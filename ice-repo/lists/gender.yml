@@ -1,0 +1,6 @@
+list:
+  items:
+    - value: male
+    - value: female
+    - value: diverse
+  type: text

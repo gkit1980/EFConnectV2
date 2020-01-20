@@ -1,0 +1,6 @@
+# Ignore everything
+**
+
+#besides
+!/dist/apps
+!/ice-repo

@@ -1,0 +1,108 @@
+locales:
+  - en
+  - de
+entries:
+  elements:
+    person:
+      first-name:
+        label:
+          - en: First Name
+            de: null
+      last-name:
+        label:
+          - en: Last Name
+            de: null
+      birthdate:
+        label:
+          - en: Birthdate
+            de: null
+      gender:
+        label:
+          - en: Gender
+            de: null
+      finalize:
+        label:
+          - en: Submit
+            de: null
+  validation:
+    pageValidation:
+      summary:
+        - en: >-
+            There ${errors > 1 ? 'are' : 'is' } ${errors} ${errors > 1 ?
+            'Errors' : 'Error' } on this page
+      growl:
+        summary:
+          - en: Validation failed
+        detail:
+          - en: Please correct the input before leaving this page
+    messages:
+      blank:
+        - en: must be given
+      comply:
+        - en: Please confirm
+          de: Bitte bestätigen
+      not_allowed_here:
+        - en: '''${value}'' not allowed here'
+      regexp:
+        - en: '''${value}'' does not matches regular expression ${regexp}'
+      array:
+        min:
+          - en: 'must have at least ${min} entries'
+        max:
+          - en: 'can have max ${max} entries'
+      range:
+        currency:
+          min:
+            - en: 'may not be smaller than ${number}'
+          max:
+            - en: 'may not be more than ${number}'
+        integer:
+          min:
+            - en: 'may not be smaller than ${number}'
+          max:
+            - en: 'may not be more than ${number}'
+        date:
+          min:
+            - en: 'may not be less than ${date}'
+          max:
+            - en: 'may not be greater than ${date}'
+      email:
+        - en: Please enter a valid email address
+          de: Bitte geben Sie eine gültige Email-Adresse ein.
+      iban:
+        - en: Please enter a valid IBAN.
+          de: Bitte geben Sie eine gültige Iban ein.
+  page-navigation:
+    page-pagination:
+      first:
+        - en: First
+      prev:
+        - en: Back
+      next:
+        - en: Next
+  common:
+    definitions:
+      demo:
+        - en: Portal demo
+          de: null
+  pages:
+    home:
+      title:
+        - en: Home
+          de: null
+  lists:
+    gender:
+      diverse:
+        - en: Diverse
+          de: null
+      male:
+        - en: Male
+          de: null
+      female:
+        - en: Female
+          de: null
+  formats:
+    date:
+      default:
+        - en: dd.MM.yyyy
+          de: null

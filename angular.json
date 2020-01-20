@@ -1,0 +1,202 @@
+{
+  "version": 1,
+  "projects": {
+    "angular": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/angular",
+      "sourceRoot": "apps/angular/src",
+      "prefix": "portal",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/angular",
+            "index": "apps/angular/src/index.html",
+            "main": "apps/angular/src/main.ts",
+            "polyfills": "apps/angular/src/polyfills.ts",
+            "tsConfig": "apps/angular/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "apps/angular/src/favicon.ico",
+              "apps/angular/src/assets"
+            ],
+            "styles": ["apps/angular/src/styles/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/angular/src/environments/environment.ts",
+                  "with": "apps/angular/src/environments/environment.prod.ts"
+                }
+              ],
+              "tsConfig": "apps/angular/tsconfig.app.prod.json",
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "5mb",
+                  "maximumError": "10mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "angular:build",
+            "proxyConfig": "apps/angular/proxy.conf.json",
+            "open": true
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "angular:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "angular:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/angular/tsconfig.app.json",
+              "apps/angular/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/angular/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/angular/jest.config.js",
+            "tsConfig": "apps/angular/tsconfig.spec.json",
+            "setupFile": "apps/angular/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "express": {
+      "root": "apps/express",
+      "sourceRoot": "apps/express/src",
+      "projectType": "application",
+      "prefix": "express",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/express",
+            "main": "apps/express/src/main.ts",
+            "tsConfig": "apps/express/tsconfig.app.json",
+            "assets": [
+              "apps/express/src/assets",
+              {
+                "glob": "**/*.yml",
+                "input": "node_modules/@impeo/documentation/descriptors",
+                "output": "/assets/documentation/descriptors"
+              },
+              {
+                "glob": "**/*.yml",
+                "input": "node_modules/@impeo/ice-core/descriptors",
+                "output": "/assets/ice-core/descriptors"
+              },
+              {
+                "glob": "**/*.yml",
+                "input": "node_modules/@impeo/ice-insurance-rules/descriptors",
+                "output": "/assets/ice-insurance-rules/descriptors"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/@impeo/exp-ice/public",
+                "output": "/assets/public"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/@impeo/exp-ice/assets",
+                "output": "/assets/exp-ice"
+              }
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": false,
+              "inspect": false,
+              "aot": true,
+              "sourceMap": false,
+              "externalDependencies": "none",
+              "tsConfig": "apps/express/tsconfig.app.prod.json",
+              "fileReplacements": [
+                {
+                  "replace": "apps/express/src/environments/environment.ts",
+                  "with": "apps/express/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "express:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/express/tsconfig.app.json",
+              "apps/express/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/express/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/express/jest.config.js",
+            "tsConfig": "apps/express/tsconfig.spec.json"
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "none"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "angular"
+}

@@ -1,0 +1,11 @@
+element:
+  type: text
+  values:
+    ListValuesRule:
+      list: gender
+  pages:
+    home: {}
+  component:
+    StaticComponentRule:
+      component:
+        IceDropdown: {}

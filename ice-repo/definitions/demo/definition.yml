@@ -1,0 +1,5 @@
+definition:
+  title: Demo Definition
+  executable: true
+  showInsights: true
+  elementOnPageCheck: false

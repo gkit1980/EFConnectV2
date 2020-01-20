@@ -1,0 +1,27 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "editor.formatOnSave": true,
+    "search.exclude": {
+      "**/dist": true,
+      "**/*.log": true,
+      "**/*-lock.json": true
+    },
+    "files.exclude": {
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "ice-packages": false,
+      "node_modules": false,
+      "cypress": false,
+      "dist": false
+    },
+    "git.autofetch": true
+  }
+}

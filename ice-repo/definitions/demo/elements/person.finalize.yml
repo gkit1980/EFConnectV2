@@ -1,0 +1,16 @@
+element:
+  type: action
+  change:
+    - MessageActionRule:
+        severity: info
+        message: Thank you!
+        dismiss: 1000
+        summary: null
+    - ResetElementValueExecutionRule:
+        elements:
+          - person.birthdate
+          - person.first-name
+          - person.last-name
+          - person.gender
+  pages:
+    home: {}

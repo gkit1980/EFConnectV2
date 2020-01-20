@@ -1,0 +1,9 @@
+element:
+  type: date
+  title: Birthdate
+  component:
+    StaticComponentRule:
+      component:
+        IceDatepicker: {}
+  pages:
+    home: null

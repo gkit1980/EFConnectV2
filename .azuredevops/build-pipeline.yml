@@ -1,0 +1,149 @@
+trigger:
+  batch: false
+  branches:
+    include:
+      - master
+      - releases/*
+
+variables:
+  DOCKER_REPO: mmun/repo
+  VERSION_MAJOR: 1
+  VERSION_MINOR: $[format('{0:yyyyMMdd}', pipeline.startTime)]
+  VERSION_REVISION: $[counter(format('{0}_{1}', variables['VERSION_MAJOR'], variables['VERSION_MINOR']), 0)]
+  VERSION: $[format('{0}.{1}.{2}', variables['VERSION_MAJOR'], variables['VERSION_MINOR'], variables['VERSION_REVISION'])]
+  ICE_REPO_BRANCH: master
+
+stages:
+  - stage: build
+    jobs:
+      - job: artifacts
+        pool:
+          name: fadata-dct
+        steps:
+          # Set version for non-PR
+          - script: echo "##vso[build.updatebuildnumber]$(VERSION)"
+            displayName: set BUILDNUMBER
+            condition: ne(variables['Build.Reason'], 'PullRequest')
+
+          # Set version for PR
+          - script: echo "##vso[build.updatebuildnumber]$(VERSION)-pr.$(System.PullRequest.PullRequestId)"
+            displayName: set BUILDNUMBER with PREID
+            condition: eq(variables['Build.Reason'], 'PullRequest')
+
+          # prevent the default cleaning done by Devops: it is radical and leads to node_modules getting deleted, which causes npm install to take much longer
+          - checkout: self
+            clean: false
+            persistCredentials: true
+
+          - script: git tag $(Build.BuildNumber) && git push origin $(Build.BuildNumber)
+            displayName: git tag
+            condition: ne(variables['Build.Reason'], 'PullRequest')
+
+          # since we disabled the default Devops cleaning, we handle it ourselves. Alowing the user to do a comlete clean
+          - script: git clean -d -x -f
+            displayName: git clean complete
+            condition: eq(variables['GIT_CLEAN_COMPLETE'], true)
+
+          - script: git clean -d -x -e node_modules -e .cache -f
+            displayName: git clean
+            condition: ne(variables['GIT_CLEAN_COMPLETE'], true)
+
+          # ensure any changed files by a previous build are reset
+          - script: git reset --hard HEAD
+            displayName: git reset
+
+          - script: npm install --no-optional
+            displayName: npm install
+
+          - script: npm run prettier:check
+            displayName: npm run prettier:check
+
+          - script: ./node_modules/.bin/nx affected --target=lint --base=origin/master --parallel
+            displayName: nx affected lint
+
+          - script: npm run build
+            displayName: npm run build
+
+          - task: Docker@2
+            displayName: docker build
+            inputs:
+              containerRegistry: docker-test
+              repository: $(DOCKER_REPO)
+              command: build
+              tags: $(Build.DefinitionName)_$(Build.BuildNumber)
+              Dockerfile: Dockerfile
+              arguments: >-
+                --build-arg BUILD_NUMBER=$(Build.DefinitionName)_$(Build.BuildNumber)
+                --build-arg SYSTEM_ACCESSTOKEN=$(System.AccessToken)
+                --build-arg ICE_REPO_BRANCH=$(ICE_REPO_BRANCH)
+                --label Build.BuildId=$(Build.BuildId)
+                --label Build.BuildNumber=$(Build.BuildNumber)
+                --label Build.Reason=$(Build.Reason)
+                --label Build.DefinitionName=$(Build.DefinitionName)
+                --label Build.Repository.Name=$(Build.Repository.Name)
+                --label Build.SourceBranch=$(Build.SourceBranch)
+                --label Build.SourceBranchName=$(Build.SourceBranchName)
+                --label System.PullRequest.PullRequestId=$(System.PullRequest.PullRequestId)
+                --label System.PullRequest.SourceBranch=$(System.PullRequest.SourceBranch)
+                --label System.PullRequest.TargetBranch=$(System.PullRequest.TargetBranch)
+                --label Build.Repository.Uri=$(Build.Repository.Uri)
+                --label System.CollectionUri=$(System.CollectionUri)
+                --label System.TeamProject=$(System.TeamProject)
+              addPipelineData: false
+
+  - stage: dev
+    dependsOn: build
+    condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+    jobs:
+      - deployment: docker
+        pool:
+          name: fadata-dct
+        environment: dev
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - script: >
+                    node -e "
+                    let branch = ('-' + path.basename(process.env.BUILD_SOURCEBRANCH)).replace('-master', '');
+                    console.log('##vso[task.setvariable variable=DOCKER_CONTAINER]' + process.env.BUILD_DEFINITIONNAME + branch + '-' + process.env.ENVIRONMENT_NAME);
+                    "
+                  displayName: set DOCKER_CONTAINER
+
+                - script: |
+                    if [ "$(docker ps -aq -f name=$DOCKER_CONTAINER)" ]; then
+                      docker container rm -f $DOCKER_CONTAINER
+                    fi
+                    docker run -d --name $DOCKER_CONTAINER -p :3000 --restart always $DOCKER_IMAGE
+                  displayName: docker run
+                  env:
+                    DOCKER_IMAGE: '$(DOCKER_REPO):$(Build.DefinitionName)_$(Build.BuildNumber)'
+
+  - stage: pr
+    dependsOn: build
+    condition: and(succeeded(), eq(variables['Build.Reason'], 'PullRequest'))
+    jobs:
+      - deployment: docker
+        pool:
+          name: fadata-dct
+        environment: pr
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - script: >
+                    node -e "
+                    let branch = ('-' + path.basename(process.env.SYSTEM_PULLREQUEST_TARGETBRANCH)).replace('-master', '');
+                    let pr = process.env.SYSTEM_PULLREQUEST_PULLREQUESTID;
+                    console.log('##vso[task.setvariable variable=DOCKER_CONTAINER]' + process.env.BUILD_DEFINITIONNAME + branch + '-' + process.env.ENVIRONMENT_NAME + pr);
+                    "
+                  displayName: set DOCKER_CONTAINER
+
+                - script: |
+                    if [ "$(docker ps -aq -f name=$DOCKER_CONTAINER)" ]; then
+                      docker container rm -f $DOCKER_CONTAINER
+                    fi
+                    docker run -d --name $DOCKER_CONTAINER -p :3000 --restart always $DOCKER_IMAGE
+                  displayName: docker run
+                  env:
+                    DOCKER_IMAGE: '$(DOCKER_REPO):$(Build.DefinitionName)_$(Build.BuildNumber)'

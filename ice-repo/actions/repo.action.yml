@@ -1,0 +1,6 @@
+action:
+  execution:
+    - MessageActionRule:
+        severity: info
+        message: I was clicked
+        summary: 'Hi, y''all!'
