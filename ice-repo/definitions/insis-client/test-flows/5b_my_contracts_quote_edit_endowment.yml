@@ -1,0 +1,36 @@
+testFlow:
+  name: 5b_my_contracts_quote_edit_endowment
+  execute: true
+  steps:
+    - UrlNavigationStep:
+        url: '/#/autologin'
+    - SleepStep:
+        value: 2000
+    - HtmlGenericActionStep:
+        selector: .logo-icon
+        action: click
+    - HtmlGenericActionStep:
+        selector: home-tile
+        index: 1
+        action: click
+    - SleepStep:
+        value: 5000
+    - HtmlGenericActionStep:
+        selector: 'div[class="topImageClass old_man_with_child_image"]'
+        index: 0
+        action: click
+    - SleepStep:
+        value: 2000
+    - ElementEntryStep:
+        element: policy.insured.object.cover.rider-hosp.active
+        value: true
+    - ElementEntryStep:
+        element: policy.insured.object.cover.rider-hosp.insured-amount
+        value: 80
+    - SleepStep:
+        value: 20000
+    - ElementEntryStep:
+        element: policy.status.issue-policy
+        value: true
+    - SleepStep:
+        value: 15000

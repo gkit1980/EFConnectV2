@@ -1,0 +1,14 @@
+integration:
+  type: api
+  requestHandler:
+    SwaggerRequestHandlerRule:
+      endpoint:
+        route: swagger/client
+        method: GET
+      info:
+        title: client api
+        description: 'api for reading, updating, adding and deleting clients'
+        license:
+          name: commercial
+          url: 'https://www.impeo.org/licenses/ice-license.html'
+        version: 1.0.0.0

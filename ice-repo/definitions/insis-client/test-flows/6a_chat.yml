@@ -1,0 +1,41 @@
+testFlow:
+  name: 6a_chat
+  execute: false
+  steps:
+    - UrlNavigationStep:
+        url: '/#/autologin'
+    - SleepStep:
+        value: 2000
+    - HtmlGenericActionStep:
+        selector: .logo-icon
+        action: click
+    - HtmlGenericActionStep:
+        selector: 'div[class="mat-slide-toggle-bar"]'
+        index: 0
+        action: click
+    - HtmlGenericActionStep:
+        selector: textarea
+        action: type
+        value: I would like to make a claim
+    - HtmlGenericActionStep:
+        selector: >-
+          button[class="btn f-14 text-center theme-bg-primary
+          theme-text-main-light-color p-0 px-5 agent-chat-button d-flex
+          align-items-center"]
+        action: click
+    - SleepStep:
+        value: 2000
+    - HtmlGenericActionStep:
+        selector: home-tile
+        index: 2
+        action: click
+    - SleepStep:
+        value: 2000
+    - HtmlGenericValidationStep:
+        selectors:
+          - mat-card-content
+          - p
+        index: all
+        assertions:
+          - contain
+          - I would like to make a claim

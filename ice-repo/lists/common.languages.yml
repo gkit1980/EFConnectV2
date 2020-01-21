@@ -1,0 +1,39 @@
+list:
+  type: text
+  additionals:
+    label:
+      label: Label
+      type: text
+  items:
+    - value: ARABIC
+      label: Arabic
+    - value: ROMANIAN
+      label: Romanian
+    - value: DANISH
+      label: Danish
+    - value: BULGARIAN
+      label: Bulgarian
+    - value: RUSSIAN
+      label: Russian
+    - value: ENGLISH
+      label: English
+    - value: SPANISH
+      label: Spanish
+    - value: FRENCH
+      label: French
+    - value: PORTUGUESE
+      label: Portuguese
+    - value: SLOVAK
+      label: Slovak
+    - value: HUNGARIAN
+      label: Hungarian
+    - value: SERBIAN
+      label: Serbian
+    - value: SWEDISH
+      label: Swedish
+    - value: THAI
+      label: Thai
+    - value: TURKISH
+      label: Turkish
+    - value: ENGLISH_US
+      label: English (US)

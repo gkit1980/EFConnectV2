@@ -1,0 +1,9 @@
+element:
+  title: full name of the policy holder
+  type: text
+  viewMode: disabled
+  mirror:
+    DtMirrorRule:
+      dt: client.personal-data.full-name
+  pages:
+    client-data: null

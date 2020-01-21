@@ -1,0 +1,18 @@
+element:
+  type: action
+  component: IceIconActionButton
+  label: apps
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: client.personal-data.status.is-customer
+      conditionValue: true
+      conditionViewMode: hidden
+      elseViewMode: default
+  action:
+    execution:
+      - DtNavigateToDefinitionExecutionRule:
+          dt: navigate-to-policy-overview
+          definitionOutput: url
+          dynIdOutput: dynId
+  pages:
+    client-data: {}

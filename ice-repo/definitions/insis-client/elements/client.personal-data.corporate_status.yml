@@ -1,0 +1,9 @@
+element:
+  title: corporate satatus for person
+  type: text
+  viewMode: hidden
+  defaultValue: '2'
+  buckets:
+    insis-save-client: {}
+    insis-get-client: {}
+    insis-update-client: {}

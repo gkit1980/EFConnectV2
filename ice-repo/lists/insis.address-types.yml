@@ -1,0 +1,25 @@
+list:
+  type: text
+  additionals:
+    label_en:
+      label: Label EN
+      type: text
+    label_de:
+      label: Label DE
+      type: text
+    insis:
+      label: Insis
+      type: text
+  items:
+    - value: home
+      label_en: Home
+      label_de: Privat
+      insis: H
+    - value: correspondence
+      label_en: Correspondence
+      label_de: Korrespondenz
+      insis: C
+    - value: business
+      label_en: Business
+      label_de: Geschäftsadresse
+      insis: W

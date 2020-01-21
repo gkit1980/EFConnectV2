@@ -1,0 +1,12 @@
+element:
+  title: Birthdate of person
+  type: date
+  label:
+    ResourceLabelRule:
+      key: insis-common.birthdate.label
+  viewMode: disabled
+  pages:
+    client-data: null
+  buckets:
+    insis-get-client: {}
+    insis-save-client: {}

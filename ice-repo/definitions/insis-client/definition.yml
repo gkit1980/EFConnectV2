@@ -1,0 +1,6 @@
+definition:
+  title: Client Data
+  labelKey: definitions.client
+  executable: true
+  api: true
+  showInsights: false

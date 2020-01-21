@@ -1,0 +1,8 @@
+environment:
+  log-soap-messages: true
+  log-soap-messages-folder: './logs'
+  insis_pdm_endpoint: http://10.3.7.200:7808/insisws/InsisPDMPort
+  insis-username: insis_gen_v10
+  insis-password: insis_gen_v10
+  insis-ignoreNamespaces:
+    - insis

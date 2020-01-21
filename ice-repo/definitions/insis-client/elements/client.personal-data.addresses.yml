@@ -1,0 +1,19 @@
+element:
+  title: List of addresses of person
+  type: array
+  array:
+    StaticArrayRule:
+      default: 0
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: client.personal-data.status.edit-mode
+      conditionValue: true
+      conditionViewMode: default
+      elseViewMode: disabled
+  label:
+    NoLabelRule: {}
+  pages:
+    client-data: null
+  buckets:
+    insis-get-client: {}
+    insis-update-client: {}

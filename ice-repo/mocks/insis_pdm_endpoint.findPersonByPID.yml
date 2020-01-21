@@ -1,0 +1,42 @@
+default:
+  condition: null
+  response:
+    Entity:
+      PersonalData:
+        PID: 6000034933
+        BirthDate: '1978-07-22T00:00:00.000Z'
+        Gender: 1
+        Name:
+          Given: JohnY
+          Family: Smith
+        HomeCountry: GB
+        Language: ENGLISH
+      Nationality: GB
+    Addresses:
+      Address:
+        - AddressID: 1222
+          AddressType: H
+          Country: United Kingdom
+          City: London
+          State: London
+          ResidentialAddress:
+            StreetName: Surrey Quays Road
+            StreetNo: 50
+          ZipCode: SE11 5BU
+    Contacts:
+      Contact:
+        - ContactID: 61500000003714
+          Type: Home
+          Details: + 44 (0) 341 020 8201
+        - ContactID: 61500000003715
+          Type: Office
+          Details: + 44 (0) 341 020 8201
+        - ContactID: 61500000003716
+          Type: Mobile
+          Details: + 44 (0) 738 129 5202
+    BankAccounts:
+      BankAccount:
+        - BankAccID: 6230000789
+          BankName: Llyods Banking Group
+          AccountNo: 82847390
+          BankPID: 98-34-78

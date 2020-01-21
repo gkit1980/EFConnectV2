@@ -1,0 +1,55 @@
+testFlow:
+  name: 6c_callback
+  execute: false
+  steps:
+    - UrlNavigationStep:
+        url: '/#/autologin'
+    - SleepStep:
+        value: 2000
+    - HtmlGenericActionStep:
+        selector: .logo-icon
+        action: click
+    - HtmlGenericActionStep:
+        selector: 'div[class="mat-slide-toggle-bar"]'
+        index: 2
+        action: click
+    - HtmlGenericActionStep:
+        selector: input.appointment-input
+        action: type
+        value: 389123456
+    - HtmlGenericActionStep:
+        selector: textarea
+        action: type
+        value: I would like some additional information
+    - HtmlGenericActionStep:
+        selector: button.mat-calendar-next-button
+        action: click
+    - HtmlGenericActionStep:
+        selector: div.mat-calendar-body-cell-content
+        index: 0
+        action: click
+    - HtmlGenericActionStep:
+        selector: select.appointment-time
+        action: <select>
+        value: '09:30:00'
+    - HtmlGenericActionStep:
+        selector: button.appointment-button
+        action: click
+    - SleepStep:
+        value: 2000
+    - HtmlGenericActionStep:
+        selector: home-tile
+        index: 2
+        action: click
+    - SleepStep:
+        value: 2000
+    - HtmlGenericValidationStep:
+        selectors:
+          - mat-card-content
+          - p
+        index: all
+        assertions:
+          - contain
+          - I would like some additional information
+    - SleepStep:
+        value: 2000

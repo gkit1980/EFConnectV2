@@ -1,0 +1,14 @@
+element:
+  title: Language of person
+  type: text
+  component: IceDropdown
+  viewMode: disabled
+  values: common.languages
+  pages:
+    client-data: null
+  buckets:
+    insis-get-client: {}
+    insis-save-client: {}
+  label:
+    ResourceLabelRule:
+      key: insis-common.language.label

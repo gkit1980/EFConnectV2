@@ -1,0 +1,736 @@
+list:
+  type: text
+  additionals:
+    label:
+      label: Label
+      type: text
+    currency:
+      label: Currency
+      type: text
+  items:
+    - value: AF
+      label: Afghanistan
+      currency: AFA
+    - value: AX
+      label: Aland Islands
+      currency: EUR
+    - value: AL
+      label: Albania
+      currency: ALL
+    - value: DZ
+      label: Algeria
+      currency: DZD
+    - value: AS
+      label: American Samoa
+      currency: USD
+    - value: AD
+      label: Andorra
+      currency: EUR
+    - value: AO
+      label: Angola
+      currency: AON
+    - value: AI
+      label: Anguilla
+      currency: XCD
+    - value: AQ
+      label: Antarctica
+      currency: XCD
+    - value: AG
+      label: Antigua and Barbuda
+      currency: XCD
+    - value: AR
+      label: Argentina
+      currency: ARS
+    - value: AM
+      label: Armenia
+      currency: AMD
+    - value: AW
+      label: Aruba
+      currency: AWG
+    - value: AU
+      label: Australia
+      currency: AUD
+    - value: AT
+      label: Austria
+      currency: EUR
+    - value: AZ
+      label: Azerbaijan
+      currency: AZM
+    - value: BS
+      label: Bahamas
+      currency: BSD
+    - value: BH
+      label: Bahrain
+      currency: BHD
+    - value: BD
+      label: Bangladesh
+      currency: BDT
+    - value: BB
+      label: Barbados
+      currency: BBD
+    - value: BY1
+      label: Belarus
+      currency: BYB
+    - value: BE
+      label: Belgium
+      currency: EUR
+    - value: BZ
+      label: Belize
+      currency: BZD
+    - value: BJ
+      label: Benin
+      currency: XOF
+    - value: BM
+      label: Bermuda
+      currency: BMD
+    - value: BT
+      label: Bhutan
+      currency: BTN
+    - value: BO
+      label: Bolivia
+      currency: BOB
+    - value: BIH
+      label: Bosnia and Herzegovina
+      currency: BAM
+    - value: BW
+      label: Botswana
+      currency: BWP
+    - value: BV
+      label: Bouvet Island
+      currency: NOK
+    - value: BR
+      label: Brazil
+      currency: BRL
+    - value: IO
+      label: British Indian Ocean Territory
+      currency: USD
+    - value: BN
+      label: Brunei Darussalam
+      currency: BND
+    - value: BG
+      label: Bulgaria
+      currency: BGL
+    - value: BF
+      label: Burkina Faso
+      currency: XOF
+    - value: BI
+      label: Burundi
+      currency: BIF
+    - value: KH
+      label: Cambodia
+      currency: KHR
+    - value: CM
+      label: Cameroon
+      currency: XAF
+    - value: CA
+      label: Canada
+      currency: CAD
+    - value: CV
+      label: Cape Verde
+      currency: CVE
+    - value: KY
+      label: Cayman Islands
+      currency: KYD
+    - value: CF
+      label: Central African Republic
+      currency: XAF
+    - value: TD
+      label: Chad
+      currency: EUR
+    - value: CL
+      label: Chile
+      currency: CLP
+    - value: CN
+      label: China
+      currency: CNY
+    - value: CX
+      label: Christmas Island
+      currency: AUD
+    - value: CC
+      label: Cocos (Keeling) Islands
+      currency: AUD
+    - value: CO
+      label: Colombia
+      currency: COP
+    - value: KM
+      label: Comoros
+      currency: KMF
+    - value: CG
+      label: Congo
+      currency: XAF
+    - value: CD
+      label: Congo Democratic Republic of the
+      currency: EUR
+    - value: CK
+      label: Cook Islands
+      currency: NZD
+    - value: CR
+      label: Costa Rica
+      currency: CRC
+    - value: CI
+      label: Cote D'Ivoire
+      currency: EUR
+    - value: HR
+      label: Croatia
+      currency: HRK
+    - value: CU
+      label: Cuba
+      currency: CUP
+    - value: CY
+      label: Cyprus
+      currency: CYP
+    - value: CZ
+      label: Czech Republic
+      currency: CZK
+    - value: DK
+      label: Denmark
+      currency: DKK
+    - value: DJ
+      label: Djibouti
+      currency: DJF
+    - value: DM
+      label: Dominica
+      currency: XCD
+    - value: DO
+      label: Dominican Republic
+      currency: DOP
+    - value: EC
+      label: Ecuador
+      currency: ECS
+    - value: EG
+      label: Egypt
+      currency: EGP
+    - value: SV
+      label: El Salvador
+      currency: SVC
+    - value: GQ
+      label: Equatorial Guinea
+      currency: XAF
+    - value: ER
+      label: Eritrea
+      currency: ERN
+    - value: EST
+      label: Estonia
+      currency: EEK
+    - value: ET
+      label: Ethiopia
+      currency: ETB
+    - value: FK
+      label: Falkland Islands (Malvinas)
+      currency: FKP
+    - value: FO
+      label: Faroe Islands
+      currency: DKK
+    - value: FJ
+      label: Fiji
+      currency: FJD
+    - value: FIN
+      label: Finland
+      currency: EUR
+    - value: FR
+      label: France
+      currency: EUR
+    - value: GF
+      label: French Guiana
+      currency: EUR
+    - value: PF
+      label: French Polynesia
+      currency: XPF
+    - value: TF
+      label: French Southern Territories
+      currency: EUR
+    - value: GA
+      label: Gabon
+      currency: XAF
+    - value: GM
+      label: Gambia
+      currency: GMD
+    - value: GE
+      label: Georgia
+      currency: GEL
+    - value: DE
+      label: Germany
+      currency: EUR
+    - value: GH
+      label: Ghana
+      currency: GHC
+    - value: GI
+      label: Gibraltar
+      currency: GIP
+    - value: GR
+      label: Greece
+      currency: EUR
+    - value: GL
+      label: Greenland
+      currency: DKK
+    - value: GD
+      label: Grenada
+      currency: XCD
+    - value: GP
+      label: Guadeloupe
+      currency: EUR
+    - value: GU
+      label: Guam
+      currency: USD
+    - value: GT
+      label: Guatemala
+      currency: QTQ
+    - value: GN
+      label: Guinea
+      currency: GNF
+    - value: GW
+      label: Guinea-Bissau
+      currency: GWP
+    - value: GY
+      label: Guyana
+      currency: GYD
+    - value: HT
+      label: Haiti
+      currency: HTG
+    - value: HM
+      label: Heard Island and McDonald Islands
+      currency: AUD
+    - value: VA
+      label: Holy See (Vatican City State)
+      currency: EUR
+    - value: HN
+      label: Honduras
+      currency: HNL
+    - value: HK
+      label: Hong Kong
+      currency: HKD
+    - value: HU
+      label: Hungary
+      currency: HUF
+    - value: IS1
+      label: Iceland
+      currency: ISK
+    - value: IN
+      label: India
+      currency: INR
+    - value: ID
+      label: Indonesia
+      currency: IDR
+    - value: IR
+      label: Iran
+      currency: IRR
+    - value: IQ
+      label: Iraq
+      currency: IQD
+    - value: IRL
+      label: Ireland
+      currency: EUR
+    - value: IL
+      label: Israel
+      currency: ILS
+    - value: IT
+      label: Italy
+      currency: EUR
+    - value: JM
+      label: Jamaica
+      currency: JMD
+    - value: JP
+      label: Japan
+      currency: JPY
+    - value: JO
+      label: Jordan
+      currency: JOD
+    - value: KZ
+      label: Kazakhstan
+      currency: KZT
+    - value: KE
+      label: Kenya
+      currency: KES
+    - value: KI
+      label: Kiribati
+      currency: AUD
+    - value: KP
+      label: Korea Democratic People's Republic of
+      currency: KPW
+    - value: KR
+      label: Korea Republic of
+      currency: KRW
+    - value: KW
+      label: Kuwait
+      currency: KWD
+    - value: KG
+      label: Kyrgyzstan
+      currency: KGS
+    - value: LA
+      label: Laos
+      currency: LAK
+    - value: LV
+      label: Latvia
+      currency: LVL
+    - value: LB
+      label: Lebanon
+      currency: LBP
+    - value: LS
+      label: Lesotho
+      currency: LSL
+    - value: LR
+      label: Liberia
+      currency: LRD
+    - value: LY
+      label: Libya
+      currency: LYD
+    - value: LI
+      label: Liechtenstein
+      currency: CHF
+    - value: LT
+      label: Lithuania
+      currency: LTL
+    - value: LU
+      label: Luxembourg
+      currency: EUR
+    - value: MO
+      label: Macao
+      currency: MOP
+    - value: MK
+      label: Macedonia
+      currency: MKD
+    - value: MG
+      label: Madagascar
+      currency: MGF
+    - value: MW
+      label: Malawi
+      currency: MWK
+    - value: MY
+      label: Malaysia
+      currency: MYR
+    - value: MV
+      label: Maldives
+      currency: MVR
+    - value: ML
+      label: Mali
+      currency: XOF
+    - value: MT
+      label: Malta
+      currency: MTL
+    - value: MH
+      label: Marshall Islands
+      currency: USD
+    - value: MQ
+      label: Martinique
+      currency: EUR
+    - value: MR
+      label: Mauritania
+      currency: MRO
+    - value: MU
+      label: Mauritius
+      currency: MUR
+    - value: YT
+      label: Mayotte
+      currency: EUR
+    - value: MX
+      label: Mexico
+      currency: MXN
+    - value: FM
+      label: Micronesia Federated States of
+      currency: USD
+    - value: MD
+      label: Moldova
+      currency: MDL
+    - value: MC
+      label: Monaco
+      currency: EUR
+    - value: MN
+      label: Mongolia
+      currency: MNT
+    - value: MNE
+      label: Montenegro
+      currency: EUR
+    - value: MS
+      label: Montserrat
+      currency: XCD
+    - value: MA
+      label: Morocco
+      currency: MAD
+    - value: MZ
+      label: Mozambique
+      currency: MZM
+    - value: MM
+      label: Myanmar
+      currency: MMK
+    - value: NA
+      label: Namibia
+      currency: NAD
+    - value: NR
+      label: Nauru
+      currency: AUD
+    - value: NP
+      label: Nepal
+      currency: NPR
+    - value: NL
+      label: Netherlands
+      currency: EUR
+    - value: AN
+      label: Netherlands Antilles
+      currency: ANG
+    - value: NC
+      label: New Caledonia
+      currency: XPF
+    - value: NZ
+      label: New Zealand
+      currency: NZD
+    - value: NI
+      label: Nicaragua
+      currency: NIC
+    - value: NE
+      label: Niger
+      currency: XOF
+    - value: NG
+      label: Nigeria
+      currency: NGN
+    - value: NU
+      label: Niue
+      currency: NZD
+    - value: NF
+      label: Norfolk Island
+      currency: AUD
+    - value: MP
+      label: Northern Mariana Islands
+      currency: USD
+    - value: 'NO'
+      label: Norway
+      currency: NOK
+    - value: OM
+      label: Oman
+      currency: OMR
+    - value: PK
+      label: Pakistan
+      currency: PKR
+    - value: PW
+      label: Palau
+      currency: USD
+    - value: PS
+      label: Palestinian Territory Occupied
+      currency: JOD
+    - value: PA
+      label: Panama
+      currency: PAB
+    - value: PG
+      label: Papua New Guinea
+      currency: PGK
+    - value: PY
+      label: Paraguay
+      currency: PYG
+    - value: PE
+      label: Peru
+      currency: PEN
+    - value: PH
+      label: Philippines
+      currency: PHP
+    - value: PN
+      label: Pitcairn
+      currency: NZD
+    - value: PL
+      label: Poland
+      currency: PLN
+    - value: PT
+      label: Portugal
+      currency: EUR
+    - value: PR
+      label: Puerto Rico
+      currency: USD
+    - value: QA
+      label: Qatar
+      currency: QAR
+    - value: RE
+      label: Reunion
+      currency: EUR
+    - value: RO
+      label: Romania
+      currency: RON
+    - value: RU
+      label: Russia
+      currency: RUR
+    - value: RW
+      label: Rwanda
+      currency: RWF
+    - value: SH
+      label: Saint Helena
+      currency: SHP
+    - value: KN
+      label: Saint Kitts and Nevis
+      currency: XCD
+    - value: LC
+      label: Saint Lucia
+      currency: XCD
+    - value: PM
+      label: Saint Pierre and Miquelon
+      currency: EUR
+    - value: VC
+      label: Saint Vincent and the Grenadines
+      currency: XCD
+    - value: WS
+      label: Samoa
+      currency: WST
+    - value: SM
+      label: San Marino
+      currency: ITL
+    - value: ST
+      label: Sao Tome and Principe
+      currency: STD
+    - value: SA
+      label: Saudi Arabia
+      currency: SAR
+    - value: SN
+      label: Senegal
+      currency: XOF
+    - value: RS
+      label: Serbia
+      currency: RSD
+    - value: SC
+      label: Seychelles
+      currency: SCR
+    - value: SL
+      label: Sierra Leone
+      currency: SLL
+    - value: SG
+      label: Singapore
+      currency: SGD
+    - value: SK
+      label: Slovakia
+      currency: SKK
+    - value: SLO
+      label: Slovenia
+      currency: SIT
+    - value: SB
+      label: Solomon Islands
+      currency: SBD
+    - value: SO
+      label: Somalia
+      currency: SOD
+    - value: ZA
+      label: South Africa
+      currency: ZAR
+    - value: GS
+      label: South Georgia and the S. Sandwich Isl.
+      currency: GBP
+    - value: ES
+      label: Spain
+      currency: EUR
+    - value: LK
+      label: Sri Lanka
+      currency: LKR
+    - value: SD
+      label: Sudan
+      currency: SDD
+    - value: SR
+      label: Suriname
+      currency: SRG
+    - value: SJ
+      label: Svalbard and Jan Mayen
+      currency: NOK
+    - value: SZ
+      label: Swaziland
+      currency: SZL
+    - value: SE
+      label: Sweden
+      currency: SEK
+    - value: CH
+      label: Switzerland
+      currency: CHF
+    - value: SY
+      label: Syrian Arab Republic
+      currency: SYP
+    - value: TW
+      label: Taiwan Province of China
+      currency: TWD
+    - value: TJ
+      label: Tajikistan
+      currency: TJR
+    - value: TZ
+      label: Tanzania
+      currency: TZS
+    - value: TH
+      label: Thailand
+      currency: THB
+    - value: TL
+      label: Timor-Leste
+      currency: USD
+    - value: TG
+      label: Togo
+      currency: XOF
+    - value: TK
+      label: Tokelau
+      currency: NZD
+    - value: TO
+      label: Tonga
+      currency: TOP
+    - value: TT
+      label: Trinidad and Tobago
+      currency: TTD
+    - value: TN
+      label: Tunisia
+      currency: TND
+    - value: TR
+      label: Turkey
+      currency: TRL
+    - value: TRE
+      label: Turkey(European part)
+      currency: EUR
+    - value: TM
+      label: Turkmenistan
+      currency: TMM
+    - value: TC
+      label: Turks and Caicos Islands
+      currency: USD
+    - value: TV
+      label: Tuvalu
+      currency: AUD
+    - value: UG
+      label: Uganda
+      currency: UGS
+    - value: UA
+      label: Ukraine
+      currency: UAG
+    - value: AE
+      label: United Arab Emirates
+      currency: AED
+    - value: GB
+      label: United Kingdom
+      currency: GBP
+    - value: US
+      label: United States
+      currency: USD
+    - value: UM
+      label: United States Minor Outlying Islands
+      currency: USD
+    - value: UY
+      label: Uruguay
+      currency: UYP
+    - value: UZ
+      label: Uzbekistan
+      currency: UZS
+    - value: VU
+      label: Vanuatu
+      currency: VUV
+    - value: VE
+      label: Venezuela
+      currency: VUB
+    - value: VN
+      label: Vietnam
+      currency: VND
+    - value: VG
+      label: Virgin Islands British
+      currency: USD
+    - value: VI
+      label: Virgin Islands U.S.
+      currency: USD
+    - value: WF
+      label: Wallis and Futuna
+      currency: XPF
+    - value: EH
+      label: Western Sahara
+      currency: MAD
+    - value: YE
+      label: Yemen
+      currency: YER
+    - value: ZM
+      label: Zambia
+      currency: ZMK
+    - value: ZW
+      label: Zimbabwe
+      currency: ZWD

@@ -1,0 +1,19 @@
+dt:
+  output-label: url
+  hitPolicy: F
+  inputs:
+    - label: pid
+      element: client.personal-data.pid
+  outputs:
+    - label: url
+      id: url
+      type: string
+    - label: dynId
+      id: dynId
+      type: string
+  rules:
+    - inputs:
+        - not(null)
+      outputs:
+        - insis-policy-overview/policylist
+        - client.personal-data.pid

@@ -1,0 +1,14 @@
+element:
+  type: text
+  title: contact number of person
+  buckets:
+    insis-get-client: {}
+    insis-update-client: {}
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: client.personal-data.status.edit-mode
+      conditionValue: true
+      conditionViewMode: default
+      elseViewMode: disabled
+  label:
+    NoLabelRule: {}

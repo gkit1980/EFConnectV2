@@ -1,0 +1,6 @@
+element:
+  title: id of address of person
+  type: text
+  buckets:
+    insis-get-client: {}
+    insis-update-client: {}

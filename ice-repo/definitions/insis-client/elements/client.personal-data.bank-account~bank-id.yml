@@ -1,0 +1,6 @@
+element:
+  title: id of bank
+  type: text
+  buckets:
+    insis-get-client: {}
+    insis-update-client: {}

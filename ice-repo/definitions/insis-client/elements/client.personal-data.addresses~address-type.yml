@@ -1,0 +1,16 @@
+element:
+  title: Type of address of person
+  type: text
+  component: IceButtonToggle
+  values: insis.address-types
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: client.personal-data.status.edit-mode
+      conditionValue: true
+      conditionViewMode: required
+      elseViewMode: hidden
+  pages:
+    client-data: null
+  buckets:
+    insis-get-client: {}
+    insis-update-client: {}

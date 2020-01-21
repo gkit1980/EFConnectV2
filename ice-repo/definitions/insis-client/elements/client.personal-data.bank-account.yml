@@ -1,0 +1,16 @@
+element:
+  title: List of bank accounts of person
+  type: array
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: client.personal-data.status.edit-mode
+      conditionValue: true
+      conditionViewMode: default
+      elseViewMode: disabled
+  pages:
+    client-data: null
+  buckets:
+    insis-get-client: {}
+    insis-update-client: {}
+  label:
+    NoLabelRule: {}

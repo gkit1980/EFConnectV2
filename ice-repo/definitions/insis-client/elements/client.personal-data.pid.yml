@@ -1,0 +1,13 @@
+element:
+  title: PID for person
+  type: text
+  viewMode: disabled
+  validation:
+    - RegexpValidationRule:
+        regexp: '^[0-9a-zA-Z.]{1,}'
+  pages:
+    client-data: null
+  buckets:
+    insis-save-client: {}
+    insis-get-client: {}
+    insis-update-client: {}
