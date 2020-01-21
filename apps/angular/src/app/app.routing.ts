@@ -1,4 +1,6 @@
 import { RouterModule, Routes } from '@angular/router';
+import { IceRuntimeResolver } from '@impeo/ng-ice';
+
 import { HomeComponent } from './components/home/home.component';
 import { StyleGuideComponent } from './components/styleguide/styleguide.component';
 
@@ -6,7 +8,8 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: HomeComponent
+    component: HomeComponent,
+    resolve: { runtime: IceRuntimeResolver }
   },
   {
     path: 'styleguide',
