@@ -1,23 +1,15 @@
-$body-background-color: #fff !default;
-
-// Global colors
-// TODO: what for ? Why not using theme?
-$color-text: #484848;
-$color-impeo: #0099ff;
-
-// Home
-$color-teaser: $color-impeo;
-$color-teaser-background: #f3f3f3;
-$color-hr: rgba(0, 0, 0, 0.1);
-
-$show-required-label-suffix: true;
-$show-required-bottom-border: false;
-
-$ice-demo-page-set-background-image: true !default;
+$ice-demo-page-set-background-image: false !default;
 $ice-demo-page-background-image-url: '../../../../node_modules/@impeo/ng-ice/assets-webpacked/arctic.jpg' !default;
 
-$ice-one-page-set-background-image: true !default;
+$ice-one-page-set-background-image: false !default;
 $ice-one-page-background-image-url: '../../../../node_modules/@impeo/ng-ice/assets-webpacked/arctic.jpg' !default;
 
-$take-photo-image-url: '../assets-webpacked/home/camera.svg' !default;
-$cancel-image-url: '../assets-webpacked/home/cancel.svg' !default;
+//TODO: define later
+$breakpoints: (
+  'xs': 568px,
+  'sm': 768px,
+  'md': 1024px,
+  'lg': 1176px,
+  'xl': 1440px,
+  'xxl': 1680px
+);

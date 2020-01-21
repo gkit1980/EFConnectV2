@@ -1,0 +1,23 @@
+@mixin respond-to($breakpoint) {
+  $width: map-get($breakpoints, $breakpoint);
+
+  @if not $width {
+    $width: $breakpoint;
+  } @else {
+    $width: $width - 1;
+  }
+  @media (max-width: #{$width}) {
+    @content;
+  }
+}
+
+@mixin respond-from($breakpoint) {
+  $width: map-get($breakpoints, $breakpoint);
+
+  @if not $width {
+    $width: $breakpoint;
+  }
+  @media (min-width: #{$width}) {
+    @content;
+  }
+}

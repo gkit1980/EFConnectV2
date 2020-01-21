@@ -1,37 +1,18 @@
-// Import bootsstrap as a single file - ideally, we would import parts only and in between, override bootstrap variables
-@import '../../../../node_modules/bootstrap/scss/bootstrap';
-
-// Import fontawesome, adjust the path for finding fonts
-$fa-font-path: '../../../../node_modules/font-awesome/fonts';
-@import '../../../../node_modules/font-awesome/scss/font-awesome';
+// Import only Grid part of bootstrap
+@import '../../../../node_modules/bootstrap/scss/bootstrap-grid';
 
 // Internal imports
 @import 'variables';
+@import 'mixins';
+@import 'reset';
 @import 'themes';
 
-body {
-  background-color: $body-background-color;
-}
+.container {
+  width: 100%;
+  max-width: 1328px; // 1280 max width + padding 24px
+  padding: 16px;
 
-.container-fluid {
-  max-width: 1024px;
-  padding: 30px;
-  padding-top: 0px;
-  margin-bottom: 20px;
-}
-
-@media (max-width: 1024px) {
-  .container-fluid {
-    max-width: 100%;
-    padding: 0px;
-    margin-bottom: 0px;
-  }
-}
-
-@media (max-width: 768px) {
-  .container-fluid {
-    max-width: 100%;
-    padding: 0px;
-    margin-bottom: 0px;
+  @include respond-from(840px) {
+    padding: 24px;
   }
 }

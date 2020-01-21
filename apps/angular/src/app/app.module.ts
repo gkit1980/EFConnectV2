@@ -22,6 +22,7 @@ import {
 } from '@angular/material';
 import { NgIceModule, IcePrincipalService } from '@impeo/ng-ice';
 import { ClientPrincipal } from '@impeo/ice-core';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, StyleGuideComponent],
@@ -41,6 +42,7 @@ import { ClientPrincipal } from '@impeo/ice-core';
     MatRadioModule,
     MatCheckboxModule,
     MatSlideToggleModule,
+    FlexLayoutModule,
     NgIceModule.forRoot()
   ],
   providers: [

@@ -15,12 +15,9 @@
 
 @include mat-core();
 
-$common: (
-  $body-background-color: #fff,
-  /**
+$common: (/**
    * TIP: Include common styles here to be applied for the entire application
-   */
-);
+   */);
 
 @mixin all_mixins($theme) {
   $merged-theme: map-merge($theme, $common);

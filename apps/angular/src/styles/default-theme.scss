@@ -3,7 +3,7 @@
 
 
 // How to extend AMT -> https://dev.azure.com/impeo-work/K-M%20MyDog/_git/k-m-customer-portal?path=%2Fangular%2Fsrc%2Fstyles%2Fthemes%2Fice-master-material-custom.scss
-
+// https://github.com/angular/components/blob/9db13336393eab8bebbc151043917829fa0bb013/src/material/core/theming/_palette.scss
 
 // @mat-typography-level arguments are: font-size, line-height, font-weight, font-family, letter-spacing
 $fontConfig: (
@@ -22,50 +22,52 @@ $fontConfig: (
   input: mat-typography-level(16px, 1.5, 400, 'Roboto', 0.25px), // input
 );
 
+$colors: (
+  'success': #408300,
+  'success-light': rgba(#408300, 0.15),
+  'warning': #996B0F,
+  'warning-light': rgba(#996B0F, 0.15),
+  'error': #C40404,
+  'error-light': rgba(#C40404, 0.15),
+  'info': rgba(#287BA4, 0.15),
+  'action': #0D78C0,
+  'header': #243A76,
+  'text': #282828,
+  'text-disabled': rgba(#282828, 0.6),
+  'title-disabled': rgba(#000000, 0.6),
+  'background': #fafafa,
+  'border': #ddd,
+  'border-input': #919191,
+  'light': #fff,
+  'badge-1': #767676,
+  'badge-2': #ca16c7,
+  'badge-3': #673ab7,
+  'badge-4': #8a2b00
+);
+
+@function color($key: 'action') {
+  @return map-get($colors, $key);
+}
+
+$all: (
+  colors: $colors
+);
+
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
 @include mat-core($fontConfig);
 
-@function color($key: 'primary') {
-  $colors: map-get($other, 'colors');
-  @return map-get($colors, $key);
-}
-
-$other: (
-  colors: (
-    'success': #408300,
-    'success-light': rgba(#408300, 0.15),
-    'warning': #996B0F,
-    'warning-light': rgba(#996B0F, 0.15),
-    'error': #C40404,
-    'error-light': rgba(#C40404, 0.15),
-    'info': rgba(#287BA4, 0.15),
-    'action': #0D78C0,
-    'header': #243A76,
-    'text': #282828,
-    'text-disabled': rgba(#282828, 0.6),
-    'title-disabled': rgba(#000000, 0.6),
-    'background': #fafafa,
-    'border': #ddd,
-    'border-input': #919191,
-    'light': #fff,
-    'badge-1': #767676,
-    'badge-2': #ca16c7,
-    'badge-3': #673ab7,
-    'badge-4': #8a2b00
-  )
-);
 
 $mat-primary: (
-  500: color('action'),
+  500: color('header'),
   contrast: (
-    500:color('light')
+    500: color('light')
   )
 );
 
 $mat-accent: (
-  500: color('header'),
+  500: color('action'),
   contrast: (
     500: color('light')
   )
@@ -89,4 +91,4 @@ $default-theme-warn: mat-palette($mat-warn);
 $mat-default-theme: mat-light-theme($default-theme-primary, $default-theme-accent, $default-theme-warn);
 
 
-$default-theme: map-merge($mat-default-theme, $other);
+$default-theme: map-merge($mat-default-theme, $all);
