@@ -7,6 +7,7 @@
 
 // Application and components
 @import '../app/components/app/app.component.mixin.scss';
+@import '../app/components/footer/footer.component.mixin.scss';
 
 //ice custom components mixins
 //@import "../../../../libs/ice-custom-components/src/styles/ice-custom-components.mixin.scss";
@@ -24,6 +25,7 @@ $common: (/**
   @include angular-material-theme($merged-theme);
   @include ng-ice-mixin($merged-theme);
   @include app-mixin($merged-theme);
+  @include footer-mixin($merged-theme);
   //@include custom-components-mixin($merged-theme);
   //@include c-button-mixin($merged-theme);
 }

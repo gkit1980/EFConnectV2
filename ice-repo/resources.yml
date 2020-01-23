@@ -86,6 +86,10 @@ entries:
         - en: Portal demo
           de: null
   pages:
+    footer:
+      terms-and-conditions:
+        - en: Terms and Conditions
+          de: I dont know what terms and conditions is in german
     home:
       title:
         - en: Home

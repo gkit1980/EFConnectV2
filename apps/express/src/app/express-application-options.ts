@@ -1,4 +1,4 @@
-import { ExpressIceApplicationOptions } from '@impeo/exp-ice/src';
+import { ExpressIceApplicationOptions } from '@impeo/exp-ice';
 
 export interface VisualIceOptions {
   urlRelativePath: string;

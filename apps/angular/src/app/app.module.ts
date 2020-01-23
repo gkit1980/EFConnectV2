@@ -23,9 +23,10 @@ import {
 import { NgIceModule, IcePrincipalService } from '@impeo/ng-ice';
 import { ClientPrincipal } from '@impeo/ice-core';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, StyleGuideComponent],
+  declarations: [AppComponent, HomeComponent, StyleGuideComponent, FooterComponent],
   imports: [
     AppRouting,
     FormsModule,
