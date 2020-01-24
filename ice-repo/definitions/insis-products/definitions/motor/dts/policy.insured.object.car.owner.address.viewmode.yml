@@ -1,0 +1,25 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policy.status.policy-holder-is-owner
+    - label: neues label
+      element: policy.status.policy-status
+  outputs:
+    - id: viewmode
+      type: string
+  rules:
+    - inputs:
+        - other
+        - '-4,-3,-2'
+      outputs:
+        - required
+    - inputs:
+        - other
+        - '-'
+      outputs:
+        - disabled
+    - inputs:
+        - '-'
+        - '-'
+      outputs:
+        - hidden

@@ -1,0 +1,16 @@
+element:
+  title: zip of owner
+  type: text
+  viewMode:
+    DtViewModeRule:
+      dt: policy.insured.object.car.owner.address.viewmode
+  label:
+    ResourceLabelRule:
+      key: insis-common.address.zip.label
+  pages:
+    quote_buy: null
+  component:
+    StaticComponentRule:
+      component:
+        IceTextInput:
+          keyboardType: number

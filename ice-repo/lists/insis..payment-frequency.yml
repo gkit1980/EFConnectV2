@@ -1,0 +1,22 @@
+list:
+  type: integer
+  additionals:
+    label_en:
+      label: Label EN
+      type: text
+    label_de:
+      label: Label DE
+      type: text
+  items:
+    - value: 1
+      label_en: Annually
+      label_de: jährlich
+    - value: 2
+      label_en: Semiannual
+      label_de: halbjährlich
+    - value: 4
+      label_en: Quarterly
+      label_de: vierteljährlich
+    - value: 12
+      label_en: Monthly
+      label_de: monatlich

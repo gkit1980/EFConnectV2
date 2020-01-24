@@ -1,0 +1,6 @@
+element:
+  type: integer
+  defaultValue: 0
+  buckets:
+    insis-quote:
+      trigger: true

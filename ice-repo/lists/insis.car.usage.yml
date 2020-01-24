@@ -1,0 +1,21 @@
+list:
+  type: text
+  additionals:
+    label_en:
+      label: Label EN
+      type: text
+    label_de:
+      label: Label DE
+      type: text
+    insis:
+      label: Insis
+      type: integer
+  items:
+    - value: private
+      label_en: Only Private
+      label_de: Nur Privat
+      insis: 1
+    - value: business
+      label_en: Private and for Business
+      label_de: Privat und Geschäftlich
+      insis: 17

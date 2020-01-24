@@ -1,0 +1,4 @@
+element:
+  title: street number of policy holder person
+  type: text
+  viewMode: required

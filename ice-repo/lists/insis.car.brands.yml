@@ -1,0 +1,19 @@
+list:
+  type: text
+  additionals:
+    label_en:
+      label: Label EN
+      type: text
+    label_de:
+      label: Label DE
+      type: text
+  items:
+    - value: Audi
+      label_en: Audi
+      label_de: Audi
+    - value: BMW
+      label_en: BMW
+      label_de: BMW
+    - value: Ford
+      label_en: Ford
+      label_de: Ford

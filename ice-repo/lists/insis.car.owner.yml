@@ -1,0 +1,21 @@
+list:
+  type: text
+  additionals:
+    label_en:
+      label: Label EN
+      type: text
+    label_de:
+      label: Label DE
+      type: text
+    insis:
+      label: Insis
+      type: integer
+  items:
+    - value: policyholder
+      label_en: I am the owner
+      label_de: Ich
+      insis: 1
+    - value: other
+      label_en: Another Person
+      label_de: Andere Person
+      insis: 2

@@ -1,0 +1,19 @@
+list:
+  type: integer
+  additionals:
+    label_en:
+      label: label_en
+      type: text
+    label_de:
+      label: label_de
+      type: text
+  items:
+    - value: 4
+      label_en: Direct Debit
+      label_de: Lastschrift
+    - value: 2
+      label_en: Credit Card
+      label_de: Kreditkarte
+    - value: 1
+      label_en: Apple Pay
+      label_de: Apple Pay

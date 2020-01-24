@@ -1,0 +1,10 @@
+element:
+  type: integer
+  component: IceDropdown
+  viewMode: required
+  values:
+    DtValuesRule:
+      dt: insis-motor-category-list
+  buckets:
+    insis-quote:
+      trigger: true

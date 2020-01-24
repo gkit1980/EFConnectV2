@@ -1,0 +1,8 @@
+element:
+  title: Payment Way
+  type: integer
+  component: IceButtonToggle
+  defaultValue: 4
+  values: insis.payment.way
+  label: null
+  viewMode: required

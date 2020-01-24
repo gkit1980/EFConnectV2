@@ -1,0 +1,10 @@
+element:
+  title: number of installments for the policy
+  type: integer
+  component: IceDropdown
+  defaultValue: 1
+  values:
+    StaticValuesRule:
+      values:
+        - 1..31
+  viewMode: required

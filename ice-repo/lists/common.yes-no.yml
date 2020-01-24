@@ -1,0 +1,16 @@
+list:
+  type: text
+  additionals:
+    label_en:
+      label: Label en
+      type: text
+    label_de:
+      label: Label de
+      type: text
+  items:
+    - value: true
+      label_en: 'Yes'
+      label_de: Ja
+    - value: false
+      label_en: 'No'
+      label_de: Nein

@@ -1,0 +1,17 @@
+element:
+  title: Duration of insurance
+  description: Duration of insurance
+  type: integer
+  component:
+    StaticComponentRule:
+      component:
+        IceNumber:
+          keyboardType: text
+  buckets:
+    insis-quote:
+      trigger: true
+  viewMode: required
+  text:
+    ResourceTextRule:
+      suffix: elements.policy.contract.term.years.suffix
+      placeholder: elements.policy.contract.term.years.placeholder

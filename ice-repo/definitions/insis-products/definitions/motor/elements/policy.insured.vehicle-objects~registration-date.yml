@@ -1,0 +1,6 @@
+element:
+  type: date
+  viewMode: required
+  buckets:
+    insis-quote:
+      trigger: true

@@ -1,0 +1,10 @@
+element:
+  title: Insurance Begin
+  type: date
+  defaultValue:
+    DateExpressionValueRule:
+      expression: date(today)
+  buckets:
+    insis-quote:
+      trigger: true
+  viewMode: required

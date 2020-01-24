@@ -1,0 +1,7 @@
+element:
+  title: PID for policy holder person
+  type: text
+  defaultValue:
+    PrincipalDataValueRule:
+      path: pid
+  viewMode: disabled

@@ -1,0 +1,9 @@
+element:
+  type: text
+  component: IceButtonToggle
+  viewMode: required
+  defaultValue: private
+  values: insis.car.usage
+  buckets:
+    insis-quote:
+      trigger: true

@@ -1,0 +1,4 @@
+element:
+  title: state of policy holder person
+  type: text
+  viewMode: default

@@ -1,0 +1,6 @@
+element:
+  type: text
+  viewMode: required
+  buckets:
+    insis-quote:
+      trigger: true

@@ -1,0 +1,5 @@
+element:
+  title: car engine
+  type: text
+  defaultValue: '*'
+  viewMode: output

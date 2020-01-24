@@ -1,0 +1,8 @@
+element:
+  title: state as text of the policy
+  type: text
+  label: null
+  mirror:
+    DtResourceMirrorRule:
+      dt: policy-state.label
+  viewMode: output
