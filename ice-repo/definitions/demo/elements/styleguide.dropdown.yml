@@ -1,0 +1,12 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        IceDropdown: {}
+  values:
+    StaticValuesRule:
+      values:
+        - option1
+        - option2
+        - option3

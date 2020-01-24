@@ -16,7 +16,7 @@
 <h3>Toolbar/Header</h3>
 
 <mat-toolbar color="primary">
-  <mat-toolbar-row >
+  <mat-toolbar-row>
     INSIS Portal
   </mat-toolbar-row>
 </mat-toolbar>
@@ -57,6 +57,11 @@
   <button mat-stroked-button disabled>Disabled</button>
   <a mat-stroked-button routerLink=".">Link</a>
 </div>
+<div>
+  <button mat-flat-button color="accent" class="small">Accent</button>
+  <button mat-stroked-button color="accent" class="small">Accent</button>
+  <button mat-button color="accent" class="small">Accent</button>
+</div>
 
 <h3>Form input</h3>
 <mat-form-field appearance="outline">
@@ -82,6 +87,7 @@
 <mat-form-field appearance="outline">
   <mat-label>Select label</mat-label>
   <select matNativeControl required>
+    <option value=""></option>
     <option value="volvo">Volvo</option>
     <option value="saab">Saab</option>
     <option value="mercedes">Mercedes</option>
@@ -91,51 +97,51 @@
 
 <br /><br />
 <mat-radio-group>
-  <mat-radio-button value="1" checked="true" >
+  <mat-radio-button value="1" checked="true">
     Option 1
   </mat-radio-button>
-  <mat-radio-button value="2" >
+  <mat-radio-button value="2">
     Option 2
   </mat-radio-button>
 </mat-radio-group>
 
 <mat-radio-group>
-  <mat-radio-button value="1" checked="true" disabled >
+  <mat-radio-button value="1" checked="true" disabled>
     Option 1
   </mat-radio-button>
-  <mat-radio-button value="2" disabled >
+  <mat-radio-button value="2" disabled>
     Option 2
   </mat-radio-button>
 </mat-radio-group>
 
 <br /><br />
-<mat-checkbox checked="true" >
+<mat-checkbox checked="true">
   Checkbox
 </mat-checkbox>
 <mat-checkbox>
   Checkbox
 </mat-checkbox>
-<mat-checkbox disabled checked="true" >
+<mat-checkbox disabled checked="true">
   Checked disabled
 </mat-checkbox>
-<mat-checkbox disabled >
+<mat-checkbox disabled>
   Disabled
 </mat-checkbox>
 
 <br /><br />
-<mat-slide-toggle >Toggle</mat-slide-toggle>
+<mat-slide-toggle>Toggle</mat-slide-toggle>
 
-<mat-slide-toggle checked="true" >Checked Toggle</mat-slide-toggle>
+<mat-slide-toggle checked="true">Checked Toggle</mat-slide-toggle>
 
-<mat-slide-toggle disabled="true" >Disabled</mat-slide-toggle>
+<mat-slide-toggle disabled="true">Disabled</mat-slide-toggle>
 
-<mat-slide-toggle checked="true"  disabled="true">
+<mat-slide-toggle checked="true" disabled="true">
   Disabled checked
 </mat-slide-toggle>
 
 <br /><br />
 
-<mat-slider max="10" min="1" step="2" thumbLabel="true" ></mat-slider>
+<mat-slider max="10" min="1" step="2" thumbLabel="true"></mat-slider>
 
 <h3>Menu</h3>
 <p>To be added</p>
