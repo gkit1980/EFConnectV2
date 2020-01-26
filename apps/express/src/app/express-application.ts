@@ -12,6 +12,8 @@ import { configureBodyParser } from './middleware/configure-body-parser';
 import { ExpressApplicationOptions } from './express-application-options';
 import { configureIcePrincipal } from './middleware/configure-ice-principal';
 import { configureVisualIce } from './middleware/configure-visual-ice';
+import { registerCustomRules } from '@insis-portal/ice-custom-rules';
+import { registerCustomServerRules } from '@insis-portal/ice-custom-server-rules';
 
 export class ExpressApplication {
   private app: express.Application = express();
@@ -20,6 +22,13 @@ export class ExpressApplication {
   constructor(private appOptions: ExpressApplicationOptions) {}
 
   start() {
+    /**
+     * TIP: Here we register custom rules into express application, this will allow
+     * the execution of custom rules on the server.
+     */
+    registerCustomRules();
+    registerCustomServerRules();
+
     configureCompression(this.app);
 
     configureStaticFiles(this.app, this.appOptions.wwwRootPath);

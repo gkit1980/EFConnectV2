@@ -1,4 +1,6 @@
 @import '~@angular/material/theming';
+@import 'variables';
+
 
 @mixin material-override-mixin($theme) {
   $primary: map-get($theme, primary);

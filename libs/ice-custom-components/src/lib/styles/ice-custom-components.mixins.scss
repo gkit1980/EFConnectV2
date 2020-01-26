@@ -1,0 +1,10 @@
+@import '../components/element-components/dummy-button-component/dummy-button.mixin';
+
+/**
+ * TIP: You will need to @include here any new mixin you add to the ice-custom-component library.
+ * This file here will be loaded by theme.scss which is part of theming structure inside application styles.
+ */
+
+@mixin all-ice-custom-component-mixins($theme){
+  @include dummy-button-mixin($theme);
+}

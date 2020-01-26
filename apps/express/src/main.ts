@@ -23,6 +23,7 @@ const numInstances = process.env.ENABLE_NODE_CLUSTER === 'true' ? numCPUs : 1;
 
 console.log('Starting express ...');
 console.log('Root path: ', __dirname);
+
 startWebServer(numInstances);
 
 function startApp() {
@@ -51,9 +52,16 @@ function startApp() {
     descriptorsPaths: [
       path.resolve(__dirname, './assets/documentation'),
       path.resolve(__dirname, './assets/ice-core'),
-      path.resolve(__dirname, './assets/ice-insurance-rules')
+      path.resolve(__dirname, './assets/ice-insurance-rules'),
+      path.resolve(__dirname, './assets')
+
       /**
-       * TIP: Register your custom descriptors here
+       * TIP: Register your custom descriptors here. Important !!! the URL should
+       * point only to the root folder which inside it self should contain '/descriptors' folder.
+       *
+       * CORRECT: path.resolve(__dirname, './my_custom_folder')
+       * WRONG: path.resolve(__dirname, './my_custom_folder/descriptors')
+       *
        */
     ]
   };

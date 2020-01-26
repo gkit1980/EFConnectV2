@@ -6,4 +6,4 @@ element:
       component:
         IceDatepicker: {}
   pages:
-    home: null
+    home: {}

@@ -2,25 +2,18 @@ page:
   validation: {}
   component: OnePage
   sections:
-    - component: GridView
-      rows:
-        - css: null
-          cols:
-            - col: 12
-              element: person.first-name
-        - css: null
-          cols:
-            - col: 12
-              element: person.last-name
-        - css: null
-          cols:
-            - col: 12
-              element: person.birthdate
-        - css: null
-          cols:
-            - col: 12
-              element: person.gender
-        - css: null
-          cols:
-            - col: 12
-              element: person.finalize
+    - component:
+        IceFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    elements:
+                      - name: person.birthdate
+                      - name: person.finalize
+                  - size: auto
+                    size.xs: auto
+                    elements:
+                      - name: person.last-name
+                      - name: person.gender

@@ -24,6 +24,8 @@ import { NgIceModule, IcePrincipalService } from '@impeo/ng-ice';
 import { ClientPrincipal } from '@impeo/ice-core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FooterComponent } from './components/footer/footer.component';
+import { registerCustomRules } from '@insis-portal/ice-custom-rules';
+import { IceCustomComponentsModule } from '@insis-portal/ice-custom-components';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, StyleGuideComponent, FooterComponent],
@@ -44,7 +46,12 @@ import { FooterComponent } from './components/footer/footer.component';
     MatCheckboxModule,
     MatSlideToggleModule,
     FlexLayoutModule,
-    NgIceModule.forRoot()
+    NgIceModule.forRoot(),
+
+    /**
+     * TIP: Register the Angular module of the custom components
+     */
+    IceCustomComponentsModule
   ],
   providers: [
     {
@@ -61,5 +68,10 @@ export class AppModule {
      * TIP: Configure proper ICE principal
      */
     icePrincipalService.principal = new ClientPrincipal('n/a', 'en', [], {});
+
+    /**
+     * TIP: We need to register our custom rules to the client application
+     */
+    registerCustomRules();
   }
 }

@@ -1,0 +1,15 @@
+@import "chrismas-material-theme";
+
+/**
+ * TIP: Include common styles here to be applied for the entire application
+ */
+$default-common: (
+  body-background-color: #fff,
+);
+
+/**
+ * TIP: Only these 2 variables are the export points of a theme and should be further used inside
+ *
+ */
+$christmas-light-theme : map-merge($theme, $default-common);
+$christmas-dark-theme : map-merge($altTheme, $default-common);

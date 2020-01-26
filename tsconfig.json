@@ -15,7 +15,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {},
+    "paths": {
+      "@insis-portal/ice-custom-rules": ["libs/ice-custom-rules/src/index.ts"],
+      "@insis-portal/ice-custom-components": ["libs/ice-custom-components/src/index.ts"],
+      "@insis-portal/ice-custom-server-rules": ["libs/ice-custom-server-rules/src/index.ts"]
+    },
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true
   },

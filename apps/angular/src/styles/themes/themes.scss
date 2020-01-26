@@ -1,0 +1,25 @@
+// Material
+@import '~@angular/material/theming';
+
+// ICE
+@import '~@impeo/ng-ice/styles/ng-ice.mixin';
+@import '~@impeo/ng-ice/styles/variables';
+
+// All mixins
+@import '../application.mixins';
+
+// All mixins from ice-custom-components library
+@import '../../../../../libs/ice-custom-components/src/lib/styles/ice-custom-components.mixins';
+
+@import '../material-overrides.mixin';
+
+@include mat-core();
+
+@mixin all_mixins($theme) {
+  @include angular-material-theme($theme);
+  @include ng-ice-mixin($theme);
+  @include all-ice-custom-component-mixins($theme);
+  @include all-application-mixins($theme);
+
+  //@include material-override-mixin($theme);
+}

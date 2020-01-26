@@ -1,4 +1,4 @@
-# INSI Portal
+# ICE Portal Workspace
 
 This repository contains a template for creating new portals based on ICE.
 
@@ -94,6 +94,28 @@ npx ng add @nrwl/express
 ```
 npx ng g @nrwl/express:application express --frontendProject=angular --directory='' --unitTestRunner=jest
 ```
+
+### Adding Library to Workspace
+
+By default all NX Libraries are not publishable, you will need to add '--publishable' parameter in order to get a library with package.json.
+
+- **Angular Library** <br />
+
+  ```
+  ng generate @nrwl/angular:library test-library --style=scss
+  ```
+
+- **None Angular Library** <br />
+
+  ```
+  ng generate @nrwl/workspace:library test-library
+  ```
+
+- **Express Library** <br />
+
+  ```
+  ng generate @nrwl/node:library test-library
+  ```
 
 ### Configure ICE
 

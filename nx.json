@@ -13,6 +13,15 @@
     },
     "express": {
       "tags": []
+    },
+    "ice-custom-rules": {
+      "tags": []
+    },
+    "ice-custom-components": {
+      "tags": []
+    },
+    "ice-custom-server-rules": {
+      "tags": []
     }
   }
 }

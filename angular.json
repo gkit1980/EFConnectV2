@@ -21,10 +21,7 @@
             "polyfills": "apps/angular/src/polyfills.ts",
             "tsConfig": "apps/angular/tsconfig.app.json",
             "aot": false,
-            "assets": [
-              "apps/angular/src/favicon.ico",
-              "apps/angular/src/assets"
-            ],
+            "assets": ["apps/angular/src/favicon.ico", "apps/angular/src/assets"],
             "styles": ["apps/angular/src/styles/styles.scss"],
             "scripts": []
           },
@@ -36,7 +33,6 @@
                   "with": "apps/angular/src/environments/environment.prod.ts"
                 }
               ],
-              "tsConfig": "apps/angular/tsconfig.app.prod.json",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -83,10 +79,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/angular/tsconfig.app.json",
-              "apps/angular/tsconfig.spec.json"
-            ],
+            "tsConfig": ["apps/angular/tsconfig.app.json", "apps/angular/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**", "!apps/angular/**"]
           }
         },
@@ -113,6 +106,7 @@
             "outputPath": "dist/apps/express",
             "main": "apps/express/src/main.ts",
             "tsConfig": "apps/express/tsconfig.app.json",
+            "webpackConfig": "apps/express/webpack.config.js",
             "assets": [
               "apps/express/src/assets",
               {
@@ -150,7 +144,6 @@
               "aot": true,
               "sourceMap": false,
               "externalDependencies": "none",
-              "tsConfig": "apps/express/tsconfig.app.prod.json",
               "fileReplacements": [
                 {
                   "replace": "apps/express/src/environments/environment.ts",
@@ -169,10 +162,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/express/tsconfig.app.json",
-              "apps/express/tsconfig.spec.json"
-            ],
+            "tsConfig": ["apps/express/tsconfig.app.json", "apps/express/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**", "!apps/express/**"]
           }
         },
@@ -181,6 +171,87 @@
           "options": {
             "jestConfig": "apps/express/jest.config.js",
             "tsConfig": "apps/express/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "ice-custom-rules": {
+      "root": "libs/ice-custom-rules",
+      "sourceRoot": "libs/ice-custom-rules/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ice-custom-rules/tsconfig.lib.json",
+              "libs/ice-custom-rules/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ice-custom-rules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ice-custom-rules/jest.config.js",
+            "tsConfig": "libs/ice-custom-rules/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "ice-custom-components": {
+      "projectType": "library",
+      "root": "libs/ice-custom-components",
+      "sourceRoot": "libs/ice-custom-components/src",
+      "prefix": "insis-portal",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ice-custom-components/tsconfig.lib.json",
+              "libs/ice-custom-components/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ice-custom-components/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ice-custom-components/jest.config.js",
+            "tsConfig": "libs/ice-custom-components/tsconfig.spec.json",
+            "setupFile": "libs/ice-custom-components/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "ice-custom-server-rules": {
+      "root": "libs/ice-custom-server-rules",
+      "sourceRoot": "libs/ice-custom-server-rules/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ice-custom-server-rules/tsconfig.lib.json",
+              "libs/ice-custom-server-rules/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ice-custom-server-rules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ice-custom-server-rules/jest.config.js",
+            "tsConfig": "libs/ice-custom-server-rules/tsconfig.spec.json"
           }
         }
       }

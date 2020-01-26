@@ -1,0 +1,12 @@
+@import "default-material-theme";
+
+/**
+ * TIP: Include common styles here to be applied for the entire application
+ */
+$default-common: (
+  body-background-color: #fff,
+);
+
+
+$default-light-theme : map-merge($theme, $default-common);
+$default-dark-theme : map-merge($altTheme, $default-common);

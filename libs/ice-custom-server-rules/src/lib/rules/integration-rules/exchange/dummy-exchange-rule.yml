@@ -1,0 +1,4 @@
+implementations:
+  DummyExchangeRule:
+    description: >
+      This is example of server exchange rule.
