@@ -21,3 +21,13 @@
     @content;
   }
 }
+
+@function get-mat-color($theme, $palette: primary, $hue: default, $opacity: null) {
+  $palleteColor: map-get($theme, $palette);
+  @return mat-color($palleteColor, $hue, $opacity);
+}
+
+@function get-color($theme, $color) {
+  $colors: map-get($theme, 'colors');
+  @return map-get($colors, $color);
+}

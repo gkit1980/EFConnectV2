@@ -1,12 +1,13 @@
-@import '~@angular/material/theming';
-@import 'variables';
-
+@import 'mixins';
 
 @mixin material-override-mixin($theme) {
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
-  $foreground: map-get($theme, foreground);
   $colors: map-get($theme, colors);
+
+  $primaryColor: get-mat-color($theme, primary);
+  $lightColor: get-color($theme, 'light');
+  $borderInputColor: get-color($theme, 'border-input');
+  $borderColor: get-color($theme, 'border');
+  $textColor: get-color($theme, 'text');
 
   /* TOGGLE */
   .mat-slide-toggle {
@@ -16,7 +17,7 @@
   .mat-slide-toggle-bar {
     margin-right: 0 !important;
     width: 36px !important;
-    border: 1px solid mat-color($accent);
+    border: 1px solid $primaryColor;
     background: none;
     height: 20px;
     border-radius: 10px;
@@ -37,41 +38,41 @@
     height: 16px !important;
     width: 16px !important;
     box-shadow: none !important;
-    background: mat-color($accent);
+    background: $primaryColor;
   }
 
   // Checked and Not disabled
   .mat-slide-toggle.mat-checked:not(.mat-disabled) {
     .mat-slide-toggle-thumb {
-      background: map-get($colors, 'light');
+      background: $lightColor;
     }
 
     .mat-slide-toggle-bar {
-      background: mat-color($accent);
+      background: $primaryColor;
     }
   }
 
   // Disabled
   .mat-slide-toggle.mat-disabled {
     .mat-slide-toggle-thumb {
-      background: map-get($colors, 'border-input');
+      background: $borderInputColor;
     }
 
     .mat-slide-toggle-bar {
-      border: 1px solid map-get($colors, 'border-input');
-      background: map-get($colors, 'light');
+      border: 1px solid $borderInputColor;
+      background: $lightColor;
     }
   }
 
   // Disabled and Checked
   .mat-slide-toggle.mat-disabled.mat-checked {
     .mat-slide-toggle-thumb {
-      background: map-get($colors, 'light');
+      background: $lightColor;
     }
 
     .mat-slide-toggle-bar {
-      border: 1px solid map-get($colors, 'border-input');
-      background: map-get($colors, 'border-input');
+      border: 1px solid $borderInputColor;
+      background: $borderInputColor;
     }
   }
 
@@ -89,12 +90,12 @@
   }
 
   .mat-radio-button.mat-radio-disabled .mat-radio-outer-circle {
-    border-color: map-get($colors, 'border-input');
-    background: map-get($colors, 'border');
+    border-color: $borderInputColor;
+    background: $borderColor;
   }
 
   .mat-radio-button.mat-radio-disabled .mat-radio-inner-circle {
-    background-color: map-get($colors, 'border-input');
+    background-color: $borderInputColor;
   }
 
   /*
@@ -127,27 +128,29 @@
 
   // When is disabled and NOT checked
   .mat-checkbox-disabled:not(.mat-checkbox-checked) .mat-checkbox-background {
-    border: 1px solid map-get($colors, 'border-input');
-    background: map-get($colors, 'border');
+    border: 1px solid $borderInputColor;
+    background: $borderColor;
   }
 
   // When is disabled and IS checked
   .mat-checkbox-disabled.mat-checkbox-checked .mat-checkbox-background {
-    background: map-get($colors, 'border-input');
+    background: $borderInputColor;
   }
 
   /*
   INPUT + DROPDOWN + TEXTAREA
   */
   .mat-form-field-appearance-outline .mat-form-field-flex {
+    padding: 0 16px;
   }
 
   .mat-form-field-appearance-outline .mat-form-field-infix {
-    padding: 0.15em 0;
+    padding: 0.6em 0;
   }
 
   .mat-form-field-appearance-outline .mat-form-field-label {
-    margin-top: -1.2em;
+    margin-top: -0.65em;
+    color: rgba($textColor, 0.8);
   }
 
   .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
@@ -156,25 +159,25 @@
     .mat-input-server:focus
     + .mat-form-field-label-wrapper
     .mat-form-field-label {
-    transform: translateY(-1.175em) scale(0.75);
-    color: mat-color($accent);
+    transform: translateY(-1.25em) scale(0.75);
+    color: $primaryColor;
   }
 
   .mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-outline-start,
   .mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-outline-gap,
   .mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-outline-end {
-    border-color: map-get($colors, 'border-input');
+    border-color: $borderInputColor;
   }
 
   .mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end,
   .mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-gap,
   .mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start {
     border-width: 1px !important;
-    border-color: mat-color($accent);
+    border-color: $primaryColor;
   }
 
   .mat-form-field-disabled .mat-form-field-label {
-    color: map-get($colors, 'border') !important;
+    color: $borderColor !important;
   }
 
   /*
