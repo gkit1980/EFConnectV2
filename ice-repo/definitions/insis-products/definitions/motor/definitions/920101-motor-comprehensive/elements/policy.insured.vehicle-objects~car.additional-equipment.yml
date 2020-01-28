@@ -1,0 +1,7 @@
+element:
+  type: boolean
+  viewMode: required
+  component: IceButtonToggle
+  buckets:
+    insis-quote:
+      trigger: true

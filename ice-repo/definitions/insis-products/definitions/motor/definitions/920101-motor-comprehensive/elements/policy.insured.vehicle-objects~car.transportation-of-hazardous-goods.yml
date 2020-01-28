@@ -1,0 +1,8 @@
+element:
+  type: integer
+  viewMode: required
+  component: IceButtonToggle
+  values: insis.policy.insured.vehicle-objects~car.transportation-of-hazardous-goods
+  buckets:
+    insis-quote:
+      trigger: true

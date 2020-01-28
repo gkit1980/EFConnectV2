@@ -1,0 +1,58 @@
+integration:
+  exchange: {}
+  transformation:
+    DefaultTransformationRule:
+      additional: insis
+      dateFormat: YYYY-MM-DD
+      dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
+      extends: insis-policy.save
+      in: {}
+      out:
+        - toIdx:
+            array: payload.Insureds.Insured
+            apppend: true
+          mappings:
+            - element: policy.contract.begin
+              payload: Insureds.Insured[n].InsrBegin
+            - element: policy.insured.currency
+              payload: Insureds.Insured[n].Currency
+            - element: policy.insured.insured-amount
+              payload: Insureds.Insured[n].InsuredAmount
+            - element: policy.insured.vehicle-objects~object.id
+              payload: Insureds.Insured[n].InsuredObjectID
+            - element: policy.insured.vehicle-objects~entity-id
+              payload: Insureds.Insured[n].InsuredEntity.ObjectType
+            - element: policy.insured.vehicle-objects~car.bonus-malus
+              payload: Insureds.Insured[n].InsuredEntity.OCar.BonusMalus
+            - element: policy.insured.vehicle-objects~car.ccm-ton
+              payload: Insureds.Insured[n].InsuredEntity.OCar.CCMTon
+            - element: policy.insured.vehicle-objects~car.chassis
+              payload: Insureds.Insured[n].InsuredEntity.OCar.Chassis
+            - element: policy.insured.vehicle-objects~car.engine
+              payload: Insureds.Insured[n].InsuredEntity.OCar.Engine
+            - element: policy.insured.vehicle-objects~car.modified
+              payload: Insureds.Insured[n].InsuredEntity.OCar.Modified
+            - element: policy.insured.vehicle-objects~car.paint-type
+              payload: Insureds.Insured[n].InsuredEntity.OCar.PaintType
+            - element: policy.insured.vehicle-objects~car.prod-type
+              payload: Insureds.Insured[n].InsuredEntity.OCar.ProdType
+            - element: policy.insured.vehicle-objects~car.registration-date
+              payload: Insureds.Insured[n].InsuredEntity.OCar.Notes
+            - element: policy.insured.vehicle-objects~car.regno
+              payload: Insureds.Insured[n].InsuredEntity.OCar.RegNo
+            - element: policy.insured.vehicle-objects~car.search.brand
+              payload: Insureds.Insured[n].InsuredEntity.OCar.Make
+            - element: policy.insured.vehicle-objects~car.search.category
+              payload: Insureds.Insured[n].InsuredEntity.OCar.DoorNum
+            - element: policy.insured.vehicle-objects~car.search.construction-date
+              payload: Insureds.Insured[n].InsuredEntity.OCar.ProdYear
+            - element: policy.insured.vehicle-objects~car.search.engine-power
+              payload: Insureds.Insured[n].InsuredEntity.OCar.EnginePower
+            - element: policy.insured.vehicle-objects~car.search.fuel
+              payload: Insureds.Insured[n].InsuredEntity.OCar.FuelType
+            - element: policy.insured.vehicle-objects~car.search.model
+              payload: Insureds.Insured[n].InsuredEntity.OCar.Model
+            - element: policy.insured.vehicle-objects~car.type
+              payload: Insureds.Insured[n].InsuredEntity.OCar.CarType
+            - element: policy.insured.vehicle-objects~car.usage
+              payload: Insureds.Insured[n].InsuredEntity.OCar.CarUsage

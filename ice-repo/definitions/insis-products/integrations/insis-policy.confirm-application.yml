@@ -1,0 +1,26 @@
+integration:
+  exchange:
+    SoapCallExchangeRule:
+      endpoint: insis_pam_endpoint
+      securityMode: UsernamePassword
+      username: 'env:insis-username'
+      password: 'env:insis-password'
+      ignoreNamespaces: 'env:insis-ignoreNamespaces'
+      soapAction: confirmApplication
+      requestType: ConfirmAppRqType
+      jsonSchema: InsisPAM
+  transformation:
+    DefaultTransformationRule:
+      out:
+        - mappings:
+            - param: soapAction
+              value: confirmApplication
+            - param: requestType
+              value: ConfirmAppRqType
+        - mappings:
+            - element: policy.contract.policy-id
+              payload: PolicyID
+      in:
+        - mappings:
+            - element: policy.status.policy-status
+              payload: PolicyState
