@@ -1,0 +1,37 @@
+list:
+  type: text
+  additionals:
+    label:
+      label: Label
+      type: text
+  items:
+    - value: Clasa C
+      label_en: Clasa C
+      label_de: Clasa C
+    - value: Clasa C Break
+      label_en: Clasa C Break
+      label_de: Clasa C Break
+    - value: Clasa C Break Diesel
+      label_en: Clasa C Break Diesel
+      label_de: Clasa C Break Diesel
+    - value: Clasa C Diesel
+      label_en: Clasa C Diesel
+      label_de: Clasa C Diesel
+    - value: Clasa E
+      label_en: Clasa E
+      label_de: Clasa E
+    - value: Clasa E Break
+      label_en: Clasa E Break
+      label_de: Clasa E Break
+    - value: Clasa E Break Diesel
+      label_en: Clasa E Break Diesel
+      label_de: Clasa E Break Diesel
+    - value: Clasa E Coupe
+      label_en: Clasa E Coupe
+      label_de: Clasa E Coupe
+    - value: Clasa E Coupe Diesel
+      label_en: Clasa E Coupe Diesel
+      label_de: Clasa E Coupe Diesel
+    - value: Vito
+      label_en: Vito
+      label_de: Vito

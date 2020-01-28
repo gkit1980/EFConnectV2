@@ -1,0 +1,37 @@
+list:
+  type: text
+  additionals:
+    label:
+      label: Label
+      type: text
+  items:
+    - value: C 30
+      label_en: C 30
+      label_de: C 30
+    - value: C 30 DIESEL
+      label_en: C 30 DIESEL
+      label_de: C 30 DIESEL
+    - value: C 70
+      label_en: C 70
+      label_de: C 70
+    - value: C 70 DIESEL
+      label_en: C 70 DIESEL
+      label_de: C 70 DIESEL
+    - value: FM 7 290 EURO 2
+      label_en: FM 7 290 EURO 2
+      label_de: FM 7 290 EURO 2
+    - value: FM 7 290 EURO 3
+      label_en: FM 7 290 EURO 3
+      label_de: FM 7 290 EURO 3
+    - value: V 70
+      label_en: V 70
+      label_de: V 70
+    - value: V 70 DIESEL
+      label_en: V 70 DIESEL
+      label_de: V 70 DIESEL
+    - value: XC60
+      label_en: XC60
+      label_de: XC60
+    - value: XC60 DIESEL
+      label_en: XC60 DIESEL
+      label_de: XC60 DIESEL

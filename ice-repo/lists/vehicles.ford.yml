@@ -1,0 +1,40 @@
+list:
+  type: text
+  additionals:
+    label:
+      label: Label
+      type: text
+  items:
+    - value: C-Max
+      label_en: C-Max
+      label_de: C-Max
+    - value: C-Max Diesel
+      label_en: C-Max Diesel
+      label_de: C-Max Diesel
+    - value: Fiesta
+      label_en: Fiesta
+      label_de: Fiesta
+    - value: Fiesta Courier
+      label_en: Fiesta Courier
+      label_de: Fiesta Courier
+    - value: Fiesta Diesel
+      label_en: Fiesta Diesel
+      label_de: Fiesta Diesel
+    - value: Focus
+      label_en: Focus
+      label_de: Focus
+    - value: Focus Diesel
+      label_en: Focus Diesel
+      label_de: Focus Diesel
+    - value: Focus Sedan
+      label_en: Focus Sedan
+      label_de: Focus Sedan
+    - value: Focus Sedan Diesel
+      label_en: Focus Sedan Diesel
+      label_de: Focus Sedan Diesel
+    - value: Kuga
+      label_en: Kuga
+      label_de: Kuga
+    - value: Ranger
+      label_en: Ranger
+      label_de: Ranger

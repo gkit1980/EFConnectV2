@@ -1,0 +1,28 @@
+list:
+  type: text
+  additionals:
+    label:
+      label: Label
+      type: text
+  items:
+    - value: Seria 1 Cabriolet Dielel
+      label_en: Seria 1 Cabriolet Dielel
+      label_de: Seria 1 Cabriolet Dielel
+    - value: Seria 5
+      label_en: Seria 5
+      label_de: Seria 5
+    - value: Seria 7
+      label_en: Seria 7
+      label_de: Seria 7
+    - value: X1
+      label_en: X1
+      label_de: X1
+    - value: X1 Diesel
+      label_en: X1 Diesel
+      label_de: X1 Diesel
+    - value: X5
+      label_en: X5
+      label_de: X5
+    - value: X5 Diesel
+      label_en: X5 Diesel
+      label_de: X5 Diesel

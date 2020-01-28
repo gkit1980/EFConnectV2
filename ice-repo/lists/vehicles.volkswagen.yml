@@ -1,0 +1,16 @@
+list:
+  type: text
+  additionals:
+    label:
+      label: Label
+      type: text
+  items:
+    - value: L 80 EURO 2
+      label_en: L 80 EURO 2
+      label_de: L 80 EURO 2
+    - value: LT 55 D
+      label_en: LT 55 D
+      label_de: LT 55 D
+    - value: LT 55 TD
+      label_en: LT 55 TD
+      label_de: LT 55 TD

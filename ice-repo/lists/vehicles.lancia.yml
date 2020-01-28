@@ -1,0 +1,10 @@
+list:
+  type: text
+  additionals:
+    label:
+      label: Label
+      type: text
+  items:
+    - value: Delta Diesel
+      label_en: Delta Diesel
+      label_de: Delta Diesel

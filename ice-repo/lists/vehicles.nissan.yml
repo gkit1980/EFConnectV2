@@ -1,0 +1,19 @@
+list:
+  type: text
+  additionals:
+    label:
+      label: Label
+      type: text
+  items:
+    - value: Navara
+      label_en: Navara
+      label_de: Navara
+    - value: Navara Diesel
+      label_en: Navara Diesel
+      label_de: Navara Diesel
+    - value: Note
+      label_en: Note
+      label_de: Note
+    - value: Note Diesel
+      label_en: Note Diesel
+      label_de: Note Diesel

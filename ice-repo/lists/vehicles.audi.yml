@@ -1,0 +1,37 @@
+list:
+  type: text
+  additionals:
+    label:
+      label: Label
+      type: text
+  items:
+    - value: A1
+      label_en: A1
+      label_de: A1
+    - value: A1 Diesel
+      label_en: A1 Diesel
+      label_de: A1 Diesel
+    - value: A5 Cabrio
+      label_en: A5 Cabrio
+      label_de: A5 Cabrio
+    - value: A5 Sportback
+      label_en: A5 Sportback
+      label_de: A5 Sportback
+    - value: A5 Sportback Diesel
+      label_en: A5 Sportback Diesel
+      label_de: A5 Sportback Diesel
+    - value: A6
+      label_en: A6
+      label_de: A6
+    - value: A6 Diesel
+      label_en: A6 Diesel
+      label_de: A6 Diesel
+    - value: A8
+      label_en: A8
+      label_de: A8
+    - value: A8 Diesel
+      label_en: A8 Diesel
+      label_de: A8 Diesel
+    - value: Audi TT Roadster
+      label_en: Audi TT Roadster
+      label_de: Audi TT Roadster

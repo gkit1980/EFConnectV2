@@ -1,0 +1,22 @@
+list:
+  type: text
+  additionals:
+    label:
+      label: Label
+      type: text
+  items:
+    - value: Alfa 147
+      label_en: Alfa 147
+      label_de: Alfa 147
+    - value: Alfa 159
+      label_en: Alfa 159
+      label_de: Alfa 159
+    - value: Alfa 159 SW Diesel
+      label_en: Alfa 159 SW Diesel
+      label_de: Alfa 159 SW Diesel
+    - value: Giulietta
+      label_en: Giulietta
+      label_de: Giulietta
+    - value: Spider
+      label_en: Spider
+      label_de: Spider

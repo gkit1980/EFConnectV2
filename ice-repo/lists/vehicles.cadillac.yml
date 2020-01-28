@@ -1,0 +1,13 @@
+list:
+  type: text
+  additionals:
+    label:
+      label: Label
+      type: text
+  items:
+    - value: Escalade
+      label_en: Escalade
+      label_de: Escalade
+    - value: SRX
+      label_en: SRX
+      label_de: SRX

@@ -1,0 +1,13 @@
+list:
+  type: text
+  additionals:
+    label:
+      label: Label
+      type: text
+  items:
+    - value: Santa Fe
+      label_en: Santa Fe
+      label_de: Santa Fe
+    - value: Santa Fe Diesel
+      label_en: Santa Fe Diesel
+      label_de: Santa Fe Diesel

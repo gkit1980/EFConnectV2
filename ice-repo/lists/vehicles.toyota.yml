@@ -1,0 +1,19 @@
+list:
+  type: text
+  additionals:
+    label:
+      label: Label
+      type: text
+  items:
+    - value: AURIS
+      label_en: AURIS
+      label_de: AURIS
+    - value: PRIUS
+      label_en: PRIUS
+      label_de: PRIUS
+    - value: VERSO
+      label_en: VERSO
+      label_de: VERSO
+    - value: YARIS
+      label_en: YARIS
+      label_de: YARIS

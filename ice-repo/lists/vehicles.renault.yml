@@ -1,0 +1,22 @@
+list:
+  type: text
+  additionals:
+    label:
+      label: Label
+      type: text
+  items:
+    - value: Clio
+      label_en: Clio
+      label_de: Clio
+    - value: Laguna
+      label_en: Laguna
+      label_de: Laguna
+    - value: Master
+      label_en: Master
+      label_de: Master
+    - value: Scenic
+      label_en: Scenic
+      label_de: Scenic
+    - value: Scenic Diesel
+      label_en: Scenic Diesel
+      label_de: Scenic Diesel

@@ -1,0 +1,31 @@
+list:
+  type: text
+  additionals:
+    label:
+      label: Label
+      type: text
+  items:
+    - value: 500
+      label_en: 500
+      label_de: 500
+    - value: 500 Diesel
+      label_en: 500 Diesel
+      label_de: 500 Diesel
+    - value: Doblo
+      label_en: Doblo
+      label_de: Doblo
+    - value: Doblo Diesel
+      label_en: Doblo Diesel
+      label_de: Doblo Diesel
+    - value: Ducato
+      label_en: Ducato
+      label_de: Ducato
+    - value: Linea Diesel
+      label_en: Linea Diesel
+      label_de: Linea Diesel
+    - value: PUNTO
+      label_en: PUNTO
+      label_de: PUNTO
+    - value: REGATA
+      label_en: REGATA
+      label_de: REGATA

@@ -1,0 +1,40 @@
+list:
+  type: text
+  additionals:
+    label:
+      label: Label
+      type: text
+  items:
+    - value: Sedan
+      label_en: Sedan
+      label_bg: Sedan
+    - value: Coupe
+      label_en: Coupe
+      label_bg: Coupe
+    - value: Hatchback
+      label_en: Hatchback
+      label_bg: Hatchback
+    - value: Limousine
+      label_en: Limousine
+      label_bg: Limousine
+    - value: Truck/Pick-Up
+      label_en: Truck/Pick-Up
+      label_bg: Truck/Pick-Up
+    - value: Station Wagon
+      label_en: Station Wagon
+      label_bg: Station Wagon
+    - value: Convertible
+      label_en: Convertible
+      label_bg: Convertible
+    - value: SUV/MUV
+      label_en: SUV/MUV
+      label_bg: SUV/MUV
+    - value: Crossover
+      label_en: Crossover
+      label_bg: Crossover
+    - value: Wagon
+      label_en: Wagon
+      label_bg: Wagon
+    - value: Van/minivan
+      label_en: Van/minivan
+      label_bg: Van/minivan

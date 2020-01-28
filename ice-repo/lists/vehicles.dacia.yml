@@ -1,0 +1,28 @@
+list:
+  type: text
+  additionals:
+    label:
+      label: Label
+      type: text
+  items:
+    - value: 1300
+      label_en: 1300
+      label_de: 1300
+    - value: Duster
+      label_en: Duster
+      label_de: Duster
+    - value: Duster Diesel
+      label_en: Duster Diesel
+      label_de: Duster Diesel
+    - value: Logan
+      label_en: Logan
+      label_de: Logan
+    - value: Logan Diesel
+      label_en: Logan Diesel
+      label_de: Logan Diesel
+    - value: Sandero
+      label_en: Sandero
+      label_de: Sandero
+    - value: Sandero Diesel
+      label_en: Sandero Diesel
+      label_de: Sandero Diesel

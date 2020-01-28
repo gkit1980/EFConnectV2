@@ -1,0 +1,31 @@
+list:
+  type: text
+  additionals:
+    label:
+      label: Label
+      type: text
+  items:
+    - value: Astra
+      label_en: Astra
+      label_de: Astra
+    - value: Astra Caravan
+      label_en: Astra Caravan
+      label_de: Astra Caravan
+    - value: Astra Caravan Diesel
+      label_en: Astra Caravan Diesel
+      label_de: Astra Caravan Diesel
+    - value: Astra Diesel
+      label_en: Astra Diesel
+      label_de: Astra Diesel
+    - value: Astra Sedan
+      label_en: Astra Sedan
+      label_de: Astra Sedan
+    - value: Astra Sedan Diesel
+      label_en: Astra Sedan Diesel
+      label_de: Astra Sedan Diesel
+    - value: Corsa
+      label_en: Corsa
+      label_de: Corsa
+    - value: Corsa Diesel
+      label_en: Corsa Diesel
+      label_de: Corsa Diesel

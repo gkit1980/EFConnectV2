@@ -1,0 +1,19 @@
+list:
+  type: text
+  additionals:
+    label:
+      label: Label
+      type: text
+  items:
+    - value: 911 Cabrio
+      label_en: 911 Cabrio
+      label_de: 911 Cabrio
+    - value: 911 Cabrio 997
+      label_en: 911 Cabrio 997
+      label_de: 911 Cabrio 997
+    - value: 911 Coupe
+      label_en: 911 Coupe
+      label_de: 911 Coupe
+    - value: 911 Coupe 997
+      label_en: 911 Coupe 997
+      label_de: 911 Coupe 997

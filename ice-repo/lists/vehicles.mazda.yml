@@ -1,0 +1,28 @@
+list:
+  type: text
+  additionals:
+    label:
+      label: Label
+      type: text
+  items:
+    - value: Mazda 5
+      label_en: Mazda 5
+      label_de: Mazda 5
+    - value: Mazda 6
+      label_en: Mazda 6
+      label_de: Mazda 6
+    - value: Mazda 6 Diesel
+      label_en: Mazda 6 Diesel
+      label_de: Mazda 6 Diesel
+    - value: Mazda 6 Sedan
+      label_en: Mazda 6 Sedan
+      label_de: Mazda 6 Sedan
+    - value: Mazda 6 Sedan Diesel
+      label_en: Mazda 6 Diesel
+      label_de: Mazda 6 Diesel
+    - value: Mazda 6 Sport
+      label_en: Mazda 6 Sport
+      label_de: Mazda 6 Sport
+    - value: Mazda 6 Sport Diesel
+      label_en: Mazda 6 Sport Diesel
+      label_de: Mazda 6 Sport Diesel
