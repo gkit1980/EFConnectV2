@@ -24,11 +24,18 @@ import { NgIceModule, IcePrincipalService } from '@impeo/ng-ice';
 import { ClientPrincipal } from '@impeo/ice-core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
 import { registerCustomRules } from '@insis-portal/ice-custom-rules';
 import { IceCustomComponentsModule } from '@insis-portal/ice-custom-components';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, StyleGuideComponent, FooterComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    StyleGuideComponent,
+    FooterComponent,
+    HeaderComponent
+  ],
   imports: [
     AppRouting,
     FormsModule,

@@ -1,0 +1,21 @@
+<mat-toolbar class="toolbar">
+  <mat-toolbar-row class="container nav" fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxLayoutAlign="start center">
+      <a [routerLink]="'#'"
+        ><img src="../../../assets/icons/Fadata-logo-white.svg" style="height: 40px;"
+      /></a>
+    </div>
+    <div fxLayoutAlign="center center">
+      <a
+        class="tab"
+        *ngFor="let n of navigation"
+        [routerLink]="n.link"
+        [ngClass]="{ active: isSelectedTab(n) }"
+        >{{ n.key }}</a
+      >
+    </div>
+    <div fxLayoutAlign="end center ">
+      <span>Profile</span>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

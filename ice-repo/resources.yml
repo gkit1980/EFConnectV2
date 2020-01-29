@@ -94,6 +94,22 @@ entries:
       title:
         - en: Home
           de: null
+    header:
+      dashboard:
+        - en: Dashboard
+          de: null
+      policies:
+        - en: Policies
+          de: null
+      payments:
+        - en: Payments
+          de: null
+      claims:
+        - en: Claims
+          de: null
+      products:
+        - en: Products
+          de: null
   lists:
     gender:
       diverse:

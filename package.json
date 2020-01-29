@@ -28,7 +28,8 @@
     "copy-visual-ice": "rimraf dist/apps/visual-ice && cpx \"node_modules/@impeo/visual-ice/**/*\" dist/apps/visual-ice",
     "postinstall": "npm run install-ice-packages",
     "install-ice-packages": "npm i file:ice-packages/dmn-eval-js.tgz file:ice-packages/documentation.tgz file:ice-packages/ice-core.tgz file:ice-packages/ice-core-sourcemap.tgz file:ice-packages/exp-ice.tgz file:ice-packages/exp-ice-sourcemap.tgz file:ice-packages/ng-ice.tgz file:ice-packages/visual-ice.tgz file:ice-packages/ice-insurance-rules.tgz file:ice-packages/ice-insurance-rules-sourcemap.tgz file:ice-packages/ice-tea.tgz file:ice-packages/ice-tea-sourcemap.tgz --no-save --no-optional --no-audit",
-    "prettier:check": "prettier --check apps/**/*.ts libs/**/*.ts"
+    "prettier:check": "prettier --check apps/**/*.ts libs/**/*.ts",
+    "prettier:write": "prettier --check apps/**/*.ts libs/**/*.ts --write"
   },
   "private": true,
   "dependencies": {

@@ -1,9 +1,11 @@
 @import '../app/components/app/app.component.mixin';
 @import '../app/components/footer/footer.component.mixin.scss';
+@import '../app/components/header/header.mixin.scss';
 
 /** TIP: You will need to @include any application mixin within this all application mixins.
  */
 @mixin all-application-mixins($theme) {
   @include app-mixin($theme);
   @include footer-mixin($theme);
+  @include header-mixin($theme);
 }
