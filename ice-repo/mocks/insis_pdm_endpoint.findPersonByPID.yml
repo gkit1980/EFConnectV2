@@ -1,5 +1,5 @@
 default:
-  condition: null
+  condition: payload.PID="6000034933"
   response:
     Entity:
       PersonalData:

@@ -1,0 +1,100 @@
+@import '~@angular/material/theming';
+
+@mixin alert-mixin($theme) {
+  $background: map-get($theme, background);
+
+  #alert-wrapper {
+    position: relative;
+
+    .ax_default {
+      font-family: 'Arial';
+      font-weight: 400;
+      font-style: normal;
+      font-size: 13px;
+      letter-spacing: normal;
+      color: #333333;
+      vertical-align: none;
+      text-align: center;
+      line-height: normal;
+      text-transform: none;
+    }
+
+    .u419 {
+      border-width: 0px;
+      display: flex;
+      font-family: 'Roboto';
+      font-weight: 400;
+      font-style: normal;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      color: #282828;
+      text-align: left;
+      line-height: 16px;
+    }
+
+    .u419_div {
+      border-width: 0px;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 36px;
+      background: inherit;
+      background-color: rgba(196, 4, 4, 0.149019607843137);
+      box-sizing: border-box;
+      border-width: 1px;
+      border-style: solid;
+      border-color: rgba(196, 4, 4, 1);
+      border-radius: 4px;
+      -moz-box-shadow: none;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      font-family: 'Roboto';
+      font-weight: 400;
+      font-style: normal;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      color: #282828;
+      text-align: left;
+      line-height: 16px;
+    }
+
+    .u419 .text {
+      position: absolute;
+      align-self: center;
+      padding: 10px 12px 0px 36px;
+      box-sizing: border-box;
+    }
+
+    .u419_text {
+      border-width: 0px;
+      word-wrap: break-word;
+      text-transform: none;
+    }
+
+    .u422 {
+      border-width: 0px;
+      position: absolute;
+      left: 5px;
+      top: 8px;
+      display: flex;
+    }
+
+    .u422_img {
+      border-width: 0px;
+    }
+
+    .u422 .text {
+      align-self: center;
+      padding: 2px 2px 2px 2px;
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    .u422_text {
+      border-width: 0px;
+      word-wrap: break-word;
+      text-transform: none;
+      visibility: hidden;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@import '~@angular/material/theming';
+
+@mixin login-mixin($theme) {
+  $background: map-get($theme, background);
+
+  div.login {
+    margin: 20px;
+    padding-left: 25%;
+    padding-right: 25%;
+  }
+
+  #login-button {
+    margin-bottom: 10px;
+
+    button {
+      width: 100%;
+    }
+  }
+
+  mat-label {
+    background: mat_color($background, background);
+  }
+}

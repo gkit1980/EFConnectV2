@@ -1,0 +1,17 @@
+<div *ngIf="message" [@fadeOut] id="alert-wrapper">
+  <div class="u419 ax_default shape1">
+    <div class="u419_div"></div>
+    <div class="u419_text text">
+      <p>
+        <span>{{ message.text }}</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="u422 ax_default shape1">
+    <img class="u422_img img" src="../../../assets/u422.svg" />
+    <div class="u422_text text" style="display:none; visibility: hidden">
+      <p></p>
+    </div>
+  </div>
+</div>

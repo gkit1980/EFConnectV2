@@ -1,0 +1,14 @@
+<div class="login">
+  <p class="mat-display-2">INSIS portal login</p>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Please enter your PID to access the portal:</mat-label>
+    <input matInput id="pid" [(ngModel)]="pid" (keyup.enter)="login()" />
+  </mat-form-field>
+
+  <div id="login-button">
+    <button mat-flat-button color="primary" (click)="login()">Login</button>
+  </div>
+
+  <app-alert></app-alert>
+</div>
