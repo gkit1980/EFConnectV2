@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './components/app/app.component';
 import { HomeComponent } from './components/home/home.component';
 import { StyleGuideComponent } from './components/styleguide/styleguide.component';
+import { LanguagePickerComponent } from './components/language-picker/language-picker.component';
+import { AppDialog } from './components/dialog/dialog.component';
+import { LanguageService, getDefaultLanguage } from './services/language.service';
 import { AppRouting } from './app.routing';
 import {
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
@@ -18,7 +21,8 @@ import {
   MatToolbarModule,
   MatRadioModule,
   MatCheckboxModule,
-  MatSlideToggleModule
+  MatSlideToggleModule,
+  MatDialogModule
 } from '@angular/material';
 import { NgIceModule, IcePrincipalService } from '@impeo/ng-ice';
 import { ClientPrincipal } from '@impeo/ice-core';
@@ -41,8 +45,11 @@ import { IceCustomComponentsModule } from '@insis-portal/ice-custom-components';
     LoginComponent,
     AlertComponent,
     StyleGuideComponent,
+    HeaderComponent,
     FooterComponent,
-    HeaderComponent
+    StyleGuideComponent,
+    LanguagePickerComponent,
+    AppDialog
   ],
   imports: [
     AppRouting,
@@ -62,11 +69,8 @@ import { IceCustomComponentsModule } from '@insis-portal/ice-custom-components';
     MatSlideToggleModule,
     FlexLayoutModule,
     NgIceModule.forRoot(),
-
-    /**
-     * TIP: Register the Angular module of the custom components
-     */
-    IceCustomComponentsModule
+    IceCustomComponentsModule,
+    MatDialogModule
   ],
   providers: [
     AlertService,
@@ -77,17 +81,19 @@ import { IceCustomComponentsModule } from '@insis-portal/ice-custom-components';
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
       useValue: { appearance: 'standard' }
     },
-    IcePrincipalService
+    IcePrincipalService,
+    LanguageService
   ],
   entryComponents: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
   constructor(icePrincipalService: IcePrincipalService) {
+    const langCode = getDefaultLanguage();
     /**
      * TIP: Configure proper ICE principal
      */
-    icePrincipalService.principal = new ClientPrincipal('n/a', 'en', [], {});
+    icePrincipalService.principal = new ClientPrincipal('n/a', langCode, [], {});
 
     /**
      * TIP: We need to register our custom rules to the client application

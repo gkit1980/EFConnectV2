@@ -1,5 +1,6 @@
 // Import bootstrap as a single file - ideally, we would import parts only and in between, override bootstrap variables
 @import '../../../../node_modules/bootstrap/scss/bootstrap-grid';
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 // Internal imports
 @import 'variables';
@@ -12,7 +13,6 @@
  * logic needed for generating Angular Material Themes.
  */
 @import 'themes/themes';
-
 
 /**
  * TIP: You will need to import here only the themes you plan to use inside your application.

@@ -1,0 +1,27 @@
+<button mat-button [matMenuTriggerFor]="languagePicker" aria-label="Select a language">
+  {{ currentLabel }}
+  <mat-icon>arrow_drop_down</mat-icon>
+</button>
+
+<mat-menu #languagePicker="matMenu">
+  <button
+    mat-menu-item
+    *ngFor="let lang of languages; trackBy: trackByFn"
+    (click)="onChange(lang.code)"
+  >
+    {{ lang.label }}
+  </button>
+</mat-menu>
+
+<app-dialog [(visible)]="showWarning" size="small">
+  <h1 mat-dialog-title>{{ translation.dialogTitle }}</h1>
+  <mat-dialog-content>{{ translation.dialogMessage }}</mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button (click)="discard()">
+      {{ translation.dialogDiscardLabel }}
+    </button>
+    <button mat-button (click)="confirm()" color="warn">
+      {{ translation.dialogConfirmLabel }}
+    </button>
+  </mat-dialog-actions>
+</app-dialog>

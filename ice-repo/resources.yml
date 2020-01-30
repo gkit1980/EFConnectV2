@@ -78,9 +78,9 @@ entries:
         - en: Please confirm
           de: Bitte bestätigen
       not_allowed_here:
-        - en: "'${value}' not allowed here"
+        - en: '''${value}'' not allowed here'
       regexp:
-        - en: "'${value}' does not matches regular expression ${regexp}"
+        - en: '''${value}'' does not matches regular expression ${regexp}'
       array:
         min:
           - en: 'must have at least ${min} entries'
@@ -167,3 +167,21 @@ entries:
       title:
         - en: INSIS Portal
           de: INSIS Portal
+    languages:
+      dialog:
+        title:
+          - en: Warning
+            de: Warning
+        message:
+          - en: >-
+              Are you sure you want to change language. The page will refresh
+              and you will lose all unsaved information.
+            de: >-
+              Are you sure you want to change language. The page will refresh
+              and you will lose all unsaved information.
+        confirm:
+          - en: Confirm
+            de: Confirm
+        discard:
+          - en: Discard
+            de: Discard

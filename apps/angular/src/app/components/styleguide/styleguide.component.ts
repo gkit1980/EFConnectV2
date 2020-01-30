@@ -4,4 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-styleguide',
   templateUrl: './styleguide.component.html'
 })
-export class StyleGuideComponent {}
+export class StyleGuideComponent {
+  showDialog = false;
+}
