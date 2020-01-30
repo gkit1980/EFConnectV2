@@ -140,6 +140,10 @@
   /*
   INPUT + DROPDOWN + TEXTAREA
   */
+  mat-form-field {
+    height: 45px;
+  }
+  
   .mat-form-field-appearance-outline .mat-form-field-flex {
     padding: 0 16px;
   }

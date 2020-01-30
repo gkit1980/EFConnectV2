@@ -36,6 +36,7 @@ page:
                     elements:
                       - name: policy.insured.vehicle-objects~cover.mtpl.premium
                 align: space-between
+                css: u-mb-4
               - cols:
                   - size: auto
                     elements:
@@ -44,17 +45,19 @@ page:
                     elements:
                       - name: policy.insured.vehicle-objects~cover.owndamage.premium
                 align: space-between
+                css: u-mb-4
               - cols:
                   - size: 35%
                     size.xs: 100%
-                    offset: 30px
+                    css: u-ml-7
                     elements:
                       - name: policy.insured.vehicle-objects~cover.owndamage.code
                   - size: 35%
                     size.xs: 100%
-                    offset: 30px
+                    css: u-ml-7
                     elements:
                       - name: policy.insured.vehicle-objects~cover.owndamage.code
+                css: u-mb-4      
               - cols:
                   - size: auto
                     elements:
@@ -63,6 +66,7 @@ page:
                     elements:
                       - name: policy.insured.vehicle-objects~cover.pa.premium
                 align: space-between
+                css: u-mb-4
               - cols:
                   - size: auto
                     elements:
