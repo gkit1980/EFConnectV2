@@ -36,6 +36,27 @@ entries:
                 label:
                   - en: Consecutive years without accidents
                     de: null
+            cover:
+              mtpl:
+                active:
+                  label:
+                    - en: Motor Third Party Liability
+                      de: Motor Third Party Liability
+              owndamage:
+                active:
+                  label:
+                    - en: Motor Own Damage
+                      de: Motor Own Damage
+              pa:
+                active:
+                  label:
+                    - en: Personal Accident
+                      de: Personal Accident
+              road_assis:
+                active:
+                  label:
+                    - en: Road Assistance
+                      de: Road Assistance         
             car:
               brand:
                 label:
@@ -125,30 +146,7 @@ entries:
             label:
               - en: Payment
                 de: Payment
-      insured:
-        vehicle-objects:
-          items:
-            cover:
-              mtpl:
-                active:
-                  label:
-                    - en: Motor Third Party Liability
-                      de: Motor Third Party Liability
-              owndamage:
-                active:
-                  label:
-                    - en: Motor Own Damage
-                      de: Motor Own Damage
-              pa:
-                active:
-                  label:
-                    - en: Personal Accident
-                      de: Personal Accident
-              road_assis:
-                active:
-                  label:
-                    - en: Road Assistance
-                      de: Road Assistance
+            
 
   validation:
     pageValidation:
@@ -220,9 +218,17 @@ entries:
       title:
         - en: Home
           de: null
+    1.application:
+      title:
+        - en: See prices
+          de: null
     1.1.vehicles:
       title:
         - en: Insured vehicles
+          de: null
+    1.2.covers:
+      title:
+        - en: Covers
           de: null
     header:
       dashboard:

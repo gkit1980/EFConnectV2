@@ -1,6 +1,6 @@
 page:
   validation: {}
-  component: DemoPage
+  component: InsisPage
   sections:
     - component:
         IceFlexSection:
@@ -57,7 +57,7 @@ page:
                     css: u-ml-7
                     elements:
                       - name: policy.insured.vehicle-objects~cover.owndamage.code
-                css: u-mb-4      
+                css: u-mb-4
               - cols:
                   - size: auto
                     elements:

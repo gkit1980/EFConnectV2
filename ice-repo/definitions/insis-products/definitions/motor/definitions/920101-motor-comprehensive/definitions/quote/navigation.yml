@@ -1,1 +1,12 @@
-{}
+default:
+  validations:
+    onElementComponentChange: true
+    behaviour: forward
+pages:
+  StaticNavigationPagesRule:
+    pages:
+      - page: 1.application
+        firstChild: true
+        pages:
+          - page: 1.1.vehicles
+          - page: 1.2.covers

@@ -1,8 +1,7 @@
 element:
   viewMode:
     DtViewModeRule:
-      dt: >-
-        policy.insured.vehicle-objects~car.additional-equipment-other.viewmode
+      dt: policy.insured.vehicle-objects~car.additional-equipment-other.viewmode
   range:
     StaticRangeRule:
       min: '1'

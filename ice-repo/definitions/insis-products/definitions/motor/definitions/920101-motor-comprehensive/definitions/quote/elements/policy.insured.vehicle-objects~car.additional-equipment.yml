@@ -4,3 +4,4 @@ element:
   defaultValue:
     StaticValueRule:
       value: false
+  type: boolean

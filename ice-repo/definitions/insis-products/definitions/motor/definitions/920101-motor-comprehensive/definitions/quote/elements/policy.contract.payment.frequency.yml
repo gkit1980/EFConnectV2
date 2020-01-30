@@ -1,2 +1,3 @@
 element:
   values: insis.payment.frequency
+  type: integer
