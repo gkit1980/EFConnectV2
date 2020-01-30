@@ -24,6 +24,42 @@ entries:
         label:
           - en: Submit
             de: null
+    policy:
+      contract:
+        begin:
+          label:
+            - en: Insurance start
+              de: Insurance start
+        payment:
+          frequency:
+            label:
+              - en: Payment
+                de: Payment
+      insured:
+        vehicle-objects:
+          items:
+            cover:
+              mtpl:
+                active:
+                  label:
+                    - en: Motor Third Party Liability
+                      de: Motor Third Party Liability
+              owndamage:
+                active:
+                  label:
+                    - en: Motor Own Damage
+                      de: Motor Own Damage
+              pa:
+                active:
+                  label:
+                    - en: Personal Accident
+                      de: Personal Accident
+              road_assis:
+                active:
+                  label:
+                    - en: Road Assistance
+                      de: Road Assistance
+
   validation:
     pageValidation:
       summary:

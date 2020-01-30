@@ -1,0 +1,9 @@
+element:
+  defaultValue:
+    DateExpressionValueRule:
+      expression: date(tomorrow)
+  range:
+    FeelExpressionRangeRule:
+      expressionMin: date('')
+      expressionMax: date('') + duration('P3M')
+  type: date

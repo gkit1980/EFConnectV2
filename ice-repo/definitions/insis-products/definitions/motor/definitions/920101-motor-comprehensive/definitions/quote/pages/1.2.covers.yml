@@ -1,0 +1,74 @@
+page:
+  validation: {}
+  component: DemoPage
+  sections:
+    - component:
+        IceFlexSection:
+          css: card
+          grid:
+            rows:
+              - cols:
+                  - size: auto
+                    size.xs: 100%
+                    elements:
+                      - name: policy.contract.begin
+                  - size: auto
+                    size.xs: 100%
+                    elements:
+                      - name: policy.contract.term.years
+                  - size: auto
+                    size.xs: 100%
+                    elements:
+                      - name: policy.contract.payment.frequency
+                gap: 40px
+                gap.xs: 0
+      labelKey: Policy details
+    - component:
+        IceArrayFlexSection:
+          css: card
+          grid:
+            rows:
+              - cols:
+                  - size: auto
+                    elements:
+                      - name: policy.insured.vehicle-objects~cover.mtpl.active
+                  - size: none
+                    elements:
+                      - name: policy.insured.vehicle-objects~cover.mtpl.premium
+                align: space-between
+              - cols:
+                  - size: auto
+                    elements:
+                      - name: policy.insured.vehicle-objects~cover.owndamage.active
+                  - size: none
+                    elements:
+                      - name: policy.insured.vehicle-objects~cover.owndamage.premium
+                align: space-between
+              - cols:
+                  - size: 35%
+                    size.xs: 100%
+                    offset: 30px
+                    elements:
+                      - name: policy.insured.vehicle-objects~cover.owndamage.code
+                  - size: 35%
+                    size.xs: 100%
+                    offset: 30px
+                    elements:
+                      - name: policy.insured.vehicle-objects~cover.owndamage.code
+              - cols:
+                  - size: auto
+                    elements:
+                      - name: policy.insured.vehicle-objects~cover.pa.active
+                  - size: none
+                    elements:
+                      - name: policy.insured.vehicle-objects~cover.pa.premium
+                align: space-between
+              - cols:
+                  - size: auto
+                    elements:
+                      - name: policy.insured.vehicle-objects~cover.road_assis.active
+                  - size: none
+                    elements:
+                      - name: >-
+                          policy.insured.vehicle-objects~cover.road_assis.premium
+          arrayElement: policy.insured.vehicle-objects
