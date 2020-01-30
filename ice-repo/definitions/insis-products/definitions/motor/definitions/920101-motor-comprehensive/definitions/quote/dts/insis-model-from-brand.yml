@@ -1,0 +1,32 @@
+dt:
+  hitPolicy: C
+  inputs:
+    - element: policy.insured.vehicle-objects~car.brand
+  outputs:
+    - id: output
+      type: ''
+  rules:
+    - inputs:
+        - AUDI
+      outputs:
+        - 'A1'
+    - inputs:
+        - AUDI
+      outputs:
+        - A1 Diesel
+    - inputs:
+        - BMW
+      outputs:
+        - X1
+    - inputs:
+        - BMW
+      outputs:
+        - X1 Diesel
+    - inputs:
+        - '-'
+      outputs:
+        - Escalade
+    - inputs:
+        - '-'
+      outputs:
+        - SRX

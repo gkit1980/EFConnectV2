@@ -25,6 +25,96 @@ entries:
           - en: Submit
             de: null
     policy:
+      insured:
+        vehicle-objects:
+          label:
+            - en: Give us some information about the vehicles you want to insure.
+              de: null
+          items:
+            question:
+              number-of-consecutive-years-without-claims:
+                label:
+                  - en: Consecutive years without accidents
+                    de: null
+            car:
+              brand:
+                label:
+                  - en: Make
+                    de: null
+              model:
+                label:
+                  - en: Model
+                    de: null
+              construction-date:
+                label:
+                  - en: Year
+                    de: null
+              chassis:
+                label:
+                  - en: Body type
+                    de: null
+              engine:
+                label:
+                  - en: Engine
+                    de: null
+              engine-power:
+                label:
+                  - en: Power
+                    de: null
+              fuel:
+                label:
+                  - en: Fuel type
+                    de: null
+              category:
+                label:
+                  - en: Number of seats
+                    de: null
+              millage:
+                label:
+                  - en: Kilometers driven per year
+                    de: null
+              usage:
+                label:
+                  - en: Primary usage
+                    de: null
+              transportation-of-hazardous-goods:
+                label:
+                  - en: The car is used for transportation of hazardous goods
+                    de: null
+              additional-equipment:
+                label:
+                  - en: >-
+                      Insure additional equipment like audio systems, alloy
+                      wheels, etc.
+                    de: null
+              additional-equipment-car-audio-included:
+                label:
+                  - en: Audio/Video system
+                    de: null
+              additional-equipment-car-audio:
+                label:
+                  - en: Insured value (EUR)
+                    de: null
+              additional-equipment-alloy-wheels-included:
+                label:
+                  - en: Alloy wheels
+                    de: null
+              additional-equipment-alloy-wheels:
+                label:
+                  - en: Insured value (EUR)
+                    de: null
+              additional-equipment-other-included:
+                label:
+                  - en: Other
+                    de: null
+              additional-equipment-other:
+                label:
+                  - en: Insured value (EUR)
+                    de: null
+        add-another-vehicle:
+          label:
+            - en: ADD ANOTHER VEHICLE
+              de: null
       contract:
         begin:
           label:
@@ -130,6 +220,10 @@ entries:
       title:
         - en: Home
           de: null
+    1.1.vehicles:
+      title:
+        - en: Insured vehicles
+          de: null
     header:
       dashboard:
         - en: Dashboard
@@ -162,6 +256,16 @@ entries:
       default:
         - en: dd.MM.yyyy
           de: null
+    number:
+      fractionDelimiter:
+        - en: .
+          de: ','
+      thousandDelimiter:
+        - en: ','
+          de: .
+  currency-code:
+    - en: EUR
+      de: EUR
   portal:
     home:
       title:

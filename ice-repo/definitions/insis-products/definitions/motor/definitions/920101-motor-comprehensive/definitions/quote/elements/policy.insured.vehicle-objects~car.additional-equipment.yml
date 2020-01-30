@@ -1,0 +1,6 @@
+element:
+  viewMode: default
+  component: IceCheckbox
+  defaultValue:
+    StaticValueRule:
+      value: false

@@ -1,0 +1,16 @@
+list:
+  type: integer
+  additionals:
+    label:
+      label: Label
+      type: integer
+  items:
+    - value: 1
+      label_en: 'Detect car based on license plate'
+      label_bg: null
+    - value: 2
+      label_en: 'Detect car based on VIN (Vehicle Identification Number)'
+      label_bg: null
+    - value: 3
+      label_en: 'Enter make / model / year'
+      label_bg: null

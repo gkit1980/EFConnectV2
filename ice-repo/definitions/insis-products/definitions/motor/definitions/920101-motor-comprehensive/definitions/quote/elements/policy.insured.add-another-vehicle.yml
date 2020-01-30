@@ -1,0 +1,10 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          action: add-another-vehicle
+  label:
+    ResourceLabelRule:
+      key: elements.policy.insured.add-another-vehicle.label

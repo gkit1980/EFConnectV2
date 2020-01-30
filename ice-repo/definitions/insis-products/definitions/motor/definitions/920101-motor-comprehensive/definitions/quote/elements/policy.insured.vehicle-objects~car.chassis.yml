@@ -1,0 +1,5 @@
+element:
+  component: IceDropdown
+  values:
+    ListValuesRule:
+      list: body-type

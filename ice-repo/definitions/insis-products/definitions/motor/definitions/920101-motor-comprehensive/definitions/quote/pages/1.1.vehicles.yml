@@ -1,0 +1,138 @@
+page:
+  validation:
+    onElementComponentChange: true
+    behaviour: forward
+    showMessages: details
+    showGrowl: false
+    showElementValidation: true
+  component: OnePage
+  sections:
+    - component:
+        IceArrayFlexSection:
+          grid:
+            rows:
+              - gap.xs: 10px
+                cols:
+                  - size: 20%
+                    size.xs: auto
+                    elements:
+                      - name: policy.insured.vehicle-objects~car.method-of-entry
+              - gap: 10px
+                cols:
+                  - size: auto
+                    size.xs: auto
+                    elements:
+                      - name: policy.insured.vehicle-objects~car.brand
+                  - size: auto
+                    size.xs: auto
+                    elements:
+                      - name: policy.insured.vehicle-objects~car.model
+              - gap: 10px
+                cols:
+                  - size: auto
+                    size.xs: auto
+                    elements:
+                      - name: policy.insured.vehicle-objects~car.construction-date
+                  - size: auto
+                    size.xs: auto
+                    elements:
+                      - name: policy.insured.vehicle-objects~car.chassis
+              - gap: 10px
+                cols:
+                  - size: auto
+                    size.xs: auto
+                    elements:
+                      - name: policy.insured.vehicle-objects~car.engine
+                  - size: auto
+                    size.xs: auto
+                    elements:
+                      - name: policy.insured.vehicle-objects~car.engine-power
+              - gap: 10px
+                cols:
+                  - size: auto
+                    size.xs: auto
+                    elements:
+                      - name: policy.insured.vehicle-objects~car.fuel
+                  - size: auto
+                    size.xs: auto
+                    elements:
+                      - name: policy.insured.vehicle-objects~car.category
+              - gap: 10px
+                cols:
+                  - size: auto
+                    size.xs: auto
+                    elements:
+                      - name: policy.insured.vehicle-objects~car.millage
+                  - size: auto
+                    size.xs: auto
+                    elements:
+                      - name: policy.insured.vehicle-objects~car.usage
+              - gap: 10px
+                cols:
+                  - size: auto
+                    size.xs: auto
+                    elements:
+                      - name: >-
+                          policy.insured.vehicle-objects~question.number-of-consecutive-years-without-claims
+              - gap: 10px
+                cols:
+                  - size: auto
+                    size.xs: auto
+                    elements:
+                      - name: >-
+                          policy.insured.vehicle-objects~car.transportation-of-hazardous-goods
+              - gap: 10px
+                cols:
+                  - size: auto
+                    size.xs: auto
+                    elements:
+                      - name: >-
+                          policy.insured.vehicle-objects~car.additional-equipment
+              - gap: 10px
+                cols:
+                  - size: 30%
+                    size.xs: auto
+                    elements:
+                      - name: >-
+                          policy.insured.vehicle-objects~car.additional-equipment-car-audio-included
+                  - size: 60%
+                    size.xs: auto
+                    elements:
+                      - name: >-
+                          policy.insured.vehicle-objects~car.additional-equipment-car-audio
+              - gap: 10px
+                cols:
+                  - size: 30%
+                    size.xs: auto
+                    elements:
+                      - name: >-
+                          policy.insured.vehicle-objects~car.additional-equipment-alloy-wheels-included
+                  - size: 60%
+                    size.xs: auto
+                    elements:
+                      - name: >-
+                          policy.insured.vehicle-objects~car.additional-equipment-alloy-wheels
+              - gap: 10px
+                cols:
+                  - size: 30%
+                    size.xs: auto
+                    elements:
+                      - name: >-
+                          policy.insured.vehicle-objects~car.additional-equipment-other-included
+                  - size: 60%
+                    size.xs: auto
+                    elements:
+                      - name: >-
+                          policy.insured.vehicle-objects~car.additional-equipment-other
+          arrayElement: policy.insured.vehicle-objects
+          behaviourForEmptyRows: render
+    - component:
+        IceFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    css: margin-10
+                    elements:
+                      - name: policy.insured.add-another-vehicle

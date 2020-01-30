@@ -1,0 +1,6 @@
+element:
+  viewMode: required
+  component: IceDropdown
+  values:
+    ListValuesRule:
+      list: engine-capacity

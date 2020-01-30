@@ -5,105 +5,105 @@ list:
       label: Label
       type: text
   items:
-    - value: 1.0
-      label_en: 1.0
-      label_bg: 1.0
-    - value: 1.5
-      label_en: 1.5
-      label_bg: 1.5
-    - value: 1.6
-      label_en: 1.6
-      label_bg: 1.6
-    - value: 1.7
-      label_en: 1.7
-      label_bg: 1.7
-    - value: 1.8
-      label_en: 1.8
-      label_bg: 1.8
-    - value: 2.0
-      label_en: 2.0
-      label_bg: 2.0
-    - value: 2.2
-      label_en: 2.2
-      label_bg: 2.2
-    - value: 2.3
-      label_en: 2.3
-      label_bg: 2.3
-    - value: 2.5
-      label_en: 2.5
-      label_bg: 2.5
-    - value: 2.6
-      label_en: 2.6
-      label_bg: 2.6
-    - value: 2.8
-      label_en: 2.8
-      label_bg: 2.8
-    - value: 3.0
-      label_en: 3.0
-      label_bg: 3.0
-    - value: 3.2
-      label_en: 3.2
-      label_bg: 3.2
-    - value: 3.3
-      label_en: 3.3
-      label_bg: 3.3
-    - value: 3.5
-      label_en: 3.5
-      label_bg: 3.5
-    - value: 3.7
-      label_en: 3.7
-      label_bg: 3.7
-    - value: 3.8
-      label_en: 3.8
-      label_bg: 3.8
-    - value: 3.9
-      label_en: 3.9
-      label_bg: 3.9
-    - value: 4.1
-      label_en: 4.1
-      label_bg: 4.1
-    - value: 4.2
-      label_en: 4.2
-      label_bg: 4.2
-    - value: 4.3
-      label_en: 4.3
-      label_bg: 4.3
-    - value: 4.4
-      label_en: 4.4
-      label_bg: 4.4
-    - value: 4.8
-      label_en: 4.8
-      label_bg: 4.8
-    - value: 4.9
-      label_en: 4.9
-      label_bg: 4.9
-    - value: 5.0
-      label_en: 5.0
-      label_bg: 5.0
-    - value: 5.2
-      label_en: 5.2
-      label_bg: 5.2
-    - value: 5.7
-      label_en: 5.7
-      label_bg: 5.7
-    - value: 5.8
-      label_en: 5.8
-      label_bg: 5.8
-    - value: 5.9
-      label_en: 5.9
-      label_bg: 5.9
-    - value: 6.0
-      label_en: 6.0
-      label_bg: 6.0
-    - value: 6.2
-      label_en: 6.2
-      label_bg: 6.2
-    - value: 6.6
-      label_en: 6.6
-      label_bg: 6.6
-    - value: 6.9
-      label_en: 6.9
-      label_bg: 6.9
-    - value: 7.0
-      label_en: 7.0
-      label_bg: 7.0
+    - value: '1.0'
+      label_en: '1.0'
+      label_bg: '1.0'
+    - value: '1.5'
+      label_en: '1.5'
+      label_bg: '1.5'
+    - value: '1.6'
+      label_en: '1.6'
+      label_bg: '1.6'
+    - value: '1.7'
+      label_en: '1.7'
+      label_bg: '1.7'
+    - value: '1.8'
+      label_en: '1.8'
+      label_bg: '1.8'
+    - value: '2.0'
+      label_en: '2.0'
+      label_bg: '2.0'
+    - value: '2.2'
+      label_en: '2.2'
+      label_bg: '2.2'
+    - value: '2.3'
+      label_en: '2.3'
+      label_bg: '2.3'
+    - value: '2.5'
+      label_en: '2.5'
+      label_bg: '2.5'
+    - value: '2.6'
+      label_en: '2.6'
+      label_bg: '2.6'
+    - value: '2.8'
+      label_en: '2.8'
+      label_bg: '2.8'
+    - value: '3.0'
+      label_en: '3.0'
+      label_bg: '3.0'
+    - value: '3.2'
+      label_en: '3.2'
+      label_bg: '3.2'
+    - value: '3.3'
+      label_en: '3.3'
+      label_bg: '3.3'
+    - value: '3.5'
+      label_en: '3.5'
+      label_bg: '3.5'
+    - value: '3.7'
+      label_en: '3.7'
+      label_bg: '3.7'
+    - value: '3.8'
+      label_en: '3.8'
+      label_bg: '3.8'
+    - value: '3.9'
+      label_en: '3.9'
+      label_bg: '3.9'
+    - value: '4.1'
+      label_en: '4.1'
+      label_bg: '4.1'
+    - value: '4.2'
+      label_en: '4.2'
+      label_bg: '4.2'
+    - value: '4.3'
+      label_en: '4.3'
+      label_bg: '4.3'
+    - value: '4.4'
+      label_en: '4.4'
+      label_bg: '4.4'
+    - value: '4.8'
+      label_en: '4.8'
+      label_bg: '4.8'
+    - value: '4.9'
+      label_en: '4.9'
+      label_bg: '4.9'
+    - value: '5.0'
+      label_en: '5.0'
+      label_bg: '5.0'
+    - value: '5.2'
+      label_en: '5.2'
+      label_bg: '5.2'
+    - value: '5.7'
+      label_en: '5.7'
+      label_bg: '5.7'
+    - value: '5.8'
+      label_en: '5.8'
+      label_bg: '5.8'
+    - value: '5.9'
+      label_en: '5.9'
+      label_bg: '5.9'
+    - value: '6.0'
+      label_en: '6.0'
+      label_bg: '6.0'
+    - value: '6.2'
+      label_en: '6.2'
+      label_bg: '6.2'
+    - value: '6.6'
+      label_en: '6.6'
+      label_bg: '6.6'
+    - value: '6.9'
+      label_en: '6.9'
+      label_bg: '6.9'
+    - value: '7.0'
+      label_en: '7.0'
+      label_bg: '7.0'
