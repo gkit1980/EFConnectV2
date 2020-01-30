@@ -1,0 +1,17 @@
+page:
+  validation:
+    onElementComponentChange: true
+    behaviour: page
+    showMessages: details
+  component: InsisPage
+  sections:
+    - component:
+        GridView:
+          grid:
+            rows:
+              - css: null
+                cols:
+                  - col: 6
+                    element: person.birthdate
+                  - col: 6
+                    element: go-to-next-page

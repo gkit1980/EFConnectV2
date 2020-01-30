@@ -1,0 +1,15 @@
+<nav class="insis-navigation">
+  <ng-container *ngFor="let page of pages; let i = index; let first = first; let last = last">
+    <button [ngClass]="{
+            'insis-navigation__navigation-button': true,
+            first: first,
+            past: selectedIndex > i,
+            current: selectedIndex === i,
+            future: i > selectedIndex
+          }" [disabled]="i > selectedIndex" (click)="tryToGo(page)">
+      {{page.name}}
+    </button>
+    <div *ngIf="!last" class="insis-navigation__line-between-page-buttons">
+    </div>
+  </ng-container>
+</nav>

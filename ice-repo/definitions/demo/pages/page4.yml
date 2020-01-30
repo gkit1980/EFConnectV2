@@ -1,6 +1,6 @@
 page:
   validation:
-    showElementValidation: false
-    behaviour: page
     onElementComponentChange: true
+    behaviour: page
   component: InsisPage
+  label: Page4

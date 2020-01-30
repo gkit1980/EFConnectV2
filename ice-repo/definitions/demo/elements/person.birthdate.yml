@@ -7,3 +7,6 @@ element:
         IceDatepicker: {}
   pages:
     home: {}
+  viewMode:
+    StaticViewModeRule:
+      viewMode: required

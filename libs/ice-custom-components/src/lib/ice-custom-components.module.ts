@@ -3,11 +3,19 @@ import { CommonModule } from '@angular/common';
 import { DummyButtonComponent } from './components/element-components/dummy-button-component/dummy-button.component';
 import { IceComponentsService, NgIceModule } from '@impeo/ng-ice';
 import { BrowserModule } from '@angular/platform-browser';
+import { InsisPageComponent } from './components/page-components/insis-page/insis-page.component';
+import { InsisNavigationComponent } from './components/navigation-components/insis-navigation/insis-navigation.component';
+import { StepperNavigationComponent } from './components/navigation-components/stepper-navigation/stepper-navigation.component';
 
 /**
  * TIP: You will need to include in this array any new component you create.
  */
-export const iceCustomComponents = [DummyButtonComponent];
+export const iceCustomComponents = [
+  DummyButtonComponent,
+  InsisNavigationComponent,
+  StepperNavigationComponent,
+  InsisPageComponent
+];
 
 /**
  * TIP: Include this module in your main Angular app.module to automatically register all custom ICE components

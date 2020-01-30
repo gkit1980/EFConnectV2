@@ -6,3 +6,13 @@ pages:
   StaticNavigationPagesRule:
     pages:
       - page: home
+        firstChild: true
+        pages:
+          - page: home.child2
+          - page: home.anotherpage
+      - page: page3
+        firstChild: true
+        pages:
+          - page: page3.page5
+      - page: page4
+        firstChild: true

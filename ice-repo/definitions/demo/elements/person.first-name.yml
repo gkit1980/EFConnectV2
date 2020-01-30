@@ -3,3 +3,9 @@ element:
   title: First Name
   pages:
     home: {}
+  validation:
+    - LengthValidationRule:
+        min: '2'
+  viewMode:
+    StaticViewModeRule:
+      viewMode: required

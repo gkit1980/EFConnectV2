@@ -1,10 +1,16 @@
 @import '../components/element-components/dummy-button-component/dummy-button.mixin';
+@import '../components/navigation-components/insis-navigation/insis-navigation.mixin.scss';
+@import '../components/navigation-components/stepper-navigation/stepper-navigation.mixin.scss';
+@import '../components/page-components/insis-page/insis-page.mixin.scss';
 
 /**
  * TIP: You will need to @include here any new mixin you add to the ice-custom-component library.
  * This file here will be loaded by theme.scss which is part of theming structure inside application styles.
  */
 
-@mixin all-ice-custom-component-mixins($theme){
+@mixin all-ice-custom-component-mixins($theme) {
   @include dummy-button-mixin($theme);
+  @include stepper-navigation-mixin($theme);
+  @include insis-navigation-mixin($theme);
+  @include insis-page-mixin($theme);
 }

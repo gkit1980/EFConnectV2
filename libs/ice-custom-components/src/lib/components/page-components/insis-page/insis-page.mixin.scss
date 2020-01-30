@@ -1,0 +1,8 @@
+@import '~@angular/material/theming';
+
+@mixin insis-page-mixin($theme) {
+  stepper-navigation {
+    display: block;
+    margin-top: 24px;
+  }
+}

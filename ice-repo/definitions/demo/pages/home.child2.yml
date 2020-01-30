@@ -1,0 +1,16 @@
+page:
+  validation:
+    behaviour: page
+    onElementComponentChange: true
+  component: InsisPage
+  sections:
+    - component:
+        GridView:
+          grid:
+            rows:
+              - css: null
+                cols:
+                  - col: 6
+                    html: text
+                  - col: 6
+                    element: person.first-name
