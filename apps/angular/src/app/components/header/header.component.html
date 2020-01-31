@@ -14,9 +14,22 @@
         >{{ n.key }}</a
       >
     </div>
+
     <language-picker></language-picker>
+
     <div fxLayoutAlign="end center">
-      <span>Profile</span>
+      <mat-menu #appMenu="matMenu">
+        <ng-template ngFor let-menuItem [ngForOf]="menuItems">
+          <button mat-menu-item (click)="menuItem.method()">
+            {{ menuItem.key }}
+          </button>
+        </ng-template>
+      </mat-menu>
+
+      <button mat-icon-button [matMenuTriggerFor]="appMenu">
+        <span>{{ name }}</span>
+        <mat-icon>arrow_drop_down</mat-icon>
+      </button>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>

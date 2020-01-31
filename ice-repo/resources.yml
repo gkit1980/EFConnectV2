@@ -31,11 +31,6 @@ entries:
             - en: Give us some information about the vehicles you want to insure.
               de: null
           items:
-            question:
-              number-of-consecutive-years-without-claims:
-                label:
-                  - en: Consecutive years without accidents
-                    de: null
             cover:
               mtpl:
                 active:
@@ -56,7 +51,12 @@ entries:
                 active:
                   label:
                     - en: Road Assistance
-                      de: Road Assistance         
+                      de: Road Assistance
+            question:
+              number-of-consecutive-years-without-claims:
+                label:
+                  - en: Consecutive years without accidents
+                    de: null
             car:
               brand:
                 label:
@@ -147,11 +147,10 @@ entries:
               - en: Payment
                 de: Payment
         term:
-            duration:
-              label:
-                - en: Insurance duration
-                  de: Insurance duration
-
+          duration:
+            label:
+              - en: Insurance duration
+                de: Insurance duration
   validation:
     pageValidation:
       summary:
@@ -250,6 +249,10 @@ entries:
       products:
         - en: Products
           de: null
+      menu:
+        logout:
+          - en: Logout
+            de: null
   lists:
     gender:
       diverse:

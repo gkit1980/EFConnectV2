@@ -16,7 +16,7 @@ integration:
               element: client.personal-data.pid
             - payload: gender
               element: client.personal-data.gender
-            - payload: fistName
+            - payload: firstName
               element: client.personal-data.first-name
             - payload: lastName
               element: client.personal-data.last-name

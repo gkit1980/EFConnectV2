@@ -1,7 +1,8 @@
-import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 import { IceRuntimeService } from '@impeo/ng-ice';
+
+import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
   selector: 'app-header',
@@ -10,8 +11,17 @@ import { IceRuntimeService } from '@impeo/ng-ice';
 export class HeaderComponent {
   activeURL = '';
   navigation: any[] = [];
+  menuItems: { key: string; method: () => any }[] = [];
 
-  constructor(private http: HttpClient, private runtimeService: IceRuntimeService, router: Router) {
+  get name(): string {
+    return this.authenticationService.name;
+  }
+
+  constructor(
+    private router: Router,
+    private runtimeService: IceRuntimeService,
+    private authenticationService: AuthenticationService
+  ) {
     this.runtimeService.getRuntime().then(runtime => {
       this.navigation.push(
         {
@@ -40,8 +50,13 @@ export class HeaderComponent {
           includes: []
         }
       );
+
+      this.menuItems.push({
+        key: runtime.iceResource.resolve('pages.header.menu.logout'),
+        method: this.logout.bind(this)
+      });
     });
-    router.events.subscribe(event => {
+    this.router.events.subscribe(event => {
       this.activeURL = window.location.hash.split('#')[1];
     });
   }
@@ -51,5 +66,11 @@ export class HeaderComponent {
     return (
       this.activeURL === tab.link || tab.includes.some(urlPart => this.activeURL.includes(urlPart))
     );
+  }
+
+  private async logout(): Promise<void> {
+    await this.authenticationService.logout();
+
+    this.router.navigate(['/login']);
   }
 }
