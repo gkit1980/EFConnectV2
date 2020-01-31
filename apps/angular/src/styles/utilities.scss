@@ -1,78 +1,78 @@
 $step-size: 4px;
 @for $i from 0 through 10 {
-    $current-step: $step-size * $i;
-  
-    // margin in all directions;
-    .u-m-#{$i} {
-        margin: $current-step !important;
-    }
-    
-    // margin in X axis
-    .u-mx-#{$i} {
-        margin-left: $current-step !important;
-        margin-right: $current-step !important;
-    }
-    
-    // margin in Y axis
-    .u-my-#{$i} {
-        margin-top: $current-step !important;
-        margin-bottom: $current-step !important;
-    }
-    
-    // margin Top
-    .u-mt-#{$i} {
-        margin-top: $current-step !important;
-    }
-    
-    // margin Bottom
-    .u-mb-#{$i} {
-        margin-bottom: $current-step !important;
-    }
-    
-    // margin Right
-    .u-mr-#{$i} {
-        margin-right: $current-step !important;
-    }
-    
-    // margin Left
-    .u-ml-#{$i} {
-        margin-left: $current-step !important;
-    }
-  
-    // Padding in all direction
-    .u-p-#{$i} {
-        padding: $current-step !important;
-    }
-    
-    // padding in X axis
-    .u-px-#{$i} {
-        padding-left: $current-step !important;
-        padding-right: $current-step !important;
-    }
-    
-    // padding in Y axis
-    .u-py-#{$i} {
-        padding-top: $current-step !important;
-        padding-bottom: $current-step !important;
-    }
-    
-    // padding Top
-    .u-pt-#{$i} {
-        padding-top: $current-step !important;
-    }
-    
-    // padding Bottom
-    .u-pb-#{$i} {
-        padding-bottom: $current-step !important;
-    }
-    
-    // padding Right
-    .u-pr-#{$i} {
-        padding-right: $current-step !important;
-    }
-    
-    // padding Left
-    .u-pl-#{$i} {
-        padding-left: $current-step !important;
-    }
+  $current-step: $step-size * $i;
+
+  // margin in all directions;
+  .u-m-#{$i} {
+    margin: $current-step;
+  }
+
+  // margin in X axis
+  .u-mx-#{$i} {
+    margin-left: $current-step;
+    margin-right: $current-step;
+  }
+
+  // margin in Y axis
+  .u-my-#{$i} {
+    margin-top: $current-step;
+    margin-bottom: $current-step;
+  }
+
+  // margin Top
+  .u-mt-#{$i} {
+    margin-top: $current-step;
+  }
+
+  // margin Bottom
+  .u-mb-#{$i} {
+    margin-bottom: $current-step;
+  }
+
+  // margin Right
+  .u-mr-#{$i} {
+    margin-right: $current-step;
+  }
+
+  // margin Left
+  .u-ml-#{$i} {
+    margin-left: $current-step;
+  }
+
+  // Padding in all direction
+  .u-p-#{$i} {
+    padding: $current-step;
+  }
+
+  // padding in X axis
+  .u-px-#{$i} {
+    padding-left: $current-step;
+    padding-right: $current-step;
+  }
+
+  // padding in Y axis
+  .u-py-#{$i} {
+    padding-top: $current-step;
+    padding-bottom: $current-step;
+  }
+
+  // padding Top
+  .u-pt-#{$i} {
+    padding-top: $current-step;
+  }
+
+  // padding Bottom
+  .u-pb-#{$i} {
+    padding-bottom: $current-step;
+  }
+
+  // padding Right
+  .u-pr-#{$i} {
+    padding-right: $current-step;
+  }
+
+  // padding Left
+  .u-pl-#{$i} {
+    padding-left: $current-step;
+  }
 }

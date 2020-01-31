@@ -1,6 +1,15 @@
 @import 'mixins';
 
+@mixin ice-checkbox-mixin($theme) {
+}
+
+@mixin ice-array-mixin($theme) {
+}
+
 @mixin material-override-mixin($theme) {
+  @include ice-checkbox-mixin($theme); // remove styles from NG-ICE
+  @include ice-array-mixin($theme);
+
   $colors: map-get($theme, colors);
 
   $primaryColor: get-mat-color($theme, primary);
@@ -143,7 +152,7 @@
   mat-form-field {
     height: 45px;
   }
-  
+
   .mat-form-field-appearance-outline .mat-form-field-flex {
     padding: 0 16px;
   }
