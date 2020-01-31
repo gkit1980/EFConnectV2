@@ -15,7 +15,7 @@ page:
                   - size: auto
                     size.xs: 100%
                     elements:
-                      - name: policy.contract.term.years
+                      - name: policy.contract.term.duration
                   - size: auto
                     size.xs: 100%
                     elements:

@@ -146,7 +146,11 @@ entries:
             label:
               - en: Payment
                 de: Payment
-            
+        term:
+            duration:
+              label:
+                - en: Insurance duration
+                  de: Insurance duration
 
   validation:
     pageValidation:

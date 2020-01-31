@@ -55,6 +55,12 @@
 .ice-datepicker {
   // it needs relative position on the contaienr, otherwise the icon is off the screen
   position: relative;
+
+  .mat-form-field-suffix {
+    position: absolute;
+    bottom: 5px !important;
+    right: 5px !important;
+  }
 }
 
 // TODO: This is temporary solution, we need to add option to add custom class to the IceFlexSection

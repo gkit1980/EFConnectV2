@@ -1,0 +1,22 @@
+list:
+  type: integer
+  additionals:
+    label_en:
+      label: Label EN
+      type: text
+    label_de:
+      label: Label DE
+      type: text
+  items:
+    - value: 1
+      label_en: 1 month
+      label_de: 1 month
+    - value: 3
+      label_en: 3 months
+      label_de: 3 months
+    - value: 6
+      label_en: 6 months
+      label_de: 6 months
+    - value: 12
+      label_en: 1 year
+      label_de: 1 year
