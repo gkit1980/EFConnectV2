@@ -7,9 +7,26 @@
   .nav {
     color: map-get($colors, 'light');
     .tab {
-      padding: 14px 30px;
+      font-family: 'Roboto Light', 'Roboto Regular', 'Roboto';
+      font-size: 18px;
+      font-weight: 300;
+
+      padding: 12.8px 28px;
+      border-bottom: 2.4px solid transparent;
+
+      &:hover {
+        background-color: map-get($colors, 'header-hover');
+        border-color: map-get($colors, 'header-hover');
+      }
+
+      &:active,
       &.active {
-        background-color: darken($header, 10%);
+        background-color: map-get($colors, 'header-click');
+        border-color: map-get($colors, 'header-click');
+      }
+
+      &.active {
+        border-bottom-color: white;
       }
     }
     a {
