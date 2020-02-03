@@ -4,28 +4,28 @@ page:
   sections:
     - component:
         IceFlexSection:
-          css: card
           grid:
             rows:
               - cols:
-                  - size: auto
+                  - size: 190px
                     size.xs: 100%
                     elements:
                       - name: policy.contract.begin
-                  - size: auto
+                  - size: 190px
                     size.xs: 100%
                     elements:
                       - name: policy.contract.term.duration
-                  - size: auto
-                    size.xs: 100%
+                  - size: 190px
+                    size.xs: auto
                     elements:
                       - name: policy.contract.payment.frequency
                 gap: 40px
                 gap.xs: 0
+                align: space-between
       labelKey: Policy details
+      css: card main-side
     - component:
         IceArrayFlexSection:
-          css: card
           grid:
             rows:
               - cols:
@@ -76,3 +76,4 @@ page:
                       - name: >-
                           policy.insured.vehicle-objects~cover.road_assis.premium
           arrayElement: policy.insured.vehicle-objects
+      css: card main-side

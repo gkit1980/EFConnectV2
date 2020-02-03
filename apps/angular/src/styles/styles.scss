@@ -25,7 +25,7 @@
   max-width: 1328px; // 1280 max width + padding 24px
   padding: 16px;
 
-  @include respond-from(840px) {
+  @include respond-from('sm') {
     padding: 24px;
   }
 }
@@ -67,8 +67,24 @@
 // maybe we should remove default styling of ice-array-item so we don't need to override it in every project
 .ice-flex-section,
 .default-light-theme .ice-array .ice-array-item {
-  @extend .u-p-4;
-  border-radius: 4px;
-  border: 1px solid #ddd;
-  background: #fff;
+  // TODO
+}
+
+.ice-flex-section,
+.ice-array-flex-section {
+  @extend .u-mb-6;
+
+  &.card {
+    @extend .u-p-4;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    background: #fff;
+  }
+
+  &.main-side {
+    width: 100%;
+    @include respond-from('sm') {
+      width: 794px;
+    }
+  }
 }

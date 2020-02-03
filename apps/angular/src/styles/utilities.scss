@@ -76,3 +76,9 @@ $step-size: 4px;
     padding-left: $current-step;
   }
 }
+
+.u-mb-0-xs {
+  @include respond-to('xs') {
+    margin-bottom: 0;
+  }
+}

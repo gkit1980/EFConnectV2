@@ -88,6 +88,16 @@
   /* RADIO */
   .mat-radio-button {
     margin-right: 20px;
+
+    &:not(:nth-last-of-type(1)) {
+      @extend .u-mb-3;
+    }
+  }
+
+  @include respond-to('xs') {
+    .mat-radio-label {
+      white-space: normal;
+    }
   }
 
   .mat-radio-label-content {
@@ -112,6 +122,12 @@
   */
   .mat-checkbox {
     margin-right: 20px;
+  }
+
+  @include respond-to('xs') {
+    .mat-checkbox-label {
+      white-space: normal;
+    }
   }
 
   .mat-checkbox-inner-container {
