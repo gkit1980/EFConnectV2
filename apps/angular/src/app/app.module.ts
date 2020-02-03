@@ -79,7 +79,7 @@ import { IceCustomComponentsModule } from '@insis-portal/ice-custom-components';
     LoginPageGuard,
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
-      useValue: { appearance: 'standard' }
+      useValue: { appearance: 'outline' }
     },
     IcePrincipalService,
     LanguageService
