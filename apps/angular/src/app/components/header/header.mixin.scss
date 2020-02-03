@@ -6,9 +6,16 @@
 
   .nav {
     color: map-get($colors, 'light');
+    font-family: 'Roboto Light', 'Roboto Regular', 'Roboto';
+    font-size: 18px;
+
+    .nav__user-name {
+      font-family: 'Roboto';
+      font-size: 14px;
+      font-weight: 400;
+    }
+
     .tab {
-      font-family: 'Roboto Light', 'Roboto Regular', 'Roboto';
-      font-size: 18px;
       font-weight: 300;
 
       padding: 12.8px 28px;
