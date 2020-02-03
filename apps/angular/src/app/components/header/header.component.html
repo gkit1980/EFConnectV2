@@ -1,18 +1,11 @@
 <mat-toolbar class="toolbar">
   <mat-toolbar-row class="container nav" fxLayout="row" fxLayoutAlign="space-between center">
     <div fxLayoutAlign="start center">
-      <a [routerLink]="'#'"
-        ><img src="../../../assets/icons/Fadata-logo-white.svg" style="height: 40px;"
-      /></a>
+      <a [routerLink]="'#'"><img src="../../../assets/icons/Fadata-logo-white.svg" style="height: 36px;" /></a>
     </div>
     <div fxLayoutAlign="center center">
-      <a
-        class="tab"
-        *ngFor="let n of navigation"
-        [routerLink]="n.link"
-        [ngClass]="{ active: isSelectedTab(n) }"
-        >{{ n.key }}</a
-      >
+      <a class="tab" *ngFor="let n of navigation" [routerLink]="n.link"
+        [ngClass]="{ active: isSelectedTab(n) }">{{ n.key }}</a>
     </div>
 
     <language-picker></language-picker>
