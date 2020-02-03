@@ -26,13 +26,15 @@ page:
       css: card main-side
     - component:
         IceArrayFlexSection:
+          css: card
+          behaviourForEmptyRows: render
           grid:
             rows:
               - cols:
                   - size: auto
                     elements:
                       - name: policy.insured.vehicle-objects~cover.mtpl.active
-                  - size: none
+                  - size: auto
                     elements:
                       - name: policy.insured.vehicle-objects~cover.mtpl.premium
                 align: space-between
@@ -41,7 +43,7 @@ page:
                   - size: auto
                     elements:
                       - name: policy.insured.vehicle-objects~cover.owndamage.active
-                  - size: none
+                  - size: auto
                     elements:
                       - name: policy.insured.vehicle-objects~cover.owndamage.premium
                 align: space-between
@@ -51,12 +53,12 @@ page:
                     size.xs: 100%
                     css: u-ml-7
                     elements:
-                      - name: policy.insured.vehicle-objects~cover.owndamage.code
+                      - name: policy.insured.vehicle-objects~cover.owndamage.deductible
                   - size: 35%
                     size.xs: 100%
                     css: u-ml-7
                     elements:
-                      - name: policy.insured.vehicle-objects~cover.owndamage.code
+                      - name: policy.insured.vehicle-objects~cover.owndamage.insured-amount
                 css: u-mb-4
               - cols:
                   - size: auto

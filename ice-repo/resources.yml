@@ -42,6 +42,14 @@ entries:
                   label:
                     - en: Motor Own Damage
                       de: Motor Own Damage
+                deductible:
+                  label:
+                    - en: Deductible
+                      de: Deductible
+                insured-amount:
+                  label:
+                    - en: Insured Amount
+                      de: Insured Amount
               pa:
                 active:
                   label:
