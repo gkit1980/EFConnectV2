@@ -8,3 +8,6 @@ element:
   label:
     ResourceLabelRule:
       key: elements.policy.insured.add-another-vehicle.label
+  viewMode:
+    StaticViewModeRule:
+      viewMode: hidden

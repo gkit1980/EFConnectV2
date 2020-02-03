@@ -3,6 +3,10 @@ locales:
   - de
 entries:
   elements:
+    go-to-next-page:
+      label:
+        - en: Next
+          de: Next
     person:
       first-name:
         label:
@@ -220,6 +224,11 @@ entries:
       demo:
         - en: Portal demo
           de: null
+  section:
+    policy-details:
+      label:
+        - en: Policy details
+          de: Policy details
   pages:
     footer:
       terms-and-conditions:
@@ -231,7 +240,7 @@ entries:
           de: null
     1.application:
       title:
-        - en: See prices
+        - en: See price
           de: null
     1.1.vehicles:
       title:

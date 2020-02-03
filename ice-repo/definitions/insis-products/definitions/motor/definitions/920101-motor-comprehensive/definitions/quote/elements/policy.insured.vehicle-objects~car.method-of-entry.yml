@@ -10,3 +10,6 @@ element:
   label:
     NoLabelRule: {}
   defaultValue: 3
+  viewMode:
+    StaticViewModeRule:
+      viewMode: hidden
