@@ -37,6 +37,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { registerCustomRules } from '@insis-portal/ice-custom-rules';
 import { IceCustomComponentsModule } from '@insis-portal/ice-custom-components';
+import { CustomBreakpointsProvider } from './custom-breakpoints';
 
 @NgModule({
   declarations: [
@@ -82,7 +83,8 @@ import { IceCustomComponentsModule } from '@insis-portal/ice-custom-components';
       useValue: { appearance: 'outline' }
     },
     IcePrincipalService,
-    LanguageService
+    LanguageService,
+    CustomBreakpointsProvider
   ],
   entryComponents: [],
   bootstrap: [AppComponent]
