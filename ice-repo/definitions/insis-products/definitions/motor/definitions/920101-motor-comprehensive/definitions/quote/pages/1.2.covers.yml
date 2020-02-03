@@ -31,7 +31,6 @@ page:
     - component:
         IceArrayFlexSection:
           css: card
-          behaviourForEmptyRows: render
           grid:
             rows:
               - cols:
