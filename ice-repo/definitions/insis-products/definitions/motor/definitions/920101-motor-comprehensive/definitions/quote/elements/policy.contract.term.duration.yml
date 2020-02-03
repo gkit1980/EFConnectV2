@@ -9,7 +9,7 @@ element:
       value: 12
   values:
     ListValuesRule:
-      list: insis.payment.duration
+      list: insis.term.duration
   change:
     - ResetElementValueExecutionRule:
         elements:
