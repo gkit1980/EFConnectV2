@@ -25,7 +25,7 @@
   max-width: 1328px; // 1280 max width + padding 24px
   padding: 16px;
 
-  @include respond-from('sm') {
+  @include respond-from('md') {
     padding: 24px;
   }
 }
@@ -58,7 +58,8 @@
 
   .mat-form-field-suffix {
     position: absolute;
-    bottom: 13px !important;
+    bottom: auto !important;
+    top: 0 !important;
     right: 5px !important;
   }
 }
@@ -90,8 +91,13 @@
 
   &.main-side {
     width: 100%;
+
     @include respond-from('sm') {
-      width: 794px;
+      max-width: 470px;
+    }
+
+    @include respond-from('md') {
+      max-width: 794px;
     }
   }
 }

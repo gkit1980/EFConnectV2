@@ -9,6 +9,7 @@ page:
               - cols:
                   - size: 190px
                     size.xs: 100%
+                    css: u-mb-4-sm
                     elements:
                       - name: policy.contract.begin
                   - size: 190px
@@ -20,7 +21,6 @@ page:
                     elements:
                       - name: policy.contract.payment.frequency
                 align: space-between
-                layout: row
                 layout.xs: column
                 gap: 0px
                 gap.xs: 16px

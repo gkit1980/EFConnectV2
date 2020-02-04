@@ -78,7 +78,13 @@ $step-size: 4px;
 }
 
 .u-mb-0-xs {
-  @include respond-to('xs') {
+  @include respond-to('sm') {
     margin-bottom: 0;
+  }
+}
+
+.u-mb-4-sm {
+  @include respond-to('md') {
+    margin-bottom: $step-size * 4;
   }
 }
