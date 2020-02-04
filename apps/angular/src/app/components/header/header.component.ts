@@ -25,28 +25,28 @@ export class HeaderComponent {
     this.runtimeService.getRuntime().then(runtime => {
       this.navigation.push(
         {
-          key: runtime.iceResource.resolve('pages.header.dashboard'),
-          link: '/',
+          key: runtime.iceResource.resolve('pages.header.dashboard.label'),
+          link: runtime.iceResource.resolve('pages.header.dashboard.link'),
           includes: []
         },
         {
-          key: runtime.iceResource.resolve('pages.header.policies'),
-          link: '/',
+          key: runtime.iceResource.resolve('pages.header.policies.label'),
+          link: runtime.iceResource.resolve('pages.header.policies.link'),
           includes: []
         },
         {
-          key: runtime.iceResource.resolve('pages.header.payments'),
-          link: '/',
+          key: runtime.iceResource.resolve('pages.header.payments.label'),
+          link: runtime.iceResource.resolve('pages.header.payments.link'),
           includes: []
         },
         {
-          key: runtime.iceResource.resolve('pages.header.claims'),
-          link: '/',
+          key: runtime.iceResource.resolve('pages.header.claims.label'),
+          link: runtime.iceResource.resolve('pages.header.claims.link'),
           includes: []
         },
         {
-          key: runtime.iceResource.resolve('pages.header.products'),
-          link: '/',
+          key: runtime.iceResource.resolve('pages.header.products.label'),
+          link: runtime.iceResource.resolve('pages.header.products.link'),
           includes: []
         }
       );

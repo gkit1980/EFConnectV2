@@ -181,9 +181,9 @@ entries:
         - en: Please confirm
           de: Bitte bestätigen
       not_allowed_here:
-        - en: '''${value}'' not allowed here'
+        - en: "'${value}' not allowed here"
       regexp:
-        - en: '''${value}'' does not matches regular expression ${regexp}'
+        - en: "'${value}' does not matches regular expression ${regexp}"
       array:
         min:
           - en: 'must have at least ${min} entries'
@@ -252,20 +252,40 @@ entries:
           de: null
     header:
       dashboard:
-        - en: Dashboard
-          de: null
+        label:
+          - en: Dashboard
+            de: null
+        link:
+          - en: '/dashboard'
+            de: '/dashboard'
       policies:
-        - en: Policies
-          de: null
+        label:
+          - en: Policies
+            de: null
+        link:
+          - en: '/policies'
+            de: '/policies'
       payments:
-        - en: Payments
-          de: null
+        label:
+          - en: Payments
+            de: null
+        link:
+          - en: '/payments'
+            de: '/payments'
       claims:
-        - en: Claims
-          de: null
+        label:
+          - en: Claims
+            de: null
+        link:
+          - en: '/claims'
+            de: '/claims'
       products:
-        - en: Products
-          de: null
+        label:
+          - en: Products
+            de: null
+        link:
+          - en: '/products'
+            de: '/products'
       menu:
         logout:
           - en: Logout
