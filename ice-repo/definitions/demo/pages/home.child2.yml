@@ -2,7 +2,7 @@ page:
   validation:
     behaviour: page
     onElementComponentChange: true
-  component: InsisPage
+  component: TwoLevelStepperNavigationPage
   sections:
     - component:
         GridView:

@@ -1,7 +1,7 @@
 @import '../components/element-components/dummy-button-component/dummy-button.mixin';
-@import '../components/navigation-components/insis-navigation/insis-navigation.mixin.scss';
-@import '../components/navigation-components/stepper-navigation/stepper-navigation.mixin.scss';
-@import '../components/page-components/insis-page/insis-page.mixin.scss';
+@import '../components/navigation-components/insis-navigation/insis-navigation.mixin';
+@import '../components/navigation-components/stepper-navigation/stepper-navigation.mixin';
+@import '../components/page-components/two-level-stepper-navigation-page/two-level-stepper-navigation-page.mixin';
 
 /**
  * TIP: You will need to @include here any new mixin you add to the ice-custom-component library.
@@ -12,5 +12,5 @@
   @include dummy-button-mixin($theme);
   @include stepper-navigation-mixin($theme);
   @include insis-navigation-mixin($theme);
-  @include insis-page-mixin($theme);
+  @include two-level-stepper-navigation-page-mixin($theme);
 }

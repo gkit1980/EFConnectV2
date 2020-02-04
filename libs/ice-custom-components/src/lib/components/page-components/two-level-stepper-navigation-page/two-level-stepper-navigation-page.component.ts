@@ -3,11 +3,12 @@ import { PageComponentImplementation } from '@impeo/ng-ice';
 import { IcePage } from '@impeo/ice-core';
 
 @Component({
-  selector: 'insis-page',
-  templateUrl: './insis-page.component.html'
+  selector: 'two-level-stepper-navigation-page',
+  templateUrl: './two-level-stepper-navigation-page.component.html'
 })
-export class InsisPageComponent extends PageComponentImplementation implements OnInit {
-  static componentName = 'InsisPage';
+export class TwoLevelStepperNavigationPageComponent extends PageComponentImplementation
+  implements OnInit {
+  static componentName = 'TwoLevelStepperNavigationPage';
 
   get selectedIndex(): number {
     const currentPage = this.navigation.currentPage;

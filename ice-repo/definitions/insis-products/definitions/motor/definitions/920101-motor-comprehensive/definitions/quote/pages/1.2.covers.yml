@@ -1,6 +1,6 @@
 page:
   validation: {}
-  component: InsisPage
+  component: TwoLevelStepperNavigationPage
   sections:
     - component:
         IceFlexSection:

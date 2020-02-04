@@ -3,7 +3,7 @@ page:
     onElementComponentChange: true
     behaviour: page
     showMessages: details
-  component: InsisPage
+  component: TwoLevelStepperNavigationPage
   sections:
     - component:
         GridView:

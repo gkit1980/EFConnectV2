@@ -2,5 +2,5 @@ page:
   validation:
     onElementComponentChange: true
     behaviour: page
-  component: InsisPage
+  component: TwoLevelStepperNavigationPage
   label: Page4
