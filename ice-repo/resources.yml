@@ -304,8 +304,8 @@ entries:
   formats:
     date:
       default:
-        - en: dd.MM.yyyy
-          de: null
+        - en: DD.MM.YYYY
+          de: DD.MM.YYYY
     number:
       fractionDelimiter:
         - en: .
