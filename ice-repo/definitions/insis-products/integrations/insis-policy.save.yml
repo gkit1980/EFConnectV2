@@ -7,10 +7,6 @@ integration:
       dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
       out:
         - mappings:
-            - element: policy.contract.begin
-              payload: InsuranceConditions.ConclusionDate
-            - element: policy.contract.begin
-              payload: InsuranceConditions.EffectiveDate
             - element: policy.contract.agent-no
               payload: InsuranceConditions.AgentNO
             - element: policy.contract.payment.frequency
@@ -27,7 +23,7 @@ integration:
               payload: InsuranceConditions.DurationUnits
             - element: policy.contract.term.years
               payload: InsuranceConditions.Duration
-            - element: policy.insured.object.person.pid
+            - element: policy.participants.holder.person.pid
               payload: Client.Entity.PersonalData.PID
             - element: policy.status.policy-status
               payload: InsuranceConditions.PolicyState

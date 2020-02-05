@@ -33,38 +33,34 @@ integration:
               payload: Policy.InsuranceConditions.Renewal
             - element: policy.contract.term.years
               payload: Policy.InsuranceConditions.Duration
-            - element: policy.insured.object.person.pid
-              payload: Policy.Client.Entity.PersonalData.PID
             - element: policy.contract.payment.tax-value
               payload: Policy.InsuranceConditions.Taxes.Tax.TaxAmount
             - element: policy.status.policy-status
               payload: Policy.InsuranceConditions.PolicyState
-        - fromIdx: 
+        - fromIdx:
             array: payload.Policy.Insureds.Insured
             index: 0
           mappings:
             - element: policy.insured.currency
               payload: 'Policy.Insureds.Insured[n].Currency'
-            - element: policy.insured.insured-amount
-              payload: 'Policy.Insureds.Insured[n].InsuredAmount'
-        - fromIdx: 
+        - fromIdx:
             array: payload.Policy.InsuranceConditions.Billings.Billing
             index: 0
           mappings:
             - element: policy.contract.payment.day
               payload: 'Policy.InsuranceConditions.Billings.Billing[n].PayDueDate'
-        - fromIdx: 
+        - fromIdx:
             array: payload.Policy.InsuranceConditions.Taxes.Tax
             index: 0
           mappings:
             - element: policy.contract.taxes.total
               payload: 'Policy.InsuranceConditions.Taxes.Tax[n].TaxAmount'
-        - fromIdx: 
+        - fromIdx:
             array: payload.Policy.Installments.Installment
           mappings:
             - element: policy.insured.premium.total
               payload: 'Policy.Installments.Installment[n].Amount'
-        - fromIdx: 
+        - fromIdx:
             array: payload.Policy.InsuranceConditions.Participants.Participant
             condition: ParticipantRole == 'PHOLDER'
           mappings:

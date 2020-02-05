@@ -1,6 +1,5 @@
 element:
-  type: text
-  component: IceDropdown
+  type: integer
   viewMode: required
   buckets:
     insis-quote:

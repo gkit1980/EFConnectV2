@@ -3,7 +3,4 @@ element:
   type: boolean
   component: IceButtonToggle
   defaultValue: true
-  mirror:
-    DtMirrorRule:
-      dt: policy-holder-is-insured-person
   values: common.yes-no

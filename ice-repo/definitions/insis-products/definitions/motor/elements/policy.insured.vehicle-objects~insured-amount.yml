@@ -1,5 +1,5 @@
 element:
-  title: faceamount for contract
+  title: faceamount for insured object
   type: currency
   component:
     StaticComponentRule:

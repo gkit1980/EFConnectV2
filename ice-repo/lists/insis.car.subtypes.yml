@@ -4,37 +4,51 @@ list:
     label:
       label: Label
       type: text
+    insis:
+      label: Insis
+      type: integer
   items:
     - value: Sedan
       label_en: Sedan
       label_bg: Sedan
+      insis: 311
     - value: Coupe
       label_en: Coupe
       label_bg: Coupe
+      insis: 312
     - value: Hatchback
       label_en: Hatchback
       label_bg: Hatchback
+      insis: 313
     - value: Limousine
       label_en: Limousine
       label_bg: Limousine
+      insis: 314
     - value: Truck/Pick-Up
       label_en: Truck/Pick-Up
       label_bg: Truck/Pick-Up
+      insis: 315
     - value: Station Wagon
       label_en: Station Wagon
       label_bg: Station Wagon
+      insis: 316
     - value: Convertible
       label_en: Convertible
       label_bg: Convertible
+      insis: 317
     - value: SUV/MUV
       label_en: SUV/MUV
       label_bg: SUV/MUV
+      insis: 318
     - value: Crossover
       label_en: Crossover
       label_bg: Crossover
+      insis: 319
     - value: Wagon
       label_en: Wagon
       label_bg: Wagon
+      insis: 328
     - value: Van/minivan
       label_en: Van/minivan
       label_bg: Van/minivan
+      insis: 329

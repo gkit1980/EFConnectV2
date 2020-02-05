@@ -2,6 +2,9 @@ element:
   type: text
   component: IceDropdown
   viewMode: required
+  values:
+    ListValuesRule:
+      list: insis.car.subtypes
   buckets:
     insis-quote:
       trigger: true

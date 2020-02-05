@@ -1,6 +1,0 @@
-element:
-  component: IceNumber
-  range:
-    StaticRangeRule:
-      min: '1'
-      max: '14'

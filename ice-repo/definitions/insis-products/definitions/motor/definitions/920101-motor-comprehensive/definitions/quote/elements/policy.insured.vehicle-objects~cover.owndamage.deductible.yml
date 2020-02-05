@@ -1,10 +1,4 @@
 element:
-  viewMode:
-    ConditionalViewModeRule:
-      conditionElement: policy.insured.vehicle-objects~cover.owndamage.active
-      conditionValue: true
-      conditionViewMode: required
-      elseViewMode: hidden
   range:
     StaticRangeRule:
       min: '0'

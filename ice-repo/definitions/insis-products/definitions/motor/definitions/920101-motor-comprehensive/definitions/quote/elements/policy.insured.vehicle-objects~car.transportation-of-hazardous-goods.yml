@@ -1,12 +1,5 @@
 element:
-  type: boolean
   viewMode: default
-  component: IceCheckbox
   defaultValue:
     StaticValueRule:
       value: false
-  values:
-    StaticValuesRule:
-      values:
-        - true
-        - false

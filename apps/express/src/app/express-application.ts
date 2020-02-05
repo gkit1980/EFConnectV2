@@ -36,9 +36,9 @@ export class ExpressApplication {
     // Needed to parsing JSON request body
     configureBodyParser(this.app);
 
-    configureIceApplication(this.app, this.appOptions);
-
     configureIcePrincipal(this.app);
+
+    configureIceApplication(this.app, this.appOptions);
 
     if (this.appOptions.visualIce) {
       configureVisualIce(this.app, this.appOptions.visualIce);

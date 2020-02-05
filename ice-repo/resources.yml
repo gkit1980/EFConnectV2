@@ -70,6 +70,10 @@ entries:
                   - en: Consecutive years without accidents
                     de: null
             car:
+              regno:
+                label:
+                  - en: License plate
+                    de: null
               brand:
                 label:
                   - en: Make
@@ -82,11 +86,15 @@ entries:
                 label:
                   - en: Year
                     de: null
-              chassis:
+              subtype:
                 label:
                   - en: Body type
                     de: null
-              engine:
+              chassis:
+                label:
+                  - en: VIN
+                    de: null
+              ccm-ton:
                 label:
                   - en: Engine
                     de: null
@@ -98,7 +106,7 @@ entries:
                 label:
                   - en: Fuel type
                     de: null
-              category:
+              seats-number:
                 label:
                   - en: Number of seats
                     de: null

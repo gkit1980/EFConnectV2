@@ -25,6 +25,18 @@ page:
                   - size: 190px
                     size.xs: 100%
                     elements:
+                      - name: policy.insured.vehicle-objects~car.regno
+                  - size: 190px
+                    size.xs: 100%
+                    elements:
+                      - name: policy.insured.vehicle-objects~car.chassis
+                css: u-mb-4 u-mb-0-xs
+              - gap: 30px
+                gap.xs: 0px
+                cols:
+                  - size: 190px
+                    size.xs: 100%
+                    elements:
                       - name: policy.insured.vehicle-objects~car.brand
                   - size: 190px
                     size.xs: 100%
@@ -41,8 +53,8 @@ page:
                   - size: 190px
                     size.xs: 100%
                     elements:
-                      - name: policy.insured.vehicle-objects~car.chassis
-                css: u-mb-4 u-mb-0-xs       
+                      - name: policy.insured.vehicle-objects~car.subtype
+                css: u-mb-4 u-mb-0-xs
               - gap: 30px
                 gap.xs: 0px
                 css: u-mb-4 u-mb-0-xs
@@ -50,7 +62,7 @@ page:
                   - size: 190px
                     size.xs: 100%
                     elements:
-                      - name: policy.insured.vehicle-objects~car.engine
+                      - name: policy.insured.vehicle-objects~car.ccm-ton
                   - size: 190px
                     size.xs: 100%
                     elements:
@@ -66,7 +78,7 @@ page:
                   - size: 190px
                     size.xs: 100%
                     elements:
-                      - name: policy.insured.vehicle-objects~car.category
+                      - name: policy.insured.vehicle-objects~car.seats-number
               - gap: 30px
                 gap.xs: 0px
                 css: u-mb-4 u-mb-0-xs
@@ -79,6 +91,14 @@ page:
                     size.xs: 100%
                     elements:
                       - name: policy.insured.vehicle-objects~car.usage
+              - gap: 30px
+                css: u-mb-4
+                cols:
+                  - size: 190px
+                    size.xs: auto
+                    elements:
+                      - name: >-
+                          policy.insured.vehicle-objects~insured-amount
               - gap: 30px
                 css: u-mb-4
                 cols:

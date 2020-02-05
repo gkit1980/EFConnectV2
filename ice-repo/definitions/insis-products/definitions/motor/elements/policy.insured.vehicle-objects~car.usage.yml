@@ -1,8 +1,8 @@
 element:
   type: text
-  component: IceButtonToggle
+  component: IceDropdown
   viewMode: required
-  defaultValue: private
+  defaultValue: Private
   values: insis.car.usage
   buckets:
     insis-quote:

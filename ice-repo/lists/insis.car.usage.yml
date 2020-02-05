@@ -11,11 +11,35 @@ list:
       label: Insis
       type: integer
   items:
-    - value: private
-      label_en: Only Private
-      label_de: Nur Privat
+    - value: Ambulance
+      label_en: Ambulance
+      label_bg: Ambulance
+      insis: 6
+    - value: Business
+      label_en: Business
+      label_bg: Business
+      insis: 2
+    - value: Pleasure and Recreation
+      label_en: Pleasure and Recreation
+      label_bg: Pleasure and Recreation
+      insis: 4
+    - value: Private
+      label_en: Private
+      label_bg: Private
       insis: 1
-    - value: business
-      label_en: Private and for Business
-      label_de: Privat und Geschäftlich
-      insis: 17
+    - value: Private and Buisness
+      label_en: Private and Buisness
+      label_bg: Private and Buisness
+      insis: 3
+    - value: Rent-a-car
+      label_en: Rent-a-car
+      label_bg: Rent-a-car
+      insis: 7
+    - value: Specialized Vehicle Usage
+      label_en: Specialized Vehicle Usage
+      label_bg: Specialized Vehicle Usage
+      insis: 8
+    - value: Taxi
+      label_en: Taxi
+      label_bg: Taxi
+      insis: 5
