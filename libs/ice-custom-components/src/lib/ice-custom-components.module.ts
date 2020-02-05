@@ -1,5 +1,6 @@
 import { APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { DummyButtonComponent } from './components/element-components/dummy-button-component/dummy-button.component';
 import { IceComponentsService, NgIceModule } from '@impeo/ng-ice';
 import { BrowserModule } from '@angular/platform-browser';
@@ -32,7 +33,8 @@ export function registerComponents(componentService: IceComponentsService) {
 }
 
 @NgModule({
-  imports: [CommonModule, BrowserModule, NgIceModule.forRoot()],
+  imports: [CommonModule, BrowserModule, NgIceModule.forRoot(), FlexLayoutModule],
+
   declarations: [...iceCustomComponents],
   exports: [...iceCustomComponents],
   entryComponents: [...iceCustomComponents],

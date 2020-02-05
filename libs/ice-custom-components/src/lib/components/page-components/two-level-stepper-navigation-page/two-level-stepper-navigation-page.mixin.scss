@@ -1,8 +1,17 @@
-@import '~@angular/material/theming';
-
 @mixin two-level-stepper-navigation-page-mixin($theme) {
   stepper-navigation {
     display: block;
     margin-top: 24px;
+  }
+
+  .two-level-stepper-navigation-page {
+    .aside {
+      @include respond-from('sm') {
+        border-left: 2px solid get-color($theme, 'border');
+        padding-left: 12px;
+        margin-left: 16px;
+        margin-top: 25px;
+      }
+    }
   }
 }

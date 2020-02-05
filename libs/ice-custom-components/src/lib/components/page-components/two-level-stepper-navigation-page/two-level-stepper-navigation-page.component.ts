@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { PageComponentImplementation } from '@impeo/ng-ice';
 import { IcePage } from '@impeo/ice-core';
+import { get, first } from 'lodash';
+
+const RIGHT_SECTION_TAG = 'pull-right';
+
+const getTags = section => {
+  const componentName = first(Object.keys(get(section, 'recipe.component', {})));
+  return get(section, `recipe.component.${componentName}.tags`, []);
+};
 
 @Component({
   selector: 'two-level-stepper-navigation-page',
@@ -25,8 +33,18 @@ export class TwoLevelStepperNavigationPageComponent extends PageComponentImpleme
     return this.navigation.getChildren(null);
   }
 
-  ngOnInit(): void {
-    super.ngOnInit();
+  get mainSections() {
+    return this.page.sections.filter(section => {
+      const tags = getTags(section);
+      return !tags.includes(RIGHT_SECTION_TAG);
+    });
+  }
+
+  get sideSections() {
+    return this.page.sections.filter(section => {
+      const tags = getTags(section);
+      return tags.includes(RIGHT_SECTION_TAG);
+    });
   }
 
   navigateTo(page: IcePage): void {
