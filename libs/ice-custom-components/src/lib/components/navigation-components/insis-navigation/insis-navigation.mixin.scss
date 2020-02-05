@@ -1,14 +1,13 @@
 @import '~@angular/material/theming';
 
 @mixin insis-navigation-mixin($theme) {
-  $primary: map-get($theme, primary);
-  $primaryColor: mat-color($primary);
+  $primaryColor: get-mat-color($theme, primary);
 
-  $lineColorBetweenPastAndActiveStep: #0d78c0;
-  $lineColorBetweenFutureNodes: rgba(0, 0, 0, 0.4);
+  $lineColorBetweenPastAndActiveStep: $primaryColor;
+  $lineColorBetweenFutureNodes: get-color($theme, navigation-line);
 
   $navigationButtonHeight: 36px;
-  $navigationButtonWidth: 240px;
+  $navigationButtonWidth: 200px;
 
   .insis-navigation {
     display: flex;
@@ -22,12 +21,39 @@
       align-items: center;
       justify-content: center;
 
-      min-width: $navigationButtonWidth;
       min-height: $navigationButtonHeight;
+      min-width: $navigationButtonWidth;
 
       background-color: transparent;
       border: 2px solid $primaryColor;
       border-radius: 18px;
+
+      .insis-navigation__navigation-button_text--show-on-mobile {
+        display: none;
+      }
+
+      @include respond-to(sm) {
+        min-width: fit-content;
+        padding: 0 15px 0 15px;
+
+        .insis-navigation__navigation-button_text--show-on-mobile {
+          display: block;
+        }
+
+        .insis-navigation__navigation-button_text--show-on-desktop {
+          display: none;
+        }
+      }
+
+      @include respond-from(sm) {
+        .insis-navigation__navigation-button_text--show-on-mobile {
+          display: none;
+        }
+
+        .insis-navigation__navigation-button_text--show-when-desktop {
+          display: block;
+        }
+      }
 
       &.past {
         background-color: $primaryColor;
@@ -50,15 +76,24 @@
 
       &.current {
         color: $primaryColor;
+        min-width: $navigationButtonWidth;
 
         + .insis-navigation__line-between-page-buttons {
           background-color: $lineColorBetweenFutureNodes;
         }
+
+        .insis-navigation__navigation-button_text--show-when-selected {
+          display: block;
+        }
+
+        .insis-navigation__navigation-button_text--hide-when-on-current {
+          display: none;
+        }
       }
 
       &.future {
-        color: rgba(#282828, 0.6);
-        border-color: rgba(0, 0, 0, 0.4);
+        color: get-color($theme, text-disabled);
+        border-color: get-color($theme, navigation-line);
       }
     }
 

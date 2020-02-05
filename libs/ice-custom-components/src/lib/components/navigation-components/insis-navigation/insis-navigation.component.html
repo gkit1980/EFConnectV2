@@ -7,7 +7,10 @@
             current: selectedIndex === i,
             future: i > selectedIndex
           }" [disabled]="i > selectedIndex" (click)="tryToGo(page)">
-      {{  page.labelRule?.getNavigationTitle() }}
+      <span
+        class="insis-navigation__navigation-button_text--show-on-mobile insis-navigation__navigation-button_text--hide-when-on-current">{{i + 1}}</span>
+      <span
+        class="insis-navigation__navigation-button_text--show-on-desktop insis-navigation__navigation-button_text--show-when-selected">{{  page.labelRule?.getNavigationTitle() }}</span>
     </button>
     <div *ngIf="!last" class="insis-navigation__line-between-page-buttons">
     </div>
