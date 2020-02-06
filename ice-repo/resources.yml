@@ -70,6 +70,10 @@ entries:
                   - en: Consecutive years without accidents
                     de: null
             car:
+              covers-title:
+                label:
+                  - en: Covers for ${param1} ${param2}
+                    de: Covers for ${param1} ${param2}
               regno:
                 label:
                   - en: License plate

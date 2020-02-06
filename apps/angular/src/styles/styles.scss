@@ -81,11 +81,13 @@
     border: 1px solid #ddd;
     background: #fff;
 
+    .section-title,
     h2 {
       font-weight: 300 !important;
       font-size: 18px !important;
       line-height: 24px !important;
       letter-spacing: 0.0083em !important;
+      margin-bottom: 16px;
     }
   }
 

@@ -40,6 +40,11 @@ page:
             rows:
               - cols:
                   - size: auto
+                    css: section-title
+                    elements:
+                      - name: policy.insured.vehicle-objects~cover.title
+              - cols:
+                  - size: auto
                     elements:
                       - name: policy.insured.vehicle-objects~cover.mtpl.active
                   - size: auto
