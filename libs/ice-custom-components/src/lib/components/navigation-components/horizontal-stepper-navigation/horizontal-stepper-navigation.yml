@@ -1,0 +1,4 @@
+label: HorizontalStepperNavigation
+component: HorizontalStepperNavigation
+description: >
+  UI for top navigation used in insis portal. Navigation is done from left to right, i.e. horizontally.

@@ -1,6 +1,6 @@
 @import '~@angular/material/theming';
 
-@mixin stepper-navigation-mixin($theme) {
+@mixin vertical-stepper-navigation-mixin($theme) {
   $primary: map-get($theme, primary);
   $primaryColor: mat-color($primary);
   $activePageTitleBarBackgroundColor: rgba($primaryColor, 0.117);
@@ -9,8 +9,8 @@
   $circleLeftPadding: 10px;
   $circleDiameter: 24px;
 
-  .stepper-navigation {
-    .stepper-num {
+  .vertical-stepper-navigation {
+    .vertical-stepper-num {
       width: $circleDiameter;
       height: $circleDiameter;
       position: absolute;
@@ -31,7 +31,7 @@
       }
     }
 
-    .stepper-header {
+    .vertical-stepper-header {
       width: 100%;
       text-align: left;
       position: relative;
@@ -61,7 +61,7 @@
         color: $primaryColor;
         background-color: $activePageTitleBarBackgroundColor;
 
-        > .stepper-num {
+        > .vertical-stepper-num {
           border-color: $primaryColor;
         }
 
@@ -85,7 +85,7 @@
       }
     }
 
-    .stepper-content {
+    .vertical-stepper-content {
       position: relative;
       max-height: 0;
       overflow: hidden;

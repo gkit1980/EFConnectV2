@@ -1,7 +1,9 @@
 @mixin two-level-stepper-navigation-page-mixin($theme) {
-  stepper-navigation {
-    display: block;
-    margin-top: 24px;
+  .two-level-stepper-navigation-page {
+    vertical-stepper-navigation {
+      display: block;
+      margin-top: 24px;
+    }
   }
 
   .two-level-stepper-navigation-page {

@@ -1,12 +1,12 @@
-<div class="two-level-stepper-navigation-page">
-  <insis-navigation [page]="page" [level]="1"></insis-navigation>
+<main class="two-level-stepper-navigation-page">
+  <horizontal-stepper-navigation [page]="page" [level]="1"></horizontal-stepper-navigation>
 
   <div fxLayout.xs="column" fxLayout="row wrap">
     <div fxFlex.xs="100%" [fxFlex]="sideSections.length ? '66%' : '100%'">
-      <stepper-navigation [page]="page" [level]="2">
+      <vertical-stepper-navigation [page]="page" [level]="2">
         <page-validation [page]="page"></page-validation>
         <ice-section *ngFor="let section of mainSections" [section]="section"> </ice-section>
-      </stepper-navigation>
+      </vertical-stepper-navigation>
     </div>
     <aside fxFlex.xs="100%" fxFlex="calc(34% - 16px)" *ngIf="sideSections.length" class="aside">
       <ice-section *ngFor="let section of sideSections" [section]="section"> </ice-section>
@@ -15,4 +15,4 @@
 
   <ice-confirmation-dialog [page]="page"></ice-confirmation-dialog>
   <ice-message [page]="page"></ice-message>
-</div>
+</main>

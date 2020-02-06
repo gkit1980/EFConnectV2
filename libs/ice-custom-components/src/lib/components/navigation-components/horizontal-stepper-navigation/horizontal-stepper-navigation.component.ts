@@ -2,11 +2,11 @@ import { PageNavigationComponentImplementation } from '@impeo/ng-ice';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'insis-navigation',
-  templateUrl: './insis-navigation.component.html'
+  selector: 'horizontal-stepper-navigation',
+  templateUrl: './horizontal-stepper-navigation.component.html'
 })
-export class InsisNavigationComponent extends PageNavigationComponentImplementation {
-  static componentName = 'InsisNavigation';
+export class HorizontalStepperNavigationComponent extends PageNavigationComponentImplementation {
+  static componentName = 'HorizontalStepperNavigation';
 
   get selectedIndex(): number {
     const currentPage = this.navigation.currentPage;

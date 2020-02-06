@@ -3,12 +3,12 @@ import { IcePage } from '@impeo/ice-core';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'stepper-navigation',
-  templateUrl: './stepper-navigation.component.html'
+  selector: 'vertical-stepper-navigation',
+  templateUrl: './vertical-stepper-navigation.component.html'
 })
-export class StepperNavigationComponent extends PageNavigationComponentImplementation
+export class VerticalStepperNavigationComponent extends PageNavigationComponentImplementation
   implements OnInit {
-  static componentName = 'StepperNavigation';
+  static componentName = 'VerticalStepperNavigation';
 
   selectedIndex = 0;
 
