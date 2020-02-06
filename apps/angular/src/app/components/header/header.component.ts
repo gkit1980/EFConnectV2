@@ -12,6 +12,7 @@ export class HeaderComponent {
   activeURL = '';
   navigation: any[] = [];
   menuItems: { key: string; method: () => any }[] = [];
+  showMobileNav = false;
 
   get name(): string {
     return this.authenticationService.name;
@@ -58,6 +59,7 @@ export class HeaderComponent {
     });
     this.router.events.subscribe(event => {
       this.activeURL = window.location.hash.split('#')[1];
+      this.showMobileNav = false;
     });
   }
 
@@ -72,5 +74,9 @@ export class HeaderComponent {
     await this.authenticationService.logout();
 
     this.router.navigate(['/login']);
+  }
+
+  toggleMobileNav() {
+    this.showMobileNav = !this.showMobileNav;
   }
 }
