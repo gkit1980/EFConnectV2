@@ -1,0 +1,9 @@
+element:
+  type: text
+  values:
+    ListValuesRule:
+      list: gender
+  component:
+    StaticComponentRule:
+      component:
+        IceDropdown: {}

@@ -1,0 +1,45 @@
+label: ICE Slider
+
+component: IceSlider
+
+types:
+  - currency
+  - integer
+  - decimal
+  - text
+
+description: >
+  A component that allows setting a value by sliding.
+
+  component: IceTextInput
+
+params:
+  step:
+    type: number
+    label: Step
+    info: Specifies step interval at which the thumb will snap. Default step value is 1. If you want to use the slider for decimal values you will need to enter a valid decimal step.
+    default: 1
+  showTicks:
+    type: boolean
+    label: Show ticks
+    info: Specifies if the interval ticks should be shown.
+  tickInterval:
+    type: number
+    label: Tick Interval
+    info: Show tick on concrete interval. The formula for calculating where to show tick is step * tickInterval.
+  updateValueBehaviour:
+    type: select
+    options:
+      onDrag: onDrag
+      onRelease: onRelease
+    label: Update Value Behaviour
+    info: You can decide the behaviour of the slider in regard to element value update. Default behaviour is 'onRelease' this means only after interaction with slider is completed only then the element's value will be updated. Behaviour 'onDrag' will update element value on each change of the slider position (much more often).
+    default: onRelease
+  appearance:
+    type: select
+    options:
+      legacy: Legacy
+      standard: Standard
+      fill: Fill
+      outline: Outline
+    info: We allow user to customize Angular Material appearance.

@@ -1,0 +1,23 @@
+element:
+  type: text
+  viewMode:
+    StaticViewModeRule:
+      viewMode: required
+  component:
+    StaticComponentRule:
+      component:
+        IceSlider:
+          showTicks: true
+          step: '1'
+          tickInterval: '1'
+          appearance: standard
+          updateValueBehaviour: onDrag
+  label:
+    ResourceLabelRule:
+      key: elements.person.first-name.label
+  defaultValue:
+    StaticValueRule:
+      value: male
+  values:
+    ListValuesRule:
+      list: gender

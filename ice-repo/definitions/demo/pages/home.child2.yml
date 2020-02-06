@@ -5,12 +5,22 @@ page:
   component: TwoLevelStepperNavigationPage
   sections:
     - component:
-        GridView:
+        IceFlexSection:
           grid:
             rows:
-              - css: null
-                cols:
-                  - col: 6
-                    html: text
-                  - col: 6
-                    element: person.first-name
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    elements:
+                      - name: person.birthdate
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    elements:
+                      - name: test-slider
+                    offset: '25'
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    elements:
+                      - name: person.first-name

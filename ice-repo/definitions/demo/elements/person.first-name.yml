@@ -8,4 +8,7 @@ element:
         min: '2'
   viewMode:
     StaticViewModeRule:
-      viewMode: required
+      viewMode: hidden
+  defaultValue:
+    StaticValueRule:
+      value: hello

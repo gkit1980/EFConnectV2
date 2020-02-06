@@ -1,0 +1,78 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Test Current File",
+      "type": "node",
+      "request": "launch",
+      "sourceMaps": true,
+      "program": "${workspaceFolder}/tools/test-file.js",
+      "cwd": "${workspaceFolder}",
+      "args": ["${relativeFile}"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "disableOptimisticBPs": true
+    },
+    {
+      "name": "Test Current File (watch)",
+      "type": "node",
+      "request": "launch",
+      "sourceMaps": true,
+      "program": "${workspaceFolder}/tools/test-file.js",
+      "cwd": "${workspaceFolder}",
+      "args": ["${relativeFile}", "--watch"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "disableOptimisticBPs": true
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Client",
+      "url": "http://localhost:4200",
+      "sourceMaps": true,
+      "webRoot": "${workspaceRoot}/apps/angular",
+      "showAsyncStacks": true,
+      "smartStep": true,
+      "breakOnLoad": true,
+      "breakOnLoadStrategy": "instrument",
+      "sourceMapPathOverrides": {
+        "webpack:/*": "${workspaceRoot}/apps/angular/*"
+      }
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Client (watch)",
+      "url": "http://localhost:3000",
+      "sourceMaps": true,
+      "webRoot": "${workspaceRoot}/apps/angular",
+      "showAsyncStacks": true,
+      "smartStep": true,
+      "breakOnLoad": true,
+      "breakOnLoadStrategy": "instrument",
+      "sourceMapPathOverrides": {
+        "webpack:/*": "${workspaceRoot}/apps/angular/*"
+      }
+    },
+    {
+      "name": "Server",
+      "request": "attach",
+      "port": 7777,
+      "type": "node",
+      "sourceMaps": true,
+      "cwd": "${workspaceRoot}",
+      "protocol": "inspector"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Client/Server",
+      "configurations": ["Server", "Client"]
+    },
+    {
+      "name": "Client/Server (watch)",
+      "configurations": ["Server", "Client (watch)"]
+    }
+  ]
+}
