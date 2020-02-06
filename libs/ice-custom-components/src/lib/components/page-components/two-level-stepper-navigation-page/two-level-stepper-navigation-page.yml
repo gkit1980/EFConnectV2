@@ -1,6 +1,6 @@
-label: TwoLevelStepperNavigationPageComponent
+label: TwoLevelStepperNavigationPage
 
-component: TwoLevelStepperNavigationPageComponent
+component: TwoLevelStepperNavigationPage
 
 description: >
   A page that has a top level navigation and a second, side level navigation.

@@ -5,8 +5,18 @@ default:
 pages:
   StaticNavigationPagesRule:
     pages:
-      - page: 1.application
+      - page: 1.quote
         firstChild: true
         pages:
-          - page: 1.1.vehicles
-          - page: 1.2.covers
+          - page: 1.quote.vehicles
+          - page: 1.quote.covers
+      - page: 2.application
+        firstChild: true
+        pages:
+          - page: 2.application.drivers
+          - page: 2.application.participants
+      - page: 3.review
+        firstChild: true
+        pages:
+          - page: 3.review.payment
+          - page: 3.review.terms

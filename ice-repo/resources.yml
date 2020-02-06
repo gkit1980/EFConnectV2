@@ -246,17 +246,41 @@ entries:
       title:
         - en: Home
           de: null
-    1.application:
+    1.quote:
       title:
-        - en: See price
+        - en: See Price
           de: null
-    1.1.vehicles:
+    1.quote.vehicles:
       title:
         - en: Insured vehicles
           de: null
-    1.2.covers:
+    1.quote.covers:
       title:
         - en: Covers
+          de: null
+    2.application:
+      title:
+        - en: Additional Details
+          de: null
+    2.application.drivers:
+      title:
+        - en: Drivers
+          de: null
+    2.application.participants:
+      title:
+        - en: Participants
+          de: null
+    3.review:
+      title:
+        - en: Review and Buy
+          de: null
+    3.review.payment:
+      title:
+        - en: Payment details
+          de: null
+    3.review.terms:
+      title:
+        - en: Terms and conditions
           de: null
     header:
       dashboard:

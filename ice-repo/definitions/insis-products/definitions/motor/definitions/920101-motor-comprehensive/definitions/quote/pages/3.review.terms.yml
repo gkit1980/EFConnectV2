@@ -1,0 +1,13 @@
+page:
+  component: TwoLevelStepperNavigationPage
+  validation:
+    onElementComponentChange: true
+    behaviour: forward
+    showMessages: none
+    showGrowl: false
+    showElementValidation: true
+  label:
+    ResourcePageLabelRule:
+      navigationTitleKey: pages.3.review.terms.title
+      pageTitleKey: pages.3.review.terms.title
+      shortTitleKey: pages.3.review.terms.title

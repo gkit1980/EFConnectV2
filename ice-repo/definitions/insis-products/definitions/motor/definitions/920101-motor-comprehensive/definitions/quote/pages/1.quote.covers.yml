@@ -1,5 +1,10 @@
 page:
-  validation: {}
+  validation:
+    onElementComponentChange: true
+    behaviour: forward
+    showMessages: none
+    showGrowl: false
+    showElementValidation: true
   component: TwoLevelStepperNavigationPage
   sections:
     - component:
@@ -56,12 +61,14 @@ page:
                     size.xs: 100%
                     css: u-ml-7
                     elements:
-                      - name: policy.insured.vehicle-objects~cover.owndamage.deductible
+                      - name: >-
+                          policy.insured.vehicle-objects~cover.owndamage.deductible
                   - size: 35%
                     size.xs: 100%
                     css: u-ml-7
                     elements:
-                      - name: policy.insured.vehicle-objects~cover.owndamage.insured-amount
+                      - name: >-
+                          policy.insured.vehicle-objects~cover.owndamage.insured-amount
                 css: u-mb-4
               - cols:
                   - size: auto
@@ -82,3 +89,8 @@ page:
                           policy.insured.vehicle-objects~cover.road_assis.premium
           arrayElement: policy.insured.vehicle-objects
       css: card main-side
+  label:
+    ResourcePageLabelRule:
+      navigationTitleKey: pages.1.quote.covers.title
+      pageTitleKey: pages.1.quote.covers.title
+      shortTitleKey: pages.1.quote.covers.title

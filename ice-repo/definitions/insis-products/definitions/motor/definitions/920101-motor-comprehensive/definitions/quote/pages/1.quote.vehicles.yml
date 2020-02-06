@@ -2,7 +2,7 @@ page:
   validation:
     onElementComponentChange: true
     behaviour: forward
-    showMessages: details
+    showMessages: none
     showGrowl: false
     showElementValidation: true
   component: TwoLevelStepperNavigationPage
@@ -185,3 +185,8 @@ page:
                     size.xs: auto
                     elements:
                       - name: go-to-next-page
+  label:
+    ResourcePageLabelRule:
+      navigationTitleKey: pages.1.quote.vehicles.title
+      pageTitleKey: pages.1.quote.vehicles.title
+      shortTitleKey: pages.1.quote.vehicles.title
