@@ -12,98 +12,105 @@ page:
           css: main-side
           grid:
             rows:
-              - gap.xs: 10px
-                cols:
+              - cols:
                   - size: 20%
                     size.xs: auto
+                    css: u-mb-4
                     elements:
                       - name: policy.insured.vehicle-objects~car.method-of-entry
-                css: u-mb-4 u-mb-0-xs
+
               - gap: 30px
                 gap.xs: 0px
+                css: u-mt-4
                 cols:
                   - size: 190px
                     size.xs: 100%
+                    css: u-mb-4
                     elements:
                       - name: policy.insured.vehicle-objects~car.regno
                   - size: 190px
                     size.xs: 100%
+                    css: u-mb-4
                     elements:
                       - name: policy.insured.vehicle-objects~car.chassis
-                css: u-mb-4 u-mb-0-xs
               - gap: 30px
                 gap.xs: 0px
                 cols:
                   - size: 190px
                     size.xs: 100%
+                    css: u-mb-4
                     elements:
                       - name: policy.insured.vehicle-objects~car.brand
                   - size: 190px
                     size.xs: 100%
+                    css: u-mb-4
                     elements:
                       - name: policy.insured.vehicle-objects~car.model
-                css: u-mb-4 u-mb-0-xs
               - gap: 30px
                 gap.xs: 0px
                 cols:
                   - size: 190px
                     size.xs: 100%
+                    css: u-mb-4
                     elements:
                       - name: policy.insured.vehicle-objects~car.construction-date
                   - size: 190px
                     size.xs: 100%
+                    css: u-mb-4
                     elements:
                       - name: policy.insured.vehicle-objects~car.subtype
-                css: u-mb-4 u-mb-0-xs
               - gap: 30px
                 gap.xs: 0px
-                css: u-mb-4 u-mb-0-xs
                 cols:
                   - size: 190px
                     size.xs: 100%
+                    css: u-mb-4
                     elements:
                       - name: policy.insured.vehicle-objects~car.ccm-ton
                   - size: 190px
                     size.xs: 100%
+                    css: u-mb-4
                     elements:
                       - name: policy.insured.vehicle-objects~car.engine-power
               - gap: 30px
                 gap.xs: 0px
-                css: u-mb-4 u-mb-0-xs
                 cols:
                   - size: 190px
                     size.xs: 100%
+                    css: u-mb-4
                     elements:
                       - name: policy.insured.vehicle-objects~car.fuel
                   - size: 190px
                     size.xs: 100%
+                    css: u-mb-4
                     elements:
                       - name: policy.insured.vehicle-objects~car.seats-number
               - gap: 30px
                 gap.xs: 0px
-                css: u-mb-4 u-mb-0-xs
                 cols:
                   - size: 190px
                     size.xs: 100%
+                    css: u-mb-4
                     elements:
                       - name: policy.insured.vehicle-objects~car.millage
                   - size: 190px
                     size.xs: 100%
+                    css: u-mb-4
                     elements:
                       - name: policy.insured.vehicle-objects~car.usage
               - gap: 30px
-                css: u-mb-4
                 cols:
                   - size: 190px
                     size.xs: auto
+                    css: u-mb-4
                     elements:
                       - name: >-
                           policy.insured.vehicle-objects~insured-amount
               - gap: 30px
-                css: u-mb-4
                 cols:
                   - size: 260px
                     size.xs: auto
+                    css: u-mb-4
                     elements:
                       - name: >-
                           policy.insured.vehicle-objects~question.number-of-consecutive-years-without-claims
@@ -124,49 +131,57 @@ page:
                       - name: >-
                           policy.insured.vehicle-objects~car.additional-equipment
               - gap: 30px
-                css: u-mb-4 u-ml-7
+                css: u-ml-7
                 cols:
                   - size: 200px
                     size.xs: auto
                     align: center
+                    css: u-mb-2
                     elements:
                       - name: >-
                           policy.insured.vehicle-objects~car.additional-equipment-car-audio-included
                   - size: 200px
-                    size.xs: auto
+                    size.xs: 100%
+                    css: u-mb-4
                     elements:
                       - name: >-
                           policy.insured.vehicle-objects~car.additional-equipment-car-audio
               - gap: 30px
-                css: u-mb-4  u-ml-7
+                gap.xs: 0px
+                css: u-ml-7
                 cols:
                   - size: 200px
                     size.xs: auto
                     align: center
+                    css: u-mb-2
                     elements:
                       - name: >-
                           policy.insured.vehicle-objects~car.additional-equipment-alloy-wheels-included
                   - size: 200px
-                    size.xs: auto
+                    size.xs: 100%
+                    css: u-mb-4
                     elements:
                       - name: >-
                           policy.insured.vehicle-objects~car.additional-equipment-alloy-wheels
               - gap: 30px
-                css: u-mb-4  u-ml-7
+                gap.xs: 0px
+                css: u-ml-7
                 cols:
                   - size: 200px
                     size.xs: auto
                     align: center
+                    css: u-mb-2
                     elements:
                       - name: >-
                           policy.insured.vehicle-objects~car.additional-equipment-other-included
                   - size: 200px
-                    size.xs: auto
+                    size.xs: 100%
+                    css: u-mb-4
                     elements:
                       - name: >-
                           policy.insured.vehicle-objects~car.additional-equipment-other
           arrayElement: policy.insured.vehicle-objects
-          behaviourForEmptyRows: render
+          behaviourForEmptyRows: hidden
     - component:
         IceFlexSection:
           grid:

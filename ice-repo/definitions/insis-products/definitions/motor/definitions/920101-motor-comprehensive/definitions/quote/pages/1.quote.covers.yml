@@ -14,28 +14,27 @@ page:
               - cols:
                   - size: 190px
                     size.xs: 100%
-                    css: u-mb-4-sm
+                    css: u-mb-4
                     elements:
                       - name: policy.contract.begin
                   - size: 190px
                     size.xs: 100%
+                    css: u-mb-4
                     elements:
                       - name: policy.contract.term.duration
                   - size: 190px
                     size.xs: 100%
+                    css: u-mb-4
                     elements:
                       - name: policy.contract.payment.frequency
                 align: space-between
                 layout.xs: column
-                gap: 0px
-                gap.xs: 16px
       label:
         ResourceSectionLabelRule:
           labelKey: section.policy-details.label
-      css: card main-side
+      css: card main-side u-pb-1
     - component:
         IceArrayFlexSection:
-          css: card
           grid:
             rows:
               - cols:

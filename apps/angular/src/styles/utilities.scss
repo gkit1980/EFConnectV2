@@ -63,7 +63,7 @@ $step-size: 4px;
 
   // padding Bottom
   .u-pb-#{$i} {
-    padding-bottom: $current-step;
+    padding-bottom: $current-step !important;
   }
 
   // padding Right
