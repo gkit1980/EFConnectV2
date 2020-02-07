@@ -1,0 +1,11 @@
+implementations:
+  ArrayItemIndexValueRule:
+    description: Sets the value of an array item to it's array index. Either zero or one bound.
+    params:
+      indexing:
+        label: Indexing to use
+        type: select
+        options:
+          zero-based: Zero based indexing
+          one-based: One based indexing
+        default: zero-based
