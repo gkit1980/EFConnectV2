@@ -1,0 +1,6 @@
+element:
+  type: action
+  component: IceButton
+  change:
+    - NavigateToPageExecutionRule:
+        direction: next

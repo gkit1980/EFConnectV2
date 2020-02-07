@@ -3,10 +3,18 @@ locales:
   - de
 entries:
   elements:
+    continue:
+      label:
+        - en: continue
+          de: null
     go-to-next-page:
       label:
         - en: Next
           de: Next
+    more-information-needed:
+      label:
+        - en: We are going to need some more information about the vehicle and yourself to be able to issue the insurance policy.
+          de: null
     person:
       first-name:
         label:
@@ -30,6 +38,10 @@ entries:
             de: null
     policy:
       insured:
+        currency:
+          label:
+            - en: ${param1}/payment
+              de: null
         vehicle-objects:
           label:
             - en: Give us some information about the vehicles you want to insure.
