@@ -1,0 +1,9 @@
+element:
+  type: boolean
+  defaultValue: false
+  viewMode:
+    ConditionalViewModeRule:
+      conditionValue: 'false'
+      conditionElement: policy.insured.vehicle-objects~cover.owndamage.active
+      conditionViewMode: disabled
+      elseViewMode: default
