@@ -11,3 +11,33 @@ page:
       navigationTitleKey: pages.3.review.terms.title
       pageTitleKey: pages.3.review.terms.title
       shortTitleKey: pages.3.review.terms.title
+  sections:
+    - component:
+        IceFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: terms-and-conditions.description
+                css: u-mb-4
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: terms-and-conditions.truthy-and-valid-information
+                gapundefined: 10px
+                css: u-mb-3
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: terms-and-conditions.access-personal-information
+                gapundefined: 10px
+                css: u-mb-3
+          behaviourForEmptyRows: render
+      viewMode: required

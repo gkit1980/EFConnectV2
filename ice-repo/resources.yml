@@ -187,6 +187,29 @@ entries:
             label:
               - en: Insurance duration
                 de: Insurance duration
+    terms-and-conditions:
+      description:
+        label:
+          - en: We need your consent to finalize the purchase.
+            de: Wir benötigen Ihre Zustimmung, um den Kauf abzuschließen.
+      access-personal-information:
+        label:
+          - en: >-
+              I consent to the Insurance Company using, storing and disclosing
+              my personal information to its affiliates and trusted partners for
+              the purposes of verification and administration of insurance
+            de: >-
+              I consent to the Insurance Company using, storing and disclosing
+              my personal information to its affiliates and trusted partners for
+              the purposes of verification and administration of insurance
+      truthy-and-valid-information:
+        label:
+          - en: >-
+              I declare that the information provided by me in this insurance
+              application is true and complete
+            de: >-
+              I declare that the information provided by me in this insurance
+              application is true and complete
   validation:
     pageValidation:
       summary:
