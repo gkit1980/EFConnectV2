@@ -320,13 +320,9 @@ entries:
       title:
         - en: Additional Details
           de: null
-    2.application.drivers:
+    2.application.vehicle-details:
       title:
-        - en: Drivers
-          de: null
-    2.application.participants:
-      title:
-        - en: Participants
+        - en: Vehicle details
           de: null
     3.review:
       title:

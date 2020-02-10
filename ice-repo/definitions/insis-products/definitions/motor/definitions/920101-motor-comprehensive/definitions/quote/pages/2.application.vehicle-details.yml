@@ -20,22 +20,63 @@ page:
             rows:
               - gap: 30px
                 gap.xs: 0px
-                css: u-mt-4
-                cols:
-                  - size: 190px
-                    size.xs: 100%
-                    css: u-mb-4
-                    elements:
-                      - name: policy.insured.vehicle-objects~car.regno
-                  - size: 190px
-                    size.xs: 100%
-                    css: u-mb-4
-                    elements:
-                      - name: policy.insured.vehicle-objects~car.chassis
-              - gap: 30px
-                gap.xs: 0px
                 cols:
                   - size: 100%
                     size.xs: 100%
                     sections:
                       - name: drivers
+    - component:
+        IceFlexSection:
+          tags:
+            - pull-right
+          grid:
+            rows:
+              - cols:
+                  - size: 100%
+                    size.xs: 100%
+                    elements:
+                      - name: continue
+                css: mat-flat-button mat-primary button-white
+                align: space-between
+                layout.xs: column
+                gap: 10px
+                gap.xs: 16px
+      css: main-side button-width-100
+    - component:
+        IceFlexSection:
+          tags:
+            - pull-right
+          grid:
+            rows:
+              - cols:
+                  - size: 100%
+                    size.xs: 100%
+                    elements:
+                      - name: more-information-needed
+                align: space-between
+                layout.xs: column
+                gap: 10px
+                gap.xs: 16px
+      css: main-side text-align-center
+    - component:
+        IceFlexSection:
+          tags:
+            - pull-right
+          grid:
+            rows:
+              - cols:
+                  - size: none
+                    size.xs: 100%
+                    css: text-align-right
+                    elements:
+                      - name: policy.insured.total-premium.amount
+                  - size: none
+                    size.xs: 100%
+                    elements:
+                      - name: policy.insured.premium.title
+                css: mat-headline margin-0
+                align: center
+                layout.xs: column
+                gap: 10px
+                gap.xs: 16px
+      css: card main-side
