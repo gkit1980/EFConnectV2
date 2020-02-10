@@ -3,6 +3,14 @@ locales:
   - de
 entries:
   elements:
+    previous-insurer-heading:
+      label:
+        - en: What is the name of your previous Motor and Third Party Liability insurer?
+          de: What is the name of your previous Motor and Third Party Liability insurer?
+    previous-insurer:
+      label:
+        - en: Previous insurer
+          de: Previous insurer      
     continue:
       label:
         - en: continue

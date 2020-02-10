@@ -17,6 +17,17 @@ page:
           grid:
             rows:
               - cols:
+                  - size: 100%
+                    css: u-mb-4
+                    elements:
+                      - name: previous-insurer-heading
+              - cols:
+                  - size: 190px
+                    size.xs: 100%
+                    css: u-mb-8
+                    elements:
+                      - name: previous-insurer
+              - cols:
                   - size: auto
                     size.xs: auto
                     size.sm: auto

@@ -1,0 +1,22 @@
+list:
+  items:
+    - value: none
+      label_en: None
+      label_de: None
+    - value: Allianz
+      label_en: Allianz
+      label_de: Allianz
+    - value: Bulstrad
+      label_en: Bulstrad
+      label_de: Bulstrad
+    - value: UNIQA
+      label_en: UNIQA
+      label_de: UNIQA
+  type: text
+  additionals:
+    label_en:
+      label: label_en
+      type: text
+    label_de:
+      label: label_de
+      type: string
