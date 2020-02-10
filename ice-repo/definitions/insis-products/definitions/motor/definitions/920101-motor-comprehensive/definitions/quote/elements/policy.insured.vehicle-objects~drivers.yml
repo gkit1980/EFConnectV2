@@ -1,0 +1,8 @@
+element:
+  component: InsisArray
+  viewMode: default
+  label: Driver
+  array:
+    StaticArrayRule:
+      default: '1'
+      min: '1'

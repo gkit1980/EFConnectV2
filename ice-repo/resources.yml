@@ -47,6 +47,10 @@ entries:
             - en: Give us some information about the vehicles you want to insure.
               de: null
           items:
+            insured-amount:
+              label:
+                - en: Actual value of the car
+                  de: Aktueller Wert des Fahrzeuges
             cover:
               mtpl:
                 active:
@@ -168,6 +172,13 @@ entries:
                 label:
                   - en: Insured value (EUR)
                     de: null
+            drivers:
+              items:
+                person:
+                  first-name:
+                    label:
+                      - en: First name
+                        de: Vorname
         add-another-vehicle:
           label:
             - en: ADD ANOTHER VEHICLE

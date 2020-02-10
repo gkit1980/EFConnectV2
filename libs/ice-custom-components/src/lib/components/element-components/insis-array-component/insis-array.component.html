@@ -1,0 +1,26 @@
+<ng-template #default let-index>
+  <div *ngFor="let element of itemElements()">
+    <ice-element *ngIf="element" [section]="section" [elementName]="element.name" [index]="index">
+    </ice-element>
+  </div>
+</ng-template>
+
+<div class="insis-array" *ngIf="isVisible">
+  <div *ngFor="let item of getItems(); index as index" class="insis-array-item">
+    <div>
+      <label>{{ label }} {{ getIndexOfArrayItem(index) }}</label>
+      <span *ngIf="canRemove()" (click)="deleteItem(index)">
+        Remove
+      </span>
+      <ng-container
+        [ngTemplateOutlet]="template"
+        [ngTemplateOutletContext]="{ $implicit: childIndex(index) }"
+      >
+      </ng-container>
+    </div>
+  </div>
+  <span *ngIf="canAdd()" (click)="addItem()">Add</span>
+  <mat-error *ngFor="let message of validation?.getMessagesFor(element.name, index)">
+    {{ message }}
+  </mat-error>
+</div>

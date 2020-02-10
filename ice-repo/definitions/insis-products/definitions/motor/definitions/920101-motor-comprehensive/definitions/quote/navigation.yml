@@ -13,7 +13,7 @@ pages:
       - page: 2.application
         firstChild: true
         pages:
-          - page: 2.application.drivers
+          - page: 2.application.vehicle-details
           - page: 2.application.participants
       - page: 3.review
         firstChild: true

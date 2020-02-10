@@ -1,8 +1,3 @@
 element:
   title: faceamount for insured object
   type: currency
-  component:
-    StaticComponentRule:
-      component:
-        InsisCurrency:
-          currencyElementName: policy.insured.currency

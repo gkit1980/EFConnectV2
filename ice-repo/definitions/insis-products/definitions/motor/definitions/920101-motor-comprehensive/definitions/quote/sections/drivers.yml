@@ -1,0 +1,37 @@
+section:
+  viewMode: default
+  component:
+    IceArrayFlexSection:
+      arrayElement: policy.insured.vehicle-objects~drivers
+      css: main-side
+      grid:
+        rows:
+          - gap.xs: 30px
+            css: u-mt-4
+            cols:
+              - size: 190px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.insured.vehicle-objects~drivers~person.first-name
+              - size: 190px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.insured.vehicle-objects~drivers~person.last-name
+          - gap: 30px
+            gap.xs: 0px
+            cols:
+              - size: 190px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.insured.vehicle-objects~drivers~person.driver-license-nb
+          - gap: 30px
+            gap.xs: 0px
+            cols:
+              - size: 190px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.insured.vehicle-objects~drivers~person.date-of-birth

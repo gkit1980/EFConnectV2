@@ -1,0 +1,41 @@
+page:
+  validation:
+    onElementComponentChange: true
+    behaviour: forward
+    showMessages: none
+    showGrowl: false
+    showElementValidation: true
+  component: TwoLevelStepperNavigationPage
+  label:
+    ResourcePageLabelRule:
+      navigationTitleKey: pages.1.quote.car-details.title
+      pageTitleKey: pages.1.quote.car-details.title
+      shortTitleKey: pages.1.quote.car-details.title
+  sections:
+    - component:
+        IceArrayFlexSection:
+          arrayElement: policy.insured.vehicle-objects
+          css: main-side
+          grid:
+            rows:
+              - gap: 30px
+                gap.xs: 0px
+                css: u-mt-4
+                cols:
+                  - size: 190px
+                    size.xs: 100%
+                    css: u-mb-4
+                    elements:
+                      - name: policy.insured.vehicle-objects~car.regno
+                  - size: 190px
+                    size.xs: 100%
+                    css: u-mb-4
+                    elements:
+                      - name: policy.insured.vehicle-objects~car.chassis
+              - gap: 30px
+                gap.xs: 0px
+                cols:
+                  - size: 100%
+                    size.xs: 100%
+                    sections:
+                      - name: drivers
