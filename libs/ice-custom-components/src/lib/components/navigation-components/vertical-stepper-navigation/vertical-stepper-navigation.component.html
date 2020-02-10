@@ -1,10 +1,14 @@
-<nav class="vertical-stepper-navigation vertical-stepper">
+<nav
+  class="vertical-stepper-navigation vertical-stepper"
+  [ngClass]="{ 'is-single-paged': pages.length === 1 }"
+>
   <div
     class="vertical-stepper-step"
     *ngFor="let p of pages; let i = index; let first = first; let last = last"
     [ngClass]="{ active: i == selectedIndex }"
   >
     <button
+      *ngIf="pages.length > 1"
       class="vertical-stepper-header"
       [ngClass]="{
         active: i == selectedIndex,

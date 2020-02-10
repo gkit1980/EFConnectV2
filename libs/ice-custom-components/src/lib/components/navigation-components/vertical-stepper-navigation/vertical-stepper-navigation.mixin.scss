@@ -111,6 +111,11 @@
         display: none;
       }
     }
+
+    // remove padding when page is only 1
+    &.is-single-paged .vertical-stepper-content.active {
+      padding: 15px 0;
+    }
   }
 
   @keyframes make-me-primary-bg {
