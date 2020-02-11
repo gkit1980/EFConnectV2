@@ -1,0 +1,12 @@
+list:
+  type: text
+  items:
+    - value: policyholder
+      label_en: I own this vehicle, it is not leased
+      label_de: I own this vehicle, it is not leased
+    - value: owner
+      label_en: Someone else owns this vehicle, it is not leased
+      label_de: Someone else owns this vehicle, it is not leased
+    - value: leased
+      label_en: This vehicles is leased
+      label_de: This vehicles is leased

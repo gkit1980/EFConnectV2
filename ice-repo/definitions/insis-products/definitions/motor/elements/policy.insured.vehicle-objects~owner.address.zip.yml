@@ -3,10 +3,7 @@ element:
   type: text
   viewMode:
     DtViewModeRule:
-      dt: policy.insured.object.car.owner.address.viewmode
-  label:
-    ResourceLabelRule:
-      key: insis-common.address.zip.label
+      dt: policy.insured.vehicle-objects~owner.address.city.viewmode
   component:
     StaticComponentRule:
       component:

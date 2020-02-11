@@ -55,6 +55,37 @@ entries:
             - en: Give us some information about the vehicles you want to insure.
               de: null
           items:
+            owner:
+              address:
+                city:
+                  label:
+                    - en: City
+                      de: null
+                zip:
+                  label:
+                    - en: ZIP
+                      de: null
+              options:
+                title:
+                  label:
+                    - en: Vehicle ownership
+                      de: null
+              first-name:
+                label:
+                  - en: Owner first name
+                    de: null
+              last-name:
+                label:
+                  - en: Owner last name
+                    de: null
+              birthdate:
+                label:
+                  - en: Birthdate
+                    de: null
+              lessor-name:
+                label:
+                  - en: Lessor name
+                    de: null
             insured-amount:
               label:
                 - en: Actual value of the car
@@ -96,8 +127,8 @@ entries:
             car:
               covers-title:
                 label:
-                  - en: Covers for ${param1} ${param2}
-                    de: Covers for ${param1} ${param2}
+                  - en: 'Covers for ${param1} ${param2}'
+                    de: 'Covers for ${param1} ${param2}'
               regno:
                 label:
                   - en: License plate
@@ -324,6 +355,15 @@ entries:
       title:
         - en: Vehicle details
           de: null
+      section-title:
+        - en: >-
+            A bit more information for this vehicle would be required to be able
+            to identify it.
+          de: null
+    2.application.participants:
+      title:
+        - en: Participants
+          de: null
     3.review:
       title:
         - en: Review and Buy
@@ -342,36 +382,36 @@ entries:
           - en: Dashboard
             de: null
         link:
-          - en: '/dashboard'
-            de: '/dashboard'
+          - en: /dashboard
+            de: /dashboard
       policies:
         label:
           - en: Policies
             de: null
         link:
-          - en: '/policies'
-            de: '/policies'
+          - en: /policies
+            de: /policies
       payments:
         label:
           - en: Payments
             de: null
         link:
-          - en: '/payments'
-            de: '/payments'
+          - en: /payments
+            de: /payments
       claims:
         label:
           - en: Claims
             de: null
         link:
-          - en: '/claims'
-            de: '/claims'
+          - en: /claims
+            de: /claims
       products:
         label:
           - en: Products
             de: null
         link:
-          - en: '/products'
-            de: '/products'
+          - en: /products
+            de: /products
       menu:
         logout:
           - en: Logout

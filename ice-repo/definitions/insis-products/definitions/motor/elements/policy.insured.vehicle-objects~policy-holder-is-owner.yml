@@ -1,5 +1,0 @@
-element:
-  type: boolean
-  component: IceButtonToggle
-  viewMode: required
-  defaultValue: true

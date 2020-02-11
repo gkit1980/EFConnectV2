@@ -1,0 +1,12 @@
+element:
+  type: date
+  viewMode:
+    ConditionalViewModeRule:
+      conditionValue: owner
+      conditionViewMode: required
+      elseViewMode: hidden
+      conditionElement: policy.insured.vehicle-objects~owner.options
+  component:
+    StaticComponentRule:
+      component:
+        IceDatepicker: {}

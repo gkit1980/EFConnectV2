@@ -8,7 +8,5 @@ element:
   viewMode:
     StaticViewModeRule:
       viewMode: output
-  pages:
-    1.quote.covers:
-      label:
-        NoLabelRule: {}
+  label:
+    NoLabelRule: {}

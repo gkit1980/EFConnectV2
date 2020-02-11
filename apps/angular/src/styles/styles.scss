@@ -103,6 +103,12 @@
     }
   }
 }
+.small-title {
+  h2 {
+    font-size: 16px;
+    font-weight: normal;
+  }
+}
 
 .button-width-100 {
   div.mat-flat-button.mat-primary {
@@ -129,4 +135,15 @@
 
 .margin-0 {
   margin: 0px !important;
+}
+
+.section-subgroup mat-label {
+  font-family: 'Roboto Medium', 'Roboto Regular', 'Roboto';
+  font-weight: 500;
+  font-style: normal;
+  font-size: 18px;
+  letter-spacing: 0.15px;
+  color: #282828;
+  text-align: left;
+  line-height: 24px;
 }

@@ -3,4 +3,4 @@ element:
   type: text
   viewMode:
     DtViewModeRule:
-      dt: policy.insured.object.car.owner.address.viewmode
+      dt: policy.insured.vehicle-objects~owner.address.city.viewmode

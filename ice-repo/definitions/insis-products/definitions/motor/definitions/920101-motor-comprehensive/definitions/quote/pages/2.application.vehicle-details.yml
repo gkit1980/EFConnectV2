@@ -1,17 +1,93 @@
 page:
+  component: TwoLevelStepperNavigationPage
   validation:
     onElementComponentChange: true
     behaviour: forward
     showMessages: none
     showGrowl: false
     showElementValidation: true
-  component: TwoLevelStepperNavigationPage
   label:
     ResourcePageLabelRule:
-      navigationTitleKey: pages.1.quote.car-details.title
-      pageTitleKey: pages.1.quote.car-details.title
-      shortTitleKey: pages.1.quote.car-details.title
+      navigationTitleKey: pages.2.application.vehicle-details.title
+      pageTitleKey: pages.2.application.vehicle-details.title
+      shortTitleKey: pages.2.application.vehicle-details.title
   sections:
+    - css: small-title
+      label:
+        ResourceSectionLabelRule:
+          labelKey: pages.2.application.vehicle-details.section-title
+      component:
+        IceArrayFlexSection:
+          css: main-side
+          arrayElement: policy.insured.vehicle-objects
+          behaviourForEmptyRows: hidden
+          grid:
+            rows:
+              - gap: 30px
+                gap.xs: 0px
+                cols:
+                  - size: 190px
+                    size.xs: 100%
+                    css: u-mb-4 section-subgroup
+                    elements:
+                      - name: policy.insured.vehicle-objects~owner.options.title
+              - gap: 30px
+                gap.xs: 0px
+                cols:
+                  - size: 190px
+                    size.xs: 100%
+                    css: u-mb-4 section-subgroup
+                    elements:
+                      - name: policy.insured.vehicle-objects~owner.options
+              - gap: 30px
+                gap.xs: 0px
+                align: start
+                css: u-mt-4
+                cols:
+                  - size: 410px
+                    size.xs: 100%
+                    css: u-mb-4
+                    elements:
+                      - name: policy.insured.vehicle-objects~owner.lessor-name
+              - gap: 30px
+                gap.xs: 0px
+                align: start
+                css: u-mt-4
+                cols:
+                  - size: 190px
+                    size.xs: 100%
+                    css: u-mb-4
+                    elements:
+                      - name: policy.insured.vehicle-objects~owner.first-name
+                  - size: 190px
+                    size.xs: 100%
+                    elements:
+                      - name: policy.insured.vehicle-objects~owner.last-name
+              - gap: 30px
+                gap.xs: 0px
+                align: start
+                css: u-mt-4
+                cols:
+                  - size: 190px
+                    size.xs: 100%
+                    css: u-mb-4
+                    elements:
+                      - name: policy.insured.vehicle-objects~owner.address.city
+                  - size: 190px
+                    size.xs: 100%
+                    css: u-mb-4
+                    elements:
+                      - name: policy.insured.vehicle-objects~owner.address.zip
+              - gap: 30px
+                gap.xs: 0px
+                align: start
+                css: u-mt-4
+                cols:
+                  - size: 190px
+                    size.xs: 100%
+                    css: u-mb-4
+                    elements:
+                      - name: policy.insured.vehicle-objects~owner.birthdate
     - component:
         IceArrayFlexSection:
           arrayElement: policy.insured.vehicle-objects
