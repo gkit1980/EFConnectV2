@@ -127,7 +127,6 @@ page:
                     size.xs: 100%
                     elements:
                       - name: continue
-                css: mat-flat-button mat-primary button-white
                 align: space-between
                 layout.xs: column
                 gap: 10px
@@ -165,7 +164,7 @@ page:
                     size.xs: 100%
                     elements:
                       - name: policy.insured.premium.title
-                css: mat-headline margin-0
+                css: mat-headline u-m-0
                 align: center
                 layout.xs: column
                 gap: 10px

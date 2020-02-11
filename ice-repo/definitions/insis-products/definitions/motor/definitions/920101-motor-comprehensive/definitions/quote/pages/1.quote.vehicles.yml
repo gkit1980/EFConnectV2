@@ -13,9 +13,9 @@ page:
           grid:
             rows:
               - cols:
-                  - size: 20%
+                  - size: 100%
                     size.xs: auto
-                    css: u-mb-4
+                    css: u-mb-4 radio-group-list
                     elements:
                       - name: policy.insured.vehicle-objects~car.method-of-entry
 

@@ -100,10 +100,9 @@
     }
   }
 
-  @include respond-to('xs') {
-    .mat-radio-label {
-      white-space: normal;
-    }
+  .mat-radio-label {
+    white-space: normal;
+    line-height: 1.1;
   }
 
   .mat-radio-label-content {
@@ -130,10 +129,9 @@
     margin-right: 20px;
   }
 
-  @include respond-to('xs') {
-    .mat-checkbox-label {
-      white-space: normal;
-    }
+  .mat-checkbox-label {
+    white-space: normal;
+    line-height: 1.1;
   }
 
   .mat-checkbox-inner-container {
@@ -253,5 +251,4 @@
       height: 24px;
     }
   }
-
 }

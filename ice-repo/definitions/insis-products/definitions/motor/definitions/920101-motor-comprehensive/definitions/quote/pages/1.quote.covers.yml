@@ -104,12 +104,11 @@ page:
                     size.xs: 100%
                     elements:
                       - name: continue
-                css: mat-flat-button mat-primary button-white
                 align: space-between
                 layout.xs: column
                 gap: 10px
                 gap.xs: 10px
-      css: button-width-100 margin-bottom-10
+      css: button-width-100 u-mb-3
     - component:
         IceFlexSection:
           tags:
@@ -145,12 +144,12 @@ page:
                     css: text-align-left
                     elements:
                       - name: policy.insured.premium.title
-                css: mat-headline margin-0
+                css: mat-headline u-m-0
                 align: center
                 layout.xs: row
                 gap: 10px
                 gap.xs: 10px
-      css: card margin-bottom-10
+      css: card u-mb-3
   label:
     ResourcePageLabelRule:
       navigationTitleKey: pages.1.quote.covers.title

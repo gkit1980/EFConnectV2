@@ -111,9 +111,6 @@
 }
 
 .button-width-100 {
-  div.mat-flat-button.mat-primary {
-    padding: 0px;
-  }
   button {
     width: 100%;
   }
@@ -131,19 +128,6 @@
   text-align: left;
 }
 
-.button-white {
-  button {
-    color: white !important;
-  }
-}
-
-.margin-0 {
-  margin: 0px !important;
-}
-.margin-bottom-10 {
-  margin-bottom: 10px !important;
-}
-
 .section-subgroup mat-label {
   font-family: "Roboto Medium", "Roboto Regular", "Roboto";
   font-weight: 500;
@@ -153,4 +137,10 @@
   color: #282828;
   text-align: left;
   line-height: 24px;
+}
+
+.radio-group-list {
+  mat-radio-button {
+    width: 100%;
+  }
 }
