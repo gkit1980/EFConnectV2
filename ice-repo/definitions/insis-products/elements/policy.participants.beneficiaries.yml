@@ -1,0 +1,9 @@
+element:
+  title: List of beneficiaries
+  type: array
+  array:
+    StaticArrayRule:
+      default: '1'
+      min: '1'
+  component: IceArray
+  label: null

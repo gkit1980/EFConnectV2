@@ -1,0 +1,9 @@
+element:
+  title: gender of beneficiary
+  type: text
+  viewMode: required
+  component: IceButtonToggle
+  label:
+    ResourceLabelRule:
+      key: insis-common.gender.label
+  values: insis.gender

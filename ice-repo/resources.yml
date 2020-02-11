@@ -10,7 +10,7 @@ entries:
     previous-insurer:
       label:
         - en: Previous insurer
-          de: Previous insurer      
+          de: Previous insurer
     continue:
       label:
         - en: continue
@@ -45,6 +45,22 @@ entries:
           - en: Submit
             de: null
     policy:
+      participants:
+        beneficiaries:
+          items:
+            person:
+              first-name:
+                label:
+                  - en: First name
+                    de: null
+              last-name:
+                label:
+                  - en: Last name
+                    de: null
+            title:
+              label:
+                - en: Beneficiary
+                  de: null
       insured:
         currency:
           label:

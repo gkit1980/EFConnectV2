@@ -88,12 +88,27 @@ page:
                     css: u-mb-4
                     elements:
                       - name: policy.insured.vehicle-objects~owner.birthdate
-    - component:
-        IceArrayFlexSection:
-          arrayElement: policy.insured.vehicle-objects
-          css: main-side
-          grid:
-            rows:
+              - cols:
+                  - size: auto
+                    size.xs: 100%
+                    css: section-title
+                    elements:
+                      - name: policy.participants.beneficiaries~title
+              - gap: 30px
+                gap.xs: 0px
+                align: start
+                css: u-mt-4
+                cols:
+                  - size: 190px
+                    size.xs: 100%
+                    css: u-mb-4
+                    elements:
+                      - name: policy.participants.beneficiaries~person.first-name
+                  - size: 190px
+                    size.xs: 100%
+                    css: u-mb-4
+                    elements:
+                      - name: policy.participants.beneficiaries~person.last-name
               - gap: 30px
                 gap.xs: 0px
                 cols:

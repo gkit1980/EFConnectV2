@@ -1,31 +1,31 @@
 // Import bootstrap as a single file - ideally, we would import parts only and in between, override bootstrap variables
-@import '../../../../node_modules/bootstrap/scss/bootstrap-grid';
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import "../../../../node_modules/bootstrap/scss/bootstrap-grid";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 // Internal imports
-@import 'variables';
-@import 'mixins';
-@import 'reset';
-@import 'utilities';
+@import "variables";
+@import "mixins";
+@import "reset";
+@import "utilities";
 
 /**
  * TIP: We need to import the themes.scss in order to force its logic execution. Which is in fact
  * logic needed for generating Angular Material Themes.
  */
-@import 'themes/themes';
+@import "themes/themes";
 
 /**
  * TIP: You will need to import here only the themes you plan to use inside your application.
  */
-@import 'themes/defualt/default-theme';
-@import 'themes/christmas/christmas-theme';
+@import "themes/defualt/default-theme";
+@import "themes/christmas/christmas-theme";
 
 .container {
   width: 100%;
   max-width: 1328px; // 1280 max width + padding 24px
   padding: 16px;
 
-  @include respond-from('md') {
+  @include respond-from("md") {
     padding: 24px;
   }
 }
@@ -94,11 +94,11 @@
   &.main-side {
     width: 100%;
 
-    @include respond-from('sm') {
+    @include respond-from("sm") {
       max-width: 470px;
     }
 
-    @include respond-from('md') {
+    @include respond-from("md") {
       max-width: 794px;
     }
   }
@@ -145,7 +145,7 @@
 }
 
 .section-subgroup mat-label {
-  font-family: 'Roboto Medium', 'Roboto Regular', 'Roboto';
+  font-family: "Roboto Medium", "Roboto Regular", "Roboto";
   font-weight: 500;
   font-style: normal;
   font-size: 18px;

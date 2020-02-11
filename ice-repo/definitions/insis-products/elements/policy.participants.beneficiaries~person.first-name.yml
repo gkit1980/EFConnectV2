@@ -1,0 +1,9 @@
+element:
+  title: first name of beneficiary
+  type: text
+  viewMode:
+    DtViewModeRule:
+      dt: policy.participants.beneficiaries.viewmode
+  defaultValue:
+    PrincipalDataValueRule:
+      path: firstName
