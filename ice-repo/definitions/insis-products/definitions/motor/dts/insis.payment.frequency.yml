@@ -16,8 +16,8 @@ dt:
     - inputs:
         - 1
       outputs:
-        - monthly
-        - monatlich
+        - Single payment
+        - Einmalzahlung
         - 12
     - inputs:
         - 3
@@ -28,8 +28,8 @@ dt:
     - inputs:
         - 3
       outputs:
-        - quarterly
-        - vierteljährlich
+        - Single payment
+        - Einmalzahlung
         - 4
     - inputs:
         - 6
@@ -46,8 +46,8 @@ dt:
     - inputs:
         - 6
       outputs:
-        - semiannually
-        - halbjährlich
+        - Single payment
+        - Einmalzahlung
         - 2
     - inputs:
         - 12
@@ -70,8 +70,8 @@ dt:
     - inputs:
         - 12
       outputs:
-        - annually
-        - jährlich
+        - Single payment
+        - Einmalzahlung
         - 1
     - inputs:
         - null
