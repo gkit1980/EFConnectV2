@@ -73,8 +73,6 @@
 
 .ice-flex-section,
 .ice-array-flex-section {
-  @extend .u-mb-6;
-
   &.card {
     @extend .u-p-4;
     border-radius: 4px;

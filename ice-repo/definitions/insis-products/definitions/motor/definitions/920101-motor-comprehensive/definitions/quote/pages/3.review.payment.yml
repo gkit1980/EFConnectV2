@@ -11,3 +11,79 @@ page:
       navigationTitleKey: pages.3.review.payment.title
       pageTitleKey: pages.3.review.payment.title
       shortTitleKey: pages.3.review.payment.title
+  sections:
+    - component:
+        IceFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: 40%
+                    size.xs: auto
+                    size.sm: auto
+                    css: u-mt-6
+                    elements:
+                      - name: policy.participants.payor.iban
+              - cols:
+                  - size: 280px
+                    size.xs: auto
+                    size.sm: 280px
+                    elements:
+                      - name: policy.is-user-bank-account-holder
+      css: u-mb-1
+    - component:
+        IceFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: bank-holder-details-title
+                    css: u-mt-3
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: >-
+                          policy.participants.payor.agreed-on-terms-and-conditions
+                    css: u-mt-3
+              - cols:
+                  - size: 20%
+                    size.xs: auto
+                    size.sm: auto
+                    css: u-mt-5
+                    elements:
+                      - name: policy.participants.payor.first-name
+                  - size: 20%
+                    size.xs: auto
+                    size.sm: auto
+                    css: u-mt-5
+                    elements:
+                      - name: policy.participants.payor.last-name
+                gap: 24px
+              - cols:
+                  - size: 20%
+                    size.xs: auto
+                    size.sm: auto
+                    css: u-mt-5
+                    elements:
+                      - name: policy.participants.payor.city
+                  - size: 10%
+                    size.xs: auto
+                    size.sm: auto
+                    css: u-mt-5
+                    elements:
+                      - name: policy.participants.payor.zip
+                gap: 24px
+              - cols:
+                  - size: 20%
+                    size.xs: auto
+                    size.sm: auto
+                    css: u-mt-5
+                    elements:
+                      - name: policy.participants.payor.birthdate
+          viewMode:
+            ConditionalSectionViewModeRule:
+              dt: policy.bank-account-holder-details-viewmode-dt

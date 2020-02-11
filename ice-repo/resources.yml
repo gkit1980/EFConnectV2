@@ -45,22 +45,6 @@ entries:
           - en: Submit
             de: null
     policy:
-      participants:
-        beneficiaries:
-          items:
-            person:
-              first-name:
-                label:
-                  - en: First name
-                    de: null
-              last-name:
-                label:
-                  - en: Last name
-                    de: null
-            title:
-              label:
-                - en: Beneficiary
-                  de: null
       insured:
         currency:
           label:
@@ -253,6 +237,55 @@ entries:
             label:
               - en: Insurance duration
                 de: Insurance duration
+      participants:
+        beneficiaries:
+          items:
+            person:
+              first-name:
+                label:
+                  - en: First name
+                    de: null
+              last-name:
+                label:
+                  - en: Last name
+                    de: null
+            title:
+              label:
+                - en: Beneficiary
+                  de: null
+        payor:
+          agreed-on-terms-and-conditions:
+            label:
+              - en: >-
+                  The owner agrees to use this account for the purposes of this
+                  insurance policy
+                de: >-
+                  The owner agrees to use this account for the purposes of this
+                  insurance policy
+          birthdate:
+            label:
+              - en: DD/MM/YYYY
+                de: DD/MM/YYYY
+          city:
+            label:
+              - en: City
+                de: City
+          first-name:
+            label:
+              - en: First name
+                de: First name
+          iban:
+            label:
+              - en: IBAN
+                de: IBAN
+          last-name:
+            label:
+              - en: Last name
+                de: Last name
+          zip:
+            label:
+              - en: ZIP
+                de: ZIP
     buy-insurance:
       label:
         - en: Buy insurance
@@ -280,6 +313,10 @@ entries:
             de: >-
               I declare that the information provided by me in this insurance
               application is true and complete
+    bank-holder-details-title:
+      label:
+        - en: Bank account holder details
+          de: Angaben zum Kontoinhaber
     buy-insurance-description:
       label:
         - en: >-

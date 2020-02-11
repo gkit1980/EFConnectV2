@@ -1,0 +1,16 @@
+list:
+  items:
+    - value: 'true'
+      label_de: I am the bank account holder
+      label_en: I am the bank account holder
+    - value: 'false'
+      label_de: I am not the bank account holder
+      label_en: I am not the bank account holder
+  type: boolean
+  additionals:
+    label_de:
+      label: label_de
+      type: text
+    label_en:
+      label: label_en
+      type: text

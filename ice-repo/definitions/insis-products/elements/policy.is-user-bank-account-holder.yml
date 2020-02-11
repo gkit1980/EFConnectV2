@@ -1,0 +1,9 @@
+element:
+  type: boolean
+  component: IceRadiobuttonGroup
+  values:
+    ListValuesRule:
+      list: policy.is-user-bank-account-holder
+  defaultValue:
+    StaticValueRule:
+      value: true
