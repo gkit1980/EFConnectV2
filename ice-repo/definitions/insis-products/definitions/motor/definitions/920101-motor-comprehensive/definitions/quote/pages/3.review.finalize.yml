@@ -40,7 +40,7 @@ page:
                     size.sm: auto
                     elements:
                       - name: terms-and-conditions.truthy-and-valid-information
-                gapundefined: 10px
+                gap: 10px
                 css: u-mb-3
               - cols:
                   - size: auto
@@ -48,7 +48,40 @@ page:
                     size.sm: auto
                     elements:
                       - name: terms-and-conditions.access-personal-information
-                gapundefined: 10px
+                gap: 10px
                 css: u-mb-3
           behaviourForEmptyRows: render
       viewMode: required
+    - component:
+        IceFlexSection:
+          tags:
+            - pull-right
+          grid:
+            rows:
+              - cols:
+                  - size: 100%
+                    size.xs: 100%
+                    elements:
+                      - name: buy-insurance
+                css: mat-flat-button mat-primary button-white
+                align: space-between
+                layout.xs: column
+                gap: 10px
+                gap.xs: 16px
+      css: main-side button-width-100
+    - component:
+        IceFlexSection:
+          tags:
+            - pull-right
+          grid:
+            rows:
+              - cols:
+                  - size: 100%
+                    size.xs: 100%
+                    elements:
+                      - name: buy-insurance-description
+                align: space-between
+                layout.xs: column
+                gap: 10px
+                gap.xs: 16px
+      css: main-side text-align-center disabled-text

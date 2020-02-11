@@ -17,6 +17,12 @@
   $borderInputColor: get-color($theme, 'border-input');
   $borderColor: get-color($theme, 'border');
   $textColor: get-color($theme, 'text');
+  $textDisabledColor: get-color($theme, text-disabled);
+
+
+  .disabled-text {
+    color: $textDisabledColor;
+  }
 
   /* TOGGLE */
   .mat-slide-toggle {

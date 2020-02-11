@@ -237,6 +237,10 @@ entries:
             label:
               - en: Insurance duration
                 de: Insurance duration
+    buy-insurance:
+      label:
+        - en: Buy insurance
+          de: Versicherung kaufen
     terms-and-conditions:
       description:
         label:
@@ -260,6 +264,14 @@ entries:
             de: >-
               I declare that the information provided by me in this insurance
               application is true and complete
+    buy-insurance-description:
+      label:
+        - en: >-
+            Upon clicking this button the policy will be issued and the provided
+            bank account will be debited as per the selected preferences.
+          de: >-
+            Upon clicking this button the policy will be issued and the provided
+            bank account will be debited as per the selected preferences.
   validation:
     pageValidation:
       summary:
