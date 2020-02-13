@@ -1,0 +1,60 @@
+integration:
+  exchange:
+    SoapCallExchangeRule:
+      endpoint: insis_generic_endpoint
+      securityMode: UsernamePassword
+      username: 'env:insis-username'
+      password: 'env:insis-password'
+      ignoreNamespaces: 'env:insis-ignoreNamespaces'
+      soapAction: paginatedQuery
+      requestType: PaginatedQueryRqType
+      jsonSchema: Insis_GenericWS
+  transformation:
+    InsisPaginatedQueryTransformation:
+      queryId: POLICIES
+      additional: insis
+      out:
+        - mappings:
+            - param: soapAction
+              value: paginatedQuery
+            - param: requestType
+              value: PaginatedQueryRqType
+        - toIdx: 0
+          mappings:
+            - value: PID
+              payload: 'FilterCriteria.FilterCriterion[n].field'
+            - value: EQ
+              payload: 'FilterCriteria.FilterCriterion[n].operation'
+            - principal: pid
+              payload: 'FilterCriteria.FilterCriterion[n].value'
+      in:
+        - fromIdx:
+            array: payload.RowSet.Row
+          toIdx:
+            array: datamodel.policies
+            append: true
+          mappings:
+            - payload: 'RowSet.Row[n].INSR_TYPE'
+              element: policies~insurance-type
+            - payload: 'RowSet.Row[n].INSURANCE_BEGIN'
+              element: policies~insurance-begin
+            - payload: 'RowSet.Row[n].INSURANCE_END'
+              element: policies~insurance-end
+            - payload: 'RowSet.Row[n].POLICY_ID'
+              element: policies~policy-id
+            - payload: 'RowSet.Row[n].POLICY_NO'
+              element: policies~policy-number
+            - payload: 'RowSet.Row[n].POLICY_STATE'
+              element: policies~policy-state
+            - payload: 'RowSet.Row[n].POLICY_STATE_NAME'
+              element: policies~policy-state-name
+            - payload: 'RowSet.Row[n].PREMIUM'
+              element: policies~premium
+            - payload: 'RowSet.Row[n].CURRENCY'
+              element: policies~currency
+            - payload: 'RowSet.Row[n].PRODUCT_NAME'
+              element: policies~product-name
+            - value: cancel-quote
+              element: policies~cancel-quote
+            - value: continue-policy
+              element: policies~continue

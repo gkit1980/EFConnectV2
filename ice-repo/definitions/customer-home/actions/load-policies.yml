@@ -1,0 +1,12 @@
+action:
+  execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - policies
+    - IntegrationExecutionRule:
+        integration: load-policies
+  trigger:
+    - PageTriggerRule:
+        enter:
+          - home
+    - DynIdChangeTriggerRule: {}

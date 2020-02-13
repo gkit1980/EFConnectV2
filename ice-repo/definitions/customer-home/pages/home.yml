@@ -1,0 +1,39 @@
+page:
+  validation: {}
+  component: OnePage
+  sections:
+    - component:
+        IceArrayFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    elements:
+                      - name: policies~product-name
+                  - size: auto
+                    size.xs: auto
+                    elements:
+                      - name: policies~policy-number
+                  - size: auto
+                    size.xs: auto
+                    elements:
+                      - name: policies~premium
+                  - size: auto
+                    size.xs: auto
+                    elements:
+                      - name: policies~policy-state-name
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: policies~continue
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: policies~cancel-quote
+                css: margin-bottom-10
+          arrayElement: policies
+      title: Quotes in Progress
+      labelKey: lists.gender.diverse

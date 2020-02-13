@@ -1,0 +1,5 @@
+element:
+  type: array
+  viewMode: default
+  label:
+    NoLabelRule: {}

@@ -1,0 +1,13 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          variant: flat
+  defaultValue:
+    StaticValueRule:
+      value: cancel-quote
+  viewMode:
+    DtViewModeRule:
+      dt: cancel-policy

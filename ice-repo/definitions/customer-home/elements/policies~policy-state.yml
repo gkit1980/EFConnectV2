@@ -1,0 +1,4 @@
+element:
+  type: integer
+  component: IceDropdown
+  viewMode: default

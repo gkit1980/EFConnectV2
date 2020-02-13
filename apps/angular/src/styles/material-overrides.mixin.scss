@@ -6,6 +6,9 @@
 @mixin ice-array-mixin($theme) {
 }
 
+@mixin ice-button-mixin($theme) {
+}
+
 @mixin material-override-mixin($theme) {
   @include ice-checkbox-mixin($theme); // remove styles from NG-ICE
   @include ice-array-mixin($theme);

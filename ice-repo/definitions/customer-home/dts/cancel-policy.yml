@@ -1,0 +1,16 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policies~policy-state
+  outputs:
+    - id: output
+      type: string
+  rules:
+    - inputs:
+        - '>=-3'
+      outputs:
+        - disabled
+    - inputs:
+        - '-'
+      outputs:
+        - default
