@@ -87,3 +87,13 @@ page:
           viewMode:
             ConditionalSectionViewModeRule:
               dt: policy.bank-account-holder-details-viewmode-dt
+    - component:
+        IceFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    css: u-mt-5
+                    elements:
+                      - name: go-to-next-page
