@@ -5,6 +5,12 @@
     .mat-slider {
       display: block;
     }
+
+    .mat-slider-horizontal .mat-slider-wrapper {
+      left: 0;
+      right: 0;
+    }
+
     .mat-slider.mat-slider-horizontal .mat-slider-track-wrapper {
       height: 4px;
     }

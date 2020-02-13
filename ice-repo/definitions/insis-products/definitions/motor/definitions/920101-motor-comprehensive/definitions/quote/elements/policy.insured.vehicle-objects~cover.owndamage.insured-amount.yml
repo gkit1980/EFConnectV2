@@ -1,4 +1,10 @@
 element:
   range:
-    StaticRangeRule:
-      min: '0'
+    FeelExpressionRangeRule:
+      expressionMin: '0'
+      expressionMax: '1000'
+  component:
+    StaticComponentRule:
+      component:
+        IceSlider:
+          appearance: null

@@ -61,18 +61,20 @@ page:
                 align: space-between
                 css: u-mb-4
               - cols:
-                  - size: 35%
+                  - size: 40%
                     size.xs: 100%
-                    css: u-ml-7
+                    css: u-ml-7 u-d-inlineblock slider-mirror-labels
+                    align: center
                     elements:
-                      - name: >-
-                          policy.insured.vehicle-objects~cover.owndamage.deductible
-                  - size: 35%
+                      - name: policy.insured.vehicle-objects~cover.owndamage.deductible
+                      - name: policy.insured.vehicle-objects~cover.owndamage.deductible-mirror
+                  - size: 40%
                     size.xs: 100%
-                    css: u-ml-7
+                    css: u-ml-7 u-d-inlineblock slider-mirror-labels
+                    align: center
                     elements:
-                      - name: >-
-                          policy.insured.vehicle-objects~cover.owndamage.insured-amount
+                      - name: policy.insured.vehicle-objects~cover.owndamage.insured-amount
+                      - name: policy.insured.vehicle-objects~cover.owndamage.insured-amount-mirror
                 css: u-mb-4
               - cols:
                   - size: auto

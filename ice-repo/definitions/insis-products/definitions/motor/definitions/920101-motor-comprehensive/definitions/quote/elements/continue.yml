@@ -8,4 +8,4 @@ element:
           variant: flat
   change:
     - NavigateToPageExecutionRule:
-        direction: next
+        direction: next        

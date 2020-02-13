@@ -88,3 +88,7 @@ $step-size: 4px;
     margin-bottom: $step-size * 4;
   }
 }
+
+.u-d-inlineblock > ice-element > div {
+  display: inline-block;
+}

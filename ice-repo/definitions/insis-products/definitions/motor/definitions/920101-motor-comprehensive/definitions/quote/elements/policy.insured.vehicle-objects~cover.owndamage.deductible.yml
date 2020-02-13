@@ -1,4 +1,6 @@
 element:
-  range:
-    StaticRangeRule:
-      min: '0'
+  component:
+    StaticComponentRule:
+      component: 
+        IceSlider:
+          showTicks: true

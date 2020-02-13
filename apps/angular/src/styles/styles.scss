@@ -142,3 +142,14 @@ mat-radio-button {
   width: 100%;
 }
 
+.slider-mirror-labels {
+  display: flex;
+  align-items: center;
+
+  mat-output {
+    height: 19px;
+    display: inline-block;
+    margin-top: 23px;
+    margin-left: 20px;
+  }
+}
