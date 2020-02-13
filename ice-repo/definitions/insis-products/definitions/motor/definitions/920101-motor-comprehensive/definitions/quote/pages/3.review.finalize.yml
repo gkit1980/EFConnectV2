@@ -63,7 +63,6 @@ page:
                     size.xs: 100%
                     elements:
                       - name: buy-insurance
-                css: mat-flat-button mat-primary button-white
                 align: space-between
                 layout.xs: column
                 gap: 10px

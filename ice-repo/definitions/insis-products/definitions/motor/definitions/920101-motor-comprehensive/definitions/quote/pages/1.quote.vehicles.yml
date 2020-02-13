@@ -15,7 +15,7 @@ page:
               - cols:
                   - size: 100%
                     size.xs: auto
-                    css: u-mb-4 radio-group-list
+                    css: u-mb-4
                     elements:
                       - name: policy.insured.vehicle-objects~car.method-of-entry
 

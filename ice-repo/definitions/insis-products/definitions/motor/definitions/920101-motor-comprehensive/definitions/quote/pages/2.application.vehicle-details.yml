@@ -34,7 +34,7 @@ page:
               - gap: 30px
                 gap.xs: 0px
                 cols:
-                  - size: 190px
+                  - size: 100%
                     size.xs: 100%
                     css: u-mb-4 section-subgroup
                     elements:
@@ -131,7 +131,7 @@ page:
                 layout.xs: column
                 gap: 10px
                 gap.xs: 16px
-      css: main-side button-width-100
+      css: button-width-100
     - component:
         IceFlexSection:
           tags:

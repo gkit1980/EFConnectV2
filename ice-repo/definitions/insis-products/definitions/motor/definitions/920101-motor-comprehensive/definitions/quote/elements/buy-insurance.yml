@@ -1,3 +1,8 @@
 element:
   type: action
-  component: IceButton
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          themeColor: primary
+          variant: flat
