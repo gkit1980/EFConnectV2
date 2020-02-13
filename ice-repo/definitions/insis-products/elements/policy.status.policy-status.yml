@@ -1,5 +1,5 @@
 element:
   title: state of the policy
   type: integer
-  defaultValue: -3
+  defaultValue: -4
   label: null

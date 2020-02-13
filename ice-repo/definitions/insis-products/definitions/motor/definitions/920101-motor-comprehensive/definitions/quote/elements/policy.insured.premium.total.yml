@@ -1,5 +1,6 @@
 element:
-  type: integer
+  type: currency
+  component: IceNumber
   viewMode: output
   label:
     NoLabelRule: {}

@@ -1,7 +1,6 @@
 element:
   title: Premium for contract
   type: currency
-  component: PremiumElement
   defaultValue:
     StaticValueRule:
       value: null

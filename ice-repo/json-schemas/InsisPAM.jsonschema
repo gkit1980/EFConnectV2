@@ -9293,6 +9293,19 @@
                 "coverCode"
             ],
             "properties":{
+                "grcid":{
+                    "title":"grcid",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"GrcID",
+                        "namespaceURI":"http://www.fadata.bg/Insurance_Messages/v3.0/xml/"
+                    }
+                },
                 "coverCode":{
                     "title":"coverCode",
                     "allOf":[
@@ -9586,6 +9599,7 @@
                 "namespaceURI":"http://www.fadata.bg/Insurance_Messages/v3.0/xml/"
             },
             "propertiesOrder":[
+                "grcid",
                 "coverCode",
                 "objectNum",
                 "coverDescription",

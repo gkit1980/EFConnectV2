@@ -12,7 +12,7 @@ integration:
             array: payload.Policy.Insureds.Insured
           toIdx:
             array: datamodel.policy.insured.vehicle-objects
-            append: false
+            append: true
           mappings:
             - element: policy.insured.vehicle-objects~insured-amount
               payload: 'Policy.Insureds.Insured[n].InsuredAmount'
@@ -54,6 +54,8 @@ integration:
               payload: Policy.Insureds.Insured[n].InsuredEntity.OCar.Model
             - element: policy.insured.vehicle-objects~car.type
               payload: Policy.Insureds.Insured[n].InsuredEntity.OCar.CarType
+            - element: policy.insured.vehicle-objects~car.subtype
+              payload: Policy.Insureds.Insured[n].InsuredEntity.OCar.CarSubtype
             - element: policy.insured.vehicle-objects~car.usage
               payload: Policy.Insureds.Insured[n].InsuredEntity.OCar.CarUsage
             - element: policy.insured.vehicle-objects~car.seats-number

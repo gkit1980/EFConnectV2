@@ -6,19 +6,20 @@ integration:
       username: 'env:insis-username'
       password: 'env:insis-password'
       ignoreNamespaces: 'env:insis-ignoreNamespaces'
-      soapAction: registerQuotation
-      requestType: RegsrApplRqType
+      soapAction: modifyEngagementQuote
+      requestType: ModifyEngagementQuoteRqType
+      responseType: ModifyEngagementQuoteRsType
       jsonSchema: InsisPAM
   transformation:
     DefaultTransformationRule:
       additional: insis
       dateFormat: YYYY-MM-DD
       dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
-      extends: 920101.motor.insis-policy.save
+      extends: 920101.motor.insis-engagement-quote.save
       in: {}
       out:
         - mappings:
             - param: soapAction
-              value: registerQuotation
+              value: modifyEngagementQuote
             - param: requestType
-              value: RegsrApplRqType
+              value: ModifyEngagementQuoteRqType

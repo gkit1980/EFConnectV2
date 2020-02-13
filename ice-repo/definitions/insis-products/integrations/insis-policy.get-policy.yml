@@ -44,12 +44,6 @@ integration:
             - element: policy.insured.currency
               payload: 'Policy.Insureds.Insured[n].Currency'
         - fromIdx:
-            array: payload.Policy.InsuranceConditions.Billings.Billing
-            index: 0
-          mappings:
-            - element: policy.contract.payment.day
-              payload: 'Policy.InsuranceConditions.Billings.Billing[n].PayDueDate'
-        - fromIdx:
             array: payload.Policy.InsuranceConditions.Taxes.Tax
             index: 0
           mappings:

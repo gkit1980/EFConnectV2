@@ -6,3 +6,4 @@ element:
       conditionValue: true
       conditionViewMode: required
       elseViewMode: hidden
+  defaultValue: 0

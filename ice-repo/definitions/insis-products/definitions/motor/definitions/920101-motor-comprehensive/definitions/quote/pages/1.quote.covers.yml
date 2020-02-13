@@ -16,6 +16,13 @@ page:
                     size.xs: 100%
                     css: u-mb-4
                     elements:
+                      - name: quote.calculate
+                      - name: quote.recalculate
+              - cols:
+                  - size: 190px
+                    size.xs: 100%
+                    css: u-mb-4-sm
+                    elements:
                       - name: policy.contract.begin
                   - size: 190px
                     size.xs: 100%
@@ -139,7 +146,7 @@ page:
                     size.sm: auto
                     css: text-align-right
                     elements:
-                      - name: policy.insured.total-premium.amount
+                      - name: policy.insured.premium.total
                   - size: auto
                     size.xs: auto
                     size.sm: auto

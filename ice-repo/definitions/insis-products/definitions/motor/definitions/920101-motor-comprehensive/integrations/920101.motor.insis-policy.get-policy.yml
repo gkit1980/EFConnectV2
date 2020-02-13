@@ -1,0 +1,147 @@
+integration:
+  exchange: {}
+  transformation:
+    DefaultTransformationRule:
+      additional: insis
+      dateFormat: YYYY-MM-DD
+      dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
+      extends: motor.insis-policy.get-policy
+      out: {}
+      in:
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+          toIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            condition: 1 == 1
+          mappings:
+            - element: policy.insured.vehicle-objects~entity-type
+              payload: Policy.Insureds.Insured[n].InsuredEntity.ObjectType
+            - element: policy.insured.vehicle-objects~car.transportation-of-hazardous-goods-fieldname
+              payload: 'Policy.Insureds.Insured[n].InsuredEntity.OCar.CustomProperties.CustomProperty[0].FieldName'
+            - element: policy.insured.vehicle-objects~car.transportation-of-hazardous-goods
+              payload: 'Policy.Insureds.Insured[n].InsuredEntity.OCar.CustomProperties.CustomProperty[0].Value'
+            - element: policy.insured.vehicle-objects~cover.mtpl.active
+              value: false
+            - element: policy.insured.vehicle-objects~cover.owndamage.active
+              value: false
+            - element: policy.insured.vehicle-objects~cover.pa.active
+              value: false
+            - element: policy.insured.vehicle-objects~cover.road_assis.active
+              value: false
+            - element: policy.insured.vehicle-objects~cover.vandalism.active
+              value: false
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+            fromIdx:
+              array: Covers.Cover
+              condition: CoverCode == 'MTPL'
+          toIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            condition: 1 == 1
+          mappings:
+            - element: policy.insured.vehicle-objects~cover.mtpl.active
+              value: true
+            - element: policy.insured.vehicle-objects~cover.mtpl.grc-id
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].GrcID'
+            - element: policy.insured.vehicle-objects~cover.mtpl.annex-id
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].AnnexID'
+            - element: policy.insured.vehicle-objects~cover.mtpl.code
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].CoverCode'
+            - element: policy.insured.vehicle-objects~cover.mtpl.currency
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Currency'
+            - element: policy.insured.vehicle-objects~cover.mtpl.insured-amount
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
+            - element: policy.insured.vehicle-objects~cover.mtpl.premium
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Premium.TotalAmount'
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+            fromIdx:
+              array: Covers.Cover
+              condition: CoverCode == 'OWNDAMAGE'
+          toIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            condition: 1 == 1
+          mappings:
+            - element: policy.insured.vehicle-objects~cover.owndamage.active
+              value: true
+            - element: policy.insured.vehicle-objects~cover.owndamage.grc-id
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].GrcID'
+            - element: policy.insured.vehicle-objects~cover.owndamage.annex-id
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].AnnexID'
+            - element: policy.insured.vehicle-objects~cover.owndamage.code
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].CoverCode'
+            - element: policy.insured.vehicle-objects~cover.owndamage.currency
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Currency'
+            - element: policy.insured.vehicle-objects~cover.owndamage.insured-amount
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
+            - element: policy.insured.vehicle-objects~cover.owndamage.premium
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Premium.TotalAmount'
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+            fromIdx:
+              array: Covers.Cover
+              condition: CoverCode == 'PA'
+          toIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            condition: 1 == 1
+          mappings:
+            - element: policy.insured.vehicle-objects~cover.pa.active
+              value: true
+            - element: policy.insured.vehicle-objects~cover.pa.grc-id
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].GrcID'
+            - element: policy.insured.vehicle-objects~cover.pa.annex-id
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].AnnexID'
+            - element: policy.insured.vehicle-objects~cover.pa.code
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].CoverCode'
+            - element: policy.insured.vehicle-objects~cover.pa.currency
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Currency'
+            - element: policy.insured.vehicle-objects~cover.pa.insured-amount
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
+            - element: policy.insured.vehicle-objects~cover.pa.premium
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Premium.TotalAmount'
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+            fromIdx:
+              array: Covers.Cover
+              condition: CoverCode == 'ROAD_ASSIS'
+          toIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            condition: 1 == 1
+          mappings:
+            - element: policy.insured.vehicle-objects~cover.road_assis.active
+              value: true
+            - element: policy.insured.vehicle-objects~cover.road_assis.grc-id
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].GrcID'
+            - element: policy.insured.vehicle-objects~cover.road_assis.annex-id
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].AnnexID'
+            - element: policy.insured.vehicle-objects~cover.road_assis.code
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].CoverCode'
+            - element: policy.insured.vehicle-objects~cover.road_assis.currency
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Currency'
+            - element: policy.insured.vehicle-objects~cover.road_assis.insured-amount
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
+            - element: policy.insured.vehicle-objects~cover.road_assis.premium
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Premium.TotalAmount'
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+            fromIdx:
+              array: Covers.Cover
+              condition: CoverCode == 'VANDALISM'
+          toIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            condition: 1 == 1
+          mappings:
+            - element: policy.insured.vehicle-objects~cover.vandalism.active
+              value: true
+            - element: policy.insured.vehicle-objects~cover.vandalism.grc-id
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].GrcID'
+            - element: policy.insured.vehicle-objects~cover.vandalism.annex-id
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].AnnexID'
+            - element: policy.insured.vehicle-objects~cover.vandalism.code
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].CoverCode'
+            - element: policy.insured.vehicle-objects~cover.vandalism.currency
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Currency'
+            - element: policy.insured.vehicle-objects~cover.vandalism.insured-amount
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
+            - element: policy.insured.vehicle-objects~cover.vandalism.premium
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Premium.TotalAmount'

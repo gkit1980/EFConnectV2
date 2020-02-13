@@ -1,0 +1,25 @@
+integration:
+  exchange:
+    SoapCallExchangeRule:
+      endpoint: insis_pam_endpoint
+      securityMode: UsernamePassword
+      username: 'env:insis-username'
+      password: 'env:insis-password'
+      ignoreNamespaces: 'env:insis-ignoreNamespaces'
+      soapAction: modifyApplication
+      requestType: ModifyApplRqType
+      responseType: ModifyApplRsType
+      jsonSchema: InsisPAM
+  transformation:
+    DefaultTransformationRule:
+      additional: insis
+      dateFormat: YYYY-MM-DD
+      dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
+      extends: 920101.motor.insis-policy.save
+      in: {}
+      out:
+        - mappings:
+            - param: soapAction
+              value: modifyApplication
+            - param: requestType
+              value: ModifyApplRqType

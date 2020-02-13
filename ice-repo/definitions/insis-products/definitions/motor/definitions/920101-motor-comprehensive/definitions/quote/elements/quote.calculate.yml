@@ -1,0 +1,7 @@
+element:
+  type: action
+  component: IceButton
+  defaultValue: quote.calculate.premiums
+  viewMode:
+    DtViewModeRule:
+      dt: insis.viewmode.calculate.quote

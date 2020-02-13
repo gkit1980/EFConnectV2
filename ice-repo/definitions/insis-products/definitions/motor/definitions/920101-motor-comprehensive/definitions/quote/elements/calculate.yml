@@ -1,4 +1,0 @@
-element:
-  type: action
-  component: IceButton
-  defaultValue: calculate-premiums

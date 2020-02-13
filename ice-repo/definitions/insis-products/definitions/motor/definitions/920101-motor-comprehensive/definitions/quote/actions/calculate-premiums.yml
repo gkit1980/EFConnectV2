@@ -1,8 +1,0 @@
-action:
-  title: calls the quick quote calculation for insis
-  condition:
-    FeelConditionRule:
-      expression: policy.contract.policy-id = null
-  execution:
-    - IntegrationExecutionRule:
-        integration: 920101.motor.insis-policy.register-quote
