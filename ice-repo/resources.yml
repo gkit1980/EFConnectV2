@@ -218,6 +218,18 @@ entries:
                     label:
                       - en: First name
                         de: Vorname
+                  last-name:
+                    label:
+                      - en: Last name
+                        de: Nachname
+                  date-of-birth:
+                    label:
+                      - en: Birthdate
+                        de: null
+                  driver-license-nb:
+                    label:
+                      - en: Driving license number
+                        de: null
         add-another-vehicle:
           label:
             - en: ADD ANOTHER VEHICLE

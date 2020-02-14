@@ -159,7 +159,7 @@ page:
                     size.xs: 100%
                     css: text-align-right
                     elements:
-                      - name: policy.insured.total-premium.amount
+                      - name: policy.insured.premium.total
                   - size: none
                     size.xs: 100%
                     elements:

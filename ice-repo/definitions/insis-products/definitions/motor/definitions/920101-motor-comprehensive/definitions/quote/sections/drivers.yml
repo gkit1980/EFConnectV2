@@ -6,7 +6,8 @@ section:
       css: main-side
       grid:
         rows:
-          - gap.xs: 30px
+          - gap: 30px
+            gap.xs: 30px
             css: u-mt-4
             cols:
               - size: 190px
