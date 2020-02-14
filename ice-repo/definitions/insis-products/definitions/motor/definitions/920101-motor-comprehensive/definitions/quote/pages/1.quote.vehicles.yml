@@ -123,7 +123,7 @@ page:
                       - name: >-
                           policy.insured.vehicle-objects~car.transportation-of-hazardous-goods
               - gap: 10px
-                css: u-mb-4
+                css: u-mb-3
                 cols:
                   - size: auto
                     size.xs: auto
@@ -176,7 +176,7 @@ page:
                           policy.insured.vehicle-objects~car.additional-equipment-other-included
                   - size: 200px
                     size.xs: 100%
-                    css: u-mb-4
+                    css: u-mb-2
                     elements:
                       - name: >-
                           policy.insured.vehicle-objects~car.additional-equipment-other
@@ -198,6 +198,7 @@ page:
               - cols:
                   - size: auto
                     size.xs: auto
+                    css: u-mt-4
                     elements:
                       - name: go-to-next-page
   label:

@@ -22,7 +22,6 @@
   $textColor: get-color($theme, 'text');
   $textDisabledColor: get-color($theme, text-disabled);
 
-
   .disabled-text {
     color: $textDisabledColor;
   }
@@ -130,19 +129,22 @@
   */
   .mat-checkbox {
     margin-right: 20px;
-  }
-
-  .mat-checkbox-label {
-    white-space: normal;
-    line-height: 1.1;
+    min-height: 20px;
+    display: inline-block;
   }
 
   .mat-checkbox-inner-container {
     margin-right: 0 !important;
   }
 
+  .mat-checkbox-layout {
+    align-items: center;
+  }
+
   .mat-checkbox-label {
     padding-left: 4px !important;
+    white-space: normal;
+    line-height: 1.1;
   }
 
   .mat-checkbox-inner-container {
@@ -173,7 +175,6 @@
   INPUT + DROPDOWN + TEXTAREA
   */
   .mat-form-field {
-    margin-bottom: -9px;
     display: block;
   }
 
@@ -187,6 +188,7 @@
 
   .mat-form-field-appearance-outline .mat-form-field-flex {
     padding: 0 16px;
+    margin-top: 0;
   }
 
   .mat-form-field-appearance-outline .mat-form-field-infix {
@@ -200,10 +202,13 @@
 
   .mat-form-field-subscript-wrapper {
     position: static;
-  }
+    margin-bottom: 0;
+    margin-top: 0;
 
-  .mat-form-field-subscript-wrapper .mat-error {
-    margin-bottom: 5px;
+    .mat-error {
+      margin-bottom: 8px;
+      margin-top: 4px;
+    }
   }
 
   .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
