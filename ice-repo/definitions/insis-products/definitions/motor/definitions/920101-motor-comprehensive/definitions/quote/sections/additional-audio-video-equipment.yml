@@ -1,0 +1,24 @@
+section:
+  viewMode: default
+  component:
+    IceArrayFlexSection:
+      arrayElement: policy.insured.vehicle-objects~car.additional-equipment-audio-video
+      css: main-side
+      grid:
+        rows:
+          - gap: 24px
+            gap.xs: 0px
+            css: u-mt-4
+            cols:
+              - size: 190px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.insured.vehicle-objects~car.additional-equipment-audio-video~name
+              - size: 190px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.insured.vehicle-objects~car.additional-equipment-audio-video~serial-no
+                align: space-between
+                layout.xs: column

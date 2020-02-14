@@ -115,6 +115,7 @@ page:
                   - size: 100%
                     size.xs: 100%
                     sections:
+                      - name: additional-audio-video-equipment
                       - name: drivers
     - component:
         IceFlexSection:

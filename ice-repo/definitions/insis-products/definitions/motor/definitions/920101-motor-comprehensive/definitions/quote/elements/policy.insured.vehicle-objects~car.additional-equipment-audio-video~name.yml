@@ -1,0 +1,14 @@
+element:
+  type: text
+  title: Model
+  component:
+    StaticComponentRule:
+      component:
+        IceTextInput: {}
+  viewMode:
+    ConditionalViewModeRule:
+      conditionValue: 'true'
+      conditionElement: >-
+        policy.insured.vehicle-objects~car.additional-equipment-car-audio-included
+      conditionViewMode: required
+      elseViewMode: hidden
