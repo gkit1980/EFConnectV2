@@ -6,8 +6,8 @@ section:
       css: main-side
       grid:
         rows:
-          - gap: 30px
-            gap.xs: 30px
+          - gap: 24px
+            gap.xs: 0
             css: u-mt-4
             cols:
               - size: 190px
@@ -20,19 +20,21 @@ section:
                 css: u-mb-4
                 elements:
                   - name: policy.insured.vehicle-objects~drivers~person.last-name
-          - gap: 30px
+          - gap: 24px
             gap.xs: 0px
             cols:
               - size: 190px
                 size.xs: 100%
                 css: u-mb-4
                 elements:
-                  - name: policy.insured.vehicle-objects~drivers~person.driver-license-nb
-          - gap: 30px
+                  - name: >-
+                      policy.insured.vehicle-objects~drivers~person.driver-license-nb
+          - gap: 24px
             gap.xs: 0px
             cols:
               - size: 190px
                 size.xs: 100%
                 css: u-mb-4
                 elements:
-                  - name: policy.insured.vehicle-objects~drivers~person.date-of-birth
+                  - name: >-
+                      policy.insured.vehicle-objects~drivers~person.date-of-birth

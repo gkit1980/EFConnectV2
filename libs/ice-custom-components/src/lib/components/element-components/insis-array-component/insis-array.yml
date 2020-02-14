@@ -1,0 +1,6 @@
+label: Insis Array
+
+component: InsisArray
+
+types:
+  - array

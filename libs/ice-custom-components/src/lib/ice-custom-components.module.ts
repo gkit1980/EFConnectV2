@@ -7,6 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IceSliderComponent } from './components/element-components/ice-slider-component/ice-slider.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
 
 import { TwoLevelStepperNavigationPageComponent } from './components/page-components/two-level-stepper-navigation-page/two-level-stepper-navigation-page.component';
 import { FormsModule } from '@angular/forms';
@@ -49,6 +50,7 @@ export function registerComponents(componentService: IceComponentsService) {
     MatSliderModule,
     MatFormFieldModule,
     MatInputModule,
+    MatButtonModule,
     FlexLayoutModule
   ],
 

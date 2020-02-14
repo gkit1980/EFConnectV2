@@ -9,9 +9,9 @@
   <div *ngFor="let item of getItems(); index as index" class="insis-array-item">
     <div>
       <label>{{ label }} {{ getIndexOfArrayItem(index) }}</label>
-      <span *ngIf="canRemove()" (click)="deleteItem(index)">
+      <button *ngIf="canRemove()" mat-button color="primary" (click)="deleteItem(index)">
         Remove
-      </span>
+      </button>
       <ng-container
         [ngTemplateOutlet]="template"
         [ngTemplateOutletContext]="{ $implicit: childIndex(index) }"
@@ -19,7 +19,7 @@
       </ng-container>
     </div>
   </div>
-  <span *ngIf="canAdd()" (click)="addItem()">Add</span>
+  <button *ngIf="canAdd()" mat-button color="primary" (click)="addItem()">Add</button>
   <mat-error *ngFor="let message of validation?.getMessagesFor(element.name, index)">
     {{ message }}
   </mat-error>
