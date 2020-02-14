@@ -113,6 +113,7 @@
 
   .mat-radio-outer-circle {
     border-width: 1px;
+    border-color: $primaryColor;
   }
 
   .mat-radio-button.mat-radio-disabled .mat-radio-outer-circle {
@@ -158,6 +159,7 @@
 
   .mat-checkbox-frame {
     border-width: 1px !important;
+    border-color: $primaryColor;
   }
 
   // When is disabled and NOT checked
@@ -206,19 +208,18 @@
     margin-top: 0;
 
     .mat-error {
-      margin-bottom: 8px;
-      margin-top: 4px;
+      margin-bottom: 2px;
+      margin-top: 2px;
     }
   }
 
-  .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
+  .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float 
     .mat-form-field-label,
   .mat-form-field-appearance-outline.mat-form-field-can-float
     .mat-input-server:focus
     + .mat-form-field-label-wrapper
     .mat-form-field-label {
     transform: translateY(-1.25em) scale(0.75);
-    color: $primaryColor;
   }
 
   .mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-outline-start,
