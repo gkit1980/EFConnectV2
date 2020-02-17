@@ -16,5 +16,5 @@ element:
           labelPosition: after
   change:
     - ResetElementValueExecutionRule:
-      elements:
-        - policy.insured.vehicle-objects~car.additional-equipment-other
+        elements:
+          - policy.insured.vehicle-objects~car.additional-equipment-other

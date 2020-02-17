@@ -11,10 +11,10 @@ element:
       value: false
   change:
     - ResetElementValueExecutionRule:
-      elements:
-        - policy.insured.vehicle-objects~car.additional-equipment-alloy-wheels
-component:
-  StaticComponentRule:
-    component:
-      IceCheckbox:
-        labelPosition: after
+        elements:
+          - policy.insured.vehicle-objects~car.additional-equipment-alloy-wheels
+  component:
+    StaticComponentRule:
+      component:
+        IceCheckbox:
+          labelPosition: after
