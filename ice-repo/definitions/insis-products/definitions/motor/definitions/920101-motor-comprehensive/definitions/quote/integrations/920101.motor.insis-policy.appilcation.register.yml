@@ -23,3 +23,18 @@ integration:
               value: registerQuotation
             - param: requestType
               value: RegsrApplRqType
+        - mappings:
+            - value: null
+              payload: InsuranceConditions.PolicyNo
+            - value: '-2'
+              payload: InsuranceConditions.PolicyState
+        - fromIdx:
+            array: datamodel.policy.insured.vehicle-objects
+          toIdx:
+            array: payload.Insureds.Insured
+            condition: 1 == 1
+          mappings:
+            - value: null
+              payload: Insureds.Insured[n].InsuredObjectID
+            - value: '-1'
+              payload: Insureds.Insured[n].InsuredEntity.ObjectID

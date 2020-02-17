@@ -1,0 +1,19 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policy.contract.policy-id
+    - element: policy.status.policy-status
+  outputs:
+    - id: view-mode
+      type: string
+  rules:
+    - inputs:
+        - not(null)
+        - '-4'
+      outputs:
+        - default
+    - inputs:
+        - '-'
+        - '-'
+      outputs:
+        - disabled

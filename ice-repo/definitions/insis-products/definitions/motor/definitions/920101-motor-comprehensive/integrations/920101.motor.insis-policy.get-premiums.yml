@@ -34,6 +34,39 @@ integration:
         - fromIdx:
             array: payload.Policy.Insureds.Insured
             fromIdx:
+              array: InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment
+              condition: EquipmentType == '1001'
+          toIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            condition: 1 == 1
+          mappings:
+            - element: policy.insured.vehicle-objects~car.additional-equipment-car-audio-parent-id
+              payload: Policy.Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].ParentObjectID
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+            fromIdx:
+              array: InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment
+              condition: EquipmentType == '1002'
+          toIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            condition: 1 == 1
+          mappings:
+            - element: policy.insured.vehicle-objects~car.additional-equipment-alloy-wheels-parent-id
+              payload: Policy.Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].ParentObjectID
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+            fromIdx:
+              array: InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment
+              condition: EquipmentType == '1003'
+          toIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            condition: 1 == 1
+          mappings:
+            - element: policy.insured.vehicle-objects~car.additional-equipment-other-parent-id
+              payload: Policy.Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].ParentObjectID
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+            fromIdx:
               array: Covers.Cover
               condition: CoverCode == 'MTPL'
           toIdx:

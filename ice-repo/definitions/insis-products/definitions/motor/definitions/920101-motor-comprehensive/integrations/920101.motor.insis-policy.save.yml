@@ -8,6 +8,35 @@ integration:
       extends: motor.insis-policy.save
       in: {}
       out:
+        - toIdx:
+            array: 'payload.InsuranceConditions.Questionary.Question'
+            append: true
+          mappings:
+            - value: '1000'
+              payload: 'InsuranceConditions.Questionary.Question[n].ID'
+            - element: policy.contract.question.previous-mtpl-insurer
+              payload: 'InsuranceConditions.Questionary.Question[n].Answer'
+        - toIdx:
+            array: 'payload.InsuranceConditions.Questionary.Question'
+            append: true
+          mappings:
+            - value: '1000.1'
+              payload: 'InsuranceConditions.Questionary.Question[n].ID'
+            - element: policy.insured.vehicle-objects~question.number-of-consecutive-years-without-claims
+              payload: 'InsuranceConditions.Questionary.Question[n].Answer'
+        - fromIdx:
+            array: datamodel.policy.insured.vehicle-objects
+          toIdx:
+            array: 'payload.Insureds.Insured'
+            condition: 1 == 1
+            toIdx:
+              array: Questionary.Question
+              append: true
+          mappings:
+            - value: '1000.1'
+              payload: 'Insureds.Insured[n].Questionary.Question[n].ID'
+            - element: policy.insured.vehicle-objects~question.number-of-consecutive-years-without-claims
+              payload: 'Insureds.Insured[n].Questionary.Question[n].Answer'
         - fromIdx:
             array: datamodel.policy.insured.vehicle-objects
           toIdx:
@@ -16,10 +45,91 @@ integration:
           mappings:
             - element: policy.insured.vehicle-objects~entity-type
               payload: Insureds.Insured[n].InsuredEntity.ObjectType
+        - fromIdx:
+            array: datamodel.policy.insured.vehicle-objects
+          toIdx:
+            array: 'payload.Policies.Policy[0].Insureds.Insured'
+            condition: 1 == 1
+            toIdx:
+              array: InsuredEntity.OCar.CustomProperties.CustomProperty
+              append: true
+          mappings:
             - element: policy.insured.vehicle-objects~car.transportation-of-hazardous-goods-fieldname
-              payload: 'Insureds.Insured[n].InsuredEntity.OCar.CustomProperties.CustomProperty[0].FieldName'
+              payload: 'Insureds.Insured[n].InsuredEntity.OCar.CustomProperties.CustomProperty[n].FieldName'
             - element: policy.insured.vehicle-objects~car.transportation-of-hazardous-goods
-              payload: 'Insureds.Insured[n].InsuredEntity.OCar.CustomProperties.CustomProperty[0].Value'
+              payload: 'Insureds.Insured[n].InsuredEntity.OCar.CustomProperties.CustomProperty[n].Value'
+        - fromIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            condition: car.additional-equipment-car-audio > 0
+          toIdx:
+            array: payload.Insureds.Insured
+            condition: 1 == 1
+            toIdx:
+              array: InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment
+              append: true
+          mappings:
+            - element: policy.insured.vehicle-objects~car.additional-equipment-car-audio-parent-id
+              payload: Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].ParentObjectID
+            - value: 1001
+              payload: Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].EquipmentType
+            - value: 100101
+              payload: Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].EquipmentSubtype
+            - value: '-1'
+              payload: Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].Model
+            - value: '-1'
+              payload: Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].SerialNo
+            - element: policy.insured.vehicle-objects~car.additional-equipment-car-audio
+              payload: Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].AvValue
+            - element: policy.insured.currency
+              payload: Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].Currency
+        - fromIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            condition: car.additional-equipment-alloy-wheels > 0
+          toIdx:
+            array: payload.Insureds.Insured
+            condition: 1 == 1
+            toIdx:
+              array: InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment
+              append: true
+          mappings:
+            - element: policy.insured.vehicle-objects~car.additional-equipment-alloy-wheels-parent-id
+              payload: Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].ParentObjectID
+            - value: 1002
+              payload: Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].EquipmentType
+            - value: 100201
+              payload: Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].EquipmentSubtype
+            - value: '-1'
+              payload: Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].Model
+            - value: '-1'
+              payload: Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].SerialNo
+            - element: policy.insured.vehicle-objects~car.additional-equipment-alloy-wheels
+              payload: Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].AvValue
+            - element: policy.insured.currency
+              payload: Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].Currency
+        - fromIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            condition: car.additional-equipment-other > 0
+          toIdx:
+            array: payload.Insureds.Insured
+            condition: 1 == 1
+            toIdx:
+              array: InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment
+              append: true
+          mappings:
+            - element: policy.insured.vehicle-objects~car.additional-equipment-other-parent-id
+              payload: Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].ParentObjectID
+            - value: 1003
+              payload: Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].EquipmentType
+            - value: 100301
+              payload: Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].EquipmentSubtype
+            - value: '-1'
+              payload: Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].Model
+            - value: '-1'
+              payload: Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].SerialNo
+            - element: policy.insured.vehicle-objects~car.additional-equipment-other
+              payload: Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].AvValue
+            - element: policy.insured.currency
+              payload: Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].Currency
         - fromIdx:
             array: datamodel.policy.insured.vehicle-objects
             condition: cover.mtpl.active == true

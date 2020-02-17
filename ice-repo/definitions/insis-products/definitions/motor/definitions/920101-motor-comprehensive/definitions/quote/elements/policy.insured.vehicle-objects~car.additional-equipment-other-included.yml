@@ -14,3 +14,7 @@ element:
       component:
         IceCheckbox:
           labelPosition: after
+  change:
+    - ResetElementValueExecutionRule:
+      elements:
+        - policy.insured.vehicle-objects~car.additional-equipment-other

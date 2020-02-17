@@ -1,0 +1,18 @@
+action:
+  title: calls the quick quote calculation for insis
+  condition:
+    DtConditionRule:
+      dt: insis.recalculate.quote
+      output: calculate
+  execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - policy.contract.policy-id
+    - IntegrationExecutionRule:
+        integration: 920101.motor.insis-policy.appilcation.register
+    - IntegrationExecutionRule:
+        integration: insis-policy.convert-quote-to-application
+    - IntegrationExecutionRule:
+        integration: 920101.motor.insis-policy.get-premiums
+    - NavigateToPageExecutionRule:
+        direction: next

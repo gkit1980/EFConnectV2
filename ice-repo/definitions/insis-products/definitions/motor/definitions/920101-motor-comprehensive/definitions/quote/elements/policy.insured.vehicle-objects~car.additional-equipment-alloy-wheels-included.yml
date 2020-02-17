@@ -9,8 +9,12 @@ element:
   defaultValue:
     StaticValueRule:
       value: false
-  component:
-    StaticComponentRule:
-      component:
-        IceCheckbox:
-          labelPosition: after
+  change:
+    - ResetElementValueExecutionRule:
+      elements:
+        - policy.insured.vehicle-objects~car.additional-equipment-alloy-wheels
+component:
+  StaticComponentRule:
+    component:
+      IceCheckbox:
+        labelPosition: after

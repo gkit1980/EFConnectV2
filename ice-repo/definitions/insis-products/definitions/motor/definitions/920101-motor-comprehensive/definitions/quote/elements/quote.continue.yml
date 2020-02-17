@@ -6,7 +6,7 @@ element:
         IceButton:
           themeColor: primary
           variant: flat
-  defaultValue: quote.recalculate.premiums
+  defaultValue: quote.continue
   viewMode:
     DtViewModeRule:
-      dt: insis.viewmode.recalculate.quote
+      dt: insis.continue.view-mode

@@ -14,13 +14,6 @@ page:
               - cols:
                   - size: 190px
                     size.xs: 100%
-                    css: u-mb-4
-                    elements:
-                      - name: quote.calculate
-                      - name: quote.recalculate
-              - cols:
-                  - size: 190px
-                    size.xs: 100%
                     css: u-mb-4-sm
                     elements:
                       - name: policy.contract.begin
@@ -153,6 +146,36 @@ page:
                     css: text-align-left
                     elements:
                       - name: policy.insured.premium.title
+                css: mat-headline u-m-0
+                align: center
+                layout.xs: row
+                gap: 10px
+                gap.xs: 10px
+      css: card u-mb-3
+    - component:
+        IceFlexSection:
+          tags:
+            - pull-right
+          grid:
+            rows:
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: quote.calculate
+                      - name: quote.recalculate
+                css: mat-headline u-m-0
+                align: center
+                layout.xs: row
+                gap: 10px
+                gap.xs: 10px
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: quote.continue
                 css: mat-headline u-m-0
                 align: center
                 layout.xs: row
