@@ -6,20 +6,25 @@
 
   .nav {
     color: map-get($colors, 'light');
-    font-family: 'Roboto Light', 'Roboto Regular', 'Roboto';
     font-size: 18px;
 
     .nav__user-name {
-      font-family: 'Roboto';
       font-size: 14px;
       font-weight: 400;
     }
 
     .tab {
       font-weight: 300;
+      line-height: 58px;
 
-      padding: 12.8px 28px;
-      border-bottom: 2.4px solid transparent;
+      padding: 0 18px;
+      border-bottom: 2px solid transparent;
+      display: inline-block;
+
+      @include respond-to('md') {
+        display: block;
+        padding-left: 38px;
+      }
 
       &:hover {
         background-color: map-get($colors, 'header-hover');
