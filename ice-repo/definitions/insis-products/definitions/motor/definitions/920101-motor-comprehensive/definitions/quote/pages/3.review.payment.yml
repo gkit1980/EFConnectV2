@@ -20,7 +20,7 @@ page:
                   - size: 40%
                     size.xs: auto
                     size.sm: auto
-                    css: u-mt-6
+                    css: u-mb-4
                     elements:
                       - name: policy.participants.payor.iban
               - cols:
@@ -29,59 +29,55 @@ page:
                     size.sm: 280px
                     elements:
                       - name: policy.is-user-bank-account-holder
-      css: u-mb-1
+      css: u-mb-4
     - component:
         IceFlexSection:
           grid:
             rows:
               - cols:
                   - size: auto
-                    size.xs: auto
-                    size.sm: auto
                     elements:
                       - name: bank-holder-details-title
-                    css: u-mt-3
+                    css: u-mb-3 u-mt-2 u-text-medium
               - cols:
                   - size: auto
-                    size.xs: auto
-                    size.sm: auto
+                    css: u-mb-4
                     elements:
                       - name: >-
                           policy.participants.payor.agreed-on-terms-and-conditions
-                    css: u-mt-3
               - cols:
-                  - size: 20%
+                  - size: 190px
                     size.xs: auto
                     size.sm: auto
-                    css: u-mt-5
+                    css: u-mb-4
                     elements:
                       - name: policy.participants.payor.first-name
-                  - size: 20%
+                  - size: 190px
                     size.xs: auto
                     size.sm: auto
-                    css: u-mt-5
+                    css: u-mb-4
                     elements:
                       - name: policy.participants.payor.last-name
                 gap: 24px
               - cols:
-                  - size: 20%
+                  - size: 190px
                     size.xs: auto
                     size.sm: auto
-                    css: u-mt-5
+                    css: u-mb-4
                     elements:
                       - name: policy.participants.payor.city
-                  - size: 10%
+                  - size: 90px
                     size.xs: auto
                     size.sm: auto
-                    css: u-mt-5
+                    css: u-mb-4
                     elements:
                       - name: policy.participants.payor.zip
                 gap: 24px
               - cols:
-                  - size: 20%
+                  - size: 190px
                     size.xs: auto
                     size.sm: auto
-                    css: u-mt-5
+                    css: u-mb-4
                     elements:
                       - name: policy.participants.payor.birthdate
           viewMode:
@@ -94,6 +90,6 @@ page:
               - cols:
                   - size: auto
                     size.xs: auto
-                    css: u-mt-5
+                    css: u-mt-4
                     elements:
                       - name: go-to-next-page

@@ -24,32 +24,26 @@ page:
               - cols:
                   - size: 190px
                     size.xs: 100%
-                    css: u-mb-8
+                    css: u-mb-6
                     elements:
                       - name: previous-insurer
               - cols:
                   - size: auto
-                    size.xs: auto
-                    size.sm: auto
                     elements:
                       - name: terms-and-conditions.description
                 css: u-mb-4
               - cols:
                   - size: auto
-                    size.xs: auto
-                    size.sm: auto
                     elements:
                       - name: terms-and-conditions.truthy-and-valid-information
                 gap: 10px
-                css: u-mb-3
+                css: u-mb-4
               - cols:
                   - size: auto
-                    size.xs: auto
-                    size.sm: auto
                     elements:
                       - name: terms-and-conditions.access-personal-information
                 gap: 10px
-                css: u-mb-3
+                css: u-mb-4
           behaviourForEmptyRows: render
       viewMode: required
     - component:
@@ -60,14 +54,9 @@ page:
             rows:
               - cols:
                   - size: 100%
-                    size.xs: 100%
                     elements:
                       - name: buy-insurance
-                align: space-between
-                layout.xs: column
-                gap: 10px
-                gap.xs: 16px
-      css: main-side button-width-100
+      css: button-width-100 u-mb-3
     - component:
         IceFlexSection:
           tags:
@@ -76,11 +65,7 @@ page:
             rows:
               - cols:
                   - size: 100%
-                    size.xs: 100%
+                    css: mat-small
                     elements:
                       - name: buy-insurance-description
-                align: space-between
-                layout.xs: column
-                gap: 10px
-                gap.xs: 16px
-      css: main-side text-align-center disabled-text
+      css: text-align-center hide-on-mobile u-mb-4

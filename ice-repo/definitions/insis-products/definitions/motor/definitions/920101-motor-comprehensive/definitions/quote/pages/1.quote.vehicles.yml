@@ -18,8 +18,7 @@ page:
                     css: u-mb-4
                     elements:
                       - name: policy.insured.vehicle-objects~car.method-of-entry
-
-              - gap: 30px
+              - gap: 24px
                 gap.xs: 0px
                 css: u-mt-4
                 cols:
@@ -33,7 +32,7 @@ page:
                     css: u-mb-4
                     elements:
                       - name: policy.insured.vehicle-objects~car.chassis
-              - gap: 30px
+              - gap: 24px
                 gap.xs: 0px
                 cols:
                   - size: 190px
@@ -46,7 +45,7 @@ page:
                     css: u-mb-4
                     elements:
                       - name: policy.insured.vehicle-objects~car.model
-              - gap: 30px
+              - gap: 24px
                 gap.xs: 0px
                 cols:
                   - size: 190px
@@ -59,7 +58,7 @@ page:
                     css: u-mb-4
                     elements:
                       - name: policy.insured.vehicle-objects~car.subtype
-              - gap: 30px
+              - gap: 24px
                 gap.xs: 0px
                 cols:
                   - size: 190px
@@ -72,7 +71,7 @@ page:
                     css: u-mb-4
                     elements:
                       - name: policy.insured.vehicle-objects~car.engine-power
-              - gap: 30px
+              - gap: 24px
                 gap.xs: 0px
                 cols:
                   - size: 190px
@@ -85,7 +84,7 @@ page:
                     css: u-mb-4
                     elements:
                       - name: policy.insured.vehicle-objects~car.seats-number
-              - gap: 30px
+              - gap: 24px
                 gap.xs: 0px
                 cols:
                   - size: 190px
@@ -98,7 +97,7 @@ page:
                     css: u-mb-4
                     elements:
                       - name: policy.insured.vehicle-objects~car.usage
-              - gap: 30px
+              - gap: 24px
                 cols:
                   - size: 190px
                     size.xs: auto
@@ -106,7 +105,7 @@ page:
                     elements:
                       - name: >-
                           policy.insured.vehicle-objects~insured-amount
-              - gap: 30px
+              - gap: 24px
                 cols:
                   - size: 260px
                     size.xs: auto
@@ -130,7 +129,7 @@ page:
                     elements:
                       - name: >-
                           policy.insured.vehicle-objects~car.additional-equipment
-              - gap: 30px
+              - gap: 24px
                 css: u-ml-7
                 cols:
                   - size: 200px
@@ -146,7 +145,7 @@ page:
                     elements:
                       - name: >-
                           policy.insured.vehicle-objects~car.additional-equipment-car-audio
-              - gap: 30px
+              - gap: 24px
                 gap.xs: 0px
                 css: u-ml-7
                 cols:
@@ -163,7 +162,7 @@ page:
                     elements:
                       - name: >-
                           policy.insured.vehicle-objects~car.additional-equipment-alloy-wheels
-              - gap: 30px
+              - gap: 24px
                 gap.xs: 0px
                 css: u-ml-7
                 cols:

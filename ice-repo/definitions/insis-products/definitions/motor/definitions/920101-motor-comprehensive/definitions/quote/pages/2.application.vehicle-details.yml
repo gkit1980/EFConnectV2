@@ -23,36 +23,34 @@ page:
           behaviourForEmptyRows: hidden
           grid:
             rows:
-              - gap: 30px
+              - gap: 24px
                 gap.xs: 0px
                 cols:
                   - size: 190px
                     size.xs: 100%
-                    css: u-mb-4 section-subgroup
+                    css: u-mb-3 mat-h3 u-text-medium
                     elements:
                       - name: policy.insured.vehicle-objects~owner.options.title
-              - gap: 30px
+              - gap: 24px
                 gap.xs: 0px
                 cols:
                   - size: 100%
                     size.xs: 100%
-                    css: u-mb-4 section-subgroup
+                    css: u-mb-4
                     elements:
                       - name: policy.insured.vehicle-objects~owner.options
-              - gap: 30px
+              - gap: 24px
                 gap.xs: 0px
                 align: start
-                css: u-mt-4
                 cols:
-                  - size: 410px
+                  - size: 404px
                     size.xs: 100%
                     css: u-mb-4
                     elements:
                       - name: policy.insured.vehicle-objects~owner.lessor-name
-              - gap: 30px
+              - gap: 24px
                 gap.xs: 0px
                 align: start
-                css: u-mt-4
                 cols:
                   - size: 190px
                     size.xs: 100%
@@ -63,25 +61,23 @@ page:
                     size.xs: 100%
                     elements:
                       - name: policy.insured.vehicle-objects~owner.last-name
-              - gap: 30px
+              - gap: 24px
                 gap.xs: 0px
                 align: start
-                css: u-mt-4
                 cols:
-                  - size: 190px
+                  - size: 280px
                     size.xs: 100%
                     css: u-mb-4
                     elements:
                       - name: policy.insured.vehicle-objects~owner.address.city
-                  - size: 190px
+                  - size: 100px
                     size.xs: 100%
                     css: u-mb-4
                     elements:
                       - name: policy.insured.vehicle-objects~owner.address.zip
-              - gap: 30px
+              - gap: 24px
                 gap.xs: 0px
                 align: start
-                css: u-mt-4
                 cols:
                   - size: 190px
                     size.xs: 100%
@@ -91,13 +87,12 @@ page:
               - cols:
                   - size: auto
                     size.xs: 100%
-                    css: section-title
+                    css: mat-h3 u-mb-3 u-text-medium
                     elements:
                       - name: policy.participants.beneficiaries~title
-              - gap: 30px
+              - gap: 24px
                 gap.xs: 0px
                 align: start
-                css: u-mt-4
                 cols:
                   - size: 190px
                     size.xs: 100%
@@ -109,13 +104,24 @@ page:
                     css: u-mb-4
                     elements:
                       - name: policy.participants.beneficiaries~person.last-name
-              - gap: 30px
+              - cols:
+                  - size: 100%
+                    css: mat-h3 u-mb-3 u-text-medium
+                    elements:
+                      - name: additional-audio-video-equipment.title
+              - gap: 24px
+                gap.xs: 0px
+                cols:
+                  - size: 100%
+                    sections:
+                      - name: additional-audio-video-equipment
+
+              - gap: 24px
                 gap.xs: 0px
                 cols:
                   - size: 100%
                     size.xs: 100%
                     sections:
-                      - name: additional-audio-video-equipment
                       - name: drivers
     - component:
         IceFlexSection:
@@ -125,30 +131,21 @@ page:
             rows:
               - cols:
                   - size: 100%
-                    size.xs: 100%
                     elements:
                       - name: continue
-                align: space-between
-                layout.xs: column
-                gap: 10px
-                gap.xs: 16px
-      css: button-width-100
+      css: button-width-100 u-mb-3
     - component:
         IceFlexSection:
           tags:
-            - pull-right
+            - 'pull-right'
           grid:
             rows:
               - cols:
                   - size: 100%
-                    size.xs: 100%
+                    css: mat-small
                     elements:
                       - name: more-information-needed
-                align: space-between
-                layout.xs: column
-                gap: 10px
-                gap.xs: 16px
-      css: main-side text-align-center
+      css: text-align-center hide-on-mobile u-mb-4
     - component:
         IceFlexSection:
           tags:
@@ -157,17 +154,14 @@ page:
             rows:
               - cols:
                   - size: none
-                    size.xs: 100%
-                    css: text-align-right
+                    css: u-d-inlineblock
                     elements:
                       - name: policy.insured.premium.total
                   - size: none
-                    size.xs: 100%
+                    css: u-d-inlineblock
                     elements:
                       - name: policy.insured.premium.title
-                css: mat-headline u-m-0
+                css: mat-headline u-mb-0
                 align: center
-                layout.xs: column
                 gap: 10px
-                gap.xs: 16px
-      css: card main-side
+      css: card u-mb-3

@@ -12,17 +12,17 @@ page:
           grid:
             rows:
               - cols:
-                  - size: 190px
+                  - size: 200px
                     size.xs: 100%
                     css: u-mb-4-sm
                     elements:
                       - name: policy.contract.begin
-                  - size: 190px
+                  - size: 200px
                     size.xs: 100%
                     css: u-mb-4
                     elements:
                       - name: policy.contract.term.duration
-                  - size: 190px
+                  - size: 200px
                     size.xs: 100%
                     css: u-mb-4
                     elements:
@@ -32,7 +32,7 @@ page:
       label:
         ResourceSectionLabelRule:
           labelKey: section.policy-details.label
-      css: card main-side u-pb-1
+      css: card main-side u-pb-1 u-mb-4
     - component:
         IceArrayFlexSection:
           grid:
@@ -61,15 +61,17 @@ page:
                 align: space-between
                 css: u-mb-4
               - cols:
-                  - size: 40%
+                  - size: calc(50% - 28px)
                     size.xs: 100%
+                    size.sm: 100%
                     css: u-ml-7 u-d-inlineblock slider-mirror-labels
                     align: center
                     elements:
                       - name: policy.insured.vehicle-objects~cover.owndamage.deductible
                       - name: policy.insured.vehicle-objects~cover.owndamage.deductible-mirror
-                  - size: 40%
+                  - size: calc(50% - 28px)
                     size.xs: 100%
+                    size.sm: 100%
                     css: u-ml-7 u-d-inlineblock slider-mirror-labels
                     align: center
                     elements:
@@ -103,13 +105,8 @@ page:
             rows:
               - cols:
                   - size: 100%
-                    size.xs: 100%
                     elements:
                       - name: continue
-                align: space-between
-                layout.xs: column
-                gap: 10px
-                gap.xs: 10px
       css: button-width-100 u-mb-3
     - component:
         IceFlexSection:
@@ -119,14 +116,10 @@ page:
             rows:
               - cols:
                   - size: 100%
-                    size.xs: 100%
+                    css: mat-small
                     elements:
                       - name: more-information-needed
-                align: space-between
-                layout.xs: column
-                gap: 10px
-                gap.xs: 0px
-      css: text-align-center hide-on-mobile
+      css: text-align-center hide-on-mobile u-mb-4
     - component:
         IceFlexSection:
           tags:
@@ -134,23 +127,17 @@ page:
           grid:
             rows:
               - cols:
-                  - size: auto
-                    size.xs: auto
-                    size.sm: auto
-                    css: text-align-right
+                  - size: none
+                    css: u-d-inlineblock
                     elements:
                       - name: policy.insured.premium.total
-                  - size: auto
-                    size.xs: auto
-                    size.sm: auto
-                    css: text-align-left
+                  - size: none
+                    css: u-d-inlineblock
                     elements:
                       - name: policy.insured.premium.title
-                css: mat-headline u-m-0
+                css: mat-headline u-mb-0
                 align: center
-                layout.xs: row
                 gap: 10px
-                gap.xs: 10px
       css: card u-mb-3
     - component:
         IceFlexSection:
@@ -160,27 +147,19 @@ page:
             rows:
               - cols:
                   - size: auto
-                    size.xs: auto
-                    size.sm: auto
                     elements:
                       - name: quote.calculate
                       - name: quote.recalculate
                 css: mat-headline u-m-0
                 align: center
-                layout.xs: row
                 gap: 10px
-                gap.xs: 10px
               - cols:
                   - size: auto
-                    size.xs: auto
-                    size.sm: auto
                     elements:
                       - name: quote.continue
-                css: mat-headline u-m-0
+                css: mat-headline u-mb-0
                 align: center
-                layout.xs: row
                 gap: 10px
-                gap.xs: 10px
       css: card u-mb-3
   label:
     ResourcePageLabelRule:

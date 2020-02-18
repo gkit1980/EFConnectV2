@@ -3,6 +3,11 @@ locales:
   - de
 entries:
   elements:
+    additional-audio-video-equipment:
+      title:
+        label:
+          - en: Additional audio/video equipment
+            de: Additional audio/video equipment
     previous-insurer-heading:
       label:
         - en: What is the name of your previous Motor and Third Party Liability insurer?
@@ -212,9 +217,6 @@ entries:
                   - en: Insured value (EUR)
                     de: null
               additional-equipment-audio-video:
-                label:
-                  - en: Additional audio/video equipment
-                    de: null
                 items:
                   name:
                     label:

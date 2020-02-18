@@ -1,8 +1,8 @@
 <nav class="horizontal-stepper-navigation">
   <ng-container *ngFor="let page of pages; let i = index; let first = first; let last = last">
     <button
+      class="horizontal-stepper-navigation__navigation-button mat-body-2"
       [ngClass]="{
-        'horizontal-stepper-navigation__navigation-button': true,
         first: first,
         past: selectedIndex > i,
         current: selectedIndex === i,

@@ -13,14 +13,12 @@
   @include ice-checkbox-mixin($theme); // remove styles from NG-ICE
   @include ice-array-mixin($theme);
 
-  $colors: map-get($theme, colors);
-
   $primaryColor: get-mat-color($theme, primary);
   $lightColor: get-color($theme, 'light');
   $borderInputColor: get-color($theme, 'border-input');
   $borderColor: get-color($theme, 'border');
   $textColor: get-color($theme, 'text');
-  $textDisabledColor: get-color($theme, text-disabled);
+  $textDisabledColor: get-color($theme, 'text-disabled');
 
   .disabled-text {
     color: $textDisabledColor;
@@ -71,6 +69,12 @@
 
   // Disabled
   .mat-slide-toggle.mat-disabled {
+    opacity: 1;
+
+    .mat-slide-toggle-content {
+      color: $textDisabledColor;
+    }
+
     .mat-slide-toggle-thumb {
       background: $borderInputColor;
     }
@@ -108,7 +112,7 @@
   }
 
   .mat-radio-label-content {
-    padding-left: 4px !important;
+    padding-left: 8px !important;
   }
 
   .mat-radio-outer-circle {
@@ -116,13 +120,17 @@
     border-color: $primaryColor;
   }
 
-  .mat-radio-button.mat-radio-disabled .mat-radio-outer-circle {
-    border-color: $borderInputColor;
-    background: $borderColor;
-  }
-
-  .mat-radio-button.mat-radio-disabled .mat-radio-inner-circle {
-    background-color: $borderInputColor;
+  .mat-radio-button.mat-radio-disabled {
+    .mat-radio-outer-circle {
+      border-color: $borderInputColor;
+      background: $borderColor;
+    }
+    .mat-radio-inner-circle {
+      background-color: $borderInputColor;
+    }
+    .mat-radio-label-content {
+      color: $textDisabledColor;
+    }
   }
 
   /*
@@ -143,7 +151,7 @@
   }
 
   .mat-checkbox-label {
-    padding-left: 4px !important;
+    padding-left: 8px !important;
     white-space: normal;
     line-height: 1.1;
   }
@@ -160,6 +168,10 @@
   .mat-checkbox-frame {
     border-width: 1px !important;
     border-color: $primaryColor;
+  }
+
+  .mat-checkbox-disabled .mat-checkbox-label {
+    color: $textDisabledColor;
   }
 
   // When is disabled and NOT checked
@@ -194,11 +206,11 @@
   }
 
   .mat-form-field-appearance-outline .mat-form-field-infix {
-    padding: 0.6em 0;
+    padding: 0.1em 0;
   }
 
   .mat-form-field-appearance-outline .mat-form-field-label {
-    margin-top: -0.65em;
+    margin-top: -1.2em;
     color: rgba($textColor, 0.8);
   }
 
@@ -213,13 +225,13 @@
     }
   }
 
-  .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float 
+  .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
     .mat-form-field-label,
   .mat-form-field-appearance-outline.mat-form-field-can-float
     .mat-input-server:focus
     + .mat-form-field-label-wrapper
     .mat-form-field-label {
-    transform: translateY(-1.25em) scale(0.75);
+    transform: translateY(-1.15em) scale(0.75);
   }
 
   .mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-outline-start,
@@ -235,8 +247,20 @@
     border-color: $primaryColor;
   }
 
-  .mat-form-field-disabled .mat-form-field-label {
-    color: $borderColor !important;
+  .mat-input-element:disabled {
+    color: $textDisabledColor !important;
+  }
+
+  .mat-form-field-disabled {
+    .mat-form-field-label {
+      color: rgba($textColor, 0.3) !important;
+    }
+
+    .mat-form-field-outline-start,
+    .mat-form-field-outline-gap,
+    .mat-form-field-outline-end {
+      border-color: rgba($borderInputColor, 0.4);
+    }
   }
 
   /*
@@ -259,6 +283,20 @@
       line-height: 24px;
       height: 24px;
     }
+  }
+
+  .mat-flat-button[disabled] {
+    background: get-color($theme, 'navigation-line') !important;
+    color: $textDisabledColor !important;
+  }
+
+  .mat-stroked-button[disabled] {
+    border-color: get-color($theme, 'navigation-line') !important;
+    color: $textDisabledColor !important;
+  }
+
+  .mat-button[disabled] {
+    color: $textDisabledColor !important;
   }
 
   /*

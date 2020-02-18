@@ -1,16 +1,10 @@
 element:
-  type: array
-  component: InsisArray
+  type: text
+  component: IceNone
   viewMode:
     ConditionalViewModeRule:
       conditionValue: 'true'
       conditionElement: >-
         policy.insured.vehicle-objects~car.additional-equipment-car-audio-included
-      conditionViewMode: default
+      conditionViewMode: required
       elseViewMode: hidden
-  array:
-    StaticArrayRule:
-      default: '1'
-      min: '1'
-  label:
-    NoLabelRule: null
