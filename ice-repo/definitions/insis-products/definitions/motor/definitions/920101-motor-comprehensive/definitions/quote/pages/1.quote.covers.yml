@@ -96,7 +96,7 @@ page:
                       - name: >-
                           policy.insured.vehicle-objects~cover.road_assis.premium
           arrayElement: policy.insured.vehicle-objects
-      css: card main-side
+      css: main-side
     - component:
         IceFlexSection:
           tags:

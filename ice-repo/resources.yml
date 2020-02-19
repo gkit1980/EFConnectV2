@@ -249,6 +249,10 @@ entries:
           label:
             - en: ADD ANOTHER VEHICLE
               de: null
+        remove-vehicle:
+          label:
+            - en: REMOVE VEHICLE
+              de: null
       contract:
         begin:
           label:

@@ -1,0 +1,37 @@
+<ng-template #default let-index>
+  <div *ngFor="let element of itemElements()">
+    <ice-element *ngIf="element" [section]="section" [elementName]="element.name" [index]="index">
+    </ice-element>
+  </div>
+</ng-template>
+
+<div
+  class="ice-array-card-layout"
+  *ngIf="isVisible"
+  [ngClass]="getItems().length > 1 ? 'is-multiple' : 'is-single'"
+>
+  <div class="ice-array-card-layout-list">
+    <div
+      *ngFor="let item of getItems(); index as index"
+      class="ice-array-card-layout-item"
+      [ngClass]="{ card: hasCard(index) }"
+    >
+      <div>
+        <ng-container
+          [ngTemplateOutlet]="template"
+          [ngTemplateOutletContext]="{ $implicit: childIndex(index) }"
+        >
+        </ng-container>
+      </div>
+      <button *ngIf="canRemove()" mat-button color="primary" (click)="deleteItem(index)">
+        {{ removeButtonLabel }}
+      </button>
+    </div>
+  </div>
+  <button *ngIf="canAdd()" mat-button color="primary" (click)="addItem()" class="u-mt-2">
+    {{ addButtonLabel }}
+  </button>
+  <mat-error *ngFor="let message of validation?.getMessagesFor(element.name, index)">
+    {{ message }}
+  </mat-error>
+</div>

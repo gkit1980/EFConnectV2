@@ -206,12 +206,17 @@
   }
 
   .mat-form-field-appearance-outline .mat-form-field-infix {
-    padding: 0.1em 0;
+    padding: 0.13em 0 0.4em 0;
+    border-top: 0.725em solid transparent;
   }
 
   .mat-form-field-appearance-outline .mat-form-field-label {
     margin-top: -1.2em;
     color: rgba($textColor, 0.8);
+  }
+
+  .mat-form-field-appearance-outline .mat-select-arrow-wrapper {
+    transform: translateY(0%);
   }
 
   .mat-form-field-subscript-wrapper {
@@ -223,6 +228,10 @@
       margin-bottom: 2px;
       margin-top: 2px;
     }
+  }
+
+  .mat-form-field-label-wrapper {
+    top: -0.825em;
   }
 
   .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float

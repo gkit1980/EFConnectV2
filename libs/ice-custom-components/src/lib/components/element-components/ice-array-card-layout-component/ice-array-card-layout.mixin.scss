@@ -1,0 +1,19 @@
+@mixin ice-array-card-layout-mixin($theme) {
+  .ice-array-card-layout-list {
+    @include respond-to('md') {
+      .ice-array-card-layout-item {
+        margin-bottom: 12px;
+      }
+    }
+
+    @include respond-from('md') {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      gap: 24px;
+    }
+  }
+
+  .ice-array-card-layout .ice-array-card-layout-item.card {
+    @include make-card();
+  }
+}

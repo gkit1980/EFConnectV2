@@ -1,0 +1,18 @@
+label: IceArrayCardLayout
+component: IceArrayCardLayout
+types:
+  - array
+params:
+  addButtonLabelResourceKey:
+    label: Add button label
+    type: resourceKey
+  removeButtonLabelResourceKey:
+    label: Remove button label
+    type: resourceKey
+  cardLayout:
+    label: Show cards
+    type: select
+    options:
+      never: Never
+      always: Always
+      onMultiple: On multiple items

@@ -15,6 +15,7 @@ import { MatInputModule } from '@angular/material';
 import { HorizontalStepperNavigationComponent } from './components/navigation-components/horizontal-stepper-navigation/horizontal-stepper-navigation.component';
 import { VerticalStepperNavigationComponent } from './components/navigation-components/vertical-stepper-navigation/vertical-stepper-navigation.component';
 import { InsisArrayComponent } from './components/element-components/insis-array-component/insis-array.component';
+import { IceArrayCardLayoutComponent } from './components/element-components/ice-array-card-layout-component/ice-array-card-layout.component';
 
 /**
  * TIP: You will need to include in this array any new component you create.
@@ -24,6 +25,7 @@ export const iceCustomComponents = [
   DummyButtonComponent,
   IceSliderComponent,
   InsisArrayComponent,
+  IceArrayCardLayoutComponent,
   TwoLevelStepperNavigationPageComponent
 ];
 
