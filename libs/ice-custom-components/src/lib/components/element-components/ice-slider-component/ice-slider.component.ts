@@ -127,8 +127,8 @@ export class IceSliderComponent extends MaterialElementComponentImplementation
   //
   private setMinMaxFromRangeRule(): void {
     const itemElement = <ItemElement>this.element.element;
-    const minValue = itemElement.rangeRule.getMin() as number;
-    const maxValue = itemElement.rangeRule.getMax() as number;
+    const minValue = itemElement.rangeRule.getMin(this.index) as number;
+    const maxValue = itemElement.rangeRule.getMax(this.index) as number;
     this.setMinMax(minValue, maxValue);
   }
 

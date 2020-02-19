@@ -2,7 +2,10 @@ element:
   range:
     FeelExpressionRangeRule:
       expressionMin: '0'
-      expressionMax: '1000'
+      expressionMax: policy.insured.vehicle-objects~insured-amount
+  mirror:
+    CopyValueMirrorRule:
+      originElement: policy.insured.vehicle-objects~insured-amount
   component:
     StaticComponentRule:
       component:
