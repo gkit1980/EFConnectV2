@@ -2,18 +2,12 @@ dt:
   hitPolicy: F
   inputs:
     - element: policy.insured.vehicle-objects~car.additional-equipment
-    - label: new label
-      element: >-
+    - element: >-
         policy.insured.vehicle-objects~car.additional-equipment-car-audio-included
   outputs:
     - id: viewMode
       type: string
   rules:
-    - inputs:
-        - false
-        - false
-      outputs:
-        - hidden
     - inputs:
         - true
         - false
@@ -24,3 +18,8 @@ dt:
         - true
       outputs:
         - required
+    - inputs:
+        - "-"
+        - "-"
+      outputs:
+        - hidden
