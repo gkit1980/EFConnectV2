@@ -1,0 +1,4 @@
+element:
+  viewMode:
+    StaticViewModeRule:
+      viewMode: required
