@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { IceArrayComponent } from '@impeo/ng-ice';
 
 @Component({
-  selector: 'ice-array-card-layout',
-  templateUrl: './ice-array-card-layout.component.html'
+  selector: 'insis-array-cards-layout',
+  templateUrl: './insis-array-cards-layout.component.html'
 })
-export class IceArrayCardLayoutComponent extends IceArrayComponent implements OnInit {
-  static componentName = 'IceArrayCardLayout';
+export class InsisArrayCardsLayoutComponent extends IceArrayComponent implements OnInit {
+  static componentName = 'InsisArrayCardsLayout';
   addButtonLabel = '';
   removeButtonLabel = '';
 
@@ -20,7 +20,7 @@ export class IceArrayCardLayoutComponent extends IceArrayComponent implements On
     switch (cardLayoutParam) {
       case 'never':
         return false;
-      case 'onMultiple':
+      case 'onMultipleItems':
         return this.getItems().length > 1;
       case 'always':
       default:

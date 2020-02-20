@@ -1,7 +1,7 @@
-@mixin ice-array-card-layout-mixin($theme) {
-  .ice-array-card-layout-list {
+@mixin insis-array-cards-layout-mixin($theme) {
+  .insis-array-cards-layout-list {
     @include respond-to('md') {
-      .ice-array-card-layout-item {
+      .insis-array-cards-layout-item {
         margin-bottom: 12px;
       }
     }
@@ -13,7 +13,7 @@
     }
   }
 
-  .ice-array-card-layout .ice-array-card-layout-item.card {
+  .insis-array-cards-layout .insis-array-cards-layout-item.card {
     @include make-card();
   }
 }

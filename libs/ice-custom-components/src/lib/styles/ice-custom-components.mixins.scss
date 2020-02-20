@@ -3,7 +3,7 @@
 @import '../components/navigation-components/vertical-stepper-navigation/vertical-stepper-navigation.mixin';
 @import '../components/page-components/two-level-stepper-navigation-page/two-level-stepper-navigation-page.mixin';
 @import '../components/element-components/ice-slider-component/ice-slider.mixin.scss';
-@import '../components/element-components/ice-array-card-layout-component/ice-array-card-layout.mixin.scss';
+@import '../components/element-components/insis-array-cards-layout-component/insis-array-cards-layout.mixin.scss';
 
 /**
  * TIP: You will need to @include here any new mixin you add to the ice-custom-component library.
@@ -16,5 +16,5 @@
   @include horizontal-stepper-navigation-mixin($theme);
   @include two-level-stepper-navigation-page-mixin($theme);
   @include ice-slider-mixin($theme);
-  @include ice-array-card-layout-mixin($theme);
+  @include insis-array-cards-layout-mixin($theme);
 }

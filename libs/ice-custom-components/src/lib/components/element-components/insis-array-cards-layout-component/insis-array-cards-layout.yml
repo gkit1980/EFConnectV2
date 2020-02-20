@@ -1,5 +1,5 @@
-label: IceArrayCardLayout
-component: IceArrayCardLayout
+label: InsisArrayCardLayout
+component: InsisArrayCardLayout
 types:
   - array
 params:
@@ -15,4 +15,4 @@ params:
     options:
       never: Never
       always: Always
-      onMultiple: On multiple items
+      onMultipleItems: On multiple items

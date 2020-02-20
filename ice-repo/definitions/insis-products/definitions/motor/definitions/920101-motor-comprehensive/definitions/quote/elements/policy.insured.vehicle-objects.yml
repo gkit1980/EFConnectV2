@@ -13,7 +13,7 @@ element:
   component:
     StaticComponentRule:
       component:
-        IceArrayCardLayout: {}
+        InsisArrayCardsLayout: {}
   pages:
     1.quote.vehicles:
       viewMode:
@@ -22,7 +22,7 @@ element:
       component:
         StaticComponentRule:
           component:
-            IceArrayCardLayout:
+            InsisArrayCardsLayout:
               addButtonLabelResourceKey: elements.policy.insured.add-another-vehicle.label
               removeButtonLabelResourceKey: elements.policy.insured.remove-vehicle.label
-              cardLayout: onMultiple
+              cardLayout: onMultipleItems

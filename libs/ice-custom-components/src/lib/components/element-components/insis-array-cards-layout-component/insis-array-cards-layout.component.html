@@ -6,14 +6,14 @@
 </ng-template>
 
 <div
-  class="ice-array-card-layout"
+  class="insis-array-cards-layout"
   *ngIf="isVisible"
   [ngClass]="getItems().length > 1 ? 'is-multiple' : 'is-single'"
 >
-  <div class="ice-array-card-layout-list">
+  <div class="insis-array-cards-layout-list">
     <div
       *ngFor="let item of getItems(); index as index"
-      class="ice-array-card-layout-item"
+      class="insis-array-cards-layout-item"
       [ngClass]="{ card: hasCard(index) }"
     >
       <div>
