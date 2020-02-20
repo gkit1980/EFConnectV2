@@ -1,0 +1,12 @@
+label: InsisMotorPolicySummarySection
+component: InsisMotorPolicySummarySection
+description: >
+  A section which shows summary of motor policy
+
+params:
+  tags:
+    label: Additional section tags
+    required: false
+    type: texts
+    info: >
+      Arbitrary tags assigned to this section.

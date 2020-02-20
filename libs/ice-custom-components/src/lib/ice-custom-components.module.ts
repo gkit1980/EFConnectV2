@@ -8,14 +8,15 @@ import { IceSliderComponent } from './components/element-components/ice-slider-c
 import { MatSliderModule } from '@angular/material/slider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
-
-import { TwoLevelStepperNavigationPageComponent } from './components/page-components/two-level-stepper-navigation-page/two-level-stepper-navigation-page.component';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material';
+
+import { TwoLevelStepperNavigationPageComponent } from './components/page-components/two-level-stepper-navigation-page/two-level-stepper-navigation-page.component';
 import { HorizontalStepperNavigationComponent } from './components/navigation-components/horizontal-stepper-navigation/horizontal-stepper-navigation.component';
 import { VerticalStepperNavigationComponent } from './components/navigation-components/vertical-stepper-navigation/vertical-stepper-navigation.component';
 import { InsisArrayComponent } from './components/element-components/insis-array-component/insis-array.component';
 import { InsisArrayCardsLayoutComponent } from './components/element-components/insis-array-cards-layout-component/insis-array-cards-layout.component';
+import { InsisMotorPolicySummarySectionComponent } from './components/section-components/insis-motor-policy-summary-section/insis-motor-policy-summary-section.component';
 
 /**
  * TIP: You will need to include in this array any new component you create.
@@ -26,7 +27,8 @@ export const iceCustomComponents = [
   IceSliderComponent,
   InsisArrayComponent,
   InsisArrayCardsLayoutComponent,
-  TwoLevelStepperNavigationPageComponent
+  TwoLevelStepperNavigationPageComponent,
+  InsisMotorPolicySummarySectionComponent
 ];
 
 /**

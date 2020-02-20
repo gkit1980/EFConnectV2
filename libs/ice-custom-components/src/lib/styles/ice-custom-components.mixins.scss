@@ -4,6 +4,7 @@
 @import '../components/page-components/two-level-stepper-navigation-page/two-level-stepper-navigation-page.mixin';
 @import '../components/element-components/ice-slider-component/ice-slider.mixin.scss';
 @import '../components/element-components/insis-array-cards-layout-component/insis-array-cards-layout.mixin.scss';
+@import '../components/section-components/insis-motor-policy-summary-section/insis-motor-policy-summary-section.mixin.scss';
 
 /**
  * TIP: You will need to @include here any new mixin you add to the ice-custom-component library.
@@ -17,4 +18,5 @@
   @include two-level-stepper-navigation-page-mixin($theme);
   @include ice-slider-mixin($theme);
   @include insis-array-cards-layout-mixin($theme);
+  @include insis-motor-policy-summary-section-mixin($theme);
 }

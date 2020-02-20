@@ -269,6 +269,12 @@ entries:
               - en: Insurance duration
                 de: Insurance duration
       participants:
+        holder:
+          person:
+            full-name:
+              label:
+                - en: Policy holder
+                  de: Policy holder
         beneficiaries:
           items:
             person:

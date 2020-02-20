@@ -93,3 +93,7 @@ page:
                     css: u-mt-4
                     elements:
                       - name: go-to-next-page
+    - component:
+        InsisMotorPolicySummarySection:
+          tags:
+            - pull-right

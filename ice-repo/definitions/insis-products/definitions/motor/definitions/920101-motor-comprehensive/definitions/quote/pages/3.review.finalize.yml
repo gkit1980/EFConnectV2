@@ -69,3 +69,7 @@ page:
                     elements:
                       - name: buy-insurance-description
       css: text-align-center hide-on-mobile u-mb-4
+    - component:
+        InsisMotorPolicySummarySection:
+          tags:
+            - pull-right

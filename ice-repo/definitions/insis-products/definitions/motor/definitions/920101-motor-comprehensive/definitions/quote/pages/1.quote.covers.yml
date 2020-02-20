@@ -67,16 +67,20 @@ page:
                     css: u-ml-7 u-d-inlineblock slider-mirror-labels
                     align: center
                     elements:
-                      - name: policy.insured.vehicle-objects~cover.owndamage.deductible
-                      - name: policy.insured.vehicle-objects~cover.owndamage.deductible-mirror
+                      - name: >-
+                          policy.insured.vehicle-objects~cover.owndamage.deductible
+                      - name: >-
+                          policy.insured.vehicle-objects~cover.owndamage.deductible-mirror
                   - size: calc(50% - 28px)
                     size.xs: 100%
                     size.sm: 100%
                     css: u-ml-7 u-d-inlineblock slider-mirror-labels
                     align: center
                     elements:
-                      - name: policy.insured.vehicle-objects~cover.owndamage.insured-amount
-                      - name: policy.insured.vehicle-objects~cover.owndamage.insured-amount-mirror
+                      - name: >-
+                          policy.insured.vehicle-objects~cover.owndamage.insured-amount
+                      - name: >-
+                          policy.insured.vehicle-objects~cover.owndamage.insured-amount-mirror
                 css: u-mb-4
               - cols:
                   - size: auto
@@ -100,7 +104,7 @@ page:
     - component:
         IceFlexSection:
           tags:
-            - 'pull-right'
+            - pull-right
           grid:
             rows:
               - cols:
@@ -111,7 +115,7 @@ page:
     - component:
         IceFlexSection:
           tags:
-            - 'pull-right'
+            - pull-right
           grid:
             rows:
               - cols:
@@ -161,6 +165,10 @@ page:
                 align: center
                 gap: 10px
       css: card u-mb-3
+    - component:
+        InsisMotorPolicySummarySection:
+          tags:
+            - pull-right
   label:
     ResourcePageLabelRule:
       navigationTitleKey: pages.1.quote.covers.title

@@ -165,3 +165,7 @@ page:
                 align: center
                 gap: 10px
       css: card u-mb-3
+    - component:
+        InsisMotorPolicySummarySection:
+          tags:
+            - pull-right
