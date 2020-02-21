@@ -22,7 +22,8 @@ import {
   MatRadioModule,
   MatCheckboxModule,
   MatSlideToggleModule,
-  MatDialogModule
+  MatDialogModule,
+  MatProgressSpinnerModule
 } from '@angular/material';
 import { NgIceModule, IcePrincipalService } from '@impeo/ng-ice';
 import { ClientPrincipal } from '@impeo/ice-core';
@@ -38,6 +39,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { registerCustomRules } from '@insis-portal/ice-custom-rules';
 import { IceCustomComponentsModule } from '@insis-portal/ice-custom-components';
 import { CustomBreakpointsProvider } from './custom-breakpoints';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+import { SpinnerService } from './services/spinner.service';
 
 @NgModule({
   declarations: [
@@ -50,6 +53,7 @@ import { CustomBreakpointsProvider } from './custom-breakpoints';
     FooterComponent,
     StyleGuideComponent,
     LanguagePickerComponent,
+    SpinnerComponent,
     AppDialog
   ],
   imports: [
@@ -68,6 +72,7 @@ import { CustomBreakpointsProvider } from './custom-breakpoints';
     MatRadioModule,
     MatCheckboxModule,
     MatSlideToggleModule,
+    MatProgressSpinnerModule,
     FlexLayoutModule,
     NgIceModule.forRoot(),
     IceCustomComponentsModule,
@@ -78,6 +83,7 @@ import { CustomBreakpointsProvider } from './custom-breakpoints';
     AuthenticationService,
     LoginAuthenticationGuard,
     LoginPageGuard,
+    SpinnerService,
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
       useValue: { appearance: 'outline' }

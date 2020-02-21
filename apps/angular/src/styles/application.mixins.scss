@@ -3,6 +3,7 @@
 @import '../app/components/footer/footer.component.mixin';
 @import '../app/components/login/login.component.mixin';
 @import '../app/components/header/header.mixin';
+@import '../app/components/spinner/spinner.mixin';
 
 /** TIP: You will need to @include any application mixin within this all application mixins.
  */
@@ -12,4 +13,5 @@
   @include alert-mixin($theme);
   @include login-mixin($theme);
   @include header-mixin($theme);
+  @include spinner-mixin($theme);
 }
