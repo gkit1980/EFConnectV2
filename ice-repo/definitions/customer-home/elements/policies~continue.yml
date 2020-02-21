@@ -5,3 +5,8 @@ element:
       component:
         IceButton:
           variant: flat
+  action:
+    execution:
+      - DtNavigateToDefinitionExecutionRule:
+          dt: navigate-to-show-policy
+          definitionOutput: url
