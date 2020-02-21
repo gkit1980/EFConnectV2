@@ -1,21 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { IceArrayComponent } from '@impeo/ng-ice';
+import { Component } from '@angular/core';
+import { InsisArrayComponentImplementation } from '../insis-array-component-implementation';
 
 @Component({
   selector: 'insis-array-cards-layout',
   templateUrl: './insis-array-cards-layout.component.html'
 })
-export class InsisArrayCardsLayoutComponent extends IceArrayComponent implements OnInit {
+export class InsisArrayCardsLayoutComponent extends InsisArrayComponentImplementation {
   static componentName = 'InsisArrayCardsLayout';
-  addButtonLabel = '';
-  removeButtonLabel = '';
 
-  ngOnInit() {
-    super.ngOnInit();
-    this.determineLabels();
-  }
-
-  hasCard(index) {
+  hasCard() {
     const cardLayoutParam = this.getRecipeParam('cardLayout');
     switch (cardLayoutParam) {
       case 'never':
@@ -26,16 +19,5 @@ export class InsisArrayCardsLayoutComponent extends IceArrayComponent implements
       default:
         return true;
     }
-  }
-
-  private determineLabels() {
-    this.addButtonLabel = this.resource.resolve(
-      this.getRecipeParam('addButtonLabelResourceKey'),
-      'Add'
-    );
-    this.removeButtonLabel = this.resource.resolve(
-      this.getRecipeParam('removeButtonLabelResourceKey'),
-      'Remove'
-    );
   }
 }

@@ -10,8 +10,12 @@ entries:
             de: Additional audio/video equipment
     previous-insurer-heading:
       label:
-        - en: What is the name of your previous Motor and Third Party Liability insurer?
-          de: What is the name of your previous Motor and Third Party Liability insurer?
+        - en: >-
+            What is the name of your previous Motor and Third Party Liability
+            insurer?
+          de: >-
+            What is the name of your previous Motor and Third Party Liability
+            insurer?
     previous-insurer:
       label:
         - en: Previous insurer
@@ -26,7 +30,9 @@ entries:
           de: Next
     more-information-needed:
       label:
-        - en: We are going to need some more information about the vehicle and yourself to be able to issue the insurance policy.
+        - en: >-
+            We are going to need some more information about the vehicle and
+            yourself to be able to issue the insurance policy.
           de: null
     person:
       first-name:
@@ -252,6 +258,14 @@ entries:
         remove-vehicle:
           label:
             - en: REMOVE VEHICLE
+              de: null
+        add-another-additional-equipment-audio-video:
+          label:
+            - en: ADD MORE
+              de: null
+        remove-additional-equipment-audio-video:
+          label:
+            - en: REMOVE
               de: null
       contract:
         begin:

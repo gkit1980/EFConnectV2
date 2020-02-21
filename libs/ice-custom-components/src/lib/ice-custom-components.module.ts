@@ -18,6 +18,7 @@ import { VerticalStepperNavigationComponent } from './components/navigation-comp
 import { InsisArrayComponent } from './components/element-components/insis-array-component/insis-array.component';
 import { InsisArrayCardsLayoutComponent } from './components/element-components/insis-array-cards-layout-component/insis-array-cards-layout.component';
 import { InsisMotorPolicySummarySectionComponent } from './components/section-components/insis-motor-policy-summary-section/insis-motor-policy-summary-section.component';
+import { InsisArrayListLayoutComponent } from './components/element-components/insis-array-list-layout-component/insis-array-list-layout.component';
 
 /**
  * TIP: You will need to include in this array any new component you create.
@@ -28,6 +29,7 @@ export const iceCustomComponents = [
   IceSliderComponent,
   InsisArrayComponent,
   InsisArrayCardsLayoutComponent,
+  InsisArrayListLayoutComponent,
   TwoLevelStepperNavigationPageComponent,
   InsisMotorPolicySummarySectionComponent,
   ConfirmationPageComponent

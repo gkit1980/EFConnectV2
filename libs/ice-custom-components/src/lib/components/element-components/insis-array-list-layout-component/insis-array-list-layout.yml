@@ -1,5 +1,7 @@
-label: InsisArrayCardLayout
-component: InsisArrayCardLayout
+label: Insis array list layout
+
+component: InsisArrayListLayout
+
 types:
   - array
 params:
@@ -9,13 +11,6 @@ params:
   removeButtonLabelResourceKey:
     label: Remove button label
     type: resourceKey
-  cardLayout:
-    label: Show cards
-    type: select
-    options:
-      never: Never
-      always: Always
-      onMultipleItems: On multiple items
   confirmOnRemove:
     type: boolean
     label: Show confirm dialog before remove item from array

@@ -1,6 +1,5 @@
 element:
   type: array
-  component: InsisArray
   viewMode:
     ConditionalViewModeRule:
       conditionValue: 'true'
@@ -13,4 +12,13 @@ element:
       default: '1'
       min: '1'
   label:
-    NoLabelRule: null
+    NoLabelRule: {}
+  component:
+    StaticComponentRule:
+      component:
+        InsisArrayListLayout:
+          addButtonLabelResourceKey: >-
+            elements.policy.insured.add-another-additional-equipment-audio-video.label
+          removeButtonLabelResourceKey: >-
+            elements.policy.insured.remove-additional-equipment-audio-video.label
+          confirmOnRemove: false

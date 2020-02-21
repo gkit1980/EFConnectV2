@@ -14,7 +14,7 @@
     <div
       *ngFor="let item of getItems(); index as index"
       class="insis-array-cards-layout-item"
-      [ngClass]="{ card: hasCard(index) }"
+      [ngClass]="{ card: hasCard() }"
     >
       <div>
         <ng-container

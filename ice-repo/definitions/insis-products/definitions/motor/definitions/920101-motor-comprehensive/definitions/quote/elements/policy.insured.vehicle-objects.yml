@@ -26,3 +26,4 @@ element:
               addButtonLabelResourceKey: elements.policy.insured.add-another-vehicle.label
               removeButtonLabelResourceKey: elements.policy.insured.remove-vehicle.label
               cardLayout: onMultipleItems
+              confirmOnRemove: false
