@@ -85,26 +85,6 @@ page:
                     elements:
                       - name: policy.insured.vehicle-objects~owner.birthdate
               - cols:
-                  - size: auto
-                    size.xs: 100%
-                    css: mat-h3 u-mb-3 u-text-medium
-                    elements:
-                      - name: policy.participants.beneficiaries~title
-              - gap: 24px
-                gap.xs: 0px
-                align: start
-                cols:
-                  - size: 190px
-                    size.xs: 100%
-                    css: u-mb-4
-                    elements:
-                      - name: policy.participants.beneficiaries~person.first-name
-                  - size: 190px
-                    size.xs: 100%
-                    css: u-mb-4
-                    elements:
-                      - name: policy.participants.beneficiaries~person.last-name
-              - cols:
                   - size: 100%
                     css: mat-h3 u-mb-3 u-text-medium
                     elements:
