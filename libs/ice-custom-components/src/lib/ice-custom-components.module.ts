@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material';
 
 import { TwoLevelStepperNavigationPageComponent } from './components/page-components/two-level-stepper-navigation-page/two-level-stepper-navigation-page.component';
+import { ConfirmationPageComponent } from './components/page-components/confirmation-page/confirmation-page.component';
 import { HorizontalStepperNavigationComponent } from './components/navigation-components/horizontal-stepper-navigation/horizontal-stepper-navigation.component';
 import { VerticalStepperNavigationComponent } from './components/navigation-components/vertical-stepper-navigation/vertical-stepper-navigation.component';
 import { InsisArrayComponent } from './components/element-components/insis-array-component/insis-array.component';
@@ -28,7 +29,8 @@ export const iceCustomComponents = [
   InsisArrayComponent,
   InsisArrayCardsLayoutComponent,
   TwoLevelStepperNavigationPageComponent,
-  InsisMotorPolicySummarySectionComponent
+  InsisMotorPolicySummarySectionComponent,
+  ConfirmationPageComponent
 ];
 
 /**

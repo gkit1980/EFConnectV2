@@ -4,10 +4,6 @@
   $background: map-get($theme, background);
 
   .app-root {
-    background: mat_color($background, background);
-  }
-
-  .margin-10 {
-    margin: 10px;
+    background: #fff;
   }
 }
