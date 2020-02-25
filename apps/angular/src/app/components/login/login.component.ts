@@ -9,7 +9,7 @@ import { AuthenticationService } from '../../services/authentication.service';
   templateUrl: './login.component.html'
 })
 export class LoginComponent implements OnInit {
-  pid = '';
+  pid = 'DCT01';
 
   constructor(
     private router: Router,
