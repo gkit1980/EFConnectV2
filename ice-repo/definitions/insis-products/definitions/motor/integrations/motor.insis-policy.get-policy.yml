@@ -60,3 +60,28 @@ integration:
               payload: Policy.Insureds.Insured[n].InsuredEntity.OCar.CarUsage
             - element: policy.insured.vehicle-objects~car.seats-number
               payload: Policy.Insureds.Insured[n].InsuredEntity.OCar.SeatsNum
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+            fromIdx:
+              array: Drivers.Driver
+          toIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            condition: 1==1
+            toIdx:
+              array: drivers
+              append: true
+          mappings:
+            - element: policy.insured.vehicle-objects~drivers~person.driver-id
+              payload: Insureds.Insured[n].Drivers.Driver[n].DriverID
+            - element: policy.insured.vehicle-objects~drivers~person.pid
+              payload: Insureds.Insured[n].Drivers.Driver[n].PID
+            - element: policy.insured.vehicle-objects~drivers~person.first-name
+              payload: Insureds.Insured[n].Drivers.Driver[n].Entity.PersonalData.Name.Given
+            - element: policy.insured.vehicle-objects~drivers~person.last-name
+              payload: Insureds.Insured[n].Drivers.Driver[n].Entity.PersonalData.Name.Family
+            - element: policy.insured.vehicle-objects~drivers~person.pid
+              payload: Insureds.Insured[n].Drivers.Driver[n].Entity.PersonalData.PID
+            - element: policy.insured.vehicle-objects~drivers~person.date-of-birth
+              payload: Insureds.Insured[n].Drivers.Driver[n].Entity.PersonalData.BirthDate
+            - element: policy.insured.vehicle-objects~drivers~person.driver-license-nb
+              payload: Insureds.Insured[n].Drivers.Driver[n].LicenseID

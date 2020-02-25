@@ -13,11 +13,11 @@ element:
   change:
     - ResetElementValueExecutionRule:
         elements:
-          - policy.insured.vehicle-objects~owner.lessor-name
-          - policy.insured.vehicle-objects~owner.first-name
-          - policy.insured.vehicle-objects~owner.last-name
+          - policy.insured.vehicle-objects~owner.lessor.name
+          - policy.insured.vehicle-objects~owner.person.first-name
+          - policy.insured.vehicle-objects~owner.person.last-name
           - policy.insured.vehicle-objects~owner.address.city
           - policy.insured.vehicle-objects~owner.address.zip
-          - policy.insured.vehicle-objects~owner.birthdate
+          - policy.insured.vehicle-objects~owner.person.birthdate
   label:
     NoLabelRule: {}

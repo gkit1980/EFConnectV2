@@ -16,7 +16,10 @@ integration:
               payload: 'InsuranceConditions.Questionary.Question[n].ID'
             - element: policy.contract.question.previous-mtpl-insurer
               payload: 'InsuranceConditions.Questionary.Question[n].Answer'
-        - toIdx:
+        - fromIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            index: [0]
+          toIdx:
             array: 'payload.InsuranceConditions.Questionary.Question'
             append: true
           mappings:
@@ -140,6 +143,8 @@ integration:
               array: Covers.Cover
               append: true
           mappings:
+            - element: policy.insured.vehicle-objects~cover.mtpl.grc-id
+              payload: 'Insureds.Insured[n].Covers.Cover[n].GrcID'
             - element: policy.insured.vehicle-objects~cover.mtpl.annex-id
               payload: 'Insureds.Insured[n].Covers.Cover[n].AnnexID'
             - element: policy.insured.vehicle-objects~cover.mtpl.code
@@ -158,6 +163,8 @@ integration:
               array: Covers.Cover
               append: true
           mappings:
+            - element: policy.insured.vehicle-objects~cover.owndamage.grc-id
+              payload: 'Insureds.Insured[n].Covers.Cover[n].GrcID'
             - element: policy.insured.vehicle-objects~cover.owndamage.annex-id
               payload: 'Insureds.Insured[n].Covers.Cover[n].AnnexID'
             - element: policy.insured.vehicle-objects~cover.owndamage.code
@@ -176,6 +183,8 @@ integration:
               array: Covers.Cover
               append: true
           mappings:
+            - element: policy.insured.vehicle-objects~cover.pa.grc-id
+              payload: 'Insureds.Insured[n].Covers.Cover[n].GrcID'
             - element: policy.insured.vehicle-objects~cover.pa.annex-id
               payload: 'Insureds.Insured[n].Covers.Cover[n].AnnexID'
             - element: policy.insured.vehicle-objects~cover.pa.code
@@ -194,6 +203,8 @@ integration:
               array: Covers.Cover
               append: true
           mappings:
+            - element: policy.insured.vehicle-objects~cover.road_assis.grc-id
+              payload: 'Insureds.Insured[n].Covers.Cover[n].GrcID'
             - element: policy.insured.vehicle-objects~cover.road_assis.annex-id
               payload: 'Insureds.Insured[n].Covers.Cover[n].AnnexID'
             - element: policy.insured.vehicle-objects~cover.road_assis.code
@@ -212,6 +223,8 @@ integration:
               array: Covers.Cover
               append: true
           mappings:
+            - element: policy.insured.vehicle-objects~cover.vandalism.grc-id
+              payload: 'Insureds.Insured[n].Covers.Cover[n].GrcID'
             - element: policy.insured.vehicle-objects~cover.vandalism.annex-id
               payload: 'Insureds.Insured[n].Covers.Cover[n].AnnexID'
             - element: policy.insured.vehicle-objects~cover.vandalism.code

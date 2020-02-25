@@ -6,3 +6,4 @@ element:
         IceButton:
           themeColor: primary
           variant: flat
+  defaultValue: issue-policy

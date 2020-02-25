@@ -76,27 +76,28 @@ entries:
                   label:
                     - en: ZIP
                       de: null
-              options:
-                title:
+              options-title:
                   label:
                     - en: Vehicle ownership
                       de: null
-              first-name:
-                label:
-                  - en: Owner first name
-                    de: null
-              last-name:
-                label:
-                  - en: Owner last name
-                    de: null
-              birthdate:
-                label:
-                  - en: Birthdate
-                    de: null
-              lessor-name:
-                label:
-                  - en: Lessor name
-                    de: null
+              person:
+                first-name:
+                  label:
+                    - en: Owner first name
+                      de: null
+                last-name:
+                  label:
+                    - en: Owner last name
+                      de: null
+                birthdate:
+                  label:
+                    - en: Birthdate
+                      de: null
+              lessor:
+                name:
+                  label:
+                    - en: Lessor name
+                      de: null
             insured-amount:
               label:
                 - en: Actual value of the car

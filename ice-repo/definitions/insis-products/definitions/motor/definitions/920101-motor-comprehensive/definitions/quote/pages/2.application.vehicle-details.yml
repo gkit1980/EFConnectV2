@@ -30,7 +30,7 @@ page:
                     size.xs: 100%
                     css: u-mb-3 mat-h3 u-text-medium
                     elements:
-                      - name: policy.insured.vehicle-objects~owner.options.title
+                      - name: policy.insured.vehicle-objects~owner.options-title
               - gap: 24px
                 gap.xs: 0px
                 cols:
@@ -47,7 +47,7 @@ page:
                     size.xs: 100%
                     css: u-mb-4
                     elements:
-                      - name: policy.insured.vehicle-objects~owner.lessor-name
+                      - name: policy.insured.vehicle-objects~owner.lessor.name
               - gap: 24px
                 gap.xs: 0px
                 align: start
@@ -56,11 +56,11 @@ page:
                     size.xs: 100%
                     css: u-mb-4
                     elements:
-                      - name: policy.insured.vehicle-objects~owner.first-name
+                      - name: policy.insured.vehicle-objects~owner.person.first-name
                   - size: 190px
                     size.xs: 100%
                     elements:
-                      - name: policy.insured.vehicle-objects~owner.last-name
+                      - name: policy.insured.vehicle-objects~owner.person.last-name
               - gap: 24px
                 gap.xs: 0px
                 align: start
@@ -83,7 +83,7 @@ page:
                     size.xs: 100%
                     css: u-mb-4
                     elements:
-                      - name: policy.insured.vehicle-objects~owner.birthdate
+                      - name: policy.insured.vehicle-objects~owner.person.birthdate
               - cols:
                   - size: 100%
                     css: mat-h3 u-mb-3 u-text-medium
