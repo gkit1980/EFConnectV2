@@ -4,3 +4,6 @@ element:
   values:
     ListValuesRule:
       list: engine-capacity
+  type: integer
+  fake:
+    value: 2800

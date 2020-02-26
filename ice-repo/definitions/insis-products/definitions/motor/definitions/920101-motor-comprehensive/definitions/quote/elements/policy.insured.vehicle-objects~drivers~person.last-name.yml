@@ -4,3 +4,5 @@ element:
     ElementValueRule:
       element: policy.participants.holder.person.last-name
       index: 0
+  fake:
+    value: Smith

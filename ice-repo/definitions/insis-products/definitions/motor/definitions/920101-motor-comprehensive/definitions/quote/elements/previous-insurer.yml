@@ -7,3 +7,5 @@ element:
   values:
     ListValuesRule:
       list: previous-insurers
+  fake:
+    value: none

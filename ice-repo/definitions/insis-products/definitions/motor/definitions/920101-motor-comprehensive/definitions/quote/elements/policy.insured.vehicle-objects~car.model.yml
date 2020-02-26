@@ -2,3 +2,6 @@ element:
   values:
     DtValuesRule:
       dt: insis-model-from-brand
+  type: text
+  fake:
+    value: A1

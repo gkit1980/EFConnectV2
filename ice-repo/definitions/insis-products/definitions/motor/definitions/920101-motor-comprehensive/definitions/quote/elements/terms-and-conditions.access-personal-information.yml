@@ -13,3 +13,5 @@ element:
         value: true
         messageKey: validation.messages.comply
   defaultValue: false
+  fake:
+    value: true

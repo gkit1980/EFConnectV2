@@ -2,3 +2,6 @@ element:
   range:
     StaticRangeRule:
       min: '1'
+  type: integer
+  fake:
+    value: 10000
