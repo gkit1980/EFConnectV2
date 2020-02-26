@@ -1,0 +1,20 @@
+page:
+  validation:
+    onElementComponentChange: true
+    behaviour: forward
+    showMessages: none
+    showGrowl: false
+    showElementValidation: true
+  component: TwoLevelStepperNavigationPage
+  sections:
+    - component:
+        IceFlexSection:
+          tags:
+            - pull-right
+          grid:
+            rows:
+              - cols:
+                  - size: 100%
+                    elements:
+                      - name: buy-insurance
+      css: button-width-100 u-mb-3

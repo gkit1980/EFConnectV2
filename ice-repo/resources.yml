@@ -139,8 +139,8 @@ entries:
             car:
               covers-title:
                 label:
-                  - en: 'Covers for ${param1} ${param2}'
-                    de: 'Covers for ${param1} ${param2}'
+                  - en: "Covers for ${param1} ${param2}"
+                    de: "Covers for ${param1} ${param2}"
               regno:
                 label:
                   - en: License plate
@@ -404,25 +404,25 @@ entries:
         - en: "'${value}' does not matches regular expression ${regexp}"
       array:
         min:
-          - en: 'must have at least ${min} entries'
+          - en: "must have at least ${min} entries"
         max:
-          - en: 'can have max ${max} entries'
+          - en: "can have max ${max} entries"
       range:
         currency:
           min:
-            - en: 'may not be smaller than ${number}'
+            - en: "may not be smaller than ${number}"
           max:
-            - en: 'may not be more than ${number}'
+            - en: "may not be more than ${number}"
         integer:
           min:
-            - en: 'may not be smaller than ${number}'
+            - en: "may not be smaller than ${number}"
           max:
-            - en: 'may not be more than ${number}'
+            - en: "may not be more than ${number}"
         date:
           min:
-            - en: 'may not be less than ${date}'
+            - en: "may not be less than ${date}"
           max:
-            - en: 'may not be greater than ${date}'
+            - en: "may not be greater than ${date}"
       email:
         - en: Please enter a valid email address
           de: Bitte geben Sie eine gültige Email-Adresse ein.
@@ -468,6 +468,18 @@ entries:
       title:
         - en: Covers
           de: null
+    1.quote.buildings:
+      title:
+        - en: Buildings
+          de: null
+    1.quote.contents:
+      title:
+        - en: Contents
+          de: null
+    1.quote.property-type:
+      title:
+        - en: Insured property type
+          de: null
     2.application:
       title:
         - en: Additional Details
@@ -485,6 +497,18 @@ entries:
       title:
         - en: Participants
           de: null
+    2.application.buildings-details:
+      title:
+        - en: Buildings details
+          de: null
+    2.application.contents-details:
+      title:
+        - en: Contents details
+          de: null
+    2.application.person-details:
+      title:
+        - en: Person details
+          de: null
     3.review:
       title:
         - en: Review and Buy
@@ -496,6 +520,10 @@ entries:
     3.review.terms:
       title:
         - en: Finalize
+          de: null
+    3.review.finalize:
+      title:
+        - en: Terms and conditions
           de: null
     header:
       dashboard:
@@ -556,9 +584,9 @@ entries:
     number:
       fractionDelimiter:
         - en: .
-          de: ','
+          de: ","
       thousandDelimiter:
-        - en: ','
+        - en: ","
           de: .
   currency-code:
     - en: EUR

@@ -1,0 +1,25 @@
+default:
+  validations:
+    onElementComponentChange: true
+    behaviour: forward
+pages:
+  StaticNavigationPagesRule:
+    pages:
+      - page: 1.quote
+        firstChild: true
+        pages:
+          - page: 1.quote.property-type
+          - page: 1.quote.buildings
+          - page: 1.quote.contents
+          - page: 1.quote.covers
+      - page: 2.application
+        firstChild: true
+        pages:
+          - page: 2.application.buildings-details
+          - page: 2.application.contents-details
+          - page: 2.application.person-details
+      - page: 3.review
+        firstChild: true
+        pages:
+          - page: 3.review.payment
+          - page: 3.review.finalize

@@ -1,0 +1,6 @@
+element:
+  type: text
+  defaultValue:
+    ElementValueRule:
+      element: policy.participants.holder.person.last-name
+      index: 0

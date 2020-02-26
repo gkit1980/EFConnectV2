@@ -1,0 +1,11 @@
+element:
+  type: action
+  change:
+    - NavigateToPageExecutionRule:
+        direction: next
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          themeColor: primary
+          variant: flat

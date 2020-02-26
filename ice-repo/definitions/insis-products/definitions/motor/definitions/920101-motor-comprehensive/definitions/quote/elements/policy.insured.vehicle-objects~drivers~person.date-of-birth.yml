@@ -1,0 +1,6 @@
+element:
+  type: date
+  defaultValue:
+    ElementValueRule:
+      element: policy.participants.holder.person.date-of-birth
+      index: 0
