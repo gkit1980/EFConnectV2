@@ -1,0 +1,8 @@
+element:
+  title: >-
+    Do you have a security system installed at the premises where the contents
+    is kept?
+  type: text
+  component: IceTextInput
+  viewMode: required
+  values: insis.policy.insured.property-objects~questions.2000.12

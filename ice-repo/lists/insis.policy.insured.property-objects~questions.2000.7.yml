@@ -1,0 +1,11 @@
+list:
+  type: text
+  additionals:
+    label:
+      label: Label
+      type: text
+  items:
+    - value: 2000.7.1
+      label: brickwork
+    - value: 2000.7.2
+      label: gypsum/vynil pannels

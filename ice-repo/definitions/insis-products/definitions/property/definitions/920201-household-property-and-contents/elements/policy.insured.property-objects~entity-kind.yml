@@ -1,0 +1,5 @@
+element:
+  title: Kind of Object
+  type: integer
+  defaultValue: '41'
+  values: insis.policy.insured.property-objects~entity-kind

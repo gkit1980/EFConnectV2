@@ -1,0 +1,8 @@
+element:
+  type: currency
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.insured.property-objects~.cover-packages.nathaz.active
+      conditionValue: true
+      conditionViewMode: output
+      elseViewMode: hidden

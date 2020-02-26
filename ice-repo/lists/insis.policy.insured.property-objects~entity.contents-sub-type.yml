@@ -1,0 +1,31 @@
+list:
+  type: text
+  additionals:
+    label_en:
+      label: label_en
+      type: text
+    label_de:
+      label: label_de
+      type: text
+  items:
+    - value: '421'
+      label_en: Furniture
+      label_de: Furniture
+    - value: '422'
+      label_en: Kitchen Appliance
+      label_de: Kitchen Appliance
+    - value: '423'
+      label_en: Audio/Video
+      label_de: Audio/Video
+    - value: '424'
+      label_en: Valuable items
+      label_de: Valuable items
+    - value: '425'
+      label_en: Tools
+      label_de: Tools
+    - value: '426'
+      label_en: Other
+      label_de: Other
+    - value: '420'
+      label_en: All contents
+      label_de: All contents

@@ -1,0 +1,5 @@
+element:
+  title: owner's-liability
+  type: integer
+  defaultValue: '90101'
+  values: insis.policy.insured.liability-objects~entity.owner's-liability-sub-type

@@ -1,0 +1,22 @@
+list:
+  type: text
+  additionals:
+    label_en:
+      label: label_en
+      type: text
+    label_de:
+      label: label_de
+      type: text
+  items:
+    - value: '411'
+      label_en: Apartment
+      label_de: Apartment
+    - value: '412'
+      label_en: House
+      label_de: House
+    - value: '413'
+      label_en: Villa
+      label_de: Villa
+    - value: '414'
+      label_en: Auxiliary building
+      label_de: Auxiliary building

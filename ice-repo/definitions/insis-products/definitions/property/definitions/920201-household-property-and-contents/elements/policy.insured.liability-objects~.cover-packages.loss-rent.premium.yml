@@ -1,0 +1,8 @@
+element:
+  type: currency
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.insured.liability-objects~.cover-packages.loss-rent.active
+      conditionValue: true
+      conditionViewMode: output
+      elseViewMode: hidden

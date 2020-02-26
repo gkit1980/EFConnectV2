@@ -1,0 +1,6 @@
+element:
+  title: Do you keep your valuable items in a safe-box?
+  type: text
+  component: IceTextInput
+  viewMode: required
+  values: insis.policy.insured.property-objects~questions.2000.13

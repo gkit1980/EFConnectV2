@@ -1,0 +1,8 @@
+element:
+  type: currency
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.insured.property-objects~.cover-packages.debris.active
+      conditionValue: true
+      conditionViewMode: required
+      elseViewMode: hidden

@@ -1,0 +1,13 @@
+list:
+  type: text
+  additionals:
+    label:
+      label: Label
+      type: text
+  items:
+    - value: 2000.4.1
+      label: ceramic tiles
+    - value: 2000.4.2
+      label: concrete roof with bitumen insulation
+    - value: 2000.4.3
+      label: other

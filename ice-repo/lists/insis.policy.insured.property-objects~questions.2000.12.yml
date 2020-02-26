@@ -1,0 +1,11 @@
+list:
+  type: text
+  additionals:
+    label:
+      label: Label
+      type: text
+  items:
+    - value: 2000.12.1
+      label: 'YES'
+    - value: 2000.12.2
+      label: 'NO'

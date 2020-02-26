@@ -1,0 +1,9 @@
+element:
+  type: boolean
+  component:
+    StaticComponentRule:
+      component:
+        IceCheckbox:
+          labelPosition: after
+  viewMode: disabled
+  defaultValue: true

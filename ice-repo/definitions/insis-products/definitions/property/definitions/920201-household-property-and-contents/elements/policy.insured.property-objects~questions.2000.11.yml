@@ -1,0 +1,6 @@
+element:
+  title: Installed fire-alarm?
+  type: text
+  component: IceTextInput
+  viewMode: required
+  values: insis.policy.insured.property-objects~questions.2000.11

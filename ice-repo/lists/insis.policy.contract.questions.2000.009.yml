@@ -1,0 +1,7 @@
+list:
+  type: text
+  additionals:
+    label:
+      label: Label
+      type: text
+  items: []

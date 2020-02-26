@@ -55,7 +55,7 @@ integration:
               payload: 'Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OCar.CustomProperties.CustomProperty[n].Value'
         - fromIdx:
             array: datamodel.policy.insured.vehicle-objects
-            condition: 'car.additional-equipment-car-audio > 0'
+            condition: car.additional-equipment-car-audio > 0
           toIdx:
             array: payload.Policies.Policy[0].Insureds.Insured
             condition: 1 == 1

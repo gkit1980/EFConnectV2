@@ -1,0 +1,8 @@
+element:
+  type: currency
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.insured.property-objects~.cover-packages.water-dmg.active
+      conditionValue: true
+      conditionViewMode: output
+      elseViewMode: hidden

@@ -1,0 +1,5 @@
+element:
+  title: loss-of-rent
+  type: integer
+  defaultValue: '90301'
+  values: insis.policy.insured.liability-objects~entity.loss-of-rent-sub-type

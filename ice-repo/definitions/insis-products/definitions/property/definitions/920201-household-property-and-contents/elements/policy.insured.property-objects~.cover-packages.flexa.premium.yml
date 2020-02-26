@@ -1,0 +1,8 @@
+element:
+  type: currency
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.insured.property-objects~.cover-packages.flexa.active
+      conditionValue: true
+      conditionViewMode: output
+      elseViewMode: hidden

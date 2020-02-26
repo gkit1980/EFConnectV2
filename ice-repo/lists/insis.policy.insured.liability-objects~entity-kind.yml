@@ -1,0 +1,19 @@
+list:
+  type: text
+  additionals:
+    label_en:
+      label: label_en
+      type: text
+    label_de:
+      label: label_de
+      type: text
+  items:
+    - value: '901'
+      label_en: Owner's Liability
+      label_de: Owner's Liability
+    - value: '902'
+      label_en: Tenant's Liability
+      label_de: Tenant's Liability
+    - value: '903'
+      label_en: Loss of Rent
+      label_de: Loss of Rent

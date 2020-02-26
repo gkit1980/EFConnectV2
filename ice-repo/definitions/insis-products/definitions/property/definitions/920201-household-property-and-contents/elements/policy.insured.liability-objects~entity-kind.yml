@@ -1,0 +1,5 @@
+element:
+  title: Kind of Object
+  type: integer
+  defaultValue: '901'
+  values: insis.policy.insured.liability-objects~entity-kind

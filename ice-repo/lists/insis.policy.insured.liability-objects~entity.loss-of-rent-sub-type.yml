@@ -1,0 +1,13 @@
+list:
+  type: text
+  additionals:
+    label_en:
+      label: label_en
+      type: text
+    label_de:
+      label: label_de
+      type: text
+  items:
+    - value: '90301'
+      label_en: Loss of Rent
+      label_de: Loss of Rent

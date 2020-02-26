@@ -1,0 +1,5 @@
+element:
+  title: tenant's-liability
+  type: integer
+  defaultValue: '90201'
+  values: insis.policy.insured.liability-objects~entity.tenant's-liability-sub-type

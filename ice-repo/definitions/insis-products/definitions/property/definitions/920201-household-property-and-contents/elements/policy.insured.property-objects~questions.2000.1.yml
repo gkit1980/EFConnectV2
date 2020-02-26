@@ -1,0 +1,6 @@
+element:
+  title: 'Type of construction of the structural framework:'
+  type: text
+  component: IceTextInput
+  viewMode: required
+  values: insis.policy.insured.property-objects~questions.2000.1

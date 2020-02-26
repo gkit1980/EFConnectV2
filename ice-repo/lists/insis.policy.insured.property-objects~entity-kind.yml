@@ -1,0 +1,16 @@
+list:
+  type: text
+  additionals:
+    label_en:
+      label: label_en
+      type: text
+    label_de:
+      label: label_de
+      type: text
+  items:
+    - value: '41'
+      label_en: Buildings
+      label_de: Buildings
+    - value: '42'
+      label_en: Contents
+      label_de: Contents

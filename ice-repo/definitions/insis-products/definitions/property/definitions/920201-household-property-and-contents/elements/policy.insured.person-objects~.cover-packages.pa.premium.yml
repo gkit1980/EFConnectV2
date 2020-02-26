@@ -1,0 +1,8 @@
+element:
+  type: currency
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.insured.person-objects~.cover-packages.pa.active
+      conditionValue: true
+      conditionViewMode: output
+      elseViewMode: hidden

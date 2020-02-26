@@ -1,0 +1,5 @@
+element:
+  title: buildings
+  type: integer
+  defaultValue: '411'
+  values: insis.policy.insured.property-objects~entity.buildings-sub-type

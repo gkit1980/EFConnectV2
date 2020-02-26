@@ -1,0 +1,6 @@
+element:
+  title: Type of  roof construction
+  type: text
+  component: IceTextInput
+  viewMode: required
+  values: insis.policy.insured.property-objects~questions.2000.4

@@ -1,0 +1,5 @@
+element:
+  title: Total number of floors of the building where contents is kept in
+  type: integer
+  component: IceNumber
+  viewMode: required

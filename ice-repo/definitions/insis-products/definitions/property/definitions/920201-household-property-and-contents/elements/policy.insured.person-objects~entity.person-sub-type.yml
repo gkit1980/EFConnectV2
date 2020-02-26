@@ -1,0 +1,5 @@
+element:
+  title: person
+  type: integer
+  defaultValue: '11811'
+  values: insis.policy.insured.person-objects~entity.person-sub-type

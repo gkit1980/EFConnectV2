@@ -1,0 +1,5 @@
+element:
+  title: contents
+  type: integer
+  defaultValue: '421'
+  values: insis.policy.insured.property-objects~entity.contents-sub-type

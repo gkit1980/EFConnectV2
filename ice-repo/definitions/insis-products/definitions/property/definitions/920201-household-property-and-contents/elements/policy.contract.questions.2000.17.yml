@@ -1,0 +1,5 @@
+element:
+  title: What is Permanent Disability %?
+  type: integer
+  component: IceNumber
+  viewMode: required

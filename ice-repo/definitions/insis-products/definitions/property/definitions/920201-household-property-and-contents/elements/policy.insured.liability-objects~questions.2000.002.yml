@@ -1,0 +1,5 @@
+element:
+  title: For what period (in months) have you rented the property?
+  type: integer
+  component: IceNumber
+  viewMode: required

@@ -1,0 +1,13 @@
+list:
+  type: text
+  additionals:
+    label_en:
+      label: label_en
+      type: text
+    label_de:
+      label: label_de
+      type: text
+  items:
+    - value: '90201'
+      label_en: Tenant's Liability
+      label_de: Tenant's Liability

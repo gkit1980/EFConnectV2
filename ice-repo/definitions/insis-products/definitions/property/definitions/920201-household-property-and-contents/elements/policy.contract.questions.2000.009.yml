@@ -1,0 +1,6 @@
+element:
+  title: Is there a third party involved in the event?
+  type: text
+  component: IceDropdown
+  viewMode: default
+  values: insis.policy.contract.questions.2000.009

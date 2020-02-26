@@ -1,0 +1,13 @@
+list:
+  type: text
+  additionals:
+    label_en:
+      label: label_en
+      type: text
+    label_de:
+      label: label_de
+      type: text
+  items:
+    - value: '1181'
+      label_en: Person
+      label_de: Person

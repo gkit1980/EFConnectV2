@@ -1,0 +1,8 @@
+element:
+  title: >-
+    Did an insurer reject your application for the [product], cancel a contract
+    for the [product] or impose special conditions (e.g. higher deductible)?
+  type: text
+  component: IceTextInput
+  viewMode: required
+  values: insis.policy.contract.questions.2000.15
