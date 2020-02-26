@@ -1,8 +1,9 @@
 <mat-toolbar class="toolbar">
   <mat-toolbar-row class="container nav" fxLayout="row" fxLayoutAlign="space-between center">
     <div fxLayoutAlign="start center">
-      <a [routerLink]="'#'" class="hide-on-mobile"><img src="../../../assets/icons/Fadata-logo-white.svg"
-          style="height: 36px;" alt="" /></a>
+      <a [routerLink]="'#'" class="hide-on-mobile"
+        ><img src="/assets/icons/Fadata-logo-white.svg" style="height: 36px;" alt=""
+      /></a>
       <button mat-button class="show-on-mobile" (click)="toggleMobileNav()">
         <mat-icon>menu</mat-icon>
       </button>
@@ -10,8 +11,13 @@
 
     <div fxLayoutAlign="center center">
       <nav class="nav-list" [ngClass]="{ 'is-shown': showMobileNav }">
-        <a class="tab" *ngFor="let n of navigation" [routerLink]="n.link"
-          [ngClass]="{ active: isSelectedTab(n) }">{{ n.key }}</a>
+        <a
+          class="tab"
+          *ngFor="let n of navigation"
+          [routerLink]="n.link"
+          [ngClass]="{ active: isSelectedTab(n) }"
+          >{{ n.key }}</a
+        >
         <button mat-button class="show-on-mobile btn-close-mobile-nav" (click)="toggleMobileNav()">
           <mat-icon>close</mat-icon>
         </button>

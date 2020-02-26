@@ -59,7 +59,7 @@ entries:
       insured:
         currency:
           label:
-            - en: ${param1}/payment
+            - en: '${param1}/payment'
               de: null
         vehicle-objects:
           label:
@@ -350,7 +350,7 @@ entries:
       description:
         label:
           - en: We need your consent to finalize the purchase.
-            de: Wir benötigen Ihre Zustimmung, um den Kauf abzuschließen.
+            de: 'Wir benötigen Ihre Zustimmung, um den Kauf abzuschließen.'
       access-personal-information:
         label:
           - en: >-
@@ -381,6 +381,17 @@ entries:
           de: >-
             Upon clicking this button the policy will be issued and the provided
             bank account will be debited as per the selected preferences.
+    checbox-card:
+      label:
+        - en: Checkbox component
+          de: null
+      description:
+        - en: >-
+            Such as furniture, kitchen appliances, audio/video, valuable items,
+            tools, etc.
+          de: null
+      icon:
+        - en: person.svg
   validation:
     pageValidation:
       summary:

@@ -1,0 +1,23 @@
+label: Insis Checkbox Card
+
+component: InsisCheckboxCard
+
+types:
+  - boolean
+
+description: >
+  A card component that sets element value to true and false.
+  Set description, icon and label by adding resources. Add the icon file in the folder icons in angular assets.
+
+  resource example:
+      checbox-card:
+      label:
+        - en: Some Label
+          de: null
+      description:
+        - en: >-
+            Such as furniture, kitchen appliances, audio/video, valuable items,
+            tools, etc.
+          de: null
+      icon:
+        - en: person.svg

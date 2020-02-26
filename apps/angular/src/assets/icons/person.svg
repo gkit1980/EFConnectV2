@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 419 427" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-390.47,-1486.15)">
+        <g transform="matrix(0.996769,0,0,1.0941,-344.057,912.197)">
+            <path d="M932.175,528.901C1065.8,573.319 1156.95,585.042 1156.95,713.942C1156.95,842.843 1076.22,914.455 947.324,914.455C818.423,914.455 712.956,827.532 741.658,701.867C765.85,595.949 855.026,503.255 932.175,528.901Z" style="fill:rgb(227,239,248);"/>
+        </g>
+        <g transform="matrix(1,0,0,1.27887,-514.633,-1767.92)">
+            <circle cx="1109.5" cy="2652.3" r="58.966" style="fill:white;stroke:rgb(35,74,118);stroke-width:12.34px;"/>
+        </g>
+        <g transform="matrix(0.946338,0,0,1.09339,-434.077,-1282.55)">
+            <path d="M1024.99,2875.44L972.945,2875.44C972.945,2875.44 940.058,2860.03 967.292,2807.1C967.292,2807.1 984.024,2782.49 1024.99,2767.33C1043.21,2760.59 1066.24,2755.71 1094.73,2755.71C1094.73,2755.71 1179.93,2756.1 1213.94,2807.1C1246.77,2856.31 1213.94,2875.44 1213.94,2875.44" style="fill:white;stroke:rgb(35,74,118);stroke-width:13.85px;"/>
+        </g>
+        <path d="M714.726,1861.43L623.298,1861.43" style="fill:none;stroke:rgb(35,74,118);stroke-width:14.17px;"/>
+        <path d="M562.415,1861.43L594.871,1861.43" style="fill:none;stroke:rgb(35,74,118);stroke-width:14.17px;"/>
+        <path d="M521.592,1721.73C521.592,1721.73 463.537,1737.38 447.351,1795.97" style="fill:none;stroke:rgb(35,74,118);stroke-width:14.17px;stroke-dasharray:7.08,28.33,0,0;"/>
+        <path d="M623.298,1526.96C623.298,1526.96 658.951,1551.31 669.012,1579.98" style="fill:none;stroke:rgb(35,74,118);stroke-width:14.17px;stroke-dasharray:7.08,28.33,0,0;"/>
+    </g>
+</svg>

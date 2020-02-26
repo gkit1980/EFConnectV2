@@ -1,0 +1,27 @@
+<div
+  class="insis-checkbox-card card"
+  *ngIf="isVisible"
+  (click)="onChange()"
+  [ngClass]="{ selected: value }"
+>
+  <mat-checkbox
+    matInput
+    class="checkbox"
+    *ngIf="!isOutput"
+    [(ngModel)]="value"
+    [indeterminate]="value == null"
+    [required]="isRequired"
+    [disabled]="isDisabled"
+    [ngClass]="{ hide: !value }"
+  >
+  </mat-checkbox>
+  <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <img [src]="src" style="width: 154px;" alt="" />
+    <p class="mat-headline text-align-center" *ngIf="label">{{ label }}</p>
+    <p class="description mat-caption text-align-center" *ngIf="description">{{ description }}</p>
+  </div>
+  <mat-output *ngIf="isOutput" [isOutput]="isOutput" [label]="label" [value]="value"></mat-output>
+  <mat-error *ngFor="let message of validation?.getMessagesFor(element.name, index)">
+    {{ message }}
+  </mat-error>
+</div>

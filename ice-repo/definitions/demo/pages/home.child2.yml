@@ -24,3 +24,21 @@ page:
                     size.xs: auto
                     elements:
                       - name: person.first-name
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: checbox-card
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements: []
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements: []
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto

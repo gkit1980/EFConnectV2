@@ -1,0 +1,8 @@
+element:
+  type: boolean
+  component:
+    StaticComponentRule:
+      component:
+        InsisCheckboxCard: {}
+  text:
+    DefaultTextRule: {}

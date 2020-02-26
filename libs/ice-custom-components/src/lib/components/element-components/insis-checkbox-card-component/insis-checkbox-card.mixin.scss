@@ -1,0 +1,35 @@
+@import '~@angular/material/theming';
+
+@mixin insis-checkbox-card-mixin($theme) {
+  $primary: get-mat-color($theme, 'primary');
+  $navigation-line: get-color($theme, 'navigation-line');
+
+  .insis-checkbox-card {
+    width: 224px;
+    height: 304px;
+    display: inline-block;
+  }
+
+  .card {
+    @include make-card();
+
+    &.selected {
+      border: 1px solid $primary;
+      background: #e3eff8;
+      transition: border 100ms linear;
+      transition: background 100ms linear;
+    }
+  }
+
+  .description {
+    color: $navigation-line;
+  }
+
+  .checkbox {
+    position: absolute;
+    float: left;
+    &.hide {
+      visibility: hidden;
+    }
+  }
+}
