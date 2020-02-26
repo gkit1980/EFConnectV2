@@ -10,6 +10,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatIconModule } from '@angular/material/icon';
 
 import { TwoLevelStepperNavigationPageComponent } from './components/page-components/two-level-stepper-navigation-page/two-level-stepper-navigation-page.component';
 import { ConfirmationPageComponent } from './components/page-components/confirmation-page/confirmation-page.component';
@@ -19,6 +21,7 @@ import { InsisArrayComponent } from './components/element-components/insis-array
 import { InsisArrayCardsLayoutComponent } from './components/element-components/insis-array-cards-layout-component/insis-array-cards-layout.component';
 import { InsisMotorPolicySummarySectionComponent } from './components/section-components/insis-motor-policy-summary-section/insis-motor-policy-summary-section.component';
 import { InsisArrayListLayoutComponent } from './components/element-components/insis-array-list-layout-component/insis-array-list-layout.component';
+import { InsisFileUploadComponent } from './components/element-components/insis-file-upload-component/insis-file-upload.component';
 
 /**
  * TIP: You will need to include in this array any new component you create.
@@ -32,7 +35,8 @@ export const iceCustomComponents = [
   InsisArrayListLayoutComponent,
   TwoLevelStepperNavigationPageComponent,
   InsisMotorPolicySummarySectionComponent,
-  ConfirmationPageComponent
+  ConfirmationPageComponent,
+  InsisFileUploadComponent
 ];
 
 /**
@@ -59,6 +63,8 @@ export function registerComponents(componentService: IceComponentsService) {
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatChipsModule,
+    MatIconModule,
     FlexLayoutModule
   ],
 

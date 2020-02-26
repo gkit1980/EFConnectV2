@@ -1,0 +1,20 @@
+<div class="insis-file-upload">
+  <mat-label *ngIf="label">{{ label }}</mat-label>
+  <div class="insis-file-upload-button" *ngIf="!getValue()">
+    <input
+      class="hidden-button"
+      #fileInput
+      type="file"
+      accept="application/pdf,image/*"
+      (change)="uploadEvent($event)"
+    />
+    <button mat-button color="primary">BROWSE</button>
+  </div>
+
+  <mat-chip-list aria-label="Files" *ngIf="getValue()">
+    <mat-chip [removable]="true" (removed)="deleteFile()">
+      {{ trimName(getValue()) }}
+      <mat-icon matChipRemove>cancel</mat-icon>
+    </mat-chip>
+  </mat-chip-list>
+</div>

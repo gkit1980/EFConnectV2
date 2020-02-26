@@ -27,6 +27,12 @@ section:
                 elements:
                   - name: >-
                       policy.insured.vehicle-objects~drivers~person.driver-license-nb
+              - size: auto
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: >-
+                      policy.insured.vehicle-objects~drivers~person.driver-license-file
           - gap: 24px
             gap.xs: 0px
             cols:

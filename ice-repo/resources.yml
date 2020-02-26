@@ -252,6 +252,10 @@ entries:
                     label:
                       - en: Driving license number
                         de: null
+                  driver-license-file:
+                    label:
+                      - en: Driving license copy (optional)
+                        de: null
         add-another-vehicle:
           label:
             - en: ADD ANOTHER VEHICLE

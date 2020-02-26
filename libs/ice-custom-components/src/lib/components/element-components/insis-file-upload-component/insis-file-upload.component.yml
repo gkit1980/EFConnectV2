@@ -1,0 +1,6 @@
+label: InsisFileUpload
+component: InsisFileUpload
+types:
+  - text
+description: >
+  Upload file/image

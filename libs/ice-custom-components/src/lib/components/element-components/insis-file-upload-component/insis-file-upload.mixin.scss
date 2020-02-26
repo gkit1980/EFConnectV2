@@ -1,0 +1,48 @@
+@mixin insis-file-upload-mixin($theme) {
+  .insis-file-upload {
+    mat-label {
+      display: block;
+      font-size: 12px;
+      line-height: 1;
+      padding-top: 4px;
+    }
+
+    .mat-button {
+      padding-left: 0;
+      height: 28px !important;
+    }
+
+    .insis-file-upload-button {
+      position: relative;
+      display: inline-block;
+    }
+
+    .hidden-button {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 10;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .mat-chip-list-wrapper {
+      margin: 4px 0 0 0;
+    }
+
+    .mat-standard-chip {
+      min-height: 24px;
+      font-size: 12px;
+      margin: 0 4px;
+      background-color: transparent;
+      border: 1px solid get-color($theme, 'border-input');
+    }
+
+    .mat-standard-chip.mat-chip-with-trailing-icon {
+      padding-top: 4px;
+      padding-bottom: 4px;
+    }
+  }
+}

@@ -6,6 +6,7 @@
 @import '../components/element-components/insis-array-cards-layout-component/insis-array-cards-layout.mixin.scss';
 @import '../components/section-components/insis-motor-policy-summary-section/insis-motor-policy-summary-section.mixin.scss';
 @import '../components/page-components/confirmation-page/confirmation-page.mixin.scss';
+@import '../components/element-components/insis-file-upload-component/insis-file-upload.mixin.scss';
 /**
  * TIP: You will need to @include here any new mixin you add to the ice-custom-component library.
  * This file here will be loaded by theme.scss which is part of theming structure inside application styles.
@@ -20,4 +21,5 @@
   @include insis-array-cards-layout-mixin($theme);
   @include insis-motor-policy-summary-section-mixin($theme);
   @include confirmation-page-mixin($theme);
+  @include insis-file-upload-mixin($theme);
 }
