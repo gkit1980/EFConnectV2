@@ -51,7 +51,8 @@ export class InsisMotorPolicySummarySectionComponent extends SectionComponentImp
   formatIBAN(iban: string): string {
     const ibanCharArray = iban.split('');
     for (let i = 4; i < ibanCharArray.length - 4; i++) {
-      ibanCharArray[i] = '*';
+      if (i < 8) ibanCharArray[i] = '*';
+      else ibanCharArray[i] = null;
     }
     return ibanCharArray.join('');
   }
