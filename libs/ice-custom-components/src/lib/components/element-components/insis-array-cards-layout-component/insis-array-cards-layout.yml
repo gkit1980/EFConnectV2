@@ -1,5 +1,5 @@
-label: InsisArrayCardLayout
-component: InsisArrayCardLayout
+label: InsisArrayCardsLayout
+component: InsisArrayCardsLayout
 types:
   - array
 params:
