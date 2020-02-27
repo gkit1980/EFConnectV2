@@ -1,0 +1,18 @@
+implementations:
+  ValidatePageExecutionRule:
+    description: >-
+      Triggers component validation on given Page
+
+    params:
+      what:
+        label: What should be validated
+        type: select
+        options:
+          currentPage: Current page
+          specificPage: Specific page
+        required: true
+
+      page:
+        label: Page
+        type: page
+        required: false
