@@ -1,0 +1,12 @@
+implementations:
+  ArrayItemBasedValuesRule:
+    description: returns values based on array item values.
+    params:
+      valueElement:
+        label: Element for the value
+        type: element
+        required: true
+      labelElement:
+        label: Element for the label
+        type: element
+        required: true

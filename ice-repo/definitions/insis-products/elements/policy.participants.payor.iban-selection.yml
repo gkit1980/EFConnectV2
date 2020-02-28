@@ -1,0 +1,8 @@
+element:
+  type: text
+  component: IceRadiobuttonGroup
+  viewMode: default
+  values:
+    ArrayItemBasedValuesRule:
+      valueElement: policy.participants.holder.person.accounts~iban
+      labelElement: policy.participants.holder.person.accounts~iban
