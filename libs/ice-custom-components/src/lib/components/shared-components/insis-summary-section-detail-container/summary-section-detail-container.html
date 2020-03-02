@@ -1,0 +1,11 @@
+<div class="summary-section-detail-container">
+  <h3 class="mat-subheading-1">{{ title }}</h3>
+  <ul>
+    <li class="mat-body-2" *ngFor="let item of items">
+      <span>{{ item.title }}</span>
+      <span *ngIf="item.amount !== null && item.currency !== null">
+        {{ item.amount }} {{ item.currency }}
+      </span>
+    </li>
+  </ul>
+</div>

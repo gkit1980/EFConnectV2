@@ -1,0 +1,20 @@
+<details class="insis-motor-premium-summary-section card" [attr.open]="expanded ? true : null">
+  <summary class="container" fxLayoutAlign="flex-start center">
+    <div class="amount" fxFlex="2 1">
+      <div *ngIf="!singlePayment" class="mat-title amount-per-payment">
+        {{ amountPerPayment }} {{ currency }}/{{ period }}
+      </div>
+      <div class="mat-title" [class.mat-body-2]="!singlePayment">
+        {{ totalAmount }} {{ currency }} <span *ngIf="!singlePayment">(total)</span>
+      </div>
+    </div>
+  </summary>
+  <div>
+    <summary-section-detail-container [title]="'Premiums'" [items]="premiumItems">
+    </summary-section-detail-container>
+    <summary-section-detail-container [title]="'Taxes and fees'" [items]="taxesAndFeesItems">
+    </summary-section-detail-container>
+    <summary-section-detail-container [title]="'Included discounts and loadings'" [items]="discountItems">
+    </summary-section-detail-container>
+  </div>
+</details>

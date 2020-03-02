@@ -410,9 +410,9 @@ entries:
         - en: Please confirm
           de: Bitte bestätigen
       not_allowed_here:
-        - en: "'${value}' not allowed here"
+        - en: '''${value}'' not allowed here'
       regexp:
-        - en: "'${value}' does not matches regular expression ${regexp}"
+        - en: '''${value}'' does not matches regular expression ${regexp}'
       array:
         min:
           - en: "must have at least ${min} entries"
@@ -625,3 +625,31 @@ entries:
         discard:
           - en: Discard
             de: Discard
+  policy:
+    payment:
+      per-month:
+        - en: month
+          de: monat
+      per-quarter:
+        - en: quarter
+          de: quartal
+      per-half-year:
+        - en: half year
+          de: halbes jahr
+    covers:
+      short-name-to-long-name:
+        mtpl:
+          - en: Motor Third Party Liability
+            de: Motor Third Party Liability
+        owndamage:
+          - en: Motor Own Damage
+            de: Motor Own Damage
+        road_assis:
+          - en: Road Assistance
+            de: Road Assistance
+        pa:
+          - en: Personal Accident
+            de: Personal Accident
+        vandalism:
+          - en: Vandalism
+            de: Vandalism

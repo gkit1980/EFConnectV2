@@ -11,8 +11,7 @@ integration:
         - fromIdx:
             array: payload.Policy.Insureds.Insured
           toIdx:
-            array: datamodel.policy.insured.vehicle-objects
-            append: true
+            array: payload.Policy.Insureds.Insured
           mappings:
             - element: policy.insured.vehicle-objects~insured-amount
               payload: 'Policy.Insureds.Insured[n].InsuredAmount'
@@ -85,3 +84,18 @@ integration:
               payload: Insureds.Insured[n].Drivers.Driver[n].Entity.PersonalData.BirthDate
             - element: policy.insured.vehicle-objects~drivers~person.driver-license-nb
               payload: Insureds.Insured[n].Drivers.Driver[n].LicenseID
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+            fromIdx:
+              array: Discounts.Discount
+          toIdx:
+            array: datamodel.policy.insured.vehicle-boejcts
+            condition: 1==1
+            toIdx:
+              array: discounts
+              append: true
+          mappings:
+            - element: policy.insured.vehicle-objects~discounts~type
+              payload: Insureds.Insured[n].Discounts.Discount[n].DiscountType
+            - element: policy.insured.vehicle-objects~discounts~amount
+              payload: Insureds.Insured[n].Discounts.Discount[n].LumpSumDiscount

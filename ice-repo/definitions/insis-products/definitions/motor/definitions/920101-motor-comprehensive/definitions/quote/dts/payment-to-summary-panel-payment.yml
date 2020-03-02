@@ -1,0 +1,21 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - label: new label
+      element: policy.contract.payment.frequency
+  outputs:
+    - id: output
+      type: resourceKey
+  rules:
+    - inputs:
+        - 12
+      outputs:
+        - policy.payment.per-month
+    - inputs:
+        - 4
+      outputs:
+        - policy.payment.per-quarter
+    - inputs:
+        - 2
+      outputs:
+        - policy.payment.per-half-year

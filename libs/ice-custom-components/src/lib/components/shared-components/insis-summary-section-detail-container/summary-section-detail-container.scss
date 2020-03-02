@@ -1,0 +1,15 @@
+@mixin insis-summary-section-detail-container-mixin($theme) {
+  .summary-section-detail-container {
+    h3 {
+      margin: 0;
+    }
+
+    ul {
+      padding-inline-start: 20px;
+      li {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}

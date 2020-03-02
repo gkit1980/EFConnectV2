@@ -16,7 +16,7 @@ export class InsisMotorPolicySummarySectionComponent extends SectionComponentImp
   }
 
   getElementValue(elementName: string, index = [0]): string {
-    const element = this.iceModel.elements[elementName] as ItemElement;
+    const element = (this.iceModel.elements[elementName] as unknown) as ItemElement;
     const value = element.getValue().forIndex(index);
     let displayValue = '';
 

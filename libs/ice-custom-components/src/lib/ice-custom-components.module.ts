@@ -20,9 +20,11 @@ import { VerticalStepperNavigationComponent } from './components/navigation-comp
 import { InsisArrayComponent } from './components/element-components/insis-array-component/insis-array.component';
 import { InsisArrayCardsLayoutComponent } from './components/element-components/insis-array-cards-layout-component/insis-array-cards-layout.component';
 import { InsisMotorPolicySummarySectionComponent } from './components/section-components/insis-motor-policy-summary-section/insis-motor-policy-summary-section.component';
+import { InsisMotorPremiumSummarySection } from './components/section-components/insis-motor-premium-summary-section/insis-motor-premium-summary-section.component';
 import { InsisArrayListLayoutComponent } from './components/element-components/insis-array-list-layout-component/insis-array-list-layout.component';
 import { InsisCheckboxCardComponent } from './components/element-components/insis-checkbox-card-component/insis-checkbox-card.component';
 import { InsisFileUploadComponent } from './components/element-components/insis-file-upload-component/insis-file-upload.component';
+import { SummarySectionDetailContainer } from './components/shared-components/insis-summary-section-detail-container/summary-section-detail-container.component';
 
 /**
  * TIP: You will need to include in this array any new component you create.
@@ -37,6 +39,8 @@ export const iceCustomComponents = [
   InsisCheckboxCardComponent,
   TwoLevelStepperNavigationPageComponent,
   InsisMotorPolicySummarySectionComponent,
+  InsisMotorPremiumSummarySection,
+  SummarySectionDetailContainer,
   ConfirmationPageComponent,
   InsisFileUploadComponent
 ];

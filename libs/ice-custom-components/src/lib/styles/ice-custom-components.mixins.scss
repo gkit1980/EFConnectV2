@@ -5,9 +5,12 @@
 @import '../components/element-components/ice-slider-component/ice-slider.mixin.scss';
 @import '../components/element-components/insis-array-cards-layout-component/insis-array-cards-layout.mixin.scss';
 @import '../components/section-components/insis-motor-policy-summary-section/insis-motor-policy-summary-section.mixin.scss';
+@import '../components/section-components/insis-motor-premium-summary-section/insis-motor-premium-summary.component.mixin.scss';
 @import '../components/page-components/confirmation-page/confirmation-page.mixin.scss';
 @import '../components/element-components/insis-checkbox-card-component/insis-checkbox-card.mixin.scss';
 @import '../components/element-components/insis-file-upload-component/insis-file-upload.mixin.scss';
+@import '../components/shared-components/insis-summary-section-detail-container/summary-section-detail-container.scss';
+
 /**
  * TIP: You will need to @include here any new mixin you add to the ice-custom-component library.
  * This file here will be loaded by theme.scss which is part of theming structure inside application styles.
@@ -21,7 +24,9 @@
   @include ice-slider-mixin($theme);
   @include insis-array-cards-layout-mixin($theme);
   @include insis-motor-policy-summary-section-mixin($theme);
+  @include insis-motor-premium-summary-section-mixin($theme);
   @include confirmation-page-mixin($theme);
   @include insis-checkbox-card-mixin($theme);
   @include insis-file-upload-mixin($theme);
+  @include insis-summary-section-detail-container-mixin($theme);
 }
