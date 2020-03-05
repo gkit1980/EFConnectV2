@@ -25,6 +25,7 @@ import { InsisArrayListLayoutComponent } from './components/element-components/i
 import { InsisCheckboxCardComponent } from './components/element-components/insis-checkbox-card-component/insis-checkbox-card.component';
 import { InsisFileUploadComponent } from './components/element-components/insis-file-upload-component/insis-file-upload.component';
 import { SummarySectionDetailContainer } from './components/shared-components/insis-summary-section-detail-container/summary-section-detail-container.component';
+import { InsisSimplePageComponent } from './components/page-components/insis-simple-page/insis-simple-page.component';
 
 /**
  * TIP: You will need to include in this array any new component you create.
@@ -38,6 +39,7 @@ export const iceCustomComponents = [
   InsisArrayListLayoutComponent,
   InsisCheckboxCardComponent,
   TwoLevelStepperNavigationPageComponent,
+  InsisSimplePageComponent,
   InsisMotorPolicySummarySectionComponent,
   InsisMotorPremiumSummarySection,
   SummarySectionDetailContainer,

@@ -1,0 +1,6 @@
+label: InsisSimplePage
+
+component: InsisSimplePage
+
+description: >
+  This componenent has no navigation and renders a list of sections.
