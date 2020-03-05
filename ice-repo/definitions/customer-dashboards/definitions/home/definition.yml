@@ -1,0 +1,5 @@
+definition:
+  title: customer-dashboards.home
+  executable: true
+  showInsights: true
+  elementOnPageCheck: false
