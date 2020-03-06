@@ -15,3 +15,6 @@ element:
   label:
     NoLabelRule: {}
   component: IceDropdown
+  defaultValue:
+    StaticValueRule:
+      value: 3

@@ -21,6 +21,7 @@ export class IceSliderComponent extends MaterialElementComponentImplementation
   max = Number.MAX_SAFE_INTEGER;
   step: number;
   showTicks: boolean;
+  addEmptyValue: boolean;
   componentValue: number;
   updateValueBehaviour: 'onDrag' | 'onRelease' = 'onRelease';
 
@@ -45,6 +46,7 @@ export class IceSliderComponent extends MaterialElementComponentImplementation
   ngOnInit() {
     this.step = this.getRecipeParam('step', 1);
     this.showTicks = this.getRecipeParam('showTicks', false);
+    this.addEmptyValue = this.getRecipeParam('addEmptyValue', true);
     this.updateValueBehaviour = this.getRecipeParam('updateValueBehaviour', 'onRelease');
 
     const itemElement = <ItemElement>this.element.element;
@@ -117,9 +119,11 @@ export class IceSliderComponent extends MaterialElementComponentImplementation
   //
   private applyValuesRuleComponentSettings() {
     const itemElement = <ItemElement>this.element.element;
-    this.setMinMax(0, this.values.length);
+    const min = this.addEmptyValue ? 0 : 1;
+
+    this.setMinMax(min, this.values.length);
     itemElement.valuesRule.$reevaluate.subscribe(() => {
-      this.setMinMax(0, this.values.length);
+      this.setMinMax(min, this.values.length);
     });
   }
 

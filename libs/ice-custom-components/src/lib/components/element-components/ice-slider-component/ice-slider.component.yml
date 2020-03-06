@@ -35,8 +35,13 @@ params:
     label: Update Value Behaviour
     info: You can decide the behaviour of the slider in regard to element value update. Default behaviour is 'onRelease' this means only after interaction with slider is completed only then the element's value will be updated. Behaviour 'onDrag' will update element value on each change of the slider position (much more often).
     default: onRelease
+  addEmptyValue:
+    type: boolean
+    label: Add Empty Value
+    info: When the slider is used with values rule, you can decide if the first value is an empty value. By default the empty value is added.
   appearance:
     type: select
+    label: Appearance
     options:
       legacy: Legacy
       standard: Standard
