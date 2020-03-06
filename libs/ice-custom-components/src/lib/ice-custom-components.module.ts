@@ -24,6 +24,7 @@ import { InsisMotorPolicySummarySectionComponent } from './components/section-co
 import { InsisMotorPremiumSummarySection } from './components/section-components/insis-motor-premium-summary-section/insis-motor-premium-summary-section.component';
 import { InsisArrayListLayoutComponent } from './components/element-components/insis-array-list-layout-component/insis-array-list-layout.component';
 import { InsisCheckboxCardComponent } from './components/element-components/insis-checkbox-card-component/insis-checkbox-card.component';
+import { InsisCardComponent } from './components/element-components/insis-card-component/insis-card.component';
 import { InsisFileUploadComponent } from './components/element-components/insis-file-upload-component/insis-file-upload.component';
 import {
   IceInfoButtonComponent,
@@ -48,6 +49,7 @@ export const iceCustomComponents = [
   InsisArrayCardsLayoutComponent,
   InsisArrayListLayoutComponent,
   InsisCheckboxCardComponent,
+  InsisCardComponent,
   TwoLevelStepperNavigationPageComponent,
   InsisSimplePageComponent,
   InsisMotorPolicySummarySectionComponent,

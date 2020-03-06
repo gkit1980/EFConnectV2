@@ -1,0 +1,9 @@
+implementations:
+  GetArrayLengthMirrorRule:
+    description: Sets the value of an element to array's length
+    params:
+      originElement:
+        label: Origin Element
+        info: the array element
+        required: true
+        type: element

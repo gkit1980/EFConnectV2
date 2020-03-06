@@ -121,7 +121,7 @@ entries:
       insured:
         currency:
           label:
-            - en: '${param1}/payment'
+            - en: "${param1}/payment"
               de: null
         vehicle-objects:
           label:
@@ -181,7 +181,7 @@ entries:
                           - Death or bodily injury
 
 
-                        > [See more about risks and limits]() 
+                        > [See more about risks and limits]()
                         ![](/assets/icons/link-in-tooltip.svg)
                       de: null
               owndamage:
@@ -207,7 +207,7 @@ entries:
                         > The deductible is the amount withheld for every claim.
 
 
-                        > [See more about risks and limits]() 
+                        > [See more about risks and limits]()
                         ![](/assets/icons/link-in-tooltip.svg)
                       de: null
                 deductible:
@@ -235,7 +235,7 @@ entries:
                           - Death
 
 
-                        > [See more about risks and limits]() 
+                        > [See more about risks and limits]()
                         ![](/assets/icons/link-in-tooltip.svg)
                       de: null
               road_assis:
@@ -255,7 +255,7 @@ entries:
                           - Accommodation and transportation costs
 
 
-                        > [See more about risks and limits]() 
+                        > [See more about risks and limits]()
                         ![](/assets/icons/link-in-tooltip.svg)
                       de: null
             question:
@@ -266,8 +266,8 @@ entries:
             car:
               covers-title:
                 label:
-                  - en: 'Covers for ${param1} ${param2}'
-                    de: 'Covers for ${param1} ${param2}'
+                  - en: "Covers for ${param1} ${param2}"
+                    de: "Covers for ${param1} ${param2}"
               regno:
                 label:
                   - en: License plate
@@ -487,7 +487,7 @@ entries:
       description:
         label:
           - en: We need your consent to finalize the purchase.
-            de: 'Wir benötigen Ihre Zustimmung, um den Kauf abzuschließen.'
+            de: "Wir benötigen Ihre Zustimmung, um den Kauf abzuschließen."
       access-personal-information:
         label:
           - en: >-
@@ -529,6 +529,53 @@ entries:
           de: null
       icon:
         - en: person.svg
+    submit-a-claim-here:
+      label:
+        - en: Submit a claim here
+          de: null
+      icon:
+        - en: thunder.png
+          de: thunder.png
+    get-more-insurance:
+      label:
+        - en: Get more insurance
+          de: null
+      icon:
+        - en: page-of-text.png
+          de: page-of-text.png
+    summary-of-active-policies:
+      label:
+        - en: "${param1} active policies"
+          de: null
+      icon:
+        - en: umbrella.png
+          de: umbrella.png
+    summary-of-claims-in-progress:
+      label:
+        - en: "${param1} claims in progress"
+          de: null
+      icon:
+        - en: thunder.png
+          de: thunder.png
+    summary-of-unfinished-quotes:
+      label:
+        - en: "${param1} unfinished quotes"
+          de: null
+      icon:
+        - en: page-of-text.png
+          de: page-of-text.png
+    welcome-back:
+      label:
+        - en: "Welcome back, ${param1} ${param2}!"
+          de: null
+    claims-in-progress-title:
+      label:
+        - en: Claims in Progress
+          de: null
+    quotes-in-progress-title:
+      label:
+        - en: Quotes in Progress
+          de: null
     test-dropdown:
       icon:
         - en: more_horiz.svg
@@ -556,25 +603,25 @@ entries:
         - en: "'${value}' does not matches regular expression ${regexp}"
       array:
         min:
-          - en: 'must have at least ${min} entries'
+          - en: "must have at least ${min} entries"
         max:
-          - en: 'can have max ${max} entries'
+          - en: "can have max ${max} entries"
       range:
         currency:
           min:
-            - en: 'may not be smaller than ${number}'
+            - en: "may not be smaller than ${number}"
           max:
-            - en: 'may not be more than ${number}'
+            - en: "may not be more than ${number}"
         integer:
           min:
-            - en: 'may not be smaller than ${number}'
+            - en: "may not be smaller than ${number}"
           max:
-            - en: 'may not be more than ${number}'
+            - en: "may not be more than ${number}"
         date:
           min:
-            - en: 'may not be less than ${date}'
+            - en: "may not be less than ${date}"
           max:
-            - en: 'may not be greater than ${date}'
+            - en: "may not be greater than ${date}"
       email:
         - en: Please enter a valid email address
           de: Bitte geben Sie eine gültige Email-Adresse ein.
@@ -604,10 +651,6 @@ entries:
       terms-and-conditions:
         - en: Terms and Conditions
           de: I dont know what terms and conditions is in german
-    home:
-      title:
-        - en: Home
-          de: null
     1.quote:
       title:
         - en: See Price
@@ -680,11 +723,11 @@ entries:
     header:
       dashboard:
         label:
-          - en: Dashboard
+          - en: Home
             de: null
         link:
-          - en: /dashboard
-            de: /dashboard
+          - en: /ice/home/home
+            de: /ice/home/home
       policies:
         label:
           - en: Policies
@@ -704,8 +747,8 @@ entries:
           - en: Claims
             de: null
         link:
-          - en: /ice/claims
-            de: /ice/claims
+          - en: /ice/claims/home
+            de: /ice/claims/home
       products:
         label:
           - en: Products
@@ -736,9 +779,9 @@ entries:
     number:
       fractionDelimiter:
         - en: .
-          de: ','
+          de: ","
       thousandDelimiter:
-        - en: ','
+        - en: ","
           de: .
   currency-code:
     - en: EUR

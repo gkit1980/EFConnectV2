@@ -1,0 +1,15 @@
+label: Insis Card
+
+component: InsisCard
+
+types:
+  - text
+
+description: >
+  A card component that displays data and can provide link to another page
+
+params:
+  url:
+    type: text
+    label: Url
+    info: Url address to which clicking on the card redirects you

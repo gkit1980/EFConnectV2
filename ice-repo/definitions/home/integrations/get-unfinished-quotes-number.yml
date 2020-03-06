@@ -1,0 +1,36 @@
+integration:
+  exchange:
+    SoapCallExchangeRule:
+      endpoint: insis_generic_endpoint
+      securityMode: UsernamePassword
+      username: "env:insis-username"
+      password: "env:insis-password"
+      ignoreNamespaces: "env:insis-ignoreNamespaces"
+      soapAction: paginatedQuery
+      requestType: PaginatedQueryRqType
+      jsonSchema: Insis_GenericWS
+  transformation:
+    InsisPaginatedQueryTransformation:
+      queryId: POLICIES
+      additional: insis
+      out:
+        - mappings:
+            - param: soapAction
+              value: paginatedQuery
+            - param: requestType
+              value: PaginatedQueryRqType
+        - toIdx: 1
+          mappings:
+            - value: POLICY_STATE
+              payload: "FilterCriteria.FilterCriterion[n].field"
+            - value: EQ
+              payload: "FilterCriteria.FilterCriterion[n].operation"
+            - value: "-2"
+              payload: "FilterCriteria.FilterCriterion[n].value"
+      in:
+        - fromIdx:
+            array: payload.TotalRowCount
+          toIdx: 0
+          mappings:
+            - payload: "TotalRowCount"
+              element: number-of-unfinished-quotes

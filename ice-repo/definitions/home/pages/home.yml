@@ -1,0 +1,39 @@
+page:
+  validation: {}
+  component: EmbeddablePage
+  sections:
+    - component:
+        IceFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: 100%
+                    size.xs: 100%
+                    elements:
+                      - name: welcome-back
+      css: text-align-center u-mb-6
+    - component:
+        IceFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    elements:
+                      - name: summary-of-active-policies
+                  - size: auto
+                    size.xs: auto
+                    elements:
+                      - name: summary-of-claims-in-progress
+                  - size: auto
+                    size.xs: auto
+                    elements:
+                      - name: submit-a-claim-here
+                  - size: auto
+                    size.xs: auto
+                    elements:
+                      - name: summary-of-unfinished-quotes
+                  - size: auto
+                    size.xs: auto
+                    elements:
+                      - name: get-more-insurance
