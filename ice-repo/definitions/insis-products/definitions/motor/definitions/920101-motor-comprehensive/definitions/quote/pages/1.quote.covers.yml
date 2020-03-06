@@ -131,9 +131,9 @@ page:
       css: text-align-center hide-on-mobile u-mb-4
     - component:
         InsisMotorPremiumSummarySection:
+          expanded: true
           tags:
             - pull-right
-      css: card u-mb-3
     - component:
         IceFlexSection:
           tags:

@@ -127,24 +127,9 @@ page:
                       - name: more-information-needed
       css: text-align-center hide-on-mobile u-mb-4
     - component:
-        IceFlexSection:
+        InsisMotorPremiumSummarySection:
           tags:
             - pull-right
-          grid:
-            rows:
-              - cols:
-                  - size: none
-                    css: u-d-inlineblock
-                    elements:
-                      - name: policy.insured.premium.total
-                  - size: none
-                    css: u-d-inlineblock
-                    elements:
-                      - name: policy.insured.premium.title
-                css: mat-headline u-mb-0
-                align: center
-                gap: 10px
-      css: card u-mb-3
     - component:
         InsisMotorPolicySummarySection:
           tags:

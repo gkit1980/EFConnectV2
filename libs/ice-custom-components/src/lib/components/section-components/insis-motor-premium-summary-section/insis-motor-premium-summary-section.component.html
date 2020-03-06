@@ -1,4 +1,7 @@
-<details class="insis-motor-premium-summary-section card" [attr.open]="expanded ? true : null">
+<details
+  class="insis-motor-premium-summary-section card u-mb-4"
+  [attr.open]="expanded ? true : null"
+>
   <summary class="container" fxLayoutAlign="flex-start center">
     <div class="amount" fxFlex="2 1">
       <div *ngIf="!singlePayment" class="mat-title amount-per-payment">
@@ -14,7 +17,10 @@
     </summary-section-detail-container>
     <summary-section-detail-container [title]="'Taxes and fees'" [items]="taxesAndFeesItems">
     </summary-section-detail-container>
-    <summary-section-detail-container [title]="'Included discounts and loadings'" [items]="discountItems">
+    <summary-section-detail-container
+      [title]="'Included discounts and loadings'"
+      [items]="discountItems"
+    >
     </summary-section-detail-container>
   </div>
 </details>
