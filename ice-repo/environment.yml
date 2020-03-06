@@ -5,8 +5,8 @@ environment:
   insis_pdm_endpoint: http://10.3.7.200:7808/insisws/InsisPDMPort
   insis_pam_endpoint: http://10.3.7.200:7808/insisws/InsisPAMPort
   insis_generic_endpoint: http://10.3.7.200:7810/insisws/InsisGenericWSPort
-#  insis_generic_endpoint: mock
-  insis-username: insis_gen_v10
-  insis-password: insis_gen_v10
+  #  insis_generic_endpoint: mock
+  insis-username: de1_ops_superuser
+  insis-password: welcome123
   insis-ignoreNamespaces:
     - insis

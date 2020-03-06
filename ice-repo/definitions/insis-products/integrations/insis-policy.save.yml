@@ -21,7 +21,7 @@ integration:
               payload: InsuranceConditions.Renewal
             - element: policy.contract.term.units
               payload: InsuranceConditions.DurationUnits
-            - element: policy.contract.term.years
+            - element: policy.contract.term.duration
               payload: InsuranceConditions.Duration
             - element: policy.participants.holder.person.pid
               payload: Client.Entity.PersonalData.PID

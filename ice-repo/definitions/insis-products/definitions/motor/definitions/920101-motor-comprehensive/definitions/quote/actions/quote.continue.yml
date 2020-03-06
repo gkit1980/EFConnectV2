@@ -11,8 +11,6 @@ action:
     - IntegrationExecutionRule:
         integration: 920101.motor.insis-policy.appilcation.register
     - IntegrationExecutionRule:
-        integration: insis-policy.convert-quote-to-application
-    - IntegrationExecutionRule:
         integration: 920101.motor.insis-policy.get-premiums
     - NavigateToPageExecutionRule:
         direction: next

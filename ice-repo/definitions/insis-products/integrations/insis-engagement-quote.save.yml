@@ -26,7 +26,7 @@ integration:
               payload: Policies.Policy[0].InsuranceConditions.Renewal
             - element: policy.contract.term.units
               payload: Policies.Policy[0].InsuranceConditions.DurationUnits
-            - element: policy.contract.term.years
+            - element: policy.contract.term.duration
               payload: Policies.Policy[0].InsuranceConditions.Duration
             - element: policy.status.policy-status
               payload: Policies.Policy[0].InsuranceConditions.PolicyState

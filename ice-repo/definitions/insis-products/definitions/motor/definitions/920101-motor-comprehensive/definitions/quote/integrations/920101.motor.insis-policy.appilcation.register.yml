@@ -20,7 +20,7 @@ integration:
       out:
         - mappings:
             - param: soapAction
-              value: registerQuotation
+              value: registerApplication
             - param: requestType
               value: RegsrApplRqType
         - mappings:

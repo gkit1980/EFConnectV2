@@ -20,7 +20,7 @@ integration:
             - element: policy.contract.end
               payload: Policy.InsuranceConditions.ExpireDate
             - element: policy.contract.agent-no
-              payload: Policy.InsuranceConditions.AgentID
+              payload: Policy.InsuranceConditions.AgentNO
             - element: policy.contract.payment.frequency
               payload: Policy.InsuranceConditions.Installments
             - element: policy.contract.payment.way
