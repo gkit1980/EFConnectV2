@@ -1,0 +1,19 @@
+<div class="insis-button-toggle" *ngIf="isVisible">
+  <ng-container *ngIf="!isOutput">
+    <mat-label *ngIf="label" [attr.data-required]="isRequired">{{ label }}</mat-label>
+    <button mat-button color="primary" [disabled]="isDisabled" (click)="onClick($event)">
+      {{ value ? onLabel : offLabel }}
+    </button>
+
+    <mat-error *ngFor="let message of validation?.getMessagesFor(element.name, index)">
+      {{ message }}
+    </mat-error>
+  </ng-container>
+
+  <mat-output
+    *ngIf="isOutput"
+    [isOutput]="isOutput"
+    [label]="label"
+    [value]="value ? onLabel : offLabel"
+  ></mat-output>
+</div>

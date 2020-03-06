@@ -13,6 +13,11 @@ page:
                     size.xs: auto
                     elements:
                       - name: person.birthdate
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: button-toggle
               - cols:
                   - size: auto
                     size.xs: auto

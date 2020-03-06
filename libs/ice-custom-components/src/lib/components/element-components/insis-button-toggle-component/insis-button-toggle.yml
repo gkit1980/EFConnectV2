@@ -1,0 +1,19 @@
+label: Insis Button Toggle
+
+component: InsisButtonToggle
+
+types:
+  - boolean
+
+description: >
+  a button component which toggle its value
+
+params:
+  labelTrue:
+    label: Label (true)
+    type: resourceKey
+    info: if you want no label to show, set this to ":" (static empty string)
+  labelFalse:
+    label: Label (false)
+    type: resourceKey
+    info: if you want no label to show, set this to ":" (static empty string)

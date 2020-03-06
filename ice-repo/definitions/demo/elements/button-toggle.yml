@@ -1,0 +1,8 @@
+element:
+  type: boolean
+  component:
+    StaticComponentRule:
+      component:
+        InsisButtonToggle:
+          labelTrue: ':truty'
+          labelFalse: ':falsy'

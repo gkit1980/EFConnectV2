@@ -32,6 +32,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { MarkdownToHtmlModule } from 'markdown-to-html-pipe';
 import { SummarySectionDetailContainer } from './components/shared-components/insis-summary-section-detail-container/summary-section-detail-container.component';
 import { InsisSimplePageComponent } from './components/page-components/insis-simple-page/insis-simple-page.component';
+import { InsisButtonToggleComponent } from './components/element-components/insis-button-toggle-component/insis-button-toggle.component';
 
 /**
  * TIP: You will need to include in this array any new component you create.
@@ -51,7 +52,8 @@ export const iceCustomComponents = [
   InsisMotorPremiumSummarySection,
   SummarySectionDetailContainer,
   ConfirmationPageComponent,
-  InsisFileUploadComponent
+  InsisFileUploadComponent,
+  InsisButtonToggleComponent
 ];
 
 /**
