@@ -1,0 +1,10 @@
+element:
+  type: text
+  component: ButtonDropdown
+  values:
+    ListValuesRule:
+      list: incident-types
+  label:
+    NoLabelRule: {}
+  text:
+    DefaultTextRule: {}

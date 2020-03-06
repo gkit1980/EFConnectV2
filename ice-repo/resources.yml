@@ -458,6 +458,10 @@ entries:
           de: null
       icon:
         - en: person.svg
+    button-dropdown:
+      icon:
+        - en: person.svg
+          de: person.svg
   validation:
     pageValidation:
       summary:
@@ -476,9 +480,9 @@ entries:
         - en: Please confirm
           de: Bitte bestätigen
       not_allowed_here:
-        - en: '''${value}'' not allowed here'
+        - en: "'${value}' not allowed here"
       regexp:
-        - en: '''${value}'' does not matches regular expression ${regexp}'
+        - en: "'${value}' does not matches regular expression ${regexp}"
       array:
         min:
           - en: "must have at least ${min} entries"

@@ -9,9 +9,10 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
-import { MatInputModule, MatCheckboxModule } from '@angular/material';
+import { MatInputModule, MatCheckboxModule, MatMenuModule } from '@angular/material';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
+import { MarkdownToHtmlModule } from 'markdown-to-html-pipe';
 
 import { TwoLevelStepperNavigationPageComponent } from './components/page-components/two-level-stepper-navigation-page/two-level-stepper-navigation-page.component';
 import { ConfirmationPageComponent } from './components/page-components/confirmation-page/confirmation-page.component';
@@ -29,8 +30,8 @@ import {
   TooltipComponent
 } from './components/element-components/ice-info-button/ice-info-button.component';
 import { OverlayModule } from '@angular/cdk/overlay';
-import { MarkdownToHtmlModule } from 'markdown-to-html-pipe';
 import { SummarySectionDetailContainer } from './components/shared-components/insis-summary-section-detail-container/summary-section-detail-container.component';
+import { ButtonDropdownComponent } from './components/element-components/button-dropdown-component/button-dropdown.component';
 import { InsisSimplePageComponent } from './components/page-components/insis-simple-page/insis-simple-page.component';
 import { InsisButtonToggleComponent } from './components/element-components/insis-button-toggle-component/insis-button-toggle.component';
 
@@ -39,6 +40,7 @@ import { InsisButtonToggleComponent } from './components/element-components/insi
  */
 
 export const iceCustomComponents = [
+  ButtonDropdownComponent,
   DummyButtonComponent,
   IceInfoButtonComponent,
   IceSliderComponent,
@@ -81,10 +83,12 @@ export function registerComponents(componentService: IceComponentsService) {
     MatSliderModule,
     MatFormFieldModule,
     MatInputModule,
+    MatMenuModule,
     MatButtonModule,
     MatCheckboxModule,
     MatChipsModule,
     MatIconModule,
+    MarkdownToHtmlModule,
     FlexLayoutModule
   ],
 

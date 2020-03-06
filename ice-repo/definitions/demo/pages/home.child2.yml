@@ -22,8 +22,13 @@ page:
                   - size: auto
                     size.xs: auto
                     elements:
+                      - name: button-dropdown
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    elements:
                       - name: test-slider
-                    offset: '25'
+                    offset: "25"
               - cols:
                   - size: auto
                     size.xs: auto
