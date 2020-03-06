@@ -1,0 +1,20 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: show-resolved-state
+  outputs:
+    - id: labelKey
+      type: resourceKey
+  rules:
+    - inputs:
+        - true
+      outputs:
+        - claims.show-resolved
+    - inputs:
+        - false
+      outputs:
+        - claims.hide-resolved
+    - inputs:
+        - '-'
+      outputs:
+        - claims.hide-resolved

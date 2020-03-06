@@ -1,0 +1,9 @@
+action:
+  execution:
+    - CopyValueExecutionRule:
+        source: incident.claim-id
+        destination: claim-to-cancel
+    - IntegrationExecutionRule:
+        integration: cancel-claim
+    - NavigateToUrlExecutionRule:
+        url: ice/claims/home

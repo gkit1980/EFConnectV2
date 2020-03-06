@@ -3,6 +3,72 @@ locales:
   - de
 entries:
   elements:
+    show-resolved-claims-label:
+      - en: Show resolved claims
+        de: Show resolved claims
+    hide-resolved-claims-label:
+      - en: Hide resolved claims
+        de: Hide resolved claims
+    add-claim:
+      label:
+        - en: Add claim
+          de: Add claim
+    claims-in-progress:
+      label:
+        - en: Claims in progress
+          de: Claims in progress
+    claims:
+      items:
+        claim-no:
+          label:
+            - en: Claim number
+              de: Claim number
+        claim-state-name:
+          label:
+            - en: Status
+              de: Status
+        policy-label:
+          label:
+            - en: Policy
+              de: Policy
+        event-date:
+          label:
+            - en: Event date
+              de: Event date
+        button-view-more:
+          label:
+            - en: View
+              de: View
+        button-dropdown:
+          label:
+            - en: '...'
+              de: '...'
+    resolved-claims:
+      items:
+        claim-no:
+          label:
+            - en: Claim number
+              de: Claim number
+        claim-state-name:
+          label:
+            - en: Status
+              de: Status
+        policy-label:
+          label:
+            - en: Policy
+              de: Policy
+        event-date:
+          label:
+            - en: Event date
+              de: Event date
+        button-view-more:
+          label:
+            - en: View
+              de: View
+        button-dropdown:
+          label:
+            - en: '...'
+              de: '...'
     additional-audio-video-equipment:
       title:
         label:
@@ -197,8 +263,8 @@ entries:
             car:
               covers-title:
                 label:
-                  - en: "Covers for ${param1} ${param2}"
-                    de: "Covers for ${param1} ${param2}"
+                  - en: 'Covers for ${param1} ${param2}'
+                    de: 'Covers for ${param1} ${param2}'
               regno:
                 label:
                   - en: License plate
@@ -485,25 +551,25 @@ entries:
         - en: "'${value}' does not matches regular expression ${regexp}"
       array:
         min:
-          - en: "must have at least ${min} entries"
+          - en: 'must have at least ${min} entries'
         max:
-          - en: "can have max ${max} entries"
+          - en: 'can have max ${max} entries'
       range:
         currency:
           min:
-            - en: "may not be smaller than ${number}"
+            - en: 'may not be smaller than ${number}'
           max:
-            - en: "may not be more than ${number}"
+            - en: 'may not be more than ${number}'
         integer:
           min:
-            - en: "may not be smaller than ${number}"
+            - en: 'may not be smaller than ${number}'
           max:
-            - en: "may not be more than ${number}"
+            - en: 'may not be more than ${number}'
         date:
           min:
-            - en: "may not be less than ${date}"
+            - en: 'may not be less than ${date}'
           max:
-            - en: "may not be greater than ${date}"
+            - en: 'may not be greater than ${date}'
       email:
         - en: Please enter a valid email address
           de: Bitte geben Sie eine gültige Email-Adresse ein.
@@ -633,8 +699,8 @@ entries:
           - en: Claims
             de: null
         link:
-          - en: /claims
-            de: /claims
+          - en: /ice/claims
+            de: /ice/claims
       products:
         label:
           - en: Products
@@ -665,9 +731,9 @@ entries:
     number:
       fractionDelimiter:
         - en: .
-          de: ","
+          de: ','
       thousandDelimiter:
-        - en: ","
+        - en: ','
           de: .
   currency-code:
     - en: EUR
@@ -723,3 +789,10 @@ entries:
         vandalism:
           - en: Vandalism
             de: Vandalism
+  claims:
+    show-resolved:
+      - en: Show resolved claims
+        de: Show resolved claims
+    hide-resolved:
+      - en: Hide resolved claims
+        de: Hide resolved claims

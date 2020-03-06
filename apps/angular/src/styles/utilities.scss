@@ -21,7 +21,7 @@ $step-size: 4px;
 
   // margin Top
   .u-mt-#{$i} {
-    margin-top: $current-step;
+    margin-top: $current-step !important;
   }
 
   // margin Bottom
@@ -58,7 +58,7 @@ $step-size: 4px;
 
   // padding Top
   .u-pt-#{$i} {
-    padding-top: $current-step;
+    padding-top: $current-step !important;
   }
 
   // padding Bottom

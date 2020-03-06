@@ -1,0 +1,11 @@
+element:
+  type: action
+  change:
+    - NavigateToPageExecutionRule:
+        page: fnol
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          variant: stroked
+          themeColor: primary

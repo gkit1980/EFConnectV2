@@ -1,0 +1,9 @@
+element:
+  type: text
+  viewMode:
+    StaticViewModeRule:
+      viewMode: output
+  mirror:
+    FullNameMirrorRule:
+      firstName: resolved-claims~insr-type-name
+      lastName: resolved-claims~policy-no

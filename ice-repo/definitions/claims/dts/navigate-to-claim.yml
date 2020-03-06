@@ -1,0 +1,19 @@
+dt:
+  output-label: url
+  hitPolicy: F
+  inputs:
+    - label: product
+      element: claims~claim-state
+  outputs:
+    - label: url
+      id: url
+      type: string
+    - label: dynId
+      id: dynId
+      type: string
+  rules:
+    - inputs:
+        - '-'
+      outputs:
+        - 'claims.details/details'
+        - claims~claim-id

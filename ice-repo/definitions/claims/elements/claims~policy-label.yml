@@ -1,0 +1,9 @@
+element:
+  type: text
+  viewMode:
+    StaticViewModeRule:
+      viewMode: output
+  mirror:
+    FullNameMirrorRule:
+      firstName: claims~insr-type-name
+      lastName: claims~policy-no

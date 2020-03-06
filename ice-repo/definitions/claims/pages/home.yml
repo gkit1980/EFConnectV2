@@ -1,0 +1,83 @@
+page:
+  validation: {}
+  component: InsisSimplePage
+  sections:
+    - component:
+        IceFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: none
+                    css: mat-display-1 u-mb-6
+                    elements:
+                      - name: claims-in-progress
+                  - size: none
+                    elements:
+                      - name: add-claim
+                align: space-between
+    - component:
+        IceArrayFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: 25%
+                    elements:
+                      - name: claims~claim-no
+                  - size: 15%
+                    elements:
+                      - name: claims~claim-state-name
+                  - size: auto
+                    elements:
+                      - name: claims~policy-label
+                  - size: 100px
+                    elements:
+                      - name: claims~event-date
+                  - size: none
+                    elements:
+                      - name: claims~button-view-more
+                    align: center
+                  - size: none
+                    elements:
+                      - name: claims~button-dropdown
+                    align: center
+          arrayElement: claims
+      css: horizontal-list
+    - component:
+        IceFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: show-resolved-state
+    - component:
+        IceArrayFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: 25%
+                    elements:
+                      - name: resolved-claims~claim-no
+                  - size: 15%
+                    elements:
+                      - name: resolved-claims~claim-state-name
+                  - size: auto
+                    elements:
+                      - name: resolved-claims~policy-label
+                  - size: 100px
+                    elements:
+                      - name: resolved-claims~event-date
+                  - size: none
+                    elements:
+                      - name: resolved-claims~button-view-more
+                    align: center
+          arrayElement: resolved-claims
+      css: horizontal-list u-mt-4
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: show-resolved-state
+          conditionValue: true
+          conditionViewMode: output
+          elseViewMode: hidden

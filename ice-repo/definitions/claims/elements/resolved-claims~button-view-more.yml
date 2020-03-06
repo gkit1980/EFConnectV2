@@ -1,0 +1,13 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          variant: default
+          themeColor: primary
+  action:
+    execution:
+      - DtNavigateToDefinitionExecutionRule:
+          dt: navigate-to-claim
+          definitionOutput: url

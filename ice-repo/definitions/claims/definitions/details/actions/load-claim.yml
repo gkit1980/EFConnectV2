@@ -1,0 +1,10 @@
+action:
+  title: calls the load claim for insis
+  execution:
+    - IntegrationExecutionRule:
+        integration: load-single-claim
+  trigger:
+    - PageTriggerRule:
+        enter:
+          - view
+    - DynIdChangeTriggerRule: {}

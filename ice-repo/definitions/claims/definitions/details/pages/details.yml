@@ -1,0 +1,29 @@
+page:
+  validation: {}
+  component: OnePage
+  sections:
+    - component:
+        IceFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: none
+                    css: mat-display-1 u-mb-6
+                    elements:
+                      - name: incident.claim-no
+                  - size: none
+                    elements:
+                      - name: cancel-claim
+                align: space-between
+    - component:
+        IceFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: none
+                    elements:
+                      - name: incident.claim-id
+                      - name: incident.claim-no
+                      - name: incident.event-date
+                      - name: incident.event-type
+                align: space-between
