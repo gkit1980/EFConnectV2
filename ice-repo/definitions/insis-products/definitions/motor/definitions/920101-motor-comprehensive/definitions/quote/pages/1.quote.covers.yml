@@ -46,20 +46,22 @@ page:
                   - size: auto
                     elements:
                       - name: policy.insured.vehicle-objects~cover.mtpl.active
+                      - name: policy.insured.vehicle-objects~cover.mtpl.active.info
                   - size: auto
                     elements:
                       - name: policy.insured.vehicle-objects~cover.mtpl.premium
                 align: space-between
-                css: u-mb-4
+                css: inline-cell-elements
               - cols:
                   - size: auto
                     elements:
                       - name: policy.insured.vehicle-objects~cover.owndamage.active
+                      - name: policy.insured.vehicle-objects~cover.owndamage.active.info
                   - size: auto
                     elements:
                       - name: policy.insured.vehicle-objects~cover.owndamage.premium
                 align: space-between
-                css: u-mb-4
+                css: inline-cell-elements
               - cols:
                   - size: calc(50% - 28px)
                     size.xs: 100%
@@ -82,19 +84,22 @@ page:
                       - name: >-
                           policy.insured.vehicle-objects~cover.owndamage.insured-amount-mirror
                 css: u-mb-4
-              - cols:
+              - css: inline-cell-elements
+                cols:
                   - size: auto
                     elements:
                       - name: policy.insured.vehicle-objects~cover.pa.active
+                      - name: policy.insured.vehicle-objects~cover.pa.active.info
                   - size: none
                     elements:
                       - name: policy.insured.vehicle-objects~cover.pa.premium
                 align: space-between
-                css: u-mb-4
-              - cols:
+              - css: inline-cell-elements
+                cols:
                   - size: auto
                     elements:
                       - name: policy.insured.vehicle-objects~cover.road_assis.active
+                      - name: policy.insured.vehicle-objects~cover.road_assis.active.info
                   - size: none
                     elements:
                       - name: >-

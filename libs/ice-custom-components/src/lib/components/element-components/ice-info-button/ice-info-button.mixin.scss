@@ -1,0 +1,117 @@
+@import "~@angular/material/theming";
+
+@mixin ice-info-button-mixin($theme) {
+  $primary: map-get($theme, primary);
+  $primaryColor: mat-color($primary);
+
+  .ice-info-button {
+    mat-icon {
+      background-repeat: no-repeat;
+      background-position: center;
+      color: gray;
+    }
+    mat-icon.bubble-open {
+      color: $primaryColor;
+      cursor: default;
+    }
+  }
+
+  .ice-info-bubble {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    box-shadow: 0 0 6px #b2b2b2;
+    display: inline-block;
+    padding: 10px 18px;
+    position: relative;
+    vertical-align: top;
+    float: left;
+    margin: 5px 45px 5px 15px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    #triangle {
+      width: 0px;
+      height: 0px;
+      border-top: 15px solid white;
+      border-left: 15px solid transparent;
+      display: inline-block;
+      left: -15px;
+      position: absolute;
+    }
+
+    #triangle:after {
+      top: -15px;
+      color: transparent;
+      border-top: thin solid white;
+      content: " ";
+      left: -15px;
+      position: absolute;
+      width: 15px;
+    }
+
+    #triangle:before {
+      color: transparent;
+      border-bottom: thin solid white;
+      content: " ";
+      left: -18px;
+      position: absolute;
+      transform: rotate(45deg);
+      width: 20px;
+      top: -8px;
+    }
+
+    mat-icon {
+      display: flex;
+      right: 5px;
+      position: absolute;
+      top: 5px;
+      cursor: pointer;
+    }
+
+    background-color: white !important;
+    color: $primaryColor;
+    border: solid;
+    border-width: thin;
+    font-size: 14px;
+
+    ul li {
+      list-style-type: square;
+      margin-left: 10%;
+    }
+
+    .close {
+      color: black;
+    }
+
+    .bubble-content {
+      color: black;
+    }
+
+    #triangle:after {
+      border-top: thin solid $primaryColor !important;
+    }
+
+    #triangle:before {
+      border-bottom: thin solid $primaryColor !important;
+    }
+
+    a {
+      color: $primaryColor;
+      cursor: auto;
+      text-decoration: none;
+      font-size: 16px;
+
+      :hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+
+    blockquote {
+      p {
+        margin-bottom: 0px;
+      }
+    }
+  }
+}

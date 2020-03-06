@@ -59,7 +59,7 @@ entries:
       insured:
         currency:
           label:
-            - en: '${param1}/payment'
+            - en: "${param1}/payment"
               de: null
         vehicle-objects:
           label:
@@ -77,9 +77,9 @@ entries:
                     - en: ZIP
                       de: null
               options-title:
-                  label:
-                    - en: Vehicle ownership
-                      de: null
+                label:
+                  - en: Vehicle ownership
+                    de: null
               person:
                 first-name:
                   label:
@@ -108,11 +108,43 @@ entries:
                   label:
                     - en: Motor Third Party Liability
                       de: Motor Third Party Liability
+                  info:
+                    - en: >-
+                        # Motor Third Party Liability
+
+                        In the event of a road accident, the following risks are covered:
+
+                          - Property damage as a
+                          - Death or bodily injury
+
+
+                        > [See more about risks and limits]()  ![](/assets/icons/link-in-tooltip.svg)
+
+                      de: null
               owndamage:
                 active:
                   label:
                     - en: Motor Own Damage
                       de: Motor Own Damage
+                  info:
+                    - en: >-
+                        # Motor Own Damage
+
+                        Your vehicle is protected up to the insurance value agains:
+
+                          - Fire
+                          - Lightning
+                          - Explosion
+                          - Natural hazards (flood, storm, heavy rainfall, heavy snowfall, falling trees or objects
+                          - Theft
+                          - Road accident
+                          - Malicious acts of 3rd parties
+
+                        > The deductible is the amount withheld for every claim.
+
+
+                        > [See more about risks and limits]()  ![](/assets/icons/link-in-tooltip.svg)
+                      de: null
                 deductible:
                   label:
                     - en: Deductible
@@ -126,11 +158,37 @@ entries:
                   label:
                     - en: Personal Accident
                       de: Personal Accident
+                  info:
+                    - en: >-
+                        # Personal Accident
+
+                        In the event of a road accident, the following risks are covered:
+
+                          - Temporary disability
+                          - Permanent disability
+                          - Death
+
+
+                        > [See more about risks and limits]()  ![](/assets/icons/link-in-tooltip.svg)
+                      de: null
               road_assis:
                 active:
                   label:
                     - en: Road Assistance
                       de: Road Assistance
+                  info:
+                    - en: >-
+                        # Road Assistance
+
+                        In the event of a road accident or natural hazards, the following risks are covered:
+
+                          - Towing of the vehicle (only for road accident)
+                          - On-site repair costs
+                          - Accommodation and transportation costs
+
+
+                        > [See more about risks and limits]()  ![](/assets/icons/link-in-tooltip.svg)
+                      de: null
             question:
               number-of-consecutive-years-without-claims:
                 label:
@@ -164,6 +222,14 @@ entries:
               chassis:
                 label:
                   - en: VIN
+                    de: null
+                info:
+                  - en: >-
+                      # Vehicle Identification Number
+
+                      The Vehicle Identification Number (VIN) is a uniqe identifier of your vehicle. It can be found on your vehicle registration certificate.
+
+                      <more details if necessary>
                     de: null
               ccm-ton:
                 label:
@@ -350,7 +416,7 @@ entries:
       description:
         label:
           - en: We need your consent to finalize the purchase.
-            de: 'Wir benötigen Ihre Zustimmung, um den Kauf abzuschließen.'
+            de: "Wir benötigen Ihre Zustimmung, um den Kauf abzuschließen."
       access-personal-information:
         label:
           - en: >-

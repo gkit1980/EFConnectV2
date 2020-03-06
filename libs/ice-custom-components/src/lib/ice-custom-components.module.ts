@@ -24,6 +24,12 @@ import { InsisMotorPremiumSummarySection } from './components/section-components
 import { InsisArrayListLayoutComponent } from './components/element-components/insis-array-list-layout-component/insis-array-list-layout.component';
 import { InsisCheckboxCardComponent } from './components/element-components/insis-checkbox-card-component/insis-checkbox-card.component';
 import { InsisFileUploadComponent } from './components/element-components/insis-file-upload-component/insis-file-upload.component';
+import {
+  IceInfoButtonComponent,
+  TooltipComponent
+} from './components/element-components/ice-info-button/ice-info-button.component';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { MarkdownToHtmlModule } from 'markdown-to-html-pipe';
 import { SummarySectionDetailContainer } from './components/shared-components/insis-summary-section-detail-container/summary-section-detail-container.component';
 import { InsisSimplePageComponent } from './components/page-components/insis-simple-page/insis-simple-page.component';
 
@@ -33,6 +39,7 @@ import { InsisSimplePageComponent } from './components/page-components/insis-sim
 
 export const iceCustomComponents = [
   DummyButtonComponent,
+  IceInfoButtonComponent,
   IceSliderComponent,
   InsisArrayComponent,
   InsisArrayCardsLayoutComponent,
@@ -65,6 +72,8 @@ export function registerComponents(componentService: IceComponentsService) {
   imports: [
     CommonModule,
     BrowserModule,
+    OverlayModule,
+    MarkdownToHtmlModule,
     NgIceModule.forRoot(),
     FormsModule,
     MatSliderModule,
@@ -79,12 +88,14 @@ export function registerComponents(componentService: IceComponentsService) {
 
   declarations: [
     ...iceCustomComponents,
+    TooltipComponent,
     HorizontalStepperNavigationComponent,
     VerticalStepperNavigationComponent
   ],
   exports: [...iceCustomComponents],
   entryComponents: [
     ...iceCustomComponents,
+    TooltipComponent,
     HorizontalStepperNavigationComponent,
     VerticalStepperNavigationComponent
   ],
