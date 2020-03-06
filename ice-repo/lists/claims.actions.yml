@@ -1,8 +1,8 @@
 list:
   items:
     - value: cancel-claim
-      label_en: Remove
-      label_de: Remove
+      label_en: Cancel claim
+      label_de: Cancel claim
   type: text
   additionals:
     label_en:

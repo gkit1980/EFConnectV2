@@ -18,4 +18,4 @@ description: >
   Option values can be textual or boolean (true/false).
 
 
-  Option values are configured with a select rule.
+  Option values are configured with a values rule.

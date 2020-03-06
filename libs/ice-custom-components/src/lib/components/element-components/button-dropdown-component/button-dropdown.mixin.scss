@@ -1,6 +1,8 @@
-@import "~@angular/material/theming";
+@import '~@angular/material/theming';
 
 @mixin button-dropdown-mixin($theme) {
   .button-dropdown {
+    img {
+    }
   }
 }

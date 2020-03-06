@@ -40,9 +40,9 @@ entries:
             - en: View
               de: View
         button-dropdown:
-          label:
-            - en: '...'
-              de: '...'
+          icon:
+            - en: more_horiz.svg
+              de: more_horiz.svg
     resolved-claims:
       items:
         claim-no:
@@ -65,10 +65,6 @@ entries:
           label:
             - en: View
               de: View
-        button-dropdown:
-          label:
-            - en: '...'
-              de: '...'
     additional-audio-video-equipment:
       title:
         label:
@@ -125,7 +121,7 @@ entries:
       insured:
         currency:
           label:
-            - en: "${param1}/payment"
+            - en: '${param1}/payment'
               de: null
         vehicle-objects:
           label:
@@ -178,14 +174,15 @@ entries:
                     - en: >-
                         # Motor Third Party Liability
 
-                        In the event of a road accident, the following risks are covered:
+                        In the event of a road accident, the following risks are
+                        covered:
 
                           - Property damage as a
                           - Death or bodily injury
 
 
-                        > [See more about risks and limits]()  ![](/assets/icons/link-in-tooltip.svg)
-
+                        > [See more about risks and limits]() 
+                        ![](/assets/icons/link-in-tooltip.svg)
                       de: null
               owndamage:
                 active:
@@ -196,7 +193,8 @@ entries:
                     - en: >-
                         # Motor Own Damage
 
-                        Your vehicle is protected up to the insurance value agains:
+                        Your vehicle is protected up to the insurance value
+                        agains:
 
                           - Fire
                           - Lightning
@@ -209,7 +207,8 @@ entries:
                         > The deductible is the amount withheld for every claim.
 
 
-                        > [See more about risks and limits]()  ![](/assets/icons/link-in-tooltip.svg)
+                        > [See more about risks and limits]() 
+                        ![](/assets/icons/link-in-tooltip.svg)
                       de: null
                 deductible:
                   label:
@@ -228,14 +227,16 @@ entries:
                     - en: >-
                         # Personal Accident
 
-                        In the event of a road accident, the following risks are covered:
+                        In the event of a road accident, the following risks are
+                        covered:
 
                           - Temporary disability
                           - Permanent disability
                           - Death
 
 
-                        > [See more about risks and limits]()  ![](/assets/icons/link-in-tooltip.svg)
+                        > [See more about risks and limits]() 
+                        ![](/assets/icons/link-in-tooltip.svg)
                       de: null
               road_assis:
                 active:
@@ -246,14 +247,16 @@ entries:
                     - en: >-
                         # Road Assistance
 
-                        In the event of a road accident or natural hazards, the following risks are covered:
+                        In the event of a road accident or natural hazards, the
+                        following risks are covered:
 
                           - Towing of the vehicle (only for road accident)
                           - On-site repair costs
                           - Accommodation and transportation costs
 
 
-                        > [See more about risks and limits]()  ![](/assets/icons/link-in-tooltip.svg)
+                        > [See more about risks and limits]() 
+                        ![](/assets/icons/link-in-tooltip.svg)
                       de: null
             question:
               number-of-consecutive-years-without-claims:
@@ -293,7 +296,9 @@ entries:
                   - en: >-
                       # Vehicle Identification Number
 
-                      The Vehicle Identification Number (VIN) is a uniqe identifier of your vehicle. It can be found on your vehicle registration certificate.
+                      The Vehicle Identification Number (VIN) is a uniqe
+                      identifier of your vehicle. It can be found on your
+                      vehicle registration certificate.
 
                       <more details if necessary>
                     de: null
@@ -482,7 +487,7 @@ entries:
       description:
         label:
           - en: We need your consent to finalize the purchase.
-            de: "Wir benötigen Ihre Zustimmung, um den Kauf abzuschließen."
+            de: 'Wir benötigen Ihre Zustimmung, um den Kauf abzuschließen.'
       access-personal-information:
         label:
           - en: >-
@@ -524,10 +529,10 @@ entries:
           de: null
       icon:
         - en: person.svg
-    button-dropdown:
+    test-dropdown:
       icon:
-        - en: person.svg
-          de: person.svg
+        - en: more_horiz.svg
+          de: more_horiz.svg
   validation:
     pageValidation:
       summary:

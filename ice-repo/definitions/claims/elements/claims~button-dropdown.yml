@@ -1,5 +1,11 @@
 element:
   type: action
-  defaultValue:
-    StaticValueRule:
-      value: cancel-claim
+  component:
+    StaticComponentRule:
+      component:
+        ButtonDropdown: {}
+  values:
+    ListValuesRule:
+      list: claims.actions
+  label:
+    NoLabelRule: {}

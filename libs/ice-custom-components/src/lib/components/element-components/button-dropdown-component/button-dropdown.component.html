@@ -1,10 +1,10 @@
 <div class="button-dropdown" *ngIf="isVisible">
   <ng-container *ngIf="!isOutput">
     <base target="_blank" />
-    <button mat-stroked-button *ngIf="!src" [matMenuTriggerFor]="menu" [disabled]="isDisabled">
+    <button mat-button [matMenuTriggerFor]="menu" [disabled]="isDisabled">
+      <img *ngIf="src" [src]="src" width="24" alt="" />
       {{ label }}
     </button>
-    <img *ngIf="src" [src]="src" style="width: 154px;" alt=" " [matMenuTriggerFor]="menu" />
 
     <mat-menu #menu="matMenu">
       <button
