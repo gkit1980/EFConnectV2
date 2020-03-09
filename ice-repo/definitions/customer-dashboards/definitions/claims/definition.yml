@@ -1,5 +1,5 @@
 definition:
-  title: customer-dashboards.claims
+  title: claims
   executable: true
   showInsights: true
   elementOnPageCheck: false

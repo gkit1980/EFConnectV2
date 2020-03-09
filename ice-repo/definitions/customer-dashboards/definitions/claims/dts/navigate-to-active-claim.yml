@@ -15,5 +15,5 @@ dt:
     - inputs:
         - '-'
       outputs:
-        - 'claims.details/details'
+        - 'customer-dashboards.claims.details/details'
         - claims~claim-id

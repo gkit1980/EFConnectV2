@@ -9,5 +9,5 @@ element:
   action:
     execution:
       - DtNavigateToDefinitionExecutionRule:
-          dt: navigate-to-claim
+          dt: navigate-to-active-claim
           definitionOutput: url

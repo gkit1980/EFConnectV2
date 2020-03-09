@@ -1,6 +1,6 @@
 page:
   validation: {}
-  component: OnePage
+  component: InsisSimplePage
   sections:
     - component:
         IceFlexSection:
