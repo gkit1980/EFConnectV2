@@ -1,3 +1,215 @@
+load-quotes:
+  condition: payload.QueryID = 'QUOTES'
+  response:
+    RowSet:
+      Row:
+        - Column:
+            - attributes:
+                name: PRODUCT_ID
+                type: T
+              $value: '1001'
+            - attributes:
+                name: PRODUCT_NAME
+                type: T
+              $value: 'Motor comprehensive'
+            - attributes:
+                name: PREMIUM
+                type: 'N'
+              $value: 900
+            - attributes:
+                name: PAYMENT_FREQUENCY
+                type: 'N'
+              $value: 4
+            - attributes:
+                name: PAYMENT_PREMIUM_INSTALMENT
+                type: 'N'
+              $value: 4
+            - attributes:
+                name: INSURANCE_BEGIN
+                type: 'D'
+              $value: '2019-01-01'
+            - attributes:
+                name: INSURANCE_END
+                type: 'D'
+              $value: '2021-01-01'
+            - attributes:
+                name: POLICY_ID
+                type: 'N'
+              $value: 100000000191
+            - attributes:
+                name: POLICY_NO
+                type: 'N'
+              $value: 100000000191
+            - attributes:
+                name: POLICY_STATE
+                type: 'N'
+              $value: -2
+            - attributes:
+                name: POLICY_STATE_NAME
+                type: 'T'
+              $value: 'Quote'
+            - attributes:
+                name: CURRENCY
+                type: 'T'
+              $value: EUR
+            - attributes:
+                name: QUOTE_ID
+                type: 'N'
+              $value: 100000000191
+            - attributes:
+                name: QUOTE_NO
+                type: 'N'
+              $value: 100000000191
+            - attributes:
+                name: QUOTE_STATE
+                type: 'N'
+              $value: -2
+            - attributes:
+                name: QUOTE_STATE_NAME
+                type: 'T'
+              $value: 'Quote'
+            - attributes:
+                name: INSURED_OBJECT
+                type: 'T'
+              $value: 'BMW X1 2019'
+        - Column:
+            - attributes:
+                name: PRODUCT_ID
+                type: T
+              $value: '1001'
+            - attributes:
+                name: PRODUCT_NAME
+                type: T
+              $value: 'Motor comprehensive'
+            - attributes:
+                name: PREMIUM
+                type: 'N'
+              $value: 900
+            - attributes:
+                name: PAYMENT_FREQUENCY
+                type: 'N'
+              $value: 4
+            - attributes:
+                name: PAYMENT_PREMIUM_INSTALMENT
+                type: 'N'
+              $value: 4
+            - attributes:
+                name: INSURANCE_BEGIN
+                type: 'D'
+              $value: '2019-01-01'
+            - attributes:
+                name: INSURANCE_END
+                type: 'D'
+              $value: '2021-01-01'
+            - attributes:
+                name: POLICY_ID
+                type: 'N'
+              $value: 100000000192
+            - attributes:
+                name: POLICY_NO
+                type: 'N'
+              $value: 100000000192
+            - attributes:
+                name: POLICY_STATE
+                type: 'N'
+              $value: -2
+            - attributes:
+                name: POLICY_STATE_NAME
+                type: 'T'
+              $value: 'Quote'
+            - attributes:
+                name: CURRENCY
+                type: 'T'
+              $value: EUR
+            - attributes:
+                name: QUOTE_ID
+                type: 'N'
+              $value: 100000000192
+            - attributes:
+                name: QUOTE_NO
+                type: 'N'
+              $value: 100000000192
+            - attributes:
+                name: QUOTE_STATE
+                type: 'N'
+              $value: -2
+            - attributes:
+                name: QUOTE_STATE_NAME
+                type: 'T'
+              $value: 'Quote'
+            - attributes:
+                name: INSURED_OBJECT
+                type: 'T'
+              $value: 'Audi A6 2018'
+        - Column:
+            - attributes:
+                name: PRODUCT_ID
+                type: T
+              $value: '1001'
+            - attributes:
+                name: PRODUCT_NAME
+                type: T
+              $value: 'Motor comprehensive'
+            - attributes:
+                name: PREMIUM
+                type: 'N'
+              $value: 900
+            - attributes:
+                name: PAYMENT_FREQUENCY
+                type: 'N'
+              $value: 4
+            - attributes:
+                name: PAYMENT_PREMIUM_INSTALMENT
+                type: 'N'
+              $value: 4
+            - attributes:
+                name: INSURANCE_BEGIN
+                type: 'D'
+              $value: '2019-01-01'
+            - attributes:
+                name: INSURANCE_END
+                type: 'D'
+              $value: '2021-01-01'
+            - attributes:
+                name: POLICY_ID
+                type: 'N'
+              $value: 100000000193
+            - attributes:
+                name: POLICY_NO
+                type: 'N'
+              $value: 100000000193
+            - attributes:
+                name: POLICY_STATE
+                type: 'N'
+              $value: -2
+            - attributes:
+                name: POLICY_STATE_NAME
+                type: 'T'
+              $value: 'Quote'
+            - attributes:
+                name: CURRENCY
+                type: 'T'
+              $value: EUR
+            - attributes:
+                name: QUOTE_ID
+                type: 'N'
+              $value: 100000000193
+            - attributes:
+                name: QUOTE_NO
+                type: 'N'
+              $value: 100000000193
+            - attributes:
+                name: QUOTE_STATE
+                type: 'N'
+              $value: -2
+            - attributes:
+                name: QUOTE_STATE_NAME
+                type: 'T'
+              $value: 'Quote'
+            - attributes:
+                name: INSURED_OBJECT
+                type: 'T'
+              $value: 'Fiat BlaBlaCar 2000'
 load-policies:
   condition: payload.QueryID = 'POLICIES'
   response:
@@ -5,50 +217,25 @@ load-policies:
       Row:
         - Column:
             - attributes:
-                name: INSR_TYPE
+                name: PRODUCT_ID
                 type: T
               $value: '1001'
             - attributes:
-                name: INSURANCE_BEGIN
-                type: 'D'
-              $value: '2019-01-01'
-            - attributes:
-                name: INSURANCE_END
-                type: 'D'
-              $value: '2021-01-01'
-            - attributes:
-                name: POLICY_ID
-                type: 'N'
-              $value: 100000000198
-            - attributes:
-                name: POLICY_NO
-                type: 'N'
-              $value: 100000000198
-            - attributes:
-                name: POLICY_STATE
-                type: 'N'
-              $value: -2
-            - attributes:
-                name: POLICY_STATE_NAME
-                type: 'T'
-              $value: 'Quote'
+                name: PRODUCT_NAME
+                type: T
+              $value: 'Motor comprehensive'
             - attributes:
                 name: PREMIUM
                 type: 'N'
               $value: 900
             - attributes:
-                name: CURRENCY
-                type: 'T'
-              $value: EUR
+                name: PAYMENT_FREQUENCY
+                type: 'N'
+              $value: 4
             - attributes:
-                name: PRODUCT_NAME
-                type: 'T'
-              $value: 'MOTOR'
-        - Column:
-            - attributes:
-                name: INSR_TYPE
-                type: T
-              $value: '1001'
+                name: PAYMENT_PREMIUM_INSTALMENT
+                type: 'N'
+              $value: 4
             - attributes:
                 name: INSURANCE_BEGIN
                 type: 'D'
@@ -60,11 +247,11 @@ load-policies:
             - attributes:
                 name: POLICY_ID
                 type: 'N'
-              $value: 100000000199
+              $value: 100000000191
             - attributes:
                 name: POLICY_NO
                 type: 'N'
-              $value: 100000000199
+              $value: 100000000191
             - attributes:
                 name: POLICY_STATE
                 type: 'N'
@@ -74,22 +261,50 @@ load-policies:
                 type: 'T'
               $value: 'Quote'
             - attributes:
-                name: PREMIUM
-                type: 'N'
-              $value: 500
-            - attributes:
                 name: CURRENCY
                 type: 'T'
               $value: EUR
             - attributes:
-                name: PRODUCT_NAME
+                name: QUOTE_ID
+                type: 'N'
+              $value: 100000000191
+            - attributes:
+                name: QUOTE_NO
+                type: 'N'
+              $value: 100000000191
+            - attributes:
+                name: QUOTE_STATE
+                type: 'N'
+              $value: -2
+            - attributes:
+                name: QUOTE_STATE_NAME
                 type: 'T'
-              $value: 'MOTOR'
+              $value: 'Quote'
+            - attributes:
+                name: INSURED_OBJECT
+                type: 'T'
+              $value: 'Volkswagen Passat, 2017, XX3333ZZ'
         - Column:
             - attributes:
-                name: INSR_TYPE
+                name: PRODUCT_ID
                 type: T
               $value: '1001'
+            - attributes:
+                name: PRODUCT_NAME
+                type: T
+              $value: 'Motor comprehensive'
+            - attributes:
+                name: PREMIUM
+                type: 'N'
+              $value: 900
+            - attributes:
+                name: PAYMENT_FREQUENCY
+                type: 'N'
+              $value: 4
+            - attributes:
+                name: PAYMENT_PREMIUM_INSTALMENT
+                type: 'N'
+              $value: 4
             - attributes:
                 name: INSURANCE_BEGIN
                 type: 'D'
@@ -101,36 +316,64 @@ load-policies:
             - attributes:
                 name: POLICY_ID
                 type: 'N'
-              $value: 100000000200
+              $value: 100000000192
             - attributes:
                 name: POLICY_NO
                 type: 'N'
-              $value: 100000000200
+              $value: 100000000192
             - attributes:
                 name: POLICY_STATE
                 type: 'N'
-              $value: -1
+              $value: -2
             - attributes:
                 name: POLICY_STATE_NAME
                 type: 'T'
-              $value: 'Application'
-            - attributes:
-                name: PREMIUM
-                type: 'N'
-              $value: 1900
+              $value: 'Quote'
             - attributes:
                 name: CURRENCY
                 type: 'T'
               $value: EUR
             - attributes:
-                name: PRODUCT_NAME
+                name: QUOTE_ID
+                type: 'N'
+              $value: 100000000192
+            - attributes:
+                name: QUOTE_NO
+                type: 'N'
+              $value: 100000000192
+            - attributes:
+                name: QUOTE_STATE
+                type: 'N'
+              $value: -2
+            - attributes:
+                name: QUOTE_STATE_NAME
                 type: 'T'
-              $value: 'MOTOR'
+              $value: 'Quote'
+            - attributes:
+                name: INSURED_OBJECT
+                type: 'T'
+              $value: 'Audi A4, 2019, AA9999BB'
         - Column:
             - attributes:
-                name: INSR_TYPE
+                name: PRODUCT_ID
                 type: T
               $value: '1001'
+            - attributes:
+                name: PRODUCT_NAME
+                type: T
+              $value: 'Motor comprehensive'
+            - attributes:
+                name: PREMIUM
+                type: 'N'
+              $value: 900
+            - attributes:
+                name: PAYMENT_FREQUENCY
+                type: 'N'
+              $value: 4
+            - attributes:
+                name: PAYMENT_PREMIUM_INSTALMENT
+                type: 'N'
+              $value: 4
             - attributes:
                 name: INSURANCE_BEGIN
                 type: 'D'
@@ -142,31 +385,44 @@ load-policies:
             - attributes:
                 name: POLICY_ID
                 type: 'N'
-              $value: 100000000201
+              $value: 100000000193
             - attributes:
                 name: POLICY_NO
                 type: 'N'
-              $value: 100000000201
+              $value: 100000000193
             - attributes:
                 name: POLICY_STATE
                 type: 'N'
-              $value: 0
+              $value: -2
             - attributes:
                 name: POLICY_STATE_NAME
                 type: 'T'
-              $value: 'Policy'
-            - attributes:
-                name: PREMIUM
-                type: 'N'
-              $value: 700
+              $value: 'Quote'
             - attributes:
                 name: CURRENCY
                 type: 'T'
               $value: EUR
             - attributes:
-                name: PRODUCT_NAME
+                name: QUOTE_ID
+                type: 'N'
+              $value: 100000000193
+            - attributes:
+                name: QUOTE_NO
+                type: 'N'
+              $value: 100000000193
+            - attributes:
+                name: QUOTE_STATE
+                type: 'N'
+              $value: -2
+            - attributes:
+                name: QUOTE_STATE_NAME
                 type: 'T'
-              $value: 'MOTOR'
+              $value: 'Quote'
+            - attributes:
+                name: INSURED_OBJECT
+                type: 'T'
+              $value: 'Fiat BlaBlaCar 2000'
+
 load-claims:
   condition: payload.QueryID = 'CLAIMS'
   response:
