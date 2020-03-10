@@ -3,7 +3,7 @@ dt:
   hitPolicy: F
   inputs:
     - label: product
-      element: resolved-claims~claim-state
+      element: claim-to-view
   outputs:
     - label: url
       id: url
@@ -16,4 +16,4 @@ dt:
         - '-'
       outputs:
         - 'customer-dashboards.claims.details/details'
-        - resolved-claims~claim-id
+        - claim-to-view

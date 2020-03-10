@@ -1,0 +1,11 @@
+action:
+  execution:
+    - CopyValueExecutionRule:
+        source: claims~policy-id
+        destination: policy-to-view
+    - DtNavigateToDefinitionExecutionRule:
+        dt: navigate-to-policy
+        definitionOutput: url
+    - ResetElementValueExecutionRule:
+        elements:
+          - policy-to-view

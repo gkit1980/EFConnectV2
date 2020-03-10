@@ -53,6 +53,10 @@ entries:
           label:
             - en: Status
               de: Status
+        policy-link:
+          label:
+            - en: ${param1} ${param2}
+              de: ${param1} ${param2}
         policy-label:
           label:
             - en: Policy

@@ -27,8 +27,10 @@ page:
                     elements:
                       - name: claims~claim-state-name
                   - size: auto
+                    css: label-link
                     elements:
                       - name: claims~policy-label
+                      - name: claims~policy-link
                   - size: 100px
                     elements:
                       - name: claims~event-date
@@ -64,8 +66,10 @@ page:
                     elements:
                       - name: resolved-claims~claim-state-name
                   - size: auto
+                    css: label-link
                     elements:
                       - name: resolved-claims~policy-label
+                      - name: resolved-claims~policy-link
                   - size: 100px
                     elements:
                       - name: resolved-claims~event-date

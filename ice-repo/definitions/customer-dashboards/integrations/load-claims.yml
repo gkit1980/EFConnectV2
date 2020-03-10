@@ -55,6 +55,10 @@ integration:
               element: claims~claim-state
             - payload: 'RowSet.Row[n].CLAIM_STATE_NAME'
               element: claims~claim-state-name
+            - value: 'view-claim-active'
+              element: claims~button-view-more
+            - value: 'view-policy-active'
+              element: claims~policy-link
         - fromIdx:
             array: payload.RowSet.Row
             condition: CLAIM_STATE == '2'
@@ -82,3 +86,7 @@ integration:
               element: resolved-claims~claim-state
             - payload: 'RowSet.Row[n].CLAIM_STATE_NAME'
               element: resolved-claims~claim-state-name
+            - value: 'view-claim-resolved'
+              element: resolved-claims~button-view-more
+            - value: 'view-policy-resolved'
+              element: resolved-claims~policy-link

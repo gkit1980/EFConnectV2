@@ -1,30 +1,30 @@
 // Import bootstrap as a single file - ideally, we would import parts only and in between, override bootstrap variables
-@import "../../../../node_modules/bootstrap/scss/bootstrap-grid";
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import '../../../../node_modules/bootstrap/scss/bootstrap-grid';
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 // Internal imports
-@import "variables";
-@import "mixins";
-@import "reset";
-@import "utilities";
+@import 'variables';
+@import 'mixins';
+@import 'reset';
+@import 'utilities';
 
 /**
  * TIP: We need to import the themes.scss in order to force its logic execution. Which is in fact
  * logic needed for generating Angular Material Themes.
  */
-@import "themes/themes";
+@import 'themes/themes';
 
 /**
  * TIP: You will need to import here only the themes you plan to use inside your application.
  */
-@import "themes/defualt/default-theme";
+@import 'themes/defualt/default-theme';
 
 .container {
   width: 100%;
   max-width: 1328px; // 1280 max width + padding 24px
   padding: 16px;
 
-  @include respond-from("md") {
+  @include respond-from('md') {
     padding: 24px;
   }
 }
@@ -79,11 +79,11 @@
   &.main-side {
     width: 100%;
 
-    @include respond-from("sm") {
+    @include respond-from('sm') {
       max-width: 470px;
     }
 
-    @include respond-from("md") {
+    @include respond-from('md') {
       max-width: 794px;
     }
   }
@@ -185,5 +185,25 @@ embeddable-page {
     .value {
       display: block;
     }
+  }
+}
+
+.label-link {
+  .ice-none {
+    color: rgba(0, 0, 0, 0.87);
+    margin-right: 10px;
+    display: block;
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  button {
+    font-weight: 400;
+    text-transform: none !important;
+    padding: 0 !important;
+    display: block;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    height: auto !important;
   }
 }

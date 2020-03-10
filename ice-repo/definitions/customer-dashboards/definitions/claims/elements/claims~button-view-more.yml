@@ -6,8 +6,3 @@ element:
         IceButton:
           variant: default
           themeColor: primary
-  action:
-    execution:
-      - DtNavigateToDefinitionExecutionRule:
-          dt: navigate-to-active-claim
-          definitionOutput: url
