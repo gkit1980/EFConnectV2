@@ -4,6 +4,7 @@ import { MaterialElementComponentImplementation } from '@impeo/ng-ice';
 import { OverlayRef, Overlay, OverlayPositionBuilder, ScrollStrategy } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldDefaultOptions } from '@angular/material';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ice-info-button',
@@ -30,24 +31,36 @@ export class IceInfoButtonComponent extends MaterialElementComponentImplementati
     }
   }
 
+  get isOpen() {
+    return this.overlayRef && this.overlayRef.hasAttached();
+  }
+
   constructor(
     private overlay: Overlay,
     private elementRef: ElementRef,
     private overlayPositionBuilder: OverlayPositionBuilder,
+    private router: Router,
     @Inject(MAT_FORM_FIELD_DEFAULT_OPTIONS) defaults: MatFormFieldDefaultOptions
   ) {
     super(defaults);
-
-    this.overlayRef = this.overlay.create({});
   }
 
   ngOnInit() {
     super.ngOnInit();
 
-    this.updateConfiguration();
+    const disposeOnNavigation = this.getRecipeParam('disposeOnNavigation', true);
+    this.router.events.subscribe(() => {
+      if (disposeOnNavigation && this.overlayRef) {
+        this.overlayRef.dispose();
+      }
+    });
   }
 
   attachTooltip() {
+    this.overlayRef = this.overlay.create({});
+
+    this.updateConfiguration();
+
     this.componentPortal = new ComponentPortal(TooltipComponent);
 
     if (this.overlayRef.hasAttached()) this.overlayRef.detach();
@@ -60,6 +73,10 @@ export class IceInfoButtonComponent extends MaterialElementComponentImplementati
       );
       componentRef.instance.overlayRef = this.overlayRef;
     }
+  }
+
+  dettachTooltip() {
+    if (this.overlayRef && this.overlayRef.hasAttached()) this.overlayRef.detach();
   }
 
   private updateConfiguration() {
