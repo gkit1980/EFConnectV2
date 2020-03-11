@@ -16,7 +16,9 @@ integration:
       dateFormat: YYYY-MM-DD
       dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
       extends: 920101.motor.insis-engagement-quote.save
-      in: {}
+      in:
+        - element: policy.participants.holder.person.engagement-id
+          payload: EngagementID
       out:
         - mappings:
             - param: soapAction
