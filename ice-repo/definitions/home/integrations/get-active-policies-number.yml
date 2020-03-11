@@ -37,8 +37,10 @@ integration:
               payload: "FilterCriteria.FilterCriterion[n].value"
       in:
         - fromIdx:
-            array: payload.TotalRowCount
-          toIdx: 0
+            array: payload.RowSet.Row
+          toIdx:
+            array: datamodel.policies
+            append: true
           mappings:
-            - payload: "TotalRowCount"
-              element: number-of-active-policies
+            - payload: "RowSet.Row[n].POLICY_ID"
+              element: policies~policy-id

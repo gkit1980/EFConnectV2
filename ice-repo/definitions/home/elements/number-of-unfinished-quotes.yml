@@ -3,3 +3,6 @@ element:
   defaultValue:
     StaticValueRule:
       value: 0
+  mirror:
+    GetArrayLengthMirrorRule:
+      originElement: quotes

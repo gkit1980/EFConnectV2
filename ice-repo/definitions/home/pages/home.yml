@@ -17,23 +17,18 @@ page:
           grid:
             rows:
               - cols:
-                  - size: auto
+                  - size: 25%
                     size.xs: auto
                     elements:
                       - name: summary-of-active-policies
-                  - size: auto
+                  - size: 25%
                     size.xs: auto
                     elements:
                       - name: summary-of-claims-in-progress
-                  - size: auto
-                    size.xs: auto
-                    elements:
                       - name: submit-a-claim-here
-                  - size: auto
+                  - size: 25%
                     size.xs: auto
                     elements:
                       - name: summary-of-unfinished-quotes
-                  - size: auto
-                    size.xs: auto
-                    elements:
                       - name: get-more-insurance
+                align: space-between

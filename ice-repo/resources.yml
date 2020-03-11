@@ -751,8 +751,8 @@ entries:
           - en: Claims
             de: null
         link:
-          - en: /ice/customer-dashboards.claims/home
-            de: /ice/customer-dashboards.claims/home
+          - en: /ice/claims/home
+            de: /ice/claims/home
       products:
         label:
           - en: Products

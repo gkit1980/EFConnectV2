@@ -29,8 +29,10 @@ integration:
               payload: "FilterCriteria.FilterCriterion[n].value"
       in:
         - fromIdx:
-            array: payload.TotalRowCount
-          toIdx: 0
+            array: payload.RowSet.Row
+          toIdx:
+            array: datamodel.quotes
+            append: true
           mappings:
-            - payload: "TotalRowCount"
-              element: number-of-unfinished-quotes
+            - payload: "RowSet.Row[n].POLICY_ID"
+              element: quotes~quote-id

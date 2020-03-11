@@ -4,9 +4,15 @@ element:
     StaticComponentRule:
       component:
         InsisCard:
-          url: "#/ice/policies/policies"
+          url: "#/ice/policies/policies-dashboard"
   label:
     ResourceWithElementValuesLabelRule:
       elements:
         - number-of-active-policies
       key: elements.summary-of-active-policies.label
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: number-of-active-policies
+      conditionValue: "0"
+      conditionViewMode: hidden
+      elseViewMode: default

@@ -17,7 +17,7 @@ export class GetArrayLengthMirrorRule extends MirrorRule {
     if (!(this.requireElement('originElement') instanceof ArrayElement))
       IceConsole.error('Origin element is not an array');
     this.element.setSimpleValue(
-      (this.requireElement('originElement') as ArrayElement).getArrayItemElements().length
+      (this.requireElement('originElement') as ArrayElement).getValue().values[0].value.length
     );
   }
 }

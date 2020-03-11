@@ -37,8 +37,11 @@ integration:
               payload: "FilterCriteria.FilterCriterion[n].value"
       in:
         - fromIdx:
-            array: payload.TotalRowCount
-          toIdx: 0
+            array: payload.RowSet.Row
+            condition: CLAIM_STATE == '1'
+          toIdx:
+            array: datamodel.claims
+            append: true
           mappings:
-            - payload: "TotalRowCount"
-              element: number-of-claims-in-progress
+            - payload: "RowSet.Row[n].CLAIM_ID"
+              element: claims~claim-id
