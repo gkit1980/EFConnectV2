@@ -125,7 +125,7 @@ entries:
       insured:
         currency:
           label:
-            - en: "${param1}/payment"
+            - en: '${param1}/payment'
               de: null
         vehicle-objects:
           label:
@@ -270,8 +270,8 @@ entries:
             car:
               covers-title:
                 label:
-                  - en: "Covers for ${param1} ${param2}"
-                    de: "Covers for ${param1} ${param2}"
+                  - en: 'Covers for ${param1} ${param2}'
+                    de: 'Covers for ${param1} ${param2}'
               regno:
                 label:
                   - en: License plate
@@ -491,7 +491,7 @@ entries:
       description:
         label:
           - en: We need your consent to finalize the purchase.
-            de: "Wir benötigen Ihre Zustimmung, um den Kauf abzuschließen."
+            de: 'Wir benötigen Ihre Zustimmung, um den Kauf abzuschließen.'
       access-personal-information:
         label:
           - en: >-
@@ -549,28 +549,28 @@ entries:
           de: page-of-text.png
     summary-of-active-policies:
       label:
-        - en: "${param1} active policies"
+        - en: '${param1} active policies'
           de: null
       icon:
         - en: umbrella.png
           de: umbrella.png
     summary-of-claims-in-progress:
       label:
-        - en: "${param1} claims in progress"
+        - en: '${param1} claims in progress'
           de: null
       icon:
         - en: thunder.png
           de: thunder.png
     summary-of-unfinished-quotes:
       label:
-        - en: "${param1} unfinished quotes"
+        - en: '${param1} unfinished quotes'
           de: null
       icon:
         - en: page-of-text.png
           de: page-of-text.png
     welcome-back:
       label:
-        - en: "Welcome back, ${param1} ${param2}!"
+        - en: 'Welcome back, ${param1} ${param2}!'
           de: null
     claims-in-progress-title:
       label:
@@ -607,25 +607,25 @@ entries:
         - en: "'${value}' does not matches regular expression ${regexp}"
       array:
         min:
-          - en: "must have at least ${min} entries"
+          - en: 'must have at least ${min} entries'
         max:
-          - en: "can have max ${max} entries"
+          - en: 'can have max ${max} entries'
       range:
         currency:
           min:
-            - en: "may not be smaller than ${number}"
+            - en: 'may not be smaller than ${number}'
           max:
-            - en: "may not be more than ${number}"
+            - en: 'may not be more than ${number}'
         integer:
           min:
-            - en: "may not be smaller than ${number}"
+            - en: 'may not be smaller than ${number}'
           max:
-            - en: "may not be more than ${number}"
+            - en: 'may not be more than ${number}'
         date:
           min:
-            - en: "may not be less than ${date}"
+            - en: 'may not be less than ${date}'
           max:
-            - en: "may not be greater than ${date}"
+            - en: 'may not be greater than ${date}'
       email:
         - en: Please enter a valid email address
           de: Bitte geben Sie eine gültige Email-Adresse ein.
@@ -737,29 +737,29 @@ entries:
           - en: Policies
             de: null
         link:
-          - en: /policies
-            de: /policies
+          - en: /ice/customer-dashboards.policies/home
+            de: /ice/customer-dashboards.policies/home
       payments:
         label:
           - en: Payments
             de: null
         link:
-          - en: /payments
-            de: /payments
+          - en: /ice/customer-dashboards.payments/home
+            de: /ice/customer-dashboards.payments/home
       claims:
         label:
           - en: Claims
             de: null
         link:
-          - en: /ice/claims/home
-            de: /ice/claims/home
+          - en: /ice/customer-dashboards.claims/home
+            de: /ice/customer-dashboards.claims/home
       products:
         label:
-          - en: Products
+          - en: Insurances
             de: null
         link:
-          - en: /products
-            de: /products
+          - en: /ice/customer-dashboards.insurances/home
+            de: /ice/customer-dashboards.insurances/home
       menu:
         logout:
           - en: Logout
@@ -783,9 +783,9 @@ entries:
     number:
       fractionDelimiter:
         - en: .
-          de: ","
+          de: ','
       thousandDelimiter:
-        - en: ","
+        - en: ','
           de: .
   currency-code:
     - en: EUR
