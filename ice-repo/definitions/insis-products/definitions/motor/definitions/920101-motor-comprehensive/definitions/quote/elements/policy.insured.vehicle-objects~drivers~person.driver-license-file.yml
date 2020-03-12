@@ -1,9 +1,7 @@
 element:
   title: Picture of License number of a driver
   type: text
-  viewMode: required
   component:
     StaticComponentRule:
       component:
         InsisFileUpload: {}
-        

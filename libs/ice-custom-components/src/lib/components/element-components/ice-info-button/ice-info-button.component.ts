@@ -122,7 +122,7 @@ export class IceInfoButtonComponent extends MaterialElementComponentImplementati
 @Component({
   selector: 'tooltip-component',
   template: `
-    <div class="ice-info-bubble">
+    <div class="ice-info-bubble" (window:mouseup)="handleOutsideClick($event)">
       <mat-icon class="close" (click)="close()">close</mat-icon>
       <div id="triangle"></div>
       <div [innerHTML]="this.text | MarkdownToHtml" class="bubble-content"></div>
@@ -134,7 +134,13 @@ export class TooltipComponent {
 
   overlayRef: OverlayRef;
 
-  constructor() {}
+  constructor(private elementRef: ElementRef) {}
+
+  handleOutsideClick(event) {
+    if (!this.elementRef.nativeElement.contains(event.target)) {
+      this.close();
+    }
+  }
 
   close() {
     if (this.overlayRef.hasAttached()) this.overlayRef.detach();
