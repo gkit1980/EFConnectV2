@@ -1081,3 +1081,10 @@ entries:
       label:
         - en: Remove
           de: Remove
+  claims:
+    hide-resolved:
+      - en: Hide resolved
+        de: Hide resolved
+    show-resolved:
+      - en: Show resolved
+        de: Show resolved
