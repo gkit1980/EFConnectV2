@@ -3,7 +3,7 @@ component: InsisPictureComponent
 types:
   - text
 description: >
-  Show picture from url. Url equals to the element value
+  Show picture with address from current element value
 params:
   css:
     label: CSS

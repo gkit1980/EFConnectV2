@@ -1,8 +1,0 @@
-default:
-  validations:
-    onElementComponentChange: true
-    behaviour: forward
-pages:
-  StaticNavigationPagesRule:
-    pages:
-      - page: home

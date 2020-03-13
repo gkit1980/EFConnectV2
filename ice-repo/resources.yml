@@ -3,6 +3,66 @@ locales:
   - de
 entries:
   elements:
+    expired-policies:
+      items:
+        more-actions:
+          icon:
+            - en: more_horiz.svg
+              de: more_horiz.svg
+        insured:
+          premium:
+            total:
+              label:
+                - en: Price
+                  de: null
+        insured-object:
+          label:
+            - en: Insured object
+              de: null
+        contract:
+          payment:
+            completed:
+              label:
+                - en: Completed
+                  de: null
+            frequency:
+              label:
+                - en: Payment
+                  de: null
+          end:
+            label:
+              - en: Expired on
+                de: null
+          product-name:
+            label:
+              - en: Type
+                de: null
+          policy-id:
+            label:
+              - en: Policy number
+                de: null
+    policies:
+      items:
+        view-more:
+          label:
+            - en: View
+              de: View
+        submit-claim:
+          label:
+            - en: Submit claim
+              de: Submit claim
+        more-actions:
+          icon:
+            - en: more_horiz.svg
+              de: more_horiz.svg
+        ins-end-date:
+          label:
+            - en: Valid until
+              de: Valid until
+        insured-objects:
+          label:
+            - en: Vehicle
+              de: Vehicle
     show-resolved-claims-label:
       - en: Show resolved claims
         de: Show resolved claims
@@ -40,6 +100,9 @@ entries:
             - en: View
               de: View
         button-dropdown:
+          label:
+            - en: ...
+              de: ...
           icon:
             - en: more_horiz.svg
               de: more_horiz.svg
@@ -69,6 +132,10 @@ entries:
           label:
             - en: View
               de: View
+        button-dropdown:
+          label:
+            - en: ...
+              de: ...
     additional-audio-video-equipment:
       title:
         label:
@@ -413,6 +480,11 @@ entries:
           label:
             - en: REMOVE
               de: null
+        premium:
+          total:
+            label:
+              - en: Price
+                de: null
       contract:
         begin:
           label:
@@ -428,6 +500,10 @@ entries:
             label:
               - en: Insurance duration
                 de: Insurance duration
+        end:
+          label:
+            - en: Valid until
+              de: null
       participants:
         holder:
           person:
@@ -533,6 +609,35 @@ entries:
           de: null
       icon:
         - en: person.svg
+    view-policy:
+      label:
+        - en: VIEW
+          de: null
+    submit-claim:
+      label:
+        - en: SUBMIT CLAIM
+          de: null
+    more-actions:
+      label:
+        - en: ...
+          de: null
+    show-expired-policies:
+      label:
+        - en: SHOW EXPIRED POLICIES
+          de: null
+    hide-expired-policies:
+      label:
+        - en: HIDE EXPIRED POLICIES
+          de: null
+    cancel-policy:
+      label:
+        - en: Cancel policy
+          de: null
+    download-pdf:
+      label:
+        - en: Download PDF
+          de: null
+    button-dropdown: null
     quotes:
       label:
         - en: Quotes in progress
@@ -851,8 +956,8 @@ entries:
           - en: Home
             de: null
         link:
-          - en: /ice/home/home
-            de: /ice/home/home
+          - en: /ice/customer-dashboards.home/home
+            de: /ice/customer-dashboards.home/home
       policies:
         label:
           - en: Policies
@@ -877,7 +982,7 @@ entries:
       products:
         label:
           - en: Insurances
-            de: null
+            de: Insurances
         link:
           - en: /ice/customer-dashboards.insurances/home
             de: /ice/customer-dashboards.insurances/home

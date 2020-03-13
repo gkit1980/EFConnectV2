@@ -1,0 +1,40 @@
+@mixin insis-datagrid-section-mixin($theme) {
+  $primary: map-get($theme, primary);
+  $primaryColor: mat-color($primary);
+
+  .insis-datagrid-section {
+    border-radius: 4px;
+    border: 1px solid get-color($theme, 'border');
+    background: get-color($theme, 'light');
+    margin: 10px 0;
+    padding: 5px;
+
+    table {
+      width: 100%;
+    }
+
+    td.mat-cell:first-of-type,
+    td.mat-footer-cell:first-of-type,
+    th.mat-header-cell:first-of-type {
+      padding-left: 0px;
+    }
+
+    td.mat-cell {
+      align-items: center;
+      display: flex;
+      font-family: "Roboto Medium", "Roboto Regular", "Roboto";
+      font-weight: 500;
+    }
+
+    tr.mat-header-row {
+      height: 47px;
+      line-height: 47px;
+    }
+
+    th {
+      font-weight: bold;
+      color: get-color($theme, text);
+    }
+
+  }
+}

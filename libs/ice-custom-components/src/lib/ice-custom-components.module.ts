@@ -9,7 +9,12 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
-import { MatInputModule, MatCheckboxModule, MatMenuModule } from '@angular/material';
+import {
+  MatInputModule,
+  MatCheckboxModule,
+  MatMenuModule,
+  MatTableModule
+} from '@angular/material';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MarkdownToHtmlModule } from 'markdown-to-html-pipe';
@@ -37,6 +42,7 @@ import { InsisCurrencyComponent } from './components/element-components/insis-cu
 import { ButtonDropdownComponent } from './components/element-components/button-dropdown-component/button-dropdown.component';
 import { InsisSimplePageComponent } from './components/page-components/insis-simple-page/insis-simple-page.component';
 import { InsisButtonToggleComponent } from './components/element-components/insis-button-toggle-component/insis-button-toggle.component';
+import { InsisDatagridSectionComponent } from './components/section-components/insis-datagrid-section/insis-datagrid-section.component';
 
 /**
  * TIP: You will need to include in this array any new component you create.
@@ -54,14 +60,15 @@ export const iceCustomComponents = [
   InsisCardComponent,
   TwoLevelStepperNavigationPageComponent,
   InsisSimplePageComponent,
+  InsisDatagridSectionComponent,
   InsisMotorPolicySummarySectionComponent,
   InsisMotorPremiumSummarySection,
   SummarySectionDetailContainer,
   ConfirmationPageComponent,
   InsisFileUploadComponent,
+  InsisButtonToggleComponent,
   InsisPictureComponent,
-  InsisCurrencyComponent,
-  InsisButtonToggleComponent
+  InsisCurrencyComponent
 ];
 
 /**
@@ -87,6 +94,7 @@ export function registerComponents(componentService: IceComponentsService) {
     NgIceModule.forRoot(),
     FormsModule,
     MatSliderModule,
+    MatTableModule,
     MatFormFieldModule,
     MatInputModule,
     MatMenuModule,

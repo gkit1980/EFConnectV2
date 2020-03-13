@@ -1,0 +1,13 @@
+element:
+  type: boolean
+  defaultValue:
+    StaticValueRule:
+      value: false
+  component:
+    StaticComponentRule:
+      component:
+        InsisButtonToggle:
+          labelTrue: elements.hide-expired-policies.label
+          labelFalse: elements.show-expired-policies.label
+  label:
+    NoLabelRule: {}

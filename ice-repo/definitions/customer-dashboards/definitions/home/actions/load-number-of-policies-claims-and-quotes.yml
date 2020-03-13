@@ -1,0 +1,18 @@
+action:
+  title: gets the available policies / quotes / claims for a client
+  execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - number-of-active-policies
+          - number-of-claims-in-progress
+          - number-of-unfinished-quotes
+    - IntegrationExecutionRule:
+        integration: load-claims
+    - IntegrationExecutionRule:
+        integration: load-quotes
+    - IntegrationExecutionRule:
+        integration: load-policies
+  trigger:
+    - PageTriggerRule:
+        enter:
+          - home

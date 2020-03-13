@@ -1,0 +1,14 @@
+element:
+  type: text
+  mirror:
+    DtMirrorRule:
+      dt: policies.select-picture
+  label:
+    NoLabelRule: {}
+  viewMode:
+    StaticViewModeRule:
+      viewMode: output
+  component:
+    StaticComponentRule:
+      component:
+        InsisPictureComponent: {}

@@ -1,5 +1,0 @@
-action:
-  execution:
-    - CopyValueExecutionRule:
-        source: policies~policy-id
-        destination: selected.policy

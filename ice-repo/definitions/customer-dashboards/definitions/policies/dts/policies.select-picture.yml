@@ -1,0 +1,13 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - label: new label
+      element: policies~product-code
+  outputs:
+    - id: output
+      type: string
+  rules:
+    - inputs:
+        - '1001'
+      outputs:
+        - /assets/icons/car.svg

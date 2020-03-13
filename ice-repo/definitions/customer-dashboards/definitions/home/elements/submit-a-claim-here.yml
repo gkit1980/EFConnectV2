@@ -1,0 +1,13 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        InsisCard:
+          url: '#/ice/claims/home'
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: number-of-claims-in-progress
+      conditionValue: '0'
+      conditionViewMode: default
+      elseViewMode: hidden

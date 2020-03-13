@@ -1,0 +1,11 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        ButtonDropdown: {}
+  values:
+    ListValuesRule:
+      list: policy.more-actions
+  label:
+    NoLabelRule: {}

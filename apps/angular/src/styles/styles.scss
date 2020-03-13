@@ -149,16 +149,20 @@ mat-radio-button {
   display: inline-block;
 }
 
-embeddable-page {
-  hr {
-    display: none;
-  }
-
-  mat-label {
-    font: 300 18px/24px Roboto;
+.half-column {
+  .ice-array-item {
+    display: inline-block;
+    width: 50%;
   }
 }
 
+.car-image {
+  background-image: url('/assets/icons/car-with-bubbles.png');
+  background-repeat: no-repeat;
+  height: 209px;
+  background-size: contain;
+  background-position: center;
+}
 .inline-cell-elements {
   .ice-element {
     display: inline-block;
@@ -205,5 +209,34 @@ embeddable-page {
     font-size: 16px !important;
     line-height: 24px !important;
     height: auto !important;
+  }
+}
+
+.policies-grid {
+  .ice-array {
+    > label {
+      display: none;
+    }
+
+    @include respond-from('md') {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 24px;
+    }
+  }
+
+  .ice-array-item {
+    @include make-card();
+  }
+
+  .ice-output {
+    label {
+      display: block;
+      @extend .mat-caption;
+    }
+
+    .value {
+      display: block;
+    }
   }
 }

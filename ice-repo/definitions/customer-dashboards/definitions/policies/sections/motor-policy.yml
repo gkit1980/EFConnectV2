@@ -1,0 +1,34 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: 100%
+                elements:
+                  - name: policies~product-name
+                  - name: policies~policy-id
+          - cols:
+              - size: auto
+                elements:
+                  - name: policies~ins-end-date
+              - size: auto
+                elements:
+                  - name: policies~ins-end-date
+          - cols:
+              - size: auto
+                elements:
+                  - name: policies~insured-objects
+              - size: auto
+                elements:
+                  - name: policies~insured-objects
+          - cols:
+              - size: none
+                elements:
+                  - name: policies~view-more
+              - size: none
+                elements:
+                  - name: policies~submit-claim
+              - size: none
+                elements:
+                  - name: policies~more-actions

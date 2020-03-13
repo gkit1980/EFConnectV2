@@ -1,0 +1,13 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        InsisCard:
+          url: '#/ice/insurances/insurances-home'
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: number-of-unfinished-quotes
+      conditionValue: '0'
+      conditionViewMode: default
+      elseViewMode: hidden

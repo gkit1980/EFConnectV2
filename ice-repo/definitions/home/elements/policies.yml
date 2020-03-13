@@ -1,7 +1,0 @@
-element:
-  type: array
-  array:
-    StaticArrayRule:
-      default: "3"
-      min: "1"
-      max: "10"

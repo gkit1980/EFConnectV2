@@ -1,0 +1,31 @@
+<section *ngIf="showSection" class="insis-datagrid-section" [ngClass]="getRecipeParam('css')">
+  <table mat-table [dataSource]="dataSource">
+    <ng-container *ngFor="let col of elements; let colIndex = index" [matColumnDef]="col">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        [fxFlex]="getWidthDesktop(colIndex)"
+        [fxLayout.xs]="getWidthMobile(colIndex)"
+      >
+        {{ getLabel(col, colIndex) }}
+      </th>
+
+      <td
+        mat-cell
+        *matCellDef="let element; let i = index"
+        [fxFlex]="getWidthDesktop(colIndex)"
+        [fxLayout.xs]="getWidthMobile(colIndex)"
+      >
+        <ice-element [section]="section" [elementName]="col" [index]="[i]"></ice-element>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="elements"></tr>
+    <tr
+      mat-row
+      [ngClass]="{ selected: row === selectedRow }"
+      (click)="selectRow(row)"
+      *matRowDef="let row; columns: elements"
+    ></tr>
+  </table>
+</section>

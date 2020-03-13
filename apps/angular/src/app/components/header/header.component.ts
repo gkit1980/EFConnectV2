@@ -36,18 +36,18 @@ export class HeaderComponent {
           includes: []
         },
         {
-          key: runtime.iceResource.resolve('pages.header.payments.label'),
-          link: runtime.iceResource.resolve('pages.header.payments.link'),
-          includes: []
-        },
-        {
           key: runtime.iceResource.resolve('pages.header.claims.label'),
           link: runtime.iceResource.resolve('pages.header.claims.link'),
-          includes: []
+          includes: ['/ice/customer-dashboards.claims.details/details']
         },
         {
           key: runtime.iceResource.resolve('pages.header.products.label'),
           link: runtime.iceResource.resolve('pages.header.products.link'),
+          includes: []
+        },
+        {
+          key: runtime.iceResource.resolve('pages.header.payments.label'),
+          link: runtime.iceResource.resolve('pages.header.payments.link'),
           includes: []
         }
       );

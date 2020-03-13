@@ -1,0 +1,100 @@
+page:
+  validation:
+    behaviour: page
+    onElementComponentChange: true
+  component: InsisSimplePage
+  sections:
+    - component:
+        IceArrayFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: policies~picture
+                css: u-mb-4
+              - cols:
+                  - size: none
+                    css: inline-cell-elements
+                    elements:
+                      - name: policies~product-name
+                  - size: none
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: policies~policy-id
+                    offset: 4px
+                css: mat-headline u-mt-4
+                gap: 4px
+              - cols:
+                  - size: auto
+                    elements:
+                      - name: policies~ins-end-date
+                    css: u-mb-2
+              - cols:
+                  - size: auto
+                    elements:
+                      - name: policies~insured-objects
+                    css: u-mb-5
+              - cols:
+                  - size: none
+                    elements:
+                      - name: policies~view-more
+                  - size: none
+                    elements:
+                      - name: policies~submit-claim
+                  - size: none
+                    elements:
+                      - name: policies~more-actions
+          arrayElement: policies
+          behaviourForEmptyRows: null
+      css: policies-grid
+    - component:
+        IceFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: auto
+                    css: u-mt-2
+                    elements:
+                      - name: show-expired-policies
+    - component:
+        InsisDatagridSection:
+          elements:
+            - expired-policies~more-actions
+            - expired-policies~policy-id
+            - expired-policies~product-name
+            - expired-policies~ins-end-date
+            - expired-policies~premium-total
+            - expired-policies~insured-objects
+          labels:
+            - null
+            - elements.expired-policies.items.contract.policy-id.label
+            - elements.expired-policies.items.contract.product-name.label
+            - elements.expired-policies.items.contract.end.label
+            - elements.expired-policies.items.insured.premium.total.label
+            - elements.expired-policies.items.insured-object.label
+          selectionElement: selected-policy
+          arrayElement: expired-policies
+          columnWidthsMobile:
+            - 70px
+            - null
+            - null
+            - null
+            - null
+            - 400px
+          columnWidthsDesktop:
+            - 70px
+            - null
+            - null
+            - null
+            - null
+            - 400px
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: show-expired-policies
+          conditionValue: '0'
+          conditionViewMode: hidden
+          elseViewMode: output

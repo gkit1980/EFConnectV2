@@ -1,0 +1,17 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - label: new label
+      element: expired-policies-visible
+  outputs:
+    - id: defaultValue
+      type: string
+  rules:
+    - inputs:
+        - false
+      outputs:
+        - "true"
+    - inputs:
+        - "-"
+      outputs:
+        - "false"

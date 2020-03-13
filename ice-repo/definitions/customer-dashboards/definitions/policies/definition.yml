@@ -1,5 +1,5 @@
 definition:
-  title: customer-dashboards.policies
+  title: Policies dashboard
   executable: true
   showInsights: true
   elementOnPageCheck: false

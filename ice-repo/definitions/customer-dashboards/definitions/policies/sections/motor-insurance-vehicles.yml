@@ -1,0 +1,14 @@
+section:
+  component:
+    IceArrayFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: 100%
+                size.xs: 100%
+                size.sm: auto
+                elements:
+                  - name: policy.insured.vehicle-objects~car.regno
+      behaviourForEmptyRows: hide
+      arrayElement: policy.insured.vehicle-objects
+  css: half-column
