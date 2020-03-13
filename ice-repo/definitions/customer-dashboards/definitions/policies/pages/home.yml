@@ -5,6 +5,17 @@ page:
   component: InsisSimplePage
   sections:
     - component:
+        IceFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: policies-title
+                    css: mat-title
+    - component:
         IceArrayFlexSection:
           grid:
             rows:

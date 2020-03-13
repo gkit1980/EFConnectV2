@@ -18,10 +18,19 @@ export class InsuranceDateAndDurationMirrorRule extends MirrorRule {
     let startDate = this.requireElement('startDateElement')
       .getValue()
       .forIndex(index);
+
+    if (!startDate) {
+      return;
+    }
+
     startDate = moment(startDate);
     const duration = this.requireElement('durationElement')
       .getValue()
       .forIndex(index);
+
+    if (!duration) {
+      return;
+    }
 
     const listNameForDurationUnit = this.requireParam('durationUnitList');
     const listForDurationUnit = this.requireList(listNameForDurationUnit);
@@ -29,6 +38,11 @@ export class InsuranceDateAndDurationMirrorRule extends MirrorRule {
     let durationUnit = this.requireElement('durationUnitElement')
       .getValue()
       .forIndex(index);
+
+    if (!durationUnit) {
+      return;
+    }
+
     durationUnit = listForDurationUnit.getItem(durationUnit);
     const locale = this.context.runtime.locale;
     durationUnit = durationUnit[`label_${locale}`];

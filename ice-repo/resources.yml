@@ -810,6 +810,10 @@ entries:
           label:
             - en: WHOLE LIFE INSURANCE
               de: WHOLE LIFE INSURANCE
+    policies-title:
+      label:
+        - en: Active policies
+          de: Active policies
   validation:
     pageValidation:
       summary:
