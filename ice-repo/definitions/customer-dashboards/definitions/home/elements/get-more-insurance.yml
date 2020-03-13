@@ -4,7 +4,7 @@ element:
     StaticComponentRule:
       component:
         InsisCard:
-          url: '#/ice/insurances/insurances-home'
+          url: '/ice/customer-dashboards.insurances/home'
   viewMode:
     ConditionalViewModeRule:
       conditionElement: number-of-unfinished-quotes

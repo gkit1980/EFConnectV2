@@ -4,7 +4,7 @@ element:
     StaticComponentRule:
       component:
         InsisCard:
-          url: '#/ice/claims/home'
+          url: '/ice/customer-dashboards.claims/home'
   viewMode:
     ConditionalViewModeRule:
       conditionElement: number-of-claims-in-progress

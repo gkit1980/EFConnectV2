@@ -4,7 +4,7 @@ element:
     StaticComponentRule:
       component:
         InsisCard:
-          url: '/ice/customer-dashboards.claims'
+          url: '/ice/customer-dashboards.claims/home'
   label:
     ResourceWithElementValuesLabelRule:
       elements:
