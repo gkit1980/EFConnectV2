@@ -700,36 +700,36 @@ entries:
         - en: Submit a claim here
           de: null
       icon:
-        - en: thunder.png
-          de: thunder.png
+        - en: thunder.svg
+          de: thunder.svg
     get-more-insurance:
       label:
         - en: Get more insurance
           de: null
       icon:
-        - en: page-of-text.png
-          de: page-of-text.png
+        - en: page-of-text.svg
+          de: page-of-text.svg
     summary-of-active-policies:
       label:
         - en: '${param1} active policies'
           de: null
       icon:
-        - en: umbrella.png
-          de: umbrella.png
+        - en: umbrella.svg
+          de: umbrella.svg
     summary-of-claims-in-progress:
       label:
         - en: '${param1} claims in progress'
           de: null
       icon:
-        - en: thunder.png
-          de: thunder.png
+        - en: thunder.svg
+          de: thunder.svg
     summary-of-unfinished-quotes:
       label:
         - en: '${param1} unfinished quotes'
           de: null
       icon:
-        - en: page-of-text.png
-          de: page-of-text.png
+        - en: page-of-text.svg
+          de: page-of-text.svg
     welcome-back:
       label:
         - en: 'Welcome back, ${param1} ${param2}!'
