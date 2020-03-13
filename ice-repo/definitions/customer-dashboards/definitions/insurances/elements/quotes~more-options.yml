@@ -1,0 +1,15 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        ButtonDropdown: {}
+  label:
+    NoLabelRule: {}
+  viewMode:
+    DtViewModeRule:
+      dt: cancel-quote-viewmode
+  values:
+    DtValuesRule:
+      dt: cancel-quote-action
+      list: null

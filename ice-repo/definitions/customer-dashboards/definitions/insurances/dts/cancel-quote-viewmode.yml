@@ -1,0 +1,24 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: quotes~state
+  outputs:
+    - id: output
+      type: string
+  rules:
+    - inputs:
+        - '-4'
+      outputs:
+        - default
+    - inputs:
+        - '-3'
+      outputs:
+        - default
+    - inputs:
+        - '-2'
+      outputs:
+        - default
+    - inputs:
+        - '-'
+      outputs:
+        - hidden

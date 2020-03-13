@@ -1,0 +1,12 @@
+action:
+  execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - quotes
+    - IntegrationExecutionRule:
+        integration: load-quotes
+  trigger:
+    - PageTriggerRule:
+        enter:
+          - home
+    - DynIdChangeTriggerRule: {}

@@ -1,0 +1,25 @@
+implementations:
+  InsuranceDateAndDurationMirrorRule:
+    description: rule that formats insurance start duration in very specific way
+    params:
+      startDateElement:
+        label: The insurance start date element
+        type: element
+        required: true
+      durationElement:
+        label: The insurance duration element
+        type: element
+        required: true
+      durationUnitElement:
+        label: The insurance duration unit element
+        type: element
+        required: true
+      durationUnitList:
+        label: list that transforms duration unit to human readable value
+        type: string
+        required: true
+      dateFormat:
+        label: date format
+        type: string
+        required: true
+        default: YYYY.MM.DD

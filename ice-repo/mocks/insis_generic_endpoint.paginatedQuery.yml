@@ -5,6 +5,10 @@ load-quotes:
       Row:
         - Column:
             - attributes:
+                name: ENGAGEMENT_ID
+                type: T
+              $value: '123456789'
+            - attributes:
                 name: PRODUCT_ID
                 type: T
               $value: '1001'
@@ -29,9 +33,13 @@ load-quotes:
                 type: 'D'
               $value: '2019-01-01'
             - attributes:
-                name: INSURANCE_END
+                name: INSURANCE_DURATION
                 type: 'D'
-              $value: '2021-01-01'
+              $value: '6'
+            - attributes:
+                name: INSURANCE_DURATION_UNIT
+                type: 'D'
+              $value: 'MONTH'
             - attributes:
                 name: POLICY_ID
                 type: 'N'
@@ -43,7 +51,7 @@ load-quotes:
             - attributes:
                 name: POLICY_STATE
                 type: 'N'
-              $value: -2
+              $value: -4
             - attributes:
                 name: POLICY_STATE_NAME
                 type: 'T'
@@ -74,6 +82,10 @@ load-quotes:
               $value: 'BMW X1 2019'
         - Column:
             - attributes:
+                name: ENGAGEMENT_ID
+                type: T
+              $value: '123456789'
+            - attributes:
                 name: PRODUCT_ID
                 type: T
               $value: '1001'
@@ -88,19 +100,23 @@ load-quotes:
             - attributes:
                 name: PAYMENT_FREQUENCY
                 type: 'N'
-              $value: 4
+              $value: 6
             - attributes:
                 name: PAYMENT_PREMIUM_INSTALMENT
                 type: 'N'
-              $value: 4
+              $value: 6
             - attributes:
                 name: INSURANCE_BEGIN
                 type: 'D'
               $value: '2019-01-01'
             - attributes:
-                name: INSURANCE_END
+                name: INSURANCE_DURATION
                 type: 'D'
-              $value: '2021-01-01'
+              $value: '1'
+            - attributes:
+                name: INSURANCE_DURATION_UNIT
+                type: 'D'
+              $value: 'YEAR'
             - attributes:
                 name: POLICY_ID
                 type: 'N'
@@ -143,6 +159,10 @@ load-quotes:
               $value: 'Audi A6 2018'
         - Column:
             - attributes:
+                name: ENGAGEMENT_ID
+                type: T
+              $value: '123456789'
+            - attributes:
                 name: PRODUCT_ID
                 type: T
               $value: '1001'
@@ -157,19 +177,23 @@ load-quotes:
             - attributes:
                 name: PAYMENT_FREQUENCY
                 type: 'N'
-              $value: 4
+              $value: 6
             - attributes:
                 name: PAYMENT_PREMIUM_INSTALMENT
                 type: 'N'
-              $value: 4
+              $value: 6
             - attributes:
                 name: INSURANCE_BEGIN
                 type: 'D'
               $value: '2019-01-01'
             - attributes:
-                name: INSURANCE_END
+                name: INSURANCE_DURATION
                 type: 'D'
-              $value: '2021-01-01'
+              $value: '3'
+            - attributes:
+                name: INSURANCE_DURATION_UNIT
+                type: 'D'
+              $value: 'MONTH'
             - attributes:
                 name: POLICY_ID
                 type: 'N'
@@ -241,9 +265,17 @@ load-policies:
                 type: 'D'
               $value: '2019-01-01'
             - attributes:
-                name: INSURANCE_END
+                name: INSURANCE_BEGIN
                 type: 'D'
-              $value: '2021-01-01'
+              $value: '2019-01-01'
+            - attributes:
+                name: INSURANCE_DURATION
+                type: 'D'
+              $value: '6'
+            - attributes:
+                name: INSURANCE_DURATION_UNIT
+                type: 'D'
+              $value: 'MONTH'
             - attributes:
                 name: POLICY_ID
                 type: 'N'
@@ -310,9 +342,17 @@ load-policies:
                 type: 'D'
               $value: '2019-01-01'
             - attributes:
-                name: INSURANCE_END
+                name: INSURANCE_BEGIN
                 type: 'D'
-              $value: '2021-01-01'
+              $value: '2019-01-01'
+            - attributes:
+                name: INSURANCE_DURATION
+                type: 'D'
+              $value: '6'
+            - attributes:
+                name: INSURANCE_DURATION_UNIT
+                type: 'D'
+              $value: 'MONTH'
             - attributes:
                 name: POLICY_ID
                 type: 'N'
@@ -379,9 +419,17 @@ load-policies:
                 type: 'D'
               $value: '2019-01-01'
             - attributes:
-                name: INSURANCE_END
+                name: INSURANCE_BEGIN
                 type: 'D'
-              $value: '2021-01-01'
+              $value: '2019-01-01'
+            - attributes:
+                name: INSURANCE_DURATION
+                type: 'D'
+              $value: '6'
+            - attributes:
+                name: INSURANCE_DURATION_UNIT
+                type: 'D'
+              $value: 'MONTH'
             - attributes:
                 name: POLICY_ID
                 type: 'N'

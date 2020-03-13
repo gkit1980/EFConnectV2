@@ -1,0 +1,16 @@
+list:
+  items:
+    - value: YEAR
+      label_en: Year
+      label_de: Year
+    - value: MONTH
+      label_en: Months
+      label_de: Months
+  type: text
+  additionals:
+    label_en:
+      label: label_en
+      type: text
+    label_de:
+      label: label_de
+      type: text

@@ -1,0 +1,12 @@
+action:
+  execution:
+    - CopyValueExecutionRule:
+        source: quotes~id
+        destination: selected.quote.number
+    - IntegrationExecutionRule:
+        integration: cancel-application
+    - ResetElementValueExecutionRule:
+        elements:
+          - quotes
+    - IntegrationExecutionRule:
+        integration: load-quotes

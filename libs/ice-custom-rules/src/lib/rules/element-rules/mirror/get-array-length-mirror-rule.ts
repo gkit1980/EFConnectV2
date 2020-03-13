@@ -1,6 +1,5 @@
 import * as _ from 'lodash';
 import { MirrorRule, IceElement, IndexedValue, IceConsole, ArrayElement } from '@impeo/ice-core';
-
 //
 //
 export class GetArrayLengthMirrorRule extends MirrorRule {

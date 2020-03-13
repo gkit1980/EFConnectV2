@@ -1,0 +1,15 @@
+label: INSIS Currency
+component: InsisCurrency
+types:
+  - currency
+description: >
+  A component for displaying currency values using the currency from an element.
+params:
+  currencyElementName:
+    label: Currency Element
+    type: element
+    info: >
+      The element from which to take the currency code from.
+      If not specified, the component will search for an element named like this element replacing
+      the last part after the last . with "currency".
+      If no currency element is found the currency code defined in the resource file us used.

@@ -1,0 +1,12 @@
+action:
+  execution:
+    - CopyValueExecutionRule:
+        source: quotes~id
+        destination: selected.quote.number
+    - CopyValueExecutionRule:
+        source: quotes~engagement-id
+        destination: selected.quote.engagement-id
+    - DtNavigateToDefinitionExecutionRule:
+        dt: navigate-to-show-quote
+        definitionOutput: url
+        dynIdOutput: dynId

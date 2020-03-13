@@ -1,0 +1,35 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: health-insurance.picture
+                align: center
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: health-insurance.title
+                css: mat-display-1 u-mb-6 u-mt-4
+                align: center
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: health-insurance.description
+                css: u-mb-3
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: health-insurance.button
+                align: center
+  css: card text-align-center

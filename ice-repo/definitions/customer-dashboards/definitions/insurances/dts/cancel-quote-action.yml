@@ -1,0 +1,40 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: quotes~state
+  outputs:
+    - id: output
+      type: string
+    - label: new label
+      default: ''
+      id: label_en
+      type: string
+    - label: new label
+      default: ''
+      id: label_de
+      type: string
+  rules:
+    - inputs:
+        - '-4'
+      outputs:
+        - cancel-quote
+        - Remove
+        - Remove
+    - inputs:
+        - '-3'
+      outputs:
+        - cancel-application
+        - Remove
+        - Remove
+    - inputs:
+        - '-2'
+      outputs:
+        - cancel-application
+        - Remove
+        - Remove
+    - inputs:
+        - '-'
+      outputs:
+        - cancel-application
+        - Remove
+        - Remove

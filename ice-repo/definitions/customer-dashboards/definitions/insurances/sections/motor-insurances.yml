@@ -1,0 +1,36 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: 100
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: motor-insurance.picture
+                align: center
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: motor-insurance.title
+                css: mat-display-1 u-mb-6 u-mt-4
+                align: center
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: motor-insurance.description
+                align: center
+                css: u-mb-3
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: motor-insurance.button
+                align: center
+  css: card text-align-center

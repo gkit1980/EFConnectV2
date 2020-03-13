@@ -1,5 +1,5 @@
 definition:
-  title: customer-dashboards.insurances
+  title: insurances
   executable: true
   showInsights: true
   elementOnPageCheck: false

@@ -1,0 +1,55 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: life-insurance.picture
+                align: center
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: life-insurance.title
+                css: mat-display-1 u-mb-6 u-mt-4
+                align: center
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: life-insurance.description
+                align: center
+                css: u-mb-3
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: life-insurance.buttons.whole-life
+                align: center
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: life-insurance.buttons.term-life
+                align: center
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: life-insurance.buttons.unit-link
+                align: center
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: life-insurance.buttons.endowment
+                align: center
+  css: card text-align-center

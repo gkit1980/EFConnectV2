@@ -32,6 +32,8 @@ import {
 } from './components/element-components/ice-info-button/ice-info-button.component';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { SummarySectionDetailContainer } from './components/shared-components/insis-summary-section-detail-container/summary-section-detail-container.component';
+import { InsisPictureComponent } from './components/element-components/insis-picture-component/insis-picture.component';
+import { InsisCurrencyComponent } from './components/element-components/insis-currency-component/insis-currency.component';
 import { ButtonDropdownComponent } from './components/element-components/button-dropdown-component/button-dropdown.component';
 import { InsisSimplePageComponent } from './components/page-components/insis-simple-page/insis-simple-page.component';
 import { InsisButtonToggleComponent } from './components/element-components/insis-button-toggle-component/insis-button-toggle.component';
@@ -57,6 +59,8 @@ export const iceCustomComponents = [
   SummarySectionDetailContainer,
   ConfirmationPageComponent,
   InsisFileUploadComponent,
+  InsisPictureComponent,
+  InsisCurrencyComponent,
   InsisButtonToggleComponent
 ];
 

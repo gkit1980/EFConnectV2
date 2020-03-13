@@ -1,0 +1,63 @@
+integration:
+  exchange:
+    SoapCallExchangeRule:
+      endpoint: insis_generic_endpoint
+      securityMode: UsernamePassword
+      username: 'env:insis-username'
+      password: 'env:insis-password'
+      ignoreNamespaces: 'env:insis-ignoreNamespaces'
+      soapAction: paginatedQuery
+      requestType: PaginatedQueryRqType
+      jsonSchema: Insis_GenericWS
+  transformation:
+    InsisPaginatedQueryTransformation:
+      queryId: QUOTES
+      additional: insis
+      out:
+        - mappings:
+            - param: soapAction
+              value: paginatedQuery
+            - param: requestType
+              value: PaginatedQueryRqType
+        - toIdx: 0
+          mappings:
+            - value: PID
+              payload: 'FilterCriteria.FilterCriterion[n].field'
+            - value: EQ
+              payload: 'FilterCriteria.FilterCriterion[n].operation'
+            - principal: pid
+              payload: 'FilterCriteria.FilterCriterion[n].value'
+      in:
+        - fromIdx:
+            array: payload.RowSet.Row
+            condition: POLICY_STATE_NAME = 'Quote'
+          toIdx:
+            array: datamodel.quotes
+            append: true
+          mappings:
+            - payload: 'RowSet.Row[n].ENGAGEMENT_ID'
+              element: quotes~engagement-id
+            - payload: 'RowSet.Row[n].POLICY_STATE'
+              element: quotes~state
+            - payload: 'RowSet.Row[n].PRODUCT_NAME'
+              element: quotes~product.name
+            - payload: 'RowSet.Row[n].INSURANCE_BEGIN'
+              element: quotes~insurance.start
+            - payload: 'RowSet.Row[n].INSURANCE_DURATION'
+              element: quotes~insurance.duration
+            - payload: 'RowSet.Row[n].INSURANCE_DURATION_UNIT'
+              element: quotes~insurance.duration-unit
+            - payload: 'RowSet.Row[n].POLICY_NO'
+              element: quotes~policy-number
+            - payload: 'RowSet.Row[n].PREMIUM'
+              element: quotes~price
+            - payload: 'RowSet.Row[n].CURRENCY'
+              element: quotes~currency
+            - payload: 'RowSet.Row[n].PRODUCT_NAME'
+              element: quotes~product.name
+            - payload: 'RowSet.Row[n].QUOTE_ID'
+              element: quotes~id
+            - payload: 'RowSet.Row[n].INSURED_OBJECT'
+              element: quotes~vehicles
+            - value: continue-quote
+              element: quotes~continue

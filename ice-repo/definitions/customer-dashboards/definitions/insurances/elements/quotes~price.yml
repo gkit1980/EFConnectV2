@@ -1,0 +1,10 @@
+element:
+  type: currency
+  viewMode:
+    StaticViewModeRule:
+      viewMode: output
+  component:
+    StaticComponentRule:
+      component:
+        InsisCurrency:
+          currencyElementName: quotes~currency

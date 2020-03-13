@@ -55,8 +55,8 @@ entries:
               de: Status
         policy-link:
           label:
-            - en: ${param1} ${param2}
-              de: ${param1} ${param2}
+            - en: '${param1} ${param2}'
+              de: '${param1} ${param2}'
         policy-label:
           label:
             - en: Policy
@@ -533,6 +533,63 @@ entries:
           de: null
       icon:
         - en: person.svg
+    quotes:
+      label:
+        - en: Quotes in progress
+          de: Quotes in progress
+      items:
+        insurance-start-and-duration:
+          label:
+            - en: Insurance start and duration
+              de: Insurance start and duration
+        continue:
+          label:
+            - en: Continue
+              de: Continue
+        vehicles:
+          label:
+            - en: Vehicles
+              de: Vehicles
+        more-options:
+          icon:
+            - en: more_horiz.svg
+              de: more_horiz.svg
+          label:
+            - en: More options
+              de: More options
+        currency: {}
+        price:
+          label:
+            - en: Price
+              de: Price
+        start-and-duration:
+          label:
+            - en: Insurance start and duration
+              de: Insurance start and duration
+      itesm: {}
+    quotes-title:
+      label:
+        - en: Quotes in Progress
+          de: Quotes in Progress
+    isurance-products-title:
+      label:
+        - en: Insurance Products
+          de: Insurance Products
+    motor-insurance:
+      description:
+        label:
+          - en: >-
+              Some description here some description here some description here
+              some description here some description here some description here
+            de: null
+      title:
+        label:
+          - en: Motor insurance
+            de: Motor insurance
+      button:
+        label:
+          - en: MOTOR INSURANCE
+            de: MOTOR INSURANCE
     submit-a-claim-here:
       label:
         - en: Submit a claim here
@@ -584,6 +641,70 @@ entries:
       icon:
         - en: more_horiz.svg
           de: more_horiz.svg
+    property-insurance:
+      button:
+        label:
+          - en: PROPERTY INSURANCE
+            de: PROPERTY INSURANCE
+      description:
+        label:
+          - en: >-
+              Some description here some description here some description here
+              some description here some description here some description here
+            de: >-
+              Some description here some description here some description here
+              some description here some description here some description here
+      title:
+        label:
+          - en: Property insurance
+            de: Property insurance
+    health-insurance:
+      description:
+        label:
+          - en: >-
+              Some description here some description here some description here
+              some description here some description here some description here
+            de: >-
+              Some description here some description here some description here
+              some description here some description here some description here
+      title:
+        label:
+          - en: Health insurance
+            de: Health insurance
+      button:
+        label:
+          - en: HEALTH INSURANCE
+            de: HEALTH INSURANCE
+    life-insurance:
+      title:
+        label:
+          - en: Life insurance
+            de: Life insurance
+      description:
+        label:
+          - en: >-
+              Some description here some description here some description here
+              some description here some description here some description here
+            de: >-
+              Some description here some description here some description here
+              some description here some description here some description here
+      buttons:
+        endowment:
+          label:
+            - en: ENDOWMENT INSURANCE
+              de: ENDOWMENT INSURANCE
+        term-life:
+          label:
+            - en: TERM LIFE INSURANCE
+              de: TERM LIFE INSURANCE
+        unit-link:
+          label:
+            - en: UNIT LINK INSURANCE
+              de: UNIT LINK INSURANCE
+        whole-life:
+          label:
+            - en: WHOLE LIFE INSURANCE
+              de: WHOLE LIFE INSURANCE
   validation:
     pageValidation:
       summary:
@@ -602,9 +723,9 @@ entries:
         - en: Please confirm
           de: Bitte bestätigen
       not_allowed_here:
-        - en: "'${value}' not allowed here"
+        - en: '''${value}'' not allowed here'
       regexp:
-        - en: "'${value}' does not matches regular expression ${regexp}"
+        - en: '''${value}'' does not matches regular expression ${regexp}'
       array:
         min:
           - en: 'must have at least ${min} entries'
@@ -764,6 +885,10 @@ entries:
         logout:
           - en: Logout
             de: null
+    insurances:
+      title:
+        - en: Quotes in Progress
+          de: Quotes in Progress
   lists:
     gender:
       diverse:
@@ -841,10 +966,9 @@ entries:
         vandalism:
           - en: Vandalism
             de: Vandalism
-  claims:
-    show-resolved:
-      - en: Show resolved claims
-        de: Show resolved claims
-    hide-resolved:
-      - en: Hide resolved claims
-        de: Hide resolved claims
+  quotes:
+    title: {}
+    remove:
+      label:
+        - en: Remove
+          de: Remove

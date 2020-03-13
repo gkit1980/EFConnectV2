@@ -1,0 +1,109 @@
+page:
+  validation: {}
+  component: InsisSimplePage
+  sections:
+    - component:
+        IceFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: quotes-title
+                    css: mat-display-1 u-mb-6
+      viewMode:
+        HideSectionWhenArrayElementIsEmpty:
+          array: quotes
+    - component:
+        IceArrayFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: 20%
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: quotes~product.name
+                    align: center
+                  - size: 20%
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: quotes~price
+                    align: center
+                  - size: 20%
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: quotes~vehicles
+                    align: center
+                  - size: none
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: quotes~start-and-duration
+                    align: center
+                  - size: none
+                    size.xs: auto
+                    size.sm: auto
+                    align: center
+                    elements:
+                      - name: quotes~continue
+                  - size: none
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: quotes~more-options
+                    align: center
+                align: space-between
+          arrayElement: quotes
+          behaviourForEmptyRows: hide
+      css: horizontal-list
+    - component:
+        IceFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: isurance-products-title
+                    css: mat-display-1 u-mb-8 u-mt-2
+    - component:
+        IceFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: calc(33.33% -15px)
+                    size.xs: auto
+                    size.sm: auto
+                    sections:
+                      - name: motor-insurances
+                  - size: calc(33.33% -15px)
+                    size.xs: auto
+                    size.sm: auto
+                    sections:
+                      - name: property-insurance
+                  - size: calc(33.33% -15px)
+                    size.xs: auto
+                    size.sm: auto
+                    sections:
+                      - name: health-insurance
+                gap: 15px
+              - cols:
+                  - size: calc(33.33% -15px)
+                    size.xs: auto
+                    size.sm: auto
+                    sections:
+                      - name: life-insurance
+                    css: u-mt-4
+                  - size: calc(33.33% -15px)
+                    size.xs: auto
+                    size.sm: auto
+                  - size: calc(33.33% -15px)
+                    size.xs: auto
+                    size.sm: auto
+                gap: 15px

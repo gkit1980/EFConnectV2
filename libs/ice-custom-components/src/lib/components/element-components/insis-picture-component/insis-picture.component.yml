@@ -1,0 +1,12 @@
+label: InsisPictureComponent
+component: InsisPictureComponent
+types:
+  - text
+description: >
+  Show picture from url. Url equals to the element value
+params:
+  css:
+    label: CSS
+    info: CSS class that will be added to the component
+    required: false
+    type: string

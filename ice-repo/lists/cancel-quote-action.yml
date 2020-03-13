@@ -1,0 +1,13 @@
+list:
+  items:
+    - value: cancel-application
+      label_en: Remove
+      label_de: Remove
+  type: text
+  additionals:
+    label_en:
+      label: label_en
+      type: text
+    label_de:
+      label: label_de
+      type: text

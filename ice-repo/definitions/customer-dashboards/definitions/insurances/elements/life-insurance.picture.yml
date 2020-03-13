@@ -1,0 +1,9 @@
+element:
+  type: text
+  component: InsisPictureComponent
+  defaultValue:
+    StaticValueRule:
+      value: /assets/insurances/family.svg
+  viewMode:
+    StaticViewModeRule:
+      viewMode: output

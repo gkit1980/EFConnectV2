@@ -1,0 +1,12 @@
+element:
+  type: text
+  viewMode:
+    StaticViewModeRule:
+      viewMode: output
+  mirror:
+    InsuranceDateAndDurationMirrorRule:
+      dateFormat: YYYY.MM.DD
+      durationUnitList: quotes.duration-unit
+      startDateElement: quotes~insurance.start
+      durationElement: quotes~insurance.duration
+      durationUnitElement: quotes~insurance.duration-unit
