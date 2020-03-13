@@ -41,38 +41,35 @@
       }
     },
     {
-      "type": "chrome",
+      "name": "Server (launch)",
       "request": "launch",
-      "name": "Client (watch)",
-      "url": "http://localhost:3000",
+      "type": "node",
       "sourceMaps": true,
-      "webRoot": "${workspaceRoot}/apps/angular",
-      "showAsyncStacks": true,
-      "smartStep": true,
-      "breakOnLoad": true,
-      "breakOnLoadStrategy": "instrument",
+      "cwd": "${workspaceRoot}",
+      "protocol": "inspector",
+      "program": "${workspaceRoot}/dist/apps/express/main.js",
+      "outFiles": ["${workspaceRoot}/dist/apps/express/**/*.js"],
       "sourceMapPathOverrides": {
-        "webpack:/*": "${workspaceRoot}/apps/angular/*"
+        "webpack:///./*": "${workspaceRoot}/*"
       }
     },
     {
-      "name": "Server",
+      "name": "Server (attach)",
       "request": "attach",
       "port": 7777,
       "type": "node",
       "sourceMaps": true,
       "cwd": "${workspaceRoot}",
-      "protocol": "inspector"
+      "protocol": "inspector",
+      "sourceMapPathOverrides": {
+        "webpack:///./*": "${workspaceRoot}/*"
+      }
     }
   ],
   "compounds": [
     {
-      "name": "Client/Server",
-      "configurations": ["Server", "Client"]
-    },
-    {
-      "name": "Client/Server (watch)",
-      "configurations": ["Server", "Client (watch)"]
+      "name": "Client/Server (launch)",
+      "configurations": ["Server (launch)", "Client"]
     }
   ]
 }

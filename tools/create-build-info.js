@@ -18,7 +18,7 @@ function createBuildInfo() {
       ? process.env.BUILD_SOURCEBRANCH.replace('refs/heads/', '')
       : gitInfo.branch,
     commit: gitInfo.abbreviatedSha,
-    date: gitInfo.committerDate,
+    date: gitInfo.committerDate || new Date(),
     buildNumber: process.env.BUILD_BUILDNUMBER || '0.0.1'
   };
 }

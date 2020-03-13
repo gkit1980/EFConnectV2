@@ -1,232 +1,202 @@
-const path = require("path");
-const fs = require("fs");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
-const yml = require("js-yaml");
-const lodash = require("lodash");
+const path = require('path');
+const fs = require('fs');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const yml = require('js-yaml');
+const lodash = require('lodash');
 
-const ICE_DEFAULT_MODULE_FOLDER = path.dirname(require.resolve('@impeo/ice-core'));
-const ICE_DEFAULT_DESCRIPTORS_RULES_FOLDER = path.resolve(ICE_DEFAULT_MODULE_FOLDER, 'descriptors/rules');
-const ICE_AVAILABLE_ENTITIES_FOLDERS = fs.readdirSync(ICE_DEFAULT_DESCRIPTORS_RULES_FOLDER, {withFileTypes: true})
-    .filter(dir => dir.isDirectory())
-    .map(dir => dir.name);
+function readdirDirsSync(folder) {
+  return fs.readdirSync(folder, { withFileTypes: true }).filter(dirent => dirent.isDirectory());
+}
+
+function readdirFilesSync(folder) {
+  return fs.readdirSync(folder, { withFileTypes: true }).filter(dirent => dirent.isFile());
+}
+
+function tryResolveAvailableEntitiesAndAspects() {
+  try {
+    const iceCoreFolder = path.dirname(require.resolve('@impeo/ice-core'));
+    const defaultRulesFolder = path.resolve(iceCoreFolder, 'descriptors/rules');
+
+    return readdirDirsSync(defaultRulesFolder).reduce(
+      (result, dirent) =>
+        Object.assign(result, {
+          [dirent.name]: readdirFilesSync(path.resolve(defaultRulesFolder, dirent.name)).map(x => {
+            // Descriptor entity folders are in camelCase,
+            // but the source entity folders are in kebab-case.
+            // So we transform from camelCase to kebab-case.
+            return path
+              .basename(x.name, path.extname(x.name))
+              .replace(/([A-Z]+)/g, '-$1')
+              .toLowerCase();
+          })
+        }),
+      {}
+    );
+  } catch (err) {
+    console.warn('Error when trying to resolve available entities and apsects', err);
+    return null;
+  }
+}
+
+const availableEntitiesAndAspects = tryResolveAvailableEntitiesAndAspects();
 
 function getDescriptorFiles(sourceFolder) {
-    const descriptorFiles = getFolderFiles(sourceFolder)
-        .filter(file => path.extname(file) === '.yml');
-
-    return descriptorFiles;
+  return getFolderFiles(sourceFolder).filter(file => path.extname(file) === '.yml');
 }
 
 function getFolderFiles(folder) {
-    const files = [];
-    fs.readdirSync(folder, {withFileTypes: true}).forEach(file => {
-        const absolutePath = path.join(folder, file.name);
+  const files = [];
+  fs.readdirSync(folder, { withFileTypes: true }).forEach(file => {
+    const absolutePath = path.join(folder, file.name);
 
-        if (file.isDirectory())
-            return files.push(...getFolderFiles(absolutePath));
+    if (file.isDirectory()) return files.push(...getFolderFiles(absolutePath));
 
-        files.push(absolutePath);
-    });
+    files.push(absolutePath);
+  });
 
-    return files;
+  return files;
 }
 
-function getDirectories(folder) {
-    return fs.readdirSync(folder, {withFileTypes: true})
-        .filter(dir => dir.isDirectory());
-}
+function extractEntityAndAspectFolders(folder) {
+  const pathParts = path.dirname(folder).split(path.sep);
+  const rulesPartIdx = pathParts.indexOf('rules');
+  if (rulesPartIdx < 0 || pathParts.length <= rulesPartIdx + 2)
+    throw new Error(
+      'All rules must follow the following folder structure: rules/ENTITY-rules/ASPECT/*\n' +
+        `Rule '${folder}' does not`
+    );
 
-/**
- * Will return a valid entity folder name.
- * @param folder
- * @returns {T}
- */
-function extractEntityFolder(folder) {
-    const pathParts = path.dirname(folder).split(path.sep);
+  const entityFolder = pathParts[rulesPartIdx + 1];
+  const aspectFolder = pathParts[rulesPartIdx + 2];
 
-    const entityFolder = pathParts.filter(part => getDefaultAvailableEntities().includes(part));
+  // Validate entity and aspect folders
+  if (availableEntitiesAndAspects) {
+    if (!(entityFolder in availableEntitiesAndAspects))
+      throw new Error(`Folder '${entityFolder}' is not a valid entity folder`);
 
-    if (!entityFolder || !entityFolder.length) {
-        console.error('Not found valid entity folder inside path:', folder);
-        return;
-    }
+    if (!availableEntitiesAndAspects[entityFolder].includes(aspectFolder))
+      throw new Error(
+        `Folder '${aspectFolder}' is not a valid aspect folder under '${entityFolder}'`
+      );
+  }
 
-    return entityFolder.pop();
-}
-
-
-/**
- * Will extract valid aspect folder name. This name will be latter used to bundle all the descriptors
- * for this aspect into a single yml file.
- *
- * @param folder
- * @returns {T}
- */
-function extractAspectFolder(folder) {
-    const entityFolder = extractEntityFolder(folder);
-    const pathParts = path.dirname(folder).split(path.sep);
-
-    const aspectFolder = pathParts.filter(part => getDefaultAvailableAspects(entityFolder).includes(part));
-
-    if (!aspectFolder || !aspectFolder.length) {
-        console.error('Not found valid aspect folder inside path:', folder);
-        return;
-    }
-
-    return aspectFolder.pop();
-}
-
-
-/**
- * Return a list of available entity folder names.
- * They are extracted from: '@impeo/ice-core/descriptors/rules/**'
- *
- *
- * @param folder
- * @returns {*}
- */
-function getDefaultAvailableEntities() {
-    return ICE_AVAILABLE_ENTITIES_FOLDERS || [];
-}
-
-/**
- * Will return list of aspect folder names available for the provided entity.
- * They are extracted from: '@impeo/ice-core/descriptors/rules/[entityFolder]/**'
- *
- * @param folder
- * @returns {T[] | Array}
- */
-function getDefaultAvailableAspects(entityFolder) {
-
-    const availableAspects = getFolderFiles(path.resolve(ICE_DEFAULT_DESCRIPTORS_RULES_FOLDER, entityFolder))
-        .filter(filename => path.extname(filename) === ".yml")
-        .map(fileName => path.basename(fileName, ".yml"))
-        .map(fileName => {
-            // replace viewMode to view-Mode
-            return fileName.replace(/([A-Z]+)/g, "-$1");
-        })
-        .map(fileName => {
-            // convert view-Mode to view-mode
-            const name = fileName.split('-').map(part => part.toLowerCase()).join('-');
-            return name
-        });
-
-    if (!availableAspects && !availableAspects.length) {
-        console.error("No aspects found inside folder:", path.resolve(ICE_DEFAULT_DESCRIPTORS_RULES_FOLDER, entityFolder));
-        return [];
-    }
-
-    return availableAspects
+  return [entityFolder, aspectFolder];
 }
 
 function loadYamlContent(filePath) {
-    try {
-        return yml.safeLoad(fs.readFileSync(filePath, 'utf8'));
-    } catch (error) {
-        console.warn(`Error: [${filePath}] - ${error}`);
-    }
+  try {
+    return yml.safeLoad(fs.readFileSync(filePath, 'utf8'));
+  } catch (error) {
+    console.warn(`Error: [${filePath}] - ${error}`);
+  }
 }
 
-//
-//
 function saveYamlContent(filePath, content) {
-    const dir = path.dirname(filePath);
-    try {
-        if (!fs.existsSync(dir)) fs.mkdirSync(dir, {recursive: true});
-        return fs.writeFileSync(filePath, yml.dump(content));
-    } catch (error) {
-        console.warn(`Error: [${filePath}] - ${error}`);
-    }
+  const dir = path.dirname(filePath);
+  try {
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+    return fs.writeFileSync(filePath, yml.dump(content));
+  } catch (error) {
+    console.warn(`Error: [${filePath}] - ${error}`);
+  }
 }
-
 
 class MergeRuleDescriptorsPlugin {
+  constructor(inputFolder, outputFolder) {
+    this.inputFolder = inputFolder;
+    this.outputFolder = outputFolder;
+  }
 
-    constructor(inputFolder, outputFolder) {
-        this.inputFolder = inputFolder;
-        this.outputFolder = outputFolder;
-    }
+  apply(compiler) {
+    const plugin = { name: 'MergeCustomDescriptors' };
 
-    apply(compiler) {
+    compiler.hooks.emit.tap(plugin, compilation => {
+      return this.emitHookHandler(compilation);
+    });
+  }
 
-        const plugin = {name: "MergeCustomDescriptors"};
+  emitHookHandler(compilation) {
+    const descriptorFiles = getDescriptorFiles(this.inputFolder);
+    const allDescriptors = {};
 
-        compiler.hooks.emit.tap(plugin, (compilation) => {
-            return this.emitHookHandler(compilation);
-        });
-    }
+    descriptorFiles.forEach(file => {
+      const ymlContent = loadYamlContent(file);
+      const [entityFolder, aspectFolder] = extractEntityAndAspectFolders(file);
+      const formattedAspectFolder = this.reformatAspectFolderName(aspectFolder);
+      const mergedAspectRulesJSON =
+        lodash.get(allDescriptors, [entityFolder, formattedAspectFolder]) || {};
+      lodash.merge(mergedAspectRulesJSON, ymlContent);
+      lodash.set(allDescriptors, [entityFolder, formattedAspectFolder], mergedAspectRulesJSON);
+    });
 
-    emitHookHandler(compilation) {
+    const entitieFolders = lodash.keys(allDescriptors);
 
-        const descriptorFiles = getDescriptorFiles(this.inputFolder);
-        const allDescriptors = {};
+    entitieFolders.forEach(entityFolder => {
+      const aspectsFiles = lodash.keys(lodash.get(allDescriptors, entityFolder));
+      aspectsFiles.forEach(aspectName => {
+        const aspectJSON = lodash.get(allDescriptors, [entityFolder, aspectName]);
+        const outputFile = path.resolve(this.outputFolder, entityFolder, aspectName) + '.yml';
+        saveYamlContent(outputFile, aspectJSON);
+      });
+    });
+    return true;
+  }
 
-        descriptorFiles.forEach(file => {
-            const ymlContent = loadYamlContent(file);
-            const entityFolder = extractEntityFolder(file);
-            const aspectFolder = this.reformatAspectFolderName(extractAspectFolder(file));
-            const mergedAspectRulesJSON = lodash.get(allDescriptors, [entityFolder, aspectFolder]) || {};
-            lodash.merge(mergedAspectRulesJSON, ymlContent);
-            lodash.set(allDescriptors, [entityFolder, aspectFolder], mergedAspectRulesJSON);
-        });
+  /**
+   * Formats something like `view-mode` into `viewMode`. The former is
+   * used in the code, but the latter is used to store the final
+   * descriptors.
+   */
+  reformatAspectFolderName(folder) {
+    const parts = folder.split('-').map((part, index) => {
+      if (index > 0) part = lodash.capitalize(part);
+      return part;
+    });
 
-        const entitieFolders = lodash.keys(allDescriptors);
-
-        entitieFolders.forEach(entityFolder => {
-            const aspectsFiles = lodash.keys(lodash.get(allDescriptors, entityFolder));
-            aspectsFiles.forEach(aspectName => {
-                const aspectJSON = lodash.get(allDescriptors, [entityFolder, aspectName]);
-                const outputFile = path.resolve(this.outputFolder, entityFolder, aspectName) + '.yml';
-                saveYamlContent(outputFile, aspectJSON);
-            });
-        });
-        return true;
-    }
-
-    reformatAspectFolderName(folder) {
-        const parts = folder.split("-").map((part, index) => {
-            if (index > 0) part = lodash.capitalize(part);
-            return part;
-        });
-
-        return parts.join('');
-    }
+    return parts.join('');
+  }
 }
 
+module.exports = function(webpackConfig) {
+  const componentRulesInputFolder = path.resolve(
+    __dirname,
+    '../../libs/ice-custom-components/src/lib/components'
+  );
 
-module.exports = function (webpackConfig) {
+  const rulesInputFolder = path.resolve(__dirname, '../../libs/ice-custom-rules/src/lib/rules');
 
-    const componentRulesInputFolder = path.resolve(__dirname,
-        "../../libs/ice-custom-components/src/lib/components");
+  const serverRulesInputFolder = path.resolve(
+    __dirname,
+    '../../libs/ice-custom-server-rules/src/lib/rules'
+  );
 
-    const rulesInputFolder = path.resolve(__dirname,
-        "../../libs/ice-custom-rules/src/lib/rules");
+  const componentDescriptorsOutputFolder = path.join(
+    webpackConfig.output.path,
+    'assets/descriptors/components'
+  );
 
-    const serverRulesInputFolder = path.resolve(__dirname,
-        "../../libs/ice-custom-server-rules/src/lib/rules");
+  const ruleDescriptorsOutputFolder = path.join(
+    webpackConfig.output.path,
+    'assets/descriptors/rules'
+  );
 
-    const componentDescriptorsOutputFolder = path.join(webpackConfig.output.path,
-        "assets/descriptors/components");
+  // We do this to allow putting the descriptor files next to the custom components. The
+  // descriptor of the components will be put into dist/app/express/assets/descriptors/components/element.components
+  webpackConfig.plugins.push(
+    new CopyWebpackPlugin(
+      fs
+        .readdirSync(componentRulesInputFolder, { withFileTypes: true })
+        .filter(dirent => dirent.isDirectory())
+        .map(dirent => ({
+          from: path.join(componentRulesInputFolder, dirent.name, '**/*.yml'),
+          to: path.join(componentDescriptorsOutputFolder, dirent.name),
+          toType: 'dir',
+          flatten: true
+        }))
+    ),
+    new MergeRuleDescriptorsPlugin(rulesInputFolder, ruleDescriptorsOutputFolder),
+    new MergeRuleDescriptorsPlugin(serverRulesInputFolder, ruleDescriptorsOutputFolder)
+  );
 
-    const ruleDescriptorsOutputFolder = path.join(webpackConfig.output.path,
-        "assets/descriptors/rules");
-
-    // We do this to allow putting the descriptor files next to the custom components. The
-    // descriptor of the components will be put into dist/app/express/assets/descriptors/components/element.components
-    webpackConfig.plugins.push(
-        new CopyWebpackPlugin(
-            fs.readdirSync(componentRulesInputFolder, {withFileTypes: true})
-                .filter(dirent => dirent.isDirectory())
-                .map(dirent => ({
-                    from: path.join(componentRulesInputFolder, dirent.name, "**/*.yml"),
-                    to: path.join(componentDescriptorsOutputFolder, dirent.name),
-                    toType: "dir",
-                    flatten: true
-                }))
-        ),
-        new MergeRuleDescriptorsPlugin(rulesInputFolder, ruleDescriptorsOutputFolder),
-        new MergeRuleDescriptorsPlugin(serverRulesInputFolder, ruleDescriptorsOutputFolder)
-    );
-
-    return webpackConfig;
+  return webpackConfig;
 };

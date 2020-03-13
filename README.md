@@ -31,6 +31,18 @@ You can then run express.js app:
 node dist/apps/express/main.js
 ```
 
+## Debug
+
+### Debug ICE Foundation sources
+
+To build the portal using ICE Foundation sources, run the following command:
+
+```
+node ./tools/enable-ice-foundation-sources.js
+```
+
+When you build later, it will build against ICE Foundation sources, rather than using the npm packages.
+
 ### Environment variables
 
 Environment variables are used to affect some of the settings of the portal. They are used when starting S-ICE in `apps/express/src/main.ts`. All environment variables have default values, which can be overriden for development or production.

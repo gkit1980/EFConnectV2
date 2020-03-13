@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { SectionComponentImplementation } from '@impeo/ng-ice';
 import { first } from 'lodash';
-import { ItemElement } from '@impeo/ice-core/src';
+import { ItemElement } from '@impeo/ice-core';
 import * as moment from 'moment';
 
 @Component({
