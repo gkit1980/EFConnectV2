@@ -1,5 +1,5 @@
 element:
   type: date
-  viewMode:
-    StaticViewModeRule:
-      viewMode: output
+  viewMode: output
+  label:
+    NoLabelRule: {}

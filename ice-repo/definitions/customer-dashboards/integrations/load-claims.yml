@@ -87,6 +87,6 @@ integration:
             - payload: 'RowSet.Row[n].CLAIM_STATE_NAME'
               element: resolved-claims~claim-state-name
             - value: 'view-claim-resolved'
-              element: resolved-claims~button-view-more
+              element: resolved-claims~claim-link
             - value: 'view-policy-resolved'
               element: resolved-claims~policy-link

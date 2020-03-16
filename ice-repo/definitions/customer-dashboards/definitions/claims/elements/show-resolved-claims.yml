@@ -7,7 +7,7 @@ element:
     StaticComponentRule:
       component:
         InsisButtonToggle:
-          labelTrue: claims.hide-resolved
-          labelFalse: claims.show-resolved
+          labelTrue: elements.hide-resolved-claims.label
+          labelFalse: elements.show-resolved-claims.label
   label:
     NoLabelRule: {}

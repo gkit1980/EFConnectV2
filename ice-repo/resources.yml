@@ -63,12 +63,14 @@ entries:
           label:
             - en: Vehicle
               de: Vehicle
-    show-resolved-claims-label:
-      - en: Show resolved claims
-        de: Show resolved claims
-    hide-resolved-claims-label:
-      - en: Hide resolved claims
-        de: Hide resolved claims
+    show-resolved-claims:
+      label:
+        - en: Show resolved claims
+          de: Show resolved claims
+    hide-resolved-claims:
+      label:
+        - en: Hide resolved claims
+          de: Hide resolved claims
     add-claim:
       label:
         - en: Add claim
@@ -112,10 +114,18 @@ entries:
           label:
             - en: Claim number
               de: Claim number
+        claim-link:
+          label:
+            - en: '${param1}'
+              de: '${param1}'
         claim-state-name:
           label:
             - en: Status
               de: Status
+        date-resolved:
+          label:
+            - en: Date resolved
+              de: Date resolved
         policy-link:
           label:
             - en: '${param1} ${param2}'
@@ -832,9 +842,9 @@ entries:
         - en: Please confirm
           de: Bitte bestätigen
       not_allowed_here:
-        - en: '''${value}'' not allowed here'
+        - en: "'${value}' not allowed here"
       regexp:
-        - en: '''${value}'' does not matches regular expression ${regexp}'
+        - en: "'${value}' does not matches regular expression ${regexp}"
       array:
         min:
           - en: 'must have at least ${min} entries'

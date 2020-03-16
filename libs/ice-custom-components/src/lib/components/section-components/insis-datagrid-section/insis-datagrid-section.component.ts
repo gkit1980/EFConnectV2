@@ -24,7 +24,6 @@ export class InsisDatagridSectionComponent extends SectionComponentImplementatio
   //
   //
   get showSection() {
-    console.log(this.section.viewModeRule.getViewMode());
     return this.section.viewModeRule.getViewMode() !== SectionViewMode.HIDDEN;
   }
 

@@ -53,35 +53,33 @@ page:
                     size.xs: auto
                     size.sm: auto
                     elements:
-                      - name: show-resolved-state
+                      - name: show-resolved-claims
     - component:
-        IceArrayFlexSection:
-          grid:
-            rows:
-              - cols:
-                  - size: 25%
-                    elements:
-                      - name: resolved-claims~claim-no
-                  - size: 15%
-                    elements:
-                      - name: resolved-claims~claim-state-name
-                  - size: auto
-                    css: label-link
-                    elements:
-                      - name: resolved-claims~policy-label
-                      - name: resolved-claims~policy-link
-                  - size: 100px
-                    elements:
-                      - name: resolved-claims~event-date
-                  - size: none
-                    elements:
-                      - name: resolved-claims~button-view-more
-                    align: center
+        InsisDatagridSection:
           arrayElement: resolved-claims
-      css: horizontal-list u-mt-4
+          elements:
+            - resolved-claims~claim-link
+            - resolved-claims~claim-state-name
+            - resolved-claims~date-resolved
+            - resolved-claims~policy-link
+          labels:
+            - elements.resolved-claims~claim-no.label
+            - elements.resolved-claims~claim-state-name.label
+            - elements.resolved-claims~date-resolved.label
+            - elements.resolved-claims~policy-label.label
+          columnWidthsMobile:
+            - null
+            - null
+            - null
+            - null
+          columnWidthsDesktop:
+            - 180px
+            - 180px
+            - 180px
+            - 180px
       viewMode:
         ConditionalSectionViewModeRule:
-          conditionElement: show-resolved-state
+          conditionElement: show-resolved-claims
           conditionValue: true
           conditionViewMode: output
           elseViewMode: hidden

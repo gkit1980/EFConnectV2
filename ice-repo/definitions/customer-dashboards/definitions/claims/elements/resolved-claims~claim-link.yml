@@ -9,10 +9,9 @@ element:
         IceButton:
           themeColor: primary
           variant: default
-          action: view-policy-resolved
+          action: view-claim-resolved
   label:
     ResourceWithElementValuesLabelRule:
-      key: elements.resolved-claims.items.policy-link.label
+      key: elements.resolved-claims.items.claim-link.label
       elements:
-        - resolved-claims~insr-type-name
-        - resolved-claims~policy-no
+        - resolved-claims~claim-no
