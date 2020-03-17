@@ -7,34 +7,39 @@
     border: 1px solid get-color($theme, 'border');
     background: get-color($theme, 'light');
     margin: 10px 0;
-    padding: 5px;
 
-    table {
+    mat-table {
       width: 100%;
     }
 
-    td.mat-cell:first-of-type,
-    td.mat-footer-cell:first-of-type,
-    th.mat-header-cell:first-of-type {
+    mat-cell:first-of-type,
+    mat-footer-cell:first-of-type,
+    mat-header-cell:first-of-type {
       padding-left: 0px;
     }
-
-    td.mat-cell {
-      align-items: center;
-      display: flex;
-      font-family: "Roboto Medium", "Roboto Regular", "Roboto";
-      font-weight: 500;
+    mat-cell:last-of-type,
+    mat-footer-cell:last-of-type,
+    mat-header-cell:last-of-type {
+      padding-right: 0px;
     }
 
-    tr.mat-header-row {
-      height: 47px;
-      line-height: 47px;
-    }
-
-    th {
-      font-weight: bold;
+    .mat-header-cell {
+      font-weight: 500 !important;
       color: get-color($theme, text);
     }
 
+    .mat-header-cell,
+    mat-header-row {
+      min-height: 48px;
+    }
+
+    mat-row,
+    mat-cell {
+      min-height: 36px;
+    }
+
+    mat-row:last-of-type {
+      border-bottom: 0;
+    }
   }
 }

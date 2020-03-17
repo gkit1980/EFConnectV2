@@ -1,48 +1,39 @@
 label: InsisDatagridSection
-
 component: InsisDatagridSection
-
 description: >
   A section to display data as a table
 
 params:
-  elements:
-    label: An array of element names
-    required: true
-    type: array
-    info: >
-      An array of elements to display (in order of appearance)
-
+  cols:
+    label: Columns
+    type: FlexTableColumn
   arrayElement:
     label: Array element
     type: element
     required: true
-
-  labels:
-    label: An array of resource paths
-    required: true
-    type: array
-    info: >
-      An array of resource paths to display as headers (in order of appearance; null to skip the header)
-
   css:
     label: CSS class
     required: false
     type: text
+  showFilter:
+    label: Show filter
+    description: Show filter on top of the table so data can be filtered
+    type: boolean
+    default: false
 
-  columnWidthsMobile:
-    label: Column widths on a small device
-    required: false
-    type: array
+icel: >
 
-  columnWidthsDesktop:
-    label: Column widths on a large device
-    required: false
-    type: array
+  Type of FlexTableColumn: 
 
-  tags:
-    label: Additional section tags
-    required: false
-    type: texts
-    info: >
-      Arbitrary tags assigned to this section.
+  ```
+  FlexTableColumn:
+    element: name of element
+    size: value in px/%
+    size.xs: value in px/% for mobile
+    size.sm: value in px/% for tablet
+    align: align
+    align.xs: align for mobile
+    align.sm: align for tablet
+    css: css class name
+    caption: resource key for label
+  ```
