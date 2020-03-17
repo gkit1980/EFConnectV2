@@ -2,6 +2,8 @@ dt:
   hitPolicy: F
   inputs:
     - label: new label
+      element: policy.contract.term.duration
+    - label: new label
       element: policy.contract.payment.frequency
   outputs:
     - id: output
@@ -9,13 +11,31 @@ dt:
   rules:
     - inputs:
         - 12
+        - 2
       outputs:
-        - policy.payment.per-month
+        - policy.payment.per-half-year
     - inputs:
+        - 12
         - 4
       outputs:
         - policy.payment.per-quarter
     - inputs:
-        - 2
+        - 12
+        - 12
       outputs:
-        - policy.payment.per-half-year
+        - policy.payment.per-month
+    - inputs:
+        - 6
+        - 4
+      outputs:
+        - policy.payment.per-quarter
+    - inputs:
+        - 6
+        - 12
+      outputs:
+        - policy.payment.per-month
+    - inputs:
+        - 3
+        - 12
+      outputs:
+        - policy.payment.per-month
