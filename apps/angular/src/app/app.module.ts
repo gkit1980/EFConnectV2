@@ -42,6 +42,8 @@ import { CustomBreakpointsProvider } from './custom-breakpoints';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { SpinnerService } from './services/spinner.service';
 
+import moment from 'moment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -107,5 +109,12 @@ export class AppModule {
      * TIP: We need to register our custom rules to the client application
      */
     registerCustomRules();
+
+    moment.locale('en', {
+      week: {
+        dow: 1, // Monday is the first day of the week.
+        doy: 4 // Used to determine first week of the year.
+      }
+    }); //reference https://momentjscom.readthedocs.io/en/latest/moment/07-customization/16-dow-doy/
   }
 }
