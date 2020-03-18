@@ -32,7 +32,7 @@ export class InsisMotorPolicySummarySectionComponent extends SectionComponentImp
       displayValue =
         // option.value is string, and element.value is number that's why we need to use == insted of ===
         // tslint:disable-next-line:triple-equals
-        first(options.filter(option => option.value == value).map(option => option.label)) || '';
+        first(options.filter(option => option.value == value).map(option => option.label)) || value;
     } else {
       displayValue = value;
     }
