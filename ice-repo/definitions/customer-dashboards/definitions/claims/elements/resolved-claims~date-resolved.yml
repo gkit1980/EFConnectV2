@@ -1,5 +1,9 @@
 element:
-  type: text
+  type: date
   viewMode: output
   label:
     NoLabelRule: {}
+  component:
+    StaticComponentRule:
+      component:
+        IceDatepicker: {}

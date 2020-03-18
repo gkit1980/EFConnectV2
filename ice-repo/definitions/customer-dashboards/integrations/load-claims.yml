@@ -80,6 +80,8 @@ integration:
               element: resolved-claims~claim-no
             - payload: 'RowSet.Row[n].REGISTRATION_DATE'
               element: resolved-claims~registration-date
+            - payload: 'RowSet.Row[n].CLOSE_DATE'
+              element: resolved-claims~date-resolved
             - payload: 'RowSet.Row[n].EVENT_DATE'
               element: resolved-claims~event-date
             - payload: 'RowSet.Row[n].CLAIM_STATE'
