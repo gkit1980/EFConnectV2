@@ -1,9 +1,9 @@
 list:
   items:
-    - value: Download PDF
+    - value: download-pdf
       label_en: Download PDF
       label_de: ''
-    - value: Cancel policy
+    - value: cancel-policy
       label_en: Cancel policy
       label_de: ''
   type: text

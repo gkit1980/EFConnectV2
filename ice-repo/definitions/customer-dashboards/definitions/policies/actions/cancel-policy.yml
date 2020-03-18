@@ -1,0 +1,12 @@
+action:
+  execution:
+    - CopyValueExecutionRule:
+        source: policies~policy-id
+        destination: selected-policy-id
+    - IntegrationExecutionRule:
+        integration: cancel-policy
+    - ResetElementValueExecutionRule:
+        elements:
+          - policies
+    - IntegrationExecutionRule:
+        integration: load-policies
