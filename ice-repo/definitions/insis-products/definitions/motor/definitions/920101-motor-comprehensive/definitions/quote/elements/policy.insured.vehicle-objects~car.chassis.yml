@@ -2,3 +2,5 @@ element:
   fake:
     value: 123GGR13534RE23
   type: text
+  validation:
+    - UniqueValueInsideArrayValidationRule: {}

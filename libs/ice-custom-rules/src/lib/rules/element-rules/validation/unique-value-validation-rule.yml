@@ -1,0 +1,2 @@
+UniqueValueValidationRule:
+  description: It ensures that this element does not have duplicate values
