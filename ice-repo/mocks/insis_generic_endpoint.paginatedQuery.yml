@@ -265,9 +265,9 @@ load-policies:
                 type: 'D'
               $value: '2019-01-01'
             - attributes:
-                name: INSURANCE_BEGIN
+                name: INSURANCE_END
                 type: 'D'
-              $value: '2019-01-01'
+              $value: '2022-01-01'
             - attributes:
                 name: INSURANCE_DURATION
                 type: 'D'
@@ -342,9 +342,9 @@ load-policies:
                 type: 'D'
               $value: '2019-01-01'
             - attributes:
-                name: INSURANCE_BEGIN
+                name: INSURANCE_END
                 type: 'D'
-              $value: '2019-01-01'
+              $value: '2022-01-01'
             - attributes:
                 name: INSURANCE_DURATION
                 type: 'D'
@@ -419,9 +419,9 @@ load-policies:
                 type: 'D'
               $value: '2019-01-01'
             - attributes:
-                name: INSURANCE_BEGIN
+                name: INSURANCE_END
                 type: 'D'
-              $value: '2019-01-01'
+              $value: '2022-01-01'
             - attributes:
                 name: INSURANCE_DURATION
                 type: 'D'
