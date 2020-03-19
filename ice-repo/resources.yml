@@ -22,7 +22,7 @@ entries:
         link:
           label:
             - en: ${param1}
-            - de: ${param1}      
+            - de: ${param1}
         contract:
           payment:
             completed:
@@ -77,8 +77,8 @@ entries:
           de: Hide resolved claims
     add-claim:
       label:
-        - en: Add claim
-          de: Add claim
+        - en: Submit a new claim
+          de: null
     claims-in-progress:
       label:
         - en: Claims in progress
