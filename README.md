@@ -35,13 +35,17 @@ node dist/apps/express/main.js
 
 ### Debug ICE Foundation sources
 
-To build the portal using ICE Foundation sources, run the following command:
+To start the portal using ICE Foundation sources, rather than npm packages, run the following command:
 
 ```
-node ./tools/enable-ice-foundation-sources.js
+npm run start:ice-debug
 ```
 
-When you build later, it will build against ICE Foundation sources, rather than using the npm packages.
+To go back using ICE Foundation as npm packages, run
+
+```
+npm run revert:ice-debug
+```
 
 ### Environment variables
 

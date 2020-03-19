@@ -24,6 +24,8 @@
     "dep-graph": "nx dep-graph",
     "help": "nx help",
     "start": "node tools/create-build-info.js && node tools/start.js",
+    "start:ice-debug": "node tools/enable-ice-foundation-sources.js && npm run start",
+    "revert:ice-debug": "git checkout tsconfig.json && npm run install-ice-packages",
     "build": "node tools/create-build-info.js && ng build angular --prod && ng build express --prod && npm run copy-visual-ice",
     "copy-visual-ice": "rimraf dist/apps/visual-ice && cpx \"node_modules/@impeo/visual-ice/**/*\" dist/apps/visual-ice",
     "postinstall": "npm run install-ice-packages",
