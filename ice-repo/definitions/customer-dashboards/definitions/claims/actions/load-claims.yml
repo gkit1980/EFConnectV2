@@ -1,5 +1,4 @@
 action:
-  title: gets  claims for the client
   execution:
     - IntegrationExecutionRule:
         integration: load-claims

@@ -1,6 +1,5 @@
 element:
   type: text
-  label: null
   defaultValue:
     PrincipalDataValueRule:
       path: firstName

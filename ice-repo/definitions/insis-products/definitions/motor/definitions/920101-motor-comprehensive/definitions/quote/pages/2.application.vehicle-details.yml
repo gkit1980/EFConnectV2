@@ -20,7 +20,7 @@ page:
         IceArrayFlexSection:
           css: main-side
           arrayElement: policy.insured.vehicle-objects
-          behaviourForEmptyRows: hidden
+          behaviourForEmptyRows: hide
           grid:
             rows:
               - gap: 24px

@@ -1,3 +1,4 @@
 element:
   fake:
     value: AUDI
+  type: text

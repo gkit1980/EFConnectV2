@@ -1,3 +1,4 @@
 element:
   fake:
     value: 2011
+  type: integer

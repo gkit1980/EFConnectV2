@@ -6,4 +6,3 @@ element:
       default: '1'
       min: '1'
   component: IceArray
-  label: null

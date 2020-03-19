@@ -36,7 +36,7 @@ page:
                     size.xs: 100%
                     css: u-mb-4
                     elements:
-                      - name: policy.insured.vehicle-objects~car.chassis.info
+                      - name: policy.insured.vehicle-objects~car.chassis-info
               - gap: 24px
                 gap.xs: 0px
                 cols:
@@ -185,7 +185,7 @@ page:
                       - name: >-
                           policy.insured.vehicle-objects~car.additional-equipment-other
           arrayElement: policy.insured.vehicle-objects
-          behaviourForEmptyRows: hidden
+          behaviourForEmptyRows: hide
     - component:
         IceFlexSection:
           grid:

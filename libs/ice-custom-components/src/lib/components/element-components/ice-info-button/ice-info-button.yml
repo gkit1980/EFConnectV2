@@ -62,7 +62,7 @@ params:
   originX:
     label: Origin X
     type: select
-    option:
+    options:
       start: start
       end: end
       center: center
@@ -71,7 +71,7 @@ params:
   originY:
     label: Origin Y
     type: select
-    option:
+    options:
       top: top
       bottom: bottom
       center: center
@@ -80,7 +80,7 @@ params:
   overlayX:
     label: Overlay X
     type: select
-    option:
+    options:
       start: start
       end: end
       center: center
@@ -89,7 +89,7 @@ params:
   overlayY:
     label:  Overlay Y
     type: select
-    option:
+    options:
       top: top
       bottom: bottom
       center: center
@@ -105,6 +105,7 @@ params:
     type: boolean
     info: Whether the overlay should be disposed of when the user goes backwards/forwards in history.
       Note that this usually doesn't include clicking on links (unless the user is using the HashLocationStrategy).
+    default: true
 
   hasBackdrop:
     label: Has backdrop

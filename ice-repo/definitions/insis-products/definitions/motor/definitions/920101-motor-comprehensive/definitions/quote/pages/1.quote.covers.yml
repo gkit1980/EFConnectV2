@@ -46,7 +46,7 @@ page:
                   - size: auto
                     elements:
                       - name: policy.insured.vehicle-objects~cover.mtpl.active
-                      - name: policy.insured.vehicle-objects~cover.mtpl.active.info
+                      - name: policy.insured.vehicle-objects~cover.mtpl.active-info
                   - size: auto
                     elements:
                       - name: policy.insured.vehicle-objects~cover.mtpl.premium
@@ -56,7 +56,7 @@ page:
                   - size: auto
                     elements:
                       - name: policy.insured.vehicle-objects~cover.owndamage.active
-                      - name: policy.insured.vehicle-objects~cover.owndamage.active.info
+                      - name: policy.insured.vehicle-objects~cover.owndamage.active-info
                   - size: auto
                     elements:
                       - name: policy.insured.vehicle-objects~cover.owndamage.premium
@@ -89,7 +89,7 @@ page:
                   - size: auto
                     elements:
                       - name: policy.insured.vehicle-objects~cover.pa.active
-                      - name: policy.insured.vehicle-objects~cover.pa.active.info
+                      - name: policy.insured.vehicle-objects~cover.pa.active-info
                   - size: none
                     elements:
                       - name: policy.insured.vehicle-objects~cover.pa.premium
@@ -99,7 +99,7 @@ page:
                   - size: auto
                     elements:
                       - name: policy.insured.vehicle-objects~cover.road_assis.active
-                      - name: policy.insured.vehicle-objects~cover.road_assis.active.info
+                      - name: policy.insured.vehicle-objects~cover.road_assis.active-info
                   - size: none
                     elements:
                       - name: >-

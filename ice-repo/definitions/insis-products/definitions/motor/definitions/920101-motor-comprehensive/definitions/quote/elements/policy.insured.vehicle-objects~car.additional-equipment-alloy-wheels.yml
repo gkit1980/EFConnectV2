@@ -6,3 +6,4 @@ element:
   range:
     StaticRangeRule:
       min: '1'
+  type: currency

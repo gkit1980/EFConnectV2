@@ -45,7 +45,7 @@ page:
                 gap: 10px
                 css: u-mb-4
           behaviourForEmptyRows: render
-      viewMode: required
+      viewMode: default
     - component:
         IceFlexSection:
           tags:

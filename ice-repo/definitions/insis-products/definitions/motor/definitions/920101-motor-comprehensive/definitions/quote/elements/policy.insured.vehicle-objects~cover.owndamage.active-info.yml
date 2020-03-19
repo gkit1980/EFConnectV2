@@ -2,7 +2,8 @@ element:
   type: text
   text:
     ResourceTextRule:
-      info: elements.policy.insured.vehicle-objects.items.cover.owndamage.active.info
+      info: >-
+        elements.policy.insured.vehicle-objects.items.cover.owndamage.active-info
   label:
     NoLabelRule: {}
   component:

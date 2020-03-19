@@ -11,3 +11,4 @@ element:
       component:
         IceSlider:
           appearance: null
+  type: currency

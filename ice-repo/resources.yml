@@ -251,46 +251,25 @@ entries:
                   label:
                     - en: Motor Third Party Liability
                       de: Motor Third Party Liability
-                  info:
-                    - en: >-
-                        # Motor Third Party Liability
+                active-info:
+                  - en: >-
+                      # Motor Third Party Liability
 
-                        In the event of a road accident, the following risks are
-                        covered:
+                      In the event of a road accident, the following risks are
+                      covered:
 
-                          - Property damage as a
-                          - Death or bodily injury
+                        - Property damage as a
+                        - Death or bodily injury
 
 
-                        > [See more about risks and limits]()
-                        ![](/assets/icons/link-in-tooltip.svg)
-                      de: null
+                      > [See more about risks and limits]()
+                      ![](/assets/icons/link-in-tooltip.svg)
+                    de: null
               owndamage:
                 active:
                   label:
                     - en: Motor Own Damage
                       de: Motor Own Damage
-                  info:
-                    - en: >-
-                        # Motor Own Damage
-
-                        Your vehicle is protected up to the insurance value
-                        agains:
-
-                          - Fire
-                          - Lightning
-                          - Explosion
-                          - Natural hazards (flood, storm, heavy rainfall, heavy snowfall, falling trees or objects
-                          - Theft
-                          - Road accident
-                          - Malicious acts of 3rd parties
-
-                        > The deductible is the amount withheld for every claim.
-
-
-                        > [See more about risks and limits]()
-                        ![](/assets/icons/link-in-tooltip.svg)
-                      de: null
                 deductible:
                   label:
                     - en: Deductible
@@ -299,46 +278,67 @@ entries:
                   label:
                     - en: Insured Amount
                       de: Insured Amount
+                active-info:
+                  - en: >-
+                      # Motor Own Damage
+
+                      Your vehicle is protected up to the insurance value
+                      agains:
+
+                        - Fire
+                        - Lightning
+                        - Explosion
+                        - Natural hazards (flood, storm, heavy rainfall, heavy snowfall, falling trees or objects
+                        - Theft
+                        - Road accident
+                        - Malicious acts of 3rd parties
+
+                      > The deductible is the amount withheld for every claim.
+
+
+                      > [See more about risks and limits]()
+                      ![](/assets/icons/link-in-tooltip.svg)
+                    de: null
               pa:
                 active:
                   label:
                     - en: Personal Accident
                       de: Personal Accident
-                  info:
-                    - en: >-
-                        # Personal Accident
+                active-info:
+                  - en: >-
+                      # Personal Accident
 
-                        In the event of a road accident, the following risks are
-                        covered:
+                      In the event of a road accident, the following risks are
+                      covered:
 
-                          - Temporary disability
-                          - Permanent disability
-                          - Death
+                        - Temporary disability
+                        - Permanent disability
+                        - Death
 
 
-                        > [See more about risks and limits]()
-                        ![](/assets/icons/link-in-tooltip.svg)
-                      de: null
+                      > [See more about risks and limits]()
+                      ![](/assets/icons/link-in-tooltip.svg)
+                    de: null
               road_assis:
                 active:
                   label:
                     - en: Road Assistance
                       de: Road Assistance
-                  info:
-                    - en: >-
-                        # Road Assistance
+                active-info:
+                  - en: >-
+                      # Road Assistance
 
-                        In the event of a road accident or natural hazards, the
-                        following risks are covered:
+                      In the event of a road accident or natural hazards, the
+                      following risks are covered:
 
-                          - Towing of the vehicle (only for road accident)
-                          - On-site repair costs
-                          - Accommodation and transportation costs
+                        - Towing of the vehicle (only for road accident)
+                        - On-site repair costs
+                        - Accommodation and transportation costs
 
 
-                        > [See more about risks and limits]()
-                        ![](/assets/icons/link-in-tooltip.svg)
-                      de: null
+                      > [See more about risks and limits]()
+                      ![](/assets/icons/link-in-tooltip.svg)
+                    de: null
             question:
               number-of-consecutive-years-without-claims:
                 label:
@@ -372,16 +372,6 @@ entries:
               chassis:
                 label:
                   - en: VIN
-                    de: null
-                info:
-                  - en: >-
-                      # Vehicle Identification Number
-
-                      The Vehicle Identification Number (VIN) is a uniqe
-                      identifier of your vehicle. It can be found on your
-                      vehicle registration certificate.
-
-                      <more details if necessary>
                     de: null
               ccm-ton:
                 label:
@@ -451,6 +441,16 @@ entries:
                     label:
                       - en: Serial number
                         de: null
+              chassis-info:
+                - en: >-
+                    # Vehicle Identification Number
+
+                    The Vehicle Identification Number (VIN) is a uniqe
+                    identifier of your vehicle. It can be found on your vehicle
+                    registration certificate.
+
+                    <more details if necessary>
+                  de: null
             drivers:
               items:
                 person:
@@ -569,6 +569,11 @@ entries:
             label:
               - en: ZIP
                 de: ZIP
+        beneficiaries~person:
+          gender:
+            label:
+              - en: Gender
+                de: Gender
     buy-insurance:
       label:
         - en: Buy insurance
@@ -842,9 +847,9 @@ entries:
         - en: Please confirm
           de: Bitte bestätigen
       not_allowed_here:
-        - en: "'${value}' not allowed here"
+        - en: '''${value}'' not allowed here'
       regexp:
-        - en: "'${value}' does not matches regular expression ${regexp}"
+        - en: '''${value}'' does not matches regular expression ${regexp}'
       array:
         min:
           - en: 'must have at least ${min} entries'

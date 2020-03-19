@@ -1,7 +1,6 @@
 element:
   title: full name of the policy holder
   type: text
-  label: null
   defaultValue:
     DtValueRule:
       dt: policy-holder.name

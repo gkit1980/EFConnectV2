@@ -2,7 +2,7 @@ element:
   type: text
   text:
     ResourceTextRule:
-      info: elements.policy.insured.vehicle-objects.items.cover.pa.active.info
+      info: elements.policy.insured.vehicle-objects.items.cover.pa.active-info
   label:
     NoLabelRule: {}
   component:
