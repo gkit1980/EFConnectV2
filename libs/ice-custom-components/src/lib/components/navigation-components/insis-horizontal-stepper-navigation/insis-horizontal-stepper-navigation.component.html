@@ -1,0 +1,25 @@
+<nav class="insis-horizontal-stepper-navigation">
+  <ng-container *ngFor="let page of pages; let i = index; let first = first; let last = last">
+    <button
+      class="insis-horizontal-stepper-navigation__navigation-button mat-body-2"
+      [ngClass]="{
+        first: first,
+        past: selectedIndex > i,
+        current: selectedIndex === i,
+        future: i > selectedIndex
+      }"
+      [disabled]="i > selectedIndex"
+      (click)="tryToGo(page)"
+    >
+      <span
+        class="insis-horizontal-stepper-navigation__navigation-button_text--show-on-mobile insis-horizontal-stepper-navigation__navigation-button_text--hide-when-on-current"
+        >{{ i + 1 }}</span
+      >
+      <span
+        class="insis-horizontal-stepper-navigation__navigation-button_text--show-on-desktop insis-horizontal-stepper-navigation__navigation-button_text--show-when-selected"
+        >{{ page.labelRule?.getNavigationTitle() }}</span
+      >
+    </button>
+    <div *ngIf="!last" class="insis-horizontal-stepper-navigation__line-between-page-buttons"></div>
+  </ng-container>
+</nav>

@@ -2,7 +2,7 @@ page:
   validation:
     behaviour: page
     onElementComponentChange: true
-  component: TwoLevelStepperNavigationPage
+  component: InsisTwoLevelStepperNavigationPage
   sections:
     - component:
         IceFlexSection:

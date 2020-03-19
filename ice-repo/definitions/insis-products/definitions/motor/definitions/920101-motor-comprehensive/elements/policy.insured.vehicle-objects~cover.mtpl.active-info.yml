@@ -8,7 +8,7 @@ element:
   component:
     StaticComponentRule:
       component:
-        IceInfoButton:
+        InsisInfoButton:
           height: 200
           width: 400
           originX: start

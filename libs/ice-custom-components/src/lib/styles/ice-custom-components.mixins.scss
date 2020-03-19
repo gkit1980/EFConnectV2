@@ -1,20 +1,20 @@
-@import "../components/element-components/button-dropdown-component/button-dropdown.mixin";
-@import "../components/element-components/dummy-button-component/dummy-button.mixin";
-@import "../components/element-components/ice-info-button/ice-info-button.mixin";
-@import "../components/element-components/ice-slider-component/ice-slider.mixin.scss";
+@import "../components/element-components/insis-button-dropdown-component/insis-button-dropdown.mixin";
+@import "../components/element-components/insis-dummy-button-component/insis-dummy-button.mixin";
+@import "../components/element-components/insis-info-button/insis-info-button.mixin";
+@import "../components/element-components/insis-slider-component/insis-slider.mixin.scss";
 @import "../components/element-components/insis-array-cards-layout-component/insis-array-cards-layout.mixin.scss";
 @import "../components/element-components/insis-button-toggle-component/insis-button-toggle.mixin";
 @import "../components/element-components/insis-card-component/insis-card.mixin.scss";
 @import "../components/element-components/insis-checkbox-card-component/insis-checkbox-card.mixin.scss";
 @import "../components/element-components/insis-file-upload-component/insis-file-upload.mixin.scss";
-@import "../components/navigation-components/horizontal-stepper-navigation/horizontal-stepper-navigation.mixin";
-@import "../components/navigation-components/vertical-stepper-navigation/vertical-stepper-navigation.mixin";
-@import "../components/page-components/confirmation-page/confirmation-page.mixin.scss";
-@import "../components/page-components/two-level-stepper-navigation-page/two-level-stepper-navigation-page.mixin";
+@import "../components/navigation-components/insis-horizontal-stepper-navigation/insis-horizontal-stepper-navigation.mixin";
+@import "../components/navigation-components/insis-vertical-stepper-navigation/insis-vertical-stepper-navigation.mixin";
+@import "../components/page-components/insis-confirmation-page/insis-confirmation-page.mixin.scss";
+@import "../components/page-components/insis-two-level-stepper-navigation-page/insis-two-level-stepper-navigation-page.mixin";
 @import "../components/section-components/insis-datagrid-section/insis-datagrid-section.mixin";
 @import "../components/section-components/insis-motor-policy-summary-section/insis-motor-policy-summary-section.mixin.scss";
 @import "../components/section-components/insis-motor-premium-summary-section/insis-motor-premium-summary.component.mixin.scss";
-@import "../components/shared-components/insis-summary-section-detail-container/summary-section-detail-container.scss";
+@import "../components/shared-components/insis-summary-section-detail-container/insis-summary-section-detail-container.scss";
 
 /**
  * TIP: You will need to @include here any new mixin you add to the ice-custom-component library.
@@ -22,21 +22,21 @@
  */
 
 @mixin all-ice-custom-component-mixins($theme) {
-  @include button-dropdown-mixin($theme);
-  @include dummy-button-mixin($theme);
-  @include vertical-stepper-navigation-mixin($theme);
-  @include horizontal-stepper-navigation-mixin($theme);
-  @include two-level-stepper-navigation-page-mixin($theme);
-  @include ice-slider-mixin($theme);
+  @include insis-button-dropdown-mixin($theme);
+  @include insis-dummy-button-mixin($theme);
+  @include insis-vertical-stepper-navigation-mixin($theme);
+  @include insis-horizontal-stepper-navigation-mixin($theme);
+  @include insis-two-level-stepper-navigation-page-mixin($theme);
+  @include insis-slider-mixin($theme);
   @include insis-array-cards-layout-mixin($theme);
   @include insis-motor-policy-summary-section-mixin($theme);
   @include insis-motor-premium-summary-section-mixin($theme);
-  @include confirmation-page-mixin($theme);
+  @include insis-confirmation-page-mixin($theme);
   @include insis-card-mixin($theme);
   @include insis-checkbox-card-mixin($theme);
   @include insis-datagrid-section-mixin($theme);
   @include insis-file-upload-mixin($theme);
-  @include ice-info-button-mixin($theme);
+  @include insis-info-button-mixin($theme);
   @include insis-summary-section-detail-container-mixin($theme);
   @include insis-button-toggle-mixin($theme);
 }

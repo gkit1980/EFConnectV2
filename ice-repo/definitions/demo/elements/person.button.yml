@@ -3,6 +3,6 @@ element:
   component:
     StaticComponentRule:
       component:
-        DummyButtonComponent: {}
+        InsisDummyButtonComponent: {}
   pages:
     home: null

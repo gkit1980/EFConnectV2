@@ -1,10 +1,10 @@
 import { APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { DummyButtonComponent } from './components/element-components/dummy-button-component/dummy-button.component';
+import { InsisDummyButtonComponent } from './components/element-components/insis-dummy-button-component/insis-dummy-button.component';
 import { IceComponentsService, NgIceModule } from '@impeo/ng-ice';
 import { BrowserModule } from '@angular/platform-browser';
-import { IceSliderComponent } from './components/element-components/ice-slider-component/ice-slider.component';
+import { InsisSliderComponent } from './components/element-components/insis-slider-component/insis-slider.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
@@ -19,10 +19,10 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MarkdownToHtmlModule } from 'markdown-to-html-pipe';
 
-import { TwoLevelStepperNavigationPageComponent } from './components/page-components/two-level-stepper-navigation-page/two-level-stepper-navigation-page.component';
-import { ConfirmationPageComponent } from './components/page-components/confirmation-page/confirmation-page.component';
-import { HorizontalStepperNavigationComponent } from './components/navigation-components/horizontal-stepper-navigation/horizontal-stepper-navigation.component';
-import { VerticalStepperNavigationComponent } from './components/navigation-components/vertical-stepper-navigation/vertical-stepper-navigation.component';
+import { InsisTwoLevelStepperNavigationPageComponent } from './components/page-components/insis-two-level-stepper-navigation-page/insis-two-level-stepper-navigation-page.component';
+import { InsisConfirmationPageComponent } from './components/page-components/insis-confirmation-page/insis-confirmation-page.component';
+import { InsisHorizontalStepperNavigationComponent } from './components/navigation-components/insis-horizontal-stepper-navigation/insis-horizontal-stepper-navigation.component';
+import { InsisVerticalStepperNavigationComponent } from './components/navigation-components/insis-vertical-stepper-navigation/insis-vertical-stepper-navigation.component';
 import { InsisArrayComponent } from './components/element-components/insis-array-component/insis-array.component';
 import { InsisArrayCardsLayoutComponent } from './components/element-components/insis-array-cards-layout-component/insis-array-cards-layout.component';
 import { InsisMotorPolicySummarySectionComponent } from './components/section-components/insis-motor-policy-summary-section/insis-motor-policy-summary-section.component';
@@ -32,14 +32,14 @@ import { InsisCheckboxCardComponent } from './components/element-components/insi
 import { InsisCardComponent } from './components/element-components/insis-card-component/insis-card.component';
 import { InsisFileUploadComponent } from './components/element-components/insis-file-upload-component/insis-file-upload.component';
 import {
-  IceInfoButtonComponent,
+  InsisInfoButtonComponent,
   TooltipComponent
-} from './components/element-components/ice-info-button/ice-info-button.component';
+} from './components/element-components/insis-info-button/insis-info-button.component';
 import { OverlayModule } from '@angular/cdk/overlay';
-import { SummarySectionDetailContainer } from './components/shared-components/insis-summary-section-detail-container/summary-section-detail-container.component';
+import { InsisSummarySectionDetailContainer } from './components/shared-components/insis-summary-section-detail-container/insis-summary-section-detail-container.component';
 import { InsisPictureComponent } from './components/element-components/insis-picture-component/insis-picture.component';
 import { InsisCurrencyComponent } from './components/element-components/insis-currency-component/insis-currency.component';
-import { ButtonDropdownComponent } from './components/element-components/button-dropdown-component/button-dropdown.component';
+import { InsisButtonDropdownComponent } from './components/element-components/insis-button-dropdown-component/insis-button-dropdown.component';
 import { InsisSimplePageComponent } from './components/page-components/insis-simple-page/insis-simple-page.component';
 import { InsisButtonToggleComponent } from './components/element-components/insis-button-toggle-component/insis-button-toggle.component';
 import { InsisDatagridSectionComponent } from './components/section-components/insis-datagrid-section/insis-datagrid-section.component';
@@ -49,22 +49,22 @@ import { InsisDatagridSectionComponent } from './components/section-components/i
  */
 
 export const iceCustomComponents = [
-  ButtonDropdownComponent,
-  DummyButtonComponent,
-  IceInfoButtonComponent,
-  IceSliderComponent,
+  InsisButtonDropdownComponent,
+  InsisDummyButtonComponent,
+  InsisInfoButtonComponent,
+  InsisSliderComponent,
   InsisArrayComponent,
   InsisArrayCardsLayoutComponent,
   InsisArrayListLayoutComponent,
   InsisCheckboxCardComponent,
   InsisCardComponent,
-  TwoLevelStepperNavigationPageComponent,
+  InsisTwoLevelStepperNavigationPageComponent,
   InsisSimplePageComponent,
   InsisDatagridSectionComponent,
   InsisMotorPolicySummarySectionComponent,
   InsisMotorPremiumSummarySection,
-  SummarySectionDetailContainer,
-  ConfirmationPageComponent,
+  InsisSummarySectionDetailContainer,
+  InsisConfirmationPageComponent,
   InsisFileUploadComponent,
   InsisButtonToggleComponent,
   InsisPictureComponent,
@@ -109,15 +109,15 @@ export function registerComponents(componentService: IceComponentsService) {
   declarations: [
     ...iceCustomComponents,
     TooltipComponent,
-    HorizontalStepperNavigationComponent,
-    VerticalStepperNavigationComponent
+    InsisHorizontalStepperNavigationComponent,
+    InsisVerticalStepperNavigationComponent
   ],
   exports: [...iceCustomComponents],
   entryComponents: [
     ...iceCustomComponents,
     TooltipComponent,
-    HorizontalStepperNavigationComponent,
-    VerticalStepperNavigationComponent
+    InsisHorizontalStepperNavigationComponent,
+    InsisVerticalStepperNavigationComponent
   ],
   providers: [
     {

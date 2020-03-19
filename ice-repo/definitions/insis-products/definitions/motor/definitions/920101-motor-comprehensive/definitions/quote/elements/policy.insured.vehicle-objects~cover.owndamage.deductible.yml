@@ -2,7 +2,7 @@ element:
   component:
     StaticComponentRule:
       component:
-        IceSlider:
+        InsisSlider:
           showTicks: true
           addEmptyValue: false
   type: integer

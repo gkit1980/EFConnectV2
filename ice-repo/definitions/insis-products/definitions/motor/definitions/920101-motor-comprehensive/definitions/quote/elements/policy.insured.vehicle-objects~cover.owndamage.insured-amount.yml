@@ -9,6 +9,6 @@ element:
   component:
     StaticComponentRule:
       component:
-        IceSlider:
+        InsisSlider:
           appearance: null
   type: currency

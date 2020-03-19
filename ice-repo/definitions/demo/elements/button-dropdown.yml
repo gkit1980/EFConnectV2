@@ -1,6 +1,6 @@
 element:
   type: text
-  component: ButtonDropdown
+  component: InsisButtonDropdown
   values:
     ListValuesRule:
       list: incident-types

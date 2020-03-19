@@ -3,7 +3,7 @@ element:
   component:
     StaticComponentRule:
       component:
-        ButtonDropdown: {}
+        InsisButtonDropdown: {}
   label:
     NoLabelRule: {}
   viewMode:

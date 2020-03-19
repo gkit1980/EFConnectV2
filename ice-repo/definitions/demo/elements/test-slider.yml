@@ -6,7 +6,7 @@ element:
   component:
     StaticComponentRule:
       component:
-        IceSlider:
+        InsisSlider:
           showTicks: true
           step: '1'
           tickInterval: '1'

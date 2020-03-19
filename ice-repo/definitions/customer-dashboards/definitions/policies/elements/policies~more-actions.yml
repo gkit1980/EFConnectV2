@@ -3,7 +3,7 @@ element:
   component:
     StaticComponentRule:
       component:
-        ButtonDropdown: {}
+        InsisButtonDropdown: {}
   values:
     ListValuesRule:
       list: policy.more-actions

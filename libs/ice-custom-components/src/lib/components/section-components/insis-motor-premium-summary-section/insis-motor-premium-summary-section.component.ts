@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SectionComponentImplementation } from '@impeo/ng-ice';
 import _ from 'lodash';
 import { ItemElement } from '@impeo/ice-core';
-import { SummarySectionDetailItem } from '../../shared-components/insis-summary-section-detail-container/summary-section-detail-item';
+import { SummarySectionDetailItem } from '../../shared-components/insis-summary-section-detail-container/insis-summary-section-detail-item';
 
 @Component({
   selector: 'insis-motor-premium-summary-section',

@@ -3,4 +3,4 @@ page:
     showElementValidation: false
     behaviour: page
     onElementComponentChange: true
-  component: TwoLevelStepperNavigationPage
+  component: InsisTwoLevelStepperNavigationPage

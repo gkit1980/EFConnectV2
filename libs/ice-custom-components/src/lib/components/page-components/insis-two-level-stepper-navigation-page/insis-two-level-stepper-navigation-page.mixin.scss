@@ -1,0 +1,32 @@
+@mixin insis-two-level-stepper-navigation-page-mixin($theme) {
+  .insis-two-level-stepper-navigation-page {
+    insis-vertical-stepper-navigation {
+      display: block;
+      margin-top: 24px;
+    }
+  }
+
+  .insis-two-level-stepper-navigation-page {
+    .aside {
+      @include respond-from('sm') {
+        border-left: 2px solid get-color($theme, 'border');
+        padding-left: 12px;
+        margin-left: 16px;
+        margin-top: 25px;
+      }
+
+      @include respond-to('sm') {
+        position: sticky;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        background: rgba(#000000, 0.5);
+        padding: 10px;
+
+        .hide-on-mobile {
+          display: none;
+        }
+      }
+    }
+  }
+}

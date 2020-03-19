@@ -1,0 +1,37 @@
+<nav
+  class="insis-vertical-stepper-navigation vertical-stepper"
+  [ngClass]="{ 'is-single-paged': pages.length === 1 }"
+>
+  <div
+    class="vertical-stepper-step"
+    *ngFor="let p of pages; let i = index; let first = first; let last = last"
+    [ngClass]="{ active: i == selectedIndex }"
+  >
+    <button
+      *ngIf="pages.length > 1"
+      class="vertical-stepper-header mat-body-2"
+      [ngClass]="{
+        active: i == selectedIndex,
+        past: selectedIndex > i,
+        first: first,
+        last: last
+      }"
+      (click)="tryToGo(p)"
+    >
+      <div
+        class="vertical-stepper-num"
+        [ngClass]="{ active: i == selectedIndex, past: selectedIndex > i }"
+      >
+        {{ i + 1 }}
+      </div>
+      <div class="vertical-stepper-page-title">
+        {{ p.labelRule?.getShortTitle() }}
+      </div>
+    </button>
+    <div class="vertical-stepper-content" [ngClass]="{ active: i == selectedIndex, last: last }">
+      <div *ngIf="selectedIndex == i">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+</nav>
