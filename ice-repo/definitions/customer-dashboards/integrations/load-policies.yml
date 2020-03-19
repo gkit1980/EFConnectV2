@@ -40,6 +40,8 @@ integration:
               element: policies~ins-end-date
             - payload: 'RowSet.Row[n].POLICY_ID'
               element: policies~policy-id
+            - payload: 'RowSet.Row[n].POLICY_NO'
+              element: policies~policy-no
             - payload: 'RowSet.Row[n].PRODUCT_NAME'
               element: policies~product-name
             - payload: 'RowSet.Row[n].PRODUCT_ID'
@@ -62,6 +64,8 @@ integration:
               element: expired-policies~ins-end-date
             - payload: 'RowSet.Row[n].POLICY_ID'
               element: expired-policies~policy-id
+            - payload: 'RowSet.Row[n].POLICY_NO'
+              element: expired-policies~policy-no
             - payload: 'RowSet.Row[n].PRODUCT_NAME'
               element: expired-policies~product-name
             - payload: 'RowSet.Row[n].PRODUCT_ID'

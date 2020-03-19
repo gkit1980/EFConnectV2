@@ -1,0 +1,17 @@
+element:
+  type: text
+  viewMode:
+    StaticViewModeRule:
+      viewMode: output
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          themeColor: primary
+          variant: default
+          action: navigate-to-policy
+  label:
+    ResourceWithElementValuesLabelRule:
+      key: elements.expired-policies.items.link.label
+      elements:
+        - expired-policies~policy-no

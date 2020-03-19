@@ -19,6 +19,10 @@ entries:
           label:
             - en: Insured object
               de: null
+        link:
+          label:
+            - en: ${param1}
+            - de: ${param1}      
         contract:
           payment:
             completed:

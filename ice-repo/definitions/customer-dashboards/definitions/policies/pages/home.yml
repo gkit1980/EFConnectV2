@@ -79,9 +79,10 @@ page:
               caption: null
               size: 65px
 
-            - element: expired-policies~policy-id
+            - element: expired-policies~link
               caption: elements.expired-policies.items.contract.policy-id.label
               size: 200px
+              css: label-link
 
             - element: expired-policies~product-name
               caption: elements.expired-policies.items.contract.product-name.label
