@@ -90,4 +90,27 @@ describe(UniqueValueValidationRule.name, () => {
     expect(validationMessages.hasMessagesFor(elementName, [0])).toBeFalsy();
     expect(validationMessages.hasMessagesFor(elementName, [1])).toBeFalsy();
   });
+
+  it('should add message only to the element elments that have dublicating values', async () => {
+    const context = await createIceContext();
+    const iceModel = context.iceModel;
+
+    const element = iceModel.elements[elementName];
+
+    [
+      new IndexedValue(element, 'test value', [0], ValueOrigin.UNKNOWN),
+      new IndexedValue(element, 'test value', [1], ValueOrigin.UNKNOWN),
+      new IndexedValue(element, 'test value unique', [2], ValueOrigin.UNKNOWN)
+    ].forEach(value => {
+      element.setValue(value);
+    });
+
+    const validationMessages: ValidationMessages = new ValidationMessages();
+    element.validate(validationMessages);
+
+    expect(validationMessages.isEmpty).toBeFalsy();
+    expect(validationMessages.hasMessagesFor(elementName, [0])).toBeTruthy();
+    expect(validationMessages.hasMessagesFor(elementName, [1])).toBeTruthy();
+    expect(validationMessages.hasMessagesFor(elementName, [2])).toBeFalsy();
+  });
 });
