@@ -10,7 +10,7 @@
     <div
       fxLayout="row"
       fxLayout.xs="column"
-      fxLayoutAlign="start center"
+      fxLayoutAlign="start start"
       fxLayoutAlign.xs="start start"
       fxLayoutGap="10px"
       fxLayoutGap.xs="0px"
@@ -20,12 +20,12 @@
         [ngTemplateOutletContext]="{ $implicit: childIndex(index) }"
       >
       </ng-container>
-      <button mat-button color="primary" *ngIf="canRemove()" (click)="deleteItem(index)">
+      <button mat-button color="primary" *ngIf="canRemove()" (click)="deleteItem(index)" class="u-mt-2">
         {{ removeButtonLabel }}
       </button>
     </div>
   </div>
-  <button mat-button color="primary" *ngIf="canAdd()" (click)="addItem()">
+  <button mat-button color="primary" *ngIf="canAdd()" (click)="addItem()" >
     {{ addButtonLabel }}
   </button>
   <mat-error *ngFor="let message of validation?.getMessagesFor(element.name, index)">
