@@ -3,3 +3,4 @@
  * for registering those rules to be able to register it.
  */
 export * from './exchange/dummy-exchange-rule';
+export * from './exchange/insis-db-exchange-rule';

@@ -1,0 +1,103 @@
+implementations:
+  InsisDBExchangeRule:
+    description: >
+      This rule executes a sql query based on the configuration in this _recipe_.
+
+      Depending on query types, the `in` data will be list of JSON objects or list of objects corespondig `{ column_name: value }`.
+
+
+      icel:>
+        Using SQL query type with DefaultTransformationRule
+        ```
+        integration:
+          exchange:
+            InsisDBExchangeRule:
+              connectString: 'env:insis-db-url'
+              username: 'env:insis-db-username'
+              password: 'env:insis-db-password'
+              query: >-
+                SELECT 
+                  gname, 
+                  fname 
+                FROM p_people 
+                WHERE fname != :fname
+              queryType: SQL
+          transformation:
+            DefaultTransformationRule:
+              additional: insis
+              dateFormat: YYYY-MM-DD
+              out:
+                - mappings:
+                    - param: fname
+                      value: 'Joe'
+              in:
+                - fromIdx:
+                    array: payload.rows
+                    condition: 1 == 1
+                  toIdx:
+                    array: datamodel.users
+                    append: true
+                  mappings:
+                    - payload: 'rows[n].GNAME'
+                      element: users~gname
+                    - payload: 'rows[n].FNAME'
+                      element: users~fname
+        ```
+        
+        Using JSON query type with DefaultTransformationRule
+        ```
+        integration:
+          exchange:
+            InsisDBExchangeRule:
+              connectString: 'env:insis-db-url'
+              username: 'env:insis-db-username'
+              password: 'env:insis-db-password'
+              query: >-
+                select JSON_OBJECT(
+                    'first_name' is gname, 
+                    'last_name' is fname
+                ) from p_people  WHERE p_people.fname != :fname
+
+              queryType: JSON
+          transformation:
+            DefaultTransformationRule:
+              additional: insis
+              dateFormat: YYYY-MM-DD
+              out:
+                - mappings:
+                    - param: fname
+                      value: 'Joe'
+              in:
+                - fromIdx:
+                    array: payload.rows
+                  toIdx:
+                    array: datamodel.users
+                    append: true
+                  mappings:
+                    - payload: 'rows[n].first_name'
+                      element: users~gname
+                    - payload: 'rows[n].last_name'
+                      element: users~fname
+        ```
+
+    params:
+      connectString:
+        label: Connect string
+        info: connectString is ip / port / dbname
+        required: true
+      query:
+        label: SQL Query
+        info: This parameter can have dynamic parts that can be expressed as `:id` where `id` would be a param in the params part of the IntegrationData.
+        type: text
+        required: true
+      queryType:
+        label: Output type
+        info: For plain SQL queries select SQL for JSON_OBJECT ones select JSON
+        type: select
+        options:
+          sql: SQL
+          json: JSON
+      username:
+        label: Username
+      password:
+        label: Password
