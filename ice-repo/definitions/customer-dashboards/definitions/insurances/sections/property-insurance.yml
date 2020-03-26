@@ -33,4 +33,4 @@ section:
                 elements:
                   - name: property-insurance.button
                 align: center
-  css: card text-align-center
+      css: card text-align-center

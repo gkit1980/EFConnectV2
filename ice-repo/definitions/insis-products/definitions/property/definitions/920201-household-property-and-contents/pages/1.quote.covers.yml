@@ -5,7 +5,8 @@ page:
     showMessages: none
     showGrowl: false
     showElementValidation: true
-  component: InsisTwoLevelStepperNavigationPage
+  component:
+    InsisTwoLevelStepperNavigationPage: {}
   sections:
     - component:
         IceFlexSection:
@@ -20,4 +21,4 @@ page:
                 css: mat-headline u-mb-0
                 align: center
                 gap: 10px
-      css: button-width-100 u-mb-3
+          css: button-width-100 u-mb-3

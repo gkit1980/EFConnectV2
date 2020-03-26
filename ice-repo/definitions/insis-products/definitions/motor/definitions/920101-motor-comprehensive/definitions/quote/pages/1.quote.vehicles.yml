@@ -5,7 +5,8 @@ page:
     showMessages: none
     showGrowl: false
     showElementValidation: true
-  component: InsisTwoLevelStepperNavigationPage
+  component:
+    InsisTwoLevelStepperNavigationPage: {}
   sections:
     - component:
         IceArrayFlexSection:
@@ -108,8 +109,7 @@ page:
                     size.xs: auto
                     css: u-mb-4
                     elements:
-                      - name: >-
-                          policy.insured.vehicle-objects~insured-amount
+                      - name: policy.insured.vehicle-objects~insured-amount
               - gap: 24px
                 cols:
                   - size: 260px

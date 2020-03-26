@@ -2,7 +2,8 @@ page:
   validation:
     behaviour: page
     onElementComponentChange: true
-  component: InsisSimplePage
+  component:
+    InsisSimplePage: {}
   sections:
     - component:
         IceFlexSection:
@@ -61,7 +62,7 @@ page:
                       - name: policies~more-actions
           arrayElement: policies
           behaviourForEmptyRows: null
-      css: policies-grid
+          css: policies-grid
     - component:
         IceFlexSection:
           grid:
@@ -78,24 +79,19 @@ page:
             - element: expired-policies~more-actions
               caption: null
               size: 65px
-
             - element: expired-policies~link
               caption: elements.expired-policies.items.contract.policy-id.label
               size: 200px
               css: label-link
-
             - element: expired-policies~product-name
               caption: elements.expired-policies.items.contract.product-name.label
               size: 200px
-
             - element: expired-policies~ins-end-date
               caption: elements.expired-policies.items.contract.end.label
               size: 150px
-
             - element: expired-policies~premium-total
               caption: elements.expired-policies.items.insured.premium.total.label
               size: 100px
-
             - element: expired-policies~insured-objects
               caption: elements.expired-policies.items.insured-object.label
               size: auto

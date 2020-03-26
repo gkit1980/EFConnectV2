@@ -32,4 +32,4 @@ section:
                 elements:
                   - name: health-insurance.button
                 align: center
-  css: card text-align-center
+      css: card text-align-center

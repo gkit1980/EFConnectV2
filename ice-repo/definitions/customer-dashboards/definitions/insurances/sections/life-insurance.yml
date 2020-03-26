@@ -52,4 +52,4 @@ section:
                 elements:
                   - name: life-insurance.buttons.endowment
                 align: center
-  css: card text-align-center
+      css: card text-align-center

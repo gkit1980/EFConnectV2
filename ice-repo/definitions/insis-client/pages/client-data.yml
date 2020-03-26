@@ -1,91 +1,100 @@
 page:
-  component: NavigatableSectionsOnePage
+  component:
+    NavigatableSectionsOnePage: {}
   validation:
     onElementComponentChange: true
     behaviour: page
   sections:
-    - component: GridView
+    - component:
+        GridView:
+          grid:
+            rows:
+              - cols:
+                  - col: 11
+                    css: text-right
+                    element: client.personal-data.status.edit-mode
+                  - col: 1
+                    css: text-right
+                    element: client.personal-data.status.goto-policies
+              - cols:
+                  - col: 6
+                    element: client.personal-data.first-name
+                  - col: 6
+                    element: client.personal-data.last-name
+              - cols:
+                  - col: 6
+                    element: client.personal-data.gender
+                  - col: 6
+                    element: client.personal-data.date-of-birth
+              - cols:
+                  - col: 6
+                    element: client.personal-data.home-country
+                  - col: 6
+                    element: client.personal-data.nationality
+              - cols:
+                  - col: 6
+                    element: client.personal-data.pid
       label:
         ResourceSectionLabelRule:
           labelKey: sections.client.personal-data.label
-      rows:
-        - cols:
-            - col: 11
-              css: text-right
-              element: client.personal-data.status.edit-mode
-            - col: 1
-              css: text-right
-              element: client.personal-data.status.goto-policies
-        - cols:
-            - col: 6
-              element: client.personal-data.first-name
-            - col: 6
-              element: client.personal-data.last-name
-        - cols:
-            - col: 6
-              element: client.personal-data.gender
-            - col: 6
-              element: client.personal-data.date-of-birth
-        - cols:
-            - col: 6
-              element: client.personal-data.home-country
-            - col: 6
-              element: client.personal-data.nationality
-        - cols:
-            - col: 6
-              element: client.personal-data.pid
       labelKey: sections.mydata.personaldata.label
-    - component: ArrayView
+    - component:
+        ArrayView:
+          grid:
+            rows:
+              - cols:
+                  - col: 6
+                    element: client.personal-data.addresses~address-type
+                  - col: 6
+                    element: client.personal-data.addresses~is-primary
+              - cols:
+                  - col: 6
+                    element: client.personal-data.addresses~is-invoice
+                  - col: 6
+                    element: client.personal-data.addresses~is-mail
+              - cols:
+                  - col: 6
+                    element: client.personal-data.addresses~street-number
+                  - col: 6
+                    element: client.personal-data.addresses~street
+              - cols:
+                  - col: 6
+                    element: client.personal-data.addresses~city
+                  - col: 6
+                    element: client.personal-data.addresses~region
+              - cols:
+                  - col: 6
+                    element: client.personal-data.addresses~zip
+                  - col: 6
+                    element: client.personal-data.addresses~country
       label:
         ResourceSectionLabelRule:
           labelKey: sections.mydata.address.label
       element: client.personal-data.addresses
-      rows:
-        - cols:
-            - col: 6
-              element: client.personal-data.addresses~address-type
-            - col: 6
-              element: client.personal-data.addresses~is-primary
-        - cols:
-            - col: 6
-              element: client.personal-data.addresses~is-invoice
-            - col: 6
-              element: client.personal-data.addresses~is-mail
-        - cols:
-            - col: 6
-              element: client.personal-data.addresses~street-number
-            - col: 6
-              element: client.personal-data.addresses~street
-        - cols:
-            - col: 6
-              element: client.personal-data.addresses~city
-            - col: 6
-              element: client.personal-data.addresses~region
-        - cols:
-            - col: 6
-              element: client.personal-data.addresses~zip
-            - col: 6
-              element: client.personal-data.addresses~country
-    - component: ArrayView
+    - component:
+        ArrayView:
+          grid:
+            rows:
+              - cols:
+                  - col: 6
+                    element: client.personal-data.contacts~type
+                  - col: 6
+                    element: client.personal-data.contacts~details
       label:
         ResourceSectionLabelRule:
           labelKey: sections.mydata.contact.label
       element: client.personal-data.contacts
-      rows:
-        - cols:
-            - col: 6
-              element: client.personal-data.contacts~type
-            - col: 6
-              element: client.personal-data.contacts~details
-    - component: ArrayView
+    - component:
+        ArrayView:
+          grid:
+            rows:
+              - cols:
+                  - col: 6
+                    element: client.personal-data.bank-account~iban
+                  - col: 6
+                    element: client.personal-data.bank-account~name
       label:
         ResourceSectionLabelRule:
           labelKey: sections.mydata.bankaccount.label
       element: client.personal-data.bank-account
-      rows:
-        - cols:
-            - col: 6
-              element: client.personal-data.bank-account~iban
-            - col: 6
-              element: client.personal-data.bank-account~name
   label: My Profile

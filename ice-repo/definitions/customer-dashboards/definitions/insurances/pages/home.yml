@@ -1,6 +1,7 @@
 page:
   validation: {}
-  component: InsisSimplePage
+  component:
+    InsisSimplePage: {}
   sections:
     - component:
         IceFlexSection:
@@ -60,7 +61,7 @@ page:
                 align: space-between
           arrayElement: quotes
           behaviourForEmptyRows: hide
-      css: horizontal-list
+          css: horizontal-list
     - component:
         IceFlexSection:
           grid:

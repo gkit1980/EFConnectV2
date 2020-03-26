@@ -1,5 +1,6 @@
 page:
-  component: InsisTwoLevelStepperNavigationPage
+  component:
+    InsisTwoLevelStepperNavigationPage: {}
   validation:
     onElementComponentChange: true
     behaviour: forward
@@ -12,13 +13,12 @@ page:
       pageTitleKey: pages.2.application.vehicle-details.title
       shortTitleKey: pages.2.application.vehicle-details.title
   sections:
-    - css: small-title
-      label:
+    - label:
         ResourceSectionLabelRule:
           labelKey: pages.2.application.vehicle-details.section-title
       component:
         IceArrayFlexSection:
-          css: main-side
+          css: main-side small-title
           arrayElement: policy.insured.vehicle-objects
           behaviourForEmptyRows: hide
           grid:
@@ -95,7 +95,6 @@ page:
                   - size: 100%
                     sections:
                       - name: additional-audio-video-equipment
-
               - gap: 24px
                 gap.xs: 0px
                 cols:
@@ -113,11 +112,11 @@ page:
                   - size: 100%
                     elements:
                       - name: continue
-      css: button-width-100 u-mb-3
+          css: button-width-100 u-mb-3
     - component:
         IceFlexSection:
           tags:
-            - 'pull-right'
+            - pull-right
           grid:
             rows:
               - cols:
@@ -125,7 +124,7 @@ page:
                     css: mat-small
                     elements:
                       - name: more-information-needed
-      css: text-align-center hide-on-mobile u-mb-4
+          css: text-align-center hide-on-mobile u-mb-4
     - component:
         InsisMotorPremiumSummarySection:
           tags:

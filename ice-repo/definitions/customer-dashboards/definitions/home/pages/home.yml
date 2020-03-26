@@ -1,6 +1,7 @@
 page:
   validation: {}
-  component: InsisSimplePage
+  component:
+    InsisSimplePage: {}
   sections:
     - component:
         IceFlexSection:
@@ -11,7 +12,7 @@ page:
                     size.xs: 100%
                     elements:
                       - name: welcome-back
-      css: text-align-center u-mb-6
+          css: text-align-center u-mb-6
     - component:
         IceFlexSection:
           grid:

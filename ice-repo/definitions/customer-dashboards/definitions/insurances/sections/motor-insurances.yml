@@ -33,4 +33,4 @@ section:
                 elements:
                   - name: motor-insurance.button
                 align: center
-  css: card text-align-center
+      css: card text-align-center

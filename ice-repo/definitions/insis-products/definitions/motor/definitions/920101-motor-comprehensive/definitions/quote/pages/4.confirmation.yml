@@ -1,5 +1,6 @@
 page:
-  component: InsisConfirmationPage
+  component:
+    InsisConfirmationPage: {}
   validation:
     onElementComponentChange: true
     behaviour: forward

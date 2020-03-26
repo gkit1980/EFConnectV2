@@ -5,7 +5,8 @@ page:
     showMessages: none
     showGrowl: false
     showElementValidation: true
-  component: InsisTwoLevelStepperNavigationPage
+  component:
+    InsisTwoLevelStepperNavigationPage: {}
   sections:
     - component:
         IceFlexSection:
@@ -17,4 +18,4 @@ page:
                   - size: 100%
                     elements:
                       - name: buy-insurance
-      css: button-width-100 u-mb-3
+          css: button-width-100 u-mb-3

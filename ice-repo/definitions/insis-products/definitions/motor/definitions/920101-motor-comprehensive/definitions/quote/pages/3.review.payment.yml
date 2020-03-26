@@ -1,5 +1,6 @@
 page:
-  component: InsisTwoLevelStepperNavigationPage
+  component:
+    InsisTwoLevelStepperNavigationPage: {}
   validation:
     onElementComponentChange: true
     behaviour: forward
@@ -36,7 +37,7 @@ page:
                     size.sm: 280px
                     elements:
                       - name: policy.is-user-bank-account-holder
-      css: u-mb-4
+          css: u-mb-4
     - component:
         IceFlexSection:
           grid:

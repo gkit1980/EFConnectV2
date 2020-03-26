@@ -1,5 +1,5 @@
 element:
-  type: text
+  type: integer
   viewMode: output
   label:
     NoLabelRule: {}

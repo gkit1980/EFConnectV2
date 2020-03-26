@@ -2,7 +2,8 @@ page:
   validation:
     behaviour: page
     onElementComponentChange: true
-  component: InsisTwoLevelStepperNavigationPage
+  component:
+    InsisTwoLevelStepperNavigationPage: {}
   sections:
     - component:
         IceFlexSection:
@@ -28,7 +29,7 @@ page:
                     size.xs: auto
                     elements:
                       - name: test-slider
-                    offset: "25"
+                    offset: '25'
               - cols:
                   - size: auto
                     size.xs: auto

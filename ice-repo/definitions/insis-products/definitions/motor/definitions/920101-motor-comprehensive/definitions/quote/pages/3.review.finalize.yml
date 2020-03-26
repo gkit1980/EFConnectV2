@@ -1,5 +1,6 @@
 page:
-  component: InsisTwoLevelStepperNavigationPage
+  component:
+    InsisTwoLevelStepperNavigationPage: {}
   validation:
     onElementComponentChange: true
     behaviour: forward
@@ -56,7 +57,7 @@ page:
                   - size: 100%
                     elements:
                       - name: buy-insurance
-      css: button-width-100 u-mb-3
+          css: button-width-100 u-mb-3
     - component:
         IceFlexSection:
           tags:
@@ -68,7 +69,7 @@ page:
                     css: mat-small
                     elements:
                       - name: buy-insurance-description
-      css: text-align-center hide-on-mobile u-mb-4
+          css: text-align-center hide-on-mobile u-mb-4
     - component:
         InsisMotorPremiumSummarySection:
           tags:

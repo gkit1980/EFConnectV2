@@ -11,4 +11,4 @@ section:
                   - name: policy.insured.vehicle-objects~car.regno
       behaviourForEmptyRows: hide
       arrayElement: policy.insured.vehicle-objects
-  css: half-column
+      css: half-column

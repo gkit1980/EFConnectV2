@@ -5,4 +5,5 @@ page:
     showMessages: none
     showGrowl: false
     showElementValidation: true
-  component: InsisTwoLevelStepperNavigationPage
+  component:
+    InsisTwoLevelStepperNavigationPage: {}

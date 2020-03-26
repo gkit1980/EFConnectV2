@@ -1,5 +1,6 @@
 page:
-  component: InsisTwoLevelStepperNavigationPage
+  component:
+    InsisTwoLevelStepperNavigationPage: {}
   validation:
     onElementComponentChange: true
     behaviour: forward
