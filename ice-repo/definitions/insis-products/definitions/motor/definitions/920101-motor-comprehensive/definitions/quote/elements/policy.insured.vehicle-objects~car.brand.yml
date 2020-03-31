@@ -2,3 +2,6 @@ element:
   fake:
     value: AUDI
   type: text
+  values:
+    DynamicValuesListRule:
+      datastoreRootPath: vehicles-data

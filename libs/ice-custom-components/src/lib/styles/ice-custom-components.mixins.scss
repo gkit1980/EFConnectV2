@@ -1,20 +1,20 @@
-@import "../components/element-components/insis-button-dropdown-component/insis-button-dropdown.mixin";
-@import "../components/element-components/insis-dummy-button-component/insis-dummy-button.mixin";
-@import "../components/element-components/insis-info-button/insis-info-button.mixin";
-@import "../components/element-components/insis-slider-component/insis-slider.mixin.scss";
-@import "../components/element-components/insis-array-cards-layout-component/insis-array-cards-layout.mixin.scss";
-@import "../components/element-components/insis-button-toggle-component/insis-button-toggle.mixin";
-@import "../components/element-components/insis-card-component/insis-card.mixin.scss";
-@import "../components/element-components/insis-checkbox-card-component/insis-checkbox-card.mixin.scss";
-@import "../components/element-components/insis-file-upload-component/insis-file-upload.mixin.scss";
-@import "../components/navigation-components/insis-horizontal-stepper-navigation/insis-horizontal-stepper-navigation.mixin";
-@import "../components/navigation-components/insis-vertical-stepper-navigation/insis-vertical-stepper-navigation.mixin";
-@import "../components/page-components/insis-confirmation-page/insis-confirmation-page.mixin.scss";
-@import "../components/page-components/insis-two-level-stepper-navigation-page/insis-two-level-stepper-navigation-page.mixin";
-@import "../components/section-components/insis-datagrid-section/insis-datagrid-section.mixin";
-@import "../components/section-components/insis-motor-policy-summary-section/insis-motor-policy-summary-section.mixin.scss";
-@import "../components/section-components/insis-motor-premium-summary-section/insis-motor-premium-summary.component.mixin.scss";
-@import "../components/shared-components/insis-summary-section-detail-container/insis-summary-section-detail-container.scss";
+@import '../components/element-components/insis-button-dropdown-component/insis-button-dropdown.mixin';
+@import '../components/element-components/insis-dummy-button-component/insis-dummy-button.mixin';
+@import '../components/element-components/insis-info-button/insis-info-button.mixin';
+@import '../components/element-components/insis-slider-component/insis-slider.mixin.scss';
+@import '../components/element-components/insis-array-cards-layout-component/insis-array-cards-layout.mixin.scss';
+@import '../components/element-components/insis-button-toggle-component/insis-button-toggle.mixin';
+@import '../components/element-components/insis-card-component/insis-card.mixin.scss';
+@import '../components/element-components/insis-checkbox-card-component/insis-checkbox-card.mixin.scss';
+@import '../components/element-components/insis-file-upload-component/insis-file-upload.mixin.scss';
+@import '../components/navigation-components/insis-horizontal-stepper-navigation/insis-horizontal-stepper-navigation.mixin';
+@import '../components/navigation-components/insis-vertical-stepper-navigation/insis-vertical-stepper-navigation.mixin';
+@import '../components/page-components/insis-confirmation-page/insis-confirmation-page.mixin.scss';
+@import '../components/page-components/insis-two-level-stepper-navigation-page/insis-two-level-stepper-navigation-page.mixin';
+@import '../components/section-components/insis-datagrid-section/insis-datagrid-section.mixin';
+@import '../components/section-components/insis-motor-policy-summary-section/insis-motor-policy-summary-section.mixin.scss';
+@import '../components/section-components/insis-motor-premium-summary-section/insis-motor-premium-summary.component.mixin.scss';
+@import '../components/shared-components/insis-summary-section-detail-container/insis-summary-section-detail-container.scss';
 
 /**
  * TIP: You will need to @include here any new mixin you add to the ice-custom-component library.

@@ -1,0 +1,74 @@
+get-vehicle-object:
+  condition: payload.CustomOID.ObjectType = 3
+  response:
+    FindObjectRs:
+      Objects:
+        Object:
+          ObjectID: '5000076272'
+          Owners:
+            Owner:
+              Entity:
+                PersonalData:
+                  Name:
+                    Given: Marie
+                    Family: Legrand
+                  PID: '6000036414'
+                  Gender: '2'
+                  BirthDate: '1980-06-06'
+                  HomeCountry: AT
+              Addresses:
+                Address:
+                  AddressID: '61400000007818'
+                  Country: Bulgaria
+                  CountryCode: BG
+                  ResidentialAddress:
+                  ZipCode: '1000'
+                  AddressType: W
+                  Address: 1000, Bulgaria
+                  MailYN: N
+                  InvoiceYN: N
+              BankAccounts:
+                BankAccount:
+                  BankAccID: '6270002315'
+                  BankName: Bank X
+                  BankPID: '6000036413'
+                  AccountNo: '5554567890'
+                  Currency: EUR
+                  AccountState: '1'
+                  ValidFrom: '2000-01-01'
+                  PrimaryFlag: Y
+              CreditCards: "${cards}"
+              BeginDate: '2015-05-07'
+              Percent: '100'
+          OCar:
+            RegNo: CB1514AA
+            CarType: '31'
+            CarSubtype: '318'
+            Model: Kangoo
+            Make: RENAULT
+            Chassis: '11122233456334'
+            Engine: "*"
+            CCMTon: '1598'
+            CarUsage: '1'
+            SeatsNum: '2'
+            DoorNum: '4'
+            PaintType: '3'
+            ProdYear: '2007'
+            CarAge: '8'
+            ProdType: '2'
+            CarColor: '41'
+            RegType: '1'
+            EnginePower: '95'
+            BonusMalus: '0'
+            Tonage: '1.61'
+            FuelType: '1'
+            DriveType: AW
+            CarBodyType: '230030'
+            WindowColor: '1'
+            Modified: '0'
+            VehicleKey: D20447943
+            CustomProperties:
+              CustomProperty:
+                FieldName: OCP2
+                FieldLabel: Transportation of hazardous goods?
+                Value: '2'

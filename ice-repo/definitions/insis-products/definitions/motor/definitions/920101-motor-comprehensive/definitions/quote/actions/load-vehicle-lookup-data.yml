@@ -1,0 +1,8 @@
+action:
+  trigger:
+    - PageTriggerRule:
+        enter:
+          - 1.quote.vehicles
+  execution:
+    - IntegrationExecutionRule:
+        integration: 920101.motor.insis.load-vehicles-lookup-data

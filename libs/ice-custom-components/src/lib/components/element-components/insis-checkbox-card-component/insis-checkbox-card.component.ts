@@ -18,6 +18,7 @@ export class InsisCheckboxCardComponent extends MaterialElementComponentImplemen
   get description() {
     return this.element.textRule.getText('description', null, this.index);
   }
+
   get src() {
     return `/assets/icons/${this.element.textRule.getText('icon', null, this.index)}`;
   }

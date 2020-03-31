@@ -833,6 +833,9 @@ entries:
       label:
         - en: Active policies
           de: Active policies
+    search-car-by:
+      - en: Search by
+        de: Suche nach
   validation:
     pageValidation:
       summary:

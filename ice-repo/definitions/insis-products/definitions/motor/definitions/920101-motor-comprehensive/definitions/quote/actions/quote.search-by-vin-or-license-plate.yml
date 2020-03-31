@@ -1,0 +1,18 @@
+action:
+  trigger:
+    - ElementChangeTriggerRule:
+        originsToExclude:
+          - DATAMODEL
+          - EXTERNAL
+          - INTERNAL
+          - INSIGHT
+          - UNKNOWN
+          - DEFAULTVALUE
+        elements:
+          - policy.insured.vehicle-objects~car.search.input
+  execution:
+    - CopyValueExecutionRule:
+        source: policy.insured.vehicle-objects~car.index
+        destination: selected-vehicle-index
+    - IntegrationExecutionRule:
+        integration: 920101.motor.insis-policy.search-by-vin-or-license-plate

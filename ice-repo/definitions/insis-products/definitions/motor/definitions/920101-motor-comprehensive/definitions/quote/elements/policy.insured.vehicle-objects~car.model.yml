@@ -1,7 +1,10 @@
 element:
-  values:
-    DtValuesRule:
-      dt: insis-model-from-brand
   type: text
   fake:
     value: A1
+  values:
+    DynamicValuesListRule:
+      datastoreRootPath: vehicles-data
+      pathElements:
+        - policy.insured.vehicle-objects~car.brand
+        - policy.insured.path-models

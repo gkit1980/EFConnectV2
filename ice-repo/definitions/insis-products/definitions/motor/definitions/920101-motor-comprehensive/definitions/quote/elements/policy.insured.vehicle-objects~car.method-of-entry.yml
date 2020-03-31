@@ -9,7 +9,10 @@ element:
       list: entry-method
   label:
     NoLabelRule: {}
-  defaultValue: 3
   viewMode:
     StaticViewModeRule:
-      viewMode: hidden
+      viewMode: default
+  defaultValue:
+    ArrayItemValueRule:
+      values:
+        - 1

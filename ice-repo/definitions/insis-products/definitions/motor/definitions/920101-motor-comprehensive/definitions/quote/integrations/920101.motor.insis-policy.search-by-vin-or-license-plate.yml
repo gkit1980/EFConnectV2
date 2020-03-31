@@ -1,0 +1,60 @@
+integration:
+  exchange:
+    SoapCallExchangeRule:
+      endpoint: insis_oom_endpoint
+      securityMode: UsernamePassword
+      username: 'env:insis-username'
+      password: 'env:insis-password'
+      ignoreNamespaces: 'env:insis-ignoreNamespaces'
+      soapAction: findObject
+  transformation:
+    InsisDefaultTransformationRule:
+      additional: insis
+      dateFormat: YYYY-MM-DD
+      dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
+      out:
+        - mappings:
+            - param: soapAction
+              value: findObject
+            - param: requestType
+              value: FindObjectRqType
+        - mappings:
+            - value: 3
+              payload: CustomOID.ObjectType
+        - fromIdx:
+            index: selected-vehicle-index
+          mappings:
+            - value: EQ
+              payload: CustomOID.FilterCriteria.FilterCriterion.attributes.operation
+            - element: policy.insured.vehicle-objects~car.search.input
+              payload: CustomOID.FilterCriteria.FilterCriterion.attributes.value
+            - element: policy.insured.vehicle-objects~car.search.type
+              payload: CustomOID.FilterCriteria.FilterCriterion.attributes.field
+            - value: AND
+              payload: CustomOID.FilterCriteria.FilterCriterion.attributes.conjunction
+      in:
+        - toIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            index: selected-vehicle-index
+          mappings:
+            - payload: 'Objects.Object.OCar.Chassis'
+              element: policy.insured.vehicle-objects~car.chassis
+            - payload: 'Objects.Object.OCar.RegNo'
+              element: policy.insured.vehicle-objects~car.regno
+            - payload: 'Objects.Object.OCar.Make'
+              element: policy.insured.vehicle-objects~car.brand
+            - payload: 'Objects.Object.OCar.Model'
+              element: policy.insured.vehicle-objects~car.model
+            - payload: 'Objects.Object.OCar.ProdYear'
+              element: policy.insured.vehicle-objects~car.construction-date
+            - payload: 'Objects.Object.OCar.CarSubtype'
+            - payload: 'Objects.Object.OCar.Engine'
+            - payload: 'Objects.Object.OCar.EnginePower'
+              element: policy.insured.vehicle-objects~car.engine-power
+            - payload: 'Objects.Object.OCar.FuelType'
+              element: policy.insured.vehicle-objects~car.fuel
+            - payload: 'Objects.Object.OCar.SeatsNum'
+              element: policy.insured.vehicle-objects~car.seats-number
+            - payload: 'Objects.Object.OCar.CarUsage'
+              element: policy.insured.vehicle-objects~car.usage
+      ignoreNull: true

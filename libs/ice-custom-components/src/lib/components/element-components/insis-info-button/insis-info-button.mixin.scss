@@ -1,4 +1,4 @@
-@import "~@angular/material/theming";
+@import '~@angular/material/theming';
 
 @mixin insis-info-button-mixin($theme) {
   $primary: map-get($theme, primary);
@@ -10,6 +10,7 @@
       background-position: center;
       color: gray;
     }
+
     mat-icon.bubble-open {
       color: $primaryColor;
       cursor: default;
@@ -44,7 +45,7 @@
       top: -15px;
       color: transparent;
       border-top: thin solid white;
-      content: " ";
+      content: ' ';
       left: -15px;
       position: absolute;
       width: 15px;
@@ -53,7 +54,7 @@
     #triangle:before {
       color: transparent;
       border-bottom: thin solid white;
-      content: " ";
+      content: ' ';
       left: -18px;
       position: absolute;
       transform: rotate(45deg);

@@ -1,0 +1,18 @@
+action:
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - policy.insured.vehicle-objects~car.regno
+        originsToExclude:
+          - EXTERNAL
+          - INTERNAL
+          - INSIGHT
+          - DEFAULTVALUE
+          - UNKNOWN
+          - DATAMODEL
+  execution:
+    - CopyValueExecutionRule:
+        source: policy.insured.vehicle-objects~car.index
+        destination: selected-vehicle-index
+    - IntegrationExecutionRule:
+        integration: 920101.motor.insis-policy.get-regno

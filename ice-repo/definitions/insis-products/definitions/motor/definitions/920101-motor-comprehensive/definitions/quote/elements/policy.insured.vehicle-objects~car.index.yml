@@ -1,0 +1,5 @@
+element:
+  type: integer
+  defaultValue:
+    ArrayItemIndexValueRule:
+      indexing: zero-based

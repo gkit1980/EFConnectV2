@@ -1,9 +1,23 @@
 <div class="ice-currency" *ngIf="isVisible">
-  <mat-form-field [attr.data-required]="isRequired" [appearance]='appearance' hideRequiredMarker="true"
-    *ngIf="!isOutput" [hintLabel]="hint">
-    <mat-label [attr.data-required]="isRequired">{{label}}</mat-label>
-    <input #iceInput matInput [errorStateMatcher]="errorStateMatcher" [required]="isRequired" [disabled]="isDisabled"
-      [placeholder]="placeholder" [(ngModel)]="value" (blur)="onBlur($event)" (focus)="onFocus($event)">
+  <mat-form-field
+    [attr.data-required]="isRequired"
+    [appearance]="appearance"
+    hideRequiredMarker="true"
+    *ngIf="!isOutput"
+    [hintLabel]="hint"
+  >
+    <mat-label [attr.data-required]="isRequired">{{ label }}</mat-label>
+    <input
+      #iceInput
+      matInput
+      [errorStateMatcher]="errorStateMatcher"
+      [required]="isRequired"
+      [disabled]="isDisabled"
+      [placeholder]="placeholder"
+      [(ngModel)]="value"
+      (blur)="onBlur($event)"
+      (focus)="onFocus($event)"
+    />
     <mat-error *ngFor="let message of validation?.getMessagesFor(element.name, index)">
       {{ message }}
     </mat-error>

@@ -5,3 +5,4 @@ export * from './mirror/get-array-length-mirror-rule';
 export * from './values/array-item-based-values-rule';
 export * from './mirror/insurance-date-and-duration-mirror-rule';
 export * from './validation/unique-value-validation-rule';
+export * from './values/dynamic-values-list-rule';

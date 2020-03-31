@@ -1,7 +1,7 @@
 import { IceCurrencyComponent } from '@impeo/ng-ice';
 import { Component } from '@angular/core';
 import { IndexedValue } from '@impeo/ice-core';
-import { CurrencyPipe } from '@angular/common';
+
 @Component({
   selector: 'insis-currency',
   templateUrl: './insis-currency.component.html'

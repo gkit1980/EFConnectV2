@@ -2,3 +2,14 @@ element:
   fake:
     value: 2011
   type: integer
+  values:
+    DynamicValuesListRule:
+      datastoreRootPath: vehicles-data
+      pathElements:
+        - policy.insured.vehicle-objects~car.brand
+        - policy.insured.path-years
+        - policy.insured.vehicle-objects~car.model
+  component:
+    StaticComponentRule:
+      component:
+        IceDropdown: {}

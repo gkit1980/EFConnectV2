@@ -1,15 +1,18 @@
 <main class="insis-two-level-stepper-navigation-page">
-  <insis-horizontal-stepper-navigation [page]="page" [level]="1"></insis-horizontal-stepper-navigation>
+  <insis-horizontal-stepper-navigation
+    [page]="page"
+    [level]="1"
+  ></insis-horizontal-stepper-navigation>
 
   <div fxLayout.xs="column" fxLayout="row wrap">
     <div fxFlex.xs="100%" [fxFlex]="sideSections.length ? '66%' : '100%'">
       <insis-vertical-stepper-navigation [page]="page" [level]="2">
         <page-validation [page]="page"></page-validation>
-        <ice-section *ngFor="let section of mainSections" [section]="section"> </ice-section>
+        <ice-section *ngFor="let section of mainSections" [section]="section"></ice-section>
       </insis-vertical-stepper-navigation>
     </div>
     <aside fxFlex.xs="100%" fxFlex="calc(34% - 16px)" *ngIf="sideSections.length" class="aside">
-      <ice-section *ngFor="let section of sideSections" [section]="section"> </ice-section>
+      <ice-section *ngFor="let section of sideSections" [section]="section"></ice-section>
     </aside>
   </div>
 
