@@ -1,0 +1,9 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        InsisImageButton: {}
+  defaultValue:
+    StaticValueRule:
+      value: test-action

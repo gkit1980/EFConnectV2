@@ -1,0 +1,4 @@
+<div class="insis-markdown-output" *ngIf="isVisible">
+    <div  [innerHTML]="text | MarkdownToHtml"></div>
+    <div class="ice-hint" *ngIf="hint">{{ hint }}</div>
+</div>

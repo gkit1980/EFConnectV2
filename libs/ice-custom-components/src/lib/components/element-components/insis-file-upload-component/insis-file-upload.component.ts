@@ -16,9 +16,6 @@ export class InsisFileUploadComponent extends IceTextInputComponent {
     fileReader.onloadend = () => {
       const fileName = file.name ? file.name : this.createName();
       this.setAndApplyValue(fileName);
-
-      //TODO: Do something with this data
-      const fileData = fileReader.result.toString();
     };
   }
 

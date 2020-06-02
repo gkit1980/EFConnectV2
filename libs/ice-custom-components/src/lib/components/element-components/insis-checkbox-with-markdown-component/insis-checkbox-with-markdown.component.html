@@ -1,0 +1,22 @@
+<div class="ice-checkbox insis-checkbox-with-markdown" *ngIf="isVisible">
+	<base target="_blank">
+	<mat-checkbox   
+		[matTooltip]="tooltip"
+		matTooltipClass="ice-tooltip" 
+		matInput 
+		*ngIf="!isOutput" 
+		[(ngModel)]="value" 
+		[indeterminate]="value == null" 
+		[required]="isRequired"
+		[disabled]="isDisabled" 
+		[labelPosition]="labelPosition" 
+		(change)="onChange($event)">
+		<mat-label [attr.data-required]="isRequired" [innerHTML]="label | MarkdownToHtml" class="text-dark">
+		</mat-label>
+	</mat-checkbox>
+	<div class="ice-hint" *ngIf="hint">{{ hint }}</div>
+	<mat-output *ngIf="isOutput" [isOutput]="isOutput" [label]="label" [value]="value"></mat-output>
+	<mat-error *ngFor="let message of validation?.getMessagesFor(element.name, index)">
+		{{ message }}
+	</mat-error>
+</div>

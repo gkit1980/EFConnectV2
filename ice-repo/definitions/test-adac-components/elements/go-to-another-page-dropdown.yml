@@ -1,0 +1,11 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        InsisButtonDropdown: {}
+  values:
+    StaticValuesRule:
+      values:
+        - new-page
+        - new-page2

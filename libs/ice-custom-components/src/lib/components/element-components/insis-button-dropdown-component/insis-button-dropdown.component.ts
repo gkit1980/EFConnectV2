@@ -12,6 +12,9 @@ export class InsisButtonDropdownComponent extends MaterialSelectComponentImpleme
     const iconName = this.element.textRule.getText('icon', null, this.index);
     return iconName ? `/assets/icons/${iconName}` : null;
   }
+  get accesskey() {
+    return this.getRecipeParam('accesskey', null);
+  }
 
   //
   //

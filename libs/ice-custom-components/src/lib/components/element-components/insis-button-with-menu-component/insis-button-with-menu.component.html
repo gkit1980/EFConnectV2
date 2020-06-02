@@ -1,0 +1,30 @@
+<div class="insis-menu-dropdown" *ngIf="isVisible">
+  <ng-container *ngIf="!isOutput">
+    <div [ngSwitch]="variant">
+      <button *ngSwitchCase="'stroked'" mat-stroked-button [matMenuTriggerFor]="menu" [disabled]="isDisabled">
+        <ng-container *ngTemplateOutlet="content"></ng-container>
+      </button>
+      <button *ngSwitchCase="'icon'" mat-icon-button [matMenuTriggerFor]="menu" [disabled]="isDisabled">
+        <ng-container *ngTemplateOutlet="content"></ng-container>
+      </button>
+
+      <mat-menu #menu="matMenu">
+        <span mat-menu-item *ngFor="let option of options" (click)="onClick(option.value)"
+          [innerHTML]="option.label | MarkdownToHtml">
+          <!-- {{ option.label }} -->
+        </span>
+      </mat-menu>
+    </div>
+  </ng-container>
+  <mat-error *ngFor="let message of validation?.getMessagesFor(element.name, index)">
+    {{ message }}
+  </mat-error>
+  <mat-output *ngIf="isOutput" [isOutput]="isOutput" [label]="label" [value]="value">
+  </mat-output>
+</div>
+
+<ng-template #content>
+  <mat-icon *ngIf="iconName && iconPosition == 'left' ">{{iconName}}</mat-icon>
+  {{label}}
+  <mat-icon *ngIf="iconName && iconPosition == 'right' ">{{iconName}}</mat-icon>
+</ng-template>

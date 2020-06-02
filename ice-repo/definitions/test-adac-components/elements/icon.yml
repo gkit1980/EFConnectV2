@@ -1,0 +1,10 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        InsisIcon:
+          showLabel: true
+  defaultValue:
+    StaticValueRule:
+      value: assignment_late

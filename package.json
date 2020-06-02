@@ -46,6 +46,7 @@
     "@angular/platform-browser": "^8.2.12",
     "@angular/platform-browser-dynamic": "^8.2.12",
     "@angular/router": "^8.2.12",
+    "@google/maps": "^1.0.2",
     "@nrwl/angular": "8.12.10",
     "async-file": "^2.0.2",
     "axios": "^0.19.0",

@@ -13,7 +13,9 @@ import {
   MatInputModule,
   MatCheckboxModule,
   MatMenuModule,
-  MatTableModule
+  MatTableModule,
+  MatTooltipModule,
+  MatBadgeModule
 } from '@angular/material';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
@@ -43,6 +45,13 @@ import { InsisButtonDropdownComponent } from './components/element-components/in
 import { InsisSimplePageComponent } from './components/page-components/insis-simple-page/insis-simple-page.component';
 import { InsisButtonToggleComponent } from './components/element-components/insis-button-toggle-component/insis-button-toggle.component';
 import { InsisDatagridSectionComponent } from './components/section-components/insis-datagrid-section/insis-datagrid-section.component';
+import { InsisCheckboxWithMarkdownComponent } from './components/element-components/insis-checkbox-with-markdown-component/insis-checkbox-with-markdown.component';
+import { InsisIconComponent } from './components/element-components/insis-icon-component/insis-icon.component';
+import { InsisImageButtonComponent } from './components/element-components/insis-image-button-component/insis-image-button.component';
+import { InsisMarkdownOutputElementComponent } from './components/element-components/insis-markdown-output-component/insis-markdown-output-element.component';
+import { InsisDialogSectionContainer } from './components/shared-components/insis-dialog-section-container/insis-dialog-section-container';
+import { InsisButtonWithDialogComponent } from './components/element-components/insis-button-with-dialog/insis-button-with-dialog.component';
+import { InsisGoogleMapComponent } from './components/element-components/insis-google-map-component/insis-google-map.component';
 
 /**
  * TIP: You will need to include in this array any new component you create.
@@ -68,7 +77,15 @@ export const iceCustomComponents = [
   InsisFileUploadComponent,
   InsisButtonToggleComponent,
   InsisPictureComponent,
-  InsisCurrencyComponent
+  InsisCurrencyComponent,
+  InsisButtonDropdownComponent,
+  InsisButtonWithDialogComponent,
+  InsisCheckboxCardComponent,
+  InsisCheckboxWithMarkdownComponent,
+  InsisIconComponent,
+  InsisImageButtonComponent,
+  InsisMarkdownOutputElementComponent,
+  InsisGoogleMapComponent
 ];
 
 /**
@@ -103,21 +120,28 @@ export function registerComponents(componentService: IceComponentsService) {
     MatChipsModule,
     MatIconModule,
     MarkdownToHtmlModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatTooltipModule,
+    MatChipsModule,
+    FlexLayoutModule,
+    MatIconModule,
+    MatBadgeModule
   ],
 
   declarations: [
     ...iceCustomComponents,
     TooltipComponent,
     InsisHorizontalStepperNavigationComponent,
-    InsisVerticalStepperNavigationComponent
+    InsisVerticalStepperNavigationComponent,
+    InsisDialogSectionContainer
   ],
   exports: [...iceCustomComponents],
   entryComponents: [
     ...iceCustomComponents,
     TooltipComponent,
     InsisHorizontalStepperNavigationComponent,
-    InsisVerticalStepperNavigationComponent
+    InsisVerticalStepperNavigationComponent,
+    InsisDialogSectionContainer
   ],
   providers: [
     {

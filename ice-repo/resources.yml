@@ -21,8 +21,8 @@ entries:
               de: null
         link:
           label:
-            - en: ${param1}
-            - de: ${param1}
+            - en: '${param1}'
+            - de: '${param1}'
         contract:
           payment:
             completed:
@@ -836,6 +836,28 @@ entries:
     search-car-by:
       - en: Search by
         de: Suche nach
+    image-button:
+      label:
+        - en: 'http://localhost:4200/visual-ice/assets/logo.png'
+          de: 'http://localhost:4200/visual-ice/assets/logo.png'
+    badge:
+      label:
+        - en: Label
+          de: Label
+    markdown-output:
+      label:
+        - en: |-
+            # Test markdown
+
+            - list
+            - of
+            - something
+          de: |-
+            # Test markdown
+
+            - list
+            - of
+            - something
   validation:
     pageValidation:
       summary:

@@ -19,3 +19,14 @@ description: >
 
 
   Option values are configured with a values rule.
+
+
+  Supported text aspect keys:
+    - hint
+    - tooltip
+
+params:
+  accesskey:
+    label: Access Key
+    type: text
+    info: The key shortcut used to press the button. Note that you can add only one character.

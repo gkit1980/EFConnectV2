@@ -3,4 +3,4 @@ component: InsisFileUpload
 types:
   - text
 description: >
-  Upload file/image
+  Component that allows uploading/loading file into element

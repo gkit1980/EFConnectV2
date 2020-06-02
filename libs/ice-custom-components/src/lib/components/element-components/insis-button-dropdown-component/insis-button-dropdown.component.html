@@ -1,23 +1,20 @@
 <div class="button-dropdown" *ngIf="isVisible">
   <ng-container *ngIf="!isOutput">
     <base target="_blank" />
-    <button mat-button [matMenuTriggerFor]="menu" [disabled]="isDisabled">
-      <img *ngIf="src" [src]="src" width="24" alt="" />
+    <button mat-button color="accent" [matMenuTriggerFor]="menu" [disabled]="isDisabled" [matTooltip]="tooltip"
+      matTooltipClass="ice-tooltip" [attr.accesskey]="accesskey">
       {{ label }}
+      <mat-icon>keyboard_arrow_down</mat-icon>
     </button>
 
     <mat-menu #menu="matMenu">
-      <button
-        class="menu-dropdown"
-        mat-menu-item
-        *ngFor="let option of options"
-        (click)="onClick(option.value)"
-        [innerHTML]="option.label | MarkdownToHtml"
-      ></button>
+      <button class="menu-dropdown" mat-menu-item *ngFor="let option of options" (click)="onClick(option.value)"
+        [innerHTML]="option.label | MarkdownToHtml"></button>
     </mat-menu>
   </ng-container>
+  <div class="ice-hint" *ngIf="hint">{{ hint }}</div>
   <mat-error *ngFor="let message of validation?.getMessagesFor(element.name, index)">
     {{ message }}
   </mat-error>
-  <mat-output *ngIf="isOutput" [isOutput]="isOutput" [label]="label" [value]="value"></mat-output>
+  <mat-output *ngIf="isOutput" [isOutput]="isOutput" [label]="label" [value]="value"> </mat-output>
 </div>

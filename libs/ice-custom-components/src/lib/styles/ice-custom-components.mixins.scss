@@ -16,6 +16,11 @@
 @import '../components/section-components/insis-motor-premium-summary-section/insis-motor-premium-summary.component.mixin.scss';
 @import '../components/shared-components/insis-summary-section-detail-container/insis-summary-section-detail-container.scss';
 
+@import '../components/element-components/insis-image-button-component/insis-image-button.component.mixin.scss';
+@import '../components/element-components/insis-checkbox-with-markdown-component/insis-checkbox-with-markdown.mixin.scss';
+@import '../components/element-components/insis-markdown-output-component/insis-markdown-output-element.mixin.scss';
+@import '../components/element-components/insis-google-map-component/insis-google-map.mixin.scss';
+
 /**
  * TIP: You will need to @include here any new mixin you add to the ice-custom-component library.
  * This file here will be loaded by theme.scss which is part of theming structure inside application styles.
@@ -39,4 +44,9 @@
   @include insis-info-button-mixin($theme);
   @include insis-summary-section-detail-container-mixin($theme);
   @include insis-button-toggle-mixin($theme);
+
+  @include insis-image-button-mixin($theme);
+  @include insis-checkbox-with-markdown-mixin($theme);
+  @include insis-markdown-output-element-mixin($theme);
+  @include insis-google-map-mixin($theme);
 }

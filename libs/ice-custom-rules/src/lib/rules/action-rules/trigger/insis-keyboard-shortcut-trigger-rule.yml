@@ -1,0 +1,39 @@
+implementations:
+  InsisKeyboardShortcutTriggerRule:
+    description: >-
+      Trigger rule that activates action when certain key combination is made
+    params:
+      keyCombination:
+        label: >-
+          Key combination. Different keys should be separated with + .
+          Example key combinations:  "Ctrl + K", Meta + D .. and so on
+        type: text
+        required: true
+      preventDefault:
+        label: >-
+          If true, keycombination not triggered.
+          For example, if your key combination is Ctrl + S, your action is going to be triggered after browser's save page functionality.
+          If preventDefault set to true, browser's save functionality is not going to be executed
+        type: boolean
+        required: false
+        default: false
+      element:
+        label: Element name
+        description: If set, action will be triggered only if key-combination is pressed
+          while specified element is in focus.
+        type: element
+        required: false
+      index:
+        label: Element index
+        description: If set, action will be triggered only if key-combination is pressed
+          while specified element is in focus and its index matches the index set here.
+        type: integers
+        required: false
+    icel: >
+      ```
+        action:
+          trigger:
+            - InsisKeyboardShortcutTriggerRule:
+                keyCombination: Meta + C
+                preventDefault: true
+      ```

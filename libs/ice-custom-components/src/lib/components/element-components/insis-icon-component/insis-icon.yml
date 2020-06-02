@@ -1,0 +1,23 @@
+label: Insis Icon Component
+
+component: InsisIcon
+
+types:
+  - text
+
+description: >
+  Show material icon
+
+  There is an option to show label as well, be sure to enable it
+
+  The component also supports Values rule, so you can configure list/dt with additional "icon" and it will be shown
+
+
+  Supported text aspect keys: 
+    - hint
+    - tooltip
+
+params:
+  showLabel:
+    type: boolean
+    label: Show label  

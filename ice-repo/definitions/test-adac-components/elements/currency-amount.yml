@@ -1,0 +1,10 @@
+element:
+  type: decimal
+  component:
+    StaticComponentRule:
+      component:
+        InsisCurrency:
+          currencyElementName: currency-type
+  defaultValue:
+    StaticValueRule:
+      value: 2345

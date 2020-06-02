@@ -22,7 +22,7 @@ export class InsisDefaultTransformationRule extends DefaultTransformationRule {
       const value = this.iceModel.elements[indexData.index].getValue().forIndex(null);
       if (!_.isNil(value)) return this.resolveIndices(key, value, source, index);
     }
-    if (_.isString(indexData.index)) return this.evaluateIndexLiteral(indexData.index);
+    if (_.isString(indexData.index)) return this.evaluateIndexLiteral(indexData.index, source);
     return this.evaluateArrayCondition(key, indexData, source, index);
   }
 }

@@ -1,0 +1,14 @@
+@mixin insis-icon-mixin($theme) {
+  .insis-icon {
+    display: flex;
+    align-items: center;
+
+    .mat-icon {
+      margin-right: 4px;
+    }
+
+    mat-label {
+      line-height: 100%;
+    }
+  }
+}

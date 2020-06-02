@@ -1,0 +1,11 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        InsisBadge:
+          color: blue
+          size: medium
+  defaultValue:
+    StaticValueRule:
+      value: Value

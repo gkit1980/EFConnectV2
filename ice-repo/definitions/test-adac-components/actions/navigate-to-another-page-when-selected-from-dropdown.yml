@@ -1,0 +1,8 @@
+action:
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - go-to-another-page-dropdown
+  execution:
+    - NavigateToPageFeelExecutionRule:
+        expression: element("go-to-another-page-dropdown")

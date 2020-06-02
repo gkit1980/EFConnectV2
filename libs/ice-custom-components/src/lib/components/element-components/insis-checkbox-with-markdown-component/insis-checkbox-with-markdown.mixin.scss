@@ -1,0 +1,22 @@
+@import "~@angular/material/theming";
+
+@mixin insis-checkbox-with-markdown-mixin($theme) {
+  .insis-checkbox-with-markdown {
+    a[href] {
+      text-decoration: underline;
+      color: black;
+    }
+
+    label.mat-checkbox-layout {
+      white-space: normal !important;
+      margin-bottom: 0px;
+    }
+
+    mat-label[data-required="true"]:after {
+      position: absolute;
+      top: 0em;
+      left: 2em;
+      visibility: hidden;
+    }
+  }
+}

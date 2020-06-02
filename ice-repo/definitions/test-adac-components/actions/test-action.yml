@@ -1,0 +1,5 @@
+action:
+  execution:
+    - MessageActionRule:
+        severity: info
+        message: Successfully executed

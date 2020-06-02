@@ -1,0 +1,9 @@
+implementations:
+  NavigateToPageFeelExecutionRule:
+    description: >-
+      Navigates to page using feel expression
+    params:
+      expression:
+        label: FEEL expression
+        type: feel
+        required: true

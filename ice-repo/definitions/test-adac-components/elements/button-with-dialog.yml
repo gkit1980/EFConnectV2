@@ -1,0 +1,10 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        InsisButtonWithDialog:
+          section: dialog-section
+          width: '500'
+          themeColor: primary
+          variant: default

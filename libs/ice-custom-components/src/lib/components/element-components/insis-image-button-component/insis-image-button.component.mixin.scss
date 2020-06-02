@@ -1,0 +1,9 @@
+@import '~@angular/material/theming';
+
+@mixin insis-image-button-mixin($theme) {
+  .button-thumbnail {
+    img {
+      cursor: pointer;
+    }
+  }
+}

@@ -1,19 +1,7 @@
-<div
-  class="insis-checkbox-card card"
-  *ngIf="isVisible"
-  (click)="onChange()"
-  [ngClass]="{ selected: value }"
->
-  <mat-checkbox
-    matInput
-    class="checkbox"
-    *ngIf="!isOutput"
-    [(ngModel)]="value"
-    [indeterminate]="value == null"
-    [required]="isRequired"
-    [disabled]="isDisabled"
-    [ngClass]="{ hide: !value }"
-  >
+<div class="insis-checkbox-card card" *ngIf="isVisible" (click)="onChange()" [ngClass]="{ selected: value }"
+  [matTooltip]="tooltip" matTooltipClass="ice-tooltip">
+  <mat-checkbox matInput class="checkbox" *ngIf="!isOutput" [(ngModel)]="value" [indeterminate]="value == null"
+    [required]="isRequired" [disabled]="isDisabled" [ngClass]="{ hide: !value }">
   </mat-checkbox>
   <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
     <img [src]="src" style="width: 154px;" alt="" />
@@ -25,3 +13,4 @@
     {{ message }}
   </mat-error>
 </div>
+<div class="ice-hint" *ngIf="hint">{{ hint }}</div>

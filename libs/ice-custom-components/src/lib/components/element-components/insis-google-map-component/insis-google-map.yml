@@ -1,0 +1,16 @@
+label: InsisGoogleMap
+
+component: InsisGoogleMap
+
+types:
+  - text
+
+params:
+  latElement:
+    label: Latitude element source
+    type: element
+    required: true
+  lngElement:
+    label: Longitude element source
+    type: element
+    required: true

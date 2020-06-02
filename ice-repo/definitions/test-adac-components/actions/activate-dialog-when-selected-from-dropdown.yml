@@ -1,0 +1,6 @@
+action:
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - dropdown
+        originsToExclude: []
