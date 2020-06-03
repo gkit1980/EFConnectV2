@@ -1,76 +1,62 @@
 integration:
   exchange:
-    SoapCallExchangeRule:
-      endpoint: insis_generic_endpoint
-      securityMode: UsernamePassword
-      username: 'env:insis-username'
-      password: 'env:insis-password'
-      ignoreNamespaces: 'env:insis-ignoreNamespaces'
-      soapAction: paginatedQuery
-      requestType: PaginatedQueryRqType
-      jsonSchema: Insis_GenericWS
+    InsisDBExchangeRule:
+      connectString: 'env:insis-db-url'
+      username: 'env:insis-db-username'
+      password: 'env:insis-db-password'
+      queryFileURL: data/get-client-policies.sql
+      queryType: SQL
   transformation:
-    InsisPaginatedQueryTransformation:
-      queryId: POLICIES
+    DefaultTransformationRule:
       additional: insis
       out:
         - mappings:
-            - param: soapAction
-              value: paginatedQuery
-            - param: requestType
-              value: PaginatedQueryRqType
-        - toIdx: 0
-          mappings:
-            - value: PID
-              payload: 'FilterCriteria.FilterCriterion[n].field'
-            - value: EQ
-              payload: 'FilterCriteria.FilterCriterion[n].operation'
             - principal: pid
-              payload: 'FilterCriteria.FilterCriterion[n].value'
+              param: PID
       in:
         - fromIdx:
-            array: payload.RowSet.Row
+            array: payload.rows
           toIdx:
             array: datamodel.policies
             append: true
           mappings:
-            - payload: 'RowSet.Row[n].PREMIUM'
+            - payload: 'rows[n].PREMIUM'
               element: policies~premium-total
-            - payload: 'RowSet.Row[n].INSURANCE_END'
+            - payload: 'rows[n].INSURANCE_END'
               element: policies~ins-end-date
-            - payload: 'RowSet.Row[n].POLICY_ID'
+            - payload: 'rows[n].POLICY_ID'
               element: policies~policy-id
-            - payload: 'RowSet.Row[n].POLICY_NO'
+            - payload: 'rows[n].POLICY_NO'
               element: policies~policy-no
-            - payload: 'RowSet.Row[n].PRODUCT_NAME'
+            - payload: 'rows[n].PRODUCT_NAME'
               element: policies~product-name
-            - payload: 'RowSet.Row[n].PRODUCT_ID'
+            - payload: 'rows[n].PRODUCT_ID'
               element: policies~product-code
-            - payload: 'RowSet.Row[n].INSURED_OBJECT'
+            - payload: 'rows[n].INSURED_OBJECT'
               element: policies~insured-objects
             - value: 'navigate-view-policy'
               element: policies~view-more
             - value: 'navigate-submit-claim'
               element: policies~submit-claim
         - fromIdx:
-            array: payload.RowSet.Row
+            array: payload.rows
           toIdx:
             array: datamodel.expired-policies
             append: true
           mappings:
-            - payload: 'RowSet.Row[n].PREMIUM'
+            - payload: 'rows[n].PREMIUM'
               element: expired-policies~premium-total
-            - payload: 'RowSet.Row[n].INSURANCE_END'
+            - payload: 'rows[n].INSURANCE_END'
               element: expired-policies~ins-end-date
-            - payload: 'RowSet.Row[n].POLICY_ID'
+            - payload: 'rows[n].POLICY_ID'
               element: expired-policies~policy-id
-            - payload: 'RowSet.Row[n].POLICY_NO'
+            - payload: 'rows[n].POLICY_NO'
               element: expired-policies~policy-no
-            - payload: 'RowSet.Row[n].PRODUCT_NAME'
+            - payload: 'rows[n].PRODUCT_NAME'
               element: expired-policies~product-name
-            - payload: 'RowSet.Row[n].PRODUCT_ID'
+            - payload: 'rows[n].PRODUCT_ID'
               element: expired-policies~product-code
-            - payload: 'RowSet.Row[n].INSURED_OBJECT'
+            - payload: 'rows[n].INSURED_OBJECT'
               element: expired-policies~insured-objects
             - value: 'navigate-submit-claim'
               element: expired-policies~submit-claim

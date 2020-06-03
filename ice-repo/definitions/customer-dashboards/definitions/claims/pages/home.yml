@@ -58,21 +58,27 @@ page:
     - component:
         InsisDatagridSection:
           arrayElement: resolved-claims
-          cols:
-            - element: resolved-claims~claim-link
-              caption: elements.resolved-claims~claim-no.label
-              size: 180px
-              css: u-ml-5 label-link
-            - element: resolved-claims~claim-state-name
-              caption: elements.resolved-claims~claim-state-name.label
-              size: 180px
-            - element: resolved-claims~date-resolved
-              caption: elements.resolved-claims~date-resolved.label
-              size: 180px
-            - element: resolved-claims~policy-link
-              caption: elements.resolved-claims~policy-label.label
-              size: auto
-              css: label-link
+          grid:
+            rows:
+              - cols:
+                  - caption: elements.resolved-claims~claim-no.label
+                    size: 180px
+                    css: u-ml-5 label-link
+                    elements:
+                      - name: resolved-claims~claim-link
+                  - caption: elements.resolved-claims~claim-state-name.label
+                    size: 180px
+                    elements:
+                      - name: resolved-claims~claim-state-name
+                  - caption: elements.resolved-claims~date-resolved.label
+                    size: 180px
+                    elements:
+                      - name: resolved-claims~date-resolved
+                  - caption: elements.resolved-claims~policy-label.label
+                    size: auto
+                    css: label-link
+                    elements:
+                      - name: resolved-claims~policy-link
       viewMode:
         ConditionalSectionViewModeRule:
           conditionElement: show-resolved-claims

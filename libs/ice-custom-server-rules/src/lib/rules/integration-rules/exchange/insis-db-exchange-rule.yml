@@ -5,9 +5,8 @@ implementations:
 
       Depending on query types, the `in` data will be list of JSON objects or list of objects corespondig `{ column_name: value }`.
 
-
-      icel:>
-        Using SQL query type with DefaultTransformationRule
+    icel: >
+      Using SQL query type with DefaultTransformationRule
         ```
         integration:
           exchange:
@@ -16,10 +15,10 @@ implementations:
               username: 'env:insis-db-username'
               password: 'env:insis-db-password'
               query: >-
-                SELECT 
-                  gname, 
-                  fname 
-                FROM p_people 
+                SELECT
+                  gname,
+                  fname
+                FROM p_people
                 WHERE fname != :fname
               queryType: SQL
           transformation:
@@ -43,7 +42,7 @@ implementations:
                     - payload: 'rows[n].FNAME'
                       element: users~fname
         ```
-        
+
         Using JSON query type with DefaultTransformationRule
         ```
         integration:
@@ -54,7 +53,7 @@ implementations:
               password: 'env:insis-db-password'
               query: >-
                 select JSON_OBJECT(
-                    'first_name' is gname, 
+                    'first_name' is gname,
                     'last_name' is fname
                 ) from p_people  WHERE p_people.fname != :fname
 
@@ -85,11 +84,18 @@ implementations:
         label: Connect string
         info: connectString is ip / port / dbname
         required: true
+      queryFileURL:
+        label: SQL Query File
+        info: >
+          Provide relative path to external SQL Query file (*.sql). Current repo-folder will be used as root for provided relative path to SQL file.
+          Full file url will be constructed by merging: [ice-repo-folder]/[queryFileURL]
+        type: text
+        required: false
       query:
         label: SQL Query
         info: This parameter can have dynamic parts that can be expressed as `:id` where `id` would be a param in the params part of the IntegrationData.
-        type: text
-        required: true
+        type: sql
+        required: false
       queryType:
         label: Output type
         info: For plain SQL queries select SQL for JSON_OBJECT ones select JSON

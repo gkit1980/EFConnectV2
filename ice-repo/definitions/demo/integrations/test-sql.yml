@@ -4,12 +4,7 @@ integration:
       connectString: 'env:insis-db-url'
       username: 'env:insis-db-username'
       password: 'env:insis-db-password'
-      query: >-
-        SELECT 
-          gname, 
-          fname 
-        FROM p_people 
-        WHERE p_people.fname != :fname
+      queryFileURL: data/test.sql
       queryType: SQL
   transformation:
     DefaultTransformationRule:

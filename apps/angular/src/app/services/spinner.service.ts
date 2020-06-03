@@ -1,17 +1,24 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Subject, Subscription } from 'rxjs';
-import { delay, map, debounceTime } from 'rxjs/operators';
+import { delay, debounceTime, tap, take } from 'rxjs/operators';
 
 import { IceContextService } from '@impeo/ng-ice';
-import { get } from 'lodash';
+import { get, forEach } from 'lodash';
+import { IceContext, LifecycleType } from '@impeo/ice-core';
 
 @Injectable()
 export class SpinnerService {
-  // counter of ongoing server operations - used to decide wether to show the spinner or not
-  private outstandingSpinnerShowRequests: number;
-  private serverOperationStarted: EventEmitter<void>;
-  private serverOperationEnded: EventEmitter<void>;
+  private serverOperationStarted: EventEmitter<string>;
+  private serverOperationEnded: EventEmitter<string>;
   private subscriptions: { [id: string]: Subscription[] } = {};
+  private delayedActions: string[] = [];
+  private actionsQueue: string[] = [];
+  private ignoreActions = [
+    'register-application',
+    'upload-single-claim-attachment-action',
+    'upload-file',
+    'update-claim'
+  ];
 
   public visible: Subject<boolean>;
 
@@ -22,69 +29,116 @@ export class SpinnerService {
 
     this.init({
       spinnerShowDelay: 600, // time to wait before showing any spinner
-      spinnerHideDebounceTime: 750 // keeps spinner window open for 0.75s
+      spinnerHideDebounceTime: 50, // keeps spinner window open for {N}ms
+      considerApplicationInnactiveTime: 120 * 1000 // declare application innactive after {N} minutes
     });
 
     this.contextService.$contextCreated.subscribe(contextAndContextId => {
-      const context = get(contextAndContextId, 'context');
-      const contextId = get(contextAndContextId, 'contextId');
-      this.subscriptions[contextId] = [];
-      this.subscriptions[contextId].push(
-        context.$actionStarted.subscribe((actionName: string) => {
-          this.actionStarted(actionName);
-        }),
-        context.$actionEnded.subscribe((actionName: string) => {
-          this.actionEnded(actionName);
-        })
-      );
+      const context = get(contextAndContextId, 'context') as IceContext;
+
+      const actionStart = (actionName: string) => {
+        if (this.shouldIgnoreAction(actionName)) return;
+        this.actionStarted(actionName);
+      };
+
+      const actionEnd = (actionName: string) => {
+        if (this.shouldIgnoreAction(actionName)) return;
+        this.actionEnded(actionName);
+      };
+
+      context.$lifecycle.subscribe(({ type, payload }) => {
+        if (type === LifecycleType.ACTION_STARTED) {
+          actionStart(payload.action);
+        } else if (type === LifecycleType.ACTION_FINISHED || type === LifecycleType.ACTION_FAILED) {
+          actionEnd(payload.action);
+        } else if (
+          type === LifecycleType.ICE_CONTEXT_DEACTIVATED ||
+          type === LifecycleType.ICE_APP_UNLOAD
+        ) {
+          // reset spinner state
+          this.delayedActions = [];
+          this.actionsQueue = [];
+          this.visible.next(this.makeNext());
+        }
+      });
     });
   }
 
   //
   //
-  public start(suppress?: boolean): void {
+  public start(actionName, suppress?: boolean): void {
     if (suppress) return;
-    this.serverOperationStarted.emit();
+    this.serverOperationStarted.emit(actionName);
   }
 
   //
   //
-  public stop(suppress?: boolean): void {
+  public stop(actionName, suppress?: boolean): void {
     if (suppress) return;
-    this.serverOperationEnded.emit();
+    this.serverOperationEnded.emit(actionName);
   }
+
+  shouldIgnoreAction = actionName => this.ignoreActions.indexOf(actionName) >= 0;
+
+  removeFromList = (actionName, list) => {
+    const index = list.indexOf(actionName);
+    if (index >= 0) {
+      list.splice(index, 1);
+    }
+  };
+
+  removeFromQueue = actionName => {
+    this.removeFromList(actionName, this.actionsQueue);
+  };
+
+  removeFromDelayed = actionName => {
+    this.removeFromList(actionName, this.delayedActions);
+  };
+
+  isDelayedAction = actionName => this.delayedActions.indexOf(actionName) >= 0;
+
+  makeNext = () => this.actionsQueue.length > 0;
 
   //
   //
   private init(options: any): void {
-    this.serverOperationStarted = new EventEmitter<void>();
-    this.serverOperationEnded = new EventEmitter<void>();
-    this.outstandingSpinnerShowRequests = 0;
+    this.serverOperationStarted = new EventEmitter<string>();
+    this.serverOperationEnded = new EventEmitter<string>();
+    this.actionsQueue = [];
 
-    this.serverOperationStarted.pipe(delay(options.spinnerShowDelay)).subscribe(() => {
-      this.outstandingSpinnerShowRequests++;
-      this.visible.next(this.outstandingSpinnerShowRequests > 0);
-    });
+    this.serverOperationStarted
+      .pipe(
+        tap(actionName => {
+          this.delayedActions.push(actionName);
+        })
+      )
+      .pipe(delay(options.spinnerShowDelay))
+      .subscribe(actionName => {
+        if (this.isDelayedAction(actionName)) {
+          this.removeFromDelayed(actionName);
+          this.actionsQueue.push(actionName);
+          this.visible.next(this.makeNext());
+        }
+      });
 
     this.serverOperationEnded
       .pipe(
-        map(() => {
-          this.outstandingSpinnerShowRequests--;
+        tap(actionName => {
+          this.removeFromDelayed(actionName);
+          this.removeFromQueue(actionName);
         }),
         debounceTime(options.spinnerHideDebounceTime)
       )
       .subscribe(() => {
-        this.visible.next(this.outstandingSpinnerShowRequests > 0);
+        this.visible.next(this.makeNext());
       });
   }
 
   private actionStarted(actionName: string): void {
-    if (actionName === 'register-application') return;
-    this.start(false);
+    this.start(actionName, false);
   }
 
   private actionEnded(actionName: string): void {
-    if (actionName === 'register-application') return;
-    this.stop(false);
+    this.stop(actionName, false);
   }
 }

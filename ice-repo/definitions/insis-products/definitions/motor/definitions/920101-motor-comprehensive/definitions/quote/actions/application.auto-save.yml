@@ -9,4 +9,4 @@ action:
         integration: 920101.motor.insis-policy.application.modify
   trigger:
     - IceLifecycleEventTriggerRule:
-        event: ICE_APP_UNLOAD
+        event: ICE_CONTEXT_DEACTIVATED

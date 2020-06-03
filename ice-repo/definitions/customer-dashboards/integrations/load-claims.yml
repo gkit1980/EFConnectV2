@@ -1,92 +1,77 @@
 integration:
   exchange:
-    SoapCallExchangeRule:
-      endpoint: insis_generic_endpoint
-      securityMode: UsernamePassword
-      username: 'env:insis-username'
-      password: 'env:insis-password'
-      ignoreNamespaces: 'env:insis-ignoreNamespaces'
-      soapAction: paginatedQuery
-      requestType: PaginatedQueryRqType
-      jsonSchema: Insis_GenericWS
+    InsisDBExchangeRule:
+      connectString: 'env:insis-db-url'
+      username: 'env:insis-db-username'
+      password: 'env:insis-db-password'
+      queryFileURL: data/get-client-claims.sql
+      queryType: SQL
   transformation:
-    InsisPaginatedQueryTransformation:
-      queryId: CLAIMS
-      additional: insis
+    DefaultTransformationRule:
       out:
         - mappings:
-            - param: soapAction
-              value: paginatedQuery
-            - param: requestType
-              value: PaginatedQueryRqType
-        - toIdx: 0
-          mappings:
-            - value: PID
-              payload: 'FilterCriteria.FilterCriterion[n].field'
-            - value: EQ
-              payload: 'FilterCriteria.FilterCriterion[n].operation'
             - principal: pid
-              payload: 'FilterCriteria.FilterCriterion[n].value'
+              param: PID
       in:
         - fromIdx:
-            array: payload.RowSet.Row
+            array: payload.rows
             condition: CLAIM_STATE == '1'
           toIdx:
             array: datamodel.claims
             append: true
           mappings:
-            - payload: 'RowSet.Row[n].POLICY_ID'
+            - payload: 'rows[n].POLICY_ID'
               element: claims~policy-id
-            - payload: 'RowSet.Row[n].POLICY_NO'
+            - payload: 'rows[n].POLICY_NO'
               element: claims~policy-no
-            - payload: 'RowSet.Row[n].INSR_TYPE'
+            - payload: 'rows[n].INSR_TYPE'
               element: claims~insr-type
-            - payload: 'RowSet.Row[n].INSR_TYPE_NAME'
+            - payload: 'rows[n].INSR_TYPE_NAME'
               element: claims~insr-type-name
-            - payload: 'RowSet.Row[n].CLAIM_ID'
+            - payload: 'rows[n].CLAIM_ID'
               element: claims~claim-id
-            - payload: 'RowSet.Row[n].CLAIM_NO'
+            - payload: 'rows[n].CLAIM_NO'
               element: claims~claim-no
-            - payload: 'RowSet.Row[n].REGISTRATION_DATE'
+            - payload: 'rows[n].REGISTRATION_DATE'
               element: claims~registration-date
-            - payload: 'RowSet.Row[n].EVENT_DATE'
+            - payload: 'rows[n].EVENT_DATE'
               element: claims~event-date
-            - payload: 'RowSet.Row[n].CLAIM_STATE'
+            - payload: 'rows[n].CLAIM_STATE'
               element: claims~claim-state
-            - payload: 'RowSet.Row[n].CLAIM_STATE_NAME'
+            - payload: 'rows[n].CLAIM_STATE_NAME'
               element: claims~claim-state-name
             - value: 'view-claim-active'
               element: claims~button-view-more
             - value: 'view-policy-active'
               element: claims~policy-link
         - fromIdx:
-            array: payload.RowSet.Row
+            array: payload.rows
             condition: CLAIM_STATE == '2'
           toIdx:
             array: datamodel.resolved-claims
             append: true
           mappings:
-            - payload: 'RowSet.Row[n].POLICY_ID'
+            - payload: 'rows[n].POLICY_ID'
               element: resolved-claims~policy-id
-            - payload: 'RowSet.Row[n].POLICY_NO'
+            - payload: 'rows[n].POLICY_NO'
               element: resolved-claims~policy-no
-            - payload: 'RowSet.Row[n].INSR_TYPE'
+            - payload: 'rows[n].INSR_TYPE'
               element: resolved-claims~insr-type
-            - payload: 'RowSet.Row[n].INSR_TYPE_NAME'
+            - payload: 'rows[n].INSR_TYPE_NAME'
               element: resolved-claims~insr-type-name
-            - payload: 'RowSet.Row[n].CLAIM_ID'
+            - payload: 'rows[n].CLAIM_ID'
               element: resolved-claims~claim-id
-            - payload: 'RowSet.Row[n].CLAIM_NO'
+            - payload: 'rows[n].CLAIM_NO'
               element: resolved-claims~claim-no
-            - payload: 'RowSet.Row[n].REGISTRATION_DATE'
+            - payload: 'rows[n].REGISTRATION_DATE'
               element: resolved-claims~registration-date
-            - payload: 'RowSet.Row[n].CLOSE_DATE'
+            - payload: 'rows[n].CLOSE_DATE'
               element: resolved-claims~date-resolved
-            - payload: 'RowSet.Row[n].EVENT_DATE'
+            - payload: 'rows[n].EVENT_DATE'
               element: resolved-claims~event-date
-            - payload: 'RowSet.Row[n].CLAIM_STATE'
+            - payload: 'rows[n].CLAIM_STATE'
               element: resolved-claims~claim-state
-            - payload: 'RowSet.Row[n].CLAIM_STATE_NAME'
+            - payload: 'rows[n].CLAIM_STATE_NAME'
               element: resolved-claims~claim-state-name
             - value: 'view-claim-resolved'
               element: resolved-claims~claim-link

@@ -5,18 +5,13 @@
   </mat-form-field>
 
   <mat-table [dataSource]="dataSource">
-    <ng-container *ngFor="let col of cols; let colIndex = index" [matColumnDef]="col.element">
-      <mat-header-cell
-        *matHeaderCellDef
-        [fxFlex]="getProp(col, 'size')"
-        [fxFlex.xs]="getProp(col, 'size', 'xs')"
-        [fxFlex.sm]="getProp(col, 'size', 'sm')"
-        [fxLayoutAlign]="getProp(col, 'align')"
-        [fxLayoutAlign.xs]="getProp(col, 'align', 'xs')"
-        [fxLayoutAlign.sm]="getProp(col, 'align', 'sm')"
-        [ngClass]="getProp(col, 'css')"
-      >
-        {{ getLabel(col) }}
+    <ng-container *ngFor="let col of cols; let colIndex = index" [matColumnDef]="getLabel(col)">
+      <mat-header-cell *matHeaderCellDef [fxFlex]="getProp(col, 'size')" [fxFlex.xs]="getProp(col, 'size', 'xs')"
+        [fxFlex.sm]="getProp(col, 'size', 'sm')" [fxLayoutAlign]="getProp(col, 'align')"
+        [fxLayoutAlign.xs]="getProp(col, 'align', 'xs')" [fxLayoutAlign.sm]="getProp(col, 'align', 'sm')"
+        [fxHide]="getProp(col, 'hide')" [fxHide.xs]="getProp(col, 'hide', 'xs')"
+        [fxHide.sm]="getProp(col, 'hide', 'sm')" [ngClass]="getProp(col, 'css')">
+        {{ getColLabel(col) }}
       </mat-header-cell>
       <mat-cell
         *matCellDef="let element; let i = index"
@@ -26,12 +21,22 @@
         [fxLayoutAlign]="getProp(col, 'align')"
         [fxLayoutAlign.xs]="getProp(col, 'align', 'xs')"
         [fxLayoutAlign.sm]="getProp(col, 'align', 'sm')"
+        [fxHide]="getProp(col, 'hide')"
+        [fxHide.xs]="getProp(col, 'hide', 'xs')"
+        [fxHide.sm]="getProp(col, 'hide', 'sm')"
         [ngClass]="getProp(col, 'css')"
       >
-        <ice-element [section]="section" [elementName]="col.element" [index]="[i]"></ice-element>
+        <ng-container *ngFor="let element of col.elements">
+          <ice-element
+          *ngIf="element"
+          [section]="section"
+          [elementName]="element.name"
+          [index]="[i]"
+        ></ice-element>
+        </ng-container>
       </mat-cell>
     </ng-container>
-    <mat-header-row *matHeaderRowDef="getColsNames()" fxLayout="row wrap"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: getColsNames()" fxLayout="row wrap"></mat-row>
+    <mat-header-row *matHeaderRowDef="getColsNames()" fxLayout="row nowrap"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: getColsNames()" fxLayout="row nowrap" #rows></mat-row>
   </mat-table>
 </section>

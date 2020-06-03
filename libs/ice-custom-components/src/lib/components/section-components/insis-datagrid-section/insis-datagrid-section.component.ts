@@ -1,19 +1,34 @@
-import { SectionComponentImplementation } from '@impeo/ng-ice';
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChildren,
+  QueryList,
+  ViewContainerRef,
+  ChangeDetectionStrategy,
+  Host,
+  ChangeDetectorRef
+} from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 import { get, map } from 'lodash';
+import { PageElement } from '@impeo/ice-core';
+import { SectionComponentImplementation, IceSectionComponent } from '@impeo/ng-ice';
+import { map as rxMap, debounceTime } from 'rxjs/operators';
 
 interface Col {
   size?: string;
   'size.xs'?: string;
   'size.sm'?: string;
   caption?: string;
-  element: string;
+  elements: any[];
+  hide: boolean;
+  'hide.xs': boolean;
+  'hide.sm': boolean;
 }
 
 @Component({
   selector: 'insis-datagrid-section',
-  templateUrl: './insis-datagrid-section.component.html'
+  templateUrl: './insis-datagrid-section.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class InsisDatagridSectionComponent extends SectionComponentImplementation
   implements OnInit {
@@ -21,24 +36,60 @@ export class InsisDatagridSectionComponent extends SectionComponentImplementatio
 
   defaults = {
     size: 'auto',
-    align: 'start center'
+    align: 'start center',
+    hide: false
   };
 
   dataSource: MatTableDataSource<any>;
 
   cols: Col[];
 
+  @ViewChildren('rows', { read: ViewContainerRef })
+  rows: QueryList<any>;
+
   get showFilter() {
     return this.getRecipeParam('showFilter', false);
   }
 
+  constructor(@Host() parent: IceSectionComponent, private changeDetectorRef: ChangeDetectorRef) {
+    super(parent);
+  }
+
+  //
+  //
   ngOnInit(): void {
     super.ngOnInit();
-    this.cols = this.getRecipeParam('cols');
+    const grid = this.getRecipeParam('grid');
+    this.cols = get(grid, ['rows', 0, 'cols'], []);
     const element = this.context.iceModel.elements[this.getRecipeParam('arrayElement')];
-    element.$dataModelValueChange.subscribe(e => {
-      const data = this.context.dataModel.getValue(this.getRecipeParam('arrayElement'));
-      this.dataSource = new MatTableDataSource<any>(data);
+
+    const getData = () => this.context.dataModel.getValue(this.getRecipeParam('arrayElement'));
+
+    this.changeDetectorRef.markForCheck();
+    this.dataSource = new MatTableDataSource<any>(getData());
+
+    element.$dataModelValueChange
+      .pipe(
+        debounceTime(50),
+        rxMap(() => getData())
+      )
+      .subscribe(data => {
+        this.dataSource = new MatTableDataSource<any>(data);
+        this.changeDetectorRef.markForCheck();
+      });
+  }
+
+  onChildNodeAdded(): void {
+    this.rows.forEach((row: any, index: number) => {
+      let visible = false;
+      this.getColsNames().forEach(colName => {
+        if (
+          (this.section.elements.find(element => element.name === colName).indexedElements[index]
+            .element as PageElement).viewModeRule.getViewMode({ index: [index] }) !== 'hidden'
+        )
+          visible = true;
+      });
+      if (!visible) row.element.nativeElement.classList.add('hide-row');
     });
   }
 
@@ -58,11 +109,18 @@ export class InsisDatagridSectionComponent extends SectionComponentImplementatio
 
   getLabel(col: Col): string {
     const key = get(col, 'caption', '');
-    return this.resource.resolve(key, null);
+    const resource = this.resource.resolve(key, null);
+    return resource || get(col.elements, [0, 'name'], '');
+  }
+
+  getColLabel(col: Col): string {
+    const key = get(col, 'caption', '');
+    const resource = this.resource.resolve(key, null);
+    return resource;
   }
 
   getColsNames() {
-    return map(this.getRecipeParam('cols'), item => item.element);
+    return map(this.cols, item => this.getLabel(item));
   }
 
   applyFilter(event: Event) {

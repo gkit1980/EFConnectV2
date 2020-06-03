@@ -1,8 +1,12 @@
 action:
   execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - claims
+          - resolved-claims
     - IntegrationExecutionRule:
         integration: load-claims
+
   trigger:
-    - PageTriggerRule:
-        enter:
-          - home
+    - IceLifecycleEventTriggerRule:
+        event: ICE_CONTEXT_ACTIVATED

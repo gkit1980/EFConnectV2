@@ -3,6 +3,7 @@ action:
     - ResetElementValueExecutionRule:
         elements:
           - policies
+          - expired-policies
     - IntegrationExecutionRule:
         integration: load-policies
   trigger:

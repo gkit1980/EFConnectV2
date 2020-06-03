@@ -75,26 +75,36 @@ page:
     - component:
         InsisDatagridSection:
           arrayElement: expired-policies
-          cols:
-            - element: expired-policies~more-actions
-              caption: null
-              size: 65px
-            - element: expired-policies~link
-              caption: elements.expired-policies.items.contract.policy-id.label
-              size: 200px
-              css: label-link
-            - element: expired-policies~product-name
-              caption: elements.expired-policies.items.contract.product-name.label
-              size: 200px
-            - element: expired-policies~ins-end-date
-              caption: elements.expired-policies.items.contract.end.label
-              size: 150px
-            - element: expired-policies~premium-total
-              caption: elements.expired-policies.items.insured.premium.total.label
-              size: 100px
-            - element: expired-policies~insured-objects
-              caption: elements.expired-policies.items.insured-object.label
-              size: auto
+          grid:
+            rows:
+              - cols:
+                  - caption: null
+                    size: 65px
+                    elements:
+                      - name: expired-policies~more-actions
+                  - caption: elements.expired-policies.items.contract.policy-id.label
+                    size: 200px
+                    css: label-link
+                    elements:
+                      - name: expired-policies~link
+                  - caption: >-
+                      elements.expired-policies.items.contract.product-name.label
+                    size: 200px
+                    elements:
+                      - name: expired-policies~product-name
+                  - caption: elements.expired-policies.items.contract.end.label
+                    size: 150px
+                    elements:
+                      - name: expired-policies~ins-end-date
+                  - caption: >-
+                      elements.expired-policies.items.insured.premium.total.label
+                    size: 100px
+                    elements:
+                      - name: expired-policies~premium-total
+                  - caption: elements.expired-policies.items.insured-object.label
+                    size: auto
+                    elements:
+                      - name: expired-policies~insured-objects
       viewMode:
         ConditionalSectionViewModeRule:
           conditionElement: show-expired-policies
