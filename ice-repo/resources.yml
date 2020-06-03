@@ -858,6 +858,11 @@ entries:
             - list
             - of
             - something
+    no-active-policies:
+      label:
+        - en: You have no active policies
+          de: You have no active policies
+    no-policies: {}
   validation:
     pageValidation:
       summary:

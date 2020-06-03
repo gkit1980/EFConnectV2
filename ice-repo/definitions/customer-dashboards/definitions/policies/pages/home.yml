@@ -14,8 +14,38 @@ page:
                     size.xs: auto
                     size.sm: auto
                     elements:
+                      - name: no-active-policies
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: get-more-insurance
+      viewMode:
+        ChangeViewModeBasedOnArrayLengthRule:
+          condition: equals
+          conditionValue: '0'
+          viewMode: default
+          elseViewMode: hidden
+          array: policies
+    - component:
+        IceFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
                       - name: policies-title
                     css: mat-title
+      viewMode:
+        ChangeViewModeBasedOnArrayLengthRule:
+          condition: greater
+          conditionValue: '0'
+          array: policies
+          viewMode: default
+          elseViewMode: hidden
     - component:
         IceArrayFlexSection:
           grid:
@@ -63,6 +93,13 @@ page:
           arrayElement: policies
           behaviourForEmptyRows: null
           css: policies-grid
+      viewMode:
+        ChangeViewModeBasedOnArrayLengthRule:
+          array: policies
+          condition: greater
+          conditionValue: '0'
+          viewMode: default
+          elseViewMode: hidden
     - component:
         IceFlexSection:
           grid:
@@ -72,6 +109,13 @@ page:
                     css: u-mt-2
                     elements:
                       - name: show-expired-policies
+      viewMode:
+        ChangeViewModeBasedOnArrayLengthRule:
+          array: expired-policies
+          condition: greater
+          conditionValue: '0'
+          viewMode: default
+          elseViewMode: hidden
     - component:
         InsisDatagridSection:
           arrayElement: expired-policies
