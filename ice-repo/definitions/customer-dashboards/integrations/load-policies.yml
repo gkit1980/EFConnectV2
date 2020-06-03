@@ -22,6 +22,8 @@ integration:
           mappings:
             - payload: 'rows[n].PREMIUM'
               element: policies~premium-total
+            - payload: 'rows[n].INSR_BEGIN'
+              element: policies~ins-start-date
             - payload: 'rows[n].INSURANCE_END'
               element: policies~ins-end-date
             - payload: 'rows[n].POLICY_ID'
