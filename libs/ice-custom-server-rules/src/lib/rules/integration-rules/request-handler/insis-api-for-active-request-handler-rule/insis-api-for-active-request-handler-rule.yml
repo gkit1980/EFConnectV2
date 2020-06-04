@@ -12,14 +12,15 @@ implementations:
         label: Bucket for Validation
         required: false
         type: bucket
-      endpoint.route:
-        label: Endpoint route
-        required: true
-        type: text
-      endpoint.method:
-        label: Endpoint method
-        required: true
-        type: text
+      endpoint:
+        route:
+          label: Endpoint route
+          required: true
+          type: text
+        method:
+          label: Endpoint method
+          required: true
+          type: text
 
     icel: >
       ```
