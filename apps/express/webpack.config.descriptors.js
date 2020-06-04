@@ -102,8 +102,8 @@ function saveYamlContent(filePath, content) {
 }
 
 class MergeRuleDescriptorsPlugin {
-  constructor(inputFolder, outputFolder) {
-    this.inputFolder = inputFolder;
+  constructor(inputFolders, outputFolder) {
+    this.inputFolders = inputFolders;
     this.outputFolder = outputFolder;
   }
 
@@ -116,7 +116,12 @@ class MergeRuleDescriptorsPlugin {
   }
 
   emitHookHandler(compilation) {
-    const descriptorFiles = getDescriptorFiles(this.inputFolder);
+    const descriptorFiles = this.inputFolders.reduce((all, folder) => {
+      const files = getDescriptorFiles(folder);
+      all = all.concat(files);
+      return all;
+    }, []);
+
     const allDescriptors = {};
 
     descriptorFiles.forEach(file => {
@@ -194,8 +199,10 @@ module.exports = function(webpackConfig) {
           flatten: true
         }))
     ),
-    new MergeRuleDescriptorsPlugin(rulesInputFolder, ruleDescriptorsOutputFolder),
-    new MergeRuleDescriptorsPlugin(serverRulesInputFolder, ruleDescriptorsOutputFolder)
+    new MergeRuleDescriptorsPlugin(
+      [rulesInputFolder, serverRulesInputFolder],
+      ruleDescriptorsOutputFolder
+    )
   );
 
   return webpackConfig;
