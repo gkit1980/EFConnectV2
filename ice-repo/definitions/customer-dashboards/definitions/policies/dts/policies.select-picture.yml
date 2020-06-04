@@ -8,6 +8,6 @@ dt:
       type: string
   rules:
     - inputs:
-        - '1001'
+        - '920101'
       outputs:
         - /assets/icons/car.svg

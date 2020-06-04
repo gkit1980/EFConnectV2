@@ -17,8 +17,8 @@ SELECT insr_type,
     quote_status_name,
     rejection_reason_id,
     rejection_reason_name
-FROM ( 
-    WITH 
+FROM (
+    WITH
     pol_info AS
 ( SELECT p.*, pn.client_pid
 FROM policy p, policy_names pn
@@ -76,9 +76,9 @@ GROUP BY a.policy_id )
 ,
             prem_tab AS
 ( SELECT grc.policy_id,
-    CASE WHEN NVL(grc.add_premium, 0) = 0 
+    CASE WHEN NVL(grc.add_premium, 0) = 0
                       THEN GREATEST ( NVL( wp.wp_premium, grc.grc_premium), 0)
-                      ELSE GREATEST ( grc.grc_premium, 0) 
+                      ELSE GREATEST ( grc.grc_premium, 0)
                   END AS prm
 FROM grc, wp
 WHERE grc.policy_id = wp.policy_id )

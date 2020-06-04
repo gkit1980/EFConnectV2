@@ -24,7 +24,7 @@ integration:
               element: policies~premium-total
             - payload: 'rows[n].INSR_BEGIN'
               element: policies~ins-start-date
-            - payload: 'rows[n].INSURANCE_END'
+            - payload: 'rows[n].INSR_END'
               element: policies~ins-end-date
             - payload: 'rows[n].POLICY_ID'
               element: policies~policy-id
@@ -32,7 +32,7 @@ integration:
               element: policies~policy-no
             - payload: 'rows[n].PRODUCT_NAME'
               element: policies~product-name
-            - payload: 'rows[n].PRODUCT_ID'
+            - payload: 'rows[n].INSR_TYPE'
               element: policies~product-code
             - payload: 'rows[n].INSURED_OBJECT'
               element: policies~insured-objects
@@ -48,7 +48,7 @@ integration:
           mappings:
             - payload: 'rows[n].PREMIUM'
               element: expired-policies~premium-total
-            - payload: 'rows[n].INSURANCE_END'
+            - payload: 'rows[n].INSR_END'
               element: expired-policies~ins-end-date
             - payload: 'rows[n].POLICY_ID'
               element: expired-policies~policy-id

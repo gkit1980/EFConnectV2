@@ -3,3 +3,6 @@ element:
   viewMode:
     StaticViewModeRule:
       viewMode: output
+  defaultValue:
+    StaticValueRule:
+      value: EUR

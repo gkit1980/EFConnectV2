@@ -6,5 +6,4 @@ element:
   component:
     StaticComponentRule:
       component:
-        InsisCurrency:
-          currencyElementName: quotes~currency
+        InsisCurrency: {}

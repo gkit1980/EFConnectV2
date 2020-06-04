@@ -1,13 +1,37 @@
 import { IceCurrencyComponent } from '@impeo/ng-ice';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IndexedValue } from '@impeo/ice-core';
+import { clone, defaults, get } from 'lodash';
 
 @Component({
   selector: 'insis-currency',
   templateUrl: './insis-currency.component.html'
 })
-export class InsisCurrencyComponent extends IceCurrencyComponent {
+export class InsisCurrencyComponent extends IceCurrencyComponent implements OnInit {
   static componentName = 'InsisCurrency';
+
+  options: any;
+
+  ngOnInit() {
+    super.ngOnInit();
+  }
+
+  //
+  //
+  onBlur(): void {
+    let value = this.getComponentValue();
+
+    if (!value || !value.length || (typeof value === 'string' && value.trim().length === 0)) {
+      value = '';
+    }
+
+    value = get(value.split(/\s+/g), [0], '');
+    this.value = Number(value);
+
+    this.onComponentValueChange();
+    this.setComponentValue(value);
+  }
+
   //
   //
   protected get currencyCode(): string {
@@ -21,7 +45,7 @@ export class InsisCurrencyComponent extends IceCurrencyComponent {
   }
 
   setComponentValue(value: any): void {
-    this.value = `${value} ${this.currencyCode}`;
+    this.value = `${value || 0} ${this.currencyCode}`;
   }
 
   //

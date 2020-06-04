@@ -35,8 +35,6 @@ integration:
               element: quotes~policy-number
             - payload: 'rows[n].PREMIUM'
               element: quotes~price
-            - payload: 'rows[n].CURRENCY'
-              element: quotes~currency
             - payload: 'rows[n].PRODUCT_NAME'
               element: quotes~product.name
             - payload: 'rows[n].QUOTE_ID'
