@@ -1,0 +1,25 @@
+implementations:
+  InsisDtListValuesRule:
+    description: >
+      This rule will get from a specific DT it's output as list name then act as standard ListValuesRule.
+    params:
+      dt:
+        label: Decision table to output list name
+        type: string
+        required: true
+      dtOutput:
+        label: Custom decision table output column name
+        type: string
+        required: false
+    icel: >
+      ```
+        element:
+          type: text
+          component:
+            StaticComponentRule:
+              component:
+                IceDropdown: {}
+          values:
+            InsisDtListValuesRule:
+              dt: event.types.values
+      ```

@@ -1,0 +1,29 @@
+implementations:
+  InsisDynamicValuesListRule:
+    description: This is a values rule which will provide dinamically values based on change in the value of a particular element.
+    params:
+      pathElements:
+        info: Specify elements which will trigger re-evaluation of the values returned by this rule
+        label: Change Elements
+        type: elements
+      datastoreRootPath:
+        info: Path to the object inside Datastore. Example datastore.[datastoreRootPath].[element_1]
+        label: DataStore Root Path
+        type: text
+        required: true
+    icel: >
+      ```
+        element:
+          type: text
+          values:
+            InsisDynamicValuesListRule:
+              datastoreRootPath: vehicles-data
+              pathElements:
+                - policy.insured.vehicle-objects~car.brand
+                - policy.insured.path-fuel-types
+                - policy.insured.vehicle-objects~car.model
+          component:
+            StaticComponentRule:
+              component:
+                IceDropdown: {}
+      ```

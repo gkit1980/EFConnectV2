@@ -1,6 +1,6 @@
 action:
   execution:
-    - CopyValueExecutionRule:
+    - InsisCopyValueExecutionRule:
         source: resolved-claims~policy-id
         destination: policy-to-view
     - DtNavigateToDefinitionExecutionRule:

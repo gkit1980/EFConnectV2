@@ -1,0 +1,26 @@
+implementations:
+  InsisOpenPdfExecutionRule:
+    description: >
+      This rule downloads pdf and knows where to get the data from
+    params:
+      element:
+        label: some element name to get the data from
+        type: text
+      datastorePath:
+        label: some path to the datastore to get the data
+        type: text
+      mode:
+        label: do we want to open (mode=open) or save (mode=download) pdf files
+        type: text
+      filename:
+        label: filename for the pdf file; default value is 'unknown.pdf'
+        type: text
+    icel: >
+      ```
+        action:
+          execution:
+            - InsisOpenPdfExecutionRule:
+                datastorePath: printData.0.data
+                mode: download
+                filename: Policy.pdf
+      ```

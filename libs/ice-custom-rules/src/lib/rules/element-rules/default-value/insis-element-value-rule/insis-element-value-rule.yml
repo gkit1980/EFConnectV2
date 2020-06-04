@@ -1,0 +1,28 @@
+implementations:
+  InsisElementValueRule:
+    description: Sets the value of an element or array item to Source element's value.
+      It is possible to condition it on element's index, eg. set default value only for the first item of an array.
+    params:
+      index:
+        label: Array item index
+        type: integer
+        required: false
+
+      element:
+        label: Source element
+        type: element
+        required: true
+
+      sourceElementIndex:
+        label: Index of source element when source element is an array
+        type: integers
+        required: false
+    icel: >
+      ```
+        element:
+          type: date
+          defaultValue:
+            InsisElementValueRule:
+              element: policy.participants.holder.person.date-of-birth
+              index: 0
+      ```

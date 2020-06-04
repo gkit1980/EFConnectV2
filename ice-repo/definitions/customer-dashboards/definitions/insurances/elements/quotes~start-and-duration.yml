@@ -4,7 +4,7 @@ element:
     StaticViewModeRule:
       viewMode: output
   mirror:
-    InsuranceDateAndDurationMirrorRule:
+    InsisInsuranceDateAndDurationMirrorRule:
       dateFormat: YYYY.MM.DD
       durationUnitList: quotes.duration-unit
       startDateElement: quotes~insurance.start

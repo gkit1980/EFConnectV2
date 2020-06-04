@@ -1,0 +1,31 @@
+implementations:
+  InsisHideSectionWhenArrayElementIsEmpty:
+    description: View mode that hides section when array element is empty
+    params:
+      array:
+        info: Array element
+        label: Array element
+        required: true
+        type: element
+    icel: >
+      ```
+        page:
+          validation: {}
+          component:
+            InsisSimplePage: {}
+          sections:
+            - component:
+                IceFlexSection:
+                  grid:
+                    rows:
+                      - cols:
+                          - size: auto
+                            size.xs: auto
+                            size.sm: auto
+                            elements:
+                              - name: quotes-title
+                            css: mat-display-1 u-mb-6
+              viewMode:
+                InsisHideSectionWhenArrayElementIsEmpty:
+                  array: quotes
+      ```

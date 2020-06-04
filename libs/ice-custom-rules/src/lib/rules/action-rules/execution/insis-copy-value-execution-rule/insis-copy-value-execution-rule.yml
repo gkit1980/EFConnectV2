@@ -1,0 +1,22 @@
+implementations:
+  InsisCopyValueExecutionRule:
+    description: >-
+      Copies an element value from a source element to an destinition element,
+      taking index handling for arrays into account
+    params:
+      source:
+        label: Source Element
+        type: element
+        required: true
+      destination:
+        label: Destination Element
+        type: element
+        required: true
+    icel: >
+      ```
+        action:
+          execution:
+            - InsisCopyValueExecutionRule:
+                source: quotes~policy-id
+                destination: selected.quote-to-cancel
+      ```

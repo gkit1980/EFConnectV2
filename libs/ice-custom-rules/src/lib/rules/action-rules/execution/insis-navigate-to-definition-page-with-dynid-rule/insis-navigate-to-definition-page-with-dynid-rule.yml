@@ -1,0 +1,28 @@
+implementations:
+  InsisNavigateToDefinitionPageWithDynidRule:
+    description: >-
+      Navigate to definition with dynid in the url specified by element
+    params:
+      dynIdElement:
+        label: element that provides dynid value
+        info: element that provides dynid value
+        type: element
+        required: true
+      definition:
+        label: destination definition
+        info: destination definition
+        type: text
+        required: true
+      page:
+        label: destination page
+        info: destination page
+        type: page
+    icel: >
+      ```
+        action:
+          title: converts an application to a policy
+          execution:
+            - InsisNavigateToDefinitionPageWithDynidRule:
+                dynIdElement: claims~client-pid
+                definition: agent.client-details
+      ```

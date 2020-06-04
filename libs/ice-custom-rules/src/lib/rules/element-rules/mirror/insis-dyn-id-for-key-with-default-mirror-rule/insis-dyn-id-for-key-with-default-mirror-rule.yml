@@ -1,0 +1,25 @@
+implementations:
+  InsisDynIdForKeyWithDefaultMirrorRule:
+    description: >
+      sets the element value by getting the dynId from the _DataStore_.
+      if the value from the _DataStore_ is null, the defualtValue is used.
+    params:
+      key:
+        label: key
+        required: true
+        type: text
+      defaultValue:
+        label: Default Value
+        required: false
+        type: text
+    icel: >
+      ```
+        element:
+          title: engagement id of the contract
+          type: text
+          defaultValue: '-1'
+          mirror: 
+            InsisDynIdForKeyWithDefaultMirrorRule:
+              key: eng
+              defaultValue: '-1'
+      ```

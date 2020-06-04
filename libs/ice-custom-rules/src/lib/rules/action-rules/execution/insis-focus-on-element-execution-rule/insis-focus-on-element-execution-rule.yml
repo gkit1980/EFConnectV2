@@ -1,0 +1,23 @@
+implementations:
+  InsisFocusOnElementExecutionRule:
+    description: Focuses on specified element. If the element is array item the last element in the parent array is selected.
+
+    params:
+      element:
+        label: Element
+        type: element
+        required: true
+    icel: >
+      ```
+        element:
+          type: action
+          component:
+            StaticComponentRule:
+              component:
+                IceButton:
+                  themeColor: primary
+                  variant: flat
+          change:
+            - InsisFocusOnElementExecutionRule:
+                element: basic-input
+      ```

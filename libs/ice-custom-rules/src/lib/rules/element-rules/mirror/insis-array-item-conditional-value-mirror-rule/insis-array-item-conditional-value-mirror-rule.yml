@@ -1,0 +1,30 @@
+implementations:
+  InsisArrayItemConditionalValueMirrorRule:
+    description: >
+      Mirrors the value of a mirroredArrayItem for index for
+      which conditionalArrayItem has the same value as originElement.
+    params:
+      originElement:
+        label: Origin element
+        required: true
+        type: element
+      conditionalArrayItem:
+        label: Conditional array item
+        info: the array element
+        required: true
+        type: element
+      mirroredArrayItem:
+        label: Mirrored array item
+        info: the array element
+        required: true
+        type: element
+    icel: >
+      ```
+        element:
+          type: text
+          mirror:
+            InsisArrayItemConditionalValueMirrorRule:
+              mirroredArrayItem: document-categories~doc-seq
+              conditionalArrayItem: document-categories~document-name
+              originElement: new-document-type
+      ```

@@ -1,9 +1,0 @@
-implementations:
-  HideSectionWhenArrayElementIsEmpty:
-    description: View mode that hides section when array element is empty
-    params:
-      array:
-        info: Array element
-        label: Array element
-        required: true
-        type: element

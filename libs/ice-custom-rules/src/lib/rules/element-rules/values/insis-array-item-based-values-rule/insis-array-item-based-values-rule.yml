@@ -1,0 +1,23 @@
+implementations:
+  InsisArrayItemBasedValuesRule:
+    description: returns values based on array item values.
+    params:
+      valueElement:
+        label: Array element for the value
+        type: element
+        required: true
+      labelElement:
+        label: Array element for the label
+        type: element
+        required: true
+    icel: >
+      ```
+        element:
+          type: text
+          component: IceRadiobuttonGroup
+          viewMode: default
+          values:
+            InsisArrayItemBasedValuesRule:
+              valueElement: policy.participants.holder.person.accounts~iban
+              labelElement: policy.participants.holder.person.accounts~iban
+      ```

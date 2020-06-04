@@ -1,0 +1,73 @@
+_options: &view_mode_options
+  default: Default
+  hidden: Hidden
+  disabled: Disabled
+  output: Output
+  required: Required
+
+implementations:
+  InsisAllArrayIndexDtViewModeRule:
+    description: determines the ViewMode in dependence of the value of each sibling arrayElement based on the index
+    params:
+      dt:
+        label: DT
+        required: true
+        type: dt
+        info: a dt used to evaluate the value of the arrayElement with the same index
+      arrayElement:
+        label: Array Element
+        required: true
+        type: element
+        info: a sibling array element
+      conditionViewMode:
+        label: Conditonal ViewMode
+        required: true
+        type: select
+        options: *view_mode_options
+        info: the ViewMode this element has if the dt returns true
+      elseViewMode:
+        label: Else ViewMode
+        type: select
+        options: *view_mode_options
+        info: ViewMode this element has if the dt retutns falsе
+    icel: >
+      ```
+        # element name - incident.requests~confirm
+        element:
+          type: action
+          action:
+            execution:
+              - IntegrationExecutionRule:
+                  integration: confirm-all-request-services
+          component:
+            StaticComponentRule:
+              component:
+                IceButton:
+                  iconName: check_circle
+                  themeColor: accent
+          viewMode:
+            InsisAllArrayIndexDtViewModeRule:
+              dt: incident.requests.services.confirmed-amount
+              arrayElement: incident.requests~services
+              conditionViewMode: default
+              elseViewMode: disabled
+
+        # dt - incident.requests.services.confirmed-amount
+        dt:
+          hitPolicy: C
+          inputs:
+            - label: amount
+              element: incident.requests~services~confirmed-amount
+          outputs:
+            - id: value
+              type: boolean
+          rules:
+            - inputs:
+                - not(null)
+              outputs:
+                - true
+            - inputs:
+                - "-"
+              outputs:
+                - false
+      ```

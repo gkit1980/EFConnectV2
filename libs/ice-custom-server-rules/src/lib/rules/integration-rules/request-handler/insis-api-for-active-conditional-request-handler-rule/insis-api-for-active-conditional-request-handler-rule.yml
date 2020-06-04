@@ -1,0 +1,38 @@
+implementations:
+  InsisApiForActiveConditionalRequestHandlerRule:
+    description: >
+      Executes active integration if condition element equals condition value, else it executes elseActiveIntegration.
+
+    params:
+      activeIntegration:
+        lable: Active integration
+        required: true
+        type: integration
+      elseActiveIntegration:
+        lable: Else active integration
+        required: true
+        type: integration
+      bucket:
+        label: Bucket for validation
+        required: false
+        type: bucket
+      endpoint.route:
+        label: Endpoint route
+        required: true
+        type: text
+      endpoint.method:
+        label: Endpoint method
+        required: true
+        type: text
+      conditionElement:
+        label: Condition element
+        required: true
+        type: element
+      conditionValue:
+        label: Condition value
+        required: true
+        type: text
+
+    icel: >
+      ```
+      ```

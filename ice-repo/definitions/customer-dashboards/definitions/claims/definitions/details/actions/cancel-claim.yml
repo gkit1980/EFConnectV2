@@ -1,6 +1,6 @@
 action:
   execution:
-    - CopyValueExecutionRule:
+    - InsisCopyValueExecutionRule:
         source: incident.claim-id
         destination: claim-to-cancel
     - IntegrationExecutionRule:

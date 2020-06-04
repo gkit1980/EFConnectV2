@@ -1,7 +1,7 @@
 integration:
   type: active
   exchange:
-    StaticJsonExchangeRule:
+    InsisStaticJsonExchangeRule:
       dataFileName: motor_makes_models.json
   transformation:
     DefaultTransformationRule:

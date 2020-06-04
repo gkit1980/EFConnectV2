@@ -1,0 +1,16 @@
+implementations:
+  InsisPostMessageEventTriggerRule:
+    description: >-
+      Trigger rule that activates action on custom post message event
+    params:
+      event: name of the event
+      required: true
+      type: text
+      label: Event
+    icel: >
+      ```
+        action:
+          trigger:
+            - InsisPostMessageEventTriggerRule:
+                event: refresh-cases
+      ```

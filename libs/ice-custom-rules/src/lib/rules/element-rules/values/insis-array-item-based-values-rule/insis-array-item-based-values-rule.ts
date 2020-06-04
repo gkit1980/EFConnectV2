@@ -1,0 +1,52 @@
+import { ValuesRule, IceElement, IceType } from '@impeo/ice-core';
+import { map } from 'lodash';
+
+//
+//
+export class InsisArrayItemBasedValuesRule extends ValuesRule {
+  private valueElement: IceElement;
+  private labelElement: IceElement;
+
+  //
+  //
+
+  //
+  //
+  public getValues(index: number[] | null): any[] {
+    this.initialize();
+    return map(this.getItems(index), item =>
+      IceType.sanitizeValueToElementType(item.value, this.element)
+    );
+  }
+
+  //
+  //
+  getOptions(index: number[] | null): { value: string; label: string }[] {
+    this.initialize();
+    return this.getItems(index);
+  }
+
+  protected getItems(index: number[] | null): any[] {
+    const items = map(this.valueElement.getValue().values, value => {
+      return {
+        value: value.value,
+        label: this.labelElement.getValue().forIndex(value.index)
+      };
+    });
+    const emptyItemResourceKey = this.element.name + '.empty';
+    items.push({
+      value: null,
+      label: this.resource.resolve(emptyItemResourceKey, 'Add resourse yourElementName.empty')
+    });
+    return items;
+  }
+
+  //
+  //
+  private initialize(): void {
+    if (this.valueElement != null) return;
+    this.valueElement = this.requireElement('valueElement');
+    this.labelElement = this.requireElement('labelElement');
+    this.triggerReevaluationOnElementsChange([this.valueElement, this.labelElement]);
+  }
+}

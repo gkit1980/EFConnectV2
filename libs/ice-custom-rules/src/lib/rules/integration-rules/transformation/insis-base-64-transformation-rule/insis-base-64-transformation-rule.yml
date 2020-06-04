@@ -1,0 +1,51 @@
+implementations:
+  InsisBase64TransformationRule:
+    description: Can transform element string to base64 value
+    icel: >
+      ```
+        integration:
+          exchange:
+            SoapCallExchangeRule:
+              endpoint: insis_generic_endpoint
+              securityMode: UsernamePassword
+              username: 'env:insis-username'
+              password: 'env:insis-password'
+              ignoreNamespaces: 'env:insis-ignoreNamespaces'
+              soapAction: uploadAttachments
+              requestType: UploadAttachmentsRqType
+          transformation:
+            InsisBase64TransformationRule:
+              additional: insis
+              dateFormat: YYYY-MM-DD
+              dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
+              out:
+                - mappings:
+                    - param: soapAction
+                      value: uploadAttachments
+                    - param: requestType
+                      value: UploadAttachmentsRqType
+                - mappings:
+                    - value: ClaimId
+                      payload: ReferenceID.IDComponent[0].attributes.name
+                    - element: claim.id
+                      payload: ReferenceID.IDComponent[0].$value
+                    - value: AttachmentType
+                      payload: ReferenceID.IDComponent[1].attributes.name
+                    - value: 1
+                      payload: ReferenceID.IDComponent[1].$value
+                - mappings:
+                    - value: 'CLAIM'
+                      payload: ReferenceType
+                    - value: 'WF_ATTACHMENT'
+                      payload: ContainerType
+                - mappings:
+                    - element: new-document-name
+                      payload: BinaryAttachments.BinaryAttachment[0].FileName
+                    - value: 'plain/text'
+                      payload: BinaryAttachments.BinaryAttachment[0].MimeType
+                    - element: new-document-select
+                      payload: BinaryAttachments.BinaryAttachment[0].Data
+              in:
+                - datastore: test.lattestAttachmentWFID
+                  payload: '*'
+      ```

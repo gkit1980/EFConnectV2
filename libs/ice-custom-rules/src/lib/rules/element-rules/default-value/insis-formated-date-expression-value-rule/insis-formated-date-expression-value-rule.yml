@@ -1,0 +1,23 @@
+implementations:
+  InsisFormatedDateExpressionValueRule:
+    description: Sets the value of an element to a date defined in the configured expression. The date can be formated using the format param.
+    params:
+      expression:
+        label: Expression
+        type: text
+        required: true
+        info: example - date('2015-07-03') or you can set it to now
+
+      format:
+        label: Format
+        type: text
+        required: false
+    icel: >
+      ```
+        element:
+          type: text
+          defaultValue:
+            InsisFormatedDateExpressionValueRule:
+              expression: now
+              format: 'DDhhmmss'
+      ```

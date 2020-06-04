@@ -1,0 +1,49 @@
+implementations:
+  InsisDtArrayItemFromResourceValueRule:
+    description: >
+      Gets the name of a resource for an array item element based on the index from a decision table.
+      Then returns the value of the resourse based on the locale. If index is not defined null is returned.
+    params:
+      dt:
+        label: Decision table
+        type: dt
+        required: true
+        info: the decision table with the values used for each index
+      output:
+        label: Output column
+    icel: >
+      ```
+        # element example
+        element:
+          type: text
+          defaultValue:
+            InsisDtArrayItemFromResourceValueRule:
+              dt: covers
+              output: cover-name-key
+        
+        # dt example 
+        dt:
+          output-label: covers
+          hitPolicy: C
+          inputs:
+            - label: Is Member
+              element: policy.participants.holder.person.is-member
+          outputs:
+            - label: cover code
+              id: cover-code
+              type: string
+            - label: cover name key
+              id: cover-name-key
+              type: string
+          rules:
+            - inputs:
+                - '-'
+              outputs:
+                - OUTPAT
+                - elements.policy.insured.object.available-covers.outpat
+            - inputs:
+                - '-'
+              outputs:
+                - DENTIST
+                - elements.policy.insured.object.available-covers.dentist
+      ```

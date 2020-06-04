@@ -1,0 +1,21 @@
+implementations:
+  InsisNoopExchangeRule:
+    description: >
+      Just returns the request payload as response. Available on the client. Usefull to use IN/OUT transformations to move data 
+      between ICE Data Model, Datastore, etc
+    icel: >
+      ```
+        integration:
+          exchange:
+            InsisNoopExchangeRule: {}
+          transformation:
+            DefaultTransformationRule:
+              out:
+                - mappings:
+                    - element: "search-cases.*"
+                      payload: "*"
+              in:
+                - mappings:
+                  - payload: "*"
+                    datastore: agent-cases
+      ```

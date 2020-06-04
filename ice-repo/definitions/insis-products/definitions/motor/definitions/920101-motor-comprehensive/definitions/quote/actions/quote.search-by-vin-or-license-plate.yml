@@ -11,7 +11,7 @@ action:
         elements:
           - policy.insured.vehicle-objects~car.search.input
   execution:
-    - CopyValueExecutionRule:
+    - InsisCopyValueExecutionRule:
         source: policy.insured.vehicle-objects~car.index
         destination: selected-vehicle-index
     - IntegrationExecutionRule:

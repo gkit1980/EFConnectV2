@@ -1,6 +1,6 @@
 action:
   execution:
-    - CopyValueExecutionRule:
+    - InsisCopyValueExecutionRule:
         source: quotes~id
         destination: selected.quote.number
     - IntegrationExecutionRule:

@@ -1,0 +1,20 @@
+implementations:
+  InsisNavigateToPageFeelExecutionRule:
+    description: >
+      Navigates to page using feel expression
+    params:
+      expression:
+        label: FEEL expression
+        type: feel
+        required: true
+    icel: >
+      ```
+        action:
+          trigger:
+            - ElementChangeTriggerRule:
+                elements:
+                  - go-to-another-page-dropdown
+          execution:
+            - InsisNavigateToPageFeelExecutionRule:
+                expression: element("go-to-another-page-dropdown")
+      ```

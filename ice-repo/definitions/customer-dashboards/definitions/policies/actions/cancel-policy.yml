@@ -1,6 +1,6 @@
 action:
   execution:
-    - CopyValueExecutionRule:
+    - InsisCopyValueExecutionRule:
         source: policies~policy-id
         destination: selected-policy-id
     - IntegrationExecutionRule:

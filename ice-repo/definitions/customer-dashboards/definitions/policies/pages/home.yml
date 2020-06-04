@@ -22,7 +22,7 @@ page:
                     elements:
                       - name: get-more-insurance
       viewMode:
-        ChangeViewModeBasedOnArrayLengthRule:
+        InsisChangeViewModeBasedOnArrayLengthRule:
           condition: equals
           conditionValue: '0'
           viewMode: default
@@ -40,7 +40,7 @@ page:
                       - name: policies-title
                     css: mat-title
       viewMode:
-        ChangeViewModeBasedOnArrayLengthRule:
+        InsisChangeViewModeBasedOnArrayLengthRule:
           condition: greater
           conditionValue: '0'
           array: policies
@@ -94,7 +94,7 @@ page:
           behaviourForEmptyRows: null
           css: policies-grid
       viewMode:
-        ChangeViewModeBasedOnArrayLengthRule:
+        InsisChangeViewModeBasedOnArrayLengthRule:
           array: policies
           condition: greater
           conditionValue: '0'
@@ -110,7 +110,7 @@ page:
                     elements:
                       - name: show-expired-policies
       viewMode:
-        ChangeViewModeBasedOnArrayLengthRule:
+        InsisChangeViewModeBasedOnArrayLengthRule:
           array: expired-policies
           condition: greater
           conditionValue: '0'

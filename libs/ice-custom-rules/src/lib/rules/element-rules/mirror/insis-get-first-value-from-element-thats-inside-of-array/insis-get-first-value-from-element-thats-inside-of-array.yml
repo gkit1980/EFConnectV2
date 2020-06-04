@@ -1,0 +1,19 @@
+implementations:
+  InsisGetFirstValueFromElementThatsInsideArray:
+    description: Get first value from element inside of an array
+    params:
+      originElement:
+        label: Origin element
+        info: the array element
+        required: true
+        type: element
+    icel: >
+      ```
+        element:
+          type: text
+          viewMode: output
+          mirror:
+            InsisGetFirstValueFromElementThatsInsideArray:
+              originElement: client.personal-data.contacts~number
+          defaultValue: ''
+      ```

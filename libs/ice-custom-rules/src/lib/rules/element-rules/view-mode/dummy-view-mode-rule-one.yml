@@ -1,9 +1,0 @@
-implementations:
-  DummyViewModeRuleOne:
-    description: This is an example custom Element rule with descriptor.
-    params:
-      viewMode:
-        info: Specify view mode to be applied
-        label: View Mode
-        required: true
-        type: string

@@ -1,0 +1,61 @@
+implementations:
+  InsisEmailExchangeRule:
+    description: >
+      Rule that allows sending  HTML emails with lodash templates
+
+    icel: >
+      To, Subject and Template name have to be provided as params in transformation like
+
+      ```
+        integration:
+          exchange:
+            InsisEmailExchangeRule:
+              host: env:smtp-host
+              port: env:smtp-port
+              username: env:smtp-username
+              password: env:smtp-password
+          transformation:
+            DefaultTransformationRule:
+              out:
+                - mappings:
+                    - param: to
+                      value: email@fadata.eu
+
+                    - param: subject
+                      value: hello
+
+                    - param: template
+                      value: email.html
+
+                    - payload: name
+                      value: Stoyan
+
+                    - payload: from
+                      value: Ivan
+        ```        
+        
+        Here is an example of html template:
+
+        ```
+        <p>Hi <b><%= name %></b>, how are you doing?</p>
+        <p>My name is <b><%= from %></b> from Ice Team</p>
+        ```  
+        the `name` and `from` variables will be replaced with `payload.name` and `payload.from` data from transformation
+
+    params:
+      host:
+        label: SMTP host
+        type: text
+      port:
+        label: SMTP port
+        type: text
+      username:
+        label: Username
+        type: text
+      password:
+        label: Password
+        type: text
+      debugMode:
+        label: Debug mode
+        type: boolean
+        info: Disable sending emails and instead save output in html file

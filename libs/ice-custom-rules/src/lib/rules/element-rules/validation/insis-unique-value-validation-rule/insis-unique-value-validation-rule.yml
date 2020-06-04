@@ -1,0 +1,10 @@
+implementations:
+  InsisUniqueValueValidationRule:
+    description: It ensures that this element does not have duplicate values
+    icel: >
+      ```
+        element:
+          type: text
+          validation:
+            - InsisUniqueValueValidationRule: {}
+      ```

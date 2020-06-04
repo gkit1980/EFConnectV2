@@ -1,0 +1,21 @@
+implementations:
+  InsisParallelIntegrationExecutionRule:
+    description: >-
+      Executes integrations in parallel
+    params:
+      integrations:
+        label: Integrations
+        info: List of integrations
+        type: integrations
+        required: true
+    icel: >
+      ```
+        action:
+          title: converts an application to a policy
+          execution:
+            - InsisParallelIntegrationExecutionRule:
+                integrations:
+                  - load-claim
+                  - get-claim-wf-documents
+                  - get-policy-info
+      ```

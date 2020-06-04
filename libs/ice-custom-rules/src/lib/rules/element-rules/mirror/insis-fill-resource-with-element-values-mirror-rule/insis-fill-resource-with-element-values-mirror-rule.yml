@@ -1,0 +1,40 @@
+implementations:
+  InsisFillResourceWithElementValuesMirrorRule:
+    description: >
+      Switches resource params with element values and returns the maped string.
+
+    params:
+      resourceKey:
+        label: Resource key
+        required: true
+        type: resourceKey
+
+      elements:
+        label: Elements list
+        required: true
+        type: elements
+    icel: >
+      ```
+        element:
+          type: text
+          viewMode: output
+          mirror:
+            InsisFillResourceWithElementValuesMirrorRule:
+              resourceKey: pages.claims-details.policy
+              elements:
+                - claim.policy.id
+                - claim.policy.product-name
+          component:
+            StaticComponentRule:
+              component:
+                ButtonWithFloatingLabel: {}
+        
+        # resource:
+        pages:
+          claims-details:
+            policy:
+              - en: '${param1} ${param2}'
+                de: '${param1} ${param2}'
+
+
+      ```

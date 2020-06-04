@@ -1,0 +1,29 @@
+implementations:
+  InsisCalculateSumExecutionRule:
+    description: >-
+      Calculates the sum of element values and sets it to an destinition element,
+      taking index handling for arrays into account.
+      In case you want to sum array items values you shoud provide a sourceArray.
+    params:
+      sourceArray:
+        label: Source Array Element
+        type: element
+        required: false
+      elements:
+        label: Source Elements
+        type: elements
+        required: true
+      destination:
+        label: Destination Element
+        type: element
+        required: true
+    icel: >
+      ```
+        action:
+          execution:
+            - InsisCalculateSumExecutionRule:
+                sourceArray: incident.requests
+                elements:
+                  - incident.requests~services~confirmed-amount
+                destination: incident.requests~confirmed-price
+      ```

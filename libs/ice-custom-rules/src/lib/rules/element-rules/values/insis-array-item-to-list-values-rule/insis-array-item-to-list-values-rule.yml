@@ -1,0 +1,44 @@
+implementations:
+  InsisArrayItemToListValuesRule:
+    description:
+      a rule that maps the values of an array item to the values of list and returns values with maped label.
+
+      The _label for a value_ will be determined (in this order)
+
+      * an _additional_ with a name in the form `label_[locale]`, e.g. `label_de`
+      or `label_en-US` - if  the current user's locale is specific e.g. `en-GB` it would first
+      try to find the _additional_ `label_en-GB`, then `label_en` then ...
+
+      * an _additional_ with the name `label` then
+
+      * a _resource entry_ with the key `lists.[name.of.the.list].[value]` then
+
+      * the _value_
+
+    params:
+      valueElement:
+        label: Element for the values
+        type: element
+        required: true
+      labelList:
+        label: List for the labels
+        type: list
+        required: true
+      addEmptyValue:
+        label: Add an empty value
+        type: boolean
+        info: determine if there should be an empty value in the returned values. To set the label of the empty value (null) create a resource yourElementName.empty
+    icel: >
+      ```
+        element:
+          type: text
+          component:
+            StaticComponentRule:
+              component:
+                IceDropdown: {}
+          values:
+            InsisArrayItemToListValuesRule:
+              valueElement: document-categories~document-name
+              addEmptyValue: false
+              labelList: claims-details.documents.new-document-type
+      ```

@@ -1,0 +1,46 @@
+_options: &view_mode_options
+  default: Default
+  hidden: Hidden
+  disabled: Disabled
+  output: Output
+  required: Required
+
+implementations:
+  InsisConditionalIndexViewModeRule:
+    description: determines the ViewMode in dependence of the index of the attached element
+    params:
+      conditionIndex:
+        label: Condition Index
+        required: true
+        type: text
+        info: must be a the text representation of an index like '1' for one level array or '1-1' for the array in array.
+      conditionViewMode:
+        label: Conditonal ViewMode
+        required: true
+        type: select
+        options: *view_mode_options
+        info: the ViewMode this element has if the condition element has the condition value
+      elseViewMode:
+        label: Else ViewMode
+        type: select
+        options: *view_mode_options
+        info: 'ViewMode this element has if the condition element has not the condition value (empty: default)'
+    icel: >
+      ```
+        element:
+          type: action
+          label: null
+          component:
+            StaticComponentRule:
+              component:
+                ButtonWithMenu:
+                  variant: icon
+                  iconName: more_horiz
+                  iconPosition: left
+          values: insis.insured.object.person.action-items
+          viewMode:
+            InsisConditionalIndexViewModeRule:
+              conditionIndex: '0'
+              conditionViewMode: hidden
+              elseViewMode: default
+      ```

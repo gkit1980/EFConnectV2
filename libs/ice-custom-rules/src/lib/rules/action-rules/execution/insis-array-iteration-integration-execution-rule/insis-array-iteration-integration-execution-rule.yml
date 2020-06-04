@@ -1,0 +1,21 @@
+implementations:
+  InsisArrayIterationIntegrationExecutionRule:
+    description: Executes an integration for each item of an array.
+    params:
+      integration:
+        label: Integration
+        type: integration
+        required: true
+
+      arrayElement:
+        label: Array element
+        type: element
+        required: true
+    icel: >
+      ```
+        action:
+          execution:
+            - InsisArrayIterationIntegrationExecutionRule:
+                integration: calculate-request-services
+                arrayElement: claim.requests~services
+      ```

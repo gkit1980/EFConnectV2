@@ -1,0 +1,22 @@
+implementations:
+  InsisSetElementValueExecutionRule:
+    description: >-
+      Sets an element value to a source value,
+      taking index handling for arrays into account
+    params:
+      element:
+        label: Element
+        type: element
+        required: true
+      value:
+        label: Value
+        type: text
+        required: true
+    icel: >
+      ```
+        action:
+          execution:
+            - InsisSetElementValueExecutionRule:
+                element: card-id
+                value: '123'
+      ```

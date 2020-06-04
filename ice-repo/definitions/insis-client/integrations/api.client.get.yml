@@ -1,7 +1,7 @@
 integration:
   type: api
   requestHandler:
-    ApiForActiveRequestHandlerRule:
+    InsisApiForActiveRequestHandlerRule:
       activeIntegration: insis-get-client
       endpoint:
         route: 'client/:id'

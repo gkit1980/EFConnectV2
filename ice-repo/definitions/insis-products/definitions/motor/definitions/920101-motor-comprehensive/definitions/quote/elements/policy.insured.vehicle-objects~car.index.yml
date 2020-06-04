@@ -1,5 +1,5 @@
 element:
   type: integer
   defaultValue:
-    ArrayItemIndexValueRule:
+    InsisArrayItemIndexValueRule:
       indexing: zero-based

@@ -1,0 +1,13 @@
+implementations:
+  InsisDateFormatPayloadRule:
+    description: >
+      This rule inherits the functionality of the DefaultPayloadRule with the difference that it formats the date
+    icel: >
+      ```
+        definition:
+          title: Incidents overview
+          executable: true
+          showInsights: false
+          payload:
+            InsisDateFormatPayloadRule: {}
+      ```

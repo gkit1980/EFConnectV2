@@ -15,7 +15,7 @@ page:
                       - name: quotes-title
                     css: mat-display-1 u-mb-6
       viewMode:
-        HideSectionWhenArrayElementIsEmpty:
+        InsisHideSectionWhenArrayElementIsEmpty:
           array: quotes
     - component:
         IceArrayFlexSection:

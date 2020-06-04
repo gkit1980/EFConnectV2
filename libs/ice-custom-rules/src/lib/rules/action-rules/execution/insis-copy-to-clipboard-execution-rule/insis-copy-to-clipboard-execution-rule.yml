@@ -1,0 +1,42 @@
+implementations:
+  InsisCopyToClipboardExecutionRule:
+    description: Rule which allow you to pass data to clipboard
+    params:
+      templateLink:
+        label: Resource key used as template for the link part
+        type: resourceKey
+        required: false
+      templateinfo:
+        label: Resource key used as template for the info part after the link
+        type: resourceKey
+        required: false
+      linkPlaceholders:
+        label: List of elements which values will be used inside link template
+        type: elements
+        required: false
+      infoPlaceholders:
+        label: List of elements which values will be used inside info template
+        type: elements
+        required: false
+      simpleElement:
+        label: Ignore all above parameters and copy the value form an element,
+        info: Specify the name of element
+        type: element
+        required: false
+    icel: >
+      ```
+        action:
+          title: converts an application to a policy
+          execution:
+            - InsisCopyToClipboardExecutionRule:
+                templateLink: clipboard.case-link
+                linkPlaceholders:
+                  - case.id
+                  - case.event
+                  - case.date
+                infoPlaceholders:
+                  - case.id
+                  - case.event
+                  - case.date
+                templateinfo: clipboard.case-info
+      ```

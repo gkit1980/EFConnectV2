@@ -1,0 +1,16 @@
+implementations:
+  InsisSampleDataExchangeRule:
+    description: >
+      Returns sample data in order to be able to play with transformations. Is available on the client so no roundtrip to the server backend ocurrs.
+    icel: >
+      ```
+        integration:
+          exchange:
+            InsisSampleDataExchangeRule: {}
+          transformation:
+            DefaultTransformationRule:
+              in:
+                - mappings:
+                  - payload: "*"
+                    datastore: test-sample-data
+      ```

@@ -1,0 +1,24 @@
+implementations:
+  InsisExtractFileNameMirrorRule:
+    description: Extracts file name from passed path and sets element value to the file name
+
+    params:
+      originElement:
+        label: Origin element with value file path
+        required: true
+        type: element
+    icel: >
+      ```
+        # element name - documents~name-only
+        element:
+          defaultValue: drivers_license.pdf
+          type: text
+          viewMode:
+            StaticViewModeRule:
+              viewMode: output
+          label:
+            NoLabelRule: {}
+          mirror:
+            InsisExtractFileNameMirrorRule:
+              originElement: documents~name
+      ```

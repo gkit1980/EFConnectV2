@@ -1,0 +1,22 @@
+implementations:
+  InsisQRCodeMirrorRule:
+    description: >
+      Creates a QR Code url with text from source element
+    params:
+      originElement:
+        type: element
+        required: true
+        label: Source element
+    icel: >
+      ```
+        element:
+          type: text
+          mirror:
+            InsisQRCodeMirrorRule:
+              originElement: cross-device.url
+          component:
+            StaticComponentRule:
+              component:
+                InsisPictureComponent:
+                  css: qrcode-frame
+      ```

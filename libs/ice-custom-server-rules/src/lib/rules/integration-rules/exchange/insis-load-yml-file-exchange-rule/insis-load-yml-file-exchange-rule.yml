@@ -1,0 +1,29 @@
+implementations:
+  InsisLoadYmlFileExchangeRule:
+    description: >
+      This is server Exchange rule capable of loading only static JSON or YML files. You should provide a relative path to a file,
+      repo-folder will be used as a root folder to resolve the path. (example: [repo-foder] + 'data/myfile.json')
+      The loaded files then will be passed inside the payload and transformation can be used
+      in order to load the file into DataStore or IceModel. The payload pathto the files content is data.payload.file
+    params:
+      dataFileURL:
+        label: File URL (JSON or YML)
+        type: text
+        required: true
+        info: By default path to this files is constructed [repo]/[dataFileURL]
+    icel: >
+
+      Example of loading json file into DataStore.
+
+      ```
+        integration:
+          exchange:
+            InsisLoadYmlFileExchangeRule:
+              dataFileURL: data/vehicles-data.json
+          transformation:
+            DefaultTransformationRule:
+              in:
+                - mappings:
+                    - payload: file
+                      datastore: test-sql-data.test-file
+      ```

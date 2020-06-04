@@ -3,4 +3,4 @@ element:
     value: KW02RBJ
   type: text
   validation:
-    - UniqueValueValidationRule: {}
+    - InsisUniqueValueValidationRule: {}

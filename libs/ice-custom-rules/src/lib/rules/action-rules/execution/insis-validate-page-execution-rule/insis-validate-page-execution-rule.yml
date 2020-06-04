@@ -1,0 +1,27 @@
+implementations:
+  InsisValidatePageExecutionRule:
+    description: >-
+      Triggers component validation on given Page
+
+    params:
+      what:
+        label: What should be validated
+        type: select
+        options:
+          currentPage: Current page
+          specificPage: Specific page
+        required: true
+
+      page:
+        label: Page
+        type: page
+        required: false
+    icel: >
+      ```
+        action:
+          title: converts an application to a policy
+          execution:
+            - InsisValidatePageExecutionRule:
+                page: 3.review.finalize
+                what: currentPage
+      ```

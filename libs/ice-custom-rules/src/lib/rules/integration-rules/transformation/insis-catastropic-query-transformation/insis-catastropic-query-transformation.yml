@@ -1,0 +1,75 @@
+implementations:
+  InsisCatastropicQueryTransformation:
+    description: >
+      transform the catacrophic data
+
+    params:
+      additional:
+        label: Additional
+      dateFormat:
+        label: Date format
+        info: e.g. YYYY-MM-DD, can use any moment.js format string
+      dateTimeFormat:
+        label: DateTime format
+        info: e.g. YYYY-MM-DDThh:mm:ss, can use any moment.js format string
+      queryId:
+        label: Query ID
+        required: true
+      maxResultItems:
+        label: Max Result Items
+    icel: >
+      ```
+        integration:
+          exchange:
+            SoapCallExchangeRule:
+              endpoint: insis_generic_endpoint
+              securityMode: UsernamePassword
+              username: 'env:insis-username'
+              password: 'env:insis-password'
+              ignoreNamespaces: 'env:insis-ignoreNamespaces'
+              soapAction: paginatedQuery
+              requestType: PaginatedQueryRqType
+              jsonSchema: Insis_GenericWS
+          transformation:
+            InsisCatastropicQueryTransformation:
+              queryId: ALL_CLAIMS_CATASTROPHICS
+              additional: insis
+              out:
+                - mappings:
+                    - param: soapAction
+                      value: paginatedQuery
+                    - param: requestType
+                      value: PaginatedQueryRqType
+              in:
+                - fromIdx: 
+                    array: payload.catastrophicEvents
+                  toIdx:
+                    array: datamodel.catastrophic-events
+                    append: true
+                  mappings:
+                    - payload: 'catastrophicEvents[n].eventID'
+                      element: catastrophic-events~event-id
+                    - payload: 'catastrophicEvents[n].eventType'
+                      element: catastrophic-events~event-type
+                    - payload: 'catastrophicEvents[n].eventPlace'
+                      element: catastrophic-events~event-place
+                    - payload: 'catastrophicEvents[n].eventDescription'
+                      element: catastrophic-events~event-description
+                    - payload: 'catastrophicEvents[n].eventBegin'
+                      element: catastrophic-events~event-begin
+                    - payload: 'catastrophicEvents[n].eventEnd'
+                      element: catastrophic-events~event-end
+                - fromIdx: 
+                    array: payload.catastrophicEvents
+                    fromIdx:
+                      array: cases
+                  toIdx:
+                    useSourceIndex: true
+                  mappings:
+                    - payload: 'catastrophicEvents[n].cases[n].srcClaim'
+                      element: catastrophic-events~cases~id
+                    - payload: 'catastrophicEvents[n].cases[n].claimId'
+                      element: catastrophic-events~cases~claim-id
+                    - payload: 'catastrophicEvents[n].cases[n].claimComment'
+                      element: catastrophic-events~cases~claim-comment
+      ```

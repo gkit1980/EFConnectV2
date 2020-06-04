@@ -1,6 +1,6 @@
 action:
   execution:
-    - CopyValueExecutionRule:
+    - InsisCopyValueExecutionRule:
         source: claims~claim-no
         destination: claim-to-view
     - DtNavigateToDefinitionExecutionRule:

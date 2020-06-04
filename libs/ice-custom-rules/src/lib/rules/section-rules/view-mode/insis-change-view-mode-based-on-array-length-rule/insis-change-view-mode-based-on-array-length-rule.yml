@@ -1,0 +1,76 @@
+viewModeOptions: &view_mode_options
+  default: Default
+  hidden: Hidden
+  disabled: Disabled
+  output: Output
+
+conditionOptions: &condition_options
+  lesser: Less than
+  equals: Equals to
+  greater: Greater than
+
+implementations:
+  InsisChangeViewModeBasedOnArrayLengthRule:
+    description: Change current element view mode based on another element children count.
+    params:
+      array:
+        info: Specify the array element
+        label: Array element
+        required: true
+        type: element
+      condition:
+        info: Comparison condition
+        label: condition
+        required: true
+        type: select
+        options: *condition_options
+      conditionValue:
+        info: Specify children count (length)
+        label: length
+        required: true
+        type: number
+      viewMode:
+        info: Specify view mode to be applied
+        label: View Mode
+        required: true
+        type: select
+        options: *view_mode_options
+      elseViewMode:
+        info: Specify view mode to be applied if array is not of certain length
+        label: Else View Mode
+        required: false
+        type: select
+        options: *view_mode_options
+    icel: >
+      ```
+        page:
+          validation:
+            behaviour: page
+            onElementComponentChange: true
+          component:
+            InsisSimplePage: {}
+          sections:
+            - component:
+                IceFlexSection:
+                  grid:
+                    rows:
+                      - cols:
+                          - size: auto
+                            size.xs: auto
+                            size.sm: auto
+                            elements:
+                              - name: no-active-policies
+                      - cols:
+                          - size: auto
+                            size.xs: auto
+                            size.sm: auto
+                            elements:
+                              - name: get-more-insurance
+              viewMode:
+                InsisChangeViewModeBasedOnArrayLengthRule:
+                  condition: equals
+                  conditionValue: '0'
+                  viewMode: default
+                  elseViewMode: hidden
+                  array: policies
+      ```

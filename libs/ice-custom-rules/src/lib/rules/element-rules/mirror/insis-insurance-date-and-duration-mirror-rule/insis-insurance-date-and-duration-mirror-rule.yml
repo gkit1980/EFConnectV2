@@ -1,0 +1,54 @@
+implementations:
+  InsisInsuranceDateAndDurationMirrorRule:
+    description: rule that formats insurance start and duration set with dateFormat param
+    params:
+      startDateElement:
+        label: The insurance start date element
+        type: element
+        required: true
+      durationElement:
+        label: The insurance duration element
+        type: element
+        required: true
+      durationUnitElement:
+        label: The insurance duration unit element
+        type: element
+        required: true
+      durationUnitList:
+        label: list that transforms duration unit to human readable value
+        type: list
+        required: true
+      dateFormat:
+        label: date format
+        type: text
+        required: true
+        default: YYYY.MM.DD
+    icel: >
+      ```
+        # element name - quotes~start-and-duration 
+        element:
+          type: text
+          viewMode:
+            StaticViewModeRule:
+              viewMode: output
+          mirror:
+            InsisInsuranceDateAndDurationMirrorRule:
+              dateFormat: YYYY.MM.DD
+              durationUnitList: quotes.duration-unit
+              startDateElement: quotes~insurance.start
+              durationElement: quotes~insurance.duration
+              durationUnitElement: quotes~insurance.duration-unit
+        
+        # list - quotes.duration-unit
+        list:
+          items:
+            - value: YEAR
+              label_en: Year
+            - value: MONTH
+              label_en: Months
+          type: text
+          additionals:
+            label_en:
+              label: label_en
+              type: text
+      ```

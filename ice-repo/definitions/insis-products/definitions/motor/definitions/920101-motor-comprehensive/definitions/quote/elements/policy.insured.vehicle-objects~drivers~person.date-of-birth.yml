@@ -1,7 +1,7 @@
 element:
   type: date
   defaultValue:
-    ElementValueRule:
+    InsisElementValueRule:
       element: policy.participants.holder.person.date-of-birth
       index: 0
   fake:

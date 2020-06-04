@@ -1,0 +1,17 @@
+implementations:
+  InsisWaitExecutionRule:
+    description: >
+      Adds a delay to the execution of an action.
+    params:
+      waitPeriod:
+        label: Wait period in milliseconds
+        type: integer
+        required: true
+    icel: >
+      ```
+        action:
+          title: converts an application to a policy
+          execution:
+            - InsisWaitExecutionRule:
+                waitPeriod: 1000
+      ```

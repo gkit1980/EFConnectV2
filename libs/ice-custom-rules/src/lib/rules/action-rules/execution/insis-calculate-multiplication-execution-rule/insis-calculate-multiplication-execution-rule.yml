@@ -1,0 +1,30 @@
+implementations:
+  InsisCalculateMultiplicationExecutionRule:
+    description: >-
+      Calculates the multiplication of element values and int values. Then sets it to an destinition element,
+      taking index handling for arrays into account
+    params:
+      elements:
+        label: Source Elements
+        type: elements
+        required: true
+      values:
+        label: Values
+        type: integers
+        required: false
+      destination:
+        label: Destination Element
+        type: element
+        required: true
+    icel: >
+      ```
+        action:
+          execution:
+            - InsisCalculateMultiplicationExecutionRule:
+                elements:
+                  - claim.insured-sum
+                  - leistung
+                values:
+                  - 0.01
+                destination: requested-amount
+      ```

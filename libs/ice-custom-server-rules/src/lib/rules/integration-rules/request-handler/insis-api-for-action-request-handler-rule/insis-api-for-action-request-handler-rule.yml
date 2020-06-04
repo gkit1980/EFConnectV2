@@ -1,0 +1,46 @@
+implementations:
+  InsisApiForActionRequestHandlerRule:
+    description: >
+      Validates data model and executes action on receiving input data.
+
+    params:
+      action:
+        lable: Action
+        required: true
+        type: text
+      bucket:
+        label: Bucket for Validation
+        required: false
+        type: bucket
+      endpoint.route:
+        label: Endpoint route
+        required: true
+        type: text
+      endpoint.method:
+        label: Endpoint method
+        required: true
+        type: text
+
+    icel: >
+      ```
+        integration:
+          type: api
+          requestHandler:
+            InsisApiForActionRequestHandlerRule:
+              action: report-incident
+              endpoint:
+                route: 'file-gopro-incident/alexa'
+                method: POST
+          transformation:
+            DefaultTransformationRule:
+              in:
+                - mappings:
+                    - element: '*'
+                      payload: '*'
+              out:
+                - mappings:
+                    - element: incident.claim-id
+                      payload: claim-id
+                    - element: incident.claim-number
+                      payload: claim-no
+      ```

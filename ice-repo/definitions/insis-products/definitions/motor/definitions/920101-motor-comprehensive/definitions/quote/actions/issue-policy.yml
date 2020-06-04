@@ -1,7 +1,7 @@
 action:
   title: converts an application to a policy
   execution:
-    - ValidatePageExecutionRule:
+    - InsisValidatePageExecutionRule:
         page: 3.review.finalize
         what: currentPage
     - IntegrationExecutionRule:

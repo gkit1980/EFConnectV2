@@ -1,0 +1,51 @@
+implementations:
+  InsisPrintExchangeRule:
+    description: >
+      This rule will send request to INSIS and return pdf documents as base64 encoded data.
+    params:
+      endpointBaseurl:
+        label: Endpoint / Baseurl
+        info: endpoint name that can be resolved to a baseUrl or mocked
+        required: true
+      url:
+        label: URL
+        info: the url (probably with dynamic params) for the request
+      verb:
+        label: Http verb
+        type: select
+        options:
+          get: get
+          post: post
+          put: put
+          delete: delete
+      headers:
+        label: Headers
+        viHideNull: true
+        info: list of names from the IntegrationData params to be set as Headers
+    icel: >
+      ```
+        integration:
+          type: active
+          exchange:
+            InsisPrintExchangeRule:
+              endpointBaseurl: 'http://10.3.4.148:7809/insis/util/print'
+              verb: post
+          transformation:
+            DefaultTransformationRule:
+              additional: insis
+              dateFormat: YYYY-MM-DD
+              out:
+                - mappings:
+                    - value: /std/gen/printouts_v10/std_nl_p_demo_policy.xdo
+                      payload: reportFullPath
+                    - value: pdf
+                      payload: outputFormat
+                    - element: policy.contract.policy-id
+                      payload: reportParams.P_POLICY_ID
+                    - value: '0'
+                      payload: reportParams.P_ANEX_ID
+              in:
+                - mappings:
+                    - datastore: printData
+                      payload: data
+      ```

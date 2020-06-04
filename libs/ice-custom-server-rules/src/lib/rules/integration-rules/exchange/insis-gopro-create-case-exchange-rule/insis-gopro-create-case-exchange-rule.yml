@@ -1,0 +1,58 @@
+implementations:
+  InsisGoproCreateCaseExchangeRule:
+    description: >
+      This rule uses GoPro API to create case.
+
+    params:
+      username:
+        label: Username
+        required: true
+        type: text
+      password:
+        label: Password
+        required: true
+        type: text
+    icel: >
+      ```
+        integration:
+          exchange:
+            InsisGoproCreateCaseExchangeRule:
+              username: alexa
+              password: gopro
+              endpointBaseurl: 'https://opis.gopro.net/katla/api'
+          transformation:
+            DefaultTransformationRule:
+              additional: insis
+              dateFormat: YYYY-MM-DD
+              dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
+              out:
+                - mappings:
+                    - payload: parentId
+                      value: BB1F5E1D-C93F-4A2E-B465-5D738E4A8F09
+                    - payload: templateId
+                      value: 466ACE28-6E3B-49EE-9A44-FDC3F73E6C20
+                    - param: metaDataEntries.Accident.accidentType
+                      value: Autounfall
+                    - param: metaDataEntries.Accident.accidentTime
+                      element: incident.event-date
+                    - param: metaDataEntries.Accident.locationAddress
+                      value: 'La Farinera, 08018 Barcelona, Spain'
+                    - param: metaDataEntries.Accident.locationLat
+                      value: 41.404104
+                    - param: metaDataEntries.Accident.locationLong
+                      value: 2.188161
+                    - param: metaDataEntries.Accident.injuredNumber
+                      element: incident.event-number-of-people
+                    - param: metaDataEntries.Accident.ambulenceRequired
+                      element: incident.event-ambulance
+                    - param: metaDataEntries.Accident.towTruckRequired
+                      element: incident.event-tow-truck
+              in:
+                - mappings:
+                    - payload: caseId
+                      element: incident.claim-id
+                    - payload: caseNumber
+                      element: incident.claim-number
+            type: active
+
+      ```

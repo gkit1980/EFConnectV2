@@ -1,0 +1,21 @@
+implementations:
+  InsisGeolocationExecutionRule:
+    description: Fills specified elements with current geolocation data. In-case geolocation data is not available null is returned
+    params:
+      latElement:
+        label: Element which will store Latitude
+        type: element
+        required: true
+      lngElement:
+        label: Element which will store Longitude
+        type: element
+        required: true
+    icel: >
+      ```
+        action:
+          title: get geolocation of the user using browser api
+          execution:
+            - InsisGeolocationExecutionRule:
+                latElement: incident.event-latitude
+                lngElement: incident.event-longitude
+      ```

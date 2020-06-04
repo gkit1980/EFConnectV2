@@ -4,5 +4,5 @@ element:
     StaticValueRule:
       value: 0
   mirror:
-    GetArrayLengthMirrorRule:
+    InsisGetArrayLengthMirrorRule:
       originElement: claims

@@ -1,0 +1,168 @@
+implementations:
+  InsisClaimsSortedRequestTransformation:
+    description: >
+      This rule is the almost the same as DefaultTransformationRule with a small addition,
+      it returns the claims sorted.
+
+    icel: >
+      ```
+        integration:
+          exchange:
+            SoapCallExchangeRule:
+              endpoint: insis_csm_endpoint
+              securityMode: UsernamePassword
+              username: 'env:insis-username'
+              password: 'env:insis-password'
+              ignoreNamespaces: 'env:insis-ignoreNamespaces'
+              soapAction: findClaimHlt
+              requestType: FindClaimRqType
+              responseType: FindClaimHltRsType
+              jsonSchema: InsisCSM
+          transformation:
+            InsisClaimsSortedRequestTransformation:
+              additional: insis
+              dateFormat: YYYY-MM-DD
+              dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
+              out:
+                - mappings:
+                    - param: soapAction
+                      value: findClaimHlt
+                    - param: requestType
+                      value: FindClaimRqType
+                - mappings:
+                    - dynid: true
+                      payload: ClaimID
+              in:
+                - mappings:
+                    - element: claim.status
+                      payload: Claim.ClaimState
+                    - element: claim-initial-reserve-currency
+                      payload: >-
+                        Claim.Requests.Request[0].InjuredObjects.InjuredObject[0].Currency
+                    - element: claim-initial-reserve
+                      payload: >-
+                        Claim.Requests.Request[0].InjuredObjects.InjuredObject[0].InitialReserve
+                - fromIdx:
+                    array: payload.Claim.CustomProperties.CustomProperty
+                    condition: FieldName == 'ATTRC3'
+                  mappings:
+                    - element: claim.notes
+                      payload: 'Claim.CustomProperties.CustomProperty[n].Value'
+                - fromIdx:
+                    array: payload.Claim.CustomProperties.CustomProperty
+                    condition: FieldName == 'ATTR1'
+                  mappings:
+                    - element: claim.license-plate
+                      payload: 'Claim.CustomProperties.CustomProperty[n].Value'
+                - fromIdx:
+                    array: payload.Claim.CustomProperties.CustomProperty
+                    condition: FieldName == 'ATTR2'
+                  mappings:
+                    - element: claim.driver-license
+                      payload: 'Claim.CustomProperties.CustomProperty[n].Value'
+                - fromIdx:
+                    array: payload.Claim.CustomProperties.CustomProperty
+                    condition: FieldName == 'ATTR3'
+                  mappings:
+                    - element: claim.field-of-law
+                      payload: 'Claim.CustomProperties.CustomProperty[n].Value'
+                - fromIdx:
+                    array: payload.Claim.CustomProperties.CustomProperty
+                    condition: FieldName == 'ATTR4'
+                  mappings:
+                    - element: claim.situation-description
+                      payload: 'Claim.CustomProperties.CustomProperty[n].Value'
+                - fromIdx:
+                    array: payload.Claim.CustomProperties.CustomProperty
+                    condition: FieldName == 'ATTR5'
+                  mappings:
+                    - element: claim.is-hidden-toggle
+                      payload: 'Claim.CustomProperties.CustomProperty[n].Value'
+                - fromIdx:
+                    array: payload.Claim.CustomProperties.CustomProperty
+                    condition: FieldName == 'ATTRN1'
+                  mappings:
+                    - element: claim.value-in-dispute
+                      payload: 'Claim.CustomProperties.CustomProperty[n].Value'
+                - fromIdx:
+                    array: payload.Claim.CustomProperties.CustomProperty
+                    condition: FieldName == 'ATTRN2'
+                  mappings:
+                    - element: claim.level-of-jurisdiction
+                      payload: 'Claim.CustomProperties.CustomProperty[n].Value'
+                - fromIdx:
+                    array: payload.Claim.Requests.Request
+                  toIdx:
+                    useSourceIndex: true
+                  mappings:
+                    - payload: Claim.Requests.Request[n].ClaimReqSeq
+                      element: incident.requests~request-seq
+                    - element: incident.requests~invoice-amount
+                      payload: 'Claim.Requests.Request[n].InvoiceAmount'
+                    - element: incident.requests~invoice-currency
+                      payload: 'Claim.Requests.Request[n].InvoiceCurrency'
+                    - element: incident.requests~state-descr
+                      payload: 'Claim.Requests.Request[n].RequestStateDescr'
+                    - element: incident.requests~state-aux
+                      payload: 'Claim.Requests.Request[n].RequestStateAux'
+                    - element: incident.requests~state-aux-description
+                      payload: 'Claim.Requests.Request[n].RequestStateAux'
+                    - element: incident.requests~provider
+                      payload: 'Claim.Requests.Request[n].ProviderName'
+                    - element: incident.requests~state
+                      payload: 'Claim.Requests.Request[n].RequestState'
+                    - element: incident.requests~add-service
+                      value: 'add-service-item'
+                - fromIdx:
+                    array: payload.Claim.Requests.Request
+                    fromIdx:
+                      array: ClaimServices.ClaimService
+                  toIdx:
+                    useSourceIndex: true
+                  mappings:
+                    - element: incident.requests~services~claim-service-seq
+                      payload: >-
+                        Claim.Requests.Request[n].ClaimServices.ClaimService[n].ClaimServiceSeq
+
+                    - element: incident.requests~services~service-type
+                      payload: >-
+                        Claim.Requests.Request[n].ClaimServices.ClaimService[n].ServiceType
+                    - element: incident.requests~services~request-date-to
+                      payload: >-
+                        Claim.Requests.Request[n].ClaimServices.ClaimService[n].ServiceDateTo
+                    - element: incident.requests~services~state
+                      payload: >-
+                        Claim.Requests.Request[n].ClaimServices.ClaimService[n].ServiceState
+                    - element: incident.requests~services~state-name
+                      payload: >-
+                        Claim.Requests.Request[n].ClaimServices.ClaimService[n].ServiceStateName
+                    - element: incident.requests~services~activity-type
+                      payload: >-
+                        Claim.Requests.Request[n].ClaimServices.ClaimService[n].ActivityType
+                    - element: incident.requests~services~activity-code
+                      payload: >-
+                        Claim.Requests.Request[n].ClaimServices.ClaimService[n].ActivityCode
+                    - element: incident.requests~services~activity-name
+                      payload: >-
+                        Claim.Requests.Request[n].ClaimServices.ClaimService[n].ActivityCode
+                    - element: incident.requests~services~requested-price
+                      payload: >-
+                        Claim.Requests.Request[n].ClaimServices.ClaimService[n].RequestedPrice
+                    - element: incident.requests~services~requested-amount
+                      payload: >-
+                        Claim.Requests.Request[n].ClaimServices.ClaimService[n].RequestedAmount
+                    - element: incident.requests~services~requested-currency
+                      payload: >-
+                        Claim.Requests.Request[n].ClaimServices.ClaimService[n].RequestedCurrency
+                    - element: incident.requests~services~requested-quantity
+                      payload: >-
+                        Claim.Requests.Request[n].ClaimServices.ClaimService[n].RequestedQuantity
+                    - element: incident.requests~services~confirmed-amount
+                      payload: >-
+                        Claim.Requests.Request[n].ClaimServices.ClaimService[n].ConfirmedAmount
+                    - element: incident.requests~services~cover-code
+                      payload: >-
+                        Claim.Requests.Request[n].ClaimServices.ClaimService[n].CoverCode
+                    - payload: Claim.Requests.Request[n].ClaimServices.ClaimService[n].ClaimDscrFracts.ClaimDscrFract[0].PublicDescr
+                      element: incident.requests~services~confirmed-message
+      ```

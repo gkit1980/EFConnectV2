@@ -3,6 +3,6 @@ element:
   component: IceRadiobuttonGroup
   viewMode: default
   values:
-    ArrayItemBasedValuesRule:
+    InsisArrayItemBasedValuesRule:
       valueElement: policy.participants.holder.person.accounts~iban
       labelElement: policy.participants.holder.person.accounts~iban

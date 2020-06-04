@@ -1,7 +1,7 @@
 element:
   type: text
   defaultValue:
-    ElementValueRule:
+    InsisElementValueRule:
       element: policy.participants.holder.person.first-name
       index: 0
   fake:

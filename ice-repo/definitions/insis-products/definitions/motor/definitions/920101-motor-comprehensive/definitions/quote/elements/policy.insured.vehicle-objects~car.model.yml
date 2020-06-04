@@ -3,7 +3,7 @@ element:
   fake:
     value: A1
   values:
-    DynamicValuesListRule:
+    InsisDynamicValuesListRule:
       datastoreRootPath: vehicles-data
       pathElements:
         - policy.insured.vehicle-objects~car.brand

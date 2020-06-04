@@ -3,5 +3,5 @@ element:
     value: AUDI
   type: text
   values:
-    DynamicValuesListRule:
+    InsisDynamicValuesListRule:
       datastoreRootPath: vehicles-data
