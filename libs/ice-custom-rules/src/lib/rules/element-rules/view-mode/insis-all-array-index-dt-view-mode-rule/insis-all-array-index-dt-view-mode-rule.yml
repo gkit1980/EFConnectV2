@@ -29,7 +29,7 @@ implementations:
         label: Else ViewMode
         type: select
         options: *view_mode_options
-        info: ViewMode this element has if the dt retutns falsе
+        info: ViewMode this element has if the dt retutns false
     icel: >
       ```
         # element name - incident.requests~confirm

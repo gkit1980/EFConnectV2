@@ -4,7 +4,7 @@ list:
       label_en: >
         Submit claim
       label_de: null
-    - value: download
+    - value: download-pdf-expired
       label_en: Download PDF
       label_de: null
     - value: renew

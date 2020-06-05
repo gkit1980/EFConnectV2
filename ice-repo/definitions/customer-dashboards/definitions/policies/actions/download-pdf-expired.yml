@@ -1,0 +1,11 @@
+action:
+  execution:
+    - InsisCopyValueExecutionRule:
+        source: expired-policies~policy-id
+        destination: policy-to-print
+    - IntegrationExecutionRule:
+        integration: print-policy
+    - InsisOpenPdfExecutionRule:
+        datastorePath: printData.0.data
+        mode: download
+        filename: Policy.pdf
