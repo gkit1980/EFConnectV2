@@ -133,11 +133,6 @@ page:
                       - name: more-information-needed
           css: text-align-center hide-on-mobile u-mb-4
     - component:
-        InsisMotorPremiumSummarySection:
-          expanded: true
-          tags:
-            - pull-right
-    - component:
         IceFlexSection:
           tags:
             - pull-right

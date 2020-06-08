@@ -102,10 +102,6 @@ page:
                     elements:
                       - name: go-to-next-page
     - component:
-        InsisMotorPremiumSummarySection:
-          tags:
-            - pull-right
-    - component:
         InsisMotorPolicySummarySection:
           tags:
             - pull-right

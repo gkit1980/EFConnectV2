@@ -13,19 +13,17 @@
 @import '../components/page-components/insis-two-level-stepper-navigation-page/insis-two-level-stepper-navigation-page.mixin';
 @import '../components/section-components/insis-datagrid-section/insis-datagrid-section.mixin';
 @import '../components/section-components/insis-motor-policy-summary-section/insis-motor-policy-summary-section.mixin.scss';
-@import '../components/section-components/insis-motor-premium-summary-section/insis-motor-premium-summary.component.mixin.scss';
 @import '../components/shared-components/insis-summary-section-detail-container/insis-summary-section-detail-container.scss';
 
 @import '../components/element-components/insis-image-button-component/insis-image-button.component.mixin.scss';
 @import '../components/element-components/insis-checkbox-with-markdown-component/insis-checkbox-with-markdown.mixin.scss';
 @import '../components/element-components/insis-markdown-output-component/insis-markdown-output-element.mixin.scss';
 @import '../components/element-components/insis-google-map-component/insis-google-map.mixin.scss';
-
+@import '../components/section-components/insis-premium-summary-section/insis-premium-summary-section.mixin.scss';
 /**
  * TIP: You will need to @include here any new mixin you add to the ice-custom-component library.
  * This file here will be loaded by theme.scss which is part of theming structure inside application styles.
  */
-
 @mixin all-ice-custom-component-mixins($theme) {
   @include insis-button-dropdown-mixin($theme);
   @include insis-dummy-button-mixin($theme);
@@ -35,7 +33,6 @@
   @include insis-slider-mixin($theme);
   @include insis-array-cards-layout-mixin($theme);
   @include insis-motor-policy-summary-section-mixin($theme);
-  @include insis-motor-premium-summary-section-mixin($theme);
   @include insis-confirmation-page-mixin($theme);
   @include insis-card-mixin($theme);
   @include insis-checkbox-card-mixin($theme);
@@ -49,4 +46,5 @@
   @include insis-checkbox-with-markdown-mixin($theme);
   @include insis-markdown-output-element-mixin($theme);
   @include insis-google-map-mixin($theme);
+  @include insis-premium-summary-selection-mixin($theme);
 }

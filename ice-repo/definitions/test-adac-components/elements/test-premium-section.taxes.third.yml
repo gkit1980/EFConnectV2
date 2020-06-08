@@ -1,0 +1,6 @@
+element:
+  type: text
+  defaultValue:
+    StaticValueRule:
+      value: '33.3456'
+  viewMode: output

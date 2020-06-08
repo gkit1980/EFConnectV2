@@ -1,0 +1,68 @@
+label: InsisPremiumSummarySection
+component: insisPremiumSummarySection
+description: >
+  A section that contains information for premiums, taxes and fees, discounts.
+
+params:
+  expanded:
+    label: Is panel expanded
+    required: false
+    type: boolean
+    info: >
+      Determinates whatever panel is expanded or collapsed. When expanded it shows all taxes, discounts, loading, etc..., otherwise they are hidden and only sum that needs to be paid is displayed
+  premiumElement:
+    label: Element containing premium total
+    required: true
+    type: element
+    info: >
+      Should be element that has end sum as value. This element should have viewmode output
+  paymentFrequencyElement:
+    label: Payment frequency
+    required: false
+    type: element
+    info: >
+      Element containing payment frequency (per month, per year, etc...).
+  printElement:
+    label: Print button element
+    required: false
+    type: element
+    info: >
+      Element thats displayed next to end sum. Usually used for creating element of type action that actiaves action that prints current section/page
+  premiumsCategoryTitleResourceKey:
+    label: Title thats going to be diplay above all premiums
+    required: false
+    type: resourceKey
+    info: >
+      If resource key does not exists or not entered it's going to try to show title with "premium-summary-section.dues.label"
+  premiumElements:
+    label: Premium elements
+    required: true
+    type: elements
+    info: >
+      Elements that contain premium amount.
+  taxesAndFeesCategoryTitleResourceKey:
+    label: Title thats going to be diplay above all taxes and fees
+    required: true
+    type: resourceKey
+    info: >
+      If resource key does not exists or not entered it's going to try to show title with "premium-summary-section.taxes-and-fees.label"
+  taxesAndFeesElements:
+    label: taxes and fees elements
+    required: true
+    type: elements
+  discountsAndLoaingsCategoryTitleResourceKey:
+    label: Title thats going to be diplay above all taxes and fees
+    required: true
+    type: resourceKey
+    info: >
+      If resource key does not exists or not entered it's going to try to show title with "premium-summary-section.discounts.label"
+  discountElements:
+    label: Discount and load elements
+    required: true
+    type: elements
+  currencyElement:
+    label: Element holding currency
+    required: false
+    type: element
+    info: >
+      Element thats holding currency displayed for each tax, discount and etc.. If not specified as element, its going to use the one defined at "currency-code" in the resources

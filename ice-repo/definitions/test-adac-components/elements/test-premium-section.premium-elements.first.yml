@@ -1,0 +1,6 @@
+element:
+  type: currency
+  defaultValue:
+    StaticValueRule:
+      value: 123.33
+  viewMode: output

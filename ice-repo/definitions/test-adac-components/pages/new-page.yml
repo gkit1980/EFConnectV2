@@ -66,3 +66,17 @@ page:
                     size.sm: auto
                     elements:
                       - name: currency-amount
+    - component:
+        InsisPremiumSummarySection:
+          expanded: true
+          premiumElement: test-premium-section.premium-sum-element
+          paymentFrequencyElement: test-premium-section.payment-frequency-element
+          premiumElements:
+            - test-premium-section.premium-elements.first
+            - test-premium-section.premium-elements.second
+          taxesElements:
+            - test-premium-section.taxes.first
+            - test-premium-section.taxes.second
+            - test-premium-section.taxes.third
+          discountElements:
+            - test-premium-section.discounts.first

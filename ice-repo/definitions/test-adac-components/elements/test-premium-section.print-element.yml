@@ -1,0 +1,12 @@
+element:
+  type: text
+  defaultValue:
+    StaticValueRule:
+      value: test print element
+  viewMode: output
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          themeColor: accent
+          accesskey: h

@@ -28,7 +28,6 @@ import { InsisVerticalStepperNavigationComponent } from './components/navigation
 import { InsisArrayComponent } from './components/element-components/insis-array-component/insis-array.component';
 import { InsisArrayCardsLayoutComponent } from './components/element-components/insis-array-cards-layout-component/insis-array-cards-layout.component';
 import { InsisMotorPolicySummarySectionComponent } from './components/section-components/insis-motor-policy-summary-section/insis-motor-policy-summary-section.component';
-import { InsisMotorPremiumSummarySection } from './components/section-components/insis-motor-premium-summary-section/insis-motor-premium-summary-section.component';
 import { InsisArrayListLayoutComponent } from './components/element-components/insis-array-list-layout-component/insis-array-list-layout.component';
 import { InsisCheckboxCardComponent } from './components/element-components/insis-checkbox-card-component/insis-checkbox-card.component';
 import { InsisCardComponent } from './components/element-components/insis-card-component/insis-card.component';
@@ -52,6 +51,7 @@ import { InsisMarkdownOutputElementComponent } from './components/element-compon
 import { InsisDialogSectionContainer } from './components/shared-components/insis-dialog-section-container/insis-dialog-section-container';
 import { InsisButtonWithDialogComponent } from './components/element-components/insis-button-with-dialog/insis-button-with-dialog.component';
 import { InsisGoogleMapComponent } from './components/element-components/insis-google-map-component/insis-google-map.component';
+import { InsisPremiumSummarySection } from './components/section-components/insis-premium-summary-section/insis-premium-summary-section.component';
 
 /**
  * TIP: You will need to include in this array any new component you create.
@@ -71,7 +71,6 @@ export const iceCustomComponents = [
   InsisSimplePageComponent,
   InsisDatagridSectionComponent,
   InsisMotorPolicySummarySectionComponent,
-  InsisMotorPremiumSummarySection,
   InsisSummarySectionDetailContainer,
   InsisConfirmationPageComponent,
   InsisFileUploadComponent,
@@ -85,7 +84,8 @@ export const iceCustomComponents = [
   InsisIconComponent,
   InsisImageButtonComponent,
   InsisMarkdownOutputElementComponent,
-  InsisGoogleMapComponent
+  InsisGoogleMapComponent,
+  InsisPremiumSummarySection
 ];
 
 /**

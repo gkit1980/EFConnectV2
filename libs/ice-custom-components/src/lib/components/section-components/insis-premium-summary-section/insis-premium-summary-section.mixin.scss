@@ -1,0 +1,68 @@
+@import '~@angular/material/theming';
+
+@mixin insis-premium-summary-selection-mixin($theme) {
+  $arrowsColor: map-get($theme, default-contrast);
+  $arrowBordersStyle: 1px solid $arrowsColor;
+  $arrowSize: 23px;
+
+  insis-premium-summary-section {
+    max-width: 60%;
+    max-width: 500px;
+    display: block;
+
+    summary {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    summary::after {
+      content: '';
+      display: block;
+
+      margin-top: -($arrowSize / 2);
+
+      width: $arrowSize;
+      height: $arrowSize;
+
+      transform: rotate(225deg);
+
+      border-left: $arrowBordersStyle;
+      border-top: $arrowBordersStyle;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details[open] > summary::after {
+      transform: rotate(45deg) translateY($arrowSize / 2) translateX($arrowSize / 2);
+    }
+
+    details[open] > summary {
+      margin-bottom: 20px;
+    }
+
+    .premium-amount {
+      font-size: 22px;
+      font-weight: 300;
+      text-rendering: optimizeLegibility;
+
+      label {
+        display: none;
+      }
+    }
+
+    .insis-summary-section-detail-container {
+      width: 100%;
+
+      ice-element {
+        width: 100%;
+      }
+
+      .ice-output {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}

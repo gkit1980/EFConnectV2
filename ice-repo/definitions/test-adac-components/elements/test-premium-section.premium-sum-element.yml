@@ -1,0 +1,6 @@
+element:
+  type: decimal
+  defaultValue:
+    StaticValueRule:
+      value: 123.123
+  viewMode: output
