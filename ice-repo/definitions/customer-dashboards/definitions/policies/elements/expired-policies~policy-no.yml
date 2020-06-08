@@ -1,5 +1,0 @@
-element:
-  type: text
-  viewMode: output
-  label:
-    NoLabelRule: {}

@@ -217,20 +217,22 @@ mat-radio-button {
 }
 
 .policies-grid {
-  .ice-array {
+  > ice-element > .ice-element > ice-array > .ice-array {
     > label {
       display: none;
     }
 
     @include respond-from('md') {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      //grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      grid-template-columns: repeat(3, minmax(400px, 1fr));
+      //grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
-  }
 
-  .ice-array-item {
-    @include make-card();
+    > .ice-array-item {
+      @include make-card();
+    }
   }
 
   .ice-output {

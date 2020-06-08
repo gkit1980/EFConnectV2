@@ -1,7 +1,7 @@
 action:
   execution:
     - InsisCopyValueExecutionRule:
-        source: expired-policies~policy-id
+        source: expired-policies~policy_id
         destination: policy-to-print
     - IntegrationExecutionRule:
         integration: print-policy

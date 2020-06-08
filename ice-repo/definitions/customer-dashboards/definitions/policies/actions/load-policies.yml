@@ -7,7 +7,5 @@ action:
     - IntegrationExecutionRule:
         integration: load-policies
   trigger:
-    - PageTriggerRule:
-        enter:
-          - home
-    - DynIdChangeTriggerRule: {}
+    - IceLifecycleEventTriggerRule:
+        event: ICE_CONTEXT_ACTIVATED

@@ -1,0 +1,10 @@
+section:
+  component:
+    IceArrayFlexSection:
+      arrayElement: policies~insured_objects
+      grid:
+        rows:
+          - cols:
+              - size: 100%
+                elements:
+                  - name: policies~insured_objects~object_name

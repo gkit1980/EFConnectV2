@@ -2,7 +2,7 @@ dt:
   hitPolicy: F
   inputs:
     - label: new label
-      element: policies~product-code
+      element: policies~insr_type
   outputs:
     - id: output
       type: string
@@ -11,3 +11,15 @@ dt:
         - '920101'
       outputs:
         - /assets/icons/car.svg
+    - inputs:
+        - '920401'
+      outputs:
+        - /assets/icons/house.svg
+    - inputs:
+        - '910111'
+      outputs:
+        - /assets/icons/house.svg
+    - inputs:
+        - '910211'
+      outputs:
+        - /assets/icons/family.svg

@@ -59,7 +59,7 @@ entries:
           icon:
             - en: more_horiz.svg
               de: more_horiz.svg
-        ins-end-date:
+        insr_end:
           label:
             - en: Valid until
               de: Valid until

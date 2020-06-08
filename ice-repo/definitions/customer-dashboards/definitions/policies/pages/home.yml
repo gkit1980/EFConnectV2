@@ -61,24 +61,24 @@ page:
                   - size: none
                     css: inline-cell-elements
                     elements:
-                      - name: policies~product-name
+                      - name: policies~product_name
                   - size: none
                     size.xs: auto
                     size.sm: auto
                     elements:
-                      - name: policies~policy-id
+                      - name: policies~policy_id
                     offset: 4px
                 css: mat-headline u-mt-4
                 gap: 4px
               - cols:
                   - size: auto
                     elements:
-                      - name: policies~ins-end-date
+                      - name: policies~insr_end
                     css: u-mb-2
               - cols:
                   - size: auto
-                    elements:
-                      - name: policies~insured-objects
+                    sections:
+                      - name: insured-objects-motor
                     css: u-mb-5
               - cols:
                   - size: none
@@ -135,20 +135,20 @@ page:
                       elements.expired-policies.items.contract.product-name.label
                     size: 200px
                     elements:
-                      - name: expired-policies~product-name
+                      - name: expired-policies~product_name
                   - caption: elements.expired-policies.items.contract.end.label
                     size: 150px
                     elements:
-                      - name: expired-policies~ins-end-date
+                      - name: expired-policies~insr_end
                   - caption: >-
                       elements.expired-policies.items.insured.premium.total.label
                     size: 100px
                     elements:
-                      - name: expired-policies~premium-total
+                      - name: expired-policies~premium_amnt
                   - caption: elements.expired-policies.items.insured-object.label
                     size: auto
                     elements:
-                      - name: expired-policies~insured-objects
+                      - name: expired-policies~insured_objects
       viewMode:
         ConditionalSectionViewModeRule:
           conditionElement: show-expired-policies

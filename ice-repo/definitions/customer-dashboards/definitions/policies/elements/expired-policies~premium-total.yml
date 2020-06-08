@@ -1,5 +1,0 @@
-element:
-  type: decimal
-  viewMode: output
-  label:
-    NoLabelRule: {}

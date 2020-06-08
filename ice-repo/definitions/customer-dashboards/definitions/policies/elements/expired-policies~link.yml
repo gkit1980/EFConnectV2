@@ -14,4 +14,4 @@ element:
     ResourceWithElementValuesLabelRule:
       key: elements.expired-policies.items.link.label
       elements:
-        - expired-policies~policy-no
+        - expired-policies~policy_no
