@@ -1,5 +1,6 @@
 @mixin insis-datagrid-section-mixin($theme) {
   $primary: map-get($theme, primary);
+  $background: map-get($theme, background);
   $primaryColor: mat-color($primary);
 
   .insis-datagrid-section {
@@ -17,7 +18,6 @@
     mat-header-cell:first-of-type {
       padding-left: 0px;
     }
-
     mat-cell:last-of-type,
     mat-footer-cell:last-of-type,
     mat-header-cell:last-of-type {
@@ -32,11 +32,30 @@
     .mat-header-cell,
     mat-header-row {
       min-height: 48px;
+      background-color: mat-color($background, background);
     }
 
     mat-row,
     mat-cell {
       min-height: 36px;
+
+      ice-element,
+      .mat-button {
+        max-width: 100%;
+      }
+
+      .mat-button {
+        max-width: 100%;
+        text-align: left;
+      }
+
+      .value,
+      .mat-button-wrapper {
+        display: block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
     }
 
     mat-row:last-of-type {

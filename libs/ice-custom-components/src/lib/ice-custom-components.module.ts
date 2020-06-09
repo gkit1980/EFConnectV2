@@ -20,6 +20,7 @@ import {
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MarkdownToHtmlModule } from 'markdown-to-html-pipe';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 import { InsisTwoLevelStepperNavigationPageComponent } from './components/page-components/insis-two-level-stepper-navigation-page/insis-two-level-stepper-navigation-page.component';
 import { InsisConfirmationPageComponent } from './components/page-components/insis-confirmation-page/insis-confirmation-page.component';
@@ -44,6 +45,8 @@ import { InsisButtonDropdownComponent } from './components/element-components/in
 import { InsisSimplePageComponent } from './components/page-components/insis-simple-page/insis-simple-page.component';
 import { InsisButtonToggleComponent } from './components/element-components/insis-button-toggle-component/insis-button-toggle.component';
 import { InsisDatagridSectionComponent } from './components/section-components/insis-datagrid-section/insis-datagrid-section.component';
+import { InsisChartComponent } from './components/section-components/insis-chart/insis-chart.component';
+import { InsisOneLevelTabsNavigationPageComponent } from './components/page-components/insis-one-level-tabs-navigation-page/insis-one-level-tabs-navigation-page.component';
 import { InsisCheckboxWithMarkdownComponent } from './components/element-components/insis-checkbox-with-markdown-component/insis-checkbox-with-markdown.component';
 import { InsisIconComponent } from './components/element-components/insis-icon-component/insis-icon.component';
 import { InsisImageButtonComponent } from './components/element-components/insis-image-button-component/insis-image-button.component';
@@ -69,9 +72,11 @@ export const iceCustomComponents = [
   InsisCardComponent,
   InsisTwoLevelStepperNavigationPageComponent,
   InsisSimplePageComponent,
+  InsisChartComponent,
   InsisDatagridSectionComponent,
   InsisMotorPolicySummarySectionComponent,
   InsisSummarySectionDetailContainer,
+  InsisOneLevelTabsNavigationPageComponent,
   InsisConfirmationPageComponent,
   InsisFileUploadComponent,
   InsisButtonToggleComponent,
@@ -120,6 +125,7 @@ export function registerComponents(componentService: IceComponentsService) {
     MatChipsModule,
     MatIconModule,
     MarkdownToHtmlModule,
+    NgxEchartsModule,
     FlexLayoutModule,
     MatTooltipModule,
     MatChipsModule,

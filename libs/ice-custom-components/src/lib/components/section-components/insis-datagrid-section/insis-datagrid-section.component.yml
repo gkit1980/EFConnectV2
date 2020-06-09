@@ -4,9 +4,10 @@ description: >
   A section to display data as a table
 
 params:
-  cols:
-    label: Columns
-    type: FlexTableColumn
+  grid:
+    label: grid
+    type: dataGrid
+    required: true
   arrayElement:
     label: Array element
     type: element
@@ -23,7 +24,7 @@ params:
 
 icel: >
 
-  Type of FlexTableColumn: 
+  Type of FlexTableColumn:
 
   ```
   FlexTableColumn:

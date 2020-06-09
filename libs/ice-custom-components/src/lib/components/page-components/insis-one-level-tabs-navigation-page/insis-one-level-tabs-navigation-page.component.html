@@ -1,0 +1,13 @@
+<div class="insis-one-level-tabs-navigation-page">
+  <ice-section *ngFor="let section of headerSections" [section]="section"> </ice-section>
+  <horizontal-tabs-navigation
+    [pages]="navigation.getChildren(null)"
+    (navigate)="navigateToPage($event)"
+    [currentPage]="navigation.currentPage"
+  >
+  </horizontal-tabs-navigation>
+  <ice-section *ngFor="let section of mainSections" [section]="section" [ngClass]="page.name">
+  </ice-section>
+  <ice-confirmation-dialog [page]="page"></ice-confirmation-dialog>
+  <ice-message [page]="page"></ice-message>
+</div>

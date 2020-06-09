@@ -1,0 +1,8 @@
+label: InsisOneLevelTabsNavigationPage
+
+component: InsisOneLevelTabsNavigationPage
+
+description: >
+  A page which can render just a ONE level navigation.
+  The navigation in rendered below a "header section"
+  The "header section", the one rendered above the navigation, is extracted from the list of sections configured in VI - it has a section tag "header"
