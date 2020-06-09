@@ -1,16 +1,16 @@
 environment:
   log-soap-messages: true
   log-soap-messages-folder: './logs'
-  insis_csm_endpoint: http://10.3.7.200:7808/insisws/InsisCSMPort
-  insis_pdm_endpoint: http://10.3.7.200:7808/insisws/InsisPDMPort
-  insis_pam_endpoint: http://10.3.7.200:7808/insisws/InsisPAMPort
-  insis_generic_endpoint: http://10.3.7.200:7810/insisws/InsisGenericWSPort
-  insis_oom_endpoint: http://10.3.7.200:7808/insisws/InsisOMMPort
+  insis_csm_endpoint: http://10.3.7.198:7808/insisws/InsisCSMPort
+  insis_pdm_endpoint: http://10.3.7.198:7808/insisws/InsisPDMPort
+  insis_pam_endpoint: http://10.3.7.198:7808/insisws/InsisPAMPort
+  insis_generic_endpoint: http://10.3.7.198:7810/insisws/InsisGenericWSPort
+  insis_oom_endpoint: http://10.3.7.198:7808/insisws/InsisOMMPort
   insis-username: de1_ops_superuser
   insis-password: welcome123
   insis-ignoreNamespaces:
     - insis
-  insis-db-url: 10.3.7.200/insispdb
+  insis-db-url: 10.3.7.198/insispdb
   insis-db-username: insis_gen_v10_rls
   insis-db-password: insis_gen_v10_rls
   insis_print_endpoint: http://10.3.4.148:7809/insis/util/print
