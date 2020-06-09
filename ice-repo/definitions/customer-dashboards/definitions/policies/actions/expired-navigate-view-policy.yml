@@ -1,5 +1,5 @@
 action:
   execution:
     - InsisNavigateToDefinitionPageWithDynidRule:
-        dynIdElement: policies~policy_id
+        dynIdElement: expired-policies~policy_id
         definition: customer-dashboards.policies.details/details

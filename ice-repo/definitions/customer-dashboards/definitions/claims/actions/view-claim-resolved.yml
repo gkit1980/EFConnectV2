@@ -1,11 +1,5 @@
 action:
   execution:
-    - InsisCopyValueExecutionRule:
-        source: resolved-claims~claim-no
-        destination: claim-to-view
-    - DtNavigateToDefinitionExecutionRule:
-        dt: navigate-to-claim
-        definitionOutput: url
-    - ResetElementValueExecutionRule:
-        elements:
-          - claim-to-view
+    - InsisNavigateToDefinitionPageWithDynidRule:
+        dynIdElement: resolved-claims~claim-no
+        definition: customer-dashboards.claims.details/details

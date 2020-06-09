@@ -1,0 +1,11 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          themeColor: accent
+          accesskey: l
+  defaultValue:
+    StaticValueRule:
+      value: navigate-to-all-policies

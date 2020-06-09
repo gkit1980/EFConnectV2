@@ -863,6 +863,10 @@ entries:
         - en: You have no active policies
           de: You have no active policies
     no-policies: {}
+    navigate-to-all-policies:
+      label:
+        - en: '< ALL POLICIES '
+          de: < ALLE POLICEN
   validation:
     pageValidation:
       summary:

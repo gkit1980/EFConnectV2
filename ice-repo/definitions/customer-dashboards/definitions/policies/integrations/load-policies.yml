@@ -82,6 +82,8 @@ integration:
               element: policies~quote_status_name
             - payload: 'rows[n].insured_objects'
               element: policies~insured_objects
+            - value: navigate-view-policy
+              element: policies~view-more
         - fromIdx:
             array: payload.rows
             conditions: is_expired == 0
@@ -150,6 +152,8 @@ integration:
               element: expired-policies~quote_status_name
             - payload: 'rows[n].insured_objects'
               element: expired-policies~insured_objects
+            - value: expired-navigate-view-policy
+              element: expired-policies~link
         - fromIdx:
             array: payload.rows
             conditions: is_expired == 0
