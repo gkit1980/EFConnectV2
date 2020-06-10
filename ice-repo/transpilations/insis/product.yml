@@ -1,0 +1,39 @@
+transpilation:
+  exchange:
+    - InsisProductConfigRestExchangeRule:
+        endpointBaseurl: insis-transpilation-endpoint
+        url: '/product/${productcode}'
+    - InsisProductConfigRestExchangeRule:
+        endpointBaseurl: insis-transpilation-endpoint
+        url: '/quest-def-collection'
+    - InsisProductConfigRestExchangeRule:
+        endpointBaseurl: insis-transpilation-endpoint
+        url: '/cover-package-collection'
+  transpile:
+    InsisProductTranspileRule:
+      out:
+        - mappings:
+          - param: productcode
+            value: 2001
+          - param: parent-definition
+            value: 'products'
+      in:
+        - fromIdx:
+            source: ProductConfiguration.Versions[0].Version
+            condition: Status[0] == 'R'
+          mappings:
+            - element: policy.insured.object.entity-type
+              source: ProductConfiguration.Versions[0].Version[n].Objects[0].Object[0].ObjectType[0]
+            - element: policy.insured.object.entity-type
+              source: ProductConfiguration.Versions[0].Version[n].Objects[0].Object[0].ObjectType[0]
+            - element: policy.contract.product-code
+              source: ProductConfiguration.ProductCode[0]
+            - questions:
+                source: ProductConfiguration.Versions[0].Version[n].Questions[0].Question
+                namePrefix: policy.contract.questions
+            - questions:
+                source: ProductConfiguration.Versions[0].Version[n].Objects[0].Object[0].Questions[0].Question
+                namePrefix: policy.insured.object.questions
+            - coverPackages:
+              - source: ProductConfiguration.Versions[0].Version[n].Objects[0].Object[0].Packages[0].Package
+                namePrefix: policy.insured.object.cover-packages

@@ -1,0 +1,73 @@
+transpilation:
+  exchange:
+    - InsisProductConfigRestExchangeRule:
+        endpointBaseurl: insis-transpilation-endpoint
+        url: '/product/${productcode}'
+    - InsisProductConfigRestExchangeRule:
+        endpointBaseurl: insis-transpilation-endpoint
+        url: '/quest-def-collection'
+    - InsisProductConfigRestExchangeRule:
+        endpointBaseurl: insis-transpilation-endpoint
+        url: '/cover-package-collection'
+    - InsisProductConfigRestExchangeRule:
+        endpointBaseurl: insis-transpilation-endpoint
+        url: '/product-collection'
+    - InsisProductConfigRestExchangeRule:
+        endpointBaseurl: insis-transpilation-endpoint
+        url: '/object-collection'
+    - InsisProductConfigRestExchangeRule:
+        endpointBaseurl: insis-transpilation-endpoint
+        url: '/document-collection'
+  transpile:
+    InsisProductTranspileRule:
+      out:
+        - mappings:
+          - param: productcode
+            value: 920101
+          - param: parent-definition
+            value: 'products'
+          - param: lob
+            value: motor
+          - param: useVersion
+            value: '1.00'
+      in:
+        - fromIdx:
+            source: ProductConfiguration.Versions[0].Version
+            condition: Version[0] == '1.00'
+          mappings:
+            - element: policy.contract.product-code
+              source: ProductConfiguration.ProductCode[0]
+            - questions:
+                source: ProductConfiguration.Versions[0].Version[n].Questions[0].Question
+                namePrefix: policy.contract.question
+            - documents:
+                source: ProductConfiguration.Versions[0].Version[n].Documents[0].Document
+                namePrefix: policy.contract.document
+        - fromIdx:
+            source: ProductConfiguration.Versions[0].Version
+            condition: Version[0] == '1.00'
+            fromIdx:
+              source: Objects[0].Object
+              condition: ObjectType[0] == '3'
+            mappings:
+            - element: policy.insured.vehicle-objects~entity-type
+              source: ProductConfiguration.Versions[0].Version[n].Objects[0].Object[n].ObjectType[0]
+            - questions:
+                source: ProductConfiguration.Versions[0].Version[n].Objects[0].Object[n].Questions[0].Question
+                namePrefix: policy.insured.vehicle-objects~question
+            - covers:
+                source: ProductConfiguration.Versions[0].Version[n].Objects[0].Object[n].Covers[0].Cover
+                namePrefix: policy.insured.vehicle-objects~cover
+            - documents:
+                source: ProductConfiguration.Versions[0].Version[n].Objects[0].Object[n].Documents[0].Document
+                namePrefix: policy.insured.vehicle-objects~document
+        - fromIdx:
+            source: Repository.Entities[0].ObjectCollection[0].Object
+            condition: ObjectType[0] == '3'
+          mappings:
+            - objectSubTypes: 
+                source: Repository.Entities[0].ObjectCollection[0].Object[n]
+                namePrefix: policy.insured.vehicle-objects~entity
+            - usedDefinedFields: 
+                source: Repository.Entities[0].ObjectCollection[0].Object[n]
+                namePrefix: policy.insured.vehicle-objects~

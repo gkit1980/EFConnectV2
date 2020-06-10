@@ -1,0 +1,7 @@
+element:
+  title: Was the claim caused by self-inflicted injuries by the Insured?
+  type: text
+  component: IceDropdown
+  viewMode: required
+  defaultValue: '1'
+  values: insis.policy.contract.question.clm-2

@@ -1,0 +1,10 @@
+element:
+  title: number of installments for the policy
+  type: integer
+  component: IceDropdown
+  defaultValue: 1
+  buckets:
+    insis-quote:
+      trigger: true
+  values: insis.payment-frequency
+  viewMode: required

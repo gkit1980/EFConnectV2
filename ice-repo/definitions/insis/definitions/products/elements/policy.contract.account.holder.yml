@@ -1,0 +1,6 @@
+element:
+  title: holder
+  type: text
+  viewMode:
+    DtViewModeRule:
+      dt: policy.contract.account.behaviour

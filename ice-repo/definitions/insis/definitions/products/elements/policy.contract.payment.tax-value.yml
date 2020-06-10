@@ -1,0 +1,5 @@
+element:
+  title: number of installments for the policy
+  type: currency
+  component: PremiumElement
+  viewMode: disabled

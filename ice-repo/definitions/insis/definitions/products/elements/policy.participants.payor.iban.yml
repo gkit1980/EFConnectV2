@@ -1,0 +1,11 @@
+element:
+  type: text
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.participants.payor.iban-selection
+      conditionValue: 0
+      conditionViewMode: required
+      elseViewMode: hidden
+  mirror:
+    CopyValueMirrorRule:
+      originElement: policy.participants.payor.iban-selection

@@ -1,0 +1,8 @@
+element:
+  type: currency
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.insured.person-objects~cover.death-any.active
+      conditionValue: true
+      conditionViewMode: output
+      elseViewMode: hidden

@@ -1,0 +1,9 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        IceNone: {}
+  viewMode:
+    DtViewModeRule:
+      dt: policy.participants.beneficiaries.title.viewmode

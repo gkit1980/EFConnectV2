@@ -1,0 +1,10 @@
+element:
+  title: Date of illness
+  type: date
+  component: IceDatepicker
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.insured.person-objects~question.q-13
+      conditionValue: '1'
+      conditionViewMode: default
+      elseViewMode: hidden

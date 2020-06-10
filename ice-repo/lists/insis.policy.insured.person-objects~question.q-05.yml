@@ -1,0 +1,39 @@
+list:
+  type: text
+  additionals:
+    label:
+      label: Label
+      type: text
+  items:
+    - value: '1'
+      label: Wholesale and retail trade
+    - value: '2'
+      label: Public Officials
+    - value: '3'
+      label: Financial assistance
+    - value: '4'
+      label: Rental activities
+    - value: '5'
+      label: Administration
+    - value: '6'
+      label: Agriculture
+    - value: '7'
+      label: Health services/medical
+    - value: '8'
+      label: Hunting/fishing and forestry
+    - value: '9'
+      label: Hotels and Restaurants
+    - value: '10'
+      label: Mining and quarry
+    - value: '11'
+      label: Manufacturing Industry
+    - value: '12'
+      label: 'Electricity, gas and water supply'
+    - value: '13'
+      label: Construction
+    - value: '14'
+      label: Military
+    - value: '15'
+      label: Repair of automotive vehicles
+    - value: '16'
+      label: Transportation

@@ -1,0 +1,14 @@
+element:
+  type: boolean
+  component: IceCheckbox
+  validation:
+    - ComplyValidationRule:
+        value: true
+        messageKey: validation.messages.comply
+  viewMode:
+    ConditionalViewModeRule:
+      conditionValue: 'true'
+      conditionElement: policy.is-user-bank-account-holder
+      conditionViewMode: hidden
+      elseViewMode: required
+  defaultValue: false

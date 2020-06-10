@@ -1,0 +1,4 @@
+element:
+  title: percentage of beneficiary
+  type: integer
+  viewMode: required

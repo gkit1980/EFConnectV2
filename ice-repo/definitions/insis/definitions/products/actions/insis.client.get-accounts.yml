@@ -1,0 +1,10 @@
+action:
+  execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - policy.participants.holder.person.accounts
+    - IntegrationExecutionRule:
+        integration: insis-client.get-accounts
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: NEW_DATAMODEL

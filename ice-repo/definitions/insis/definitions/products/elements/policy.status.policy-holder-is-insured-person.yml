@@ -1,0 +1,6 @@
+element:
+  title: Policy Holder is Insured Person
+  type: boolean
+  component: IceButtonToggle
+  defaultValue: true
+  values: common.yes-no

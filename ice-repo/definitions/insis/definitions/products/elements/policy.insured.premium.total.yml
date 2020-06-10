@@ -1,0 +1,7 @@
+element:
+  title: Premium for contract
+  type: currency
+  defaultValue:
+    StaticValueRule:
+      value: null
+  viewMode: disabled

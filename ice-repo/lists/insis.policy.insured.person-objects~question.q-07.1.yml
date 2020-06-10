@@ -1,0 +1,31 @@
+list:
+  type: text
+  additionals:
+    label:
+      label: Label
+      type: text
+  items:
+    - value: '11'
+      label: Boxing
+    - value: '12'
+      label: Chess
+    - value: '1'
+      label: Swimming
+    - value: '2'
+      label: Dancing
+    - value: '3'
+      label: Skiing and all winter sports
+    - value: '4'
+      label: Badminton
+    - value: '5'
+      label: Basketball
+    - value: '6'
+      label: Football
+    - value: '7'
+      label: Motor sports
+    - value: '8'
+      label: Wrestling
+    - value: '9'
+      label: Surfing
+    - value: '10'
+      label: Judo

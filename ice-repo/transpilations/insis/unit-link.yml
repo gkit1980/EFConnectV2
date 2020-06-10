@@ -1,0 +1,49 @@
+transpilation:
+  exchange:
+    - InsisProductConfigRestExchangeRule:
+        endpointBaseurl: insis-transpilation-endpoint
+        url: '/product/${productcode}'
+    - InsisProductConfigRestExchangeRule:
+        endpointBaseurl: insis-transpilation-endpoint
+        url: '/quest-def-collection'
+    - InsisProductConfigRestExchangeRule:
+        endpointBaseurl: insis-transpilation-endpoint
+        url: '/cover-package-collection'
+    - InsisProductConfigRestExchangeRule:
+        endpointBaseurl: insis-transpilation-endpoint
+        url: '/document-collection'
+  transpile:
+    InsisProductTranspileRule:
+      useIdForName: true
+      out:
+        - mappings:
+          - param: productcode
+            value: 101
+          - param: parent-definition
+            value: 'products'
+          - param: lob
+            value: life
+      in:
+        - fromIdx:
+            source: ProductConfiguration.Versions[0].Version
+            condition: Status[0] == 'R'
+          mappings:
+            - element: policy.insured.person-objects~entity-type
+              source: ProductConfiguration.Versions[0].Version[n].Objects[0].Object[0].ObjectType[0]
+              integration:
+                save: Insureds.Insured[n].InsuredEntity.ObjectType
+                get: Policy.Insureds.Insured[0].InsuredEntity.ObjectType
+            - element: policy.contract.product-code
+              source: ProductConfiguration.ProductCode[0]
+            - questions:
+                source: ProductConfiguration.Versions[0].Version[n].Questions[0].Question
+                namePrefix: policy.contract.question
+            - questions:
+                source: ProductConfiguration.Versions[0].Version[n].Objects[0].Object[0].Questions[0].Question
+                namePrefix: policy.insured.person-objects~question
+            - covers:
+                source: ProductConfiguration.Versions[0].Version[n].Objects[0].Object[0].Covers[0].Cover
+                namePrefix: policy.insured.person-objects~cover
+            - documents:
+                source: ProductConfiguration.Versions[0].Version[n].Objects[0].Object[0].Documents[0].Document
+                namePrefix: policy.insured.person-objects~document

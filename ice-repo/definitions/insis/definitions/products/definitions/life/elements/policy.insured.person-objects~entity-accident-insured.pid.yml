@@ -1,0 +1,5 @@
+element:
+  type: text
+  mirror:
+    CopyValueMirrorRule:
+      originElement: policy.insured.person-objects~person.pid

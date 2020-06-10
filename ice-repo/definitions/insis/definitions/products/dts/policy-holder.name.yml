@@ -1,0 +1,25 @@
+dt:
+  output-label: label
+  hitPolicy: F
+  inputs:
+    - label: policy holder first name
+      element: policy.participants.holder.person.first-name
+    - label: policy holder last name
+      element: policy.participants.holder.person.last-name
+  outputs:
+    - label: label
+      id: label
+      type: string
+  rules:
+    - inputs:
+        - not(null)
+        - not(null)
+      outputs:
+        - >-
+          policy.participants.holder.person.first-name + ' '  +
+          policy.participants.holder.person.last-name
+    - inputs:
+        - '-'
+        - '-'
+      outputs:
+        - Name of client

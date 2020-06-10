@@ -6,6 +6,7 @@ environment:
   insis_pam_endpoint: http://10.3.7.198:7808/insisws/InsisPAMPort
   insis_generic_endpoint: http://10.3.7.198:7810/insisws/InsisGenericWSPort
   insis_oom_endpoint: http://10.3.7.198:7808/insisws/InsisOMMPort
+  insis-transpilation-endpoint: http://10.3.7.198:7804/insis-services/rest/configurator-export
   insis-username: de1_ops_superuser
   insis-password: welcome123
   insis-ignoreNamespaces:

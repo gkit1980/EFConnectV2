@@ -1,0 +1,9 @@
+element:
+  title: Gender of Insured Person
+  type: text
+  component: IceButtonToggle
+  defaultValue:
+    PrincipalDataValueRule:
+      path: gender
+  values: insis.gender
+  viewMode: disabled

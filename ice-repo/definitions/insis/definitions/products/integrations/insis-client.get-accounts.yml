@@ -1,0 +1,43 @@
+integration:
+  exchange:
+    SoapCallExchangeRule:
+      endpoint: insis_pdm_endpoint
+      securityMode: UsernamePassword
+      username: 'env:insis-username'
+      password: 'env:insis-password'
+      ignoreNamespaces: 'env:insis-ignoreNamespaces'
+      soapAction: findPersonByPID
+      requestType: FndPersonByPIDRqType
+      jsonSchema: InsisPDM
+      responseType: FndPersonByPIDRsType
+  transformation:
+    DefaultTransformationRule:
+      additional: insis
+      dateFormat: YYYY-MM-DD
+      dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
+      out:
+        - mappings:
+            - param: soapAction
+              value: findPersonByPID
+            - param: requestType
+              value: FndPersonByPIDRqType
+        - mappings:
+            - element: policy.participants.holder.person.pid
+              payload: PID
+      in:
+        - fromIdx:
+            array: payload.BankAccounts.BankAccount
+          toIdx:
+            array: datamodel.policy.participants.holder.person.accounts
+            append: true
+          mappings:
+            - element: policy.participants.holder.person.accounts~bank-id
+              payload: 'BankAccounts.BankAccount[n].BankAccID'
+            - element: policy.participants.holder.person.accounts~bankpid
+              payload: 'BankAccounts.BankAccount[n].BankPID'
+            - element: policy.participants.holder.person.accounts~currency
+              payload: 'BankAccounts.BankAccount[n].Currency'
+            - element: policy.participants.holder.person.accounts~iban
+              payload: 'BankAccounts.BankAccount[n].AccountNo'
+            - element: policy.participants.holder.person.accounts~name
+              payload: 'BankAccounts.BankAccount[n].BankName'

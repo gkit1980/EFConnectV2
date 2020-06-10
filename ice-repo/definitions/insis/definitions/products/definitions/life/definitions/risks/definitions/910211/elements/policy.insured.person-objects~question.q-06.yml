@@ -1,0 +1,9 @@
+element:
+  title: >-
+    Has any application for Insurance on your life (life, accident, health) been
+    declined, postponed or accepted on special terms?
+  type: text
+  component: IceDropdown
+  viewMode: default
+  defaultValue: '2'
+  values: insis.policy.insured.person-objects~question.q-06

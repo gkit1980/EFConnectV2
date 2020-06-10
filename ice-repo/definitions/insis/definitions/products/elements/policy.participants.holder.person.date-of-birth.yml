@@ -1,0 +1,10 @@
+element:
+  title: Birthdate policy holder
+  type: date
+  defaultValue:
+    PrincipalDataValueRule:
+      path: birthdate
+  range:
+    FeelExpressionRangeRule:
+      expressionMax: date(policy.contract.begin) - duration('P18Y')
+  viewMode: disabled

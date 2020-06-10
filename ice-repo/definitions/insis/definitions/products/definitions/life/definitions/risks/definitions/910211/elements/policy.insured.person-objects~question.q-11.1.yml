@@ -1,0 +1,10 @@
+element:
+  title: 'Please, give details'
+  type: text
+  component: IceTextInput
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.insured.person-objects~question.q-11
+      conditionValue: '1'
+      conditionViewMode: default
+      elseViewMode: hidden
