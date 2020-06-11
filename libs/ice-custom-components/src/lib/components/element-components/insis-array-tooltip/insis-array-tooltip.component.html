@@ -23,6 +23,7 @@
       class="insis-array-tooltip--tooltip insis-info-bubble"
       (window:mouseup)="outsideClick($event)"
       *ngIf="showTooltip"
+      [ngClass]="{ 'has-label': label }"
     >
       <mat-icon class="close" (click)="showTooltip = false">close</mat-icon>
       <div id="triangle"></div>
