@@ -1,0 +1,38 @@
+<ng-template #default let-index>
+  <div *ngFor="let element of getTemplate">
+    <ice-element *ngIf="element" [section]="section" [elementName]="element" [index]="index">
+    </ice-element>
+  </div>
+</ng-template>
+
+<div class="insis-array-tooltip" *ngIf="isVisible" style="max-width: 100%;">
+  <label class="mat-small">{{ label }}</label>
+  <div *ngIf="showFirst >= getItems().length" style="overflow: hidden; max-width: 100%;">
+    <div *ngFor="let item of getItems(); index as index" class="insis-array-tooltip-item">
+      <ng-container
+        [ngTemplateOutlet]="template"
+        [ngTemplateOutletContext]="{ $implicit: childIndex(index) }"
+      >
+      </ng-container>
+    </div>
+  </div>
+  <div *ngIf="showFirst < getItems().length">
+    <div (click)="showTooltip = !showTooltip">{{ dynamicLabel }}</div>
+
+    <div
+      class="insis-array-tooltip--tooltip insis-info-bubble"
+      (window:mouseup)="outsideClick($event)"
+      *ngIf="showTooltip"
+    >
+      <mat-icon class="close" (click)="showTooltip = false">close</mat-icon>
+      <div id="triangle"></div>
+      <div *ngFor="let item of getItems(); index as index" class="insis-array-tooltip-item">
+        <ng-container
+          [ngTemplateOutlet]="template"
+          [ngTemplateOutletContext]="{ $implicit: childIndex(index) }"
+        >
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

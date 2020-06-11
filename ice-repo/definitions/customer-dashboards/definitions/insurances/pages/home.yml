@@ -38,13 +38,13 @@ page:
                     size.xs: auto
                     size.sm: auto
                     elements:
-                      - name: quotes~vehicles
+                      - name: quotes~insured_objects
                     align: center
                   - size: none
                     size.xs: auto
                     size.sm: auto
                     elements:
-                      - name: quotes~start-and-duration
+                      - name: quotes~insurance.start-and-duration
                     align: center
                   - size: none
                     size.xs: auto

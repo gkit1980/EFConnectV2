@@ -1,0 +1,25 @@
+@mixin insis-array-tooltip-mixin($theme) {
+  .insis-array-tooltip {
+    display: inline-flex;
+    position: relative;
+
+    mat-icon {
+      background-repeat: no-repeat;
+      background-position: center;
+      color: gray;
+    }
+
+    &--tooltip {
+      position: absolute;
+      left: calc(100% + 20px);
+      top: - 11px;
+      z-index: 10;
+    }
+
+    .insis-array-tooltip-item{
+      .mat-icon{
+       position: static;
+      }
+    }
+  }
+}

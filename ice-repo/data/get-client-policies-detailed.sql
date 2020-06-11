@@ -14,6 +14,8 @@
               'client_name' is client_name, 
               'insr_begin' is insr_begin, 
               'insr_end' is insr_end,
+              'insr_duration' is insr_duration,
+              'insr_duration_unit' is insr_duration_unit,
               'premium_amnt' IS premium_amnt,
               'active_claims' is active_claims, 
               'engagement_id' is engagement_id, 
@@ -46,7 +48,7 @@
                             WHEN pol.policy_state = -4 THEN 'Quotation'
                             WHEN pol.policy_state = -30 THEN 'Canceled'
                             ELSE 'Policy' END AS policy_state_name, pn.client_id,
-              pn.client_pid AS pid, pn.client_man_id AS man_id, pn.client_name, pol.insr_begin, pol.insr_end,
+              pn.client_pid AS pid, pn.client_man_id AS man_id, pn.client_name, pol.insr_begin, pol.insr_end, pol.insr_duration, pol.dur_dimension as insr_duration_unit, 
               LTRIM(TO_CHAR( (SELECT SUM(amount)
                                   FROM blc_policy_payment_plan
                                 WHERE policy_id = pol.policy_id

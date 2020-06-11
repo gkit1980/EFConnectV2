@@ -1,0 +1,5 @@
+element:
+  type: text
+  mirror:
+    DtResourceMirrorRule:
+      dt: quotes~insurance.translated-duration-unit.mirror

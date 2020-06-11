@@ -55,6 +55,7 @@ import { InsisDialogSectionContainer } from './components/shared-components/insi
 import { InsisButtonWithDialogComponent } from './components/element-components/insis-button-with-dialog/insis-button-with-dialog.component';
 import { InsisGoogleMapComponent } from './components/element-components/insis-google-map-component/insis-google-map.component';
 import { InsisPremiumSummarySection } from './components/section-components/insis-premium-summary-section/insis-premium-summary-section.component';
+import { InsisArrayTooltipComponent } from './components/element-components/insis-array-tooltip/insis-array-tooltip.component';
 
 /**
  * TIP: You will need to include in this array any new component you create.
@@ -68,6 +69,7 @@ export const iceCustomComponents = [
   InsisArrayComponent,
   InsisArrayCardsLayoutComponent,
   InsisArrayListLayoutComponent,
+  InsisArrayTooltipComponent,
   InsisCheckboxCardComponent,
   InsisCardComponent,
   InsisTwoLevelStepperNavigationPageComponent,

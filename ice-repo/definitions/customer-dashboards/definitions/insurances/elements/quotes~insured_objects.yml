@@ -1,0 +1,10 @@
+element:
+  type: array
+  viewMode: output
+  component:
+    StaticComponentRule:
+      component:
+        InsisArrayTooltip:
+          showFirst: '1'
+          items:
+            - quotes~insured_objects~object_name

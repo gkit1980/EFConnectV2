@@ -1,0 +1,12 @@
+element:
+  type: text
+  mirror:
+    InsisFillResourceWithElementValuesMirrorRule:
+      elements:
+        - quotes~insurance.start
+        - quotes~insurance.duration
+        - quotes~insurance.translated-duration-unit
+      resourceKey: elements.quotes.items.start-and-duration.mirror
+  viewMode:
+    StaticViewModeRule:
+      viewMode: output

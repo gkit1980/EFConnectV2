@@ -27,7 +27,7 @@ integration:
       in:
         - fromIdx:
             array: payload.rows
-            conditions: is_expired == 0
+            condition: is_expired == 0
           toIdx:
             array: datamodel.policies
             append: true
@@ -86,7 +86,7 @@ integration:
               element: policies~view-more
         - fromIdx:
             array: payload.rows
-            conditions: is_expired == 0
+            condition: is_expired == 0
             fromIdx:
               array: insured_objects
           toIdx:
@@ -97,7 +97,7 @@ integration:
 
         - fromIdx:
             array: payload.rows
-            conditions: is_expired == 0
+            condition: is_expired == 0
           toIdx:
             array: datamodel.expired-policies
             append: true
@@ -156,7 +156,7 @@ integration:
               element: expired-policies~link
         - fromIdx:
             array: payload.rows
-            conditions: is_expired == 0
+            condition: is_expired == 0
             fromIdx:
               array: insured_objects
           toIdx:

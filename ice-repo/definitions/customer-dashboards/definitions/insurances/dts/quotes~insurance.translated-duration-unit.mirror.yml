@@ -1,0 +1,40 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: quotes~insurance.duration-unit
+    - label: new label
+      element: quotes~insurance.duration
+  outputs:
+    - id: mirror
+      type: string
+  rules:
+    - inputs:
+        - 'y'
+        - 1
+      outputs:
+        - insuranse-duration-unit.year.label
+    - inputs:
+        - 'y'
+        - '-'
+      outputs:
+        - insuranse-duration-unit.years.label
+    - inputs:
+        - m
+        - 1
+      outputs:
+        - insuranse-duration-unit.month.label
+    - inputs:
+        - m
+        - '-'
+      outputs:
+        - insuranse-duration-unit.months.label
+    - inputs:
+        - d
+        - 1
+      outputs:
+        - insuranse-duration-unit.day.label
+    - inputs:
+        - d
+        - '-'
+      outputs:
+        - insuranse-duration-unit.days.label

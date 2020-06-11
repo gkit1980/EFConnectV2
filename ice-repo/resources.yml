@@ -687,10 +687,21 @@ entries:
             - en: Price
               de: Price
         start-and-duration:
+          mirror:
+            - en: '${param1}, ${param2} ${param3}'
+              de: '${param1}, ${param2} ${param3}'
+        insured_objects:
           label:
-            - en: Insurance start and duration
-              de: Insurance start and duration
-      itesm: {}
+            - en: Insured objects
+              de: Insured objects
+          dynamic-label:
+            - en: '${param1} objects'
+              de: '${param1} objects'
+        insurance:
+          start-and-duration:
+            label:
+              - en: Insurance start and duration
+                de: Insurance start and duration
     quotes-title:
       label:
         - en: Quotes in Progress
@@ -885,9 +896,9 @@ entries:
         - en: Please confirm
           de: Bitte bestätigen
       not_allowed_here:
-        - en: '''${value}'' not allowed here'
+        - en: "'${value}' not allowed here"
       regexp:
-        - en: '''${value}'' does not matches regular expression ${regexp}'
+        - en: "'${value}' does not matches regular expression ${regexp}"
       array:
         min:
           - en: 'must have at least ${min} entries'
@@ -1141,3 +1152,28 @@ entries:
     show-resolved:
       - en: Show resolved
         de: Show resolved
+  insuranse-duration-unit:
+    year:
+      label:
+        - en: year
+          de: Jahr
+    years:
+      label:
+        - en: years
+          de: Jahre
+    month:
+      label:
+        - en: month
+          de: Monat
+    months:
+      label:
+        - en: months
+          de: Monate
+    day:
+      label:
+        - en: day
+          de: Tag
+    days:
+      label:
+        - en: days
+          de: Tage

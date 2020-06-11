@@ -17,7 +17,8 @@ export class InsisFillResourceWithElementValuesMirrorRule extends MirrorRule {
     const paramList: any = {};
 
     this.getOriginElements().forEach((originElement, index) => {
-      const _value = originElement.getValue().values[0].value;
+      const indexFoElement = IndexedValue.sliceIndexToElementLevel(originElement.name, value.index);
+      const _value = originElement.getValue().getIndexedValue(indexFoElement).value;
       if (originElement.type === 'date')
         paramList[`param${index + 1}`] = this.resource.format(<Date>_value);
       else paramList[`param${index + 1}`] = _value;
@@ -27,7 +28,7 @@ export class InsisFillResourceWithElementValuesMirrorRule extends MirrorRule {
       new IndexedValue(
         this.element,
         this.resource.resolve(this.requireParam('resourceKey'), paramList),
-        null,
+        value.index,
         ValueOrigin.INTERNAL
       )
     );
