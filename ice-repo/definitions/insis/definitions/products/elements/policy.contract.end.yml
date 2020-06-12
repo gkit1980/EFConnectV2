@@ -4,5 +4,5 @@ element:
   mirror:
     InsuranceEndMirrorRule:
       beginElement: policy.contract.begin
-      termElement: policy.contract.term.years
+      termElement: policy.contract.term.duration
   viewMode: disabled

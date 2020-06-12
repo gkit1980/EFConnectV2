@@ -31,7 +31,7 @@ integration:
               payload: Policy.InsuranceConditions.ProductCode
             - element: policy.contract.renewal
               payload: Policy.InsuranceConditions.Renewal
-            - element: policy.contract.term.years
+            - element: policy.contract.term.duration
               payload: Policy.InsuranceConditions.Duration
             - element: policy.contract.payment.tax-value
               payload: Policy.InsuranceConditions.Taxes.Tax.TaxAmount

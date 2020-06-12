@@ -1,0 +1,9 @@
+element:
+  title: Term of payment
+  type: integer
+  mirror:
+    CopyValueMirrorRule:
+      originElement: policy.contract.term.duration
+  buckets:
+    insis-quote:
+      trigger: true

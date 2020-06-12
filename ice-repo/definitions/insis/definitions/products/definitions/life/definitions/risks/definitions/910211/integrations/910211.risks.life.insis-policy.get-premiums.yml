@@ -1,0 +1,110 @@
+integration:
+  exchange:
+    SoapCallExchangeRule:
+      endpoint: insis_pam_endpoint
+      securityMode: UsernamePassword
+      username: 'env:insis-username'
+      password: 'env:insis-password'
+      ignoreNamespaces: 'env:insis-ignoreNamespaces'
+      soapAction: findPolicyByNumber
+      requestType: FndPlcyByNumRqType
+      responseType: FndPlcyByNumRsType
+      jsonSchema: InsisPAM
+  transformation:
+    DefaultTransformationRule:
+      additional: insis
+      dateFormat: YYYY-MM-DD
+      dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
+      extends: life.insis-policy.get-premiums
+      out:
+        - mappings:
+            - param: soapAction
+              value: findPolicyByNumber
+            - param: requestType
+              value: FndPlcyByNumRqType
+      in:
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+            fromIdx:
+              array: Covers.Cover
+              condition: CoverCode == 'DEATH_ANY'
+          toIdx:
+            useSourceIndex: true
+          mappings:
+            - element: policy.insured.person-objects~cover.death-any.grc-id
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].GrcID'
+            - element: policy.insured.person-objects~cover.death-any.insured-amount
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
+            - element: policy.insured.person-objects~cover.death-any.premium
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Premium.TotalAmount'
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+            fromIdx:
+              array: Covers.Cover
+              condition: CoverCode == 'DEATH_ACC'
+          toIdx:
+            useSourceIndex: true
+          mappings:
+            - element: policy.insured.person-objects~cover.death-acc.grc-id
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].GrcID'
+            - element: policy.insured.person-objects~cover.death-acc.insured-amount
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
+            - element: policy.insured.person-objects~cover.death-acc.premium
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Premium.TotalAmount'
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+            fromIdx:
+              array: Covers.Cover
+              condition: CoverCode == 'DEATH_ANY'
+              fromIdx:
+                array: Taxes.Tax
+            toIdx:
+              useSourceIndex: true
+            mappings:
+              - element: policy.insured.person-objects~cover.death-any.taxes~type
+                payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Taxes.Tax[n].TaxType'
+              - element: policy.insured.person-objects~cover.death-any.taxes~amount
+                payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Taxes.Tax[n].TaxAmount'
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+            fromIdx:
+              array: Covers.Cover
+              condition: CoverCode == 'DEATH_ACC'
+              fromIdx:
+                array: Taxes.Tax
+            toIdx:
+              useSourceIndex: true
+            mappings:
+              - element: policy.insured.person-objects~cover.death-acc.taxes~type
+                payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Taxes.Tax[n].TaxType'
+              - element: policy.insured.person-objects~cover.death-acc.taxes~amount
+                payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Taxes.Tax[n].TaxAmount'
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+            fromIdx:
+              array: Covers.Cover
+              condition: CoverCode == 'DEATH_ANY'
+              fromIdx:
+                array: Discounts.Discount
+          toIdx:
+            useSourceIndex: true
+          mappings:
+            - element: policy.insured.person-objects~cover.death-any.discounts~type
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Discounts.Discount[n].DiscountType'
+            - element: policy.insured.person-objects~cover.death-any.discounts~amount
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Discounts.Discount[n].LumpSumDiscount'
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+            fromIdx:
+              array: Covers.Cover
+              condition: CoverCode == 'DEATH_ACC'
+              fromIdx:
+                array: Discounts.Discount
+                append: true
+          toIdx:
+            useSourceIndex: true
+          mappings:
+            - element: policy.insured.person-objects~cover.death-acc.discounts~type
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Discounts.Discount[n].DiscountType'
+            - element: policy.insured.person-objects~cover.death-acc.discounts~amount
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Discounts.Discount[n].LumpSumDiscount'

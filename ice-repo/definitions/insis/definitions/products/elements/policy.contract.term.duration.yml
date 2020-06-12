@@ -13,5 +13,5 @@ element:
   viewMode: required
   text:
     ResourceTextRule:
-      suffix: elements.policy.contract.term.years.suffix
-      placeholder: elements.policy.contract.term.years.placeholder
+      suffix: elements.policy.contract.term.duration.suffix
+      placeholder: elements.policy.contract.term.duration.placeholder

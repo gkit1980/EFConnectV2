@@ -1,0 +1,45 @@
+integration:
+  exchange: {}
+  transformation:
+    DefaultTransformationRule:
+      additional: insis
+      dateFormat: YYYY-MM-DD
+      dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
+      extends: insis-engagement-quote.save
+      in: {}
+      out:
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            array: payload.Policies.Policy[0].Insureds.Insured
+            apppend: true
+          mappings:
+            - element: policy.contract.begin
+              payload: Policies.Policy[0].Insureds.Insured[n].InsrBegin
+            - element: policy.insured.currency
+              payload: Policies.Policy[0].Insureds.Insured[n].Currency
+            - element: policy.insured.person-objects~insured-amount
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredAmount
+            - element: policy.insured.person-objects~object.id
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredObjectID
+            - element: policy.insured.vehicle-objects~entity-id
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.ObjectID
+            - element: policy.insured.person-objects~person.pid
+              payload: Policies.Policy[0].Insureds.Insured[n].OAccidentInsured.PID
+            - element: policy.insured.person-objects~person.gender
+              payload: Policies.Policy[0].Insureds.Insured[n].OAccidentInsured.PersonalData.Gender
+            - element: policy.insured.person-objects~person.pid
+              payload: Policies.Policy[0].Insureds.Insured[n].OAccidentInsured.PersonalData.PID
+            - element: policy.insured.person-objects~person.date-of-birth
+              payload: Policies.Policy[0].Insureds.Insured[n].OAccidentInsured.PersonalData.BirthDate
+            - element: policy.insured.person-objects~person.first-name
+              payload: Policies.Policy[0].Insureds.Insured[n].OAccidentInsured.PersonalData.Name.Given
+            - element: policy.insured.person-objects~person.last-name
+              payload: Policies.Policy[0].Insureds.Insured[n].OAccidentInsured.PersonalData.Name.Family
+            - element: policy.insured.person-objects~entity-accident-insured.type
+              payload: Policies.Policy[0].Insureds.Insured[n].OAccidentInsured.AccinsType
+        - mappings:
+            - element: policy.contract.payment.term.duration
+              payload: Policies.Policy[0].InsuranceConditions.Billings.Billing[0].PaymentDuration
+            - element: policy.contract.payment.term.years.units
+              payload: Policies.Policy[0].InsuranceConditions.Billings.Billing[0].PaymentDurUnits

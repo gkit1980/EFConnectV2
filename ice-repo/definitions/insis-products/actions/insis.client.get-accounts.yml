@@ -7,4 +7,4 @@ action:
         integration: insis-client.get-accounts
   trigger:
     - IceLifecycleEventTriggerRule:
-        event: NEW_DATAMODEL
+        event: ICE_CONTEXT_ACTIVATED

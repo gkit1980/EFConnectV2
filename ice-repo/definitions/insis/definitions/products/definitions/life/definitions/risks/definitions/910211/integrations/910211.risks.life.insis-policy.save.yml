@@ -1,0 +1,84 @@
+integration:
+  exchange: {}
+  transformation:
+    DefaultTransformationRule:
+      additional: insis
+      dateFormat: YYYY-MM-DD
+      dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
+      extends: motor.insis-policy.save
+      in: {}
+      out:
+        - toIdx:
+            array: 'payload.InsuranceConditions.Questionary.Question'
+            append: true
+          mappings:
+            - value: 'Q_01'
+              payload: 'InsuranceConditions.Questionary.Question[n].ID'
+            - element: policy.contract.question.q-01
+              payload: 'InsuranceConditions.Questionary.Question[n].Answer'
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            array: 'payload.Insureds.Insured'
+            condition: 1 == 1
+            toIdx:
+              array: Questionary.Question
+              append: true
+          mappings:
+            - value: 'Q_02'
+              payload: 'Insureds.Insured[n].Questionary.Question[n].ID'
+            - element: policy.insured.person-objects~question.q-02
+              payload: 'Insureds.Insured[n].Questionary.Question[n].Answer'
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            array: 'payload.Insureds.Insured'
+            condition: 1 == 1
+            toIdx:
+              array: Questionary.Question
+              append: true
+          mappings:
+            - value: 'Q_03'
+              payload: 'Insureds.Insured[n].Questionary.Question[n].ID'
+            - element: policy.insured.person-objects~question.q-03
+              payload: 'Insureds.Insured[n].Questionary.Question[n].Answer'
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+            condition: cover.death-any.active == true
+          toIdx:
+            array: payload.Insureds.Insured
+            condition: 1 == 1
+            toIdx:
+              array: Covers.Cover
+              append: true
+          mappings:
+            - element: policy.insured.person-objects~cover.death-any.grc-id
+              payload: 'Insureds.Insured[n].Covers.Cover[n].GrcID'
+            - element: policy.insured.person-objects~cover.death-any.annex-id
+              payload: 'Insureds.Insured[n].Covers.Cover[n].AnnexID'
+            - element: policy.insured.person-objects~cover.death-any.code
+              payload: 'Insureds.Insured[n].Covers.Cover[n].CoverCode'
+            - element: policy.insured.person-objects~cover.death-any.currency
+              payload: 'Insureds.Insured[n].Covers.Cover[n].Currency'
+            - element: policy.insured.person-objects~cover.death-any.insured-amount
+              payload: 'Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+            condition: cover.death-acc.active == true
+          toIdx:
+            array: payload.Insureds.Insured
+            condition: 1 == 1
+            toIdx:
+              array: Covers.Cover
+              append: true
+          mappings:
+            - element: policy.insured.person-objects~cover.death-acc.grc-id
+              payload: 'Insureds.Insured[n].Covers.Cover[n].GrcID'
+            - element: policy.insured.person-objects~cover.death-acc.annex-id
+              payload: 'Insureds.Insured[n].Covers.Cover[n].AnnexID'
+            - element: policy.insured.person-objects~cover.death-acc.code
+              payload: 'Insureds.Insured[n].Covers.Cover[n].CoverCode'
+            - element: policy.insured.person-objects~cover.death-acc.currency
+              payload: 'Insureds.Insured[n].Covers.Cover[n].Currency'
+            - element: policy.insured.person-objects~cover.death-acc.insured-amount
+              payload: 'Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
