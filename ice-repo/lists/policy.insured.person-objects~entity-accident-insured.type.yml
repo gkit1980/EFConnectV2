@@ -1,0 +1,16 @@
+list:
+  type: integer
+  additionals:
+    label_en:
+      label: label_en
+      type: text
+    label_de:
+      label: label_de
+      type: text
+  items:
+    - value: 1
+      label_en: Main Insured Person
+      label_de: Versicherte Person
+    - value: 2
+      label_en: Add on
+      label_de: Mitversicherte Person

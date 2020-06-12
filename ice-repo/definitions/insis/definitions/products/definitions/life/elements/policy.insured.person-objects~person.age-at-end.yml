@@ -1,0 +1,4 @@
+element:
+  title: Age of Insured Person at end
+  type: integer
+  viewMode: output
