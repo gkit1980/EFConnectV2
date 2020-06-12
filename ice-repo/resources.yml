@@ -499,6 +499,72 @@ entries:
             label:
               - en: Price
                 de: null
+        add-another-person:
+          label:
+            - en: Add another person
+              de: Add another person
+        remove-person:
+          label:
+            - en: Remove person
+              de: Remove person
+        person-objects:
+          items:
+            covers-title:
+              label:
+                - en: 'Covers ${param1} ${param2}'
+                  de: 'Covers ${param1} ${param2}'
+            cover:
+              death-any:
+                active:
+                  label:
+                    - en: Death any cause (mandatory)
+                      de: Death any cause (mandatory)
+                insured-amount:
+                  label:
+                    - en: Sum insured
+                      de: Sum insured
+              wop-total:
+                active:
+                  label:
+                    - en: Waiver of premium due to permanent disability any cause
+                      de: Waiver of premium due to permanent disability any cause
+              tpdill:
+                active:
+                  label:
+                    - en: Total and permanent disability due to illness over 75%
+                      de: Total and permanent disability due to illness over 75%
+              tpdaccd:
+                active:
+                  label:
+                    - en: Total and permanent disability due to accident over 75%
+                      de: Total and permanent disability due to accident over 75%
+              death-acc:
+                active:
+                  label:
+                    - en: Accidental death
+                      de: Accidental death
+              critic-ill:
+                active:
+                  label:
+                    - en: Critical illness
+                      de: Critical illness
+              premret:
+                active:
+                  label:
+                    - en: Premium return by survival
+                      de: Premium return by survival
+              policy-details-info:
+                label:
+                  - en: >-
+                      *The maximum age at which a person can still be insured is
+                      70 years old.
+                    de: >-
+                      *The maximum age at which a person can still be insured is
+                      70 years old.
+              covers-info:
+                label:
+                  - en: '${param1} will be ${param2} at the end of their insurance.'
+                    de: '${param1} will be ${param2} at the end of their insurance.'
       contract:
         begin:
           label:
@@ -884,6 +950,14 @@ entries:
       label:
         - en: '< ALL POLICIES '
           de: < ALLE POLICEN
+    more-information-needed-life:
+      label:
+        - en: >-
+            We are going to need some more information about you to be able to
+            issue the insurance policy.
+          de: >-
+            We are going to need some more information about you to be able to
+            issue the insurance policy.
   validation:
     pageValidation:
       summary:
@@ -902,9 +976,9 @@ entries:
         - en: Please confirm
           de: Bitte bestätigen
       not_allowed_here:
-        - en: "'${value}' not allowed here"
+        - en: '''${value}'' not allowed here'
       regexp:
-        - en: "'${value}' does not matches regular expression ${regexp}"
+        - en: '''${value}'' does not matches regular expression ${regexp}'
       array:
         min:
           - en: 'must have at least ${min} entries'

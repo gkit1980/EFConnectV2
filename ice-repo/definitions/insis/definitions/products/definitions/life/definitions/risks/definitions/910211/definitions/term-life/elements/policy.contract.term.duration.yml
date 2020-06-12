@@ -1,0 +1,17 @@
+element:
+  type: integer
+  component:
+    StaticComponentRule:
+      component:
+        IceDropdown: {}
+  defaultValue:
+    StaticValueRule:
+      value: 12
+  values:
+    ListValuesRule:
+      list: insis.term.duration
+  change:
+    - ResetElementValueExecutionRule:
+        elements:
+          - policy.contract.payment.frequency
+  viewMode: required

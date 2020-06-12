@@ -1,0 +1,28 @@
+element:
+  array:
+    StaticArrayRule:
+      default: '1'
+      min: '1'
+      max: '4'
+  viewMode:
+    StaticViewModeRule:
+      viewMode: output
+  label:
+    NoLabelRule: {}
+  component:
+    StaticComponentRule:
+      component:
+        InsisArrayCardsLayout: {}
+  pages:
+    1.quote.people:
+      viewMode:
+        StaticViewModeRule:
+          viewMode: default
+      component:
+        StaticComponentRule:
+          component:
+            InsisArrayCardsLayout:
+              addButtonLabelResourceKey: elements.policy.insured.add-another-person.label
+              removeButtonLabelResourceKey: elements.policy.insured.remove-person.label
+              cardLayout: onMultipleItems
+              confirmOnRemove: false

@@ -1,0 +1,12 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        IceNone: {}
+  label:
+    ResourceWithElementValuesLabelRule:
+      elements:
+        - policy.insured.person-objects~person.first-name
+        - policy.insured.person-objects~person.age-at-end
+      key: elements.policy.insured.person-objects.items.cover.covers-info.label

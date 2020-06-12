@@ -1,0 +1,6 @@
+element:
+  defaultValue:
+    StaticValueRule:
+      value: 100
+  label:
+    NoLabelRule: {}
