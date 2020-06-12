@@ -17,6 +17,7 @@ export class InsisMotorPolicySummarySectionComponent extends SectionComponentImp
 
   getElementValue(elementName: string, index = [0]): string {
     const element = (this.iceModel.elements[elementName] as unknown) as ItemElement;
+    if (!element) return '';
     const value = element.getValue().forIndex(index);
     let displayValue = '';
 
@@ -42,6 +43,7 @@ export class InsisMotorPolicySummarySectionComponent extends SectionComponentImp
 
   getArrayElementIndexes(elementName: string, index = [0]): number[] {
     const element = this.iceModel.elements[elementName];
+    if (!element) return [];
     return element
       .getValue()
       .forIndex(index)

@@ -565,6 +565,10 @@ entries:
             label:
               - en: IBAN
                 de: IBAN
+          iban-selection:
+            label:
+              - en: Select a bank account to use for insurance payment
+                de: Select a bank account to use for insurance payment
           last-name:
             label:
               - en: Last name
@@ -579,9 +583,18 @@ entries:
               - en: Gender
                 de: Gender
     buy-insurance:
-      label:
-        - en: Buy insurance
-          de: Versicherung kaufen
+      btn:
+        label:
+          - en: Buy insurance
+            de: Versicherung kaufen
+      description:
+        label:
+          - en: >-
+              Upon clicking this button the policy will be issued and the provided
+              bank account will be debited as per the selected preferences.
+            de: >-
+              Upon clicking this button the policy will be issued and the provided
+              bank account will be debited as per the selected preferences.      
     terms-and-conditions:
       description:
         label:
@@ -609,14 +622,7 @@ entries:
       label:
         - en: Bank account holder details
           de: Angaben zum Kontoinhaber
-    buy-insurance-description:
-      label:
-        - en: >-
-            Upon clicking this button the policy will be issued and the provided
-            bank account will be debited as per the selected preferences.
-          de: >-
-            Upon clicking this button the policy will be issued and the provided
-            bank account will be debited as per the selected preferences.
+    
     checbox-card:
       label:
         - en: Checkbox component
@@ -1139,6 +1145,12 @@ entries:
         vandalism:
           - en: Vandalism
             de: Vandalism
+    participants:
+      payor:
+        iban-selection:
+          empty:
+            - en: Use a different bank account
+              de: policy.participants.payor.iban-selection.empty      
   quotes:
     title: {}
     remove:

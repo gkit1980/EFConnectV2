@@ -1,2 +1,5 @@
 element:
   type: action
+  defaultValue:
+    StaticValueRule:
+      value: go-to-term-life-insurance

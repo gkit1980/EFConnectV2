@@ -3,7 +3,7 @@ element:
   viewMode:
     ConditionalViewModeRule:
       conditionElement: policy.participants.payor.iban-selection
-      conditionValue: 0
+      conditionValue: null
       conditionViewMode: required
       elseViewMode: hidden
   mirror:

@@ -36,7 +36,10 @@ export class InsisArrayItemBasedValuesRule extends ValuesRule {
     const emptyItemResourceKey = this.element.name + '.empty';
     items.push({
       value: null,
-      label: this.resource.resolve(emptyItemResourceKey, 'Add resourse yourElementName.empty')
+      label: this.resource.resolve(
+        emptyItemResourceKey,
+        `Add resourse your ${emptyItemResourceKey}`
+      )
     });
     return items;
   }

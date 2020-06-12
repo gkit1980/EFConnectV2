@@ -118,8 +118,14 @@ mat-radio-button {
   width: 100%;
 }
 
-.ice-radiobutton-qroup mat-label {
+.hide-label .ice-radiobutton-qroup mat-label {
   display: none !important;
+}
+
+.ice-radiobutton-qroup mat-label {
+  transform: none !important;
+  width: 100% !important;
+  margin-bottom: 10px;
 }
 
 .slider-mirror-labels {
