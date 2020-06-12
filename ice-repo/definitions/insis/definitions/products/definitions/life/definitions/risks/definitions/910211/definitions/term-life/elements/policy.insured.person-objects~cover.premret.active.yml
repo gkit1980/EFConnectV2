@@ -1,0 +1,6 @@
+element:
+  viewMode:
+    DtViewModeRule:
+      dt: policy.insured.person-objects~cover.additional-person-covers.viewmode
+      output: viewmode
+  type: boolean

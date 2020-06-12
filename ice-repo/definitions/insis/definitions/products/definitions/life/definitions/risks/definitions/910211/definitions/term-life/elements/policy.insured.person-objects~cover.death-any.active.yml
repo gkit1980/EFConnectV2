@@ -1,0 +1,10 @@
+element:
+  defaultValue:
+    DtValueRule:
+      dt: policy.insured.person-objects~cover.death-any
+      output: defautvalue
+  viewMode:
+    DtViewModeRule:
+      dt: policy.insured.person-objects~cover.death-any
+      output: viewmode
+  type: boolean

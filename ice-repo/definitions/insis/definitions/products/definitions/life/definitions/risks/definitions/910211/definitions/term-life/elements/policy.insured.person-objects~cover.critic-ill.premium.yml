@@ -4,3 +4,4 @@ element:
       value: 100
   label:
     NoLabelRule: {}
+  type: currency

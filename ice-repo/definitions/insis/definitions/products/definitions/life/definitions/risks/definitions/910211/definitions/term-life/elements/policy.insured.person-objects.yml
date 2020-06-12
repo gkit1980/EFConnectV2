@@ -26,3 +26,4 @@ element:
               removeButtonLabelResourceKey: elements.policy.insured.remove-person.label
               cardLayout: onMultipleItems
               confirmOnRemove: false
+  type: array

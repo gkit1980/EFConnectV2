@@ -2,3 +2,4 @@ element:
   defaultValue: 1000
   label:
     NoLabelRule: null
+  type: currency

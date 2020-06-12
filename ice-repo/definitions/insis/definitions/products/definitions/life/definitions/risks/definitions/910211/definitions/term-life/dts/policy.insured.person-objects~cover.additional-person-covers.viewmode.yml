@@ -1,0 +1,16 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policy.insured.person-objects~entity-accident-insured.type
+  outputs:
+    - id: viewmode
+      type: string
+  rules:
+    - inputs:
+        - 1
+      outputs:
+        - default
+    - inputs:
+        - 2
+      outputs:
+        - hidden
