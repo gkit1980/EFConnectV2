@@ -1,5 +1,5 @@
 import { Component, ViewChild, TemplateRef, Input, Output, EventEmitter } from '@angular/core';
-import { MatDialog, MatDialogRef, MatDialogConfig } from '@angular/material';
+import { MatDialog, MatDialogRef, MatDialogConfig } from '@angular/material/dialog';
 
 type DialogSize = 'small' | 'medium' | 'large' | 'xlarge';
 
@@ -9,10 +9,10 @@ type DialogSize = 'small' | 'medium' | 'large' | 'xlarge';
     <ng-template #myTemplate>
       <ng-content></ng-content>
     </ng-template>
-  `
+  `,
 })
 export class AppDialog {
-  @ViewChild('myTemplate', { static: false }) customTemplate: TemplateRef<any>;
+  @ViewChild('myTemplate') customTemplate: TemplateRef<any>;
 
   dialogRef: any;
 
@@ -25,10 +25,10 @@ export class AppDialog {
       Promise.resolve().then(() => {
         this.dialogRef = this.dialog.open(this.customTemplate, {
           width: this.getWidth() + 'px',
-          ...this.config
+          ...this.config,
         });
 
-        this.dialogRef.afterClosed().subscribe(result => {
+        this.dialogRef.afterClosed().subscribe((result) => {
           this.visibleChange.emit(false);
         });
       });

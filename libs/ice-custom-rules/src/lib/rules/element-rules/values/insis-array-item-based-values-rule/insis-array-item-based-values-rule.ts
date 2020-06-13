@@ -14,7 +14,7 @@ export class InsisArrayItemBasedValuesRule extends ValuesRule {
   //
   public getValues(index: number[] | null): any[] {
     this.initialize();
-    return map(this.getItems(index), item =>
+    return map(this.getItems(index), (item) =>
       IceType.sanitizeValueToElementType(item.value, this.element)
     );
   }
@@ -27,10 +27,10 @@ export class InsisArrayItemBasedValuesRule extends ValuesRule {
   }
 
   protected getItems(index: number[] | null): any[] {
-    const items = map(this.valueElement.getValue().values, value => {
+    const items = map(this.valueElement.getValue().values, (value) => {
       return {
         value: value.value,
-        label: this.labelElement.getValue().forIndex(value.index)
+        label: this.labelElement.getValue().forIndex(value.index),
       };
     });
     const emptyItemResourceKey = this.element.name + '.empty';
@@ -39,7 +39,7 @@ export class InsisArrayItemBasedValuesRule extends ValuesRule {
       label: this.resource.resolve(
         emptyItemResourceKey,
         `Add resourse your ${emptyItemResourceKey}`
-      )
+      ),
     });
     return items;
   }

@@ -17,7 +17,7 @@ describe(InsisArrayItemIndexValueRule.name, () => {
     await iceTesting
       .contextBuilder()
       .element('parentArray', 'array')
-      .element(elementName, 'text', element =>
+      .element(elementName, 'text', (element) =>
         element.defaultValueRule(InsisArrayItemIndexValueRule.name, ruleRecipe)
       )
       .build();

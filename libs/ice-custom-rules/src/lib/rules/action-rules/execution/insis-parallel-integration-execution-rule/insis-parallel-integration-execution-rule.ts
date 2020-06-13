@@ -9,7 +9,7 @@ export class InsisParallelIntegrationExecutionRule extends ExecutionRule {
   async execute(): Promise<void> {
     const integrationsNames = this.requireParam('integrations');
     const integrationExecutions = [];
-    forEach(integrationsNames, integrationName => {
+    forEach(integrationsNames, (integrationName) => {
       const integration = this.iceModel.integrations[integrationName];
       if (!integration) return IceConsole.warn(`no such integration: '${integrationName}'`);
       if (!(integration instanceof ActiveIntegration))
@@ -19,8 +19,8 @@ export class InsisParallelIntegrationExecutionRule extends ExecutionRule {
 
     await Promise.all(
       integrationExecutions.map(
-        p =>
-          new Promise(resolve => {
+        (p) =>
+          new Promise((resolve) => {
             p.then(resolve).catch(resolve);
           })
       )

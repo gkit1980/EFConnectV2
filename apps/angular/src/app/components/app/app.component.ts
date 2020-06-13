@@ -6,7 +6,7 @@ import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
 })
 export class AppComponent {
   authenticationService: AuthenticationService;
@@ -18,7 +18,7 @@ export class AppComponent {
   }
 
   addGuard(routes: Route[], exclude: string[]) {
-    routes.forEach(route => {
+    routes.forEach((route) => {
       if (exclude.includes(route.path)) return;
 
       if (route.canActivate) {

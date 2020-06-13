@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'insis-vertical-stepper-navigation',
-  templateUrl: './insis-vertical-stepper-navigation.component.html'
+  templateUrl: './insis-vertical-stepper-navigation.component.html',
 })
 export class InsisVerticalStepperNavigationComponent extends PageNavigationComponentImplementation
   implements OnInit {

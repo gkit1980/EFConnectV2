@@ -12,7 +12,7 @@ export class InsisDynIdForKeyWithDefaultMirrorRule extends MirrorRule {
 
     this.subscriptions.push(
       this.dataStore.subscribe(path, {
-        next: dataStorePath => {
+        next: (dataStorePath) => {
           if (dataStorePath !== path) return;
           let value = this.dataStore.get([this.context.definition, 'dynId']) as string;
           if (_.isObject(value)) return IceConsole.warn(`Object is not allowed here`);
@@ -20,7 +20,7 @@ export class InsisDynIdForKeyWithDefaultMirrorRule extends MirrorRule {
           if (value == null) value = this.getParam('defaultValue', null);
           else value = value.substr(4);
           this.element.setSimpleValue(value);
-        }
+        },
       })
     );
   }

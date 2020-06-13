@@ -6,11 +6,11 @@ import buildJSON from '../../../../../../build-info.json';
 
 @Component({
   selector: 'app-footer',
-  templateUrl: './footer.component.html'
+  templateUrl: './footer.component.html',
 })
 export class FooterComponent {
   version: any = {
-    BuildNumber: ''
+    BuildNumber: '',
   };
   navigation: any[] = [];
 
@@ -19,10 +19,10 @@ export class FooterComponent {
   }
 
   constructor(private http: HttpClient, private runtimeService: IceRuntimeService) {
-    this.runtimeService.getRuntime().then(runtime => {
+    this.runtimeService.getRuntime().then((runtime) => {
       this.navigation.push({
         key: runtime.iceResource.resolve('pages.footer.terms-and-conditions'),
-        link: '/terms-and-conditions'
+        link: '/terms-and-conditions',
       });
     });
   }

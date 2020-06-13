@@ -6,7 +6,7 @@ import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
   selector: 'app-header',
-  templateUrl: './header.component.html'
+  templateUrl: './header.component.html',
 })
 export class HeaderComponent {
   activeURL = '';
@@ -23,41 +23,41 @@ export class HeaderComponent {
     private runtimeService: IceRuntimeService,
     private authenticationService: AuthenticationService
   ) {
-    this.runtimeService.getRuntime().then(runtime => {
+    this.runtimeService.getRuntime().then((runtime) => {
       this.navigation.push(
         {
           key: runtime.iceResource.resolve('pages.header.dashboard.label'),
           link: runtime.iceResource.resolve('pages.header.dashboard.link'),
-          includes: []
+          includes: [],
         },
         {
           key: runtime.iceResource.resolve('pages.header.policies.label'),
           link: runtime.iceResource.resolve('pages.header.policies.link'),
-          includes: []
+          includes: [],
         },
         {
           key: runtime.iceResource.resolve('pages.header.claims.label'),
           link: runtime.iceResource.resolve('pages.header.claims.link'),
-          includes: ['/ice/customer-dashboards.claims.details/details']
+          includes: ['/ice/customer-dashboards.claims.details/details'],
         },
         {
           key: runtime.iceResource.resolve('pages.header.products.label'),
           link: runtime.iceResource.resolve('pages.header.products.link'),
-          includes: []
+          includes: [],
         },
         {
           key: runtime.iceResource.resolve('pages.header.payments.label'),
           link: runtime.iceResource.resolve('pages.header.payments.link'),
-          includes: []
+          includes: [],
         }
       );
 
       this.menuItems.push({
         key: runtime.iceResource.resolve('pages.header.menu.logout'),
-        method: this.logout.bind(this)
+        method: this.logout.bind(this),
       });
     });
-    this.router.events.subscribe(event => {
+    this.router.events.subscribe((event) => {
       this.activeURL = window.location.hash.split('#')[1];
       this.showMobileNav = false;
     });
@@ -66,7 +66,8 @@ export class HeaderComponent {
   isSelectedTab(tab): boolean {
     if (!tab) return false;
     return (
-      this.activeURL === tab.link || tab.includes.some(urlPart => this.activeURL.includes(urlPart))
+      this.activeURL === tab.link ||
+      tab.includes.some((urlPart) => this.activeURL.includes(urlPart))
     );
   }
 

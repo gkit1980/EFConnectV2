@@ -4,7 +4,7 @@ import { get } from 'lodash';
 export enum Conditions {
   LESS_THAN = 'leser',
   EQUALS = 'equals',
-  GREATER_THAN = 'greater'
+  GREATER_THAN = 'greater',
 }
 
 export class InsisChangeViewModeBasedOnArrayLengthRule extends SectionViewModeRule {

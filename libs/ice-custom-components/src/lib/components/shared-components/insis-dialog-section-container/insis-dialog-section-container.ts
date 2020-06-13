@@ -5,7 +5,7 @@ import { IcePage, IceSection, PageElement, ItemElement } from '@impeo/ice-core';
 
 @Component({
   selector: 'insis-dialog-section-container',
-  templateUrl: 'insis-dialog-section-container.html'
+  templateUrl: 'insis-dialog-section-container.html',
 })
 export class InsisDialogSectionContainer {
   section: IceSection;

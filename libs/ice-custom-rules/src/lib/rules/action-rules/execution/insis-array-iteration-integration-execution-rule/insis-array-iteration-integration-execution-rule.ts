@@ -27,8 +27,8 @@ export class InsisArrayIterationIntegrationExecutionRule extends ExecutionRule {
 
     await Promise.all(
       integrationExecutions.map(
-        p =>
-          new Promise(resolve => {
+        (p) =>
+          new Promise((resolve) => {
             p.then(resolve).catch(resolve);
           })
       )

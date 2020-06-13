@@ -1,16 +1,14 @@
 import { Component, Inject } from '@angular/core';
 import { get } from 'lodash';
-
 import { MaterialElementComponentImplementation, IceButtonComponent } from '@impeo/ng-ice';
 import { MatDialog } from '@angular/material/dialog';
-import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldDefaultOptions } from '@angular/material';
 import { LifecycleEvent } from '@impeo/ice-core';
 import { Subscription } from 'rxjs';
 import { InsisDialogSectionContainer } from '../../shared-components/insis-dialog-section-container/insis-dialog-section-container';
 
 @Component({
   selector: 'insis-button-with-dialog',
-  templateUrl: './insis-button-with-dialog.component.html'
+  templateUrl: './insis-button-with-dialog.component.html',
 })
 export class InsisButtonWithDialogComponent extends IceButtonComponent {
   static componentName = 'InsisButtonWithDialog';
@@ -25,7 +23,7 @@ export class InsisButtonWithDialogComponent extends IceButtonComponent {
           'background-image': `url(${this.assetsIconPath})`,
           'background-repeat': 'no-repeat',
           height: '20px',
-          width: '20px'
+          width: '20px',
         }
       : {};
   }
@@ -58,10 +56,10 @@ export class InsisButtonWithDialogComponent extends IceButtonComponent {
 
     const dialogRef = this.dialog.open(InsisDialogSectionContainer, {
       width: this.getRecipeParam('width'),
-      data: dialogData
+      data: dialogData,
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
       if (lifecycleSubscription) lifecycleSubscription.unsubscribe();
       if (this.afterCloseActionName) {
         const action = this.context.iceModel.actions[this.afterCloseActionName];

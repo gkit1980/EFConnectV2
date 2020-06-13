@@ -17,7 +17,7 @@ describe(InsisUniqueValueValidationRule.name, () => {
     await iceTesting
       .contextBuilder()
       .element('parent-array', 'array')
-      .element(elementName, 'text', element =>
+      .element(elementName, 'text', (element) =>
         element.validationRule(InsisUniqueValueValidationRule.name, {})
       )
       .build();
@@ -100,8 +100,8 @@ describe(InsisUniqueValueValidationRule.name, () => {
     [
       new IndexedValue(element, 'test value', [0], ValueOrigin.UNKNOWN),
       new IndexedValue(element, 'test value', [1], ValueOrigin.UNKNOWN),
-      new IndexedValue(element, 'test value unique', [2], ValueOrigin.UNKNOWN)
-    ].forEach(value => {
+      new IndexedValue(element, 'test value unique', [2], ValueOrigin.UNKNOWN),
+    ].forEach((value) => {
       element.setValue(value);
     });
 

@@ -1,7 +1,16 @@
 {
   "extends": "../../tslint.json",
   "rules": {
-    "directive-selector": [false],
-    "component-selector": [false]
+    "directive-selector": [
+      false
+    ],
+    "component-selector": [
+      false
+    ]
+  },
+  "linterOptions": {
+    "exclude": [
+      "!**/*"
+    ]
   }
 }

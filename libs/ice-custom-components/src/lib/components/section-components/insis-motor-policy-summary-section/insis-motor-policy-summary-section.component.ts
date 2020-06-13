@@ -6,7 +6,7 @@ import * as moment from 'moment';
 
 @Component({
   selector: 'insis-motor-policy-summary-section',
-  templateUrl: './insis-motor-policy-summary-section.component.html'
+  templateUrl: './insis-motor-policy-summary-section.component.html',
 })
 export class InsisMotorPolicySummarySectionComponent extends SectionComponentImplementation {
   static componentName = 'InsisMotorPolicySummarySection';
@@ -33,7 +33,8 @@ export class InsisMotorPolicySummarySectionComponent extends SectionComponentImp
       displayValue =
         // option.value is string, and element.value is number that's why we need to use == insted of ===
         // tslint:disable-next-line:triple-equals
-        first(options.filter(option => option.value == value).map(option => option.label)) || value;
+        first(options.filter((option) => option.value == value).map((option) => option.label)) ||
+        value;
     } else {
       displayValue = value;
     }

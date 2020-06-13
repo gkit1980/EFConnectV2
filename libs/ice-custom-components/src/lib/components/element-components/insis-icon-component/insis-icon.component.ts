@@ -4,7 +4,7 @@ import { IceConsole, ItemElement } from '@impeo/ice-core';
 
 @Component({
   selector: 'insis-icon',
-  templateUrl: './insis-icon.component.html'
+  templateUrl: './insis-icon.component.html',
 })
 export class InsisIconComponent extends SelectComponentImplementation implements OnInit {
   static componentName = 'InsisIcon';

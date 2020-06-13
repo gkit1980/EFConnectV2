@@ -4,7 +4,7 @@ import { truncate } from 'lodash';
 
 @Component({
   selector: 'insis-file-upload',
-  templateUrl: './insis-file-upload.component.html'
+  templateUrl: './insis-file-upload.component.html',
 })
 export class InsisFileUploadComponent extends IceTextInputComponent {
   static componentName = 'InsisFileUpload';
@@ -33,8 +33,9 @@ export class InsisFileUploadComponent extends IceTextInputComponent {
 
   private createName() {
     const d = new Date();
-    return `photo-${d.getFullYear()}-${d.getMonth() +
-      1}-${d.getDate()}-${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}.jpg`;
+    return `photo-${d.getFullYear()}-${
+      d.getMonth() + 1
+    }-${d.getDate()}-${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}.jpg`;
   }
 
   private setAndApplyValue(value: any) {

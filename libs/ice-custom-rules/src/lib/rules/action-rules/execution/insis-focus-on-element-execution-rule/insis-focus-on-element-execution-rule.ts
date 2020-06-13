@@ -10,7 +10,7 @@ export class InsisFocusOnElementExecutionRule extends ExecutionRule {
     IceDropdown: `mat-select`,
     IceRadiobuttonGroup: 'mat-radio-button',
     IceTextarea: 'textarea',
-    IceToggle: 'mat-slide-toggle'
+    IceToggle: 'mat-slide-toggle',
   };
 
   private elementNodes: NodeListOf<Element>;
@@ -39,10 +39,7 @@ export class InsisFocusOnElementExecutionRule extends ExecutionRule {
       actionContext != null && actionContext.index != null ? actionContext.index : null;
 
     if (index) {
-      const parentName = element.name
-        .split('~')
-        .slice(0, -1)
-        .join('~');
+      const parentName = element.name.split('~').slice(0, -1).join('~');
 
       const parentNode = document.querySelector(
         `div[data-element="${parentName}"][data-index="${index.join(',')}"]`
@@ -73,6 +70,6 @@ export class InsisFocusOnElementExecutionRule extends ExecutionRule {
   }
 
   private sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise((resolve) => setTimeout(resolve, ms));
   }
 }

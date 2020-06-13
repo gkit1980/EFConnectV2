@@ -65,7 +65,7 @@ export class InsisOpenPdfExecutionRule extends ExecutionRule {
   private open(blob: Blob, data: string) {
     const linkData = window.URL.createObjectURL(blob);
     window.open(linkData);
-    setTimeout(function() {
+    setTimeout(function () {
       window.URL.revokeObjectURL(data);
     }, 100);
   }

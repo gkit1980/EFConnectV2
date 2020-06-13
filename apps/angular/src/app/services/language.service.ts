@@ -15,9 +15,9 @@ export class LanguageService {
     const current = getDefaultLanguage();
     this.current = current;
 
-    iceRuntimeService.getRuntime().then(runtime => {
+    iceRuntimeService.getRuntime().then((runtime) => {
       const avaliableLanguages = iceRuntimeService.getResourceLanguages();
-      this.languages = map(avaliableLanguages, language => ({ code: language, label: language }));
+      this.languages = map(avaliableLanguages, (language) => ({ code: language, label: language }));
     });
   }
 
@@ -26,7 +26,7 @@ export class LanguageService {
   }
 
   get() {
-    return this.getList().filter(lang => lang.code === this.current)[0];
+    return this.getList().filter((lang) => lang.code === this.current)[0];
   }
 
   setCode(lang) {

@@ -13,36 +13,36 @@ export class InsisSampleDataExchangeRule extends ExchangeRule {
           item: 0,
           childs: [
             {
-              child: '0-a'
+              child: '0-a',
             },
             {
-              child: '0-b'
-            }
-          ]
+              child: '0-b',
+            },
+          ],
         },
         {
           item: 1,
           childs: [
             {
-              child: '1-a'
+              child: '1-a',
             },
             {
-              child: '1-b'
-            }
-          ]
+              child: '1-b',
+            },
+          ],
         },
         {
           item: 2,
           childs: [
             {
-              child: '2-a'
+              child: '2-a',
             },
             {
-              child: '2-b'
-            }
-          ]
-        }
-      ]
+              child: '2-b',
+            },
+          ],
+        },
+      ],
     };
 
     return data;

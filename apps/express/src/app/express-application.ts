@@ -92,7 +92,7 @@ S-ICE started \x1b[36m http://localhost:${this.appOptions.serverPort} \x1b[0m
 
   private dumpRoutes() {
     const endpointLines = (<any[]>expressListEndpoints(this.app)).map(
-      endpoint => `\t${endpoint.methods}:\t${endpoint.path}`
+      (endpoint) => `\t${endpoint.methods}:\t${endpoint.path}`
     );
     console.log(`Custom routes:\n${endpointLines.join('\n')}\n`);
   }

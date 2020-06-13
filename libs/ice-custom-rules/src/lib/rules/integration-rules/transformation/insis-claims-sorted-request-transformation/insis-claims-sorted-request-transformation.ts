@@ -20,9 +20,9 @@ export class InsisClaimsSortedRequestTransformation extends DefaultTransformatio
       return;
 
     claimData.Requests.Request = _.sortBy(claimData.Requests.Request, [
-      request => {
+      (request) => {
         return request.RequestNo;
-      }
+      },
     ]);
   }
 }

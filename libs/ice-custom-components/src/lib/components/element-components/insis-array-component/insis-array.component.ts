@@ -3,7 +3,7 @@ import { IceArrayComponent } from '@impeo/ng-ice';
 
 @Component({
   selector: 'insis-array',
-  templateUrl: './insis-array.component.html'
+  templateUrl: './insis-array.component.html',
 })
 export class InsisArrayComponent extends IceArrayComponent {
   static componentName = 'InsisArray';

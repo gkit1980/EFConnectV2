@@ -68,14 +68,14 @@ export class InsisCopyToClipboardExecutionRule extends ExecutionRule {
 
   private getPlaceholderElementsValues(placeholderElementNames: string[]): { [T: string]: string } {
     const placeholders = placeholderElementNames
-      .filter(elementName => get(this.iceModel.elements, [elementName]))
-      .map(elementName => get(this.iceModel.elements, [elementName]))
+      .filter((elementName) => get(this.iceModel.elements, [elementName]))
+      .map((elementName) => get(this.iceModel.elements, [elementName]))
       .map((element, index) => {
         let currentValue = element.getValue().forIndex(this.index);
         if ((element as ItemElement).valuesRule) {
           const values = (element as ItemElement).valuesRule
             .getOptions(this.index)
-            .filter(value => value.value === currentValue);
+            .filter((value) => value.value === currentValue);
           currentValue = get(values, [0, 'label']) || currentValue;
         }
 

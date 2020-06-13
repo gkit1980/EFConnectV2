@@ -11,9 +11,7 @@ export class InsisGeolocationExecutionRule extends ExecutionRule {
       return Promise.reject();
     }
 
-    return this.getGeoLocation()
-      .then(this.handleSuccess)
-      .catch(this.handleError);
+    return this.getGeoLocation().then(this.handleSuccess).catch(this.handleError);
   }
 
   getGeoLocation() {
@@ -39,7 +37,7 @@ export class InsisGeolocationExecutionRule extends ExecutionRule {
     lngElement.setSimpleValue(longitude);
   };
 
-  handleError = err => {
+  handleError = (err) => {
     InsisGeolocationExecutionRule.POSITION_ERROR = err;
     //TODO: We need to do something with the error
     console.log({ err });

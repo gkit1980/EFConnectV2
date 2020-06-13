@@ -27,8 +27,8 @@ $default-common: (
     'badge-1': #767676,
     'badge-2': #ca16c7,
     'badge-3': #673ab7,
-    'badge-4': #8a2b00
-  )
+    'badge-4': #8a2b00,
+  ),
 );
 
 $default-light-theme: map-merge($theme, $default-common);

@@ -6,13 +6,14 @@ import {
   ViewContainerRef,
   ChangeDetectionStrategy,
   Host,
-  ChangeDetectorRef
+  ChangeDetectorRef,
 } from '@angular/core';
-import { MatTableDataSource } from '@angular/material';
+
 import { get, map } from 'lodash';
 import { PageElement } from '@impeo/ice-core';
 import { SectionComponentImplementation, IceSectionComponent } from '@impeo/ng-ice';
 import { map as rxMap, debounceTime } from 'rxjs/operators';
+import { MatTableDataSource } from '@angular/material/table';
 
 interface Col {
   size?: string;
@@ -28,7 +29,7 @@ interface Col {
 @Component({
   selector: 'insis-datagrid-section',
   templateUrl: './insis-datagrid-section.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InsisDatagridSectionComponent extends SectionComponentImplementation
   implements OnInit {
@@ -37,7 +38,7 @@ export class InsisDatagridSectionComponent extends SectionComponentImplementatio
   defaults = {
     size: 'auto',
     align: 'start center',
-    hide: false
+    hide: false,
   };
 
   dataSource: MatTableDataSource<any>;
@@ -51,7 +52,7 @@ export class InsisDatagridSectionComponent extends SectionComponentImplementatio
     return this.getRecipeParam('showFilter', false);
   }
 
-  constructor(@Host() parent: IceSectionComponent, private changeDetectorRef: ChangeDetectorRef) {
+  constructor(parent: IceSectionComponent, private changeDetectorRef: ChangeDetectorRef) {
     super(parent);
   }
 
@@ -73,7 +74,7 @@ export class InsisDatagridSectionComponent extends SectionComponentImplementatio
         debounceTime(50),
         rxMap(() => getData())
       )
-      .subscribe(data => {
+      .subscribe((data) => {
         this.dataSource = new MatTableDataSource<any>(data);
         this.changeDetectorRef.markForCheck();
       });
@@ -82,9 +83,9 @@ export class InsisDatagridSectionComponent extends SectionComponentImplementatio
   onChildNodeAdded(): void {
     this.rows.forEach((row: any, index: number) => {
       let visible = false;
-      this.getColsNames().forEach(colName => {
+      this.getColsNames().forEach((colName) => {
         if (
-          (this.section.elements.find(element => element.name === colName).indexedElements[index]
+          (this.section.elements.find((element) => element.name === colName).indexedElements[index]
             .element as PageElement).viewModeRule.getViewMode({ index: [index] }) !== 'hidden'
         )
           visible = true;
@@ -120,7 +121,7 @@ export class InsisDatagridSectionComponent extends SectionComponentImplementatio
   }
 
   getColsNames() {
-    return map(this.cols, item => this.getLabel(item));
+    return map(this.cols, (item) => this.getLabel(item));
   }
 
   applyFilter(event: Event) {

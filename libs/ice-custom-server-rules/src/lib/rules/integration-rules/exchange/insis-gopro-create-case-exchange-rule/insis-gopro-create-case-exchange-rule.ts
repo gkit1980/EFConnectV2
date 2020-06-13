@@ -18,8 +18,8 @@ export class GoProIntegration {
       credentials: JSON.stringify({
         _type: 'UserCredentialsType',
         username: username,
-        password: password
-      })
+        password: password,
+      }),
     };
 
     try {
@@ -28,8 +28,8 @@ export class GoProIntegration {
         url: this.baseUrl + '/Client/Access/Login',
         data: qs.stringify(credentials),
         headers: {
-          'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
-        }
+          'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+        },
       });
 
       this.goproToken = response.headers['x-goprotoken'];
@@ -45,7 +45,7 @@ export class GoProIntegration {
 
     const initCase = {
       parentId: parentId,
-      templateId: templateId
+      templateId: templateId,
     };
 
     try {
@@ -55,8 +55,8 @@ export class GoProIntegration {
         data: qs.stringify(initCase),
         headers: {
           'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
-          Authorization: 'Bearer ' + this.goproToken
-        }
+          Authorization: 'Bearer ' + this.goproToken,
+        },
       });
 
       this.goproCase = response.data;
@@ -75,7 +75,7 @@ export class GoProIntegration {
     }
 
     const createCase = {
-      document: JSON.stringify(this.goproCase)
+      document: JSON.stringify(this.goproCase),
     };
 
     try {
@@ -85,8 +85,8 @@ export class GoProIntegration {
         data: qs.stringify(createCase),
         headers: {
           'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
-          Authorization: 'Bearer ' + this.goproToken
-        }
+          Authorization: 'Bearer ' + this.goproToken,
+        },
       });
 
       this.goproCaseId = response.data;
@@ -108,8 +108,8 @@ export class GoProIntegration {
         method: 'get',
         url: this.baseUrl + '/Client/Data/Case/' + this.goproCaseId,
         headers: {
-          Authorization: 'Bearer ' + this.goproToken
-        }
+          Authorization: 'Bearer ' + this.goproToken,
+        },
       });
 
       this.goproCase = response.data;
@@ -157,7 +157,7 @@ export class InsisGoproCreateCaseExchangeRule extends ExchangeRule {
       'Accident.locationLat': Number(request.params['metaDataEntries.Accident.locationLat']),
       'Accident.locationLong': Number(request.params['metaDataEntries.Accident.locationLong']),
       'Accident.ambulenceRequired': request.params['metaDataEntries.Accident.ambulenceRequired'],
-      'Accident.towTruckRequired': request.params['metaDataEntries.Accident.towTruckRequired']
+      'Accident.towTruckRequired': request.params['metaDataEntries.Accident.towTruckRequired'],
     };
 
     await gopro.createCase(metadata);

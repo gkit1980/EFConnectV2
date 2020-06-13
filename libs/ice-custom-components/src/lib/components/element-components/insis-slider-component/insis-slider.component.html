@@ -1,8 +1,17 @@
 <div class="insis-slider" *ngIf="isVisible">
   <div *ngIf="!isOutput" class="mat-form-field-wrapper" [attr.data-required]="isRequired">
     <mat-label [attr.data-required]="isRequired">{{ label }}</mat-label>
-    <mat-slider #slider [min]="min" [max]="max" [disabled]="isDisabled" [(value)]="componentValue"
-      [tickInterval]="tickInterval" [step]="step" (change)="change()" [ngClass]="{ 'force-accent': hasValue }">
+    <mat-slider
+      #slider
+      [min]="min"
+      [max]="max"
+      [disabled]="isDisabled"
+      [(value)]="componentValue"
+      [tickInterval]="tickInterval"
+      [step]="step"
+      (change)="change()"
+      [ngClass]="{ 'force-accent': hasValue }"
+    >
     </mat-slider>
     <mat-error *ngFor="let message of validation?.getMessagesFor(element.name, index)">
       {{ message }}

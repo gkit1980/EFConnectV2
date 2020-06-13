@@ -3,7 +3,7 @@ import { SpinnerService } from '../../services/spinner.service';
 
 @Component({
   selector: 'app-spinner',
-  templateUrl: './spinner.component.html'
+  templateUrl: './spinner.component.html',
 })
 export class SpinnerComponent {
   spinnerVisible: boolean;
@@ -12,6 +12,6 @@ export class SpinnerComponent {
   //
   constructor(private spinnerService: SpinnerService) {
     this.spinnerVisible = false;
-    this.spinnerService.visible.subscribe(isVisible => (this.spinnerVisible = isVisible));
+    this.spinnerService.visible.subscribe((isVisible) => (this.spinnerVisible = isVisible));
   }
 }

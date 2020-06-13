@@ -14,17 +14,17 @@ export class InsisCatastropicQueryTransformation extends DefaultTransformationRu
     if (!_.isArray(inData.payload.RowSet.Row))
       inData.payload.RowSet.Row = [inData.payload.RowSet.Row];
 
-    _.forEach(inData.payload.RowSet.Row, row => {
-      _.forEach(row.Column, column => {
+    _.forEach(inData.payload.RowSet.Row, (row) => {
+      _.forEach(row.Column, (column) => {
         row[column.attributes.name] = column['$value'];
       });
     });
 
     const catastrophicEvents = [];
-    _.forEach(inData.payload.RowSet.Row, row => {
+    _.forEach(inData.payload.RowSet.Row, (row) => {
       const eventId = _.get(row, 'CAT_EVENT_ID');
       if (!eventId) return;
-      let catastrophicEvent = _.find(catastrophicEvents, event => event.eventID === eventId);
+      let catastrophicEvent = _.find(catastrophicEvents, (event) => event.eventID === eventId);
       if (!catastrophicEvent) {
         catastrophicEvent = {};
         _.set(catastrophicEvent, 'eventID', eventId);
@@ -39,7 +39,7 @@ export class InsisCatastropicQueryTransformation extends DefaultTransformationRu
       const caseItem = {
         srcClaim: row.SRC_CLAIM,
         claimId: row.CLAIM_ID,
-        claimComment: row.CLAIM_COMMENT
+        claimComment: row.CLAIM_COMMENT,
       };
       catastrophicEvent.cases.push(caseItem);
     });

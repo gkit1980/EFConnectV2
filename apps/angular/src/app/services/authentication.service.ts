@@ -26,7 +26,7 @@ export class AuthenticationService {
   async login(userData: any): Promise<void> {
     try {
       const response = await axios.default.get(`/api/v1/external/client/${userData}`, {
-        timeout: 4000
+        timeout: 4000,
       });
 
       localStorage.setItem('insis-principal', JSON.stringify(response.data));

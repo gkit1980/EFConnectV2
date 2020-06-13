@@ -2,7 +2,7 @@ import {
   IntegrationDataIn,
   IntegrationDataOut,
   ExchangeRule,
-  IceIntegration
+  IceIntegration,
 } from '@impeo/ice-core';
 import { YamlFileService } from '@impeo/exp-ice';
 import { get, set } from 'lodash';

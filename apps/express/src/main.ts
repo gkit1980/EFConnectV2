@@ -37,7 +37,7 @@ function startApp() {
         /**
          * TIP: Change here if you want to serve Visual ICE on a different path
          */
-        urlRelativePath: '/visual-ice'
+        urlRelativePath: '/visual-ice',
       }
     : null;
 
@@ -53,7 +53,7 @@ function startApp() {
       path.resolve(__dirname, './assets/documentation'),
       path.resolve(__dirname, './assets/ice-core'),
       path.resolve(__dirname, './assets/ice-insurance-rules'),
-      path.resolve(__dirname, './assets')
+      path.resolve(__dirname, './assets'),
 
       /**
        * TIP: Register your custom descriptors here. Important !!! the URL should
@@ -63,7 +63,7 @@ function startApp() {
        * WRONG: path.resolve(__dirname, './my_custom_folder/descriptors')
        *
        */
-    ]
+    ],
   };
   const app = new ExpressApplication(appOptions);
   app.start();
@@ -86,7 +86,7 @@ function startWebServer(activeNodes: number) {
         cluster.fork();
       }
 
-      cluster.on('online', worker => {
+      cluster.on('online', (worker) => {
         console.log(`Worker ${worker.process.pid} is online`);
       });
 

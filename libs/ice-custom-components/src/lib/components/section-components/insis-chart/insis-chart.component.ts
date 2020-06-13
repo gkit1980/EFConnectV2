@@ -22,13 +22,13 @@ enum SerieStackName {
   seven,
   eight,
   nine,
-  ten
+  ten,
 }
 
 enum ChartTypes {
   line = 'line',
   bar = 'bar',
-  pie = 'pie'
+  pie = 'pie',
 }
 
 const INITIAL_BASE_OPTIONS: EChartOption<Series> = {
@@ -44,12 +44,12 @@ const INITIAL_BASE_OPTIONS: EChartOption<Series> = {
     '#bda29a',
     '#6e7074',
     '#546570',
-    '#c4ccd3'
+    '#c4ccd3',
   ],
   legend: {
     data: [],
     left: 10,
-    top: 10
+    top: 10,
   },
   tooltip: {},
   toolbox: {
@@ -57,41 +57,41 @@ const INITIAL_BASE_OPTIONS: EChartOption<Series> = {
       magicType: {
         type: ['stack'],
         title: {
-          stack: 'Stack'
-        }
+          stack: 'Stack',
+        },
       },
       saveAsImage: {
         type: '.png',
-        title: 'Save'
+        title: 'Save',
       },
       restore: {
-        title: 'Restore'
-      }
-    }
-  }
+        title: 'Restore',
+      },
+    },
+  },
 };
 
 const INITIAL_LINE_OPTIONS: EChartOption<SeriesLine> = {
   xAxis: {
-    type: 'category'
+    type: 'category',
   },
   yAxis: {
-    type: 'category'
+    type: 'category',
   },
   tooltip: {
     trigger: 'axis',
     axisPointer: {
       type: 'cross',
       label: {
-        backgroundColor: '#6a7985'
-      }
-    }
+        backgroundColor: '#6a7985',
+      },
+    },
   },
   grid: {
     left: 40,
-    right: 30
+    right: 30,
   },
-  series: []
+  series: [],
 };
 const INITIAL_LINE_SERIES: SeriesLine = { type: 'line', data: [] };
 
@@ -100,52 +100,52 @@ const INITIAL_BAR_OPTIONS: EChartOption<SeriesBar> = {
     name: 'Y Axis',
     axisLine: { onZero: true },
     splitLine: { show: false },
-    splitArea: { show: false }
+    splitArea: { show: false },
   },
   xAxis: {
     inverse: false,
-    splitArea: { show: false }
+    splitArea: { show: false },
   },
   grid: {
     left: 120,
-    right: 30
+    right: 30,
   },
   tooltip: {},
-  series: []
+  series: [],
 };
 const INITIAL_BAR_SERIES: SeriesBar = {
   name: 'bar',
   type: 'bar',
   stack: 'one',
-  data: []
+  data: [],
 };
 
 const INITIAL_PIE_OPTIONS: EChartOption<SeriesBar> = {
   grid: {
-    left: 100
+    left: 100,
   },
-  series: []
+  series: [],
 };
 const INITIAL_PIE_SERIES: SeriesPie = {
   name: 'pie',
   type: 'pie',
-  data: []
+  data: [],
 };
 
 const CHART_OPTIONS: { [key in keyof typeof ChartTypes]?: any } = {
   line: INITIAL_LINE_OPTIONS,
   bar: INITIAL_BAR_OPTIONS,
-  pie: INITIAL_PIE_OPTIONS
+  pie: INITIAL_PIE_OPTIONS,
 };
 const CHART_SERIES_OPTIONS: { [key in keyof typeof ChartTypes]?: any } = {
   line: INITIAL_LINE_SERIES,
   bar: INITIAL_BAR_SERIES,
-  pie: INITIAL_PIE_SERIES
+  pie: INITIAL_PIE_SERIES,
 };
 
 @Component({
   selector: 'insis-chart',
-  templateUrl: './insis-chart.component.html'
+  templateUrl: './insis-chart.component.html',
 })
 export class InsisChartComponent extends SectionComponentImplementation
   implements OnInit, OnDestroy {
@@ -165,7 +165,7 @@ export class InsisChartComponent extends SectionComponentImplementation
     super.ngOnInit();
 
     const elements = this.getDataProvidingElements(this.recipeParams);
-    elements.forEach(element => {
+    elements.forEach((element) => {
       this.changeElementSubscriptions.push(
         element.$dataModelValueChange.pipe(debounceTime(20)).subscribe(this.elementChangedHandler)
       );
@@ -184,30 +184,30 @@ export class InsisChartComponent extends SectionComponentImplementation
     this.initialChartOption = merge(this.initialChartOption, {
       legend: {
         data: [...labels],
-        left: 10
-      }
+        left: 10,
+      },
     });
 
     if (has(this.initialChartOption, 'xAxis'))
       this.initialChartOption.xAxis = merge(this.initialChartOption.xAxis, {
-        data: [...this.labels]
+        data: [...this.labels],
       });
 
     if (has(this.initialChartOption, 'yAxis'))
       this.initialChartOption.yAxis = merge(this.initialChartOption.yAxis, {
-        data: [...this.labels]
+        data: [...this.labels],
       });
 
     if (has(this.initialChartOption, [this.dataAxis]))
       this.initialChartOption[this.dataAxis] = merge(this.initialChartOption[this.dataAxis], {
-        type: 'value'
+        type: 'value',
       });
 
     this.updateChartVisualization();
   }
 
   ngOnDestroy(): void {
-    this.changeElementSubscriptions.forEach(subscription => {
+    this.changeElementSubscriptions.forEach((subscription) => {
       subscription.unsubscribe();
     });
     this.changeElementSubscriptions.length = 0;
@@ -254,21 +254,21 @@ export class InsisChartComponent extends SectionComponentImplementation
 
   getElementValues(element: IceElement): any[] {
     if (!element) return [];
-    return [...element.getValue().values.map(indexed => indexed.value)];
+    return [...element.getValue().values.map((indexed) => indexed.value)];
   }
 
   private getDataProvidingElements(recipe: any): IceElement[] {
     const elements = get(recipe, 'elements')
-      .map(elementName => {
+      .map((elementName) => {
         return get(this.iceModel.elements, elementName);
       })
-      .filter(element => !!element);
+      .filter((element) => !!element);
     return uniq(elements);
   }
 
   private updateSeries(series: any[]) {
     const mergeOptions = {
-      series: []
+      series: [],
     };
 
     series.forEach((serie, index) => {
@@ -276,7 +276,7 @@ export class InsisChartComponent extends SectionComponentImplementation
         ...this.initialSeriesOptions,
         data: [...serie],
         stack: SerieStackName[index],
-        name: this.legendLabels[index]
+        name: this.legendLabels[index],
       };
       mergeOptions.series.push(data);
     });
@@ -294,7 +294,7 @@ export class InsisChartComponent extends SectionComponentImplementation
 
   private updateChartVisualization() {
     const elements = this.getDataProvidingElements(this.recipeParams);
-    const values = elements.map(element => this.getElementValues(element));
+    const values = elements.map((element) => this.getElementValues(element));
     this.updateSeries(values);
   }
 

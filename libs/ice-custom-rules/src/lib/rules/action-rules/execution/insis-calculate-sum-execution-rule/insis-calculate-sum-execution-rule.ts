@@ -4,7 +4,7 @@ import {
   ValueOrigin,
   IceUtil,
   ItemElement,
-  IceElement
+  IceElement,
 } from '@impeo/ice-core';
 import { forEach, last, get } from 'lodash';
 
@@ -29,7 +29,7 @@ export class InsisCalculateSumExecutionRule extends ExecutionRule {
   private calculateSum(sourceElements: IceElement[], sourceIndex: number[]): void {
     let sum = 0;
     const destElement = this.requireElement('destination');
-    forEach(sourceElements, sourceElement => {
+    forEach(sourceElements, (sourceElement) => {
       let _index = sourceIndex
         ? IndexedValue.sliceIndexToElementLevel(sourceElement.name, sourceIndex)
         : null;
@@ -42,7 +42,7 @@ export class InsisCalculateSumExecutionRule extends ExecutionRule {
         items = parentElement.getValue().forIndex(_index);
       }
 
-      forEach(items, item => {
+      forEach(items, (item) => {
         let value = item;
         if (sourceElement.isArrayItem())
           value = get(item, last(sourceElement.name.split(IceUtil.ARRAY_ITEM_SEPERATOR)));

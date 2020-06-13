@@ -8,7 +8,7 @@ export class InsisUniqueValueValidationRule extends ValidationRule {
 
     if (
       hasDuplicates &&
-      duplicatedValues.some(duplicateValue => duplicateValue.value === value.value)
+      duplicatedValues.some((duplicateValue) => duplicateValue.value === value.value)
     ) {
       messages.addMessage(`Element value must be unique`, value.element.name, value.index);
     }
@@ -21,7 +21,7 @@ export class InsisUniqueValueValidationRule extends ValidationRule {
     for (let i = 0; i < values.length; i++) {
       const value = values[i];
 
-      if (uniqueValues.some(uniqueValue => uniqueValue.value === value.value)) {
+      if (uniqueValues.some((uniqueValue) => uniqueValue.value === value.value)) {
         duplicatedValues.push(value);
       } else {
         uniqueValues.push(value);

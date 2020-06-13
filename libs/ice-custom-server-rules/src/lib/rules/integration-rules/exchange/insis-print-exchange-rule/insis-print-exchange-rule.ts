@@ -4,7 +4,7 @@ import {
   IceConsole,
   IntegrationDataOut,
   IntegrationDataIn,
-  IceIntegration
+  IceIntegration,
 } from '@impeo/ice-core';
 import * as dicer from 'dicer';
 import { get } from 'lodash';
@@ -18,7 +18,7 @@ export class InsisPrintExchangeRule extends RestCallExchangeRule {
     const headers = {
       'Content-Type': 'application/json',
       Authorization: 'Basic aW5zaXNfZ2VuX3YxMDppbnNpc19nZW5fdjEw',
-      ignoreLoginService: true
+      ignoreLoginService: true,
     };
     return headers;
   }
@@ -70,7 +70,7 @@ export class InsisPrintExchangeRule extends RestCallExchangeRule {
 
     //initialize multipart parser
     const multipartParser = new dicer({
-      boundary: boundary
+      boundary: boundary,
     });
 
     /*
@@ -85,7 +85,7 @@ export class InsisPrintExchangeRule extends RestCallExchangeRule {
     */
 
     const result = new Promise((resolve, reject) => {
-      multipartParser.on('part', part => {
+      multipartParser.on('part', (part) => {
         /*
           in here we should create on instance of MultipartItem
           and on each event below, complete a bit more of its fields
@@ -97,14 +97,14 @@ export class InsisPrintExchangeRule extends RestCallExchangeRule {
         let base64EncodedData: string;
         let isEncoded: boolean;
 
-        part.on('data', data => {
+        part.on('data', (data) => {
           const buff = Buffer.from(data);
           // fs.writeFileSync('d:/temp/test2.pdf', data);
           base64EncodedData = buff.toString('base64');
           isEncoded = true;
         });
 
-        part.on('header', header => {
+        part.on('header', (header) => {
           type = get(header, ['content-type', 0]);
           name = get(header, ['content-disposition', 0]);
         });
@@ -114,7 +114,7 @@ export class InsisPrintExchangeRule extends RestCallExchangeRule {
             name: name,
             contentType: type,
             base64Encoded: isEncoded,
-            data: base64EncodedData
+            data: base64EncodedData,
           });
           //here, we add the MultipartItem to the array of MultipartItem
         });

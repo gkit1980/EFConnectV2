@@ -5,7 +5,7 @@ import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'language-picker',
-  templateUrl: './language-picker.component.html'
+  templateUrl: './language-picker.component.html',
 })
 export class LanguagePickerComponent {
   showWarning = false;
@@ -15,16 +15,16 @@ export class LanguagePickerComponent {
     dialogConfirmLabel: '',
     dialogDiscardLabel: '',
     dialogTitle: '',
-    dialogMessage: ''
+    dialogMessage: '',
   };
 
   constructor(private languageService: LanguageService, private runtimeService: IceRuntimeService) {
-    this.runtimeService.getRuntime().then(runtime => {
+    this.runtimeService.getRuntime().then((runtime) => {
       this.translation = {
         dialogConfirmLabel: runtime.iceResource.resolve('portal.languages.dialog.confirm'),
         dialogDiscardLabel: runtime.iceResource.resolve('portal.languages.dialog.discard'),
         dialogTitle: runtime.iceResource.resolve('portal.languages.dialog.title'),
-        dialogMessage: runtime.iceResource.resolve('portal.languages.dialog.message')
+        dialogMessage: runtime.iceResource.resolve('portal.languages.dialog.message'),
       };
     });
   }

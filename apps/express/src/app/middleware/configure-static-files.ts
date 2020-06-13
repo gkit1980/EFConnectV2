@@ -23,7 +23,7 @@ export function configureStaticFiles(app: express.Application, folder: string) {
         if (!isHashed) {
           response.setHeader('Cache-Control', 'max-age=0, must-revalidate');
         }
-      }
+      },
     })
   );
 }

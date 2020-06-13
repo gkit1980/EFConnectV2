@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'insis-horizontal-stepper-navigation',
-  templateUrl: './insis-horizontal-stepper-navigation.component.html'
+  templateUrl: './insis-horizontal-stepper-navigation.component.html',
 })
 export class InsisHorizontalStepperNavigationComponent extends PageNavigationComponentImplementation {
   static componentName = 'InsisHorizontalStepperNavigation';

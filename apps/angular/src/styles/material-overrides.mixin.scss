@@ -1,4 +1,4 @@
-@import "mixins";
+@import 'mixins';
 
 @mixin ice-checkbox-mixin($theme) {
 }
@@ -14,11 +14,11 @@
   @include ice-array-mixin($theme);
 
   $primaryColor: get-mat-color($theme, primary);
-  $lightColor: get-color($theme, "light");
-  $borderInputColor: get-color($theme, "border-input");
-  $borderColor: get-color($theme, "border");
-  $textColor: get-color($theme, "text");
-  $textDisabledColor: get-color($theme, "text-disabled");
+  $lightColor: get-color($theme, 'light');
+  $borderInputColor: get-color($theme, 'border-input');
+  $borderColor: get-color($theme, 'border');
+  $textColor: get-color($theme, 'text');
+  $textDisabledColor: get-color($theme, 'text-disabled');
 
   .disabled-text {
     color: $textDisabledColor;
@@ -234,7 +234,8 @@
     top: -0.825em;
   }
 
-  .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
+  .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
+    .mat-form-field-label,
   .mat-form-field-appearance-outline.mat-form-field-can-float
     .mat-input-server:focus
     + .mat-form-field-label-wrapper
@@ -299,7 +300,7 @@
     .mat-button {
       background-color: $lightColor;
       color: $primaryColor;
-      font-family: "Roboto";
+      font-family: 'Roboto';
       font-weight: 500;
       font-style: normal;
       font-size: 14px;
@@ -312,12 +313,12 @@
   }
 
   .mat-flat-button[disabled] {
-    background: get-color($theme, "navigation-line") !important;
+    background: get-color($theme, 'navigation-line') !important;
     color: $textDisabledColor !important;
   }
 
   .mat-stroked-button[disabled] {
-    border-color: get-color($theme, "navigation-line") !important;
+    border-color: get-color($theme, 'navigation-line') !important;
     color: $textDisabledColor !important;
   }
 

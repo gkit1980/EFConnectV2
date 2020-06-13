@@ -106,10 +106,10 @@ export class InsisDBExchangeRule extends ExchangeRule {
     let rows = [];
 
     if (queryType.toLowerCase() === 'json') {
-      rows = result.rows.map(row => JSON.parse(row[0]));
+      rows = result.rows.map((row) => JSON.parse(row[0]));
     } else {
-      const names = result.metaData.map(item => item.name);
-      rows = result.rows.map(row =>
+      const names = result.metaData.map((item) => item.name);
+      rows = result.rows.map((row) =>
         row.reduce((acc, current, index) => {
           acc[names[index]] = current;
           return acc;
@@ -125,7 +125,7 @@ export class InsisDBExchangeRule extends ExchangeRule {
     return {
       user: this.getValueFromEnvironment(this.getParam('username')),
       password: this.getValueFromEnvironment(this.getParam('password')),
-      connectString: this.getValueFromEnvironment(this.getParam('connectString'))
+      connectString: this.getValueFromEnvironment(this.getParam('connectString')),
     };
   }
 

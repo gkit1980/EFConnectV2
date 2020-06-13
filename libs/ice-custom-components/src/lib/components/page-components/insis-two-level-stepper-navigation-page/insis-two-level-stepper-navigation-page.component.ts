@@ -5,14 +5,14 @@ import { get, first } from 'lodash';
 
 const RIGHT_SECTION_TAG = 'pull-right';
 
-const getTags = section => {
+const getTags = (section) => {
   const componentName = first(Object.keys(get(section, 'recipe.component', {})));
   return get(section, `recipe.component.${componentName}.tags`, []);
 };
 
 @Component({
   selector: 'insis-two-level-stepper-navigation-page',
-  templateUrl: './insis-two-level-stepper-navigation-page.component.html'
+  templateUrl: './insis-two-level-stepper-navigation-page.component.html',
 })
 export class InsisTwoLevelStepperNavigationPageComponent extends PageComponentImplementation
   implements OnInit {
@@ -34,14 +34,14 @@ export class InsisTwoLevelStepperNavigationPageComponent extends PageComponentIm
   }
 
   get mainSections() {
-    return this.page.sections.filter(section => {
+    return this.page.sections.filter((section) => {
       const tags = getTags(section);
       return !tags.includes(RIGHT_SECTION_TAG);
     });
   }
 
   get sideSections() {
-    return this.page.sections.filter(section => {
+    return this.page.sections.filter((section) => {
       const tags = getTags(section);
       return tags.includes(RIGHT_SECTION_TAG);
     });

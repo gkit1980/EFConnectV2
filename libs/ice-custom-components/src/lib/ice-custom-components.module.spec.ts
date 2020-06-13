@@ -4,7 +4,7 @@ import { IceCustomComponentsModule } from './ice-custom-components.module';
 describe('IceCustomComponentsModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [IceCustomComponentsModule]
+      imports: [IceCustomComponentsModule],
     }).compileComponents();
   }));
 

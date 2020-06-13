@@ -3,7 +3,7 @@ import { IceToogleComponent } from '@impeo/ng-ice';
 
 @Component({
   selector: 'insis-button-toggle',
-  templateUrl: './insis-button-toggle.component.html'
+  templateUrl: './insis-button-toggle.component.html',
 })
 export class InsisButtonToggleComponent extends IceToogleComponent {
   static componentName = 'InsisButtonToggle';

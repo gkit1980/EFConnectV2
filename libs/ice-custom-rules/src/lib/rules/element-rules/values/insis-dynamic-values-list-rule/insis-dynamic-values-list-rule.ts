@@ -9,7 +9,7 @@ import {
   isPlainObject,
   isString,
   keys,
-  toString
+  toString,
 } from 'lodash';
 import { BehaviorSubject, merge, Subscription, timer } from 'rxjs';
 import { debounce, distinctUntilChanged } from 'rxjs/operators';
@@ -34,7 +34,7 @@ export class InsisDynamicValuesListRule extends ValuesRule {
           this.$reevaluate.next();
         }
         this.$dataStoreUpdate.next(this.dataStore.get(this.datastoreRootPath));
-      }
+      },
     });
 
     this.iceModel.$iceModelReady.subscribe(() => {
@@ -45,8 +45,8 @@ export class InsisDynamicValuesListRule extends ValuesRule {
   public getValues(index: number[] | null): any[] {
     this.updateIndex(index);
     const values = keys(this.options)
-      .map(key => get(this.options, [key]))
-      .map(object => get(object, 'value'));
+      .map((key) => get(this.options, [key]))
+      .map((object) => get(object, 'value'));
     return values;
   }
 
@@ -71,7 +71,7 @@ export class InsisDynamicValuesListRule extends ValuesRule {
       return;
     }
 
-    const subjects = this.pathElements.map(element => element.$dataModelValueChange);
+    const subjects = this.pathElements.map((element) => element.$dataModelValueChange);
     subjects.push(this.$dataStoreUpdate);
 
     this.isInitialized = true;
@@ -88,10 +88,12 @@ export class InsisDynamicValuesListRule extends ValuesRule {
   }
 
   private evaluateOptions(index): { value: string; label: string }[] {
-    const pathElementValues = this.pathElements.map(element => element.getValue().forIndex(index));
+    const pathElementValues = this.pathElements.map((element) =>
+      element.getValue().forIndex(index)
+    );
     const list: { value: string; label: string }[] = get(this.dataStore.data, [
       this.datastoreRootPath,
-      ...pathElementValues
+      ...pathElementValues,
     ]);
 
     // cover the case when we have the data as array of numbers or strings
@@ -110,8 +112,8 @@ export class InsisDynamicValuesListRule extends ValuesRule {
   private get pathElements(): IceElement[] {
     const elementNames = this.getParam('pathElements', []);
     return elementNames
-      .filter(elementName => !isNil(get(this.iceModel.elements, elementName)))
-      .map(elementName => get(this.iceModel.elements, elementName));
+      .filter((elementName) => !isNil(get(this.iceModel.elements, elementName)))
+      .map((elementName) => get(this.iceModel.elements, elementName));
   }
 
   private createListItem(data: any): { value: string; label: string } {

@@ -1,5 +1,7 @@
 <span class="insis-icon" [ngClass]="'insis-icon-' + iconValue" *ngIf="isVisible">
-    <mat-icon  [matTooltip]="tooltip" matTooltipClass="ice-tooltip" *ngIf="iconValue" >{{ iconValue }}</mat-icon>
-    <mat-label *ngIf="showLabel">{{iconLabel}}</mat-label>
+  <mat-icon [matTooltip]="tooltip" matTooltipClass="ice-tooltip" *ngIf="iconValue">{{
+    iconValue
+  }}</mat-icon>
+  <mat-label *ngIf="showLabel">{{ iconLabel }}</mat-label>
 </span>
-<div class="ice-hint" *ngIf="hint && isVisible ">{{ hint }}</div>
+<div class="ice-hint" *ngIf="hint && isVisible">{{ hint }}</div>

@@ -4,7 +4,7 @@ import * as template from 'es6-template-strings';
 
 @Component({
   selector: 'insis-array-tooltip',
-  templateUrl: './insis-array-tooltip.component.html'
+  templateUrl: './insis-array-tooltip.component.html',
 })
 export class InsisArrayTooltipComponent extends IceArrayComponent {
   static componentName = 'InsisArrayTooltip';
@@ -21,13 +21,16 @@ export class InsisArrayTooltipComponent extends IceArrayComponent {
   }
 
   get getTemplate() {
-    return this.getRecipeParam('items', this.itemElements().map(({ name }) => name));
+    return this.getRecipeParam(
+      'items',
+      this.itemElements().map(({ name }) => name)
+    );
   }
 
   outsideClick(event) {
     const { target } = event;
     // TODO: We should find a better way of preventing buttons being clicked when they are inside tooltip
-    const containMatButton = [...target.classList].some(className =>
+    const containMatButton = [...target.classList].some((className) =>
       className.includes('mat-button')
     );
     if (!containMatButton) {

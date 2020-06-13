@@ -13,27 +13,27 @@ const routes: Routes = [
     pathMatch: 'full',
     component: HomeComponent,
     canActivate: [LoginAuthenticationGuard],
-    resolve: { runtime: IceRuntimeResolver }
+    resolve: { runtime: IceRuntimeResolver },
   },
   {
     path: 'styleguide',
-    component: StyleGuideComponent
+    component: StyleGuideComponent,
   },
   {
     path: 'login',
     pathMatch: 'full',
     component: LoginComponent,
-    canActivate: [LoginPageGuard]
+    canActivate: [LoginPageGuard],
   },
   {
     path: '**',
-    redirectTo: '/'
-  }
+    redirectTo: '/',
+  },
   /**
    * TIP: Define your routes here
    */
 ];
 export const AppRouting = RouterModule.forRoot(routes, {
   initialNavigation: true,
-  useHash: true
+  useHash: true,
 });

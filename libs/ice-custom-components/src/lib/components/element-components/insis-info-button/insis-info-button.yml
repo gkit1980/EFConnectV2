@@ -43,10 +43,10 @@ params:
     label: Scroll Strategy
     type: select
     options:
-      NoopScrollStrategy: "NoopScrollStrategy: does nothing"
-      CloseScrollStrategy: "CloseScrollStrategy: automatically closes the overlay when scrolling"
-      BlockScrollStrategy: "BlockScrollStrategy: blocks page scrolling"
-      RepositionScrollStrategy: "RepositionScrollStrategy: will reposition the overlay element on scroll"
+      NoopScrollStrategy: 'NoopScrollStrategy: does nothing'
+      CloseScrollStrategy: 'CloseScrollStrategy: automatically closes the overlay when scrolling'
+      BlockScrollStrategy: 'BlockScrollStrategy: blocks page scrolling'
+      RepositionScrollStrategy: 'RepositionScrollStrategy: will reposition the overlay element on scroll'
     info: The scroll strategy is a way of defining how our overlay should behave if the user scrolls while the overlay is open.
 
   offsetX:
@@ -87,7 +87,7 @@ params:
     info: X-axis attachment point for connected overlay. Can be 'start', 'end', or 'center'.
 
   overlayY:
-    label:  Overlay Y
+    label: Overlay Y
     type: select
     options:
       top: top
@@ -103,7 +103,8 @@ params:
   disposeOnNavigation:
     label: Dispose on navigation
     type: boolean
-    info: Whether the overlay should be disposed of when the user goes backwards/forwards in history.
+    info:
+      Whether the overlay should be disposed of when the user goes backwards/forwards in history.
       Note that this usually doesn't include clicking on links (unless the user is using the HashLocationStrategy).
     default: true
 
@@ -116,5 +117,3 @@ params:
     label: Backdrop class
     type: text
     info: Custom class to add to the backdrop
-
-

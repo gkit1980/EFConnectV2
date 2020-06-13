@@ -2,8 +2,8 @@ module.exports = {
   name: 'ice-custom-rules',
   preset: '../../jest.config.js',
   transform: {
-    '^.+\\.[tj]sx?$': 'ts-jest'
+    '^.+\\.[tj]sx?$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'html'],
-  coverageDirectory: '../../coverage/libs/ice-custom-rules'
+  coverageDirectory: '../../coverage/libs/ice-custom-rules',
 };

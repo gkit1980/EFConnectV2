@@ -5,7 +5,7 @@ import { clone, defaults, get } from 'lodash';
 
 @Component({
   selector: 'insis-currency',
-  templateUrl: './insis-currency.component.html'
+  templateUrl: './insis-currency.component.html',
 })
 export class InsisCurrencyComponent extends IceCurrencyComponent implements OnInit {
   static componentName = 'InsisCurrency';

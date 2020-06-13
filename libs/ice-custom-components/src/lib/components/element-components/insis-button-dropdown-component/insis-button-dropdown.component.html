@@ -1,15 +1,27 @@
 <div class="button-dropdown" *ngIf="isVisible">
   <ng-container *ngIf="!isOutput">
     <base target="_blank" />
-    <button mat-button color="accent" [matMenuTriggerFor]="menu" [disabled]="isDisabled" [matTooltip]="tooltip"
-      matTooltipClass="ice-tooltip" [attr.accesskey]="accesskey">
+    <button
+      mat-button
+      color="accent"
+      [matMenuTriggerFor]="menu"
+      [disabled]="isDisabled"
+      [matTooltip]="tooltip"
+      matTooltipClass="ice-tooltip"
+      [attr.accesskey]="accesskey"
+    >
       {{ label }}
       <mat-icon>keyboard_arrow_down</mat-icon>
     </button>
 
     <mat-menu #menu="matMenu">
-      <button class="menu-dropdown" mat-menu-item *ngFor="let option of options" (click)="onClick(option.value)"
-        [innerHTML]="option.label | MarkdownToHtml"></button>
+      <button
+        class="menu-dropdown"
+        mat-menu-item
+        *ngFor="let option of options"
+        (click)="onClick(option.value)"
+        [innerHTML]="option.label | MarkdownToHtml"
+      ></button>
     </mat-menu>
   </ng-container>
   <div class="ice-hint" *ngIf="hint">{{ hint }}</div>

@@ -3,12 +3,15 @@ import { Component, ElementRef, Inject, OnInit } from '@angular/core';
 import { MaterialElementComponentImplementation } from '@impeo/ng-ice';
 import { OverlayRef, Overlay, OverlayPositionBuilder, ScrollStrategy } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
-import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldDefaultOptions } from '@angular/material';
+import {
+  MAT_FORM_FIELD_DEFAULT_OPTIONS,
+  MatFormFieldDefaultOptions,
+} from '@angular/material/form-field';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'insis-info-button',
-  templateUrl: './insis-info-button.component.html'
+  templateUrl: './insis-info-button.component.html',
 })
 export class InsisInfoButtonComponent extends MaterialElementComponentImplementation
   implements OnInit {
@@ -89,8 +92,8 @@ export class InsisInfoButtonComponent extends MaterialElementComponentImplementa
           overlayX: this.getRecipeParam('overlayX', 'end'),
           overlayY: this.getRecipeParam('overlayY', 'bottom'),
           offsetX: this.getRecipeParam('offsetX', 0),
-          offsetY: this.getRecipeParam('offsetY', 0)
-        }
+          offsetY: this.getRecipeParam('offsetY', 0),
+        },
       ]);
 
     this.overlayRef.updatePositionStrategy(positionStrategy);
@@ -110,7 +113,7 @@ export class InsisInfoButtonComponent extends MaterialElementComponentImplementa
       maxHeight: this.getRecipeParam('maxHeight'),
       minHeight: this.getRecipeParam('minHeight'),
       maxWidth: this.getRecipeParam('maxWidth'),
-      minWidth: this.getRecipeParam('minWidth')
+      minWidth: this.getRecipeParam('minWidth'),
     });
 
     this.overlayRef.updateScrollStrategy(this.scrollStrategy);
@@ -127,7 +130,7 @@ export class InsisInfoButtonComponent extends MaterialElementComponentImplementa
       <div id="triangle"></div>
       <div [innerHTML]="this.text | MarkdownToHtml" class="bubble-content"></div>
     </div>
-  `
+  `,
 })
 export class TooltipComponent {
   text = '';

@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'insis-button-dropdown',
-  templateUrl: './insis-button-dropdown.component.html'
+  templateUrl: './insis-button-dropdown.component.html',
 })
 export class InsisButtonDropdownComponent extends MaterialSelectComponentImplementation {
   static componentName = 'InsisButtonDropdown';

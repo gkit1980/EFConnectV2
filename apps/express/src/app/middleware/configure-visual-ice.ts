@@ -13,7 +13,7 @@ export function configureVisualIce(app: express.Application, visualIceOptions: V
         if (isIndex) {
           response.setHeader('Cache-Control', 'max-age=0, must-revalidate');
         }
-      }
+      },
     })
   );
   console.log(

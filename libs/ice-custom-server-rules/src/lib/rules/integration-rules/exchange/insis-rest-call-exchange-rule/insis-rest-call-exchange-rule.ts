@@ -9,7 +9,7 @@ export class InsisRestCallExchangeRule extends RestCallExchangeRule {
     const headers = {
       //'Content-Type': 'application/json',
       Authorization: 'Basic aW5zaXNfZ2VuX3YxMDppbnNpc19nZW5fdjEw',
-      ignoreLoginService: true
+      ignoreLoginService: true,
     };
     return headers;
   }

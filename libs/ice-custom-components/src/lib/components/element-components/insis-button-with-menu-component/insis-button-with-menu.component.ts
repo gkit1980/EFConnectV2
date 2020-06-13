@@ -12,7 +12,7 @@ type IconPosition = 'left' | 'right';
 
 @Component({
   selector: 'insis-button-with-menu',
-  templateUrl: './insis-button-with-menu.component.html'
+  templateUrl: './insis-button-with-menu.component.html',
 })
 export class InsisButtonWithMenuComponent extends MaterialSelectComponentImplementation {
   static componentName = 'InsisButtonWithMenu';
@@ -46,10 +46,10 @@ export class InsisButtonWithMenuComponent extends MaterialSelectComponentImpleme
       const dialogData = { section: section, page: this.context.iceModel.navigation.currentPage };
       const dialogRef = this.dialog.open(InsisDialogSectionContainer, {
         width: width,
-        data: dialogData
+        data: dialogData,
       });
 
-      dialogRef.afterClosed().subscribe(result => {
+      dialogRef.afterClosed().subscribe((result) => {
         if (lifecycleSubscription) lifecycleSubscription.unsubscribe();
       });
 

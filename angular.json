@@ -20,7 +20,7 @@
             "main": "apps/angular/src/main.ts",
             "polyfills": "apps/angular/src/polyfills.ts",
             "tsConfig": "apps/angular/tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": ["apps/angular/src/favicon.ico", "apps/angular/src/assets"],
             "styles": ["apps/angular/src/styles/styles.scss"],
             "scripts": []
@@ -38,10 +38,10 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true,
+              "aot": true,
+              "buildOptimizer": false,
               "budgets": [
                 {
                   "type": "initial",
@@ -134,7 +134,8 @@
                 "input": "node_modules/@impeo/exp-ice/assets",
                 "output": "/assets/exp-ice"
               }
-            ]
+            ],
+            "buildLibsFromSource": true
           },
           "configurations": {
             "production": {

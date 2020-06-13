@@ -6,7 +6,7 @@ export class InsisInsuranceDateAndDurationMirrorRule extends MirrorRule {
     return [
       this.requireElement('startDateElement'),
       this.requireElement('durationElement'),
-      this.requireElement('durationUnitElement')
+      this.requireElement('durationUnitElement'),
     ];
   }
 
@@ -15,18 +15,14 @@ export class InsisInsuranceDateAndDurationMirrorRule extends MirrorRule {
   }
 
   private setElementValueToBeautifiedStartAndDuration(index: number[]) {
-    let startDate = this.requireElement('startDateElement')
-      .getValue()
-      .forIndex(index);
+    let startDate = this.requireElement('startDateElement').getValue().forIndex(index);
 
     if (!startDate) {
       return;
     }
 
     startDate = moment(startDate);
-    const duration = this.requireElement('durationElement')
-      .getValue()
-      .forIndex(index);
+    const duration = this.requireElement('durationElement').getValue().forIndex(index);
 
     if (!duration) {
       return;
@@ -35,9 +31,7 @@ export class InsisInsuranceDateAndDurationMirrorRule extends MirrorRule {
     const listNameForDurationUnit = this.requireParam('durationUnitList');
     const listForDurationUnit = this.requireList(listNameForDurationUnit);
 
-    let durationUnit = this.requireElement('durationUnitElement')
-      .getValue()
-      .forIndex(index);
+    let durationUnit = this.requireElement('durationUnitElement').getValue().forIndex(index);
 
     if (!durationUnit) {
       return;

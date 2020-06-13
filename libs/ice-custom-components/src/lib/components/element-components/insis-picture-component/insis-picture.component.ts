@@ -3,7 +3,7 @@ import { ElementComponentImplementation } from '@impeo/ng-ice';
 
 @Component({
   selector: 'insis-picture',
-  templateUrl: './insis-picture.component.html'
+  templateUrl: './insis-picture.component.html',
 })
 export class InsisPictureComponent extends ElementComponentImplementation implements OnInit {
   static componentName = 'InsisPictureComponent';

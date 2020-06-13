@@ -1,4 +1,4 @@
-@import "chrismas-material-theme";
+@import 'chrismas-material-theme';
 
 /**
  * TIP: Include common styles here to be applied for the entire application
@@ -11,5 +11,5 @@ $default-common: (
  * TIP: Only these 2 variables are the export points of a theme and should be further used inside
  *
  */
-$christmas-light-theme : map-merge($theme, $default-common);
-$christmas-dark-theme : map-merge($altTheme, $default-common);
+$christmas-light-theme: map-merge($theme, $default-common);
+$christmas-dark-theme: map-merge($altTheme, $default-common);

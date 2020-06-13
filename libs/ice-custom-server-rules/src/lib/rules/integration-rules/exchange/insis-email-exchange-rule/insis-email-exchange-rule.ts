@@ -35,7 +35,7 @@ export class InsisEmailExchangeRule extends ExchangeRule {
     const email = {
       to,
       subject,
-      html
+      html,
     };
 
     data.payload = await this.send(email);
@@ -54,10 +54,10 @@ export class InsisEmailExchangeRule extends ExchangeRule {
     try {
       const { accepted } = await transporter.sendMail({
         ...email,
-        from: config.auth.user
+        from: config.auth.user,
       });
       return {
-        accepted
+        accepted,
       };
     } catch (error) {
       IceConsole.error(error);
@@ -73,8 +73,8 @@ export class InsisEmailExchangeRule extends ExchangeRule {
       secure: false,
       auth: {
         user: this.getValueFromEnvironment(this.getParam('username')),
-        pass: this.getValueFromEnvironment(this.getParam('password'))
-      }
+        pass: this.getValueFromEnvironment(this.getParam('password')),
+      },
     };
   }
 
@@ -103,19 +103,12 @@ export class InsisEmailExchangeRule extends ExchangeRule {
 
   private async writeDebugFiles({ html }) {
     const fileName =
-      'email-' +
-      new Date()
-        .toISOString()
-        .split(':')
-        .join('-')
-        .split('.')
-        .join('-') +
-      '.html';
+      'email-' + new Date().toISOString().split(':').join('-').split('.').join('-') + '.html';
 
     return new Promise((resolve, reject) => {
       const filePath = path.resolve(this.repoFolder + '/data/' + fileName);
       console.log('write file', filePath);
-      fs.writeFile(filePath, html, err => {
+      fs.writeFile(filePath, html, (err) => {
         if (err) {
           console.log('ERROR');
           reject(err);

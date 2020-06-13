@@ -4,7 +4,7 @@ import {
   IceType,
   IceList,
   IndexedValue,
-  IceConsole
+  IceConsole,
 } from '@impeo/ice-core';
 import { map, find } from 'lodash';
 
@@ -19,7 +19,7 @@ export class InsisArrayItemToListValuesRule extends ValuesRule {
   //
   public getValues(index: number[] | null): any[] {
     this.initialize();
-    return map(this.getItems(index), item =>
+    return map(this.getItems(index), (item) =>
       IceType.sanitizeValueToElementType(item.value, this.element)
     );
   }
@@ -32,10 +32,10 @@ export class InsisArrayItemToListValuesRule extends ValuesRule {
   }
 
   protected getItems(index: number[] | null): any[] {
-    const items = map(this.valueElement.getValue().values, value => {
+    const items = map(this.valueElement.getValue().values, (value) => {
       return {
         value: value.value,
-        label: this.getLabelFromList(value)
+        label: this.getLabelFromList(value),
       };
     });
 
@@ -43,7 +43,7 @@ export class InsisArrayItemToListValuesRule extends ValuesRule {
       const emptyItemResourceKey = this.element.name + '.empty';
       items.push({
         value: null,
-        label: this.resource.resolve(emptyItemResourceKey, 'Add resourse yourElementName.empty')
+        label: this.resource.resolve(emptyItemResourceKey, 'Add resourse yourElementName.empty'),
       });
     }
 
@@ -53,7 +53,7 @@ export class InsisArrayItemToListValuesRule extends ValuesRule {
   getLabelFromList(value: IndexedValue): string {
     const listItems = this.labelList.getItems();
 
-    const item = find(listItems, _item => {
+    const item = find(listItems, (_item) => {
       const listValue = this.getSanitizedStringValue(_item['value']);
       return value.value === listValue;
     });

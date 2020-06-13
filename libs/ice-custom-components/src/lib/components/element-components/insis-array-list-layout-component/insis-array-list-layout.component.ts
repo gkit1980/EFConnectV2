@@ -3,7 +3,7 @@ import { InsisArrayComponentImplementation } from '../insis-array-component-impl
 
 @Component({
   selector: 'insis-array',
-  templateUrl: './insis-array-list-layout.component.html'
+  templateUrl: './insis-array-list-layout.component.html',
 })
 export class InsisArrayListLayoutComponent extends InsisArrayComponentImplementation {
   static componentName = 'InsisArrayListLayout';

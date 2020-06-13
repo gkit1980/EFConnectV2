@@ -5,7 +5,7 @@ import { get, toString, forEach, map, compact } from 'lodash';
 
 @Component({
   selector: 'insis-premium-summary-section',
-  templateUrl: './insis-premium-summary-section.component.html'
+  templateUrl: './insis-premium-summary-section.component.html',
 })
 export class InsisPremiumSummarySection extends SectionComponentImplementation implements OnInit {
   static componentName = 'InsisPremiumSummarySection';
@@ -33,7 +33,7 @@ export class InsisPremiumSummarySection extends SectionComponentImplementation i
     const paymentsFrequencyName = get(this.recipe, [
       'component',
       InsisPremiumSummarySection.componentName,
-      'paymentFrequencyElement'
+      'paymentFrequencyElement',
     ]);
     return paymentsFrequencyName;
   }
@@ -42,7 +42,7 @@ export class InsisPremiumSummarySection extends SectionComponentImplementation i
     const premimumElementName = get(this.recipe, [
       'component',
       InsisPremiumSummarySection.componentName,
-      'premiumElement'
+      'premiumElement',
     ]);
     const premimumElement = get(this.iceModel.elements, premimumElementName);
     if (!premimumElement) return null;
@@ -53,7 +53,7 @@ export class InsisPremiumSummarySection extends SectionComponentImplementation i
     const paymentsFrequencyName = get(this.recipe, [
       'component',
       InsisPremiumSummarySection.componentName,
-      'paymentFrequencyElement'
+      'paymentFrequencyElement',
     ]);
 
     if (!paymentsFrequencyName) {
@@ -63,14 +63,17 @@ export class InsisPremiumSummarySection extends SectionComponentImplementation i
     const paymentPageElement = get(this.page.elements, paymentsFrequencyName);
     const options = (paymentPageElement.element as ItemElement).valuesRule.getOptions(null);
     const value = paymentPageElement.element.getValue().forIndex(null);
-    return get(options.filter(option => toString(option.value) === toString(value)), '[0].label');
+    return get(
+      options.filter((option) => toString(option.value) === toString(value)),
+      '[0].label'
+    );
   }
 
   get currencyISOCode(): string {
     const currencyElementName = get(this.recipe, [
       'component',
       InsisPremiumSummarySection.componentName,
-      'currencyElement'
+      'currencyElement',
     ]);
     const currencyElement = get(this.iceModel.elements, currencyElementName);
     const currencyElementValue = currencyElement && currencyElement.getValue().forIndex([0]);
@@ -94,7 +97,7 @@ export class InsisPremiumSummarySection extends SectionComponentImplementation i
     this.printButtonElementName = get(this.recipe, [
       'component',
       InsisPremiumSummarySection.componentName,
-      'printElement'
+      'printElement',
     ]);
 
     this.premiumCategoryTitleResourceKey = get(
@@ -108,7 +111,7 @@ export class InsisPremiumSummarySection extends SectionComponentImplementation i
       [
         'component',
         InsisPremiumSummarySection.componentName,
-        'taxesAndFeesCategoryTitleResourceKey'
+        'taxesAndFeesCategoryTitleResourceKey',
       ],
       'premium-summary-section.taxes-and-fees.label'
     );
@@ -118,7 +121,7 @@ export class InsisPremiumSummarySection extends SectionComponentImplementation i
       [
         'component',
         InsisPremiumSummarySection.componentName,
-        'discountsAndLoaingsCategoryTitleResourceKey'
+        'discountsAndLoaingsCategoryTitleResourceKey',
       ],
       'premium-summary-section.discounts.label'
     );
@@ -136,7 +139,7 @@ export class InsisPremiumSummarySection extends SectionComponentImplementation i
 
   getArrayItems(name: string): any[] {
     const items = [];
-    forEach(this.iceModel.elements[name].getValue().values, value =>
+    forEach(this.iceModel.elements[name].getValue().values, (value) =>
       items.push({ index: value.index })
     );
     return items;
@@ -151,10 +154,10 @@ export class InsisPremiumSummarySection extends SectionComponentImplementation i
     }
 
     let areNotInvisible = false;
-    forEach(elements, element => {
-      forEach(element.indexedElements, indexedElement => {
+    forEach(elements, (element) => {
+      forEach(element.indexedElements, (indexedElement) => {
         const viewMode = element.viewModeRule.getViewMode({
-          index: indexedElement.index
+          index: indexedElement.index,
         });
         const resolved = ViewModeRule.resolved[viewMode];
         if (resolved['visible']) areNotInvisible = true;
@@ -170,6 +173,6 @@ export class InsisPremiumSummarySection extends SectionComponentImplementation i
   }
 
   private getPageElements(elementNames: string[]): PageElement[] {
-    return compact(map(elementNames, elementName => this.section.page.elements[elementName]));
+    return compact(map(elementNames, (elementName) => this.section.page.elements[elementName]));
   }
 }

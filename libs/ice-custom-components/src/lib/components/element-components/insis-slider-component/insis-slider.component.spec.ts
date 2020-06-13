@@ -2,12 +2,9 @@ import { TestBed } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
-import {
-  MatSliderModule,
-  MAT_FORM_FIELD_DEFAULT_OPTIONS,
-  MatFormFieldModule,
-  MatInputModule
-} from '@angular/material';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSliderModule } from '@angular/material/slider';
 import { NgIceTesting } from '@impeo/ng-ice/testing';
 import { InsisSliderComponent } from './insis-slider.component';
 import { FormsModule } from '@angular/forms';
@@ -16,13 +13,8 @@ describe(InsisSliderComponent.name, () => {
   let iceTesting: NgIceTesting;
 
   beforeEach(async () => {
-    iceTesting = NgIceTesting.initializeTestingRuntime(optionsBuilder => {
-      optionsBuilder.list('test', 'text', list =>
-        list
-          .item('test1')
-          .item('test2')
-          .item('test3')
-      );
+    iceTesting = NgIceTesting.initializeTestingRuntime((optionsBuilder) => {
+      optionsBuilder.list('test', 'text', (list) => list.item('test1').item('test2').item('test3'));
     });
 
     await TestBed.configureTestingModule({
@@ -31,51 +23,51 @@ describe(InsisSliderComponent.name, () => {
         MatSliderModule,
         MatFormFieldModule,
         MatInputModule,
-        NoopAnimationsModule
+        NoopAnimationsModule,
       ],
       declarations: [InsisSliderComponent],
       providers: [
-        { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'standard' } }
+        { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'standard' } },
       ],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA]
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
   });
 
   async function createIceContext(componentRecipe: any) {
     return await iceTesting
       .contextBuilder()
-      .element('mockElement', 'text', element =>
+      .element('mockElement', 'text', (element) =>
         element.component(InsisSliderComponent.componentName, componentRecipe)
       )
-      .element('rangeElement', 'text', element => {
+      .element('rangeElement', 'text', (element) => {
         element
           .component(InsisSliderComponent.componentName, componentRecipe)
           .rangeRule('StaticRangeRule', { min: 5, max: 10 });
       })
-      .element('defautvalueElement', 'integer', element => {
+      .element('defautvalueElement', 'integer', (element) => {
         element
           .component(InsisSliderComponent.componentName, componentRecipe)
           .defaultValueRule('StaticValueRule', { value: 25 });
       })
-      .element('valuesElement', 'text', element => {
+      .element('valuesElement', 'text', (element) => {
         element
           .component(InsisSliderComponent.componentName, componentRecipe)
           .valuesRule('ListValuesRule', { list: 'test' });
       })
-      .element('rangeElementWithDefautRuleInTheRange', 'text', element => {
+      .element('rangeElementWithDefautRuleInTheRange', 'text', (element) => {
         element
           .component(InsisSliderComponent.componentName, componentRecipe)
           .rangeRule('StaticRangeRule', { min: 5, max: 10 })
           .defaultValueRule('StaticValueRule', { value: 7 });
       })
-      .element('rangeElementWithDefautRuleOutOfTheRange', 'text', element => {
+      .element('rangeElementWithDefautRuleOutOfTheRange', 'text', (element) => {
         element
           .component(InsisSliderComponent.componentName, componentRecipe)
           .rangeRule('StaticRangeRule', { min: 5, max: 10 })
           .defaultValueRule('StaticValueRule', { value: 25 });
       })
-      .page('mockPage', page =>
-        page.section(section =>
+      .page('mockPage', (page) =>
+        page.section((section) =>
           section
             .includeElement('mockElement')
             .includeElement('rangeElement')

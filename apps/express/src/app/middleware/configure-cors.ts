@@ -15,7 +15,7 @@ export function configureCors(app: express.Application) {
         callback(new Error('Not allowed by CORS'));
       }
     },
-    optionsSuccessStatus: 200
+    optionsSuccessStatus: 200,
   };
   app.get('/api/v1/external', cors(corsOptions));
 }

@@ -38,15 +38,15 @@ class KeyCombination {
   static parse(keyCombination: string): KeyCombination {
     const keyCombinationWithModifierKeys: string[] = keyCombination
       .split('+')
-      .map(_key => _key.trim().toLowerCase());
+      .map((_key) => _key.trim().toLowerCase());
 
     const modifierKeys =
-      keyCombinationWithModifierKeys.filter(_key => {
+      keyCombinationWithModifierKeys.filter((_key) => {
         return getModifierKeys().includes(_key);
       }) || [];
 
     const keys =
-      keyCombinationWithModifierKeys.filter(value => {
+      keyCombinationWithModifierKeys.filter((value) => {
         return !getModifierKeys().includes(value);
       }) || [];
 
@@ -74,9 +74,9 @@ export class InsisKeyboardShortcutTriggerRule extends TriggerRule {
   private parseShortcutParameter(shortcutParameter: string): KeyCombination[] {
     const allKeyCombinations: string[] = shortcutParameter
       .split(',')
-      .map(combination => combination.trim().toLowerCase());
+      .map((combination) => combination.trim().toLowerCase());
     const allKeyCombinationWithModifierKeys: KeyCombination[] = allKeyCombinations.map(
-      keyCombination => {
+      (keyCombination) => {
         return KeyCombination.parse(keyCombination);
       }
     );
@@ -91,7 +91,7 @@ export class InsisKeyboardShortcutTriggerRule extends TriggerRule {
 
     const observable = fromEvent(document, 'keyup').pipe(
       filter((keyboardEvent: KeyboardEvent) => {
-        return combinations.some(combination => {
+        return combinations.some((combination) => {
           return combination.isPressed(keyboardEvent);
         });
       })
@@ -127,7 +127,7 @@ export class InsisKeyboardShortcutTriggerRule extends TriggerRule {
           if (document.activeElement.closest(`div[data-element="${this.getParam('element')}"]`)) {
             // Prepare action context, i.e. current element's index for action that will be executed.
             // Since index is not element's html attribute, we need to find it out manually.
-            subpaths.forEach(subpath => {
+            subpaths.forEach((subpath) => {
               document.querySelectorAll(`div[data-element="${subpath}"]`).forEach((value, key) => {
                 if (value === document.activeElement.closest(`div[data-element="${subpath}"]`))
                   indeces.push(key);
@@ -151,7 +151,7 @@ export class InsisKeyboardShortcutTriggerRule extends TriggerRule {
         }
 
         this.action.execute();
-      })
+      }),
     ];
   }
 }

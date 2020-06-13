@@ -5,7 +5,7 @@ import {
   CantHaveOnlyMultiplerKeysAsShortcutsErrorMessage,
   ParseErrorMessage,
   DoesNotSupportMultipleNonModifierKeys,
-  preventDefaultParameterName
+  preventDefaultParameterName,
 } from './insis-keyboard-shortcut-trigger-rule';
 import { IceTesting } from '@impeo/ice-core/testing';
 import { RuleHolder, ExecutionRule, IceConsole, IceContext } from '@impeo/ice-core';
@@ -38,13 +38,13 @@ describe(InsisKeyboardShortcutTriggerRule.name, () => {
     iceConsoleErrorSpy = jest.spyOn(IceConsole, 'error');
 
     if (context) context.iceModel.unregisterEvents();
-    listeners.forEach(listener => document.removeEventListener('keyup', listener));
+    listeners.forEach((listener) => document.removeEventListener('keyup', listener));
   });
 
   const createIceContext = async (ruleRecipe: any) =>
     await iceTesting
       .contextBuilder()
-      .action('test-action', recipeBuilder =>
+      .action('test-action', (recipeBuilder) =>
         recipeBuilder
           .triggerRule(InsisKeyboardShortcutTriggerRule.name, ruleRecipe)
           .executionRule(DummyExecutionRule.name, {})
@@ -58,9 +58,9 @@ describe(InsisKeyboardShortcutTriggerRule.name, () => {
   const createKeyupEvent = (modifierKey: string[], key: string) => {
     key = key || capitalizeFirstLetter(modifierKey[0]);
     const keyboardEventInit = {
-      key: key
+      key: key,
     };
-    modifierKey.forEach(_modifierKey => {
+    modifierKey.forEach((_modifierKey) => {
       keyboardEventInit[`${_modifierKey}Key`] = true;
     });
     const event = new KeyboardEvent('keyup', keyboardEventInit);
@@ -68,9 +68,9 @@ describe(InsisKeyboardShortcutTriggerRule.name, () => {
   };
 
   it('should log error if only modifier keys are set as shortcuts', async () => {
-    getModifierKeys().forEach(async modifierKey => {
+    getModifierKeys().forEach(async (modifierKey) => {
       const ruleRecipe = {
-        [shortcutParameterName]: modifierKey
+        [shortcutParameterName]: modifierKey,
       };
       context = await createIceContext(ruleRecipe);
       expect(iceConsoleErrorSpy).toHaveBeenCalled();
@@ -87,7 +87,7 @@ describe(InsisKeyboardShortcutTriggerRule.name, () => {
 
   it('should log error if key combintaion param is invalid combination of keys', async () => {
     context = await createIceContext({
-      [shortcutParameterName]: 'ctrl + ad'
+      [shortcutParameterName]: 'ctrl + ad',
     });
     expect(iceConsoleErrorSpy).toHaveBeenCalled();
     expect(iceConsoleErrorSpy).toHaveBeenLastCalledWith(ParseErrorMessage);
@@ -95,7 +95,7 @@ describe(InsisKeyboardShortcutTriggerRule.name, () => {
 
   it('should not activate action if correct key combination is not pressed', async () => {
     const ruleRecipe = {
-      [shortcutParameterName]: 'ctrl + c'
+      [shortcutParameterName]: 'ctrl + c',
     };
     context = await createIceContext(ruleRecipe);
     const keyupEvent = createKeyupEvent(['ctrl'], 'h');
@@ -105,7 +105,7 @@ describe(InsisKeyboardShortcutTriggerRule.name, () => {
 
   it('should activate action if correct key combination is pressed', async () => {
     const ruleRecipe = {
-      [shortcutParameterName]: 'ctrl + c'
+      [shortcutParameterName]: 'ctrl + c',
     };
     context = await createIceContext(ruleRecipe);
     const keyupEvent = createKeyupEvent(['ctrl'], 'c');
@@ -115,7 +115,7 @@ describe(InsisKeyboardShortcutTriggerRule.name, () => {
 
   it('should support using multiple multiplier keys', async () => {
     const ruleRecipe = {
-      [shortcutParameterName]: 'ctrl + alt + c'
+      [shortcutParameterName]: 'ctrl + alt + c',
     };
     context = await createIceContext(ruleRecipe);
     const keyupEvent = createKeyupEvent(['ctrl', 'alt'], 'c');
@@ -125,7 +125,7 @@ describe(InsisKeyboardShortcutTriggerRule.name, () => {
 
   it('should log error if multiple keys are in the recipe. it does not support using multiple non multiplier keys', async () => {
     const ruleRecipe = {
-      [shortcutParameterName]: 'ctrl + v + c'
+      [shortcutParameterName]: 'ctrl + v + c',
     };
     context = await createIceContext(ruleRecipe);
     expect(iceConsoleErrorSpy).toHaveBeenCalled();
@@ -134,7 +134,7 @@ describe(InsisKeyboardShortcutTriggerRule.name, () => {
 
   it('should not activate preventDefault when prevntDefault param is missing or false', async () => {
     const ruleRecipe = {
-      [shortcutParameterName]: 'ctrl + c'
+      [shortcutParameterName]: 'ctrl + c',
     };
     context = await createIceContext(ruleRecipe);
     const keyupEvent = createKeyupEvent(['ctrl'], 'c');
@@ -147,7 +147,7 @@ describe(InsisKeyboardShortcutTriggerRule.name, () => {
   it('should activate preventDefault when prevntDefault param is true', async () => {
     const ruleRecipe = {
       [shortcutParameterName]: 'ctrl + c',
-      [preventDefaultParameterName]: true
+      [preventDefaultParameterName]: true,
     };
     context = await createIceContext(ruleRecipe);
     const keyupEvent = createKeyupEvent(['ctrl'], 'c');
@@ -159,7 +159,7 @@ describe(InsisKeyboardShortcutTriggerRule.name, () => {
 
   it('should activate action if one of the key combinations are pressed', async () => {
     const ruleRecipe = {
-      [shortcutParameterName]: 'ctrl + c, alt + c'
+      [shortcutParameterName]: 'ctrl + c, alt + c',
     };
     context = await createIceContext(ruleRecipe);
 

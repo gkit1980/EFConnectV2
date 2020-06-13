@@ -25,14 +25,14 @@ describe(InsisChangeViewModeBasedOnArrayLengthRule.name, () => {
               'size.sm': 'auto',
               elements: [
                 {
-                  name: 'parentArray~childElement'
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
+                  name: 'parentArray~childElement',
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
   };
 
   const flexSectionRecipe = {
@@ -46,14 +46,14 @@ describe(InsisChangeViewModeBasedOnArrayLengthRule.name, () => {
               'size.sm': 'auto',
               elements: [
                 {
-                  name: 'anotherElement'
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
+                  name: 'anotherElement',
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
   };
 
   const createIceContext = async (ruleRecipe: any) =>
@@ -62,14 +62,14 @@ describe(InsisChangeViewModeBasedOnArrayLengthRule.name, () => {
       .element('parentArray', 'array')
       .element('parentArray~childElement', 'text')
       .element('anotherElement', 'text')
-      .page('testpage', pageRecipeBuilder =>
+      .page('testpage', (pageRecipeBuilder) =>
         pageRecipeBuilder
-          .section(sectionRecipeBuilder =>
+          .section((sectionRecipeBuilder) =>
             sectionRecipeBuilder
               .component('IceArrayFlexSection', arrayFlexSectionRecipe)
               .viewModeRule(InsisChangeViewModeBasedOnArrayLengthRule.name, ruleRecipe)
           )
-          .section(sectionRecipeBuilder =>
+          .section((sectionRecipeBuilder) =>
             sectionRecipeBuilder.component('IceFlexSection', flexSectionRecipe)
           )
       )
@@ -78,7 +78,7 @@ describe(InsisChangeViewModeBasedOnArrayLengthRule.name, () => {
   const getSectionWithTheViewmodeRule = (iceModel: IceModel) => {
     const testPage = iceModel.pages['testpage'];
     const sectionWithViewModeRule = testPage.sections.find(
-      section => section.viewModeRule.ruleName === InsisChangeViewModeBasedOnArrayLengthRule.name
+      (section) => section.viewModeRule.ruleName === InsisChangeViewModeBasedOnArrayLengthRule.name
     );
     return sectionWithViewModeRule;
   };
@@ -88,7 +88,7 @@ describe(InsisChangeViewModeBasedOnArrayLengthRule.name, () => {
       conditionElement: 'parentArray~childElement',
       condition: 'equals',
       conditionValue: 1,
-      viewMode: SectionViewMode.HIDDEN
+      viewMode: SectionViewMode.HIDDEN,
     });
     const sectionWithViewModeRule = getSectionWithTheViewmodeRule(iceModel);
     const viewmode = sectionWithViewModeRule.viewModeRule.getViewMode();
@@ -100,7 +100,7 @@ describe(InsisChangeViewModeBasedOnArrayLengthRule.name, () => {
       conditionElement: 'parentArray~childElement',
       condition: 'equals',
       conditionValue: 'asdasd',
-      viewMode: SectionViewMode.HIDDEN
+      viewMode: SectionViewMode.HIDDEN,
     });
     const sectionWithViewModeRule = getSectionWithTheViewmodeRule(iceModel);
     const viewmode = sectionWithViewModeRule.viewModeRule.getViewMode();
@@ -112,7 +112,7 @@ describe(InsisChangeViewModeBasedOnArrayLengthRule.name, () => {
       conditionElement: 'parentArray~childElement',
       condition: 'invalid condition',
       conditionValue: 1,
-      viewMode: SectionViewMode.HIDDEN
+      viewMode: SectionViewMode.HIDDEN,
     });
     const sectionWithViewModeRule = getSectionWithTheViewmodeRule(iceModel);
     const viewmode = sectionWithViewModeRule.viewModeRule.getViewMode();
@@ -124,7 +124,7 @@ describe(InsisChangeViewModeBasedOnArrayLengthRule.name, () => {
       conditionElement: 'parentArray',
       condition: 'equals',
       conditionValue: 1,
-      viewMode: SectionViewMode.HIDDEN
+      viewMode: SectionViewMode.HIDDEN,
     });
     const sectionWithViewModeRule = getSectionWithTheViewmodeRule(iceModel);
     const viewmode = sectionWithViewModeRule.viewModeRule.getViewMode();
@@ -136,7 +136,7 @@ describe(InsisChangeViewModeBasedOnArrayLengthRule.name, () => {
       conditionElement: 'parentArray',
       condition: 'greater',
       conditionValue: 1,
-      viewMode: SectionViewMode.HIDDEN
+      viewMode: SectionViewMode.HIDDEN,
     });
     const sectionWithViewModeRule = getSectionWithTheViewmodeRule(iceModel);
     const viewmode = sectionWithViewModeRule.viewModeRule.getViewMode();
@@ -148,7 +148,7 @@ describe(InsisChangeViewModeBasedOnArrayLengthRule.name, () => {
       conditionElement: 'parentArray',
       condition: 'lesser',
       conditionValue: 0,
-      viewMode: SectionViewMode.HIDDEN
+      viewMode: SectionViewMode.HIDDEN,
     });
     const sectionWithViewModeRule = getSectionWithTheViewmodeRule(iceModel);
     const viewmode = sectionWithViewModeRule.viewModeRule.getViewMode();
@@ -161,7 +161,7 @@ describe(InsisChangeViewModeBasedOnArrayLengthRule.name, () => {
       condition: 'equals',
       conditionValue: 1,
       viewMode: SectionViewMode.HIDDEN,
-      elseViewMode: SectionViewMode.DISABLED
+      elseViewMode: SectionViewMode.DISABLED,
     });
     const sectionWithViewModeRule = getSectionWithTheViewmodeRule(iceModel);
     const viewmode = sectionWithViewModeRule.viewModeRule.getViewMode();
@@ -174,7 +174,7 @@ describe(InsisChangeViewModeBasedOnArrayLengthRule.name, () => {
       condition: 'equals',
       conditionValue: 1,
       viewMode: SectionViewMode.HIDDEN,
-      elseViewMode: SectionViewMode.DISABLED
+      elseViewMode: SectionViewMode.DISABLED,
     });
 
     const childElementValue = new IndexedValue(
@@ -196,7 +196,7 @@ describe(InsisChangeViewModeBasedOnArrayLengthRule.name, () => {
       condition: 'lesser',
       conditionValue: 2,
       viewMode: SectionViewMode.HIDDEN,
-      elseViewMode: SectionViewMode.DISABLED
+      elseViewMode: SectionViewMode.DISABLED,
     });
 
     const childElementValue = new IndexedValue(
@@ -218,7 +218,7 @@ describe(InsisChangeViewModeBasedOnArrayLengthRule.name, () => {
       condition: 'greater',
       conditionValue: 0,
       viewMode: SectionViewMode.HIDDEN,
-      elseViewMode: SectionViewMode.DISABLED
+      elseViewMode: SectionViewMode.DISABLED,
     });
 
     const childElementValue = new IndexedValue(

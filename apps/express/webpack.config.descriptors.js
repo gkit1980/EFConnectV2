@@ -5,11 +5,11 @@ const yml = require('js-yaml');
 const lodash = require('lodash');
 
 function readdirDirsSync(folder) {
-  return fs.readdirSync(folder, { withFileTypes: true }).filter(dirent => dirent.isDirectory());
+  return fs.readdirSync(folder, { withFileTypes: true }).filter((dirent) => dirent.isDirectory());
 }
 
 function readdirFilesSync(folder) {
-  return fs.readdirSync(folder, { withFileTypes: true }).filter(dirent => dirent.isFile());
+  return fs.readdirSync(folder, { withFileTypes: true }).filter((dirent) => dirent.isFile());
 }
 
 function tryResolveAvailableEntitiesAndAspects() {
@@ -20,15 +20,17 @@ function tryResolveAvailableEntitiesAndAspects() {
     return readdirDirsSync(defaultRulesFolder).reduce(
       (result, dirent) =>
         Object.assign(result, {
-          [dirent.name]: readdirFilesSync(path.resolve(defaultRulesFolder, dirent.name)).map(x => {
-            // Descriptor entity folders are in camelCase,
-            // but the source entity folders are in kebab-case.
-            // So we transform from camelCase to kebab-case.
-            return path
-              .basename(x.name, path.extname(x.name))
-              .replace(/([A-Z]+)/g, '-$1')
-              .toLowerCase();
-          })
+          [dirent.name]: readdirFilesSync(path.resolve(defaultRulesFolder, dirent.name)).map(
+            (x) => {
+              // Descriptor entity folders are in camelCase,
+              // but the source entity folders are in kebab-case.
+              // So we transform from camelCase to kebab-case.
+              return path
+                .basename(x.name, path.extname(x.name))
+                .replace(/([A-Z]+)/g, '-$1')
+                .toLowerCase();
+            }
+          ),
         }),
       {}
     );
@@ -41,12 +43,12 @@ function tryResolveAvailableEntitiesAndAspects() {
 const availableEntitiesAndAspects = tryResolveAvailableEntitiesAndAspects();
 
 function getDescriptorFiles(sourceFolder) {
-  return getFolderFiles(sourceFolder).filter(file => path.extname(file) === '.yml');
+  return getFolderFiles(sourceFolder).filter((file) => path.extname(file) === '.yml');
 }
 
 function getFolderFiles(folder) {
   const files = [];
-  fs.readdirSync(folder, { withFileTypes: true }).forEach(file => {
+  fs.readdirSync(folder, { withFileTypes: true }).forEach((file) => {
     const absolutePath = path.join(folder, file.name);
 
     if (file.isDirectory()) return files.push(...getFolderFiles(absolutePath));
@@ -110,7 +112,7 @@ class MergeRuleDescriptorsPlugin {
   apply(compiler) {
     const plugin = { name: 'MergeCustomDescriptors' };
 
-    compiler.hooks.emit.tap(plugin, compilation => {
+    compiler.hooks.emit.tap(plugin, (compilation) => {
       return this.emitHookHandler(compilation);
     });
   }
@@ -124,7 +126,7 @@ class MergeRuleDescriptorsPlugin {
 
     const allDescriptors = {};
 
-    descriptorFiles.forEach(file => {
+    descriptorFiles.forEach((file) => {
       const ymlContent = loadYamlContent(file);
       const [entityFolder, aspectFolder] = extractEntityAndAspectFolders(file);
       const formattedAspectFolder = this.reformatAspectFolderName(aspectFolder);
@@ -136,9 +138,9 @@ class MergeRuleDescriptorsPlugin {
 
     const entitieFolders = lodash.keys(allDescriptors);
 
-    entitieFolders.forEach(entityFolder => {
+    entitieFolders.forEach((entityFolder) => {
       const aspectsFiles = lodash.keys(lodash.get(allDescriptors, entityFolder));
-      aspectsFiles.forEach(aspectName => {
+      aspectsFiles.forEach((aspectName) => {
         const aspectJSON = lodash.get(allDescriptors, [entityFolder, aspectName]);
         const outputFile = path.resolve(this.outputFolder, entityFolder, aspectName) + '.yml';
         saveYamlContent(outputFile, aspectJSON);
@@ -162,7 +164,7 @@ class MergeRuleDescriptorsPlugin {
   }
 }
 
-module.exports = function(webpackConfig) {
+module.exports = function (webpackConfig) {
   const componentRulesInputFolder = path.resolve(
     __dirname,
     '../../libs/ice-custom-components/src/lib/components'
@@ -191,12 +193,12 @@ module.exports = function(webpackConfig) {
     new CopyWebpackPlugin(
       fs
         .readdirSync(componentRulesInputFolder, { withFileTypes: true })
-        .filter(dirent => dirent.isDirectory())
-        .map(dirent => ({
+        .filter((dirent) => dirent.isDirectory())
+        .map((dirent) => ({
           from: path.join(componentRulesInputFolder, dirent.name, '**/*.yml'),
           to: path.join(componentDescriptorsOutputFolder, dirent.name),
           toType: 'dir',
-          flatten: true
+          flatten: true,
         }))
     ),
     new MergeRuleDescriptorsPlugin(

@@ -1,5 +1,4 @@
 implementations:
-
   InsisDefaultTransformationRule:
     description: >
       This rule is the almost the same as DefaultTransformationRule with a small addition, fromIndex and toIndex to be
@@ -143,4 +142,3 @@ implementations:
                             element: policy.insured.vehicle-objects~car.usage
                     ignoreNull: true
             ```
-

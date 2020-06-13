@@ -61,6 +61,17 @@ stages:
           - script: ./node_modules/.bin/nx affected --target=lint --base=origin/master --parallel
             displayName: nx affected lint
 
+          # - script: npm run test:ci
+          #   displayName: npm test
+
+          # - task: PublishTestResults@2
+          #   displayName: publish unit test results
+          #   inputs:
+          #     testResultsFiles: test-results/**/*.xml
+          #     mergeTestResults: true
+          #     testRunTitle: Unit tests
+          #   condition: succeededOrFailed()
+
           - script: npm run build
             displayName: npm run build
 

@@ -14,8 +14,8 @@ export class InsisPaginatedQueryTransformation extends DefaultTransformationRule
     if (!_.isArray(inData.payload.RowSet.Row))
       inData.payload.RowSet.Row = [inData.payload.RowSet.Row];
 
-    _.forEach(inData.payload.RowSet.Row, row => {
-      _.forEach(row.Column, column => {
+    _.forEach(inData.payload.RowSet.Row, (row) => {
+      _.forEach(row.Column, (column) => {
         row[column.attributes.name] = column['$value'];
       });
     });

@@ -5,14 +5,14 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 // on GitHub that fixes the issue. Note, that it might not work with future
 // versions of the npm packages
 // See https://github.com/oracle/node-oracledb/issues/1156#issuecomment-574396243
-module.exports = function(webpackConfig) {
+module.exports = function (webpackConfig) {
   webpackConfig.plugins.push(
     new CopyWebpackPlugin([
       {
         // Copy the binary Oracle DB driver to dist.
         from: path.resolve(__dirname, '../../node_modules/oracledb/build'),
-        to: 'node_modules/oracledb/build'
-      }
+        to: 'node_modules/oracledb/build',
+      },
     ])
   );
 
@@ -22,8 +22,8 @@ module.exports = function(webpackConfig) {
     loader: 'string-replace-loader',
     options: {
       search: 'require(binaryLocations[i])',
-      replace: '__non_webpack_require__(binaryLocations[i])'
-    }
+      replace: '__non_webpack_require__(binaryLocations[i])',
+    },
   });
 
   return webpackConfig;

@@ -9,14 +9,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
-import {
-  MatInputModule,
-  MatCheckboxModule,
-  MatMenuModule,
-  MatTableModule,
-  MatTooltipModule,
-  MatBadgeModule
-} from '@angular/material';
+
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MarkdownToHtmlModule } from 'markdown-to-html-pipe';
@@ -35,7 +28,7 @@ import { InsisCardComponent } from './components/element-components/insis-card-c
 import { InsisFileUploadComponent } from './components/element-components/insis-file-upload-component/insis-file-upload.component';
 import {
   InsisInfoButtonComponent,
-  TooltipComponent
+  TooltipComponent,
 } from './components/element-components/insis-info-button/insis-info-button.component';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { InsisSummarySectionDetailContainer } from './components/shared-components/insis-summary-section-detail-container/insis-summary-section-detail-container.component';
@@ -55,6 +48,12 @@ import { InsisDialogSectionContainer } from './components/shared-components/insi
 import { InsisButtonWithDialogComponent } from './components/element-components/insis-button-with-dialog/insis-button-with-dialog.component';
 import { InsisGoogleMapComponent } from './components/element-components/insis-google-map-component/insis-google-map.component';
 import { InsisPremiumSummarySection } from './components/section-components/insis-premium-summary-section/insis-premium-summary-section.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatBadgeModule } from '@angular/material/badge';
 import { InsisArrayTooltipComponent } from './components/element-components/insis-array-tooltip/insis-array-tooltip.component';
 
 /**
@@ -92,7 +91,7 @@ export const iceCustomComponents = [
   InsisImageButtonComponent,
   InsisMarkdownOutputElementComponent,
   InsisGoogleMapComponent,
-  InsisPremiumSummarySection
+  InsisPremiumSummarySection,
 ];
 
 /**
@@ -100,7 +99,7 @@ export const iceCustomComponents = [
  * @param componentService
  */
 export function registerComponents(componentService: IceComponentsService) {
-  const result = function(): Promise<any> {
+  const result = function (): Promise<any> {
     return new Promise((resolve, reject) => {
       componentService.registerComponentTypes(iceCustomComponents);
       resolve();
@@ -133,7 +132,7 @@ export function registerComponents(componentService: IceComponentsService) {
     MatChipsModule,
     FlexLayoutModule,
     MatIconModule,
-    MatBadgeModule
+    MatBadgeModule,
   ],
 
   declarations: [
@@ -141,7 +140,7 @@ export function registerComponents(componentService: IceComponentsService) {
     TooltipComponent,
     InsisHorizontalStepperNavigationComponent,
     InsisVerticalStepperNavigationComponent,
-    InsisDialogSectionContainer
+    InsisDialogSectionContainer,
   ],
   exports: [...iceCustomComponents],
   entryComponents: [
@@ -149,16 +148,16 @@ export function registerComponents(componentService: IceComponentsService) {
     TooltipComponent,
     InsisHorizontalStepperNavigationComponent,
     InsisVerticalStepperNavigationComponent,
-    InsisDialogSectionContainer
+    InsisDialogSectionContainer,
   ],
   providers: [
     {
       provide: APP_INITIALIZER,
       deps: [IceComponentsService],
       multi: true,
-      useFactory: registerComponents
-    }
+      useFactory: registerComponents,
+    },
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class IceCustomComponentsModule {}

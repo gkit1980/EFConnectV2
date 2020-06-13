@@ -1,6 +1,6 @@
 import { isUndefined, indexOf, isNil } from 'lodash';
 import { Component, AfterViewInit, ViewChild, OnInit, Inject, OnDestroy } from '@angular/core';
-import { MatSlider } from '@angular/material';
+import { MatSlider } from '@angular/material/slider';
 import { MaterialElementComponentImplementation } from '@impeo/ng-ice';
 import { ItemElement } from '@impeo/ice-core';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
@@ -8,13 +8,13 @@ import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'insis-slider',
-  templateUrl: './insis-slider.component.html'
+  templateUrl: './insis-slider.component.html',
 })
 export class InsisSliderComponent extends MaterialElementComponentImplementation
   implements OnInit, AfterViewInit, OnDestroy {
   static componentName = 'InsisSlider';
 
-  @ViewChild(MatSlider, { static: false })
+  @ViewChild(MatSlider)
   slider: MatSlider;
 
   min = 0;
@@ -60,11 +60,8 @@ export class InsisSliderComponent extends MaterialElementComponentImplementation
   ngAfterViewInit(): void {
     if (this.updateValueBehaviour === 'onDrag' && this.slider) {
       this.debouncerSubscription = this.slider.input
-        .pipe(
-          debounceTime(this.ELEMENT_VALUE_UPDATE_DEBOUNCE_TIME_MS),
-          distinctUntilChanged()
-        )
-        .subscribe(value => {
+        .pipe(debounceTime(this.ELEMENT_VALUE_UPDATE_DEBOUNCE_TIME_MS), distinctUntilChanged())
+        .subscribe((value) => {
           this.componentValue = value.value;
           this.changeValue();
         });

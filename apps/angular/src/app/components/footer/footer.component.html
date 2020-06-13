@@ -3,13 +3,17 @@
     <div fxFlex="50" fxLayout="row" fxLayoutAlign="flex-start center">
       <span>Follow us</span>
       <a href="https://www.facebook.com/fadatagroup/"><img src="/assets/icons/facebook.svg" /></a>
-      <a href="https://twitter.com/fadata_group" target="_blank"><img src="/assets/icons/twitter.svg" /></a>
-      <a href="https://www.instagram.com/fadatagroup/?hl=en" target="_blank"><img
-          src="/assets/icons/instagram.svg" /></a>
+      <a href="https://twitter.com/fadata_group" target="_blank"
+        ><img src="/assets/icons/twitter.svg"
+      /></a>
+      <a href="https://www.instagram.com/fadatagroup/?hl=en" target="_blank"
+        ><img src="/assets/icons/instagram.svg"
+      /></a>
     </div>
     <div fxFlex="50" fxLayout="row" fxLayoutAlign="flex-end normal" fxLayoutGap="10px">
       <a class="navigation-link" [href]="n.link" target="_blank" *ngFor="let n of navigation">
-        {{ n.key }}</a>
+        {{ n.key }}</a
+      >
       <span>{{ buildNumber }}</span>
     </div>
   </div>

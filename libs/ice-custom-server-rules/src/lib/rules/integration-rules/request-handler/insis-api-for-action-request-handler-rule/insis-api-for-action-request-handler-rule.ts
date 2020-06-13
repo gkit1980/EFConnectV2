@@ -7,7 +7,7 @@ import {
   IntegrationElement,
   ApiIntegration,
   Validation,
-  IceAction
+  IceAction,
 } from '@impeo/ice-core';
 import * as _ from 'lodash';
 
@@ -43,7 +43,7 @@ export class InsisApiForActionRequestHandlerRule extends RequestHandlerRule {
       )} endpoint method: ${this.requireParam('endpoint.method')}`
     );
     return [
-      new IceEndpoint(this.requireParam('endpoint.route'), [this.requireParam('endpoint.method')])
+      new IceEndpoint(this.requireParam('endpoint.route'), [this.requireParam('endpoint.method')]),
     ];
   }
 
@@ -105,7 +105,7 @@ export class InsisApiForActionRequestHandlerRule extends RequestHandlerRule {
     if (this.recipe['bucket']) {
       elements = this.requireBucket(this.recipe['bucket']).getElements();
     }
-    return _.map(elements, element => {
+    return _.map(elements, (element) => {
       return IntegrationElement.build(this.integration as ApiIntegration, element);
     });
   }

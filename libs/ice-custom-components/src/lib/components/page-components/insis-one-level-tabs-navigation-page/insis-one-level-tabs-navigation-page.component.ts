@@ -5,28 +5,28 @@ import { get, first } from 'lodash';
 
 const HEADER_SECTION_TAG = 'header';
 
-const getTags = section => {
+const getTags = (section) => {
   const componentName = first(Object.keys(get(section, 'recipe.component', {})));
   return get(section, `recipe.component.${componentName}.tags`, []);
 };
 
 @Component({
   selector: 'insis-one-level-tabs-navigation-page',
-  templateUrl: './insis-one-level-tabs-navigation-page.component.html'
+  templateUrl: './insis-one-level-tabs-navigation-page.component.html',
 })
 export class InsisOneLevelTabsNavigationPageComponent extends PageComponentImplementation
   implements OnInit {
   static componentName = 'InsisOneLevelTabsNavigationPage';
 
   get mainSections() {
-    return this.page.sections.filter(section => {
+    return this.page.sections.filter((section) => {
       const tags = getTags(section);
       return !tags.includes(HEADER_SECTION_TAG);
     });
   }
 
   get headerSections() {
-    return this.page.sections.filter(section => {
+    return this.page.sections.filter((section) => {
       const tags = getTags(section);
       return tags.includes(HEADER_SECTION_TAG);
     });

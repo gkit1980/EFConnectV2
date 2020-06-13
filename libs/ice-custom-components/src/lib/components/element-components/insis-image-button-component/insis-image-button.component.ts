@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'insis-image-button',
-  templateUrl: './insis-image-button.component.html'
+  templateUrl: './insis-image-button.component.html',
 })
 export class InsisImageButtonComponent extends IceButtonComponent {
   static componentName = 'InsisImageButton';

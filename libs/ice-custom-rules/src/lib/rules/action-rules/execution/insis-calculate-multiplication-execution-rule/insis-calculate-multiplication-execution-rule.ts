@@ -10,7 +10,7 @@ export class InsisCalculateMultiplicationExecutionRule extends ExecutionRule {
 
     let multiplication = 1;
 
-    forEach(sourceElements, sourceElement => {
+    forEach(sourceElements, (sourceElement) => {
       const _index: number[] = actionContext.index
         ? IndexedValue.sliceIndexToElementLevel(sourceElement.name, actionContext.index)
         : null;
@@ -19,7 +19,7 @@ export class InsisCalculateMultiplicationExecutionRule extends ExecutionRule {
       if (value != null) multiplication *= <number>value;
     });
 
-    forEach(sourceValues, sourceValue => {
+    forEach(sourceValues, (sourceValue) => {
       if (sourceValue != null) multiplication *= <number>sourceValue;
     });
 

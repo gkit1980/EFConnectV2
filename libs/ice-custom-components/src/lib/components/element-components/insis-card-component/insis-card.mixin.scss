@@ -1,15 +1,15 @@
-@import "~@angular/material/theming";
+@import '~@angular/material/theming';
 
 @mixin insis-card-mixin($theme) {
   $primary: map-get($theme, primary);
   $primaryColor: mat-color($primary);
-  $navigation-line: get-color($theme, "navigation-line");
+  $navigation-line: get-color($theme, 'navigation-line');
 
   .insis-card {
     @include make-card();
 
     cursor: pointer;
-    background-color: get-color($theme, "light");
+    background-color: get-color($theme, 'light');
 
     &:hover {
       background-color: rgba(13, 120, 192, 0.0392157);

@@ -2,7 +2,7 @@ import {
   IntegrationDataIn,
   IntegrationDataOut,
   ExchangeRule,
-  IceIntegration
+  IceIntegration,
 } from '@impeo/ice-core';
 import { YamlFileService } from '@impeo/exp-ice';
 import { get, set } from 'lodash';
@@ -29,10 +29,7 @@ export class InsisLoadYmlFileExchangeRule extends ExchangeRule {
     const data = new IntegrationDataIn();
     let ymlContent: any;
 
-    const extension: string = path
-      .extname(dataFileName)
-      .split('.')
-      .pop();
+    const extension: string = path.extname(dataFileName).split('.').pop();
 
     if (!SUPPORTED_FILE_TYPES[extension]) {
       const errorMsg =
@@ -72,5 +69,5 @@ export class InsisLoadYmlFileExchangeRule extends ExchangeRule {
 
 enum SUPPORTED_FILE_TYPES {
   JSON = '.json',
-  YML = '.yml'
+  YML = '.yml',
 }

@@ -14,4 +14,3 @@ params:
       This is part of the element recipe.
       For the _action_ the complete action recipe must be defined here. Only the execution rules must be defined for
       the action, as the trigger for executing is handled by the component.
-

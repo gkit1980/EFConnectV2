@@ -17,7 +17,7 @@ export class SpinnerService {
     'register-application',
     'upload-single-claim-attachment-action',
     'upload-file',
-    'update-claim'
+    'update-claim',
   ];
 
   public visible: Subject<boolean>;
@@ -30,10 +30,10 @@ export class SpinnerService {
     this.init({
       spinnerShowDelay: 600, // time to wait before showing any spinner
       spinnerHideDebounceTime: 50, // keeps spinner window open for {N}ms
-      considerApplicationInnactiveTime: 120 * 1000 // declare application innactive after {N} minutes
+      considerApplicationInnactiveTime: 120 * 1000, // declare application innactive after {N} minutes
     });
 
-    this.contextService.$contextCreated.subscribe(contextAndContextId => {
+    this.contextService.$contextCreated.subscribe((contextAndContextId) => {
       const context = get(contextAndContextId, 'context') as IceContext;
 
       const actionStart = (actionName: string) => {
@@ -78,7 +78,7 @@ export class SpinnerService {
     this.serverOperationEnded.emit(actionName);
   }
 
-  shouldIgnoreAction = actionName => this.ignoreActions.indexOf(actionName) >= 0;
+  shouldIgnoreAction = (actionName) => this.ignoreActions.indexOf(actionName) >= 0;
 
   removeFromList = (actionName, list) => {
     const index = list.indexOf(actionName);
@@ -87,15 +87,15 @@ export class SpinnerService {
     }
   };
 
-  removeFromQueue = actionName => {
+  removeFromQueue = (actionName) => {
     this.removeFromList(actionName, this.actionsQueue);
   };
 
-  removeFromDelayed = actionName => {
+  removeFromDelayed = (actionName) => {
     this.removeFromList(actionName, this.delayedActions);
   };
 
-  isDelayedAction = actionName => this.delayedActions.indexOf(actionName) >= 0;
+  isDelayedAction = (actionName) => this.delayedActions.indexOf(actionName) >= 0;
 
   makeNext = () => this.actionsQueue.length > 0;
 
@@ -108,12 +108,12 @@ export class SpinnerService {
 
     this.serverOperationStarted
       .pipe(
-        tap(actionName => {
+        tap((actionName) => {
           this.delayedActions.push(actionName);
         })
       )
       .pipe(delay(options.spinnerShowDelay))
-      .subscribe(actionName => {
+      .subscribe((actionName) => {
         if (this.isDelayedAction(actionName)) {
           this.removeFromDelayed(actionName);
           this.actionsQueue.push(actionName);
@@ -123,7 +123,7 @@ export class SpinnerService {
 
     this.serverOperationEnded
       .pipe(
-        tap(actionName => {
+        tap((actionName) => {
           this.removeFromDelayed(actionName);
           this.removeFromQueue(actionName);
         }),

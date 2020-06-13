@@ -4,7 +4,7 @@ import { IceElement } from '@impeo/ice-core';
 
 @Component({
   selector: 'insis-google-map',
-  templateUrl: './insis-google-map.component.html'
+  templateUrl: './insis-google-map.component.html',
 })
 export class InsisGoogleMapComponent extends MaterialSelectComponentImplementation
   implements OnInit {
@@ -41,12 +41,12 @@ export class InsisGoogleMapComponent extends MaterialSelectComponentImplementati
       this.lng = parseFloat(lngValue);
     }
 
-    latElement.$dataModelValueChange.subscribe(v => {
+    latElement.$dataModelValueChange.subscribe((v) => {
       if (this.lat === 0) {
         this.lat = parseFloat(v.value);
       }
     });
-    lngElement.$dataModelValueChange.subscribe(v => {
+    lngElement.$dataModelValueChange.subscribe((v) => {
       if (this.lng === 0) {
         this.lng = parseFloat(v.value);
       }

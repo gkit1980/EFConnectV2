@@ -5,9 +5,9 @@ component: InsisMarkdownOutputElement
 types:
   - text
 
-description: > 
+description: >
   A component for displaying options as cards. User toggles between values by clicking on the card.
 
 
-  Supported text aspect keys: 
+  Supported text aspect keys:
     - hint

@@ -20,7 +20,7 @@ export class InsisArrayItemConditionalValueMirrorRule extends MirrorRule {
     const mirroredArrayItemValue = this.requireElement('mirroredArrayItem').getValue().values;
 
     const index = conditionalArrayItemValue.findIndex(
-      indexedValue => indexedValue.value === originElementValue
+      (indexedValue) => indexedValue.value === originElementValue
     );
     this.element.setSimpleValue(mirroredArrayItemValue[index].value);
   }

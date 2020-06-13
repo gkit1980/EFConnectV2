@@ -1,8 +1,16 @@
 <div class="google-map" *ngIf="isVisible">
-    <agm-map [latitude]="lat" [longitude]="lng" (centerChange)="centerChange($event)" [zoom]="15" [streetViewControl]="false">
-    </agm-map>
-    <div class="marker"></div>
-    <p class="google-map-info px-4 py-2">
-        <a [href]="'https://www.google.com/maps/place/' + latMap + ',' + lngMap ">{{ latMap | number:'0.5' }}, {{lngMap | number:'0.5'}}</a>
-    </p>
+  <agm-map
+    [latitude]="lat"
+    [longitude]="lng"
+    (centerChange)="centerChange($event)"
+    [zoom]="15"
+    [streetViewControl]="false"
+  >
+  </agm-map>
+  <div class="marker"></div>
+  <p class="google-map-info px-4 py-2">
+    <a [href]="'https://www.google.com/maps/place/' + latMap + ',' + lngMap"
+      >{{ latMap | number: '0.5' }}, {{ lngMap | number: '0.5' }}</a
+    >
+  </p>
 </div>

@@ -8,23 +8,6 @@ import { LanguagePickerComponent } from './components/language-picker/language-p
 import { AppDialog } from './components/dialog/dialog.component';
 import { LanguageService, getDefaultLanguage } from './services/language.service';
 import { AppRouting } from './app.routing';
-import {
-  MAT_FORM_FIELD_DEFAULT_OPTIONS,
-  MatSelectModule,
-  MatTooltipModule,
-  MatInputModule,
-  MatSliderModule,
-  MatMenuModule,
-  MatCardModule,
-  MatIconModule,
-  MatButtonModule,
-  MatToolbarModule,
-  MatRadioModule,
-  MatCheckboxModule,
-  MatSlideToggleModule,
-  MatDialogModule,
-  MatProgressSpinnerModule
-} from '@angular/material';
 import { NgIceModule, IcePrincipalService } from '@impeo/ng-ice';
 import { ClientPrincipal } from '@impeo/ice-core';
 import { LoginComponent } from './components/login/login.component';
@@ -43,6 +26,21 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { SpinnerService } from './services/spinner.service';
 
 import moment from 'moment';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -56,7 +54,7 @@ import moment from 'moment';
     StyleGuideComponent,
     LanguagePickerComponent,
     SpinnerComponent,
-    AppDialog
+    AppDialog,
   ],
   imports: [
     AppRouting,
@@ -75,10 +73,10 @@ import moment from 'moment';
     MatCheckboxModule,
     MatSlideToggleModule,
     MatProgressSpinnerModule,
+    MatDialogModule,
     FlexLayoutModule,
     NgIceModule.forRoot(),
     IceCustomComponentsModule,
-    MatDialogModule
   ],
   providers: [
     AlertService,
@@ -88,14 +86,14 @@ import moment from 'moment';
     SpinnerService,
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
-      useValue: { appearance: 'outline' }
+      useValue: { appearance: 'outline' },
     },
     IcePrincipalService,
     LanguageService,
-    CustomBreakpointsProvider
+    CustomBreakpointsProvider,
   ],
   entryComponents: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {
   constructor(icePrincipalService: IcePrincipalService) {
@@ -113,8 +111,8 @@ export class AppModule {
     moment.locale('en', {
       week: {
         dow: 1, // Monday is the first day of the week.
-        doy: 4 // Used to determine first week of the year.
-      }
+        doy: 4, // Used to determine first week of the year.
+      },
     }); //reference https://momentjscom.readthedocs.io/en/latest/moment/07-customization/16-dow-doy/
   }
 }

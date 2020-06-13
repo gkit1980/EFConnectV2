@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { MaterialElementComponentImplementation } from '@impeo/ng-ice';
-import { IceConsole, IceClientRuntime } from '@impeo/ice-core';
+import { IceClientRuntime } from '@impeo/ice-core';
 
 @Component({
   selector: 'insis-card',
-  templateUrl: './insis-card.component.html'
+  templateUrl: './insis-card.component.html',
 })
 export class InsisCardComponent extends MaterialElementComponentImplementation {
   static componentName = 'InsisCard';

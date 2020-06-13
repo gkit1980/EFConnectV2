@@ -3,7 +3,7 @@ import { MaterialElementComponentImplementation } from '@impeo/ng-ice';
 
 @Component({
   selector: 'insis-markdown-output-element',
-  templateUrl: './insis-markdown-output-element.component.html'
+  templateUrl: './insis-markdown-output-element.component.html',
 })
 export class InsisMarkdownOutputElementComponent extends MaterialElementComponentImplementation {
   static componentName = 'InsisMarkdownOutputElement';
