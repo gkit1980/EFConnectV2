@@ -64,6 +64,11 @@ function startApp() {
        *
        */
     ],
+    integrationsLogPath:
+      process.env.INTEGRATIONS_LOG_PATH != null
+        ? path.resolve(__dirname, process.env.INTEGRATIONS_LOG_PATH)
+        : undefined,
+    logIntegrationsToFile: process.env.LOG_INTEGRATIONS_TO_FILE == 'true' ? true : false,
   };
   const app = new ExpressApplication(appOptions);
   app.start();
