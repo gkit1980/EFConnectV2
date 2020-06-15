@@ -573,8 +573,13 @@ entries:
         payment:
           frequency:
             label:
-              - en: Payment
-                de: Payment
+              - en: Number of installments
+                de: Number of installments
+          term:
+            duration:
+              label:
+                - en: Payment duration
+                  de: Payment duration
         term:
           duration:
             label:
@@ -656,11 +661,13 @@ entries:
       description:
         label:
           - en: >-
-              Upon clicking this button the policy will be issued and the provided
-              bank account will be debited as per the selected preferences.
+              Upon clicking this button the policy will be issued and the
+              provided bank account will be debited as per the selected
+              preferences.
             de: >-
-              Upon clicking this button the policy will be issued and the provided
-              bank account will be debited as per the selected preferences.      
+              Upon clicking this button the policy will be issued and the
+              provided bank account will be debited as per the selected
+              preferences.      
     terms-and-conditions:
       description:
         label:
@@ -688,7 +695,6 @@ entries:
       label:
         - en: Bank account holder details
           de: Angaben zum Kontoinhaber
-    
     checbox-card:
       label:
         - en: Checkbox component
@@ -1224,7 +1230,7 @@ entries:
         iban-selection:
           empty:
             - en: Use a different bank account
-              de: policy.participants.payor.iban-selection.empty      
+              de: policy.participants.payor.iban-selection.empty
   quotes:
     title: {}
     remove:

@@ -13,17 +13,22 @@ page:
           grid:
             rows:
               - cols:
-                  - size: 200px
+                  - size: 175px
                     size.xs: 100%
                     css: u-mb-4-sm
                     elements:
                       - name: policy.contract.begin
-                  - size: 200px
+                  - size: 175px
                     size.xs: 100%
                     css: u-mb-4
                     elements:
                       - name: policy.contract.term.duration
-                  - size: 200px
+                  - size: 175px
+                    size.xs: 100%
+                    css: u-mb-4
+                    elements:
+                      - name: policy.contract.payment.term.duration
+                  - size: 175px
                     size.xs: 100%
                     css: u-mb-4
                     elements:
