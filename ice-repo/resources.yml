@@ -550,10 +550,13 @@ entries:
                   - en: Occupation
                     de: Besetzung
               q-07:
-                '1':
-                  label:
-                    - en: Main sport activites
-                      de: Hauptsportaktivitäten
+                label:
+                  - en: Do you have hobby (sports)?
+                    de: Do you have hobby (sports)?
+              q-07-1:
+                label:
+                  - en: Main sport activites
+                    de: Hauptsportaktivitäten
               q-02:
                 label:
                   - en: Height

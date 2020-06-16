@@ -104,7 +104,7 @@ page:
                     size.xs: auto
                     size.sm: auto
                     elements:
-                      - name: policy.insured.person-objects~question.q-07.1
+                      - name: policy.insured.person-objects~question.q-07-1
                 css: u-mb-2
               - cols:
                   - size: auto

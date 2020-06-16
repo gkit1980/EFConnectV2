@@ -3,7 +3,7 @@ element:
   type: text
   component: IceDropdown
   defaultValue: 12
-  values: insis.policy.insured.person-objects~question.q-07.1
+  values: insis.policy.insured.person-objects~question.q-07-1
   viewMode:
     ConditionalViewModeRule:
       conditionElement: policy.insured.person-objects~question.q-07
