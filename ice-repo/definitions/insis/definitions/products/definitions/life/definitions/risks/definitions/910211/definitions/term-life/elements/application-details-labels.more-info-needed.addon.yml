@@ -1,0 +1,12 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        IceNone: {}
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.insured.person-objects~entity-accident-insured.type
+      conditionValue: '2'
+      conditionViewMode: default
+      elseViewMode: hidden

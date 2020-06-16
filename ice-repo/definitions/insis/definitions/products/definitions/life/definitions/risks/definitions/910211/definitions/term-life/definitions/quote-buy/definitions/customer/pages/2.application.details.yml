@@ -7,4 +7,199 @@ page:
     showElementValidation: true
   component:
     InsisTwoLevelStepperNavigationPage: {}
-  sections: null
+  sections:
+    - component:
+        IceArrayFlexSection:
+          css: main-side small-title
+          arrayElement: policy.insured.person-objects
+          behaviourForEmptyRows: hide
+          grid:
+            rows:
+              - gap: 24px
+                gap.xs: 0px
+                cols:
+                  - size: 100%
+                    size.xs: 100%
+                    css: u-mb-4
+                    elements:
+                      - name: application-details-labels.more-info-needed.addon
+              - gap: 24px
+                gap.xs: 0px
+                cols:
+                  - size: 100%
+                    size.xs: 100%
+                    css: u-mb-4
+                    elements:
+                      - name: application-details-labels.more-info-needed.main
+              - gap: 24px
+                gap.xs: 0px
+                cols:
+                  - size: 56.5%
+                    size.xs: 100%
+                    css: u-mb-4
+                    elements:
+                      - name: policy.insured.person-objects~question.q-08
+              - gap: 24px
+                gap.xs: 0px
+                align: start
+                cols:
+                  - size: 100%
+                    size.xs: 100%
+                    css: u-mb-4 application-person-details-questions
+                    elements:
+                      - name: policy.insured.person-objects~question.q-09
+              - gap: 24px
+                gap.xs: 0px
+                align: start
+                cols:
+                  - size: 100%
+                    size.xs: 100%
+                    css: u-mb-4
+                    elements:
+                      - name: policy.insured.person-objects~question.q-09-1
+              - gap: 24px
+                gap.xs: 0px
+                align: start
+                cols:
+                  - size: 100%
+                    size.xs: 100%
+                    css: u-mb-4 application-person-details-questions
+                    elements:
+                      - name: policy.insured.person-objects~question.q-10
+              - gap: 24px
+                gap.xs: 0px
+                align: start
+                cols:
+                  - size: 100%
+                    size.xs: 100%
+                    css: u-mb-4
+                    elements:
+                      - name: policy.insured.person-objects~question.q-10-1
+              - gap: 24px
+                gap.xs: 0px
+                align: start
+                cols:
+                  - size: 100%
+                    size.xs: 100%
+                    css: u-mb-4 application-person-details-questions
+                    elements:
+                      - name: policy.insured.person-objects~question.q-11
+              - gap: 24px
+                gap.xs: 0px
+                align: start
+                cols:
+                  - size: 100%
+                    size.xs: 100%
+                    css: u-mb-4
+                    elements:
+                      - name: policy.insured.person-objects~question.q-11-1
+              - gap: 24px
+                gap.xs: 0px
+                align: start
+                cols:
+                  - size: 100%
+                    size.xs: 100%
+                    css: u-mb-4 application-person-details-questions
+                    elements:
+                      - name: policy.insured.person-objects~question.q-12
+              - gap: 24px
+                gap.xs: 0px
+                align: start
+                cols:
+                  - size: 100%
+                    size.xs: 100%
+                    css: u-mb-4
+                    elements:
+                      - name: policy.insured.person-objects~question.q-12-1
+              - gap: 24px
+                gap.xs: 0px
+                align: start
+                cols:
+                  - size: 100%
+                    size.xs: 100%
+                    css: u-mb-4 application-person-details-questions
+                    elements:
+                      - name: policy.insured.person-objects~question.q-13
+              - gap: 24px
+                gap.xs: 0px
+                align: start
+                cols:
+                  - size: 100%
+                    size.xs: 100%
+                    css: u-mb-4
+                    elements:
+                      - name: policy.insured.person-objects~question.q-13-1
+              - gap: 24px
+                gap.xs: 0px
+                align: start
+                cols:
+                  - size: 100%
+                    size.xs: 100%
+                    css: u-mb-4 application-person-details-questions
+                    elements:
+                      - name: policy.insured.person-objects~question.q-06
+              - gap: 24px
+                gap.xs: 0px
+                align: start
+                cols:
+                  - size: 100%
+                    size.xs: 100%
+                    css: u-mb-4 medical-documents-label
+                    elements:
+                      - name: application-details-labels.medical-documents
+              - gap: 24px
+                gap.xs: 0px
+                align: start
+                cols:
+                  - size: 100%
+                    size.xs: 100%
+                    css: u-mb-4 medical-documents-label
+                    elements:
+                      - name: policy.insured.person-objects~document.l-medex.document-name
+              - gap: 24px
+                gap.xs: 0px
+                align: start
+                cols:
+                  - size: 100%
+                    size.xs: 100%
+                    css: u-mb-4 medical-documents-label
+                    elements:
+                      - name: policy.insured.person-objects~document.medex1.document-name
+              - gap: 24px
+                gap.xs: 0px
+                align: start
+                cols:
+                  - size: 100%
+                    size.xs: 100%
+                    css: u-mb-4 medical-documents-label
+                    elements:
+                      - name: policy.insured.person-objects~document.medex2.document-name
+              - gap: 24px
+                gap.xs: 0px
+                align: start
+                cols:
+                  - size: 100%
+                    size.xs: 100%
+                    css: u-mb-4 medical-documents-label
+                    elements:
+                      - name: policy.insured.person-objects~document.medex3.document-name
+              - gap: 24px
+                gap.xs: 0px
+                align: start
+                cols:
+                  - size: 100%
+                    size.xs: 100%
+                    css: u-mb-4 medical-documents-label
+                    elements:
+                      - name: policy.insured.person-objects~document.smd.document-name
+    - component:
+        IceFlexSection:
+          tags:
+            - pull-right
+          grid:
+            rows:
+              - cols:
+                  - size: 100%
+                    elements:
+                      - name: go-to-next-page
+          css: button-width-100 u-mb-3

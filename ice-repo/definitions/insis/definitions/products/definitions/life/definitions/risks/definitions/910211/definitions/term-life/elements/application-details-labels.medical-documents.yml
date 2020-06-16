@@ -1,0 +1,6 @@
+element:
+  type: text
+  viewMode: output
+  defaultValue:
+    ResourceValueRule:
+      key: elements.application-details-labels.medical-documents.value

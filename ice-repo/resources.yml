@@ -531,7 +531,6 @@ entries:
                   label:
                     - en: Country
                       de: Land
-              question: {}
               height:
                 label:
                   - en: Height
@@ -565,6 +564,69 @@ entries:
                 label:
                   - en: Weight
                     de: Gewicht
+              q-08:
+                label:
+                  - en: How often does this person consume alcohol?
+                    de: How often does this person consume alcohol?
+              q-09:
+                '1': {}
+                label:
+                  - en: >-
+                      Does this person currently have any illness that requires
+                      treatment, medical observation or hospitalization?
+                    de: >-
+                      Does this person currently have any illness that requires
+                      treatment, medical observation or hospitalization?
+              describe:
+                label:
+                  - en: Please describe
+                    de: Please describe
+              q-10:
+                label:
+                  - en: >-
+                      Has this person suffered in the past from any illness that
+                      required treatment and/or medical examinations and/or
+                      hospotalizations and/or observation?
+                    de: >-
+                      Has this person suffered in the past from any illness that
+                      required treatment and/or medical examinations and/or
+                      hospotalizations and/or observation?
+              q-11:
+                label:
+                  - en: >-
+                      Does the person have or had liver disease, hepatitis B or
+                      C, kidney, pancreas, ulcers or diabetes mellitus (high
+                      blood sugar?
+                    de: >-
+                      Does the person have or had liver disease, hepatitis B or
+                      C, kidney, pancreas, ulcers or diabetes mellitus (high
+                      blood sugar?
+              q-12:
+                label:
+                  - en: Does this person currently take any medications?
+                    de: Does this person currently take any medications?
+              q-13:
+                label:
+                  - en: >-
+                      Does this person suffer or has suffered or been treated
+                      previously of epilepsy, convulsions, paralysis, mental or
+                      nervous illness, dizziness, headache, fainting or other
+                      nervous system disease?
+                    de: >-
+                      Does this person suffer or has suffered or been treated
+                      previously of epilepsy, convulsions, paralysis, mental or
+                      nervous illness, dizziness, headache, fainting or other
+                      nervous system disease?
+              q-06:
+                label:
+                  - en: >-
+                      Has any application for insurance on this person's life
+                      (life, accident, health) been declined, postponed or
+                      accepted on special terms?
+                    de: >-
+                      Has any application for insurance on this person's life
+                      (life, accident, health) been declined, postponed or
+                      accepted on special terms?
             height: {}
             covers-title:
               label:
@@ -1041,6 +1103,35 @@ entries:
           de: >-
             We are going to need some more information about you to be able to
             issue the insurance policy.
+    application-details-labels:
+      more-info-needed:
+        addon:
+          label:
+            - en: >-
+                A bit more information about the additional insured person is
+                necessary.
+              de: >-
+                A bit more information about the additional insured person is
+                necessary.
+        main:
+          label:
+            - en: >-
+                A bit more information about the main insured person is
+                necessary.
+              de: >-
+                A bit more information about the main insured person is
+                necessary.
+      medical-documents:
+        label:
+          - en: Medical examination documents
+            de: Medical examination documents
+        value:
+          - en: >-
+              Please attach documents (.jpg, .pdf) presenting the results of
+              medical examinations, containing:
+            de: >-
+              Please attach documents (.jpg, .pdf) presenting the results of
+              medical examinations, containing:
   validation:
     pageValidation:
       summary:
@@ -1059,9 +1150,9 @@ entries:
         - en: Please confirm
           de: Bitte bestätigen
       not_allowed_here:
-        - en: "'${value}' not allowed here"
+        - en: '''${value}'' not allowed here'
       regexp:
-        - en: "'${value}' does not matches regular expression ${regexp}"
+        - en: '''${value}'' does not matches regular expression ${regexp}'
       array:
         min:
           - en: 'must have at least ${min} entries'

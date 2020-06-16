@@ -256,3 +256,17 @@ mat-radio-button {
     }
   }
 }
+
+.application-person-details-questions {
+  mat-radio-button,
+  .mat-radio-label {
+    width: auto;
+  }
+}
+
+.medical-documents-label {
+  .ice-output > label {
+    display: block;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,12 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        IceRadiobuttonGroup: {}
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.insured.person-objects~entity-accident-insured.type
+      conditionValue: '1'
+      conditionViewMode: default
+      elseViewMode: hidden
