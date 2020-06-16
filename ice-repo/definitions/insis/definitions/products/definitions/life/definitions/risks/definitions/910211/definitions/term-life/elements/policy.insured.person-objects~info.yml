@@ -1,0 +1,19 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        InsisInfoButton:
+          height: 200
+          width: 400
+          originX: start
+          originY: bottom
+          overlayX: start
+          overlayY: bottom
+          offsetX: '36'
+          offsetY: '150'
+          scrollStrategy: BlockScrollStrategy
+  label:
+    NoLabelRule: {}
+  text:
+    ResourceTextRule: {}

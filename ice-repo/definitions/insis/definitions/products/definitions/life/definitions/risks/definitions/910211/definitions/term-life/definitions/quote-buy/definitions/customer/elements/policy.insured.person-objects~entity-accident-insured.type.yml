@@ -1,0 +1,7 @@
+element:
+  type: integer
+  defaultValue:
+    ArrayItemValueRule:
+      values:
+        - '1'
+        - '2'

@@ -499,16 +499,70 @@ entries:
             label:
               - en: Price
                 de: null
-        add-another-person:
-          label:
-            - en: Add another person
-              de: Add another person
-        remove-person:
-          label:
-            - en: Remove person
-              de: Remove person
         person-objects:
           items:
+            person:
+              is-main-insured:
+                label:
+                  'on':
+                    - en: null
+                      de: null
+                  'off':
+                    - en: MAKE THIS PERSON MAIN INSURED
+                      de: MAKE THIS PERSON MAIN INSUREDr
+              first-name:
+                label:
+                  - en: First name
+                    de: Vorname
+              last-name:
+                label:
+                  - en: Last name
+                    de: Nachname
+              gender:
+                label:
+                  - en: Gender
+                    de: Geschlecht
+              date-of-birth:
+                label:
+                  - en: Date of birth
+                    de: Geburtsdatum
+              address:
+                country:
+                  label:
+                    - en: Country
+                      de: Land
+              question: {}
+              height:
+                label:
+                  - en: Height
+                    de: Höhe
+              weight:
+                label:
+                  - en: Weight
+                    de: Gewicht
+            question:
+              q-04:
+                label:
+                  - en: The person is a smoker
+                    de: Die Person ist Raucher
+              q-05:
+                label:
+                  - en: Occupation
+                    de: Besetzung
+              q-07:
+                '1':
+                  label:
+                    - en: Main sport activites
+                      de: Hauptsportaktivitäten
+              q-02:
+                label:
+                  - en: Height
+                    de: Höhe
+              q-03:
+                label:
+                  - en: Weight
+                    de: Gewicht
+            height: {}
             covers-title:
               label:
                 - en: 'Covers ${param1} ${param2}'
@@ -565,6 +619,22 @@ entries:
                 label:
                   - en: '${param1} will be ${param2} at the end of their insurance.'
                     de: '${param1} will be ${param2} at the end of their insurance.'
+        add-another-person:
+          label:
+            - en: Add another person
+              de: Add another person
+        remove-person:
+          label:
+            - en: Remove person
+              de: Remove person
+        main-insured-title:
+          label:
+            - en: Main insured person
+              de: Hauptversicherte
+        additional-insured-title:
+          label:
+            - en: Additional insured person
+              de: Zusätzliche versicherte Person
       contract:
         begin:
           label:
@@ -667,7 +737,7 @@ entries:
             de: >-
               Upon clicking this button the policy will be issued and the
               provided bank account will be debited as per the selected
-              preferences.      
+              preferences.
     terms-and-conditions:
       description:
         label:
@@ -956,6 +1026,10 @@ entries:
       label:
         - en: '< ALL POLICIES '
           de: < ALLE POLICEN
+    insured-people-give-us-information:
+      label:
+        - en: Give us some information about the people you want to insure.
+          de: Give us some information about the people you want to insure.
     more-information-needed-life:
       label:
         - en: >-
@@ -982,9 +1056,9 @@ entries:
         - en: Please confirm
           de: Bitte bestätigen
       not_allowed_here:
-        - en: '''${value}'' not allowed here'
+        - en: "'${value}' not allowed here"
       regexp:
-        - en: '''${value}'' does not matches regular expression ${regexp}'
+        - en: "'${value}' does not matches regular expression ${regexp}"
       array:
         min:
           - en: 'must have at least ${min} entries'
@@ -1031,6 +1105,12 @@ entries:
         - en: Policy details
           de: Policy details
   pages:
+    '1':
+      quote:
+        people:
+          title:
+            - en: Insureds people
+              de: Versicherte personen
     footer:
       terms-and-conditions:
         - en: Terms and Conditions
