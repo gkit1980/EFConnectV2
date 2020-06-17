@@ -783,6 +783,14 @@ entries:
             label:
               - en: ZIP
                 de: ZIP
+          income-statement:
+            label:
+              - en: Upload your income statement
+                de: Laden Sie Ihre Gewinn- und Verlustrechnung hoch
+          swift:
+            label:
+              - en: SWIFT
+                de: SWIFT
         beneficiaries~person:
           gender:
             label:
@@ -1103,6 +1111,16 @@ entries:
           de: >-
             We are going to need some more information about you to be able to
             issue the insurance policy.
+    payment-details:
+      financial-questions:
+        first:
+          label:
+            - en: Financial question 1
+              de: Financial question 1
+        second:
+          label:
+            - en: Financial question 2
+              de: Financial question 2
     application-details-labels:
       more-info-needed:
         addon:
@@ -1150,9 +1168,9 @@ entries:
         - en: Please confirm
           de: Bitte bestätigen
       not_allowed_here:
-        - en: '''${value}'' not allowed here'
+        - en: "'${value}' not allowed here"
       regexp:
-        - en: '''${value}'' does not matches regular expression ${regexp}'
+        - en: "'${value}' does not matches regular expression ${regexp}"
       array:
         min:
           - en: 'must have at least ${min} entries'

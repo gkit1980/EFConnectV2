@@ -1,0 +1,9 @@
+element:
+  type: boolean
+  component:
+    StaticComponentRule:
+      component:
+        IceRadiobuttonGroup: {}
+  values:
+    ListValuesRule:
+      list: insis.person.yes-no
