@@ -1,0 +1,7 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        InsisFileUpload:
+          fileNameElement: policy.insured.person-objects~document.medex1.document-name

@@ -1,30 +1,40 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IceTextInputComponent } from '@impeo/ng-ice';
 import { truncate } from 'lodash';
+import { IceElement, IndexedValue, ValueOrigin } from '@impeo/ice-core';
 
 @Component({
   selector: 'insis-file-upload',
   templateUrl: './insis-file-upload.component.html',
 })
-export class InsisFileUploadComponent extends IceTextInputComponent {
+export class InsisFileUploadComponent extends IceTextInputComponent implements OnInit {
   static componentName = 'InsisFileUpload';
+  private fileNameElement: IceElement;
+
+  ngOnInit() {
+    super.ngOnInit();
+    const fileNameElementName = this.getRecipeParam('fileNameElement');
+    this.fileNameElement = this.context.iceModel.elements[fileNameElementName];
+  }
 
   uploadEvent(event) {
     const file: File = event.target.files[0];
     const fileReader: FileReader = new FileReader();
+
     fileReader.readAsDataURL(file);
+
     fileReader.onloadend = () => {
       const fileName = file.name ? file.name : this.createName();
-      this.setAndApplyValue(fileName);
+      this.setAndApplyValue(fileName, fileReader.result);
     };
   }
 
-  getValue() {
-    return this.value;
+  getFileName() {
+    return this.fileNameElement ? this.fileNameElement.getValue().forIndex(this.index) : null;
   }
 
   deleteFile() {
-    this.setAndApplyValue(null);
+    this.setAndApplyValue(null, null);
   }
 
   trimName(name) {
@@ -38,7 +48,10 @@ export class InsisFileUploadComponent extends IceTextInputComponent {
     }-${d.getDate()}-${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}.jpg`;
   }
 
-  private setAndApplyValue(value: any) {
+  private setAndApplyValue(fileName: string, value: any) {
+    this.fileNameElement.setValue(
+      new IndexedValue(this.fileNameElement, fileName, this.index, ValueOrigin.UI)
+    );
     this.setComponentValue(value);
     this.applyComponentValueToDataModel();
   }

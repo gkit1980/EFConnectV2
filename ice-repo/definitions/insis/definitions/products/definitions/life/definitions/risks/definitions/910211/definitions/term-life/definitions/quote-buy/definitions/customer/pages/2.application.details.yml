@@ -155,7 +155,7 @@ page:
                     size.xs: 100%
                     css: u-mb-4 medical-documents-label
                     elements:
-                      - name: policy.insured.person-objects~document.l-medex.document-name
+                      - name: policy.insured.person-objects~document.l-medex.document-file
               - gap: 24px
                 gap.xs: 0px
                 align: start
@@ -164,7 +164,7 @@ page:
                     size.xs: 100%
                     css: u-mb-4 medical-documents-label
                     elements:
-                      - name: policy.insured.person-objects~document.medex1.document-name
+                      - name: policy.insured.person-objects~document.medex1.document-file
               - gap: 24px
                 gap.xs: 0px
                 align: start
@@ -173,7 +173,7 @@ page:
                     size.xs: 100%
                     css: u-mb-4 medical-documents-label
                     elements:
-                      - name: policy.insured.person-objects~document.medex2.document-name
+                      - name: policy.insured.person-objects~document.medex2.document-file
               - gap: 24px
                 gap.xs: 0px
                 align: start
@@ -182,7 +182,7 @@ page:
                     size.xs: 100%
                     css: u-mb-4 medical-documents-label
                     elements:
-                      - name: policy.insured.person-objects~document.medex3.document-name
+                      - name: policy.insured.person-objects~document.medex3.document-file
               - gap: 24px
                 gap.xs: 0px
                 align: start
@@ -191,7 +191,7 @@ page:
                     size.xs: 100%
                     css: u-mb-4 medical-documents-label
                     elements:
-                      - name: policy.insured.person-objects~document.smd.document-name
+                      - name: policy.insured.person-objects~document.smd.document-file
     - component:
         IceFlexSection:
           tags:

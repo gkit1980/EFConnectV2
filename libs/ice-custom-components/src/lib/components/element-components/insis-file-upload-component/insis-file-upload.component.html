@@ -1,7 +1,7 @@
 <div class="insis-file-upload" *ngIf="isVisible">
   <div *ngIf="!isOutput">
     <mat-label *ngIf="label">{{ label }}</mat-label>
-    <div class="insis-file-upload-button" *ngIf="!getValue()">
+    <div class="insis-file-upload-button" *ngIf="!getFileName()">
       <input
         class="hidden-button"
         #fileInput
@@ -12,9 +12,9 @@
       <button mat-button color="primary">BROWSE</button>
     </div>
 
-    <mat-chip-list aria-label="Files" *ngIf="getValue()">
+    <mat-chip-list aria-label="Files" *ngIf="getFileName()">
       <mat-chip [removable]="true" (removed)="deleteFile()">
-        {{ trimName(getValue()) }}
+        {{ trimName(getFileName()) }}
         <mat-icon matChipRemove>cancel</mat-icon>
       </mat-chip>
     </mat-chip-list>
@@ -28,6 +28,6 @@
     *ngIf="isOutput"
     [isOutput]="isOutput"
     [label]="label"
-    [value]="trimName(getValue())"
+    [value]="trimName(getFileName())"
   ></mat-output>
 </div>

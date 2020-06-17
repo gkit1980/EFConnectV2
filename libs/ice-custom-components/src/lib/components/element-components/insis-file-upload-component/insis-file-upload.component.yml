@@ -4,3 +4,22 @@ types:
   - text
 description: >
   Component that allows uploading/loading file into element
+params:
+  fileNameElement:
+    label: file name element
+    type: element
+    info: Element where the file name will be save and will be read from. fileNameElement element should be of type text. Note that the recipient element should be a sibling in the the data model.
+    required: true
+icel: >
+  ```
+    element name - policy.insured.person-objects~document.l-medex.document-file
+
+    element:
+      type: text
+      component:
+        StaticComponentRule:
+          component:
+            InsisFileUpload:
+              fileNameElement: policy.insured.person-objects~document.l-medex.document-name
+
+  ```
