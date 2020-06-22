@@ -1,5 +1,0 @@
-definition:
-  title: customer-dashboards.payments
-  executable: true
-  showInsights: true
-  elementOnPageCheck: false

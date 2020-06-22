@@ -1,0 +1,11 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          themeColor: primary
+          variant: default
+  defaultValue:
+    StaticValueRule:
+      value: /ice/insis.dashboard.insurances/home

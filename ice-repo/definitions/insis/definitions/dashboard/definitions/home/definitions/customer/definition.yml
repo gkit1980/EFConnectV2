@@ -1,0 +1,5 @@
+definition:
+  title: insis.dashboard.home.customer
+  executable: true
+  showInsights: false
+  elementOnPageCheck: false

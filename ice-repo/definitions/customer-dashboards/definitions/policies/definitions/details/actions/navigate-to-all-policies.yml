@@ -1,4 +1,0 @@
-action:
-  execution:
-    - NavigateToUrlExecutionRule:
-        url: ice/customer-dashboards.policies/home

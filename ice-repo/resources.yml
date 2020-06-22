@@ -1302,36 +1302,36 @@ entries:
           - en: Home
             de: null
         link:
-          - en: /ice/customer-dashboards.home/home
-            de: /ice/customer-dashboards.home/home
+          - en: /ice/insis.dashboard.home.customer/home
+            de: /ice/insis.dashboard.home.customer/home
       policies:
         label:
           - en: Policies
             de: null
         link:
-          - en: /ice/customer-dashboards.policies/home
-            de: /ice/customer-dashboards.policies/home
+          - en: /ice/insis.dashboard.policies.customer/home
+            de: /ice/insis.dashboard.policies.customer/home
       payments:
         label:
           - en: Payments
             de: null
         link:
-          - en: /ice/customer-dashboards.payments/home
-            de: /ice/customer-dashboards.payments/home
+          - en: /ice/insis.dashboard.payments.customer/home
+            de: /ice/insis.dashboard.payments.customer/home
       claims:
         label:
           - en: Claims
             de: null
         link:
-          - en: /ice/customer-dashboards.claims/home
-            de: /ice/customer-dashboards.claims/home
+          - en: /ice/insis.dashboard.claims.customer/home
+            de: /ice/insis.dashboard.claims.customer/home
       products:
         label:
           - en: Insurances
             de: Insurances
         link:
-          - en: /ice/customer-dashboards.insurances/home
-            de: /ice/customer-dashboards.insurances/home
+          - en: /ice/insis.dashboard.products.customer/home
+            de: /ice/insis.dashboard.products.customer/home
       menu:
         logout:
           - en: Logout

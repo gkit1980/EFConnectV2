@@ -1,0 +1,5 @@
+definition:
+  title: insis.dashboard.payments
+  executable: true
+  showInsights: true
+  elementOnPageCheck: false

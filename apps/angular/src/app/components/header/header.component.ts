@@ -38,7 +38,7 @@ export class HeaderComponent {
         {
           key: runtime.iceResource.resolve('pages.header.claims.label'),
           link: runtime.iceResource.resolve('pages.header.claims.link'),
-          includes: ['/ice/customer-dashboards.claims.details/details'],
+          includes: ['/ice/insis.dashboard.claims.customer/home'],
         },
         {
           key: runtime.iceResource.resolve('pages.header.products.label'),

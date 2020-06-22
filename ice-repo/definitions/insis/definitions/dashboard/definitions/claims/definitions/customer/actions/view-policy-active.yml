@@ -1,0 +1,5 @@
+action:
+  execution:
+    - InsisNavigateToDefinitionPageWithDynidRule:
+        dynIdElement: claims~policy-id
+        definition: insis.dashboard.policies.details/details

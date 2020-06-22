@@ -1,5 +1,0 @@
-action:
-  execution:
-    - InsisNavigateToDefinitionPageWithDynidRule:
-        dynIdElement: resolved-claims~policy-id
-        definition: customer-dashboards.policies.details/details

@@ -1,0 +1,12 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        InsisCard:
+          url: '/ice/insis.dashboard.policies.customer/home'
+  label:
+    ResourceWithElementValuesLabelRule:
+      elements:
+        - number-of-active-policies
+      key: elements.summary-of-active-policies.label
