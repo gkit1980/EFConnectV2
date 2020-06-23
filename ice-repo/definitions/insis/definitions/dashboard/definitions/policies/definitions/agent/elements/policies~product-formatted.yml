@@ -1,0 +1,11 @@
+element:
+  type: text
+  viewMode:
+    StaticViewModeRule:
+      viewMode: output
+  label:
+    NoLabelRule: {}
+  mirror:
+    DtMirrorRule:
+      dt: policy-name
+      output: output

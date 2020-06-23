@@ -1,0 +1,14 @@
+element:
+  type: action
+  defaultValue:
+    StaticValueRule:
+      value: search-policies
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          themeColor: accent
+          variant: stroked
+          action: null
+          accesskey: s
+          type: submit

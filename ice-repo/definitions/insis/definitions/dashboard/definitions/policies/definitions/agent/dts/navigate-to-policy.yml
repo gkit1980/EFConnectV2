@@ -1,0 +1,38 @@
+dt:
+  output-label: url
+  hitPolicy: F
+  inputs:
+    - label: policy
+      element: policies~policy-id
+    - label: policy status
+      element: policies~policy-state-name
+    - label: product code
+      element: policies~insr-type
+  outputs:
+    - label: url
+      id: url
+      type: string
+    - label: dynId
+      id: dynId
+      type: string
+  rules:
+    - inputs:
+        - '-'
+        - Quotation
+        - '2001'
+      outputs:
+        - insis-policy.health.foreign-health-insurance.quote_buy.agent/quote
+        - policies~policy-id
+    - inputs:
+        - '-'
+        - Application
+        - '2001'
+      outputs:
+        - insis-policy.health.foreign-health-insurance.quote_buy.agent/quote
+        - policies~policy-id
+    - inputs:
+        - '-'
+        - '-'
+      outputs:
+        - agent.policy-details/summary
+        - policies~policy-id

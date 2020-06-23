@@ -1,4 +1,4 @@
 pages:
   StaticNavigationPagesRule:
     pages:
-      - page: new-page
+      - page: home

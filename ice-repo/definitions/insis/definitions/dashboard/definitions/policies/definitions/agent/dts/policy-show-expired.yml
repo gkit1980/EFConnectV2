@@ -1,0 +1,16 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policies~is-expired
+  outputs:
+    - id: output
+      type: string
+  rules:
+    - inputs:
+        - 1
+      outputs:
+        - history
+    - inputs:
+        - '-'
+      outputs:
+        - ''

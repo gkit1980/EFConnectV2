@@ -1,0 +1,27 @@
+dt:
+  output-label: url
+  hitPolicy: F
+  inputs:
+    - label: pid
+      element: new-policy
+  outputs:
+    - label: url
+      id: url
+      type: string
+  rules:
+    - inputs:
+        - '2001'
+      outputs:
+        - insis-policy.health.foreign-health-insurance.quote_buy.agent
+    - inputs:
+        - '3000'
+      outputs:
+        - insis-policy.accident.personal-accident.quote_buy/quote
+    - inputs:
+        - '2012+4000'
+      outputs:
+        - insis-policy.health.foreign-health-insurance.quote_buy.rrv-bundle    
+    - inputs:
+        - '-'
+      outputs:
+        - ''

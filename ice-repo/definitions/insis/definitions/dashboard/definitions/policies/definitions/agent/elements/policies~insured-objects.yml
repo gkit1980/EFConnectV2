@@ -1,0 +1,11 @@
+element:
+  type: array
+  component:
+    StaticComponentRule:
+      component:
+        InsisArrayTooltip:
+          showFirst: '1'
+  viewMode: output
+  label:
+    ResourceLabelRule:
+      key: elements.policies.items.insured-objects-formatted.label

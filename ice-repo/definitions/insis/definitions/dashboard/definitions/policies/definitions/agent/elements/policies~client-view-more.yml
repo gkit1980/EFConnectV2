@@ -1,0 +1,14 @@
+element:
+  type: action
+  label:
+    ResourceWithElementValuesLabelRule:
+      key: elements.policies.items.view-more.label
+      elements:
+        - policies~client-pid
+        - policies~client-name
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          themeColor: accent
+          variant: default

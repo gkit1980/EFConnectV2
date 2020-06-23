@@ -1,0 +1,6 @@
+element:
+  type: date
+  component:
+    StaticComponentRule:
+      component:
+        IceDatepicker: {}

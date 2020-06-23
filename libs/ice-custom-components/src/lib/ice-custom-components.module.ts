@@ -55,6 +55,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatBadgeModule } from '@angular/material/badge';
 import { InsisArrayTooltipComponent } from './components/element-components/insis-array-tooltip/insis-array-tooltip.component';
+import { InsisFormFlexSectionComponent } from './components/section-components/insis-form-flex-section/insis-form-flex-section.component';
 
 /**
  * TIP: You will need to include in this array any new component you create.
@@ -75,6 +76,7 @@ export const iceCustomComponents = [
   InsisSimplePageComponent,
   InsisChartComponent,
   InsisDatagridSectionComponent,
+  InsisFormFlexSectionComponent,
   InsisMotorPolicySummarySectionComponent,
   InsisSummarySectionDetailContainer,
   InsisOneLevelTabsNavigationPageComponent,

@@ -1,0 +1,13 @@
+integration:
+  exchange:
+    InsisNoopExchangeRule: {}
+  transformation:
+    DefaultTransformationRule:
+      out:
+        - mappings:
+            - element: 'search-policies.*'
+              payload: '*'
+      in:
+        - mappings:
+            - payload: '*'
+              datastore: agent-policies

@@ -1,0 +1,8 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component: InsisIcon
+  mirror:
+    DtMirrorRule:
+      dt: policy-show-link

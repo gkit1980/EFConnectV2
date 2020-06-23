@@ -1,0 +1,9 @@
+element:
+  type: text
+  title: ''
+  defaultValue:
+    ArrayItemValueRule:
+      values: []
+  viewMode: output
+  label:
+    NoLabelRule: {}

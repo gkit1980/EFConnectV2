@@ -1,0 +1,31 @@
+list:
+  items:
+    - value: ''
+      label_en: Any
+      label_de: Alle
+    - value: '2001'
+      label_en: AKS
+      label_de: AKS
+    - value: '3000'
+      label_en: US
+      label_de: US
+    - value: '4000'
+      label_en: RRV
+      label_de: RRV
+    - value: '1002'
+      label_en: VRS
+      label_de: VRS
+    - value: '2011'
+      label_en: Nemo
+      label_de: Nemo
+    - value: '2012'
+      label_en: Nemo Plus
+      label_de: Nemo Plus
+  type: text
+  additionals:
+    label_en:
+      label: label_en
+      type: string
+    label_de:
+      label: label_de
+      type: string

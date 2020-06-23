@@ -1,0 +1,8 @@
+action:
+    execution:
+      - ResetElementValueExecutionRule:
+          elements:
+            - policies
+      - IntegrationExecutionRule:
+          integration: search-policies
+  

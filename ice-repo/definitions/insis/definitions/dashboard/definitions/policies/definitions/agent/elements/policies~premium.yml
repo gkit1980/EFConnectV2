@@ -1,0 +1,7 @@
+element:
+  type: currency
+  viewMode:
+    StaticViewModeRule:
+      viewMode: output
+  label:
+    NoLabelRule: {}

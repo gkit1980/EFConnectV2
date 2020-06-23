@@ -1,0 +1,69 @@
+page:
+  validation: {}
+  component:
+    InsisSimplePage: {}
+  sections:
+    - search
+    - component:
+        IceFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: new-policy
+          css: mb-2
+    - component:
+        InsisDatagridSection:
+          arrayElement: policies
+          grid:
+            rows:
+              - cols:
+                  - elements:
+                      - name: policies~view-more
+                    caption: elements.agent-policies.items.policy-no.label
+                    size: 140px
+                    css: ml-3 label-link
+                  - elements:
+                      - name: policies~linked-icon
+                    caption: null
+                    size: 30px
+                    css: link-icon
+                  - elements:
+                      - name: policies~product-formatted
+                    caption: elements.agent-policies.items.product-name.label
+                    size: 140px
+                  - elements:
+                      - name: policies~is-expired-icon
+                    caption: null
+                    size: 30px
+                    css: link-icon
+                  - elements:
+                      - name: policies~policy-state-name
+                    caption: elements.agent-policies.items.policy-status.label
+                    size: 120px
+                  - elements:
+                      - name: policies~client-view-more
+                    caption: elements.agent-policies.items.client-name.label
+                    size: 242px
+                    css: label-link
+                  - elements:
+                      - name: policies~insured-objects
+                    caption: elements.agent-policies.items.insured-objects.label
+                    size: 200px
+                    css: overflow-visible
+                  - elements:
+                      - name: policies~premium
+                    caption: elements.agent-policies.items.premium.label
+                    size: 100px
+                  - elements:
+                      - name: policies~insr-end
+                    caption: elements.agent-policies.items.insr-end.label
+                    size: 120px
+                  - elements:
+                      - name: policies~active-claims
+                    caption: elements.agent-policies.items.active-claims.label
+                    size: 90px
+      description: section

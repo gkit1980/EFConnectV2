@@ -1,0 +1,33 @@
+_displayBehaviour: &display_behaviour
+  render: render
+  hide: hide
+
+label: INSIS Form Flex Section
+component: InsisFormFlexSection
+
+description: >
+  This section is just a form elements and is used to place other sections inside
+
+params:
+  grid:
+    label: Grid
+    type: flexGrid
+    required: true
+    info: >
+      Based on this param type, VI editor is displayed that allows you to configure the grid further.
+  behaviourForEmptyRows:
+    label: Empty row display behaviour
+    type: select
+    options: *display_behaviour
+    info: >
+      If set to hide then rows that only have elements with viewmode === 'hidden', are not going to be visualized dom
+      Default: hide
+  tags:
+    label: Additional section tags
+    required: false
+    type: texts
+    info: >
+      Arbitrary tags assigned to this section.
+  css:
+    label: Css class
+    type: text

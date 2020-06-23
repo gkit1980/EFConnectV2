@@ -1,0 +1,25 @@
+list:
+  items:
+    - value: ''
+      label_en: Any
+      label_de: Alle
+    - value: Quotation
+      label_en: Quotation
+      label_de: Angebot
+    - value: Application
+      label_en: Application
+      label_de: Antrag
+    - value: Policy
+      label_en: Policy
+      label_de: Police
+    - value: Police
+      label_en: Policy
+      label_de: Police
+  type: string
+  additionals:
+    label_en:
+      label: label_en
+      type: string
+    label_de:
+      label: label_de
+      type: string

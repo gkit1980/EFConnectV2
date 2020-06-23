@@ -1,0 +1,40 @@
+section:
+  component:
+    InsisFormFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: search-policies.policy-name
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: search-policies.product-id
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: search-policies.policy-state
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: search-policies.client
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: search-policies.insr-end
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                css: mt-1
+                elements:
+                  - name: search-policies.send-button
+            layout: row
+            gap: 20px
+      css: search-policies

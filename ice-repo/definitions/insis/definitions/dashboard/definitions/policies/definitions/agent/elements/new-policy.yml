@@ -1,0 +1,17 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        InsisButtonDropdown: 
+          accesskey: n
+  values:
+    ListValuesRule:
+      list: policy.new-policy-products
+  change:
+    - DtNavigateToDefinitionExecutionRule:
+        dt: navigate-to-new-policy
+        definitionOutput: url
+    - ResetElementValueExecutionRule:
+        elements:
+          - new-policy    

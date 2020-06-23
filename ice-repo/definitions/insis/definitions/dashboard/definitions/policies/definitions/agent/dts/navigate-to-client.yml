@@ -1,0 +1,19 @@
+dt:
+  output-label: url
+  hitPolicy: F
+  inputs:
+    - label: client
+      element: policies~client-pid
+  outputs:
+    - label: url
+      id: url
+      type: string
+    - label: dynId
+      id: dynId
+      type: string
+  rules:
+    - inputs:
+        - '-'
+      outputs:
+        - agent.client-details/summary
+        - policies~client-pid

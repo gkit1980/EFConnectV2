@@ -3,6 +3,48 @@ locales:
   - de
 entries:
   elements:
+    clients:
+      items:
+        view-more:
+          label:
+            - en: View
+              de: View
+    new-policy:
+      label:
+        - en: NEW POLICY
+          de: NEUE POLICE
+    search-policies:
+      policy-name:
+        label:
+          - en: Policy name
+            de: Vers.Schein
+      product-id:
+        label:
+          - en: Product
+            de: Produkt
+      policy-state:
+        label:
+          - en: Type
+            de: Typ
+      insr-begin:
+        label:
+          - en: Insurance begin
+            de: Vers.Beginn
+      insr-end:
+        label:
+          - en: Insurance end
+            de: Vers.Ende
+      send-button:
+        label:
+          - en: SEARCH
+            de: SUCHEN
+        tooltip:
+          - en: Alt+S
+            de: Alt+S
+      client:
+        label:
+          - en: Client
+            de: Kunde
     expired-policies:
       items:
         more-actions:
@@ -47,6 +89,10 @@ entries:
                 de: null
     policies:
       items:
+        insured-objects-formatted:
+          label:
+            - en: '${param1} objects'
+              de: '${param1} Objekte'
         view-more:
           label:
             - en: View

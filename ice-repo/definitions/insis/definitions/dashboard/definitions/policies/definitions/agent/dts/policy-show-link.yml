@@ -1,0 +1,16 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policies~engagement-id
+  outputs:
+    - id: output
+      type: ''
+  rules:
+    - inputs:
+        - not(null)
+      outputs:
+        - link
+    - inputs:
+        - '-'
+      outputs:
+        - ''

@@ -1,0 +1,9 @@
+element:
+  type: text
+  values:
+    ListValuesRule:
+      list: policy.product-search
+  component:
+    StaticComponentRule:
+      component:
+        IceDropdown: {}
