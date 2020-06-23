@@ -1,0 +1,27 @@
+integration:
+  exchange:
+    SoapCallExchangeRule:
+      endpoint: insis_pam_endpoint
+      securityMode: UsernamePassword
+      username: 'env:insis-username'
+      password: 'env:insis-password'
+      ignoreNamespaces: 'env:insis-ignoreNamespaces'
+      soapAction: registerEngagementQuote
+      requestType: RegisterEngagementQuoteRqType
+      responseType: RegisterEngagementQuoteRsType
+      jsonSchema: InsisPAM
+  transformation:
+    DefaultTransformationRule:
+      additional: insis
+      dateFormat: YYYY-MM-DD
+      dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
+      extends: 910211.risks.life.insis-engagement-quote.save
+      in:
+        - element: policy.participants.holder.person.engagement-id
+          payload: EngagementID
+      out:
+        - mappings:
+            - param: soapAction
+              value: registerEngagementQuote
+            - param: requestType
+              value: RegisterEngagementQuoteRqType

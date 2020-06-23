@@ -5,6 +5,6 @@ element:
   viewMode:
     ConditionalViewModeRule:
       conditionElement: policy.insured.person-objects~question.q-12
-      conditionValue: '1'
+      conditionValue: true
       conditionViewMode: required
       elseViewMode: hidden

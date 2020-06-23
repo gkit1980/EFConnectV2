@@ -20,7 +20,7 @@ integration:
             array: datamodel.policy.insured.person-objects
           toIdx:
             array: 'payload.Policies.Policy[0].Insureds.Insured'
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: Questionary.Question
               append: true
@@ -33,7 +33,7 @@ integration:
             array: datamodel.policy.insured.person-objects
           toIdx:
             array: 'payload.Policies.Policy[0].Insureds.Insured'
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: Questionary.Question
               append: true
@@ -47,7 +47,7 @@ integration:
             condition: cover.death-any.active == true
           toIdx:
             array: payload.Policies.Policy[0].Insureds.Insured
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: Covers.Cover
               append: true
@@ -67,7 +67,7 @@ integration:
             condition: cover.death-acc.active == true
           toIdx:
             array: payload.Policies.Policy[0].Insureds.Insured
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: Covers.Cover
               append: true
@@ -81,4 +81,24 @@ integration:
             - element: policy.insured.person-objects~cover.death-acc.currency
               payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].Currency'
             - element: policy.insured.person-objects~cover.death-acc.insured-amount
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+            condition: cover.wop-total.active == true
+          toIdx:
+            array: payload.Policies.Policy[0].Insureds.Insured
+            useSourceIndex: true
+            toIdx:
+              array: Covers.Cover
+              append: true
+          mappings:
+            - element: policy.insured.person-objects~cover.wop-total.grc-id
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].GrcID'
+            - element: policy.insured.person-objects~cover.wop-total.annex-id
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].AnnexID'
+            - element: policy.insured.person-objects~cover.wop-total.code
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].CoverCode'
+            - element: policy.insured.person-objects~cover.wop-total.currency
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].Currency'
+            - element: policy.insured.person-objects~cover.wop-total.insured-amount
               payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].InsuredAmount'

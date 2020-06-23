@@ -1,5 +1,4 @@
 element:
-  type: text
   component:
     StaticComponentRule:
       component:

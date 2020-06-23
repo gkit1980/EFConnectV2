@@ -3,8 +3,8 @@ element:
     Suffer or have suffered or been treated previously of epilepsy, convulsions,
     paralysis, mental or nervous illness, dizziness, headache, fainting or other
     nervous system disease?
-  type: text
-  component: IceDropdown
+  type: boolean
+  component: IceCheckbox
   viewMode: required
-  defaultValue: '2'
+  defaultValue: false
   values: insis.policy.insured.person-objects~question.q-13

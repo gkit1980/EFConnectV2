@@ -60,6 +60,9 @@ integration:
                 array: Taxes.Tax
             toIdx:
               useSourceIndex: true
+              toIdx:
+                array: cover.death-any.taxes
+                append: true
             mappings:
               - element: policy.insured.person-objects~cover.death-any.taxes~type
                 payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Taxes.Tax[n].TaxType'
@@ -74,6 +77,9 @@ integration:
                 array: Taxes.Tax
             toIdx:
               useSourceIndex: true
+              toIdx:
+                array: cover.death-acc.taxes
+                append: true
             mappings:
               - element: policy.insured.person-objects~cover.death-acc.taxes~type
                 payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Taxes.Tax[n].TaxType'
@@ -88,6 +94,9 @@ integration:
                 array: Discounts.Discount
           toIdx:
             useSourceIndex: true
+            toIdx:
+              array: cover.death-any.discounts
+              append: true
           mappings:
             - element: policy.insured.person-objects~cover.death-any.discounts~type
               payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Discounts.Discount[n].DiscountType'
@@ -103,6 +112,9 @@ integration:
                 append: true
           toIdx:
             useSourceIndex: true
+            toIdx:
+              array: cover.death-acc.discounts
+              append: true
           mappings:
             - element: policy.insured.person-objects~cover.death-acc.discounts~type
               payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Discounts.Discount[n].DiscountType'

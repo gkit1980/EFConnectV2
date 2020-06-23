@@ -1,0 +1,11 @@
+action:
+  title: calls the quick quote calculation for insis
+  condition:
+    DtConditionRule:
+      dt: insis.calculate.quote
+      output: calculate
+  execution:
+    - IntegrationExecutionRule:
+        integration: 910211.risks.life.insis-policy.engagement-quote.register
+    - IntegrationExecutionRule:
+        integration: 910211.risks.life.insis-policy.get-premiums

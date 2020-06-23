@@ -29,6 +29,10 @@ transpilation:
               value: 'insis.products'
             - param: lob
               value: life.risks
+            - param: definition-prefix
+              value: null
+            - param: definition-suffix
+              value: null
       in:
         - fromIdx:
             source: ProductConfiguration.Versions[0].Version
@@ -36,11 +40,10 @@ transpilation:
           mappings:
             - element: policy.insured.person-objects~entity-type
               source: ProductConfiguration.Versions[0].Version[n].Objects[0].Object[0].ObjectType[0]
-              integration:
-                save: Insureds.Insured[n].InsuredEntity.ObjectType
-                get: Policy.Insureds.Insured[0].InsuredEntity.ObjectType
             - element: policy.contract.product-code
               source: ProductConfiguration.ProductCode[0]
+            - element: policy.contract.term.duration
+              range: Duration
             - questions:
                 source: ProductConfiguration.Versions[0].Version[n].Questions[0].Question
                 namePrefix: policy.contract.question
@@ -50,6 +53,9 @@ transpilation:
             - covers:
                 source: ProductConfiguration.Versions[0].Version[n].Objects[0].Object[0].Covers[0].Cover
                 namePrefix: policy.insured.person-objects~cover
+                ageMinParam: INS_AGE_MIN_ENTRY
+                ageMaxParam: INS_AGE_MAX_ENTRY
+                endAgeMaxParam: INS_AGE_TERM
             - documents:
                 source: ProductConfiguration.Versions[0].Version[n].Objects[0].Object[0].Documents[0].Document
                 namePrefix: policy.insured.person-objects~document

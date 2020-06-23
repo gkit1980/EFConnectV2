@@ -1,0 +1,5 @@
+element:
+  range:
+    StaticRangeRule:
+      min: 1
+      max: 30

@@ -119,6 +119,8 @@ implementations:
                       array: ClaimServices.ClaimService
                   toIdx:
                     useSourceIndex: true
+                    toIdx:
+                      useSourceIndex: true
                   mappings:
                     - element: incident.requests~services~claim-service-seq
                       payload: >-

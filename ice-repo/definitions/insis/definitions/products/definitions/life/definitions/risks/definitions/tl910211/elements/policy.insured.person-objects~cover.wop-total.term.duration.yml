@@ -1,0 +1,6 @@
+element:
+  type: integer
+  range:
+    DurationFromAgeRangeRule:
+      ageElement: policy.insured.person-objects~person.age-at-begin
+      maxEndAge: 75

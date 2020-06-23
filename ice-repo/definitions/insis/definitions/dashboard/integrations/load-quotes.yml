@@ -63,6 +63,8 @@ integration:
               array: insured_objects
           toIdx:
             useSourceIndex: true
+            toIdx:
+              useSourceIndex: true
           mappings:
             - payload: 'rows[n].insured_objects[n].object_name'
               element: quotes~insured_objects~object_name

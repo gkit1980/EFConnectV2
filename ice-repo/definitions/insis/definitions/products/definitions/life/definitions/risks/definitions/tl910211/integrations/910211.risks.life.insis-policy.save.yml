@@ -20,7 +20,7 @@ integration:
             array: datamodel.policy.insured.person-objects
           toIdx:
             array: 'payload.Insureds.Insured'
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: Questionary.Question
               append: true
@@ -33,7 +33,7 @@ integration:
             array: datamodel.policy.insured.person-objects
           toIdx:
             array: 'payload.Insureds.Insured'
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: Questionary.Question
               append: true
@@ -47,7 +47,7 @@ integration:
             condition: cover.death-any.active == true
           toIdx:
             array: payload.Insureds.Insured
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: Covers.Cover
               append: true
@@ -67,7 +67,7 @@ integration:
             condition: cover.death-acc.active == true
           toIdx:
             array: payload.Insureds.Insured
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: Covers.Cover
               append: true

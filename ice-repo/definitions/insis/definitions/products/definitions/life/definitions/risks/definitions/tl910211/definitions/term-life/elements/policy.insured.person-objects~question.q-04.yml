@@ -1,5 +1,4 @@
 element:
-  type: text
   viewMode:
     ConditionalViewModeRule:
       conditionElement: policy.insured.person-objects~entity-accident-insured.type

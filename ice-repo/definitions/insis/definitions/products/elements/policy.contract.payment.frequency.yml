@@ -6,5 +6,5 @@ element:
   buckets:
     insis-quote:
       trigger: true
-  values: insis.payment-frequency
+  values: insis.payment.frequency
   viewMode: required

@@ -1,5 +1,4 @@
 element:
-  type: date
   component: IceTextarea
   label:
     ResourceLabelRule:

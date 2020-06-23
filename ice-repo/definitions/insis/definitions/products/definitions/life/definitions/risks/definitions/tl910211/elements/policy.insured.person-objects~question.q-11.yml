@@ -2,8 +2,8 @@ element:
   title: >-
     Do you have or have you had liver disease, hepatitis B or C, kidney,
     pancreas, ulcers or diabetes mellitus (high blood sugar)?
-  type: text
-  component: IceDropdown
+  type: boolean
+  component: IceCheckbox
   viewMode: required
-  defaultValue: '2'
+  defaultValue: false
   values: insis.policy.insured.person-objects~question.q-11

@@ -2,8 +2,8 @@ element:
   title: >-
     Have you suffered in the past from any illness that required treatment and /
     or medical examinations and / or hospitalizations and / or observation?
-  type: text
-  component: IceDropdown
+  type: boolean
+  component: IceCheckbox
   viewMode: required
-  defaultValue: '2'
+  defaultValue: false
   values: insis.policy.insured.person-objects~question.q-10

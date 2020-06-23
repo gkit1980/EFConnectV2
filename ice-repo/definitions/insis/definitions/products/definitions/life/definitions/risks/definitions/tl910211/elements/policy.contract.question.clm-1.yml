@@ -1,7 +1,7 @@
 element:
   title: Was the claim caused by Pre-existing Illness?
-  type: text
-  component: IceDropdown
+  type: boolean
+  component: IceCheckbox
   viewMode: required
-  defaultValue: '2'
+  defaultValue: false
   values: insis.policy.contract.question.clm-1

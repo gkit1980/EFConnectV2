@@ -1,7 +1,7 @@
 element:
   title: Do you have hobby (sports)?
-  type: text
-  component: IceDropdown
+  type: boolean
+  component: IceCheckbox
   viewMode: default
-  defaultValue: '2'
+  defaultValue: true
   values: insis.policy.insured.person-objects~question.q-07

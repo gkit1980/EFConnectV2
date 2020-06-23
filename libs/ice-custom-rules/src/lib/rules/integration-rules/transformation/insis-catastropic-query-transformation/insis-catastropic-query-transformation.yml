@@ -65,6 +65,8 @@ implementations:
                       array: cases
                   toIdx:
                     useSourceIndex: true
+                    toIdx:
+                      useSourceIndex: true
                   mappings:
                     - payload: 'catastrophicEvents[n].cases[n].srcClaim'
                       element: catastrophic-events~cases~id

@@ -160,6 +160,10 @@ page:
               - cols:
                   - size: 100%
                     elements:
+                      - name: quote.calculate
+              - cols:
+                  - size: 100%
+                    elements:
                       - name: go-to-next-page
           css: button-width-100 u-mb-3
     - component:

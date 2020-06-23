@@ -2,8 +2,8 @@ element:
   title: >-
     Do you currently have any illness that requires treatment, medical
     observation or hospitalization?
-  type: text
-  component: IceDropdown
+  type: boolean
+  component: IceCheckbox
   viewMode: required
-  defaultValue: '2'
+  defaultValue: false
   values: insis.policy.insured.person-objects~question.q-09

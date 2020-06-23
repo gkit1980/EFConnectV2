@@ -1,3 +1,5 @@
 element:
-  type: integer
-  defaultValue: 1
+  type: text
+  defaultValue: >-
+    Medical Exam 1 (Clinical examination, blood pressure and personal interview
+    with the doctor)
