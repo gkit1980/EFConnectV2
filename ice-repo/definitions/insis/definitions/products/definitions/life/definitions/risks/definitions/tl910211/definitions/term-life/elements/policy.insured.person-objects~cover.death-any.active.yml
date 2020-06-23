@@ -1,10 +1,12 @@
 element:
-  defaultValue:
-    DtValueRule:
-      dt: policy.insured.person-objects~cover.death-any
-      output: defautvalue
-  viewMode:
-    DtViewModeRule:
-      dt: policy.insured.person-objects~cover.death-any
-      output: viewmode
   type: boolean
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.insured.person-objects~entity-accident-insured.type
+      conditionValue: '1'
+      conditionViewMode: disabled
+      elseViewMode: hidden
+  defaultValue:
+    InsisSetForIndexesDefaultValueRule:
+      indexes: 0
+      value: true

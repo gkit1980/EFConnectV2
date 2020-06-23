@@ -1,0 +1,22 @@
+implementations:
+  InsisSetForIndexesDefaultValueRule:
+    description: Sets default value only for the specified indexes.  
+      indexes:
+        label: Array item indexes separated by comma. Example value 1,2,3
+        type: text
+        required: true
+      value:
+        label: Value
+        required: true
+        allowNull: true
+        type: thisElement
+
+    icel: >
+      ```
+        element:
+          type: boolean
+          defaultValue:
+            InsisSetForIndexesDefaultValueRule:
+              indexes: 0,2
+              value: true
+      ```

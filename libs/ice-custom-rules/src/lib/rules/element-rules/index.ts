@@ -2,6 +2,7 @@ export * from './default-value/insis-array-item-index-value-rule/insis-array-ite
 export * from './default-value/insis-formated-date-expression-value-rule/insis-formated-date-expression-value-rule';
 export * from './default-value/insis-dt-array-item-from-resource-value-rule/insis-dt-array-item-from-resource-value-rule';
 export * from './default-value/insis-element-value-rule/insis-element-value-rule';
+export * from './default-value/insis-set-for-indexes-default-value-rule/insis-set-for-indexes-default-value-rule';
 export * from './mirror/insis-array-item-conditional-value-mirror-rule/insis-array-item-conditional-value-mirror-rule';
 export * from './mirror/insis-dyn-id-for-key-with-default-mirror-rule/insis-dyn-id-for-key-with-default-mirror-rule';
 export * from './mirror/insis-extract-file-name-mirror-rule/insis-extract-file-name-mirror-rule';
