@@ -99,13 +99,14 @@ page:
                     size.sm: auto
                     elements:
                       - name: policy.insured.person-objects~question.q-07
+                css: u-mb-2
               - cols:
                   - size: auto
                     size.xs: auto
                     size.sm: auto
                     elements:
                       - name: policy.insured.person-objects~question.q-07-1
-                css: u-mb-2
+                css: u-mb-2 u-mt-2
               - cols:
                   - size: auto
                     size.xs: auto
@@ -117,9 +118,8 @@ page:
                   - size: auto
                     size.xs: auto
                     size.sm: auto
-                    elements:
-                      - name: >-
-                          policy.insured.person-objects~entity-accident-insured.type
+                    sections:
+                      - name: clear-person-section
             length: 0
           arrayElement: policy.insured.person-objects
           behaviourForEmptyRows: hide

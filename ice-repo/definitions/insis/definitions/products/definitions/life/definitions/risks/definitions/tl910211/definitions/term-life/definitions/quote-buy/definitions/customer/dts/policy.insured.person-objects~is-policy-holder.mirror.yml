@@ -1,0 +1,16 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policy.insured.person-objects~person.pid
+  outputs:
+    - id: mirror
+      type: boolean
+  rules:
+    - inputs:
+        - policy.participants.holder.person.pid
+      outputs:
+        - 'true'
+    - inputs:
+        - '-'
+      outputs:
+        - false

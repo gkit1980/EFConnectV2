@@ -1,0 +1,9 @@
+element:
+  title: First name of insured person
+  type: text
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.insured.person-objects~is-policy-holder
+      conditionValue: 'true'
+      conditionViewMode: disabled
+      elseViewMode: required

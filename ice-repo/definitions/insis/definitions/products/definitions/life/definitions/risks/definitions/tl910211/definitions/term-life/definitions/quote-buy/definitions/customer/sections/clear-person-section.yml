@@ -1,0 +1,19 @@
+section:
+  component:
+    IceArrayItemFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.person-objects~person.clear-person
+      behaviourForEmptyRows: render
+  viewMode:
+    InsisChangeViewModeBasedOnArrayLengthRule:
+      array: policy.insured.person-objects
+      condition: equals
+      conditionValue: '1'
+      viewMode: default
+      elseViewMode: hidden

@@ -1,0 +1,8 @@
+action:
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ICE_CONTEXT_ACTIVATED
+        payload: null
+  execution:
+    - IntegrationExecutionRule:
+        integration: fill-policy-holder-information

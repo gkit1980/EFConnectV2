@@ -609,6 +609,10 @@ entries:
                 label:
                   - en: Weight
                     de: Gewicht
+              clear-person:
+                label:
+                  - en: Clear person
+                    de: Clear person
             question:
               q-04:
                 label:

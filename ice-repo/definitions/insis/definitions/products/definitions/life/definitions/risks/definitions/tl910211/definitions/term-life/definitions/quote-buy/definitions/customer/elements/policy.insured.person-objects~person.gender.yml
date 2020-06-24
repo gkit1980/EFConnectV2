@@ -1,0 +1,12 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        IceDropdown: {}
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.insured.person-objects~is-policy-holder
+      conditionValue: 'true'
+      conditionViewMode: disabled
+      elseViewMode: required

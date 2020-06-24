@@ -1,0 +1,15 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        IceButton: {}
+  defaultValue:
+    StaticValueRule:
+      value: remove-policy-holder-from-insureds
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.insured.person-objects~is-policy-holder
+      conditionValue: 'true'
+      conditionViewMode: default
+      elseViewMode: hidden
