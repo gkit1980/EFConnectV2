@@ -10,6 +10,7 @@ import { AuthenticationService } from '../../services/authentication.service';
 })
 export class LoginComponent implements OnInit {
   pid = 'DCT01';
+  role = 'customer';
 
   constructor(
     private router: Router,
@@ -20,9 +21,16 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
 
   async login() {
-    await this.authenticationService.login(this.pid);
+    this.role = this.pid.endsWith('agent') ? 'agent' : 'customer';
+    await this.authenticationService.login(this.pid, this.role);
 
-    if (this.authenticationService.loggedIn) this.router.navigate(['/home']);
-    else this.alertService.error('Login failed');
+    if (this.authenticationService.loggedIn) {
+      if (this.role === 'agent') {
+        this.router.navigate(['/ice/insis.dashboard.home.agent/home']);
+      } else if (this.role === 'customer') {
+        this.router.navigate(['/ice/insis.dashboard.home.customer/home']);
+      }
+      this.router.navigate(['/home']);
+    } else this.alertService.error('Login failed');
   }
 }

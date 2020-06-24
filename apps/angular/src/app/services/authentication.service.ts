@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { IcePrincipalService } from '@impeo/ng-ice';
 import * as axios from 'axios';
+import { get } from 'lodash';
+
+type Role = 'customer' | 'agent' | null;
 
 @Injectable()
 export class AuthenticationService {
@@ -19,15 +22,21 @@ export class AuthenticationService {
     return '';
   }
 
+  get role(): Role {
+    return get(this.icePrincipalService.principal, 'data.role', null);
+  }
+
   constructor(private icePrincipalService: IcePrincipalService) {
     this.setPrincipalDataFromStorage();
   }
 
-  async login(userData: any): Promise<void> {
+  async login(userData: any, role: string): Promise<void> {
     try {
       const response = await axios.default.get(`/api/v1/external/client/${userData}`, {
         timeout: 4000,
       });
+
+      response.data['role'] = role;
 
       localStorage.setItem('insis-principal', JSON.stringify(response.data));
       this.icePrincipalService.principal.data = response.data;

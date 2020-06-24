@@ -41,6 +41,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSelectModule } from '@angular/material/select';
+import { RoleGuard } from './guards/role.guard';
 
 @NgModule({
   declarations: [
@@ -83,6 +84,7 @@ import { MatSelectModule } from '@angular/material/select';
     AuthenticationService,
     LoginAuthenticationGuard,
     LoginPageGuard,
+    RoleGuard,
     SpinnerService,
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,

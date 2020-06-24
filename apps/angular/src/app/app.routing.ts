@@ -6,13 +6,14 @@ import { StyleGuideComponent } from './components/styleguide/styleguide.componen
 import { LoginComponent } from './components/login/login.component';
 import { LoginAuthenticationGuard } from './guards/login-authentication.guard';
 import { LoginPageGuard } from './guards/login-page.guard';
+import { RoleGuard } from './guards/role.guard';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
     component: HomeComponent,
-    canActivate: [LoginAuthenticationGuard],
+    canActivate: [LoginAuthenticationGuard, RoleGuard],
     resolve: { runtime: IceRuntimeResolver },
   },
   {
@@ -23,7 +24,7 @@ const routes: Routes = [
     path: 'login',
     pathMatch: 'full',
     component: LoginComponent,
-    canActivate: [LoginPageGuard],
+    canActivate: [LoginPageGuard, RoleGuard],
   },
   {
     path: '**',
