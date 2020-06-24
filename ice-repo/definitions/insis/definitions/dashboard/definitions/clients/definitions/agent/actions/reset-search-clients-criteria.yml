@@ -1,0 +1,11 @@
+action:
+  trigger:
+    - InsisKeyboardShortcutTriggerRule:
+        keyCombination: Escape
+        preventDefault: true
+  execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - search.client-city
+          - search.client-pid-name
+          - search.client-type

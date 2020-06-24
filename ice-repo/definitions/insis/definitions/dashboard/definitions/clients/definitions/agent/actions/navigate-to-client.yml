@@ -1,0 +1,5 @@
+action:
+  execution:
+    - DtNavigateToDefinitionExecutionRule:
+        dt: navigate-to-client
+        definitionOutput: url

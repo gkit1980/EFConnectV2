@@ -1,0 +1,16 @@
+list:
+  items:
+    - value: 'Person'
+      label_en: Person
+      label_de: Person
+    - value: 'Company'
+      label_en: Company
+      label_de: Firma
+  type: string
+  additionals:
+    label_en:
+      label: label_en
+      type: string
+    label_de:
+      label: label_de
+      type: string

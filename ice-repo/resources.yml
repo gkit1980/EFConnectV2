@@ -7,8 +7,8 @@ entries:
       items:
         view-more:
           label:
-            - en: View
-              de: View
+            - en: '${param1}'
+              de: '${param1}'
     new-policy:
       label:
         - en: NEW POLICY
@@ -45,6 +45,30 @@ entries:
         label:
           - en: Client
             de: Kunde
+    search-client:
+      send-button:
+        label:
+          - en: SEARCH
+            de: SUCHEN
+        tooltip:
+          - en: Alt+S
+            de: Alt+S
+      client-pid-name:
+        label:
+          - en: Client
+            de: Kunde
+      client-type:
+        label:
+          - en: Type
+            de: Typ
+      client-city:
+        label:
+          - en: City
+            de: Stadt
+    new-client:
+      label:
+        - en: NEW CLIENT
+          de: NEUER KUNDE
     expired-policies:
       items:
         more-actions:

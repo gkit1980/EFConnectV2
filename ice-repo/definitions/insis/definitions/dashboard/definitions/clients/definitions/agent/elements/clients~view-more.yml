@@ -1,0 +1,17 @@
+element:
+  type: action
+  label:
+    ResourceWithElementValuesLabelRule:
+      key: elements.clients.items.view-more.label
+      elements:
+        - clients~pid
+  defaultValue:
+    StaticValueRule:
+      value: navigate-to-client
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          themeColor: accent
+          variant: default
+          action: navigate-to-client

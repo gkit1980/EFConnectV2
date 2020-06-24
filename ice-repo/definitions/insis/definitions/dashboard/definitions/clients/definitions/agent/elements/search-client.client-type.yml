@@ -1,0 +1,9 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        IceDropdown: {}
+  values:
+    ListValuesRule:
+      list: clients.types

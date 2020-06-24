@@ -1,0 +1,6 @@
+action:
+  execution:
+    - MessageActionRule:
+        severity: warning
+        message: Neue Kunden bitte nur über BSI CRM anlegen.
+   

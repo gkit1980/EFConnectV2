@@ -1,0 +1,7 @@
+element:
+  type: integer
+  viewMode:
+    StaticViewModeRule:
+      viewMode: output
+  label:
+    NoLabelRule: {}        

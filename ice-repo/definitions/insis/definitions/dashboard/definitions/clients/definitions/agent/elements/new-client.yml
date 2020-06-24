@@ -1,0 +1,10 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          themeColor: accent
+          variant: default
+          accesskey: n
+  defaultValue: new-client

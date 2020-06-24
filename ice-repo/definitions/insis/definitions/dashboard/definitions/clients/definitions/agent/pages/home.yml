@@ -1,0 +1,44 @@
+page:
+  validation: {}
+  component:
+    InsisSimplePage: {}
+  sections:
+    - search
+    - component:
+        IceFlexSection:
+          css: mb-2
+          grid:
+            rows:
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: new-client
+    - component:
+        InsisDatagridSection:
+          arrayElement: clients
+          grid:
+            rows:
+              - cols:
+                  - elements:
+                      - name: clients~view-more
+                    caption: elements.search-policies.client-pid.label
+                    size: 250px
+                    css: ml-3 label-link
+                  - elements:
+                      - name: clients~client-name
+                    caption: elements.search-policies.client-name.label
+                    size: auto
+                  - elements:
+                      - name: clients~client-type
+                    caption: elements.search-client.client-type.label
+                    size: 250px
+                  - elements:
+                      - name: clients~client-city
+                    caption: elements.search-client.client-city.label
+                    size: 250px
+                  - elements:
+                      - name: clients~active-policies
+                    caption: elements.clients.items.active-policies.label
+                    size: 150px
