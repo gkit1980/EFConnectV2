@@ -1,0 +1,16 @@
+action:
+  title: >-
+    resets additional person covers when same cover is set to false for the main
+    person
+  execution:
+    - InsisIndexesResetArrayItemExecutionRule:
+        element: policy.insured.person-objects~cover.death-acc.active
+        excludedIndexes: 0
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - policy.insured.person-objects~cover.death-acc.active
+  condition:
+    FeelConditionRule:
+      expression: >-
+        element('policy.insured.person-objects~cover.death-acc.active', '0') = false

@@ -1,6 +1,7 @@
 implementations:
   InsisSetForIndexesDefaultValueRule:
-    description: Sets default value only for the specified indexes.  
+    description: Sets default value only for the specified indexes.
+    params:
       indexes:
         label: Array item indexes separated by comma. Example value 1,2,3
         type: text
