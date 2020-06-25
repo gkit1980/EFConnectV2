@@ -5,3 +5,4 @@ element:
       conditionValue: '1'
       conditionViewMode: required
       elseViewMode: hidden
+  type: boolean

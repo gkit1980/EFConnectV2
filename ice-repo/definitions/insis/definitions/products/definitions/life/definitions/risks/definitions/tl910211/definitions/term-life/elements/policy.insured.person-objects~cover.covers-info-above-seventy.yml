@@ -3,13 +3,18 @@ element:
   component:
     StaticComponentRule:
       component:
-        IceNone: {}
+        InsisIcon:
+          showLabel: true
   label:
     ResourceWithElementValuesLabelRule:
       elements:
         - policy.insured.person-objects~person.first-name
         - policy.insured.person-objects~person.age-at-end
-      key: elements.policy.insured.person-objects.items.cover.covers-info.label
+      key: >-
+        elements.policy.insured.person-objects.items.cover.covers-info-above-seventy.label
+  defaultValue:
+    StaticValueRule:
+      value: warning
   viewMode:
     DtViewModeRule:
-      dt: policy.insured.person-objects~cover.covers-info.viewmode
+      dt: policy.insured.person-objects~cover.covers-info-above-seventy.viewmode

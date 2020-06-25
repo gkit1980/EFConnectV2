@@ -64,6 +64,13 @@ page:
                     css: mat-small
               - cols:
                   - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: policy.insured.person-objects~cover.covers-info-above-seventy
+                    css: mat-small info-above-seventy
+              - cols:
+                  - size: auto
                     elements:
                       - name: policy.insured.person-objects~cover.death-any.active
                       - name: policy.insured.person-objects~cover.death-any.active-info

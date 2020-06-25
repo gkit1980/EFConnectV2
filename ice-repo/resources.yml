@@ -758,6 +758,16 @@ entries:
                 label:
                   - en: '${param1} will be ${param2} at the end of their insurance.'
                     de: '${param1} will be ${param2} at the end of their insurance.'
+              covers-info-above-seventy:
+                label:
+                  - en: >-
+                      ${param1} will be ${param2} at the end of the selected
+                      insurance duration. Their covers will only be valid
+                      until they reach the age of 70.
+                    de: >-
+                      ${param1} will be ${param2} at the end of the selected
+                      insurance duration. Their covers will only be valid
+                      until they reach the age of 70.
         add-another-person:
           label:
             - en: Add another person

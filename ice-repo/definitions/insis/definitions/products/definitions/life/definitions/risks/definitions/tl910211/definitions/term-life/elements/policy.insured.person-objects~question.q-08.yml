@@ -5,3 +5,4 @@ element:
       conditionValue: '1'
       conditionViewMode: default
       elseViewMode: hidden
+  type: text

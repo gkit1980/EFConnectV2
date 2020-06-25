@@ -270,3 +270,21 @@ mat-radio-button {
     font-weight: bold;
   }
 }
+
+.info-above-seventy {
+  background-color: rgba(153, 107, 15, 0.149019607843137);
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(153, 107, 15, 1);
+  border-radius: 4px;
+  padding: 3px;
+
+  .mat-icon {
+    height: 15px;
+    width: 15px;
+    font-size: 13px;
+    margin: 0px 3px;
+    color: rgba(153, 107, 15, 1);
+  }
+}

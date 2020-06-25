@@ -1,0 +1,25 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policy.insured.person-objects~entity-accident-insured.type
+    - label: new label
+      element: policy.insured.person-objects~person.age-at-end
+  outputs:
+    - id: viewMode
+      type: string
+  rules:
+    - inputs:
+        - 2
+        - '> 70'
+      outputs:
+        - output
+    - inputs:
+        - 2
+        - '<= 70'
+      outputs:
+        - hidden
+    - inputs:
+        - 1
+        - not(null)
+      outputs:
+        - hidden

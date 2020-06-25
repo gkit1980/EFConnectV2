@@ -3,3 +3,4 @@ element:
     StaticComponentRule:
       component:
         IceRadiobuttonGroup: {}
+  type: boolean
