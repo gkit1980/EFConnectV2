@@ -816,8 +816,15 @@ entries:
                 - en: Policy holder
                   de: Policy holder
         beneficiaries:
+          label:
+            - en: Beneficiary
+              de: Beneficiary
           items:
             person:
+              gender:
+                label:
+                  - en: Gender
+                    de: Gender
               first-name:
                 label:
                   - en: First name
@@ -826,6 +833,14 @@ entries:
                 label:
                   - en: Last name
                     de: null
+              country:
+                label:
+                  - en: Country
+                    de: Country
+              birthdate:
+                label:
+                  - en: Birthdate
+                    de: Birthdate
             title:
               label:
                 - en: Beneficiary
@@ -875,11 +890,14 @@ entries:
             label:
               - en: SWIFT
                 de: SWIFT
-        beneficiaries~person:
-          gender:
-            label:
-              - en: Gender
-                de: Gender
+        is-standard-beneficiary:
+          label:
+            - en: Who would you like to protect?
+              de: Who would you like to protect?
+        add-beneficiary:
+          label:
+            - en: ADD BENEFICIARY
+              de: ADD BENEFICIARY
     buy-insurance:
       btn:
         label:
@@ -1364,6 +1382,10 @@ entries:
       title:
         - en: Person details
           de: null
+    2.application.beneficiaries:
+      title:
+        - en: Beneficiaries
+          de: Beneficiaries
     3.review:
       title:
         - en: Review and Buy

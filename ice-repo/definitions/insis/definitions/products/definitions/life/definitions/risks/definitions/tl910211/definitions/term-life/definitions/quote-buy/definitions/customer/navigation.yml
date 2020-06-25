@@ -14,6 +14,7 @@ pages:
         firstChild: true
         pages:
           - page: 2.application.details
+          - page: 2.application.beneficiaries
       - page: 3.review
         firstChild: true
         pages:

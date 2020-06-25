@@ -1,0 +1,12 @@
+element:
+  type: boolean
+  label:
+    NoLabelRule: {}
+  component:
+    StaticComponentRule:
+      component:
+        IceRadiobuttonGroup: {}
+  values:
+    ListValuesRule:
+      list: person-or-company
+  defaultValue: false

@@ -1,0 +1,12 @@
+element:
+  type: boolean
+  component:
+    StaticComponentRule:
+      component:
+        IceRadiobuttonGroup: {}
+  values:
+    ListValuesRule:
+      list: policy.beneficiaries
+  defaultValue:
+    StaticValueRule:
+      value: true

@@ -1,0 +1,12 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          themeColor: accent
+          variant: default
+          type: none
+  change:
+    - AddArrayItemExecutionRule:
+        element: policy.participants.beneficiaries

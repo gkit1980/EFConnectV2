@@ -1,0 +1,22 @@
+list:
+  items:
+    - value: true
+      label_en: >-
+        Standard beneficiary in the following order: spouse or registered
+        partner, children, parents, heirs of the insured person
+      label_de: >-
+        Standard beneficiary in the following order: spouse or registered
+        partner, children, parents, heirs of the insured person
+    - value: false
+      label_en: >-
+        Specific people/companies
+      label_de: >-
+        Specific people/companies
+  type: boolean
+  additionals:
+    label_en:
+      label: label_en
+      type: text
+    label_de:
+      label: label_de
+      type: text
