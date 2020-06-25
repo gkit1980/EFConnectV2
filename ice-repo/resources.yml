@@ -1412,41 +1412,78 @@ entries:
         - en: Terms and conditions
           de: null
     header:
-      dashboard:
-        label:
-          - en: Home
-            de: null
-        link:
-          - en: /ice/insis.dashboard.home.customer/home
-            de: /ice/insis.dashboard.home.customer/home
-      policies:
-        label:
-          - en: Policies
-            de: null
-        link:
-          - en: /ice/insis.dashboard.policies.customer/home
-            de: /ice/insis.dashboard.policies.customer/home
-      payments:
-        label:
-          - en: Payments
-            de: null
-        link:
-          - en: /ice/insis.dashboard.payments.customer/home
-            de: /ice/insis.dashboard.payments.customer/home
-      claims:
-        label:
-          - en: Claims
-            de: null
-        link:
-          - en: /ice/insis.dashboard.claims.customer/home
-            de: /ice/insis.dashboard.claims.customer/home
-      products:
-        label:
-          - en: Insurances
-            de: Insurances
-        link:
-          - en: /ice/insis.dashboard.products.customer/home
-            de: /ice/insis.dashboard.products.customer/home
+      agent:
+        dashboard:
+          label:
+            - en: Home
+              de: null
+          link:
+            - en: /ice/insis.dashboard.home.agent/home
+              de: /ice/insis.dashboard.home.agent/home
+        clients:
+          label:
+            - en: Clients
+              de: null
+          link:
+            - en: /ice/insis.dashboard.clients.agent/home
+              de: /ice/insis.dashboard.clients.agent/home
+        policies:
+          label:
+            - en: Policies
+              de: null
+          link:
+            - en: /ice/insis.dashboard.policies.agent/home
+              de: /ice/insis.dashboard.policies.agent/home
+        claims:
+          label:
+            - en: Claims
+              de: null
+          link:
+            - en: /ice/insis.dashboard.claims.agent/home
+              de: /ice/insis.dashboard.claims.agent/home
+        products:
+          label:
+            - en: Products
+              de: Products
+          link:
+            - en: /ice/insis.dashboard.products.agent/home
+              de: /ice/insis.dashboard.products.agent/home
+      customer:
+        dashboard:
+          label:
+            - en: Home
+              de: null
+          link:
+            - en: /ice/insis.dashboard.home.customer/home
+              de: /ice/insis.dashboard.home.customer/home
+        policies:
+          label:
+            - en: Policies
+              de: null
+          link:
+            - en: /ice/insis.dashboard.policies.customer/home
+              de: /ice/insis.dashboard.policies.customer/home
+        payments:
+          label:
+            - en: Payments
+              de: null
+          link:
+            - en: /ice/insis.dashboard.payments.customer/home
+              de: /ice/insis.dashboard.payments.customer/home
+        claims:
+          label:
+            - en: Claims
+              de: null
+          link:
+            - en: /ice/insis.dashboard.claims.customer/home
+              de: /ice/insis.dashboard.claims.customer/home
+        products:
+          label:
+            - en: Products
+              de: Products
+          link:
+            - en: /ice/insis.dashboard.products.customer/home
+              de: /ice/insis.dashboard.products.customer/home
       menu:
         logout:
           - en: Logout

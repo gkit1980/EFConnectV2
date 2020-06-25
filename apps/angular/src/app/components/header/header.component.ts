@@ -10,9 +10,15 @@ import { AuthenticationService } from '../../services/authentication.service';
 })
 export class HeaderComponent {
   activeURL = '';
-  navigation: any[] = [];
+  agentNavigation: any[] = [];
+  customerNavigation: any[] = [];
   menuItems: { key: string; method: () => any }[] = [];
   showMobileNav = false;
+  get navigation() {
+    return this.authenticationService.role === 'agent'
+      ? this.agentNavigation
+      : this.customerNavigation;
+  }
 
   get name(): string {
     return this.authenticationService.name;
@@ -24,31 +30,59 @@ export class HeaderComponent {
     private authenticationService: AuthenticationService
   ) {
     this.runtimeService.getRuntime().then((runtime) => {
-      this.navigation.push(
+      this.customerNavigation.push(
         {
-          key: runtime.iceResource.resolve('pages.header.dashboard.label'),
-          link: runtime.iceResource.resolve('pages.header.dashboard.link'),
-          includes: [],
+          key: runtime.iceResource.resolve('pages.header.customer.dashboard.label'),
+          link: runtime.iceResource.resolve('pages.header.customer.dashboard.link'),
+          includes: ['/ice/insis.dashboard.home.customer/home'],
         },
         {
-          key: runtime.iceResource.resolve('pages.header.policies.label'),
-          link: runtime.iceResource.resolve('pages.header.policies.link'),
-          includes: [],
+          key: runtime.iceResource.resolve('pages.header.customer.policies.label'),
+          link: runtime.iceResource.resolve('pages.header.customer.policies.link'),
+          includes: ['/ice/insis.dashboard.policies.customer/home'],
         },
         {
-          key: runtime.iceResource.resolve('pages.header.claims.label'),
-          link: runtime.iceResource.resolve('pages.header.claims.link'),
+          key: runtime.iceResource.resolve('pages.header.customer.claims.label'),
+          link: runtime.iceResource.resolve('pages.header.customer.claims.link'),
           includes: ['/ice/insis.dashboard.claims.customer/home'],
         },
         {
-          key: runtime.iceResource.resolve('pages.header.products.label'),
-          link: runtime.iceResource.resolve('pages.header.products.link'),
-          includes: [],
+          key: runtime.iceResource.resolve('pages.header.customer.products.label'),
+          link: runtime.iceResource.resolve('pages.header.customer.products.link'),
+          includes: ['/ice/insis.dashboard.products.customer/home'],
         },
         {
-          key: runtime.iceResource.resolve('pages.header.payments.label'),
-          link: runtime.iceResource.resolve('pages.header.payments.link'),
-          includes: [],
+          key: runtime.iceResource.resolve('pages.header.customer.payments.label'),
+          link: runtime.iceResource.resolve('pages.header.customer.payments.link'),
+          includes: ['/ice/insis.dashboard.payments.customer/home'],
+        }
+      );
+
+      this.agentNavigation.push(
+        {
+          key: runtime.iceResource.resolve('pages.header.agent.dashboard.label'),
+          link: runtime.iceResource.resolve('pages.header.agent.dashboard.link'),
+          includes: ['/ice/insis.dashboard.home.agent/home'],
+        },
+        {
+          key: runtime.iceResource.resolve('pages.header.agent.clients.label'),
+          link: runtime.iceResource.resolve('pages.header.agent.clients.link'),
+          includes: ['/ice/insis.dashboard.clients.agent/home'],
+        },
+        {
+          key: runtime.iceResource.resolve('pages.header.agent.policies.label'),
+          link: runtime.iceResource.resolve('pages.header.agent.policies.link'),
+          includes: ['/ice/insis.dashboard.policies.agent/home'],
+        },
+        {
+          key: runtime.iceResource.resolve('pages.header.agent.claims.label'),
+          link: runtime.iceResource.resolve('pages.header.agent.claims.link'),
+          includes: ['/ice/insis.dashboard.claims.agent/home'],
+        },
+        {
+          key: runtime.iceResource.resolve('pages.header.agent.products.label'),
+          link: runtime.iceResource.resolve('pages.header.agent.products.link'),
+          includes: ['/ice/insis.dashboard.products.agent/home'],
         }
       );
 
