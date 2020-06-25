@@ -5,7 +5,7 @@ integration:
       additional: insis
       dateFormat: YYYY-MM-DD
       dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
-      extends: motor.insis-policy.save
+      extends: life.insis-policy.save
       in: {}
       out:
         - toIdx:
@@ -41,6 +41,214 @@ integration:
             - value: 'Q_03'
               payload: 'Insureds.Insured[n].Questionary.Question[n].ID'
             - element: policy.insured.person-objects~question.q-03
+              payload: 'Insureds.Insured[n].Questionary.Question[n].Answer'
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            array: 'payload.Insureds.Insured'
+            useSourceIndex: true
+            toIdx:
+              array: Questionary.Question
+              append: true
+          mappings:
+            - value: 'Q_04'
+              payload: 'Insureds.Insured[n].Questionary.Question[n].ID'
+            - element: policy.insured.person-objects~question.q-04
+              payload: 'Insureds.Insured[n].Questionary.Question[n].Answer'
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            array: 'payload.Insureds.Insured'
+            useSourceIndex: true
+            toIdx:
+              array: Questionary.Question
+              append: true
+          mappings:
+            - value: 'Q_05'
+              payload: 'Insureds.Insured[n].Questionary.Question[n].ID'
+            - element: policy.insured.person-objects~question.q-05
+              payload: 'Insureds.Insured[n].Questionary.Question[n].Answer'
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            array: 'payload.Insureds.Insured'
+            useSourceIndex: true
+            toIdx:
+              array: Questionary.Question
+              append: true
+          mappings:
+            - value: 'Q_06'
+              payload: 'Insureds.Insured[n].Questionary.Question[n].ID'
+            - element: policy.insured.person-objects~question.q-06
+              payload: 'Insureds.Insured[n].Questionary.Question[n].Answer'
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            array: 'payload.Insureds.Insured'
+            condition: 1 == 1
+            toIdx:
+              array: Questionary.Question
+              append: true
+          mappings:
+            - value: 'Q_07'
+              payload: 'Insureds.Insured[n].Questionary.Question[n].ID'
+            - element: policy.insured.person-objects~question.q-07
+              payload: 'Insureds.Insured[n].Questionary.Question[n].Answer'
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            array: 'payload.Insureds.Insured'
+            condition: 1 == 1
+            toIdx:
+              array: Questionary.Question
+              append: true
+          mappings:
+            - value: 'Q_07.1'
+              payload: 'Insureds.Insured[n].Questionary.Question[n].ID'
+            - element: policy.insured.person-objects~question.q-07-1
+              payload: 'Insureds.Insured[n].Questionary.Question[n].Answer'
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            array: 'payload.Insureds.Insured'
+            condition: 1 == 1
+            toIdx:
+              array: Questionary.Question
+              append: true
+          mappings:
+            - value: 'Q_08'
+              payload: 'Insureds.Insured[n].Questionary.Question[n].ID'
+            - element: policy.insured.person-objects~question.q-08
+              payload: 'Insureds.Insured[n].Questionary.Question[n].Answer'
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            array: 'payload.Insureds.Insured'
+            condition: 1 == 1
+            toIdx:
+              array: Questionary.Question
+              append: true
+          mappings:
+            - value: 'Q_09'
+              payload: 'Insureds.Insured[n].Questionary.Question[n].ID'
+            - element: policy.insured.person-objects~question.q-09
+              payload: 'Insureds.Insured[n].Questionary.Question[n].Answer'
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            array: 'payload.Insureds.Insured'
+            condition: 1 == 1
+            toIdx:
+              array: Questionary.Question
+              append: true
+          mappings:
+            - value: 'Q_09.1'
+              payload: 'Insureds.Insured[n].Questionary.Question[n].ID'
+            - element: policy.insured.person-objects~question.q-09-1
+              payload: 'Insureds.Insured[n].Questionary.Question[n].Answer'
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            array: 'payload.Insureds.Insured'
+            condition: 1 == 1
+            toIdx:
+              array: Questionary.Question
+              append: true
+          mappings:
+            - value: 'Q_10'
+              payload: 'Insureds.Insured[n].Questionary.Question[n].ID'
+            - element: policy.insured.person-objects~question.q-10
+              payload: 'Insureds.Insured[n].Questionary.Question[n].Answer'
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            array: 'payload.Insureds.Insured'
+            condition: 1 == 1
+            toIdx:
+              array: Questionary.Question
+              append: true
+          mappings:
+            - value: 'Q_10.1'
+              payload: 'Insureds.Insured[n].Questionary.Question[n].ID'
+            - element: policy.insured.person-objects~question.q-10-1
+              payload: 'Insureds.Insured[n].Questionary.Question[n].Answer'
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            array: 'payload.Insureds.Insured'
+            condition: 1 == 1
+            toIdx:
+              array: Questionary.Question
+              append: true
+          mappings:
+            - value: 'Q_11'
+              payload: 'Insureds.Insured[n].Questionary.Question[n].ID'
+            - element: policy.insured.person-objects~question.q-11
+              payload: 'Insureds.Insured[n].Questionary.Question[n].Answer'
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            array: 'payload.Insureds.Insured'
+            condition: 1 == 1
+            toIdx:
+              array: Questionary.Question
+              append: true
+          mappings:
+            - value: 'Q_11.1'
+              payload: 'Insureds.Insured[n].Questionary.Question[n].ID'
+            - element: policy.insured.person-objects~question.q-11-1
+              payload: 'Insureds.Insured[n].Questionary.Question[n].Answer'
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            array: 'payload.Insureds.Insured'
+            condition: 1 == 1
+            toIdx:
+              array: Questionary.Question
+              append: true
+          mappings:
+            - value: 'Q_12'
+              payload: 'Insureds.Insured[n].Questionary.Question[n].ID'
+            - element: policy.insured.person-objects~question.q-12
+              payload: 'Insureds.Insured[n].Questionary.Question[n].Answer'
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            array: 'payload.Insureds.Insured'
+            condition: 1 == 1
+            toIdx:
+              array: Questionary.Question
+              append: true
+          mappings:
+            - value: 'Q_12.1'
+              payload: 'Insureds.Insured[n].Questionary.Question[n].ID'
+            - element: policy.insured.person-objects~question.q-12-1
+              payload: 'Insureds.Insured[n].Questionary.Question[n].Answer'
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            array: 'payload.Insureds.Insured'
+            condition: 1 == 1
+            toIdx:
+              array: Questionary.Question
+              append: true
+          mappings:
+            - value: 'Q_13'
+              payload: 'Insureds.Insured[n].Questionary.Question[n].ID'
+            - element: policy.insured.person-objects~question.q-13
+              payload: 'Insureds.Insured[n].Questionary.Question[n].Answer'
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            array: 'payload.Insureds.Insured'
+            condition: 1 == 1
+            toIdx:
+              array: Questionary.Question
+              append: true
+          mappings:
+            - value: 'Q_13.1'
+              payload: 'Insureds.Insured[n].Questionary.Question[n].ID'
+            - element: policy.insured.person-objects~question.q-13-1
               payload: 'Insureds.Insured[n].Questionary.Question[n].Answer'
         - fromIdx:
             array: datamodel.policy.insured.person-objects
@@ -82,3 +290,194 @@ integration:
               payload: 'Insureds.Insured[n].Covers.Cover[n].Currency'
             - element: policy.insured.person-objects~cover.death-acc.insured-amount
               payload: 'Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+            condition: cover.critic-ill.active == true
+          toIdx:
+            array: payload.Insureds.Insured
+            useSourceIndex: true
+            toIdx:
+              array: Covers.Cover
+              append: true
+          mappings:
+            - element: policy.insured.person-objects~cover.critic-ill.grc-id
+              payload: 'Insureds.Insured[n].Covers.Cover[n].GrcID'
+            - element: policy.insured.person-objects~cover.critic-ill.annex-id
+              payload: 'Insureds.Insured[n].Covers.Cover[n].AnnexID'
+            - element: policy.insured.person-objects~cover.critic-ill.code
+              payload: 'Insureds.Insured[n].Covers.Cover[n].CoverCode'
+            - element: policy.insured.person-objects~cover.critic-ill.currency
+              payload: 'Insureds.Insured[n].Covers.Cover[n].Currency'
+            - element: policy.insured.person-objects~cover.critic-ill.insured-amount
+              payload: 'Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+            condition: cover.premret.active == true
+          toIdx:
+            array: payload.Insureds.Insured
+            useSourceIndex: true
+            toIdx:
+              array: Covers.Cover
+              append: true
+          mappings:
+            - element: policy.insured.person-objects~cover.premret.grc-id
+              payload: 'Insureds.Insured[n].Covers.Cover[n].GrcID'
+            - element: policy.insured.person-objects~cover.premret.annex-id
+              payload: 'Insureds.Insured[n].Covers.Cover[n].AnnexID'
+            - element: policy.insured.person-objects~cover.premret.code
+              payload: 'Insureds.Insured[n].Covers.Cover[n].CoverCode'
+            - element: policy.insured.person-objects~cover.premret.currency
+              payload: 'Insureds.Insured[n].Covers.Cover[n].Currency'
+            - element: policy.insured.person-objects~cover.premret.insured-amount
+              payload: 'Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+            condition: cover.tpdaccd.active == true
+          toIdx:
+            array: payload.Insureds.Insured
+            useSourceIndex: true
+            toIdx:
+              array: Covers.Cover
+              append: true
+          mappings:
+            - element: policy.insured.person-objects~cover.tpdaccd.grc-id
+              payload: 'Insureds.Insured[n].Covers.Cover[n].GrcID'
+            - element: policy.insured.person-objects~cover.tpdaccd.annex-id
+              payload: 'Insureds.Insured[n].Covers.Cover[n].AnnexID'
+            - element: policy.insured.person-objects~cover.tpdaccd.code
+              payload: 'Insureds.Insured[n].Covers.Cover[n].CoverCode'
+            - element: policy.insured.person-objects~cover.tpdaccd.currency
+              payload: 'Insureds.Insured[n].Covers.Cover[n].Currency'
+            - element: policy.insured.person-objects~cover.tpdaccd.insured-amount
+              payload: 'Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+            condition: cover.tpdill.active == true
+          toIdx:
+            array: payload.Insureds.Insured
+            useSourceIndex: true
+            toIdx:
+              array: Covers.Cover
+              append: true
+          mappings:
+            - element: policy.insured.person-objects~cover.tpdill.grc-id
+              payload: 'Insureds.Insured[n].Covers.Cover[n].GrcID'
+            - element: policy.insured.person-objects~cover.tpdill.annex-id
+              payload: 'Insureds.Insured[n].Covers.Cover[n].AnnexID'
+            - element: policy.insured.person-objects~cover.tpdill.code
+              payload: 'Insureds.Insured[n].Covers.Cover[n].CoverCode'
+            - element: policy.insured.person-objects~cover.tpdill.currency
+              payload: 'Insureds.Insured[n].Covers.Cover[n].Currency'
+            - element: policy.insured.person-objects~cover.tpdill.insured-amount
+              payload: 'Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+            condition: cover.wop-total.active == true
+          toIdx:
+            array: payload.Insureds.Insured
+            useSourceIndex: true
+            toIdx:
+              array: Covers.Cover
+              append: true
+          mappings:
+            - element: policy.insured.person-objects~cover.wop-total.grc-id
+              payload: 'Insureds.Insured[n].Covers.Cover[n].GrcID'
+            - element: policy.insured.person-objects~cover.wop-total.annex-id
+              payload: 'Insureds.Insured[n].Covers.Cover[n].AnnexID'
+            - element: policy.insured.person-objects~cover.wop-total.code
+              payload: 'Insureds.Insured[n].Covers.Cover[n].CoverCode'
+            - element: policy.insured.person-objects~cover.wop-total.currency
+              payload: 'Insureds.Insured[n].Covers.Cover[n].Currency'
+            - element: policy.insured.person-objects~cover.wop-total.insured-amount
+              payload: 'Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
+
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            array: payload.Insureds.Insured
+            useSourceIndex: true
+            toIdx:
+              array: Documents.Document
+              append: true
+          mappings:
+            - element: policy.insured.person-objects~document.medex1.document-state
+              payload: 'Insureds.Insured[n].Documents.Document[n].DocState'
+            - element: policy.insured.person-objects~document.medex1.document-id
+              payload: 'Insureds.Insured[n].Documents.Document[n].DocumentID'
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            array: payload.Insureds.Insured
+            useSourceIndex: true
+            toIdx:
+              array: Documents.Document
+              append: true
+          mappings:
+            - element: policy.insured.person-objects~document.medex2.document-state
+              payload: 'Insureds.Insured[n].Documents.Document[n].DocState'
+            - element: policy.insured.person-objects~document.medex2.document-id
+              payload: 'Insureds.Insured[n].Documents.Document[n].DocumentID'
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            array: payload.Insureds.Insured
+            useSourceIndex: true
+            toIdx:
+              array: Documents.Document
+              append: true
+          mappings:
+            - element: policy.insured.person-objects~document.medex3.document-state
+              payload: 'Insureds.Insured[n].Documents.Document[n].DocState'
+            - element: policy.insured.person-objects~document.medex3.document-id
+              payload: 'Insureds.Insured[n].Documents.Document[n].DocumentID'
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            array: payload.Insureds.Insured
+            useSourceIndex: true
+            toIdx:
+              array: Documents.Document
+              append: true
+          mappings:
+            - element: policy.insured.person-objects~document.l-medex.document-state
+              payload: 'Insureds.Insured[n].Documents.Document[n].DocState'
+            - element: policy.insured.person-objects~document.l-medex.document-id
+              payload: 'Insureds.Insured[n].Documents.Document[n].DocumentID'
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            array: payload.Insureds.Insured
+            useSourceIndex: true
+            toIdx:
+              array: Documents.Document
+              append: true
+          mappings:
+            - element: policy.insured.person-objects~document.smd.document-state
+              payload: 'Insureds.Insured[n].Documents.Document[n].DocState'
+            - element: policy.insured.person-objects~document.smd.document-id
+              payload: 'Insureds.Insured[n].Documents.Document[n].DocumentID'
+        - toIdx:
+            array: Documents.Document
+            append: true
+          mappings:
+            - element: policy.insured.document.icd.document-id
+              payload: 'InsuranceConditions.Documents.Document[n].DocumentID'
+            - element: policy.insured.document.icd.document-state
+              payload: 'InsuranceConditions.Documents.Document[n].DocState'
+
+        - fromIdx:
+            array: datamodel.policy.participants.beneficiaries
+          toIdx:
+            array: InsuranceConditions.Participants
+            append: true
+          mappings:
+            - element: policy.participants.is-standard-beneficiary
+              value: false
+            - element: policy.participants.beneficiaries~person.gender
+              payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.Gender
+            - element: policy.participants.beneficiaries~person.birthdate
+              payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.BirthDate
+            - element: policy.participants.beneficiaries~person.last-name
+              payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.Name.Family
+            - element: policy.participants.beneficiaries~person.first-name
+              payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.Name.Given

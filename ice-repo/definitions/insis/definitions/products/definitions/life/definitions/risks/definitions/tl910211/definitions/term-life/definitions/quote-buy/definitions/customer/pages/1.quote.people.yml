@@ -120,6 +120,15 @@ page:
                     size.sm: auto
                     sections:
                       - name: clear-person-section
+                    elements:
+                      - name: >-
+                          policy.insured.person-objects~entity-accident-insured.type
+              - cols:
+                  - size: auto
+                    elements:
+                      - name: policy.insured.person-objects~person.pid
+                      - name: policy.insured.person-objects~object.id
+                      - name: policy.insured.person-objects~entity-id
             length: 0
           arrayElement: policy.insured.person-objects
           behaviourForEmptyRows: hide

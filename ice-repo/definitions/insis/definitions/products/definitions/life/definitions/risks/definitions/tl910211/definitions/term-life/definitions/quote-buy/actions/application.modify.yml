@@ -1,0 +1,5 @@
+action:
+  title: calls convert modify application
+  execution:
+    - IntegrationExecutionRule:
+        integration: 910211.risks.life.insis-policy.application.modify

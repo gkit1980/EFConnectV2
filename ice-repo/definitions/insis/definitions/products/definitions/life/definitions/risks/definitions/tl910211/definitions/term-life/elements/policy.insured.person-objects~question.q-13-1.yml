@@ -1,6 +1,0 @@
-element:
-  component: IceTextarea
-  label:
-    ResourceLabelRule:
-      key: elements.policy.insured.person-objects.items.question.describe.label
-  type: date

@@ -6,3 +6,5 @@ element:
       conditionViewMode: required
       elseViewMode: hidden
   type: integer
+  fake:
+    value: 95

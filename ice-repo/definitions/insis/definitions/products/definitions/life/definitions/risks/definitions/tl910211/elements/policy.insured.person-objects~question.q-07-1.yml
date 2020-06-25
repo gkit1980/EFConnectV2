@@ -1,12 +1,13 @@
 element:
-  title: Please provide more details about your hobby or sport activity.
-  type: text
-  component: IceDropdown
-  viewMode:
-    ConditionalViewModeRule:
-      conditionElement: policy.insured.person-objects~question.q-07
-      conditionValue: true
-      conditionViewMode: default
-      elseViewMode: hidden
-  defaultValue: '12'
-  values: insis.policy.insured.person-objects~question.q-07-1
+      title: Please provide more details about your hobby or sport activity.
+      type: text
+      component: IceDropdown
+      viewMode:
+        ConditionalViewModeRule:
+          conditionElement: policy.insured.person-objects~question.q-07
+          conditionValue: true
+          conditionViewMode: default
+          elseViewMode: hidden
+      defaultValue: '12'
+      values: insis.policy.insured.person-objects~question.q-07-1
+    

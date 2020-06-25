@@ -1,4 +1,4 @@
-import { ExecutionRule, IceClientRuntime, IceConsole } from '@impeo/ice-core/';
+import { ExecutionRule, IceClientRuntime, IceConsole } from '@impeo/ice-core';
 
 export class InsisNavigateToDefinitionPageWithDynidRule extends ExecutionRule {
   execute(actionContext?: any): Promise<void> {

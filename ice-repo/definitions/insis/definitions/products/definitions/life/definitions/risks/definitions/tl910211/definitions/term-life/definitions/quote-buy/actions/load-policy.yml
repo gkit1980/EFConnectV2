@@ -1,0 +1,13 @@
+action:
+  execution:
+    - IntegrationExecutionRule:
+        integration: 910211.risks.life.insis-policy.get-policy.init
+    - InsisArrayIterationIntegrationExecutionRule:
+        integration: load-insurer
+        arrayElement: policy.insured.person-objects
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ICE_CONTEXT_ACTIVATED
+  condition:
+    DynIdConditionRule:
+      element: policy.contract.policy-id

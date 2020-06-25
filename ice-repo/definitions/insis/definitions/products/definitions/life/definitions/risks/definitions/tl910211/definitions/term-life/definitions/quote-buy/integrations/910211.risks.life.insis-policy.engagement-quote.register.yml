@@ -25,3 +25,23 @@ integration:
               value: registerEngagementQuote
             - param: requestType
               value: RegisterEngagementQuoteRqType
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            useSourceIndex: true
+          mappings:
+            - element: policy.insured.person-objects~entity-accident-insured.type
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OAccidentInsured.AccinsType
+        - mappings:
+            - value: null
+              payload: Policies.Policy[0].InsuranceConditions.PolicyNo
+
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            useSourceIndex: true
+          mappings:
+            - payload: Policies.Policy[0].Insureds.Insured[n].InsuredObjectID
+              value: '-1'
+            - payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.ObjectID
+              value: '-1'

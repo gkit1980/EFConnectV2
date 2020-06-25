@@ -1,0 +1,10 @@
+implementations:
+    InsisRandomIDValueRule:
+        description: Generates random number between 1000000 and 999999999
+        icel: >
+            ```
+                element:
+                    type: text
+                    defaultValue:
+                        InsisRandomIDValueRule: {}
+            ```

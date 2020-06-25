@@ -6,3 +6,5 @@ action:
   execution:
     - IntegrationExecutionRule:
         integration: fill-policy-holder-information
+  condition:
+    HasNoDynIdConditionRule: {}

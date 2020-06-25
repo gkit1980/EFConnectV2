@@ -7,6 +7,3 @@ element:
           themeColor: primary
           variant: flat
   defaultValue: quote.calculate.premiums
-  viewMode:
-    DtViewModeRule:
-      dt: insis.viewmode.calculate.quote

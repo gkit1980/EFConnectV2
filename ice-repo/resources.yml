@@ -691,6 +691,12 @@ entries:
                       previously of epilepsy, convulsions, paralysis, mental or
                       nervous illness, dizziness, headache, fainting or other
                       nervous system disease?
+              q-13-1:
+                label:
+                  - en: >-
+                      Select date
+                    de: >-
+                      Select date
               q-06:
                 label:
                   - en: >-
@@ -784,6 +790,13 @@ entries:
           label:
             - en: Additional insured person
               de: Zusätzliche versicherte Person
+
+        document:
+          icd:
+            document-file:
+              label:
+                - en: Upload your income statement
+                  de: Laden Sie Ihre Gewinn- und Verlustrechnung hoch
       contract:
         begin:
           label:
@@ -882,10 +895,6 @@ entries:
             label:
               - en: ZIP
                 de: ZIP
-          income-statement:
-            label:
-              - en: Upload your income statement
-                de: Laden Sie Ihre Gewinn- und Verlustrechnung hoch
           swift:
             label:
               - en: SWIFT
@@ -1529,6 +1538,7 @@ entries:
           empty:
             - en: Use a different bank account
               de: policy.participants.payor.iban-selection.empty
+
   quotes:
     title: {}
     remove:

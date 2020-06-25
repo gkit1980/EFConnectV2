@@ -36,7 +36,7 @@ page:
                     size.xs: auto
                     size.sm: auto
                     elements:
-                      - name: policy.participants.payor.income-statement
+                      - name: policy.insured.document.icd.document-file
                     css: u-mb-6
               - cols:
                   - size: 40%

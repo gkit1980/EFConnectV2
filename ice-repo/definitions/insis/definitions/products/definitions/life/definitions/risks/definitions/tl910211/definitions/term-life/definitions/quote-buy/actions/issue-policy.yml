@@ -1,0 +1,10 @@
+action:
+  title: converts an application to a policy
+  execution:
+    - InsisValidatePageExecutionRule:
+        page: 3.review.finalize
+        what: currentPage
+    - IntegrationExecutionRule:
+        integration: 910211.risks.life.insis-policy.application.modify
+    - IntegrationExecutionRule:
+        integration: insis-policy.convert-application-to-policy

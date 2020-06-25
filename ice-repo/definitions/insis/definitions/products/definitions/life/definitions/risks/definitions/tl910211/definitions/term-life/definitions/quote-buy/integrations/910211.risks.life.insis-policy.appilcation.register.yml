@@ -1,0 +1,41 @@
+integration:
+  exchange:
+    SoapCallExchangeRule:
+      endpoint: insis_pam_endpoint
+      securityMode: UsernamePassword
+      username: 'env:insis-username'
+      password: 'env:insis-password'
+      ignoreNamespaces: 'env:insis-ignoreNamespaces'
+      soapAction: registerApplication
+      requestType: RegsrApplRqType
+      responseType: RegsrApplRsType
+      jsonSchema: InsisPAM
+  transformation:
+    DefaultTransformationRule:
+      additional: insis
+      dateFormat: YYYY-MM-DD
+      dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
+      extends: 910211.risks.life.insis-policy.save
+      in: {}
+      out:
+        - mappings:
+            - param: soapAction
+              value: registerApplication
+            - param: requestType
+              value: RegsrApplRqType
+        - mappings:
+            - value: null
+              payload: InsuranceConditions.PolicyNo
+            - value: '-2'
+              payload: InsuranceConditions.PolicyState
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            array: payload.Insureds.Insured
+            condition: 1 == 1
+          mappings:
+            - value: null
+              payload: Insureds.Insured[n].InsuredObjectID
+            - value: '-1'
+              payload: Insureds.Insured[n].InsuredEntity.ObjectID
+            - value: '-1'

@@ -55,19 +55,82 @@ integration:
             array: payload.Policy.Insureds.Insured
             fromIdx:
               array: Covers.Cover
+              condition: CoverCode == 'CRITIC_ILL'
+          toIdx:
+            useSourceIndex: true
+          mappings:
+            - element: policy.insured.person-objects~cover.critic-ill.grc-id
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].GrcID'
+            - element: policy.insured.person-objects~cover.critic-ill.insured-amount
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
+            - element: policy.insured.person-objects~cover.critic-ill.premium
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Premium.TotalAmount'
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+            fromIdx:
+              array: Covers.Cover
+              condition: CoverCode == 'PREMRET'
+          toIdx:
+            useSourceIndex: true
+          mappings:
+            - element: policy.insured.person-objects~cover.premret.grc-id
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].GrcID'
+            - element: policy.insured.person-objects~cover.premret.premium
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Premium.TotalAmount'
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+            fromIdx:
+              array: Covers.Cover
+              condition: CoverCode == 'TPDACCD'
+          toIdx:
+            useSourceIndex: true
+          mappings:
+            - element: policy.insured.person-objects~cover.tpdaccd.grc-id
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].GrcID'
+            - element: policy.insured.person-objects~cover.tpdaccd.premium
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Premium.TotalAmount'
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+            fromIdx:
+              array: Covers.Cover
+              condition: CoverCode == 'TPDILL'
+          toIdx:
+            useSourceIndex: true
+          mappings:
+            - element: policy.insured.person-objects~cover.tpdill.grc-id
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].GrcID'
+            - element: policy.insured.person-objects~cover.tpdill.premium
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Premium.TotalAmount'
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+            fromIdx:
+              array: Covers.Cover
+              condition: CoverCode == 'WOP_TOTAL'
+          toIdx:
+            useSourceIndex: true
+          mappings:
+            - element: policy.insured.person-objects~cover.wop-total.grc-id
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].GrcID'
+            - element: policy.insured.person-objects~cover.wop-total.premium
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Premium.TotalAmount'
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+            fromIdx:
+              array: Covers.Cover
               condition: CoverCode == 'DEATH_ANY'
               fromIdx:
                 array: Taxes.Tax
+          toIdx:
+            useSourceIndex: true
+            array: datamodel.policy.insured.person-objects
             toIdx:
-              useSourceIndex: true
-              toIdx:
-                array: cover.death-any.taxes
-                append: true
-            mappings:
-              - element: policy.insured.person-objects~cover.death-any.taxes~type
-                payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Taxes.Tax[n].TaxType'
-              - element: policy.insured.person-objects~cover.death-any.taxes~amount
-                payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Taxes.Tax[n].TaxAmount'
+              array: cover.death-any.taxes
+              append: true
+          mappings:
+            - element: policy.insured.person-objects~cover.death-any.taxes~type
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Taxes.Tax[n].TaxType'
+            - element: policy.insured.person-objects~cover.death-any.taxes~amount
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Taxes.Tax[n].TaxAmount'
         - fromIdx:
             array: payload.Policy.Insureds.Insured
             fromIdx:
@@ -75,16 +138,107 @@ integration:
               condition: CoverCode == 'DEATH_ACC'
               fromIdx:
                 array: Taxes.Tax
+          toIdx:
+            useSourceIndex: true
+            array: datamodel.policy.insured.person-objects
             toIdx:
-              useSourceIndex: true
-              toIdx:
-                array: cover.death-acc.taxes
-                append: true
-            mappings:
-              - element: policy.insured.person-objects~cover.death-acc.taxes~type
-                payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Taxes.Tax[n].TaxType'
-              - element: policy.insured.person-objects~cover.death-acc.taxes~amount
-                payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Taxes.Tax[n].TaxAmount'
+              array: cover.death-acc.taxes
+              append: true
+          mappings:
+            - element: policy.insured.person-objects~cover.death-acc.taxes~type
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Taxes.Tax[n].TaxType'
+            - element: policy.insured.person-objects~cover.death-acc.taxes~amount
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Taxes.Tax[n].TaxAmount'
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+            fromIdx:
+              array: Covers.Cover
+              condition: CoverCode == 'CRITIC_ILL'
+              fromIdx:
+                array: Taxes.Tax
+          toIdx:
+            useSourceIndex: true
+            array: datamodel.policy.insured.person-objects
+            toIdx:
+              array: cover.critic-ill.taxes
+              append: true
+          mappings:
+            - element: policy.insured.person-objects~cover.critic-ill.taxes~type
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Taxes.Tax[n].TaxType'
+            - element: policy.insured.person-objects~cover.critic-ill.taxes~amount
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Taxes.Tax[n].TaxAmount'
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+            fromIdx:
+              array: Covers.Cover
+              condition: CoverCode == 'PREMRET'
+              fromIdx:
+                array: Taxes.Tax
+          toIdx:
+            useSourceIndex: true
+            array: datamodel.policy.insured.person-objects
+            toIdx:
+              array: cover.premret.taxes
+              append: true
+          mappings:
+            - element: policy.insured.person-objects~cover.premret.taxes~type
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Taxes.Tax[n].TaxType'
+            - element: policy.insured.person-objects~cover.premret.taxes~amount
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Taxes.Tax[n].TaxAmount'
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+            fromIdx:
+              array: Covers.Cover
+              condition: CoverCode == 'TPDACCD'
+              fromIdx:
+                array: Taxes.Tax
+          toIdx:
+            useSourceIndex: true
+            array: datamodel.policy.insured.person-objects
+            toIdx:
+              array: cover.tpdaccd.taxes
+              append: true
+          mappings:
+            - element: policy.insured.person-objects~cover.tpdaccd.taxes~type
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Taxes.Tax[n].TaxType'
+            - element: policy.insured.person-objects~cover.tpdaccd.taxes~amount
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Taxes.Tax[n].TaxAmount'
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+            fromIdx:
+              array: Covers.Cover
+              condition: CoverCode == 'TPDILL'
+              fromIdx:
+                array: Taxes.Tax
+          toIdx:
+            useSourceIndex: true
+            array: datamodel.policy.insured.person-objects
+            toIdx:
+              array: cover.tpdill.taxes
+              append: true
+          mappings:
+            - element: policy.insured.person-objects~cover.tpdill.taxes~type
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Taxes.Tax[n].TaxType'
+            - element: policy.insured.person-objects~cover.tpdill.taxes~amount
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Taxes.Tax[n].TaxAmount'
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+            fromIdx:
+              array: Covers.Cover
+              condition: CoverCode == 'WOP_TOTAL'
+              fromIdx:
+                array: Taxes.Tax
+          toIdx:
+            useSourceIndex: true
+            array: datamodel.policy.insured.person-objects
+            toIdx:
+              array: cover.wop-total.taxes
+              append: true
+          mappings:
+            - element: policy.insured.person-objects~cover.wop-total.taxes~type
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Taxes.Tax[n].TaxType'
+            - element: policy.insured.person-objects~cover.wop-total.taxes~amount
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Taxes.Tax[n].TaxAmount'
         - fromIdx:
             array: payload.Policy.Insureds.Insured
             fromIdx:
@@ -94,6 +248,7 @@ integration:
                 array: Discounts.Discount
           toIdx:
             useSourceIndex: true
+            array: datamodel.policy.insured.person-objects
             toIdx:
               array: cover.death-any.discounts
               append: true
@@ -112,6 +267,7 @@ integration:
                 append: true
           toIdx:
             useSourceIndex: true
+            array: datamodel.policy.insured.person-objects
             toIdx:
               array: cover.death-acc.discounts
               append: true
@@ -119,4 +275,99 @@ integration:
             - element: policy.insured.person-objects~cover.death-acc.discounts~type
               payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Discounts.Discount[n].DiscountType'
             - element: policy.insured.person-objects~cover.death-acc.discounts~amount
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Discounts.Discount[n].LumpSumDiscount'
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+            fromIdx:
+              array: Covers.Cover
+              condition: CoverCode == 'CRITIC_ILL'
+              fromIdx:
+                array: Discounts.Discount
+                append: true
+          toIdx:
+            useSourceIndex: true
+            array: datamodel.policy.insured.person-objects
+            toIdx:
+              array: cover.critic-ill.discounts
+              append: true
+          mappings:
+            - element: policy.insured.person-objects~cover.critic-ill.discounts~type
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Discounts.Discount[n].DiscountType'
+            - element: policy.insured.person-objects~cover.critic-ill.discounts~amount
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Discounts.Discount[n].LumpSumDiscount'
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+            fromIdx:
+              array: Covers.Cover
+              condition: CoverCode == 'PREMRET'
+              fromIdx:
+                array: Discounts.Discount
+                append: true
+          toIdx:
+            useSourceIndex: true
+            array: datamodel.policy.insured.person-objects
+            toIdx:
+              array: cover.premret.discounts
+              append: true
+          mappings:
+            - element: policy.insured.person-objects~cover.premret.discounts~type
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Discounts.Discount[n].DiscountType'
+            - element: policy.insured.person-objects~cover.premret.discounts~amount
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Discounts.Discount[n].LumpSumDiscount'
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+            fromIdx:
+              array: Covers.Cover
+              condition: CoverCode == 'TPDACCD'
+              fromIdx:
+                array: Discounts.Discount
+                append: true
+          toIdx:
+            useSourceIndex: true
+            array: datamodel.policy.insured.person-objects
+            toIdx:
+              array: cover.tpdaccd.discounts
+              append: true
+          mappings:
+            - element: policy.insured.person-objects~cover.tpdaccd.discounts~type
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Discounts.Discount[n].DiscountType'
+            - element: policy.insured.person-objects~cover.tpdaccd.discounts~amount
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Discounts.Discount[n].LumpSumDiscount'
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+            fromIdx:
+              array: Covers.Cover
+              condition: CoverCode == 'TPDILL'
+              fromIdx:
+                array: Discounts.Discount
+                append: true
+          toIdx:
+            useSourceIndex: true
+            array: datamodel.policy.insured.person-objects
+            toIdx:
+              array: cover.tpdill.discounts
+              append: true
+          mappings:
+            - element: policy.insured.person-objects~cover.tpdill.discounts~type
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Discounts.Discount[n].DiscountType'
+            - element: policy.insured.person-objects~cover.tpdill.discounts~amount
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Discounts.Discount[n].LumpSumDiscount'
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+            fromIdx:
+              array: Covers.Cover
+              condition: CoverCode == 'WOP_TOTAL'
+              fromIdx:
+                array: Discounts.Discount
+                append: true
+          toIdx:
+            useSourceIndex: true
+            array: datamodel.policy.insured.person-objects
+            toIdx:
+              array: cover.wop-total.discounts
+              append: true
+          mappings:
+            - element: policy.insured.person-objects~cover.wop-total.discounts~type
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Discounts.Discount[n].DiscountType'
+            - element: policy.insured.person-objects~cover.wop-total.discounts~amount
               payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Discounts.Discount[n].LumpSumDiscount'

@@ -1,0 +1,5 @@
+action:
+  title: calls convert quote to application
+  execution:
+    - IntegrationExecutionRule:
+        integration: 910211.risks.life.insis-policy.appilcation.register

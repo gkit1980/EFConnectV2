@@ -24,21 +24,29 @@ integration:
               payload: Insureds.Insured[n].InsuredObjectID
             - element: policy.insured.person-objects~entity-id
               payload: Insureds.Insured[n].InsuredEntity.ObjectID
+            - value: 18
+              payload: Insureds.Insured[n].InsuredEntity.ObjectType
             - element: policy.insured.person-objects~person.pid
               payload: Insureds.Insured[n].OAccidentInsured.PID
             - element: policy.insured.person-objects~person.gender
-              payload: Insureds.Insured[n].OAccidentInsured.PersonalData.Gender
+              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.Gender
             - element: policy.insured.person-objects~person.pid
-              payload: Insureds.Insured[n].OAccidentInsured.PersonalData.PID
+              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.PID
             - element: policy.insured.person-objects~person.date-of-birth
-              payload: Insureds.Insured[n].OAccidentInsured.PersonalData.BirthDate
+              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.BirthDate
             - element: policy.insured.person-objects~person.first-name
-              payload: Insureds.Insured[n].OAccidentInsured.PersonalData.Name.Given
+              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.Name.Given
             - element: policy.insured.person-objects~person.last-name
-              payload: Insureds.Insured[n].OAccidentInsured.PersonalData.Name.Family
+              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.Name.Family
             - element: policy.insured.person-objects~entity-accident-insured.type
-              payload: Insureds.Insured[n].OAccidentInsured.AccinsType
+              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.AccinsType
         - mappings:
+            - value: '1'
+              payload: InsuranceConditions.Billings.Billing[0].PaymentMode
+            - value: '1'
+              payload: InsuranceConditions.Billings.Billing[0].PaymentWay
+            - value: 'Y'
+              payload: InsuranceConditions.Billings.Billing[0].InstallmentsPeriod
             - element: policy.contract.payment.term.duration
               payload: InsuranceConditions.Billings.Billing[0].PaymentDuration
             - element: policy.contract.payment.term.years.units

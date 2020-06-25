@@ -1,5 +1,6 @@
 element:
   type: action
+  defaultValue: issue-policy
   component:
     StaticComponentRule:
       component:
