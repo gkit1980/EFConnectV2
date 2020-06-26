@@ -1416,7 +1416,7 @@ entries:
         dashboard:
           label:
             - en: Home
-              de: null
+              de: Home
           link:
             - en: /ice/insis.dashboard.home.agent/home
               de: /ice/insis.dashboard.home.agent/home

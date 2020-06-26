@@ -1,0 +1,14 @@
+page:
+  validation: {}
+  component:
+    InsisSimplePage: {}
+  sections:
+    - component:
+        IceFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: 100%
+                    size.xs: 100%
+                    elements:
+                      - name: welcome-back

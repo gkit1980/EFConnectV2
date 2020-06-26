@@ -11,6 +11,10 @@
     mat-label {
       background: mat_color($background, background);
     }
+
+    mat-form-field {
+      margin-bottom: 20px;
+    }
   }
 
   #login-button {

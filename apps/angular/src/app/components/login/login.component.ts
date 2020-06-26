@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
 
   async login() {
-    this.role = this.pid.endsWith('agent') ? 'agent' : 'customer';
     await this.authenticationService.login(this.pid, this.role);
 
     if (this.authenticationService.loggedIn) {

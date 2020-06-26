@@ -6,6 +6,18 @@
     <input matInput id="pid" [(ngModel)]="pid" (keyup.enter)="login()" />
   </mat-form-field>
 
+  <mat-form-field>
+    <mat-label>Select role</mat-label>
+    <mat-select [(value)]="role">
+      <mat-option value="customer">
+        Customer
+      </mat-option>
+      <mat-option value="agent">
+        Agent
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
   <div id="login-button">
     <button mat-flat-button color="primary" (click)="login()">Login</button>
   </div>
