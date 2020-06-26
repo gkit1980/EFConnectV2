@@ -722,7 +722,12 @@ integration:
         - fromIdx:
             array: payload.Policy.InsuranceConditions.Participants.Participant
             condition: ParticipantRole == 'BENEFICENT'
+          toIdx:
+            array: datamodel.policy.participants.beneficiaries
+            append: true
           mappings:
+            - element: policy.participants.is-standard-beneficiary
+              value: false
             - element: policy.participants.beneficiaries~person.gender
               payload: Policy.InsuranceConditions.Participants.Participant[n].Entity.PersonalData.Gender
             - element: policy.participants.beneficiaries~person.birthdate
@@ -731,3 +736,5 @@ integration:
               payload: Policy.InsuranceConditions.Participants.Participant[n].Entity.PersonalData.Name.Family
             - element: policy.participants.beneficiaries~person.first-name
               payload: Policy.InsuranceConditions.Participants.Participant[n].Entity.PersonalData.Name.Given
+            - element: policy.participants.beneficiaries~person.pid
+              payload: Policy.InsuranceConditions.Participants.Participant[n].Entity.PersonalData.PID

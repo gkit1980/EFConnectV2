@@ -464,19 +464,3 @@ integration:
               payload: 'InsuranceConditions.Documents.Document[n].DocumentID'
             - element: policy.insured.document.icd.document-state
               payload: 'InsuranceConditions.Documents.Document[n].DocState'
-        # - fromIdx:
-        #     array: datamodel.policy.participants.beneficiaries
-        #   toIdx:
-        #     array: InsuranceConditions.Participants
-        #     append: true
-        #   mappings:
-        #     - element: policy.participants.is-standard-beneficiary
-        #       value: false
-        #     - element: policy.participants.beneficiaries~person.gender
-        #       payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.Gender
-        #     - element: policy.participants.beneficiaries~person.birthdate
-        #       payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.BirthDate
-        #     - element: policy.participants.beneficiaries~person.last-name
-        #       payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.Name.Family
-        #     - element: policy.participants.beneficiaries~person.first-name
-        #       payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.Name.Given

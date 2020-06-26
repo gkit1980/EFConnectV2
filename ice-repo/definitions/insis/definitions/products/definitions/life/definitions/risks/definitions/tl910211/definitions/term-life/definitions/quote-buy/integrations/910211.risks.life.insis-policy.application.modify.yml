@@ -32,3 +32,42 @@ integration:
           mappings:
             - value: null
               payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.AccinsType
+        - fromIdx:
+            array: datamodel.policy.participants.beneficiaries
+          toIdx:
+            array: payload.InsuranceConditions.Participants.Participant
+            append: true
+          if: datamodel.policy.participants.is-standard-beneficiary == false
+          mappings:
+            - element: policy.participants.beneficiaries~person.gender
+              payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.Gender
+            - element: policy.participants.beneficiaries~person.birthdate
+              payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.BirthDate
+            - element: policy.participants.beneficiaries~person.last-name
+              payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.Name.Family
+            - element: policy.participants.beneficiaries~person.first-name
+              payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.Name.Given
+            - value: 'BENEFICENT'
+              payload: InsuranceConditions.Participants.Participant[n].ParticipantRole
+            - value: 'ACTIVE'
+              payload: InsuranceConditions.Participants.Participant[n].Status
+            - value: 'ENGLISH'
+              payload: InsuranceConditions.Participants.Participant[n].Language
+        - fromIdx:
+            array: datamodel.policy.participants.beneficiaries
+            condition: person.pid == null
+          toIdx:
+            useSourceIndex: true
+          if: datamodel.policy.participants.is-standard-beneficiary == false
+          mappings:
+            - value: ''
+              payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.PID
+        - fromIdx:
+            array: datamodel.policy.participants.beneficiaries
+            condition: person.pid != null
+          toIdx:
+            useSourceIndex: true
+          if: datamodel.policy.participants.is-standard-beneficiary == false
+          mappings:
+            - element: policy.participants.beneficiaries~person.pid
+              payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.PID
