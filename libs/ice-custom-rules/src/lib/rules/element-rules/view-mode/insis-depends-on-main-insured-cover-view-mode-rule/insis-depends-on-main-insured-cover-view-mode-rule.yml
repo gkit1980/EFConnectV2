@@ -1,0 +1,31 @@
+_options: &view_mode_options
+  default: Default
+  hidden: Hidden
+  disabled: Disabled
+  output: Output
+  required: Required
+
+implementations:
+  InsisDependsOnMainInsuredCoverViewModeRule:
+    description: determines the ViewMode in dependence of the value of the main insured cover
+    params:
+      conditionViewMode:
+        label: Conditonal ViewMode
+        required: true
+        type: select
+        options: *view_mode_options
+        info: the ViewMode this element has if the condition element has the condition value
+      elseViewMode:
+        label: Else ViewMode
+        type: select
+        options: *view_mode_options
+        info: 'ViewMode this element has if the condition element has not the condition value (empty: default)'
+    icel: >
+      ```
+        element:
+          type: boolean
+          viewMode:
+            InsisDependsOnMainInsuredCoverViewModeRule:
+              conditionViewMode: hidden
+              elseViewMode: default
+      ```
