@@ -13,7 +13,7 @@ integration:
               payload: InsuranceConditions.Installments
             - element: policy.contract.payment.way
               payload: InsuranceConditions.PaymentWay
-            - element: policy.contract.policy-id
+            - element: policy.contract.policy-number
               payload: InsuranceConditions.PolicyNo
             - element: policy.contract.product-code
               payload: InsuranceConditions.ProductCode

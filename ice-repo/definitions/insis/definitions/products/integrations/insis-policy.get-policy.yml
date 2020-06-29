@@ -26,6 +26,8 @@ integration:
             - element: policy.contract.payment.way
               payload: Policy.InsuranceConditions.PaymentWay
             - element: policy.contract.policy-id
+              payload: Policy.InsuranceConditions.PolicyID
+            - element: policy.contract.policy-number
               payload: Policy.InsuranceConditions.PolicyNo
             - element: policy.contract.product-code
               payload: Policy.InsuranceConditions.ProductCode

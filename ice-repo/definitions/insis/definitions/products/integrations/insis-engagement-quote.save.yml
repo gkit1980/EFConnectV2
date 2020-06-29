@@ -18,7 +18,7 @@ integration:
               payload: Policies.Policy[0].InsuranceConditions.Installments
             - element: policy.contract.payment.way
               payload: Policies.Policy[0].InsuranceConditions.PaymentWay
-            - element: policy.contract.policy-id
+            - element: policy.contract.policy-number
               payload: Policies.Policy[0].InsuranceConditions.PolicyNo
             - element: policy.contract.product-code
               payload: Policies.Policy[0].InsuranceConditions.ProductCode
@@ -34,5 +34,7 @@ integration:
         - mappings:
             - element: policy.contract.policy-id
               payload: Policies.Policy[0].PolicyID
+            - element: policy.contract.policy-number
+              payload: Policies.Policy[0].PolicyNo
             - element: policy.insured.premium.total
               payload: 'Policies.Policy[0].Installments.Installment.Amount'
