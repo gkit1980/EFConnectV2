@@ -53,11 +53,11 @@ integration:
             - element: policy.insured.person-objects~entity-accident-insured.type
               payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OAccidentInsured.AccinsType
         - mappings:
-            - value: '1'
+            - element: policy.contract.payment.frequency
               payload: Policies.Policy[0].InsuranceConditions.Billings.Billing[0].PaymentMode
-            - value: '1'
+            - element: policy.contract.payment.term.payment-way
               payload: Policies.Policy[0].InsuranceConditions.Billings.Billing[0].PaymentWay
-            - value: 'Y'
+            - element: policy.contract.payment.term.installments-period
               payload: Policies.Policy[0].InsuranceConditions.Billings.Billing[0].InstallmentsPeriod
             - element: policy.contract.payment.term.duration
               payload: Policies.Policy[0].InsuranceConditions.Billings.Billing[0].PaymentDuration

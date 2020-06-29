@@ -1,0 +1,4 @@
+element:
+  title: Installments Period
+  type: text
+  defaultValue: 'Y'

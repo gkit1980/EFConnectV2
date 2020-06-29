@@ -1,0 +1,4 @@
+element:
+  title: Payment way
+  type: integer
+  defaultValue: 4
