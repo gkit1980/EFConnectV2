@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { IceRuntimeService } from '@impeo/ng-ice';
 
@@ -27,8 +28,16 @@ export class HeaderComponent {
   constructor(
     private router: Router,
     private runtimeService: IceRuntimeService,
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    public location: Location
   ) {
+    this.activeURL = this.location.path();
+
+    this.router.events.subscribe((event) => {
+      this.activeURL = window.location.hash.split('#')[1];
+      this.showMobileNav = false;
+    });
+
     this.runtimeService.getRuntime().then((runtime) => {
       this.customerNavigation.push(
         {
@@ -90,10 +99,6 @@ export class HeaderComponent {
         key: runtime.iceResource.resolve('pages.header.menu.logout'),
         method: this.logout.bind(this),
       });
-    });
-    this.router.events.subscribe((event) => {
-      this.activeURL = window.location.hash.split('#')[1];
-      this.showMobileNav = false;
     });
   }
 
