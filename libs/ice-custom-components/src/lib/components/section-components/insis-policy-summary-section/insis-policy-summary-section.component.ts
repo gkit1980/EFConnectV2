@@ -1,15 +1,19 @@
 import { Component } from '@angular/core';
 import { SectionComponentImplementation } from '@impeo/ng-ice';
-import { first } from 'lodash';
+import { first, get } from 'lodash';
 import { ItemElement } from '@impeo/ice-core';
 import * as moment from 'moment';
 
 @Component({
-  selector: 'insis-motor-policy-summary-section',
-  templateUrl: './insis-motor-policy-summary-section.component.html',
+  selector: 'insis-policy-summary-section',
+  templateUrl: './insis-policy-summary-section.component.html',
 })
-export class InsisMotorPolicySummarySectionComponent extends SectionComponentImplementation {
-  static componentName = 'InsisMotorPolicySummarySection';
+export class InsisPolicySummarySectionComponent extends SectionComponentImplementation {
+  static componentName = 'InsisPolicySummarySection';
+
+  get type() {
+    return get(this.recipe, 'component.InsisPolicySummarySection.type');
+  }
 
   getElementLabel(elementName: string): string {
     return this.runtime.iceResource.resolve(`elements.${elementName}.label`);

@@ -187,3 +187,8 @@ page:
                     elements:
                       - name: more-information-needed-life
           css: text-align-center hide-on-mobile u-mb-4
+    - component:
+        InsisPolicySummarySection:
+          type: life
+          tags:
+            - pull-right

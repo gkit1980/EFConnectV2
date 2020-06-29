@@ -1,0 +1,20 @@
+label: InsisPolicySummarySection
+component: InsisPolicySummarySection
+description: >
+  A section which shows summary of motor policy
+
+params:
+  type:
+    label: Line of business type
+    required: true
+    type: select
+    options:
+      motor: 'Motor'
+      life: 'Life'
+      property: 'Property'
+  tags:
+    label: Additional section tags
+    required: false
+    type: texts
+    info: >
+      Arbitrary tags assigned to this section.

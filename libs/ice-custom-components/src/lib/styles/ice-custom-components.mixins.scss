@@ -15,7 +15,7 @@
 @import '../components/page-components/insis-one-level-tabs-navigation-page/insis-one-level-tabs-navigation-page.mixin';
 @import '../components/section-components/insis-chart/insis-chart.mixin';
 @import '../components/section-components/insis-datagrid-section/insis-datagrid-section.mixin';
-@import '../components/section-components/insis-motor-policy-summary-section/insis-motor-policy-summary-section.mixin.scss';
+@import '../components/section-components/insis-policy-summary-section/insis-policy-summary-section.mixin.scss';
 @import '../components/shared-components/insis-summary-section-detail-container/insis-summary-section-detail-container.scss';
 
 @import '../components/element-components/insis-image-button-component/insis-image-button.component.mixin.scss';
@@ -36,7 +36,7 @@
   @include insis-slider-mixin($theme);
   @include insis-array-cards-layout-mixin($theme);
   @include insis-array-tooltip-mixin($theme);
-  @include insis-motor-policy-summary-section-mixin($theme);
+  @include insis-policy-summary-section-mixin($theme);
   @include insis-confirmation-page-mixin($theme);
   @include insis-card-mixin($theme);
   @include insis-checkbox-card-mixin($theme);

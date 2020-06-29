@@ -21,7 +21,7 @@ import { InsisHorizontalStepperNavigationComponent } from './components/navigati
 import { InsisVerticalStepperNavigationComponent } from './components/navigation-components/insis-vertical-stepper-navigation/insis-vertical-stepper-navigation.component';
 import { InsisArrayComponent } from './components/element-components/insis-array-component/insis-array.component';
 import { InsisArrayCardsLayoutComponent } from './components/element-components/insis-array-cards-layout-component/insis-array-cards-layout.component';
-import { InsisMotorPolicySummarySectionComponent } from './components/section-components/insis-motor-policy-summary-section/insis-motor-policy-summary-section.component';
+import { InsisPolicySummarySectionComponent } from './components/section-components/insis-policy-summary-section/insis-policy-summary-section.component';
 import { InsisArrayListLayoutComponent } from './components/element-components/insis-array-list-layout-component/insis-array-list-layout.component';
 import { InsisCheckboxCardComponent } from './components/element-components/insis-checkbox-card-component/insis-checkbox-card.component';
 import { InsisCardComponent } from './components/element-components/insis-card-component/insis-card.component';
@@ -77,7 +77,7 @@ export const iceCustomComponents = [
   InsisChartComponent,
   InsisDatagridSectionComponent,
   InsisFormFlexSectionComponent,
-  InsisMotorPolicySummarySectionComponent,
+  InsisPolicySummarySectionComponent,
   InsisSummarySectionDetailContainer,
   InsisOneLevelTabsNavigationPageComponent,
   InsisConfirmationPageComponent,
