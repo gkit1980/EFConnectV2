@@ -1,0 +1,6 @@
+action:
+  execution:
+    - RemoveArrayItemExecutionRule:
+        element: policy.insured.person-objects
+    - IntegrationExecutionRule:
+        integration: make-person-main-insured

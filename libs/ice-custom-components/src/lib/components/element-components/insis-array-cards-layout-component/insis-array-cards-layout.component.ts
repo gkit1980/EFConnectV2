@@ -20,4 +20,8 @@ export class InsisArrayCardsLayoutComponent extends InsisArrayComponentImplement
         return true;
     }
   }
+
+  canRemove(): boolean {
+    return this.getRecipeParam('showRemoveButton', super.canRemove());
+  }
 }

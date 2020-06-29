@@ -20,3 +20,6 @@ params:
     type: boolean
     label: Show confirm dialog before remove item from array
     default: true
+  showRemoveButton:
+    type: boolean
+    label: Show delete button for each card

@@ -120,9 +120,7 @@ page:
                     size.sm: auto
                     sections:
                       - name: clear-person-section
-                    elements:
-                      - name: >-
-                          policy.insured.person-objects~entity-accident-insured.type
+                      - name: remove-insured-person-section
               - cols:
                   - size: auto
                     elements:

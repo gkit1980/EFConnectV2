@@ -1,0 +1,17 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          themeColor: primary
+          variant: stroked
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.insured.person-objects~entity-accident-insured.type
+      conditionValue: '2'
+      conditionViewMode: default
+      elseViewMode: hidden
+  defaultValue:
+    StaticValueRule:
+      value: make-person-main-insured

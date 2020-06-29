@@ -12,7 +12,8 @@ element:
   component:
     StaticComponentRule:
       component:
-        InsisArrayCardsLayout: {}
+        InsisArrayCardsLayout:
+          showRemoveButton: null
   pages:
     1.quote.people:
       viewMode:
@@ -26,4 +27,5 @@ element:
               removeButtonLabelResourceKey: elements.policy.insured.remove-person.label
               cardLayout: always
               confirmOnRemove: false
+              showRemoveButton: false
   type: array
