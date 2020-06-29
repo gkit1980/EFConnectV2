@@ -1,0 +1,24 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policy.insured.person-objects~cover.death-acc.active
+    - label: new label
+      element: policy.insured.person-objects~cover.tpdaccd.active
+    - label: new label
+      element: policy.insured.person-objects~entity-accident-insured.type
+  outputs:
+    - id: confirmation
+      type: boolean
+  rules:
+    - inputs:
+        - false
+        - false
+        - 2
+      outputs:
+        - true
+    - inputs:
+        - '-'
+        - '-'
+        - '-'
+      outputs:
+        - false

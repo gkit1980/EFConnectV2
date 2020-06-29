@@ -772,12 +772,12 @@ entries:
                 label:
                   - en: >-
                       ${param1} will be ${param2} at the end of the selected
-                      insurance duration. Their covers will only be valid
-                      until they reach the age of 70.
+                      insurance duration. Their covers will only be valid until
+                      they reach the age of 70.
                     de: >-
                       ${param1} will be ${param2} at the end of the selected
-                      insurance duration. Their covers will only be valid
-                      until they reach the age of 70.
+                      insurance duration. Their covers will only be valid until
+                      they reach the age of 70.
         add-another-person:
           label:
             - en: Add another person
@@ -1265,6 +1265,27 @@ entries:
             de: >-
               Please attach documents (.jpg, .pdf) presenting the results of
               medical examinations, containing:
+    go-to-next-page-covers:
+      label:
+        - en: NEXT
+          de: NEXT
+      confirmation:
+        - en: >-
+            Warning
+
+
+            No covers have been selected for ${name}. 
+
+
+            If you decide to continue ${name} will be removed from the insurance policy.
+          de: >-
+            Warning
+
+
+            No covers have been selected for ${name}.
+
+
+            If you decide to continue ${name} will be removed from the insurance policy.
   validation:
     pageValidation:
       summary:

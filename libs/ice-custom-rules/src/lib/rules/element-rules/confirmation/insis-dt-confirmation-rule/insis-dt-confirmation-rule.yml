@@ -1,0 +1,55 @@
+implementations:
+  InsisDtConfirmationRule:
+    description: >
+      Conformation dialog based on the value retured by the dt. To display the dialog the value returned by the dt must be true.
+
+      The confirmation message come from a resource. If nothing is configured the _messageKey_
+      is `common.confirmation`. The _resource_ gets the following parameter for the confirmation
+      message:
+        * **name** - the value provided the _elementForResourceValue_
+
+    params:
+      dt:
+        label: Decision Table
+        required: true
+        type: dt
+      output:
+        label: Output column from DT
+        info: if more than one, if omit rule will the first
+      dtIndex:
+        label: Dt index
+        info: index of the element the decission table is bound to
+        type: text
+      messageKey:
+        label: Resource Key
+        info: Resource Key which value will be used as a message dialog (if empty default)
+        type: resourceKey
+      elementForResourceValue:
+        label: Element for resource value
+        info: Will replace resourceKey placeholder 'name' with the value from this element
+        type: element
+      elementIndex:
+        label: Dt index
+        info: index of the element which value will be taken for the resource. Note that if elementForResourceValue is array item you should configue index as well.
+        type: text
+
+    icel: >
+      ``` 
+        element:
+          confirmation:
+            InsisDtConfirmationRule:
+              dt: go-to-next-page-covers.confirmation
+              dtIndex: 1,0
+              elementForResourceValue: policy.insured.person-objects~person.full-name
+              elementIndex: 1
+              messageKey: elements.go-to-next-page-covers.confirmation
+      ```    
+
+      ```    
+        resources:
+          entries:
+            some:
+              message:
+                key:
+                  - en: "Are you sure? ${name} has no covers"
+      ```

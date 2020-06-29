@@ -1,0 +1,6 @@
+element:
+  type: text
+  mirror:
+    FullNameMirrorRule:
+      firstName: policy.insured.person-objects~person.first-name
+      lastName: policy.insured.person-objects~person.last-name

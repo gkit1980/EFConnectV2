@@ -173,7 +173,7 @@ page:
               - cols:
                   - size: 100%
                     elements:
-                      - name: go-to-next-page
+                      - name: go-to-next-page-covers
           css: button-width-100 u-mb-3
     - component:
         IceFlexSection:

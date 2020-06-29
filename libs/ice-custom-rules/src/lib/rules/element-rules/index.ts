@@ -19,3 +19,4 @@ export * from './values/insis-dt-list-values-rule.spec/insis-dt-list-values-rule
 export * from './values/insis-dynamic-values-list-rule/insis-dynamic-values-list-rule';
 export * from './view-mode/insis-all-array-index-dt-view-mode-rule/insis-all-array-index-dt-view-mode-rule';
 export * from './view-mode/insis-conditonal-index-view-mode-rule/insis-conditonal-index-view-mode-rule';
+export * from './confirmation/insis-dt-confirmation-rule/insis-dt-confirmation-rule';

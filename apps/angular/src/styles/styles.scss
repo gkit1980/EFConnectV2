@@ -288,3 +288,11 @@ mat-radio-button {
     color: rgba(153, 107, 15, 1);
   }
 }
+
+confirmation-dialog-layout {
+  h2 {
+    white-space: break-spaces !important;
+    font-size: large !important;
+    line-height: normal !important;
+  }
+}
