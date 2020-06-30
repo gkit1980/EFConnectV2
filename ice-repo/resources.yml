@@ -693,10 +693,8 @@ entries:
                       nervous system disease?
               q-13-1:
                 label:
-                  - en: >-
-                      Select date
-                    de: >-
-                      Select date
+                  - en: Select date
+                    de: Select date
               q-06:
                 label:
                   - en: >-
@@ -764,6 +762,16 @@ entries:
                 label:
                   - en: '${param1} will be ${param2} at the end of their insurance.'
                     de: '${param1} will be ${param2} at the end of their insurance.'
+              covers-info-above-seventy:
+                label:
+                  - en: >-
+                      ${param1} will be ${param2} at the end of the selected
+                      insurance duration. The selected covers will only be valid until
+                      the age of 70.
+                    de: >-
+                      ${param1} will be ${param2} at the end of the selected
+                      insurance duration. The slected covers will only be valid until
+                      the age of 70.
             remove-insured-person:
               label:
                 - en: REMOVE PESRON
@@ -794,7 +802,6 @@ entries:
           label:
             - en: Additional insured person
               de: Zusätzliche versicherte Person
-
         document:
           icd:
             document-file:
@@ -1277,7 +1284,8 @@ entries:
             No covers have been selected for ${name}. 
 
 
-            If you decide to continue ${name} will be removed from the insurance policy.
+            If you decide to continue ${name} will be removed from the insurance
+            policy.
           de: >-
             Warning
 
@@ -1285,7 +1293,8 @@ entries:
             No covers have been selected for ${name}.
 
 
-            If you decide to continue ${name} will be removed from the insurance policy.
+            If you decide to continue ${name} will be removed from the insurance
+            policy.
   validation:
     pageValidation:
       summary:
@@ -1600,7 +1609,6 @@ entries:
           empty:
             - en: Use a different bank account
               de: policy.participants.payor.iban-selection.empty
-
   quotes:
     title: {}
     remove:
