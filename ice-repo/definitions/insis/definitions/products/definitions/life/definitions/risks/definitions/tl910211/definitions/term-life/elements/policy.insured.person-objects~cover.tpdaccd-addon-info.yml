@@ -1,0 +1,12 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        IceNone: {}
+  viewMode:
+    InsisDependsOnMainInsuredCoverViewModeRule:
+      conditionViewMode: hidden
+      elseViewMode: default
+      coverElement: policy.insured.person-objects~cover.tpdaccd.active
+      mainCoverViewMode: hidden

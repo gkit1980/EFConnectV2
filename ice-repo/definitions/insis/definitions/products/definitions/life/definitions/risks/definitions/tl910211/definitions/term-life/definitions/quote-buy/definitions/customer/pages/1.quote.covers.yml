@@ -116,7 +116,7 @@ page:
                     elements:
                       - name: >-
                           policy.insured.person-objects~cover.tpdill.premium
-              - css: inline-cell-elements
+              - css: inline-cell-elements cover-addon-info
                 cols:
                   - size: auto
                     elements:
@@ -124,9 +124,9 @@ page:
                       - name: policy.insured.person-objects~cover.tpdaccd.active-info
                   - size: none
                     elements:
-                      - name: >-
-                          policy.insured.person-objects~cover.tpdaccd.premium
-              - css: inline-cell-elements
+                      - name: policy.insured.person-objects~cover.tpdaccd.premium
+                      - name: policy.insured.person-objects~cover.tpdaccd-addon-info
+              - css: inline-cell-elements cover-addon-info
                 cols:
                   - size: auto
                     elements:
@@ -134,8 +134,8 @@ page:
                       - name: policy.insured.person-objects~cover.death-acc.active-info
                   - size: none
                     elements:
-                      - name: >-
-                          policy.insured.person-objects~cover.death-acc.premium
+                      - name: policy.insured.person-objects~cover.death-acc.premium
+                      - name: policy.insured.person-objects~cover.death-acc-addon-info
               - css: inline-cell-elements
                 cols:
                   - size: auto

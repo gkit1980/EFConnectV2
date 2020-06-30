@@ -9,9 +9,10 @@ export class InsisDependsOnMainInsuredCoverViewModeRule extends ViewModeRule {
 
     const mainIndex = entityAccidentInsuredElementValues.find((item) => item.value === 1).index;
 
-    if (String(mainIndex) === String(actionContext.index)) return 'default';
+    if (String(mainIndex) === String(actionContext.index))
+      return this.getParam('mainCoverViewMode') || 'default';
 
-    const elementValues = this.element.getValue().values;
+    const elementValues = this.requireElement('coverElement').getValue().values;
     const mainCoverValue = elementValues.find((item) => String(item.index) === String(mainIndex))
       .value;
 

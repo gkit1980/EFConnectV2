@@ -4,3 +4,4 @@ element:
     InsisDependsOnMainInsuredCoverViewModeRule:
       conditionViewMode: default
       elseViewMode: disabled
+      coverElement: policy.insured.person-objects~cover.tpdaccd.active

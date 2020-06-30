@@ -772,6 +772,16 @@ entries:
                       ${param1} will be ${param2} at the end of the selected
                       insurance duration. The slected covers will only be valid until
                       the age of 70.
+              death-acc-addon-info:
+                label:
+                  - en: Only available if main insured person has it
+                    de: Only available if main insured person has it
+              tpdaccd-addon-info:
+                label:
+                  - en: Only available if main insured person has it
+                    de: Only available if main insured person has it
+
+
             remove-insured-person:
               label:
                 - en: REMOVE PESRON
@@ -1313,9 +1323,9 @@ entries:
         - en: Please confirm
           de: Bitte bestätigen
       not_allowed_here:
-        - en: "'${value}' not allowed here"
+        - en: '''${value}'' not allowed here'
       regexp:
-        - en: "'${value}' does not matches regular expression ${regexp}"
+        - en: '''${value}'' does not matches regular expression ${regexp}'
       array:
         min:
           - en: 'must have at least ${min} entries'
