@@ -32,6 +32,7 @@ integration:
           mappings:
             - value: null
               payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.AccinsType
+
         - fromIdx:
             array: datamodel.policy.participants.beneficiaries
           toIdx:
@@ -53,6 +54,7 @@ integration:
               payload: InsuranceConditions.Participants.Participant[n].Status
             - value: 'ENGLISH'
               payload: InsuranceConditions.Participants.Participant[n].Language
+
         - fromIdx:
             array: datamodel.policy.participants.beneficiaries
             condition: person.pid == null
@@ -62,6 +64,7 @@ integration:
           mappings:
             - value: ''
               payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.PID
+
         - fromIdx:
             array: datamodel.policy.participants.beneficiaries
             condition: person.pid != null
@@ -71,3 +74,22 @@ integration:
           mappings:
             - element: policy.participants.beneficiaries~person.pid
               payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.PID
+
+        - fromIdx:
+            index: '[datamodel.policy.participants.beneficiaries.length + 1 ]'
+          toIdx:
+            array: payload.InsuranceConditions.Participants.Participant
+            append: true
+          mappings:
+            - principal: pid
+              payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.PID
+            - value: 'PHOLDER'
+              payload: InsuranceConditions.Participants.Participant[n].ParticipantRole
+            - value: 'ACTIVE'
+              payload: InsuranceConditions.Participants.Participant[n].Status
+            - value: 'ENGLISH'
+              payload: InsuranceConditions.Participants.Participant[n].Language
+            # - value: '-1'
+            #   payload: InsuranceConditions.Participants.Participant[n].PolicyBankAccounts.PolicyBankAccount[0].BankAccount.BankPID
+            # - element: policy.participants.payor.iban
+            #   payload: InsuranceConditions.Participants.Participant[n].PolicyBankAccounts.PolicyBankAccount[0].BankAccount.AccountNo

@@ -728,6 +728,8 @@ integration:
           mappings:
             - element: policy.participants.is-standard-beneficiary
               value: false
+            - element: policy.participants.beneficiaries~is-company
+              value: false
             - element: policy.participants.beneficiaries~person.gender
               payload: Policy.InsuranceConditions.Participants.Participant[n].Entity.PersonalData.Gender
             - element: policy.participants.beneficiaries~person.birthdate
