@@ -80,7 +80,7 @@ page:
                 align: space-between
                 css: inline-cell-elements
               - cols:
-                  - size: calc(50% - 28px)
+                  - size: calc(60%)
                     size.xs: 100%
                     size.sm: 100%
                     css: u-ml-7 u-d-inlineblock slider-mirror-labels mat-small
@@ -90,12 +90,12 @@ page:
                           policy.insured.person-objects~cover.death-any.insured-amount
                       - name: >-
                           policy.insured.person-objects~cover.death-any.insured-amount-mirror
-                  - size: calc(50% - 28px)
+                  - size: calc(40% - 28px)
                     size.xs: 100%
                     size.sm: 100%
                     css: u-ml-7 u-d-inlineblock slider-mirror-labels
                     align: center
-                css: u-mb-4
+                css: u-mb-4 insured-amount-slider
               - css: inline-cell-elements
                 cols:
                   - size: auto

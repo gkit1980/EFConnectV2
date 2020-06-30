@@ -5,11 +5,10 @@ element:
         InsisSlider:
           showTicks: true
           addEmptyValue: false
-  range:
-    StaticRangeRule:
-      min: 1000
-      max: 1000000
   defaultValue:
     StaticValueRule:
       value: 100000
   type: currency
+  values:
+    ListValuesRule:
+      list: policy.insured.person-objects~cover.death-any.insured-amount.values

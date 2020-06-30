@@ -11,3 +11,6 @@ element:
       originElement: policy.insured.person-objects~cover.death-any.insured-amount
   label:
     NoLabelRule: {}
+  defaultValue:
+    StaticValueRule:
+      value: 100000
