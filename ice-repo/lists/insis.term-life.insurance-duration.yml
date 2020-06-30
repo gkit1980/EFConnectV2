@@ -1,0 +1,31 @@
+list:
+  type: integer
+  additionals:
+    label_en:
+      label: Label EN
+      type: text
+    label_de:
+      label: Label DE
+      type: text
+  items:
+    - value: 1
+      label_en: 1 year
+      label_de: 1 year
+    - value: 5
+      label_en: 5 year
+      label_de: 5 year
+    - value: 10
+      label_en: 10 year
+      label_de: 10 year
+    - value: 15
+      label_en: 15 year
+      label_de: 15 year
+    - value: 20
+      label_en: 20 year
+      label_de: 20 year
+    - value: 25
+      label_en: 25 year
+      label_de: 25 year
+    - value: 30
+      label_en: 30 year
+      label_de: 30 year

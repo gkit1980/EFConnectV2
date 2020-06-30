@@ -15,3 +15,4 @@ export * from './execution/insis-indexes-reset-array-item-execution-rule/insis-i
 export * from './trigger/insis-keyboard-shortcut-trigger-rule/insis-keyboard-shortcut-trigger-rule';
 export * from './trigger/insis-post-message-event-trigger-rule/insis-post-message-event-trigger-rule';
 export * from './execution/insis-navigate-to-page-feel-execution-rule/insis-navigate-to-page-feel-execution-rule';
+export * from './execution/insis-reset-element-value-execution-rule/insis-reset-element-value-execution-rule';

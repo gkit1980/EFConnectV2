@@ -1,0 +1,9 @@
+implementations:
+  InsisResetElementValueExecutionRule:
+    description: >
+      This rule is used for bug walk around in ItemElement reset method. It has the same implementation as ResetElementValueExecutionRule.
+
+    params:
+      elements:
+        label: Elements
+        type: elements

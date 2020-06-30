@@ -6,12 +6,13 @@ element:
         IceDropdown: {}
   defaultValue:
     StaticValueRule:
-      value: 12
+      value: 1
   values:
     ListValuesRule:
-      list: insis.term.duration
+      list: insis.term-life.insurance-duration
   change:
-    - ResetElementValueExecutionRule:
+    - InsisResetElementValueExecutionRule:
         elements:
           - policy.contract.payment.frequency
+          - policy.insured.person-objects~cover.premret.active
   viewMode: required
