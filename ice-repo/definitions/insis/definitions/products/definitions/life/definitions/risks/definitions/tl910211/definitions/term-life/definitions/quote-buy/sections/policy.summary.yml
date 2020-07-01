@@ -1,0 +1,6 @@
+section:
+  component:
+    InsisPolicySummarySection:
+      type: life
+      tags:
+        - pull-right

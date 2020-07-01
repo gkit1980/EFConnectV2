@@ -1,0 +1,113 @@
+section:
+  component:
+    IceArrayFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.main-insured-title
+                  - name: policy.insured.additional-insured-title
+                css: section-title
+                align: end
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.person-objects~info
+                align: end
+                css: u-mb-2
+            css: ''
+            align: start
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.person-objects~person.first-name
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.person-objects~person.last-name
+            gap: 15px
+            css: u-mb-2
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.person-objects~person.gender
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.person-objects~person.date-of-birth
+            gap: 15px
+            css: u-mb-2
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.person-objects~person.address.country
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.person-objects~question.q-05
+            gap: 15px
+            css: u-mb-2
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.person-objects~question.q-02
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.person-objects~question.q-03
+            gap: 15px
+            css: u-mb-2
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.person-objects~question.q-07
+            css: u-mb-2
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.person-objects~question.q-07-1
+            css: u-mb-2 u-mt-2
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.person-objects~question.q-04
+            css: u-mb-4
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                sections:
+                  - name: clear-person-section
+                  - name: remove-insured-person-section
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.person-objects~make-this-main-insured
+        length: 0
+      arrayElement: policy.insured.person-objects
+      behaviourForEmptyRows: hide
+      css: null

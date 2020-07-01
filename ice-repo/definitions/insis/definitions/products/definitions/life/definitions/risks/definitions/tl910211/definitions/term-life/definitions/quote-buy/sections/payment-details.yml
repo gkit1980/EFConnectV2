@@ -1,0 +1,47 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: payment-details.financial-questions.first
+                css: u-mb-2
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: payment-details.financial-questions.second
+                css: u-mb-6
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.document.icd.document-file
+                css: u-mb-6
+          - cols:
+              - size: 40%
+                size.xs: auto
+                size.sm: auto
+                css: u-mb-4
+                elements:
+                  - name: policy.participants.payor.iban-selection
+          - cols:
+              - size: 40%
+                size.xs: auto
+                size.sm: auto
+                css: u-mb-4
+                elements:
+                  - name: policy.participants.payor.iban
+          - cols:
+              - size: 20%
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.participants.payor.swift
+        length: 0

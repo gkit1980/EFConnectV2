@@ -13,54 +13,7 @@ page:
       pageTitleKey: pages.3.review.terms.title
       shortTitleKey: pages.3.review.terms.title
   sections:
-    - component:
-        IceFlexSection:
-          grid:
-            rows:
-              - cols:
-                  - size: auto
-                    elements:
-                      - name: terms-and-conditions.description
-                css: u-mb-4
-              - cols:
-                  - size: auto
-                    elements:
-                      - name: terms-and-conditions.truthy-and-valid-information
-                gap: 10px
-                css: u-mb-4
-              - cols:
-                  - size: auto
-                    elements:
-                      - name: terms-and-conditions.access-personal-information
-                gap: 10px
-                css: u-mb-4
-          behaviourForEmptyRows: render
-      viewMode: default
-    - component:
-        IceFlexSection:
-          tags:
-            - pull-right
-          grid:
-            rows:
-              - cols:
-                  - size: 100%
-                    elements:
-                      - name: buy-insurance.btn
-          css: button-width-100 u-mb-3
-    - component:
-        IceFlexSection:
-          tags:
-            - pull-right
-          grid:
-            rows:
-              - cols:
-                  - size: 100%
-                    css: mat-small
-                    elements:
-                      - name: buy-insurance.description
-          css: text-align-center hide-on-mobile u-mb-4
-    - component:
-        InsisPolicySummarySection:
-          type: life
-          tags:
-            - pull-right
+    - terms-and-conditions
+    - buy-insurance.btn
+    - buy-insurance.description
+    - policy.summary

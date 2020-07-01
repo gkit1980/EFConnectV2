@@ -1,0 +1,18 @@
+section:
+  component:
+    IceFlexSection:
+      css: u-mt-4 u-ml-8
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.participants.add-beneficiary
+  viewMode:
+    ConditionalSectionViewModeRule:
+      conditionElement: policy.participants.is-standard-beneficiary
+      conditionValue: true
+      conditionViewMode: hidden
+      elseViewMode: default

@@ -1,0 +1,113 @@
+section:
+  component:
+    IceArrayFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                css: section-title
+                elements:
+                  - name: policy.insured.person-objects~cover.title
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.person-objects~cover.covers-info
+                css: mat-small
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.person-objects~cover.covers-info-above-seventy
+                css: mat-small info-above-seventy
+          - cols:
+              - size: auto
+                elements:
+                  - name: policy.insured.person-objects~cover.death-any.active
+                  - name: policy.insured.person-objects~cover.death-any.active-info
+              - size: none
+                elements:
+                  - name: policy.insured.person-objects~cover.death-any.premium
+            align: space-between
+            css: inline-cell-elements
+          - cols:
+              - size: calc(60%)
+                size.xs: 100%
+                size.sm: 100%
+                css: u-ml-7 u-d-inlineblock slider-mirror-labels mat-small
+                align: center
+                elements:
+                  - name: >-
+                      policy.insured.person-objects~cover.death-any.insured-amount
+                  - name: >-
+                      policy.insured.person-objects~cover.death-any.insured-amount-mirror
+              - size: calc(40% - 28px)
+                size.xs: 100%
+                size.sm: 100%
+                css: u-ml-7 u-d-inlineblock slider-mirror-labels
+                align: center
+            css: u-mb-4 insured-amount-slider
+          - css: inline-cell-elements
+            cols:
+              - size: auto
+                elements:
+                  - name: policy.insured.person-objects~cover.wop-total.active
+                  - name: policy.insured.person-objects~cover.wop-total.active-info
+              - size: none
+                elements:
+                  - name: policy.insured.person-objects~cover.wop-total.premium
+            align: space-between
+          - css: inline-cell-elements
+            cols:
+              - size: auto
+                elements:
+                  - name: policy.insured.person-objects~cover.tpdill.active
+                  - name: policy.insured.person-objects~cover.tpdill.active-info
+              - size: none
+                elements:
+                  - name: >-
+                      policy.insured.person-objects~cover.tpdill.premium
+          - css: inline-cell-elements cover-addon-info
+            cols:
+              - size: auto
+                elements:
+                  - name: policy.insured.person-objects~cover.tpdaccd.active
+                  - name: policy.insured.person-objects~cover.tpdaccd.active-info
+              - size: none
+                elements:
+                  - name: policy.insured.person-objects~cover.tpdaccd.premium
+                  - name: policy.insured.person-objects~cover.tpdaccd-addon-info
+          - css: inline-cell-elements cover-addon-info
+            cols:
+              - size: auto
+                elements:
+                  - name: policy.insured.person-objects~cover.death-acc.active
+                  - name: policy.insured.person-objects~cover.death-acc.active-info
+              - size: none
+                elements:
+                  - name: policy.insured.person-objects~cover.death-acc.premium
+                  - name: policy.insured.person-objects~cover.death-acc-addon-info
+          - css: inline-cell-elements
+            cols:
+              - size: auto
+                elements:
+                  - name: policy.insured.person-objects~cover.critic-ill.active
+                  - name: policy.insured.person-objects~cover.critic-ill.active-info
+              - size: none
+                elements:
+                  - name: >-
+                      policy.insured.person-objects~cover.critic-ill.premium
+          - css: inline-cell-elements
+            cols:
+              - size: auto
+                elements:
+                  - name: policy.insured.person-objects~cover.premret.active
+                  - name: policy.insured.person-objects~cover.premret.active-info
+              - size: none
+                elements:
+                  - name: >-
+                      policy.insured.person-objects~cover.premret.premium
+      arrayElement: policy.insured.person-objects
+      css: main-side

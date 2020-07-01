@@ -1,0 +1,18 @@
+section:
+  component:
+    IceFlexSection:
+      tags:
+        - pull-right
+      grid:
+        rows:
+          - cols:
+              - size: 100%
+                elements:
+                  - name: quote.calculate
+                  - name: quote.recalculate
+                  - name: application.register
+          - cols:
+              - size: 100%
+                elements:
+                  - name: go-to-next-page-covers
+      css: button-width-100 u-mb-3
