@@ -5,12 +5,12 @@ section:
         - pull-right
       grid:
         rows:
-          - cols:
-              - size: 100%
-                elements:
-                  - name: quote.calculate
-                  - name: quote.recalculate
-                  - name: application.register
+          # - cols:
+          #     - size: 100%
+          #       elements:
+          #         - name: quote.calculate
+          #         - name: quote.recalculate
+          #         - name: application.register
           - cols:
               - size: 100%
                 elements:

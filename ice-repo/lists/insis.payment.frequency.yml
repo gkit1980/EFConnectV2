@@ -8,15 +8,15 @@ list:
       label: Label DE
       type: text
   items:
-    - value: 12
+    - value: 1
       label_en: Annually
       label_de: jährlich
-    - value: 6
+    - value: 2
       label_en: Semiannual
       label_de: halbjährlich
-    - value: 3
+    - value: 4
       label_en: Quarterly
       label_de: vierteljährlich
-    - value: 1
+    - value: 12
       label_en: Monthly
       label_de: monatlich

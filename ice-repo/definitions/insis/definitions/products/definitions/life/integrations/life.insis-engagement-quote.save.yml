@@ -28,7 +28,7 @@ integration:
               payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.ObjectType
         - fromIdx:
             array: datamodel.policy.insured.person-objects
-            condition: person.pid != null
+            condition: person.pid != ""
           toIdx:
             useSourceIndex: true
           mappings:
@@ -36,11 +36,11 @@ integration:
               payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OAccidentInsured.PID
         - fromIdx:
             array: datamodel.policy.insured.person-objects
-            condition: person.pid == null
+            condition: person.pid == ""
           toIdx:
             useSourceIndex: true
           mappings:
-            - value: ''
+            - value: ' '
               payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.PID
             - element: policy.insured.person-objects~person.gender
               payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.Gender

@@ -10,3 +10,6 @@ element:
     InsisSetForIndexesDefaultValueRule:
       indexes: 0
       value: true
+  buckets:
+    insis-quote:
+      trigger: true

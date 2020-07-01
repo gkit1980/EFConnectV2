@@ -12,3 +12,6 @@ element:
   values:
     ListValuesRule:
       list: policy.insured.person-objects~cover.death-any.insured-amount.values
+  buckets:
+    insis-quote:
+      trigger: true

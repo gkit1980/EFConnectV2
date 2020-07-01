@@ -1,0 +1,12 @@
+action:
+  title: calls convert modify application
+  execution:
+    - IntegrationExecutionRule:
+        integration: 910211.risks.life.insis-policy.application.modify
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ICE_CONTEXT_DEACTIVATED
+  condition:
+    FeelConditionRule:
+      expression: >-
+        element('policy.status.policy-status') = -2

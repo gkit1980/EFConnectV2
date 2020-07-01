@@ -1,8 +1,15 @@
 element:
   type: date
+  # defaultValue:
+  #   DateExpressionValueRule:
+  #     expression: date(today) + duration('P2D')
+  # range:
+  #   FeelExpressionRangeRule:
+  #     expressionMin: date(today) + duration('P1D')
   defaultValue:
     DateExpressionValueRule:
-      expression: date(today) + duration('P2D')
+      expression: date('2015-01-22')
   range:
     FeelExpressionRangeRule:
-      expressionMin: date(today) + duration('P1D')
+      expressionMin: date('2015-01-22')
+      expressionMax: date('2015-01-22') + duration('P3M')

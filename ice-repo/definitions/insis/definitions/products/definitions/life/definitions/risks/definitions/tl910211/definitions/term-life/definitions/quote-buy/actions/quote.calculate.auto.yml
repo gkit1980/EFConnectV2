@@ -1,0 +1,15 @@
+action:
+  title: calls quote calculation for insis
+  trigger:
+    - BucketValidTriggerRule:
+        bucket: insis-quote
+    - PageTriggerRule:
+        enter:
+          - 1.quote.covers
+  execution:
+    - IntegrationExecutionRule:
+        integration: 910211.risks.life.insis-policy.engagement-quote.register
+    - IntegrationExecutionRule:
+        integration: 910211.risks.life.insis-policy.get-premiums
+  condition:
+    InsisCovers910211ConditionRule: {}

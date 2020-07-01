@@ -4,3 +4,6 @@ element:
       dt: policy.insured.person-objects~cover.additional-person-covers.viewmode
       output: viewmode
   type: boolean
+  buckets:
+    insis-quote:
+      trigger: true

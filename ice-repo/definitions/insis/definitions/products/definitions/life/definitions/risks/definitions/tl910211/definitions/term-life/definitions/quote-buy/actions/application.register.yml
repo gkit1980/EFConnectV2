@@ -5,3 +5,5 @@ action:
         integration: 910211.risks.life.insis-policy.appilcation.register
     - IntegrationExecutionRule:
         integration: 910211.risks.life.insis-policy.get-premiums
+    - NavigateToPageExecutionRule:
+        direction: next

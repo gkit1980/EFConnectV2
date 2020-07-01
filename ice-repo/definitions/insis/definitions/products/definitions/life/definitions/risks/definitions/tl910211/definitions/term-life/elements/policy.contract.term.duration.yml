@@ -16,3 +16,6 @@ element:
           - policy.contract.payment.frequency
           - policy.insured.person-objects~cover.premret.active
   viewMode: required
+  buckets:
+    insis-quote:
+      trigger: true

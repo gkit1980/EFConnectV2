@@ -5,3 +5,6 @@ element:
       conditionViewMode: default
       elseViewMode: disabled
       coverElement: policy.insured.person-objects~cover.tpdaccd.active
+  buckets:
+    insis-quote:
+      trigger: true
