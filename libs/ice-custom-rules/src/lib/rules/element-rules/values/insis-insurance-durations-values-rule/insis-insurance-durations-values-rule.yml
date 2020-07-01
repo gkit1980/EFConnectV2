@@ -1,0 +1,49 @@
+implementations:
+  InsisInsuranceDurationsValuesRule:
+    description: Rule that that takes the age of the main person, subtracts 70 and looks in
+      a list with values and returns only the values that are smaller or equal to the substracted value
+
+      The _label for a value_ will be determined (in this order)
+
+      * an _additional_ with a name in the form `label_[locale]`, e.g. `label_de`
+      or `label_en-US` - if  the current user's locale is specific e.g. `en-GB` it would first
+      try to find the _additional_ `label_en-GB`, then `label_en` then ...
+
+      * an _additional_ with the name `label` then
+
+      * a _resource entry_ with the key `lists.[name.of.the.list].[value]` then
+
+      * the _value_
+
+    params:
+      ageElement:
+        label: Age of main insured person
+        type: element
+        required: true
+      maxAge:
+        label: Maximum age until which the person can be insured
+        type: number
+        required: true
+      mainIndex:
+        label: main element index
+        info: index of the age element which is the main person.
+        type: text
+      list:
+        label: List for the values
+        type: list
+        required: true
+    icel: >
+      ```
+        element:
+          type: text
+          component:
+            StaticComponentRule:
+              component:
+                IceDropdown: {}
+          values:
+            InsisInsuranceDurationsValuesRule:
+              ageElement: policy.insured.person-objects~person.age-at-begin
+              mainIndex: '0'
+              list: insis.term-life.insurance-duration
+              maxAge: 70
+      ```

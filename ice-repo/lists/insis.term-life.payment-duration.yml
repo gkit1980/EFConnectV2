@@ -8,6 +8,9 @@ list:
       label: Label DE
       type: text
   items:
+    - value: 0
+      label_en: single payment
+      label_de: single payment
     - value: 1
       label_en: 1 year
       label_de: 1 year

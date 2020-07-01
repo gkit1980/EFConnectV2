@@ -8,12 +8,14 @@ element:
     StaticValueRule:
       value: 1
   values:
-    ListValuesRule:
+    InsisInsuranceDurationsValuesRule:
+      ageElement: policy.insured.person-objects~person.age-at-begin
+      mainIndex: '0'
       list: insis.term-life.insurance-duration
+      maxAge: 70
   change:
     - InsisResetElementValueExecutionRule:
         elements:
-          - policy.contract.payment.frequency
           - policy.insured.person-objects~cover.premret.active
   viewMode: required
   buckets:

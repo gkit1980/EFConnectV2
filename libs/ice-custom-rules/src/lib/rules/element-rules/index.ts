@@ -23,3 +23,4 @@ export * from './view-mode/insis-all-array-index-dt-view-mode-rule/insis-all-arr
 export * from './view-mode/insis-conditonal-index-view-mode-rule/insis-conditonal-index-view-mode-rule';
 export * from './confirmation/insis-dt-confirmation-rule/insis-dt-confirmation-rule';
 export * from './view-mode/insis-depends-on-main-insured-cover-view-mode-rule/insis-depends-on-main-insured-cover-view-mode-rule';
+export * from './values/insis-insurance-durations-values-rule/insis-insurance-durations-values-rule';

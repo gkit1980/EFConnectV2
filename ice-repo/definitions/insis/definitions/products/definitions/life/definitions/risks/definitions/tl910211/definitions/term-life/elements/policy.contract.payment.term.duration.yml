@@ -1,4 +1,19 @@
 element:
+  type: integer
+  values:
+    InsisInsuranceDurationsValuesRule:
+      ageElement: policy.insured.person-objects~person.age-at-begin
+      mainIndex: '0'
+      list: insis.term-life.payment-duration
+      maxAge: 70
+  change:
+    - InsisResetElementValueExecutionRule:
+        elements:
+          - policy.contract.payment.frequency
+  component:
+    StaticComponentRule:
+      component:
+        IceDropdown: {}
   buckets:
     insis-quote:
       trigger: true
