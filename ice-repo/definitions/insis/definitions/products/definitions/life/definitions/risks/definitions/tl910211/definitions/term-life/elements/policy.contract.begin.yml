@@ -1,0 +1,8 @@
+element:
+  type: date
+  defaultValue:
+    DateExpressionValueRule:
+      expression: date(today) + duration('P2D')
+  range:
+    FeelExpressionRangeRule:
+      expressionMin: date(today) + duration('P1D')
