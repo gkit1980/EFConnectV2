@@ -56,11 +56,12 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatBadgeModule } from '@angular/material/badge';
 import { InsisArrayTooltipComponent } from './components/element-components/insis-array-tooltip/insis-array-tooltip.component';
 import { InsisFormFlexSectionComponent } from './components/section-components/insis-form-flex-section/insis-form-flex-section.component';
+import { InsisUploadAttachmentButtonComponent } from './components/element-components/insis-upload-attachment-button/insis-upload-attachment-button.component';
+import { InsisChipComponent } from './components/element-components/insis-chip-component/insis-chip.component';
 
 /**
  * TIP: You will need to include in this array any new component you create.
  */
-
 export const iceCustomComponents = [
   InsisButtonDropdownComponent,
   InsisDummyButtonComponent,
@@ -94,6 +95,8 @@ export const iceCustomComponents = [
   InsisMarkdownOutputElementComponent,
   InsisGoogleMapComponent,
   InsisPremiumSummarySection,
+  InsisUploadAttachmentButtonComponent,
+  InsisChipComponent,
 ];
 
 /**

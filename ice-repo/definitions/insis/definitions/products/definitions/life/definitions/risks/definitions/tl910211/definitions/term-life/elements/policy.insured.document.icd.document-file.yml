@@ -1,7 +1,0 @@
-element:
-  type: text
-  component:
-    StaticComponentRule:
-      component:
-        InsisFileUpload:
-          fileNameElement: policy.insured.document.icd.document-name

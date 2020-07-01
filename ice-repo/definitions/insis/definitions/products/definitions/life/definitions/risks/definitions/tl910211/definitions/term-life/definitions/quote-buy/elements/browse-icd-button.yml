@@ -1,0 +1,11 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        InsisUploadButtonAttachment:
+          attachmentNameElement: policy.insured.document.icd.attachments~name
+          attachmentDataElement: policy.insured.document.icd.attachments~data
+          action: upload-icd-attachments
+  label:
+    NoLabelRule: {}

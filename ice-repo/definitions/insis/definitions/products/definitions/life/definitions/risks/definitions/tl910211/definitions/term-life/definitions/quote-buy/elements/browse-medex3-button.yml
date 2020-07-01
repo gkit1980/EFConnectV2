@@ -1,0 +1,11 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        InsisUploadButtonAttachment:
+          attachmentNameElement: policy.insured.person-objects~document.medex3.attachments~name
+          attachmentDataElement: policy.insured.person-objects~document.medex3.attachments~data
+          action: upload-medex3-attachments
+  label:
+    NoLabelRule: {}

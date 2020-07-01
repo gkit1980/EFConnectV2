@@ -1,0 +1,13 @@
+section:
+  component:
+    IceArrayFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: >-
+                      policy.insured.person-objects~document.medex3.attachments~name
+      arrayElement: policy.insured.person-objects~document.medex3.attachments

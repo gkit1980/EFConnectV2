@@ -7,7 +7,9 @@
 @import '../components/element-components/insis-card-component/insis-card.mixin.scss';
 @import '../components/element-components/insis-checkbox-card-component/insis-checkbox-card.mixin.scss';
 @import '../components/element-components/insis-file-upload-component/insis-file-upload.mixin.scss';
-@import '../components//element-components/insis-array-tooltip/insis-array-tooltip.mixin.scss';
+@import '../components/element-components/insis-array-tooltip/insis-array-tooltip.mixin.scss';
+@import '../components/element-components/insis-chip-component/insis-chip.mixin.scss';
+
 @import '../components/navigation-components/insis-horizontal-stepper-navigation/insis-horizontal-stepper-navigation.mixin';
 @import '../components/navigation-components/insis-vertical-stepper-navigation/insis-vertical-stepper-navigation.mixin';
 @import '../components/page-components/insis-confirmation-page/insis-confirmation-page.mixin.scss';
@@ -23,6 +25,7 @@
 @import '../components/element-components/insis-markdown-output-component/insis-markdown-output-element.mixin.scss';
 @import '../components/element-components/insis-google-map-component/insis-google-map.mixin.scss';
 @import '../components/section-components/insis-premium-summary-section/insis-premium-summary-section.mixin.scss';
+
 /**
  * TIP: You will need to @include here any new mixin you add to the ice-custom-component library.
  * This file here will be loaded by theme.scss which is part of theming structure inside application styles.
@@ -52,4 +55,5 @@
   @include insis-markdown-output-element-mixin($theme);
   @include insis-google-map-mixin($theme);
   @include insis-premium-summary-selection-mixin($theme);
+  @include insis-chip-mixin($theme);
 }

@@ -1,0 +1,12 @@
+section:
+  component:
+    IceArrayFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: 25
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.document.icd.attachments~name
+      arrayElement: policy.insured.document.icd.attachments

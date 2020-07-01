@@ -1,0 +1,16 @@
+label: Insis Chip Component
+
+component: InsisChip
+
+types:
+  - text
+  - integer
+
+description: >
+  A chip component representing the data of the element.
+
+params:
+  removable:
+    type: boolean
+    label: Removable
+    info: Will show a X button which will allow the user to remove the chip.

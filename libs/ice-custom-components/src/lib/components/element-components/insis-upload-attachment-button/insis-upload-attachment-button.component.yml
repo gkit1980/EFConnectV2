@@ -1,0 +1,26 @@
+label: Insis Upload Attachment Button
+
+component: InsisUploadButtonAttachment
+
+types:
+  - action
+
+description: >
+  A component that allow adding attachments to an array.
+
+  component: InsisUploadButtonAttachment
+
+params:
+  attachmentNameElement:
+    type: element
+    label: Attachment File Name
+    info: Contains only attachment's file name.
+  attachmentDataElement:
+    type: element
+    label: Attchment Data
+    info: Contains base64 encoded attachment data.
+  action:
+    type: action
+    label: Action name
+    required: false
+    info: Action which will be triggerd after attachment has been added.

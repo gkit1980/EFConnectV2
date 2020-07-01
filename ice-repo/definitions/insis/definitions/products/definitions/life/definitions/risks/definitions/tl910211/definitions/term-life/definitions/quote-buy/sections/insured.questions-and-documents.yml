@@ -138,48 +138,15 @@ section:
                 css: u-mb-4 medical-documents-label
                 elements:
                   - name: application-details-labels.medical-documents
-          - gap: 24px
-            gap.xs: 0px
-            align: start
-            cols:
-              - size: 100%
-                size.xs: 100%
-                css: u-mb-4 medical-documents-label
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                sections:
+                  - name: document-medex3-attachments
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
                 elements:
-                  - name: policy.insured.person-objects~document.l-medex.document-file
-          - gap: 24px
-            gap.xs: 0px
-            align: start
-            cols:
-              - size: 100%
-                size.xs: 100%
-                css: u-mb-4 medical-documents-label
-                elements:
-                  - name: policy.insured.person-objects~document.medex1.document-file
-          - gap: 24px
-            gap.xs: 0px
-            align: start
-            cols:
-              - size: 100%
-                size.xs: 100%
-                css: u-mb-4 medical-documents-label
-                elements:
-                  - name: policy.insured.person-objects~document.medex2.document-file
-          - gap: 24px
-            gap.xs: 0px
-            align: start
-            cols:
-              - size: 100%
-                size.xs: 100%
-                css: u-mb-4 medical-documents-label
-                elements:
-                  - name: policy.insured.person-objects~document.medex3.document-file
-          - gap: 24px
-            gap.xs: 0px
-            align: start
-            cols:
-              - size: 100%
-                size.xs: 100%
-                css: u-mb-4 medical-documents-label
-                elements:
-                  - name: policy.insured.person-objects~document.smd.document-file
+                  - name: browse-medex3-button

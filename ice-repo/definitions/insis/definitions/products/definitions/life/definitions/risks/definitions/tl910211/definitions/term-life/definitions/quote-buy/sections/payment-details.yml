@@ -21,8 +21,14 @@ section:
               - size: auto
                 size.xs: auto
                 size.sm: auto
+                sections:
+                  - name: document-icd-attachments
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
                 elements:
-                  - name: policy.insured.document.icd.document-file
+                  - name: browse-icd-button
                 css: u-mb-6
           - cols:
               - size: 40%
