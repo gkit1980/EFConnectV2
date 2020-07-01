@@ -9,7 +9,7 @@ dt:
     - inputs:
         - policy.participants.holder.person.pid
       outputs:
-        - 'true'
+        - true
     - inputs:
         - '-'
       outputs:

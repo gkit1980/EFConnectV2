@@ -123,10 +123,10 @@ page:
                       - name: remove-insured-person-section
               - cols:
                   - size: auto
+                    size.xs: auto
+                    size.sm: auto
                     elements:
-                      - name: policy.insured.person-objects~person.pid
-                      - name: policy.insured.person-objects~object.id
-                      - name: policy.insured.person-objects~entity-id
+                      - name: policy.insured.person-objects~make-this-main-insured
             length: 0
           arrayElement: policy.insured.person-objects
           behaviourForEmptyRows: hide

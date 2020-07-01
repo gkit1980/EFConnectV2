@@ -1,0 +1,16 @@
+integration:
+  type: active
+  exchange:
+    InsisNoopExchangeRule: {}
+  transformation:
+    DefaultTransformationRule:
+      in:
+        - fromIdx:
+            index: '[0]'
+          toIdx:
+            array: datamodel.policy.insured.person-objects
+            append: false
+            condition: 1 == 1
+          mappings:
+            - value: 1
+              element: policy.insured.person-objects~entity-accident-insured.type

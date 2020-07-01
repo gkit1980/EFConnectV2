@@ -5,13 +5,13 @@ element:
       component:
         IceButton:
           themeColor: primary
-          variant: stroked
+          variant: default
   viewMode:
     ConditionalViewModeRule:
       conditionElement: policy.insured.person-objects~entity-accident-insured.type
-      conditionValue: '2'
-      conditionViewMode: default
-      elseViewMode: hidden
+      conditionValue: '1'
+      conditionViewMode: hidden
+      elseViewMode: default
   defaultValue:
     StaticValueRule:
-      value: make-person-main-insured
+      value: change-main-insured

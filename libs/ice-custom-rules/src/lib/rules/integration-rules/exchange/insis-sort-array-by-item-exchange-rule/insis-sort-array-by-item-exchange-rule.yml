@@ -1,0 +1,14 @@
+implementations:
+  InsisSortArrayByItemExchangeRule:
+    description: >
+      This is server Exchange rule sorts an array of elements based on child element value.
+    params:
+      arrayElement:
+        label: Array to sort
+        type: element
+        required: true
+      childElement:
+        label: Child element
+        type: element
+        required: true
+        info: This element's value will be used for sorting

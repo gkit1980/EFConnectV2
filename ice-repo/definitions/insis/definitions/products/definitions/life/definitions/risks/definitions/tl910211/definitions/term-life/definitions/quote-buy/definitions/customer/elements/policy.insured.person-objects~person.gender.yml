@@ -10,3 +10,6 @@ element:
       conditionValue: 'true'
       conditionViewMode: disabled
       elseViewMode: required
+  defaultValue:
+    StaticValueRule:
+      value: ''

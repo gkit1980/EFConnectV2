@@ -1,0 +1,12 @@
+implementations:
+  InsisResetElementOrElementsInsideNamespaceExecutionRule:
+    description: Extension of ResetElementValueExecutionRule. It supports reseting elements inside namespace (folder) and allows specifing index
+    params:
+      elementOrNamespace:
+        label: element or namespace
+        type: text
+        required: true
+      index:
+        label: Index
+        type: text
+        info: If not supplied, it will use actionContext's index

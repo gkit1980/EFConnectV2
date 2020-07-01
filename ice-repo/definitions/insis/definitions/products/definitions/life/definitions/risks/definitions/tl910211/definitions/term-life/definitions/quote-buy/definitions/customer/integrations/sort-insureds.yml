@@ -1,0 +1,17 @@
+integration:
+  type: active
+  exchange:
+    InsisSortArrayByItemExchangeRule:
+      childElement: policy.insured.person-objects~entity-accident-insured.type
+      arrayElement: policy.insured.person-objects
+  transformation:
+    DefaultTransformationRule:
+      out:
+        - mappings:
+            - payload: '*'
+              element: '*'
+      in:
+        - mappings:
+            - payload: '*'
+              element: '*'
+      ignoreNull: false

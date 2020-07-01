@@ -5,16 +5,16 @@ integration:
     DefaultTransformationRule:
       out:
         - mappings:
-            - principal: 'firstName'
-              payload: 'firstName'
-            - principal: 'lastName'
-              payload: 'lastName'
-            - principal: 'gender'
-              payload: 'gender'
-            - principal: 'birthdate'
-              payload: 'birthdate'
-            - principal: 'pid'
-              payload: 'pid'
+            - principal: firstName
+              payload: firstName
+            - principal: lastName
+              payload: lastName
+            - principal: gender
+              payload: gender
+            - principal: birthdate
+              payload: birthdate
+            - principal: pid
+              payload: pid
       in:
         - fromIdx:
             index: '[0]'
@@ -33,3 +33,5 @@ integration:
               element: policy.insured.person-objects~person.date-of-birth
             - payload: pid
               element: policy.insured.person-objects~person.pid
+            - value: 'Bulgaria'
+              element: policy.insured.person-objects~person.address.country
