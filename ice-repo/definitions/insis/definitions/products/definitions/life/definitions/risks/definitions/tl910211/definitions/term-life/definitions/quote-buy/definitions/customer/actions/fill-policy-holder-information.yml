@@ -1,8 +1,8 @@
 action:
   trigger:
     - IceLifecycleEventTriggerRule:
-        event: ICE_CONTEXT_ACTIVATED
-        payload: null
+        event: ACTIVE_INTEGRATION_SUCCESS
+        payload: insis-client.get-accounts
   execution:
     - IntegrationExecutionRule:
         integration: fill-policy-holder-information

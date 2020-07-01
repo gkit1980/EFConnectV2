@@ -25,6 +25,17 @@ integration:
             - element: policy.participants.holder.person.pid
               payload: PID
       in:
+        - mappings:
+            - element: policy.participants.holder.person.first-name
+              payload: Entity.PersonalData.Name.Given
+            - element: policy.participants.holder.person.last-name
+              payload: Entity.PersonalData.Name.Family
+            - element: policy.participants.holder.person.gender
+              payload: Entity.PersonalData.Gender
+            - element: policy.participants.holder.person.date-of-birth
+              payload: Entity.PersonalData.BirthDate
+            - element: policy.participants.holder.person.pid
+              payload: Entity.PersonalData.PID
         - fromIdx:
             array: payload.BankAccounts.BankAccount
           toIdx:

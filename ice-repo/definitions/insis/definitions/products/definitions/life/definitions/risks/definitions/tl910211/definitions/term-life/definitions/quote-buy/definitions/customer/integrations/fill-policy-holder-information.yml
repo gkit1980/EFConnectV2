@@ -5,16 +5,16 @@ integration:
     DefaultTransformationRule:
       out:
         - mappings:
-            - principal: firstName
-              payload: firstName
-            - principal: lastName
-              payload: lastName
-            - principal: gender
-              payload: gender
-            - principal: birthdate
-              payload: birthdate
-            - principal: pid
-              payload: pid
+            - element: policy.participants.holder.person.first-name
+              payload: 'firstName'
+            - element: policy.participants.holder.person.last-name
+              payload: 'lastName'
+            - element: policy.participants.holder.person.gender
+              payload: 'gender'
+            - element: policy.participants.holder.person.date-of-birth
+              payload: 'birthdate'
+            - element: policy.participants.holder.person.pid
+              payload: 'pid'
       in:
         - fromIdx:
             index: '[0]'
