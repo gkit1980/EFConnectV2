@@ -2,3 +2,19 @@ element:
   buckets:
     insis-quote:
       trigger: true
+  type: integer
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.contract.payment.term.duration
+      conditionValue: '0'
+      conditionViewMode: disabled
+      elseViewMode: required
+  values:
+    InsisDtListValuesRule:
+      dt: policy.contract.payment.frequency
+      output: values
+      dtElement: policy.contract.payment.term.duration
+  defaultValue:
+    DtValueRule:
+      dt: policy.contract.payment.frequency
+      output: defaultValue

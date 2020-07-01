@@ -1,0 +1,27 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policy.contract.payment.term.duration
+  outputs:
+    - id: defaultValue
+      type: string
+    - label: new label
+      default: ''
+      id: values
+      type: string
+  rules:
+    - inputs:
+        - 0
+      outputs:
+        - null
+        - policy.contract.payment.frequency-empty-value
+    - inputs:
+        - 1
+      outputs:
+        - 2
+        - policy.contract.payment.frequency-one-year
+    - inputs:
+        - 5,10,15,20,25,30
+      outputs:
+        - 1
+        - policy.contract.payment.frequency-above-one-year

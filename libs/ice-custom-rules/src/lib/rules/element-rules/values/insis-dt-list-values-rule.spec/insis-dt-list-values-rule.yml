@@ -7,10 +7,14 @@ implementations:
         label: Decision table to output list name
         type: string
         required: true
-      dtOutput:
+      output:
         label: Custom decision table output column name
         type: string
         required: false
+      dtElement:
+        label: Dt element
+        type: element
+        info: element passed as input to the dt
     icel: >
       ```
         element:

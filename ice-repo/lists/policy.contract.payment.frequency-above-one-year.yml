@@ -1,0 +1,22 @@
+list:
+  items:
+    - value: 1
+      label_en: yearly
+      label_de: yearly
+    - value: 2
+      label_en: half-yearly
+      label_de: half-yearly
+    - value: 4
+      label_en: quarterly
+      label_de: quarterly
+    - value: 12
+      label_en: monthly
+      label_de: monthly
+  type: integer
+  additionals:
+    label_en:
+      label: label_en
+      type: string
+    label_de:
+      label: label_de
+      type: string
