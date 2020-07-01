@@ -29,9 +29,17 @@ implementations:
         info: Will replace resourceKey placeholder 'name' with the value from this element
         type: element
       elementIndex:
-        label: Dt index
+        label: Element index
         info: index of the element which value will be taken for the resource. Note that if elementForResourceValue is array item you should configue index as well.
         type: text
+      confirmAction:
+        label: Action for confirm
+        info: Action to be executed if the user confirms
+        type: action
+      rejectAction:
+        label: Action for reject
+        info: Action to be executed if the user rejects
+        type: action
 
     icel: >
       ``` 

@@ -1,4 +1,4 @@
-import { ConfirmationRule, IceDt, IceConsole } from '@impeo/ice-core';
+import { ConfirmationRule, IceDt, IceConsole, IndexedValue } from '@impeo/ice-core';
 
 //
 //
@@ -10,10 +10,7 @@ export class InsisDtConfirmationRule extends ConfirmationRule {
     this.initialize();
     const dtIndex = this.parseIndex('dtIndex');
 
-    const dtResult = dtIndex
-      ? this.dt.getOutputValue(this.recipe['output'], dtIndex)
-      : this.dt.getOutputValue(this.recipe['output']);
-
+    const dtResult = this.dt.getOutputValue(this.recipe['output'], dtIndex);
     return dtResult == null ? false : dtResult;
   }
 
@@ -22,7 +19,7 @@ export class InsisDtConfirmationRule extends ConfirmationRule {
   public getMessage(componentValue: any, index: number[]): string {
     const elementIndex = this.parseIndex('elementIndex');
     const element = this.getElement('elementForResourceValue');
-    let name;
+    let name: any;
 
     if (!element)
       IceConsole.error(
@@ -30,8 +27,8 @@ export class InsisDtConfirmationRule extends ConfirmationRule {
       );
     else
       name = elementIndex
-        ? element.getValue().values[elementIndex[elementIndex.length - 1]].value
-        : element.getValue().values[0].value;
+        ? element.getValue().forIndex(elementIndex).value
+        : element.getValue().forIndex([0]).value;
 
     const defaultConfimation = this.context.iceResource.resolve(
       'common.confirmation',
@@ -47,18 +44,9 @@ export class InsisDtConfirmationRule extends ConfirmationRule {
 
   //
   //
-  private parseIndex(param: string): number[] {
+  private parseIndex(param: string): number[] | null {
     if (!this.recipe[param]) return null;
-
-    const index = String(this.recipe[param])
-      .split(',')
-      .map((_index) => Number.parseInt(_index, 10));
-
-    return index.includes(NaN)
-      ? IceConsole.error(
-          `InsisDtConfirmationRule: ${param} contains characters other than numbers and commas`
-        )
-      : index;
+    return IndexedValue.key2Index(this.recipe[param]);
   }
 
   //
