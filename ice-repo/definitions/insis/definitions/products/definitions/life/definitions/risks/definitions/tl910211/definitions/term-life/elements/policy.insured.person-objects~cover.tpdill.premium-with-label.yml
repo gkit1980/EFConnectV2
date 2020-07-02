@@ -1,0 +1,14 @@
+element:
+  type: currency
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.insured.person-objects~cover.tpdill.premium-with-label
+      conditionViewMode: hidden
+      elseViewMode: output
+      conditionValue: 0
+  mirror:
+    CopyValueMirrorRule:
+      originElement: policy.insured.person-objects~cover.tpdill.premium
+  defaultValue:
+    StaticValueRule:
+      value: 0

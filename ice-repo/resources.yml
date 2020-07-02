@@ -773,13 +773,41 @@ entries:
                   label:
                     - en: Sum insured
                       de: Sum insured
+                premium-with-label:
+                  label:
+                    - en: Death any cause
+                      de: Death any cause
+                discounts:
+                  label:
+                    - en: 'Death any cause '
+                      de: 'Death any cause '
               wop-total:
                 active:
                   label:
                     - en: Waiver of premium due to permanent disability any cause
                       de: Waiver of premium due to permanent disability any cause
+                premium-duplicate:
+                  label:
+                    - en: null
+                      de: null
+                premium-with-label:
+                  label:
+                    - en: Waiver of premium due ot permanent disability any cause
+                      de: Waiver of premium due ot permanent disability any cause
+                discounts:
+                  label:
+                    - en: Waiver of premium due ot permanent disability any cause
+                      de: Waiver of premium due ot permanent disability
               tpdill:
                 active:
+                  label:
+                    - en: Total and permanent disability due to illness over 75%
+                      de: Total and permanent disability due to illness over 75%
+                premium-with-label:
+                  label:
+                    - en: Total and permanent disability due to illness over 75%
+                      de: Total and permanent disability due to illness over 75%
+                discounts:
                   label:
                     - en: Total and permanent disability due to illness over 75%
                       de: Total and permanent disability due to illness over 75%
@@ -788,8 +816,24 @@ entries:
                   label:
                     - en: Total and permanent disability due to accident over 75%
                       de: Total and permanent disability due to accident over 75%
+                premium-with-label:
+                  label:
+                    - en: Total and permanent disability due to accident over 75%
+                      de: Total and permanent disability due to accident over 75%
+                discounts:
+                  label:
+                    - en: Total and permanent disability due to accident over 75%
+                      de: Total and permanent disability due to accident over 75%
               death-acc:
                 active:
+                  label:
+                    - en: Accidental death
+                      de: Accidental death
+                premium-with-label:
+                  label:
+                    - en: Accidental death
+                      de: Accidental death
+                discounts:
                   label:
                     - en: Accidental death
                       de: Accidental death
@@ -798,11 +842,49 @@ entries:
                   label:
                     - en: Critical illness
                       de: Critical illness
+                premium:
+                  label:
+                    - en: null
+                      de: null
+                premium-with-label:
+                  label:
+                    - en: Critical illness
+                      de: Critical illness
+                discounts:
+                  label:
+                    - en: Critical illness
+                      de: Critical illness
               premret:
                 active:
                   label:
                     - en: Premium return by survival
                       de: Premium return by survival
+                premium-with-label:
+                  label:
+                    - en: Premium return by survival
+                      de: Premium return by survival
+                discounts:
+                  label:
+                    - en: Premium return by survival
+                      de: Premium return by survival
+              death-acc-addon-info:
+                label:
+                  - en: Only available if main insured person has it
+                    de: Only available if main insured person has it
+              tpdaccd-addon-info:
+                label:
+                  - en: Only available if main insured person has it
+                    de: Only available if main insured person has it
+              covers-info-above-seventy:
+                label:
+                  - en: >-
+                      ${param1} will be ${param2} at the end of the selected
+                      insurance duration. Their covers will only be valid until
+                      they reach the age of 70.
+                    de: >-
+                      ${param1} will be ${param2} at the end of the selected
+                      insurance duration. Their covers will only be valid until
+                      they reach the age of 70.
               policy-details-info:
                 label:
                   - en: >-
@@ -819,24 +901,6 @@ entries:
               label:
                 - en: REMOVE PESRON
                   de: REMOVE PESRON
-              covers-info-above-seventy:
-                label:
-                  - en: >-
-                      ${param1} will be ${param2} at the end of the selected
-                      insurance duration. Their covers will only be valid until
-                      they reach the age of 70.
-                    de: >-
-                      ${param1} will be ${param2} at the end of the selected
-                      insurance duration. Their covers will only be valid until
-                      they reach the age of 70.
-              death-acc-addon-info:
-                label:
-                  - en: Only available if main insured person has it
-                    de: Only available if main insured person has it
-              tpdaccd-addon-info:
-                label:
-                  - en: Only available if main insured person has it
-                    de: Only available if main insured person has it
             make-this-main-insured:
               label:
                 - en: Make this person main insured
@@ -1368,9 +1432,9 @@ entries:
         - en: Please confirm
           de: Bitte bestätigen
       not_allowed_here:
-        - en: '''${value}'' not allowed here'
+        - en: "'${value}' not allowed here"
       regexp:
-        - en: '''${value}'' does not matches regular expression ${regexp}'
+        - en: "'${value}' does not matches regular expression ${regexp}"
       array:
         min:
           - en: 'must have at least ${min} entries'
@@ -1702,3 +1766,25 @@ entries:
       label:
         - en: days
           de: Tage
+  premium-summary-section:
+    dues:
+      label:
+        - en: Premiums
+          de: Premiums
+    discounts:
+      label:
+        - en: Taxes and fees
+          de: Taxes and fees
+    payment-frequency:
+      annually:
+        - en: Annually
+          de: jährlich
+      semiannual:
+        - en: Semiannual
+          de: halbjährlich
+      quarterly:
+        - en: Quarterly
+          de: vierteljährlich
+      monthtly:
+        - en: Monthly
+          de: monatlich

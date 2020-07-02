@@ -1,4 +1,4 @@
 element:
-  label:
-    NoLabelRule: null
   type: currency
+  label:
+    NoLabelRule: {}

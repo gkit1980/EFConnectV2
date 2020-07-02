@@ -12,3 +12,4 @@ page:
     - beneficiaries.is-standard-beneficiary
     - beneficiaries.details
     - beneficiaries.add-beneficiary
+    - policy.premiums-taxes-fees-discounts-loadings

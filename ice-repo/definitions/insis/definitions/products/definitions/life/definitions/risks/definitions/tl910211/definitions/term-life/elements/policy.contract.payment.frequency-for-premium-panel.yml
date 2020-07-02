@@ -1,0 +1,8 @@
+element:
+  type: text
+  viewMode:
+    StaticViewModeRule:
+      viewMode: output
+  mirror:
+    DtResourceMirrorRule:
+      dt: policy.contract.payment.frequency-for-premium-panel.mirror

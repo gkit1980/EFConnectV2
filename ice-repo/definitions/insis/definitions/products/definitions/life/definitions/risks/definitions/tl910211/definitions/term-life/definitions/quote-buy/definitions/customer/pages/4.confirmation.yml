@@ -7,3 +7,4 @@ page:
     showMessages: none
     showGrowl: false
     showElementValidation: true
+  sections: []

@@ -1,0 +1,24 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policy.contract.payment.frequency
+  outputs:
+    - id: output
+      type: resourceKey
+  rules:
+    - inputs:
+        - 1
+      outputs:
+        - premium-summary-section.payment-frequency.annually
+    - inputs:
+        - 2
+      outputs:
+        - premium-summary-section.payment-frequency.semiannual
+    - inputs:
+        - 4
+      outputs:
+        - premium-summary-section.payment-frequency.quarterly
+    - inputs:
+        - 12
+      outputs:
+        - premium-summary-section.payment-frequency.monthly

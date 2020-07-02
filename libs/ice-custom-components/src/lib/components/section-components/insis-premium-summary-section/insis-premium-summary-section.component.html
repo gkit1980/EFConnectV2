@@ -1,21 +1,14 @@
 <details class="card u-mb-4" [attr.open]="expanded ? true : null">
   <summary fxLayout="row" fxLayoutAlign="space-between center" class="premium-amount">
     <div fxLayout="row">
-      <span>{{ premiumAmount | currency: currencyISOCode:'code':'1.2-2':locale }}</span>
+      <span>{{ (premiumAmount || '0') | currency: currencyISOCode:'code':'1.2-2':locale }}</span>
       <ng-container *ngIf="paymentFrequencyElementName">
         <span>/</span>
         <span>
-          <ice-element
-            [section]="section"
-            [elementName]="paymentFrequencyElementName"
-          ></ice-element>
+          <ice-element [section]="section" [elementName]="paymentFrequencyElementName"></ice-element>
         </span>
       </ng-container>
-      <ice-element
-        *ngIf="printButtonElementName"
-        [section]="section"
-        [elementName]="printButtonElementName"
-      >
+      <ice-element *ngIf="printButtonElementName" [section]="section" [elementName]="printButtonElementName">
       </ice-element>
     </div>
   </summary>
@@ -44,10 +37,7 @@
         </li>
       </ul>
     </div>
-    <div
-      *ngIf="areSomeElementsVisible(discountElements)"
-      class="insis-summary-section-detail-container"
-    >
+    <div *ngIf="areSomeElementsVisible(discountElements)" class="insis-summary-section-detail-container">
       <h3 class="mat-body-2">{{ getLabel(discountsAndLoadingsCategoryTitleResourceKey) }}</h3>
       <ul>
         <li class="mat-body-3" *ngFor="let item of discountElements">

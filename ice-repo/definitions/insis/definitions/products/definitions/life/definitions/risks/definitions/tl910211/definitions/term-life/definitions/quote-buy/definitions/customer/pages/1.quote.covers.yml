@@ -12,4 +12,5 @@ page:
     - insured.covers
     - calculate-and-recalculate
     - insured.more-information-needed
+    - policy.premiums-taxes-fees-discounts-loadings
     - policy.summary

@@ -1,5 +1,5 @@
 label: InsisPremiumSummarySection
-component: insisPremiumSummarySection
+component: InsisPremiumSummarySection
 description: >
   A section that contains information for premiums, taxes and fees, discounts.
 
