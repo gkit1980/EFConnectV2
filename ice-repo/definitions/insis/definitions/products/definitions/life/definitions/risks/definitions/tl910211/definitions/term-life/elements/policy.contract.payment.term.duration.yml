@@ -2,10 +2,10 @@ element:
   type: integer
   values:
     InsisInsuranceDurationsValuesRule:
-      ageElement: policy.insured.person-objects~person.age-at-begin
+      ageElement: policy.contract.term.duration
       mainIndex: '0'
       list: insis.term-life.payment-duration
-      maxAge: 70
+      maxAge: 0
   change:
     - InsisResetElementValueExecutionRule:
         elements:

@@ -24,6 +24,7 @@ implementations:
         label: Maximum age until which the person can be insured
         type: number
         required: true
+        info: Maximun insured age. If you set maxAge to 0 the values will be filtered by the value of ageElement (equal of smaller)
       mainIndex:
         label: main element index
         info: index of the age element which is the main person.

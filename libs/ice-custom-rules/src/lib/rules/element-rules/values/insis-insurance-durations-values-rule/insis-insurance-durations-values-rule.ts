@@ -29,7 +29,7 @@ export class InsisInsuranceDurationsValuesRule extends ValuesRule {
       ? this.ageElement.getValue().forIndex(this.mainIndex)
       : this.ageElement.getValue().forIndex([0]);
 
-    const substractedAge = this.getParam('maxAge') - ageMainPerson;
+    const substractedAge = Math.abs(this.getParam('maxAge') - ageMainPerson);
 
     const listItems = this.list.getItems();
 
