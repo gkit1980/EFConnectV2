@@ -1,0 +1,5 @@
+action:
+  execution:
+    - RemoveArrayItemExecutionRule:
+        element: policy.insured.person-objects
+        index: '1'

@@ -14,3 +14,4 @@ element:
       elementForResourceValue: policy.insured.person-objects~person.full-name
       elementIndex: '1'
       messageKey: elements.go-to-next-page-covers.confirmation
+      confirmAction: remove-additional-person
