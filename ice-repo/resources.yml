@@ -1526,6 +1526,12 @@ entries:
           title:
             - en: Insureds people
               de: Versicherte personen
+    '2':
+      application:
+        details:
+          title:
+            - en: Application details
+              de: Application details
     footer:
       terms-and-conditions:
         - en: Terms and Conditions
