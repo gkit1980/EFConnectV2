@@ -16,7 +16,7 @@ export class InsisResetElementOrElementsInsideNamespaceExecutionRule extends Exe
           element.name.includes(namespace) && !element.name.replace(namespace, '').includes('~')
       )
       .forEach((element) => {
-        element.reset(resetActionContext);
+        if (element.getValue().getIndexedValue(index)) element.reset(resetActionContext);
       });
 
     return;

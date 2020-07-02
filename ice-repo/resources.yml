@@ -750,6 +750,24 @@ entries:
                   label:
                     - en: Premium return by survival
                       de: Premium return by survival
+              death-acc-addon-info:
+                label:
+                  - en: Only available if main insured person has it
+                    de: Only available if main insured person has it
+              tpdaccd-addon-info:
+                label:
+                  - en: Only available if main insured person has it
+                    de: Only available if main insured person has it
+              covers-info-above-seventy:
+                label:
+                  - en: >-
+                      ${param1} will be ${param2} at the end of the selected
+                      insurance duration. Their covers will only be valid until
+                      they reach the age of 70.
+                    de: >-
+                      ${param1} will be ${param2} at the end of the selected
+                      insurance duration. Their covers will only be valid until
+                      they reach the age of 70.
               policy-details-info:
                 label:
                   - en: >-
@@ -784,24 +802,7 @@ entries:
               label:
                 - en: REMOVE PESRON
                   de: REMOVE PESRON
-              covers-info-above-seventy:
-                label:
-                  - en: >-
-                      ${param1} will be ${param2} at the end of the selected
-                      insurance duration. Their covers will only be valid until
-                      they reach the age of 70.
-                    de: >-
-                      ${param1} will be ${param2} at the end of the selected
-                      insurance duration. Their covers will only be valid until
-                      they reach the age of 70.
-              death-acc-addon-info:
-                label:
-                  - en: Only available if main insured person has it
-                    de: Only available if main insured person has it
-              tpdaccd-addon-info:
-                label:
-                  - en: Only available if main insured person has it
-                    de: Only available if main insured person has it
+
             make-this-main-insured:
               label:
                 - en: Make this person main insured
@@ -1301,7 +1302,7 @@ entries:
             Warning
 
 
-            No covers have been selected for ${name}. 
+            No covers have been selected for ${name}.
 
 
             If you decide to continue ${name} will be removed from the insurance
@@ -1333,9 +1334,9 @@ entries:
         - en: Please confirm
           de: Bitte bestätigen
       not_allowed_here:
-        - en: '''${value}'' not allowed here'
+        - en: "'${value}' not allowed here"
       regexp:
-        - en: '''${value}'' does not matches regular expression ${regexp}'
+        - en: "'${value}' does not matches regular expression ${regexp}"
       array:
         min:
           - en: 'must have at least ${min} entries'

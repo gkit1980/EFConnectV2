@@ -16,5 +16,5 @@ export * from './execution/insis-reset-element-value-execution-rule/insis-reset-
 export * from './trigger/insis-keyboard-shortcut-trigger-rule/insis-keyboard-shortcut-trigger-rule';
 export * from './trigger/insis-post-message-event-trigger-rule/insis-post-message-event-trigger-rule';
 export * from './execution/insis-navigate-to-page-feel-execution-rule/insis-navigate-to-page-feel-execution-rule';
-export * from './execution/insis-reset-element-value-execution-rule/insis-reset-element-value-execution-rule';
+export * from './execution/insis-reset-element-or-elements-inside-namespace/insis-reset-element-or-elements-inside-namespace-execution-rule';
 export * from './condition/insis-covers910211-condition-rule/insis-covers910211-condition-rule';
