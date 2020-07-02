@@ -1,0 +1,19 @@
+dt:
+  output-label: url
+  hitPolicy: F
+  inputs:
+    - label: pid
+      element: clients~pid
+  outputs:
+    - label: url
+      id: url
+      type: string
+    - label: pid
+      id: pid
+      type: string
+  rules:
+    - inputs:
+        - '-'
+      outputs:
+        - insis.products.life.risks.tl910211.term-life.quote-buy.agent
+        - clients~pid

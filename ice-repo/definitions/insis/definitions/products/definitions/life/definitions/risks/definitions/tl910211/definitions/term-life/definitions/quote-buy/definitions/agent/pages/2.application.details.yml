@@ -1,0 +1,12 @@
+page:
+  validation:
+    onElementComponentChange: true
+    behaviour: forward
+    showMessages: none
+    showGrowl: false
+    showElementValidation: true
+  component:
+    InsisTwoLevelStepperNavigationPage: {}
+  sections:
+    - insured.questions-and-documents
+    - insured.next-page-and-modify

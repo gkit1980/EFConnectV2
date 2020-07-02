@@ -1,0 +1,14 @@
+action:
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ICE_CONTEXT_ACTIVATED
+  execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - policy.participants.holder.person.pid
+    - IntegrationExecutionRule:
+        integration: fill-policy-holder-information
+    - IntegrationExecutionRule:
+        integration: insis-get-client
+  condition:
+    HasNoDynIdConditionRule: {}

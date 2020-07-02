@@ -65,6 +65,22 @@ entries:
         label:
           - en: City
             de: Stadt
+      active-policies:
+        label:
+          - en: Active policies
+            de: Aktive Policen
+      client-name:
+        label:
+          - en: Client name
+            de: Kunde
+      client-pid:
+        label:
+          - en: Client pid
+            de: Kunden-ID
+      new-policy:
+        label:
+          - en: NEW TERM LIFE
+            de: NEW TERM LIFE
     new-client:
       label:
         - en: NEW CLIENT

@@ -1,0 +1,14 @@
+page:
+  validation:
+    onElementComponentChange: true
+    behaviour: forward
+    showMessages: none
+    showGrowl: false
+    showElementValidation: true
+  component:
+    InsisTwoLevelStepperNavigationPage: {}
+  sections:
+    - beneficiaries.go-to-next-page
+    - beneficiaries.is-standard-beneficiary
+    - beneficiaries.details
+    - beneficiaries.add-beneficiary

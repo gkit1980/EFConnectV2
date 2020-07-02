@@ -1,0 +1,21 @@
+implementations:
+  InsisCopyValueToDatastoreExecutionRule:
+    description: >-
+      Copies an element value from a source element to a path in a datastore
+    params:
+      source:
+        label: Source Element
+        type: element
+        required: true
+      destination:
+        label: Destination Path
+        type: text
+        required: true
+    icel: >
+      ```
+        action:
+          execution:
+            - InsisCopyValueToDatastoreExecutionRule:
+                source: quotes~policy-id
+                destination: selected.quote-to-cancel
+      ```

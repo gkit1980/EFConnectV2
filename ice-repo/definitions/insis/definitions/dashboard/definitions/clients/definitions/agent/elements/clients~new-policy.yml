@@ -1,0 +1,21 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          themeColor: accent
+          variant: default
+  values:
+    ListValuesRule:
+      list: policy.new-policy-products
+  change:
+    - DtNavigateToDefinitionExecutionRule:
+        dt: navigate-to-new-policy
+        definitionOutput: url
+    - ResetElementValueExecutionRule:
+        elements:
+          - clients~new-policy
+  label:
+    ResourceLabelRule:
+      key: elements.search-client.new-policy.label

@@ -23,22 +23,26 @@ page:
               - cols:
                   - elements:
                       - name: clients~view-more
-                    caption: elements.search-policies.client-pid.label
-                    size: 250px
+                    caption: elements.search-client.client-pid.label
+                    size: 150px
                     css: ml-3 label-link
                   - elements:
                       - name: clients~client-name
-                    caption: elements.search-policies.client-name.label
-                    size: auto
+                    caption: elements.search-client.client-name.label
+                    size: 250px
                   - elements:
                       - name: clients~client-type
                     caption: elements.search-client.client-type.label
-                    size: 250px
+                    size: 200px
                   - elements:
                       - name: clients~client-city
                     caption: elements.search-client.client-city.label
                     size: 250px
                   - elements:
                       - name: clients~active-policies
-                    caption: elements.clients.items.active-policies.label
-                    size: 150px
+                    caption: elements.search-client.active-policies.label
+                    size: 100px
+                  - elements:
+                      - name: clients~new-policy
+                    size: 200px
+                    css: ml-3 label-link

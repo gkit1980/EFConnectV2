@@ -2,6 +2,7 @@ export * from './execution/insis-calculate-multiplication-execution-rule/insis-c
 export * from './execution/insis-calculate-sum-execution-rule/insis-calculate-sum-execution-rule';
 export * from './execution/insis-copy-to-clipboard-execution-rule/insis-copy-to-clipboard-execution-rule';
 export * from './execution/insis-copy-value-execution-rule/insis-copy-value-execution-rule';
+export * from './execution/insis-copy-value-to-datastore-execution-rule/insis-copy-value-to-datastore-execution-rule';
 export * from './execution/insis-focus-on-element-execution-rule/insis-focus-on-element-execution-rule';
 export * from './execution/insis-geolocation-execution-rule/insis-geolocation-execution-rule';
 export * from './execution/insis-array-iteration-integration-execution-rule/insis-array-iteration-integration-execution-rule';

@@ -3,4 +3,4 @@ action:
     - RemoveArrayItemExecutionRule:
         element: policy.insured.person-objects
     - IntegrationExecutionRule:
-        integration: make-first-person-main-insured
+        integration: make-person-main-insured

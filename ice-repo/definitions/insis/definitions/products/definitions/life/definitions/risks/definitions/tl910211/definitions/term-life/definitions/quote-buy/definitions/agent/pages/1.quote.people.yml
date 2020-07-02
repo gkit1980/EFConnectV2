@@ -1,0 +1,13 @@
+page:
+  validation:
+    onElementComponentChange: true
+    behaviour: forward
+    showMessages: none
+    showGrowl: false
+    showElementValidation: true
+  component:
+    InsisTwoLevelStepperNavigationPage: {}
+  sections:
+    - insured.give-us-information
+    - insureds
+    - go-to-next-page
