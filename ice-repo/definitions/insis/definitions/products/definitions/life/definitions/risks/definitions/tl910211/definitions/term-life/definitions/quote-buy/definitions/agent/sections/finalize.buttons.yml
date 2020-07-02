@@ -1,0 +1,19 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                size.xs: auto
+                css: u-mt-4 u-d-inlineblock
+                elements:
+                  - name: finalize-buttons.dowload-pdf
+                  - name: finalize-buttons.upload-application
+              - size: 115px
+                size.xs: auto
+                size.sm: auto
+                css: u-mt-4
+                elements:
+                  - name: finalize-buttons.issue-policy
+            css: summary-finalize

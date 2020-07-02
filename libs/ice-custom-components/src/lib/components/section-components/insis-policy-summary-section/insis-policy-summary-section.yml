@@ -12,9 +12,21 @@ params:
       motor: 'Motor'
       life: 'Life'
       property: 'Property'
+  columns:
+    label: Columns
+    required: true
+    info: in how many columns the elements will be displayed
+    type: select
+    options:
+      two: 'two'
+      four: 'four'
   tags:
     label: Additional section tags
     required: false
     type: texts
-    info: >
-      Arbitrary tags assigned to this section.
+    info: Arbitrary tags assigned to this section.
+  css:
+    label: css class
+    required: false
+    type: texts
+    info: CSS class that will be added to the section

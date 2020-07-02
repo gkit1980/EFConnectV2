@@ -17,6 +17,10 @@ export class InsisPremiumSummarySection extends SectionComponentImplementation i
 
   printButtonElementName: string;
 
+  get css() {
+    return get(this.recipe, 'component.InsisPremiumSummarySection.css');
+  }
+
   get premiumElements(): string[] {
     return this.getElements('premiumElements');
   }

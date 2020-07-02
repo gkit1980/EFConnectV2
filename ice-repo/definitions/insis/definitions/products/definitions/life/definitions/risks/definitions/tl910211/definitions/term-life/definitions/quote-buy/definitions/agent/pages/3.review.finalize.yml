@@ -13,7 +13,6 @@ page:
       pageTitleKey: pages.3.review.terms.title
       shortTitleKey: pages.3.review.terms.title
   sections:
-    - terms-and-conditions
-    - buy-insurance.btn
-    - buy-insurance.description
-    - policy.summary
+    - finalize.premiums-taxes-fees-discounts-loadings
+    - finalize.summary
+    - finalize.buttons

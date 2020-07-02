@@ -15,6 +15,15 @@ export class InsisPolicySummarySectionComponent extends SectionComponentImplemen
     return get(this.recipe, 'component.InsisPolicySummarySection.type');
   }
 
+  get css() {
+    return get(this.recipe, 'component.InsisPolicySummarySection.css');
+  }
+
+  get fxFlexValue() {
+    const columnsCount: string = get(this.recipe, 'component.InsisPolicySummarySection.columns');
+    return columnsCount === 'two' ? '50%' : '25%';
+  }
+
   getElementLabel(elementName: string): string {
     return this.runtime.iceResource.resolve(`elements.${elementName}.label`);
   }

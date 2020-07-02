@@ -66,3 +66,8 @@ params:
     type: element
     info: >
       Element thats holding currency displayed for each tax, discount and etc.. If not specified as element, its going to use the one defined at "currency-code" in the resources
+  css:
+    label: css class
+    required: false
+    type: texts
+    info: CSS class that will be added to the section

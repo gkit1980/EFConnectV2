@@ -16,29 +16,29 @@ entries:
         submit:
           label:
             - en: Search
-              de: Search    
+              de: Search
       list:
         items:
           name:
-            label: 
-              - en: Name        
+            label:
+              - en: Name
                 de: Name
           pid:
-            label: 
-              - en: National ID        
+            label:
+              - en: National ID
                 de: National ID
       action:
         add-new:
-          label: 
-            - en: Add new person        
+          label:
+            - en: Add new person
               de: Add new person
         add-selected:
-          label: 
-            - en: Add        
+          label:
+            - en: Add
               de: Add
         cancel:
-          label: 
-            - en: Cancel        
+          label:
+            - en: Cancel
               de: Cancel
     clients:
       items:
@@ -879,12 +879,10 @@ entries:
                 label:
                   - en: >-
                       ${param1} will be ${param2} at the end of the selected
-                      insurance duration. Their covers will only be valid until
-                      they reach the age of 70.
+                      insurance duration. The covers will only be valid until the age of 70.
                     de: >-
                       ${param1} will be ${param2} at the end of the selected
-                      insurance duration. Their covers will only be valid until
-                      they reach the age of 70.
+                      insurance duration. The covers will only be valid until the age of 70.
               policy-details-info:
                 label:
                   - en: >-
@@ -1414,6 +1412,19 @@ entries:
 
             If you decide to continue ${name} will be removed from the insurance
             policy.
+    finalize-buttons:
+      issue-policy:
+        label:
+          - en: ISSUE POLICY
+            de: ISSUE POLICY
+      dowload-pdf:
+        label:
+          - en: DOWNLOAD PDF
+            de: DOWNLOAD PDF
+      upload-application:
+        label:
+          - en: UPLOAD SIGNED APPLICATION
+            de: UPLOAD SIGNED APPLICATION
   validation:
     pageValidation:
       summary:

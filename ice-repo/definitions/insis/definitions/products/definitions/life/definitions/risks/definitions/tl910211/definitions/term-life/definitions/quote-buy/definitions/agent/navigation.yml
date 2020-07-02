@@ -18,5 +18,4 @@ pages:
       - page: 3.review
         firstChild: true
         pages:
-          - page: 3.review.payment
           - page: 3.review.finalize

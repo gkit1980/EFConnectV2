@@ -1,6 +1,14 @@
-<section class="insis-policy-summary-section card">
-  <div fxLayout="row wrap" fxLayoutAlign="start start" class="u-mb-4">
-    <div fxFlex="50%" fxFlex.xs="100%">
+<section class="insis-policy-summary-section card" [ngClass]="css">
+  <h2 *ngIf="label">
+    {{ label }}
+  </h2>
+  <div fxLayout="row wrap" fxLayoutAlign="start start">
+    <div
+      fxFlex="{{ fxFlexValue }}"
+      fxFlex.xs="100%"
+      *ngIf="getElementValue('policy.contract.begin')"
+      class="u-mb-4"
+    >
       <div class="label mat-caption">
         {{ getElementLabel('policy.contract.begin') }}
       </div>
@@ -8,7 +16,13 @@
         {{ getElementValue('policy.contract.begin') }}
       </div>
     </div>
-    <div fxFlex="50%" fxFlex.xs="100%">
+
+    <div
+      fxFlex="{{ fxFlexValue }}"
+      fxFlex.xs="100%"
+      *ngIf="getElementValue('policy.contract.term.duration')"
+      class="u-mb-4"
+    >
       <div class="label mat-caption">
         {{ getElementLabel('policy.contract.term.duration') }}
       </div>
@@ -16,15 +30,41 @@
         {{ getElementValue('policy.contract.term.duration') }}
       </div>
     </div>
-  </div>
 
-  <div fxLayout="row wrap" fxLayoutAlign="start start">
+    <div
+      fxFlex="{{ fxFlexValue }}"
+      fxFlex.xs="100%"
+      *ngIf="getElementValue('policy.contract.payment.term.duration')"
+      class="u-mb-4"
+    >
+      <div class="label mat-caption">
+        {{ getElementLabel('policy.contract.payment.term.duration') }}
+      </div>
+      <div class="value">
+        {{ getElementValue('policy.contract.payment.term.duration') }}
+      </div>
+    </div>
+
+    <div
+      fxFlex="{{ fxFlexValue }}"
+      fxFlex.xs="100%"
+      *ngIf="getElementValue('policy.contract.payment.frequency')"
+      class="u-mb-4"
+    >
+      <div class="label mat-caption">
+        {{ getElementLabel('policy.contract.payment.frequency') }}
+      </div>
+      <div class="value">
+        {{ getElementValue('policy.contract.payment.frequency') }}
+      </div>
+    </div>
+
     <ng-container *ngIf="type === 'motor'">
       <ng-container
         *ngFor="let elIndex of getArrayElementIndexes('policy.insured.vehicle-objects')"
       >
         <div
-          fxFlex="50%"
+          fxFlex="{{ fxFlexValue }}"
           fxFlex.xs="100%"
           class="u-mb-4"
           *ngIf="getElementValue('policy.insured.vehicle-objects~car.brand', [elIndex])"
@@ -49,7 +89,7 @@
           "
         >
           <div
-            fxFlex="50%"
+            fxFlex="{{ fxFlexValue }}"
             fxFlex.xs="100%"
             class="u-mb-4"
             *ngIf="
@@ -79,9 +119,23 @@
       </ng-container>
     </ng-container>
 
+    <div
+      fxFlex="{{ fxFlexValue }}"
+      fxFlex.xs="100%"
+      *ngIf="getElementValue('policy.participants.holder.person.full-name')"
+      class="u-mb-4"
+    >
+      <div class="label mat-caption">
+        {{ getElementLabel('policy.participants.holder.person.full-name') }}
+      </div>
+      <div class="value">
+        {{ getElementValue('policy.participants.holder.person.full-name') }}
+      </div>
+    </div>
+
     <ng-container *ngIf="type == 'life'">
       <ng-container *ngFor="let elIndex of getArrayElementIndexes('policy.insured.person-objects')">
-        <div fxFlex="50%" fxFlex.xs="100%" class="u-mb-4">
+        <div fxFlex="{{ fxFlexValue }}" fxFlex.xs="100%" class="u-mb-4">
           <div class="label mat-caption">
             {{
               getElementValue('policy.insured.person-objects~entity-accident-insured.type', [
@@ -98,21 +152,7 @@
     </ng-container>
 
     <div
-      fxFlex="50%"
-      fxFlex.xs="100%"
-      *ngIf="getElementValue('policy.participants.holder.person.full-name')"
-      class="u-mb-4"
-    >
-      <div class="label mat-caption">
-        {{ getElementLabel('policy.participants.holder.person.full-name') }}
-      </div>
-      <div class="value">
-        {{ getElementValue('policy.participants.holder.person.full-name') }}
-      </div>
-    </div>
-
-    <div
-      fxFlex="50%"
+      fxFlex="{{ fxFlexValue }}"
       fxFlex.xs="100%"
       *ngIf="getElementValue('policy.participants.payor.iban')"
       class="u-mb-4"
