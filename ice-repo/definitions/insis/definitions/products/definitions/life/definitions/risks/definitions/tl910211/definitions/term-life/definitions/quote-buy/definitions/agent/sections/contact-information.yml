@@ -1,0 +1,38 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: 100%
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: application-details-labels.contact-information
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.participants.holder.person.email
+                css: u-mb-4
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.participants.holder.person.phone
+                css: u-mb-4
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.participants.holder.person.address
+                css: u-mb-4
+  viewMode:
+    InsisConditionForAllArrayItemsViewModeRule:
+      conditionElement: policy.insured.person-objects~person.pid
+      conditionViewMode: hidden
+      elseViewMode: default
+      conditionValue: policy.participants.holder.person.pid

@@ -903,6 +903,18 @@ entries:
               label:
                 - en: Make this person main insured
                   de: Make this person main insured
+            address:
+              label:
+                - en: Address
+                  de: Address
+            email:
+              label:
+                - en: Email
+                  de: Email
+            phone:
+              label:
+                - en: Phone
+                  de: Phone
         add-another-person:
           label:
             - en: Add another person
@@ -1360,7 +1372,23 @@ entries:
           label:
             - en: Financial question 2
               de: Financial question 2
+      address:
+        label:
+          - en: Address
+            de: Address
+      email:
+        label:
+          - en: Email
+            de: Email
+      phone:
+        label:
+          - en: Phone number
+            de: Phone number
     application-details-labels:
+      contact-information:
+        label:
+          - en: Contact information
+            de: Contact information
       more-info-needed:
         addon:
           label:

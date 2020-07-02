@@ -1,0 +1,32 @@
+viewModeOptions: &view_mode_options
+  default: Default
+  hidden: Hidden
+  disabled: Disabled
+  output: Output
+
+implementations:
+  InsisConditionForAllArrayItemsViewModeRule:
+    description: View mode that compares all array items to conditional value
+    params:
+      conditionElement:
+        info: Specify condition element
+        label: Condition element - array item
+        required: true
+        type: element
+      conditionValue:
+        info: Element that has the condiiton value
+        label: Element that has the condiiton value
+        required: true
+        type: element
+      conditionViewMode:
+        info: Specify view mode to be applied
+        label: View Mode
+        required: true
+        type: select
+        options: *view_mode_options
+      elseViewMode:
+        info: Specify view mode to be applied if array is not of certain length
+        label: Else View Mode
+        required: false
+        type: select
+        options: *view_mode_options
