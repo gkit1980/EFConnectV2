@@ -7,3 +7,6 @@ page:
     showMessages: none
     showGrowl: false
     showElementValidation: true
+  label:
+    ResourcePageLabelRule:
+      navigationTitleKey: pages.3.review.agent.title

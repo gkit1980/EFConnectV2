@@ -7,3 +7,6 @@ page:
     showElementValidation: true
   component:
     InsisTwoLevelStepperNavigationPage: {}
+  label:
+    ResourcePageLabelRule:
+      navigationTitleKey: pages.1.quote.agent.title

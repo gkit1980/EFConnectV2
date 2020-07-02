@@ -1551,6 +1551,10 @@ entries:
       title:
         - en: See Price
           de: null
+      agent:
+        title:
+          - en: Quote
+            de: Quote
     1.quote.vehicles:
       title:
         - en: Insured vehicles
@@ -1575,6 +1579,10 @@ entries:
       title:
         - en: Additional Details
           de: null
+      agent:
+        title:
+          - en: Application
+            de: Application
     2.application.vehicle-details:
       title:
         - en: Vehicle details
@@ -1608,6 +1616,10 @@ entries:
       title:
         - en: Review and Buy
           de: null
+      agent:
+        title:
+          - en: Review
+            de: Review
     3.review.payment:
       title:
         - en: Payment details
