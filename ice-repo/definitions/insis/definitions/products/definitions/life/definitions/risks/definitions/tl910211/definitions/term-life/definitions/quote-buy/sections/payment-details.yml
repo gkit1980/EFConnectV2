@@ -17,6 +17,15 @@ section:
                 elements:
                   - name: payment-details.financial-questions.second
                 css: u-mb-6
+          - gap: 24px
+            gap.xs: 0px
+            align: start
+            cols:
+              - size: 100%
+                size.xs: 100%
+                css: u-mb-4 medical-documents-label
+                elements:
+                  - name: payment-labels.icd-documents    
           - cols:
               - size: auto
                 size.xs: auto

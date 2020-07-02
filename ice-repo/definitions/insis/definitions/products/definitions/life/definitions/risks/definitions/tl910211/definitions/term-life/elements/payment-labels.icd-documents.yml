@@ -1,0 +1,6 @@
+element:
+  type: text
+  viewMode: output
+  defaultValue:
+    ResourceValueRule:
+      key: elements.payment-labels.icd-documents.value

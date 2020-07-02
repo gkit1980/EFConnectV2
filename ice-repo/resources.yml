@@ -1417,6 +1417,17 @@ entries:
             de: >-
               Please attach documents (.jpg, .pdf) presenting the results of
               medical examinations, containing:
+    
+    payment-labels:
+      icd-documents:
+        label:
+          - en: Upload your income statement
+            de: Upload your income statement
+        value:
+          - en: >-
+              Please attach documents (.jpg, .pdf)
+            de: >-
+              Please attach documents (.jpg, .pdf)
     go-to-next-page-covers:
       label:
         - en: NEXT

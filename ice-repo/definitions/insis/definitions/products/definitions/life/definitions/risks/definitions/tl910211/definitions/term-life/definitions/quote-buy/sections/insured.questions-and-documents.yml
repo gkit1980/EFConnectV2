@@ -137,7 +137,7 @@ section:
                 size.xs: 100%
                 css: u-mb-4 medical-documents-label
                 elements:
-                  - name: application-details-labels.medical-documents
+                  - name: application-details-labels.medical-documents 
           - cols:
               - size: auto
                 size.xs: auto
