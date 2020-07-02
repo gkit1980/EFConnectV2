@@ -1,0 +1,23 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                sections:
+                  - name: clients.search
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                sections:
+                  - name: clients.datagrid
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                sections:
+                  - name: clients.actions

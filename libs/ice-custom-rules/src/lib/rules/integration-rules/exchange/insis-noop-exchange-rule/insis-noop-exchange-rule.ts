@@ -11,6 +11,7 @@ export class InsisNoopExchangeRule extends ExchangeRule {
     data.params = request.params;
     // tslint:disable-next-line: no-console
     console.debug('InsisNoopExchangeRule will return IntegrationDataIn:', data);
+
     return data;
   }
 }

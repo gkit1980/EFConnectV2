@@ -1,0 +1,16 @@
+section:
+  component:
+    InsisFormFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: client.search.input
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: client.search.submit

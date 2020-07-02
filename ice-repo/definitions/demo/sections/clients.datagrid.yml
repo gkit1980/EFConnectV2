@@ -1,0 +1,22 @@
+section:
+  component:
+    InsisDatagridSection:
+      arrayElement: client.list
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                caption: ''
+                elements:
+                  - name: client.list~selected
+                css: ''
+              - size: auto
+                caption: ''
+                elements:
+                  - name: client.list~name
+                css: ''
+              - size: auto
+                caption: ''
+                elements:
+                  - name: client.list~pid
+                css: ''
