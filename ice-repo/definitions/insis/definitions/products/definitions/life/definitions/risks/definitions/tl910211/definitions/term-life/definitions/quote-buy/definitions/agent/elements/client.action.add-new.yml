@@ -1,0 +1,9 @@
+element:
+  type: action
+  defaultValue: add-new-client
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          themeColor: accent
+          variant: default

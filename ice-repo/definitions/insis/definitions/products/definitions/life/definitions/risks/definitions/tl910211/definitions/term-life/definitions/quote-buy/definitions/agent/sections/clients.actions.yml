@@ -1,0 +1,17 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - align: end
+            gap: 20px
+            cols:
+              - size: 'none'
+                elements:
+                  - name: client.action.add-new
+              - size: 'none'
+                elements:
+                  - name: client.action.cancel
+              - size: 'none'
+                elements:
+                  - name: client.action.add-selected

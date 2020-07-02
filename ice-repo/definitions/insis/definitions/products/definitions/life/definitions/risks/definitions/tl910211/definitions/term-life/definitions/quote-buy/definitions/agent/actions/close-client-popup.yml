@@ -1,0 +1,10 @@
+action:
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ACTION_FINISHED
+        payload:
+          action: add-existing-client
+    - IceLifecycleEventTriggerRule:
+        event: ACTION_FINISHED
+        payload:
+          action: add-new-client

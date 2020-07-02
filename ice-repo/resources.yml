@@ -3,6 +3,43 @@ locales:
   - de
 entries:
   elements:
+    client:
+      open-popup:
+        label:
+          - en: ADD ANOTHER PERSON
+            de: ADD ANOTHER PERSON
+      search:
+        input:
+          label:
+            - en: Search by Name or National ID
+              de: Search by Name or National ID
+        submit:
+          label:
+            - en: Search
+              de: Search    
+      list:
+        items:
+          name:
+            label: 
+              - en: Name        
+                de: Name
+          pid:
+            label: 
+              - en: National ID        
+                de: National ID
+      action:
+        add-new:
+          label: 
+            - en: Add new person        
+              de: Add new person
+        add-selected:
+          label: 
+            - en: Add        
+              de: Add
+        cancel:
+          label: 
+            - en: Cancel        
+              de: Cancel
     clients:
       items:
         view-more:

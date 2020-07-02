@@ -24,4 +24,8 @@ export class InsisArrayCardsLayoutComponent extends InsisArrayComponentImplement
   canRemove(): boolean {
     return this.getRecipeParam('showRemoveButton', super.canRemove());
   }
+
+  canAdd(): boolean {
+    return this.getRecipeParam('showAddButton', super.canAdd());
+  }
 }

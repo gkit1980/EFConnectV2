@@ -11,9 +11,13 @@ dt:
     - label: pid
       id: pid
       type: string
+    - label: page
+      id: page
+      type: string  
   rules:
     - inputs:
         - '-'
       outputs:
         - insis.products.life.risks.tl910211.term-life.quote-buy.agent
         - clients~pid
+        - 1.quote.people

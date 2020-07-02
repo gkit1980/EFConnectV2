@@ -1,0 +1,7 @@
+action:
+  execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - client.list
+    - IntegrationExecutionRule:
+        integration: search-clients

@@ -1,0 +1,6 @@
+action:
+  execution:
+    - AddArrayItemExecutionRule:
+        element: policy.insured.person-objects
+    - IntegrationExecutionRule:
+        integration: add-existing-client

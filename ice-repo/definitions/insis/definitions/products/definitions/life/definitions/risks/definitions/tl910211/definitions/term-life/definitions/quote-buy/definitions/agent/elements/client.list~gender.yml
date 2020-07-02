@@ -1,0 +1,5 @@
+element:
+  title: Gender of Insured Person
+  type: text
+  values: insis.gender
+  viewMode: disabled

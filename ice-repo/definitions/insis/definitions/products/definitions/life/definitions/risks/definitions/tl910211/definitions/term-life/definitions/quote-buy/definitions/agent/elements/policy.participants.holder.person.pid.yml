@@ -3,3 +3,4 @@ element:
     DataStoreValueRule:
       path: query.pid
       scopeToDefintion: true
+  type: text

@@ -23,3 +23,6 @@ params:
   showRemoveButton:
     type: boolean
     label: Show delete button for each card
+  showAddButton:
+    type: boolean
+    label: Show add button

@@ -1,0 +1,44 @@
+integration:
+  exchange:
+    InsisNoopExchangeRule: {}
+  transformation:
+    DefaultTransformationRule:
+      out:
+        - fromIdx:
+            array: datamodel.client.list
+            condition: selected == true
+          mappings:
+            - element: client.list~name
+              payload: fullName
+            - element: client.list~first-name
+              payload: firstName
+            - element: client.list~last-name
+              payload: lastName
+            - element: client.list~gender
+              payload: gender
+            - element: client.list~birthdate
+              payload: birthdate
+            - element: client.list~pid
+              payload: pid
+      in:
+        - toIdx:
+            index: '[1]'
+            #array: datamodel.policy.insured.person-objects
+            #append: true
+          mappings:
+            - payload: firstName
+              element: policy.insured.person-objects~person.first-name
+            - payload: lastName
+              element: policy.insured.person-objects~person.last-name
+            - payload: birthdate
+              element: policy.insured.person-objects~person.date-of-birth
+            - payload: pid
+              element: policy.insured.person-objects~person.pid
+            - payload: gender
+              element: policy.insured.person-objects~person.gender
+            - value: 'Bulgaria'
+              element: policy.insured.person-objects~person.address.country
+            # - value: false
+            #   element: policy.insured.person-objects~question.q-07
+            # - value: 2
+            #   element: policy.insured.person-objects~entity-accident-insured.type
