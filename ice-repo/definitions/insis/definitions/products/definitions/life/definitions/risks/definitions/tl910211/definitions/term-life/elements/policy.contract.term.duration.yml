@@ -18,6 +18,3 @@ element:
         elements:
           - policy.insured.person-objects~cover.premret.active
   viewMode: required
-  buckets:
-    insis-quote:
-      trigger: true
