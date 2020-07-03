@@ -8,6 +8,12 @@ action:
     - InsisResetElementOrElementsInsideNamespaceExecutionRule:
         elementOrNamespace: policy.insured.person-objects~cover
         index: 1
+    - InsisResetElementOrElementsInsideNamespaceExecutionRule:
+        elementOrNamespace: policy.insured.person-objects~question
+        index: 0
+    - InsisResetElementOrElementsInsideNamespaceExecutionRule:
+        elementOrNamespace: policy.insured.person-objects~question
+        index: 1
     - InsisSetElementValueExecutionRule:
         element: policy.insured.person-objects~entity-accident-insured.type
         value: 1
@@ -18,10 +24,4 @@ action:
         index: 0
     - InsisResetElementOrElementsInsideNamespaceExecutionRule:
         elementOrNamespace: policy.insured.person-objects~cover
-        index: 1
-    - InsisResetElementOrElementsInsideNamespaceExecutionRule:
-        elementOrNamespace: policy.insured.person-objects~question.q-04
-        index: 0
-    - InsisResetElementOrElementsInsideNamespaceExecutionRule:
-        elementOrNamespace: policy.insured.person-objects~question.q-04
         index: 1
