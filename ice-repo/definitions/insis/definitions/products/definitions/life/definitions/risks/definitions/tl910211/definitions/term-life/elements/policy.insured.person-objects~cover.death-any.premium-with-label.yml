@@ -2,10 +2,10 @@ element:
   type: currency
   viewMode:
     ConditionalViewModeRule:
-      conditionElement: policy.insured.person-objects~cover.death-any.premium-with-label
+      conditionElement: policy.insured.person-objects~cover.death-any.active
       conditionViewMode: hidden
       elseViewMode: output
-      conditionValue: 0
+      conditionValue: false
   mirror:
     CopyValueMirrorRule:
       originElement: policy.insured.person-objects~cover.death-any.premium

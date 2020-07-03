@@ -2,10 +2,10 @@ element:
   type: currency
   viewMode:
     ConditionalViewModeRule:
-      conditionElement: policy.insured.person-objects~cover.critic-ill.premium-with-label
+      conditionElement: policy.insured.person-objects~cover.critic-ill.active
       conditionViewMode: hidden
       elseViewMode: output
-      conditionValue: 0
+      conditionValue: false
   mirror:
     CopyValueMirrorRule:
       originElement: policy.insured.person-objects~cover.critic-ill.premium
