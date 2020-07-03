@@ -26,9 +26,8 @@ integration:
         - fromIdx:
             array: datamodel.policy.insured.person-objects
           toIdx:
-            array: payload.Insureds.Insured
+            useSourceIndex: true
             append: false
-            condition: 1 == 1
           mappings:
             - value: null
               payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.AccinsType

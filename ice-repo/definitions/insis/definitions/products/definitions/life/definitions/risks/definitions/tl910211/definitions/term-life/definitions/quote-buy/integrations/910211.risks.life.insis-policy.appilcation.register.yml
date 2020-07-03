@@ -31,11 +31,9 @@ integration:
         - fromIdx:
             array: datamodel.policy.insured.person-objects
           toIdx:
-            array: payload.Insureds.Insured
-            condition: 1 == 1
+            useSourceIndex: true
           mappings:
             - value: null
               payload: Insureds.Insured[n].InsuredObjectID
             - value: '-1'
               payload: Insureds.Insured[n].InsuredEntity.ObjectID
-            - value: '-1'

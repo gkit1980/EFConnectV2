@@ -85,7 +85,7 @@ integration:
             array: datamodel.policy.insured.person-objects
           toIdx:
             array: 'payload.Insureds.Insured'
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: Questionary.Question
               append: true
@@ -98,7 +98,7 @@ integration:
             array: datamodel.policy.insured.person-objects
           toIdx:
             array: 'payload.Insureds.Insured'
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: Questionary.Question
               append: true
@@ -111,7 +111,7 @@ integration:
             array: datamodel.policy.insured.person-objects
           toIdx:
             array: 'payload.Insureds.Insured'
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: Questionary.Question
               append: true
@@ -124,7 +124,7 @@ integration:
             array: datamodel.policy.insured.person-objects
           toIdx:
             array: 'payload.Insureds.Insured'
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: Questionary.Question
               append: true
@@ -137,7 +137,7 @@ integration:
             array: datamodel.policy.insured.person-objects
           toIdx:
             array: 'payload.Insureds.Insured'
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: Questionary.Question
               append: true
@@ -150,7 +150,7 @@ integration:
             array: datamodel.policy.insured.person-objects
           toIdx:
             array: 'payload.Insureds.Insured'
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: Questionary.Question
               append: true
@@ -163,7 +163,7 @@ integration:
             array: datamodel.policy.insured.person-objects
           toIdx:
             array: 'payload.Insureds.Insured'
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: Questionary.Question
               append: true
@@ -176,7 +176,7 @@ integration:
             array: datamodel.policy.insured.person-objects
           toIdx:
             array: 'payload.Insureds.Insured'
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: Questionary.Question
               append: true
@@ -189,7 +189,7 @@ integration:
             array: datamodel.policy.insured.person-objects
           toIdx:
             array: 'payload.Insureds.Insured'
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: Questionary.Question
               append: true
@@ -202,7 +202,7 @@ integration:
             array: datamodel.policy.insured.person-objects
           toIdx:
             array: 'payload.Insureds.Insured'
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: Questionary.Question
               append: true
@@ -215,7 +215,7 @@ integration:
             array: datamodel.policy.insured.person-objects
           toIdx:
             array: 'payload.Insureds.Insured'
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: Questionary.Question
               append: true
@@ -228,7 +228,7 @@ integration:
             array: datamodel.policy.insured.person-objects
           toIdx:
             array: 'payload.Insureds.Insured'
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: Questionary.Question
               append: true
@@ -241,7 +241,7 @@ integration:
             array: datamodel.policy.insured.person-objects
           toIdx:
             array: 'payload.Insureds.Insured'
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: Questionary.Question
               append: true
@@ -393,6 +393,7 @@ integration:
 
         - fromIdx:
             array: datamodel.policy.insured.person-objects
+            condition: document.medex1.document-id != null
           toIdx:
             array: payload.Insureds.Insured
             useSourceIndex: true
@@ -406,6 +407,7 @@ integration:
               payload: 'Insureds.Insured[n].Documents.Document[n].DocumentID'
         - fromIdx:
             array: datamodel.policy.insured.person-objects
+            condition: document.medex2.document-id != null
           toIdx:
             array: payload.Insureds.Insured
             useSourceIndex: true
@@ -419,6 +421,7 @@ integration:
               payload: 'Insureds.Insured[n].Documents.Document[n].DocumentID'
         - fromIdx:
             array: datamodel.policy.insured.person-objects
+            condition: document.medex3.document-id != null
           toIdx:
             array: payload.Insureds.Insured
             useSourceIndex: true
@@ -432,6 +435,7 @@ integration:
               payload: 'Insureds.Insured[n].Documents.Document[n].DocumentID'
         - fromIdx:
             array: datamodel.policy.insured.person-objects
+            condition: document.l-medex.document-id != null
           toIdx:
             array: payload.Insureds.Insured
             useSourceIndex: true
@@ -445,6 +449,7 @@ integration:
               payload: 'Insureds.Insured[n].Documents.Document[n].DocumentID'
         - fromIdx:
             array: datamodel.policy.insured.person-objects
+            condition: document.smd.document-id != null
           toIdx:
             array: payload.Insureds.Insured
             useSourceIndex: true
