@@ -85,7 +85,6 @@
     "markdown-to-html-pipe": "^1.2.5",
     "moment": "^2.24.0",
     "morgan": "^1.9.1",
-    "ng2-cookies": "^1.0.12",
     "ngx-echarts": "^4.2.2",
     "nmbr": "^1.2.0",
     "nodemailer": "^6.4.6",
