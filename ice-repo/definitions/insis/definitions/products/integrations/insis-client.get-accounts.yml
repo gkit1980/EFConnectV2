@@ -36,6 +36,8 @@ integration:
               payload: Entity.PersonalData.BirthDate
             - element: policy.participants.holder.person.pid
               payload: Entity.PersonalData.PID
+            - element: policy.participants.holder.person.address.country
+              payload: Addresses.Address[0].CountryCode
         - fromIdx:
             array: payload.BankAccounts.BankAccount
           toIdx:

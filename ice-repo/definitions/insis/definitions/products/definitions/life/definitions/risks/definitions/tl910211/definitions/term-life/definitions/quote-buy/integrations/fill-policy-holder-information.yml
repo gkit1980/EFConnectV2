@@ -15,6 +15,8 @@ integration:
               payload: 'birthdate'
             - element: policy.participants.holder.person.pid
               payload: 'pid'
+            - element: policy.participants.holder.person.address.country
+              payload: 'country'
       in:
         - fromIdx:
             index: '[0]'
@@ -33,5 +35,5 @@ integration:
               element: policy.insured.person-objects~person.date-of-birth
             - payload: pid
               element: policy.insured.person-objects~person.pid
-            - value: 'Bulgaria'
+            - payload: country
               element: policy.insured.person-objects~person.address.country
