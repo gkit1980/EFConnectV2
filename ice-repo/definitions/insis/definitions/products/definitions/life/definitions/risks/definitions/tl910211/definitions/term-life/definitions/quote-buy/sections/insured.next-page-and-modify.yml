@@ -1,12 +1,10 @@
 section:
   component:
     IceFlexSection:
-      tags:
-        - pull-right
       grid:
         rows:
           - cols:
               - size: 100%
                 elements:
                   - name: go-to-next-page
-      css: button-width-100 u-mb-3
+      css: button-width-small u-mb-3 u-mt-3
