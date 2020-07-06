@@ -4,6 +4,8 @@ dt:
   inputs:
     - label: product-state
       element: quotes~state
+    - label: product-code
+      element: quotes~product.code
   outputs:
     - label: url
       id: url
@@ -14,17 +16,39 @@ dt:
   rules:
     - inputs:
         - -2
+        - '920101'
       outputs:
-        - insis-products.motor.920101-motor-comprehensive.quote/3.review.payment
-        - selected.quote.number
+        - insis.products.motor.920101-motor-comprehensive.quote/3.review.payment
+        - quotes~policy-number
     - inputs:
         - -3
+        - '920101'
       outputs:
         - >-
-          insis-products.motor.920101-motor-comprehensive.quote/2.application.vehicle-details
-        - selected.quote.number
+          insis.products.motor.920101-motor-comprehensive.quote/2.application.vehicle-details
+        - quotes~policy-number
     - inputs:
         - -4
+        - '920101'
       outputs:
-        - insis-products.motor.920101-motor-comprehensive.quote/1.quote.vehicles
-        - selected.quote.number
+        - insis.products.motor.920101-motor-comprehensive.quote/1.quote.vehicles
+        - quotes~policy-number
+    - inputs:
+        - -2
+        - '910211'
+      outputs:
+        - insis.products.life.risks.tl910211.term-life.quote-buy.customer/2.application.details
+        - quotes~policy-number
+    - inputs:
+        - -3
+        - '910211'
+      outputs:
+        - >-
+          insis.products.life.risks.tl910211.term-life.quote-buy.customer/2.application.details
+        - quotes~policy-number
+    - inputs:
+        - -4
+        - '910211'
+      outputs:
+        - insis.products.life.risks.tl910211.term-life.quote-buy.customer/1.quote.people
+        - quotes~policy-number

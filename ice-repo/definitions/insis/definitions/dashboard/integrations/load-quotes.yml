@@ -40,6 +40,8 @@ integration:
               element: quotes~state-name
             - payload: 'rows[n].product_name'
               element: quotes~product.name
+            - payload: 'rows[n].insr_type'
+              element: quotes~product.code
             - payload: 'rows[n].insr_begin'
               element: quotes~insurance.start
             - payload: 'rows[n].insr_duration'

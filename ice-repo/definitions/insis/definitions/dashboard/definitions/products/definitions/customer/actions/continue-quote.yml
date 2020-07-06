@@ -1,11 +1,11 @@
 action:
   execution:
-    - InsisCopyValueExecutionRule:
-        source: quotes~id
-        destination: selected.quote.number
-    - InsisCopyValueExecutionRule:
-        source: quotes~engagement-id
-        destination: selected.quote.engagement-id
+    # - InsisCopyValueExecutionRule:
+    #     source: quotes~id
+    #     destination: selected.quote.number
+    # - InsisCopyValueExecutionRule:
+    #     source: quotes~engagement-id
+    #     destination: selected.quote.engagement-id
     - DtNavigateToDefinitionExecutionRule:
         dt: navigate-to-show-quote
         definitionOutput: url
