@@ -3,3 +3,6 @@ element:
   viewMode:
     StaticViewModeRule:
       viewMode: output
+  range:
+    FeelExpressionRangeRule:
+      expressionMin: date(today)

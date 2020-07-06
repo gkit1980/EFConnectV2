@@ -324,3 +324,9 @@ confirmation-dialog-layout {
   margin: 0px 290px;
   width: 700px;
 }
+
+.width-100-array-item {
+  .ice-array-item {
+    width: 100%;
+  }
+}

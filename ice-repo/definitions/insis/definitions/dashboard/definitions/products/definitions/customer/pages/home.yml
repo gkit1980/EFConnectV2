@@ -61,7 +61,7 @@ page:
                 align: space-between
           arrayElement: quotes
           behaviourForEmptyRows: hide
-          css: horizontal-list
+          css: horizontal-list width-100-array-item
     - component:
         IceFlexSection:
           grid:
