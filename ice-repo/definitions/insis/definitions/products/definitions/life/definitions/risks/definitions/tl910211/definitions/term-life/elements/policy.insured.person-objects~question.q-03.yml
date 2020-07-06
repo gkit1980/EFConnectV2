@@ -8,3 +8,7 @@ element:
   type: integer
   fake:
     value: 95
+  range:
+    StaticRangeRule:
+      min: '5'
+      max: '200'
