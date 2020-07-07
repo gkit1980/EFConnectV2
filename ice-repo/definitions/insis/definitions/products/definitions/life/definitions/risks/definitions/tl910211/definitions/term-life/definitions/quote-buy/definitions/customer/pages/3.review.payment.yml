@@ -13,7 +13,7 @@ page:
       pageTitleKey: pages.3.review.payment.title
       shortTitleKey: pages.3.review.payment.title
   sections:
-    - payment-details
+    - payment.details
     - go-to-next-page
     - policy.summary
     - policy.premiums-taxes-fees-discounts-loadings
