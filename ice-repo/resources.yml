@@ -979,6 +979,11 @@ entries:
             - en: Beneficiary
               de: Beneficiary
           items:
+            company:
+              name:
+                label:
+                  - en: Company name
+                    de: Company name
             person:
               gender:
                 label:

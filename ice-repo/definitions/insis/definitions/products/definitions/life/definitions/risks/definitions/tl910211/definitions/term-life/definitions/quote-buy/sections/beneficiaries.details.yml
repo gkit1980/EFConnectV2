@@ -40,8 +40,14 @@ section:
                 size.sm: auto
                 elements:
                   - name: policy.participants.beneficiaries~person.country
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.participants.beneficiaries~company.name
       arrayElement: policy.participants.beneficiaries
-      css: u-mt-8 u-ml-8 u-text-medium
+      css: u-mt-8 u-ml-8 u-text-medium  beneficiaries-list
   viewMode:
     ConditionalSectionViewModeRule:
       conditionElement: policy.participants.is-standard-beneficiary

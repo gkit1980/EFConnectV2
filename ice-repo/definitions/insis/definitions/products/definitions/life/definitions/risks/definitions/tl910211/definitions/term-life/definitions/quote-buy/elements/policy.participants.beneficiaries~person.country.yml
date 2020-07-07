@@ -7,3 +7,6 @@ element:
   values:
     ListValuesRule:
       list: common.countries
+  viewMode:
+    DtViewModeRule:
+      dt: policy.participants.beneficiaries.person.viewmode

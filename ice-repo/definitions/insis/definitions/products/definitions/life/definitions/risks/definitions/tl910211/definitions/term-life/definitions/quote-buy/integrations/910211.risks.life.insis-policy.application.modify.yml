@@ -39,40 +39,56 @@ integration:
             append: true
           if: datamodel.policy.participants.is-standard-beneficiary == false
           mappings:
-            - element: policy.participants.beneficiaries~person.gender
-              payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.Gender
-            - element: policy.participants.beneficiaries~person.birthdate
-              payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.BirthDate
-            - element: policy.participants.beneficiaries~person.last-name
-              payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.Name.Family
-            - element: policy.participants.beneficiaries~person.first-name
-              payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.Name.Given
             - value: 'BENEFICENT'
               payload: InsuranceConditions.Participants.Participant[n].ParticipantRole
             - value: 'ACTIVE'
               payload: InsuranceConditions.Participants.Participant[n].Status
             - value: 'ENGLISH'
               payload: InsuranceConditions.Participants.Participant[n].Language
-
+        
         - fromIdx:
             array: datamodel.policy.participants.beneficiaries
-            condition: person.pid == null
+            condition: is-company == false && person.pid == null
           toIdx:
+            array: payload.InsuranceConditions.Participants.Participant
             useSourceIndex: true
           if: datamodel.policy.participants.is-standard-beneficiary == false
           mappings:
+            - element: policy.participants.beneficiaries~person.gender
+              payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.Gender
+            - element: policy.participants.beneficiaries~person.birthdate
+              payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.BirthDate
+            - element: policy.participants.beneficiaries~person.last-name
+              payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.Name.Family
+            - element: policy.participants.beneficiaries~person.first-name      
+              payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.Name.Given
             - value: ''
               payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.PID
 
         - fromIdx:
             array: datamodel.policy.participants.beneficiaries
-            condition: person.pid != null
+            condition: is-company == false && person.pid != null
           toIdx:
             useSourceIndex: true
           if: datamodel.policy.participants.is-standard-beneficiary == false
           mappings:
             - element: policy.participants.beneficiaries~person.pid
               payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.PID
+        
+        - fromIdx:
+            array: datamodel.policy.participants.beneficiaries
+            condition: is-company == true
+          toIdx:
+            array: payload.InsuranceConditions.Participants.Participant
+            useSourceIndex: true
+          if: datamodel.policy.participants.is-standard-beneficiary == false
+          mappings:
+            - element: policy.participants.beneficiaries~company.name
+              payload: InsuranceConditions.Participants.Participant[n].Entity.CompanyData.Name
+            - value: ''
+              payload: InsuranceConditions.Participants.Participant[n].Entity.CompanyData.CustomerID
+            - value: ''
+              payload: InsuranceConditions.Participants.Participant[n].Entity.CompanyData.CompType
 
         - fromIdx:
             index: '[datamodel.policy.participants.beneficiaries.length + 1 ]'

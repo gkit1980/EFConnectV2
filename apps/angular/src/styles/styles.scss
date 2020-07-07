@@ -330,3 +330,14 @@ confirmation-dialog-layout {
     width: 100%;
   }
 }
+
+.beneficiaries-list {
+  
+  .ice-element > ice-element > ice-array .ice-array > label {
+    display: block;;
+  }
+
+  .ice-array-item {
+    width: 100%;
+  }
+}

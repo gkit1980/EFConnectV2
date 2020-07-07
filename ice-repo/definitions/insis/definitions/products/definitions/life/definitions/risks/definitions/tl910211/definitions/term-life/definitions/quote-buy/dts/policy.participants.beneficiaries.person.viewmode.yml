@@ -1,0 +1,20 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policy.participants.beneficiaries~is-company
+    - label: new label
+      element: policy.participants.is-standard-beneficiary
+  outputs:
+    - id: viewMode
+      type: string
+  rules:
+    - inputs:
+        - false
+        - false
+      outputs:
+        - required
+    - inputs:
+        - '-'
+        - '-'
+      outputs:
+        - hidden

@@ -4,4 +4,6 @@ element:
     StaticComponentRule:
       component:
         IceDropdown: {}
-  viewMode: default
+  viewMode:
+    DtViewModeRule:
+      dt: policy.participants.beneficiaries.person.viewmode

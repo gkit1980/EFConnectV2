@@ -1,0 +1,6 @@
+element:
+    title: name of beneficiary
+    type: text
+    viewMode:
+        DtViewModeRule:
+          dt: policy.participants.beneficiaries.company.viewmode

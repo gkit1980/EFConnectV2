@@ -721,7 +721,7 @@ integration:
 
         - fromIdx:
             array: payload.Policy.InsuranceConditions.Participants.Participant
-            condition: ParticipantRole == 'BENEFICENT'
+            condition: ParticipantRole == 'BENEFICENT' && Entity.PersonalData.PID != null
           toIdx:
             array: datamodel.policy.participants.beneficiaries
             append: true
@@ -740,3 +740,16 @@ integration:
               payload: Policy.InsuranceConditions.Participants.Participant[n].Entity.PersonalData.Name.Given
             - element: policy.participants.beneficiaries~person.pid
               payload: Policy.InsuranceConditions.Participants.Participant[n].Entity.PersonalData.PID
+        - fromIdx:
+            array: payload.Policy.InsuranceConditions.Participants.Participant
+            condition: ParticipantRole == 'BENEFICENT' && Entity.PersonalData.PID == null
+          toIdx:
+            array: datamodel.policy.participants.beneficiaries
+            append: true
+          mappings:
+            - element: policy.participants.is-standard-beneficiary
+              value: false
+            - element: policy.participants.beneficiaries~is-company
+              value: true
+            - element: policy.participants.beneficiaries~company.name
+              payload: Policy.InsuranceConditions.Participants.Participant[n].Entity.CompanyData.Name
