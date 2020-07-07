@@ -666,6 +666,10 @@ entries:
                 label:
                   - en: Clear person
                     de: Clear person
+              age-at-begin:
+                label:
+                  - en: Age
+                    de: Age
             question:
               q-04:
                 label:
@@ -1490,9 +1494,9 @@ entries:
         - en: Please confirm
           de: Bitte bestätigen
       not_allowed_here:
-        - en: "'${value}' not allowed here"
+        - en: '''${value}'' not allowed here'
       regexp:
-        - en: "'${value}' does not matches regular expression ${regexp}"
+        - en: '''${value}'' does not matches regular expression ${regexp}'
       array:
         min:
           - en: 'must have at least ${min} entries'

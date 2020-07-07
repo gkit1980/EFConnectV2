@@ -35,16 +35,21 @@ section:
             gap: 15px
             css: u-mb-2
           - cols:
-              - size: auto
+              - size: calc(50% - 23px)
                 size.xs: auto
                 size.sm: auto
                 elements:
                   - name: policy.insured.person-objects~person.gender
-              - size: auto
+              - size: calc(35% - 25px)
                 size.xs: auto
                 size.sm: auto
                 elements:
                   - name: policy.insured.person-objects~person.date-of-birth
+              - size: calc(15% - 25px)
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.person-objects~person.age-at-begin
             gap: 15px
             css: u-mb-2
           - cols:
