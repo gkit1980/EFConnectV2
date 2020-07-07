@@ -20,6 +20,8 @@ integration:
               payload: birthdate
             - element: client.list~pid
               payload: pid
+            - element: client.list~country-code
+              payload: country-code
       in:
         - toIdx:
             index: '[1]'
@@ -36,7 +38,7 @@ integration:
               element: policy.insured.person-objects~person.pid
             - payload: gender
               element: policy.insured.person-objects~person.gender
-            - value: 'Bulgaria'
+            - payload: country-code
               element: policy.insured.person-objects~person.address.country
             # - value: false
             #   element: policy.insured.person-objects~question.q-07

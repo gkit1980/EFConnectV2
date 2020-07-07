@@ -38,5 +38,7 @@ integration:
               element: client.list~pid
             - payload: 'rows[n].SEX'
               element: client.list~gender
+            - payload: 'rows[n].COUNTRY_CODE'
+              element: client.list~country-code
             - value: false
               element: client.list~selected
