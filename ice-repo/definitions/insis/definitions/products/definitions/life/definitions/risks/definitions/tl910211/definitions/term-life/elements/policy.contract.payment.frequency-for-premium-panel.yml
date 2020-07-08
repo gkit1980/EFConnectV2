@@ -3,6 +3,9 @@ element:
   viewMode:
     StaticViewModeRule:
       viewMode: output
+  default: 1
+  label:
+    NoLabelRule: {}
   mirror:
     DtResourceMirrorRule:
       dt: policy.contract.payment.frequency-for-premium-panel.mirror

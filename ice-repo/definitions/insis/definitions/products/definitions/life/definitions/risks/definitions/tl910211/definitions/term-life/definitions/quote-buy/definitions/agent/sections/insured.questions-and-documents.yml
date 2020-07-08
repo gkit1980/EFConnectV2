@@ -1,7 +1,7 @@
 section:
   component:
     IceArrayFlexSection:
-      css: main-side small-title
+      css: in-one-column small-title
       arrayElement: policy.insured.person-objects
       behaviourForEmptyRows: hide
       grid:

@@ -71,3 +71,7 @@ params:
     required: false
     type: texts
     info: CSS class that will be added to the section
+  isPopup:
+    label: Is it going to be displayed as popup (agent details page)
+    type: boolean
+    default: false

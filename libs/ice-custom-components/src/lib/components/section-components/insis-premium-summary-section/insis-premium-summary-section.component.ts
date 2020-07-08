@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import { SectionComponentImplementation, IceSectionComponent } from '@impeo/ng-ice';
 import { PageElement, ItemElement, ViewModeRule } from '@impeo/ice-core';
 import { get, toString, forEach, map, compact } from 'lodash';
@@ -14,6 +14,11 @@ export class InsisPremiumSummarySection extends SectionComponentImplementation i
   taxesAndFeesCategoryTitleResourceKey: string;
   discountsAndLoadingsCategoryTitleResourceKey: string;
   expanded: boolean;
+
+  @HostBinding('class.premium-section-for-agent')
+  isPopup = false;
+
+  isVisible = true;
 
   printButtonElementName: string;
 
@@ -135,6 +140,16 @@ export class InsisPremiumSummarySection extends SectionComponentImplementation i
       ['component', InsisPremiumSummarySection.componentName, 'expanded'],
       false
     );
+
+    this.isPopup = get(
+      this.recipe,
+      ['component', InsisPremiumSummarySection.componentName, 'isPopup'],
+      false
+    );
+  }
+
+  toggleVisibility() {
+    this.isVisible = !this.isVisible;
   }
 
   isArrayItemElement(name: string): boolean {

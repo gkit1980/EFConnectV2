@@ -1,0 +1,33 @@
+section:
+  component:
+    InsisPremiumSummarySection:
+      tags: []
+      expanded: true
+      premiumElement: policy.insured.premium.total
+      paymentFrequencyElement: policy.contract.payment.frequency-for-premium-panel
+      premiumElements:
+        - policy.insured.person-objects~cover.critic-ill.premium-with-label
+        - policy.insured.person-objects~cover.death-acc.premium-with-label
+        - policy.insured.person-objects~cover.death-any.premium-with-label
+        - policy.insured.person-objects~cover.premret.premium-with-label
+        - policy.insured.person-objects~cover.tpdaccd.premium-with-label
+        - policy.insured.person-objects~cover.tpdill.premium-with-label
+        - policy.insured.person-objects~cover.wop-total.premium-with-label
+      taxesAndFeesElements:
+        - policy.insured.person-objects~cover.critic-ill.taxes
+        - policy.insured.person-objects~cover.death-acc.taxes
+        - policy.insured.person-objects~cover.death-any.taxes
+        - policy.insured.person-objects~cover.premret.taxes
+        - policy.insured.person-objects~cover.tpdaccd.taxes
+        - policy.insured.person-objects~cover.tpdill.taxes
+        - policy.insured.person-objects~cover.wop-total.taxes
+      discountElements:
+        - policy.insured.person-objects~cover.critic-ill.discounts
+        - policy.insured.person-objects~cover.death-acc.discounts
+        - policy.insured.person-objects~cover.death-any.discounts
+        - policy.insured.person-objects~cover.premret.discounts
+        - policy.insured.person-objects~cover.tpdaccd.discounts
+        - policy.insured.person-objects~cover.tpdill.discounts
+        - policy.insured.person-objects~cover.wop-total.discounts
+      css: []
+      isPopup: true

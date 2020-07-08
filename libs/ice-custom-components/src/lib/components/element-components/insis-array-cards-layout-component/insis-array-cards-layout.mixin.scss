@@ -13,6 +13,12 @@
     }
   }
 
+  .in-one-column {
+    .insis-array-cards-layout-list {
+      grid-template-columns: 1fr;
+    }
+  }
+
   .insis-array-cards-layout .insis-array-cards-layout-item.card {
     @include make-card();
   }

@@ -1,14 +1,46 @@
 @import '~@angular/material/theming';
 
 @mixin insis-premium-summary-selection-mixin($theme) {
-  $arrowsColor: map-get($theme, default-contrast);
-  $arrowBordersStyle: 1px solid $arrowsColor;
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+  $primary: map-get($theme, primary);
+
+  $textColor: mat-color($foreground, default-contrast);
+  $backgroundColor: mat-color($background);
+  $arrowBordersStyle: 1px solid $textColor;
   $arrowSize: 23px;
+
+  .premium-section-for-agent {
+    position: fixed;
+    bottom: 125px;
+    right: 45px;
+
+    details {
+      pointer-events: none;
+      border-radius: 20px;
+
+      > summary {
+        justify-content: center !important;
+      }
+
+      > summary::after {
+        display: none;
+      }
+    }
+  }
 
   insis-premium-summary-section {
     max-width: 60%;
     max-width: 500px;
     display: block;
+
+    * {
+      color: $textColor !important;
+    }
+
+    .insis-summary-section-detail-container:not(:first-of-type) {
+      margin-top: 5px;
+    }
 
     summary {
       padding-left: 20px;
@@ -32,6 +64,10 @@
 
     summary::-webkit-details-marker {
       display: none;
+    }
+
+    details {
+      background-color: $backgroundColor;
     }
 
     details[open] > summary::after {
@@ -62,6 +98,22 @@
       .ice-output {
         display: flex;
         justify-content: space-between;
+      }
+    }
+
+    .hide-show-button {
+      position: fixed;
+      width: 70px;
+      height: 70px;
+      right: 45px;
+      bottom: 45px;
+      background-color: #00aeef;
+      color: $textColor;
+      border-radius: 100%;
+
+      .mat-icon {
+        font-size: 32px;
+        width: 32px;
       }
     }
   }
