@@ -15,9 +15,14 @@ page:
           grid:
             rows:
               - cols:
-                  - size: auto
+                  - size: none
                     size.xs: auto
                     size.sm: auto
                     elements:
                       - name: client.open-popup
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: add-client
     - go-to-next-page

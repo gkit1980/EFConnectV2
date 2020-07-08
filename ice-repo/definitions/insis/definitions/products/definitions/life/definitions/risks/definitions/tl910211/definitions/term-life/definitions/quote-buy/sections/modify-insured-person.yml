@@ -1,0 +1,12 @@
+section:
+  component:
+    IceArrayItemFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                sections:
+                  - name: clear-person-section
+                  - name: remove-insured-person-section

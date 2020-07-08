@@ -1,0 +1,12 @@
+element:
+  type: action
+  viewMode:
+    InsisChangeViewModeBasedOnArrayLengthRule:
+      array: policy.insured.person-objects
+      condition: equals
+      conditionValue: '0'
+      viewMode: default
+      elseViewMode: hidden
+  defaultValue:
+    StaticValueRule:
+      value: add-client

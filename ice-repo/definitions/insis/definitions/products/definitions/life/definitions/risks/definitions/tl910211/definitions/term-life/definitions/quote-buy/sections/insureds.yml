@@ -104,8 +104,7 @@ section:
                 size.xs: auto
                 size.sm: auto
                 sections:
-                  - name: clear-person-section
-                  - name: remove-insured-person-section
+                  - name: modify-insured-person
           - cols:
               - size: auto
                 size.xs: auto

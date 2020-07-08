@@ -1481,6 +1481,10 @@ entries:
         label:
           - en: REVIEW APPLICATION
             de: REVIEW APPLICATION
+    add-client:
+      label:
+        - en: Add client
+          de: Add client
   validation:
     pageValidation:
       summary:
