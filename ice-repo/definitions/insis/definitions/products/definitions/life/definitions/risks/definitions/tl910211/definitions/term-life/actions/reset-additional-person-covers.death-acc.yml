@@ -3,9 +3,9 @@ action:
     resets additional person covers when same cover is set to false for the main
     person
   execution:
-    - InsisIndexesResetArrayItemExecutionRule:
+    - InsisIndexResetArrayItemExecutionRule:
         element: policy.insured.person-objects~cover.death-acc.active
-        excludedIndexes: 0
+        onlyIndex: 1
   trigger:
     - ElementChangeTriggerRule:
         elements:

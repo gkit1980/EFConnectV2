@@ -1,0 +1,23 @@
+implementations:
+  InsisIndexResetArrayItemExecutionRule:
+    description: >-
+      Resets the value of array item with specific index.
+    params:
+      element:
+        label: Element
+        type: element
+        info: Array element that will be reset
+        required: true
+      onlyIndex:
+        label: Only index
+        type: integer
+        info: only this index will be reset, this rule handles only top level arrays
+        required: true
+    icel: >
+      ```
+        action:
+          execution:
+            - InsisIndexResetArrayItemExecutionRule:
+                elements: policy.insured.person-objects~cover.death-acc.active
+                onlyIndex: 1
+      ```

@@ -12,7 +12,7 @@ export * from './execution/insis-parallel-integration-execution-rule/insis-paral
 export * from './execution/insis-set-element-value-execution-rule/insis-set-element-value-execution-rule';
 export * from './execution/insis-validate-page-execution-rule/insis-validate-page-execution-rule';
 export * from './execution/insis-wait-execution-rule/insis-wait-execution-rule';
-export * from './execution/insis-indexes-reset-array-item-execution-rule/insis-indexes-reset-array-item-execution-rule';
+export * from './execution/insis-index-reset-array-item-execution-rule/insis-index-reset-array-item-execution-rule';
 export * from './execution/insis-reset-element-value-execution-rule/insis-reset-element-value-execution-rule';
 export * from './trigger/insis-keyboard-shortcut-trigger-rule/insis-keyboard-shortcut-trigger-rule';
 export * from './trigger/insis-post-message-event-trigger-rule/insis-post-message-event-trigger-rule';
