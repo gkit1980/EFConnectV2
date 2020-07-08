@@ -14,7 +14,7 @@ element:
       list: insis.term-life.insurance-duration
       maxAge: 70
   change:
-    - InsisResetElementValueExecutionRule:
+    - ResetElementValueExecutionRule:
         elements:
           - policy.insured.person-objects~cover.premret.active
   viewMode: required

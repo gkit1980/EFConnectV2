@@ -7,7 +7,7 @@ element:
       list: insis.term-life.payment-duration
       maxAge: 0
   change:
-    - InsisResetElementValueExecutionRule:
+    - ResetElementValueExecutionRule:
         elements:
           - policy.contract.payment.frequency
   component:
