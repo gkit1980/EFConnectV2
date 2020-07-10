@@ -1,0 +1,8 @@
+action:
+  trigger:
+    - PageTriggerRule:
+        enter:
+          - 3.review.payment
+  execution:
+    - IntegrationExecutionRule:
+        integration: load-banks

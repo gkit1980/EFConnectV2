@@ -1,0 +1,9 @@
+element:
+  type: action
+  defaultValue: add-bank-account
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.participants.payor.iban-selection
+      conditionValue: null
+      conditionViewMode: required
+      elseViewMode: hidden

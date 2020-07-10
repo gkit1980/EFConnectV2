@@ -33,14 +33,17 @@ export class InsisArrayItemBasedValuesRule extends ValuesRule {
         label: this.labelElement.getValue().forIndex(value.index),
       };
     });
-    const emptyItemResourceKey = this.element.name + '.empty';
-    items.push({
-      value: null,
-      label: this.resource.resolve(
-        emptyItemResourceKey,
-        `Add resourse your ${emptyItemResourceKey}`
-      ),
-    });
+    const hideEmptyOption = this.getParam('hideEmpty', false);
+    if (!hideEmptyOption) {
+      const emptyItemResourceKey = this.element.name + '.empty';
+      items.push({
+        value: null,
+        label: this.resource.resolve(
+          emptyItemResourceKey,
+          `Add resourse your ${emptyItemResourceKey}`
+        ),
+      });
+    }
     return items;
   }
 

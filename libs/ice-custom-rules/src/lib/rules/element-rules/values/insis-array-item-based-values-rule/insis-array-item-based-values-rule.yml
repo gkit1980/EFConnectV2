@@ -10,6 +10,10 @@ implementations:
         label: Array element for the label
         type: element
         required: true
+      hideEmpty:
+        label: Hide empty option
+        type: boolean
+        required: false
     icel: >
       ```
         element:

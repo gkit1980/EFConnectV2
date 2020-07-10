@@ -45,7 +45,7 @@ integration:
               payload: InsuranceConditions.Participants.Participant[n].Status
             - value: 'ENGLISH'
               payload: InsuranceConditions.Participants.Participant[n].Language
-        
+
         - fromIdx:
             array: datamodel.policy.participants.beneficiaries
             condition: is-company == false && person.pid == null
@@ -60,7 +60,7 @@ integration:
               payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.BirthDate
             - element: policy.participants.beneficiaries~person.last-name
               payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.Name.Family
-            - element: policy.participants.beneficiaries~person.first-name      
+            - element: policy.participants.beneficiaries~person.first-name
               payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.Name.Given
             - value: ''
               payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.PID
@@ -74,7 +74,7 @@ integration:
           mappings:
             - element: policy.participants.beneficiaries~person.pid
               payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.PID
-        
+
         - fromIdx:
             array: datamodel.policy.participants.beneficiaries
             condition: is-company == true
@@ -104,7 +104,19 @@ integration:
               payload: InsuranceConditions.Participants.Participant[n].Status
             - value: 'ENGLISH'
               payload: InsuranceConditions.Participants.Participant[n].Language
-            # - value: '-1'
-            #   payload: InsuranceConditions.Participants.Participant[n].PolicyBankAccounts.PolicyBankAccount[0].BankAccount.BankPID
-            # - element: policy.participants.payor.iban
-            #   payload: InsuranceConditions.Participants.Participant[n].PolicyBankAccounts.PolicyBankAccount[0].BankAccount.AccountNo
+
+        - fromIdx:
+            array: datamodel.policy.participants.holder.person.accounts
+            condition: datamodel.policy.participants.payor.iban == iban
+          toIdx:
+            array: payload.InsuranceConditions.Participants.Participant
+            condition: ParticipantRole == 'PHOLDER'
+          mappings:
+            - element: policy.participants.holder.person.accounts~bank-id
+              payload: InsuranceConditions.Participants.Participant[n].PolicyBankAccounts.PolicyBankAccount[0].BankAccount.BankAccID
+            - element: policy.participants.holder.person.accounts~bankpid
+              payload: InsuranceConditions.Participants.Participant[n].PolicyBankAccounts.PolicyBankAccount[0].BankAccount.BankPID
+            - element: policy.participants.holder.person.accounts~iban
+              payload: InsuranceConditions.Participants.Participant[n].PolicyBankAccounts.PolicyBankAccount[0].BankAccount.AccountNo
+            - value: 'BILLING'
+              payload: InsuranceConditions.Participants.Participant[n].PolicyBankAccounts.PolicyBankAccount[0].AccountPurpose

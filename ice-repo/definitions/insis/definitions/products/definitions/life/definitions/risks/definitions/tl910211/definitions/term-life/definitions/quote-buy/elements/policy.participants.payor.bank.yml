@@ -1,0 +1,17 @@
+element:
+  type: text
+  values:
+    InsisArrayItemBasedValuesRule:
+      valueElement: banks-list~id
+      labelElement: banks-list~name
+      hideEmpty: true
+  component:
+    StaticComponentRule:
+      component:
+        IceDropdown: {}
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.participants.payor.iban-selection
+      conditionValue: null
+      conditionViewMode: required
+      elseViewMode: hidden

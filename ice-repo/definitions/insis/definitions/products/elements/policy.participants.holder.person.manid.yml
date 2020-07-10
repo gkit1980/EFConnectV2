@@ -1,0 +1,4 @@
+element:
+  title: ManID for policy holder person
+  type: text
+  viewMode: disabled

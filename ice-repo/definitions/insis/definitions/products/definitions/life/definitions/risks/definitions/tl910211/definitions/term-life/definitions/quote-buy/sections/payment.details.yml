@@ -25,7 +25,7 @@ section:
                 size.xs: 100%
                 css: u-mb-4 medical-documents-label
                 elements:
-                  - name: payment-labels.icd-documents    
+                  - name: payment-labels.icd-documents
           - cols:
               - size: auto
                 size.xs: auto
@@ -46,17 +46,23 @@ section:
                 css: u-mb-4
                 elements:
                   - name: policy.participants.payor.iban-selection
-          - cols:
+          - gap: 15px
+            cols:
               - size: 40%
                 size.xs: auto
                 size.sm: auto
                 css: u-mb-4
                 elements:
                   - name: policy.participants.payor.iban
-          - cols:
-              - size: 20%
+              - size: 30%
                 size.xs: auto
                 size.sm: auto
                 elements:
-                  - name: policy.participants.payor.swift
+                  - name: policy.participants.payor.bank
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                css: u-mt-2
+                elements:
+                  - name: policy.participants.payor.add-account
         length: 0

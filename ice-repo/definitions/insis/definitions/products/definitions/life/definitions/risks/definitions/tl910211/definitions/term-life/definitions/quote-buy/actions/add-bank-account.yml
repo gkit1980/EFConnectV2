@@ -1,0 +1,11 @@
+action:
+  execution:
+    - IntegrationExecutionRule:
+        integration: add-bank-account
+    - ResetElementValueExecutionRule:
+        elements:
+          - policy.participants.holder.person.accounts
+    - IntegrationExecutionRule:
+        integration: insis-client.get-accounts
+    - IntegrationExecutionRule:
+        integration: set-selected-iban

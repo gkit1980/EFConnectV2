@@ -15,3 +15,4 @@ environment:
   insis-db-username: insis_gen_v10_rls
   insis-db-password: insis_gen_v10_rls
   insis_print_endpoint: http://10.3.4.148:7809/insis/util/print
+  insis-rest-endpoint: http://10.3.7.198:7809/insis/

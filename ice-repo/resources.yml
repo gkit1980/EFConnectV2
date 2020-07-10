@@ -1034,6 +1034,14 @@ entries:
             label:
               - en: IBAN
                 de: IBAN
+          bank:
+            label:
+              - en: Bank
+                de: Bank
+          add-account:
+            label:
+              - en: Add account
+                de: Add account
           iban-selection:
             label:
               - en: Select a bank account to use for insurance payment
