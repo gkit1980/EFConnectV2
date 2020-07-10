@@ -1,6 +1,7 @@
 page:
   component:
-    InsisConfirmationPage: {}
+    InsisConfirmationPage:
+      product: life
   validation:
     onElementComponentChange: true
     behaviour: forward

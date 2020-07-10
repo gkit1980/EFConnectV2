@@ -8,3 +8,5 @@ action:
         integration: 910211.risks.life.insis-policy.application.modify
     - IntegrationExecutionRule:
         integration: insis-policy.convert-application-to-policy
+    - NavigateToPageExecutionRule:
+        page: 4.confirmation
