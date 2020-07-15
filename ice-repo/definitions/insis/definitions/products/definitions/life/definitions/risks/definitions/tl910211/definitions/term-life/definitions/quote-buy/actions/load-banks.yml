@@ -4,5 +4,8 @@ action:
         enter:
           - 3.review.payment
   execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - banks-list
     - IntegrationExecutionRule:
         integration: load-banks
