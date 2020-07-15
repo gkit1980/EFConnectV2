@@ -1,0 +1,28 @@
+integration:
+  exchange:
+    SoapCallExchangeRule:
+      endpoint: insis_generic_endpoint
+      securityMode: UsernamePassword
+      username: 'env:insis-username'
+      password: 'env:insis-password'
+      ignoreNamespaces: 'env:insis-ignoreNamespaces'
+      requestType: InvokeSBSEventRq
+      responseType: InvokeSBSEventRs
+      jsonSchema: InsisCSM
+  transformation:
+    DefaultTransformationRule:
+      additional: insis
+      dateFormat: YYYY-MM-DD
+      dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
+      out:
+        - mappings:
+            - param: soapAction
+              value: invokeSBSEvent
+            - param: requestType
+              value: InvokeSBSEventRqType
+            - payload: EventType
+              value: GET_OPEN_DATE
+      in:
+        - mappings:
+            - payload: Parameters[0].Parameter
+              element: insis.openday
