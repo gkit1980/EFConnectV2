@@ -1,0 +1,35 @@
+implementations:
+  CoverInsuranceEndMirrorRule:
+    description: >
+      This rule calculates the end date for a cover based on the insurance 
+      begin and term, the current age of the person and the max allowed end age.
+    params:
+      dateOfBirth:
+        label: Date of birth
+        info: The date of the insured person
+        type: element
+        required: true
+      endElement:
+        label: End element
+        type: element
+        required: true
+        info: The date that the insurance ends
+      maxEndAge:
+        label: Max end age
+        type: number
+        required: true
+        info: the max end age of cover as defined by the product configuration
+    icel: >
+      ```
+        # element name - policy.insured.person-objects~cover.[cover-name].end 
+        element:
+          type: text
+          viewMode:
+            StaticViewModeRule:
+              viewMode: output
+          mirror:
+            CoverInsuranceEndMirrorRule:
+              dateOfBirth: policy.insured.person-objects~person.date-of-birth
+              endElement: policy.contract.end
+              maxEndAge: 65
+      ```

@@ -1,5 +1,3 @@
-import { from } from 'rxjs';
-
 export * from './default-value/insis-array-item-index-value-rule/insis-array-item-index-value-rule';
 export * from './default-value/insis-formated-date-expression-value-rule/insis-formated-date-expression-value-rule';
 export * from './default-value/insis-dt-array-item-from-resource-value-rule/insis-dt-array-item-from-resource-value-rule';
@@ -14,6 +12,7 @@ export * from './mirror/insis-get-array-length-mirror-rule/insis-get-array-lengt
 export * from './mirror/insis-get-first-value-from-element-thats-inside-of-array/insis-get-first-value-from-element-thats-inside-of-array';
 export * from './mirror/insis-insurance-date-and-duration-mirror-rule/insis-insurance-date-and-duration-mirror-rule';
 export * from './mirror/insis-qr-code-mirror-rule/insis-qr-code-mirror-rule';
+export * from './mirror/cover-insurance-end-mirror-rule/cover-insurance-end-mirror-rule';
 export * from './validation/insis-unique-value-validation-rule/insis-unique-value-validation-rule';
 export * from './values/insis-array-item-based-values-rule/insis-array-item-based-values-rule';
 export * from './values/insis-array-item-to-list-values-rule/insis-array-item-to-list-values-rule';

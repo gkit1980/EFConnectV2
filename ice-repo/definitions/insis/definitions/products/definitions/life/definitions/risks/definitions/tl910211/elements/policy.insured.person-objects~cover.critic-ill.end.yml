@@ -2,7 +2,6 @@ element:
   type: date
   mirror:
     CoverInsuranceEndMirrorRule:
-      ageElement: policy.insured.person-objects~person.age-at-begin
-      termElement: policy.contract.term.duration
-      beginElement: policy.contract.begin
+      dateOfBirth: policy.insured.person-objects~person.date-of-birth
+      endElement: policy.contract.end
       maxEndAge: 65
