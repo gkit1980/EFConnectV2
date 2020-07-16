@@ -12,8 +12,8 @@ integration:
   transformation:
     DefaultTransformationRule:
       additional: insis
-      dateFormat: YYYY-MM-DD
-      dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
+      dateFormat: DD-MM-YYYY
+      dateTimeFormat: 'DD-MM-YYYYThh:mm:ss'
       out:
         - mappings:
             - param: soapAction
@@ -24,5 +24,5 @@ integration:
               value: GET_OPEN_DATE
       in:
         - mappings:
-            - payload: Parameters[0].Parameter
+            - payload: Parameters.Parameter.$value
               element: insis.openday
