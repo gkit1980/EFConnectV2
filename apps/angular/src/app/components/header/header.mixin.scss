@@ -115,4 +115,8 @@
     font-weight: normal;
     text-transform: none;
   }
+
+  mat-toolbar-row {
+    z-index: 1;
+  }
 }
