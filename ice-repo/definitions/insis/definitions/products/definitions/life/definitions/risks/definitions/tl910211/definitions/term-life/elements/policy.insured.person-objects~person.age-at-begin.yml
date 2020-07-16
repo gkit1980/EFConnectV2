@@ -4,7 +4,7 @@ element:
     AgeAtInsuranceDateMirrorRule:
       birthdateElement: policy.insured.person-objects~person.date-of-birth
       dateElement: policy.contract.begin
-      ageCalculationMethod: year
+      ageCalculationMethod: month
   range:
     StaticRangeRule:
       min: '18'
