@@ -1,15 +1,9 @@
 element:
   type: date
-  # defaultValue:
-  #   DateExpressionValueRule:
-  #     expression: date(today) + duration('P2D')
-  # range:
-  #   FeelExpressionRangeRule:
-  #     expressionMin: date(today) + duration('P1D')
-  defaultValue:
-    DateExpressionValueRule:
-      expression: date('2015-01-22')
   range:
     FeelExpressionRangeRule:
-      expressionMin: date('2015-01-22')
-      expressionMax: date('2015-01-22') + duration('P3M')
+      expressionMin: date(insis.openday)
+      expressionMax: date(insis.openday) + duration('P3M')
+  mirror:
+    ExpressionMirrorRule:
+      expression: date(insis.openday)
