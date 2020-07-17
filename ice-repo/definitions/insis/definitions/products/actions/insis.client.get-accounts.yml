@@ -3,6 +3,7 @@ action:
     - ResetElementValueExecutionRule:
         elements:
           - policy.participants.holder.person.accounts
+          - policy.participants.holder.person.pid
     - IntegrationExecutionRule:
         integration: insis-client.get-accounts
   trigger:
