@@ -1,8 +1,8 @@
 @import '~@angular/material/theming';
 
 @mixin insis-chip-mixin($theme) {
-  .ice-array-flex-section .ice-array-item {
-    display: inline-block;
-    padding-right: 0.5em;
+  .insis-chip {
+    white-space: nowrap;
+    margin-bottom: 8px;
   }
 }

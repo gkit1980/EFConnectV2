@@ -332,12 +332,18 @@ confirmation-dialog-layout {
 }
 
 .beneficiaries-list {
-  
   .ice-element > ice-element > ice-array .ice-array > label {
-    display: block;;
+    display: block;
   }
 
   .ice-array-item {
     width: 100%;
+  }
+}
+
+.documents-list {
+  .ice-array-item {
+    display: inline-block;
+    padding-right: 0.5em;
   }
 }

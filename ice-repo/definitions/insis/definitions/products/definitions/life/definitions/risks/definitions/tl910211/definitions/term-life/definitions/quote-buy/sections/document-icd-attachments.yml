@@ -1,6 +1,7 @@
 section:
   component:
     IceArrayFlexSection:
+      css: documents-list
       grid:
         rows:
           - cols:
