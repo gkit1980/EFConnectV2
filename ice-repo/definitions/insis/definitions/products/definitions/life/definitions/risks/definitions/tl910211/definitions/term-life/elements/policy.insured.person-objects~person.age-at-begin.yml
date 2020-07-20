@@ -9,4 +9,9 @@ element:
     StaticRangeRule:
       min: '18'
       max: '65'
-  viewMode: disabled
+  viewMode: required
+  component:
+    StaticComponentRule:
+      component:
+        InsisNumber:
+          shouldRenderAsDisabled: true

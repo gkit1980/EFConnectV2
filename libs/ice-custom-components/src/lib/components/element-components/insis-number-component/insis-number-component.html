@@ -1,0 +1,31 @@
+<div class="ice-number" *ngIf="isVisible">
+	<mat-form-field
+	  [attr.data-required]="isRequired"
+	  [appearance]="appearance"
+	  hideRequiredMarker="true"
+	  *ngIf="!isOutput"
+	  [hintLabel]="hint"
+	>
+	  <mat-label [attr.data-required]="isRequired">{{ label }}</mat-label>
+	  <input
+		#iceInput
+		matInput
+		[matTooltip]="tooltip"
+		matTooltipClass="ice-tooltip"
+		[errorStateMatcher]="errorStateMatcher"
+		[required]="isRequired"
+    [disabled]="isDisabled || shouldRenderAsDisabled"
+		[placeholder]="placeholder"
+		[(ngModel)]="value"
+		(blur)="onBlur()"
+		(focus)="onFocus()"
+		[type]="keyboardType || 'text'"
+		[ngClass]="{'align-right': suffix}" >
+	  <span matPrefix class="ice-prefix">{{ prefix }}</span>
+	  <span matSuffix class="ice-suffix">{{ suffix }}</span>
+	  <mat-error *ngFor="let message of validation?.getMessagesFor(element.name, index)">
+		{{ message }}
+	  </mat-error>
+	</mat-form-field>
+	<mat-output *ngIf="isOutput" [isOutput]="isOutput" [label]="label" [value]="value" [prefix]="prefix" [suffix]="suffix"></mat-output>
+  </div>
