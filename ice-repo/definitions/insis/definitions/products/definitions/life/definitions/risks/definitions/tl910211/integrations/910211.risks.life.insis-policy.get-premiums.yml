@@ -371,3 +371,10 @@ integration:
               payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Discounts.Discount[n].DiscountType'
             - element: policy.insured.person-objects~cover.wop-total.discounts~amount
               payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Discounts.Discount[n].LumpSumDiscount'
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+          toIdx:
+            useSourceIndex: true
+          mappings:
+            - element: policy.insured.person-objects~person.man-id
+              payload: Policy.Insureds.Insured[n].InsuredEntity.OAccidentInsured.PersonID

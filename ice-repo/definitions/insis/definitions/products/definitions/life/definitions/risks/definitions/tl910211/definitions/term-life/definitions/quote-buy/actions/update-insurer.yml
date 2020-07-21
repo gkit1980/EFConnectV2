@@ -1,0 +1,12 @@
+action:
+  title: calls quote calculation for insis
+  trigger:
+    - BucketValidTriggerRule:
+        bucket: insis-insurer-update
+  execution:
+    - IntegrationExecutionRule:
+        integration: update-insurer-rest
+  condition:
+    FeelConditionRule:
+      expression: >-
+        element('policy.insured.person-objects~person.man-id') != '-1'

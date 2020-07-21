@@ -26,6 +26,8 @@ integration:
               payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.ObjectID
             - value: 18
               payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.ObjectType
+            - element: policy.insured.person-objects~entity-accident-insured.type
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OAccidentInsured.AccinsType
         - fromIdx:
             array: datamodel.policy.insured.person-objects
             condition: person.pid != ""
@@ -36,7 +38,16 @@ integration:
               payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OAccidentInsured.PID
         - fromIdx:
             array: datamodel.policy.insured.person-objects
-            condition: person.pid == ""
+            condition: person.man-id != -1 && person.pid == ""
+          toIdx:
+            useSourceIndex: true
+          mappings:
+            - element: policy.insured.person-objects~person.man-id
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OAccidentInsured.PersonID
+
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+            condition: person.pid == "" && person.man-id == -1
           toIdx:
             useSourceIndex: true
           mappings:
@@ -50,8 +61,9 @@ integration:
               payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.Name.Given
             - element: policy.insured.person-objects~person.last-name
               payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.Name.Family
-            - element: policy.insured.person-objects~entity-accident-insured.type
-              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OAccidentInsured.AccinsType
+            - element: policy.insured.person-objects~person.address.country
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.HomeCountry
+
         - mappings:
             - element: policy.contract.payment.frequency
               payload: Policies.Policy[0].InsuranceConditions.Billings.Billing[0].PaymentMode

@@ -2,8 +2,8 @@ integration:
   exchange:
     InsisRestCallExchangeRule:
       endpointBaseurl: 'insis-rest-endpoint'
-      verb: get
-      url: '/people-data/pp-people-type/${MANID}'
+      verb: put
+      url: '/people-data/pp-people-type/'
 
   transformation:
     DefaultTransformationRule:
@@ -16,12 +16,10 @@ integration:
           mappings:
             - param: ignoreLoginService
               value: true
-            - param: MANID
+
+            - payload: manId
               element: policy.insured.person-objects~person.man-id
-      in:
-        - toIdx:
-            index: actionContext.index
-          mappings:
+
             - payload: gname
               element: policy.insured.person-objects~person.first-name
 
@@ -34,8 +32,11 @@ integration:
             - payload: birthDate
               element: policy.insured.person-objects~person.date-of-birth
 
-            - payload: egn
-              element: policy.insured.person-objects~person.pid
-
             - payload: homeCountry
               element: policy.insured.person-objects~person.address.country
+
+            - payload: name
+              element: policy.insured.person-objects~person.full-name
+
+            - payload: manComp
+              value: 1

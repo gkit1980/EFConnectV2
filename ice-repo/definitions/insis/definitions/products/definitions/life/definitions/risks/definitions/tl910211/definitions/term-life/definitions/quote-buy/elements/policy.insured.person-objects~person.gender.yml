@@ -13,3 +13,6 @@ element:
   defaultValue:
     StaticValueRule:
       value: ''
+  buckets:
+    insis-insurer-update:
+      trigger: true
