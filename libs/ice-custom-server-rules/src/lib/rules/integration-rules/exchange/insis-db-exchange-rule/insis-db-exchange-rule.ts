@@ -1,5 +1,5 @@
 import { ExchangeRule, IntegrationDataIn, IntegrationDataOut } from '@impeo/ice-core';
-import { get, isString, toString } from 'lodash';
+import { get, isString, toString, uniq } from 'lodash';
 import oracledb from 'oracledb';
 import * as fs from 'fs';
 import * as path from 'path';
@@ -82,7 +82,7 @@ export class InsisDBExchangeRule extends ExchangeRule {
     }
 
     const config = this.getConfig();
-    const bindValues = this.getBindValues(request);
+    const bindValues = this.getBindValues(request, query);
     let connection;
 
     try {
@@ -135,10 +135,26 @@ export class InsisDBExchangeRule extends ExchangeRule {
     return query;
   }
 
-  protected getBindValues(request: IntegrationDataOut) {
+  protected getBindValues(request: IntegrationDataOut, query: string) {
     // tslint:disable-next-line: no-console
     console.debug('InsisDBExchangeRule with params', request.params);
-    return request.params;
+
+    const re = /(?:^|\W):(\w+)(?!\w)/g;
+    const matches = [];
+    let match;
+    while ((match = re.exec(query))) {
+      matches.push(match[1]);
+    }
+
+    const allNeededVariables = uniq(matches);
+    const params = request.params;
+    allNeededVariables.forEach((paramName) => {
+      if (params[paramName] === undefined) {
+        params[paramName] = null;
+      }
+    });
+
+    return params;
   }
 
   private getValueFromEnvironment(value: string): string {
