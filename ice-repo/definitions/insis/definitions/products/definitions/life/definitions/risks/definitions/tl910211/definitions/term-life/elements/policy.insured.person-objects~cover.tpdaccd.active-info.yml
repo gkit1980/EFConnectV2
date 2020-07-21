@@ -1,8 +1,11 @@
 element:
   type: text
   text:
-    ResourceTextRule:
-      info: null
+    InsisFillResourceWithElementValuesTextRule:
+      info:
+        resourceKey: policy.insured.person-objects.items.cover.tpdaccd.active-info.info
+        elements:
+          - policy.insured.person-objects~cover.tpdaccd.insured-amount
   label:
     NoLabelRule: {}
   component:
@@ -15,6 +18,6 @@ element:
           originY: center
           overlayX: start
           overlayY: center
-          offsetX: 30
-          offsetY: -20
+          offsetX: '35'
+          offsetY: '30'
           scrollStrategy: BlockScrollStrategy

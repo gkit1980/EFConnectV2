@@ -1,0 +1,4 @@
+implementations:
+  InsisFillResourceWithElementValuesTextRule:
+    description: >
+      Switches resource params with element values and returns the maped string.

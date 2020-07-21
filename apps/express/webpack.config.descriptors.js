@@ -128,6 +128,7 @@ class MergeRuleDescriptorsPlugin {
 
     descriptorFiles.forEach((file) => {
       const ymlContent = loadYamlContent(file);
+
       const [entityFolder, aspectFolder] = extractEntityAndAspectFolders(file);
       const formattedAspectFolder = this.reformatAspectFolderName(aspectFolder);
       const mergedAspectRulesJSON =

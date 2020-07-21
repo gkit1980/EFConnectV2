@@ -1511,9 +1511,9 @@ entries:
         - en: Please confirm
           de: Bitte bestätigen
       not_allowed_here:
-        - en: "'${value}' not allowed here"
+        - en: '''${value}'' not allowed here'
       regexp:
-        - en: "'${value}' does not matches regular expression ${regexp}"
+        - en: '''${value}'' does not matches regular expression ${regexp}'
       array:
         min:
           - en: 'must have at least ${min} entries'
@@ -1825,6 +1825,89 @@ entries:
           empty:
             - en: Use a different bank account
               de: policy.participants.payor.iban-selection.empty
+    insured:
+      person-objects~cover:
+        wop-total:
+          active-info:
+            info:
+              - en: |-
+                  Waiver of premium due to permanent disability any cause
+
+                  Sum insured: ${param1}
+                de: |-
+                  Waiver of premium due to permanent disability any cause
+
+                  Sum insured: ${param1}
+      person-objects~covers:
+        text: {}
+      person-objects:
+        items:
+          cover:
+            wop-total:
+              active-info:
+                info:
+                  - en: |-
+                      # Waiver of premium due to permanent disability any cause
+                      Sum insured: ${param1} &euro;
+                    de: |-
+                      # Waiver of premium due to permanent disability any cause
+                      Sum insured: ${param1} &euro;
+            tpdill-total:
+              active-info: {}
+            tpdill:
+              active-info:
+                info:
+                  - en: |-
+                      # Total and permanent disability due to illness over 75%
+                      Sum insured: ${param1} &euro;
+                    de: |-
+                      # Total and permanent disability due to illness over 75%
+                      Sum insured: ${param1} &euro;
+            tpdaccd:
+              active-info:
+                info:
+                  - en: |-
+                      # Total and permanent disability to accident over 75%
+                      Insured sum: ${param1} &euro;
+                    de: |-
+                      # Total and permanent disability to accident over 75%
+                      Insured sum: ${param1} &euro;
+            premret:
+              active-info:
+                info:
+                  - en: |-
+                      # Premium return by survival
+                      Insured sum: ${param1} &euro;
+                    de: |-
+                      # Premium return by survival
+                      Insured sum: ${param1} &euro;
+            death-any:
+              active-info:
+                info:
+                  - en: |-
+                      # Death any cause
+                      Insured sum: ${param1} &euro;
+                    de: |-
+                      # Death any cause
+                      Insured sum: ${param1} &euro;
+            death-acc:
+              active-info:
+                info:
+                  - en: |-
+                      # Accidental death
+                      Insured sum: ${param1} &euro;
+                    de: |-
+                      # Accidental death
+                      Insured sum: ${param1} &euro;
+            critic-ill:
+              active-info:
+                info:
+                  - en: |-
+                      # Critical illness
+                      Insured sum: ${param1} &euro;
+                    de: |-
+                      # Critical illness
+                      Insured sum: ${param1} &euro;
   quotes:
     title: {}
     remove:
@@ -1885,3 +1968,24 @@ entries:
       monthtly:
         - en: Monthly
           de: monatlich
+  main-insured:
+    info:
+      text:
+        - en: >-
+            The main insured has a full range of covers available. Covers for
+            additional people depend on the main insured having the same covers.
+          de: >-
+            Dem Hauptversicherten steht eine vollständige Palette von Deckungen
+            zur Verfügung. Die Deckung für zusätzliche Personen hängt davon ab,
+            dass der Hauptversicherte die gleiche Deckung hat.
+  additional-insured:
+    info:
+      text:
+        - en: >-
+            Optionally you can insure additional people. These people have a
+            limited choice of covers, which are dependent on the main insured
+            having the same covers.
+          de: >-
+            Optional können Sie zusätzliche Personen versichern. Diese Personen
+            haben eine begrenzte Auswahl an Deckungen, die davon abhängig sind,
+            dass der Hauptversicherte die gleiche Deckung hat.

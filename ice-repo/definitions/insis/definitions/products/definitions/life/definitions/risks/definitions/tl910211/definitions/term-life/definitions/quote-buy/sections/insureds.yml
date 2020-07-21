@@ -16,7 +16,8 @@ section:
                 size.xs: auto
                 size.sm: auto
                 elements:
-                  - name: policy.insured.person-objects~info
+                  - name: policy.insured.person-objects~main-insured-info
+                  - name: policy.insured.person-objects~additional-insured-info
                 align: end
                 css: u-mb-2
             css: ''
