@@ -1,0 +1,5 @@
+definition:
+  title: insis.person.client.customer
+  executable: false
+  showInsights: false
+  elementOnPageCheck: false
