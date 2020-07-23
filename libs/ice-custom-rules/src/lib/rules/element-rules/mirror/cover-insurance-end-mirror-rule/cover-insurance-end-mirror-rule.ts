@@ -24,11 +24,11 @@ export class CoverInsuranceEndMirrorRule extends MirrorRule {
       const monthsAtMaxEndAge = maxEndAge * 12;
 
       if (monthsAtMaxEndAge > monthsAtInsuranceEnd) {
-        endDate = insuranceEnd;
+        endDate = moment(insuranceEnd).add(1, 'day').subtract(1, 'minute').toDate();
       } else {
         endDate = moment(currentBirthDate)
           .add(monthsAtMaxEndAge, 'months')
-          .subtract(1, 'day')
+          .subtract(1, 'minute')
           .toDate();
       }
 

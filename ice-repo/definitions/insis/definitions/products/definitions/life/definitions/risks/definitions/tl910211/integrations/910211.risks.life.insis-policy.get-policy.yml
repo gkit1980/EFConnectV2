@@ -238,6 +238,8 @@ integration:
               payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
             - element: policy.insured.person-objects~cover.death-any.premium
               payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Premium.TotalAmount'
+            - element: policy.insured.person-objects~cover.death-any.end
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].InsrEnd'
         - fromIdx:
             array: payload.Policy.Insureds.Insured
             fromIdx:
@@ -260,6 +262,8 @@ integration:
               payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
             - element: policy.insured.person-objects~cover.death-acc.premium
               payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Premium.TotalAmount'
+            - element: policy.insured.person-objects~cover.death-acc.end
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].InsrEnd'
         - fromIdx:
             array: payload.Policy.Insureds.Insured
             fromIdx:
@@ -282,6 +286,8 @@ integration:
               payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
             - element: policy.insured.person-objects~cover.critic-ill.premium
               payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Premium.TotalAmount'
+            - element: policy.insured.person-objects~cover.critic-ill.end
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].InsrEnd'
         - fromIdx:
             array: payload.Policy.Insureds.Insured
             fromIdx:
@@ -304,6 +310,8 @@ integration:
               payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
             - element: policy.insured.person-objects~cover.premret.premium
               payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Premium.TotalAmount'
+            - element: policy.insured.person-objects~cover.premret.end
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].InsrEnd'
         - fromIdx:
             array: payload.Policy.Insureds.Insured
             fromIdx:
@@ -326,6 +334,8 @@ integration:
               payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
             - element: policy.insured.person-objects~cover.tpdaccd.premium
               payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Premium.TotalAmount'
+            - element: policy.insured.person-objects~cover.tpdaccd.end
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].InsrEnd'
         - fromIdx:
             array: payload.Policy.Insureds.Insured
             fromIdx:
@@ -348,6 +358,8 @@ integration:
               payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
             - element: policy.insured.person-objects~cover.tpdill.premium
               payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Premium.TotalAmount'
+            - element: policy.insured.person-objects~cover.tpdill.end
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].InsrEnd'
         - fromIdx:
             array: payload.Policy.Insureds.Insured
             fromIdx:
@@ -370,6 +382,8 @@ integration:
               payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
             - element: policy.insured.person-objects~cover.wop-total.premium
               payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Premium.TotalAmount'
+            - element: policy.insured.person-objects~cover.wop-total.end
+              payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].InsrEnd'
         - fromIdx:
             array: payload.Policy.Insureds.Insured
             fromIdx:

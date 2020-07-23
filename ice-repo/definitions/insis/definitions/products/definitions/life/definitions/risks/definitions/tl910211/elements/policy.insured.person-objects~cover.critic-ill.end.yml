@@ -1,5 +1,5 @@
 element:
-  type: date
+  type: datetime
   mirror:
     CoverInsuranceEndMirrorRule:
       dateOfBirth: policy.insured.person-objects~person.date-of-birth

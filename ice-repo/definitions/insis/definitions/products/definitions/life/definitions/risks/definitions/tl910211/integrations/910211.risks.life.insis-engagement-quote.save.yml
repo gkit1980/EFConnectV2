@@ -116,6 +116,8 @@ integration:
               payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].Currency'
             - element: policy.insured.person-objects~cover.death-any.insured-amount
               payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
+            - element: policy.insured.person-objects~cover.death-any.end
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].InsrEnd'
         - fromIdx:
             array: datamodel.policy.insured.person-objects
             condition: cover.death-acc.active == true
@@ -136,6 +138,8 @@ integration:
               payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].Currency'
             - element: policy.insured.person-objects~cover.death-acc.insured-amount
               payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
+            - element: policy.insured.person-objects~cover.death-acc.end
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].InsrEnd'
         - fromIdx:
             array: datamodel.policy.insured.person-objects
             condition: cover.critic-ill.active == true
@@ -156,6 +160,8 @@ integration:
               payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].Currency'
             - element: policy.insured.person-objects~cover.critic-ill.insured-amount
               payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
+            - element: policy.insured.person-objects~cover.critic-ill.end
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].InsrEnd'
         - fromIdx:
             array: datamodel.policy.insured.person-objects
             condition: cover.premret.active == true
@@ -176,6 +182,8 @@ integration:
               payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].Currency'
             - element: policy.insured.person-objects~cover.premret.insured-amount
               payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
+            - element: policy.insured.person-objects~cover.premret.end
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].InsrEnd'
         - fromIdx:
             array: datamodel.policy.insured.person-objects
             condition: cover.tpdaccd.active == true
@@ -196,6 +204,8 @@ integration:
               payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].Currency'
             - element: policy.insured.person-objects~cover.tpdaccd.insured-amount
               payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
+            - element: policy.insured.person-objects~cover.tpdaccd.end
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].InsrEnd'
         - fromIdx:
             array: datamodel.policy.insured.person-objects
             condition: cover.tpdill.active == true
@@ -216,6 +226,8 @@ integration:
               payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].Currency'
             - element: policy.insured.person-objects~cover.tpdill.insured-amount
               payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
+            - element: policy.insured.person-objects~cover.tpdill.end
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].InsrEnd'
         - fromIdx:
             array: datamodel.policy.insured.person-objects
             condition: cover.wop-total.active == true
@@ -236,3 +248,5 @@ integration:
               payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].Currency'
             - element: policy.insured.person-objects~cover.wop-total.insured-amount
               payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
+            - element: policy.insured.person-objects~cover.wop-total.end
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].InsrEnd'
