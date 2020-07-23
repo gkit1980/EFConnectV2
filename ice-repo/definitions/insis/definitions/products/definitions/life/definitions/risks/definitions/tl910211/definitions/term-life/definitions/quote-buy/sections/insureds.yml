@@ -114,5 +114,5 @@ section:
                   - name: policy.insured.person-objects~make-this-main-insured
         length: 0
       arrayElement: policy.insured.person-objects
-      behaviourForEmptyRows: hide
+      behaviourForEmptyRows: render
       css: null
