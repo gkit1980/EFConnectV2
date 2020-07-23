@@ -1,4 +1,14 @@
 element:
   title: List of beneficiaries
   type: array
-  component: IceArray
+  component:
+    StaticComponentRule:
+      component:
+        InsisArray:
+          showIndex: false
+          addButtonLabelResourceKey: elements.policy.participants.beneficiaries.add.label
+          confirmOnRemove: false
+          hideRemoveButtonOnOneItem: true
+  array:
+    StaticArrayRule:
+      default: '1'

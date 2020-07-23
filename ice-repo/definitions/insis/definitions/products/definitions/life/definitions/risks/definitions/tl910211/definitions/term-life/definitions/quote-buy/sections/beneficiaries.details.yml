@@ -6,7 +6,7 @@ section:
           - cols:
               - size: auto
                 size.xs: auto
-                css: u-mb-4 application-person-details-questions u-text-normal
+                css: u-mb-2 application-person-details-questions u-text-normal beneficiaries-details-radio-buttons
                 size.sm: auto
                 elements:
                   - name: policy.participants.beneficiaries~is-company
@@ -21,6 +21,7 @@ section:
                 size.sm: auto
                 elements:
                   - name: policy.participants.beneficiaries~person.last-name
+                css: u-mb-2
             gap: 12px
           - cols:
               - size: auto
@@ -33,21 +34,24 @@ section:
                 size.sm: auto
                 elements:
                   - name: policy.participants.beneficiaries~person.birthdate
+                css: u-mb-2
             gap: 12px
           - cols:
-              - size: auto
+              - size: 372px
                 size.xs: auto
                 size.sm: auto
                 elements:
                   - name: policy.participants.beneficiaries~person.country
+                css: u-mb-2
           - cols:
-              - size: auto
+              - size: 372px
                 size.xs: auto
                 size.sm: auto
                 elements:
                   - name: policy.participants.beneficiaries~company.name
+                css: u-mb-2
       arrayElement: policy.participants.beneficiaries
-      css: u-mt-8 u-ml-8 u-text-medium  beneficiaries-list
+      css: u-mt-6 u-ml-8 u-text-medium beneficiaries-list
   viewMode:
     ConditionalSectionViewModeRule:
       conditionElement: policy.participants.is-standard-beneficiary

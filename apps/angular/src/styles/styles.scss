@@ -339,11 +339,24 @@ confirmation-dialog-layout {
   .ice-array-item {
     width: 100%;
   }
+
+  .insis-array .insis-array-item:not(:first-child) {
+    margin-top: 20px !important;
+  }
 }
 
 .documents-list {
   .ice-array-item {
     display: inline-block;
     padding-right: 0.5em;
+  }
+}
+
+.beneficiaries-details-radio-buttons {
+  .ice-radiobutton-qroup {
+    line-height: 0px;
+    mat-label {
+      margin-bottom: 0px;
+    }
   }
 }

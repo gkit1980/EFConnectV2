@@ -10,6 +10,5 @@ page:
   sections:
     - beneficiaries.is-standard-beneficiary
     - beneficiaries.details
-    - beneficiaries.add-beneficiary
     - beneficiaries.go-to-next-page
     - policy.premiums-taxes-fees-discounts-loadings-popup

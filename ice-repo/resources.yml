@@ -1009,6 +1009,10 @@ entries:
               label:
                 - en: Beneficiary
                   de: null
+          add:
+            label:
+              - en: ADD BENEFICIARY
+                de: ADD BENEFICIARY
         payor:
           agreed-on-terms-and-conditions:
             label:
