@@ -20,4 +20,4 @@ integration:
             - element: policy.insured.person-objects~entity-type
               payload: Policy.Insureds.Insured[n].InsuredEntity.ObjectType
             - element: policy.insured.person-objects~person.pid
-              payload: Policy.Insureds.Insured[n].OAccidentInsured.PID
+              payload: Policy.Insureds.Insured[n].InsuredEntity.OAccidentInsured.PID

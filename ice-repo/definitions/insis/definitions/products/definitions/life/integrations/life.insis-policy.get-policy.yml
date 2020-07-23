@@ -27,19 +27,19 @@ integration:
             - element: policy.insured.person-objects~entity-type
               payload: Policy.Insureds.Insured[n].InsuredEntity.ObjectType
             - element: policy.insured.person-objects~person.pid
-              payload: Policy.Insureds.Insured[n].OAccidentInsured.PID
+              payload: Policy.Insureds.Insured[n].InsuredEntity.OAccidentInsured.PID
             - element: policy.insured.person-objects~person.gender
-              payload: Policy.Insureds.Insured[n].OAccidentInsured.PersonalData.Gender
+              payload: Policy.Insureds.Insured[n].InsuredEntity.OAccidentInsured.PersonalData.Gender
             - element: policy.insured.person-objects~person.pid
-              payload: Policy.Insureds.Insured[n].OAccidentInsured.PersonalData.PID
+              payload: Policy.Insureds.Insured[n].InsuredEntity.OAccidentInsured.PersonalData.PID
             - element: policy.insured.person-objects~person.date-of-birth
-              payload: Policy.Insureds.Insured[n].OAccidentInsured.PersonalData.BirthDate
+              payload: Policy.Insureds.Insured[n].InsuredEntity.OAccidentInsured.PersonalData.BirthDate
             - element: policy.insured.person-objects~person.first-name
-              payload: Policy.Insureds.Insured[n].OAccidentInsured.PersonalData.Name.Given
+              payload: Policy.Insureds.Insured[n].InsuredEntity.OAccidentInsured.PersonalData.Name.Given
             - element: policy.insured.person-objects~person.last-name
-              payload: Policy.Insureds.Insured[n].OAccidentInsured.PersonalData.Name.Family
+              payload: Policy.Insureds.Insured[n].InsuredEntity.OAccidentInsured.PersonalData.Name.Family
             - element: policy.insured.person-objects~entity-accident-insured.type
-              payload: Policy.Insureds.Insured[n].OAccidentInsured.AccinsType
+              payload: Policy.Insureds.Insured[n].InsuredEntity.OAccidentInsured.AccinsType
         - fromIdx:
             array: payload.Policy.Insureds.Insured
             fromIdx:
