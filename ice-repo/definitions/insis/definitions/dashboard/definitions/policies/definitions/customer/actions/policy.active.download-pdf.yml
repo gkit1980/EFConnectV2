@@ -1,0 +1,8 @@
+action:
+  execution:
+    - IntegrationExecutionRule:
+        integration: policy.active.print
+    - InsisOpenPdfExecutionRule:
+        datastorePath: printData.0.data
+        mode: download
+        filename: Policy.pdf

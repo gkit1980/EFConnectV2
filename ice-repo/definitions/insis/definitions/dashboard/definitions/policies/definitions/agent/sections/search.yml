@@ -5,36 +5,17 @@ section:
         rows:
           - cols:
               - size: auto
-                size.xs: auto
-                size.sm: auto
-                elements:
-                  - name: search-policies.policy-name
-              - size: auto
-                size.xs: auto
-                size.sm: auto
-                elements:
-                  - name: search-policies.product-id
-              - size: auto
+                css: nowrap
                 size.xs: auto
                 size.sm: auto
                 elements:
                   - name: search-policies.policy-state
-              - size: auto
-                size.xs: auto
-                size.sm: auto
-                elements:
-                  - name: search-policies.client
-              - size: auto
-                size.xs: auto
-                size.sm: auto
-                elements:
-                  - name: search-policies.insr-end
-              - size: auto
-                size.xs: auto
-                size.sm: auto
-                css: mt-1
-                elements:
-                  - name: search-policies.send-button
-            layout: row
-            gap: 20px
-      css: search-policies
+                  - name: search-policies.fulltext
+                  - name: search-policies.policy-no
+                  - name: search-policies.product-id
+                  - name: search-policies.client-id
+                  - name: search-policies.client-name
+                  - name: search-policies.insured-object
+                  - name: search-policies.search
+                  - name: search-policies.see-more-options
+            gap: 0px

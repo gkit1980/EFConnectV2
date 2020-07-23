@@ -1,0 +1,17 @@
+action:
+  title: gets the number of policies / quotes / claims for a client
+  execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - active-policies.total-number
+          - claims-in-progress.total-number
+          - unfinished-quotes.total-number
+    - InsisParallelIntegrationExecutionRule:
+        integrations:
+          - claims.load-total-number
+          - policies.load-total-number
+          - quotes.load-total-number
+  trigger:
+    - PageTriggerRule:
+        enter:
+          - home

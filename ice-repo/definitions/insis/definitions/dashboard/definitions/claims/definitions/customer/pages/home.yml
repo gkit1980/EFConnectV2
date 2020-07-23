@@ -11,10 +11,10 @@ page:
                   - size: none
                     css: mat-display-1 u-mb-6
                     elements:
-                      - name: claims-in-progress
+                      - name: claims-in-progress-title
                   - size: none
                     elements:
-                      - name: add-claim
+                      - name: activity.add-claim
                 align: space-between
     - component:
         IceArrayFlexSection:
@@ -37,11 +37,11 @@ page:
                       - name: claims~event-date
                   - size: none
                     elements:
-                      - name: claims~button-view-more
+                      - name: claims~go-to-details
                     align: center
                   - size: none
                     elements:
-                      - name: claims~button-dropdown
+                      - name: claims~more-actions
                     align: center
           arrayElement: claims
           css: horizontal-list
@@ -54,7 +54,7 @@ page:
                     size.xs: auto
                     size.sm: auto
                     elements:
-                      - name: show-resolved-claims
+                      - name: activity.show-resolved-claims
     - component:
         InsisDatagridSection:
           arrayElement: resolved-claims
@@ -81,7 +81,7 @@ page:
                       - name: resolved-claims~policy-link
       viewMode:
         ConditionalSectionViewModeRule:
-          conditionElement: show-resolved-claims
+          conditionElement: activity.show-resolved-claims
           conditionValue: true
           conditionViewMode: output
           elseViewMode: hidden

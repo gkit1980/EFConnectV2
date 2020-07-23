@@ -1,0 +1,7 @@
+action:
+  execution:
+    - IntegrationExecutionRule:
+        integration: policies.store-search-criteria
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ICE_CONTEXT_DEACTIVATED

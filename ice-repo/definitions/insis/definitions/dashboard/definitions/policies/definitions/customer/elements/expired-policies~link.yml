@@ -9,7 +9,7 @@ element:
         IceButton:
           themeColor: primary
           variant: default
-          action: navigate-to-policy
+          action: policy.expired.navigate-to-details
   label:
     ResourceWithElementValuesLabelRule:
       key: elements.expired-policies.items.link.label

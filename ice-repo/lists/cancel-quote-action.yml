@@ -1,6 +1,6 @@
 list:
   items:
-    - value: cancel-application
+    - value: application.cancel
       label_en: Remove
       label_de: Remove
   type: text

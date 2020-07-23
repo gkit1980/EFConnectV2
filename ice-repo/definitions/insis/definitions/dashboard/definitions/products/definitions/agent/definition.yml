@@ -1,5 +1,0 @@
-definition:
-  title: insis.dashboard.products.agent
-  executable: true
-  showInsights: false
-  elementOnPageCheck: false

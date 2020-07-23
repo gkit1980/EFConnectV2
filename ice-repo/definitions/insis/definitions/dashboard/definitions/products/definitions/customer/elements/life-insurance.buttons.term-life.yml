@@ -2,4 +2,4 @@ element:
   type: action
   defaultValue:
     StaticValueRule:
-      value: go-to-term-life-insurance
+      value: quotes.go-to-term-life-insurance

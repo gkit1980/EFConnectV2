@@ -14,7 +14,7 @@ page:
                     size.sm: auto
                     elements:
                       - name: new-policy
-          css: mb-2
+          css: mb-2 mt-2
     - component:
         InsisDatagridSection:
           arrayElement: policies
@@ -23,47 +23,33 @@ page:
               - cols:
                   - elements:
                       - name: policies~view-more
-                    caption: elements.agent-policies.items.policy-no.label
-                    size: 140px
+                    caption: elements.policies.items.policy-no.label
+                    size: 150px
                     css: ml-3 label-link
                   - elements:
-                      - name: policies~linked-icon
-                    caption: null
-                    size: 30px
-                    css: link-icon
-                  - elements:
                       - name: policies~product-formatted
-                    caption: elements.agent-policies.items.product-name.label
-                    size: 140px
-                  - elements:
-                      - name: policies~is-expired-icon
-                    caption: null
-                    size: 30px
-                    css: link-icon
+                    caption: elements.policies.items.product-formatted.label
+                    size: 300px
                   - elements:
                       - name: policies~policy-state-name
-                    caption: elements.agent-policies.items.policy-status.label
+                    caption: elements.policies.items.policy-state-name.label
                     size: 120px
                   - elements:
                       - name: policies~client-view-more
-                    caption: elements.agent-policies.items.client-name.label
-                    size: 242px
+                    caption: elements.policies.items.client-name.label
+                    size: 250px
                     css: label-link
                   - elements:
                       - name: policies~insured-objects
-                    caption: elements.agent-policies.items.insured-objects.label
+                    caption: elements.policies.items.insured-objects.items.item.label
                     size: 200px
                     css: overflow-visible
                   - elements:
-                      - name: policies~premium
-                    caption: elements.agent-policies.items.premium.label
-                    size: 100px
-                  - elements:
-                      - name: policies~insr-end
-                    caption: elements.agent-policies.items.insr-end.label
+                      - name: policies~insr-begin
+                    caption: elements.policies.items.insr-begin.label
                     size: 120px
                   - elements:
-                      - name: policies~active-claims
-                    caption: elements.agent-policies.items.active-claims.label
-                    size: 90px
+                      - name: policies~insr-end
+                    caption: elements.policies.items.insr-end.label
+                    size: 120px
       description: section

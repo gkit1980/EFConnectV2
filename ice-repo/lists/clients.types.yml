@@ -1,7 +1,7 @@
 list:
   items:
     - value: ''
-      label_en: Any
+      label_en: Any type
       label_de: Alle
     - value: '1'
       label_en: Person

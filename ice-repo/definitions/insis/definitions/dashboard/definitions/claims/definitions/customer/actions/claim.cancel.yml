@@ -1,0 +1,9 @@
+action:
+  execution:
+    - IntegrationExecutionRule:
+        integration: claim.cancel
+    - ResetElementValueExecutionRule:
+        elements:
+          - claims
+    - IntegrationExecutionRule:
+        integration: claims.load

@@ -1,6 +1,0 @@
-element:
-  type: text
-  defaultValue: -1
-  viewMode:
-    StaticViewModeRule:
-      viewMode: output

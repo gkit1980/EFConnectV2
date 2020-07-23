@@ -1,0 +1,13 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          variant: default
+          themeColor: accent
+          accesskey: s
+          type: submit
+  defaultValue:
+    StaticValueRule:
+      value: clients.search

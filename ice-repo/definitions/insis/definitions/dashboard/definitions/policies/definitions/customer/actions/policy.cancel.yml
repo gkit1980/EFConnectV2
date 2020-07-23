@@ -1,0 +1,9 @@
+action:
+  execution:
+    - IntegrationExecutionRule:
+        integration: policy.cancel
+    - ResetElementValueExecutionRule:
+        elements:
+          - policies
+    - IntegrationExecutionRule:
+        integration: policies.load

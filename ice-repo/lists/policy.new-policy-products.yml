@@ -1,26 +1,14 @@
 list:
   items:
-    - value: '2001'
-      label_en: AKS
-      label_de: AKS
-    - value: '3000'
-      label_en: US
-      label_de: US
-    - value: '4000'
-      label_en: RRV
-      label_de: RRV
-    - value: '1002'
-      label_en: VRS
-      label_de: VRS
-    - value: '2011'
-      label_en: Nemo
-      label_de: Nemo
-    - value: '2012'
-      label_en: Nemo Plus
-      label_de: Nemo Plus
-    - value: '2012+4000'
-      label_en: AKS + RRV bundle
-      label_de: AKS + RRV bundle
+    - value: '910211'
+      label_en: 910211 - Term Life
+      label_de: 910211 - Term Life
+    - value: '920201'
+      label_en: 920201 - Household Property
+      label_de: 920201 - Household Property
+    - value: '920101'
+      label_en: 920101 - Motor Comprehensive
+      label_de: 920101 - Motor Comprehensive
   type: text
   additionals:
     label_en:

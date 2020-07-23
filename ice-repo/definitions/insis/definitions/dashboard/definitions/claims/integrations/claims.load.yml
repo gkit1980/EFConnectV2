@@ -1,0 +1,63 @@
+integration:
+  exchange:
+    InsisDBExchangeRule:
+      connectString: 'env:insis-db-url'
+      username: 'env:insis-db-username'
+      password: 'env:insis-db-password'
+      queryFileURL: data/get-client-claims.sql
+      queryType: SQL
+  transformation:
+    DefaultTransformationRule:
+      out:
+        - mappings:
+            - principal: pid
+              param: PID
+      in:
+        - fromIdx:
+            array: payload.rows
+            condition: CLAIM_STATE == '1'
+          toIdx:
+            array: datamodel.claims
+            append: true
+          mappings:
+            - payload: 'rows[n].POLICY_ID'
+              element: claims~policy-id
+            - payload: 'rows[n].POLICY_NO'
+              element: claims~policy-no
+            - payload: 'rows[n].INSR_TYPE_NAME'
+              element: claims~insr-type-name
+            - payload: 'rows[n].CLAIM_NO'
+              element: claims~claim-no
+            - payload: 'rows[n].EVENT_DATE'
+              element: claims~event-date
+            - payload: 'rows[n].CLAIM_STATE_NAME'
+              element: claims~claim-state-name
+            - value: 'claim.view-active'
+              element: claims~go-to-details
+            - value: 'policy.view-active'
+              element: claims~policy-link
+        - fromIdx:
+            array: payload.rows
+            condition: CLAIM_STATE == '2'
+          toIdx:
+            array: datamodel.resolved-claims
+            append: true
+          mappings:
+            - payload: 'rows[n].POLICY_ID'
+              element: resolved-claims~policy-id
+            - payload: 'rows[n].POLICY_NO'
+              element: resolved-claims~policy-no
+            - payload: 'rows[n].INSR_TYPE_NAME'
+              element: resolved-claims~insr-type-name
+            - payload: 'rows[n].CLAIM_NO'
+              element: resolved-claims~claim-no
+            - payload: 'rows[n].CLOSE_DATE'
+              element: resolved-claims~date-resolved
+            - payload: 'rows[n].EVENT_DATE'
+              element: resolved-claims~event-date
+            - payload: 'rows[n].CLAIM_STATE_NAME'
+              element: resolved-claims~claim-state-name
+            - value: 'claim.view-resolved'
+              element: resolved-claims~claim-link
+            - value: 'policy.view-resolved'
+              element: resolved-claims~policy-link

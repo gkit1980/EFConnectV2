@@ -7,11 +7,10 @@ element:
         - clients~pid
   defaultValue:
     StaticValueRule:
-      value: navigate-to-client
+      value: clients.navigate-to-client
   component:
     StaticComponentRule:
       component:
         IceButton:
           themeColor: accent
           variant: default
-          action: navigate-to-client

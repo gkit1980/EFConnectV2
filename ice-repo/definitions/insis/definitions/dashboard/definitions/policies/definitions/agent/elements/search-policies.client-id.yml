@@ -1,0 +1,8 @@
+element:
+  type: text
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: search-policies.see-more-options
+      conditionValue: true
+      conditionViewMode: default
+      elseViewMode: hidden

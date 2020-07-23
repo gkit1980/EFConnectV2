@@ -14,17 +14,17 @@ page:
                     size.xs: auto
                     size.sm: auto
                     elements:
-                      - name: no-active-policies
+                      - name: no-active-policies-title
               - cols:
                   - size: auto
                     size.xs: auto
                     size.sm: auto
                     elements:
-                      - name: get-more-insurance
+                      - name: activity.get-more-insurance
       viewMode:
         InsisChangeViewModeBasedOnArrayLengthRule:
           condition: equals
-          conditionValue: '0'
+          conditionValue: 0
           viewMode: default
           elseViewMode: hidden
           array: policies
@@ -108,12 +108,12 @@ page:
                   - size: auto
                     css: u-mt-2
                     elements:
-                      - name: show-expired-policies
+                      - name: activity.show-expired-policies
       viewMode:
         InsisChangeViewModeBasedOnArrayLengthRule:
           array: expired-policies
           condition: greater
-          conditionValue: '0'
+          conditionValue: 0
           viewMode: default
           elseViewMode: hidden
     - component:
@@ -151,7 +151,7 @@ page:
                       - name: expired-policies~insured_objects
       viewMode:
         ConditionalSectionViewModeRule:
-          conditionElement: show-expired-policies
-          conditionValue: '0'
+          conditionElement: activity.show-expired-policies
+          conditionValue: false
           conditionViewMode: hidden
           elseViewMode: output

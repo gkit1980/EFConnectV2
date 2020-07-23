@@ -1,0 +1,5 @@
+element:
+  type: integer
+  defaultValue:
+    StaticValueRule:
+      value: 0

@@ -1,0 +1,12 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        IceNone: {}
+  label:
+    ResourceWithElementValuesLabelRule:
+      elements:
+        - client.firstname
+        - client.lastname
+      key: elements.welcome-back.label

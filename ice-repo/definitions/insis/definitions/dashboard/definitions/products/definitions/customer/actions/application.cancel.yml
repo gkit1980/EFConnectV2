@@ -1,0 +1,9 @@
+action:
+  execution:
+    - IntegrationExecutionRule:
+        integration: application.cancel
+    - ResetElementValueExecutionRule:
+        elements:
+          - quotes
+    - IntegrationExecutionRule:
+        integration: quotes.load

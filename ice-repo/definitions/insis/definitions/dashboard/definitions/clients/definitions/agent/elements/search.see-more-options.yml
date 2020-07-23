@@ -1,0 +1,13 @@
+element:
+  type: boolean
+  defaultValue:
+    StaticValueRule:
+      value: false
+  component:
+    StaticComponentRule:
+      component:
+        InsisButtonToggle:
+          labelTrue: elements.search.see-less-options.label
+          labelFalse: elements.search.see-more-options.label
+  label:
+    NoLabelRule: {}

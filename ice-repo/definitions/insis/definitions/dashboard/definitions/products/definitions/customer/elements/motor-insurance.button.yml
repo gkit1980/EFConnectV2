@@ -2,4 +2,4 @@ element:
   type: action
   defaultValue:
     StaticValueRule:
-      value: go-to-motor-insurance
+      value: quotes.go-to-motor-insurance

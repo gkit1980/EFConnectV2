@@ -3,27 +3,16 @@ section:
     InsisFormFlexSection:
       grid:
         rows:
-          - gap: 20px
+          - gap: 0px
             cols:
               - size: auto
                 size.xs: auto
                 size.sm: auto
+                css: nowrap
                 elements:
-                  - name: search-client.client-pid-name
-              - size: auto
-                size.xs: auto
-                size.sm: auto
-                elements:
-                  - name: search-client.client-type
-              - size: auto
-                size.xs: auto
-                size.sm: auto
-                elements:
-                  - name: search-client.client-city
-              - size: auto
-                size.xs: auto
-                size.sm: auto
-                css: mt-1
-                elements:
-                  - name: search-client.send-button
-      css: search-clients
+                  - name: search.type
+                  - name: search.fulltext
+                  - name: search.id
+                  - name: search.name
+                  - name: activity.search-clients
+                  - name: search.see-more-options

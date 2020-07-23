@@ -6,6 +6,5 @@ element:
   label:
     NoLabelRule: {}
   mirror:
-    DtMirrorRule:
-      dt: policy-name
-      output: output
+    CopyValueMirrorRule:
+      originElement: policies~product-name

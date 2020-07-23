@@ -4,8 +4,12 @@ element:
     StaticComponentRule:
       component:
         InsisArrayTooltip:
-          showFirst: '1'
+          showFirst: 1
+          items:
+            - policies~insured-objects~item
   viewMode: output
+  text:
+    ResourceTextRule:
+      dynamic-label: elements.policies.items.insured-objects-formatted.label
   label:
-    ResourceLabelRule:
-      key: elements.policies.items.insured-objects-formatted.label
+    NoLabelRule: {}

@@ -1,0 +1,12 @@
+action:
+  trigger:
+    - InsisKeyboardShortcutTriggerRule:
+        keyCombination: Escape
+        preventDefault: true
+  execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - search.id
+          - search.type
+          - search.name
+          - search.fulltext

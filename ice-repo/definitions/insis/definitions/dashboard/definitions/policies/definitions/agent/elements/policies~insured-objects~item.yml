@@ -1,6 +1,5 @@
 element:
   type: text
-  title: ''
   defaultValue:
     ArrayItemValueRule:
       values: []

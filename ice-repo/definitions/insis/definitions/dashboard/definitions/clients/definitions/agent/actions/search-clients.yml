@@ -1,8 +1,0 @@
-action:
-  execution:
-    - ResetElementValueExecutionRule:
-        elements:
-          - clients
-    - IntegrationExecutionRule:
-        integration: search-clients
-   

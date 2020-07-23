@@ -71,7 +71,7 @@ page:
                     size.xs: auto
                     size.sm: auto
                     elements:
-                      - name: isurance-products-title
+                      - name: products-title
                     css: mat-display-1 u-mb-8 u-mt-2
     - component:
         IceFlexSection:

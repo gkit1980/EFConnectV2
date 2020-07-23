@@ -51,18 +51,14 @@ entries:
         - en: NEW POLICY
           de: NEUE POLICE
     search-policies:
-      policy-name:
-        label:
-          - en: Policy name
-            de: Vers.Schein
       product-id:
         label:
           - en: Product
             de: Produkt
       policy-state:
         label:
-          - en: Type
-            de: Typ
+          - en: State
+            de: State
       insr-begin:
         label:
           - en: Insurance begin
@@ -71,57 +67,58 @@ entries:
         label:
           - en: Insurance end
             de: Vers.Ende
-      send-button:
+      policy-no:
+        label:
+          - en: Policy number
+            de: Police nummer
+      client-name:
+        label:
+          - en: Client name
+            de: Kunde Name
+      client-id:
+        label:
+          - en: Client ID
+            de: Kunde ID
+      insured-object:
+        label:
+          - en: Insured object
+            de: Insured object
+      search:
         label:
           - en: SEARCH
             de: SUCHEN
         tooltip:
           - en: Alt+S
             de: Alt+S
-      client:
-        label:
-          - en: Client
-            de: Kunde
-    search-client:
-      send-button:
-        label:
-          - en: SEARCH
-            de: SUCHEN
-        tooltip:
-          - en: Alt+S
-            de: Alt+S
-      client-pid-name:
-        label:
-          - en: Client
-            de: Kunde
-      client-type:
+    search:
+      fulltext:
+        placeholder:
+          - en: Search...
+            de: Suche...
+      type:
         label:
           - en: Type
             de: Typ
-      client-city:
-        label:
-          - en: City
-            de: Stadt
       active-policies:
         label:
           - en: Active policies
             de: Aktive Policen
-      client-name:
+      name:
         label:
-          - en: Client name
+          - en: Name
             de: Kunde
-      client-pid:
+      id:
         label:
-          - en: Client pid
+          - en: Client id
             de: Kunden-ID
-      new-policy:
+      see-less-options:
         label:
-          - en: NEW TERM LIFE
-            de: NEW TERM LIFE
-    new-client:
-      label:
-        - en: NEW CLIENT
-          de: NEUER KUNDE
+          - en: See less options
+            de: See less options
+      see-more-options:
+        label:
+          - en: See more options
+            de: See more options
     expired-policies:
       items:
         more-actions:
@@ -170,6 +167,14 @@ entries:
           label:
             - en: '${param1} objects'
               de: '${param1} Objekte'
+        client-view-more:
+          label:
+            - en: '${param1} ${param2}'
+              de: '${param1} ${param2}'
+        client-name:
+          label:
+            - en: Client
+              de: Kunde
         view-more:
           label:
             - en: View
@@ -187,25 +192,50 @@ entries:
             - en: Valid until
               de: Valid until
         insured-objects:
+          items:
+            item:
+              label:
+                - en: Insured Objects
+                  de: Insured Objects
+        policy-no:
           label:
-            - en: Vehicle
-              de: Vehicle
-    show-resolved-claims:
-      label:
-        - en: Show resolved claims
-          de: Show resolved claims
-    hide-resolved-claims:
-      label:
-        - en: Hide resolved claims
-          de: Hide resolved claims
-    add-claim:
-      label:
-        - en: Submit a new claim
-          de: null
+            - en: Policy number
+              de: Policy number
+        product-formatted:
+          label:
+            - en: Product
+              de: Produkt
+        policy-state-name:
+          label:
+            - en: State
+              de: Status
+        insr-begin:
+          label:
+            - en: Insurance begin
+              de: Insurance begin
+        insr-end:
+          label:
+            - en: Insurance end
+              de: Insurance end
+        insured-objects~item:
+          label:
+            - en: Insured Object
+              de: Insured Object
     claims-in-progress:
-      label:
-        - en: Claims in progress
-          de: Claims in progress
+      submit-a-claim:
+        label:
+          - en: Submit a claim here
+            de: null
+        icon:
+          - en: thunder.svg
+            de: thunder.svg
+      summary:
+        label:
+          - en: '${param1} claims in progress'
+            de: null
+        icon:
+          - en: thunder.svg
+            de: thunder.svg
     claims:
       items:
         claim-no:
@@ -224,7 +254,7 @@ entries:
           label:
             - en: Event date
               de: Event date
-        button-view-more:
+        go-to-details:
           label:
             - en: View
               de: View
@@ -1150,14 +1180,6 @@ entries:
       label:
         - en: ...
           de: null
-    show-expired-policies:
-      label:
-        - en: SHOW EXPIRED POLICIES
-          de: null
-    hide-expired-policies:
-      label:
-        - en: HIDE EXPIRED POLICIES
-          de: null
     cancel-policy:
       label:
         - en: Cancel policy
@@ -1216,10 +1238,6 @@ entries:
       label:
         - en: Quotes in Progress
           de: Quotes in Progress
-    isurance-products-title:
-      label:
-        - en: Insurance Products
-          de: Insurance Products
     motor-insurance:
       description:
         label:
@@ -1235,41 +1253,6 @@ entries:
         label:
           - en: MOTOR INSURANCE
             de: MOTOR INSURANCE
-    submit-a-claim-here:
-      label:
-        - en: Submit a claim here
-          de: null
-      icon:
-        - en: thunder.svg
-          de: thunder.svg
-    get-more-insurance:
-      label:
-        - en: Get more insurance
-          de: null
-      icon:
-        - en: page-of-text.svg
-          de: page-of-text.svg
-    summary-of-active-policies:
-      label:
-        - en: '${param1} active policies'
-          de: null
-      icon:
-        - en: umbrella.svg
-          de: umbrella.svg
-    summary-of-claims-in-progress:
-      label:
-        - en: '${param1} claims in progress'
-          de: null
-      icon:
-        - en: thunder.svg
-          de: thunder.svg
-    summary-of-unfinished-quotes:
-      label:
-        - en: '${param1} unfinished quotes'
-          de: null
-      icon:
-        - en: page-of-text.svg
-          de: page-of-text.svg
     welcome-back:
       label:
         - en: 'Welcome back, ${param1} ${param2}!'
@@ -1379,10 +1362,6 @@ entries:
             - list
             - of
             - something
-    no-active-policies:
-      label:
-        - en: You have no active policies
-          de: You have no active policies
     no-policies: {}
     navigate-to-all-policies:
       label:
@@ -1512,6 +1491,77 @@ entries:
       label:
         - en: Add client
           de: Add client
+    unfinished-quotes:
+      get-more-insurance:
+        label:
+          - en: Get more insurance
+            de: null
+        icon:
+          - en: page-of-text.svg
+            de: page-of-text.svg
+      summary:
+        label:
+          - en: '${param1} unfinished quotes'
+            de: null
+        icon:
+          - en: page-of-text.svg
+            de: page-of-text.svg
+    active-policies:
+      summary:
+        label:
+          - en: '${param1} active policies'
+            de: null
+        icon:
+          - en: umbrella.svg
+            de: umbrella.svg
+    products-title:
+      label:
+        - en: Insurance Products
+          de: Insurance Products
+    activity:
+      show-expired-policies:
+        label:
+          - en: SHOW EXPIRED POLICIES
+            de: null
+      hide-expired-policies:
+        label:
+          - en: HIDE EXPIRED POLICIES
+            de: null
+      add-claim:
+        label:
+          - en: Submit a new claim
+            de: null
+      show-resolved-claims:
+        label:
+          - en: Show resolved claims
+            de: Show resolved claims
+      hide-resolved-claims:
+        label:
+          - en: Hide resolved claims
+            de: Hide resolved claims
+      get-more-insurance:
+        label:
+          - en: Get more insurance
+            de: null
+      search:
+        label:
+          - en: SEARCH
+            de: SUCHE
+      search-clients:
+        label:
+          - en: SEARCH
+            de: SUCHEN
+        tooltip:
+          - en: Alt+S
+            de: Alt+S
+      new-client:
+        label:
+          - en: NEW CLIENT
+            de: NEUER KUNDE
+    no-active-policies-title:
+      label:
+        - en: You have no active policies
+          de: You have no active policies
   validation:
     pageValidation:
       summary:

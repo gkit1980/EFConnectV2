@@ -17,24 +17,24 @@ dt:
     - inputs:
         - '-4'
       outputs:
-        - cancel-quote
+        - quote.cancel
         - Remove
         - Remove
     - inputs:
         - '-3'
       outputs:
-        - cancel-application
+        - application.cancel
         - Remove
         - Remove
     - inputs:
         - '-2'
       outputs:
-        - cancel-application
+        - application.cancel
         - Remove
         - Remove
     - inputs:
         - '-'
       outputs:
-        - cancel-application
+        - application.cancel
         - Remove
         - Remove

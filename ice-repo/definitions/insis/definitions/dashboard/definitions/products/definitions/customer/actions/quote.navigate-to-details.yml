@@ -1,0 +1,6 @@
+action:
+  execution:
+    - DtNavigateToDefinitionExecutionRule:
+        dt: navigate-to-show-quote
+        definitionOutput: url
+        dynIdOutput: dynId

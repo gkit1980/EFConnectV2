@@ -11,7 +11,7 @@ page:
                   - size: 100%
                     size.xs: 100%
                     elements:
-                      - name: welcome-back
+                      - name: client.welcome-message
           css: text-align-center u-mb-6
     - component:
         IceFlexSection:
@@ -21,15 +21,15 @@ page:
                   - size: 25%
                     size.xs: auto
                     elements:
-                      - name: summary-of-active-policies
+                      - name: active-policies.summary
                   - size: 25%
                     size.xs: auto
                     elements:
-                      - name: summary-of-claims-in-progress
-                      - name: submit-a-claim-here
+                      - name: claims-in-progress.summary
+                      - name: claims-in-progress.submit-a-claim
                   - size: 25%
                     size.xs: auto
                     elements:
-                      - name: summary-of-unfinished-quotes
-                      - name: get-more-insurance
+                      - name: unfinished-quotes.summary
+                      - name: unfinished-quotes.get-more-insurance
                 align: space-between

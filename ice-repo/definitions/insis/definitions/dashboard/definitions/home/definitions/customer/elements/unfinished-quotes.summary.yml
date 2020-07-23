@@ -1,0 +1,18 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        InsisCard:
+          url: /ice/insis.dashboard.products.customer/home
+  label:
+    ResourceWithElementValuesLabelRule:
+      elements:
+        - unfinished-quotes.total-number
+      key: elements.unfinished-quotes.summary.label
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: unfinished-quotes.total-number
+      conditionValue: 0
+      conditionViewMode: hidden
+      elseViewMode: default

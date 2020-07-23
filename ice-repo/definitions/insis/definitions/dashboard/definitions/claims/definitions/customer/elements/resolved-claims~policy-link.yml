@@ -9,7 +9,7 @@ element:
         IceButton:
           themeColor: primary
           variant: default
-          action: view-policy-resolved
+          action: policy.view-resolved
   label:
     ResourceWithElementValuesLabelRule:
       key: elements.resolved-claims.items.policy-link.label

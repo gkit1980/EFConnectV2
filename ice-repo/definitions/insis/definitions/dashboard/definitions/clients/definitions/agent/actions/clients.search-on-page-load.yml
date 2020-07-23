@@ -1,0 +1,12 @@
+action:
+  execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - clients
+    - IntegrationExecutionRule:
+        integration: clients.load-search-criteria
+    - IntegrationExecutionRule:
+        integration: clients.search
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ICE_CONTEXT_ACTIVATED

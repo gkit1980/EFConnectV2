@@ -12,9 +12,6 @@ list:
     - value: Policy
       label_en: Policy
       label_de: Police
-    - value: Police
-      label_en: Policy
-      label_de: Police
   type: string
   additionals:
     label_en:

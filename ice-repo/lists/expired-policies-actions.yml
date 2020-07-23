@@ -1,13 +1,13 @@
 list:
   items:
-    - value: submit
+    - value: claim.submit
       label_en: >
         Submit claim
       label_de: null
-    - value: download-pdf-expired
+    - value: policy.expired.download-pdf
       label_en: Download PDF
       label_de: null
-    - value: renew
+    - value: policy.renew
       label_en: Renew policy
       label_de: null
   additionals:

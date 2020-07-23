@@ -1,8 +1,0 @@
-element:
-  type: integer
-  defaultValue:
-    StaticValueRule:
-      value: 0
-  mirror:
-    InsisGetArrayLengthMirrorRule:
-      originElement: claims

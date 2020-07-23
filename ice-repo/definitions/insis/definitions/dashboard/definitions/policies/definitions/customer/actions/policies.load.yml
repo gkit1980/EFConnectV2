@@ -1,0 +1,11 @@
+action:
+  execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - policies
+          - expired-policies
+    - IntegrationExecutionRule:
+        integration: policies.load
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ICE_CONTEXT_ACTIVATED

@@ -1,7 +1,0 @@
-action:
-  execution:
-    - IntegrationExecutionRule:
-        integration: store-search-criteria
-  trigger:
-    - IceLifecycleEventTriggerRule:
-        event: ICE_CONTEXT_DEACTIVATED

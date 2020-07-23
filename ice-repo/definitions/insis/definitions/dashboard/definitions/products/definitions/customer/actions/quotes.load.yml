@@ -1,0 +1,11 @@
+action:
+  execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - quotes
+    - IntegrationExecutionRule:
+        integration: quotes.load
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ICE_CONTEXT_ACTIVATED
+    - DynIdChangeTriggerRule: {}

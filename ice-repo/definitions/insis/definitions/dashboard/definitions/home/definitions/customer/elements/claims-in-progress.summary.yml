@@ -1,0 +1,18 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        InsisCard:
+          url: /ice/insis.dashboard.claims.customer/home
+  label:
+    ResourceWithElementValuesLabelRule:
+      elements:
+        - claims-in-progress.total-number
+      key: elements.claims-in-progress.summary.label
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: claims-in-progress.total-number
+      conditionValue: 0
+      conditionViewMode: hidden
+      elseViewMode: default

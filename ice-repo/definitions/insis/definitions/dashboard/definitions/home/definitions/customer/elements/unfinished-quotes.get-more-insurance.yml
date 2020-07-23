@@ -1,0 +1,13 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        InsisCard:
+          url: /ice/insis.dashboard.products.customer/home
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: unfinished-quotes.total-number
+      conditionValue: 0
+      conditionViewMode: default
+      elseViewMode: hidden

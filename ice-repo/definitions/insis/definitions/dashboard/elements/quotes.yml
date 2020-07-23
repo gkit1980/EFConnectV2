@@ -1,7 +1,0 @@
-element:
-  type: array
-  viewMode:
-    StaticViewModeRule:
-      viewMode: output
-  label:
-    NoLabelRule: {}

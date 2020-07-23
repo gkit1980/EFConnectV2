@@ -1,9 +1,9 @@
 list:
   items:
-    - value: cancel-application
+    - value: application.cancel
       label_en: Remove
       label_de: Remove
-    - value: cancel-quote
+    - value: quote.cancel
       label_en: Remove
       label_de: Remove
   type: text

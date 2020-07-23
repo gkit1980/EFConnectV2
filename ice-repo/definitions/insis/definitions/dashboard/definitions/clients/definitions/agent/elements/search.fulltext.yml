@@ -1,0 +1,18 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        IceTextInput:
+          instantlyUpdateModel: true
+  label:
+    NoLabelRule: {}
+  text:
+    ResourceTextRule:
+      placeholder: elements.search.fulltext.placeholder
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: search.see-more-options
+      conditionValue: true
+      conditionViewMode: hidden
+      elseViewMode: default
