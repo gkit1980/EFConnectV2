@@ -1,0 +1,11 @@
+action:
+  execution:
+    - IntegrationExecutionRule:
+        integration: update-holder-phone
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - policy.participants.holder.person.phone
+  condition:
+    FeelConditionRule:
+      expression: element('policy.participants.holder.person.phone-id') != ''

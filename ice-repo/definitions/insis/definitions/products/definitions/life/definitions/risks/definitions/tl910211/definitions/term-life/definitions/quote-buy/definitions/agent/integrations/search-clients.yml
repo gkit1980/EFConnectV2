@@ -40,5 +40,7 @@ integration:
               element: client.list~gender
             - payload: 'rows[n].COUNTRY_CODE'
               element: client.list~country-code
+            - payload: 'rows[n].MAN_ID'
+              element: client.list~man-id
             - value: false
               element: client.list~selected

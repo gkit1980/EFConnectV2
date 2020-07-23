@@ -1,4 +1,6 @@
 import { RestCallExchangeRule } from '@impeo/ice-core/default-rules/rules/integration-rules.server';
+import { IntegrationDataIn } from '@impeo/ice-core';
+import { isArray } from 'lodash';
 
 //
 //
@@ -12,5 +14,11 @@ export class InsisRestCallExchangeRule extends RestCallExchangeRule {
       ignoreLoginService: true,
     };
     return headers;
+  }
+
+  protected buildResponseData(response: any): IntegrationDataIn {
+    const data = super.buildResponseData(response);
+    if (isArray(data.payload)) data.payload = { response: data.payload };
+    return data;
   }
 }

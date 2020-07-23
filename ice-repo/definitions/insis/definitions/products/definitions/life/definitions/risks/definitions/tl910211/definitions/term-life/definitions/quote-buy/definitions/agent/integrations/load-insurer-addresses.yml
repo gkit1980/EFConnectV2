@@ -1,0 +1,31 @@
+integration:
+  exchange:
+    InsisRestCallExchangeRule:
+      endpointBaseurl: 'insis-rest-endpoint'
+      verb: get
+      url: '/people-dir/person/${MANID}/addresses'
+
+  transformation:
+    DefaultTransformationRule:
+      additional: insis
+      dateFormat: YYYY-MM-DD
+      out:
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+            index: actionContext.index
+          mappings:
+            - param: ignoreLoginService
+              value: true
+            - param: MANID
+              element: policy.insured.person-objects~person.man-id
+      in:
+        - fromIdx:
+            array: payload.response
+            condition: primaryFlag == 'Y'
+          toIdx:
+            index: actionContext.index
+          mappings:
+            - payload: response[0].address
+              element: policy.insured.person-objects~address.value
+            - payload: response[0].addressId
+              element: policy.insured.person-objects~address.id

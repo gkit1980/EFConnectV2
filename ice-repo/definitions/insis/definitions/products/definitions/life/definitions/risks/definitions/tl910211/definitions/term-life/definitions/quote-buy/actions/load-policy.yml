@@ -3,7 +3,7 @@ action:
     - IntegrationExecutionRule:
         integration: 910211.risks.life.insis-policy.get-policy.init
     - InsisArrayIterationIntegrationExecutionRule:
-        integration: load-insurer
+        integration: load-insurer-rest
         arrayElement: policy.insured.person-objects
   trigger:
     - IceLifecycleEventTriggerRule:

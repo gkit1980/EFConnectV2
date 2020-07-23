@@ -22,6 +22,8 @@ integration:
               payload: pid
             - element: client.list~country-code
               payload: country-code
+            - element: client.list~man-id
+              payload: man-id
       in:
         - toIdx:
             index: '[1]'
@@ -40,6 +42,8 @@ integration:
               element: policy.insured.person-objects~person.gender
             - payload: country-code
               element: policy.insured.person-objects~person.address.country
+            - payload: man-id
+              element: policy.insured.person-objects~person.man-id
             # - value: false
             #   element: policy.insured.person-objects~question.q-07
             # - value: 2

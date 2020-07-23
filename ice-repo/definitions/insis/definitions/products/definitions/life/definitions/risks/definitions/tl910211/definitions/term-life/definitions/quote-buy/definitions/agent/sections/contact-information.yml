@@ -10,21 +10,21 @@ section:
                 elements:
                   - name: application-details-labels.contact-information
           - cols:
-              - size: auto
+              - size: 372px
                 size.xs: auto
                 size.sm: auto
                 elements:
                   - name: policy.participants.holder.person.email
                 css: u-mb-4
           - cols:
-              - size: auto
+              - size: 372px
                 size.xs: auto
                 size.sm: auto
                 elements:
                   - name: policy.participants.holder.person.phone
                 css: u-mb-4
           - cols:
-              - size: auto
+              - size: 372px
                 size.xs: auto
                 size.sm: auto
                 elements:

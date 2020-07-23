@@ -910,17 +910,20 @@ entries:
                 - en: Make this person main insured
                   de: Make this person main insured
             address:
-              label:
-                - en: Address
-                  de: Address
+              value:
+                label:
+                  - en: Address
+                    de: Address
             email:
-              label:
-                - en: Email
-                  de: Email
+              value:
+                label:
+                  - en: Email
+                    de: Email
             phone:
-              label:
-                - en: Phone
-                  de: Phone
+              value:
+                label:
+                  - en: Phone
+                    de: Phone
         add-another-person:
           label:
             - en: Add another person
@@ -974,6 +977,18 @@ entries:
               label:
                 - en: Policy holder
                   de: Policy holder
+            email:
+              label:
+                - en: Email
+                  de: Email
+            phone:
+              label:
+                - en: Phone
+                  de: Phone
+            address:
+              label:
+                - en: Address
+                  de: Address
         beneficiaries:
           label:
             - en: Beneficiary

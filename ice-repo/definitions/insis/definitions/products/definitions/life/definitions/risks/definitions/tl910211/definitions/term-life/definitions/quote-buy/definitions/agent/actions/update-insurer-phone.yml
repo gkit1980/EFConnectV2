@@ -1,0 +1,11 @@
+action:
+  execution:
+    - IntegrationExecutionRule:
+        integration: update-insurer-phone
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - policy.insured.person-objects~phone.value
+  condition:
+    FeelConditionRule:
+      expression: element('policy.insured.person-objects~phone.id') != ''

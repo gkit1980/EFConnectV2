@@ -1,0 +1,11 @@
+action:
+  execution:
+    - IntegrationExecutionRule:
+        integration: update-insurer-address
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - policy.insured.person-objects~address.value
+  condition:
+    FeelConditionRule:
+      expression: element('policy.insured.person-objects~address.id') != ''

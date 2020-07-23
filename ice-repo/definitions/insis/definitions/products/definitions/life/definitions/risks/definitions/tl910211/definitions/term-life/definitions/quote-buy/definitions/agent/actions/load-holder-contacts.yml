@@ -1,0 +1,8 @@
+action:
+  execution:
+    - IntegrationExecutionRule:
+        integration: load-holder-contacts
+  trigger:
+    - PageTriggerRule:
+        enter:
+          - 2.application.payment

@@ -1,0 +1,11 @@
+action:
+  execution:
+    - IntegrationExecutionRule:
+        integration: update-insurer-email
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - policy.insured.person-objects~email.value
+  condition:
+    FeelConditionRule:
+      expression: element('policy.insured.person-objects~email.id') != ''

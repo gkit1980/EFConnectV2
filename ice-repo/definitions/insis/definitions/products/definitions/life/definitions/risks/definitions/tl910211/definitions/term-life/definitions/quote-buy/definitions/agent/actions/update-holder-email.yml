@@ -1,0 +1,11 @@
+action:
+  execution:
+    - IntegrationExecutionRule:
+        integration: update-holder-email
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - policy.participants.holder.person.email
+  condition:
+    FeelConditionRule:
+      expression: element('policy.participants.holder.person.email-id') != ''

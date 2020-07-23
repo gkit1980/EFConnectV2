@@ -21,7 +21,7 @@ section:
                 size.xs: 100%
                 css: u-mb-4
                 elements:
-                  - name: policy.insured.person-objects~email
+                  - name: policy.insured.person-objects~email.value
           - gap: 24px
             gap.xs: 0px
             cols:
@@ -29,7 +29,7 @@ section:
                 size.xs: 100%
                 css: u-mb-4
                 elements:
-                  - name: policy.insured.person-objects~phone
+                  - name: policy.insured.person-objects~phone.value
           - gap: 24px
             gap.xs: 0px
             cols:
@@ -37,7 +37,7 @@ section:
                 size.xs: 100%
                 css: u-mb-4
                 elements:
-                  - name: policy.insured.person-objects~address
+                  - name: policy.insured.person-objects~address.value
           - gap: 24px
             gap.xs: 0px
             cols:
