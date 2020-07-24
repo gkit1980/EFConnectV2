@@ -96,7 +96,7 @@ integration:
             array: payload.InsuranceConditions.Participants.Participant
             append: true
           mappings:
-            - principal: pid
+            - element: policy.participants.holder.person.pid
               payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.PID
             - value: 'PHOLDER'
               payload: InsuranceConditions.Participants.Participant[n].ParticipantRole

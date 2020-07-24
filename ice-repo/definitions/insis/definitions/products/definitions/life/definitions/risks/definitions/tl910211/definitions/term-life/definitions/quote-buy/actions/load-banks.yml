@@ -3,6 +3,9 @@ action:
     - PageTriggerRule:
         enter:
           - 3.review.payment
+    - PageTriggerRule:
+        enter:
+          - 2.application.payment
   execution:
     - ResetElementValueExecutionRule:
         elements:
