@@ -44,7 +44,7 @@ integration:
               element: quotes~id
             - payload: 'rows[n].insured_objects'
               element: quotes~insured_objects
-            - value: continue-quote
+            - value: quote.navigate-to-details
               element: quotes~continue
         - fromIdx:
             array: payload.rows
