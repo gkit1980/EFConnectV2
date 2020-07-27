@@ -4,6 +4,10 @@ section:
       grid:
         rows:
           - cols:
+              - size: 100%
+                elements:
+                  - name: insis.error
+          - cols:
               - size: 175px
                 size.xs: 100%
                 css: u-mb-4-sm

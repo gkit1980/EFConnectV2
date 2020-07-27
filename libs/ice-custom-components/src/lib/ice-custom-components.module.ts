@@ -60,6 +60,7 @@ import { InsisUploadAttachmentButtonComponent } from './components/element-compo
 import { InsisChipComponent } from './components/element-components/insis-chip-component/insis-chip.component';
 import { InsisNumberComponent } from './components/element-components/insis-number-component/insis-number-component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { InsisAlertComponent } from './components/element-components/insis-alert-component/insis-alert.component';
 
 /**
  * TIP: You will need to include in this array any new component you create.
@@ -100,6 +101,7 @@ export const iceCustomComponents = [
   InsisUploadAttachmentButtonComponent,
   InsisChipComponent,
   InsisNumberComponent,
+  InsisAlertComponent,
 ];
 
 /**

@@ -1,6 +1,6 @@
 integration:
   exchange:
-    SoapCallExchangeRule:
+    InsisSoapCallExchangeRule:
       endpoint: insis_pam_endpoint
       securityMode: UsernamePassword
       username: 'env:insis-username'

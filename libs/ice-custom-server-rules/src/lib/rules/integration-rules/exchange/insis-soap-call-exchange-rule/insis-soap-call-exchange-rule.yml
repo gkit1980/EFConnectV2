@@ -1,0 +1,64 @@
+implementations:
+  InsisSoapCallExchangeRule:
+    description: >
+
+      This rule executes a SoapCall based on the configuration in this _recipe_.
+
+      The _payload_ of the _IntegrationData_ will be send 
+      as the soap body. The result of the _http response_ will be set at _payload_ in the
+      _response IntegrationData_
+
+    icel: >
+
+      You can specify _params_ from the _request IntegrationData_ to be used as header values.
+
+
+      The rule will set the following values in the _other_ data of the _response IntegrationData_:
+
+        * `http.status`  the http status code from the server response 
+        * `http.statusText` the HTTP status message from the server response
+        * `http.headers` the headers that the server responded with (all header names 
+           are lower cased)
+
+      ```
+        integration:
+          DefaultTransformationRule:
+            request:
+              - param: city
+                element: city.name
+              - param: APPID
+                value: d696e6b14e82fb9a49418a1fc1c02fdc
+              - param: units
+                value: metric
+              - param: X-Requested-With
+                value: XMLHttpRequest
+              - param: content-type
+                value: application/x-www-form-urlencoded
+          exchange:
+            InsisSoapCallExchangeRule:
+              endpoint: http://some.soap.com/api/foo
+              securityMode: UsernamePassword
+              username: 'env:username'
+              password: 'env:password'
+              ignoreNamespaces: 'env:ignoreNamespaces'
+              jsonSchema: InsisPAM
+      ```
+
+    params:
+      endpoint:
+        label: Endpoint / Url
+        info: endpoint name that can be resolved to a Url or mocked
+        required: true
+      securityMode:
+        label: Security Mode
+        type: select
+        options:
+          UsernamePassword: UsernamePassword
+          NoSecurity: NoSecurity
+      username:
+        label: Username
+        info: >
+          The username for authentication if __Security Mode__ ist set to __UsernamePassword__.
+          The username can be defined in the environment yml file, if it is defined there please use the systax __env:variablename__
+          where variablename is the name of the property in the environment yml file.
+          Or you can just enter the name of the user here.

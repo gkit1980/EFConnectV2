@@ -1,0 +1,9 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        InsisAlert:
+          type: error
+          autoDismiss: 0
+          showDismissButton: true

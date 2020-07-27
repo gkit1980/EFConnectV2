@@ -38,3 +38,11 @@ integration:
               payload: Policies.Policy[0].PolicyNo
             - element: policy.insured.premium.total
               payload: 'Policies.Policy[0].Installments.Installment.Amount'
+        - if: payload.error != null
+          mappings:
+            - payload: error
+              element: insis.error
+        - if: payload.error == undefined
+          mappings:
+            - element: insis.error
+              value: ''

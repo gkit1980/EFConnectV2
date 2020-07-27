@@ -6,6 +6,7 @@ export * from './exchange/insis-gopro-create-case-exchange-rule/insis-gopro-crea
 export * from './exchange/insis-db-exchange-rule/insis-db-exchange-rule';
 export * from './exchange/insis-email-exchange-rule/insis-email-exchange-rule';
 export * from './exchange/insis-rest-call-exchange-rule/insis-rest-call-exchange-rule';
+export * from './exchange/insis-soap-call-exchange-rule/insis-soap-call-exchange-rule';
 export * from './exchange/insis-load-yml-file-exchange-rule/insis-load-yml-file-exchange-rule';
 export * from './exchange/insis-print-exchange-rule/insis-print-exchange-rule';
 export * from './exchange/insis-static-json-exchange-rule/insis-static-json-exchange-rule';
