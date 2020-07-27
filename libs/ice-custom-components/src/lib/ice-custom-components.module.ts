@@ -19,6 +19,7 @@ import { InsisTwoLevelStepperNavigationPageComponent } from './components/page-c
 import { InsisConfirmationPageComponent } from './components/page-components/insis-confirmation-page/insis-confirmation-page.component';
 import { InsisHorizontalStepperNavigationComponent } from './components/navigation-components/insis-horizontal-stepper-navigation/insis-horizontal-stepper-navigation.component';
 import { InsisVerticalStepperNavigationComponent } from './components/navigation-components/insis-vertical-stepper-navigation/insis-vertical-stepper-navigation.component';
+import { InsisHorizontalTabsNavigationComponent } from './components/navigation-components/insis-horizontal-tabs-navigation/insis-horizontal-tabs-navigation.component';
 import { InsisArrayComponent } from './components/element-components/insis-array-component/insis-array.component';
 import { InsisArrayCardsLayoutComponent } from './components/element-components/insis-array-cards-layout-component/insis-array-cards-layout.component';
 import { InsisPolicySummarySectionComponent } from './components/section-components/insis-policy-summary-section/insis-policy-summary-section.component';
@@ -49,6 +50,7 @@ import { InsisButtonWithDialogComponent } from './components/element-components/
 import { InsisGoogleMapComponent } from './components/element-components/insis-google-map-component/insis-google-map.component';
 import { InsisPremiumSummarySection } from './components/section-components/insis-premium-summary-section/insis-premium-summary-section.component';
 import { MatTableModule } from '@angular/material/table';
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -129,6 +131,7 @@ export function registerComponents(componentService: IceComponentsService) {
     MatPaginatorModule,
     MatSliderModule,
     MatTableModule,
+    MatTabsModule,
     MatFormFieldModule,
     MatInputModule,
     MatMenuModule,
@@ -152,6 +155,7 @@ export function registerComponents(componentService: IceComponentsService) {
     InsisHorizontalStepperNavigationComponent,
     InsisVerticalStepperNavigationComponent,
     InsisDialogSectionContainer,
+    InsisHorizontalTabsNavigationComponent,
   ],
   exports: [...iceCustomComponents],
   entryComponents: [
@@ -160,6 +164,7 @@ export function registerComponents(componentService: IceComponentsService) {
     InsisHorizontalStepperNavigationComponent,
     InsisVerticalStepperNavigationComponent,
     InsisDialogSectionContainer,
+    InsisHorizontalTabsNavigationComponent,
   ],
   providers: [
     {

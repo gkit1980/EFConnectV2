@@ -1562,10 +1562,15 @@ entries:
       label:
         - en: You have no active policies
           de: You have no active policies
+    my-profile-label:
+      label:
+        - en: My profile
+          de: My profile
   pagination:
     policies:
       - en: policies
         de: Policen
+
   validation:
     pageValidation:
       summary:
@@ -1811,10 +1816,29 @@ entries:
         logout:
           - en: Logout
             de: null
+        my-profile:
+          - en: My profile
+            de: My profile
     insurances:
       title:
         - en: Quotes in Progress
           de: Quotes in Progress
+    addresses:
+      title:
+        - en: Adressess
+          de: Adressess
+    contacts:
+      title:
+        - en: contact information
+          de: contact information
+    payments:
+      title:
+        - en: payment information
+          de: payment information
+    personal-information:
+      title:
+        - en: personal information
+          de: personal information
   lists:
     gender:
       diverse:

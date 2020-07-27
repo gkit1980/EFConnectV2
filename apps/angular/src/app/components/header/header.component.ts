@@ -11,14 +11,22 @@ import { AuthenticationService } from '../../services/authentication.service';
 })
 export class HeaderComponent {
   activeURL = '';
-  agentNavigation: any[] = [];
   customerNavigation: any[] = [];
-  menuItems: { key: string; method: () => any }[] = [];
+  agentNavigation: any[] = [];
+  customerMenuItems: { key: string; method: () => any }[] = [];
+  agentMenuItems: { key: string; method: () => any }[] = [];
   showMobileNav = false;
+
   get navigation() {
     return this.authenticationService.role === 'agent'
       ? this.agentNavigation
       : this.customerNavigation;
+  }
+
+  get menuItems() {
+    return this.authenticationService.role === 'agent'
+      ? this.agentMenuItems
+      : this.customerMenuItems;
   }
 
   get name(): string {
@@ -95,7 +103,19 @@ export class HeaderComponent {
         }
       );
 
-      this.menuItems.push({
+      this.customerMenuItems.push(
+        {
+          key: runtime.iceResource.resolve('pages.header.menu.logout'),
+          method: this.logout.bind(this),
+        },
+        {
+          key: runtime.iceResource.resolve('pages.header.menu.my-profile'),
+          method: () =>
+            this.router.navigate(['ice/insis.person.client.customer/personal-information']),
+        }
+      );
+
+      this.agentMenuItems.push({
         key: runtime.iceResource.resolve('pages.header.menu.logout'),
         method: this.logout.bind(this),
       });

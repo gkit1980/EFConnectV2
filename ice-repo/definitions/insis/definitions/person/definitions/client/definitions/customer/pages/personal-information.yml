@@ -1,0 +1,17 @@
+page:
+  validation: {}
+  component: InsisOneLevelTabsNavigationPage
+  sections:
+    - component:
+        IceFlexSection:
+          tags:
+            - header
+          grid:
+            rows:
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: my-profile-label
+                css: my-profile-label

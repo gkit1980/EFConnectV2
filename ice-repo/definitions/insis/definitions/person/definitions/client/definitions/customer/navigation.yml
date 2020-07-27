@@ -1,4 +1,7 @@
 pages:
   StaticNavigationPagesRule:
     pages:
-      - page: new-page
+      - page: personal-information
+      - page: addresses
+      - page: contacts
+      - page: payments
