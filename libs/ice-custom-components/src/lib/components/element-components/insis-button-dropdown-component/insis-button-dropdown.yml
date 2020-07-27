@@ -30,3 +30,11 @@ params:
     label: Access Key
     type: text
     info: The key shortcut used to press the button. Note that you can add only one character.
+
+  matIcon:
+    label: Angular Material icon
+    type: text
+    info: >-
+      The name of the Angular Material icon that should be displayed.
+      For full list of the available names go to
+      https://www.angularjswiki.com/angular/angular-material-icons-list-mat-icon-list/

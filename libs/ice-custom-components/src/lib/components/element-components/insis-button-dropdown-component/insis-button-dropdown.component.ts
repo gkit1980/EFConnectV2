@@ -15,6 +15,9 @@ export class InsisButtonDropdownComponent extends MaterialSelectComponentImpleme
   get accesskey() {
     return this.getRecipeParam('accesskey', null);
   }
+  get icon() {
+    return this.getRecipeParam('matIcon', 'more_horiz');
+  }
 
   //
   //
