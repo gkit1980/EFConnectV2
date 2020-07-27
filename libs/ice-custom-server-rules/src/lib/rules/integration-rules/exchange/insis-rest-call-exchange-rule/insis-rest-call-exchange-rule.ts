@@ -8,9 +8,13 @@ export class InsisRestCallExchangeRule extends RestCallExchangeRule {
   //
   //
   protected getHeaders(): any {
+    const username = this.runtime.environmentVariables['insis-rest-username'];
+    const password = this.runtime.environmentVariables['insis-rest-password'];
+    const buff = Buffer.from(username + ':' + password);
+    const token = buff.toString('base64');
     const headers = {
       //'Content-Type': 'application/json',
-      Authorization: 'Basic aW5zaXNfZ2VuX3YxMDppbnNpc19nZW5fdjEw',
+      Authorization: 'Basic ' + token,
       ignoreLoginService: true,
     };
     return headers;
