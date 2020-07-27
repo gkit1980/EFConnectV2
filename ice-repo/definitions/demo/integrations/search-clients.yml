@@ -11,8 +11,6 @@ integration:
       dateFormat: YYYY-MM-DD
       out:
         - mappings:
-            - param: client_pid_name
-              element: client.search.input
             - param: city
               value: ''
             - param: cl_type

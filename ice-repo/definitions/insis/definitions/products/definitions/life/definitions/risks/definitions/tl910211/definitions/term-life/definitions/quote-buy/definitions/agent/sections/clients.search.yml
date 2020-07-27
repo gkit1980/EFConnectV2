@@ -3,12 +3,18 @@ section:
     InsisFormFlexSection:
       grid:
         rows:
-          - cols:
+          - gap: 20px
+            cols:
               - size: auto
                 size.xs: auto
                 size.sm: auto
                 elements:
-                  - name: client.search.input
+                  - name: client.search.name
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: client.search.pid
               - size: none
                 css: u-mt-1
                 elements:

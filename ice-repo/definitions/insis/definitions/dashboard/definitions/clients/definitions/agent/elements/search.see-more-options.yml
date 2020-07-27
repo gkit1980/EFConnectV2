@@ -2,7 +2,7 @@ element:
   type: boolean
   defaultValue:
     StaticValueRule:
-      value: false
+      value: true
   component:
     StaticComponentRule:
       component:

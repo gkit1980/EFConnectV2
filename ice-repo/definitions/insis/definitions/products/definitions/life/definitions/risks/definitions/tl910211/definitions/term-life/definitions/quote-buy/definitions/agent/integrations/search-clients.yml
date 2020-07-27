@@ -1,46 +1,51 @@
 integration:
   exchange:
-    InsisDBExchangeRule:
-      connectString: 'env:insis-db-url'
-      username: 'env:insis-db-username'
-      password: 'env:insis-db-password'
-      queryFileURL: data/search-clients.sql
-      queryType: SQL
+    InsisRestCallExchangeRule:
+      endpointBaseurl: 'insis-rest-endpoint'
+      verb: get
+      url: '/people-dir/person/?startRow=0&rowCount=10&name=${NAME ? NAME : ""}&egn=${PID ? PID : ""}'
+
   transformation:
     DefaultTransformationRule:
       additional: insis
       dateFormat: YYYY-MM-DD
       out:
         - mappings:
-            - param: client_pid_name
-              element: client.search.input
-            - param: city
-              value: ''
-            - param: cl_type
-              value: ''
+            - param: NAME
+              element: client.search.name
+            - param: PID
+              element: client.search.pid
       in:
         - fromIdx:
-            array: payload.rows
+            array: payload.RowSet
             condition: 1 == 1
           toIdx:
             array: datamodel.client.list
             append: true
           mappings:
-            - payload: 'rows[n].NAME'
+            - payload: 'RowSet[n].name'
               element: client.list~name
-            - payload: 'rows[n].GNAME'
+
+            - payload: 'RowSet[n].gname'
               element: client.list~first-name
-            - payload: 'rows[n].FNAME'
+
+            - payload: 'RowSet[n].fname'
               element: client.list~last-name
-            - payload: 'rows[n].BIRTH_DATE'
+
+            - payload: 'RowSet[n].birthDate'
               element: client.list~birthdate
-            - payload: 'rows[n].PID'
+
+            - payload: 'RowSet[n].egn'
               element: client.list~pid
-            - payload: 'rows[n].SEX'
+
+            - payload: 'RowSet[n].sex'
               element: client.list~gender
-            - payload: 'rows[n].COUNTRY_CODE'
+
+            - payload: 'RowSet[n].homeCountry'
               element: client.list~country-code
-            - payload: 'rows[n].MAN_ID'
+
+            - payload: 'RowSet[n].manId'
               element: client.list~man-id
+
             - value: false
               element: client.list~selected

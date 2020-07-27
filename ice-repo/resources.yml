@@ -9,10 +9,14 @@ entries:
           - en: ADD ANOTHER PERSON
             de: ADD ANOTHER PERSON
       search:
-        input:
+        name:
           label:
-            - en: Search by Name or National ID
-              de: Search by Name or National ID
+            - en: Search by Name
+              de: Search by Name
+        pid:
+          label:
+            - en: Search by National ID
+              de: Search by National ID
         submit:
           label:
             - en: Search

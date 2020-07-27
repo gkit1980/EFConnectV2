@@ -11,8 +11,8 @@ section:
                 css: nowrap
                 elements:
                   - name: search.type
-                  - name: search.fulltext
+                  #- name: search.fulltext
                   - name: search.id
                   - name: search.name
                   - name: activity.search-clients
-                  - name: search.see-more-options
+                  #- name: search.see-more-options

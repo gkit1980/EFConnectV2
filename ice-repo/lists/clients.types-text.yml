@@ -1,9 +1,9 @@
 list:
   items:
-    - value: 'Person'
+    - value: '1'
       label_en: Person
       label_de: Person
-    - value: 'Company'
+    - value: '2'
       label_en: Company
       label_de: Firma
   type: string
