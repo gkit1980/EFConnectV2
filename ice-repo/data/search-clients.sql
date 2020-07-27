@@ -1,4 +1,5 @@
   SELECT client_id, man_id, pid, NAME, GNAME, FNAME, BIRTH_DATE, SEX, TYPE, MAX(city) AS city, MAX(COUNTRY_CODE) as COUNTRY_CODE,
+              ceil(count(*) over ()) as total,
               COUNT(DISTINCT CASE WHEN open_date BETWEEN insr_begin AND insr_end THEN policy_id ELSE NULL END) AS num_active_policies,
               COUNT(DISTINCT claim_id) AS num_active_claims
             FROM (
@@ -23,12 +24,19 @@
               ON io.policy_id = pol.policy_id
             LEFT JOIN claim clm
               ON clm.client_id = c.client_id
-            LEFT JOIN claim_objects co 
+            LEFT JOIN claim_objects co
               ON co.claim_id = clm.claim_id
-            AND co.claim_state = 1 
-            WHERE ( p.egn LIKE NVL(:client_pid_name, p.egn)
-                  OR NVL(pc.NAME, p.NAME) LIKE NVL(:client_pid_name, NVL(pc.NAME, p.NAME)) )
+            AND co.claim_state = 1
+            WHERE ( ((:client_pid_name IS NULL)
+                AND p.egn LIKE NVL(:client_pid, p.egn)
+                AND NVL(pc.NAME, p.NAME) LIKE NVL(:client_name, NVL(pc.NAME, p.NAME))
+              )
+              OR ((:client_pid_name IS NOT NULL)
+                AND (p.egn LIKE NVL(:client_pid_name, p.egn)
+                  OR NVL(pc.NAME, p.NAME) LIKE NVL(:client_pid_name, NVL(pc.NAME, p.NAME)))
+              ))
             AND pmc.id = NVL(:cl_type, pmc.id) --0,1,2
             AND (:city IS NULL OR (:city IS NOT NULL AND a.city LIKE :city)))
           GROUP BY client_id, man_id, pid, NAME, TYPE, FNAME, GNAME, BIRTH_DATE, SEX
-          FETCH first 20 ROWS ONLY
+          OFFSET :offset ROWS
+          FETCH first :page_size ROWS ONLY

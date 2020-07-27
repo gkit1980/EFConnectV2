@@ -11,3 +11,9 @@ element:
           labelFalse: elements.search.see-more-options.label
   label:
     NoLabelRule: {}
+  change:
+    - ResetElementValueExecutionRule:
+        elements:
+          - search.fulltext
+          - search.name
+          - search.id

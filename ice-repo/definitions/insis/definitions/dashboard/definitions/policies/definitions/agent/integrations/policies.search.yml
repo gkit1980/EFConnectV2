@@ -31,7 +31,7 @@ integration:
               element: search-policies.client-id
             - param: p_insured_object
               element: search-policies.insured-object
-            - param: total
+            - param: page_size
               datastore: insis.dashboard.policies.agent.pagination.page-size
             - param: offset
               datastore: insis.dashboard.policies.agent.pagination.offset

@@ -13,10 +13,18 @@ integration:
         - mappings:
             - param: client_pid_name
               element: search.fulltext
+            - param: client_pid
+              element: search.id
+            - param: client_name
+              element: search.name
             - param: city
               value: ''
             - param: cl_type
               element: search.type
+            - param: page_size
+              datastore: insis.dashboard.clients.agent.pagination.page-size
+            - param: offset
+              datastore: insis.dashboard.clients.agent.pagination.offset
       in:
         - fromIdx:
             array: payload.rows
@@ -40,5 +48,7 @@ integration:
               element: clients~active-policies
             - value: 'rows[n].NUM_ACTIVE_CLAIMS'
               element: clients~active-claims
+            - payload: 'rows[n].TOTAL'
+              datastore: 'insis.dashboard.clients.agent.pagination.results-length'
             - value: navigate-to-client
               element: clients~view-more

@@ -102,4 +102,4 @@ SELECT JSON_OBJECT(
             AND (:p_insr_end IS NULL OR pol.insr_end < to_date( :p_insr_end, 'yyyy-MM-dd' ) + 1)
           ORDER BY policy_id DESC
           OFFSET :offset ROWS
-          FETCH first :total ROWS ONLY )
+          FETCH first :page_size ROWS ONLY )

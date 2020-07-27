@@ -9,3 +9,12 @@ element:
   defaultValue: false
   label:
     NoLabelRule: {}
+  change:
+    - ResetElementValueExecutionRule:
+        elements:
+          - search-policies.fulltext
+          - search-policies.client-name
+          - search-policies.insured-object
+          - search-policies.client-id
+          - search-policies.policy-no
+          - search-policies.product-id

@@ -79,10 +79,13 @@ export class InsisDatagridSectionComponent extends SectionComponentImplementatio
 
     if (this.showPagination) {
       this.paginator.length = this.context.dataStore.get(
-        `${this.context.definition}.pagination.${this.getRecipeParam('resultsLengthPath')}`
+        `${this.context.definition}.pagination.${this.getRecipeParam(
+          'resultsLengthPath',
+          'results-length'
+        )}`
       );
       this.paginator.pageSize = this.context.dataStore.get(
-        `${this.context.definition}.pagination.${this.getRecipeParam('pageSizePath')}`
+        `${this.context.definition}.pagination.${this.getRecipeParam('pageSizePath', 'page-size')}`
       );
       this.initializePaginatorLabel();
     }
@@ -97,11 +100,17 @@ export class InsisDatagridSectionComponent extends SectionComponentImplementatio
 
         if (this.showPagination) {
           this.paginator.length = this.context.dataStore.get(
-            `${this.context.definition}.pagination.${this.getRecipeParam('resultsLengthPath')}`
+            `${this.context.definition}.pagination.${this.getRecipeParam(
+              'resultsLengthPath',
+              'results-length'
+            )}`
           );
 
           this.paginator.pageIndex = this.context.dataStore.get(
-            `${this.context.definition}.pagination.${this.getRecipeParam('pageIndexPath')}`
+            `${this.context.definition}.pagination.${this.getRecipeParam(
+              'pageIndexPath',
+              'page-index'
+            )}`
           );
         }
 
@@ -168,12 +177,12 @@ export class InsisDatagridSectionComponent extends SectionComponentImplementatio
 
   onPageChanged($event) {
     this.context.dataStore.set(
-      `${this.context.definition}.pagination.${this.getRecipeParam('offsetPath')}`,
+      `${this.context.definition}.pagination.${this.getRecipeParam('offsetPath', 'offset')}`,
       $event.pageIndex * this.paginator.pageSize
     );
 
     this.context.dataStore.set(
-      `${this.context.definition}.pagination.${this.getRecipeParam('pageIndexPath')}`,
+      `${this.context.definition}.pagination.${this.getRecipeParam('pageIndexPath', 'page-index')}`,
       this.paginator.pageIndex
     );
 

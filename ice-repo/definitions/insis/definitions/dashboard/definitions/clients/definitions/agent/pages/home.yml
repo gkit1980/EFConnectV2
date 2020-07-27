@@ -37,3 +37,11 @@ page:
                   - elements:
                       - name: clients~new-policy
                     size: 200px
+          showPagination: true
+          paginationAction: clients.search-from-pagination
+          resultsLengthPath: results-length
+          pageSizePath: page-size
+          offsetPath: offset
+          pageIndexPath: page-index
+          paginationObjects: pagination.clients
+          paginationSeparator: pagination.separator
