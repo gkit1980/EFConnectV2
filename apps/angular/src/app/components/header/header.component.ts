@@ -95,11 +95,6 @@ export class HeaderComponent {
           key: runtime.iceResource.resolve('pages.header.agent.claims.label'),
           link: runtime.iceResource.resolve('pages.header.agent.claims.link'),
           includes: ['/ice/insis.dashboard.claims.agent/home'],
-        },
-        {
-          key: runtime.iceResource.resolve('pages.header.agent.products.label'),
-          link: runtime.iceResource.resolve('pages.header.agent.products.link'),
-          includes: ['/ice/insis.dashboard.products.agent/home'],
         }
       );
 
