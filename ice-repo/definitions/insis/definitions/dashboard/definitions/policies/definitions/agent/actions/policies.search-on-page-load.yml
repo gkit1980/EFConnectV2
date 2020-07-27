@@ -3,6 +3,16 @@ action:
     - ResetElementValueExecutionRule:
         elements:
           - policies
+    - InsisResetDatastoreValueExecutionRule:
+        paths:
+          - insis.dashboard.policies.agent.pagination.page-index
+          - insis.dashboard.policies.agent.pagination.offset
+          - insis.dashboard.policies.agent.pagination.results-length
+        defaultValue: 0
+    - InsisResetDatastoreValueExecutionRule:
+        paths:
+          - insis.dashboard.policies.agent.pagination.page-size
+        defaultValue: 10
     - IntegrationExecutionRule:
         integration: policies.load-search-criteria
     - IntegrationExecutionRule:

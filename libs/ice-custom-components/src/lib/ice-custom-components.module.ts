@@ -59,6 +59,7 @@ import { InsisFormFlexSectionComponent } from './components/section-components/i
 import { InsisUploadAttachmentButtonComponent } from './components/element-components/insis-upload-attachment-button/insis-upload-attachment-button.component';
 import { InsisChipComponent } from './components/element-components/insis-chip-component/insis-chip.component';
 import { InsisNumberComponent } from './components/element-components/insis-number-component/insis-number-component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 /**
  * TIP: You will need to include in this array any new component you create.
@@ -123,6 +124,7 @@ export function registerComponents(componentService: IceComponentsService) {
     MarkdownToHtmlModule,
     NgIceModule.forRoot(),
     FormsModule,
+    MatPaginatorModule,
     MatSliderModule,
     MatTableModule,
     MatFormFieldModule,

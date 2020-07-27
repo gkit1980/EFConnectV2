@@ -17,6 +17,13 @@ page:
           css: mb-2 mt-2
     - component:
         InsisDatagridSection:
+          showPagination: true
+          offsetPath: offset
+          paginationAction: policies.search-from-pagination
+          resultsLengthPath: results-length
+          pageSizePath: page-size
+          pageIndexPath: page-index
+          paginationObjects: pagination.policies
           arrayElement: policies
           grid:
             rows:

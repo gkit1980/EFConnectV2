@@ -47,4 +47,11 @@
     <mat-header-row *matHeaderRowDef="getColsNames()" fxLayout="row nowrap"></mat-header-row>
     <mat-row *matRowDef="let row; columns: getColsNames()" fxLayout="row nowrap" #rows></mat-row>
   </mat-table>
+
+  <mat-paginator
+    [ngClass]="{ 'hide-paginator': !showPagination }"
+    [hidePageSize]="true"
+    [showFirstLastButtons]="true"
+    (page)="onPageChanged($event)"
+  ></mat-paginator>
 </section>

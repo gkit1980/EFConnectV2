@@ -61,5 +61,9 @@
     mat-row:last-of-type {
       border-bottom: 0;
     }
+
+    .hide-paginator {
+      display: none;
+    }
   }
 }

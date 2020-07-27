@@ -1,0 +1,13 @@
+implementations:
+  InsisResetDatastoreValueExecutionRule:
+    description: >-
+      Resets datastore values at selected paths.
+    params:
+      paths:
+        label: Datastore paths
+        type: texts
+        required: true
+      defaultValue:
+        label: Default value
+        type: text
+        required: false
