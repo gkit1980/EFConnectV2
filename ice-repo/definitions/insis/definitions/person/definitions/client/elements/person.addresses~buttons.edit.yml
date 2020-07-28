@@ -1,0 +1,17 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          variant: default
+  change:
+    - InsisSetElementValueExecutionRule:
+        element: person.addresses~edit-mode
+        value: 'true'
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: person.addresses~edit-mode
+      conditionValue: 'true'
+      conditionViewMode: hidden
+      elseViewMode: default

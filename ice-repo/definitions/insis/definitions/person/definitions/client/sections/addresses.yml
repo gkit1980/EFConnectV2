@@ -1,0 +1,104 @@
+section:
+  component:
+    IceArrayFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~item-label
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~buttons.cancel
+                css: text-align-right
+              - size: 62px
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~buttons.save
+                  - name: person.addresses~buttons.edit
+              - size: 130px
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~buttons.make-primary
+                  - name: person.addresses~buttons.make-secondary
+              - size: 65px
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~buttons.more-options
+            gap: 12px
+            css: u-mt-2
+          - cols:
+              - size: 197px
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~address-type
+              - size: 197px
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~country
+              - size: 197px
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~state-name
+              - size: 197px
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~region-name
+              - size: 197px
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~city
+              - size: 197px
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~post-code
+            gap: 12px
+            css: u-mt-2 u-mb-2
+          - cols:
+              - size: 197px
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~street-name
+              - size: 197px
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~street-number
+              - size: 197px
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~block-number
+              - size: 197px
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~entrance-number
+              - size: 197px
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~floor-number
+              - size: 197px
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~apartment-number
+            gap: 12px
+            css: u-mb-2
+      arrayElement: person.addresses
+      css: horizontal-list

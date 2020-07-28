@@ -1,2 +1,8 @@
 element:
-  type: text
+  type: integer
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: person.addresses~edit-mode
+      conditionValue: 'true'
+      conditionViewMode: default
+      elseViewMode: output

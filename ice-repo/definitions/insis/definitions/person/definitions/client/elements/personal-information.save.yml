@@ -1,0 +1,16 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          variant: flat
+  defaultValue:
+    StaticValueRule:
+      value: personal-information.save
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: personal-information.edit-mode
+      conditionValue: 'true'
+      conditionViewMode: default
+      elseViewMode: hidden

@@ -1,0 +1,16 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        IceButton: {}
+  change:
+    - InsisSetElementValueExecutionRule:
+        element: person.addresses~is-primary
+        value: 'false'
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: person.addresses~is-primary
+      conditionValue: 'true'
+      conditionViewMode: default
+      elseViewMode: hidden

@@ -1,0 +1,8 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        InsisButtonDropdown: {}
+  label:
+    NoLabelRule: {}

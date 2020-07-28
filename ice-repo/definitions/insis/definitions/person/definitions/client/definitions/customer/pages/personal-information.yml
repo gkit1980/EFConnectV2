@@ -15,3 +15,4 @@ page:
                     elements:
                       - name: my-profile-label
                 css: my-profile-label
+    - personal-information

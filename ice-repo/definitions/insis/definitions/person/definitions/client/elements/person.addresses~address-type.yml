@@ -1,2 +1,12 @@
 element:
   type: text
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: person.addresses~edit-mode
+      conditionValue: 'true'
+      conditionViewMode: default
+      elseViewMode: output
+  component:
+    StaticComponentRule:
+      component:
+        IceDropdown: {}

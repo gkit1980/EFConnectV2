@@ -359,6 +359,129 @@ entries:
         label:
           - en: Submit
             de: null
+      name-prefix:
+        label:
+          - en: Name prefix
+            de: Name prefix
+      given-name:
+        label:
+          - en: First name
+            de: First name
+      family-name:
+        label:
+          - en: Last name
+            de: Last name
+      second-name:
+        label:
+          - en: Middle name
+            de: Middle name
+      sex:
+        label:
+          - en: Gender
+            de: Gender
+      birth-date:
+        label:
+          - en: Date of birth
+            de: Date of birth
+      nationality:
+        label:
+          - en: Nationality
+            de: Nationality
+      home-country:
+        label:
+          - en: Country
+            de: Country
+      language:
+        label:
+          - en: Preferred language
+            de: Preferred language
+      industry-code:
+        label:
+          - en: Industry
+            de: Industry
+      sub-industry-code:
+        label:
+          - en: Subindustry
+            de: Subindustry
+      name-suffix:
+        label:
+          - en: Name suffix
+            de: Name suffix
+      addresses:
+        items:
+          buttons:
+            make-primary:
+              label:
+                - en: MAKE PRIMARY
+                  de: MAKE PRIMARY
+            remove:
+              label:
+                - en: null
+                  de: null
+            edit:
+              label:
+                - en: EDIT
+                  de: EDIT
+            cancel:
+              label:
+                - en: CANCEL
+                  de: CANCEL
+            save:
+              label:
+                - en: SAVE
+                  de: SAVE
+            make-secondary:
+              label:
+                - en: MAKE SECONDARY
+                  de: MAKE SECONDARY
+          address-type:
+            label:
+              - en: Type
+                de: Type
+          country:
+            label:
+              - en: Country
+                de: Country
+          state-name:
+            label:
+              - en: State
+                de: State
+          region-name:
+            label:
+              - en: Region
+                de: Region
+          city:
+            label:
+              - en: City
+                de: City
+          post-code:
+            label:
+              - en: Post code
+                de: Post code
+          street-name:
+            label:
+              - en: Street
+                de: Street
+          street-number:
+            label:
+              - en: Street number
+                de: Street number
+          entrance-number:
+            label:
+              - en: Entrance number
+                de: Entrance number
+          floor-number:
+            label:
+              - en: Floor number
+                de: Floor number
+          apartment-number:
+            label:
+              - en: Apartment number
+                de: Apartment number
+          block-number:
+            label:
+              - en: Block number
+                de: Block number
     policy:
       insured:
         currency:
@@ -1570,6 +1693,24 @@ entries:
       label:
         - en: My profile
           de: My profile
+    personal-information:
+      cancel:
+        label:
+          - en: CANCEL
+            de: CANCEL
+      save:
+        label:
+          - en: SAVE
+            de: SAVE
+      edit:
+        label:
+          - en: EDIT
+            de: EDIT
+    addresses:
+      add-new-address:
+        label:
+          - en: ADD ADDRESS
+            de: ADD ADDRESS
   pagination:
     policies:
       - en: policies
@@ -1598,9 +1739,9 @@ entries:
         - en: Please confirm
           de: Bitte bestätigen
       not_allowed_here:
-        - en: "'${value}' not allowed here"
+        - en: '''${value}'' not allowed here'
       regexp:
-        - en: "'${value}' does not matches regular expression ${regexp}"
+        - en: '''${value}'' does not matches regular expression ${regexp}'
       array:
         min:
           - en: 'must have at least ${min} entries'
@@ -2095,3 +2236,12 @@ entries:
             Optional können Sie zusätzliche Personen versichern. Diese Personen
             haben eine begrenzte Auswahl an Deckungen, die davon abhängig sind,
             dass der Hauptversicherte die gleiche Deckung hat.
+  person:
+    addresses:
+      item-label:
+        primary-address:
+          - en: Primary address
+            de: Primary address
+        secondary-address:
+          - en: Secondary address
+            de: Secondary address

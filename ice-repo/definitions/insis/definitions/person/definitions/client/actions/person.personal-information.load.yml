@@ -1,0 +1,8 @@
+action:
+  execution:
+    - IntegrationExecutionRule:
+        integration: person
+  trigger:
+    - PageTriggerRule:
+        enter:
+          - personal-information

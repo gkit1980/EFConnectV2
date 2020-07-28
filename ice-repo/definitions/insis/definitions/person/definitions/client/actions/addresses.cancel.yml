@@ -1,0 +1,5 @@
+action:
+  execution:
+    - InsisSetElementValueExecutionRule:
+        element: person.addresses~edit-mode
+        value: 'false'

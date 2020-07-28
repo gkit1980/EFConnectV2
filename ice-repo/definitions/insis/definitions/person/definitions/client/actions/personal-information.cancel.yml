@@ -1,0 +1,5 @@
+action:
+  execution:
+    - InsisSetElementValueExecutionRule:
+        element: personal-information.edit-mode
+        value: 'false'

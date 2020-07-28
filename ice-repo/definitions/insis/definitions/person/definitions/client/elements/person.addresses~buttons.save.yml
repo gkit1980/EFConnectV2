@@ -1,0 +1,16 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          variant: flat
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: person.addresses~edit-mode
+      conditionValue: 'true'
+      conditionViewMode: default
+      elseViewMode: hidden
+  defaultValue:
+    StaticValueRule:
+      value: addresses.save
