@@ -1,0 +1,47 @@
+integration:
+  exchange:
+    InsisRestCallExchangeRule:
+      endpointBaseurl: 'insis-rest-endpoint'
+      verb: put
+      url: '/people-data/pp-people-type/'
+
+  transformation:
+    DefaultTransformationRule:
+      additional: insis
+      dateFormat: YYYY-MM-DD
+      out:
+        - mappings:
+            - payload: namePrefix
+              element: person.name-prefix
+            - payload: gname
+              element: person.given-name
+            - payload: sname
+              element: person.second-name
+            - payload: fname
+              element: person.family-name
+            - payload: nameSuffix
+              element: person.name-suffix
+            - payload: sex
+              element: person.sex
+            - payload: birthDate
+              element: person.birth-date
+            - payload: nationality
+              element: person.nationality
+            - payload: homeCountry
+              element: person.home-country
+            - payload: language
+              element: person.language
+            - payload: industryCode
+              element: person.industry-code
+            - payload: subIndustryCode
+              element: person.sub-industry-code
+            - payload: name
+              element: person.full-name
+            - payload: manId
+              element: person.man-id
+            - payload: egn
+              element: person.pid
+            - payload: manComp
+              value: 1
+            - param: ignoreLoginService
+              value: true

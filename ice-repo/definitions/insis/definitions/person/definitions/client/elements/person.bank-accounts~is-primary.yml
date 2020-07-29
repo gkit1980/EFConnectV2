@@ -1,2 +1,5 @@
 element:
   type: boolean
+  values:
+    ListValuesRule:
+      list: person.is-primary

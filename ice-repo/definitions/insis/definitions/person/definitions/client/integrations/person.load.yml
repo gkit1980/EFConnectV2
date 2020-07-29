@@ -1,0 +1,104 @@
+integration:
+  exchange:
+    InsisRestCallExchangeRule:
+      endpointBaseurl: 'insis-rest-endpoint'
+      verb: get
+      url: '/people-dir/person/composite?pid=${PID}'
+
+  transformation:
+    DefaultTransformationRule:
+      additional: insis
+      dateFormat: YYYY-MM-DD
+      out:
+        - mappings:
+            - param: PID
+              element: person.pid
+      in:
+        - mappings:
+            - payload: namePrefix
+              element: person.name-prefix
+            - payload: gname
+              element: person.given-name
+            - payload: sname
+              element: person.second-name
+            - payload: fname
+              element: person.family-name
+            - payload: nameSuffix
+              element: person.name-suffix
+            - payload: sex
+              element: person.sex
+            - payload: birthDate
+              element: person.birth-date
+            - payload: nationality
+              element: person.nationality
+            - payload: homeCountry
+              element: person.home-country
+            - payload: language
+              element: person.language
+            - payload: industryCode
+              element: person.industry-code
+            - payload: subIndustryCode
+              element: person.sub-industry-code
+            - payload: name
+              element: person.full-name
+            - payload: manId
+              element: person.man-id
+        - fromIdx:
+            array: payload.addresses
+          toIdx:
+            useSourceIndex: true
+          mappings:
+            - payload: addresses[n].addressId
+              element: person.addresses~address-id
+            - payload: addresses[n].addressType
+              element: person.addresses~address-type
+            - payload: addresses[n].apartmentNumber
+              element: person.addresses~apartment-number
+            - payload: addresses[n].blockNumber
+              element: person.addresses~block-number
+            - payload: addresses[n].city
+              element: person.addresses~city
+            - payload: addresses[n].country
+              element: person.addresses~country
+            - payload: addresses[n].entrance-number
+              element: person.addresses~entranceNumber
+            - payload: addresses[n].floorNumber
+              element: person.addresses~floor-number
+            - payload: addresses[n].primaryFlag
+              element: person.addresses~is-primary
+            - payload: addresses[n].postCode
+              element: person.addresses~post-code
+            - payload: addresses[n].regionName
+              element: person.addresses~region-name
+            - payload: addresses[n].stateName
+              element: person.addresses~state-name
+            - payload: addresses[n].streetName
+              element: person.addresses~street-name
+            - payload: addresses[n].streetNumber
+              element: person.addresses~street-number
+        - fromIdx:
+            array: payload.bankAccounts
+          toIdx:
+            useSourceIndex: true
+          mappings:
+            - payload: bankAccounts[n].accountCurrency
+              element: person.bank-accounts~account-currency
+            - payload: bankAccounts[n].accountNum
+              element: person.bank-accounts~account-num
+            - payload: bankAccounts[n].bankId
+              element: person.bank-accounts~bank-id
+            - payload: bankAccounts[n].primaryFlag
+              element: person.bank-accounts~is-primary
+        - fromIdx:
+            array: payload.contacts
+          toIdx:
+            useSourceIndex: true
+          mappings:
+            - payload: contacts[n].contactId
+              element: person.contacts~contact-id
+            - payload: contacts[n].contactType
+              element: person.contacts~contact-type
+            - payload: contacts[n].details
+              element: person.contacts~details
+            - payload: contacts[n].primaryFlag
+              element: person.contacts~is-primary

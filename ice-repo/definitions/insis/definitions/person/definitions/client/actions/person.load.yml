@@ -1,7 +1,7 @@
 action:
   execution:
     - IntegrationExecutionRule:
-        integration: person
+        integration: person.load
   trigger:
     - PageTriggerRule:
         enter:

@@ -34,14 +34,14 @@ section:
                 size.sm: auto
                 elements:
                   - name: personal-information.cancel
-                css: u-mt-2 text-align-right
+                css: text-align-right
               - size: 62px
                 size.xs: auto
                 size.sm: auto
                 elements:
                   - name: personal-information.save
                   - name: personal-information.edit
-                css: u-mt-2
+                css: ''
             layout: row wrap
             gap: 12px
             css: u-mt-4 u-mb-4
@@ -86,3 +86,4 @@ section:
                   - name: person.sub-industry-code
             gap: 12px
             css: u-mb-4
+      css: ' output-element'
