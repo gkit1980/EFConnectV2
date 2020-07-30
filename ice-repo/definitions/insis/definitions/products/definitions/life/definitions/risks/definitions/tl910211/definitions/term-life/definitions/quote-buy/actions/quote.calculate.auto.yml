@@ -4,8 +4,8 @@ action:
     - BucketValidTriggerRule:
         bucket: insis-quote
     - PageTriggerRule:
-        enter:
-          - 1.quote.covers
+        leave:
+          - 1.quote.people
   execution:
     - IntegrationExecutionRule:
         integration: 910211.risks.life.insis-policy.engagement-quote.register
