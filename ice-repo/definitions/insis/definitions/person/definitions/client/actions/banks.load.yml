@@ -1,0 +1,11 @@
+action:
+  execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - banks
+    - IntegrationExecutionRule:
+        integration: banks.load
+  trigger:
+    - PageTriggerRule:
+        enter:
+          - payments

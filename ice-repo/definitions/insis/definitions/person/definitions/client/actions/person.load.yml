@@ -2,6 +2,8 @@ action:
   execution:
     - IntegrationExecutionRule:
         integration: person.load
+    - IntegrationExecutionRule:
+        integration: industries.load
   trigger:
     - IceLifecycleEventTriggerRule:
         event: ICE_CONTEXT_ACTIVATED

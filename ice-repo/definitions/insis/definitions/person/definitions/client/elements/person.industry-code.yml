@@ -7,3 +7,8 @@ element:
       conditionViewMode: default
       elseViewMode: output
   component: IceDropdown
+  values:
+    InsisArrayItemBasedValuesRule:
+      valueElement: industries~value
+      labelElement: industries~label
+      hideEmpty: true

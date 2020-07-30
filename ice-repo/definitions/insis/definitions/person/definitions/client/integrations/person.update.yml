@@ -42,6 +42,6 @@ integration:
             - payload: egn
               element: person.pid
             - payload: manComp
-              value: 1
+              element: person.man-comp
             - param: ignoreLoginService
               value: true

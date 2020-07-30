@@ -1,0 +1,16 @@
+action:
+  execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - sub-industries
+    - IntegrationExecutionRule:
+        integration: sub-industries.load
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ACTIVE_INTEGRATION_SUCCESS
+        payload: person.load
+    - ElementChangeTriggerRule:
+        elements:
+          - person.industry-code
+        originsToExclude:
+          - DATAMODEL
