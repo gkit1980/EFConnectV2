@@ -4,3 +4,5 @@ element:
   viewMode:
     StaticViewModeRule:
       viewMode: output
+  label:
+    InsisResourceLabelRule: {}

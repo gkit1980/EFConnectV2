@@ -1,13 +1,8 @@
 element:
   type: text
-  viewMode:
-    StaticViewModeRule:
-      viewMode: output
-  label:
-    NoLabelRule: {}
   mirror:
     InsisFillResourceWithElementValuesMirrorRule:
       elements:
-        - policies~insr-type
-        - policies~product-name
+        - lob~products~product-code
+        - lob~products~title-resolved
       resourceKey: elements.policies.items.product-formatted.content

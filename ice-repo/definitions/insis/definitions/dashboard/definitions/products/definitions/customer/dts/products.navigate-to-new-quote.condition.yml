@@ -1,0 +1,20 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: insurance-products~products~definition
+  outputs:
+    - id: condition
+      type: boolean
+  rules:
+    - inputs:
+        - null
+      outputs:
+        - false
+    - inputs:
+        - ''
+      outputs:
+        - false
+    - inputs:
+        - '-'
+      outputs:
+        - true

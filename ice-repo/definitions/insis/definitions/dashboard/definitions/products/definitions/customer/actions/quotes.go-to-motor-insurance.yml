@@ -1,4 +1,0 @@
-action:
-  execution:
-    - NavigateToUrlExecutionRule:
-        url: /ice/insis-products.motor.920101-motor-comprehensive.quote

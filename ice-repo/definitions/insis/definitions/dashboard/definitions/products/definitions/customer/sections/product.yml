@@ -1,0 +1,14 @@
+section:
+  component:
+    IceArrayFlexSection:
+      arrayElement: insurance-products~products
+      css: product-button
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: insurance-products~products~product
+                align: center

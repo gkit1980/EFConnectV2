@@ -80,6 +80,8 @@ integration:
               element: policies~product-name
             - payload: 'rows[n].premium_amnt'
               element: policies~premium
+            - payload: 'rows[n].insr_type'
+              element: policies~insr-type
             - payload: 'rows[n].total'
               datastore: 'insis.dashboard.policies.agent.pagination.results-length'
             - value: navigate-policies-to-policy

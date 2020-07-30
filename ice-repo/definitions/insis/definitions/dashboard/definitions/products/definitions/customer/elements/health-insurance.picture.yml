@@ -1,9 +1,0 @@
-element:
-  type: text
-  component: InsisPictureComponent
-  defaultValue:
-    StaticValueRule:
-      value: /assets/insurances/doctor.svg
-  viewMode:
-    StaticViewModeRule:
-      viewMode: output

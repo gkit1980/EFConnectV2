@@ -4,6 +4,8 @@ action:
         elements:
           - quotes
     - IntegrationExecutionRule:
+        integration: insurance-products.load
+    - IntegrationExecutionRule:
         integration: quotes.load
   trigger:
     - IceLifecycleEventTriggerRule:

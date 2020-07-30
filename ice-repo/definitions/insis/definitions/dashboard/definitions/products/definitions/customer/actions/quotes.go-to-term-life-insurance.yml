@@ -1,4 +1,0 @@
-action:
-  execution:
-    - NavigateToUrlExecutionRule:
-        url: /ice/insis.products.life.risks.tl910211.term-life.quote-buy.customer

@@ -1,0 +1,9 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        InsisPictureComponent: {}
+  viewMode:
+    StaticViewModeRule:
+      viewMode: output

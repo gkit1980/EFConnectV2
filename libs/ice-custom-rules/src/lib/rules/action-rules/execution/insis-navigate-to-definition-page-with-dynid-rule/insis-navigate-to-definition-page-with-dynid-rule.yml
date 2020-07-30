@@ -4,15 +4,20 @@ implementations:
       Navigate to definition with dynid in the url specified by element
     params:
       dynIdElement:
-        label: element that provides dynid value
+        label: Element that provides dynid value
         info: element that provides dynid value
         type: element
-        required: true
+        required: false
       definition:
-        label: destination definition
-        info: destination definition
+        label: Destination definition
+        info: Destination definition
         type: text
-        required: true
+        required: false
+      definitionElement:
+        label: Element for destination definition
+        info: Element that contains destination definition
+        type: element
+        required: false
       page:
         label: destination page
         info: destination page

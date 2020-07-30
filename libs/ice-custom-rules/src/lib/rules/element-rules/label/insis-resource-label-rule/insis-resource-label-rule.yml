@@ -1,0 +1,3 @@
+implementations:
+  InsisResourceLabelRule:
+    description: Sets label value from resource, resource key is set to current element value.

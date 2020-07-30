@@ -1,5 +1,0 @@
-element:
-  type: action
-  defaultValue:
-    StaticValueRule:
-      value: quotes.go-to-term-life-insurance

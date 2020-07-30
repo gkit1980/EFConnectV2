@@ -14,6 +14,9 @@ implementations:
         label: Hide empty option
         type: boolean
         required: false
+      emptyValueIsString:
+        label: Empty value is string
+        type: boolean
     icel: >
       ```
         element:

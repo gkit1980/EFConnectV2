@@ -4,6 +4,7 @@ export * from './default-value/insis-dt-array-item-from-resource-value-rule/insi
 export * from './default-value/insis-element-value-rule/insis-element-value-rule';
 export * from './default-value/insis-set-for-indexes-default-value-rule/insis-set-for-indexes-default-value-rule';
 export * from './default-value/insis-random-id-value-rule/insis-random-id-value-rule';
+export * from './label/insis-resource-label-rule/insis-resource-label-rule';
 export * from './mirror/insis-array-item-conditional-value-mirror-rule/insis-array-item-conditional-value-mirror-rule';
 export * from './mirror/insis-dyn-id-for-key-with-default-mirror-rule/insis-dyn-id-for-key-with-default-mirror-rule';
 export * from './mirror/insis-extract-file-name-mirror-rule/insis-extract-file-name-mirror-rule';
@@ -13,6 +14,7 @@ export * from './mirror/insis-get-first-value-from-element-thats-inside-of-array
 export * from './mirror/insis-insurance-date-and-duration-mirror-rule/insis-insurance-date-and-duration-mirror-rule';
 export * from './mirror/insis-qr-code-mirror-rule/insis-qr-code-mirror-rule';
 export * from './mirror/cover-insurance-end-mirror-rule/cover-insurance-end-mirror-rule';
+export * from './mirror/insis-resolve-element-value-as-resource-path-mirror-rule/insis-resolve-element-value-as-resource-path-mirror-rule';
 export * from './validation/insis-unique-value-validation-rule/insis-unique-value-validation-rule';
 export * from './values/insis-array-item-based-values-rule/insis-array-item-based-values-rule';
 export * from './values/insis-array-item-to-list-values-rule/insis-array-item-to-list-values-rule';

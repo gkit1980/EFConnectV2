@@ -3,15 +3,18 @@ element:
   component:
     StaticComponentRule:
       component:
-        InsisButtonDropdown: 
+        InsisButtonDropdown:
           accesskey: n
+          matIcon: keyboard_arrow_down
   values:
-    ListValuesRule:
-      list: policy.new-policy-products
+    InsisArrayItemBasedValuesRule:
+      valueElement: lob~products~product-code
+      labelElement: lob~products~product-formatted
+      hideEmpty: true
   change:
     - DtNavigateToDefinitionExecutionRule:
         dt: navigate-to-new-policy
         definitionOutput: url
     - ResetElementValueExecutionRule:
         elements:
-          - new-policy    
+          - new-policy

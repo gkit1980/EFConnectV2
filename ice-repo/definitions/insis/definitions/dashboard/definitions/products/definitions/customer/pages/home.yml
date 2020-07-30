@@ -74,37 +74,40 @@ page:
                       - name: products-title
                     css: mat-display-1 u-mb-8 u-mt-2
     - component:
-        IceFlexSection:
+        IceArrayFlexSection:
+          arrayElement: insurance-products
           grid:
             rows:
               - cols:
-                  - size: calc(33.33% -15px)
+                  - size: 100%
                     size.xs: auto
                     size.sm: auto
-                    sections:
-                      - name: motor-insurances
-                  - size: calc(33.33% -15px)
-                    size.xs: auto
-                    size.sm: auto
-                    sections:
-                      - name: property-insurance
-                  - size: calc(33.33% -15px)
-                    size.xs: auto
-                    size.sm: auto
-                    sections:
-                      - name: health-insurance
-                gap: 15px
+                    elements:
+                      - name: insurance-products~image
+                    align: center
               - cols:
-                  - size: calc(33.33% -15px)
+                  - size: 100%
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: insurance-products~title
+                    css: mat-display-1 u-mb-6 u-mt-4
+                    align: center
+              - cols:
+                  - size: 100%
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: insurance-products~description
+                    align: center
+                    css: u-mb-3 u-ml-4 u-mr-4
+              - cols:
+                  - size: 100%
                     size.xs: auto
                     size.sm: auto
                     sections:
-                      - name: life-insurance
-                    css: u-mt-4
-                  - size: calc(33.33% -15px)
-                    size.xs: auto
-                    size.sm: auto
-                  - size: calc(33.33% -15px)
-                    size.xs: auto
-                    size.sm: auto
-                gap: 15px
+                      - name: product
+                    align: center
+                    css: u-mb-3
+            gap: 15px
+          css: text-align-center product-card

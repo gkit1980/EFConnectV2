@@ -1,0 +1,9 @@
+implementations:
+  InsisResolveElementValueAsResourcePathMirrorRule:
+    description: >
+      Resolved origin element value as resource key.
+    params:
+      originElement:
+        type: element
+        required: true
+        label: Source element

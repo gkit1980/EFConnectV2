@@ -4,17 +4,17 @@ page:
     InsisSimplePage: {}
   sections:
     - search
-    - component:
-        IceFlexSection:
-          grid:
-            rows:
-              - cols:
-                  - size: auto
-                    size.xs: auto
-                    size.sm: auto
-                    elements:
-                      - name: new-policy
-          css: mb-2 mt-2
+    # - component:
+    #     IceFlexSection:
+    #       grid:
+    #         rows:
+    #           - cols:
+    #               - size: auto
+    #                 size.xs: auto
+    #                 size.sm: auto
+    #                 elements:
+    #                   - name: new-policy
+    #       css: mb-2 mt-2
     - component:
         InsisDatagridSection:
           showPagination: true

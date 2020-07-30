@@ -8,10 +8,12 @@ export class InsisNavigateToDefinitionPageWithDynidRule extends ExecutionRule {
         `Rule '${this.ruleName}' attempted to get ClientRuntime but not available`
       );
 
-    const dynIdElement = this.requireElement('dynIdElement');
+    const dynIdElement = this.getElement('dynIdElement');
     const index = (actionContext && actionContext.index) || [0];
-    const dynId = dynIdElement.getValue().forIndex(index);
-    const definition = this.requireParam('definition');
+    const dynId = dynIdElement ? dynIdElement.getValue().forIndex(index) : null;
+    const definition = this.getParam('definitionElement')
+      ? this.getElement('definitionElement').getValue().forIndex(index)
+      : this.requireParam('definition');
     const page = this.getParam('page');
 
     clientRuntime.goToDefinition(definition, page, dynId);

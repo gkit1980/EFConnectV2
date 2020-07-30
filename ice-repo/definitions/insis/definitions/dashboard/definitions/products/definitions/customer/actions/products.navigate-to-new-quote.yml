@@ -1,0 +1,11 @@
+action:
+  condition:
+    DtConditionRule:
+      dt: products.navigate-to-new-quote.condition
+  execution:
+    - InsisNavigateToDefinitionPageWithDynidRule:
+        definitionElement: insurance-products~products~definition
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - insurance-products~products~product

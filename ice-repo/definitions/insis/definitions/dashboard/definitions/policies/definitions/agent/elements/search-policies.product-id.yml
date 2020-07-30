@@ -1,8 +1,5 @@
 element:
   type: text
-  values:
-    ListValuesRule:
-      list: policy.product-search
   component:
     StaticComponentRule:
       component:
@@ -13,3 +10,10 @@ element:
       conditionValue: true
       conditionViewMode: default
       elseViewMode: hidden
+  values:
+    InsisArrayItemBasedValuesRule:
+      valueElement: lob~products~product-code
+      labelElement: lob~products~product-formatted
+      hideEmpty: false
+      emptyValueIsString: true
+  defaultValue: null

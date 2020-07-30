@@ -1,0 +1,27 @@
+integration:
+  type: active
+  exchange:
+    InsisLoadYmlFileExchangeRule:
+      dataFileURL: data/insis-insurance-products.yml
+  transformation:
+    DefaultTransformationRule:
+      in:
+        - fromIdx:
+            array: payload.file.lob
+            fromIdx:
+              array: products
+          toIdx:
+            useSourceIndex: true
+            toIdx:
+              useSourceIndex: true
+          mappings:
+            - payload: file.lob[n].title
+              element: insurance-products~title
+            - payload: file.lob[n].description
+              element: insurance-products~description
+            - payload: file.lob[n].image
+              element: insurance-products~image
+            - payload: file.lob[n].products[n].title
+              element: insurance-products~products~title
+            - payload: file.lob[n].products[n].definition
+              element: insurance-products~products~definition

@@ -1,0 +1,9 @@
+element:
+  type: action
+  label:
+    InsisResourceLabelRule:
+      element: insurance-products~products~title
+  component:
+    StaticComponentRule:
+      component:
+        IceButton: {}

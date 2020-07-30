@@ -59,6 +59,9 @@ entries:
         label:
           - en: Product
             de: Produkt
+        empty:
+          - en: Any
+            de: Any
       policy-state:
         label:
           - en: State
@@ -205,10 +208,6 @@ entries:
           label:
             - en: Policy number
               de: Policy number
-        product-formatted:
-          label:
-            - en: Product
-              de: Produkt
         policy-state-name:
           label:
             - en: State
@@ -225,6 +224,10 @@ entries:
           label:
             - en: Insured Object
               de: Insured Object
+        product-formatted:
+          content:
+            - en: '${param1} - ${param2}'
+              de: '${param1} - ${param2}'
     claims-in-progress:
       submit-a-claim:
         label:
@@ -2240,6 +2243,74 @@ entries:
             Optional können Sie zusätzliche Personen versichern. Diese Personen
             haben eine begrenzte Auswahl an Deckungen, die davon abhängig sind,
             dass der Hauptversicherte die gleiche Deckung hat.
+  insis-insurance-products:
+    motor:
+      title:
+        - en: Motor insurance
+          de: null
+      description:
+        - en: >-
+            A comprehensive policy that not only offers optimum protection to
+            your vehicle, but also helps you financially in case of any
+            unfortunate occurrence.
+          de: null
+      motor-comprehensive:
+        title:
+          - en: Motor Comprehensive
+            de: null
+    life:
+      title:
+        - en: Life insurance
+          de: null
+      description:
+        - en: >-
+            What if... something were to happen to you? A stroke of fate can
+            change the life of your family drastically. Prepare now.
+          de: null
+      term-life:
+        title:
+          - en: Term Life
+            de: null
+      whole-life:
+        title:
+          - en: Whole Life
+            de: null
+      unit-link:
+        title:
+          - en: Unit Link
+            de: null
+      endowment:
+        title:
+          - en: Endowment
+            de: null
+    property:
+      title:
+        - en: Property insurance
+          de: null
+      description:
+        - en: >-
+            Most people simply can't afford to rebuild their home and replace
+            everything in it if there's a disaster. A home insurance policy can
+            protect your property, some of your personal possessions and you.
+          de: null
+      household:
+        title:
+          - en: Household Property
+            de: Household Property
+    health:
+      title:
+        - en: Health insurance
+          de: null
+      description:
+        - en: >-
+            The world that we live in today is full of uncertainties. Anything
+            can happen to anyone, at any point of time. Hence it is highly
+            recommended to insure you and your family's health.
+          de: null
+      health:
+        title:
+          - en: Health insurance
+            de: null
   person:
     addresses:
       item-label:
