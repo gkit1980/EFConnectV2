@@ -3,14 +3,12 @@ element:
   component:
     StaticComponentRule:
       component:
-        IceButton: {}
-  change:
-    - InsisSetElementValueExecutionRule:
-        element: person.addresses~is-primary
-        value: 'false'
+        IceButton:
+          variant: default
   viewMode:
     ConditionalViewModeRule:
-      conditionElement: person.addresses~is-primary
+      conditionElement: person.addresses~edit-mode
       conditionValue: 'true'
       conditionViewMode: default
       elseViewMode: hidden
+  defaultValue: person.addresses.cancel

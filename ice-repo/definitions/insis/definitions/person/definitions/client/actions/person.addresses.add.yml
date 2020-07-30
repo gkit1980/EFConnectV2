@@ -3,3 +3,5 @@ action:
     - InsisSetElementValueExecutionRule:
         element: person.addresses~edit-mode
         value: 'false'
+    - IntegrationExecutionRule:
+        integration: person.addresses.add

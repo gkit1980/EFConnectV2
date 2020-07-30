@@ -1,0 +1,9 @@
+action:
+  execution:
+    - IntegrationExecutionRule:
+        integration: person.addresses.remove
+    - ResetElementValueExecutionRule:
+        elements:
+          - person.addresses
+    - IntegrationExecutionRule:
+        integration: person.load

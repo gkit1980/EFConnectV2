@@ -1,0 +1,16 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: person.addresses~address-id
+  outputs:
+    - id: defaultValue
+      type: string
+  rules:
+    - inputs:
+        - not(null)
+      outputs:
+        - person.addresses.update
+    - inputs:
+        - null
+      outputs:
+        - person.addresses.add

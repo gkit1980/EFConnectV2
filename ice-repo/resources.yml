@@ -409,7 +409,7 @@ entries:
             de: Name suffix
       addresses:
         items:
-          buttons:
+          activity:
             make-primary:
               label:
                 - en: MAKE PRIMARY
@@ -482,6 +482,10 @@ entries:
             label:
               - en: Block number
                 de: Block number
+          country-code:
+            label:
+              - en: Country
+                de: Country
     policy:
       insured:
         currency:
@@ -1739,9 +1743,9 @@ entries:
         - en: Please confirm
           de: Bitte bestätigen
       not_allowed_here:
-        - en: '''${value}'' not allowed here'
+        - en: "'${value}' not allowed here"
       regexp:
-        - en: '''${value}'' does not matches regular expression ${regexp}'
+        - en: "'${value}' does not matches regular expression ${regexp}"
       array:
         min:
           - en: 'must have at least ${min} entries'

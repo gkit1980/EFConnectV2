@@ -1,5 +1,5 @@
 element:
-  type: integer
+  type: text
   viewMode:
     ConditionalViewModeRule:
       conditionElement: person.addresses~edit-mode

@@ -1,0 +1,53 @@
+integration:
+  exchange:
+    InsisRestCallExchangeRule:
+      endpointBaseurl: 'insis-rest-endpoint'
+      verb: put
+      url: '/people-dir/person/${MANID}/addresses/${ADDRESSID}'
+  transformation:
+    DefaultTransformationRule:
+      additional: insis
+      dateFormat: YYYY-MM-DD
+      out:
+        - fromIdx:
+            array: datamodel.person.addresses
+            index: actionContext.index
+          mappings:
+            - param: ignoreLoginService
+              value: true
+
+            - param: MANID
+              element: person.man-id
+
+            - param: ADDRESSID
+              element: person.addresses~address-id
+
+            - payload: address
+              value: '----'
+
+            - payload: addressType
+              element: person.addresses~address-type
+            - payload: apartmentNumber
+              element: person.addresses~apartment-number
+            - payload: blockNumber
+              element: person.addresses~block-number
+            - payload: city
+              element: person.addresses~city
+            - payload: countryCode
+              element: person.addresses~country-code
+            - payload: entranceNumber
+              element: person.addresses~entrance-number
+            - payload: floorNumber
+              element: person.addresses~floor-number
+            - payload: primaryFlag
+              element: person.addresses~is-primary
+            - payload: postCode
+              element: person.addresses~post-code
+            - payload: regionName
+              element: person.addresses~region-name
+            - payload: stateName
+              element: person.addresses~state-name
+            - payload: streetName
+              element: person.addresses~street-name
+            - payload: streetNumber
+              element: person.addresses~street-number

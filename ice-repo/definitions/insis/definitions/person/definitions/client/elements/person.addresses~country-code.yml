@@ -6,8 +6,7 @@ element:
       conditionValue: 'true'
       conditionViewMode: default
       elseViewMode: output
-  component:
-    StaticComponentRule:
-      component:
-        IceDropdown: {}
-  defaultValue: 'H'
+  component: IceDropdown
+  values:
+    ListValuesRule:
+      list: common.countries

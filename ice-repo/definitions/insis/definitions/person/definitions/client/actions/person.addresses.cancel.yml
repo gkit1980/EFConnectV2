@@ -1,0 +1,10 @@
+action:
+  execution:
+    - InsisSetElementValueExecutionRule:
+        element: person.addresses~edit-mode
+        value: 'false'
+    - ResetElementValueExecutionRule:
+        elements:
+          - person.addresses
+    - IntegrationExecutionRule:
+        integration: person.load

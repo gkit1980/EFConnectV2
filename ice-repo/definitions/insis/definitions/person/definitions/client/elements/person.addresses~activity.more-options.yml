@@ -6,3 +6,6 @@ element:
         InsisButtonDropdown: {}
   label:
     NoLabelRule: {}
+  values:
+    ListValuesRule:
+      list: person.addresses.buttons.more-options

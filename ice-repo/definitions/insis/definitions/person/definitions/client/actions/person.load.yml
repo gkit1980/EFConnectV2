@@ -3,6 +3,5 @@ action:
     - IntegrationExecutionRule:
         integration: person.load
   trigger:
-    - PageTriggerRule:
-        enter:
-          - personal-information
+    - IceLifecycleEventTriggerRule:
+        event: ICE_CONTEXT_ACTIVATED

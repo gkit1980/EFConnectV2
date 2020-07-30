@@ -1,8 +1,4 @@
 element:
   type: array
-  array:
-    StaticArrayRule:
-      default: '1'
-      min: '1'
   label:
     NoLabelRule: {}

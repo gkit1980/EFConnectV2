@@ -13,25 +13,20 @@ section:
                 size.xs: auto
                 size.sm: auto
                 elements:
-                  - name: person.addresses~buttons.cancel
+                  - name: person.addresses~activity.toggle-primary
+                  - name: person.addresses~activity.cancel
                 css: text-align-right
               - size: 62px
                 size.xs: auto
                 size.sm: auto
                 elements:
-                  - name: person.addresses~buttons.save
-                  - name: person.addresses~buttons.edit
-              - size: 130px
-                size.xs: auto
-                size.sm: auto
-                elements:
-                  - name: person.addresses~buttons.make-primary
-                  - name: person.addresses~buttons.make-secondary
+                  - name: person.addresses~activity.save
+                  - name: person.addresses~activity.edit
               - size: 65px
                 size.xs: auto
                 size.sm: auto
                 elements:
-                  - name: person.addresses~buttons.more-options
+                  - name: person.addresses~activity.more-options
             gap: 12px
             css: u-mt-2
           - cols:
@@ -44,7 +39,7 @@ section:
                 size.xs: auto
                 size.sm: auto
                 elements:
-                  - name: person.addresses~country
+                  - name: person.addresses~country-code
               - size: 197px
                 size.xs: auto
                 size.sm: auto

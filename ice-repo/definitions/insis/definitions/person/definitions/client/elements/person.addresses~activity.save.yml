@@ -12,5 +12,8 @@ element:
       conditionViewMode: default
       elseViewMode: hidden
   defaultValue:
-    StaticValueRule:
-      value: addresses.save
+    DtValueRule:
+      dt: person.addresses~activity.save.defaultvalue
+  mirror:
+    DtMirrorRule:
+      dt: person.addresses~activity.save.defaultvalue

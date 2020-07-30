@@ -48,6 +48,14 @@ integration:
           toIdx:
             useSourceIndex: true
           mappings:
+            - value: false
+              element: person.addresses~edit-mode
+            - value: person.addresses.cancel
+              element: person.addresses~activity.cancel
+            - value: person.addresses.make-primary
+              element: person.addresses~activity.make-primary
+            - value: person.addresses.make-secondary
+              element: person.addresses~activity.make-secondary
             - payload: addresses[n].addressId
               element: person.addresses~address-id
             - payload: addresses[n].addressType
@@ -58,10 +66,10 @@ integration:
               element: person.addresses~block-number
             - payload: addresses[n].city
               element: person.addresses~city
-            - payload: addresses[n].country
-              element: person.addresses~country
-            - payload: addresses[n].entrance-number
-              element: person.addresses~entranceNumber
+            - payload: addresses[n].countryCode
+              element: person.addresses~country-code
+            - payload: addresses[n].entranceNumber
+              element: person.addresses~entrance-number
             - payload: addresses[n].floorNumber
               element: person.addresses~floor-number
             - payload: addresses[n].primaryFlag
