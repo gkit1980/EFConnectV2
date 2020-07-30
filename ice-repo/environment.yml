@@ -1,6 +1,4 @@
 environment:
-  log-soap-messages: true
-  log-soap-messages-folder: './logs'
   insis_csm_endpoint: http://10.3.7.198:7808/insisws/InsisCSMPort
   insis_pdm_endpoint: http://10.3.7.198:7808/insisws/InsisPDMPort
   insis_pam_endpoint: http://10.3.7.198:7808/insisws/InsisPAMPort
