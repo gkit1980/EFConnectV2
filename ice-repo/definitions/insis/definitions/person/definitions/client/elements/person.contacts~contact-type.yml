@@ -1,2 +1,9 @@
 element:
   type: text
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: person.contacts~edit-mode
+      conditionValue: 'true'
+      conditionViewMode: default
+      elseViewMode: output
+  defaultValue: 'EMAIL'

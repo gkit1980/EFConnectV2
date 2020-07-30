@@ -413,30 +413,11 @@ entries:
       addresses:
         items:
           activity:
-            make-primary:
-              label:
-                - en: MAKE PRIMARY
-                  de: MAKE PRIMARY
-            remove:
-              label:
-                - en: null
-                  de: null
-            edit:
-              label:
-                - en: EDIT
-                  de: EDIT
-            cancel:
-              label:
-                - en: CANCEL
-                  de: CANCEL
-            save:
-              label:
-                - en: SAVE
-                  de: SAVE
-            make-secondary:
-              label:
-                - en: MAKE SECONDARY
-                  de: MAKE SECONDARY
+            make-primary: {}
+            remove: {}
+            edit: {}
+            cancel: {}
+            save: {}
           address-type:
             label:
               - en: Type
@@ -489,6 +470,16 @@ entries:
             label:
               - en: Country
                 de: Country
+      contacts:
+        items:
+          details:
+            label:
+              - en: Details
+                de: Details
+          contact-type:
+            label:
+              - en: Contact type
+                de: Contact type
     policy:
       insured:
         currency:
@@ -1718,6 +1709,11 @@ entries:
         label:
           - en: ADD ADDRESS
             de: ADD ADDRESS
+    contacts:
+      add-new-contact:
+        label:
+          - en: ADD CONTACT
+            de: ADD CONTACT
   pagination:
     policies:
       - en: policies
@@ -1746,9 +1742,9 @@ entries:
         - en: Please confirm
           de: Bitte bestätigen
       not_allowed_here:
-        - en: "'${value}' not allowed here"
+        - en: '''${value}'' not allowed here'
       regexp:
-        - en: "'${value}' does not matches regular expression ${regexp}"
+        - en: '''${value}'' does not matches regular expression ${regexp}'
       array:
         min:
           - en: 'must have at least ${min} entries'
@@ -2320,3 +2316,24 @@ entries:
         secondary-address:
           - en: Secondary address
             de: Secondary address
+    contacts:
+      item-label:
+        primary-contact:
+          - en: Primary contact
+            de: Primary contact
+        secondary-contact:
+          - en: Secondary contact
+            de: Secondary contact
+    activity:
+      edit:
+        label:
+          - en: EDIT
+            de: EDIT
+      cancel:
+        label:
+          - en: CANCEL
+            de: CANCEL
+      save:
+        label:
+          - en: SAVE
+            de: SAVE

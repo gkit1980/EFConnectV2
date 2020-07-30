@@ -104,6 +104,14 @@ integration:
           toIdx:
             useSourceIndex: true
           mappings:
+            - value: false
+              element: person.contacts~edit-mode
+            - value: person.contacts.cancel
+              element: person.contacts~activity.cancel
+            - value: person.contacts.make-primary
+              element: person.contacts~activity.make-primary
+            - value: person.contacts.make-secondary
+              element: person.contacts~activity.make-secondary
             - payload: contacts[n].contactId
               element: person.contacts~contact-id
             - payload: contacts[n].contactType

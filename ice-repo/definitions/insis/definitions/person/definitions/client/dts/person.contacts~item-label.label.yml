@@ -1,0 +1,20 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: person.contacts~is-primary
+  outputs:
+    - id: label
+      type: resourceKey
+  rules:
+    - inputs:
+        - true
+      outputs:
+        - person.contacts.item-label.primary-contact
+    - inputs:
+        - false
+      outputs:
+        - person.contacts.item-label.secondary-contact
+    - inputs:
+        - null
+      outputs:
+        - person.contacts.item-label.secondary-contact

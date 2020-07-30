@@ -1,0 +1,21 @@
+element:
+  type: text
+  mirror:
+    DtMirrorRule:
+      dt: person.contacts~activity.toggle-primary.mirror
+  component:
+    StaticComponentRule:
+      component:
+        IceButton: {}
+  label:
+    DtResourceLabelRule:
+      dt: person.contacts~activity.toggle-primary.label
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: person.contacts~edit-mode
+      conditionValue: 'true'
+      conditionViewMode: hidden
+      elseViewMode: default
+  defaultValue:
+    StaticValueRule:
+      value: person.contacts.make-primary

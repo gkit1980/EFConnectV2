@@ -1,0 +1,7 @@
+action:
+  execution:
+    - InsisSetElementValueExecutionRule:
+        element: person.contacts~edit-mode
+        value: 'false'
+    - IntegrationExecutionRule:
+        integration: person.contacts.add

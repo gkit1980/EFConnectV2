@@ -7,11 +7,11 @@ element:
           variant: default
   change:
     - InsisSetElementValueExecutionRule:
-        element: person.addresses~edit-mode
+        element: person.contacts~edit-mode
         value: 'true'
   viewMode:
     ConditionalViewModeRule:
-      conditionElement: person.addresses~edit-mode
+      conditionElement: person.contacts~edit-mode
       conditionValue: 'true'
       conditionViewMode: hidden
       elseViewMode: default

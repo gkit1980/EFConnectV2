@@ -1,0 +1,13 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: contacts.add-new-contact
+                css: text-align-right
+            css: u-mt-4 u-mb-4

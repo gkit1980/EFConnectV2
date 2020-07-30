@@ -8,4 +8,4 @@ element:
     NoLabelRule: {}
   values:
     ListValuesRule:
-      list: person.addresses.activity.more-options
+      list: person.contacts.activity.more-options

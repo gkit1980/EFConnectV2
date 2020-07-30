@@ -1,0 +1,10 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          variant: stroked
+  change:
+    - AddArrayItemExecutionRule:
+        element: person.contacts

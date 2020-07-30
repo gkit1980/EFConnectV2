@@ -7,16 +7,16 @@ element:
           variant: flat
   viewMode:
     ConditionalViewModeRule:
-      conditionElement: person.addresses~edit-mode
+      conditionElement: person.contacts~edit-mode
       conditionValue: 'true'
       conditionViewMode: default
       elseViewMode: hidden
   defaultValue:
     DtValueRule:
-      dt: person.addresses~activity.save.defaultvalue
+      dt: person.contacts~activity.save.defaultvalue
   mirror:
     DtMirrorRule:
-      dt: person.addresses~activity.save.defaultvalue
+      dt: person.contacts~activity.save.defaultvalue
   label:
     ResourceLabelRule:
       key: person.activity.save.label

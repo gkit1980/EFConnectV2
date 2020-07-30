@@ -1,0 +1,9 @@
+action:
+  execution:
+    - IntegrationExecutionRule:
+        integration: person.contacts.remove
+    - ResetElementValueExecutionRule:
+        elements:
+          - person.contacts
+    - IntegrationExecutionRule:
+        integration: person.load

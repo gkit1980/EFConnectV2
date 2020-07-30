@@ -7,11 +7,11 @@ element:
           variant: default
   viewMode:
     ConditionalViewModeRule:
-      conditionElement: person.addresses~edit-mode
+      conditionElement: person.contacts~edit-mode
       conditionValue: 'true'
       conditionViewMode: default
       elseViewMode: hidden
-  defaultValue: person.addresses.cancel
+  defaultValue: person.contacts.cancel
   label:
     ResourceLabelRule:
       key: person.activity.cancel.label

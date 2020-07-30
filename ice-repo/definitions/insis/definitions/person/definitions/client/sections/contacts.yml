@@ -1,0 +1,46 @@
+section:
+  component:
+    IceArrayFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.contacts~item-label
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.contacts~activity.toggle-primary
+                  - name: person.contacts~activity.cancel
+                css: text-align-right
+              - size: 62px
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.contacts~activity.save
+                  - name: person.contacts~activity.edit
+              - size: 65px
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.contacts~activity.more-options
+            gap: 12px
+            css: u-mt-2
+          - cols:
+              - size: 197px
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.contacts~contact-type
+              - size: 197px
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.contacts~details
+            gap: 12px
+            css: u-mt-2 u-mb-2
+      arrayElement: person.contacts
+      css: horizontal-list
