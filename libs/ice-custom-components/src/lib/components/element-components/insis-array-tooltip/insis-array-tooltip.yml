@@ -15,3 +15,14 @@ params:
   items:
     label: Items
     type: texts
+
+  templateId:
+    label: Template Id
+    type: select
+    options:
+      default: Default
+      listItems: List
+
+  signpostLabelKey:
+    label: Resource key for signpost header
+    type: resourceKey

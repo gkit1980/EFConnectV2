@@ -20,6 +20,16 @@ export class InsisArrayTooltipComponent extends IceArrayComponent {
     return template(dynamicLabel, { param1: this.getItems().length });
   }
 
+  get signpostLabelKey(): string | null {
+    return this.getRecipeParam('signpostLabelKey', null)
+      ? this.resource.resolve(this.getRecipeParam('signpostLabelKey'))
+      : null;
+  }
+
+  get templateId(): string {
+    return this.getRecipeParam('templateId', 'default');
+  }
+
   get getTemplate() {
     return this.getRecipeParam(
       'items',

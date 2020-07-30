@@ -5,6 +5,15 @@
   </div>
 </ng-template>
 
+<ng-template #listItems let-index>
+  <ul *ngFor="let element of getTemplate">
+    <li>
+      <ice-element *ngIf="element" [section]="section" [elementName]="element" [index]="index">
+      </ice-element>
+    </li>
+  </ul>
+</ng-template>
+
 <div class="insis-array-tooltip" *ngIf="isVisible" style="max-width: 100%;">
   <label class="mat-small">{{ label }}</label>
   <div *ngIf="showFirst >= getItems().length" style="overflow: hidden; max-width: 100%;">
@@ -25,11 +34,14 @@
       *ngIf="showTooltip"
       [ngClass]="{ 'has-label': label }"
     >
-      <mat-icon class="close" (click)="showTooltip = false">close</mat-icon>
       <div id="triangle"></div>
+      <div id="signpostLabelKey" *ngIf="signpostLabelKey">
+        <h1>{{ signpostLabelKey }}</h1>
+      </div>
+      <mat-icon class="close" (click)="showTooltip = false">close</mat-icon>
       <div *ngFor="let item of getItems(); index as index" class="insis-array-tooltip-item">
         <ng-container
-          [ngTemplateOutlet]="template"
+          [ngTemplateOutlet]="templateId === 'listItems' ? listItems : template"
           [ngTemplateOutletContext]="{ $implicit: childIndex(index) }"
         >
         </ng-container>

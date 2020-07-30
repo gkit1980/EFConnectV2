@@ -5,6 +5,8 @@ element:
       component:
         InsisArrayTooltip:
           showFirst: 1
+          signpostLabelKey: elements.policies.items.insured-objects.items.item.label
+          templateId: listItems
           items:
             - policies~insured-objects~item
   viewMode: output

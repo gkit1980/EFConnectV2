@@ -27,5 +27,15 @@
       }
       white-space: nowrap;
     }
+
+    #signpostLabelKey {
+      white-space: nowrap;
+      margin-top: -5px;
+      padding-right: 20px;
+    }
+
+    li {
+      list-style-type: disc !important;
+    }
   }
 }
