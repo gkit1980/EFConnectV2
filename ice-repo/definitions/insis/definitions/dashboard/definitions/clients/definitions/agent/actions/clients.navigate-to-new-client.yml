@@ -1,6 +1,8 @@
 action:
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - activity.new-client
   execution:
-    - MessageActionRule:
-        severity: warning
-        message: Neue Kunden bitte nur über BSI CRM anlegen.
-   
+    - NavigateToDefinitionExecutionRule:
+        definition: insis.person.client.new-client

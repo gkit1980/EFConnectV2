@@ -11,3 +11,8 @@ element:
         IceButton:
           themeColor: accent
           variant: default
+  change:
+    - DtNavigateToDefinitionExecutionRule:
+        definitionOutput: definition
+        dynIdOutput: dynId
+        dt: policies~view-more.change

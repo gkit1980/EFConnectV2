@@ -15,5 +15,5 @@ dt:
     - inputs:
         - '-'
       outputs:
-        - insis.person.client.agent/summary
+        - insis.person.client.agent
         - clients~pid

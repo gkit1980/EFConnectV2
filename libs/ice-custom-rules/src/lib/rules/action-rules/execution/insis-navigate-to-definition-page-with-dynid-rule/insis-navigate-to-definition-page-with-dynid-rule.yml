@@ -19,9 +19,9 @@ implementations:
         type: element
         required: false
       page:
-        label: destination page
-        info: destination page
-        type: page
+        label: Destination page
+        info: Destination page
+        type: text
     icel: >
       ```
         action:

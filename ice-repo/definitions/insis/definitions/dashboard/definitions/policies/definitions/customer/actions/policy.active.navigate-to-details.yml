@@ -2,4 +2,8 @@ action:
   execution:
     - InsisNavigateToDefinitionPageWithDynidRule:
         dynIdElement: policies~policy_id
-        definition: insis.dashboard.policies.details/details
+        definition: insis.products.policy-details.customer
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - policies~view-more

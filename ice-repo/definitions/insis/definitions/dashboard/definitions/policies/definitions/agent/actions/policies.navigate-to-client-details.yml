@@ -6,4 +6,4 @@ action:
   trigger:
     - ElementChangeTriggerRule:
         elements:
-          - clients~view-more
+          - policies~client-view-more

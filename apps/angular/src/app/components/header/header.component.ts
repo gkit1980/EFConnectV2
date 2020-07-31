@@ -56,7 +56,10 @@ export class HeaderComponent {
         {
           key: runtime.iceResource.resolve('pages.header.customer.policies.label'),
           link: runtime.iceResource.resolve('pages.header.customer.policies.link'),
-          includes: ['/ice/insis.dashboard.policies.customer/home'],
+          includes: [
+            '/ice/insis.dashboard.policies.customer/home',
+            '/ice/insis.products.policy-details.customer',
+          ],
         },
         {
           key: runtime.iceResource.resolve('pages.header.customer.claims.label'),
@@ -66,7 +69,7 @@ export class HeaderComponent {
         {
           key: runtime.iceResource.resolve('pages.header.customer.products.label'),
           link: runtime.iceResource.resolve('pages.header.customer.products.link'),
-          includes: ['/ice/insis.dashboard.products.customer/home'],
+          includes: ['/ice/insis.dashboard.products.customer/home', 'quote-buy.customer'],
         },
         {
           key: runtime.iceResource.resolve('pages.header.customer.payments.label'),
@@ -84,12 +87,20 @@ export class HeaderComponent {
         {
           key: runtime.iceResource.resolve('pages.header.agent.clients.label'),
           link: runtime.iceResource.resolve('pages.header.agent.clients.link'),
-          includes: ['/ice/insis.dashboard.clients.agent/home'],
+          includes: [
+            '/ice/insis.dashboard.clients.agent/home',
+            'insis.person.client.new-client',
+            'insis.person.client.agent',
+          ],
         },
         {
           key: runtime.iceResource.resolve('pages.header.agent.policies.label'),
           link: runtime.iceResource.resolve('pages.header.agent.policies.link'),
-          includes: ['/ice/insis.dashboard.policies.agent/home'],
+          includes: [
+            '/ice/insis.dashboard.policies.agent/home',
+            '/ice/insis.products.policy-details.agent',
+            'quote-buy.agent',
+          ],
         },
         {
           key: runtime.iceResource.resolve('pages.header.agent.claims.label'),

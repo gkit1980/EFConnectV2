@@ -1,0 +1,32 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policies~insr-type
+    - label: new label
+      element: policies~policy-state-name
+  outputs:
+    - id: definition
+      type: string
+    - label: new label
+      default: ''
+      id: dynId
+  rules:
+    - inputs:
+        - 910211
+        - 'Quotation'
+      outputs:
+        - insis.products.life.risks.tl910211.term-life.quote-buy.agent/1.quote.people
+        - policies~policy-id
+    - inputs:
+        - 910211
+        - 'Application'
+      outputs:
+        - >-
+          insis.products.life.risks.tl910211.term-life.quote-buy.agent/2.application.details
+        - policies~policy-id
+    - inputs:
+        - 910211
+        - 'Policy'
+      outputs:
+        - insis.products.policy-details.agent/summary
+        - policies~policy-id

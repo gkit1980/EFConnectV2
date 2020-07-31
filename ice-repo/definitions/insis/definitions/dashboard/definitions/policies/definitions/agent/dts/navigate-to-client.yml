@@ -15,5 +15,5 @@ dt:
     - inputs:
         - '-'
       outputs:
-        - agent.client-details/summary
+        - insis.person.client.agent
         - policies~client-pid

@@ -122,6 +122,10 @@ entries:
         label:
           - en: See less options
             de: See less options
+      see-more-options:
+        label:
+          - en: See more options
+            de: See more options
     new-client:
       label:
         - en: NEW CLIENT
@@ -402,6 +406,9 @@ entries:
           content:
             - en: '${param1} - ${param2}'
               de: '${param1} - ${param2}'
+          label:
+            - en: Product
+              de: Produkt
     claims-in-progress:
       submit-a-claim:
         label:

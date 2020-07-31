@@ -7,4 +7,3 @@ element:
           themeColor: accent
           variant: default
           accesskey: n
-  defaultValue: clients.navigate-to-new-client
