@@ -1,3 +1,12 @@
 element:
   type: text
   viewMode: output
+  label:
+    NoLabelRule: {}
+  values:
+    ListValuesRule:
+      list: insis.term-life.covers
+  component:
+    StaticComponentRule:
+      component:
+        IceDropdown: {}

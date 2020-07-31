@@ -1,0 +1,24 @@
+page:
+  component: InsisOneLevelTabsNavigationPage
+  validation: {}
+  sections:
+    - header
+    - objects-summary
+    - component:
+        IceFlexSection:
+          grid:
+            rows:
+              - gap: 20px
+                cols:
+                  - size: calc(33%-20px)
+                    sections:
+                      - name: payment-summary
+                  - size: calc(33%-20px)
+                    sections:
+                      - name: payment-summary
+                  - size: calc(33%-20px)
+                    sections:
+                      - name: payment-summary
+  label:
+    ResourcePageLabelRule:
+      navigationTitleKey: pages.policy-details.summary.title

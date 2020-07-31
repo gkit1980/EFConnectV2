@@ -1,0 +1,9 @@
+page:
+  component: InsisOneLevelTabsNavigationPage
+  validation: {}
+  sections:
+    - header
+    - objects-covers
+  label:
+    ResourcePageLabelRule:
+      navigationTitleKey: pages.policy-details.covers.title

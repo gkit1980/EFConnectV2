@@ -1,0 +1,31 @@
+list:
+  items:
+    - value: DEATH_ANY
+      label_en: Death any cause
+      label_de: Death any cause
+    - value: CRITIC_ILL
+      label_en: Critical illness
+      label_de: Critical illness
+    - value: DEACT_ACC
+      label_en: Accidental death
+      label_de: Accidental death
+    - value: PREMRET
+      label_en: Premium return by survival
+      label_de: Premium return by survival
+    - value: TPDILL
+      label_en: Total and permanent disability due to illness over 75%
+      label_de: Total and permanent disability due to illness over 75%
+    - value: TPDACCD
+      label_en: Total and permanent disability due to accident over 75%
+      label_de: Total and permanent disability due to accident over 75%
+    - value: WOP_TOTAL
+      label_en: Waiver of premium due to permanent disability any cause
+      label_de: Waiver of premium due to permanent disability any cause
+  type: string
+  additionals:
+    label_en:
+      label: label_en
+      type: string
+    label_de:
+      label: label_de
+      type: string

@@ -1,0 +1,39 @@
+section:
+  component:
+    IceArrayFlexSection:
+      arrayElement: policy.insured.objects
+      css: policy-details-objects-grid u-mt-6
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                css: mat-headline u-mb-4 u-mt-1
+                elements:
+                  - name: policy.insured.objects~person-data.title
+              - size: none
+                elements:
+                  - name: policy.insured.objects~activities.goto-covers
+
+          - css: output-element
+            cols:
+              - size: 33%
+                elements:
+                  - name: policy.insured.objects~person-data.first-name
+              - size: 33%
+                elements:
+                  - name: policy.insured.objects~person-data.last-name
+              - size: 33%
+                elements:
+                  - name: policy.insured.objects~person-data.gender
+
+          - css: output-element
+            cols:
+              - size: 33%
+                elements:
+                  - name: policy.insured.objects~person-data.birth-date
+              - size: 33%
+                elements:
+                  - name: policy.insured.objects~person-data.country
+              - size: 33%
+                elements:
+                  - name: policy.insured.objects~person-data.pid

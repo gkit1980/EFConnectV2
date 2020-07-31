@@ -1,0 +1,6 @@
+element:
+  type: action
+  viewMode: output
+  defaultValue:
+    StaticValueRule:
+      value: policy.goto-covers

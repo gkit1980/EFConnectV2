@@ -1,0 +1,40 @@
+section:
+  component:
+    IceFlexSection:
+      tags:
+        - header
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                css: mat-display-1 u-mb-8 u-mt-2
+                elements:
+                  - name: policy.contract.policy-id
+              - size: none
+                elements:
+                  - name: policy.activity.download
+              - size: none
+                css: u-ml-2
+                elements:
+                  - name: policy.activity.cancel
+
+          - css: output-element
+            cols:
+              - size: auto
+                elements:
+                  - name: policy.contract.product-full-name
+              - size: auto
+                elements:
+                  - name: policy.participants.holder.person.full-name
+              - size: auto
+                elements:
+                  - name: policy.contract.begin
+              - size: auto
+                elements:
+                  - name: policy.contract.end
+              - size: auto
+                elements:
+                  - name: policy.registration-date
+              - size: auto
+                elements:
+                  - name: policy.updated-date

@@ -1,0 +1,9 @@
+element:
+  type: text
+  defaultValue:
+    DtValueRule:
+      dt: policy-product.name
+  mirror:
+    DtMirrorRule:
+      dt: policy-product.name
+  viewMode: output

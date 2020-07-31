@@ -488,7 +488,34 @@ entries:
             label:
               - en: Bank name
                 de: Bank name
+    payment:
+      title:
+        label:
+          - en: Payments
+            de: Payments
+      activity:
+        goto-details:
+          label:
+            - en: Details
+              de: Details
     policy:
+      registration-date:
+        label:
+          - en: Issue date
+            de: Issue date
+      updated-date:
+        label:
+          - en: Last modified
+            de: Issue date
+      activity:
+        download:
+          label:
+            - en: Download PDF
+              de: Download PDF
+        cancel:
+          label:
+            - en: Cancel
+              de: Cancel
       insured:
         currency:
           label:
@@ -1109,6 +1136,52 @@ entries:
               label:
                 - en: Upload your income statement
                   de: Laden Sie Ihre Gewinn- und Verlustrechnung hoch
+        objects:
+          items:
+            activities:
+              goto-covers:
+                label:
+                  - en: See covers
+                    de: See covers
+            person-data:
+              title:
+                label:
+                  - en: Insured object
+                    de: Insured object
+              first-name:
+                label:
+                  - en: First name
+                    de: First name
+              last-name:
+                label:
+                  - en: Last name
+                    de: Last name
+              gender:
+                label:
+                  - en: Gender
+                    de: Gender
+              birth-date:
+                label:
+                  - en: Birth date
+                    de: Birth date
+              country:
+                label:
+                  - en: Country
+                    de: Country
+              pid:
+                label:
+                  - en: Client ID
+                    de: Client ID
+              covers-subtitle:
+                label:
+                  - en: '${param1} will be ${param2} at the end of the insurance.'
+                    de: '${param1} will be ${param2} at the end of the insurance.'
+            covers:
+              items:
+                premium:
+                  label:
+                    - en: 'Sum Insured: '
+                      de: 'Sum Insured: '
       contract:
         begin:
           label:
@@ -1133,6 +1206,10 @@ entries:
           label:
             - en: Valid until
               de: null
+        product-full-name:
+          label:
+            - en: Product
+              de: Product
       participants:
         holder:
           person:
@@ -1755,9 +1832,9 @@ entries:
         - en: Please confirm
           de: Bitte bestätigen
       not_allowed_here:
-        - en: '''${value}'' not allowed here'
+        - en: "'${value}' not allowed here"
       regexp:
-        - en: '''${value}'' does not matches regular expression ${regexp}'
+        - en: "'${value}' does not matches regular expression ${regexp}"
       array:
         min:
           - en: 'must have at least ${min} entries'
@@ -1905,6 +1982,15 @@ entries:
       title:
         - en: Terms and conditions
           de: null
+    policy-details:
+      summary:
+        title:
+          - en: Summary
+            de: Summary
+      covers:
+        title:
+          - en: Object and Covers
+            de: Object and Covers
     header:
       agent:
         dashboard:
@@ -2171,7 +2257,6 @@ entries:
                     de: |-
                       # Critical illness
                       Insured sum: ${param1} &euro;
-  quotes:
     title: {}
     remove:
       label:

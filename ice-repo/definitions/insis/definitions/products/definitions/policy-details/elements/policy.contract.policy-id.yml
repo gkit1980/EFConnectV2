@@ -1,5 +1,5 @@
 element:
-  type: array
+  type: text
   viewMode: output
   label:
     NoLabelRule: {}

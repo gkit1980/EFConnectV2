@@ -422,6 +422,7 @@ confirmation-dialog-layout {
   .ice-output label {
     margin: 0px;
     display: block;
+    //font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 12px;
@@ -430,9 +431,32 @@ confirmation-dialog-layout {
     text-align: left;
     line-height: 16px;
   }
+
   .ice-output .value {
     margin-top: 2px;
     font-size: 16px;
     padding: 0px;
+    //font-family: 'Roboto', sans-serif;
+  }
+}
+
+.policy-details-objects-grid {
+  > ice-element > .ice-element > ice-array > .ice-array {
+    > label {
+      display: none;
+    }
+
+    @include respond-from('md') {
+      display: grid;
+      //grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      grid-template-columns: 1fr 1fr;
+      //grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    > .ice-array-item {
+      @include make-card();
+      margin-bottom: 24px;
+    }
   }
 }

@@ -1,0 +1,13 @@
+element:
+  type: text
+  viewMode: output
+  component:
+    StaticComponentRule:
+      component:
+        IceNone: {}
+  label:
+    ResourceWithElementValuesLabelRule:
+      key: elements.policy.insured.objects.items.person-data.covers-subtitle.label
+      elements:
+        - policy.insured.objects~person-data.full-name
+        - policy.insured.objects~person-data.age-at-end

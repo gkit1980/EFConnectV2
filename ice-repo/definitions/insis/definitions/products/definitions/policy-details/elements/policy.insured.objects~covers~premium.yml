@@ -1,3 +1,8 @@
 element:
   type: currency
   viewMode: output
+  component:
+    StaticComponentRule:
+      component:
+        InsisCurrency:
+          currencyElementName: policy.insured.objects~covers~currency

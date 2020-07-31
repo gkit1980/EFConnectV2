@@ -1,0 +1,35 @@
+section:
+  component:
+    IceFlexSection:
+      css: card
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                css: mat-headline u-mb-4 u-mt-1
+                elements:
+                  - name: payment.title
+              - size: none
+                elements:
+                  - name: payment.activity.goto-details
+
+          - css: output-element
+            cols:
+              - size: auto
+                elements:
+                  - name: policy.contract.payment.duration
+                  - name: policy.contract.payment.unit
+              - size: auto
+                elements:
+                  - name: policy.contract.payment.frequency
+
+          - css: output-element
+            cols:
+              - size: auto
+                elements:
+                  - name: policy.insured.premium.total
+                  - name: policy.insured.currency
+              - size: auto
+                elements:
+                  - name: policy.insured.premium.total
+                  - name: policy.insured.currency

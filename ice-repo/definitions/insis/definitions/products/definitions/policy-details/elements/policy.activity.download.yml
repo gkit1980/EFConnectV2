@@ -1,0 +1,10 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          themeColor: primary
+          variant: stroked
+          type: none
+  defaultValue: policy.download-pdf

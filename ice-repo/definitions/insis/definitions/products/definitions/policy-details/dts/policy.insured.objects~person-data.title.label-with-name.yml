@@ -1,0 +1,41 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policy.insured.objects~person-data.accident
+    - element: policy.insured.objects~person-data.first-name
+    - element: policy.insured.objects~person-data.last-name
+  outputs:
+    - id: label_en
+      type: string
+    - label: new label
+      id: label_de
+  rules:
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+      outputs:
+        - >-
+          ':Main insured person - '  +
+          policy.insured.objects~person-data.full-name
+        - >-
+          ':Main insured person - '  +
+          policy.insured.objects~person-data.full-name
+    - inputs:
+        - '-'
+        - not(null)
+        - not(null)
+      outputs:
+        - >-
+          ':Additional insured person - '  +
+          policy.insured.objects~person-data.full-name
+        - >-
+          ':Additional insured person - '  +
+          policy.insured.objects~person-data.full-name
+    - inputs:
+        - '-'
+        - '-'
+        - '-'
+      outputs:
+        - ':Insured object'
+        - ':Insured object'

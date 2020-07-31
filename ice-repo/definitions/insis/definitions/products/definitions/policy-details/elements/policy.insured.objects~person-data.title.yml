@@ -1,0 +1,15 @@
+element:
+  type: text
+  viewMode: output
+  label:
+    DtResourceLabelRule:
+      dt: policy.insured.objects~person-data.title.label
+  component:
+    StaticComponentRule:
+      component:
+        IceNone: {}
+  pages:
+    covers:
+      label:
+        DtResourceLabelRule:
+          dt: policy.insured.objects~person-data.title.label-with-name

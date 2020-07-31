@@ -1,0 +1,23 @@
+dt:
+  output-label: label
+  hitPolicy: F
+  inputs:
+    - element: policy.contract.product-code
+  outputs:
+    - label: label
+      id: label_en
+      type: string
+    - label: new label
+      default: ''
+      id: label_de
+  rules:
+    - inputs:
+        - 910211
+      outputs:
+        - 910211 - Term Life
+        - 910211 - Term Life
+    - inputs:
+        - '-'
+      outputs:
+        - Product name
+        - Product name
