@@ -1,0 +1,36 @@
+section:
+  component:
+    IceFlexSection:
+      tags:
+        - header
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.activity.navigate-back
+          - cols:
+              - size: auto
+                css: mat-display-1 u-mb-8 u-mt-2
+                elements:
+                  - name: person.full-name
+
+          - css: output-element
+            cols:
+              - size: auto
+                elements:
+                  - name: person.man-comp
+              - size: auto
+                elements:
+                  - name: person.given-name
+              - size: auto
+                elements:
+                  - name: person.family-name
+              - size: auto
+                elements:
+                  - name: person.sex
+              - size: auto
+                elements:
+                  - name: person.birth-date

@@ -1,0 +1,6 @@
+page:
+  validation: {}
+  component: InsisOneLevelTabsNavigationPage
+  sections:
+    - header
+    - personal-information

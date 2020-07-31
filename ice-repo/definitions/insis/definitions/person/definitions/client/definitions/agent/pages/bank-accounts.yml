@@ -1,0 +1,7 @@
+page:
+  component: InsisOneLevelTabsNavigationPage
+  validation: {}
+  sections:
+    - header
+    - add-new-bank-account
+    - bank-accounts

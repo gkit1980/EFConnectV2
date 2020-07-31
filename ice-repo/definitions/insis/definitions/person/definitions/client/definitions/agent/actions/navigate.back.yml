@@ -1,0 +1,8 @@
+action:
+  trigger:
+    - InsisKeyboardShortcutTriggerRule:
+        keyCombination: Escape
+        preventDefault: true
+  execution:
+    - NavigateToUrlExecutionRule:
+        url: ice/insis.dashboard.clients.agent/home

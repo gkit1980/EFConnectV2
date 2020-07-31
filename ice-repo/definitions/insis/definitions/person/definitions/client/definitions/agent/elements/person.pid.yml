@@ -1,0 +1,6 @@
+element:
+  type: text
+  defaultValue:
+    DataStoreValueRule:
+      path: dynId
+      scopeToDefintion: true

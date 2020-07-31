@@ -303,7 +303,6 @@ entries:
         label:
           - en: Client type
             de: Client type
-
     expired-policies:
       items:
         more-actions:
@@ -677,6 +676,15 @@ entries:
             label:
               - en: Bank name
                 de: Bank name
+      man-comp:
+        label:
+          - en: Client type
+            de: Client type
+      activity:
+        navigate-back:
+          label:
+            - en: BACK TO ALL CLIENTS
+              de: BACK TO ALL CLIENTS
     payment:
       title:
         label:
@@ -1993,6 +2001,10 @@ entries:
         label:
           - en: ADD BANK ACCOUNT
             de: ADD BANK ACCOUNT
+    navigate-to-all-clients:
+      label:
+        - en: < BACK TO ALL CLIENTS
+          de: < BACK TO ALL CLIENTS
   pagination:
     policies:
       - en: policies
@@ -2281,6 +2293,10 @@ entries:
       title:
         - en: personal information
           de: personal information
+    summary:
+      title:
+        - en: summary
+          de: summary
   lists:
     gender:
       diverse:

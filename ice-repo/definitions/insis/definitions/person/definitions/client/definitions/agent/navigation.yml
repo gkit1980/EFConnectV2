@@ -1,0 +1,9 @@
+
+pages:
+  StaticNavigationPagesRule:
+    pages:
+      - page: summary
+      - page: personal-information
+      - page: addresses
+      - page: contacts
+      - page: bank-accounts

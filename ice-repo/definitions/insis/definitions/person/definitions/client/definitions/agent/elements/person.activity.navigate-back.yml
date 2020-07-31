@@ -1,0 +1,12 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          themeColor: accent
+          iconName: arrow_back_ios
+          iconPosition: left
+  defaultValue:
+    StaticValueRule:
+      value: navigate.back

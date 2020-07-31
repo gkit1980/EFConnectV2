@@ -1,0 +1,5 @@
+page:
+  component: InsisOneLevelTabsNavigationPage
+  validation: {}
+  sections:
+    - header

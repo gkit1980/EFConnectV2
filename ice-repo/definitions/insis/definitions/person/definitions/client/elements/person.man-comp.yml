@@ -1,2 +1,10 @@
 element:
-  type: integer
+  type: text
+  viewMode: output
+  component:
+    StaticComponentRule:
+      component:
+        IceDropdown: {}
+  values:
+    ListValuesRule:
+      list: clients.types-text
