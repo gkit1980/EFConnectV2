@@ -1,0 +1,5 @@
+element:
+  type: text
+  viewMode:
+    StaticViewModeRule:
+      viewMode: default

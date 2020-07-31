@@ -1,0 +1,22 @@
+action:
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - person.type
+  execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - person.sex
+          - person.sub-industry-code
+          - person.company-type
+          - person.second-name
+          - person.nationality
+          - person.name-suffix
+          - person.name-prefix
+          - person.language
+          - person.industry-code
+          - person.home-country
+          - person.given-name
+          - person.full-name
+          - person.family-name
+          - person.birth-date

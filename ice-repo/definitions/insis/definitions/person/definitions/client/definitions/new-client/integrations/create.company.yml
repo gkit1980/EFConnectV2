@@ -1,0 +1,28 @@
+integration:
+  type: active
+  exchange:
+    InsisRestCallExchangeRule:
+      endpointBaseurl: insis-rest-endpoint
+      verb: post
+      url: /people-dir/person/composite
+  transformation:
+    DefaultTransformationRule:
+      additional: insis
+      dateTimeFormat: 'YYYY-MM-DDThh:mm:ss+00:00'
+      dateFormat: 'YYYY-MM-DDT00:00:00+00:00'
+      ignoreNull: true
+      out:
+        - mappings:
+            - payload: manComp
+              value: 2
+            - payload: name
+              element: person.full-name
+            - payload: compType
+              element: person.company-type
+            - payload: homeCountry
+              element: person.home-country
+            - payload: nationality
+              element: person.nationality
+            - payload: language
+              element: person.language
+      extends: create.client

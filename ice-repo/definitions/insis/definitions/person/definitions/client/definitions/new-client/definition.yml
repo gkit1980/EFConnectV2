@@ -1,0 +1,5 @@
+definition:
+  title: insis.person.client.new-client
+  executable: true
+  showInsights: true
+  elementOnPageCheck: false

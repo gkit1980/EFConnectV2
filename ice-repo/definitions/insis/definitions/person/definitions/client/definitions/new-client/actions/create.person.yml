@@ -1,0 +1,9 @@
+action:
+  execution:
+    - InsisValidatePageExecutionRule:
+        what: currentPage
+    - IntegrationExecutionRule:
+        integration: create.person
+    - NavigateToDefinitionExecutionRule:
+        definition: insis.dashboard.clients.agent
+        page: home

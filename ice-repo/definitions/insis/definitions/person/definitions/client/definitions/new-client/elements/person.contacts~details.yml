@@ -1,0 +1,8 @@
+element:
+  type: text
+  viewMode:
+    StaticViewModeRule:
+      viewMode: required
+  label:
+    ResourceLabelRule:
+      key: elements.new-client.contact.phone-number.label

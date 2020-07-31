@@ -1,0 +1,15 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          themeColor: primary
+          action: null
+          variant: flat
+  defaultValue:
+    DtValueRule:
+      dt: new-client.create.defaultvalue
+  mirror:
+    DtMirrorRule:
+      dt: new-client.create.defaultvalue

@@ -1,0 +1,22 @@
+list:
+  items:
+    - value: MOBILE
+      label_de: Mobile phone
+      label_en: Mobile phone
+    - value: HOME
+      label_de: Home phone
+      label_en: Home phone
+    - value: OFFICE
+      label_de: Office phone
+      label_en: Office phone
+    - value: EMAIL
+      label_de: E-mail
+      label_en: E-mail
+  type: text
+  additionals:
+    label_de:
+      label: label_de
+      type: text
+    label_en:
+      label: label_en
+      type: text

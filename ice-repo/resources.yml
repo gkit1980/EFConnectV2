@@ -122,10 +122,184 @@ entries:
         label:
           - en: See less options
             de: See less options
+    new-client:
+      label:
+        - en: NEW CLIENT
+          de: NEUER KUNDE
+      title:
+        label:
+          - en: New client
+            de: New client
+      person-data:
+        title:
+          label:
+            - en: Person data
+              de: Person data
+        birthdate:
+          label:
+            - en: Birth date
+              de: Birth date
+        first-name:
+          label:
+            - en: First name
+              de: First name
+        gender:
+          label:
+            - en: Gender
+              de: Gender
+        industry:
+          label:
+            - en: Industry (optional)
+              de: Industry (optional)
+        last-name:
+          label:
+            - en: Last name
+              de: Last name
+        middle-name:
+          label:
+            - en: Middle name (optional)
+              de: Middle name (optional)
+        name-prefix:
+          label:
+            - en: Name prefix (optional)
+              de: Name prefix (optional)
+        name-suffix:
+          label:
+            - en: Name suffix (optional)
+              de: Name suffix (optional)
+        nationality:
+          label:
+            - en: Nationality
+              de: Nationality
+        preferred-language:
+          label:
+            - en: Preferred language
+              de: Preferred language
+        subindustry:
+          label:
+            - en: Subindustry (optional)
+              de: Subindustry (optional)
+      company-data:
+        title:
+          label:
+            - en: Company data
+              de: Company data
+        home-country:
+          label:
+            - en: Home country
+              de: Home country
+        industry:
+          label:
+            - en: Industry
+              de: Industry
+        name:
+          label:
+            - en: Name
+              de: Name
+        nationality:
+          label:
+            - en: Nationality
+              de: Nationality
+        preferred-language:
+          label:
+            - en: Preferred language
+              de: Preferred language
+        subindustry:
+          label:
+            - en: Subindustry (optional)
+              de: Subindustry (optional)
+        type:
+          label:
+            - en: Company type
+              de: Company type
+      contact:
+        title:
+          label:
+            - en: Contact
+              de: Contact
+        phone-number:
+          label:
+            - en: Phone number
+              de: Phone number
+        type:
+          label:
+            - en: Contact type
+              de: Contact type
+      address:
+        title:
+          label:
+            - en: Address
+              de: Address
+        apartment-number:
+          label:
+            - en: Apartment number (optional)
+              de: Apartment number (optional)
+        block-number:
+          label:
+            - en: Block number (optional)
+              de: Block number (optional)
+        city:
+          label:
+            - en: City
+              de: City
+        country:
+          label:
+            - en: Country
+              de: Country
+        entrance-number:
+          label:
+            - en: Entrance number (optional)
+              de: Entrance number (optional)
+        floor-number:
+          label:
+            - en: Floor number (optional)
+              de: Floor number (optional)
+        post-code:
+          label:
+            - en: Post code
+              de: Post code
+        region:
+          label:
+            - en: Region (optional)
+              de: Region (optional)
+        state:
+          label:
+            - en: State (optional)
+              de: State (optional)
+        street-number:
+          label:
+            - en: Street number (optional)
+              de: Street number (optional)
+        street:
+          label:
+            - en: Street (optional)
+              de: Street (optional)
+        type:
+          label:
+            - en: Address type
+              de: Address type
       see-more-options:
         label:
           - en: See more options
             de: See more options
+      activity:
+        cancel:
+          label:
+            - en: Cancel
+              de: Cancel
+        create:
+          label:
+            - en: Create
+              de: Create
+        navigate-to-all-clients:
+          label:
+            - en: BACK TO ALL CLIENTS
+              de: BACK TO ALL CLIENTS
+      client-type:
+        label:
+          - en: Client type
+            de: Client type
+
     expired-policies:
       items:
         more-actions:
@@ -460,6 +634,14 @@ entries:
             label:
               - en: Block number
                 de: Block number
+      type:
+        label:
+          - en: Client type
+            de: Client type
+        country-code:
+          label:
+            - en: Country
+              de: Country
           country-code:
             label:
               - en: Country
@@ -2075,6 +2257,7 @@ entries:
       title:
         - en: Quotes in Progress
           de: Quotes in Progress
+    new-client: {}
     addresses:
       title:
         - en: Adressess

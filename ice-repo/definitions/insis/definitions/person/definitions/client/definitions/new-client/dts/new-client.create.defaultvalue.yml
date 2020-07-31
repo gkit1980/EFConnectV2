@@ -1,0 +1,16 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: person.type
+  outputs:
+    - id: defaultValue
+      type: string
+  rules:
+    - inputs:
+        - 1
+      outputs:
+        - create.person
+    - inputs:
+        - 2
+      outputs:
+        - create.company

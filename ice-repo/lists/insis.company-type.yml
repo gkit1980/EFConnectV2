@@ -1,0 +1,25 @@
+list:
+  items:
+    - value: PT
+      label_de: Partnership
+      label_en: Partnership
+    - value: CP
+      label_de: Corporation
+      label_en: Corporation
+    - value: JV
+      label_de: Join Venture
+      label_en: Joi Venture
+    - value: AS
+      label_de: Association
+      label_en: Association
+    - value: RE
+      label_de: Reinsurer
+      label_en: Reinsurer
+  type: text
+  additionals:
+    label_de:
+      label: label_de
+      type: text
+    label_en:
+      label: label_en
+      type: text

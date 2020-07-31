@@ -1,0 +1,88 @@
+section:
+  component:
+    IceArrayFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: new-client.address.title
+            css: u-mb-4 mat-subheading-2
+          - cols:
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~address-type
+            css: u-mb-2 mat-subheading-1
+          - cols:
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~country
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~state-name
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~region-name
+            gap: 20px
+            css: u-mb-2
+          - cols:
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~city
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~post-code
+            gap: 20px
+            css: u-mb-2
+          - cols:
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~street-name
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~street-number
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~block-number
+            gap: 20px
+            css: u-mb-2
+          - cols:
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~entrance-number
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~floor-number
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~apartment-number
+            gap: 20px
+            css: u-mb-5
+      arrayElement: person.addresses
+      behaviourForEmptyRows: render

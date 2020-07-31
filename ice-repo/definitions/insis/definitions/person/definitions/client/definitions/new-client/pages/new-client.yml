@@ -1,0 +1,62 @@
+page:
+  validation: {}
+  component: InsisSimplePage
+  sections:
+    - component:
+        IceFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: new-client.activity.navigate-to-all-clients
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: new-client.title
+                css: mat-display-1 u-mb-6
+              - cols:
+                  - size: none
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: person.type
+                css: u-mb-5
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    sections:
+                      - name: company-data
+                      - name: person-data
+                gap: 20px
+                css: u-mb-5
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    sections:
+                      - name: address
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    sections:
+                      - name: contact
+              - cols:
+                  - size: none
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: new-client.activity.create
+                  - size: none
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: new-client.activity.cancel
+                gap: 20px
+          behaviourForEmptyRows: render

@@ -1,0 +1,16 @@
+element:
+  type: array
+  array:
+    StaticArrayRule:
+      max: '1'
+      min: '1'
+      default: '1'
+  component:
+    StaticComponentRule:
+      component:
+        InsisArray:
+          hideRemoveButtonOnOneItem: true
+          showIndex: false
+  viewMode:
+    StaticViewModeRule:
+      viewMode: required

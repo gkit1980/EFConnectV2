@@ -1,0 +1,14 @@
+action:
+  execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - industries
+          - sub-industries
+    - IntegrationExecutionRule:
+        integration: industries.load
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ICE_CONTEXT_ACTIVATED
+    - ElementChangeTriggerRule:
+        elements:
+          - person.type

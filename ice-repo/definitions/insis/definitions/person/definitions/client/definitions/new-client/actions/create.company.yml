@@ -1,0 +1,7 @@
+action:
+  execution:
+    - IntegrationExecutionRule:
+        integration: create.company
+    - NavigateToDefinitionExecutionRule:
+        definition: insis.dashboard.clients.agent
+        page: home

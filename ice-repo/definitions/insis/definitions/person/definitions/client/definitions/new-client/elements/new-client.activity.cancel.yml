@@ -1,0 +1,12 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          action: null
+          themeColor: primary
+          variant: stroked
+  defaultValue:
+    StaticValueRule:
+      value: navigate.to-all-clients

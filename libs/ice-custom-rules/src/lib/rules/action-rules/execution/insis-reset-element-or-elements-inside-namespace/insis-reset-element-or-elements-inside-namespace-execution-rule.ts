@@ -5,7 +5,7 @@ export class InsisResetElementOrElementsInsideNamespaceExecutionRule extends Exe
   execute(actionContext?: any): Promise<void> {
     const namespace = this.requireParam('elementOrNamespace');
     let index = this.getParam('index');
-    index = [index] || get(actionContext, 'index', []);
+    index = (index && [index]) || get(actionContext, 'index', []);
     const resetActionContext = {
       index: index,
     };

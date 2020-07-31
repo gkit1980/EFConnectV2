@@ -1,0 +1,85 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: new-client.person-data.title
+            css: u-mb-4 mat-subheading-2
+          - cols:
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.name-prefix
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.given-name
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.second-name
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.family-name
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.name-suffix
+            gap: 20px
+            css: u-mb-2
+          - cols:
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.sex
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.birth-date
+            gap: 20px
+            css: u-mb-2
+          - cols:
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.nationality
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.language
+            gap: 20px
+            css: u-mb-2
+          - cols:
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.industry-code
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.sub-industry-code
+            gap: 20px
+      behaviourForEmptyRows: render
+  viewMode:
+    ConditionalSectionViewModeRule:
+      conditionElement: person.type
+      conditionValue: '1'
+      conditionViewMode: default
+      elseViewMode: hidden

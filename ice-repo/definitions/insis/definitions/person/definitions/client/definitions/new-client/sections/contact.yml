@@ -1,0 +1,27 @@
+section:
+  component:
+    IceArrayFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: new-client.contact.title
+            css: u-mb-4 mat-subheading-2
+          - cols:
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.contacts~contact-type
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.contacts~details
+            gap: 20px
+            css: u-mb-4
+      arrayElement: person.contacts
+      behaviourForEmptyRows: render
