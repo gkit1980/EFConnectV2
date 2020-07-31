@@ -91,12 +91,24 @@ integration:
           toIdx:
             useSourceIndex: true
           mappings:
+            - value: false
+              element: person.bank-accounts~edit-mode
+            - value: person.bank-accounts.cancel
+              element: person.bank-accounts~activity.cancel
+            - value: person.bank-accounts.make-primary
+              element: person.bank-accounts~activity.make-primary
+            - value: person.bank-accounts.make-secondary
+              element: person.bank-accounts~activity.make-secondary
             - payload: bankAccounts[n].accountCurrency
               element: person.bank-accounts~account-currency
             - payload: bankAccounts[n].accountNum
               element: person.bank-accounts~account-num
+            - payload: bankAccounts[n].accountState
+              element: person.bank-accounts~account-state
             - payload: bankAccounts[n].bankId
               element: person.bank-accounts~bank-id
+            - payload: bankAccounts[n].bankAccId
+              element: person.bank-accounts~bank-acc-id
             - payload: bankAccounts[n].primaryFlag
               element: person.bank-accounts~is-primary
         - fromIdx:

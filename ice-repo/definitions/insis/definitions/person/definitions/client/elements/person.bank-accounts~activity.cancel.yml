@@ -1,17 +1,17 @@
 element:
-  type: integer
-  values:
-    InsisArrayItemBasedValuesRule:
-      valueElement: banks~value
-      labelElement: banks~label
-      hideEmpty: true
+  type: action
   component:
     StaticComponentRule:
       component:
-        IceDropdown: {}
+        IceButton:
+          variant: default
   viewMode:
     ConditionalViewModeRule:
       conditionElement: person.bank-accounts~edit-mode
       conditionValue: 'true'
       conditionViewMode: default
-      elseViewMode: output
+      elseViewMode: hidden
+  defaultValue: person.bank-accounts.cancel
+  label:
+    ResourceLabelRule:
+      key: person.activity.cancel.label

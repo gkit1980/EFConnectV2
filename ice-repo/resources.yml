@@ -412,12 +412,6 @@ entries:
             de: Name suffix
       addresses:
         items:
-          activity:
-            make-primary: {}
-            remove: {}
-            edit: {}
-            cancel: {}
-            save: {}
           address-type:
             label:
               - en: Type
@@ -480,6 +474,20 @@ entries:
             label:
               - en: Contact type
                 de: Contact type
+      bank-accounts:
+        items:
+          account-currency:
+            label:
+              - en: Currency
+                de: Currency
+          account-num:
+            label:
+              - en: IBAN
+                de: IBAN
+          bank-id:
+            label:
+              - en: Bank name
+                de: Bank name
     policy:
       insured:
         currency:
@@ -1714,6 +1722,11 @@ entries:
         label:
           - en: ADD CONTACT
             de: ADD CONTACT
+    bank-accounts:
+      add-new-bank-account:
+        label:
+          - en: ADD BANK ACCOUNT
+            de: ADD BANK ACCOUNT
   pagination:
     policies:
       - en: policies
@@ -1984,7 +1997,7 @@ entries:
       title:
         - en: contact information
           de: contact information
-    payments:
+    bank-accounts:
       title:
         - en: payment information
           de: payment information
@@ -2337,3 +2350,11 @@ entries:
         label:
           - en: SAVE
             de: SAVE
+    bank-accounts:
+      item-label:
+        primary-bank-acc:
+          - en: Primary bank account
+            de: Primary bank account
+        secondary-bank-acc:
+          - en: Secondary bank account
+            de: Secondary bank account

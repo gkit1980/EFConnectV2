@@ -3,3 +3,4 @@ element:
   values:
     ListValuesRule:
       list: person.is-primary
+  defaultValue: false

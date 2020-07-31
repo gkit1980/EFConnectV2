@@ -1,0 +1,51 @@
+section:
+  component:
+    IceArrayFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.bank-accounts~item-label
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.bank-accounts~activity.toggle-primary
+                  - name: person.bank-accounts~activity.cancel
+                css: text-align-right
+              - size: 62px
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.bank-accounts~activity.save
+                  - name: person.bank-accounts~activity.edit
+              - size: 65px
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.bank-accounts~activity.more-options
+            gap: 12px
+            css: u-mt-2
+          - cols:
+              - size: 197px
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.bank-accounts~bank-id
+              - size: 197px
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.bank-accounts~account-num
+              - size: 197px
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.bank-accounts~account-currency
+            gap: 12px
+            css: u-mt-2 u-mb-2
+      arrayElement: person.bank-accounts
+      css: horizontal-list

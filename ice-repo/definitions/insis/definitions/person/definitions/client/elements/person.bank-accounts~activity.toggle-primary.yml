@@ -1,0 +1,21 @@
+element:
+  type: text
+  mirror:
+    DtMirrorRule:
+      dt: person.bank-accounts~activity.toggle-primary.mirror
+  component:
+    StaticComponentRule:
+      component:
+        IceButton: {}
+  label:
+    DtResourceLabelRule:
+      dt: person.bank-accounts~activity.toggle-primary.label
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: person.bank-accounts~edit-mode
+      conditionValue: 'true'
+      conditionViewMode: hidden
+      elseViewMode: default
+  defaultValue:
+    StaticValueRule:
+      value: person.bank-accounts.make-primary

@@ -8,4 +8,4 @@ action:
   trigger:
     - PageTriggerRule:
         enter:
-          - payments
+          - bank-accounts

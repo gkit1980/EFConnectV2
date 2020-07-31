@@ -1,2 +1,8 @@
 element:
   type: text
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: person.bank-accounts~edit-mode
+      conditionValue: 'true'
+      conditionViewMode: default
+      elseViewMode: output

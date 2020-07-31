@@ -1,0 +1,16 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: person.bank-accounts~bank-acc-id
+  outputs:
+    - id: defaultValue
+      type: string
+  rules:
+    - inputs:
+        - not(null)
+      outputs:
+        - person.bank-accounts.update
+    - inputs:
+        - null
+      outputs:
+        - person.bank-accounts.add

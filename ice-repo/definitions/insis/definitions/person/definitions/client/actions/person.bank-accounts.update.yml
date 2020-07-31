@@ -1,0 +1,7 @@
+action:
+  execution:
+    - InsisSetElementValueExecutionRule:
+        element: person.bank-accounts~edit-mode
+        value: 'false'
+    - IntegrationExecutionRule:
+        integration: person.bank-accounts.update

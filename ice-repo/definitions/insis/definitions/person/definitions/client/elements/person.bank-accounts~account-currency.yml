@@ -1,2 +1,15 @@
 element:
   type: text
+  component:
+    StaticComponentRule:
+      component:
+        IceDropdown: {}
+  values:
+    ListValuesRule:
+      list: insis.currencies
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: person.bank-accounts~edit-mode
+      conditionValue: 'true'
+      conditionViewMode: default
+      elseViewMode: output

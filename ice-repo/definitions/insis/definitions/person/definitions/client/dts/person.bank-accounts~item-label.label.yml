@@ -1,0 +1,20 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: person.bank-accounts~is-primary
+  outputs:
+    - id: label
+      type: resourceKey
+  rules:
+    - inputs:
+        - true
+      outputs:
+        - person.bank-accounts.item-label.primary-bank-acc
+    - inputs:
+        - false
+      outputs:
+        - person.bank-accounts.item-label.secondary-bank-acc
+    - inputs:
+        - null
+      outputs:
+        - person.bank-accounts.item-label.secondary-bank-acc

@@ -1,0 +1,26 @@
+integration:
+  exchange:
+    InsisRestCallExchangeRule:
+      endpointBaseurl: 'insis-rest-endpoint'
+      verb: delete
+      url: '/people-data/pp-bankaccount-type/${MANID}/${BANKID}/${ACCNUM}'
+  transformation:
+    DefaultTransformationRule:
+      additional: insis
+      dateFormat: YYYY-MM-DD
+      out:
+        - fromIdx:
+            array: datamodel.person.bank-accounts
+            index: actionContext.index
+          mappings:
+            - param: ignoreLoginService
+              value: true
+
+            - param: MANID
+              element: person.man-id
+
+            - param: BANKID
+              element: person.bank-accounts~bank-id
+
+            - param: ACCNUM
+              element: person.bank-accounts~account-num

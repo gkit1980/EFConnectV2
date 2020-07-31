@@ -15,3 +15,5 @@ page:
                     elements:
                       - name: my-profile-label
                 css: my-profile-label
+    - add-new-bank-account
+    - bank-accounts

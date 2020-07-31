@@ -1,0 +1,22 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          variant: flat
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: person.bank-accounts~edit-mode
+      conditionValue: 'true'
+      conditionViewMode: default
+      elseViewMode: hidden
+  defaultValue:
+    DtValueRule:
+      dt: person.bank-accounts~activity.save.defaultvalue
+  mirror:
+    DtMirrorRule:
+      dt: person.bank-accounts~activity.save.defaultvalue
+  label:
+    ResourceLabelRule:
+      key: person.activity.save.label

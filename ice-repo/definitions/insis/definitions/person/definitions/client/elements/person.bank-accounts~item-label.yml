@@ -1,0 +1,6 @@
+element:
+  type: text
+  component: IceNone
+  label:
+    DtResourceLabelRule:
+      dt: person.bank-accounts~item-label.label

@@ -1,6 +1,6 @@
 action:
   execution:
     - IntegrationExecutionRule:
-        integration: person.contacts.remove
+        integration: person.bank-accounts.remove
     - RemoveArrayItemExecutionRule:
-        element: person.contacts
+        element: person.bank-accounts

@@ -1,0 +1,11 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        InsisButtonDropdown: {}
+  label:
+    NoLabelRule: {}
+  values:
+    ListValuesRule:
+      list: person.bank-accounts.activity.more-options

@@ -15,7 +15,7 @@ integration:
             array: payload.rows
             condition: 1 == 1
           toIdx:
-            array: datamodel.banks-list
+            array: datamodel.banks
             append: true
           mappings:
             - payload: 'rows[n].BANK_ID'

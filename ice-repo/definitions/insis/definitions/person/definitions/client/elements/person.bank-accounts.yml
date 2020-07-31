@@ -1,2 +1,4 @@
 element:
   type: array
+  label:
+    NoLabelRule: {}
