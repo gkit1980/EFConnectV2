@@ -1,12 +1,5 @@
 element:
   type: text
-  component:
-    StaticComponentRule:
-      component:
-        IceDropdown: {}
-  values:
-    ListValuesRule:
-      list: insis.contact.type
   viewMode:
     StaticViewModeRule:
       viewMode: required

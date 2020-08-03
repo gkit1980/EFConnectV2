@@ -1,8 +1,5 @@
 element:
   type: text
-  values:
-    ListValuesRule:
-      list: insis.address-types
   viewMode:
     StaticViewModeRule:
       viewMode: required

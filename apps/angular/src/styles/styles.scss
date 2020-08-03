@@ -412,11 +412,6 @@ confirmation-dialog-layout {
 .overflow-visible {
   overflow: visible !important;
 }
-.my-profile-label {
-  font-size: 28px;
-  font-weight: 300;
-  line-height: 40px;
-}
 
 .output-element {
   .ice-output label {
@@ -459,4 +454,8 @@ confirmation-dialog-layout {
       margin-bottom: 24px;
     }
   }
+}
+
+.align-navigation-start .insis-one-level-tabs-navigation-page .mat-tab-labels {
+  justify-content: start;
 }

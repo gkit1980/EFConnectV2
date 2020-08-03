@@ -3,6 +3,3 @@ element:
   viewMode:
     StaticViewModeRule:
       viewMode: required
-  values:
-    ListValuesRule:
-      list: common.countries

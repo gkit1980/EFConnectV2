@@ -596,7 +596,7 @@ entries:
             label:
               - en: Type
                 de: Type
-          country:
+          country-code:
             label:
               - en: Country
                 de: Country

@@ -1,6 +1,7 @@
 page:
   validation: {}
   component: InsisOneLevelTabsNavigationPage
+  css: align-navigation-start
   sections:
     - header
     - personal-information

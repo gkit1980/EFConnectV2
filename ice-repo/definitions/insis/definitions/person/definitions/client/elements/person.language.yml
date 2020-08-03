@@ -7,3 +7,6 @@ element:
       conditionViewMode: default
       elseViewMode: output
   component: IceDropdown
+  values:
+    ListValuesRule:
+      list: common.languages

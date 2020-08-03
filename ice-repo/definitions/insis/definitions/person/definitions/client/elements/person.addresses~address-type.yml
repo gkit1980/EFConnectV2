@@ -11,3 +11,6 @@ element:
       component:
         IceDropdown: {}
   defaultValue: 'H'
+  values:
+    ListValuesRule:
+      list: insis.address-types

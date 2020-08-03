@@ -22,7 +22,7 @@ section:
                 size.xs: auto
                 size.sm: auto
                 elements:
-                  - name: person.addresses~country
+                  - name: person.addresses~country-code
               - size: none
                 size.xs: auto
                 size.sm: auto

@@ -111,13 +111,13 @@ export class HeaderComponent {
 
       this.customerMenuItems.push(
         {
-          key: runtime.iceResource.resolve('pages.header.menu.logout'),
-          method: this.logout.bind(this),
-        },
-        {
           key: runtime.iceResource.resolve('pages.header.menu.my-profile'),
           method: () =>
             this.router.navigate(['ice/insis.person.client.customer/personal-information']),
+        },
+        {
+          key: runtime.iceResource.resolve('pages.header.menu.logout'),
+          method: this.logout.bind(this),
         }
       );
 

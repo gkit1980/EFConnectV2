@@ -1,8 +1,5 @@
 element:
   type: text
-  values:
-    ListValuesRule:
-      list: common.languages
   viewMode:
     StaticViewModeRule:
       viewMode: required

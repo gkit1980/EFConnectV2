@@ -86,4 +86,4 @@ section:
                   - name: person.sub-industry-code
             gap: 12px
             css: u-mb-4
-      css: ' output-element'
+      css: u-pt-4 output-element

@@ -24,7 +24,7 @@ integration:
             - payload: 'addresses[0].city'
               element: person.addresses~city
             - payload: 'addresses[0].countryCode'
-              element: person.addresses~country
+              element: person.addresses~country-code
             - payload: 'addresses[0].stateName'
               element: person.addresses~state-name
             - payload: 'addresses[0].entranceNumber'

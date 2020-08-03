@@ -1,19 +1,8 @@
 page:
   component: InsisOneLevelTabsNavigationPage
   validation: {}
+  css: align-navigation-start
   sections:
-    - component:
-        IceFlexSection:
-          tags:
-            - header
-          grid:
-            rows:
-              - cols:
-                  - size: auto
-                    size.xs: auto
-                    size.sm: auto
-                    elements:
-                      - name: my-profile-label
-                css: my-profile-label
+    - header
     - add-new-bank-account
     - bank-accounts

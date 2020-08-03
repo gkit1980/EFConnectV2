@@ -6,4 +6,11 @@ element:
       conditionValue: 'true'
       conditionViewMode: default
       elseViewMode: output
-  defaultValue: 'EMAIL'
+  defaultValue: 'MOBILE'
+  component:
+    StaticComponentRule:
+      component:
+        IceDropdown: {}
+  values:
+    ListValuesRule:
+      list: insis.contact.type

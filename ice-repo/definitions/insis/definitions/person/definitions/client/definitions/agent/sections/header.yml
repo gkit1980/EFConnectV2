@@ -17,7 +17,7 @@ section:
                 elements:
                   - name: person.full-name
 
-          - css: output-element
+          - css: output-element u-mb-6
             cols:
               - size: auto
                 elements:
