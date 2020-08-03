@@ -713,6 +713,10 @@ entries:
           label:
             - en: Cancel
               de: Cancel
+        navigate-back:
+          label:
+            - en: back to all policies
+              de: back to all policies
       insured:
         currency:
           label:

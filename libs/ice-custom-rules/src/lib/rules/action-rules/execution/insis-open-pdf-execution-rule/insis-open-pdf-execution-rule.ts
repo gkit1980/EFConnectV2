@@ -34,9 +34,6 @@ export class InsisOpenPdfExecutionRule extends ExecutionRule {
         .forIndex(null) as string;
     } else if (this.recipe['datastorePath']) {
       const dataStoreData = _.get(this.context.dataStore.data, this.recipe['datastorePath']);
-      console.log(this.context.dataStore.data, this.recipe['datastorePath']);
-      // console.log(typeof dataStoreData);
-      // console.log(dataStoreData);
 
       if (dataStoreData && dataStoreData.byteLength !== undefined) {
         data = btoa(dataStoreData);

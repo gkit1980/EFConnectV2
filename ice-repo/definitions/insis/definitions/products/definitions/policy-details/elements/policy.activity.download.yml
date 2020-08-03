@@ -7,4 +7,4 @@ element:
           themeColor: primary
           variant: stroked
           type: none
-  defaultValue: policy.download-pdf
+  defaultValue: policy.download

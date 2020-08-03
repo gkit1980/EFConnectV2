@@ -7,6 +7,11 @@ section:
         rows:
           - cols:
               - size: auto
+                css: mat-small
+                elements:
+                  - name: policy.activity.navigate-back
+          - cols:
+              - size: auto
                 css: mat-display-1 u-mb-8 u-mt-2
                 elements:
                   - name: policy.contract.policy-id
