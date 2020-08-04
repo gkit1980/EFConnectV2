@@ -42,6 +42,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSelectModule } from '@angular/material/select';
 import { RoleGuard } from './guards/role.guard';
+import { ThemeService } from './services/theme.service';
 
 @NgModule({
   declarations: [
@@ -86,6 +87,7 @@ import { RoleGuard } from './guards/role.guard';
     LoginPageGuard,
     RoleGuard,
     SpinnerService,
+    ThemeService,
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
       useValue: { appearance: 'outline' },

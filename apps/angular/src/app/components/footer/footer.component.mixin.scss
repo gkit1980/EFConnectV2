@@ -1,8 +1,11 @@
 @import '~@angular/material/theming';
 
 @mixin footer-mixin($theme) {
+  $colors: map-get($theme, colors);
+  $primary: map-get($theme, primary);
+
   footer {
-    background-color: #243a76;
+    background-color: map-get($colors, 'header') !important;
     max-width: 100%;
     width: 100%;
 

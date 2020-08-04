@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IceContext } from '@impeo/ice-core';
 import { IceRuntimeService } from '@impeo/ng-ice';
 import buildJSON from '../../../../../../build-info.json';
 

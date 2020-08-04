@@ -20,6 +20,6 @@
   }
 
   .insis-array-cards-layout .insis-array-cards-layout-item.card {
-    @include make-card();
+    @include make-card($theme);
   }
 }

@@ -2276,6 +2276,9 @@ entries:
         my-profile:
           - en: My profile
             de: My profile
+        switch-theme:
+          - en: Switch theme
+            de: Switch theme
     insurances:
       title:
         - en: Quotes in Progress

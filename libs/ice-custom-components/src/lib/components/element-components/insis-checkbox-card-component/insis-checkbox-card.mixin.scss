@@ -11,7 +11,7 @@
   }
 
   .card {
-    @include make-card();
+    @include make-card($theme);
 
     &.selected {
       border: 1px solid $primary;

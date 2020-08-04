@@ -1,0 +1,150 @@
+@import 'mixins';
+
+@mixin ice-override-mixin($theme) {
+  .ice-flex-section,
+  .ice-array-flex-section {
+    &.card {
+      @include make-card($theme);
+    }
+
+    &.main-side {
+      width: 100%;
+
+      @include respond-from('sm') {
+        max-width: 470px;
+      }
+
+      @include respond-from('md') {
+        max-width: 794px;
+      }
+    }
+  }
+
+  .horizontal-list {
+    .ice-array-item {
+      @include make-card($theme);
+      @extend .u-mb-4;
+      @extend .u-pt-2;
+      @extend .u-pb-2;
+    }
+
+    .ice-output {
+      label {
+        display: block;
+        @extend .mat-caption;
+      }
+
+      .value {
+        display: block;
+      }
+    }
+  }
+
+  .policies-grid {
+    > ice-element > .ice-element > ice-array > .ice-array {
+      > label {
+        display: none;
+      }
+
+      @include respond-from('md') {
+        display: grid;
+        //grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        grid-template-columns: repeat(3, minmax(400px, 1fr));
+        //grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      > .ice-array-item {
+        @include make-card($theme);
+      }
+    }
+
+    .ice-output {
+      label {
+        display: block;
+        @extend .mat-caption;
+      }
+
+      .value {
+        display: block;
+      }
+    }
+  }
+  .policy-details-objects-grid {
+    > ice-element > .ice-element > ice-array > .ice-array {
+      > label {
+        display: none;
+      }
+
+      @include respond-from('md') {
+        display: grid;
+        //grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        grid-template-columns: 1fr 1fr;
+        //grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      > .ice-array-item {
+        @include make-card($theme);
+        margin-bottom: 24px;
+      }
+    }
+  }
+  .label-link {
+    .ice-none {
+      color: get-color($theme, 'text');
+      margin-right: 10px;
+      display: block;
+      font-size: 12px;
+      line-height: 20px;
+    }
+
+    button {
+      font-weight: 400;
+      text-transform: none !important;
+      padding: 0 !important;
+      display: block;
+      font-size: 16px !important;
+      line-height: 24px !important;
+      height: auto !important;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .product-card {
+    .ice-array-item {
+      display: inline-flex;
+      width: 50%;
+
+      > div {
+        width: calc(100% - 15px);
+        margin: 5px;
+        padding: 15px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        background: get-color($theme, 'background');
+      }
+    }
+  }
+  .product-button {
+    min-height: 70px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+
+    .ice-array-item {
+      width: 50%;
+      display: inline-flex;
+      justify-content: center;
+
+      > div {
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        border: none;
+      }
+    }
+  }
+}

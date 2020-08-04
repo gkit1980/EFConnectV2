@@ -18,7 +18,7 @@
   }
 
   .insis-info-bubble {
-    background-color: #f2f2f2;
+    background-color: get-color($theme, 'bubble-background');
     border-radius: 5px;
     box-shadow: 0 0 6px #b2b2b2;
     display: inline-block;
@@ -34,7 +34,7 @@
     #triangle {
       width: 0px;
       height: 0px;
-      border-top: 15px solid white;
+      border-top: 15px solid get-color($theme, 'bubble-background');
       border-left: 15px solid transparent;
       display: inline-block;
       left: -15px;
@@ -44,7 +44,7 @@
     #triangle:after {
       top: -15px;
       color: transparent;
-      border-top: thin solid white;
+      border-top: thin solid get-color($theme, 'bubble-background');
       content: ' ';
       left: -15px;
       position: absolute;
@@ -53,7 +53,7 @@
 
     #triangle:before {
       color: transparent;
-      border-bottom: thin solid white;
+      border-bottom: thin solid get-color($theme, 'bubble-background');
       content: ' ';
       left: -18px;
       position: absolute;
@@ -70,7 +70,7 @@
       cursor: pointer;
     }
 
-    background-color: white !important;
+    background-color: get-color($theme, 'bubble-background') !important;
     color: $primaryColor;
     border: solid;
     border-width: thin;
@@ -82,12 +82,12 @@
     }
 
     .close {
-      color: black;
+      color: get-color($theme, 'bubble-text');
     }
 
     .bubble-content {
       padding-top: 20px;
-      color: black;
+      color: get-color($theme, 'bubble-text');
     }
 
     #triangle:after {

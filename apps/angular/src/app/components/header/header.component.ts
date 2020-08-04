@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { IceRuntimeService } from '@impeo/ng-ice';
 
 import { AuthenticationService } from '../../services/authentication.service';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-header',
@@ -37,6 +38,7 @@ export class HeaderComponent {
     private router: Router,
     private runtimeService: IceRuntimeService,
     private authenticationService: AuthenticationService,
+    private themeService: ThemeService,
     public location: Location
   ) {
     this.activeURL = this.location.path();
@@ -116,15 +118,25 @@ export class HeaderComponent {
             this.router.navigate(['ice/insis.person.client.customer/personal-information']),
         },
         {
+          key: runtime.iceResource.resolve('pages.header.menu.switch-theme'),
+          method: this.switchTheme.bind(this),
+        },
+        {
           key: runtime.iceResource.resolve('pages.header.menu.logout'),
           method: this.logout.bind(this),
         }
       );
 
-      this.agentMenuItems.push({
-        key: runtime.iceResource.resolve('pages.header.menu.logout'),
-        method: this.logout.bind(this),
-      });
+      this.agentMenuItems.push(
+        {
+          key: runtime.iceResource.resolve('pages.header.menu.switch-theme'),
+          method: this.switchTheme.bind(this),
+        },
+        {
+          key: runtime.iceResource.resolve('pages.header.menu.logout'),
+          method: this.logout.bind(this),
+        }
+      );
     });
   }
 
@@ -144,5 +156,11 @@ export class HeaderComponent {
 
   toggleMobileNav() {
     this.showMobileNav = !this.showMobileNav;
+  }
+
+  switchTheme() {
+    return this.themeService.currentTheme === 'default-light-theme'
+      ? this.themeService.setTheme('dark-theme')
+      : this.themeService.setTheme('default-light-theme');
   }
 }

@@ -1,5 +1,5 @@
 @mixin insis-policy-summary-section-mixin($theme) {
   .insis-policy-summary-section {
-    @include make-card();
+    @include make-card($theme);
   }
 }

@@ -24,6 +24,8 @@ $default-common: (
     'border': #ddd,
     'border-input': #919191,
     'light': #fff,
+    'bubble-background': white,
+    'bubble-text': black,
     'badge-1': #767676,
     'badge-2': #ca16c7,
     'badge-3': #673ab7,
@@ -32,4 +34,3 @@ $default-common: (
 );
 
 $default-light-theme: map-merge($theme, $default-common);
-$default-dark-theme: map-merge($altTheme, $default-common);
