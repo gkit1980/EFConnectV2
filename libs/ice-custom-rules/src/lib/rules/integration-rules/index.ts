@@ -3,6 +3,7 @@ export * from './transformation/insis-catastropic-query-transformation/insis-cat
 export * from './transformation/insis-claims-sorted-request-transformation/insis-claims-sorted-request-transformation';
 export * from './transformation/insis-default-transformation-rule/insis-default-transformation-rule';
 export * from './transformation/insis-paginated-query-transformation/insis-paginated-query-transformation';
+export * from './transformation/insis-person-transformation-rule/insis-person-transformation-rule';
 
 export * from './exchange/insis-noop-exchange-rule/insis-noop-exchange-rule';
 export * from './exchange/insis-sample-data-exchange-rule/insis-sample-data-exchange-rule';

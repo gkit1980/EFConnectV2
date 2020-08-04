@@ -1,0 +1,4 @@
+implementations:
+  InsisPersonTransformationRule:
+    description: >
+      The same as DefaultTransformationRule, the only difference is sorting of Person contacts, bank accounts and addresses by primary one

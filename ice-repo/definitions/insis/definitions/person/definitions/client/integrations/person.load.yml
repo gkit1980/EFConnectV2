@@ -6,7 +6,7 @@ integration:
       url: '/people-dir/person/composite?pid=${PID}'
 
   transformation:
-    DefaultTransformationRule:
+    InsisPersonTransformationRule:
       additional: insis
       dateFormat: YYYY-MM-DD
       out:
