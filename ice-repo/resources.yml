@@ -596,10 +596,6 @@ entries:
             label:
               - en: Type
                 de: Type
-          country-code:
-            label:
-              - en: Country
-                de: Country
           state-name:
             label:
               - en: State
@@ -640,14 +636,6 @@ entries:
             label:
               - en: Block number
                 de: Block number
-      type:
-        label:
-          - en: Client type
-            de: Client type
-        country-code:
-          label:
-            - en: Country
-              de: Country
           country-code:
             label:
               - en: Country
@@ -2332,7 +2320,6 @@ entries:
       title:
         - en: Quotes in Progress
           de: Quotes in Progress
-    new-client: {}
     addresses:
       title:
         - en: Adressess

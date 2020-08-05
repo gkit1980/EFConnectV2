@@ -1,0 +1,21 @@
+list:
+  type: text
+  additionals:
+    label_en:
+      label: Label EN
+      type: text
+    label_de:
+      label: Label DE
+      type: text
+    insis:
+      label: Insis
+      type: integer
+  items:
+    - value: M
+      label_en: Male
+      label_de: männlich
+      insis: 1
+    - value: F
+      label_en: Female
+      label_de: weiblich
+      insis: 2

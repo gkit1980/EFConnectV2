@@ -1,0 +1,91 @@
+integration:
+  exchange:
+    InsisRestCallExchangeRule:
+      endpointBaseurl: insis-rest-endpoint
+      url: '/policies/policy/composite?policyNo=${POLICY_NUMBER}'
+      verb: GET
+  transformation:
+    DefaultTransformationRule:
+      out:
+        - mappings:
+            - param: POLICY_NUMBER
+              dynid: true
+            # - param: POLICY_NUMBER
+            #   value: 100000046346
+      in:
+        - mappings:
+            - element: policy.contract.product-code
+              payload: policyNames.insrType
+            - element: policy.contract.product-full-name
+              payload: policyNames.insrTypeName
+            - element: policy.participants.holder.person.pid
+              payload: policyNames.clientPid
+            - element: policy.participants.holder.person.first-name
+              payload: pClients.pPeopleComplex.gname
+            - element: policy.participants.holder.person.last-name
+              payload: pClients.pPeopleComplex.fname
+            - element: policy.contract.begin
+              payload: insrBegin
+            - element: policy.contract.term.duration
+              payload: insrDuration
+            - element: policy.registration-date
+              payload: registrationDate
+            - element: policy.updated-date
+              payload: updatedOn
+            - element: policy.contract.payment.frequency
+              payload: paymentWay
+            - element: policy.contract.payment.duration
+              payload: insrDuration
+            - element: policy.contract.payment.installment-amount
+              payload: policyAnnexes[0].installments[0].amntCurrency
+            - element: policy.insured.currency
+              payload: policyAnnexes[0].installments[0].currency
+        - fromIdx:
+            array: 'payload.policyAnnexes[0].insuredObjects'
+          toIdx:
+            array: policy.insured.objects
+            useSourceIndex: true
+          mappings:
+            - element: policy.insured.objects~person-data.pid
+              payload: >-
+                policyAnnexes[0].insuredObjects[n].insuredEntity.oAccinsured.manId
+            - element: policy.insured.objects~person-data.accident
+              payload: >-
+                policyAnnexes[0].insuredObjects[n].insuredEntity.oAccinsured.accinsType
+
+            - element: policy.insured.objects~person-data.first-name
+              payload: >-
+                policyAnnexes[0].insuredObjects[n].insuredEntity.oAccinsured.pPeopleComplex.gname
+            - element: policy.insured.objects~person-data.last-name
+              payload: >-
+                policyAnnexes[0].insuredObjects[n].insuredEntity.oAccinsured.pPeopleComplex.fname
+            - element: policy.insured.objects~person-data.gender
+              payload: >-
+                policyAnnexes[0].insuredObjects[n].insuredEntity.oAccinsured.gender
+            - element: policy.insured.objects~person-data.birth-date
+              payload: >-
+                policyAnnexes[0].insuredObjects[n].insuredEntity.oAccinsured.pPeopleComplex.birthDate
+            - element: policy.insured.objects~person-data.country
+              payload: >-
+                policyAnnexes[0].insuredObjects[n].insuredEntity.oAccinsured.pPeopleComplex.homeCountry
+            - element: policy.insured.objects~activities.goto-covers
+              value: policy.goto-covers
+        - fromIdx:
+            array: 'payload.policyAnnexes[0].insuredObjects'
+            fromIdx:
+              array: covers
+          toIdx:
+            array: policy.insured.objects
+            useSourceIndex: true
+            toIdx:
+              array: policy.insured.objects~covers
+              useSourceIndex: true
+          mappings:
+            - element: policy.insured.objects~covers~currency
+              payload: 'policyAnnexes[0].insuredObjects[n].covers[n].currency'
+            - element: policy.insured.objects~covers~premium
+              payload: 'policyAnnexes[0].insuredObjects[n].covers[n].premium'
+            - element: policy.insured.objects~covers~insuredValue
+              payload: 'policyAnnexes[0].insuredObjects[n].covers[n].insured-amount'
+            - element: policy.insured.objects~covers~code
+              payload: 'policyAnnexes[0].insuredObjects[n].covers[n].coverType'

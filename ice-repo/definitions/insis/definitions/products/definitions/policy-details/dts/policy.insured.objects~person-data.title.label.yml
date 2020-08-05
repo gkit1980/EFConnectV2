@@ -10,7 +10,7 @@ dt:
       id: label_de
   rules:
     - inputs:
-        - '1'
+        - 1
       outputs:
         - ':Main insured person'
         - ':Main insured person'

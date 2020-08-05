@@ -6,7 +6,7 @@ list:
     - value: CRITIC_ILL
       label_en: Critical illness
       label_de: Critical illness
-    - value: DEACT_ACC
+    - value: DEATH_ACC
       label_en: Accidental death
       label_de: Accidental death
     - value: PREMRET

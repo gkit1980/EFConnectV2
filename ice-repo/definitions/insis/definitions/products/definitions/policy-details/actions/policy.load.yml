@@ -1,0 +1,7 @@
+action:
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ICE_CONTEXT_ACTIVATED
+  execution:
+    - IntegrationExecutionRule:
+        integration: insis.get.policy-details

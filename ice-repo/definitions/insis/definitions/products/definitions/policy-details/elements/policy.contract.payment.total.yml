@@ -1,0 +1,3 @@
+element:
+  type: currency
+  title: Total amount to pay
