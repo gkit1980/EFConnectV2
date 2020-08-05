@@ -4,7 +4,7 @@ integration:
       connectString: 'env:insis-db-url'
       username: 'env:insis-db-username'
       password: 'env:insis-db-password'
-      queryFileURL: data/get-client-policies-detailed.sql
+      queryFileURL: data/policies.client.get-detailed.sql
       queryType: JSON
   transformation:
     DefaultTransformationRule:

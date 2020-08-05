@@ -2,9 +2,9 @@ SELECT
     p.policy_id,
     p.policy_no,
     p.insr_type,
-    it.name AS insr_type_name, 
-    c.claim_id, 
-    c.claim_regid AS claim_no, 
+    it.name AS insr_type_name,
+    c.claim_id,
+    c.claim_regid AS claim_no,
     c.registration_date,
     c.event_date,
     c.event_type,
@@ -24,6 +24,5 @@ INNER JOIN h_insr_type it ON p.insr_type=it.id
 INNER JOIN h_event_list e ON c.event_type=e.id
 INNER JOIN hs_claim_state cs ON cr.claim_state=cs.id
 LEFT OUTER JOIN hs_claim_state_aux csa ON cr.claim_state_aux=csa.id
-WHERE 
+WHERE
     peo.egn=:PID
-            

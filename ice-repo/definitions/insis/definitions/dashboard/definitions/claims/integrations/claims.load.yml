@@ -4,7 +4,7 @@ integration:
       connectString: 'env:insis-db-url'
       username: 'env:insis-db-username'
       password: 'env:insis-db-password'
-      queryFileURL: data/get-client-claims.sql
+      queryFileURL: data/claims.client.get.sql
       queryType: SQL
   transformation:
     DefaultTransformationRule:
