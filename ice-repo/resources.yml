@@ -685,13 +685,62 @@ entries:
           label:
             - en: BACK TO ALL CLIENTS
               de: BACK TO ALL CLIENTS
+      primary:
+        contact:
+          email:
+            label:
+              - en: Email
+                de: Email
+          phone:
+            label:
+              - en: Phone
+                de: Phone
+        address:
+          full:
+            label:
+              - en: Address
+                de: Address
+      full-name-summary:
+        label:
+          - en: Name
+            de: Name
     payment:
       title:
         label:
-          - en: Payments
-            de: Payments
+          - en: Payment details
+            de: Payment details
       activity:
-        goto-details:
+        to-details:
+          label:
+            - en: Details
+              de: Details
+    address:
+      title:
+        label:
+          - en: Address
+            de: Address
+      activity:
+        to-details:
+          label:
+            - en: Details
+              de: Details
+    contact:
+      title:
+        label:
+          - en: Contacts
+            de: Contacts
+      activity:
+        to-details:
+          label:
+            - en: Details
+              de: Details
+    personal:
+      title:
+        label:
+          - en: Personal details
+            de: Personal details
+      activity:
+        to-details:
           label:
             - en: Details
               de: Details
@@ -2037,9 +2086,9 @@ entries:
         - en: Please confirm
           de: Bitte bestätigen
       not_allowed_here:
-        - en: "'${value}' not allowed here"
+        - en: '''${value}'' not allowed here'
       regexp:
-        - en: "'${value}' does not matches regular expression ${regexp}"
+        - en: '''${value}'' does not matches regular expression ${regexp}'
       array:
         min:
           - en: 'must have at least ${min} entries'

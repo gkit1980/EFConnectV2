@@ -1,0 +1,4 @@
+action:
+  execution:
+    - NavigateToPageExecutionRule:
+        page: personal-information

@@ -6,6 +6,5 @@ action:
     - IntegrationExecutionRule:
         integration: banks.load
   trigger:
-    - PageTriggerRule:
-        enter:
-          - bank-accounts
+    - IceLifecycleEventTriggerRule:
+        event: ICE_CONTEXT_ACTIVATED

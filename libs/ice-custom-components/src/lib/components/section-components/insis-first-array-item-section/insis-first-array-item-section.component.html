@@ -1,0 +1,50 @@
+<section class="ice-array-flex-section" [ngClass]="getCSS()">
+  <h2 *ngIf="label">{{ label }}</h2>
+
+  <ng-container *ngFor="let row of getRows()">
+    <div (childNodeAdded)="onChildNodeAdded()">
+      <div
+        #rows
+        [ngClass]="row.css"
+        [fxLayout]="getProp(row, 'layout')"
+        [fxLayout.xs]="getProp(row, 'layout', 'xs')"
+        [fxLayout.sm]="getProp(row, 'layout', 'sm')"
+        [fxLayoutAlign]="getProp(row, 'align')"
+        [fxLayoutAlign.xs]="getProp(row, 'align', 'xs')"
+        [fxLayoutAlign.sm]="getProp(row, 'align', 'sm')"
+        [fxLayoutGap]="getProp(row, 'gap')"
+        [fxLayoutGap.xs]="getProp(row, 'gap', 'xs')"
+        [fxLayoutGap.sm]="getProp(row, 'gap', 'sm')"
+        [attr.data-index]="itemIndex"
+        appliedHideRowsOnRow="no"
+      >
+        <div
+          *ngFor="let col of getCols(row)"
+          [fxFlex]="getProp(col, 'size')"
+          [fxFlex.xs]="getProp(col, 'size', 'xs')"
+          [fxFlex.sm]="getProp(col, 'size', 'sm')"
+          [fxFlexAlign]="getProp(col, 'align')"
+          [fxFlexAlign.xs]="getProp(col, 'align', 'xs')"
+          [fxFlexAlign.sm]="getProp(col, 'align', 'sm')"
+          [fxFlexOffset]="getProp(col, 'offset')"
+          [fxFlexOffset.xs]="getProp(col, 'offset', 'xs')"
+          [fxFlexOffset.sm]="getProp(col, 'offset', 'sm')"
+          [ngClass]="col.css"
+        >
+          <ng-container *ngFor="let el of getElements(col)">
+            <ice-element
+              *ngIf="el.name"
+              [section]="section"
+              [elementName]="el.name"
+              [index]="itemIndex"
+            >
+            </ice-element>
+          </ng-container>
+          <ng-container *ngFor="let childSection of getSections(col)">
+            <ice-section [section]="childSection" [index]="itemIndex"> </ice-section>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</section>

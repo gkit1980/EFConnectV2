@@ -45,6 +45,12 @@ integration:
               element: person.man-id
             - payload: manComp
               element: person.man-comp
+            - payload: primary.contact.email
+              element: person.primary.contact.email
+            - payload: primary.contact.phone
+              element: person.primary.contact.phone
+            - payload: primary.address.full
+              element: person.primary.address.full
         - fromIdx:
             array: payload.addresses
           toIdx:
@@ -132,3 +138,9 @@ integration:
               element: person.contacts~details
             - payload: contacts[n].primaryFlag
               element: person.contacts~is-primary
+        # - fromIdx:
+        #     array: payload.contacts
+        #   toIdx:
+        #     useSourceIndex: true
+        #   mappings:
+        #     -

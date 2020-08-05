@@ -1,0 +1,32 @@
+section:
+  component:
+    InsisFistArrayItemSection:
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                css: mat-headline u-mb-4 u-mt-1
+                elements:
+                  - name: payment.title
+              - size: none
+                elements:
+                  - name: payment.activity.to-details
+          - css: output-element
+            cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.bank-accounts~bank-id
+          - css: output-element u-mt-2
+            cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.bank-accounts~account-num
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.bank-accounts~account-currency

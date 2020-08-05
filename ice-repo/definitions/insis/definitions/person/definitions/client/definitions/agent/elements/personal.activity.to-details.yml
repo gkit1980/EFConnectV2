@@ -1,0 +1,3 @@
+element:
+  type: action
+  defaultValue: navigate.to-personal

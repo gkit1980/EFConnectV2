@@ -1,0 +1,23 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                css: mat-headline u-mb-4 u-mt-1
+                elements:
+                  - name: contact.title
+              - size: none
+                elements:
+                  - name: contact.activity.to-details
+          - css: output-element
+            cols:
+              - size: auto
+                elements:
+                  - name: person.primary.contact.phone
+          - css: output-element u-mt-2
+            cols:
+              - size: auto
+                elements:
+                  - name: person.primary.contact.email

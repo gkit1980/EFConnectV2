@@ -4,3 +4,39 @@ page:
   css: align-navigation-start
   sections:
     - header
+    - component:
+        IceFlexSection:
+          css: u-mt-6 u-mb-6
+          grid:
+            rows:
+              - gap: 20px
+                gap.xs: 20px
+                gap.sm: 0
+                cols:
+                  - size: calc(25%-20px)
+                    size.xs: 100%
+                    size.sm: calc(50%-20px)
+                    css: card
+                    sections:
+                      - name: summary.personal
+                  - size: calc(25%-20px)
+                    size.xs: 100%
+                    size.sm: calc(50%-20px)
+                    css: card
+                    sections:
+                      - name: summary.address
+                  - size: calc(25%-20px)
+                    size.xs: 100%
+                    size.sm: calc(50%-20px)
+                    css: card
+                    sections:
+                      - name: summary.contact
+                  - size: calc(25%-20px)
+                    size.xs: 100%
+                    size.sm: calc(50%-20px)
+                    css: card
+                    sections:
+                      - name: summary.bank-account
+                layout: row
+                layout.sm: row wrap
+                layout.xs: column

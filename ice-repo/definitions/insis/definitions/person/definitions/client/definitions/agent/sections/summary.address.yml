@@ -1,0 +1,37 @@
+section:
+  component:
+    InsisFistArrayItemSection:
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                css: mat-headline u-mb-4 u-mt-1
+                elements:
+                  - name: address.title
+              - size: none
+                elements:
+                  - name: address.activity.to-details
+          - css: output-element
+            cols:
+              - size: 50%
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~country-code
+              - size: 50%
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~city
+          - css: output-element u-mt-2
+            cols:
+              - size: 50%
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~street-name
+              - size: 50%
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.addresses~address-type

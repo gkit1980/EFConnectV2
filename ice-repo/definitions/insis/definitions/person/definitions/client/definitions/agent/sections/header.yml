@@ -34,3 +34,9 @@ section:
               - size: auto
                 elements:
                   - name: person.birth-date
+              - size: auto
+                elements:
+                  - name: person.primary.contact.phone
+              - size: auto
+                elements:
+                  - name: person.primary.address.full

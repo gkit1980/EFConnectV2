@@ -1,0 +1,38 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                css: mat-headline u-mb-4 u-mt-1
+                elements:
+                  - name: personal.title
+              - size: none
+                elements:
+                  - name: personal.activity.to-details
+          - css: output-element truncate-value
+            cols:
+              - size: 50%
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.full-name-summary
+              - size: 50%
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.birth-date
+
+          - css: output-element truncate-value u-mt-2
+            cols:
+              - size: 50%
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.nationality
+              - size: 50%
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: person.industry-code

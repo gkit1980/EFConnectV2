@@ -1,0 +1,6 @@
+element:
+  type: text
+  viewMode: output
+  mirror:
+    CopyValueMirrorRule:
+      originElement: person.full-name

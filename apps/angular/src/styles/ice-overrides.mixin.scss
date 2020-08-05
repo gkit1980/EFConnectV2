@@ -90,6 +90,16 @@
       }
     }
   }
+
+  .truncate-value .value {
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+  }
+
   .label-link {
     .ice-none {
       color: get-color($theme, 'text');
