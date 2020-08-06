@@ -1,0 +1,5 @@
+element:
+  type: text
+  mirror:
+    InsisResolveElementValueAsResourcePathMirrorRule:
+      originElement: lob~products~title

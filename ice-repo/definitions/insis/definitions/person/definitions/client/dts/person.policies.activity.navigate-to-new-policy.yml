@@ -1,0 +1,19 @@
+dt:
+  output-label: url
+  hitPolicy: F
+  inputs:
+    - label: definition
+      element: person.policy.add-new
+  outputs:
+    - label: definition
+      id: definition
+      type: string
+    - label: pid
+      id: pid
+      type: string
+  rules:
+    - inputs:
+        - '-'
+      outputs:
+        - person.policy.add-new
+        - person.pid

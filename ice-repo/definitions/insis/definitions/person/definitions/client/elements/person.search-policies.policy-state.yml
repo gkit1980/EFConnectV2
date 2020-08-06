@@ -1,0 +1,12 @@
+element:
+  type: text
+  values:
+    ListValuesRule:
+      list: policy.product-status
+  component:
+    StaticComponentRule:
+      component:
+        IceDropdown: {}
+  label:
+    ResourceLabelRule:
+      key: elements.search-policies.policy-state.label

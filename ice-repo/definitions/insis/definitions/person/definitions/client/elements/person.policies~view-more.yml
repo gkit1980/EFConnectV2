@@ -1,0 +1,18 @@
+element:
+  type: action
+  label:
+    ResourceWithElementValuesLabelRule:
+      key: elements.clients.items.view-more.label
+      elements:
+        - person.policies~policy-name
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          themeColor: accent
+          variant: default
+  change:
+    - DtNavigateToDefinitionExecutionRule:
+        definitionOutput: definition
+        dynIdOutput: dynId
+        dt: person.policies.activity.view-more

@@ -1,0 +1,11 @@
+element:
+  type: text
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: person.search-policies.see-more-options
+      conditionValue: true
+      conditionViewMode: default
+      elseViewMode: hidden
+  label:
+    ResourceLabelRule:
+      key: elements.search-policies.insured-object.label

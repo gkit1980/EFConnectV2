@@ -1,0 +1,19 @@
+section:
+  component:
+    InsisFormFlexSection:
+      css: u-mt-6 u-mb-3
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                css: nowrap
+                elements:
+                  - name: person.search-policies.policy-state
+                  - name: person.search-policies.fulltext
+                  - name: person.search-policies.policy-no
+                  - name: person.search-policies.product-id
+                  - name: person.search-policies.insured-object
+                  - name: person.search-policies.search
+                  - name: person.search-policies.see-more-options

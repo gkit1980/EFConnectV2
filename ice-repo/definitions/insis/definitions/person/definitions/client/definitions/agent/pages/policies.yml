@@ -1,0 +1,9 @@
+page:
+  component: InsisOneLevelTabsNavigationPage
+  validation: {}
+  css: align-navigation-start
+  sections:
+    - header
+    - policies.search
+    - policies.new-policy
+    - policies.datagrid

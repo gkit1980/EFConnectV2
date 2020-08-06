@@ -1,0 +1,17 @@
+element:
+  type: action
+  defaultValue:
+    StaticValueRule:
+      value: policies.search
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          themeColor: accent
+          variant: default
+          action: null
+          accesskey: s
+          type: submit
+  label:
+    ResourceLabelRule:
+      key: elements.search-policies.search.label

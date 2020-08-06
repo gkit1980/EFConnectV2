@@ -1,0 +1,13 @@
+element:
+  type: text
+  viewMode:
+    StaticViewModeRule:
+      viewMode: output
+  label:
+    NoLabelRule: {}
+  mirror:
+    InsisFillResourceWithElementValuesMirrorRule:
+      elements:
+        - person.policies~insr-type
+        - person.policies~product-name
+      resourceKey: elements.policies.items.product-formatted.content

@@ -1,0 +1,80 @@
+integration:
+  exchange:
+    InsisDBExchangeRule:
+      connectString: 'env:insis-db-url'
+      username: 'env:insis-db-username'
+      password: 'env:insis-db-password'
+      queryFileURL: data/policies.get.sql
+      queryType: JSON
+  transformation:
+    DefaultTransformationRule:
+      dateFormat: YYYY-MM-DD
+      out:
+        - mappings:
+            - param: policy_no
+              element: person.search-policies.policy-no
+            - param: policy_id
+              value: null
+            - param: policy_name
+              value: ''
+            - param: insr_type
+              element: person.search-policies.product-id
+            - param: policy_state
+              element: person.search-policies.policy-state
+            - param: p_insr_end
+              value: null
+            - param: p_client_name
+              element: null
+            - param: p_fulltext
+              element: person.search-policies.fulltext
+            - param: p_client_pid
+              element: person.pid
+            - param: p_insured_object
+              element: person.search-policies.insured-object
+            - param: page_size
+              datastore: insis.person.client.agent.pagination.page-size
+            - param: offset
+              datastore: insis.person.client.agent.pagination.offset
+      in:
+        - fromIdx:
+            array: payload.rows
+          toIdx:
+            array: 'datamodel.person.policies'
+            append: true
+          mappings:
+            - payload: 'rows[n].policy_state'
+              element: person.policies~policy-state
+            - payload: 'rows[n].policy_id'
+              element: person.policies~policy-id
+            - payload: 'rows[n].policy_no'
+              element: person.policies~policy-no
+            - payload: 'rows[n].policy_name'
+              element: person.policies~policy-name
+            - payload: 'rows[n].insr_type'
+              element: person.policies~insr-type
+            - payload: 'rows[n].product_name'
+              element: person.policies~product-name
+            - payload: 'rows[n].package_code'
+              element: person.policies~package-code
+            - payload: 'rows[n].policy_state_name'
+              element: person.policies~policy-state-name
+            - payload: 'rows[n].insr_begin'
+              element: person.policies~insr-begin
+            - payload: 'rows[n].insr_end'
+              element: person.policies~insr-end
+            - payload: 'rows[n].insr_type'
+              element: person.policies~insr-type
+            - payload: 'rows[n].total'
+              datastore: 'insis.person.client.agent.pagination.results-length'
+        - fromIdx:
+            array: payload.rows
+            fromIdx:
+              array: insured_objects
+          toIdx:
+            useSourceIndex: true
+            toIdx:
+              append: true
+              useSourceIndex: true
+          mappings:
+            - payload: 'rows[n].insured_objects[n].object_name'
+              element: person.policies~insured-objects~item

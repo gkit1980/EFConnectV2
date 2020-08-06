@@ -1,0 +1,14 @@
+element:
+  type: text
+  viewMode:
+    StaticViewModeRule:
+      viewMode: output
+  label:
+    NoLabelRule: {}
+  values:
+    ListValuesRule:
+      list: policy.product-status-label
+  component:
+    StaticComponentRule:
+      component:
+        IceDropdown: {}

@@ -1,0 +1,16 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        InsisButtonDropdown:
+          accesskey: 'n'
+          matIcon: keyboard_arrow_down
+  values:
+    InsisArrayItemBasedValuesRule:
+      valueElement: lob~products~definition
+      labelElement: lob~products~product-formatted
+      hideEmpty: true
+  label:
+    ResourceLabelRule:
+      key: elements.new-policy.label

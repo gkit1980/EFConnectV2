@@ -522,6 +522,11 @@ entries:
             yourself to be able to issue the insurance policy.
           de: null
     person:
+      search-policies:
+        product-id:
+          empty:
+            - en: Any
+              de: Any
       first-name:
         label:
           - en: First Name
@@ -2137,6 +2142,9 @@ entries:
                   - en: Client
                     de: Client
   pagination:
+    claims:
+      - en: Claims
+        de: null
     policies:
       - en: policies
         de: Policen
@@ -2430,6 +2438,10 @@ entries:
       title:
         - en: summary
           de: summary
+    policies:
+      title:
+        - en: Policies
+          de: Policen
   lists:
     gender:
       diverse:

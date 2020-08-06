@@ -1,0 +1,13 @@
+element:
+  type: text
+  label:
+    NoLabelRule: {}
+  text:
+    ResourceTextRule:
+      placeholder: elements.search.fulltext.placeholder
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: person.search-policies.see-more-options
+      conditionValue: true
+      conditionViewMode: hidden
+      elseViewMode: default

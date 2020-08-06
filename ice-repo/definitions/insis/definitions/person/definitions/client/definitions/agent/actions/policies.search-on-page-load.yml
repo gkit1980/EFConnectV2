@@ -1,0 +1,22 @@
+action:
+  execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - person.policies
+    - InsisResetDatastoreValueExecutionRule:
+        paths:
+          - insis.person.client.agent.pagination.page-index
+          - insis.person.client.agent.pagination.offset
+          - insis.person.client.agent.pagination.results-length
+        defaultValue: 0
+    - InsisResetDatastoreValueExecutionRule:
+        paths:
+          - insis.person.client.agent.pagination.page-size
+        defaultValue: 10
+    - IntegrationExecutionRule:
+        integration: insurance-products.load
+    - IntegrationExecutionRule:
+        integration: person.policies.search
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ICE_CONTEXT_ACTIVATED

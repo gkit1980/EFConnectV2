@@ -1,0 +1,22 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        IceDropdown: {}
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: person.search-policies.see-more-options
+      conditionValue: true
+      conditionViewMode: default
+      elseViewMode: hidden
+  values:
+    InsisArrayItemBasedValuesRule:
+      valueElement: lob~products~product-code
+      labelElement: lob~products~product-formatted
+      hideEmpty: false
+      emptyValueIsString: true
+  defaultValue: null
+  label:
+    ResourceLabelRule:
+      key: elements.search-policies.product-id.label

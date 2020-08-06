@@ -1,0 +1,18 @@
+element:
+  type: boolean
+  component:
+    StaticComponentRule:
+      component:
+        InsisButtonToggle:
+          labelTrue: elements.search.see-less-options.label
+          labelFalse: elements.search.see-more-options.label
+  defaultValue: false
+  label:
+    NoLabelRule: {}
+  change:
+    - ResetElementValueExecutionRule:
+        elements:
+          - search-policies.fulltext
+          - search-policies.insured-object
+          - search-policies.policy-no
+          - search-policies.product-id

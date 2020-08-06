@@ -1,0 +1,8 @@
+element:
+  type: text
+  mirror:
+    InsisFillResourceWithElementValuesMirrorRule:
+      elements:
+        - lob~products~product-code
+        - lob~products~title-resolved
+      resourceKey: elements.policies.items.product-formatted.content

@@ -1,4 +1,3 @@
-
 pages:
   StaticNavigationPagesRule:
     pages:
@@ -7,3 +6,4 @@ pages:
       - page: addresses
       - page: contacts
       - page: bank-accounts
+      - page: policies

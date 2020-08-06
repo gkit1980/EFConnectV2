@@ -1,0 +1,17 @@
+element:
+  type: array
+  component:
+    StaticComponentRule:
+      component:
+        InsisArrayTooltip:
+          showFirst: 1
+          signpostLabelKey: elements.policies.items.insured-objects.items.item.label
+          templateId: listItems
+          items:
+            - person.policies~insured-objects~item
+  viewMode: output
+  text:
+    ResourceTextRule:
+      dynamic-label: elements.policies.items.insured-objects-formatted.label
+  label:
+    NoLabelRule: {}

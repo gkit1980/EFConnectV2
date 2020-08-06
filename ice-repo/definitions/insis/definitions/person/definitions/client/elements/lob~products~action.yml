@@ -1,0 +1,6 @@
+element:
+  type: action
+  change:
+    - InsisNavigateToDefinitionPageWithDynidRule:
+        dynIdElement: person.pid
+        definitionElement: lob~products~definition

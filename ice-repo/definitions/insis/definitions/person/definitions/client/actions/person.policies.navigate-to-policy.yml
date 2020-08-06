@@ -1,0 +1,9 @@
+action:
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - person.policy.add-new
+  execution:
+    - DtNavigateToDefinitionExecutionRule:
+        dt: person.policies.activity.navigate-to-new-policy
+        definitionOutput: definition

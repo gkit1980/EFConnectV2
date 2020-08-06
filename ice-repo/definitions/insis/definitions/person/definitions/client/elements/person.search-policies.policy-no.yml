@@ -1,0 +1,16 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        IceTextInput:
+          instantlyUpdateModel: true
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: person.search-policies.see-more-options
+      conditionValue: true
+      conditionViewMode: default
+      elseViewMode: hidden
+  label:
+    ResourceLabelRule:
+      key: elements.search-policies.policy-no.label

@@ -1,0 +1,7 @@
+action:
+  execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - person.policies
+    - IntegrationExecutionRule:
+        integration: person.policies.search
