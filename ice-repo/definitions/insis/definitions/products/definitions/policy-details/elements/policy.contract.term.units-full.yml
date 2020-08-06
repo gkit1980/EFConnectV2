@@ -1,0 +1,6 @@
+element:
+  type: text
+  mirror:
+    DtMirrorRule:
+      dt: policy.contract.term.new-element.mirror
+      output: mirror

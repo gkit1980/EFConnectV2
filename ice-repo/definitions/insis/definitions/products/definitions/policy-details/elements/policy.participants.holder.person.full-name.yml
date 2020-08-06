@@ -1,3 +1,7 @@
 element:
   type: text
   viewMode: output
+  label:
+    ResourceLabelRule:
+      key: >-
+        elements.policy.participants.holder.person.full-name.policy-details.label

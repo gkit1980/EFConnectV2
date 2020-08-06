@@ -1,0 +1,11 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          variant: default
+          themeColor: primary
+  defaultValue:
+    StaticValueRule:
+      value: navigate.to-details

@@ -10,7 +10,7 @@ integration:
       dateFormat: YYYY-MM-DD
       out:
         - mappings:
-            - element: element: policy.contract.policy-id
+            - element: policy.contract.policy-id
               payload: reportParams.P_POLICY_ID
             - value: /std/gen/printouts_v10/std_nl_p_demo_policy.xdo
               payload: reportFullPath

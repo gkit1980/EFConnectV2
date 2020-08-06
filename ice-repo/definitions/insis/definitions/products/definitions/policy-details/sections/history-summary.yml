@@ -1,0 +1,35 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.history.card-title
+                css: mat-headline u-mb-4 u-mt-1
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.history.details
+            align: space-between
+          - cols:
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.history.no-changes-text
+                align: center
+                css: mat-caption u-mt-1
+            align: center
+            css: u-mt-6 u-mb-6
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                css: u-mt-10
+      behaviourForEmptyRows: render
+      css: null

@@ -11,4 +11,4 @@ section:
                   - name: policy.insured.objects~covers~code
               - size: none
                 elements:
-                  - name: policy.insured.objects~covers~premium
+                  - name: policy.insured.objects~covers~insured-amount

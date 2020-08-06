@@ -1,3 +1,6 @@
 element:
   type: currency
   viewMode: output
+  label:
+    ResourceLabelRule:
+      key: elements.policy.insured.objects.items.covers.items.insured-amount.label

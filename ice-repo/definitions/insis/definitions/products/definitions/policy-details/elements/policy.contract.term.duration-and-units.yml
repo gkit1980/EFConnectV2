@@ -1,0 +1,9 @@
+element:
+  type: text
+  mirror:
+    FullNameMirrorRule:
+      firstName: policy.contract.term.duration
+      lastName: policy.contract.term.units-full
+  viewMode:
+    StaticViewModeRule:
+      viewMode: output

@@ -12,13 +12,16 @@ page:
                 cols:
                   - size: calc(33%-20px)
                     sections:
-                      - name: payment-summary
+                      - name: claims-summary
+                    css: card
                   - size: calc(33%-20px)
                     sections:
                       - name: payment-summary
+                    css: card
                   - size: calc(33%-20px)
                     sections:
-                      - name: payment-summary
+                      - name: history-summary
+                    css: card
   label:
     ResourcePageLabelRule:
       navigationTitleKey: pages.policy-details.summary.title

@@ -1,3 +1,6 @@
 element:
   type: date
   viewMode: output
+  label:
+    ResourceLabelRule:
+      key: policy.contract.begin.policy-details.label

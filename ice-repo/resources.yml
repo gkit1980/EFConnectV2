@@ -702,6 +702,10 @@ entries:
           label:
             - en: Details
               de: Details
+        goto-details:
+          label:
+            - en: Details
+              de: Details
     address:
       title:
         label:
@@ -1050,6 +1054,10 @@ entries:
             label:
               - en: Price
                 de: null
+            policy-details:
+              label:
+                - en: Total
+                  de: Total
         person-objects:
           items:
             person:
@@ -1420,6 +1428,12 @@ entries:
                   label:
                     - en: 'Sum Insured: '
                       de: 'Sum Insured: '
+                insured-amount:
+                  label:
+                    - en: 'Sum insured:'
+                      de: 'Sum insured:'
+            covers~insured-amount: {}
+        objects~covers~insured-amount: {}
       contract:
         begin:
           label:
@@ -1430,20 +1444,44 @@ entries:
             label:
               - en: Number of installments
                 de: Number of installments
+            policy-details:
+              label:
+                - en: Installments
+                  de: Installments
           term:
             duration:
               label:
                 - en: Payment duration
                   de: Payment duration
+          duration:
+            label:
+              - en: Payment duration
+                de: Payment duration
+          installment-amount:
+            label:
+              - en: Installment amount
+                de: Installment amount
+          tax-value:
+            label:
+              - en: Installment amount
+                de: Installment amount
         term:
           duration:
             label:
               - en: Insurance duration
                 de: Insurance duration
+          duration-and-units:
+            label:
+              - en: Payment duration
+                de: Payment duration
         end:
           label:
             - en: Valid until
               de: null
+          policy-details:
+            label:
+              - en: Insurance end
+                de: Insurance end
         product-full-name:
           label:
             - en: Product
@@ -1455,6 +1493,10 @@ entries:
               label:
                 - en: Policy holder
                   de: Policy holder
+              policy-details:
+                label:
+                  - en: Client
+                    de: Client
             email:
               label:
                 - en: Email
@@ -1563,6 +1605,45 @@ entries:
           label:
             - en: ADD BENEFICIARY
               de: ADD BENEFICIARY
+      claims:
+        card-title:
+          label:
+            - en: Claims
+              de: Claims
+        no-claims-text:
+          label:
+            - en: No claims
+              de: No claims
+        activity:
+          details:
+            label:
+              - en: Details
+                de: Details
+          submit-claim:
+            label:
+              - en: Submit claim
+                de: Submit claim
+        details:
+          label:
+            - en: Details
+              de: Details
+        submit-claim:
+          label:
+            - en: Submit claim
+              de: Submit claim
+      history:
+        card-title:
+          label:
+            - en: History
+              de: History
+        no-changes-text:
+          label:
+            - en: No changes
+              de: No changes
+        details:
+          label:
+            - en: Details
+              de: Details
     buy-insurance:
       btn:
         label:
@@ -2046,6 +2127,15 @@ entries:
       label:
         - en: < BACK TO ALL CLIENTS
           de: < BACK TO ALL CLIENTS
+    ' policy':
+      participants:
+        holder:
+          person:
+            full-name:
+              policy-details:
+                label:
+                  - en: Client
+                    de: Client
   pagination:
     policies:
       - en: policies
@@ -2423,6 +2513,11 @@ entries:
           empty:
             - en: Use a different bank account
               de: policy.participants.payor.iban-selection.empty
+      holder:
+        person:
+          full-name:
+            - en: Client
+              de: Client
     insured:
       person-objects~cover:
         wop-total:
@@ -2511,6 +2606,12 @@ entries:
       label:
         - en: Remove
           de: Remove
+    contract:
+      begin:
+        policy-details:
+          label:
+            - en: Insurance begin
+              de: Insurance begin
   claims:
     hide-resolved:
       - en: Hide resolved

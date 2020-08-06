@@ -1,0 +1,11 @@
+list:
+  items:
+    - value: m
+      label: Months
+    - value: 'y'
+      label: Years
+  type: text
+  additionals:
+    label:
+      label: label
+      type: text

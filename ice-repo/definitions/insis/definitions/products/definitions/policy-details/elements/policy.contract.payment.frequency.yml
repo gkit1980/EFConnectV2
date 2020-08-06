@@ -1,3 +1,8 @@
 element:
   type: integer
-  viewMode: output
+  label:
+    ResourceLabelRule:
+      key: elements.policy.contract.payment.frequency.policy-details.label
+  viewMode:
+    StaticViewModeRule:
+      viewMode: output

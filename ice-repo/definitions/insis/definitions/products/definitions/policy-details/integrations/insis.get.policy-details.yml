@@ -32,11 +32,13 @@ integration:
               payload: registrationDate
             - element: policy.updated-date
               payload: updatedOn
-            - element: policy.contract.payment.frequency
-              payload: paymentWay
-            - element: policy.contract.payment.duration
+            - element: policy.contract.term.duration
               payload: insrDuration
-            - element: policy.contract.payment.installment-amount
+            - element: policy.contract.term.units
+              payload: durDimension
+            - element: policy.contract.payment.frequency
+              payload: numInstalments
+            - element: policy.contract.payment.tax-value
               payload: policyAnnexes[0].installments[0].amntCurrency
             - element: policy.insured.currency
               payload: policyAnnexes[0].installments[0].currency
@@ -69,7 +71,7 @@ integration:
               payload: >-
                 policyAnnexes[0].insuredObjects[n].insuredEntity.oAccinsured.pPeopleComplex.homeCountry
             - element: policy.insured.objects~activities.goto-covers
-              value: policy.goto-covers
+              value: navigate.to-covers
         - fromIdx:
             array: 'payload.policyAnnexes[0].insuredObjects'
             fromIdx:
@@ -85,7 +87,7 @@ integration:
               payload: 'policyAnnexes[0].insuredObjects[n].covers[n].currency'
             - element: policy.insured.objects~covers~premium
               payload: 'policyAnnexes[0].insuredObjects[n].covers[n].premium'
-            - element: policy.insured.objects~covers~insuredValue
-              payload: 'policyAnnexes[0].insuredObjects[n].covers[n].insured-amount'
+            - element: policy.insured.objects~covers~insured-amount
+              payload: 'policyAnnexes[0].insuredObjects[n].covers[n].insuredValue'
             - element: policy.insured.objects~covers~code
               payload: 'policyAnnexes[0].insuredObjects[n].covers[n].coverType'

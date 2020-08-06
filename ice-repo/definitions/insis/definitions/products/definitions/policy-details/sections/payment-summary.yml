@@ -1,7 +1,7 @@
 section:
   component:
     IceFlexSection:
-      css: card
+      css: null
       grid:
         rows:
           - cols:
@@ -12,24 +12,20 @@ section:
               - size: none
                 elements:
                   - name: payment.activity.goto-details
-
-          - css: output-element
+          - css: output-element u-mt-2 u-mb-4
             cols:
-              - size: auto
+              - size: 50
                 elements:
-                  - name: policy.contract.payment.duration
-                  - name: policy.contract.payment.unit
+                  - name: policy.contract.term.duration-and-units
               - size: auto
                 elements:
                   - name: policy.contract.payment.frequency
-
           - css: output-element
             cols:
-              - size: auto
+              - size: 50
                 elements:
                   - name: policy.insured.premium.total
-                  - name: policy.insured.currency
               - size: auto
                 elements:
-                  - name: policy.insured.premium.total
-                  - name: policy.insured.currency
+                  - name: policy.contract.payment.tax-value
+      behaviourForEmptyRows: render

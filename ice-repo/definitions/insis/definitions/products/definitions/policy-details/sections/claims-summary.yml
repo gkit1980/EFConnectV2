@@ -1,0 +1,39 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.claims.card-title
+                css: mat-headline u-mb-4 u-mt-1
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.claims.details
+            align: space-between
+            css: ''
+          - cols:
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.claims.no-claims-text
+                align: center
+                css: mat-caption
+            align: center
+            css: u-mt-6 u-mb-6
+          - cols:
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.claims.submit-claim
+                css: u-mt-2
+            css: ''
+      behaviourForEmptyRows: render
+      css: null

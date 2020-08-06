@@ -1,0 +1,16 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policy.contract.term.units
+  outputs:
+    - id: label
+      type: string
+  rules:
+    - inputs:
+        - m
+      outputs:
+        - Months
+    - inputs:
+        - 'y'
+      outputs:
+        - Years

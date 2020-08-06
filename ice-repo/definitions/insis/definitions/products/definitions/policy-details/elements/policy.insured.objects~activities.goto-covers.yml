@@ -3,4 +3,4 @@ element:
   viewMode: output
   defaultValue:
     StaticValueRule:
-      value: policy.goto-covers
+      value: navigate.to-covers
