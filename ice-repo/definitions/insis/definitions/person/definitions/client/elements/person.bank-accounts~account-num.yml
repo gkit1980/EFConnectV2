@@ -3,6 +3,12 @@ element:
   viewMode:
     ConditionalViewModeRule:
       conditionElement: person.bank-accounts~edit-mode
-      conditionValue: 'true'
+      conditionValue: true
       conditionViewMode: default
       elseViewMode: output
+  component:
+    InsisConditionalComponentRule:
+      conditionComponent: IceTextInput
+      elseComponent: InsisNullOutput
+      conditionElement: person.bank-accounts~edit-mode
+      conditionValue: true

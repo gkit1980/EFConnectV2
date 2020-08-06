@@ -26,7 +26,7 @@
 @import '../components/element-components/insis-google-map-component/insis-google-map.mixin.scss';
 @import '../components/section-components/insis-premium-summary-section/insis-premium-summary-section.mixin.scss';
 @import '../components/element-components/insis-alert-component/insis-alert.mixin.scss';
-
+@import '../components/element-components/insis-null-output-component/insis-null-output.mixin.scss';
 /**
  * TIP: You will need to @include here any new mixin you add to the ice-custom-component library.
  * This file here will be loaded by theme.scss which is part of theming structure inside application styles.
@@ -58,4 +58,5 @@
   @include insis-premium-summary-selection-mixin($theme);
   @include insis-chip-mixin($theme);
   @include insis-alert-mixin($theme);
+  @include insis-null-output-mixin($theme);
 }

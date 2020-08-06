@@ -27,3 +27,4 @@ export * from './view-mode/insis-depends-on-main-insured-cover-view-mode-rule/in
 export * from './values/insis-insurance-durations-values-rule/insis-insurance-durations-values-rule';
 export * from './view-mode/insis-change-viewmode-based-on-array-length-rule/insis-change-viewmode-based-on-array-length-rule';
 export * from './text/insis-fill-resource-with-element-values-text-rule/insis-fill-resource-with-element-values-text-rule';
+export * from './component/insis-conditional-component-rule/insis-conditional-component-rule';

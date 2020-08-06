@@ -1,9 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ElementComponentImplementation } from '@impeo/ng-ice';
-import { get } from 'lodash';
-import { filter, map } from 'rxjs/operators';
-import { Subject, Subscription } from 'rxjs';
-import { IceElement } from '@impeo/ice-core/src';
+import { filter } from 'rxjs/operators';
+import { Subject } from 'rxjs';
+import { IceElement } from '@impeo/ice-core';
 
 @Component({
   selector: 'insis-alert',

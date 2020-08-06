@@ -64,6 +64,8 @@ import { InsisNumberComponent } from './components/element-components/insis-numb
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { InsisAlertComponent } from './components/element-components/insis-alert-component/insis-alert.component';
 import { InsisFistArrayItemSectionComponent } from './components/section-components/insis-first-array-item-section/insis-first-array-item-section';
+import { InsisNullOutputComponent } from './components/element-components/insis-null-output-component/insis-null-output.component';
+import { InsisIBANOutputComponent } from './components/element-components/insis-iban-output-component/insis-iban-output.component';
 
 /**
  * TIP: You will need to include in this array any new component you create.
@@ -106,6 +108,8 @@ export const iceCustomComponents = [
   InsisNumberComponent,
   InsisAlertComponent,
   InsisFistArrayItemSectionComponent,
+  InsisNullOutputComponent,
+  InsisIBANOutputComponent,
 ];
 
 /**

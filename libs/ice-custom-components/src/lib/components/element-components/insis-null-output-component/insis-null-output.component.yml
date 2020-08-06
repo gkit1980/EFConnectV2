@@ -1,0 +1,14 @@
+label: Insis Null Output
+
+component: InsisNullOutput
+
+types:
+  - text
+
+description: >
+  substitutes null values with resorce value
+
+params:
+  key:
+    label: Null Resource Key
+    type: resourceKey
