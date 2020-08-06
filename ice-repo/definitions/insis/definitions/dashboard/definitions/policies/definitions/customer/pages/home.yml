@@ -38,7 +38,7 @@ page:
                     size.sm: auto
                     elements:
                       - name: policies-title
-                    css: mat-title
+                    css: mat-display-1 u-mb-6
       viewMode:
         InsisChangeViewModeBasedOnArrayLengthRule:
           condition: greater
@@ -106,7 +106,7 @@ page:
             rows:
               - cols:
                   - size: auto
-                    css: u-mt-2
+                    css: u-mt-4 u-mb-2
                     elements:
                       - name: activity.show-expired-policies
       viewMode:

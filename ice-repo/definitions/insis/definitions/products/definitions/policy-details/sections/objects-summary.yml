@@ -26,7 +26,7 @@ section:
                 elements:
                   - name: policy.insured.objects~person-data.gender
 
-          - css: output-element
+          - css: output-element u-mt-2
             cols:
               - size: 33%
                 elements:

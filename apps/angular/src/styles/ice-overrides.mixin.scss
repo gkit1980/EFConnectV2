@@ -1,6 +1,8 @@
 @import 'mixins';
 
 @mixin ice-override-mixin($theme) {
+  $colors: map-get($theme, colors);
+
   .ice-flex-section,
   .ice-array-flex-section {
     &.card {
@@ -155,6 +157,40 @@
         padding: 0px;
         border: none;
       }
+    }
+  }
+
+  .back-button {
+    .mat-button {
+      padding-left: 0;
+    }
+
+    .mat-icon {
+      font-size: 16px;
+      width: 14px;
+      height: 18px;
+    }
+  }
+
+  .output-element {
+    .ice-output label {
+      margin: 0px;
+      display: block;
+      //font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      color: map-get($colors, 'text');
+      text-align: left;
+      line-height: 16px;
+    }
+
+    .ice-output .value {
+      margin-top: 2px;
+      font-size: 16px;
+      padding: 0px;
+      //font-family: 'Roboto', sans-serif;
     }
   }
 }

@@ -1,6 +1,7 @@
 page:
   component: InsisOneLevelTabsNavigationPage
   validation: {}
+  css: align-navigation-start
   sections:
     - header
     - objects-summary

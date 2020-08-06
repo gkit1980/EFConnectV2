@@ -38,6 +38,8 @@ integration:
               payload: durDimension
             - element: policy.contract.payment.frequency
               payload: numInstalments
+            - element: policy.contract.policy-name
+              payload: policyName
             - element: policy.contract.payment.tax-value
               payload: policyAnnexes[0].installments[0].amntCurrency
             - element: policy.insured.currency

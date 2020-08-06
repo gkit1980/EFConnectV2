@@ -72,7 +72,7 @@ page:
                     size.sm: auto
                     elements:
                       - name: products-title
-                    css: mat-display-1 u-mb-8 u-mt-2
+                    css: mat-display-1 u-mb-6 u-mt-3
     - component:
         IceArrayFlexSection:
           arrayElement: insurance-products

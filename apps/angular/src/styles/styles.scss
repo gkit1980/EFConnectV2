@@ -284,28 +284,6 @@ confirmation-dialog-layout {
   overflow: visible !important;
 }
 
-.output-element {
-  .ice-output label {
-    margin: 0px;
-    display: block;
-    //font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 12px;
-    letter-spacing: 0.5px;
-    color: #282828;
-    text-align: left;
-    line-height: 16px;
-  }
-
-  .ice-output .value {
-    margin-top: 2px;
-    font-size: 16px;
-    padding: 0px;
-    //font-family: 'Roboto', sans-serif;
-  }
-}
-
 .align-navigation-start .insis-one-level-tabs-navigation-page .mat-tab-labels {
   justify-content: start;
 }

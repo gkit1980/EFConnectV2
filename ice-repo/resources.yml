@@ -697,6 +697,10 @@ entries:
         label:
           - en: Name
             de: Name
+      type:
+        label:
+          - en: Client type
+            de: Client type
     payment:
       title:
         label:
@@ -2172,9 +2176,9 @@ entries:
         - en: Please confirm
           de: Bitte bestätigen
       not_allowed_here:
-        - en: '''${value}'' not allowed here'
+        - en: "'${value}' not allowed here"
       regexp:
-        - en: '''${value}'' does not matches regular expression ${regexp}'
+        - en: "'${value}' does not matches regular expression ${regexp}"
       array:
         min:
           - en: 'must have at least ${min} entries'
@@ -2203,6 +2207,15 @@ entries:
         - en: Please enter a valid IBAN.
           de: Bitte geben Sie eine gültige Iban ein.
   page-navigation:
+    back:
+      to-all-products:
+        label:
+          - en: Back to all products
+            de: Back to all products
+      to-all-policies:
+        label:
+          - en: Back to all policies
+            de: Back to all policies
     page-pagination:
       first:
         - en: First
@@ -2469,6 +2482,10 @@ entries:
     - en: EUR
       de: EUR
   portal:
+    title:
+      term-life:
+        - en: Term Life Insurance
+          de: Term Life Insurance
     home:
       title:
         - en: INSIS Portal

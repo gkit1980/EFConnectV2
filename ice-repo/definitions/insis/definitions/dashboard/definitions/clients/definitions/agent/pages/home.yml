@@ -13,6 +13,7 @@ page:
                   - size: auto
                     size.xs: auto
                     size.sm: auto
+                    css: u-mt-4
                     elements:
                       - name: activity.new-client
     - component:

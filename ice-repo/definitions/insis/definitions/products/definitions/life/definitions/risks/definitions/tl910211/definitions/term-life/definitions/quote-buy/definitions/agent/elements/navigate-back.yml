@@ -1,0 +1,5 @@
+element:
+  type: action
+  label:
+    ResourceLabelRule:
+      key: page-navigation.back.to-all-policies.label

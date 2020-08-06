@@ -9,11 +9,12 @@ section:
               - size: auto
                 size.xs: auto
                 size.sm: auto
+                css: back-button
                 elements:
                   - name: person.activity.navigate-back
           - cols:
               - size: auto
-                css: mat-display-1 u-mb-8 u-mt-2
+                css: mat-display-1 u-mb-6
                 elements:
                   - name: person.full-name
 

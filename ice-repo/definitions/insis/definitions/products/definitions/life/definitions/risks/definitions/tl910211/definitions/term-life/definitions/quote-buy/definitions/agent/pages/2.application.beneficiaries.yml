@@ -8,6 +8,7 @@ page:
   component:
     InsisTwoLevelStepperNavigationPage: {}
   sections:
+    - header
     - beneficiaries.is-standard-beneficiary
     - beneficiaries.details
     - beneficiaries.go-to-next-page

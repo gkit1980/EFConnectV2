@@ -1,4 +1,8 @@
 <main class="insis-two-level-stepper-navigation-page">
+  <div *ngIf="topSections.length">
+    <ice-section *ngFor="let section of topSections" [section]="section"></ice-section>
+  </div>
+
   <insis-horizontal-stepper-navigation
     [page]="page"
     [level]="1"

@@ -4,6 +4,7 @@ import { IcePage } from '@impeo/ice-core';
 import { get, first } from 'lodash';
 
 const RIGHT_SECTION_TAG = 'pull-right';
+const TOP_SECTION_TAG = 'header';
 
 const getTags = (section) => {
   const componentName = first(Object.keys(get(section, 'recipe.component', {})));
@@ -36,7 +37,7 @@ export class InsisTwoLevelStepperNavigationPageComponent extends PageComponentIm
   get mainSections() {
     return this.page.sections.filter((section) => {
       const tags = getTags(section);
-      return !tags.includes(RIGHT_SECTION_TAG);
+      return !tags.includes(RIGHT_SECTION_TAG) && !tags.includes(TOP_SECTION_TAG);
     });
   }
 
@@ -44,6 +45,13 @@ export class InsisTwoLevelStepperNavigationPageComponent extends PageComponentIm
     return this.page.sections.filter((section) => {
       const tags = getTags(section);
       return tags.includes(RIGHT_SECTION_TAG);
+    });
+  }
+
+  get topSections() {
+    return this.page.sections.filter((section) => {
+      const tags = getTags(section);
+      return tags.includes(TOP_SECTION_TAG);
     });
   }
 

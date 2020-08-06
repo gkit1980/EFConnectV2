@@ -8,6 +8,7 @@ page:
   component:
     InsisTwoLevelStepperNavigationPage: {}
   sections:
+    - header
     - insured.give-us-information
     - insureds
     - component:
