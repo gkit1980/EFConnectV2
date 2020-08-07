@@ -4,6 +4,9 @@ component: InsisNullOutput
 
 types:
   - text
+  - date
+  - integer
+  - decimal
 
 description: >
   substitutes null values with resorce value

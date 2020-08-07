@@ -39,12 +39,12 @@ section:
                 size.xs: auto
                 size.sm: auto
                 elements:
-                  - name: person.bank-accounts~account-num
+                  - name: person.bank-accounts~account-currency
               - size: 197px
                 size.xs: auto
                 size.sm: auto
                 elements:
-                  - name: person.bank-accounts~account-currency
+                  - name: person.bank-accounts~account-num
             gap: 12px
             css: u-mt-2 u-mb-2
       arrayElement: person.bank-accounts

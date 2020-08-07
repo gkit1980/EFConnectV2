@@ -1,10 +1,12 @@
 element:
   type: text
   viewMode: output
-  component:
-    StaticComponentRule:
-      component:
-        IceDropdown: {}
   values:
     ListValuesRule:
       list: common.countries
+  component:
+    InsisConditionalComponentRule:
+      conditionComponent: InsisNullOutput
+      elseComponent: IceDropdown
+      conditionElement: person.nationality
+      conditionValue: null

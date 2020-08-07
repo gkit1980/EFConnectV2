@@ -6,11 +6,14 @@ element:
       conditionValue: 'true'
       conditionViewMode: default
       elseViewMode: output
-  component:
-    StaticComponentRule:
-      component:
-        IceDropdown: {}
-  defaultValue: 'H'
+  defaultValue: 'home'
   values:
     ListValuesRule:
       list: insis.address-types
+  component:
+    InsisDtComponentRule:
+      conditionComponent:
+        IceDropdown: {}
+      elseComponent:
+        InsisNullOutput: {}
+      dt: person.addresses~address-type.component

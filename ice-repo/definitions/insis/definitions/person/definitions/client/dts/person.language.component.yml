@@ -1,0 +1,20 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: person.language
+    - label: new label
+      element: personal-information.edit-mode
+  outputs:
+    - id: component
+      type: boolean
+  rules:
+    - inputs:
+        - null
+        - false
+      outputs:
+        - false
+    - inputs:
+        - '-'
+        - '-'
+      outputs:
+        - true

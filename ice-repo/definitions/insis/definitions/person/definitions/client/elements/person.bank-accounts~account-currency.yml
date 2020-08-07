@@ -1,9 +1,5 @@
 element:
   type: text
-  component:
-    StaticComponentRule:
-      component:
-        IceDropdown: {}
   values:
     ListValuesRule:
       list: insis.currencies
@@ -13,3 +9,10 @@ element:
       conditionValue: 'true'
       conditionViewMode: default
       elseViewMode: output
+  component:
+    InsisDtComponentRule:
+      conditionComponent:
+        IceDropdown: {}
+      elseComponent:
+        InsisNullOutput: {}
+      dt: person.bank-accounts~account-currency.component

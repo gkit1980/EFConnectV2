@@ -1,3 +1,4 @@
 element:
   type: text
   viewMode: output
+  component: InsisNullOutput

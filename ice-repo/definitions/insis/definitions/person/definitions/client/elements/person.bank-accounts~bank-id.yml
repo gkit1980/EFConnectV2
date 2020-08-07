@@ -5,13 +5,16 @@ element:
       valueElement: banks~value
       labelElement: banks~label
       hideEmpty: true
-  component:
-    StaticComponentRule:
-      component:
-        IceDropdown: {}
   viewMode:
     ConditionalViewModeRule:
       conditionElement: person.bank-accounts~edit-mode
       conditionValue: 'true'
       conditionViewMode: default
       elseViewMode: output
+  component:
+    InsisDtComponentRule:
+      conditionComponent:
+        IceDropdown: {}
+      elseComponent:
+        InsisNullOutput: {}
+      dt: person.bank-accounts~bank-id.component

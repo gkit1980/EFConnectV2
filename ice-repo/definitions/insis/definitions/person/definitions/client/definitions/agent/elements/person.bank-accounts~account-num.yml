@@ -5,3 +5,11 @@ element:
       viewMode:
         StaticViewModeRule:
           viewMode: output
+      component:
+        InsisConditionalComponentRule:
+          conditionComponent:
+            InsisNullOutput: {}
+          elseComponent:
+            InsisIBANOutput: {}
+          conditionElement: person.bank-accounts~account-num
+          conditionValue: null

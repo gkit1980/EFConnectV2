@@ -1,0 +1,20 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: person.bank-accounts~bank-id
+    - label: new label
+      element: person.bank-accounts~edit-mode
+  outputs:
+    - id: component
+      type: boolean
+  rules:
+    - inputs:
+        - null
+        - false
+      outputs:
+        - false
+    - inputs:
+        - '-'
+        - '-'
+      outputs:
+        - true

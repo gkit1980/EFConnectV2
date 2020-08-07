@@ -6,9 +6,15 @@ element:
       conditionValue: 'true'
       conditionViewMode: default
       elseViewMode: output
-  component: IceDropdown
   values:
     InsisArrayItemBasedValuesRule:
       valueElement: sub-industries~value
       labelElement: sub-industries~label
       hideEmpty: true
+  component:
+    InsisDtComponentRule:
+      conditionComponent:
+        IceDropdown: {}
+      elseComponent:
+        InsisNullOutput: {}
+      dt: person.sub-industry-code.component

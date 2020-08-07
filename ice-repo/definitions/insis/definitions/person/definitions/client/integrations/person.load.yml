@@ -53,8 +53,10 @@ integration:
               element: person.primary.address.full
         - fromIdx:
             array: payload.addresses
+            condition: 1 == 1
           toIdx:
-            useSourceIndex: true
+            array: datamodel.person.addresses
+            append: true
           mappings:
             - value: false
               element: person.addresses~edit-mode
@@ -94,8 +96,10 @@ integration:
               element: person.addresses~street-number
         - fromIdx:
             array: payload.bankAccounts
+            condition: 1 == 1
           toIdx:
-            useSourceIndex: true
+            array: datamodel.person.bankAccounts
+            append: true
           mappings:
             - value: false
               element: person.bank-accounts~edit-mode
@@ -119,8 +123,10 @@ integration:
               element: person.bank-accounts~is-primary
         - fromIdx:
             array: payload.contacts
+            condition: 1 == 1
           toIdx:
-            useSourceIndex: true
+            array: datamodel.person.contacts
+            append: true
           mappings:
             - value: false
               element: person.contacts~edit-mode
@@ -138,9 +144,3 @@ integration:
               element: person.contacts~details
             - payload: contacts[n].primaryFlag
               element: person.contacts~is-primary
-        # - fromIdx:
-        #     array: payload.contacts
-        #   toIdx:
-        #     useSourceIndex: true
-        #   mappings:
-        #     -

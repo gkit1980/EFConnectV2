@@ -6,7 +6,13 @@ element:
       conditionValue: 'true'
       conditionViewMode: default
       elseViewMode: output
-  component: IceDropdown
   values:
     ListValuesRule:
       list: common.languages
+  component:
+    InsisDtComponentRule:
+      conditionComponent:
+        IceDropdown: {}
+      elseComponent:
+        InsisNullOutput: {}
+      dt: person.language.component

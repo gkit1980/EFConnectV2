@@ -1,0 +1,41 @@
+implementations:
+  InsisDtComponentRule:
+    description:
+      determines the component in dependence of the evalutaion of the dt. If the dt returns true the conditionComponent is applied if
+      dt returns false - elseComponent.
+    params:
+      dt:
+        label: Decision Table
+        required: true
+        type: dt
+      output:
+        label: Output Column from DT
+        info: if more than one, if omit rule will the first
+      conditionComponent:
+        label: Conditonal Component
+        required: true
+        type: element-component-with-recipe
+        default: {}
+      elseComponent:
+        label: Else Component
+        required: true
+        type: element-component-with-recipe
+        default: {}
+
+    icel: >
+      ```
+        element:
+          type: text
+          viewMode:
+            ConditionalViewModeRule:
+              conditionElement: person.bank-accounts~edit-mode
+              conditionValue: true
+              conditionViewMode: default
+              elseViewMode: output
+          component:
+            InsisConditionalComponentRule:
+              conditionComponent: IceTextInput
+              elseComponent: InsisNullOutput
+              conditionElement: person.bank-accounts~edit-mode
+              conditionValue: true
+      ```
