@@ -26,9 +26,7 @@ integration:
               payload: man-id
       in:
         - toIdx:
-            index: '[1]'
-            #array: datamodel.policy.insured.person-objects
-            #append: true
+            index: '[ datamodel.policy.insured["person-objects"].length - 1]'
           mappings:
             - payload: firstName
               element: policy.insured.person-objects~person.first-name
@@ -44,7 +42,3 @@ integration:
               element: policy.insured.person-objects~person.address.country
             - payload: man-id
               element: policy.insured.person-objects~person.man-id
-            # - value: false
-            #   element: policy.insured.person-objects~question.q-07
-            # - value: 2
-            #   element: policy.insured.person-objects~entity-accident-insured.type
