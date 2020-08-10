@@ -1,0 +1,34 @@
+dt:
+  hitPolicy: C
+  inputs:
+    - element: person.bank-accounts~is-primary
+  outputs:
+    - id: values
+      type: string
+    - label: new label
+      default: ''
+      id: label_en
+      type: string
+    - label: new label
+      default: ''
+      id: label_de
+      type: string
+  rules:
+    - inputs:
+        - '-'
+      outputs:
+        - person.bank-accounts.remove
+        - Remove
+        - Remove
+    - inputs:
+        - true
+      outputs:
+        - person.bank-accounts.make-secondary
+        - Unfavorite
+        - Unfavorite
+    - inputs:
+        - false
+      outputs:
+        - person.bank-accounts.make-primary
+        - Favorite
+        - Favorite

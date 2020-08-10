@@ -1,6 +1,0 @@
-element:
-  type: text
-  component: IceNone
-  label:
-    DtResourceLabelRule:
-      dt: person.addresses~item-label.label

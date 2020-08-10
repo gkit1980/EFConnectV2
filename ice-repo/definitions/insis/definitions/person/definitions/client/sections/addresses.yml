@@ -8,12 +8,12 @@ section:
                 size.xs: auto
                 size.sm: auto
                 elements:
-                  - name: person.addresses~item-label
+                  - name: person.addresses~is-primary-icon
+                css: is-primary-icon
               - size: auto
                 size.xs: auto
                 size.sm: auto
                 elements:
-                  - name: person.addresses~activity.toggle-primary
                   - name: person.addresses~activity.cancel
                 css: text-align-right
               - size: 62px

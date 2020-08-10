@@ -8,12 +8,12 @@ section:
                 size.xs: auto
                 size.sm: auto
                 elements:
-                  - name: person.bank-accounts~item-label
+                  - name: person.bank-accounts~is-primary-icon
+                css: is-primary-icon
               - size: auto
                 size.xs: auto
                 size.sm: auto
                 elements:
-                  - name: person.bank-accounts~activity.toggle-primary
                   - name: person.bank-accounts~activity.cancel
                 css: text-align-right
               - size: 62px
