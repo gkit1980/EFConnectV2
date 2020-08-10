@@ -1,10 +1,19 @@
 element:
   type: action
-  component:
-    StaticComponentRule:
-      component:
-        IceButton:
-          variant: stroked
   change:
     - AddArrayItemExecutionRule:
         element: person.contacts
+    - InsisCopyValueExecutionRule:
+        source: contacts.add-new-contact
+        destination: person.contacts~contact-type
+    - ResetElementValueExecutionRule:
+        elements:
+          - contacts.add-new-contact
+  component:
+    StaticComponentRule:
+      component:
+        InsisButtonDropdown:
+          matIcon: keyboard_arrow_down
+  values:
+    ListValuesRule:
+      list: insis.contact.type

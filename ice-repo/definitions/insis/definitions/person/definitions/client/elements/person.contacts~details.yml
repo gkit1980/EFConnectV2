@@ -6,3 +6,11 @@ element:
       conditionValue: 'true'
       conditionViewMode: default
       elseViewMode: output
+  component:
+    InsisConditionalComponentRule:
+      conditionComponent:
+        IceTextInput: {}
+      elseComponent:
+        InsisNullOutput: {}
+      conditionElement: person.contacts~edit-mode
+      conditionValue: true

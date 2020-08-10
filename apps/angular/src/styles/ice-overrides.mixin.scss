@@ -2,6 +2,7 @@
 
 @mixin ice-override-mixin($theme) {
   $colors: map-get($theme, colors);
+  $primaryColor: get-mat-color($theme, primary);
 
   .ice-flex-section,
   .ice-array-flex-section {
@@ -191,6 +192,35 @@
       font-size: 16px;
       padding: 0px;
       //font-family: 'Roboto', sans-serif;
+    }
+  }
+
+  .three-columns-array {
+    > ice-element > .ice-element > ice-array > .ice-array {
+      > label {
+        display: none;
+      }
+
+      @include respond-from('md') {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0px 16px;
+      }
+
+      > .ice-array-item {
+        @include make-card($theme);
+      }
+    }
+  }
+
+  .is-primary-icon {
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+
+    mat-icon {
+      color: $primaryColor;
+      margin-top: 5px;
     }
   }
 }

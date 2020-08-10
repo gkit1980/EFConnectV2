@@ -1,0 +1,14 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        InsisIcon:
+          showLabel: false
+  defaultValue: star
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: person.contacts~is-primary
+      conditionValue: false
+      conditionViewMode: hidden
+      elseViewMode: default

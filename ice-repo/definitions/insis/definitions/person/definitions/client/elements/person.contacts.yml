@@ -2,3 +2,4 @@ element:
   type: array
   label:
     NoLabelRule: {}
+  viewMode: output

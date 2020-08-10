@@ -1,12 +1,6 @@
 element:
   type: text
-  viewMode:
-    ConditionalViewModeRule:
-      conditionElement: person.contacts~edit-mode
-      conditionValue: 'true'
-      conditionViewMode: default
-      elseViewMode: output
-  defaultValue: 'MOBILE'
+  viewMode: output
   component:
     StaticComponentRule:
       component:
@@ -14,3 +8,5 @@ element:
   values:
     ListValuesRule:
       list: insis.contact.type
+  label:
+    NoLabelRule: {}

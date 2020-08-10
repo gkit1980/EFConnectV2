@@ -7,5 +7,5 @@ element:
   label:
     NoLabelRule: {}
   values:
-    ListValuesRule:
-      list: person.contacts.activity.more-options
+    DtValuesRule:
+      dt: person.contacts~activity.more-options.values

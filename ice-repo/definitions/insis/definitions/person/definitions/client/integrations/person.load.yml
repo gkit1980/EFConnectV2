@@ -130,6 +130,8 @@ integration:
           mappings:
             - value: false
               element: person.contacts~edit-mode
+            - value: 'star'
+              element: person.contacts~is-primary-icon
             - value: person.contacts.cancel
               element: person.contacts~activity.cancel
             - value: person.contacts.make-primary

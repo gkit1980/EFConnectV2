@@ -12,6 +12,13 @@ implementations:
         label: Destination Element
         type: element
         required: true
+      destinationIndex:
+        label: Destination index
+        type: text
+        info: >-
+          set to which index the value should be copied, if destinationIndex isn't set and both source and destination elements are array elements
+          the index of source element will be used to set the destination element. If destinationIndex isn't set and source is not an array item,but destination element is, the 
+          value will be copied to the last index of the destination element
     icel: >
       ```
         action:

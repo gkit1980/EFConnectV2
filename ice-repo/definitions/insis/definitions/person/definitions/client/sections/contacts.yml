@@ -8,12 +8,13 @@ section:
                 size.xs: auto
                 size.sm: auto
                 elements:
-                  - name: person.contacts~item-label
+                  - name: person.contacts~contact-type
+                  - name: person.contacts~is-primary-icon
+                css: inline-cell-elements is-primary-icon
               - size: auto
                 size.xs: auto
                 size.sm: auto
                 elements:
-                  - name: person.contacts~activity.toggle-primary
                   - name: person.contacts~activity.cancel
                 css: text-align-right
               - size: 62px
@@ -34,13 +35,8 @@ section:
                 size.xs: auto
                 size.sm: auto
                 elements:
-                  - name: person.contacts~contact-type
-              - size: 197px
-                size.xs: auto
-                size.sm: auto
-                elements:
                   - name: person.contacts~details
             gap: 12px
             css: u-mt-2 u-mb-2
       arrayElement: person.contacts
-      css: horizontal-list
+      css: horizontal-list three-columns-array

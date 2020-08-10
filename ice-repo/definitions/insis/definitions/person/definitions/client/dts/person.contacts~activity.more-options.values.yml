@@ -1,0 +1,34 @@
+dt:
+  hitPolicy: C
+  inputs:
+    - element: person.contacts~is-primary
+  outputs:
+    - id: values
+      type: string
+    - label: new label
+      default: ''
+      id: label_en
+      type: string
+    - label: new label
+      default: ''
+      id: label_de
+      type: string
+  rules:
+    - inputs:
+        - '-'
+      outputs:
+        - person.contacts.remove
+        - Remove
+        - Remove
+    - inputs:
+        - true
+      outputs:
+        - person.contacts.make-secondary
+        - 'Unfavorite '
+        - Unfavorite
+    - inputs:
+        - false
+      outputs:
+        - person.contacts.make-primary
+        - 'Favorite '
+        - 'Favorite '
