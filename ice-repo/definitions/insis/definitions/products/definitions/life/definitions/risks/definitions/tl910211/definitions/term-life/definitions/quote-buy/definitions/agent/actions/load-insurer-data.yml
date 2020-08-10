@@ -1,0 +1,16 @@
+action:
+  execution:
+    - InsisArrayIterationIntegrationExecutionRule:
+        integration: load-insurer-data
+        arrayElement: policy.insured.person-objects
+  trigger:
+    - PageTriggerRule:
+        enter:
+          - 2.application.details
+    - IceLifecycleEventTriggerRule:
+        event: ACTIVE_INTEGRATION_SUCCESS
+        payload: 910211.risks.life.insis-policy.get-policy.init
+  # condition:
+  #   DtConditionRule:
+  #     dt: load-insurer-data.condition
+  #     output: condition

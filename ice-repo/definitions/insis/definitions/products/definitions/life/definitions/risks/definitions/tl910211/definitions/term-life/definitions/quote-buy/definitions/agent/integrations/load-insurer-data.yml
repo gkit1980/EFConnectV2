@@ -3,12 +3,16 @@ integration:
     InsisRestCallExchangeRule:
       endpointBaseurl: 'insis-rest-endpoint'
       verb: get
-      url: '/people-dir/person/${MANID}/contacts'
+      url: '/people-dir/person/composite?manId=${MANID}'
 
   transformation:
-    DefaultTransformationRule:
+    InsisPersonTransformationRule:
       additional: insis
       dateFormat: YYYY-MM-DD
+      paths:
+        - payload.contacts
+        - payload.addresses
+        - payload.bankAccounts
       out:
         - fromIdx:
             array: datamodel.policy.insured.person-objects
@@ -19,24 +23,21 @@ integration:
             - param: MANID
               element: policy.insured.person-objects~person.man-id
       in:
-        - fromIdx:
-            array: payload.response
-            condition: contactType == 'MOBILE'
-          toIdx:
+        - toIdx:
             index: actionContext.index
           mappings:
-            - payload: response[n].details
+            - payload: primary.contact.phone
               element: policy.insured.person-objects~phone.value
-            - payload: response[n].contactId
+            - payload: primary.contact.phoneid
               element: policy.insured.person-objects~phone.id
-
-        - fromIdx:
-            array: payload.response
-            condition: contactType == 'EMAIL'
-          toIdx:
+            - payload: primary.contact.email
+              element: policy.insured.person-objects~email.value
+            - payload: primary.contact.emailid
+              element: policy.insured.person-objects~email.id
+        - toIdx:
             index: actionContext.index
           mappings:
-            - payload: response[n].details
-              element: policy.insured.person-objects~email.value
-            - payload: response[n].contactId
-              element: policy.insured.person-objects~email.id
+            - payload: addresses[0].address
+              element: policy.insured.person-objects~address.value
+            - payload: addresses[0].addressId
+              element: policy.insured.person-objects~address.id

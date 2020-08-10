@@ -1,19 +1,6 @@
-import { IntegrationData, IntegrationDataOut, IntegrationDataIn } from '@impeo/ice-core';
-import { DefaultTransformationRule } from '@impeo/ice-core/default-rules/rules/integration-rules';
+import { IntegrationDataIn } from '@impeo/ice-core';
+import { InsisPrimarySortTransformationRule } from '../insis-primary-sort-transformation-rule/insis-primary-sort-transformation-rule';
 import { get, first } from 'lodash';
-
-const sortByPrimaryFlag = (a, b) => {
-  if (a.primaryFlag !== b.primaryFlag) {
-    if (a.primaryFlag === 'Y') {
-      return -1;
-    } else if (b.primaryFlag === 'Y') {
-      return 1;
-    }
-
-    return 0;
-  }
-  return 0;
-};
 
 const getAddressPart = (address, part) => {
   const data = get(address, part);
@@ -31,11 +18,9 @@ const getAddress = (address) => {
 
 //
 //
-export class InsisPersonTransformationRule extends DefaultTransformationRule {
+export class InsisPersonTransformationRule extends InsisPrimarySortTransformationRule {
   handleInData(inData: IntegrationDataIn): void {
-    inData.payload.contacts = get(inData, 'payload.contacts', []).sort(sortByPrimaryFlag);
-    inData.payload.addresses = get(inData, 'payload.addresses', []).sort(sortByPrimaryFlag);
-    inData.payload.bankAccounts = get(inData, 'payload.bankAccounts', []).sort(sortByPrimaryFlag);
+    inData = this.sortResponse(inData);
 
     const primaryEmail = first(inData.payload.contacts.filter((c) => c.contactType === 'EMAIL'));
     const primaryPhone = first(inData.payload.contacts.filter((c) => c.contactType === 'MOBILE'));
@@ -43,7 +28,9 @@ export class InsisPersonTransformationRule extends DefaultTransformationRule {
     const primaryData = {
       contact: {
         email: get(primaryEmail, 'details', ''),
+        emailid: get(primaryEmail, 'contactId', ''),
         phone: get(primaryPhone, 'details', ''),
+        phoneid: get(primaryPhone, 'contactId', ''),
       },
       address: {
         full: getAddress(primaryAddress),

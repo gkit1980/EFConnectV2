@@ -3,34 +3,38 @@ integration:
     InsisRestCallExchangeRule:
       endpointBaseurl: 'insis-rest-endpoint'
       verb: get
-      url: '/people-dir/person/${MANID}/contacts'
+      url: '/people-dir/person/composite?manId=${MANID}'
 
   transformation:
-    DefaultTransformationRule:
+    InsisPersonTransformationRule:
       additional: insis
       dateFormat: YYYY-MM-DD
+      paths:
+        - payload.contacts
+        - payload.addresses
+        - payload.bankAccounts
       out:
         - mappings:
             - param: ignoreLoginService
               value: true
             - param: MANID
               element: policy.participants.holder.person.manid
-
       in:
-        - fromIdx:
-            array: payload.response
-            condition: contactType == 'MOBILE'
-          mappings:
-            - payload: response[n].details
+        - mappings:
+            - payload: primary.contact.phone
               element: policy.participants.holder.person.phone
-            - payload: response[n].contactId
+
+            - payload: primary.contact.phoneid
               element: policy.participants.holder.person.phone-id
 
-        - fromIdx:
-            array: payload.response
-            condition: contactType == 'EMAIL'
-          mappings:
-            - payload: response[n].details
+            - payload: primary.contact.email
               element: policy.participants.holder.person.email
-            - payload: response[n].contactId
+
+            - payload: primary.contact.emailid
               element: policy.participants.holder.person.email-id
+
+        - mappings:
+            - payload: addresses[0].address
+              element: policy.participants.holder.person.address
+            - payload: addresses[0].addressId
+              element: policy.participants.holder.person.address-id

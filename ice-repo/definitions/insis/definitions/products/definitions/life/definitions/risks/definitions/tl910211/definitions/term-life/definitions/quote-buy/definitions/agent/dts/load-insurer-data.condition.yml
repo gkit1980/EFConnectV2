@@ -1,0 +1,16 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policy.insured.person-objects~person.man-id
+  outputs:
+    - id: condition
+      type: boolean
+  rules:
+    - inputs:
+        - '-1'
+      outputs:
+        - false
+    - inputs:
+        - '-'
+      outputs:
+        - true

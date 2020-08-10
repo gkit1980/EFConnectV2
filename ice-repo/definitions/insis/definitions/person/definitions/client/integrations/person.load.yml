@@ -9,6 +9,10 @@ integration:
     InsisPersonTransformationRule:
       additional: insis
       dateFormat: YYYY-MM-DD
+      paths:
+        - payload.contacts
+        - payload.addresses
+        - payload.bankAccounts
       out:
         - mappings:
             - param: PID

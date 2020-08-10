@@ -1,8 +1,0 @@
-action:
-  execution:
-    - IntegrationExecutionRule:
-        integration: load-holder-addresses
-  trigger:
-    - PageTriggerRule:
-        enter:
-          - 2.application.payment

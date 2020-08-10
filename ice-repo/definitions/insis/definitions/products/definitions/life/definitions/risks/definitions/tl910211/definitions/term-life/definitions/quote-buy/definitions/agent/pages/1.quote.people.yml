@@ -20,10 +20,10 @@ page:
                     size.xs: auto
                     size.sm: auto
                     elements:
-                      - name: client.open-popup
+                      - name: add-client
                   - size: auto
                     size.xs: auto
                     size.sm: auto
                     elements:
-                      - name: add-client
+                      - name: client.open-popup
     - go-to-next-page
