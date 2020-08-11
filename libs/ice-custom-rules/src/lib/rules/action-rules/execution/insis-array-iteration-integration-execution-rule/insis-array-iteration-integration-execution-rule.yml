@@ -11,6 +11,11 @@ implementations:
         label: Array element
         type: element
         required: true
+
+      conditiondt:
+        label: Conditional DT
+        type: dt
+        required: false
     icel: >
       ```
         action:

@@ -7,7 +7,7 @@ dt:
       type: boolean
   rules:
     - inputs:
-        - '-1'
+        - -1
       outputs:
         - false
     - inputs:

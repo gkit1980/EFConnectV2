@@ -9,4 +9,4 @@ action:
   condition:
     FeelConditionRule:
       expression: >-
-        element('policy.insured.person-objects~person.man-id') != '-1'
+        element('policy.insured.person-objects~person.man-id') != -1

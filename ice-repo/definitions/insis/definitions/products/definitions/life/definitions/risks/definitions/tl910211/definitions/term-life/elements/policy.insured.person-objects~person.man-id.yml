@@ -1,4 +1,4 @@
 element:
   title: policy insured object
-  type: text
+  type: integer
   defaultValue: -1

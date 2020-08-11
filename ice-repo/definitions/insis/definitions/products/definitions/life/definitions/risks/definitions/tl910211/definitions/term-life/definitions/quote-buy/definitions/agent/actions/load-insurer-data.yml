@@ -3,6 +3,7 @@ action:
     - InsisArrayIterationIntegrationExecutionRule:
         integration: load-insurer-data
         arrayElement: policy.insured.person-objects
+        conditiondt: load-insurer-data.condition
   trigger:
     - PageTriggerRule:
         enter:
@@ -10,7 +11,3 @@ action:
     - IceLifecycleEventTriggerRule:
         event: ACTIVE_INTEGRATION_SUCCESS
         payload: 910211.risks.life.insis-policy.get-policy.init
-  # condition:
-  #   DtConditionRule:
-  #     dt: load-insurer-data.condition
-  #     output: condition
