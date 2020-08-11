@@ -1,0 +1,22 @@
+list:
+  items:
+    - value: INIFEE
+      label_en: Initial Issue Fee
+      label_de: Initial Issue Fee
+    - value: IPT_TAX
+      label_en: IPT (Insurance Premium Tax)
+      label_de: IPT (Insurance Premium Tax)
+    - value: MREASS_FEE
+      label_en: Reassessment fee
+      label_de: Reassessment fee
+    - value: REINST_TAX
+      label_en: Reinstatement fee
+      label_de: Reinstatement fee
+  type: string
+  additionals:
+    label_en:
+      label: label_en
+      type: string
+    label_de:
+      label: label_de
+      type: string
