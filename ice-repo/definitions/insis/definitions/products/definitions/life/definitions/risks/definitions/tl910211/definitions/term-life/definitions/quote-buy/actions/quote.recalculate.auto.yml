@@ -8,9 +8,9 @@ action:
           - 1.quote.people
   execution:
     - IntegrationExecutionRule:
-        integration: 910211.risks.life.insis-policy.engagement-quote.register
+        integration: 910211.risks.life.insis-policy.engagement-quote.modify
     - IntegrationExecutionRule:
         integration: 910211.risks.life.insis-policy.get-premiums
   condition:
     InsisCovers910211ConditionRule:
-      type: calculate
+      type: recalculate

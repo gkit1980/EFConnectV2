@@ -2,6 +2,9 @@ action:
   execution:
     - IntegrationExecutionRule:
         integration: make-first-person-additional
+    - ResetElementValueExecutionRule:
+        elements:
+          - policy.contract.policy-id
     - InsisResetElementOrElementsInsideNamespaceExecutionRule:
         elementOrNamespace: policy.insured.person-objects~cover
         index: 0

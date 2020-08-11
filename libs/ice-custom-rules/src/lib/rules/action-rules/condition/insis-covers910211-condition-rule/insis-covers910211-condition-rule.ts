@@ -15,15 +15,34 @@ export class InsisCovers910211ConditionRule extends ConditionRule {
     const tpdaccdCover = getElement('policy.insured.person-objects~cover.tpdaccd.active');
     const deathAccCover = getElement('policy.insured.person-objects~cover.death-acc.active');
 
+    const triggerType = this.getParam('type', 'calculate');
+
+    const policyIDElement = getElement('policy.contract.policy-id');
+    const policyStateElement = getElement('policy.status.policy-status');
+    const policyID = getIndexValue(policyIDElement, 0);
+    const policyState = getIndexValue(policyStateElement, 0);
+
+    let triggerPolicyConditions = true;
+    if (triggerType === 'calculate') {
+      triggerPolicyConditions = policyID == null && policyState === -4;
+    } else if (triggerType === 'recalculate') {
+      triggerPolicyConditions = policyID != null && policyState === -4;
+    }
+
     const insuredObjectsSize = get(insuredObjects.getValue(), 'values.0.value.length');
 
-    if (insuredObjectsSize === 1 && getIndexValue(deathAnyCover, 0)) return true;
-    if (
-      insuredObjectsSize === 2 &&
-      (getIndexValue(tpdaccdCover, 1) || getIndexValue(deathAccCover, 1))
-    )
-      return true;
-
+    if (triggerPolicyConditions && getIndexValue(deathAnyCover, 0)) {
+      if (insuredObjectsSize === 1) {
+        return true;
+      } else if (insuredObjectsSize === 2) {
+        return (
+          (getIndexValue(tpdaccdCover, 0) && getIndexValue(tpdaccdCover, 1)) ||
+          (getIndexValue(deathAccCover, 0) && getIndexValue(deathAccCover, 1))
+        );
+      } else {
+        return false;
+      }
+    }
     return false;
   }
 }

@@ -20,6 +20,9 @@ integration:
             - payload: manId
               element: policy.insured.person-objects~person.man-id
 
+            - payload: egn
+              element: policy.insured.person-objects~person.pid
+
             - payload: gname
               element: policy.insured.person-objects~person.first-name
 

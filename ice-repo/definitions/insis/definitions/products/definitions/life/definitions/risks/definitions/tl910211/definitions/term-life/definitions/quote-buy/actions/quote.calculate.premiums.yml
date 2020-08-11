@@ -1,7 +1,0 @@
-action:
-  title: calls the quick quote calculation for insis
-  execution:
-    - IntegrationExecutionRule:
-        integration: 910211.risks.life.insis-policy.engagement-quote.register
-    - IntegrationExecutionRule:
-        integration: 910211.risks.life.insis-policy.get-premiums
