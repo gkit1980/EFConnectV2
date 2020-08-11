@@ -3,11 +3,10 @@
     <h1 class="heading u-mb-3">Purchase <span>Complete</span></h1>
     <p class="mat-caption u-mb-4">You will recieve an e-mail confirmation shortly</p>
 
-    <button mat-flat-button color="primary">VIEW POLICY</button>
+    <button (click)="navigateToPolicyDetails()" mat-flat-button color="primary">VIEW POLICY</button>
   </div>
 
   <ng-container [ngSwitch]="product">
-
     <div *ngSwitchCase="'motor'" class="car-animation appear-animation">
       <div class="car-main">
         <div class="car to-init-position-animation"></div>
@@ -18,12 +17,9 @@
 
     <div *ngSwitchCase="'life'" class="life-animation">
       <div class="shield appear-animation"></div>
-      <div class="family-picture">
-      </div>
-      <div class="background-blob appear-animation">
-      </div>
+      <div class="family-picture"></div>
+      <div class="background-blob appear-animation"></div>
       <div class="floor appear-animation"></div>
     </div>
-
   </ng-container>
 </div>
