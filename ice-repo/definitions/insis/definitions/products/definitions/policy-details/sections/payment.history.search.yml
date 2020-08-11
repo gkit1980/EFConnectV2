@@ -1,0 +1,35 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: payment.search.from
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: payment.search.to
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: payment.search.status
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: payment.search.payment-method
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: payment.search.filter
+                css: ''
+                align: center
+            gap: 20px
+      behaviourForEmptyRows: render

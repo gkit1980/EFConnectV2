@@ -1,0 +1,55 @@
+@import '~@angular/material/theming';
+
+@mixin insis-payments-section-mixin($theme) {
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+  $primary: map-get($theme, primary);
+  $colors: map-get($theme, colors);
+
+  $textColor: mat-color($foreground, default-contrast);
+  $backgroundColor: lighten(map-get($colors, 'background'), 2);
+  $arrowBordersStyle: 2px solid rgb(13, 120, 192);
+  $arrowSize: 15px;
+
+  insis-payments {
+
+    summary::after {
+      content: '';
+      display: block;
+
+      margin-top: -($arrowSize / 2);
+
+      width: $arrowSize;
+      height: $arrowSize;
+
+      transform: rotate(225deg);
+
+      border-left: $arrowBordersStyle;
+      border-top: $arrowBordersStyle;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details {
+      background-color: $backgroundColor;
+      border: 1px solid black;
+      padding: 15px;
+      border-radius: 16px;
+
+      section span {
+        display: block;
+      }
+    }
+
+    details[open] > summary::after {
+      transform: rotate(45deg) translateY($arrowSize / 2) translateX($arrowSize / 2);
+    }
+
+    details[open] > summary {
+      margin-bottom: 20px;
+    }
+
+  }
+}

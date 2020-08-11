@@ -5,3 +5,5 @@ element:
     FullNameMirrorRule:
       firstName: policy.insured.objects~person-data.first-name
       lastName: policy.insured.objects~person-data.last-name
+  label:
+    NoLabelRule: {}

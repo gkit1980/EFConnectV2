@@ -1,0 +1,27 @@
+section:
+  component:
+    IceArrayFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.objects~type
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.objects~person-data.full-name
+            gap: 5px
+            css: u-text-medium u-mb-4
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                sections:
+                  - name: payment.insured-covers
+            css: ''
+      arrayElement: policy.insured.objects
+      behaviourForEmptyRows: render

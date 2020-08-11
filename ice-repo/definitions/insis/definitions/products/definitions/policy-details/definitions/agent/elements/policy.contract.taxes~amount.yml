@@ -1,6 +1,5 @@
 element:
-  type: currency
-  title: Total amount to pay
+  type: text
   viewMode:
     StaticViewModeRule:
       viewMode: output

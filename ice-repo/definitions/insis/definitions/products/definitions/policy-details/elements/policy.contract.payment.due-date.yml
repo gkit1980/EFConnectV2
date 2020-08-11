@@ -1,0 +1,5 @@
+element:
+  type: date
+  mirror:
+    ExpressionMirrorRule:
+      expression: date('01.' + policy.contract.payment.due-month)

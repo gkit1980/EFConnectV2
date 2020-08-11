@@ -1,0 +1,64 @@
+label: InsisPaymentsSection
+component: InsisPaymentsSection
+description: >
+  A section that contains information for premiums, taxes and fees, discounts in policy details page.
+
+params:
+  expanded:
+    label: Is panel expanded
+    required: false
+    type: boolean
+    info: >
+      Determinates whatever panel is expanded or collapsed. When expanded it shows all taxes, discounts, loading, etc..., otherwise they are hidden and only sum that needs to be paid is displayed
+  paymentDurationElement:
+    label: Payment duration element
+    required: true
+    type: element
+    info: >
+      Should be element that has payment duration.
+      This element should have viewmode output
+  installmentsElement:
+    label: Installments element
+    required: true
+    type: element
+    info: >
+      Should be element that contains how ofter insurer pays. This element should have viewmode output
+  totalElement:
+    label: Total sum element
+    required: true
+    type: element
+    info: >
+      Should be element that contains how much insured would pay, whole sum. This element should have viewmode output
+  installmentAmountElement:
+    label: Installment amount element
+    required: true
+    type: element
+    info: >
+      Should be element that how much insured would pay for a period of time. This element should have viewmode output
+  nextPaymentDateElement:
+    label: Next payment date element
+    required: true
+    type: element
+    info: >
+      Should be element that shows when next payment is due. This element should have viewmode output
+  insuredsSection:
+    label: Section for insureds
+    required: true
+    type: section
+  taxesAndFeesSection:
+    label: Section for taxes and fees
+    required: true
+    type: section
+  paymentPlanLabel:
+    label: Payment plan text
+    required: false
+    type: resourceKey
+  taxesAndFeesResourceKey:
+    label: Taxes and fees label
+    required: false
+    type: resourceKey
+  css:
+    label: css class
+    required: false
+    type: texts
+    info: CSS class that will be added to the section

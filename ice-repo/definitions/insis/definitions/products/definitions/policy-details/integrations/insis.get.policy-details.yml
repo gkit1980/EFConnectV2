@@ -10,8 +10,6 @@ integration:
         - mappings:
             - param: POLICY_NUMBER
               dynid: true
-            # - param: POLICY_NUMBER
-            #   value: 100000046346
       in:
         - mappings:
             - element: policy.contract.product-code
@@ -41,9 +39,9 @@ integration:
             - element: policy.contract.policy-name
               payload: policyName
             - element: policy.contract.payment.tax-value
-              payload: policyAnnexes[0].installments[0].amntCurrency
+              payload: 'policyAnnexes[0].installments[0].amntCurrency'
             - element: policy.insured.currency
-              payload: policyAnnexes[0].installments[0].currency
+              payload: 'policyAnnexes[0].installments[0].currency'
         - fromIdx:
             array: 'payload.policyAnnexes[0].insuredObjects'
           toIdx:
@@ -56,7 +54,6 @@ integration:
             - element: policy.insured.objects~person-data.accident
               payload: >-
                 policyAnnexes[0].insuredObjects[n].insuredEntity.oAccinsured.accinsType
-
             - element: policy.insured.objects~person-data.first-name
               payload: >-
                 policyAnnexes[0].insuredObjects[n].insuredEntity.oAccinsured.pPeopleComplex.gname
@@ -78,6 +75,7 @@ integration:
             array: 'payload.policyAnnexes[0].insuredObjects'
             fromIdx:
               array: covers
+              condition: premium != 0
           toIdx:
             array: policy.insured.objects
             useSourceIndex: true
@@ -93,3 +91,14 @@ integration:
               payload: 'policyAnnexes[0].insuredObjects[n].covers[n].insuredValue'
             - element: policy.insured.objects~covers~code
               payload: 'policyAnnexes[0].insuredObjects[n].covers[n].coverType'
+        - fromIdx:
+            array: 'payload.policyAnnexes[0].taxes'
+            condition: taxAmnt != 0
+          toIdx:
+            array: policy.contract.taxes
+            useSourceIndex: true
+          mappings:
+            - element: policy.contract.taxes~amount
+              payload: 'policyAnnexes[0].taxes[n].taxAmnt'
+            - element: policy.contract.taxes~type
+              payload: 'policyAnnexes[0].taxes[n].taxType'

@@ -1,0 +1,29 @@
+section:
+  component:
+    InsisDatagridSection:
+      grid:
+        rows:
+          - cols:
+              - size: 15%
+                caption: elements.payment.objects.items.payment-date.label
+                elements:
+                  - name: payment.objects~payment-date
+                css: ''
+              - size: 15%
+                caption: elements.payment.objects.items.status.label
+                elements:
+                  - name: payment.objects~status
+                css: ''
+              - size: 15%
+                caption: elements.payment.objects.items.amount.label
+                elements:
+                  - name: payment.objects~amount
+                css: ''
+              - size: auto
+                caption: elements.payment.objects.items.method.label
+                elements:
+                  - name: payment.search.payment-method
+                css: ''
+      showPagination: false
+      showFilter: false
+      arrayElement: payment.objects

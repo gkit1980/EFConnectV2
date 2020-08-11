@@ -1,0 +1,34 @@
+section:
+  component:
+    IceArrayFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: 33.33
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.objects~covers~code
+              - size: 33.33
+                size.xs: auto
+                size.sm: auto
+                elements: []
+              - size: calc(33.33% - 130px)
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.objects~covers~premium
+                align: ''
+                css: text-align-right
+              - size: 123px
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy-details.per-installment-label
+                offset: ''
+                css: u-ml-1
+            css: underscore u-mb-2
+            align: space-between
+      arrayElement: policy.insured.objects~covers
+      behaviourForEmptyRows: render
+      css: u-mb-4 u-ml-2

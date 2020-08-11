@@ -1,0 +1,9 @@
+element:
+  type: text
+  label:
+    NoLabelRule: {}
+  component:
+    StaticComponentRule:
+      component:
+        InsisCurrency:
+          currencyElementName: policy.insured.currency

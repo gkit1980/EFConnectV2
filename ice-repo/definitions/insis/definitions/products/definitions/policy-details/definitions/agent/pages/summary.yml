@@ -17,7 +17,7 @@ page:
                     css: card
                   - size: calc(33%-20px)
                     sections:
-                      - name: payment-summary
+                      - name: payment.summary
                     css: card
                   - size: calc(33%-20px)
                     sections:

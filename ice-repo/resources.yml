@@ -704,8 +704,8 @@ entries:
     payment:
       title:
         label:
-          - en: Payment details
-            de: Payment details
+          - en: Past payments
+            de: Past payments
       activity:
         to-details:
           label:
@@ -715,6 +715,45 @@ entries:
           label:
             - en: Details
               de: Details
+      objects:
+        items:
+          status:
+            label:
+              - en: Status
+                de: Status
+          payment-date:
+            label:
+              - en: Payment date
+                de: Payment date
+          amount:
+            label:
+              - en: Amount
+                de: Amount
+          method:
+            label:
+              - en: Method
+                de: Method
+      search:
+        from:
+          label:
+            - en: From
+              de: From
+        to:
+          label:
+            - en: To
+              de: To
+        status:
+          label:
+            - en: Status
+              de: Status
+        payment-method:
+          label:
+            - en: Payment method
+              de: Payment method
+        filter:
+          label:
+            - en: Filter
+              de: Filter
     address:
       title:
         label:
@@ -1495,6 +1534,10 @@ entries:
           label:
             - en: Product
               de: Product
+        taxes:
+          label:
+            - en: Taxes and fees
+              de: Taxes and fees
       participants:
         holder:
           person:
@@ -2145,6 +2188,11 @@ entries:
                 label:
                   - en: Client
                     de: Client
+    policy-details:
+      per-installment-label:
+        label:
+          - en: ' (per installment)'
+            de: ' (per installment)'
   pagination:
     claims:
       - en: Claims
@@ -2176,9 +2224,9 @@ entries:
         - en: Please confirm
           de: Bitte bestätigen
       not_allowed_here:
-        - en: "'${value}' not allowed here"
+        - en: '''${value}'' not allowed here'
       regexp:
-        - en: "'${value}' does not matches regular expression ${regexp}"
+        - en: '''${value}'' does not matches regular expression ${regexp}'
       array:
         min:
           - en: 'must have at least ${min} entries'
@@ -2233,6 +2281,15 @@ entries:
       label:
         - en: Policy details
           de: Policy details
+      payment:
+        plan:
+          label:
+            - en: Payment plan
+              de: Payment plan
+          taxes-and-fees:
+            label:
+              - en: Taxes and fees
+                de: Taxes and fees
   pages:
     '1':
       quote:
@@ -2344,6 +2401,10 @@ entries:
         title:
           - en: Object and Covers
             de: Object and Covers
+      payments:
+        title:
+          - en: Payments
+            de: Payments
     header:
       agent:
         dashboard:

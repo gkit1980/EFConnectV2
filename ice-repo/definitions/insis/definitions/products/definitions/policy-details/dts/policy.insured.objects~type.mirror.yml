@@ -1,0 +1,20 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policy.insured.objects~person-data.accident
+  outputs:
+    - id: mirror
+      type: string
+  rules:
+    - inputs:
+        - 1
+      outputs:
+        - Premiums Main insured -
+    - inputs:
+        - 2
+      outputs:
+        - Premiums Additional insured -
+    - inputs:
+        - '-'
+      outputs:
+        - null

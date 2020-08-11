@@ -18,6 +18,8 @@
 @import '../components/section-components/insis-chart/insis-chart.mixin';
 @import '../components/section-components/insis-datagrid-section/insis-datagrid-section.mixin';
 @import '../components/section-components/insis-policy-summary-section/insis-policy-summary-section.mixin.scss';
+@import '../components/section-components/insis-payments-section/insis-payments-section.component.scss';
+
 @import '../components/shared-components/insis-summary-section-detail-container/insis-summary-section-detail-container.scss';
 
 @import '../components/element-components/insis-image-button-component/insis-image-button.component.mixin.scss';
@@ -56,6 +58,7 @@
   @include insis-markdown-output-element-mixin($theme);
   @include insis-google-map-mixin($theme);
   @include insis-premium-summary-selection-mixin($theme);
+  @include insis-payments-section-mixin($theme);
   @include insis-chip-mixin($theme);
   @include insis-alert-mixin($theme);
   @include insis-null-output-mixin($theme);

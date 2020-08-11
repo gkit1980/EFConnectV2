@@ -1,0 +1,19 @@
+<details [ngClass]="css">
+  <summary fxLayout="row" fxLayoutAlign="space-between center">
+    <div class="mat-headline" style="margin: 0">
+      {{ paymentPlanLabel }}
+    </div>
+    <ice-element class="output-element" [section]="section" [elementName]="paymentDurationElement"></ice-element>
+    <ice-element class="output-element" [section]="section" [elementName]="installmentsElement"></ice-element>
+    <ice-element class="output-element" [section]="section" [elementName]="totalElement"></ice-element>
+    <ice-element class="output-element" [section]="section" [elementName]="installmentAmountElement"></ice-element>
+    <ice-element class="output-element" [section]="section" [elementName]="nextPaymentDateElement"></ice-element>
+  </summary>
+  <section>
+    <ice-section [section]="insuredsSection"></ice-section>
+    <span class="u-text-medium u-mb-4">
+      {{ taxesAndFeesLabel }}
+    </span>
+    <ice-section [section]="taxesAndFeesSection"></ice-section>
+  </section>
+</details>

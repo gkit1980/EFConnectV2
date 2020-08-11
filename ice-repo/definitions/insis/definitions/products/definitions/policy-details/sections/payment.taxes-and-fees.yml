@@ -1,0 +1,32 @@
+section:
+  component:
+    IceArrayFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: 33.33
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.contract.taxes~type
+              - size: 33.33
+                size.xs: auto
+                size.sm: auto
+              - size: calc(33.33% - 130px)
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.contract.taxes~amount
+                align: ''
+                css: text-align-right
+              - size: 123px
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy-details.per-installment-label
+                css: u-ml-1
+            css: underscore u-mb-2 u-ml-2
+            align: space-between
+      arrayElement: policy.contract.taxes
+      behaviourForEmptyRows: render
+      css: null
