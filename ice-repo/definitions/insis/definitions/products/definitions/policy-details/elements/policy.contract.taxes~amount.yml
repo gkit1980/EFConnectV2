@@ -7,3 +7,6 @@ element:
       component:
         InsisCurrency:
           currencyElementName: policy.insured.currency
+  viewMode:
+    StaticViewModeRule:
+      viewMode: output

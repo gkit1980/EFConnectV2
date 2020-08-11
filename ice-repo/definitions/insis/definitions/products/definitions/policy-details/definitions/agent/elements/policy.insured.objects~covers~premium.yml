@@ -1,6 +1,0 @@
-element:
-  type: currency
-  pages:
-    payments:
-      label:
-        NoLabelRule: {}

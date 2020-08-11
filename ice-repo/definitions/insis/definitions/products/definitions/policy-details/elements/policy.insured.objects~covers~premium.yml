@@ -1,8 +1,14 @@
 element:
-  type: currency
-  viewMode: output
+  type: text
+  pages:
+    payments:
+      label:
+        NoLabelRule: {}
+  viewMode:
+    StaticViewModeRule:
+      viewMode: output
   component:
     StaticComponentRule:
       component:
         InsisCurrency:
-          currencyElementName: policy.insured.objects~covers~currency
+          currencyElementName: policy.insured.currency

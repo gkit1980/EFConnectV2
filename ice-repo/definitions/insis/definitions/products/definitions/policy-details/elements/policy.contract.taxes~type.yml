@@ -1,4 +1,14 @@
 element:
   type: text
+  viewMode:
+    StaticViewModeRule:
+      viewMode: output
+  component:
+    StaticComponentRule:
+      component:
+        IceDropdown: {}
+  values:
+    ListValuesRule:
+      list: insis.tax.items
   label:
     NoLabelRule: {}

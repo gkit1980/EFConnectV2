@@ -1,0 +1,42 @@
+page:
+  validation: {}
+  component: InsisOneLevelTabsNavigationPage
+  css: align-navigation-start
+  sections:
+    - header
+    - component:
+        IceFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    sections:
+                      - name: payment.plan
+                css: u-mb-4
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: payment.title
+                css: mat-display-1 u-mb-4
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    sections:
+                      - name: payment.history.search
+                css: u-mb-3
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    sections:
+                      - name: payment.history.grid
+          behaviourForEmptyRows: render
+          css: u-mt-4
+  label:
+    ResourcePageLabelRule:
+      navigationTitleKey: pages.policy-details.payments.title
