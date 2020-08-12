@@ -8,7 +8,7 @@ import {
 import { get } from 'lodash';
 
 export enum Conditions {
-  LESS_THAN = 'leser',
+  LESS_THAN = 'lesser',
   EQUALS = 'equals',
   GREATER_THAN = 'greater',
 }

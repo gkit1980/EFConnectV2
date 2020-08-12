@@ -7,3 +7,10 @@ element:
           width: 800px
           section: clients.popup
           actionName: close-client-popup
+  viewMode:
+    InsisChangeViewModeBasedOnArrayLengthRule:
+      array: policy.insured.person-objects
+      condition: lesser
+      conditionValue: '2'
+      viewMode: default
+      elseViewMode: hidden
