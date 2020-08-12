@@ -10,6 +10,9 @@ dt:
     - label: new label
       default: ''
       id: dynId
+    - label: pid
+      type: string
+      id: pid
   rules:
     - inputs:
         - 910211
@@ -17,6 +20,7 @@ dt:
       outputs:
         - insis.products.life.risks.tl910211.term-life.quote-buy.agent/1.quote.people
         - person.policies~policy-id
+        - person.pid
     - inputs:
         - 910211
         - 'Application'
@@ -24,9 +28,11 @@ dt:
         - >-
           insis.products.life.risks.tl910211.term-life.quote-buy.agent/2.application.details
         - person.policies~policy-id
+        - person.pid
     - inputs:
         - 910211
         - 'Policy'
       outputs:
         - insis.products.policy-details.agent/summary
         - person.policies~policy-id
+        - person.pid
