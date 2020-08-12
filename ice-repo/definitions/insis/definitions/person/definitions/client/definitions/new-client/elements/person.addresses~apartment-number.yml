@@ -1,8 +1,5 @@
 element:
   type: text
-  viewMode:
-    StaticViewModeRule:
-      viewMode: required
   component:
     StaticComponentRule:
       component:

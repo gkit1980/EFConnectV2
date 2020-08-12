@@ -3,3 +3,7 @@ element:
   viewMode:
     StaticViewModeRule:
       viewMode: required
+  component:
+    StaticComponentRule:
+      component:
+        IceDropdown: {}

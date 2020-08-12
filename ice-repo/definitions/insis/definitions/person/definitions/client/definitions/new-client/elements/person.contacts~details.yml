@@ -6,3 +6,7 @@ element:
   label:
     ResourceLabelRule:
       key: elements.new-client.contact.phone-number.label
+  component:
+    StaticComponentRule:
+      component:
+        IceTextInput: {}

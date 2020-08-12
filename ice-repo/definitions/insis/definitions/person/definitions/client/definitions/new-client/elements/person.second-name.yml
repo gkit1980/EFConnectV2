@@ -2,4 +2,10 @@ element:
   type: text
   viewMode:
     StaticViewModeRule:
-      viewMode: default
+      viewMode: required
+  component:
+    StaticComponentRule:
+      component:
+        IceTextInput: {}
+  values:
+    StaticValuesRule: {}

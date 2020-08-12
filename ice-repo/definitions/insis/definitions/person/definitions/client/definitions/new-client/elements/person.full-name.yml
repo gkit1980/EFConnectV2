@@ -3,8 +3,7 @@ element:
   component:
     StaticComponentRule:
       component:
-        IceTextInput:
-          keyboardType: text
+        IceTextInput: {}
   values:
     StaticValuesRule: {}
   label:

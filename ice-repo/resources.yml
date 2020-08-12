@@ -2602,7 +2602,7 @@ entries:
         iban-selection:
           empty:
             - en: Use a different bank account
-              de: policy.participants.payor.iban-selection.empty
+              de: Use a different bank account
       holder:
         person:
           full-name:
