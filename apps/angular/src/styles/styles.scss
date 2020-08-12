@@ -300,3 +300,16 @@ confirmation-dialog-layout {
     display: none;
   }
 }
+.grid-objects {
+  .ice-array {
+    display: flex;
+
+    .ice-array-item:nth-of-type(n + 2) {
+      display: flex;
+      white-space: break-spaces;
+      &::before {
+        content: ', ';
+      }
+    }
+  }
+}

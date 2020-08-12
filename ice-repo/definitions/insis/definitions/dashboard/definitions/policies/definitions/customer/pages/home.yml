@@ -122,10 +122,10 @@ page:
           grid:
             rows:
               - cols:
-                  # - caption: null
-                  #   size: 65px
-                  #   elements:
-                  #     - name: expired-policies~more-actions
+                  - caption: null
+                    size: 65px
+                    elements:
+                      - name: expired-policies~more-actions
                   - caption: elements.expired-policies.items.contract.policy-id.label
                     size: 200px
                     css: label-link u-ml-2
@@ -149,6 +149,7 @@ page:
                     size: auto
                     elements:
                       - name: expired-policies~insured_objects
+                    css: grid-objects
       viewMode:
         ConditionalSectionViewModeRule:
           conditionElement: activity.show-expired-policies
