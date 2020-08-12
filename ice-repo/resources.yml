@@ -1637,6 +1637,9 @@ entries:
             label:
               - en: Select a bank account to use for insurance payment
                 de: Select a bank account to use for insurance payment
+            empty:
+              - en: Use a different bank account
+                de: Use a different bank account
           last-name:
             label:
               - en: Last name
