@@ -5,3 +5,5 @@ action:
   trigger:
     - IceLifecycleEventTriggerRule:
         event: ICE_CONTEXT_DEACTIVATED
+    - IceLifecycleEventTriggerRule:
+        event: ICE_APP_UNLOAD
