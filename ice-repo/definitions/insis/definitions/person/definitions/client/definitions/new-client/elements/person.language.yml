@@ -2,4 +2,4 @@ element:
   type: text
   viewMode:
     StaticViewModeRule:
-      viewMode: required
+      viewMode: default

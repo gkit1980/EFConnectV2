@@ -5,3 +5,6 @@ action:
     - NavigateToDefinitionExecutionRule:
         definition: insis.dashboard.clients.agent
         page: home
+  condition:
+    InsisIsPageValidConditionRule:
+      page: new-client

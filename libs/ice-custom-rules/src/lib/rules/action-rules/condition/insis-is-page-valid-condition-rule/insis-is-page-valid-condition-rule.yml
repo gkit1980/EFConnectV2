@@ -1,0 +1,8 @@
+implementations:
+  InsisIsPageValidConditionRule:
+    description: >
+      Check if page
+    params:
+      page:
+        type: page
+        required: true

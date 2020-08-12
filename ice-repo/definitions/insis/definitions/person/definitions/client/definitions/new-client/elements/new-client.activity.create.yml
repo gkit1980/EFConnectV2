@@ -13,3 +13,6 @@ element:
   mirror:
     DtMirrorRule:
       dt: new-client.create.defaultvalue
+  change:
+    - InsisValidatePageExecutionRule:
+        what: currentPage

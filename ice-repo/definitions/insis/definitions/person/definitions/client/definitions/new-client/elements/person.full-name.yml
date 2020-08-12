@@ -11,4 +11,4 @@ element:
       key: elements.new-client.company-data.name.label
   viewMode:
     StaticViewModeRule:
-      viewMode: required
+      viewMode: default
