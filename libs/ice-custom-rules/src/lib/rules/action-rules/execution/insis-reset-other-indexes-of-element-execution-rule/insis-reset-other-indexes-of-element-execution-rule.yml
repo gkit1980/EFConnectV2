@@ -1,0 +1,29 @@
+implementations:
+  InsisResetOtherIndexesOfElementExecutionRule:
+    description: >-
+      resets all other indexes of an element other than the one that has triggered the execution rule
+    params:
+      element:
+        label: Element
+        type: element
+        info: Array element that will be reset
+        required: true
+
+    icel: >
+      ```
+        element:
+          type: boolean
+          label:
+            NoLabelRule: {}
+          component:
+            StaticComponentRule:
+              component:
+                IceRadiobuttonGroup: {}
+          values:
+            StaticValuesRule:
+              values:
+                - 'true'
+          change:
+            - InsisResetOtherIndexesOfElementExecutionRule:
+                element: client.list~selected
+      ```

@@ -9,7 +9,7 @@ section:
                 caption: ''
                 elements:
                   - name: client.list~selected
-                css: u-ml-5
+                css: u-ml-5 hide-label-of-radio-box
               - size: auto
                 caption: elements.client.list.items.name.label
                 elements:

@@ -5,4 +5,11 @@ element:
   component:
     StaticComponentRule:
       component:
-        IceCheckbox: {}
+        IceRadiobuttonGroup: {}
+  values:
+    StaticValuesRule:
+      values:
+        - 'true'
+  change:
+    - InsisResetOtherIndexesOfElementExecutionRule:
+        element: client.list~selected

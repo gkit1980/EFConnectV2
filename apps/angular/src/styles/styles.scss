@@ -291,3 +291,12 @@ confirmation-dialog-layout {
 .underscore {
   border-bottom: 1px solid rgb(144, 144, 144);
 }
+
+.hide-label-of-radio-box {
+  mat-label {
+    display: none !important;
+  }
+  .mat-radio-label-content {
+    display: none;
+  }
+}
