@@ -1,0 +1,8 @@
+action:
+  execution:
+    - NavigateToDefinitionExecutionRule:
+        definition: insis.dashboard.products.customer
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - activity.get-more-insurance

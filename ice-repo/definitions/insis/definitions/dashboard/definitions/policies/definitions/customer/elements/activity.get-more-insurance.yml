@@ -6,6 +6,3 @@ element:
         IceButton:
           themeColor: primary
           variant: default
-  defaultValue:
-    StaticValueRule:
-      value: /ice/insis.dashboard.insurances/home
