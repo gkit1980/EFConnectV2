@@ -131,10 +131,10 @@ page:
           grid:
             rows:
               - cols:
-                  - caption: null
-                    size: 65px
-                    elements:
-                      - name: expired-policies~more-actions
+                  # - caption: null
+                  #   size: 65px
+                  #   elements:
+                  #     - name: expired-policies~more-actions
                   - caption: elements.expired-policies.items.contract.policy-id.label
                     size: 200px
                     css: label-link u-ml-2

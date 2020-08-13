@@ -31,7 +31,6 @@ integration:
       in:
         - fromIdx:
             array: payload.rows
-            condition: is_expired == 0
           toIdx:
             array: datamodel.expired-policies
             append: true
