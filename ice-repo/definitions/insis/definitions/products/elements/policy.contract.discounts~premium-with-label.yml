@@ -1,0 +1,8 @@
+element:
+  type: currency
+  mirror:
+    CopyValueMirrorRule:
+      originElement: policy.contract.discounts~amount
+  viewMode:
+    StaticViewModeRule:
+      viewMode: output

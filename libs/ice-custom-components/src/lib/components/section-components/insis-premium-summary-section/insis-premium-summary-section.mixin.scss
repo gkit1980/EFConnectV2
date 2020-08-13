@@ -90,6 +90,7 @@
 
     .insis-summary-section-detail-container {
       width: 100%;
+      font-size: 14px;
 
       ice-element {
         width: 100%;
@@ -98,6 +99,10 @@
       .ice-output {
         display: flex;
         justify-content: space-between;
+      }
+
+      h3 {
+        font-size: 14px;
       }
     }
 

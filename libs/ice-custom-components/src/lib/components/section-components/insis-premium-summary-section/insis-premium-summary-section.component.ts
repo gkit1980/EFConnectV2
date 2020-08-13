@@ -31,7 +31,7 @@ export class InsisPremiumSummarySection extends SectionComponentImplementation i
   }
 
   get taxElements(): string[] {
-    return this.getElements('taxesElements');
+    return this.getElements('taxesAndFeesElements');
   }
 
   get discountElements(): string[] {
@@ -158,40 +158,22 @@ export class InsisPremiumSummarySection extends SectionComponentImplementation i
 
   getArrayItems(name: string): any[] {
     const items = [];
-    forEach(this.iceModel.elements[name].getValue().values, (value) =>
-      items.push({ index: value.index })
-    );
+    forEach(this.iceModel.elements[name].getValue().values, (value) => {
+      const isVisible = value.value === 0 ? false : true;
+      items.push({ index: value.index, isVisible: isVisible });
+    });
+
     return items;
   }
 
-  areSomeElementsVisible(elementNames: string[]): boolean {
-    if (!elementNames) return false;
-    const elements = this.getPageElements(elementNames);
-
-    if (elementNames.length !== 0 && elements.length === 0) {
-      return true;
-    }
-
-    let areNotInvisible = false;
-    forEach(elements, (element) => {
-      forEach(element.indexedElements, (indexedElement) => {
-        const viewMode = element.viewModeRule.getViewMode({
-          index: indexedElement.index,
-        });
-        const resolved = ViewModeRule.resolved[viewMode];
-        if (resolved['visible']) areNotInvisible = true;
-      });
-    });
-    return areNotInvisible;
+  elementValueIsNotZero(name: string): boolean {
+    const elementValue = this.iceModel.elements[name].getValue().values[0].value;
+    return elementValue === 0 ? false : true;
   }
 
   private getElements(paramName: string): string[] {
     return (
       get(this.recipe, ['component', InsisPremiumSummarySection.componentName, paramName]) || []
     );
-  }
-
-  private getPageElements(elementNames: string[]): PageElement[] {
-    return compact(map(elementNames, (elementName) => this.section.page.elements[elementName]));
   }
 }

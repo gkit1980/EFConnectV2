@@ -1,0 +1,11 @@
+element:
+  type: currency
+  mirror:
+    CopyValueMirrorRule:
+      originElement: policy.contract.taxes~amount
+  viewMode:
+    StaticViewModeRule:
+      viewMode: output
+  label:
+    DtResourceLabelRule:
+      dt: policy.contract.taxes~premium-with-label.label

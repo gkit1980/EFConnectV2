@@ -126,9 +126,8 @@ integration:
               payload: 'Policy.InsuranceConditions.Discounts.Discount[n].LumpSumDiscount'
         - fromIdx:
             array: payload.Policy.InsuranceConditions.Taxes.Tax
-            append: true
           toIdx:
-            array: datamodel.policy.contract.taxes
+            useSourceIndex: true
           mappings:
             - element: policy.contract.taxes~type
               payload: 'Policy.InsuranceConditions.Taxes.Tax[n].TaxType'

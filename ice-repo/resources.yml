@@ -2747,8 +2747,8 @@ entries:
           de: Premiums
     discounts:
       label:
-        - en: Taxes and fees
-          de: Taxes and fees
+        - en: Discounts
+          de: Discounts
     payment-frequency:
       annually:
         - en: Annually
@@ -2762,6 +2762,10 @@ entries:
       monthtly:
         - en: Monthly
           de: monatlich
+    taxes-and-fees:
+      label:
+        - en: Taxes and fees
+          de: Taxes and fees
   main-insured:
     info:
       text:

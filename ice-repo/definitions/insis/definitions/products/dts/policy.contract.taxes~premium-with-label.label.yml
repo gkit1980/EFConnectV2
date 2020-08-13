@@ -1,0 +1,31 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policy.contract.taxes~type
+  outputs:
+    - id: label_en
+      type: string
+    - label: new label
+      default: ''
+      id: label_de
+  rules:
+    - inputs:
+        - INIFEE
+      outputs:
+        - :Initial Issue Fee
+        - :Initial Issue Fee
+    - inputs:
+        - IPT_TAX
+      outputs:
+        - :Insurance Premium Tax
+        - :Insurance Premium Tax
+    - inputs:
+        - MREASS_FEE
+      outputs:
+        - :Reassessment fee
+        - :Reassessment fee
+    - inputs:
+        - REINST_TAX
+      outputs:
+        - :Reinstatement fee
+        - :Reinstatement fee

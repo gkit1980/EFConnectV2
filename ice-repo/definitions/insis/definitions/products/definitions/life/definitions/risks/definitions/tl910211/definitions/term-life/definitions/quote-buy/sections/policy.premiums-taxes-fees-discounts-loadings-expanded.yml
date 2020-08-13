@@ -14,18 +14,4 @@ section:
         - policy.insured.person-objects~cover.tpdill.premium-with-label
         - policy.insured.person-objects~cover.wop-total.premium-with-label
       taxesAndFeesElements:
-        - policy.insured.person-objects~cover.critic-ill.taxes
-        - policy.insured.person-objects~cover.death-acc.taxes
-        - policy.insured.person-objects~cover.death-any.taxes
-        - policy.insured.person-objects~cover.premret.taxes
-        - policy.insured.person-objects~cover.tpdaccd.taxes
-        - policy.insured.person-objects~cover.tpdill.taxes
-        - policy.insured.person-objects~cover.wop-total.taxes
-      discountElements:
-        - policy.insured.person-objects~cover.critic-ill.discounts
-        - policy.insured.person-objects~cover.death-acc.discounts
-        - policy.insured.person-objects~cover.death-any.discounts
-        - policy.insured.person-objects~cover.premret.discounts
-        - policy.insured.person-objects~cover.tpdaccd.discounts
-        - policy.insured.person-objects~cover.tpdill.discounts
-        - policy.insured.person-objects~cover.wop-total.discounts
+        - policy.contract.taxes~premium-with-label
