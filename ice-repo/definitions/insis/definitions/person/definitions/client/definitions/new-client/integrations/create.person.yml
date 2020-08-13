@@ -15,24 +15,26 @@ integration:
         - mappings:
             - payload: manComp
               value: 1
+
             - payload: birthDate
               element: person.birth-date
+
             - payload: gname
               element: person.given-name
+
             - payload: sname
               element: person.second-name
-            - payload: gname
+
+            - payload: fname
               element: person.family-name
+
             - payload: sex
               element: person.sex
+
             - payload: namePrefix
               element: person.name-prefix
+
             - payload: nameSuffix
-              element: person.name-prefix
-            - payload: nationality
-              element: person.nationality
-            - payload: homeCountry
-              element: person.home-country
-            - payload: language
-              element: person.language
+              element: person.name-suffix
+
       extends: create.client

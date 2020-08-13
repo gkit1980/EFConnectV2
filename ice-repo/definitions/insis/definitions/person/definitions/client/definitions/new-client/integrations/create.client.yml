@@ -12,41 +12,71 @@ integration:
       dateFormat: 'YYYY-MM-DDT00:00:00+00:00'
       ignoreNull: true
       out:
+        - mappings:
+            - elemenet: person.industry-code
+              payload: industryCode
+
+            - element: person.sub-industry-code
+              payload: subIndustryCode
+
+            - payload: homeCountry
+              element: person.home-country
+
+            - payload: nationality
+              element: person.nationality
+
+            - payload: language
+              element: person.language
         - fromIdx:
             index: '[0]'
           mappings:
             - payload: 'addresses[0].addressType'
               element: person.addresses~address-type
+
             - payload: 'addresses[0].apartmentNumber'
               element: person.addresses~apartment-number
+
             - payload: 'addresses[0].blockNumber'
               element: person.addresses~block-number
+
             - payload: 'addresses[0].city'
               element: person.addresses~city
+
             - payload: 'addresses[0].countryCode'
               element: person.addresses~country-code
+
             - payload: 'addresses[0].stateName'
               element: person.addresses~state-name
+
             - payload: 'addresses[0].entranceNumber'
               element: person.addresses~entrance-number
+
             - payload: 'addresses[0].floorNumber'
               element: person.addresses~floor-number
+
             - payload: 'addresses[0].postCode'
               element: person.addresses~post-code
+
             - payload: 'addresses[0].regionName'
               element: person.addresses~region-name
+
             - payload: 'addresses[0].streetName'
               element: person.addresses~street-name
+
             - payload: 'addresses[0].streetNumber'
               element: person.addresses~street-number
+
             - payload: 'addresses[0].primaryFlag'
               value: 'Y'
+
         - fromIdx:
             index: '[0]'
           mappings:
             - payload: 'contacts[0].contactType'
               element: person.contacts~contact-type
+
             - payload: 'contacts[0].details'
               element: person.contacts~details
+
             - payload: 'contacts[0].primaryFlag'
               value: 'Y'

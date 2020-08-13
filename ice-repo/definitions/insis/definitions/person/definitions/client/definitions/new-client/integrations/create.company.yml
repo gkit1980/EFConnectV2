@@ -15,14 +15,13 @@ integration:
         - mappings:
             - payload: manComp
               value: 2
+
             - payload: name
               element: person.full-name
+
             - payload: compType
               element: person.company-type
-            - payload: homeCountry
-              element: person.home-country
-            - payload: nationality
-              element: person.nationality
-            - payload: language
-              element: person.language
+
+            - elemenet: person.birth-date
+              value: '2000-01-01'
       extends: create.client
