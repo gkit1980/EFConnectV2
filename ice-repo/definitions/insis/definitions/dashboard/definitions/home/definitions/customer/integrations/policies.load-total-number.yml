@@ -12,7 +12,7 @@ integration:
       out:
         - mappings:
             - principal: pid
-              param: PID
+              param: pid
       in:
         - fromIdx:
             array: payload.rows
