@@ -2,25 +2,23 @@ action:
   execution:
     - ResetElementValueExecutionRule:
         elements:
-          - clients
+          - policies
     - InsisResetDatastoreValueExecutionRule:
         paths:
-          - pagination.clients.page-index
-          - pagination.clients.offset
-          - pagination.clients.results-length
+          - pagination.active.page-index
+          - pagination.active.offset
+          - pagination.active.results-length
         defaultValue: 0
-        scopeToDefinition: false
         skipIfValueIsSet: true
+        scopeToDefinition: true
     - InsisResetDatastoreValueExecutionRule:
         paths:
-          - pagination.clients.page-size
-        defaultValue: 10
-        scopeToDefinition: false
+          - pagination.active.page-size
+        defaultValue: 9
         skipIfValueIsSet: true
+        scopeToDefinition: true
     - IntegrationExecutionRule:
-        integration: clients.load-search-criteria
-    - IntegrationExecutionRule:
-        integration: clients.search
+        integration: policies.active.load
   trigger:
     - IceLifecycleEventTriggerRule:
         event: ICE_CONTEXT_ACTIVATED

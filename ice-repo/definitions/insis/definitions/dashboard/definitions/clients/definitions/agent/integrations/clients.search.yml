@@ -16,9 +16,9 @@ integration:
             - param: MAN_COMP
               element: search.type
             - param: PAGE_SIZE
-              datastore: insis.dashboard.clients.agent.pagination.page-size
+              datastore: pagination.clients.page-size
             - param: OFFSET
-              datastore: insis.dashboard.clients.agent.pagination.offset
+              datastore: pagination.clients.offset
 
       in:
         - fromIdx:
@@ -39,4 +39,4 @@ integration:
               element: clients~view-more
         - mappings:
             - payload: 'TotalRowCount'
-              datastore: 'insis.dashboard.clients.agent.pagination.results-length'
+              datastore: 'pagination.clients.results-length'

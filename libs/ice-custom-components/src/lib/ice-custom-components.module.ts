@@ -67,6 +67,7 @@ import { InsisFistArrayItemSectionComponent } from './components/section-compone
 import { InsisPaymentsSection } from './components/section-components/insis-payments-section/insis-payments-section.components';
 import { InsisNullOutputComponent } from './components/element-components/insis-null-output-component/insis-null-output.component';
 import { InsisIBANOutputComponent } from './components/element-components/insis-iban-output-component/insis-iban-output.component';
+import { InsisPaginatorSectionComponent } from './components/section-components/insis-paginator-section/insis-paginator-section.component';
 
 /**
  * TIP: You will need to include in this array any new component you create.
@@ -86,6 +87,7 @@ export const iceCustomComponents = [
   InsisSimplePageComponent,
   InsisChartComponent,
   InsisDatagridSectionComponent,
+  InsisPaginatorSectionComponent,
   InsisFormFlexSectionComponent,
   InsisPolicySummarySectionComponent,
   InsisSummarySectionDetailContainer,

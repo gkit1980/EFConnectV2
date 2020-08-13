@@ -15,6 +15,3 @@ element:
     - DtNavigateToDefinitionExecutionRule:
         dt: navigate-to-new-policy
         definitionOutput: url
-    - ResetElementValueExecutionRule:
-        elements:
-          - new-policy

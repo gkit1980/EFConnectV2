@@ -4,30 +4,18 @@ integration:
       connectString: 'env:insis-db-url'
       username: 'env:insis-db-username'
       password: 'env:insis-db-password'
-      queryFileURL: data/policies.client.get-detailed.sql
-      queryType: JSON
+      queryFileURL: data/quotes.client.get.sql
+      queryType: SQL
   transformation:
     DefaultTransformationRule:
+      additional: insis
       out:
         - mappings:
-            - param: policy_no
-              value: ''
-            - param: policy_id
-              value: ''
-            - param: policy_name
-              value: ''
-            - param: insr_type
-              value: ''
-            - param: p_insr_end
-              value: ''
-            - param: policy_state
-              value: ''
-            - param: p_client
-              principal: pid
+            - principal: pid
+              param: PID
       in:
         - fromIdx:
             array: payload.rows
-            condition: policy_state_name !== 'Policy'
           mappings:
             - payload: rows.length
               element: unfinished-quotes.total-number

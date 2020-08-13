@@ -5,13 +5,15 @@ action:
           - clients
     - InsisResetDatastoreValueExecutionRule:
         paths:
-          - insis.dashboard.clients.agent.pagination.page-index
-          - insis.dashboard.clients.agent.pagination.offset
-          - insis.dashboard.clients.agent.pagination.results-length
+          - pagination.clients.page-index
+          - pagination.clients.offset
+          - pagination.clients.results-length
+        scopeToDefinition: false
         defaultValue: 0
     - InsisResetDatastoreValueExecutionRule:
         paths:
-          - insis.dashboard.clients.agent.pagination.page-size
+          - pagination.clients.page-size
+        scopeToDefinition: false
         defaultValue: 10
     - IntegrationExecutionRule:
         integration: clients.search

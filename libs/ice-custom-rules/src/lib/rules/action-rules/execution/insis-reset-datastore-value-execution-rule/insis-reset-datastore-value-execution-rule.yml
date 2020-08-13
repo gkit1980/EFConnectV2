@@ -7,7 +7,18 @@ implementations:
         label: Datastore paths
         type: texts
         required: true
+      scopeToDefinition:
+        label: Scope to definition
+        type: boolean
+        required: false
+        info: Add definition path in front of the path from paths param.
       defaultValue:
         label: Default value
         type: text
         required: false
+        info: If this value is not set, datastore is set to NULL value on provided path.
+      skipIfValueIsSet:
+        label: Skip if value is set
+        type: boolean
+        required: false
+        info: If set, this rule will not changed values in the datastore unless they are NULL.

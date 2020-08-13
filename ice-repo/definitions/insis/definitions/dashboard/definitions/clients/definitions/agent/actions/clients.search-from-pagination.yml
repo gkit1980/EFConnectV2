@@ -3,5 +3,9 @@ action:
     - ResetElementValueExecutionRule:
         elements:
           - clients
+          - search.fulltext
+          - search.id
+          - search.name
+          - search.type
     - IntegrationExecutionRule:
         integration: clients.search

@@ -3,7 +3,7 @@ dt:
   hitPolicy: F
   inputs:
     - label: pid
-      element: new-policy
+      element: activity.new-policy
   outputs:
     - label: url
       id: url
@@ -20,7 +20,7 @@ dt:
     - inputs:
         - '2012+4000'
       outputs:
-        - insis-policy.health.foreign-health-insurance.quote_buy.rrv-bundle    
+        - insis-policy.health.foreign-health-insurance.quote_buy.rrv-bundle
     - inputs:
         - '-'
       outputs:

@@ -101,6 +101,15 @@ page:
           viewMode: default
           elseViewMode: hidden
     - component:
+        InsisPaginatorSection:
+          paginationAction: policies.active.load-from-pagination
+          resultsLengthDatastorePath: pagination.active.results-length
+          pageSizeDatastorePath: pagination.active.page-size
+          offsetDatastorePath: pagination.active.offset
+          pageIndexDatastorePath: pagination.active.page-index
+          paginationObjectsKey: pagination.policies
+          paginationSeparatorKey: pagination.separator
+    - component:
         IceFlexSection:
           grid:
             rows:
@@ -150,6 +159,21 @@ page:
                     elements:
                       - name: expired-policies~insured_objects
                     css: grid-objects
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: activity.show-expired-policies
+          conditionValue: false
+          conditionViewMode: hidden
+          elseViewMode: output
+    - component:
+        InsisPaginatorSection:
+          paginationAction: policies.expired.load-from-pagination
+          resultsLengthDatastorePath: pagination.expired.results-length
+          pageSizeDatastorePath: pagination.expired.page-size
+          offsetDatastorePath: pagination.expired.offset
+          pageIndexDatastorePath: pagination.expired.page-index
+          paginationObjectsKey: pagination.policies
+          paginationSeparatorKey: pagination.separator
       viewMode:
         ConditionalSectionViewModeRule:
           conditionElement: activity.show-expired-policies

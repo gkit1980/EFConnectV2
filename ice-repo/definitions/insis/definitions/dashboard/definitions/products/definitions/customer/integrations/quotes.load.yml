@@ -12,16 +12,21 @@ integration:
         - mappings:
             - param: p_client
               principal: pid
+            - param: offset
+              datastore: pagination.quotes.offset
+            - param: page_size
+              datastore: pagination.quotes.page-size
       in:
         - fromIdx:
             array: payload.rows
-            condition: policy_state_name !== 'Policy'
           toIdx:
             array: datamodel.quotes
-            append: true
+            useSourceIndex: true
           mappings:
             - payload: 'rows[n].engagement_id'
               element: quotes~engagement-id
+            - payload: 'rows[n].insured_objects'
+              element: quotes~insured_objects
             - payload: 'rows[n].policy_state'
               element: quotes~state
             - payload: 'rows[n].policy_state_name'
@@ -42,18 +47,19 @@ integration:
               element: quotes~price
             - payload: 'rows[n].quote_id'
               element: quotes~id
-            - payload: 'rows[n].insured_objects'
-              element: quotes~insured_objects
             - value: quote.navigate-to-details
               element: quotes~continue
+            - payload: 'rows[n].total'
+              datastore: pagination.quotes.results-length
         - fromIdx:
             array: payload.rows
-            condition: policy_state_name !== 'Policy'
             fromIdx:
               array: insured_objects
           toIdx:
+            array: datamodel.quotes
             useSourceIndex: true
             toIdx:
+              array: insured_objects
               useSourceIndex: true
           mappings:
             - payload: 'rows[n].insured_objects[n].object_name'

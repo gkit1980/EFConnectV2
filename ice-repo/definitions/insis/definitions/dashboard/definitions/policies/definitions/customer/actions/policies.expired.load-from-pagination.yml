@@ -1,0 +1,7 @@
+action:
+  execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - expired-policies
+    - IntegrationExecutionRule:
+        integration: policies.expired.load

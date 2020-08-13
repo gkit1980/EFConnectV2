@@ -195,6 +195,25 @@
     }
   }
 
+  .insis-datagrid-with-pagination {
+    border: 1px solid #ddd;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    margin-bottom: 0px;
+  }
+
+  .insis-paginator-with-datagrid {
+    border: 1px solid #ddd;
+    border-top: none;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+
   .three-columns-array {
     > ice-element > .ice-element > ice-array > .ice-array {
       > label {

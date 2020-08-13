@@ -18,6 +18,7 @@ page:
                       - name: activity.new-client
     - component:
         InsisDatagridSection:
+          css: insis-datagrid-with-pagination
           arrayElement: clients
           grid:
             rows:
@@ -38,11 +39,13 @@ page:
                   - elements:
                       - name: clients~new-policy
                     size: 200px
-          showPagination: true
+    - component:
+        InsisPaginatorSection:
           paginationAction: clients.search-from-pagination
-          resultsLengthPath: results-length
-          pageSizePath: page-size
-          offsetPath: offset
-          pageIndexPath: page-index
-          paginationObjects: pagination.clients
-          paginationSeparator: pagination.separator
+          resultsLengthDatastorePath: pagination.clients.results-length
+          pageSizeDatastorePath: pagination.clients.page-size
+          offsetDatastorePath: pagination.clients.offset
+          pageIndexDatastorePath: pagination.clients.page-index
+          paginationObjectsKey: pagination.clients
+          scopeToDefinition: false
+          css: insis-paginator-with-datagrid

@@ -3,6 +3,20 @@ action:
     - ResetElementValueExecutionRule:
         elements:
           - quotes
+    - InsisResetDatastoreValueExecutionRule:
+        scopeToDefinition: false
+        defaultValue: 0
+        skipIfValueIsSet: true
+        paths:
+          - pagination.quotes.page-index
+          - pagination.quotes.results-length
+          - pagination.quotes.offset
+    - InsisResetDatastoreValueExecutionRule:
+        scopeToDefinition: false
+        defaultValue: 10
+        skipIfValueIsSet: true
+        paths:
+          - pagination.quotes.page-size
     - IntegrationExecutionRule:
         integration: insurance-products.load
     - IntegrationExecutionRule:

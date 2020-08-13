@@ -2206,6 +2206,9 @@ entries:
     clients:
       - en: clients
         de: null
+    quotes:
+      - en: quotes
+        de: null
     separator:
       - en: of
         de: von

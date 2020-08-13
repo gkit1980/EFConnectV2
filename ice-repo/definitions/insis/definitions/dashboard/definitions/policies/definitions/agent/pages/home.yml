@@ -13,18 +13,12 @@ page:
     #                 size.xs: auto
     #                 size.sm: auto
     #                 elements:
-    #                   - name: new-policy
+    #                   - name: activity.new-policy
     #       css: mb-2 mt-2
     - component:
         InsisDatagridSection:
-          showPagination: true
-          offsetPath: offset
-          paginationAction: policies.search-from-pagination
-          resultsLengthPath: results-length
-          pageSizePath: page-size
-          pageIndexPath: page-index
-          paginationObjects: pagination.policies
           arrayElement: policies
+          css: insis-datagrid-with-pagination
           grid:
             rows:
               - cols:
@@ -60,3 +54,13 @@ page:
                     caption: elements.policies.items.insr-end.label
                     size: 120px
       description: section
+    - component:
+        InsisPaginatorSection:
+          css: insis-paginator-with-datagrid
+          scopeToDefinition: false
+          offsetDatastorePath: pagination.policies.offset
+          paginationAction: policies.search-from-pagination
+          resultsLengthDatastorePath: pagination.policies.results-length
+          pageSizeDatastorePath: pagination.policies.page-size
+          pageIndexDatastorePath: pagination.policies.page-index
+          paginationObjectsKey: pagination.policies

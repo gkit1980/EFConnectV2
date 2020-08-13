@@ -110,7 +110,8 @@ FROM policy p,
     hs_policy_state hps,
     prem_tab,
     eng_info
-WHERE p.policy_state >= 0
+WHERE p.policy_state <> -10
+    AND p.policy_state < 0
     AND hit.id = p.insr_type
     AND pi.policy_id = p.policy_id
     AND p.policy_id = prem_tab.policy_id(+)

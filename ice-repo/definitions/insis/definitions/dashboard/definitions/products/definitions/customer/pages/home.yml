@@ -63,6 +63,19 @@ page:
           behaviourForEmptyRows: hide
           css: horizontal-list width-100-array-item
     - component:
+        InsisPaginatorSection:
+          resultsLengthDatastorePath: pagination.quotes.results-length
+          pageSizeDatastorePath: pagination.quotes.page-size
+          offsetDatastorePath: pagination.quotes.offset
+          pageIndexDatastorePath: pagination.quotes.page-index
+          paginationObjectsKey: pagination.quotes
+          paginationSeparatorKey: pagination.separator
+          scopeToDefinition: false
+          paginationAction: quotes.load-from-pagination
+      viewMode:
+        InsisHideSectionWhenArrayElementIsEmpty:
+          array: quotes
+    - component:
         IceFlexSection:
           grid:
             rows:

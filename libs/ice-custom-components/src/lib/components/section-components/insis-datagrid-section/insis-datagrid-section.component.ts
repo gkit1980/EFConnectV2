@@ -1,21 +1,17 @@
 import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   OnInit,
-  ViewChildren,
   QueryList,
+  ViewChildren,
   ViewContainerRef,
-  ChangeDetectionStrategy,
-  Host,
-  ChangeDetectorRef,
-  ViewChild,
 } from '@angular/core';
-
-import { get, map } from 'lodash';
-import { PageElement } from '@impeo/ice-core';
-import { SectionComponentImplementation, IceSectionComponent } from '@impeo/ng-ice';
-import { map as rxMap, debounceTime } from 'rxjs/operators';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatPaginator } from '@angular/material/paginator';
+import { PageElement } from '@impeo/ice-core';
+import { IceSectionComponent, SectionComponentImplementation } from '@impeo/ng-ice';
+import { get, map } from 'lodash';
+import { debounceTime, map as rxMap } from 'rxjs/operators';
 
 interface Col {
   size?: string;
@@ -50,14 +46,8 @@ export class InsisDatagridSectionComponent extends SectionComponentImplementatio
   @ViewChildren('rows', { read: ViewContainerRef })
   rows: QueryList<any>;
 
-  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-
   get showFilter() {
     return this.getRecipeParam('showFilter', false);
-  }
-
-  get showPagination() {
-    return this.getRecipeParam('showPagination', false);
   }
 
   constructor(parent: IceSectionComponent, private changeDetectorRef: ChangeDetectorRef) {
@@ -77,19 +67,6 @@ export class InsisDatagridSectionComponent extends SectionComponentImplementatio
     this.changeDetectorRef.markForCheck();
     this.dataSource = new MatTableDataSource<any>(getData());
 
-    if (this.showPagination) {
-      this.paginator.length = this.context.dataStore.get(
-        `${this.context.definition}.pagination.${this.getRecipeParam(
-          'resultsLengthPath',
-          'results-length'
-        )}`
-      );
-      this.paginator.pageSize = this.context.dataStore.get(
-        `${this.context.definition}.pagination.${this.getRecipeParam('pageSizePath', 'page-size')}`
-      );
-      this.initializePaginatorLabel();
-    }
-
     element.$dataModelValueChange
       .pipe(
         debounceTime(50),
@@ -97,23 +74,6 @@ export class InsisDatagridSectionComponent extends SectionComponentImplementatio
       )
       .subscribe((data) => {
         this.dataSource = new MatTableDataSource<any>(data);
-
-        if (this.showPagination) {
-          this.paginator.length = this.context.dataStore.get(
-            `${this.context.definition}.pagination.${this.getRecipeParam(
-              'resultsLengthPath',
-              'results-length'
-            )}`
-          );
-
-          this.paginator.pageIndex = this.context.dataStore.get(
-            `${this.context.definition}.pagination.${this.getRecipeParam(
-              'pageIndexPath',
-              'page-index'
-            )}`
-          );
-        }
-
         this.changeDetectorRef.markForCheck();
       });
   }
@@ -173,45 +133,5 @@ export class InsisDatagridSectionComponent extends SectionComponentImplementatio
       `component.${InsisDatagridSectionComponent.componentName}.${paramName}`,
       defaultValue
     );
-  }
-
-  onPageChanged($event) {
-    this.context.dataStore.set(
-      `${this.context.definition}.pagination.${this.getRecipeParam('offsetPath', 'offset')}`,
-      $event.pageIndex * this.paginator.pageSize
-    );
-
-    this.context.dataStore.set(
-      `${this.context.definition}.pagination.${this.getRecipeParam('pageIndexPath', 'page-index')}`,
-      this.paginator.pageIndex
-    );
-
-    this.context.iceModel.actions[this.getRecipeParam('paginationAction')].execute();
-  }
-
-  initializePaginatorLabel() {
-    const paginationObjects = this.resource.resolve(
-      this.getRecipeParam('paginationObjects'),
-      null,
-      ''
-    );
-    const paginationSeparator = this.resource.resolve(
-      this.getRecipeParam('paginationSeparators'),
-      null,
-      'of'
-    );
-    this.paginator._intl.getRangeLabel = (page, pageSize, length) => {
-      if (length === 0 || pageSize === 0) {
-        return `0 - ${length} ${paginationSeparator} ${length} ${paginationObjects}`;
-      }
-
-      length = Math.max(length, 0);
-      const startIndex = page * pageSize;
-      const endIndex =
-        startIndex < length ? Math.min(startIndex + pageSize, length) : startIndex + pageSize;
-      return `${
-        startIndex + 1
-      } - ${endIndex} ${paginationSeparator} ${length} ${paginationObjects}`;
-    };
   }
 }

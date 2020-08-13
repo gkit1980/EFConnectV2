@@ -1,0 +1,43 @@
+label: InsisPaginatorSection
+component: InsisPaginatorSection
+description: >
+  A section to display paginator
+
+params:
+  paginationAction:
+    label: Pagination action
+    description: Action to perform when page index is changed in pagination.
+      It loads the next chunk of data.
+    type: action
+  scopeToDefinition:
+    label: Scope To Definition
+    type: boolean
+    info: If set to true, all datastore paths will be preceded by the active definition name.
+  resultsLengthDatastorePath:
+    label: Results length datastore path
+    description: Datastore path where total length of all data that is to be displayed, is stored.
+      This data is set in integration that is triggered by the pagination action.
+    type: text
+  pageSizeDatastorePath:
+    label: Page size datastore path
+    description: Datastore path where page size for pagination is stored
+      (number of elements displayed per page).
+    type: text
+  offsetDatastorePath:
+    label: Offset datastore path
+    description: Datastore path where current offset of the displayed data is stored
+      (it is recalculated on page navigation as current page index * page size).
+    type: text
+  pageIndexDatastorePath:
+    label: Page index path
+    description: Datastore path where current page index is stored.
+    type: text
+  paginationObjectsKey:
+    label: Pagination objects - resource key
+    description: Resource key for name of objects displayed in datagrid, eg. 1 - 10 of _POLICIES_
+      Default is empty string
+    type: resourceKey
+  paginationSeparatorKey:
+    label: Pagination separator - resource key
+    description: Resource key for separator eg. 1 - 10 _OF_ policies
+    type: resourceKey

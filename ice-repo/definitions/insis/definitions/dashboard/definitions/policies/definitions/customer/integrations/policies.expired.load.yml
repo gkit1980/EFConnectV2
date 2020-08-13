@@ -4,7 +4,7 @@ integration:
       connectString: 'env:insis-db-url'
       username: 'env:insis-db-username'
       password: 'env:insis-db-password'
-      queryFileURL: data/policies.client.get-detailed.sql
+      queryFileURL: data/policies.expired.client.get-detailed.sql
       queryType: JSON
   transformation:
     DefaultTransformationRule:
@@ -24,79 +24,11 @@ integration:
               value: 'Policy'
             - param: p_client
               principal: pid
+            - param: page_size
+              datastore: insis.dashboard.policies.customer.pagination.expired.page-size
+            - param: offset
+              datastore: insis.dashboard.policies.customer.pagination.expired.offset
       in:
-        - fromIdx:
-            array: payload.rows
-            condition: is_expired == 0
-          toIdx:
-            array: datamodel.policies
-            append: true
-          mappings:
-            - payload: 'rows[n].policy_state'
-              element: policies~policy_state
-            - payload: 'rows[n].policy_id'
-              element: policies~policy_id
-            - payload: 'rows[n].policy_no'
-              element: policies~policy_no
-            - payload: 'rows[n].policy_name'
-              element: policies~policy_name
-            - payload: 'rows[n].insr_type'
-              element: policies~insr_type
-            - payload: 'rows[n].product_name'
-              element: policies~product_name
-            - payload: 'rows[n].package_code'
-              element: policies~package_code
-            - payload: 'rows[n].is_expired'
-              element: policies~is_expired
-            - payload: 'rows[n].policy_state_name'
-              element: policies~policy_state_name
-            - payload: 'rows[n].client_id'
-              element: policies~client_id
-            - payload: 'rows[n].pid'
-              element: policies~pid
-            - payload: 'rows[n].man_id'
-              element: policies~man_id
-            - payload: 'rows[n].client_name'
-              element: policies~client_name
-            - payload: 'rows[n].insr_begin'
-              element: policies~insr_begin
-            - payload: 'rows[n].insr_end'
-              element: policies~insr_end
-            - payload: 'rows[n].premium_amnt'
-              element: policies~premium_amnt
-            - payload: 'rows[n].active_claims'
-              element: policies~active_claims
-            - payload: 'rows[n].engagement_id'
-              element: policies~engagement_id
-            - payload: 'rows[n].engagement_no'
-              element: policies~engagement_no
-            - payload: 'rows[n].engagement_name'
-              element: policies~engagement_name
-            - payload: 'rows[n].quote_id'
-              element: policies~quote_id
-            - payload: 'rows[n].quote_no'
-              element: policies~quote_no
-            - payload: 'rows[n].quote_status'
-              element: policies~quote_status
-            - payload: 'rows[n].quote_status_name'
-              element: policies~quote_status_name
-            - payload: 'rows[n].insured_objects'
-              element: policies~insured_objects
-            - value: policy.active.navigate-to-details
-              element: policies~view-more
-        - fromIdx:
-            array: payload.rows
-            condition: is_expired == 0
-            fromIdx:
-              array: insured_objects
-          toIdx:
-            useSourceIndex: true
-            toIdx:
-              useSourceIndex: true
-          mappings:
-            - payload: 'rows[n].insured_objects[n].object_name'
-              element: policies~insured_objects~object_name
-
         - fromIdx:
             array: payload.rows
             condition: is_expired == 0
@@ -156,6 +88,8 @@ integration:
               element: expired-policies~insured_objects
             - value: policy.expired.navigate.to-details
               element: expired-policies~link
+            - payload: 'rows[n].total'
+              datastore: 'insis.dashboard.policies.customer.pagination.expired.results-length'
         - fromIdx:
             array: payload.rows
             condition: is_expired == 0
