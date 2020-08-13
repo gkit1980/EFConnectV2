@@ -75,7 +75,7 @@ integration:
             array: 'payload.policyAnnexes[0].insuredObjects'
             fromIdx:
               array: covers
-              condition: premium != 0
+              #condition: premium != 0
           toIdx:
             array: policy.insured.objects
             useSourceIndex: true
