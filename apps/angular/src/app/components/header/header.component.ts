@@ -72,12 +72,12 @@ export class HeaderComponent {
           key: runtime.iceResource.resolve('pages.header.customer.products.label'),
           link: runtime.iceResource.resolve('pages.header.customer.products.link'),
           includes: ['/ice/insis.dashboard.products.customer/home', 'quote-buy.customer'],
-        },
-        {
-          key: runtime.iceResource.resolve('pages.header.customer.payments.label'),
-          link: runtime.iceResource.resolve('pages.header.customer.payments.link'),
-          includes: ['/ice/insis.dashboard.payments.customer/home'],
         }
+        // {
+        //   key: runtime.iceResource.resolve('pages.header.customer.payments.label'),
+        //   link: runtime.iceResource.resolve('pages.header.customer.payments.link'),
+        //   includes: ['/ice/insis.dashboard.payments.customer/home'],
+        // }
       );
 
       this.agentNavigation.push(
@@ -103,12 +103,12 @@ export class HeaderComponent {
             '/ice/insis.products.policy-details.agent',
             'quote-buy.agent',
           ],
-        },
-        {
-          key: runtime.iceResource.resolve('pages.header.agent.claims.label'),
-          link: runtime.iceResource.resolve('pages.header.agent.claims.link'),
-          includes: ['/ice/insis.dashboard.claims.agent/home'],
         }
+        // {
+        //   key: runtime.iceResource.resolve('pages.header.agent.claims.label'),
+        //   link: runtime.iceResource.resolve('pages.header.agent.claims.link'),
+        //   includes: ['/ice/insis.dashboard.claims.agent/home'],
+        // }
       );
 
       this.customerMenuItems.push(
