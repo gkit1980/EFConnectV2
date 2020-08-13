@@ -1,8 +1,11 @@
 element:
   type: date
   viewMode:
-    StaticViewModeRule:
-      viewMode: required
+    ConditionalViewModeRule:
+      conditionElement: person.type
+      conditionValue: '1'
+      conditionViewMode: required
+      elseViewMode: hidden
   component:
     StaticComponentRule:
       component:

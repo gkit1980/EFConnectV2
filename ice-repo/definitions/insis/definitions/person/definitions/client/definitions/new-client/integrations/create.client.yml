@@ -30,6 +30,8 @@ integration:
         - fromIdx:
             index: '[0]'
           mappings:
+            - payload: 'homeCountry'
+              element: person.addresses~country-code
             - payload: 'addresses[0].addressType'
               element: person.addresses~address-type
 
