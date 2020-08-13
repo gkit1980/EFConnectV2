@@ -1,0 +1,16 @@
+element:
+  type: text
+  mirror:
+    InsisFillResourceWithElementValuesMirrorRule:
+      elements:
+        - policies~next-payment.amount
+        - policies~next-payment.due-date
+      resourceKey: elements.policies.items.next-payment.summary.value
+  label:
+    ResourceWithElementValuesLabelRule:
+      elements:
+        - policies~next-payment.frequency
+      key: elements.policies.items.next-payment.summary.label
+  viewMode:
+    DtViewModeRule:
+      dt: policies~next-payment.viewmode

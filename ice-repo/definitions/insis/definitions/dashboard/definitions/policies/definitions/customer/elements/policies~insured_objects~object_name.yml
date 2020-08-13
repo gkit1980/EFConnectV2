@@ -2,4 +2,5 @@ element:
   type: text
   viewMode: output
   label:
-    NoLabelRule: null
+    DtResourceLabelRule:
+      dt: policies~insured_objects~object_name.label

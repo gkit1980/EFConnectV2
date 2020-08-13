@@ -84,6 +84,14 @@ integration:
               element: policies~quote_status
             - payload: 'rows[n].quote_status_name'
               element: policies~quote_status_name
+            - payload: 'rows[n].payment_completed'
+              element: policies~payment-completed
+            - payload: 'rows[n].next_payment.amnt'
+              element: policies~next-payment.amount
+            - payload: 'rows[n].next_payment.due_date'
+              element: policies~next-payment.due-date
+            - payload: 'rows[n].next_payment.frequency'
+              element: policies~next-payment.frequency
             - payload: 'rows[n].insured_objects'
               element: policies~insured_objects
             - value: policy.active.navigate-to-details
@@ -93,7 +101,7 @@ integration:
         - fromIdx:
             array: payload.rows
             fromIdx:
-              condition: object_type == 'main_insr'
+              # condition: object_type == 'main_insr'
               array: insured_objects
           toIdx:
             useSourceIndex: true
@@ -102,3 +110,5 @@ integration:
           mappings:
             - payload: 'rows[n].insured_objects[n].object_name'
               element: policies~insured_objects~object_name
+            - payload: 'rows[n].insured_objects[n].object_type'
+              element: policies~insured_objects~object_type

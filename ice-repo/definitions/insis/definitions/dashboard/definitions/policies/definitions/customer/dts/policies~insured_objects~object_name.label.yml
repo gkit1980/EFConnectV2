@@ -1,0 +1,16 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policies~insured_objects~object_type
+  outputs:
+    - id: label
+      type: string
+  rules:
+    - inputs:
+        - main_insr
+      outputs:
+        - elements.policies.items.insured-objects.main-insured
+    - inputs:
+        - '-'
+      outputs:
+        - elements.policies.items.insured-objects.additional-insured

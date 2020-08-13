@@ -1,0 +1,25 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policies~payment-completed
+    - label: new label
+      element: policies~next-payment.due-date
+  outputs:
+    - id: mirror
+      type: string
+  rules:
+    - inputs:
+        - false
+        - null
+      outputs:
+        - Not completed
+    - inputs:
+        - true
+        - '-'
+      outputs:
+        - Completed
+    - inputs:
+        - true
+        - null
+      outputs:
+        - Not completed

@@ -57,9 +57,7 @@ SELECT JSON_OBJECT(
                             ON ion.insured_obj_id = io.insured_obj_id
                           LEFT JOIN o_accinsured oac
                             ON oac.object_id = io.object_id
-                        WHERE io.policy_id = policy_id_for_object
-                          AND open_date >= io.insr_begin
-                          AND open_date <= io.insr_end ) )
+                        WHERE io.policy_id = policy_id_for_object) )
           FROM (
         WITH od AS (SELECT sys_days.get_open_date AS open_date FROM dual)
         SELECT pol.policy_state, pol.policy_id, pol.policy_id AS policy_id_for_object, pol.policy_no, pol.policy_name, pol.insr_type,
@@ -82,7 +80,7 @@ SELECT JSON_OBJECT(
               pn.client_pid AS pid, pn.client_man_id AS man_id, pn.client_name, pol.insr_begin, pol.insr_end, pol.insr_duration, pol.dur_dimension as insr_duration_unit,
               LTRIM(TO_CHAR( (SELECT SUM(risk_amnt)
                               FROM prem_inst_wp
-                              WHERE policy_id = pol.policy_id ), 9999990.99 )) AS premium_amnt,
+                              WHERE policy_id = NVL(:policy_id, pol.policy_id) ), 9999990.99 )) AS premium_amnt,
              ( SELECT NVL( SUM( DECODE( clm.claim_state, -1, 1, 1, 1, 0)), 0 )
                  FROM ( SELECT c.claim_id, MIN(cr.claim_state) AS claim_state
                           FROM insis_gen_v10.claim c
@@ -109,7 +107,27 @@ SELECT JSON_OBJECT(
             AND pol.policy_no LIKE NVL(:policy_no, pol.policy_no)
             AND pol.policy_name LIKE NVL(:policy_name, pol.policy_name)
             AND pol.insr_type = NVL(:insr_type, pol.insr_type)
-            AND od.open_date <= pol.insr_end
+            AND ( ( :p_insured_object is not null
+                    AND EXISTS(SELECT io.policy_id
+                                 FROM insured_object io
+                                 LEFT JOIN insured_object_names ion
+                                   ON ion.insured_obj_id = io.insured_obj_id
+                                WHERE io.policy_id = NVL(:policy_id, pol.policy_id)
+                                  AND ion.object_name LIKE NVL(:p_insured_object, ion.object_name))
+                                  --
+                    AND pol.policy_id in (SELECT io.policy_id
+                                 FROM insured_object io
+                                 LEFT JOIN insured_object_names ion
+                                   ON ion.insured_obj_id = io.insured_obj_id
+                                WHERE io.policy_id = NVL(:policy_id, pol.policy_id)
+                                  AND ion.object_name LIKE NVL(:p_insured_object, ion.object_name))
+                    )
+                  OR
+                  ( :p_insured_object is null
+                    AND pol.policy_id = NVL(:policy_id, pol.policy_id)
+                    )
+                )
+            --
             AND (:policy_state IS NULL
                   OR :policy_state = CASE WHEN pol.policy_state = -4 THEN 'Quotation'
                                           WHEN pol.policy_state IN (-3, -2, -1) THEN 'Application'

@@ -1,0 +1,25 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policies~payment-completed
+    - label: new label
+      element: policies~next-payment.frequency
+  outputs:
+    - id: viewMode
+      type: string
+  rules:
+    - inputs:
+        - true
+        - '-'
+      outputs:
+        - hidden
+    - inputs:
+        - false
+        - null
+      outputs:
+        - hidden
+    - inputs:
+        - '-'
+        - '-'
+      outputs:
+        - output

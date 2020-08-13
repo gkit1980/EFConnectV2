@@ -161,6 +161,14 @@
     }
   }
 
+  .insured-objects {
+    .ice-array-item {
+      display: inline-flex;
+      margin-right: 5px;
+      width: 45%;
+    }
+  }
+
   .back-button {
     .mat-button {
       padding-left: 0;

@@ -1,0 +1,11 @@
+element:
+  type: text
+  mirror:
+    DtMirrorRule:
+      dt: policies~payment-completed-text.mirror
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policies~payment-completed
+      conditionValue: true
+      conditionViewMode: output
+      elseViewMode: hidden

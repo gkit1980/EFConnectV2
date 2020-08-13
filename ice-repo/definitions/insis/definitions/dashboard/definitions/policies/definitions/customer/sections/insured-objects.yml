@@ -2,9 +2,11 @@ section:
   component:
     IceArrayFlexSection:
       arrayElement: policies~insured_objects
+      css: insured-objects
       grid:
         rows:
           - cols:
               - size: 100%
+                css: nowrap
                 elements:
                   - name: policies~insured_objects~object_name

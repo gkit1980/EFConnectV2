@@ -381,6 +381,12 @@ entries:
               label:
                 - en: Insured Objects
                   de: Insured Objects
+          main-insured:
+            - en: Main insured
+              de: null
+          additional-insured:
+            - en: Additional insured
+              de: null
         policy-no:
           label:
             - en: Policy number
@@ -408,6 +414,18 @@ entries:
           label:
             - en: Product
               de: Produkt
+        next-payment:
+          summary:
+            value:
+              - en: '${param1} EUR, ${param2}'
+                de: '${param1} EUR, ${param2}'
+            label:
+              - en: 'Next payment (${param1})'
+                de: 'Next payment (${param1})'
+        payment-completed:
+          label:
+            - en: Payment
+              de: null
     claims-in-progress:
       submit-a-claim:
         label:
@@ -2893,3 +2911,6 @@ entries:
         secondary-bank-acc:
           - en: Secondary bank account
             de: Secondary bank account
+  policies:
+    items:
+      next-payment: {}

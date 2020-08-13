@@ -71,14 +71,21 @@ page:
                 css: mat-headline u-mt-4
                 gap: 4px
               - cols:
-                  - size: auto
+                  - size: 50%
                     elements:
                       - name: policies~insr_end
                     css: u-mb-2
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    css: nowrap
+                    elements:
+                      - name: policies~next-payment.summary
+                      - name: policies~payment-completed-text
               - cols:
                   - size: auto
                     sections:
-                      - name: insured-objects-motor
+                      - name: insured-objects
                     css: u-mb-5
               - cols:
                   - size: none
@@ -131,10 +138,6 @@ page:
           grid:
             rows:
               - cols:
-                  # - caption: null
-                  #   size: 65px
-                  #   elements:
-                  #     - name: expired-policies~more-actions
                   - caption: elements.expired-policies.items.contract.policy-id.label
                     size: 200px
                     css: label-link u-ml-2
