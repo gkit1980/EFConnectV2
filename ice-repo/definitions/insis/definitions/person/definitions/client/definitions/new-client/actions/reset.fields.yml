@@ -2,7 +2,7 @@ action:
   trigger:
     - ElementChangeTriggerRule:
         elements:
-          - person.type
+          - person.man-comp
   execution:
     - ResetElementValueExecutionRule:
         elements:

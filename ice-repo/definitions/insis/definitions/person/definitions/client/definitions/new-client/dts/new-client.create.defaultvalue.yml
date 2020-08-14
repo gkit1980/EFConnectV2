@@ -1,10 +1,10 @@
 dt:
   hitPolicy: F
   inputs:
-    - element: person.type
+    - element: person.man-comp
   outputs:
     - id: defaultValue
-      type: string
+      type: number
   rules:
     - inputs:
         - 1

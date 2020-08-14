@@ -13,7 +13,7 @@ integration:
       ignoreNull: true
       out:
         - mappings:
-            - elemenet: person.industry-code
+            - element: person.industry-code
               payload: industryCode
 
             - element: person.sub-industry-code

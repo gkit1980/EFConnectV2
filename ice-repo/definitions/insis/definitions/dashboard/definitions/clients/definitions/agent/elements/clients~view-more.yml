@@ -5,9 +5,6 @@ element:
       key: elements.clients.items.view-more.label
       elements:
         - clients~pid
-  defaultValue:
-    StaticValueRule:
-      value: clients.navigate-to-client
   component:
     StaticComponentRule:
       component:

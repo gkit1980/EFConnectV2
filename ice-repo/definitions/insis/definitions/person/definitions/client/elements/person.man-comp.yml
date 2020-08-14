@@ -1,5 +1,5 @@
 element:
-  type: text
+  type: integer
   viewMode: output
   component:
     StaticComponentRule:
@@ -8,3 +8,7 @@ element:
   values:
     ListValuesRule:
       list: clients.types-text
+  defaultValue:
+    DataStoreValueRule:
+      path: query.manComp
+      scopeToDefintion: true

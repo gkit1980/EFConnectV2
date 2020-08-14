@@ -2,7 +2,7 @@ element:
   type: text
   viewMode:
     ConditionalViewModeRule:
-      conditionElement: person.type
+      conditionElement: person.man-comp
       conditionValue: '1'
       conditionViewMode: required
       elseViewMode: hidden

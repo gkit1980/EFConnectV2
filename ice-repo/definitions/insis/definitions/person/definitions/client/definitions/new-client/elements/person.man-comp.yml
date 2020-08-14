@@ -1,3 +1,13 @@
 element:
-  type: text
-  defaultValue: 1
+  type: integer
+  component:
+    StaticComponentRule:
+      component:
+        IceDropdown: {}
+  values:
+    ListValuesRule:
+      list: insis.types-only-name-and-company
+  defaultValue:
+    StaticValueRule:
+      value: 1
+  viewMode: default

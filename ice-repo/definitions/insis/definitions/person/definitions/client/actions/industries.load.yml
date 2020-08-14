@@ -4,8 +4,6 @@ action:
         elements:
           - industries
           - sub-industries
-          - person.industry-code
-          - person.sub-industry-code
     - IntegrationExecutionRule:
         integration: industries.load
   trigger:

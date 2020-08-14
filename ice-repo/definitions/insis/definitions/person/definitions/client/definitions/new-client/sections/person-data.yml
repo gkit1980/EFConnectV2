@@ -79,7 +79,7 @@ section:
       behaviourForEmptyRows: render
   viewMode:
     ConditionalSectionViewModeRule:
-      conditionElement: person.type
+      conditionElement: person.man-comp
       conditionValue: '1'
       conditionViewMode: default
       elseViewMode: hidden

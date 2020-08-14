@@ -27,7 +27,7 @@ page:
                     size.xs: auto
                     size.sm: auto
                     elements:
-                      - name: person.type
+                      - name: person.man-comp
                 css: u-mb-5
               - cols:
                   - size: auto

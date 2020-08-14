@@ -3,7 +3,7 @@ integration:
     InsisRestCallExchangeRule:
       endpointBaseurl: 'insis-rest-endpoint'
       verb: get
-      url: '/people-dir/person/composite?pid=${PID}'
+      url: '/people-dir/person/composite?pid=${PID}&manComp=${MANCOMP}'
 
   transformation:
     InsisPersonTransformationRule:
@@ -17,6 +17,8 @@ integration:
         - mappings:
             - param: PID
               element: person.pid
+            - param: MANCOMP
+              element: person.man-comp
       in:
         - mappings:
             - payload: namePrefix
