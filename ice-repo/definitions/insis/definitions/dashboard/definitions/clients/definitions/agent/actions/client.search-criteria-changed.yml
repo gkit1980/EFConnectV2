@@ -1,0 +1,15 @@
+action:
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - search.type
+          - search.id
+          - search.name
+          - search.fulltext
+  execution:
+    - InsisResetDatastoreValueExecutionRule:
+        paths:
+          - pagination.clients.search-criteria-changed
+        scopeToDefinition: false
+        defaultValue: -1
+        skipIfValueIsSet: false

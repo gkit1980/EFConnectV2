@@ -64,3 +64,4 @@ page:
           pageSizeDatastorePath: pagination.policies.page-size
           pageIndexDatastorePath: pagination.policies.page-index
           paginationObjectsKey: pagination.policies
+          searchCriteriaChangedDatastorePath: pagination.policies.search-criteria-changed

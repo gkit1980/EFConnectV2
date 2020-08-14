@@ -32,6 +32,10 @@ params:
     label: Page index path
     description: Datastore path where current page index is stored.
     type: text
+  searchCriteriaChangedDatastorePath:
+    label: Search criteria changed datastore path
+    type: number
+    description: Set datastore at this path to -1 when search from pagination should initialize new search
   paginationObjectsKey:
     label: Pagination objects - resource key
     description: Resource key for name of objects displayed in datagrid, eg. 1 - 10 of _POLICIES_

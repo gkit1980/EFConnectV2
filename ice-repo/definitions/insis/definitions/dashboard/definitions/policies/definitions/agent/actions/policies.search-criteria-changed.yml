@@ -1,0 +1,18 @@
+action:
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - search-policies.policy-state
+          - search-policies.fulltext
+          - search-policies.policy-no
+          - search-policies.product-id
+          - search-policies.client-id
+          - search-policies.client-name
+          - search-policies.insured-object
+  execution:
+    - InsisResetDatastoreValueExecutionRule:
+        paths:
+          - pagination.policies.search-criteria-changed
+        scopeToDefinition: false
+        defaultValue: -1
+        skipIfValueIsSet: false

@@ -46,6 +46,7 @@ page:
           pageSizeDatastorePath: pagination.clients.page-size
           offsetDatastorePath: pagination.clients.offset
           pageIndexDatastorePath: pagination.clients.page-index
+          searchCriteriaChangedDatastorePath: pagination.clients.search-criteria-changed
           paginationObjectsKey: pagination.clients
           scopeToDefinition: false
           css: insis-paginator-with-datagrid

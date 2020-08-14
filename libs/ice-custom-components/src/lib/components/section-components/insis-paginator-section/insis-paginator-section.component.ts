@@ -25,8 +25,32 @@ import { MatPaginator } from '@angular/material/paginator';
 export class InsisPaginatorSectionComponent extends SectionComponentImplementation
   implements OnInit {
   static componentName = 'InsisPaginatorSection';
+
   get prefix() {
     return this.getRecipeParam('scopeToDefinition', true) ? `${this.context.definition}.` : '';
+  }
+
+  get pageIndexDatastorePath() {
+    return `${this.prefix}${this.getRecipeParam('pageIndexDatastorePath', 'page-index')}`;
+  }
+
+  get pageSizeDatastorePath() {
+    return `${this.prefix}${this.getRecipeParam('pageSizeDatastorePath', 'page-size')}`;
+  }
+
+  get offsetDatastorePath() {
+    return `${this.prefix}${this.getRecipeParam('offsetDatastorePath', 'offset')}`;
+  }
+
+  get resultsLengthDatastorePath() {
+    return `${this.prefix}${this.getRecipeParam('resultsLengthDatastorePath', 'results-length')}`;
+  }
+
+  get searchCriteriaChangedDatastorePath() {
+    return `${this.prefix}${this.getRecipeParam(
+      'searchCriteriaChangedDatastorePath',
+      'search-criteria-changed'
+    )}`;
   }
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -40,25 +64,17 @@ export class InsisPaginatorSectionComponent extends SectionComponentImplementati
   ngOnInit(): void {
     super.ngOnInit();
 
-    const lengthPath = `${this.prefix}${this.getRecipeParam(
-      'resultsLengthDatastorePath',
-      'results-length'
-    )}`;
-    this.paginator.length = this.context.dataStore.get(lengthPath);
-    const sizePath = `${this.prefix}${this.getRecipeParam('pageSizeDatastorePath', 'page-size')}`;
-    this.paginator.pageSize = this.context.dataStore.get(sizePath);
-    this.paginator.pageIndex = this.context.dataStore.get(
-      `${this.prefix}${this.getRecipeParam('pageIndexDatastorePath', 'page-index')}`
-    );
+    this.paginator.length = this.context.dataStore.get(this.resultsLengthDatastorePath);
+    this.paginator.pageSize = this.context.dataStore.get(this.pageSizeDatastorePath);
+    this.paginator.pageIndex = this.context.dataStore.get(this.pageIndexDatastorePath);
 
     this.initializePaginatorLabel();
-    this.context.dataStore.subscribe(lengthPath, {
+
+    this.context.dataStore.subscribe(this.resultsLengthDatastorePath, {
       next: () => {
-        this.paginator.length = this.context.dataStore.get(lengthPath);
-        this.paginator.pageSize = this.context.dataStore.get(sizePath);
-        this.paginator.pageIndex = this.context.dataStore.get(
-          `${this.prefix}${this.getRecipeParam('pageIndexDatastorePath', 'page-index')}`
-        );
+        this.paginator.length = this.context.dataStore.get(this.resultsLengthDatastorePath);
+        this.paginator.pageSize = this.context.dataStore.get(this.pageSizeDatastorePath);
+        this.paginator.pageIndex = this.context.dataStore.get(this.pageIndexDatastorePath);
       },
     });
   }
@@ -72,17 +88,23 @@ export class InsisPaginatorSectionComponent extends SectionComponentImplementati
   }
 
   onPageChanged($event) {
-    this.context.dataStore.set(
-      `${this.prefix}${this.getRecipeParam('offsetDatastorePath', 'offset')}`,
-      $event.pageIndex * this.paginator.pageSize
-    );
+    if (this.context.dataStore.get(this.searchCriteriaChangedDatastorePath) === -1) {
+      this.resetPaginator();
+    } else {
+      this.context.dataStore.set(
+        this.offsetDatastorePath,
+        $event.pageIndex * this.paginator.pageSize
+      );
 
-    this.context.dataStore.set(
-      `${this.prefix}${this.getRecipeParam('pageIndexDatastorePath', 'page-index')}`,
-      this.paginator.pageIndex
-    );
-
+      this.context.dataStore.set(this.pageIndexDatastorePath, this.paginator.pageIndex);
+    }
     this.context.iceModel.actions[this.getRecipeParam('paginationAction')].execute();
+  }
+
+  resetPaginator() {
+    this.context.dataStore.set(this.pageIndexDatastorePath, 0);
+    this.context.dataStore.set(this.offsetDatastorePath, 0);
+    this.context.dataStore.set(this.searchCriteriaChangedDatastorePath, 0);
   }
 
   initializePaginatorLabel() {
