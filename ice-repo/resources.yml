@@ -422,7 +422,7 @@ entries:
             label:
               - en: 'Next payment (${param1})'
                 de: 'Next payment (${param1})'
-        payment-completed:
+        payment-completed-text:
           label:
             - en: Payment
               de: null
@@ -2248,9 +2248,9 @@ entries:
         - en: Please confirm
           de: Bitte bestätigen
       not_allowed_here:
-        - en: '''${value}'' not allowed here'
+        - en: "'${value}' not allowed here"
       regexp:
-        - en: '''${value}'' does not matches regular expression ${regexp}'
+        - en: "'${value}' does not matches regular expression ${regexp}"
       array:
         min:
           - en: 'must have at least ${min} entries'
