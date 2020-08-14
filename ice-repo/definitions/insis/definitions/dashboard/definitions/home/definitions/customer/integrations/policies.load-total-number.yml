@@ -4,18 +4,32 @@ integration:
       connectString: 'env:insis-db-url'
       username: 'env:insis-db-username'
       password: 'env:insis-db-password'
-      queryFileURL: data/policies.client.get.sql
-      queryType: SQL
+      queryFileURL: data/policies.active.client.get-detailed.sql
+      queryType: JSON
   transformation:
     DefaultTransformationRule:
       additional: insis
       out:
         - mappings:
-            - principal: pid
-              param: pid
+            - param: page_size
+              value: 1
+            - param: offset
+              value: 0
+            - param: policy_no
+              value: ''
+            - param: policy_id
+              value: ''
+            - param: policy_name
+              value: ''
+            - param: insr_type
+              value: ''
+            - param: p_insr_end
+              value: ''
+            - param: policy_state
+              value: 'Policy'
+            - param: p_client
+              principal: pid
       in:
-        - fromIdx:
-            array: payload.rows
-          mappings:
-            - payload: rows.length
-              element: active-policies.total-number
+        - mappings:
+            - payload: 'rows[0].total'
+              element: 'active-policies.total-number'
