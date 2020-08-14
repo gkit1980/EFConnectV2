@@ -116,6 +116,15 @@ page:
           pageIndexDatastorePath: pagination.active.page-index
           paginationObjectsKey: pagination.policies
           paginationSeparatorKey: pagination.separator
+          scopeToDefinition: true
+      viewMode:
+        InsisExpressionViewModeRule:
+          expression: >-
+            datastore('insis.dashboard.policies.customer.pagination.active.results-length')
+            >
+            datastore('insis.dashboard.policies.customer.pagination.active.page-size')
+          viewMode: default
+          elseViewMode: hidden
     - component:
         IceFlexSection:
           grid:
@@ -177,9 +186,12 @@ page:
           pageIndexDatastorePath: pagination.expired.page-index
           paginationObjectsKey: pagination.policies
           paginationSeparatorKey: pagination.separator
+          scopeToDefinition: true
       viewMode:
-        ConditionalSectionViewModeRule:
-          conditionElement: activity.show-expired-policies
-          conditionValue: false
-          conditionViewMode: hidden
-          elseViewMode: output
+        InsisExpressionViewModeRule:
+          expression: >-
+            datastore('insis.dashboard.policies.customer.pagination.expired.results-length')
+            >
+            datastore('insis.dashboard.policies.customer.pagination.expired.page-size')
+          viewMode: default
+          elseViewMode: hidden

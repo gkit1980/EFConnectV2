@@ -1,0 +1,25 @@
+viewModeOptions: &view_mode_options
+  default: Default
+  hidden: Hidden
+  disabled: Disabled
+  output: Output
+
+implementations:
+  InsisExpressionViewModeRule:
+    description: Change current element view mode based on ice expression (not to be mistaken with feel expression)
+    params:
+      expression:
+        info: Specify ice expression
+        label: Ice expression
+        required: true
+        type: text
+      viewMode:
+        label: ViewMode that will be applied if expression is satisfied
+        required: true
+        type: select
+        options: *view_mode_options
+      elseViewMode:
+        label: ViewMode that will be applied if expression is not satisfied
+        required: true
+        type: select
+        options: *view_mode_options

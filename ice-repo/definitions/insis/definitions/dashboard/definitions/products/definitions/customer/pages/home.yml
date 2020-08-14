@@ -73,8 +73,12 @@ page:
           scopeToDefinition: false
           paginationAction: quotes.load-from-pagination
       viewMode:
-        InsisHideSectionWhenArrayElementIsEmpty:
-          array: quotes
+        InsisExpressionViewModeRule:
+          viewMode: default
+          elseViewMode: hidden
+          expression: >-
+            datastore('pagination.quotes.results-length') >
+            datastore('pagination.quotes.page-size')
     - component:
         IceFlexSection:
           grid:

@@ -4,17 +4,6 @@ page:
     InsisSimplePage: {}
   sections:
     - search
-    # - component:
-    #     IceFlexSection:
-    #       grid:
-    #         rows:
-    #           - cols:
-    #               - size: auto
-    #                 size.xs: auto
-    #                 size.sm: auto
-    #                 elements:
-    #                   - name: activity.new-policy
-    #       css: mb-2 mt-2
     - component:
         InsisDatagridSection:
           arrayElement: policies
