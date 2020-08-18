@@ -56,6 +56,10 @@ export class InsisArrayItemBasedValuesRule extends ValuesRule {
     if (this.valueElement != null) return;
     this.valueElement = this.requireElement('valueElement');
     this.labelElement = this.requireElement('labelElement');
-    this.triggerReevaluationOnElementsChange([this.valueElement, this.labelElement]);
+    const arrayElement = this.getElement('arrayElement');
+    const elements = [this.valueElement, this.labelElement];
+    if (arrayElement) elements.push(arrayElement);
+
+    this.triggerReevaluationOnElementsChange(elements);
   }
 }

@@ -10,6 +10,7 @@ element:
     InsisArrayItemBasedValuesRule:
       valueElement: sub-industries~value
       labelElement: sub-industries~label
+      arrayElement: sub-industries
       hideEmpty: true
   component:
     InsisDtComponentRule:

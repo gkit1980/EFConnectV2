@@ -3,13 +3,16 @@ implementations:
     description: returns values based on array item values.
     params:
       valueElement:
-        label: Array element for the value
+        label: Array item element for the value
         type: element
         required: true
       labelElement:
-        label: Array element for the label
+        label: Array item element for the label
         type: element
         required: true
+      arrayElement:
+        label: Array parent element of the valueElement and labelElement, add it if the elements have the same parent
+        type: element
       hideEmpty:
         label: Hide empty option
         type: boolean
