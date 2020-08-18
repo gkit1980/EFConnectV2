@@ -7,7 +7,7 @@ page:
     - component:
         InsisDatagridSection:
           arrayElement: policies
-          css: insis-datagrid-with-pagination
+          css: insis-datagrid-with-pagination overflow-visible
           grid:
             rows:
               - cols:
