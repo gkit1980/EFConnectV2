@@ -4,6 +4,8 @@ trigger:
     include:
       - master
       - releases/*
+      - release/*
+
 
 variables:
   DOCKER_REPO: mmun/repo
