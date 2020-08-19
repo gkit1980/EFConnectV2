@@ -1,4 +1,4 @@
-FROM node:10
+FROM node:10.19.0
 
 # Configure Oracle Instant Client, needed for communication with Oracle DB
 # https://oracle.github.io/odpi/doc/installation.html#oracle-instant-client-zip
