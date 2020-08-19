@@ -7,9 +7,6 @@ element:
           instantlyUpdateModel: true
   label:
     NoLabelRule: {}
-  text:
-    ResourceTextRule:
-      placeholder: elements.search.fulltext.placeholder
   viewMode:
     ConditionalViewModeRule:
       conditionElement: search.see-more-options

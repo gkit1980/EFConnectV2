@@ -45,3 +45,6 @@ params:
     label: Pagination separator - resource key
     description: Resource key for separator eg. 1 - 10 _OF_ policies
     type: resourceKey
+  css:
+    label: Css class
+    type: texts
