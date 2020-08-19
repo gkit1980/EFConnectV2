@@ -1,4 +1,7 @@
 @mixin insis-one-level-tabs-navigation-page-mixin($theme) {
+  $primary: map-get($theme, primary);
+  $primaryColor: mat-color($primary);
+
   .insis-one-level-tabs-navigation-page {
     .mat-tab-header {
       text-transform: uppercase;
@@ -18,7 +21,7 @@
     }
 
     .mat-tab-label-active {
-      color: rgb(13, 120, 192);
+      color: $primaryColor;
       font-family: 'Roboto Medium', 'Roboto Regular', Roboto, sans-serif;
       font-weight: 500;
       font-style: normal;
@@ -26,7 +29,7 @@
 
     .mat-tab-group.mat-primary .mat-ink-bar,
     .mat-tab-nav-bar.mat-primary .mat-ink-bar {
-      background: rgb(13, 120, 192);
+      background: $primaryColor;
     }
   }
 }
