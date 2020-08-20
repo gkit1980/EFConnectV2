@@ -7,5 +7,3 @@ action:
           - policy.insured.vehicle-objects
     - IntegrationExecutionRule:
         integration: 920101.motor.insis-policy.load-policy
-  trigger:
-    - DynIdChangeTriggerRule: {}

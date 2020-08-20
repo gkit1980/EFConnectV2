@@ -11,4 +11,3 @@ action:
     - PageTriggerRule:
         enter:
           - client-data
-    - DynIdChangeTriggerRule: {}
