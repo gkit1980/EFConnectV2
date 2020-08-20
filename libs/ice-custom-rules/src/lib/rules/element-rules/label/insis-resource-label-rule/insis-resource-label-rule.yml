@@ -1,3 +1,20 @@
 implementations:
   InsisResourceLabelRule:
-    description: Sets label value from resource, resource key is set to current element value.
+    description: Sets label value from resource, resource key is set to current element value or if you specify source element to its value
+    params:
+      element:
+        label: Source element
+        type: element
+
+    icel: >
+      ```
+        element:
+          type: action
+          label:
+            InsisResourceLabelRule:
+              element: insurance-products~products~title
+          component:
+            StaticComponentRule:
+              component:
+                IceButton: {}
+      ```
