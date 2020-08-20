@@ -10,8 +10,6 @@ element:
     StaticComponentRule:
       component:
         IceTextInput: {}
-  values:
-    StaticValuesRule: {}
   validation:
     - LengthValidationRule:
         min: '1'

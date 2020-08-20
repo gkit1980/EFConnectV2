@@ -10,5 +10,3 @@ element:
     StaticComponentRule:
       component:
         IceTextInput: {}
-  values:
-    StaticValuesRule: {}

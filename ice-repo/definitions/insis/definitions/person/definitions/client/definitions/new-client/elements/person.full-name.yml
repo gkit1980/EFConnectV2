@@ -4,8 +4,6 @@ element:
     StaticComponentRule:
       component:
         IceTextInput: {}
-  values:
-    StaticValuesRule: {}
   label:
     ResourceLabelRule:
       key: elements.new-client.company-data.name.label
