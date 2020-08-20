@@ -26,3 +26,7 @@ params:
   signpostLabelKey:
     label: Resource key for signpost header
     type: resourceKey
+
+  dynamicLabel:
+    label: Resource key for dynamic label
+    type: resourceKey

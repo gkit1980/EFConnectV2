@@ -16,7 +16,9 @@ export class InsisArrayTooltipComponent extends IceArrayComponent {
   }
 
   get dynamicLabel(): string {
-    const dynamicLabel = this.element.textRule.getText('dynamic-label', null, this.index);
+    const dynamicLabel = this.getRecipeParam('dynamicLabel', null)
+      ? this.resource.resolve(this.getRecipeParam('dynamicLabel'))
+      : null;
     return template(dynamicLabel, { param1: this.getItems().length });
   }
 

@@ -97,6 +97,9 @@ entries:
         tooltip:
           - en: Alt+S
             de: Alt+S
+        placeholder:
+          - en: Search...
+            de: Search...
     search:
       fulltext:
         placeholder:
@@ -545,6 +548,10 @@ entries:
           empty:
             - en: Any
               de: Any
+        fulltext:
+          placeholder:
+            - en: Search...
+              de: Search...
       first-name:
         label:
           - en: First Name
@@ -1828,9 +1835,6 @@ entries:
           label:
             - en: Insured objects
               de: Insured objects
-          dynamic-label:
-            - en: '${param1} objects'
-              de: '${param1} objects'
         insurance:
           start-and-duration:
             label:

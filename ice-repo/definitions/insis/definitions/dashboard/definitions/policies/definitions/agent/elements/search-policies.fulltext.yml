@@ -2,9 +2,6 @@ element:
   type: text
   label:
     NoLabelRule: {}
-  text:
-    ResourceTextRule:
-      placeholder: elements.search.fulltext.placeholder
   viewMode:
     ConditionalViewModeRule:
       conditionElement: search-policies.see-more-options
