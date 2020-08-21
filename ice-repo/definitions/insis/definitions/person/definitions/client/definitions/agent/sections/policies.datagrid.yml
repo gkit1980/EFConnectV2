@@ -34,12 +34,4 @@ section:
                 elements:
                   - name: person.policies~insr-end
                 css: ''
-      showPagination: true
-      resultsLengthPath: results-length
-      pageSizePath: page-size
-      offsetPath: offset
-      pageIndexPath: page-index
-      paginationObjects: pagination.policies
-      paginationSeparator: pagination.separator
-      paginationAction: 'policies.search-from-pagination'
       arrayElement: person.policies

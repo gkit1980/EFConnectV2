@@ -24,6 +24,5 @@ section:
                 elements:
                   - name: payment.search.payment-method
                 css: ''
-      showPagination: false
       showFilter: false
       arrayElement: payment.objects
