@@ -1,0 +1,19 @@
+element:
+  type: action
+  label:
+    ResourceWithElementValuesLabelRule:
+      key: elements.policies.items.client-view-more.label
+      elements:
+        - cases~product-formatted
+        - cases~policy-id
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          themeColor: accent
+          variant: default
+  change:
+    - DtNavigateToDefinitionExecutionRule:
+        dynIdOutput: dynId
+        dt: cases~policy-link.change
+        definitionOutput: definition

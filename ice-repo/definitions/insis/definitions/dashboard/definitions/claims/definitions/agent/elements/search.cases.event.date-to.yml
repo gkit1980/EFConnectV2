@@ -1,0 +1,8 @@
+element:
+  type: date
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: search.cases.see-more-options
+      conditionValue: true
+      conditionViewMode: default
+      elseViewMode: hidden

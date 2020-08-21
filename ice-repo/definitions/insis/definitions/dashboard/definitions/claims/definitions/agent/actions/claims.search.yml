@@ -1,0 +1,21 @@
+action:
+  execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - cases
+    - InsisResetDatastoreValueExecutionRule:
+        paths:
+          - pagination.claims.page-index
+          - pagination.claims.offset
+          - pagination.claims.results-length
+        defaultValue: 0
+        scopeToDefinition: false
+        skipIfValueIsSet: false
+    - InsisResetDatastoreValueExecutionRule:
+        paths:
+          - pagination.claims.page-size
+        defaultValue: 10
+        scopeToDefinition: false
+        skipIfValueIsSet: false
+    - IntegrationExecutionRule:
+        integration: claims.load

@@ -1,0 +1,26 @@
+action:
+  execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - cases
+    - InsisResetDatastoreValueExecutionRule:
+        paths:
+          - pagination.claims.page-index
+          - pagination.claims.offset
+          - pagination.claims.results-length
+        defaultValue: 0
+        skipIfValueIsSet: true
+        scopeToDefinition: false
+    - InsisResetDatastoreValueExecutionRule:
+        paths:
+          - pagination.claims.page-size
+        defaultValue: 10
+        skipIfValueIsSet: true
+        scopeToDefinition: false
+    - IntegrationExecutionRule:
+        integration: insurance-products.load
+    - IntegrationExecutionRule:
+        integration: claims.load
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ICE_CONTEXT_ACTIVATED

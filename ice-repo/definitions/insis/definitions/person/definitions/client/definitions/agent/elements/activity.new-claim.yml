@@ -1,0 +1,10 @@
+element:
+  type: text
+  change:
+    - NavigateToDefinitionExecutionRule: {}
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          variant: default
+          themeColor: primary

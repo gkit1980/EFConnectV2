@@ -1,0 +1,23 @@
+action:
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - search.cases.claim.status
+          - search.cases.claim.fulltext
+          - search.cases.claim.number
+          - search.cases.product-id
+          - search.cases.policy-no
+          - search.cases.client-id
+          - search.cases.client-name
+          - search.cases.event.type
+          - search.cases.claim.date-from
+          - search.cases.claim.date-to
+          - search.cases.event.date-from
+          - search.cases.event.date-to
+  execution:
+    - InsisResetDatastoreValueExecutionRule:
+        paths:
+          - pagination.claims.search-criteria-changed
+        scopeToDefinition: false
+        defaultValue: -1
+        skipIfValueIsSet: false

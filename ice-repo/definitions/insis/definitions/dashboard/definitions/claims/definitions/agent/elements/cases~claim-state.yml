@@ -1,0 +1,13 @@
+element:
+  type: text
+  viewMode: output
+  label:
+    NoLabelRule: {}
+  component:
+    StaticComponentRule:
+      component:
+        InsisIcon:
+          showLabel: true
+  values:
+    ListValuesRule:
+      list: claims.status-with-icon

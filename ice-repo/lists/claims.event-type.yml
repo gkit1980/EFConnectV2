@@ -1,0 +1,40 @@
+list:
+  items:
+    - value: ''
+      label_en: Any
+      label_de: Alle
+    - value: '5'
+      label_en: Traffic accident
+      label_de: Verkehrsunfall
+    - value: '9'
+      label_en: Accident
+      label_de: Unfall
+    - value: '11'
+      label_en: Lightning
+      label_de: Blitz
+    - value: '14'
+      label_en: Road or traffic accident
+      label_de: Straßen- oder Verkehrsunfall
+    - value: '15'
+      label_en: Flood
+      label_de: Flut
+    - value: '198'
+      label_en: Illness
+      label_de: Erkrankung
+    - value: '249'
+      label_en: Injury Trauma
+      label_de: Verletzungstrauma
+    - value: '803'
+      label_en: Legal defence costs
+      label_de: Verteidigungs-RS-Fall
+    - value: '804'
+      label_en: Indemnity costs
+      label_de: Schadenersatzfall
+  type: text
+  additionals:
+    label_en:
+      label: label_en
+      type: text
+    label_de:
+      label: label_de
+      type: text

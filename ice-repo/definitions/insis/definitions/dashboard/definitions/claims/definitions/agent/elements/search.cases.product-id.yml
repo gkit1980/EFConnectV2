@@ -1,0 +1,19 @@
+element:
+  type: text
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: search.cases.see-more-options
+      conditionValue: true
+      conditionViewMode: default
+      elseViewMode: hidden
+  values:
+    InsisArrayItemBasedValuesRule:
+      valueElement: lob~products~product-code
+      labelElement: lob~products~product-formatted
+      hideEmpty: false
+      emptyValueIsString: true
+  defaultValue: null
+  component:
+    StaticComponentRule:
+      component:
+        IceDropdown: {}

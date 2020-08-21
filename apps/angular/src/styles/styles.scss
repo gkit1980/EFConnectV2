@@ -314,6 +314,34 @@ confirmation-dialog-layout {
   }
 }
 
+.label-font-size-small {
+  mat-label {
+    font-size: 14px;
+  }
+}
+
+.insis-icon-assignment_late {
+  .mat-icon {
+    color: red;
+    display: inline-flex;
+    vertical-align: middle;
+  }
+}
+
+.insis-icon-Open {
+  .mat-icon {
+    display: none;
+  }
+}
+
+.insis-icon-assignment_turned_in {
+  .mat-icon {
+    color: #42841d;
+    display: inline-flex;
+    vertical-align: middle;
+  }
+}
+
 .ice-hint {
   color: rgba(0, 0, 0, 0.6);
   font-family: Roboto, 'Helvetica Neue', sans-serif;

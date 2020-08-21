@@ -1,0 +1,65 @@
+integration:
+  exchange:
+    InsisDBExchangeRule:
+      connectString: 'env:insis-db-url'
+      username: 'env:insis-db-username'
+      password: 'env:insis-db-password'
+      queryFileURL: data/claims.agent.get.sql
+      queryType: JSON
+  transformation:
+    DefaultTransformationRule:
+      dateFormat: YYYY-MM-DD
+      out:
+        - mappings:
+            - param: client_pid
+              element: person.pid
+            - param: client_name
+              element: null
+            - param: event_date_from
+              element: null
+            - param: event_date_to
+              element: null
+            - param: event_type
+              element: null
+            - param: claim_status
+              element: null
+            - param: claim_date_from
+              element: null
+            - param: claim_date_to
+              element: null
+            - param: p_fulltext
+              element: null
+            - param: policy_no
+              element: null
+            - param: product_id
+              element: null
+            - param: claim_no
+              element: null
+            - param: page_size
+              datastore: pagination.client.claims.page-size
+            - param: offset
+              datastore: pagination.client.claims.offset
+      in:
+        - fromIdx:
+            array: payload.rows
+          toIdx:
+            useSourceIndex: true
+          mappings:
+            - payload: 'rows[n].claim_id'
+              element: cases~id
+            - payload: 'rows[n].claim_state_name'
+              element: cases~claim-state
+            - payload: 'rows[n].event_date'
+              element: cases~event-date
+            - payload: 'rows[n].event_type_name'
+              element: cases~event-type
+            - payload: 'rows[n].registration_date'
+              element: cases~claim-date
+            - payload: 'rows[n].policy_id'
+              element: cases~policy-id
+            - payload: 'rows[n].insr_type'
+              element: cases~insr-type
+            - payload: 'rows[n].insr_type_name'
+              element: cases~insr-type-name
+            - payload: 'rows[n].total'
+              datastore: 'pagination.client.claims.results-length'

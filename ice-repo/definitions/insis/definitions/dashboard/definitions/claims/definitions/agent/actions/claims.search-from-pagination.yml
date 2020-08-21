@@ -1,0 +1,7 @@
+action:
+  execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - cases
+    - IntegrationExecutionRule:
+        integration: claims.load

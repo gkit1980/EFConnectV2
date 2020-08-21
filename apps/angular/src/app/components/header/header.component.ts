@@ -103,12 +103,12 @@ export class HeaderComponent {
             '/ice/insis.products.policy-details.agent',
             'quote-buy.agent',
           ],
+        },
+        {
+          key: runtime.iceResource.resolve('pages.header.agent.claims.label'),
+          link: runtime.iceResource.resolve('pages.header.agent.claims.link'),
+          includes: ['/ice/insis.dashboard.claims.agent/home'],
         }
-        // {
-        //   key: runtime.iceResource.resolve('pages.header.agent.claims.label'),
-        //   link: runtime.iceResource.resolve('pages.header.agent.claims.link'),
-        //   includes: ['/ice/insis.dashboard.claims.agent/home'],
-        // }
       );
 
       this.customerMenuItems.push(

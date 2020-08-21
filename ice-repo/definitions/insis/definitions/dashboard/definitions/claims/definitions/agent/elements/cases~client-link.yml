@@ -1,0 +1,18 @@
+element:
+  type: action
+  label:
+    ResourceWithElementValuesLabelRule:
+      key: elements.policies.items.client-view-more.label
+      elements:
+        - cases~client-pid
+        - cases~client-name
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          themeColor: accent
+          variant: default
+  change:
+    - DtNavigateToDefinitionExecutionRule:
+        dt: navigate-to-client
+        definitionOutput: url

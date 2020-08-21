@@ -1,0 +1,73 @@
+page:
+  validation: {}
+  component:
+    InsisSimplePage: {}
+  sections:
+    - search
+    - component:
+        IceFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    css: mt-4
+                    elements:
+                      - name: activity.new-claim
+    - component:
+        InsisDatagridSection:
+          arrayElement: cases
+          grid:
+            rows:
+              - cols:
+                  - elements:
+                      - name: cases~claim-link
+                    caption: elements.agent-claims.items.case-id.label
+                    size: 100px
+                    css: ml-3 label-link
+                  - elements:
+                      - name: cases~claim-state
+                    caption: elements.agent-claims.items.claim-state.label
+                    size: 130px
+                    css: u-pl-2
+                  - elements:
+                      - name: cases~event-type
+                    caption: elements.agent-claims.items.event-type.label
+                    size: 170px
+                    css: u-pl-2
+                  - elements:
+                      - name: cases~claim-date
+                    caption: elements.agent-claims.items.claim-date.label
+                    size: 120px
+                    css: u-pl-2
+                  - elements:
+                      - name: cases~event-date
+                    caption: elements.agent-claims.items.event-date.label
+                    size: 120px
+                    css: u-pl-2
+                  - elements:
+                      - name: cases~policy-link
+                    caption: elements.agent-claims.items.policy.label
+                    size: 350px
+                    hide.sm: true
+                    hide.xs: true
+                    css: case-tooltip overflow-visible label-link u-pl-2
+                  - elements:
+                      - name: cases~client-link
+                    caption: elements.agent-claims.items.client.label
+                    size: 300px
+                    hide.sm: true
+                    hide.xs: true
+                    css: case-tooltip overflow-visible label-link u-pl-2
+    - component:
+        InsisPaginatorSection:
+          paginationAction: claims.search-from-pagination
+          resultsLengthDatastorePath: pagination.claims.results-length
+          pageSizeDatastorePath: pagination.claims.page-size
+          offsetDatastorePath: pagination.claims.offset
+          pageIndexDatastorePath: pagination.claims.page-index
+          searchCriteriaChangedDatastorePath: pagination.claims.search-criteria-changed
+          paginationObjectsKey: pagination.claims
+          scopeToDefinition: false
+          css: insis-paginator-with-datagrid

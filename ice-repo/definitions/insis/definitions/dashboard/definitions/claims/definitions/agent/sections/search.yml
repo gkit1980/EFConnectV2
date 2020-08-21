@@ -1,0 +1,37 @@
+section:
+  component:
+    InsisFormFlexSection:
+      grid:
+        rows:
+          - gap: 20px
+            cols:
+              - size: auto
+                css: nowrap
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: search.cases.claim.status
+                  - name: search.cases.fulltext
+                  - name: search.cases.claim.number
+                  - name: search.cases.product-id
+                  - name: search.cases.policy-no
+                  - name: search.cases.client-id
+                  - name: search.cases.client-name
+                  - name: activity.search-cases
+                  - name: search.cases.see-more-options
+            layout: row
+          - gap: 20px
+            cols:
+              - size: auto
+                css: nowrap label-font-size-small
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: search.cases.event.type
+                  - name: search.cases.claim.date-from
+                  - name: search.cases.claim.date-to
+                  - name: search.cases.event.date-from
+                  - name: search.cases.event.date-to
+            layout: row
+      css: search.cases mt-4
+      behaviourForEmptyRows: hide

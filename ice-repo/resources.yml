@@ -3,6 +3,36 @@ locales:
   - de
 entries:
   elements:
+    agent-claims:
+      items:
+        case-id:
+          label:
+            - en: Claim number
+              de: null
+        claim-state:
+          label:
+            - en: State
+              de: null
+        event-type:
+          label:
+            - en: Event type
+              de: null
+        claim-date:
+          label:
+            - en: Claim date
+              de: null
+        event-date:
+          label:
+            - en: Event date
+              de: null
+        client:
+          label:
+            - en: Client
+              de: null
+        policy:
+          label:
+            - en: Policy
+              de: null
     client:
       open-popup:
         label:
@@ -129,6 +159,60 @@ entries:
         label:
           - en: See more options
             de: See more options
+      cases:
+        product-id:
+          empty:
+            - en: Any product
+              de: null
+          label:
+            - en: Product
+              de: null
+        policy-no:
+          label:
+            - en: Policy number
+              de: null
+        client-name:
+          label:
+            - en: Client name
+              de: null
+        case-id:
+          label:
+            - en: Claim id
+              de: null
+        client-id:
+          label:
+            - en: Client ID
+              de: null
+        claim:
+          status:
+            label:
+              - en: State
+                de: null
+          number:
+            label:
+              - en: Claim number
+                de: null
+          date-from:
+            label:
+              - en: Claim date from
+                de: null
+          date-to:
+            label:
+              - en: Claim date to
+                de: null
+        event:
+          date-from:
+            label:
+              - en: Event date from
+                de: null
+          date-to:
+            label:
+              - en: Event date to
+                de: null
+          type:
+            label:
+              - en: Event type
+                de: null
     new-client:
       label:
         - en: NEW CLIENT
@@ -2164,6 +2248,14 @@ entries:
         label:
           - en: NEW CLIENT
             de: NEUER KUNDE
+      search-cases:
+        label:
+          - en: SEARCH
+            de: null
+      new-claim:
+        label:
+          - en: NEW CLAIM
+            de: null
     no-active-policies-title:
       label:
         - en: You have no active policies
@@ -2220,7 +2312,7 @@ entries:
             de: ' (per installment)'
   pagination:
     claims:
-      - en: Claims
+      - en: claims
         de: null
     policies:
       - en: policies
@@ -2544,6 +2636,10 @@ entries:
       title:
         - en: Policies
           de: Policen
+    claims:
+      title:
+        - en: Claims
+          de: Claims
   lists:
     gender:
       diverse:

@@ -1,0 +1,18 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: cases~insr-type
+  outputs:
+    - id: definition
+      type: string
+    - label: dynId
+      id: dynId
+    - label: pid
+      id: pid
+  rules:
+    - inputs:
+        - 910211
+      outputs:
+        - insis.products.policy-details.agent
+        - cases~policy-id
+        - person.pid

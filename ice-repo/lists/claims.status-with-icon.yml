@@ -1,0 +1,33 @@
+list:
+  items:
+    - value: Open
+      label_en: Open
+      label_de: Offen
+      icon: null
+    - value: Incomplete
+      label_en: Incomplete
+      label_de: Incomplete
+      icon: assignment_late
+    - value: Closed
+      label_en: Closed
+      label_de: Geschlossen
+      icon: assignment_turned_in
+    - value: 'Archived'
+      label_en: 'Archived'
+      label_de: Archiviert
+      icon: next_week
+    - value: null
+      label_en: Any
+      label_de: Any
+      icon: null
+  type: text
+  additionals:
+    label_en:
+      label: label_en
+      type: text
+    label_de:
+      label: label_de
+      type: text
+    icon:
+      label: icon
+      type: text
