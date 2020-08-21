@@ -1,6 +1,5 @@
 element:
   title: Duration of insurance
-  description: Duration of insurance
   type: integer
   component:
     StaticComponentRule:
@@ -8,7 +7,3 @@ element:
         IceNumber:
           keyboardType: text
   viewMode: required
-  text:
-    ResourceTextRule:
-      suffix: elements.policy.contract.term.duration.suffix
-      placeholder: elements.policy.contract.term.duration.placeholder

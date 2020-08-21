@@ -1,6 +1,3 @@
 element:
   title: IBAN
   type: text
-  viewMode:
-    DtViewModeRule:
-      dt: policy.contract.account.behaviour
