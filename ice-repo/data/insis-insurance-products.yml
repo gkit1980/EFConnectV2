@@ -6,7 +6,8 @@ lob:
     products:
       - title: insis-insurance-products.motor.motor-comprehensive.title
         product-code: 920101
-        definition: null
+        definition-customer: null
+        definition-agent: null
   - name: life
     title: insis-insurance-products.life.title
     description: insis-insurance-products.life.description
@@ -14,16 +15,20 @@ lob:
     products:
       - title: insis-insurance-products.life.term-life.title
         product-code: 910211
-        definition: 'insis.products.life.risks.tl910211.term-life.quote-buy.customer'
+        definition-customer: 'insis.products.life.risks.tl910211.term-life.quote-buy.customer'
+        definition-agent: 'insis.products.life.risks.tl910211.term-life.quote-buy.agent'
       - title: insis-insurance-products.life.whole-life.title
         product-code: null
-        definition: null
+        definition-customer: null
+        definition-agent: null
       - title: insis-insurance-products.life.unit-link.title
         product-code: null
-        definition: null
+        definition-customer: null
+        definition-agent: null
       - title: insis-insurance-products.life.endowment.title
         product-code: null
-        definition: null
+        definition-customer: null
+        definition-agent: null
   - name: property
     title: insis-insurance-products.property.title
     description: insis-insurance-products.property.description
@@ -31,7 +36,8 @@ lob:
     products:
       - title: insis-insurance-products.property.household.title
         product-code: 920201
-        definition: null
+        definition-customer: null
+        definition-agent: null
   - name: health
     title: insis-insurance-products.health.title
     description: insis-insurance-products.health.description
@@ -39,4 +45,5 @@ lob:
     products:
       - title: insis-insurance-products.health.health.title
         product-code: null
-        definition: null
+        definition-customer: null
+        definition-agent: null

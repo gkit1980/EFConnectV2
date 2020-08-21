@@ -23,5 +23,5 @@ integration:
               element: insurance-products~image
             - payload: file.lob[n].products[n].title
               element: insurance-products~products~title
-            - payload: file.lob[n].products[n].definition
+            - payload: file.lob[n].products[n].definition-customer
               element: insurance-products~products~definition
