@@ -8,8 +8,6 @@ element:
   viewMode: disabled
   defaultValue: m
   values: insis.gender
-  pages:
-    client-data: null
   buckets:
     insis-get-client: {}
     insis-save-client: {}

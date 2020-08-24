@@ -2,8 +2,6 @@ element:
   title: Address of person
   type: text
   viewMode: default
-  pages:
-    client-data: null
   buckets:
     insis-get-client: {}
     insis-update-client: {}

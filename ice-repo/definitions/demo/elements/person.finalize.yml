@@ -12,5 +12,3 @@ element:
           - person.first-name
           - person.last-name
           - person.gender
-  pages:
-    home: {}

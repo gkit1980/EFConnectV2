@@ -5,8 +5,6 @@ element:
     StaticComponentRule:
       component:
         IceDatepicker: {}
-  pages:
-    home: {}
   viewMode:
     StaticViewModeRule:
       viewMode: required

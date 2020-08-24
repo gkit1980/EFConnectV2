@@ -2,8 +2,6 @@ element:
   title: Last name of person
   type: text
   viewMode: disabled
-  pages:
-    client-data: null
   buckets:
     insis-get-client: {}
     insis-save-client: {}

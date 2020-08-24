@@ -4,8 +4,6 @@ element:
   component: IceDropdown
   viewMode: disabled
   values: common.languages
-  pages:
-    client-data: null
   buckets:
     insis-get-client: {}
     insis-save-client: {}

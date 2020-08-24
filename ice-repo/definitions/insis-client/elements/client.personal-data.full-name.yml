@@ -5,5 +5,3 @@ element:
   mirror:
     DtMirrorRule:
       dt: client.personal-data.full-name
-  pages:
-    client-data: null

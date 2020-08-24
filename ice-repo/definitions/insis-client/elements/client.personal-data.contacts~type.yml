@@ -1,8 +1,6 @@
 element:
   type: text
   title: contyct type of person
-  pages:
-    client-data: null
   buckets:
     insis-get-client: {}
     insis-update-client: {}

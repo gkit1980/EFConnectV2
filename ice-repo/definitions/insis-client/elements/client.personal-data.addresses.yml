@@ -12,8 +12,6 @@ element:
       elseViewMode: disabled
   label:
     NoLabelRule: {}
-  pages:
-    client-data: null
   buckets:
     insis-get-client: {}
     insis-update-client: {}

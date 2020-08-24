@@ -8,5 +8,3 @@ element:
           cancelEditAction: cancel-edit
           finishEditAction: insis-update-client
   defaultValue: false
-  pages:
-    client-data: {}

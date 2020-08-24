@@ -10,8 +10,6 @@ element:
       conditionValue: true
       conditionViewMode: default
       elseViewMode: hidden
-  pages:
-    client-data: null
   buckets:
     insis-get-client: {}
     insis-update-client: {}

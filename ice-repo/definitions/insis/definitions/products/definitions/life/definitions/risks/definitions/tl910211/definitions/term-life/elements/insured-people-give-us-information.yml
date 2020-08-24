@@ -4,4 +4,3 @@ element:
     StaticComponentRule:
       component:
         IceNone: {}
-  pages: {}

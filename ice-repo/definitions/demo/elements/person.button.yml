@@ -4,5 +4,3 @@ element:
     StaticComponentRule:
       component:
         InsisDummyButtonComponent: {}
-  pages:
-    home: null

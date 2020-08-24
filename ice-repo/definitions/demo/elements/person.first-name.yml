@@ -1,8 +1,6 @@
 element:
   type: text
   title: First Name
-  pages:
-    home: {}
   validation:
     - LengthValidationRule:
         min: '2'
