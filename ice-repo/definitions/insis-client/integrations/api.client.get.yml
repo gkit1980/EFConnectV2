@@ -22,6 +22,8 @@ integration:
               element: client.personal-data.last-name
             - payload: birthdate
               element: client.personal-data.date-of-birth
+            - payload: companyName
+              element: client.company-data.name
             - payload: engagementId
               value: -1
             - payload: insis-agent-no

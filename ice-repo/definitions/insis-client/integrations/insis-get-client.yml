@@ -44,6 +44,10 @@ integration:
               payload: Entity.PersonalData.Language
             - element: client.personal-data.last-name
               payload: Entity.PersonalData.Name.Family
+
+            - element: client.company-data.name
+              payload: Entity.CompanyData.Name
+
             - element: client.personal-data.manid
               payload: Entity.ManID
             - element: client.personal-data.nationality

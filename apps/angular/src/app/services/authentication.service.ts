@@ -15,11 +15,18 @@ export class AuthenticationService {
   }
 
   get name(): string {
-    if (this.icePrincipalService.principal.data)
-      return `${this.icePrincipalService.principal.data.firstName} ${this.icePrincipalService.principal.data.lastName}`;
+    if (!this.icePrincipalService.principal.data) {
+      console.error('No name data found for current user.');
+      return '';
+    }
 
-    console.error('No name data found for current user.');
-    return '';
+    if (this.icePrincipalService.principal.data.firstName) {
+      return `${this.icePrincipalService.principal.data.firstName} ${this.icePrincipalService.principal.data.lastName}`;
+    }
+
+    if (this.icePrincipalService.principal.data.companyName) {
+      return this.icePrincipalService.principal.data.companyName;
+    }
   }
 
   get role(): Role {
