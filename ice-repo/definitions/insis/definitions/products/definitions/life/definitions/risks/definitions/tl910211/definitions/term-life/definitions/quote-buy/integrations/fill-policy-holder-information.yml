@@ -26,6 +26,7 @@ integration:
             array: datamodel.policy.insured.person-objects
             append: false
             condition: 1 == 1
+          if: payload.firstName != null
           mappings:
             - payload: firstName
               element: policy.insured.person-objects~person.first-name
