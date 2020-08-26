@@ -2,6 +2,6 @@ action:
   execution:
     - InsisSetElementValueExecutionRule:
         element: personal-information.edit-mode
-        value: 'false'
+        value: false
     - IntegrationExecutionRule:
         integration: person.update

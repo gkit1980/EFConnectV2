@@ -8,11 +8,11 @@ element:
   change:
     - InsisSetElementValueExecutionRule:
         element: person.bank-accounts~edit-mode
-        value: 'true'
+        value: true
   viewMode:
     ConditionalViewModeRule:
       conditionElement: person.bank-accounts~edit-mode
-      conditionValue: 'true'
+      conditionValue: true
       conditionViewMode: hidden
       elseViewMode: default
   label:

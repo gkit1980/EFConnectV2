@@ -2,7 +2,7 @@ action:
   execution:
     - InsisSetElementValueExecutionRule:
         element: person.bank-accounts~edit-mode
-        value: 'false'
+        value: false
     - ResetElementValueExecutionRule:
         elements:
           - person.bank-accounts

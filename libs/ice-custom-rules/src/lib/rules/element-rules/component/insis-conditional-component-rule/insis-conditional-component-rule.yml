@@ -9,7 +9,11 @@ implementations:
       conditionValue:
         label: Condition Value
         required: true
-        type: conditionElement
+        types:
+          - boolean
+          - text
+          - integer
+        allowNull: true
       conditionComponent:
         label: Conditonal Component
         required: true

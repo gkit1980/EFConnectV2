@@ -2,7 +2,7 @@ action:
   execution:
     - InsisSetElementValueExecutionRule:
         element: person.contacts~edit-mode
-        value: 'false'
+        value: false
     - ResetElementValueExecutionRule:
         elements:
           - person.contacts

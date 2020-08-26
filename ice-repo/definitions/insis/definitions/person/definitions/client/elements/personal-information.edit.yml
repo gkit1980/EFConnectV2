@@ -8,7 +8,7 @@ element:
   change:
     - InsisSetElementValueExecutionRule:
         element: personal-information.edit-mode
-        value: 'true'
+        value: true
   viewMode:
     ConditionalViewModeRule:
       conditionElement: personal-information.edit-mode

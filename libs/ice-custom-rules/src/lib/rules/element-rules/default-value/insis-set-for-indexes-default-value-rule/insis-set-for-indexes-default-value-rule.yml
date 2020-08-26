@@ -10,7 +10,10 @@ implementations:
         label: Value
         required: true
         allowNull: true
-        type: thisElement
+        types:
+          - boolean
+          - text
+          - integer
 
     icel: >
       ```

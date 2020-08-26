@@ -2,6 +2,6 @@ action:
   execution:
     - InsisSetElementValueExecutionRule:
         element: person.bank-accounts~is-primary
-        value: 'false'
+        value: false
     - IntegrationExecutionRule:
         integration: person.bank-accounts.update

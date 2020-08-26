@@ -2,6 +2,6 @@ action:
   execution:
     - InsisSetElementValueExecutionRule:
         element: person.addresses~is-primary
-        value: 'true'
+        value: true
     - IntegrationExecutionRule:
         integration: person.addresses.update

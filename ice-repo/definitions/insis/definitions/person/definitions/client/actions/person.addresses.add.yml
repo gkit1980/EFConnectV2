@@ -2,6 +2,6 @@ action:
   execution:
     - InsisSetElementValueExecutionRule:
         element: person.addresses~edit-mode
-        value: 'false'
+        value: false
     - IntegrationExecutionRule:
         integration: person.addresses.add

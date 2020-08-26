@@ -10,8 +10,12 @@ implementations:
         required: true
       value:
         label: Value
-        type: text
+        types:
+          - text
+          - boolean
+          - integer
         required: true
+        allowNull: true
     icel: >
       ```
         action:

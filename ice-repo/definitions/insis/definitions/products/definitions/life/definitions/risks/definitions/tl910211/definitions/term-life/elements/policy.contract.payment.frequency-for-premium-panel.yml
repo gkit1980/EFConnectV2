@@ -3,7 +3,6 @@ element:
   viewMode:
     StaticViewModeRule:
       viewMode: output
-  default: 1
   label:
     NoLabelRule: {}
   mirror:
