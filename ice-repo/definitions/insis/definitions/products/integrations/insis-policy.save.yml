@@ -6,6 +6,16 @@ integration:
       dateFormat: YYYY-MM-DD
       dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
       out:
+        - if: datamodel.policy.participants.holder.company.name != null
+          mappings:
+            - element: policy.participants.holder.company.name
+              payload: Client.Entity.CompanyData.Name
+            - element: policy.participants.holder.person.pid
+              payload: Client.Entity.CompanyData.CustomerID
+        - if: datamodel.policy.participants.holder.company.name == null
+          mappings:
+            - element: policy.participants.holder.person.pid
+              payload: Client.Entity.PersonalData.PID
         - mappings:
             - element: policy.contract.agent-no
               payload: InsuranceConditions.AgentNO
@@ -23,8 +33,6 @@ integration:
               payload: InsuranceConditions.DurationUnits
             - element: policy.contract.term.duration
               payload: InsuranceConditions.Duration
-            - element: policy.participants.holder.person.pid
-              payload: Client.Entity.PersonalData.PID
             - element: policy.status.policy-status
               payload: InsuranceConditions.PolicyState
       in:
