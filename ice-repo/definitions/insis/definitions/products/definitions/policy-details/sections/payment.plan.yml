@@ -6,10 +6,8 @@ section:
       installmentsElement: policy.contract.payment.frequency
       totalElement: null
       installmentAmountElement: policy.contract.payment.tax-value
-      sections:
-        - payment-insureds
-        - payment-taxes-and-fees
       insuredsSection: payment.insureds
       taxesAndFeesSection: payment.taxes-and-fees
       paymentPlanLabel: section.policy-details.payment.plan.label
       taxesAndFeesResourceKey: section.policy-details.payment.plan.taxes-and-fees.label
+      nextPaymentDateElement: null

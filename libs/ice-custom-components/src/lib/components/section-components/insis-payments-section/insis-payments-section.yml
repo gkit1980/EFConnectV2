@@ -27,6 +27,7 @@ params:
     label: Total sum element
     required: true
     type: element
+    allowNull: true
     info: >
       Should be element that contains how much insured would pay, whole sum. This element should have viewmode output
   installmentAmountElement:
@@ -39,6 +40,7 @@ params:
     label: Next payment date element
     required: true
     type: element
+    allowNull: true
     info: >
       Should be element that shows when next payment is due. This element should have viewmode output
   insuredsSection:

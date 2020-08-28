@@ -9,7 +9,6 @@ element:
         IceButton:
           themeColor: primary
           variant: default
-          action: navigate-to-policy
   label:
     ResourceWithElementValuesLabelRule:
       key: elements.resolved-claims.items.policy-link.label

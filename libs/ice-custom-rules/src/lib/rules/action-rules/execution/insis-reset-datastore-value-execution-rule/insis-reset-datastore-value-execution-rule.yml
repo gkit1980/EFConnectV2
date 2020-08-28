@@ -14,7 +14,10 @@ implementations:
         info: Add definition path in front of the path from paths param.
       defaultValue:
         label: Default value
-        type: text
+        types:
+          - boolean
+          - text
+          - integer
         required: false
         info: If this value is not set, datastore is set to NULL value on provided path.
       skipIfValueIsSet:
