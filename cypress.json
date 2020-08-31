@@ -1,0 +1,14 @@
+{
+	"baseUrl": "http://localhost:3000/",
+	"screenshotsFolder": "./cypress/screenshots",
+  "videosFolder": "./cypress/videos",
+  "video": false,
+	"env": {
+		"scenarios": ["abc"],
+		"scenariosPath": "../../cypress/scenarios",
+		"testflowPath": "../../cypress/test-flows",
+		"performStepsToGetToTariff": true,
+		"scenariosToRun": [],
+		"testflowsToRun": []
+	}
+}

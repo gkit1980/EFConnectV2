@@ -1,0 +1,18 @@
+{
+	"browser": "chrome",
+	"exit": false,
+	"scenarioPath": "./ice-repo/",
+	"testflowPath": "./ice-repo/",
+	"repoPath": "./ice-repo",
+	"descriptorsPaths": [
+		"./libs/ice-custom-components",
+		"./libs/ice-custom-rules"
+	],
+	"baseUrl": "http://localhost:4200/",
+	"defaultCommandTimeout": 6000,
+	"responseTimeout": 15000,
+	"screenshots": "./ice-tea/screenshots",
+  "videos": "./ice-tea/videos",
+  "video": false,
+	"performStepsToGetToTariff": false
+}
