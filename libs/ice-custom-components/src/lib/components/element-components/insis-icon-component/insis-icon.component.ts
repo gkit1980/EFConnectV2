@@ -26,7 +26,7 @@ export class InsisIconComponent extends SelectComponentImplementation implements
       return this.value;
     }
 
-    const element = <ItemElement>this.element.element;
+    const element = <ItemElement>this.element;
     const iconAdditional = element.valuesRule.getAdditionalValue(this.value, 'icon');
     if (iconAdditional) return iconAdditional;
     return null;

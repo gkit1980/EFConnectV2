@@ -116,7 +116,7 @@ describe(InsisSliderComponent.name, () => {
     componentInstance.componentValue = 1;
     componentInstance.change();
 
-    expect(componentInstance.element.element.getValue().forIndex(null)).toEqual('test1');
+    expect(componentInstance.element.getValue().forIndex(null)).toEqual('test1');
   });
 
   it('when defaut value is set to a value that is not in the range of the range rule the elements value is set to the defaut value', async () => {

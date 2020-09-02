@@ -1,6 +1,7 @@
 element:
-  pages:
-    1.quote.covers:
-      label:
-        NoLabelRule: {}
   type: currency
+  label:
+    ConditionalPageResourceLabelRule:
+      conditionPage: 1.quote.covers
+      conditionKey: null
+      elseKey: elements.policy.insured.vehicle-objects.items.cover.owndamage.pa.label

@@ -1,7 +1,5 @@
 element:
   type: integer
-  pages:
-    summary:
-      viewMode:
-        StaticViewModeRule:
-          viewMode: output
+  viewMode:
+    DtViewModeRule:
+      dt: person.summary-payments.viewmode

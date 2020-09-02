@@ -1,9 +1,5 @@
 element:
   type: text
-  pages:
-    payments:
-      label:
-        NoLabelRule: {}
   viewMode:
     StaticViewModeRule:
       viewMode: output
@@ -12,3 +8,8 @@ element:
       component:
         InsisCurrency:
           currencyElementName: policy.insured.currency
+  label:
+    ConditionalPageResourceLabelRule:
+      conditionPage: payments
+      conditionKey: null
+      elseKey: elements.policy.insured.objects.items.covers.items.premium

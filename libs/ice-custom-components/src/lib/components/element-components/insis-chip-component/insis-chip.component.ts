@@ -21,7 +21,7 @@ export class InsisChipComponent extends MaterialElementComponentImplementation i
   }
 
   public get value(): string {
-    return this?.element.element.getValue().forIndex(this.index);
+    return this?.element.getValue().forIndex(this.index);
   }
 
   public onRemoveHandler() {
@@ -31,10 +31,10 @@ export class InsisChipComponent extends MaterialElementComponentImplementation i
   }
 
   private get isArrayItem(): boolean {
-    return this.element.element.isArrayItem();
+    return this.element.isArrayItem();
   }
 
   private get getParentArrayElement(): ArrayElement {
-    return (this.element.element as ItemElement).getParentArrayElement?.() as ArrayElement;
+    return (this.element as ItemElement).getParentArrayElement?.() as ArrayElement;
   }
 }

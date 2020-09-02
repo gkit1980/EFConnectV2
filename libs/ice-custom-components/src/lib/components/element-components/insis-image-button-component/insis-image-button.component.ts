@@ -17,8 +17,8 @@ export class InsisImageButtonComponent extends IceButtonComponent {
   onClick(): void {
     this.onComponentValueChange();
 
-    if (this.element.element.type === 'action') {
-      const action = this.element.element.iceModel.actions[this.getElementValue()];
+    if (this.element.type === 'action') {
+      const action = this.element.iceModel.actions[this.getElementValue()];
       if (action) action.execute({ index: this.index });
     }
   }

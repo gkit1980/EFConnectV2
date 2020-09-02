@@ -1,0 +1,24 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: person-information.edit-mode
+    - page: true
+  outputs:
+    - id: viewMode
+      type: string
+  rules:
+    - inputs:
+        - '-'
+        - 'summary'
+      outputs:
+        - 'output'
+    - inputs:
+        - 'true'
+        - '-'
+      outputs:
+        - 'default'    
+    - inputs:
+        - 'false'
+        - '-'
+      outputs:
+        - 'output'    

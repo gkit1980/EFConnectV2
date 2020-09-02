@@ -4,9 +4,10 @@ import {
   IntegrationDataOut,
   IceEndpoint,
   ActiveIntegration,
-  IntegrationElement,
+  //IntegrationElement,
   ApiIntegration,
   Validation,
+  IceElement,
 } from '@impeo/ice-core';
 import * as _ from 'lodash';
 
@@ -97,13 +98,14 @@ export class InsisApiForActiveRequestHandlerRule extends RequestHandlerRule {
 
   //
   //
-  private getIntegrationElements(): IntegrationElement[] {
+  private getIntegrationElements(): IceElement[] {
     let elements = _.values(this.iceModel.elements);
     if (this.recipe['bucket']) {
       elements = this.requireBucket(this.recipe['bucket']).getElements();
     }
     return _.map(elements, (element) => {
-      return IntegrationElement.build(this.integration as ApiIntegration, element);
+      //return IntegrationElement.build(this.integration as ApiIntegration, element);
+      return element;
     });
   }
 }

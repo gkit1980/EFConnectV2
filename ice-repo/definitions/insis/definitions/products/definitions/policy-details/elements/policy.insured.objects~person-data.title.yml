@@ -3,13 +3,8 @@ element:
   viewMode: output
   label:
     DtResourceLabelRule:
-      dt: policy.insured.objects~person-data.title.label
+      dt: policy.insured.objects~person-data.title.label-with-name
   component:
     StaticComponentRule:
       component:
         IceNone: {}
-  pages:
-    covers:
-      label:
-        DtResourceLabelRule:
-          dt: policy.insured.objects~person-data.title.label-with-name

@@ -1,15 +1,15 @@
 element:
   type: text
-  pages:
-    summary:
-      viewMode:
-        StaticViewModeRule:
-          viewMode: output
-      component:
-        InsisConditionalComponentRule:
-          conditionComponent:
-            InsisNullOutput: {}
-          elseComponent:
-            InsisIBANOutput: {}
-          conditionElement: person.bank-accounts~account-num
-          conditionValue: null
+  viewMode:
+    DtViewModeRule:
+      dt: person.summary-payments.viewmode
+  component:
+    InsisSwitchExpressionComponentRule:
+      cases:
+        - when: "currentPage == 'summary' && person.bank-accounts~account-num == null"
+          component: InsisNullOutput
+        - when: "currentPage == 'summary' && person.bank-accounts~account-num != null"
+          component: InsisIBANOutput
+        - when: "person.bank-accounts~edit-mode == true && currentPage != 'summary'"
+          component: IceTextInput
+        - defaultComponent: InsisNullOutput

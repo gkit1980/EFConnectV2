@@ -37,7 +37,7 @@ export class InsisSliderComponent extends MaterialElementComponentImplementation
   }
 
   private get values(): any[] | null {
-    const itemElement = <ItemElement>this.element.element;
+    const itemElement = <ItemElement>this.element;
     return itemElement.valuesRule == null ? null : itemElement.valuesRule.getValues(this.index);
   }
 
@@ -49,7 +49,7 @@ export class InsisSliderComponent extends MaterialElementComponentImplementation
     this.addEmptyValue = this.getRecipeParam('addEmptyValue', true);
     this.updateValueBehaviour = this.getRecipeParam('updateValueBehaviour', 'onRelease');
 
-    const itemElement = <ItemElement>this.element.element;
+    const itemElement = <ItemElement>this.element;
     if (itemElement.valuesRule) this.applyValuesRuleComponentSettings();
     else if (itemElement.rangeRule) this.applyRangeRuleComponentSettings();
     super.ngOnInit();
@@ -105,7 +105,7 @@ export class InsisSliderComponent extends MaterialElementComponentImplementation
   //
   //
   private applyRangeRuleComponentSettings() {
-    const itemElement = <ItemElement>this.element.element;
+    const itemElement = <ItemElement>this.element;
     this.setMinMaxFromRangeRule();
     itemElement.rangeRule.$reevaluate.subscribe(() => {
       this.setMinMaxFromRangeRule();
@@ -115,7 +115,7 @@ export class InsisSliderComponent extends MaterialElementComponentImplementation
   //
   //
   private applyValuesRuleComponentSettings() {
-    const itemElement = <ItemElement>this.element.element;
+    const itemElement = <ItemElement>this.element;
     const min = this.addEmptyValue ? 0 : 1;
 
     this.setMinMax(min, this.values.length);
@@ -127,7 +127,7 @@ export class InsisSliderComponent extends MaterialElementComponentImplementation
   //
   //
   private setMinMaxFromRangeRule(): void {
-    const itemElement = <ItemElement>this.element.element;
+    const itemElement = <ItemElement>this.element;
     const minValue = itemElement.rangeRule.getMin(this.index) as number;
     const maxValue = itemElement.rangeRule.getMax(this.index) as number;
     this.setMinMax(minValue, maxValue);

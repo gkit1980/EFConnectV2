@@ -1,20 +1,13 @@
 import {
   Component,
   OnInit,
-  ViewChildren,
-  QueryList,
-  ViewContainerRef,
   ChangeDetectionStrategy,
-  Host,
   ChangeDetectorRef,
   ViewChild,
 } from '@angular/core';
 
-import { get, map } from 'lodash';
-import { PageElement } from '@impeo/ice-core';
+import { get } from 'lodash';
 import { SectionComponentImplementation, IceSectionComponent } from '@impeo/ng-ice';
-import { map as rxMap, debounceTime } from 'rxjs/operators';
-import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 
 @Component({

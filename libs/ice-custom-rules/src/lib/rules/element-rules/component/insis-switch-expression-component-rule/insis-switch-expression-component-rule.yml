@@ -1,0 +1,22 @@
+implementations:
+  InsisSwitchExpressionComponentRule:
+    description: Switch expression component rule allows you to render different component based on multiple conditions
+    params:
+      cases:
+        label: Switch expressions
+        required: true
+        type: switchExpressionCase
+
+    icel: >
+      ```    
+      component:
+        InsisSwitchExpressionComponentRule:
+          cases:
+            - when: "element.name === 'john'" 
+              component: IceTextInput
+            - when: "element.name === 'Mark'" 
+              component: IceDropdown
+            - when: "element.name === "Victor" && element.age == 21"
+              component: IceDatepicker
+            - defaultComponent: IceCheckbox
+      ```

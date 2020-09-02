@@ -1,7 +1,7 @@
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Component, Inject } from '@angular/core';
 
-import { IcePage, IceSection, PageElement, ItemElement } from '@impeo/ice-core';
+import { IcePage, IceSection } from '@impeo/ice-core';
 
 @Component({
   selector: 'insis-dialog-section-container',

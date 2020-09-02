@@ -1,4 +1,4 @@
-import { SectionViewModeRule, SectionViewMode, PageElement, ArrayElement } from '@impeo/ice-core';
+import { SectionViewModeRule, SectionViewMode, ArrayElement } from '@impeo/ice-core';
 import { throttle } from 'lodash';
 
 export class InsisHideSectionWhenArrayElementIsEmpty extends SectionViewModeRule {

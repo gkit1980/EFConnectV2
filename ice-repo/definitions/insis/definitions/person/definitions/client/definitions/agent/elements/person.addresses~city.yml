@@ -1,7 +1,5 @@
 element:
   type: text
-  pages:
-    summary:
-      viewMode:
-        StaticViewModeRule:
-          viewMode: output
+  viewMode:
+    DtViewModeRule:
+      dt: person.addresses~address-type.viewmode

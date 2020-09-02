@@ -5,21 +5,12 @@ element:
       default: '1'
       min: '1'
       max: '4'
-  viewMode:
-    StaticViewModeRule:
-      viewMode: output
   label:
     NoLabelRule: {}
   component:
-    StaticComponentRule:
-      component:
-        InsisArrayCardsLayout: {}
-  pages:
-    1.quote.vehicles:
-      viewMode:
-        StaticViewModeRule:
-          viewMode: default
-      component:
+    ConditionalPageComponentRule:
+      conditionPage: 1.quote.vehicles
+      conditionComponent: 
         StaticComponentRule:
           component:
             InsisArrayCardsLayout:
@@ -27,3 +18,13 @@ element:
               removeButtonLabelResourceKey: elements.policy.insured.remove-vehicle.label
               cardLayout: onMultipleItems
               confirmOnRemove: false
+      elseComponent: 
+        StaticComponentRule:
+          component:
+            InsisArrayCardsLayout: {}  
+  viewMode:
+    ConditionalPageViewModeRule:
+      conditionPage: 1.quote.vehicles
+      conditionViewMode: default
+      elseViewMode: output
+      

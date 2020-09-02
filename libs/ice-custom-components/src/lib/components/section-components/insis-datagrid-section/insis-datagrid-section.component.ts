@@ -8,7 +8,6 @@ import {
   ViewContainerRef,
 } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { PageElement } from '@impeo/ice-core';
 import { IceSectionComponent, SectionComponentImplementation } from '@impeo/ng-ice';
 import { get, map } from 'lodash';
 import { debounceTime, map as rxMap } from 'rxjs/operators';
@@ -83,8 +82,9 @@ export class InsisDatagridSectionComponent extends SectionComponentImplementatio
       let visible = false;
       this.getColsNames().forEach((colName) => {
         if (
-          (this.section.elements.find((element) => element.name === colName).indexedElements[index]
-            .element as PageElement).viewModeRule.getViewMode({ index: [index] }) !== 'hidden'
+          this.section.elements
+            .find((element) => element.name === colName)
+            [index].element.viewModeRule.getViewMode({ index: [index] }) !== 'hidden'
         )
           visible = true;
       });

@@ -1,9 +1,11 @@
+
 dt:
   hitPolicy: F
   inputs:
     - element: policy.insured.objects~person-data.accident
     - element: policy.insured.objects~person-data.first-name
     - element: policy.insured.objects~person-data.last-name
+    - page: true
   outputs:
     - id: label_en
       type: string
@@ -14,6 +16,7 @@ dt:
         - 1
         - not(null)
         - not(null)
+        - covers
       outputs:
         - >-
           ':Main insured person - '  +
@@ -25,6 +28,7 @@ dt:
         - '-'
         - not(null)
         - not(null)
+        - covers
       outputs:
         - >-
           ':Additional insured person - '  +
@@ -33,9 +37,24 @@ dt:
           ':Additional insured person - '  +
           policy.insured.objects~person-data.full-name
     - inputs:
+        - 1
         - '-'
         - '-'
+      outputs:
+        - ':Main insured person'
+        - ':Main insured person'
+    - inputs:
+        - 2
         - '-'
+        - '-'
+      outputs:
+        - ':Additional insured person'
+        - ':Additional insured person'   
+    - inputs:
+          - '-'
+          - '-'
+          - '-'
+          - '-'
       outputs:
         - ':Insured object'
         - ':Insured object'

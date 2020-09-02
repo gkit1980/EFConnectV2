@@ -29,3 +29,4 @@ export * from './view-mode/insis-change-viewmode-based-on-array-length-rule/insi
 export * from './text/insis-fill-resource-with-element-values-text-rule/insis-fill-resource-with-element-values-text-rule';
 export * from './component/insis-conditional-component-rule/insis-conditional-component-rule';
 export * from './component/insis-dt-component-rule/insis-dt-component-rule';
+export * from './component/insis-switch-expression-component-rule/insis-switch-expression-component-rule';

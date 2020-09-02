@@ -1,6 +1,6 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { SectionComponentImplementation, IceSectionComponent } from '@impeo/ng-ice';
-import { PageElement, ItemElement, ViewModeRule } from '@impeo/ice-core';
+import { ItemElement, ViewModeRule } from '@impeo/ice-core';
 import { get, toString, forEach, map, compact } from 'lodash';
 
 @Component({
@@ -70,8 +70,8 @@ export class InsisPremiumSummarySection extends SectionComponentImplementation i
     }
 
     const paymentPageElement = get(this.page.elements, paymentsFrequencyName);
-    const options = (paymentPageElement.element as ItemElement).valuesRule.getOptions(null);
-    const value = paymentPageElement.element.getValue().forIndex(null);
+    const options = (paymentPageElement as ItemElement).valuesRule.getOptions(null);
+    const value = paymentPageElement.getValue().forIndex(null);
     return get(
       options.filter((option) => toString(option.value) === toString(value)),
       '[0].label'

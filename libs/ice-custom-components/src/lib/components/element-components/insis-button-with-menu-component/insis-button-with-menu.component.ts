@@ -32,15 +32,12 @@ export class InsisButtonWithMenuComponent extends MaterialSelectComponentImpleme
     this.value = value;
     this.onComponentValueChange();
     let lifecycleSubscription: Subscription;
-    const dialogSection = (<ItemElement>this.element.element).valuesRule.getAdditionalValue(
+    const dialogSection = (<ItemElement>this.element).valuesRule.getAdditionalValue(
       value,
       'dialog'
     );
-    const width = (<ItemElement>this.element.element).valuesRule.getAdditionalValue(value, 'width');
-    const actionName = (<ItemElement>this.element.element).valuesRule.getAdditionalValue(
-      value,
-      'action'
-    );
+    const width = (<ItemElement>this.element).valuesRule.getAdditionalValue(value, 'width');
+    const actionName = (<ItemElement>this.element).valuesRule.getAdditionalValue(value, 'action');
     if (dialogSection) {
       const section = get(this.context.iceModel.recipe, ['sections', dialogSection]);
       const dialogData = { section: section, page: this.context.iceModel.navigation.currentPage };

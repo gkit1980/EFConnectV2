@@ -1,0 +1,5 @@
+element:
+  type: text
+  viewMode:
+    DtViewModeRule:
+      dt: person.addresses~address-type.viewmode
