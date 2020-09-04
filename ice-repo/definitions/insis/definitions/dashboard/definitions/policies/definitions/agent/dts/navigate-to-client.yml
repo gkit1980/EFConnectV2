@@ -11,9 +11,13 @@ dt:
     - label: dynId
       id: dynId
       type: string
+    - label: manComp
+      id: manComp
+      type: string
   rules:
     - inputs:
         - '-'
       outputs:
         - insis.person.client.agent
         - policies~client-pid
+        - 1
