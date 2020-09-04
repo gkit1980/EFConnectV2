@@ -23800,6 +23800,32 @@
                         "namespaceURI":"http://www.fadata.bg/Insurance_Messages/v3.0/xml/"
                     }
                 },
+                "participantType":{
+                    "title":"participantType",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"ParticipantType",
+                        "namespaceURI":"http://www.fadata.bg/Insurance_Messages/v3.0/xml/"
+                    }
+                },
+                "nonamedType":{
+                    "title":"nonamedType",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"NonamedType",
+                        "namespaceURI":"http://www.fadata.bg/Insurance_Messages/v3.0/xml/"
+                    }
+                },
                 "entity":{
                     "title":"entity",
                     "allOf":[
@@ -24046,6 +24072,8 @@
                 "policyID",
                 "annexID",
                 "auxAnnexID",
+                "participantType",
+                "nonamedType",
                 "entity",
                 "addresses",
                 "contacts",
