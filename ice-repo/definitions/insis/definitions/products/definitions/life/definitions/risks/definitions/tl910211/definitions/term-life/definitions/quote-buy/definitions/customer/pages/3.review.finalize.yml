@@ -18,4 +18,5 @@ page:
     - buy-insurance.btn
     - buy-insurance.description
     - policy.premiums-taxes-fees-discounts-loadings
+    - quote.download
     - policy.summary

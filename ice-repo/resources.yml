@@ -3,6 +3,11 @@ locales:
   - de
 entries:
   elements:
+    download:
+      quote:
+        label:
+          - en: Download quote
+            de: Download quote
     agent-claims:
       items:
         case-id:
@@ -905,8 +910,8 @@ entries:
       activity:
         download:
           label:
-            - en: Download PDF
-              de: Download PDF
+            - en: Download
+              de: Download
         cancel:
           label:
             - en: Cancel
@@ -1879,7 +1884,7 @@ entries:
           de: null
     download-pdf:
       label:
-        - en: Download PDF
+        - en: Download
           de: null
     button-dropdown: null
     quotes:
@@ -2166,8 +2171,8 @@ entries:
             de: ISSUE POLICY
       dowload-pdf:
         label:
-          - en: DOWNLOAD PDF
-            de: DOWNLOAD PDF
+          - en: DOWNLOAD QUOTE
+            de: DOWNLOAD QUOTE
       upload-application:
         label:
           - en: UPLOAD SIGNED APPLICATION

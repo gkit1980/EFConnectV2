@@ -17,4 +17,5 @@ page:
     - payment.details
     - go-to-next-page
     - policy.premiums-taxes-fees-discounts-loadings
+    - quote.download
     - policy.summary

@@ -14,7 +14,7 @@ integration:
           mappings:
             - element: policies~policy_id
               payload: reportParams.P_POLICY_ID
-            - value: /std/gen/printouts_v10/std_nl_p_demo_policy.xdo
+            - value: /std/gen/printouts_v10/std_bas_term_pol.xdo
               payload: reportFullPath
             - value: pdf
               payload: outputFormat

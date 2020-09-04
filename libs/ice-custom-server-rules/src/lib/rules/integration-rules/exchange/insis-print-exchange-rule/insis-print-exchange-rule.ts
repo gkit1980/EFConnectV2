@@ -1,28 +1,11 @@
-import { RestCallExchangeRule } from '@impeo/ice-core/default-rules/rules/integration-rules.server';
-import {
-  ExchangeRule,
-  IceConsole,
-  IntegrationDataOut,
-  IntegrationDataIn,
-  IceIntegration,
-} from '@impeo/ice-core';
+import { InsisRestCallExchangeRule } from '../insis-rest-call-exchange-rule/insis-rest-call-exchange-rule';
+
+import { IceConsole, IntegrationDataOut, IntegrationDataIn } from '@impeo/ice-core';
 import * as dicer from 'dicer';
 import { get } from 'lodash';
-import * as fs from 'fs';
 //
 //
-export class InsisPrintExchangeRule extends RestCallExchangeRule {
-  //
-  //
-  protected getHeaders(): any {
-    const headers = {
-      'Content-Type': 'application/json',
-      Authorization: 'Basic aW5zaXNfZ2VuX3YxMDppbnNpc19nZW5fdjEw',
-      ignoreLoginService: true,
-    };
-    return headers;
-  }
-
+export class InsisPrintExchangeRule extends InsisRestCallExchangeRule {
   protected getConfig(request: IntegrationDataOut): any {
     const config = super.getConfig(request);
     config.responseType = 'arraybuffer';

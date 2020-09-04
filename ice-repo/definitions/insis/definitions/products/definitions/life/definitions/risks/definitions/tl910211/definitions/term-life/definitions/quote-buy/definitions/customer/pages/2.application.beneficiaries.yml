@@ -13,3 +13,4 @@ page:
     - beneficiaries.is-standard-beneficiary
     - beneficiaries.details
     - policy.premiums-taxes-fees-discounts-loadings
+    - quote.download

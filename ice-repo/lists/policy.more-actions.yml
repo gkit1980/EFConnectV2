@@ -1,9 +1,8 @@
 list:
   items:
-    # TODO: Return this when download-pdf action for customer policy is ready
-    # - value: policy.active.download-pdf
-    #   label_en: Download PDF
-    #   label_de: ''
+    - value: policy.active.download-pdf
+      label_en: Download
+      label_de: ''
     - value: policy.cancel
       label_en: Cancel policy
       label_de: ''

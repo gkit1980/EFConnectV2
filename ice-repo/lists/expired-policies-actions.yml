@@ -5,7 +5,7 @@ list:
         Submit claim
       label_de: null
     - value: policy.expired.download-pdf
-      label_en: Download PDF
+      label_en: Download
       label_de: null
     - value: policy.renew
       label_en: Renew policy
