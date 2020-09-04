@@ -1,7 +1,7 @@
 dt:
   hitPolicy: F
   inputs:
-    - element: person-information.edit-mode
+    - element: personal-information.edit-mode
     - page: true
   outputs:
     - id: viewMode
@@ -13,12 +13,12 @@ dt:
       outputs:
         - 'output'
     - inputs:
-        - 'true'
+        - true
         - '-'
       outputs:
         - 'default'    
     - inputs:
-        - 'false'
+        - false
         - '-'
       outputs:
         - 'output'    

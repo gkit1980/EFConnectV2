@@ -36,9 +36,7 @@ page:
                       - name: clients~client-type
                     caption: elements.search.type.label
                     size: 200px
-                  - elements:
-                      - name: clients~new-policy
-                    size: 200px
+
     - component:
         InsisPaginatorSection:
           paginationAction: clients.search-from-pagination

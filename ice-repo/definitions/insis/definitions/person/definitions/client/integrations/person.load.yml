@@ -106,7 +106,7 @@ integration:
             array: payload.bankAccounts
             condition: 1 == 1
           toIdx:
-            array: datamodel.person.bankAccounts
+            array: datamodel.person.bank-accounts
             append: true
           mappings:
             - value: 'star'

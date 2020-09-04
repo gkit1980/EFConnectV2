@@ -1,0 +1,66 @@
+implementations:
+  InsisRestCallExchangeRule:
+    description: >
+
+      This rule executes a RestCall based on the configuration in this _recipe_ to INSIS.
+
+
+      The `url` can have dynamic parts that can be expressed as `${foo}` where `foo`
+      would be a _param_ in the _params_ part of the _IntegrationData_.
+
+
+      If the `verb` is `post` or `put` the _payload_ of the _IntegrationData_ will be send
+      as http body. The result of the _http response_ will be set at _payload_ in the
+      _response IntegrationData_
+
+    icel: >
+
+      You can specify _params_ from the _request IntegrationData_ to be used as header values.
+
+
+      The rule will set the following values in the _other_ data of the _response IntegrationData_:
+
+        * `http.status`  the http status code from the server response
+        * `http.statusText` the HTTP status message from the server response
+        * `http.headers` the headers that the server responded with (all header names
+           are lower cased)
+
+      ```
+        integration:
+          DefaultTransformationRule:
+            request:
+              - param: city
+                element: city.name
+              - param: APPID
+                value: d696e6b14e82fb9a49418a1fc1c02fdc
+              - param: units
+                value: metric
+              - param: X-Requested-With
+                value: XMLHttpRequest
+              - param: content-type
+                value: application/x-www-form-urlencoded
+          exchange:
+            InsisRestCallExchangeRule:
+              endpointBaseurl: http://api.openweathermap.org/data/2.5/
+              url: /weather?&APPID=${APPID}&units=${units}&q=${city}
+              headers:
+                - X-Requested-With
+                - content-type
+      ```
+
+    params:
+      endpointBaseurl:
+        label: Endpoint / Baseurl
+        info: endpoint name that can be resolved to a baseUrl or mocked
+        required: true
+      url:
+        label: URL
+        info: the url (probably with dynamic params) for the request
+      verb:
+        label: Http verb
+        type: select
+        options:
+          get: get
+          post: post
+          put: put
+          delete: delete

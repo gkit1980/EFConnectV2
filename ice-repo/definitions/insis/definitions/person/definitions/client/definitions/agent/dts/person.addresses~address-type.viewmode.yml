@@ -21,4 +21,4 @@ dt:
         - false
         - '-'
       outputs:
-        - 'output'    
+        - 'output' 
