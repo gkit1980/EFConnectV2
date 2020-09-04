@@ -3,7 +3,8 @@ element:
   component:
     StaticComponentRule:
       component:
-        IceDropdown: {}
+        IceDropdown:
+          instantlyUpdateModel: true
   values:
     ListValuesRule:
       list: claims.status-with-icon

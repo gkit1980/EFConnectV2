@@ -9,3 +9,8 @@ element:
   label:
     ResourceLabelRule:
       key: elements.search-policies.insured-object.label
+  component:
+    StaticComponentRule:
+      component:
+        IceTextInput:
+          instantlyUpdateModel: true

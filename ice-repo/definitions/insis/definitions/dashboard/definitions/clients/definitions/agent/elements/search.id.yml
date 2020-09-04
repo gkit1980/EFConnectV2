@@ -6,3 +6,8 @@ element:
       conditionValue: false
       conditionViewMode: hidden
       elseViewMode: default
+  component:
+    StaticComponentRule:
+      component:
+        IceTextInput:
+          instantlyUpdateModel: true

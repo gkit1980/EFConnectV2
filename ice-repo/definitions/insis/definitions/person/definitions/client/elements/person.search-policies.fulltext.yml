@@ -8,3 +8,8 @@ element:
       conditionValue: true
       conditionViewMode: hidden
       elseViewMode: default
+  component:
+    StaticComponentRule:
+      component:
+        IceTextInput:
+          instantlyUpdateModel: true
