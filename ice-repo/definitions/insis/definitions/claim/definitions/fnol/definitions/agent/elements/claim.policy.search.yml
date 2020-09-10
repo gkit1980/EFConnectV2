@@ -1,0 +1,27 @@
+element:
+  type: text
+  defaultValue:
+    DataStoreValueRule:
+      path: query.policy-id
+      scopeToDefintion: true
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: claim.policy-search-method
+      conditionValue: p
+      conditionViewMode: default
+      elseViewMode: hidden
+  component:
+    StaticComponentRule:
+      component:
+        IceDynamicAutocomplete:
+          searchResultPath: policies
+          minCharsToStartSearch: 3
+          caseSensitiveSearch: true
+          allowInvalidInput: false
+  action:
+    execution:
+      - InsisResetDatastoreValueExecutionRule:
+          paths:
+            - policies
+      - IntegrationExecutionRule:
+          integration: policies.search

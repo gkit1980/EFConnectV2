@@ -251,11 +251,30 @@
     }
   }
 
+
+  .no-outline {
+    .mat-form-field-disabled .mat-form-field-outline-start,
+    .mat-form-field-disabled .mat-form-field-outline-gap,
+    .mat-form-field-disabled .mat-form-field-outline-end {
+      color: transparent !important;
+      border-color: get-color($theme, 'background');
+    }
+
+    .mat-form-field-appearance-outline.mat-form-field-disabled .mat-form-field-label {
+      color: get-color($theme, 'text') !important;
+    }
+
+    .mat-form-field .mat-select.mat-select-disabled .mat-select-arrow {
+      color: transparent !important;
+    }
+  }
+
   .download-quote-btn {
     margin-top: -21px;
     margin-bottom: 15px;
     .mat-button-wrapper {
       font-size: 12px;
+
     }
   }
 }

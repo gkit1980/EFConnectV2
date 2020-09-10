@@ -14,6 +14,7 @@ page:
                     css: mt-4
                     elements:
                       - name: activity.new-claim
+    - claims.no-claims
     - component:
         InsisDatagridSection:
           arrayElement: cases
@@ -52,6 +53,13 @@ page:
                     hide.sm: true
                     hide.xs: true
                     css: case-tooltip overflow-visible label-link u-pl-2
+      viewMode:
+        InsisChangeViewModeBasedOnArrayLengthRule:
+          array: cases
+          condition: greater
+          conditionValue: 0
+          viewMode: default
+          elseViewMode: hidden
     - component:
         InsisPaginatorSection:
           paginationAction: claims.search-from-pagination
@@ -63,3 +71,10 @@ page:
           paginationObjectsKey: pagination.claims
           scopeToDefinition: false
           css: insis-paginator-with-datagrid
+      viewMode:
+        InsisChangeViewModeBasedOnArrayLengthRule:
+          array: cases
+          condition: greater
+          conditionValue: 0
+          viewMode: default
+          elseViewMode: hidden

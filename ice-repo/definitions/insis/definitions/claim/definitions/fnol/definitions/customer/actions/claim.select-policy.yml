@@ -1,0 +1,11 @@
+action:
+  condition:
+    FeelConditionRule:
+      expression: claim.policy.id != null
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ICE_CONTEXT_ACTIVATED
+  execution:
+    - InsisCopyValueExecutionRule:
+        source: claim.policy.id
+        destination: claim.client.product-formatted

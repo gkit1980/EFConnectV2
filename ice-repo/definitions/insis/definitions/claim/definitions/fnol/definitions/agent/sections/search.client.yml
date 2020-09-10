@@ -1,0 +1,45 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - css: ''
+            cols:
+              - size: 25%
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: claim.client.search
+              - size: 15%
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: claim.client.name
+                css: output-element
+              - size: 15%
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: claim.client.id
+                css: output-element
+              - size: 15%
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: claim.client.type
+                css: output-element
+            gap: 20px
+          - cols:
+              - size: 25%
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: claim.client.product-formatted
+            css: mt-2
+      behaviourForEmptyRows: hide
+  viewMode:
+    ConditionalSectionViewModeRule:
+      conditionElement: claim.policy-search-method
+      conditionValue: c
+      conditionViewMode: default
+      elseViewMode: hidden

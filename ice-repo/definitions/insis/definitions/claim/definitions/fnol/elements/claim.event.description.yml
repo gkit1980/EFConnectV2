@@ -1,0 +1,12 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        IceTextarea:
+          minRows: 3
+          maxRows: 10
+          autosize: false
+  viewMode:
+    StaticViewModeRule:
+      viewMode: required

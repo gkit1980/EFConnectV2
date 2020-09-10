@@ -1,0 +1,19 @@
+action:
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ICE_CONTEXT_ACTIVATED
+  execution:
+    - IntegrationExecutionRule:
+        integration: policies.search
+    - IntegrationExecutionRule:
+        integration: policy.load
+    - ResetElementValueExecutionRule:
+        elements:
+          - policies
+    - InsisResetDatastoreValueExecutionRule:
+        paths:
+          - policies
+          - insis.claim.fnol.agent.query.policy-id
+  condition:
+    DtConditionRule:
+      dt: policy.load.condition

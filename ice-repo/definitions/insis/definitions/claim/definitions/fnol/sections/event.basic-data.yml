@@ -1,0 +1,25 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: 25%
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: claim.event.type
+              - size: 20%
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: claim.event.date
+            gap: 20px
+            css: ''
+          - cols:
+              - size: 50%
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: claim.event.description
+            css: mt-2

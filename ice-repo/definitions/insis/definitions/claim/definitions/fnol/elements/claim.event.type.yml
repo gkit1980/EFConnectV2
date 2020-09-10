@@ -1,0 +1,20 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        IceDynamicAutocomplete:
+          searchResultPath: event-types
+          minCharsToStartSearch: 1
+          caseSensitiveSearch: true
+          allowInvalidInput: false
+  action:
+    execution:
+      - InsisResetDatastoreValueExecutionRule:
+          paths:
+            - event-types
+      - IntegrationExecutionRule:
+          integration: event-types.get
+  viewMode:
+    StaticViewModeRule:
+      viewMode: required

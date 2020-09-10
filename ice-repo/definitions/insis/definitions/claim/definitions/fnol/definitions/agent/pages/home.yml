@@ -1,0 +1,45 @@
+page:
+  validation:
+    showMessages: null
+    onElementComponentChange: true
+    showElementValidation: true
+  component: InsisSimplePage
+  sections:
+    - component:
+        IceFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: activity.back-to-all-claims
+    - component:
+        IceFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: new-claim.title
+                css: mat-display-1 mb-4
+    - event.basic-data
+    - component:
+        IceFlexSection:
+          grid:
+            rows:
+              - css: mt-4 label-bold fnol
+                cols:
+                  - size: 50%
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: claim.policy-search-method
+          css: remove-radiogroup-margin
+    - search.client
+    - search.policy
+    - event.location
+    - claim.submit

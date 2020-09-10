@@ -1,0 +1,5 @@
+element:
+  type: action
+  change:
+    - NavigateToDefinitionExecutionRule:
+        definition: insis.dashboard.claims.customer

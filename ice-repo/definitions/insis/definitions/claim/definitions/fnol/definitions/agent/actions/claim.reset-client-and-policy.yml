@@ -1,0 +1,24 @@
+action:
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - claim.policy-search-method
+        originsToExclude:
+          - DEFAULTVALUE
+  execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - claim.policy.search
+          - claim.client.search
+          - claim.client.product-formatted
+    - InsisResetElementOrElementsInsideNamespaceExecutionRule:
+        elementOrNamespace: claim.policy.
+    - InsisResetElementOrElementsInsideNamespaceExecutionRule:
+        elementOrNamespace: claim.client.
+    - InsisResetDatastoreValueExecutionRule:
+        paths:
+          - policies
+          - clients
+    - InsisSetElementValueExecutionRule:
+        element: claim.policy.search
+        value: null

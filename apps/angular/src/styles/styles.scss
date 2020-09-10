@@ -370,3 +370,22 @@ confirmation-dialog-layout {
   border-width: 0 10px 10px 10px;
   border-color: transparent transparent #e6e5e5 transparent !important;
 }
+
+.fnol mat-radio-group {
+  display: flex;
+  flex-direction: row;
+  margin: 15px 0;
+}
+
+.fnol-section h2 {
+  font-size: 16px !important;
+  font-weight: 500;
+}
+
+.remove-radiogroup-margin mat-radio-group {
+  margin: 0;
+}
+
+.label-bold mat-label {
+  font-weight: 500;
+}

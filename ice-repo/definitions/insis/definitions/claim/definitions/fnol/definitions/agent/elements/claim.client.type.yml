@@ -1,0 +1,15 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        IceDropdown: {}
+  values:
+    ListValuesRule:
+      list: clients.types-text
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: claim.client.search
+      conditionValue: ''
+      conditionViewMode: hidden
+      elseViewMode: output

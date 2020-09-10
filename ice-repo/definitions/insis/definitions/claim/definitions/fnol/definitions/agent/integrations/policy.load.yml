@@ -1,0 +1,36 @@
+integration:
+  exchange:
+    InsisNoopExchangeRule: {}
+  transformation:
+    DefaultTransformationRule:
+      out:
+        - fromIdx:
+            array: policies
+            index: "[0]"
+          mappings:
+            - payload: product
+              element: policies~product-name
+            - payload: search
+              element: policies~policy-id
+            - payload: id
+              element: policies~policy-id
+            - payload: client-id
+              element: policies~client-pid
+            - payload: client-name
+              element: policies~client-name
+            - payload: client-no
+              element: policies~client-man-id
+      in:
+        - mappings:
+            - payload: product
+              element: claim.policy.product
+            - payload: search
+              element: claim.policy.search
+            - payload: id
+              element: claim.policy.id
+            - payload: client-id
+              element: claim.policy.client-id
+            - payload: client-name
+              element: claim.policy.client-name
+            - payload: client-no
+              element: claim.policy.client-no

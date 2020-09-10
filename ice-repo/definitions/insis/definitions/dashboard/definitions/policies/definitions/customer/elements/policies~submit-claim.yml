@@ -1,2 +1,6 @@
 element:
   type: action
+  change:
+    - DtNavigateToDefinitionExecutionRule:
+        definitionOutput: definition
+        dt: policies~submit-claim.change

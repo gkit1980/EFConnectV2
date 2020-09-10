@@ -1,0 +1,5 @@
+element:
+  type: text
+  mirror:
+    CopyValueMirrorRule:
+      originElement: claim.policy.search

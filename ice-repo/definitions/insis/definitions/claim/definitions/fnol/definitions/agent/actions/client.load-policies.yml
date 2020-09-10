@@ -1,0 +1,14 @@
+action:
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ACTIVE_INTEGRATION_SUCCESS
+        payload: client.load
+  condition:
+    DtConditionRule:
+      dt: client.load-policies.condition
+  execution:
+    - InsisResetDatastoreValueExecutionRule:
+        paths:
+          - policies
+    - IntegrationExecutionRule:
+        integration: policies.search

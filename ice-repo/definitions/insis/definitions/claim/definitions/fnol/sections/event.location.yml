@@ -1,0 +1,24 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: 20%
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: claim.event.location.country
+            css: mt-3
+          - cols:
+              - size: 50%
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: claim.event.location.address
+            css: mt-2
+      tags: []
+      css: mat-subheading-2 mt-4 fnol-section
+  label:
+    ResourceSectionLabelRule:
+      labelKey: section.event.location.label

@@ -1,0 +1,16 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policies~policy_id
+  outputs:
+    - id: definition
+      type: string
+    - label: policy-id
+      default: ''
+      id: policy-id
+  rules:
+    - inputs:
+        - '-'
+      outputs:
+        - insis.claim.fnol.customer
+        - policies~policy_id

@@ -1,0 +1,13 @@
+page:
+  component: InsisOneLevelTabsNavigationPage
+  validation: {}
+  css: align-navigation-start
+  sections:
+    - header
+    - claims.no-claims
+    - claims.submit-new-claim
+    - claims.dashboard.content
+    - claims.dashboard.pagination
+  label:
+    ResourcePageLabelRule:
+      navigationTitleKey: pages.policy-details.claims.title

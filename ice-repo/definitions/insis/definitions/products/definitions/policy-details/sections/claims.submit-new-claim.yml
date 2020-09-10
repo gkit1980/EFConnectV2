@@ -1,0 +1,12 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                css: mt-4
+                elements:
+                  - name: activity.new-claim

@@ -1,0 +1,22 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: client.claims.no-claims-text
+                align: center
+                css: mat-caption
+            align: center
+            css: u-mt-6 u-mb-6
+  viewMode:
+    InsisChangeViewModeBasedOnArrayLengthRule:
+      array: cases
+      condition: equals
+      conditionValue: 0
+      viewMode: default
+      elseViewMode: hidden

@@ -1,0 +1,16 @@
+integration:
+  transformation:
+    DefaultTransformationRule:
+      dateFormat: YYYY-MM-DD
+      additional: insis
+      out: {}
+      in:
+        - mappings:
+            - payload: displayTerm
+              element: claim.client.name
+            - payload: value
+              element: claim.client.id
+            - payload: man-id
+              element: claim.client.number
+            - payload: client-type
+              element: claim.client.type

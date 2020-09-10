@@ -1,4 +1,18 @@
 SELECT JSON_OBJECT(
+              'fnol_policy_display' is
+                CONCAT(
+                  insr_type,
+                  CONCAT(
+                    ' - ',
+                    CONCAT(
+                      product_name,
+                      CONCAT(
+                        ' ',
+                        policy_id
+                      )
+                    )
+                  )
+                ),
               'policy_state' is policy_state,
               'policy_id' is policy_id,
               'policy_no' is policy_no,
@@ -76,25 +90,25 @@ SELECT JSON_OBJECT(
         WHERE pol.policy_state <> -10
             --AND pol.policy_id LIKE NVL(:policy_id, pol.policy_id)
             AND pol.policy_no LIKE NVL(:policy_no, pol.policy_no)
-            AND pol.policy_name LIKE NVL(:policy_name, pol.policy_name)
+            AND pol.policy_name LIKE NVL(:policy_name, pol.policy_name) || '%'
             AND pn.client_pid LIKE NVL(:p_client_pid, pn.client_pid)
             AND pn.client_name LIKE NVL(:p_client_name, pn.client_name)
             AND pol.insr_type = NVL(:insr_type, pol.insr_type)
-            AND ( ( :p_insured_object is not null    
-                    AND EXISTS(SELECT io.policy_id  
+            AND ( ( :p_insured_object is not null
+                    AND EXISTS(SELECT io.policy_id
                                  FROM insured_object io
                                  LEFT JOIN insured_object_names ion
                                    ON ion.insured_obj_id = io.insured_obj_id
                                 WHERE io.policy_id = NVL(:policy_id, pol.policy_id)
                                   AND ion.object_name LIKE NVL(:p_insured_object, ion.object_name))
-                                  --      
-                    AND pol.policy_id in (SELECT io.policy_id                    
+                                  --
+                    AND pol.policy_id in (SELECT io.policy_id
                                  FROM insured_object io
                                  LEFT JOIN insured_object_names ion
                                    ON ion.insured_obj_id = io.insured_obj_id
                                 WHERE io.policy_id = NVL(:policy_id, pol.policy_id)
                                   AND ion.object_name LIKE NVL(:p_insured_object, ion.object_name))
-                    ) 
+                    )
                   OR
                   ( :p_insured_object is null
                     AND pol.policy_id = NVL(:policy_id, pol.policy_id)

@@ -1,0 +1,11 @@
+element:
+  type: text
+  values:
+    InsisArrayItemBasedValuesRule:
+      valueElement: policies~policy-id
+      labelElement: policies~product-formatted
+      hideEmpty: true
+  component:
+    StaticComponentRule:
+      component:
+        IceDropdown: {}

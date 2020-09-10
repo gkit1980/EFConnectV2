@@ -56,6 +56,10 @@ entries:
           label:
             - en: Search
               de: Search
+        pid-and-name:
+          label:
+            - en: '${param1} ${param2}'
+              de: '${param1} ${param2}'
       list:
         items:
           name:
@@ -79,6 +83,11 @@ entries:
           label:
             - en: Cancel
               de: Cancel
+      claims:
+        no-claims-text:
+          label:
+            - en: No claims
+              de: null
     clients:
       items:
         view-more:
@@ -499,6 +508,10 @@ entries:
           label:
             - en: Insured Object
               de: Insured Object
+        product-formatted-long:
+          content:
+            - en: '${param1} - ${param2} ${param3}'
+              de: '${param1} - ${param2} ${param3}'
         product-formatted:
           content:
             - en: '${param1} - ${param2}'
@@ -2261,6 +2274,19 @@ entries:
         label:
           - en: NEW CLAIM
             de: null
+      back-to-all-claims:
+        label:
+          - en: < BACK TO ALL CLAIMS
+            de: null
+      claim:
+        submit:
+          label:
+            - en: SUBMIT CLAIM
+              de: null
+      cancel:
+        label:
+          - en: CANCEL
+            de: null
     no-active-policies-title:
       label:
         - en: You have no active policies
@@ -2315,6 +2341,108 @@ entries:
         label:
           - en: ' (per installment)'
             de: ' (per installment)'
+    new-claim:
+      title:
+        label:
+          - en: New claim
+            de: null
+    claim:
+      search-policy-method:
+        based-on-policy:
+          - en: based on policy
+            de: null
+        based-on-client:
+          - en: based on client
+            de: null
+      policy-search-method:
+        label:
+          - en: Identify policy
+            de: null
+      even:
+        type:
+          label:
+            - en: Event type
+              de: null
+        date: {}
+      event:
+        date:
+          label:
+            - en: Event date (optional)
+              de: null
+        description:
+          label:
+            - en: Event description
+              de: null
+        type:
+          label:
+            - en: Event type
+              de: null
+        location:
+          address:
+            label:
+              - en: Address
+                de: null
+          country:
+            label:
+              - en: Country
+                de: null
+      client:
+        search-criteria:
+          - en: '${param1}%'
+            de: null
+        search:
+          label:
+            - en: Client
+              de: null
+          empty:
+            - en: Client
+              de: null
+        name:
+          label:
+            - en: Name
+              de: null
+        id:
+          label:
+            - en: Client ID
+              de: null
+        number:
+          label:
+            - en: Client number
+              de: null
+        type:
+          label:
+            - en: Type
+              de: null
+        product-formatted:
+          label:
+            - en: Policy (optional)
+              de: Policy (optional)
+      policy:
+        search:
+          label:
+            - en: Policy number
+              de: null
+        client-name:
+          label:
+            - en: Client name
+              de: null
+        client-id:
+          label:
+            - en: Client ID
+              de: null
+        client-no:
+          label:
+            - en: Client number
+              de: null
+        product:
+          label:
+            - en: Product
+              de: null
+    new-claim-customer:
+      title:
+        label:
+          - en: Submit claim
+            de: Submit claim
   pagination:
     claims:
       - en: claims
@@ -2415,6 +2543,11 @@ entries:
             label:
               - en: Taxes and fees
                 de: Taxes and fees
+    event:
+      location:
+        label:
+          - en: Event location (optional)
+            de: null
   pages:
     '1':
       quote:
@@ -2530,6 +2663,10 @@ entries:
         title:
           - en: Payments
             de: Payments
+      claims:
+        title:
+          - en: Claims
+            de: Claims
     header:
       agent:
         dashboard:

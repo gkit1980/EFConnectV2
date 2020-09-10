@@ -6,11 +6,11 @@ list:
     - value: '2'
       label_en: Company
       label_de: Firma
-  type: string
+  type: text
   additionals:
     label_en:
       label: label_en
-      type: string
+      type: text
     label_de:
       label: label_de
-      type: string
+      type: text

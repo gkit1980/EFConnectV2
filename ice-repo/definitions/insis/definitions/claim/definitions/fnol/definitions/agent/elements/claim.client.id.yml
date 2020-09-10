@@ -1,0 +1,8 @@
+element:
+  type: text
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: claim.client.search
+      conditionViewMode: hidden
+      elseViewMode: output
+      conditionValue: ''

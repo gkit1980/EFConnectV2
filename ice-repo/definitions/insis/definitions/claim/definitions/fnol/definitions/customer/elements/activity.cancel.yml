@@ -1,0 +1,5 @@
+element:
+  type: action
+  defaultValue:
+    StaticValueRule:
+      value: navigate.to-all-claims

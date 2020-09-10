@@ -1,0 +1,31 @@
+page:
+  validation:
+    onElementComponentChange: true
+    showElementValidation: true
+  component: InsisSimplePage
+  sections:
+    - component:
+        IceFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: activity.back-to-all-claims
+    - component:
+        IceFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: new-claim-customer.title
+                css: mat-display-1 mb-4
+    - event.basic-data
+    - policy
+    - event.location
+    - claim.submit

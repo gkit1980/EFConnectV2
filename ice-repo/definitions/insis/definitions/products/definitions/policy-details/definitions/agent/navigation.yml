@@ -3,4 +3,5 @@ pages:
     pages:
       - page: summary
       - page: covers
+      - page: claims
       - page: payments

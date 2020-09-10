@@ -1,0 +1,24 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: claim.policy.search
+  outputs:
+    - id: condition
+      type: boolean
+  rules:
+    - inputs:
+        - 'null'
+      outputs:
+        - false
+    - inputs:
+        - null
+      outputs:
+        - false
+    - inputs:
+        - ' '
+      outputs:
+        - false
+    - inputs:
+        - '-'
+      outputs:
+        - true

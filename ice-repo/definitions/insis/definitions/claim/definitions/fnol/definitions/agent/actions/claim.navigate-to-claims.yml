@@ -1,0 +1,11 @@
+action:
+  execution:
+    - NavigateToDefinitionExecutionRule:
+        definition: insis.dashboard.claims.agent
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - activity.back-to-all-claims
+    - ElementChangeTriggerRule:
+        elements:
+          - activity.cancel

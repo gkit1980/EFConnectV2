@@ -1,0 +1,13 @@
+action:
+  execution:
+    - InsisResetDatastoreValueExecutionRule:
+        paths:
+          - policies
+    - InsisResetElementOrElementsInsideNamespaceExecutionRule:
+        elementOrNamespace: policies
+    - IntegrationExecutionRule:
+        integration: policies.search
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ACTIVE_INTEGRATION_SUCCESS
+        payload: set.client

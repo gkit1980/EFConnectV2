@@ -1,0 +1,25 @@
+integration:
+  exchange:
+    InsisRestCallExchangeRule:
+      endpointBaseurl: 'insis-rest-endpoint'
+      verb: post
+      url: '/claims-cst/fnol'
+  transformation:
+    DefaultTransformationRule:
+      additional: insis
+      dateTimeFormat: 'YYYY-MM-DDT00:00:00+00:00'
+      dateFormat: 'YYYY-MM-DD'
+      out:
+        - mappings:
+            - payload: claimGroup.policyNo
+              element: claim.client.product-formatted
+            - payload: claimGroup.eventType
+              element: claim.event.type
+            - payload: claimGroup.eventDate
+              element: claim.event.date
+            - payload: claimGroup.eventDescription
+              element: claim.event.desccription
+            - payload: claimGroup.eventCountry
+              element: claim.event.location.country
+            - payload: claimGroup.eventPlace
+              element: claim.event.location.address

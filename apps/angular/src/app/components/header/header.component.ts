@@ -66,7 +66,7 @@ export class HeaderComponent {
         {
           key: runtime.iceResource.resolve('pages.header.customer.claims.label'),
           link: runtime.iceResource.resolve('pages.header.customer.claims.link'),
-          includes: ['/ice/insis.dashboard.claims.customer/home'],
+          includes: ['insis.dashboard.claims.customer', 'insis.claim.fnol.customer'],
         },
         {
           key: runtime.iceResource.resolve('pages.header.customer.products.label'),
@@ -107,7 +107,7 @@ export class HeaderComponent {
         {
           key: runtime.iceResource.resolve('pages.header.agent.claims.label'),
           link: runtime.iceResource.resolve('pages.header.agent.claims.link'),
-          includes: ['/ice/insis.dashboard.claims.agent/home'],
+          includes: ['insis.dashboard.claims.agent/home', 'insis.claim.fnol.agent/home'],
         }
       );
 

@@ -1,0 +1,18 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: activity.claim.submit
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: activity.cancel
+            css: mt-4
+            gap: 20px

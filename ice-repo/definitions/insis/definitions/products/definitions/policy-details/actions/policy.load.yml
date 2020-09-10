@@ -5,3 +5,22 @@ action:
   execution:
     - IntegrationExecutionRule:
         integration: insis.get.policy-details
+    - ResetElementValueExecutionRule:
+        elements:
+          - cases
+    - InsisResetDatastoreValueExecutionRule:
+        paths:
+          - pagination.policy.claims.page-index
+          - pagination.policy.claims.offset
+          - pagination.policy.claims.results-length
+        defaultValue: 0
+        scopeToDefinition: false
+    - InsisResetDatastoreValueExecutionRule:
+        paths:
+          - pagination.policy.claims.page-size
+        defaultValue: 10
+        scopeToDefinition: false
+    - IntegrationExecutionRule:
+        integration: insurance-products.load
+    - IntegrationExecutionRule:
+        integration: claims.load

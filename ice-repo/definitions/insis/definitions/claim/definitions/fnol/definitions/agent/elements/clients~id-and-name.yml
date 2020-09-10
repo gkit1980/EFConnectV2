@@ -1,0 +1,8 @@
+element:
+  type: text
+  mirror:
+    InsisFillResourceWithElementValuesMirrorRule:
+      elements:
+        - clients~pid
+        - clients~client-name
+      resourceKey: elements.client.search.pid-and-name.label

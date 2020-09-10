@@ -1,0 +1,22 @@
+action:
+  execution:
+    - InsisResetDatastoreValueExecutionRule:
+        paths:
+          - query.search-method
+        scopeToDefinition: true
+        defaultValue: c
+        skipIfValueIsSet: true
+    - InsisResetDatastoreValueExecutionRule:
+        paths:
+          - query.pid
+        scopeToDefinition: true
+        defaultValue: ''
+        skipIfValueIsSet: true
+    - ResetElementValueExecutionRule:
+        elements:
+          - claim.client.search
+          - claim.policy.search
+          - claim.policy-search-method
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ICE_CONTEXT_ACTIVATED

@@ -1,0 +1,39 @@
+integration:
+  exchange:
+    InsisRestCallExchangeRule:
+      endpointBaseurl: insis-rest-endpoint
+      verb: get
+      url: >-
+        /people-dir/person/?startRow=${OFFSET}&rowCount=${PAGE_SIZE}&name=${NAME
+        ? NAME + "%" : ""}&egn=${PID ? PID : ""}&manComp=${MAN_COMP ? MAN_COMP :
+        ""}
+  transformation:
+    DefaultTransformationRule:
+      dateFormat: YYYY-MM-DD
+      out:
+        - mappings:
+            - param: NAME
+              element: claim.client.search
+            - param: MAN_COMP
+              value: null
+            - param: PID
+              value: '%'
+            - param: PAGE_SIZE
+              value: 10
+            - param: OFFSET
+              value: 0
+      in:
+        - fromIdx:
+            array: payload.RowSet
+          toIdx:
+            array: datastore.clients
+            useSourceIndex: true
+          mappings:
+            - payload: 'RowSet[n].name'
+              datastore: 'clients[n].displayTerm'
+            - payload: 'RowSet[n].manId'
+              datastore: 'clients[n].man-id'
+            - payload: 'RowSet[n].egn'
+              datastore: 'clients[n].value'
+            - payload: 'RowSet[n].manComp'
+              datastore: 'clients[n].client-type'

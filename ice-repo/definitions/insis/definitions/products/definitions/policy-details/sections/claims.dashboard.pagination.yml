@@ -1,0 +1,19 @@
+section:
+  component:
+    InsisPaginatorSection:
+      paginationAction: claims.search-from-pagination
+      resultsLengthDatastorePath: pagination.policy.claims.results-length
+      pageSizeDatastorePath: pagination.policy.claims.page-size
+      offsetDatastorePath: pagination.policy.claims.offset
+      pageIndexDatastorePath: pagination.policy.claims.page-index
+      searchCriteriaChangedDatastorePath: pagination.policy.claims.search-criteria-changed
+      paginationObjectsKey: pagination.claims
+      scopeToDefinition: false
+      css: insis-paginator-with-datagrid
+  viewMode:
+    InsisChangeViewModeBasedOnArrayLengthRule:
+      array: cases
+      condition: greater
+      conditionValue: 0
+      viewMode: default
+      elseViewMode: hidden

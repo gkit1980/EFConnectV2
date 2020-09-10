@@ -1,0 +1,13 @@
+element:
+  type: action
+  label:
+    ResourceWithElementValuesLabelRule:
+      key: elements.clients.items.view-more.label
+      elements:
+        - cases~id
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          themeColor: accent
+          variant: default

@@ -1,0 +1,13 @@
+action:
+  execution:
+    - IntegrationExecutionRule:
+        integration: fnol.submit
+    - NavigateToDefinitionExecutionRule:
+        definition: insis.dashboard.claims.customer
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - activity.claim.submit
+  condition:
+    InsisIsPageValidConditionRule:
+      page: home

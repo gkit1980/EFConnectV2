@@ -1,8 +1,8 @@
 element:
   type: action
   change:
-    - NavigateToPageExecutionRule:
-        page: fnol
+    - NavigateToDefinitionExecutionRule:
+        definition: insis.claim.fnol.customer
   component:
     StaticComponentRule:
       component:

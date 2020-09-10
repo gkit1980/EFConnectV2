@@ -1,0 +1,35 @@
+integration:
+  type: active
+  exchange:
+    InsisLoadYmlFileExchangeRule:
+      dataFileURL: data/insis-insurance-products.yml
+  transformation:
+    DefaultTransformationRule:
+      in:
+        - fromIdx:
+            array: payload.file.lob
+            fromIdx:
+              array: products
+          toIdx:
+            useSourceIndex: true
+            toIdx:
+              useSourceIndex: true
+          mappings:
+            - payload: file.lob[n].products[n].title
+              element: lob~products~title
+            - payload: file.lob[n].products[n].product-code
+              element: lob~products~product-code
+            - payload: file.lob[n].products[n].definition-customer
+              element: lob~products~definition
+        - if: principal.role == 'agent'
+          fromIdx:
+            array: payload.file.lob
+            fromIdx:
+              array: products
+          toIdx:
+            useSourceIndex: true
+            toIdx:
+              useSourceIndex: true
+          mappings:
+            - payload: file.lob[n].products[n].definition-agent
+              element: lob~products~definition

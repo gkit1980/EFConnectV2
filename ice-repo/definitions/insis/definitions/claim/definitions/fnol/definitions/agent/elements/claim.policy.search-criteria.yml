@@ -1,0 +1,7 @@
+element:
+  type: text
+  mirror:
+    InsisFillResourceWithElementValuesMirrorRule:
+      resourceKey: elements.claim.client.search-criteria
+      elements:
+        - claim.policy.search

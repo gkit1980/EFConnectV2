@@ -1,7 +1,9 @@
 element:
-  type: text
+  type: action
   change:
-    - NavigateToDefinitionExecutionRule: {}
+    - NavigateToDefinitionExecutionRule:
+        definition: insis.claim.fnol.agent
+        page: home
   component:
     StaticComponentRule:
       component:

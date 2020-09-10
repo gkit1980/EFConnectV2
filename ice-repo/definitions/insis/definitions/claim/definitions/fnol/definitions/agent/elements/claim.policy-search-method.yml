@@ -1,0 +1,13 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        IceRadiobuttonGroup: {}
+  values:
+    ListValuesRule:
+      list: policy.search-method
+  defaultValue:
+    DataStoreValueRule:
+      path: query.search-method
+      scopeToDefintion: true

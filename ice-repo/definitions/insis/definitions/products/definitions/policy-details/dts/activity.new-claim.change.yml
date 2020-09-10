@@ -1,0 +1,24 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policy.contract.policy-name
+  outputs:
+    - id: definition
+      type: string
+    - label: policy-id
+      default: ''
+      id: policy-id
+    - label: pid
+      default: ''
+      id: pid
+    - label: search-method
+      default: ''
+      id: search-method
+  rules:
+    - inputs:
+        - '-'
+      outputs:
+        - insis.claim.fnol.agent
+        - policy.contract.policy-name
+        - policy.participants.holder.person.pid
+        - 'p'

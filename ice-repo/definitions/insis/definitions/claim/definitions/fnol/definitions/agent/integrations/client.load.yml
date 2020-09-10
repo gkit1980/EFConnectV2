@@ -1,0 +1,26 @@
+integration:
+  exchange:
+    InsisRestCallExchangeRule:
+      endpointBaseurl: insis-rest-endpoint
+      url: '/people-dir/person/?startRow=1&rowCount=1&egn=${PID}'
+      verb: get
+  transformation:
+    DefaultTransformationRule:
+      dateFormat: YYYY-MM-DD
+      additional: insis
+      out:
+        - param: PID
+          datastore: insis.claim.fnol.agent.query.pid
+      in:
+        - mappings:
+            - payload: 'RowSet[0].name'
+              element: claim.client.name
+        - mappings:
+            - payload: 'RowSet[0].egn'
+              element: claim.client.id
+        - mappings:
+            - payload: 'RowSet[0].man-id'
+              element: claim.client.number
+        - mappings:
+            - payload: 'RowSet[0].manComp'
+              element: claim.client.type

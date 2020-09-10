@@ -1,0 +1,16 @@
+list:
+  items:
+    - value: c
+      label_en: based on client
+      label_de: based on client
+    - value: p
+      label_en: based on policy number
+      label_de: based on policy number
+  type: text
+  additionals:
+    label_en:
+      label: label_en
+      type: text
+    label_de:
+      label: label_de
+      type: text

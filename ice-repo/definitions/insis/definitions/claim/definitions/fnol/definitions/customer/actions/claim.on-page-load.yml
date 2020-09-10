@@ -1,0 +1,7 @@
+action:
+  execution:
+    - IntegrationExecutionRule:
+        integration: policies.search
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ICE_CONTEXT_ACTIVATED

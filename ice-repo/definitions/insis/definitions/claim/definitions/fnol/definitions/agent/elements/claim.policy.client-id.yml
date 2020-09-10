@@ -1,0 +1,13 @@
+element:
+  type: text
+  mirror:
+    InsisArrayItemConditionalValueMirrorRule:
+      originElement: claim.policy.id
+      conditionalArrayItem: policies~policy-id
+      mirroredArrayItem: policies~client-pid
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: claim.policy.search
+      conditionValue: null
+      conditionViewMode: hidden
+      elseViewMode: output

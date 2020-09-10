@@ -20,6 +20,21 @@ export class SpinnerService {
     'update-claim',
   ];
 
+  private ignoreActionsInDefinitions = [
+    {
+      definition: 'insis.claim.fnol',
+      action: 'action-claim.client.search',
+    },
+    {
+      definition: 'insis.claim.fnol',
+      action: 'action-claim.policy.search',
+    },
+    {
+      definition: 'insis.claim.fnol',
+      action: 'action-claim.event.type',
+    },
+  ];
+
   public visible: Subject<boolean>;
 
   //
@@ -35,22 +50,21 @@ export class SpinnerService {
 
     this.contextService.$contextCreated.subscribe((contextAndContextId) => {
       const context = get(contextAndContextId, 'context') as IceContext;
-
-      const actionStart = (actionName: string) => {
-        if (this.shouldIgnoreAction(actionName)) return;
+      const actionStart = (actionName: string, definition: string) => {
+        if (this.shouldIgnoreAction(actionName, definition)) return;
         this.actionStarted(actionName);
       };
 
-      const actionEnd = (actionName: string) => {
-        if (this.shouldIgnoreAction(actionName)) return;
+      const actionEnd = (actionName: string, definition: string) => {
+        if (this.shouldIgnoreAction(actionName, definition)) return;
         this.actionEnded(actionName);
       };
 
       context.$lifecycle.subscribe(({ type, payload }) => {
         if (type === LifecycleType.ACTION_STARTED) {
-          actionStart(payload.action);
+          actionStart(payload.action, context.definition);
         } else if (type === LifecycleType.ACTION_FINISHED || type === LifecycleType.ACTION_FAILED) {
-          actionEnd(payload.action);
+          actionEnd(payload.action, context.definition);
         } else if (
           type === LifecycleType.ICE_CONTEXT_DEACTIVATED ||
           type === LifecycleType.ICE_APP_UNLOAD
@@ -78,7 +92,11 @@ export class SpinnerService {
     this.serverOperationEnded.emit(actionName);
   }
 
-  shouldIgnoreAction = (actionName) => this.ignoreActions.indexOf(actionName) >= 0;
+  shouldIgnoreAction = (actionName: string, definition: string) =>
+    this.ignoreActions.indexOf(actionName) >= 0 ||
+    this.ignoreActionsInDefinitions.find(
+      (potential) => definition.includes(potential.definition) && potential.action === actionName
+    );
 
   removeFromList = (actionName, list) => {
     const index = list.indexOf(actionName);
