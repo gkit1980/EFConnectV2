@@ -28,31 +28,6 @@ integration:
               payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.ObjectType
             - element: policy.insured.person-objects~entity-accident-insured.type
               payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OAccidentInsured.AccinsType
-        - fromIdx:
-            array: datamodel.policy.insured.person-objects
-            condition: person.pid != ""
-          toIdx:
-            useSourceIndex: true
-          mappings:
-            - element: policy.insured.person-objects~person.pid
-              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OAccidentInsured.PID
-        - fromIdx:
-            array: datamodel.policy.insured.person-objects
-            condition: person.man-id != -1 && person.pid == ""
-          toIdx:
-            useSourceIndex: true
-          mappings:
-            - element: policy.insured.person-objects~person.man-id
-              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OAccidentInsured.PersonID
-
-        - fromIdx:
-            array: datamodel.policy.insured.person-objects
-            condition: person.pid == "" && person.man-id == -1
-          toIdx:
-            useSourceIndex: true
-          mappings:
-            - value: ' '
-              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.PID
             - element: policy.insured.person-objects~person.gender
               payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.Gender
             - element: policy.insured.person-objects~person.date-of-birth
@@ -63,7 +38,32 @@ integration:
               payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.Name.Family
             - element: policy.insured.person-objects~person.address.country
               payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.HomeCountry
-
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+            condition: person.pid != ""
+          toIdx:
+            useSourceIndex: true
+          mappings:
+            - element: policy.insured.person-objects~person.pid
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.PID
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+            condition: person.man-id != -1 && person.pid == ""
+          toIdx:
+            useSourceIndex: true
+          mappings:
+            - element: policy.insured.person-objects~person.man-id
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.PersonID
+            - value: " "
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.PID
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+            condition: person.pid == "" && person.man-id == -1
+          toIdx:
+            useSourceIndex: true
+          mappings:
+            - value: ' '
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.PID
         - mappings:
             - element: policy.contract.payment.frequency
               payload: Policies.Policy[0].InsuranceConditions.Billings.Billing[0].PaymentMode

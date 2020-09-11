@@ -14,6 +14,18 @@ integration:
             array: payload.Insureds.Insured
             apppend: true
           mappings:
+            - element: policy.insured.person-objects~person.gender
+              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.Gender
+            - element: policy.insured.person-objects~person.date-of-birth
+              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.BirthDate
+            - element: policy.insured.person-objects~person.first-name
+              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.Name.Given
+            - element: policy.insured.person-objects~person.last-name
+              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.Name.Family
+            - element: policy.insured.person-objects~entity-accident-insured.type
+              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.AccinsType
+            - element: policy.insured.person-objects~person.address.country
+              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.HomeCountry
             - element: policy.contract.begin
               payload: Insureds.Insured[n].InsrBegin
             - element: policy.insured.currency
@@ -35,7 +47,7 @@ integration:
             useSourceIndex: true
           mappings:
             - element: policy.insured.person-objects~person.pid
-              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.PID
+              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.PID
 
         - fromIdx:
             array: datamodel.policy.insured.person-objects
@@ -44,7 +56,7 @@ integration:
             useSourceIndex: true
           mappings:
             - element: policy.insured.person-objects~person.pid
-              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.PID
+              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.PID
 
         - fromIdx:
             array: datamodel.policy.insured.person-objects
@@ -53,7 +65,9 @@ integration:
             useSourceIndex: true
           mappings:
             - element: policy.insured.person-objects~person.man-id
-              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.PersonID
+              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.PersonID
+            - value: " "
+              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.PID
 
         - fromIdx:
             array: datamodel.policy.insured.person-objects
@@ -63,18 +77,6 @@ integration:
           mappings:
             - value: ' '
               payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.PID
-            - element: policy.insured.person-objects~person.gender
-              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.Gender
-            - element: policy.insured.person-objects~person.date-of-birth
-              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.BirthDate
-            - element: policy.insured.person-objects~person.first-name
-              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.Name.Given
-            - element: policy.insured.person-objects~person.last-name
-              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.Name.Family
-            - element: policy.insured.person-objects~entity-accident-insured.type
-              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.AccinsType
-            - element: policy.insured.person-objects~person.address.country
-              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.HomeCountry
 
         - mappings:
             - element: policy.contract.payment.frequency
