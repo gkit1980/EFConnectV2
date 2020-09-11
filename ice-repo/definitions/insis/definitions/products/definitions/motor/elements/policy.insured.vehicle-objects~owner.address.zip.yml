@@ -1,0 +1,11 @@
+element:
+  title: zip of owner
+  type: text
+  viewMode:
+    DtViewModeRule:
+      dt: policy.insured.vehicle-objects~owner.address.city.viewmode
+  component:
+    StaticComponentRule:
+      component:
+        IceTextInput:
+          keyboardType: number

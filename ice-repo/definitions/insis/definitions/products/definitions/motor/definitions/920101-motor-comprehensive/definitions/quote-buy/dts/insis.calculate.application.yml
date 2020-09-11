@@ -1,0 +1,16 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policy.status.policy-status
+  outputs:
+    - id: calculate
+      type: boolean
+  rules:
+    - inputs:
+        - '-2'
+      outputs:
+        - true
+    - inputs:
+        - '-'
+      outputs:
+        - false

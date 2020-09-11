@@ -1,0 +1,10 @@
+element:
+  type: text
+  fake:
+    value: A1
+  values:
+    InsisDynamicValuesListRule:
+      datastoreRootPath: vehicles-data
+      pathElements:
+        - policy.insured.vehicle-objects~car.brand
+        - policy.insured.path-models

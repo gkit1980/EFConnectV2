@@ -1,0 +1,6 @@
+element:
+  fake:
+    value: KW02RBJ
+  type: text
+  validation:
+    - InsisUniqueValueValidationRule: {}

@@ -1,0 +1,17 @@
+section:
+  component:
+    IceFlexSection:
+      tags:
+        - header
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                css: back-button
+                elements:
+                  - name: navigate-back
+          - cols:
+              - size: auto
+                css: mat-display-1 u-mb-4
+                elements:
+                  - name: page-title

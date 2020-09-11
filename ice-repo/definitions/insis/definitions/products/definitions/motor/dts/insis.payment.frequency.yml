@@ -1,0 +1,81 @@
+dt:
+  hitPolicy: C
+  inputs:
+    - element: policy.contract.term.duration
+  outputs:
+    - id: label_en
+      type: string
+    - label: new label
+      default: ''
+      id: label_de
+    - label: new label
+      default: ''
+      id: value
+      type: integer
+  rules:
+    - inputs:
+        - 1
+      outputs:
+        - Single payment
+        - Einmalzahlung
+        - 12
+    - inputs:
+        - 3
+      outputs:
+        - monthly
+        - monatlich
+        - 12
+    - inputs:
+        - 3
+      outputs:
+        - Single payment
+        - Einmalzahlung
+        - 4
+    - inputs:
+        - 6
+      outputs:
+        - monthly
+        - monatlich
+        - 12
+    - inputs:
+        - 6
+      outputs:
+        - quarterly
+        - vierteljährlich
+        - 4
+    - inputs:
+        - 6
+      outputs:
+        - Single payment
+        - Einmalzahlung
+        - 2
+    - inputs:
+        - 12
+      outputs:
+        - monthly
+        - monatlich
+        - 12
+    - inputs:
+        - 12
+      outputs:
+        - quarterly
+        - vierteljährlich
+        - 4
+    - inputs:
+        - 12
+      outputs:
+        - semiannually
+        - halbjährlich
+        - 2
+    - inputs:
+        - 12
+      outputs:
+        - Single payment
+        - Einmalzahlung
+        - 1
+    - inputs:
+        - null
+      outputs:
+        - null
+        - ''
+        - 12

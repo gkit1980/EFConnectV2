@@ -1,0 +1,6 @@
+element:
+  title: city of owner
+  type: text
+  viewMode:
+    DtViewModeRule:
+      dt: policy.insured.vehicle-objects~owner.address.city.viewmode

@@ -1,0 +1,32 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: 40%
+                size.xs: auto
+                size.sm: auto
+                css: u-mb-4
+                elements:
+                  - name: policy.participants.payor.iban-selection
+          - gap: 15px
+            cols:
+              - size: 40%
+                size.xs: auto
+                size.sm: auto
+                css: u-mb-4
+                elements:
+                  - name: policy.participants.payor.iban
+              - size: 30%
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.participants.payor.bank
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                css: u-mt-2
+                elements:
+                  - name: policy.participants.payor.add-account
+      css: u-mb-4

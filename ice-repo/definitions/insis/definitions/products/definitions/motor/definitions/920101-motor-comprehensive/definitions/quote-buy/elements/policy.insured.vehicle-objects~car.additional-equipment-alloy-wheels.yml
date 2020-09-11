@@ -1,0 +1,9 @@
+element:
+  viewMode:
+    DtViewModeRule:
+      dt: >-
+        policy.insured.vehicle-objects~car.additional-equipment-alloy-wheels.viewmode
+  range:
+    StaticRangeRule:
+      min: '1'
+  type: currency

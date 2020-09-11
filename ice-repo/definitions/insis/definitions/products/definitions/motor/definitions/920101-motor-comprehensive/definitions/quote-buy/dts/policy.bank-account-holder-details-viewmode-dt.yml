@@ -1,0 +1,16 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policy.is-user-bank-account-holder
+  outputs:
+    - id: output
+      type: ''
+  rules:
+    - inputs:
+        - true
+      outputs:
+        - hidden
+    - inputs:
+        - false
+      outputs:
+        - required

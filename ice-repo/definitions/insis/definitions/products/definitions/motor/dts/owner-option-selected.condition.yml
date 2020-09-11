@@ -1,0 +1,16 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policy.insured.vehicle-objects~owner.options
+  outputs:
+    - id: output
+      type: boolean
+  rules:
+    - inputs:
+        - 'policyholder'
+      outputs:
+        - true
+    - inputs:
+        - '-'
+      outputs:
+        - false

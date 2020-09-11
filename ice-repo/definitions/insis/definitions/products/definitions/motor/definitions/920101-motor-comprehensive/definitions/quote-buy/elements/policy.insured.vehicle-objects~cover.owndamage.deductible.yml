@@ -1,0 +1,11 @@
+element:
+  component:
+    StaticComponentRule:
+      component:
+        InsisSlider:
+          showTicks: true
+          addEmptyValue: false
+  type: integer
+  defaultValue:
+    StaticValueRule:
+      value: 3

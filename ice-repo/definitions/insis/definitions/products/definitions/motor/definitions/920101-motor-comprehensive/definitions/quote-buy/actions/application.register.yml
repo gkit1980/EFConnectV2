@@ -1,0 +1,9 @@
+action:
+  title: calls convert quote to application
+  execution:
+    - IntegrationExecutionRule:
+        integration: 920101.motor.insis-policy.appilcation.register
+    - IntegrationExecutionRule:
+        integration: 920101.motor.insis-policy.get-premiums
+    - NavigateToPageExecutionRule:
+        direction: next

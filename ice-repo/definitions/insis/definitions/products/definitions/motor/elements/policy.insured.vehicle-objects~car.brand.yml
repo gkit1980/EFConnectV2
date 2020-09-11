@@ -1,0 +1,8 @@
+element:
+  type: text
+  component: IceDropdown
+  viewMode: required
+  values: insis.car.brands
+  buckets:
+    insis-quote:
+      trigger: true

@@ -1,0 +1,10 @@
+element:
+  type: integer
+  values:
+    DtValuesRule:
+      dt: insis.payment.frequency
+      list: null
+  defaultValue:
+    DtValueRule:
+      dt: insis.payment.frequency-defaults
+      output: output

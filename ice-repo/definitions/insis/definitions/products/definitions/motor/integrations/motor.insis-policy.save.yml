@@ -1,0 +1,122 @@
+integration:
+  exchange: {}
+  transformation:
+    DefaultTransformationRule:
+      additional: insis
+      dateFormat: YYYY-MM-DD
+      dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
+      extends: insis-policy.save
+      in: {}
+      out:
+        - fromIdx:
+            array: datamodel.policy.insured.vehicle-objects
+          toIdx:
+            array: payload.Insureds.Insured
+            apppend: true
+          mappings:
+            - element: policy.contract.begin
+              payload: Insureds.Insured[n].InsrBegin
+            - element: policy.insured.currency
+              payload: Insureds.Insured[n].Currency
+            - element: policy.insured.vehicle-objects~insured-amount
+              payload: Insureds.Insured[n].InsuredAmount
+            - element: policy.insured.vehicle-objects~object.id
+              payload: Insureds.Insured[n].InsuredObjectID
+            - element: policy.insured.vehicle-objects~entity-id
+              payload: Insureds.Insured[n].InsuredEntity.ObjectID
+            - element: policy.insured.vehicle-objects~car.bonus-malus
+              payload: Insureds.Insured[n].InsuredEntity.OCar.BonusMalus
+            - element: policy.insured.vehicle-objects~car.ccm-ton
+              payload: Insureds.Insured[n].InsuredEntity.OCar.CCMTon
+            - element: policy.insured.vehicle-objects~car.chassis
+              payload: Insureds.Insured[n].InsuredEntity.OCar.Chassis
+            - element: policy.insured.vehicle-objects~car.engine
+              payload: Insureds.Insured[n].InsuredEntity.OCar.Engine
+            - element: policy.insured.vehicle-objects~car.modified
+              payload: Insureds.Insured[n].InsuredEntity.OCar.Modified
+            - element: policy.insured.vehicle-objects~car.paint-type
+              payload: Insureds.Insured[n].InsuredEntity.OCar.PaintType
+            - element: policy.insured.vehicle-objects~car.prod-type
+              payload: Insureds.Insured[n].InsuredEntity.OCar.ProdType
+            - element: policy.insured.vehicle-objects~car.registration-date
+              payload: Insureds.Insured[n].InsuredEntity.OCar.Notes
+            - element: policy.insured.vehicle-objects~car.regno
+              payload: Insureds.Insured[n].InsuredEntity.OCar.RegNo
+            - element: policy.insured.vehicle-objects~car.brand
+              payload: Insureds.Insured[n].InsuredEntity.OCar.Make
+            - element: policy.insured.vehicle-objects~car.category
+              payload: Insureds.Insured[n].InsuredEntity.OCar.DoorNum
+            - element: policy.insured.vehicle-objects~car.construction-date
+              payload: Insureds.Insured[n].InsuredEntity.OCar.ProdYear
+            - element: policy.insured.vehicle-objects~car.engine-power
+              payload: Insureds.Insured[n].InsuredEntity.OCar.EnginePower
+            - element: policy.insured.vehicle-objects~car.fuel
+              payload: Insureds.Insured[n].InsuredEntity.OCar.FuelType
+            - element: policy.insured.vehicle-objects~car.model
+              payload: Insureds.Insured[n].InsuredEntity.OCar.Model
+            - element: policy.insured.vehicle-objects~car.type
+              payload: Insureds.Insured[n].InsuredEntity.OCar.CarType
+            - element: policy.insured.vehicle-objects~car.subtype
+              payload: Insureds.Insured[n].InsuredEntity.OCar.CarSubtype
+            - element: policy.insured.vehicle-objects~car.usage
+              payload: Insureds.Insured[n].InsuredEntity.OCar.CarUsage
+            - element: policy.insured.vehicle-objects~car.seats-number
+              payload: Insureds.Insured[n].InsuredEntity.OCar.SeatsNum
+        - fromIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            condition: owner.options == "policyholder"
+          toIdx:
+            array: payload.Insureds.Insured
+            condition: 1==1
+            toIdx:
+              array: InsuredEntity.Owners.Owner
+              append: true
+          mappings:
+            - element: policy.participants.holder.person.pid
+              payload: Insureds.Insured[n].InsuredEntity.Owners.Owner[0].Entity.PersonalData.PID
+            - element: policy.contract.begin
+              payload: Insureds.Insured[n].InsuredEntity.Owners.Owner[0].BeginDate
+        - fromIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            condition: owner.options == "owner"
+          toIdx:
+            array: payload.Insureds.Insured
+            condition: 1==1
+            toIdx:
+              array: InsuredEntity.Owners.Owner
+              append: true
+          mappings:
+            - element: policy.insured.vehicle-objects~owner.person.pid
+              payload: Insureds.Insured[n].InsuredEntity.Owners.Owner[0].Entity.PersonalData.PID
+            - element: policy.insured.vehicle-objects~owner.person.first-name
+              payload: Insureds.Insured[n].InsuredEntity.Owners.Owner[0].Entity.PersonalData.Name.Given
+            - element: policy.insured.vehicle-objects~owner.person.last-name
+              payload: Insureds.Insured[n].InsuredEntity.Owners.Owner[0].Entity.PersonalData.Name.Family
+            - element: policy.insured.vehicle-objects~owner.person.birthdate
+              payload: Insureds.Insured[n].InsuredEntity.Owners.Owner[0].Entity.PersonalData.BirthDate
+        - fromIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            condition: 1==2
+            fromIndex:
+              array: drivers
+          toIdx:
+            array: payload.Insureds.Insured
+            condition: 1 == 1
+            toIdx:
+              array: Drivers.Driver
+              append: true
+          mappings:
+            - element: policy.insured.vehicle-objects~drivers~person.driver-id
+              payload: Insureds.Insured[n].Drivers.Driver[n].DriverID
+            - element: policy.insured.vehicle-objects~drivers~person.pid
+              payload: Insureds.Insured[n].Drivers.Driver[n].PID
+            - element: policy.insured.vehicle-objects~drivers~person.first-name
+              payload: Insureds.Insured[n].Drivers.Driver[n].Entity.PersonalData.Name.Given
+            - element: policy.insured.vehicle-objects~drivers~person.last-name
+              payload: Insureds.Insured[n].Drivers.Driver[n].Entity.PersonalData.Name.Family
+            - element: policy.insured.vehicle-objects~drivers~person.pid
+              payload: Insureds.Insured[n].Drivers.Driver[n].Entity.PersonalData.PID
+            - element: policy.insured.vehicle-objects~drivers~person.date-of-birth
+              payload: Insureds.Insured[n].Drivers.Driver[n].Entity.PersonalData.BirthDate
+            - element: policy.insured.vehicle-objects~drivers~person.driver-license-nb
+              payload: Insureds.Insured[n].Drivers.Driver[n].LicenseID

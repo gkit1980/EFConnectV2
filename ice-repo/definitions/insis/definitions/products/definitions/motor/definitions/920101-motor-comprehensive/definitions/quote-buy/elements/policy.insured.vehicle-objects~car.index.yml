@@ -1,0 +1,5 @@
+element:
+  type: integer
+  defaultValue:
+    InsisArrayItemIndexValueRule:
+      indexing: zero-based

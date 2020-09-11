@@ -2813,6 +2813,9 @@ entries:
       term-life:
         - en: Term Life Insurance
           de: Term Life Insurance
+      motor:
+        - en: Motor Insurance
+          de: Motor Insurance
     home:
       title:
         - en: INSIS Portal

@@ -1,0 +1,12 @@
+action:
+  title: calls the application calculation for insis
+  condition:
+    DtConditionRule:
+      dt: insis.calculate.application
+      output: calculate
+  execution:
+    - IntegrationExecutionRule:
+        integration: 920101.motor.insis-policy.application.modify
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ICE_CONTEXT_DEACTIVATED

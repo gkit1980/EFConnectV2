@@ -1,0 +1,15 @@
+element:
+  fake:
+    value: gasoline
+  type: text
+  values:
+    InsisDynamicValuesListRule:
+      datastoreRootPath: vehicles-data
+      pathElements:
+        - policy.insured.vehicle-objects~car.brand
+        - policy.insured.path-fuel-types
+        - policy.insured.vehicle-objects~car.model
+  component:
+    StaticComponentRule:
+      component:
+        IceDropdown: {}

@@ -1,0 +1,17 @@
+element:
+  type: boolean
+  component:
+    StaticComponentRule:
+      component:
+        IceCheckbox:
+          labelPosition: after
+  viewMode:
+    StaticViewModeRule:
+      viewMode: required
+  validation:
+    - ComplyValidationRule:
+        value: true
+        messageKey: validation.messages.comply
+  defaultValue: false
+  fake:
+    value: true

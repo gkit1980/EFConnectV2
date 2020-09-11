@@ -1,0 +1,20 @@
+element:
+  type: text
+  text:
+    ResourceTextRule:
+      info: elements.policy.insured.vehicle-objects.items.cover.mtpl.active-info
+  label:
+    NoLabelRule: {}
+  component:
+    StaticComponentRule:
+      component:
+        InsisInfoButton:
+          height: 200
+          width: 400
+          originX: start
+          originY: center
+          overlayX: start
+          overlayY: center
+          offsetX: 30
+          offsetY: 0
+          scrollStrategy: BlockScrollStrategy

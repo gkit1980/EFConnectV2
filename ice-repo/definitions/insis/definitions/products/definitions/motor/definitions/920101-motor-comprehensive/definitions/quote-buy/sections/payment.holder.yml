@@ -1,0 +1,54 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                elements:
+                  - name: bank-holder-details-title
+                css: u-mb-3 u-mt-2 u-text-medium
+          - cols:
+              - size: auto
+                css: u-mb-4
+                elements:
+                  - name: >-
+                      policy.participants.payor.agreed-on-terms-and-conditions
+          - cols:
+              - size: 190px
+                size.xs: auto
+                size.sm: auto
+                css: u-mb-4
+                elements:
+                  - name: policy.participants.payor.first-name
+              - size: 190px
+                size.xs: auto
+                size.sm: auto
+                css: u-mb-4
+                elements:
+                  - name: policy.participants.payor.last-name
+            gap: 24px
+          - cols:
+              - size: 190px
+                size.xs: auto
+                size.sm: auto
+                css: u-mb-4
+                elements:
+                  - name: policy.participants.payor.city
+              - size: 90px
+                size.xs: auto
+                size.sm: auto
+                css: u-mb-4
+                elements:
+                  - name: policy.participants.payor.zip
+            gap: 24px
+          - cols:
+              - size: 190px
+                size.xs: auto
+                size.sm: auto
+                css: u-mb-4
+                elements:
+                  - name: policy.participants.payor.birthdate
+      viewMode:
+        ConditionalSectionViewModeRule:
+          dt: policy.bank-account-holder-details-viewmode-dt

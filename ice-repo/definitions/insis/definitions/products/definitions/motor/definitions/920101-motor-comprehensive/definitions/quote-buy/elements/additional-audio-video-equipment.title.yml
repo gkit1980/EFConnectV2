@@ -1,0 +1,10 @@
+element:
+  type: text
+  component: IceNone
+  viewMode:
+    ConditionalViewModeRule:
+      conditionValue: 'true'
+      conditionElement: >-
+        policy.insured.vehicle-objects~car.additional-equipment-car-audio-included
+      conditionViewMode: required
+      elseViewMode: hidden

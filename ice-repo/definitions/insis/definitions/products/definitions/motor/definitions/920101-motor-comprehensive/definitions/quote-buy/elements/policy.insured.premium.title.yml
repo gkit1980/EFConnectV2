@@ -1,0 +1,11 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        IceNone: {}
+  label:
+    ResourceWithElementValuesLabelRule:
+      elements:
+        - policy.insured.currency
+      key: elements.policy.insured.currency.label

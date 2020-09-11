@@ -1,0 +1,13 @@
+integration:
+  exchange:
+    InsisNoopExchangeRule: {}
+  transformation:
+    DefaultTransformationRule:
+      out:
+        - mappings:
+            - element: policy.participants.payor.iban
+              payload: 'iban'
+      in:
+        - mappings:
+            - element: policy.participants.payor.iban-selection
+              payload: 'iban'

@@ -1,0 +1,9 @@
+element:
+  defaultValue:
+    DateExpressionValueRule:
+      expression: date('2015-12-12')
+  range:
+    FeelExpressionRangeRule:
+      expressionMin: date(insis.openday)
+      expressionMax: date(insis.openday) + duration('P3M')
+  type: date

@@ -18,20 +18,20 @@ dt:
         - -2
         - '920101'
       outputs:
-        - insis.products.motor.920101-motor-comprehensive.quote/3.review.payment
+        - insis.products.motor.920101-motor-comprehensive.quote-buy.customer/3.review.payment
         - quotes~policy-number
     - inputs:
         - -3
         - '920101'
       outputs:
         - >-
-          insis.products.motor.920101-motor-comprehensive.quote/2.application.vehicle-details
+          insis.products.motor.920101-motor-comprehensive.quote-buy.customer/2.application.vehicle-details
         - quotes~policy-number
     - inputs:
         - -4
         - '920101'
       outputs:
-        - insis.products.motor.920101-motor-comprehensive.quote/1.quote.vehicles
+        - insis.products.motor.920101-motor-comprehensive.quote-buy.customer/1.quote.vehicles
         - quotes~policy-number
     - inputs:
         - -2

@@ -1,0 +1,9 @@
+element:
+  type: text
+  viewMode: required
+  buckets:
+    insis-quote:
+      trigger: true
+  validation:
+    - RegexpValidationRule:
+        regexp: '^[0-9a-zA-Z]+$'

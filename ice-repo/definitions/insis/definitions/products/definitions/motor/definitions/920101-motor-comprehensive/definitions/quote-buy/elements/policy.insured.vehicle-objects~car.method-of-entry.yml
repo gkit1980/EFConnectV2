@@ -1,0 +1,18 @@
+element:
+  type: integer
+  component:
+    StaticComponentRule:
+      component:
+        IceRadiobuttonGroup: {}
+  values:
+    ListValuesRule:
+      list: entry-method
+  label:
+    NoLabelRule: {}
+  viewMode:
+    StaticViewModeRule:
+      viewMode: default
+  defaultValue:
+    ArrayItemValueRule:
+      values:
+        - 1

@@ -155,7 +155,8 @@ page:
                 gap: 10px
           css: card u-mb-3
     - component:
-        InsisMotorPolicySummarySection:
+        InsisPolicySummarySection:
+          type: motor
           tags:
             - pull-right
   label:

@@ -1,0 +1,15 @@
+integration:
+  type: active
+  exchange:
+    InsisStaticJsonExchangeRule:
+      dataFileName: motor_makes_models.json
+  transformation:
+    DefaultTransformationRule:
+      additional: insis
+      dateFormat: YYYY-MM-DD
+      dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
+      out: {}
+      in:
+        - mappings:
+            - datastore: vehicles-data
+              payload: static-data

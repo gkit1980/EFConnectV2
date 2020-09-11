@@ -1,0 +1,20 @@
+page:
+  component:
+    InsisTwoLevelStepperNavigationPage: {}
+  validation:
+    onElementComponentChange: true
+    behaviour: forward
+    showMessages: none
+    showGrowl: false
+    showElementValidation: true
+  label:
+    ResourcePageLabelRule:
+      navigationTitleKey: pages.2.application.vehicle-details.title
+      pageTitleKey: pages.2.application.vehicle-details.title
+      shortTitleKey: pages.2.application.vehicle-details.title
+  sections:
+    - header
+    - vehicle.ownership
+    - continue
+    - need-more-info
+    - policy.summary

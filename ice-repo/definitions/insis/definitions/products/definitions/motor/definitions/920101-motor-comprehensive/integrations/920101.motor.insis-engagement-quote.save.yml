@@ -1,0 +1,227 @@
+integration:
+  exchange: {}
+  transformation:
+    DefaultTransformationRule:
+      additional: insis
+      dateFormat: YYYY-MM-DD
+      dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
+      extends: motor.insis-engagement-quote.save
+      in: {}
+      out:
+        - fromIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            index: 0
+          toIdx:
+            array: 'payload.Policies.Policy[0].InsuranceConditions.Questionary.Question'
+            append: true
+          mappings:
+            - value: '1000.1'
+              payload: 'Policies.Policy[0].InsuranceConditions.Questionary.Question[n].ID'
+            - element: policy.insured.vehicle-objects~question.number-of-consecutive-years-without-claims
+              payload: 'Policies.Policy[0].InsuranceConditions.Questionary.Question[n].Answer'
+        - fromIdx:
+            array: datamodel.policy.insured.vehicle-objects
+          toIdx:
+            array: 'payload.Policies.Policy[0].Insureds.Insured'
+            condition: 1 == 1
+            toIdx:
+              array: Questionary.Question
+              append: true
+          mappings:
+            - value: '1000.1'
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Questionary.Question[n].ID'
+            - element: policy.insured.vehicle-objects~question.number-of-consecutive-years-without-claims
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Questionary.Question[n].Answer'
+        - fromIdx:
+            array: datamodel.policy.insured.vehicle-objects
+          toIdx:
+            array: payload.Policies.Policy[0].Insureds.Insured
+            condition: 1 == 1
+          mappings:
+            - element: policy.insured.vehicle-objects~entity-type
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.ObjectType
+        - fromIdx:
+            array: datamodel.policy.insured.vehicle-objects
+          toIdx:
+            array: 'payload.Policies.Policy[0].Insureds.Insured'
+            condition: 1 == 1
+            toIdx:
+              array: InsuredEntity.OCar.CustomProperties.CustomProperty
+              append: true
+          mappings:
+            - element: policy.insured.vehicle-objects~car.transportation-of-hazardous-goods-fieldname
+              payload: 'Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OCar.CustomProperties.CustomProperty[n].FieldName'
+            - element: policy.insured.vehicle-objects~car.transportation-of-hazardous-goods
+              payload: 'Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OCar.CustomProperties.CustomProperty[n].Value'
+        - fromIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            condition: car.additional-equipment-car-audio > 0
+          toIdx:
+            array: payload.Policies.Policy[0].Insureds.Insured
+            condition: 1 == 1
+            toIdx:
+              array: InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment
+              append: true
+          mappings:
+            - element: policy.insured.vehicle-objects~car.additional-equipment-car-audio-parent-id
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].ParentObjectID
+            - value: 1001
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].EquipmentType
+            - value: 100101
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].EquipmentSubtype
+            - value: '-1'
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].Model
+            - value: '-1'
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].SerialNo
+            - element: policy.insured.vehicle-objects~car.additional-equipment-car-audio
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].AvValue
+            - element: policy.insured.currency
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].Currency
+        - fromIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            condition: 'car.additional-equipment-alloy-wheels > 0'
+          toIdx:
+            array: payload.Policies.Policy[0].Insureds.Insured
+            condition: 1 == 1
+            toIdx:
+              array: InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment
+              append: true
+          mappings:
+            - element: policy.insured.vehicle-objects~car.additional-equipment-alloy-wheels-parent-id
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].ParentObjectID
+            - value: 1002
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].EquipmentType
+            - value: 100201
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].EquipmentSubtype
+            - value: '-1'
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].Model
+            - value: '-1'
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].SerialNo
+            - element: policy.insured.vehicle-objects~car.additional-equipment-alloy-wheels
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].AvValue
+            - element: policy.insured.currency
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].Currency
+        - fromIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            condition: 'car.additional-equipment-other > 0'
+          toIdx:
+            array: payload.Policies.Policy[0].Insureds.Insured
+            condition: 1 == 1
+            toIdx:
+              array: InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment
+              append: true
+          mappings:
+            - element: policy.insured.vehicle-objects~car.additional-equipment-other-parent-id
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].ParentObjectID
+            - value: 1003
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].EquipmentType
+            - value: 100301
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].EquipmentSubtype
+            - value: '-1'
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].Model
+            - value: '-1'
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].SerialNo
+            - element: policy.insured.vehicle-objects~car.additional-equipment-other
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].AvValue
+            - element: policy.insured.currency
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].Currency
+        - fromIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            condition: cover.mtpl.active == true
+          toIdx:
+            array: payload.Policies.Policy[0].Insureds.Insured
+            condition: 1 == 1
+            toIdx:
+              array: Covers.Cover
+              append: true
+          mappings:
+            - element: policy.insured.vehicle-objects~cover.mtpl.grc-id
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].GrcID'
+            - element: policy.insured.vehicle-objects~cover.mtpl.annex-id
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].AnnexID'
+            - element: policy.insured.vehicle-objects~cover.mtpl.code
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].CoverCode'
+            - element: policy.insured.vehicle-objects~cover.mtpl.currency
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].Currency'
+            - element: policy.insured.vehicle-objects~cover.mtpl.insured-amount
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
+        - fromIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            condition: cover.owndamage.active == true
+          toIdx:
+            array: payload.Policies.Policy[0].Insureds.Insured
+            condition: 1 == 1
+            toIdx:
+              array: Covers.Cover
+              append: true
+          mappings:
+            - element: policy.insured.vehicle-objects~cover.owndamage.grc-id
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].GrcID'
+            - element: policy.insured.vehicle-objects~cover.owndamage.annex-id
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].AnnexID'
+            - element: policy.insured.vehicle-objects~cover.owndamage.code
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].CoverCode'
+            - element: policy.insured.vehicle-objects~cover.owndamage.currency
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].Currency'
+            - element: policy.insured.vehicle-objects~cover.owndamage.insured-amount
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
+        - fromIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            condition: cover.pa.active == true
+          toIdx:
+            array: payload.Policies.Policy[0].Insureds.Insured
+            condition: 1 == 1
+            toIdx:
+              array: Covers.Cover
+              append: true
+          mappings:
+            - element: policy.insured.vehicle-objects~cover.pa.grc-id
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].GrcID'
+            - element: policy.insured.vehicle-objects~cover.pa.annex-id
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].AnnexID'
+            - element: policy.insured.vehicle-objects~cover.pa.code
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].CoverCode'
+            - element: policy.insured.vehicle-objects~cover.pa.currency
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].Currency'
+            - element: policy.insured.vehicle-objects~cover.pa.insured-amount
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
+        - fromIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            condition: cover.road_assis.active == true
+          toIdx:
+            array: payload.Policies.Policy[0].Insureds.Insured
+            condition: 1 == 1
+            toIdx:
+              array: Covers.Cover
+              append: true
+          mappings:
+            - element: policy.insured.vehicle-objects~cover.road_assis.grc-id
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].GrcID'
+            - element: policy.insured.vehicle-objects~cover.road_assis.annex-id
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].AnnexID'
+            - element: policy.insured.vehicle-objects~cover.road_assis.code
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].CoverCode'
+            - element: policy.insured.vehicle-objects~cover.road_assis.currency
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].Currency'
+            - element: policy.insured.vehicle-objects~cover.road_assis.insured-amount
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
+        - fromIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            condition: cover.vandalism.active == true
+          toIdx:
+            array: payload.Policies.Policy[0].Insureds.Insured
+            condition: 1 == 1
+            toIdx:
+              array: Covers.Cover
+              append: true
+          mappings:
+            - element: policy.insured.vehicle-objects~cover.vandalism.grc-id
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].GrcID'
+            - element: policy.insured.vehicle-objects~cover.vandalism.annex-id
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].AnnexID'
+            - element: policy.insured.vehicle-objects~cover.vandalism.code
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].CoverCode'
+            - element: policy.insured.vehicle-objects~cover.vandalism.currency
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].Currency'
+            - element: policy.insured.vehicle-objects~cover.vandalism.insured-amount
+              payload: 'Policies.Policy[0].Insureds.Insured[n].Covers.Cover[n].InsuredAmount'

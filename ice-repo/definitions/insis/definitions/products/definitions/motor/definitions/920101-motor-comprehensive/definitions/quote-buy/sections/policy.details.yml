@@ -1,0 +1,27 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: 200px
+                size.xs: 100%
+                css: u-mb-4-sm
+                elements:
+                  - name: policy.contract.begin
+              - size: 200px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.contract.term.duration
+              - size: 200px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.contract.payment.frequency
+            align: space-between
+            layout.xs: column
+      css: card main-side u-pb-1 u-mb-4
+  label:
+    ResourceSectionLabelRule:
+      labelKey: section.policy-details.label

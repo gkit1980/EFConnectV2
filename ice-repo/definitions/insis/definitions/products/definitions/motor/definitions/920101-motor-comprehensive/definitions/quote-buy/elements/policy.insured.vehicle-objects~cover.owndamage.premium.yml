@@ -1,0 +1,6 @@
+element:
+  pages:
+    1.quote.covers:
+      label:
+        NoLabelRule: {}
+  type: currency

@@ -9,7 +9,7 @@ dt:
   rules:
     - inputs:
         - not(null)
-        - '-4'
+        - -4
       outputs:
         - true
     - inputs:

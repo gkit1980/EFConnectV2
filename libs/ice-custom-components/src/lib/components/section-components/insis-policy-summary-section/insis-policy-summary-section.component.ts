@@ -20,7 +20,11 @@ export class InsisPolicySummarySectionComponent extends SectionComponentImplemen
   }
 
   get fxFlexValue() {
-    const columnsCount: string = get(this.recipe, 'component.InsisPolicySummarySection.columns');
+    const columnsCount: string = get(
+      this.recipe,
+      'component.InsisPolicySummarySection.columns',
+      'two'
+    );
     return columnsCount === 'two' ? '50%' : '25%';
   }
 

@@ -1,0 +1,6 @@
+element:
+  type: text
+  defaultValue:
+    InsisElementValueRule:
+      element: policy.participants.holder.person.pid
+      index: 0

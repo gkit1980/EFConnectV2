@@ -1,0 +1,35 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: 100%
+                css: u-mb-4
+                elements:
+                  - name: previous-insurer-heading
+          - cols:
+              - size: 190px
+                size.xs: 100%
+                css: u-mb-6
+                elements:
+                  - name: previous-insurer
+          - cols:
+              - size: auto
+                elements:
+                  - name: terms-and-conditions.description
+            css: u-mb-4
+          - cols:
+              - size: auto
+                elements:
+                  - name: terms-and-conditions.truthy-and-valid-information
+            gap: 10px
+            css: u-mb-4
+          - cols:
+              - size: auto
+                elements:
+                  - name: terms-and-conditions.access-personal-information
+            gap: 10px
+            css: u-mb-4
+      behaviourForEmptyRows: render
+  viewMode: default

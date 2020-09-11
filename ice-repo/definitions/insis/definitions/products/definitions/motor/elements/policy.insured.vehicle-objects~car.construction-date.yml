@@ -1,0 +1,12 @@
+element:
+  type: integer
+  component:
+    StaticComponentRule:
+      component:
+        IceNumber:
+          separateThousands: false
+          fractionSize: 0
+  viewMode: required
+  buckets:
+    insis-quote:
+      trigger: true

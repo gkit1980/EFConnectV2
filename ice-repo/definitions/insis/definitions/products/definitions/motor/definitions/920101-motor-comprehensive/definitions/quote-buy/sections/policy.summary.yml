@@ -1,0 +1,6 @@
+section:
+  component:
+    InsisPolicySummarySection:
+      type: motor
+      tags:
+        - pull-right

@@ -1,0 +1,6 @@
+element:
+  type: boolean
+  change:
+    - ResetElementValueExecutionRule:
+        elements:
+          - policy.insured.vehicle-objects~cover.road_assis.active

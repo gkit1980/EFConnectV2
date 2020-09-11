@@ -1,0 +1,25 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policy.insured.vehicle-objects~car.additional-equipment
+    - element: >-
+        policy.insured.vehicle-objects~car.additional-equipment-car-audio-included
+  outputs:
+    - id: viewMode
+      type: string
+  rules:
+    - inputs:
+        - true
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - true
+        - true
+      outputs:
+        - required
+    - inputs:
+        - "-"
+        - "-"
+      outputs:
+        - hidden

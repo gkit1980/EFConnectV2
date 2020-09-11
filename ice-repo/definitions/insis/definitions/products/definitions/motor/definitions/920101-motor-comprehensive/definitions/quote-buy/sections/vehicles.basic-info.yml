@@ -1,0 +1,163 @@
+section:
+  component:
+    IceArrayFlexSection:
+      grid:
+        rows:
+          - gap: 0px
+            gap.xs: 0px
+            css: u-mt-4
+            cols:
+              - size: 34px
+                size.xs: 0px
+                size.sm: 0px
+              - size: 180px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.insured.vehicle-objects~car.search.type
+              - size: 190px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.insured.vehicle-objects~car.search.input
+            align: start
+          - gap: 24px
+            gap.xs: 0px
+            css: u-mt-4
+            cols:
+              - size: 190px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.insured.vehicle-objects~car.regno
+              - size: 190px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.insured.vehicle-objects~car.chassis
+              - size: 10px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.insured.vehicle-objects~car.chassis-info
+          - gap: 24px
+            gap.xs: 0px
+            cols:
+              - size: 190px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.insured.vehicle-objects~car.construction-date
+              - size: 190px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.insured.vehicle-objects~car.brand
+          - gap: 24px
+            gap.xs: 0px
+            cols:
+              - size: 190px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.insured.vehicle-objects~car.model
+              - size: 190px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.insured.vehicle-objects~car.fuel
+          - gap: 24px
+            gap.xs: 0px
+            cols:
+              - size: 190px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.insured.vehicle-objects~car.engine-power
+              - size: 190px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.insured.vehicle-objects~car.millage
+          - gap: 24px
+            gap.xs: 0px
+            cols:
+              - size: 190px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.insured.vehicle-objects~car.usage
+              - size: 190px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: >-
+                      policy.insured.vehicle-objects~question.number-of-consecutive-years-without-claims
+          - gap: 10px
+            css: u-mb-4
+            cols:
+              - size: auto
+                size.xs: auto
+                elements:
+                  - name: >-
+                      policy.insured.vehicle-objects~car.transportation-of-hazardous-goods
+          - gap: 10px
+            css: u-mb-3
+            cols:
+              - size: auto
+                size.xs: auto
+                elements:
+                  - name: >-
+                      policy.insured.vehicle-objects~car.additional-equipment
+          - gap: 24px
+            css: u-ml-7
+            cols:
+              - size: 200px
+                size.xs: auto
+                align: center
+                css: u-mb-2
+                elements:
+                  - name: >-
+                      policy.insured.vehicle-objects~car.additional-equipment-car-audio-included
+              - size: 200px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: >-
+                      policy.insured.vehicle-objects~car.additional-equipment-car-audio
+          - gap: 24px
+            gap.xs: 0px
+            css: u-ml-7
+            cols:
+              - size: 200px
+                size.xs: auto
+                align: center
+                css: u-mb-2
+                elements:
+                  - name: >-
+                      policy.insured.vehicle-objects~car.additional-equipment-alloy-wheels-included
+              - size: 200px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: >-
+                      policy.insured.vehicle-objects~car.additional-equipment-alloy-wheels
+          - gap: 24px
+            gap.xs: 0px
+            css: u-ml-7
+            cols:
+              - size: 200px
+                size.xs: auto
+                align: center
+                css: u-mb-2
+                elements:
+                  - name: >-
+                      policy.insured.vehicle-objects~car.additional-equipment-other-included
+              - size: 200px
+                size.xs: 100%
+                css: u-mb-2
+                elements:
+                  - name: >-
+                      policy.insured.vehicle-objects~car.additional-equipment-other
+      arrayElement: policy.insured.vehicle-objects
+      behaviourForEmptyRows: hide

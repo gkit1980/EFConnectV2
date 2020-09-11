@@ -1,0 +1,12 @@
+action:
+  title: calls the quick quote calculation for insis
+  condition:
+    DtConditionRule:
+      dt: insis.recalculate.quote
+      output: calculate
+  execution:
+    - IntegrationExecutionRule:
+        integration: 920101.motor.insis-policy.engagement-quote.modify
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ICE_CONTEXT_DEACTIVATED

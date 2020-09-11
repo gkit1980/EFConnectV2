@@ -1,0 +1,5 @@
+element:
+  component: IceDropdown
+  type: text
+  fake:
+    value: 0

@@ -1,0 +1,12 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          themeColor: primary
+          variant: flat
+  defaultValue: quote.recalculate.premiums
+  viewMode:
+    DtViewModeRule:
+      dt: insis.viewmode.recalculate.quote

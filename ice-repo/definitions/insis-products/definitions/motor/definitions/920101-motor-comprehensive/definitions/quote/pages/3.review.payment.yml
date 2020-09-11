@@ -102,6 +102,7 @@ page:
                     elements:
                       - name: go-to-next-page
     - component:
-        InsisMotorPolicySummarySection:
+        InsisPolicySummarySection:
+          type: motor
           tags:
             - pull-right

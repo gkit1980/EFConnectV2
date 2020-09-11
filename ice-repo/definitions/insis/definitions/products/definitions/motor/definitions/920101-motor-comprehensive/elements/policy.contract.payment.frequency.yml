@@ -1,0 +1,4 @@
+element:
+  buckets:
+    insis-quote-motor:
+      trigger: true
