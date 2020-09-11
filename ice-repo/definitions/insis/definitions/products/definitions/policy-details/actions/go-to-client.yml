@@ -1,0 +1,8 @@
+action:
+  execution:
+    - DtNavigateToUrlExecutionRule:
+        dt: go-to-client.execution
+    - InsisNavigateToDefinitionPageWithDynidRule:
+        dynIdElement: policy.participants.holder.person.pid
+        definition: insis.person.client.agent
+        page: summary
