@@ -16,6 +16,7 @@ integration:
         - mappings:
             - param: queryId
               value: policies.client.get-detailed
+
             - param: p_client
               principal: pid
             - param: offset
@@ -33,8 +34,6 @@ integration:
             - param: p_insured_object
               value: null
             - param: policy_state
-              value: null
-            - param: p_client
               value: null
             - param: p_insr_end
               value: null
