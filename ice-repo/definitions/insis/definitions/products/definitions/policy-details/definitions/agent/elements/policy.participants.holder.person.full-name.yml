@@ -1,0 +1,20 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          variant: default
+  label:
+    ResourceWithElementValuesLabelRule:
+      elements:
+        - policy.participants.holder.person.pid
+        - policy.participants.holder.person.first-name
+        - policy.participants.holder.person.last-name
+      key: elements.policy.participants.holder.person.full-name.display-label
+  defaultValue:
+    StaticValueRule:
+      value: go-to-client
+  mirror:
+    ExpressionMirrorRule:
+      expression: 'null'

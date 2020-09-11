@@ -8,3 +8,4 @@ element:
           showFirst: '1'
           items:
             - quotes~insured_objects~object_name
+          dynamicLabel: elements.quotes.items.insured_objects.dynamiclabel

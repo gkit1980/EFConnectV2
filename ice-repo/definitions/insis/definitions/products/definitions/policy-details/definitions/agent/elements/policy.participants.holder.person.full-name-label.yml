@@ -1,0 +1,9 @@
+element:
+  type: text
+  viewMode:
+    StaticViewModeRule:
+      viewMode: output
+  component:
+    StaticComponentRule:
+      component:
+        IceNone: {}
