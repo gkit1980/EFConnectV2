@@ -1,16 +1,13 @@
 action:
   title: calls quote calculation for insis
   trigger:
-    # - BucketValidTriggerRule:
-    #     bucket: insis-quote
-    # - PageTriggerRule:
-    #     leave:
-    #       - 1.quote.people
+    - IceLifecycleEventTriggerRule:
+        event: ICE_CONTEXT_DEACTIVATED
+    - IceLifecycleEventTriggerRule:
+        event: ICE_APP_UNLOAD
   execution:
     - IntegrationExecutionRule:
         integration: 910211.risks.life.insis-policy.engagement-quote.register
-    - IntegrationExecutionRule:
-        integration: 910211.risks.life.insis-policy.get-premiums
   condition:
     InsisCovers910211ConditionRule:
       type: calculate

@@ -15,3 +15,6 @@ element:
       elementIndex: '1'
       messageKey: elements.go-to-next-page-covers.confirmation
       confirmAction: remove-additional-person
+  mirror:
+    DtMirrorRule:
+      dt: go-to-next-page-covers.mirror

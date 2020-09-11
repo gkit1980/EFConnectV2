@@ -1,0 +1,4 @@
+implementations:
+  InsisRulesRestExchangeRule:
+    description: >
+      This rule is extention of RestCallExchangeRulr but is used in a simplier way that foramt input and output

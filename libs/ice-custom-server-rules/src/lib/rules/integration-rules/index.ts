@@ -14,3 +14,4 @@ export * from './request-handler/insis-api-for-action-request-handler-rule/insis
 export * from './request-handler/insis-api-for-active-conditional-request-handler-rule/insis-api-for-active-conditional-request-handler-rule';
 export * from './request-handler/insis-api-for-active-request-handler-rule/insis-api-for-active-request-handler-rule';
 export * from './exchange/insis-rest-pq-call-exchange-rule/insis-rest-pq-call-exchange-rule';
+export * from './exchange/insis-rules-rest-exchange-rule/insis-rules-rest-exchange-rule';

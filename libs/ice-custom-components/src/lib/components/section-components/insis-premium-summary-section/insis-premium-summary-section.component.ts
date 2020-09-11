@@ -1,14 +1,19 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostBinding } from '@angular/core';
 import { SectionComponentImplementation, IceSectionComponent } from '@impeo/ng-ice';
 import { ItemElement, ViewModeRule } from '@impeo/ice-core';
 import { get, toString, forEach, map, compact } from 'lodash';
+import { debounceTime } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'insis-premium-summary-section',
   templateUrl: './insis-premium-summary-section.component.html',
 })
-export class InsisPremiumSummarySection extends SectionComponentImplementation implements OnInit {
+export class InsisPremiumSummarySection extends SectionComponentImplementation
+  implements OnInit, OnDestroy {
   static componentName = 'InsisPremiumSummarySection';
+  totalElementSubscriptions: Subscription[] = [];
+  premiumAmount = 0;
 
   premiumCategoryTitleResourceKey: string;
   taxesAndFeesCategoryTitleResourceKey: string;
@@ -21,6 +26,59 @@ export class InsisPremiumSummarySection extends SectionComponentImplementation i
   isVisible = true;
 
   printButtonElementName: string;
+
+  public registerTotalElementsChange() {
+    this.unregisterTotalElementsChange();
+    this.totalElementSubscriptions = [];
+    const activePremiumElements = this.premiumElements.map(this.getActivePremiumElement);
+    const elementNames = [
+      ...this.premiumElements,
+      ...activePremiumElements,
+      ...this.taxElements,
+      ...this.discountElements,
+    ];
+    elementNames.forEach((elementName) => {
+      const element = this.context.iceModel.elements[elementName];
+      if (element) {
+        const subscription = element.$dataModelValueChange.subscribe(() => {
+          this.calculatePremiums();
+        });
+        this.totalElementSubscriptions.push(subscription);
+      }
+    });
+  }
+
+  public getActivePremiumElement(name) {
+    const parts = name.split('.');
+    parts.pop();
+    parts.push('active');
+    return parts.join('.');
+  }
+
+  public unregisterTotalElementsChange() {
+    this.totalElementSubscriptions.forEach((subscription) => subscription.unsubscribe());
+  }
+
+  private calculatePremiums() {
+    let amount = 0;
+    this.premiumElements.forEach((elementName) => {
+      if (this.isArrayItemElement(elementName)) {
+        const element = this.iceModel.elements[elementName];
+
+        forEach(element.getValue().values, (value) => {
+          const index = value.index;
+          const activeElementName = this.getActivePremiumElement(elementName);
+          const activeElement = this.iceModel.elements[activeElementName];
+          if (activeElement && activeElement.getValue().forIndex(index)) {
+            const elementValue = value.value;
+            amount += elementValue;
+          }
+        });
+      }
+    });
+
+    this.premiumAmount = amount;
+  }
 
   get css() {
     return get(this.recipe, 'component.InsisPremiumSummarySection.css');
@@ -38,24 +96,30 @@ export class InsisPremiumSummarySection extends SectionComponentImplementation i
     return this.getElements('discountElements');
   }
 
-  get paymentFrequencyElementName() {
+  get paymentFrequencyLabelElementName() {
+    const paymentsFrequencyName = get(this.recipe, [
+      'component',
+      InsisPremiumSummarySection.componentName,
+      'paymentFrequencyElementLabel',
+    ]);
+    return paymentsFrequencyName;
+  }
+
+  get paymentFrequencyValue() {
     const paymentsFrequencyName = get(this.recipe, [
       'component',
       InsisPremiumSummarySection.componentName,
       'paymentFrequencyElement',
     ]);
-    return paymentsFrequencyName;
+    const element = get(this.context.iceModel.elements, paymentsFrequencyName);
+    if (element) {
+      return element.getValue().forIndex(null);
+    }
+    return 1;
   }
 
-  get premiumAmount(): number {
-    const premimumElementName = get(this.recipe, [
-      'component',
-      InsisPremiumSummarySection.componentName,
-      'premiumElement',
-    ]);
-    const premimumElement = get(this.iceModel.elements, premimumElementName);
-    if (!premimumElement) return null;
-    return premimumElement.getValue().forIndex(null);
+  get premiumAmountTotal(): number {
+    return this.premiumAmount * this.paymentFrequencyValue;
   }
 
   get paymentFrequency(): string {
@@ -146,6 +210,13 @@ export class InsisPremiumSummarySection extends SectionComponentImplementation i
       ['component', InsisPremiumSummarySection.componentName, 'isPopup'],
       false
     );
+
+    this.registerTotalElementsChange();
+    this.calculatePremiums();
+  }
+
+  ngOnDestroy() {
+    this.unregisterTotalElementsChange();
   }
 
   toggleVisibility() {

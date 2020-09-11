@@ -1,0 +1,11 @@
+action:
+  title: calls quote calculation for insis
+  trigger:
+    - BucketValidTriggerRule:
+        bucket: insis-quote
+    - PageTriggerRule:
+        leave:
+          - 1.quote.people
+  execution:
+    - IntegrationExecutionRule:
+        integration: fast-calculation

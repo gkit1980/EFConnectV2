@@ -5,6 +5,3 @@ element:
       conditionViewMode: default
       elseViewMode: disabled
       coverElement: policy.insured.person-objects~cover.death-acc.active
-  buckets:
-    insis-quote:
-      trigger: true

@@ -4,6 +4,3 @@ element:
       dt: policy.insured.person-objects~cover.premret.viewmode
       output: viewmode
   type: boolean
-  buckets:
-    insis-quote:
-      trigger: true

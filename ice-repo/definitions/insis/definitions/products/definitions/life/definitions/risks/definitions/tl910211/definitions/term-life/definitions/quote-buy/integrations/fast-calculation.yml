@@ -1,0 +1,78 @@
+integration:
+  exchange:
+    InsisRulesRestExchangeRule:
+      endpointBaseurl: 'insis-rest-endpoint'
+      verb: post
+      url: '/util/generic/rules'
+  transformation:
+    DefaultTransformationRule:
+      dateFormat: DD-MM-YYYY
+      out:
+        - mappings:
+            - payload: params.POL_VALID_FROM
+              element: policy.contract.begin
+
+            - payload: params.POL_NUM_INST
+              element: policy.contract.payment.frequency
+
+            - payload: params.RP_DURATION
+              element: policy.contract.term.duration
+
+            - payload: params.RP_SUBSCR_TYPE
+              value: '1'
+
+            - payload: params.RP_SA_LEVEL
+              value: '1'
+
+            - payload: params.INSIS_PORTAL
+              value: 'Yes'
+
+        - fromIdx:
+            index: '[0]'
+          mappings:
+            - payload: params.IV_DEATH_ANY
+              element: policy.insured.person-objects~cover.death-any.insured-amount
+
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            useSourceIndex: true
+          mappings:
+            - payload: rules[n].ruleRef
+              value: TERM_LIFE_TRF_SEQ
+
+            - payload: rules[n].params.INSURED_ROLE
+              element: policy.insured.person-objects~entity-accident-insured.type
+
+            - payload: rules[n].params.RP_AGE
+              element: policy.insured.person-objects~person.age-at-begin
+
+            - payload: rules[n].params.RP_SMOKER
+              element: policy.insured.person-objects~question.q-04
+
+            - payload: rules[n].params.IO_AGE_WOP
+              element: policy.insured.person-objects~person.age-at-begin
+
+      in:
+        - fromIdx:
+            array: payload.rules
+          toIdx:
+            useSourceIndex: true
+          mappings:
+            - element: policy.insured.person-objects~cover.death-any.premium
+              payload: rules[n].outputParams.DEATH_ANY_PREM
+
+            - element: policy.insured.person-objects~cover.wop-total.premium
+              payload: rules[n].outputParams.WOP_TOTAL_PREM
+
+            - element: policy.insured.person-objects~cover.tpdill.premium
+              payload: rules[n].outputParams.TPDILL_PREM
+
+            - element: policy.insured.person-objects~cover.tpdaccd.premium
+              payload: rules[n].outputParams.TPDACCD_PREM
+
+            - element: policy.insured.person-objects~cover.death-acc.premium
+              payload: rules[n].outputParams.DEATH_ACC_PREM
+
+            - element: policy.insured.person-objects~cover.critic-ill.premium
+              payload: rules[n].outputParams.CRITIC_ILL_PREM

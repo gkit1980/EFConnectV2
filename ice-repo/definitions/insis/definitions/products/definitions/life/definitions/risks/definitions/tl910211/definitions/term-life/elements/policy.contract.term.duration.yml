@@ -6,7 +6,7 @@ element:
         IceDropdown: {}
   defaultValue:
     StaticValueRule:
-      value: 1
+      value: 5
   values:
     InsisInsuranceDurationsValuesRule:
       ageElement: policy.insured.person-objects~person.age-at-begin
