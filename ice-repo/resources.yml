@@ -1676,6 +1676,9 @@ entries:
                 label:
                   - en: Client
                     de: Client
+              display-label:
+                - en: '${param1} ${param2} ${param3}'
+                  de: '${param1} ${param2} ${param3}'
             email:
               label:
                 - en: Email
@@ -1688,6 +1691,10 @@ entries:
               label:
                 - en: Address
                   de: Address
+            full-name-label:
+              label:
+                - en: Client
+                  de: Client
         beneficiaries:
           label:
             - en: Beneficiary
@@ -1937,6 +1944,9 @@ entries:
           label:
             - en: Insured objects
               de: Insured objects
+          dynamiclabel:
+            - en: '${param1} people'
+              de: '${param1} people'
         insurance:
           start-and-duration:
             label:
@@ -2477,9 +2487,9 @@ entries:
         - en: Please confirm
           de: Bitte bestätigen
       not_allowed_here:
-        - en: "'${value}' not allowed here"
+        - en: '''${value}'' not allowed here'
       regexp:
-        - en: "'${value}' does not matches regular expression ${regexp}"
+        - en: '''${value}'' does not matches regular expression ${regexp}'
       array:
         min:
           - en: 'must have at least ${min} entries'
