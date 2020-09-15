@@ -1,5 +1,5 @@
 definition:
   title: insis.person.client
   executable: false
-  showInsights: false
+  showInsights: true
   elementOnPageCheck: false

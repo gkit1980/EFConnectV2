@@ -1,5 +1,5 @@
 definition:
   title: insis.dashboard.claims.customer
   executable: true
-  showInsights: false
+  showInsights: true
   elementOnPageCheck: false

@@ -1,5 +1,5 @@
 definition:
   title: insis.dashboard.claims.agent
   executable: true
-  showInsights: false
+  showInsights: true
   elementOnPageCheck: false

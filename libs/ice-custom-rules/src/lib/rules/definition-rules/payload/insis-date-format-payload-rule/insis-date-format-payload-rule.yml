@@ -7,7 +7,7 @@ implementations:
         definition:
           title: Incidents overview
           executable: true
-          showInsights: false
+          showInsights: true
           payload:
             InsisDateFormatPayloadRule: {}
       ```

@@ -1,5 +1,5 @@
 definition:
   title: insis.products.policy-details.customer
   executable: true
-  showInsights: false
+  showInsights: true
   elementOnPageCheck: false
