@@ -1,7 +1,0 @@
-element:
-  type: text
-  component:
-    StaticComponentRule:
-      component:
-        IceCheckbox:
-          labelPosition: after

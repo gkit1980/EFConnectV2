@@ -1,4 +1,0 @@
-action:
-  execution:
-    - IntegrationExecutionRule:
-        integration: add-existing-client

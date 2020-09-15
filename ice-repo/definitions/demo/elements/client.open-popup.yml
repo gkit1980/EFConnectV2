@@ -1,9 +1,0 @@
-element:
-  type: action
-  component:
-    StaticComponentRule:
-      component:
-        InsisButtonWithDialog:
-          width: 800px
-          section: clients.popup
-          actionName: close-client-popup

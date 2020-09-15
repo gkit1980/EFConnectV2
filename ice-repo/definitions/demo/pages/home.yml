@@ -1,7 +1,0 @@
-page:
-  validation:
-    showElementValidation: false
-    behaviour: page
-    onElementComponentChange: true
-  component:
-    InsisTwoLevelStepperNavigationPage: {}

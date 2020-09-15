@@ -1,5 +1,0 @@
-element:
-  type: action
-  change:
-    - NavigateToPageExecutionRule:
-        direction: next

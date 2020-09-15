@@ -1,9 +1,0 @@
-element:
-  type: action
-  defaultValue: close-client-popup
-  component:
-    StaticComponentRule:
-      component:
-        IceButton:
-          themeColor: accent
-          variant: stroked

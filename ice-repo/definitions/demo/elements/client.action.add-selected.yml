@@ -1,9 +1,0 @@
-element:
-  type: action
-  defaultValue: add-existing-client
-  component:
-    StaticComponentRule:
-      component:
-        IceButton:
-          themeColor: accent
-          variant: flat
