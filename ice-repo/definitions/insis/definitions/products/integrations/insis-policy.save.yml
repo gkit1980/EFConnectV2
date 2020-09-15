@@ -18,7 +18,7 @@ integration:
               payload: Client.Entity.PersonalData.PID
         - mappings:
             - element: policy.contract.agent-no
-              payload: InsuranceConditions.AgentNO
+              payload: InsuranceConditions.AgentNo
             - element: policy.contract.payment.frequency
               payload: InsuranceConditions.Installments
             - element: policy.contract.payment.way

@@ -1,7 +1,0 @@
-element:
-  title: Address of person
-  type: text
-  viewMode: default
-  buckets:
-    insis-get-client: {}
-    insis-update-client: {}

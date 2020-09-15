@@ -1,0 +1,99 @@
+integration:
+  exchange: {}
+  transformation:
+    DefaultTransformationRule:
+      additional: insis
+      dateFormat: YYYY-MM-DD
+      dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
+      out:
+        - mappings:
+            - dynid: true
+              payload: PID
+            - element: person.pid
+              payload: PID
+      in:
+        - mappings:
+            - element: person.pid
+              payload: Entity.PersonalData.PID
+            - element: person.man-comp
+              payload: ClientData.OfficialStatus
+            - element: person.birth-date
+              payload: Entity.PersonalData.BirthDate
+            - element: person.given-name
+              payload: Entity.PersonalData.Name.Given
+            - element: person.sex
+              payload: Entity.PersonalData.Gender
+            - element: person.home-country
+              payload: Entity.PersonalData.HomeCountry
+            - element: person.language
+              payload: Entity.PersonalData.Language
+            - element: person.family-name
+              payload: Entity.PersonalData.Name.Family
+
+            - element: client.company-data.name
+              payload: Entity.CompanyData.Name
+
+            - element: person.man-id
+              payload: Entity.ManID
+            - element: person.nationality
+              payload: Entity.Nationality
+            - element: person.notes
+              payload: Entity.PersonalData.Notes
+        - fromIdx:
+            array: payload.Addresses.Address
+          toIdx:
+            array: datamodel.person.addresses
+            append: true
+          mappings:
+            - element: person.addresses~address-id
+              payload: 'Addresses.Address[n].AddressID'
+            - element: person.addresses~address-type
+              payload: 'Addresses.Address[n].AddressType'
+            - element: person.addresses~address
+              payload: 'Addresses.Address[n].Address'
+            - element: person.addresses~city
+              payload: 'Addresses.Address[n].City'
+            - element: person.addresses~country-code
+              payload: 'Addresses.Address[n].Country'
+            - element: person.addresses~region-name
+              payload: 'Addresses.Address[n].Region'
+            - element: person.addresses~street-number
+              payload: 'Addresses.Address[n].ResidentialAddress.StreetNo'
+            - element: person.addresses~street-name
+              payload: 'Addresses.Address[n].ResidentialAddress.StreetName'
+            - element: person.addresses~post-code
+              payload: 'Addresses.Address[n].ZipCode'
+            - element: person.addresses~is-primary
+              payload: 'Addresses.Address[n].PrimaryFlag'
+            - element: person.addresses~is-invoice
+              payload: 'Addresses.Address[n].InvoiceYN'
+            - element: person.addresses~is-mail
+              payload: 'Addresses.Address[n].MailYN'
+        - fromIdx:
+            array: payload.BankAccounts.BankAccount
+          toIdx:
+            array: datamodel.person.bank-account
+            append: true
+          mappings:
+            - element: person.bank-account~bank-acc-id
+              payload: 'BankAccounts.BankAccount[n].BankAccID'
+            - element: person.bank-account~bank-id
+              payload: 'BankAccounts.BankAccount[n].BankPID'
+            - element: person.bank-account~account-currency
+              payload: 'BankAccounts.BankAccount[n].Currency'
+            - element: person.bank-account~acount-num
+              payload: 'BankAccounts.BankAccount[n].AccountNo'
+            - element: person.bank-account~name
+              payload: 'BankAccounts.BankAccount[n].BankName'
+        - fromIdx:
+            array: payload.Contacts.Contact
+          toIdx:
+            array: datamodel.person.contacts
+            append: true
+          mappings:
+            - element: person.contacts~contact-id
+              payload: 'Contacts.Contact[n].ContactID'
+            - element: person.contacts~details
+              payload: 'Contacts.Contact[n].Details'
+            - element: person.contacts~contact-type
+              payload: 'Contacts.Contact[n].Type'

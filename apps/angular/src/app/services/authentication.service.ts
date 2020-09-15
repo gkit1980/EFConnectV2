@@ -39,9 +39,14 @@ export class AuthenticationService {
 
   async login(userData: any, role: string): Promise<void> {
     try {
-      const response = await axios.default.get(`/api/v1/external/client/${userData}`, {
-        timeout: 4000,
-      });
+      const response = await axios.default.get(
+        role === 'customer'
+          ? `/api/v1/external/client/${userData}`
+          : `/api/v1/external/agent/${userData}`,
+        {
+          timeout: 4000,
+        }
+      );
 
       response.data['role'] = role;
 

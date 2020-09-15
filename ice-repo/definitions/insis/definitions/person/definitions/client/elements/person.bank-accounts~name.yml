@@ -1,0 +1,14 @@
+element:
+  type: text
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: person.bank-accounts~edit-mode
+      conditionValue: true
+      conditionViewMode: default
+      elseViewMode: disabled
+  buckets:
+    insis-get-client: {}
+    insis-update-client: {}
+  label:
+    ResourceLabelRule:
+      key: insis-common.bank-account.name.label

@@ -1,0 +1,34 @@
+integration:
+  type: api
+  requestHandler:
+    InsisApiForActiveRequestHandlerRule:
+      activeIntegration: insis-get-client
+      endpoint:
+        route: 'client/:id'
+        method: GET
+  transformation:
+    DefaultTransformationRule:
+      dateFormat: YYYY-MM-DD
+      dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
+      out:
+        - mappings:
+            - payload: pid
+              element: person.pid
+            - payload: gender
+              element: person.sex
+            - payload: firstName
+              element: person.given-name
+            - payload: lastName
+              element: person.family-name
+            - payload: birthdate
+              element: person.birth-date
+            - payload: companyName
+              element: client.company-data.name
+            - payload: engagementId
+              value: -1
+            - payload: insis-agent-no
+              value: DS9201
+      in:
+        - mappings:
+            - element: person.pid
+              params: id

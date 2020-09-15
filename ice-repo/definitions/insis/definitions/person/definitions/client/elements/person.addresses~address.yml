@@ -1,0 +1,6 @@
+element:
+  type: text
+  viewMode: default
+  buckets:
+    insis-get-client: {}
+    insis-update-client: {}

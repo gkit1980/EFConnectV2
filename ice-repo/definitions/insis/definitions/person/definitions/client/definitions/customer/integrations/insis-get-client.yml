@@ -1,0 +1,25 @@
+integration:
+  exchange:
+    SoapCallExchangeRule:
+      endpoint: insis_pdm_endpoint
+      securityMode: UsernamePassword
+      username: 'env:insis-username'
+      password: 'env:insis-password'
+      ignoreNamespaces: 'env:insis-ignoreNamespaces'
+      soapAction: findPersonByPID
+      requestType: FndPersonByPIDRqType
+      jsonSchema: InsisPDM
+      responseType: FndPersonByPIDRsType
+  transformation:
+    DefaultTransformationRule:
+      extends: insis-get-person
+      additional: insis
+      dateFormat: YYYY-MM-DD
+      dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
+      out:
+        - mappings:
+            - param: soapAction
+              value: findPersonByPID
+            - param: requestType
+              value: FndPersonByPIDRqType
+      in: {}

@@ -1,0 +1,12 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        IceTextarea:
+          autosize: false
+          minRows: 4
+          maxRows: null
+  buckets:
+    insis-get-client: {}
+    insis-save-client: {}

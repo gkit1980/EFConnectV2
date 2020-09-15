@@ -1,0 +1,14 @@
+element:
+  type: boolean
+  component: IceButtonToggle
+  values: insis.person.yes-no
+  defaultValue: false
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: person.addresses~edit-mode
+      conditionValue: true
+      conditionViewMode: default
+      elseViewMode: hidden
+  buckets:
+    insis-get-client: {}
+    insis-update-client: {}

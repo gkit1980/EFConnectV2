@@ -1,8 +1,0 @@
-element:
-  title: PID for person
-  type: text
-  viewMode: hidden
-  buckets:
-    insis-save-client: {}
-    insis-update-client: {}
-    insis-get-client: {}

@@ -1,6 +1,0 @@
-element:
-  title: currency of person
-  type: text
-  buckets:
-    insis-get-client: {}
-    insis-update-client: {}
