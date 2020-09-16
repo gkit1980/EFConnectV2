@@ -1,0 +1,12 @@
+action:
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - policy.insured.vehicle-objects~car.brand
+          - policy.insured.vehicle-objects~car.model
+  execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - policy.insured.vehicle-objects~car.construction-date
+          - policy.insured.vehicle-objects~car.fuel
+          - policy.insured.vehicle-objects~car.engine-power
