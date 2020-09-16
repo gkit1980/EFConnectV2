@@ -3,12 +3,9 @@ integration:
     SoapCallExchangeRule:
       endpoint: insis_pam_endpoint
       securityMode: UsernamePassword
-      username: 'env:insis-username'
-      password: 'env:insis-password'
-      ignoreNamespaces: 'env:insis-ignoreNamespaces'
-      soapAction: rejectQuote
-      requestType: RejectQuoteRqType
-      responseType: RejectQuoteRsType
+      username: 'insis-username'
+      password: 'insis-password'
+      ignoreNamespaces: 'insis-ignoreNamespaces'
       jsonSchema: InsisPAM
   transformation:
     DefaultTransformationRule:
@@ -20,6 +17,8 @@ integration:
               value: rejectQuote
             - param: requestType
               value: rejectQuoteRqType
+            - param: responseType
+              value: RejectQuoteRsType
         - fromIdx:
             index: actionContext.index
           mappings:

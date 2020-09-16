@@ -3,9 +3,9 @@ integration:
     InsisSoapCallExchangeRule:
       endpoint: insis_pam_endpoint
       securityMode: UsernamePassword
-      username: 'env:insis-username'
-      password: 'env:insis-password'
-      ignoreNamespaces: 'env:insis-ignoreNamespaces'
+      username: insis-username
+      password: insis-password
+      ignoreNamespaces: insis-ignoreNamespaces
       soapAction: registerEngagementQuote
       requestType: RegisterEngagementQuoteRqType
       responseType: RegisterEngagementQuoteRsType
@@ -31,17 +31,17 @@ integration:
             useSourceIndex: true
           mappings:
             - element: policy.insured.person-objects~entity-accident-insured.type
-              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OAccidentInsured.AccinsType
+              payload: >-
+                Policies.Policy[0].Insureds.Insured[n].InsuredEntity.OAccidentInsured.AccinsType
         - mappings:
             - value: null
-              payload: Policies.Policy[0].InsuranceConditions.PolicyNo
-
+              payload: 'Policies.Policy[0].InsuranceConditions.PolicyNo'
         - fromIdx:
             array: datamodel.policy.insured.person-objects
           toIdx:
             useSourceIndex: true
           mappings:
-            - payload: Policies.Policy[0].Insureds.Insured[n].InsuredObjectID
+            - payload: 'Policies.Policy[0].Insureds.Insured[n].InsuredObjectID'
               value: '-1'
-            - payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.ObjectID
+            - payload: 'Policies.Policy[0].Insureds.Insured[n].InsuredEntity.ObjectID'
               value: '-1'

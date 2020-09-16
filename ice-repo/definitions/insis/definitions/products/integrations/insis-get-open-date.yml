@@ -3,11 +3,9 @@ integration:
     SoapCallExchangeRule:
       endpoint: insis_generic_endpoint
       securityMode: UsernamePassword
-      username: 'env:insis-username'
-      password: 'env:insis-password'
-      ignoreNamespaces: 'env:insis-ignoreNamespaces'
-      requestType: InvokeSBSEventRq
-      responseType: InvokeSBSEventRs
+      username: 'insis-username'
+      password: 'insis-password'
+      ignoreNamespaces: 'insis-ignoreNamespaces'
       jsonSchema: InsisCSM
   transformation:
     DefaultTransformationRule:
@@ -20,6 +18,8 @@ integration:
               value: invokeSBSEvent
             - param: requestType
               value: InvokeSBSEventRqType
+            - param: responseType
+              value: InvokeSBSEventRsType
             - payload: EventType
               value: GET_OPEN_DATE
       in:

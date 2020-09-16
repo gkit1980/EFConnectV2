@@ -3,11 +3,9 @@ integration:
     SoapCallExchangeRule:
       endpoint: insis_pdm_endpoint
       securityMode: UsernamePassword
-      username: 'env:insis-username'
-      password: 'env:insis-password'
-      ignoreNamespaces: 'env:insis-ignoreNamespaces'
-      soapAction: changeClientInfo
-      requestType: ChngeClntInfoRqType
+      username: 'insis-username'
+      password: 'insis-password'
+      ignoreNamespaces: 'insis-ignoreNamespaces'
       jsonSchema: InsisPDM
   transformation:
     DefaultTransformationRule:

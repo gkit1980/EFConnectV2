@@ -120,11 +120,6 @@ export class InsisEmailExchangeRule extends ExchangeRule {
     });
   }
 
-  private getValueFromEnvironment(value: string): string {
-    if (!isString(value) || !value.startsWith('env:')) return value;
-    return this.runtime.environmentVariables[value.replace('env:', '')];
-  }
-
   private get repoFolder(): string {
     return get(this.integration.iceModel.context.runtime, ['environmentVariables', 'iceRepoPath']);
   }

@@ -3,11 +3,9 @@ integration:
     SoapCallExchangeRule:
       endpoint: insis_pam_endpoint
       securityMode: UsernamePassword
-      username: 'env:insis-username'
-      password: 'env:insis-password'
-      ignoreNamespaces: 'env:insis-ignoreNamespaces'
-      soapAction: convertQuotationToApplication
-      requestType: CnvrtQuotToApplRqType
+      username: 'insis-username'
+      password: 'insis-password'
+      ignoreNamespaces: 'insis-ignoreNamespaces'
       jsonSchema: InsisPAM
   transformation:
     DefaultTransformationRule:

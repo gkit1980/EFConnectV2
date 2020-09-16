@@ -10,10 +10,10 @@ implementations:
         integration:
           exchange:
             InsisEmailExchangeRule:
-              host: env:smtp-host
-              port: env:smtp-port
-              username: env:smtp-username
-              password: env:smtp-password
+              host: smtp-host
+              port: smtp-port
+              username: smtp-username
+              password: smtp-password
           transformation:
             DefaultTransformationRule:
               out:

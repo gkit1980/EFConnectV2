@@ -3,13 +3,10 @@ integration:
     SoapCallExchangeRule:
       endpoint: insis_pdm_endpoint
       securityMode: UsernamePassword
-      username: 'env:insis-username'
-      password: 'env:insis-password'
-      ignoreNamespaces: 'env:insis-ignoreNamespaces'
-      soapAction: findPersonByPID
-      requestType: FndPersonByPIDRqType
+      username: insis-username
+      password: insis-password
+      ignoreNamespaces: insis-ignoreNamespaces
       jsonSchema: InsisPDM
-      responseType: FndPersonByPIDRsType
   transformation:
     DefaultTransformationRule:
       extends: insis-get-person
@@ -22,4 +19,6 @@ integration:
               value: findPersonByPID
             - param: requestType
               value: FndPersonByPIDRqType
+            - param: responseType
+              value: FndPersonByPIDRsType
       in: {}

@@ -6,7 +6,17 @@ implementations:
 
       The _payload_ of the _IntegrationData_ will be send 
       as the soap body. The result of the _http response_ will be set at _payload_ in the
-      _response IntegrationData_
+      _response IntegrationData_ 
+
+
+      _Important_
+
+
+      This rule uses some parameters defining the
+
+        * soap action to call _soapAction_ (mandatory param)
+        * the type of the request object _requestType_ (optional param), should be provided if SOAP service is validating the xml 
+        * the type of the response object _responseType_ (optional param), should be provided if the response contains arrays. If the array contains only one item the soap lib returns it not as an array.
 
     icel: >
 
@@ -23,24 +33,20 @@ implementations:
       ```
         integration:
           DefaultTransformationRule:
-            request:
-              - param: city
-                element: city.name
-              - param: APPID
-                value: d696e6b14e82fb9a49418a1fc1c02fdc
-              - param: units
-                value: metric
-              - param: X-Requested-With
-                value: XMLHttpRequest
-              - param: content-type
-                value: application/x-www-form-urlencoded
+            out:
+              - param: soapAction
+                value: someAction
+              - param: requestType
+                value: SomeActionRequestType
+              - param: responseType
+                value: SomeActionResponseType
           exchange:
-            InsisSoapCallExchangeRule:
+            SoapCallExchangeRule:
               endpoint: http://some.soap.com/api/foo
               securityMode: UsernamePassword
-              username: 'env:username'
-              password: 'env:password'
-              ignoreNamespaces: 'env:ignoreNamespaces'
+              username: 'username'
+              password: 'password'
+              ignoreNamespaces: 'ignoreNamespaces'
               jsonSchema: InsisPAM
       ```
 
@@ -59,6 +65,24 @@ implementations:
         label: Username
         info: >
           The username for authentication if __Security Mode__ ist set to __UsernamePassword__.
-          The username can be defined in the environment yml file, if it is defined there please use the systax __env:variablename__
-          where variablename is the name of the property in the environment yml file.
-          Or you can just enter the name of the user here.
+          The value of username can be the name of a property withing the principal data, the name of an environment variable, or just plain text.
+          The rule checks first if the value is a property within the principal data, if not it checks if the value is the name of an enviroment variable 
+          and if neither the rule just returns the value.
+      password:
+        label: Password
+        info: >
+          The password for authentication if __Security Mode__ ist set to __UsernamePassword__.
+          The value of password can be the name of a property withing the principal data, the name of an environment variable, or just plain text.
+          The rule checks first if the value is a property within the principal data, if not it checks if the value is the name of an enviroment variable 
+          and if neither the rule just returns the value.
+      ignoreNamespaces:
+        label: Namespaces to Ignore
+        info: >
+          Depending on the way the SOAP service is vaidating the request, it may be necessary to remove some namespaces from the xml send to the service.
+        type: texts
+      jsonSchema:
+        label: JSON schema
+        info: >
+          Most SOAP services are validating the request against an xsd schema, therefore the order of the xml nodes is important.
+          If it is not possible, or event not easy, to create the payload via the transformation in the right order, providing the json schema helps.
+          The schema is used to create the object in the right order and omit all properties not allowed.

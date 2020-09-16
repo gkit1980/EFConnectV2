@@ -3,11 +3,9 @@ integration:
     SoapCallExchangeRule:
       endpoint: insis_generic_endpoint
       securityMode: UsernamePassword
-      username: 'env:insis-username'
-      password: 'env:insis-password'
-      ignoreNamespaces: 'env:insis-ignoreNamespaces'
-      soapAction: uploadAttachments
-      requestType: UploadAttachmentsRqType
+      username: 'insis-username'
+      password: 'insis-password'
+      ignoreNamespaces: 'insis-ignoreNamespaces'
   transformation:
     DefaultTransformationRule:
       additional: insis
@@ -64,4 +62,3 @@ integration:
               element: policy.insured.person-objects~document.medex3.attachments~uploaded
             - value: 2
               element: policy.insured.person-objects~document.medex3.document-state
-

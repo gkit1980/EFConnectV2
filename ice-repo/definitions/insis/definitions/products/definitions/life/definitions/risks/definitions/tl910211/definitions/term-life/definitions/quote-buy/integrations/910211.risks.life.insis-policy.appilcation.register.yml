@@ -3,12 +3,9 @@ integration:
     SoapCallExchangeRule:
       endpoint: insis_pam_endpoint
       securityMode: UsernamePassword
-      username: 'env:insis-username'
-      password: 'env:insis-password'
-      ignoreNamespaces: 'env:insis-ignoreNamespaces'
-      soapAction: registerApplication
-      requestType: RegsrApplRqType
-      responseType: RegsrApplRsType
+      username: 'insis-username'
+      password: 'insis-password'
+      ignoreNamespaces: 'insis-ignoreNamespaces'
       jsonSchema: InsisPAM
   transformation:
     DefaultTransformationRule:
@@ -23,6 +20,8 @@ integration:
               value: registerApplication
             - param: requestType
               value: RegsrApplRqType
+            - param: responseType
+              value: RegsrApplRsType
         - mappings:
             - value: null
               payload: InsuranceConditions.PolicyNo

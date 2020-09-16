@@ -3,12 +3,9 @@ integration:
     SoapCallExchangeRule:
       endpoint: insis_pam_endpoint
       securityMode: UsernamePassword
-      username: 'env:insis-username'
-      password: 'env:insis-password'
-      ignoreNamespaces: 'env:insis-ignoreNamespaces'
-      soapAction: registerCancelPolicyAnnex
-      requestType: RegisterCancelPolicyAnnexRqType
-      responseType: RegisterCancelPolicyAnnexRsType
+      username: 'insis-username'
+      password: 'insis-password'
+      ignoreNamespaces: 'insis-ignoreNamespaces'
       jsonSchema: InsisPAM
   transformation:
     DefaultTransformationRule:
@@ -20,6 +17,8 @@ integration:
               value: registerCancelPolicyAnnex
             - param: requestType
               value: RegisterCancelPolicyAnnexRqType
+            - param: responseType
+              value: RegisterCancelPolicyAnnexRsType
             - element: policy.contract.policy-name
               payload: PolicyID
       in: null

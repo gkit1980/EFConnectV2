@@ -11,12 +11,9 @@ implementations:
             SoapCallExchangeRule:
               endpoint: insis_csm_endpoint
               securityMode: UsernamePassword
-              username: 'env:insis-username'
-              password: 'env:insis-password'
-              ignoreNamespaces: 'env:insis-ignoreNamespaces'
-              soapAction: findClaimHlt
-              requestType: FindClaimRqType
-              responseType: FindClaimHltRsType
+              username: 'insis-username'
+              password: 'insis-password'
+              ignoreNamespaces: 'insis-ignoreNamespaces'
               jsonSchema: InsisCSM
           transformation:
             InsisClaimsSortedRequestTransformation:
@@ -29,6 +26,8 @@ implementations:
                       value: findClaimHlt
                     - param: requestType
                       value: FindClaimRqType
+                    - param: responseType
+                      value: FindClaimHltRsType
                 - mappings:
                     - dynid: true
                       payload: ClaimID

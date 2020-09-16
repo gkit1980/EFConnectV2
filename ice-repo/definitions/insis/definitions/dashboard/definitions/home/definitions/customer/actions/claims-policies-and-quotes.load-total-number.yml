@@ -1,5 +1,4 @@
 action:
-  name: gets the number of policies / quotes / claims for a client
   execution:
     - ResetElementValueExecutionRule:
         elements:

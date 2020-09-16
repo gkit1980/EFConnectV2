@@ -2,7 +2,8 @@ page:
   validation:
     onElementComponentChange: true
     showMessages: summary
-  component: InsisSimplePage
+  component:
+    InsisSimplePage: {}
   sections:
     - component:
         IceFlexSection:

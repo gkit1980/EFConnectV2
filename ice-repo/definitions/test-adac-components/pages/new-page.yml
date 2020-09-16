@@ -1,5 +1,6 @@
 page:
-  component: DemoPage
+  component:
+    DemoPage: {}
   validation: {}
   sections:
     - component:

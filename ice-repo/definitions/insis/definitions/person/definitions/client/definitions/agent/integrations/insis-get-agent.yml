@@ -3,11 +3,9 @@ integration:
     SoapCallExchangeRule:
       endpoint: insis_pdm_endpoint
       securityMode: UsernamePassword
-      username: 'env:insis-username'
-      password: 'env:insis-password'
-      ignoreNamespaces: 'env:insis-ignoreNamespaces'
-      soapAction: retrieveAgentInfo
-      requestType: RetrieveAgentInfoRqType
+      username: insis-username
+      password: insis-password
+      ignoreNamespaces: insis-ignoreNamespaces
       jsonSchema: InsisPDM
   transformation:
     DefaultTransformationRule:
@@ -19,6 +17,8 @@ integration:
         - mappings:
             - param: soapAction
               value: retrieveAgentInfo
+            - param: requestType
+              value: RetrieveAgentInfoRqType
       in:
         - mappings:
             - element: person.agent-no

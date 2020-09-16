@@ -3,12 +3,9 @@ integration:
     SoapCallExchangeRule:
       endpoint: insis_pam_endpoint
       securityMode: UsernamePassword
-      username: 'env:insis-username'
-      password: 'env:insis-password'
-      ignoreNamespaces: 'env:insis-ignoreNamespaces'
-      soapAction: findPolicyByNumber
-      requestType: FndPlcyByNumRqType
-      responseType: FndPlcyByNumRsType
+      username: 'insis-username'
+      password: 'insis-password'
+      ignoreNamespaces: 'insis-ignoreNamespaces'
       jsonSchema: InsisPAM
   transformation:
     DefaultTransformationRule:
@@ -22,3 +19,5 @@ integration:
               value: findPolicyByNumber
             - param: requestType
               value: FndPlcyByNumRqType
+            - param: responseType
+              value: FndPlcyByNumRsType

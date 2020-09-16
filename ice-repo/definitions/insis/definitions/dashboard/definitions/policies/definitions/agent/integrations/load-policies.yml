@@ -1,0 +1,61 @@
+integration:
+  type: api
+  requestHandler:
+    InsisApiForActiveRequestHandlerRule:
+      activeIntegration: policies.search
+      endpoint:
+        route: 'policies'
+        method: GET
+  transformation:
+    DefaultTransformationRule:
+      dateFormat: YYYY-MM-DD
+      dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
+      out:
+        - fromIdx:
+            array: datamodel.policies
+          toIdx:
+            array: payload.policies
+            append: true
+          mappings:
+            - payload: policies[n].policyNumber
+              element: policies~policy-no
+            - payload: policies[n].product
+              element: policies~product-name
+            - payload: policies[n].state
+              element: policies~policy-state-name
+            - payload: policies[n].client
+              element: policies~client-name
+            - payload: policies[n].clientPid
+              element: policies~client-pid
+            - payload: policies[n].insured
+              value: 'foo'
+            - payload: policies[n].begin
+              element: policies~insr-begin
+            - payload: policies[n].end
+              element: policies~insr-end
+      in:
+        - mappings:
+            - param: policy_no
+              value: null
+            - param: policy_id
+              value: null
+            - param: policy_name
+              value: ''
+            - param: insr_type
+              value: null
+            - param: policy_state
+              value: null
+            - param: p_insr_end
+              value: null
+            - param: p_client_name
+              value: null
+            - param: p_fulltext
+              value: null
+            - param: p_client_pid
+              value: null
+            - param: p_insured_object
+              value: null
+            - datastore: insis.dashboard.policies.agent.pagination.page-size
+              value: 20
+            - value: 0
+              datastore: insis.dashboard.policies.agent.pagination.offset

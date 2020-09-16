@@ -26,11 +26,9 @@ implementations:
             SoapCallExchangeRule:
               endpoint: insis_generic_endpoint_mock
               securityMode: UsernamePassword
-              username: 'env:insis-username'
-              password: 'env:insis-password'
-              ignoreNamespaces: 'env:insis-ignoreNamespaces'
-              soapAction: paginatedQuery
-              requestType: PaginatedQueryRqType
+              username: 'insis-username'
+              password: 'insis-password'
+              ignoreNamespaces: 'insis-ignoreNamespaces'
               jsonSchema: Insis_GenericWS
           transformation:
             InsisPaginatedQueryTransformation:

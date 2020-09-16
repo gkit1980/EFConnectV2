@@ -3,12 +3,9 @@ integration:
     SoapCallExchangeRule:
       endpoint: insis_csm_endpoint
       securityMode: UsernamePassword
-      username: 'env:insis-username'
-      password: 'env:insis-password'
-      ignoreNamespaces: 'env:insis-ignoreNamespaces'
-      soapAction: cancelClaim
-      requestType: CancelClaimRqType
-      responseType: CancelClaimRsType
+      username: 'insis-username'
+      password: 'insis-password'
+      ignoreNamespaces: 'insis-ignoreNamespaces'
       jsonSchema: InsisCSM
   transformation:
     DefaultTransformationRule:
@@ -20,6 +17,8 @@ integration:
               value: cancelClaim
             - param: requestType
               value: CancelClaimRqType
+            - param: responseType
+              value: CancelClaimRsType
         - fromIdx:
             index: actionContext.index
           mappings:
