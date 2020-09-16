@@ -12,5 +12,5 @@ list:
       label_en: Main Insured Person
       label_de: Versicherte Person
     - value: 2
-      label_en: Add on
+      label_en: Additional insured
       label_de: Mitversicherte Person

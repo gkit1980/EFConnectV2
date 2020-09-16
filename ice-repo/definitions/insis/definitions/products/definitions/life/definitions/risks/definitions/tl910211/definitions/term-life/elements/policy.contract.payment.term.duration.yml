@@ -6,10 +6,6 @@ element:
       mainIndex: '0'
       list: insis.term-life.payment-duration
       maxAge: 0
-  change:
-    - ResetElementValueExecutionRule:
-        elements:
-          - policy.contract.payment.frequency
   component:
     StaticComponentRule:
       component:

@@ -3,5 +3,5 @@ element:
   type: boolean
   component: IceCheckbox
   viewMode: default
-  defaultValue: true
+  defaultValue: false
   values: insis.policy.insured.person-objects~question.q-07

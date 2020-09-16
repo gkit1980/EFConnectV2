@@ -1514,8 +1514,8 @@ entries:
                     de: '${param1} will be ${param2} at the end of their insurance.'
             remove-insured-person:
               label:
-                - en: REMOVE PESRON
-                  de: REMOVE PESRON
+                - en: REMOVE PERSON
+                  de: REMOVE PERSON
             make-this-main-insured:
               label:
                 - en: Make this person main insured
