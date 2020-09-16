@@ -8,10 +8,10 @@ section:
       paymentFrequencyElement: policy.contract.payment.frequency
       premiumElements:
         - policy.insured.person-objects~cover.critic-ill.premium-with-label
-        - policy.insured.person-objects~cover.death-acc.premium-with-label
+        - policy.cover.death-acc.total-premium-with-label
         - policy.insured.person-objects~cover.death-any.premium-with-label
         - policy.insured.person-objects~cover.premret.premium-with-label
-        - policy.insured.person-objects~cover.tpdaccd.premium-with-label
+        - policy.cover.tpdaccd.total-premium-with-label
         - policy.insured.person-objects~cover.tpdill.premium-with-label
         - policy.insured.person-objects~cover.wop-total.premium-with-label
       taxesAndFeesElements:

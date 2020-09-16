@@ -1,0 +1,23 @@
+implementations:
+  InsisArrayItemTotalSumMirrorRule:
+    description: >
+      Calculates value as a total sum of all array items in origin element.
+      If conditionElement and conditionValue are set,
+      sums only values at indices where conditionElement [index] == conditionValue.
+    params:
+      originElement:
+        label: Origin element
+        required: true
+        type: element
+      conditionElement:
+        label: Condition element
+        required: false
+        type: element
+      conditionValue:
+        label: Condition value
+        required: false
+        types:
+          - boolean
+          - text
+          - integer
+          - currency

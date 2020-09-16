@@ -1,0 +1,20 @@
+element:
+  type: currency
+  mirror:
+    InsisArrayItemTotalSumMirrorRule:
+      originElement: policy.insured.person-objects~cover.tpdaccd.premium-with-label
+      conditionElement: policy.insured.person-objects~cover.tpdaccd.active
+      conditionValue: true
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.cover.tpdaccd.total-premium-with-label
+      conditionValue: '0'
+      conditionViewMode: hidden
+      elseViewMode: output
+  defaultValue:
+    StaticValueRule:
+      value: 0
+  label:
+    ResourceLabelRule:
+      key: >-
+        elements.policy.insured.person-objects.items.cover.tpdaccd.premium-with-label.label

@@ -25,3 +25,8 @@ dt:
       outputs:
         - 1
         - policy.contract.payment.frequency-above-one-year
+    - inputs:
+        - '-'
+      outputs:
+        - 4
+        - policy.contract.payment.frequency-above-one-year
