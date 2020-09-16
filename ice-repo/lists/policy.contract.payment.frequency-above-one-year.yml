@@ -1,11 +1,11 @@
 list:
   items:
     - value: 1
-      label_en: yearly
-      label_de: yearly
+      label_en: annually
+      label_de: annually
     - value: 2
-      label_en: half-yearly
-      label_de: half-yearly
+      label_en: semiannually
+      label_de: semiannually
     - value: 4
       label_en: quarterly
       label_de: quarterly
