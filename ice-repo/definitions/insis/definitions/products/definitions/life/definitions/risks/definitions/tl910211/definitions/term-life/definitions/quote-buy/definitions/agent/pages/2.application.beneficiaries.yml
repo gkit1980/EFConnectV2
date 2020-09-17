@@ -13,3 +13,4 @@ page:
     - beneficiaries.details
     - beneficiaries.go-to-next-page
     - policy.premiums-taxes-fees-discounts-loadings-popup
+    - policy.summary

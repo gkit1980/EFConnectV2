@@ -14,3 +14,4 @@ page:
     - beneficiaries.details
     - policy.premiums-taxes-fees-discounts-loadings
     - quote.download
+    - policy.summary

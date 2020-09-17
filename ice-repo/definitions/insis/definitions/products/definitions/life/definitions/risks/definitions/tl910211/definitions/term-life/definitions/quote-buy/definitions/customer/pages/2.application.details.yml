@@ -13,3 +13,4 @@ page:
     - insured.next-page-and-modify
     - policy.premiums-taxes-fees-discounts-loadings
     - quote.download
+    - policy.summary
