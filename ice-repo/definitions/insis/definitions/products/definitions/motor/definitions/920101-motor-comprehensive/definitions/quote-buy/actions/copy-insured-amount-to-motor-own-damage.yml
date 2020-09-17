@@ -1,0 +1,12 @@
+action:
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - policy.insured.vehicle-objects~insured-amount
+        originsToExclude:
+          - EXTERNAL
+          - INTERNAL
+  execution:
+    - InsisCopyValueExecutionRule:
+        source: policy.insured.vehicle-objects~insured-amount
+        destination: policy.insured.vehicle-objects~cover.owndamage.insured-amount

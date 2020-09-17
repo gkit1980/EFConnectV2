@@ -7,6 +7,3 @@ element:
       conditionValue: true
       conditionViewMode: required
       elseViewMode: hidden
-  buckets:
-    insis-quote-motor:
-      trigger: true

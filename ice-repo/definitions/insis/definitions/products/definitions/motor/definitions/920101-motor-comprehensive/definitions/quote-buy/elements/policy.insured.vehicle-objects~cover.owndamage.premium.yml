@@ -4,3 +4,6 @@ element:
       label:
         NoLabelRule: {}
   type: currency
+  label:
+    InsisHideLabelBasedOnPageNameRule:
+      page: 1.quote.covers

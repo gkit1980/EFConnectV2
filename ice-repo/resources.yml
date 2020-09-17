@@ -1457,10 +1457,6 @@ entries:
                   label:
                     - en: Critical illness
                       de: Critical illness
-                premium:
-                  label:
-                    - en: null
-                      de: null
                 premium-with-label:
                   label:
                     - en: Critical illness
@@ -2056,8 +2052,8 @@ entries:
         - en: Active policies
           de: Active policies
     search-car-by:
-      - en: Search by
-        de: Suche nach
+      - en: Give us some information about the vehicles you want to insure.
+        de: Give us some information about the vehicles you want to insure.
     image-button:
       label:
         - en: 'http://localhost:4200/visual-ice/assets/logo.png'
@@ -2487,9 +2483,9 @@ entries:
         - en: Please confirm
           de: Bitte bestätigen
       not_allowed_here:
-        - en: "'${value}' not allowed here"
+        - en: '''${value}'' not allowed here'
       regexp:
-        - en: "'${value}' does not matches regular expression ${regexp}"
+        - en: '''${value}'' does not matches regular expression ${regexp}'
       array:
         min:
           - en: 'must have at least ${min} entries'

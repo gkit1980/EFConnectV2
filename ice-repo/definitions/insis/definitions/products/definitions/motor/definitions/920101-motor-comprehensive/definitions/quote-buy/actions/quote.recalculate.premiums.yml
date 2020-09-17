@@ -12,3 +12,7 @@ action:
   trigger:
     - BucketValidTriggerRule:
         bucket: insis-quote-motor
+    - IceLifecycleEventTriggerRule:
+        event: AFTER_PAGE_LOAD
+        payload:
+          page: 1.quote.covers

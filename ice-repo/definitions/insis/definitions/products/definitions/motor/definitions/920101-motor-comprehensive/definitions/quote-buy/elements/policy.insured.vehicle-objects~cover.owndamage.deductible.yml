@@ -9,3 +9,6 @@ element:
   defaultValue:
     StaticValueRule:
       value: 3
+  buckets:
+    insis-quote-motor:
+      trigger: true

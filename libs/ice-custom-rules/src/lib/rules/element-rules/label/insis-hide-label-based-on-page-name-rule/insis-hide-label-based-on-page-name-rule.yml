@@ -1,0 +1,8 @@
+implementations:
+  InsisHideLabelBasedOnPageNameRule:
+    description: Hides label when on specified page
+    params:
+      page:
+        label: Page
+        type: text
+        required: true

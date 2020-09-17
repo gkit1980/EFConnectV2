@@ -1,6 +1,5 @@
 element:
   type: currency
-  pages:
-    1.quote.covers:
-      label:
-        NoLabelRule: {}
+  label:
+    InsisHideLabelBasedOnPageNameRule:
+      page: 1.quote.covers

@@ -5,6 +5,7 @@ export * from './default-value/insis-element-value-rule/insis-element-value-rule
 export * from './default-value/insis-set-for-indexes-default-value-rule/insis-set-for-indexes-default-value-rule';
 export * from './default-value/insis-random-id-value-rule/insis-random-id-value-rule';
 export * from './label/insis-resource-label-rule/insis-resource-label-rule';
+export * from './label/insis-hide-label-based-on-page-name-rule/insis-hide-label-based-on-page-name-rule';
 export * from './mirror/insis-array-item-conditional-value-mirror-rule/insis-array-item-conditional-value-mirror-rule';
 export * from './mirror/insis-array-items-total-sum-mirror-rule/insis-array-items-total-sum-mirror-rule';
 export * from './mirror/insis-dyn-id-for-key-with-default-mirror-rule/insis-dyn-id-for-key-with-default-mirror-rule';

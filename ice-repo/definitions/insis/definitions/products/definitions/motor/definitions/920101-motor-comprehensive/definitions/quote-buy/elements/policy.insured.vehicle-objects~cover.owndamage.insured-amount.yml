@@ -3,12 +3,12 @@ element:
     FeelExpressionRangeRule:
       expressionMin: '0'
       expressionMax: policy.insured.vehicle-objects~insured-amount
-  mirror:
-    CopyValueMirrorRule:
-      originElement: policy.insured.vehicle-objects~insured-amount
   component:
     StaticComponentRule:
       component:
         InsisSlider:
           appearance: null
   type: currency
+  buckets:
+    insis-quote-motor:
+      trigger: true
