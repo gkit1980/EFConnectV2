@@ -11,7 +11,8 @@ element:
       valueElement: industries~value
       labelElement: industries~label
       arrayElement: industries
-      hideEmpty: true
+      hideEmpty: false
+      emptyValueIsString: true
   component:
     InsisDtComponentRule:
       conditionComponent:
@@ -19,3 +20,7 @@ element:
       elseComponent:
         InsisNullOutput: {}
       dt: person.industry-code.component
+  change:
+    - ResetElementValueExecutionRule:
+        elements:
+          - person.sub-industry-code

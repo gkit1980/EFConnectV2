@@ -74,12 +74,12 @@ section:
                 size.sm: auto
                 elements:
                   - name: person.language
-              - size: 150px
+              - size: 300px
                 size.xs: auto
                 size.sm: auto
                 elements:
                   - name: person.industry-code
-              - size: 150px
+              - size: 300px
                 size.xs: auto
                 size.sm: auto
                 elements:

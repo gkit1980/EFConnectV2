@@ -11,7 +11,8 @@ element:
       valueElement: sub-industries~value
       labelElement: sub-industries~label
       arrayElement: sub-industries
-      hideEmpty: true
+      hideEmpty: false
+      emptyValueIsString: true
   component:
     InsisDtComponentRule:
       conditionComponent:
