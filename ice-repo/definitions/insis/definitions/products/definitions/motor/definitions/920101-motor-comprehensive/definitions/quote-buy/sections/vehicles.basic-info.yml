@@ -93,6 +93,27 @@ section:
                 elements:
                   - name: >-
                       policy.insured.vehicle-objects~question.number-of-consecutive-years-without-claims
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.vehicle-objects~car.ccm-ton
+            css: u-mb-2
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.vehicle-objects~insured-amount
+            css: u-mb-4
+          - gap: 10px
+            css: u-mb-3
+            cols:
+              - size: auto
+                size.xs: auto
+                elements:
+                  - name: policy.insured.vehicle-objects~car.additional-equipment
           - gap: 10px
             css: u-mb-4
             cols:
@@ -101,14 +122,6 @@ section:
                 elements:
                   - name: >-
                       policy.insured.vehicle-objects~car.transportation-of-hazardous-goods
-          - gap: 10px
-            css: u-mb-3
-            cols:
-              - size: auto
-                size.xs: auto
-                elements:
-                  - name: >-
-                      policy.insured.vehicle-objects~car.additional-equipment
           - gap: 24px
             css: u-ml-7
             cols:
