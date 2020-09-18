@@ -59,6 +59,10 @@ export class AuthenticationService {
           timeout: 4000,
         }
       );
+
+      //hotfix: so that role property exists in pricipal data
+      response.data['role'] = role;
+
       const currPrincipal = this.icePrincipalService.principal;
       const newPrincipal = new ClientPrincipal(
         response.data.pid,
@@ -67,9 +71,10 @@ export class AuthenticationService {
         response.data
       );
 
+
       this.icePrincipalService.principal = newPrincipal;
       this.storePrincipalToLocalStorage(newPrincipal);
-    } catch (error) {}
+    } catch (error) { }
   }
 
   async logout(): Promise<void> {
