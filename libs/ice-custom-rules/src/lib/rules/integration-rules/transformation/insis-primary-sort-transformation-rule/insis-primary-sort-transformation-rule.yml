@@ -2,15 +2,15 @@ implementations:
   InsisPrimarySortTransformationRule:
     description: >
       This is Transformation allows you to sort paths inside response
-  params:
-    paths:
-      label: List of paths to sort in response
+    params:
+      paths:
+        label: List of paths to sort in response
 
-  icel: >
-    ```
-      transformation:
-        InsisPrimarySortTransformationRule:
-          paths:
-            - payload.response.users
-            - payload.response.contacts
-    ```
+    icel: >
+      ```
+        transformation:
+          InsisPrimarySortTransformationRule:
+            paths:
+              - payload.response.users
+              - payload.response.contacts
+      ```
