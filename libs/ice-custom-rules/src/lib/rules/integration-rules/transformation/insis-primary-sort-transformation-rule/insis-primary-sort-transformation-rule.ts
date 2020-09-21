@@ -1,4 +1,4 @@
-import { IntegrationData, IntegrationDataOut, IntegrationDataIn } from '@impeo/ice-core';
+import { IntegrationDataIn } from '@impeo/ice-core';
 import { DefaultTransformationRule } from '@impeo/ice-core/default-rules/rules/integration-rules';
 import { get, set, first, forEach } from 'lodash';
 

@@ -56,7 +56,7 @@
     {
       "name": "Server (attach)",
       "request": "attach",
-      "port": 57848,
+      "port": 60731,
       "type": "node",
       "sourceMaps": true,
       "cwd": "${workspaceRoot}",

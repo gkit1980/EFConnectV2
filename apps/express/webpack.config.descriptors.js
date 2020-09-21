@@ -76,10 +76,10 @@ function extractEntityAndAspectFolders(folder) {
     if (!(entityFolder in availableEntitiesAndAspects))
       throw new Error(`Folder '${entityFolder}' is not a valid entity folder`);
 
-    if (!availableEntitiesAndAspects[entityFolder].includes(aspectFolder))
+    /*if (!availableEntitiesAndAspects[entityFolder].includes(aspectFolder))
       throw new Error(
         `Folder '${aspectFolder}' is not a valid aspect folder under '${entityFolder}'`
-      );
+      );*/
   }
 
   return [entityFolder, aspectFolder];

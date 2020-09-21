@@ -52,7 +52,9 @@ function startApp() {
     descriptorsPaths: [
       path.resolve(__dirname, './assets/documentation'),
       path.resolve(__dirname, './assets/ice-core'),
+      path.resolve(__dirname, './assets/ice-server-rules'),
       path.resolve(__dirname, './assets/ice-insurance-rules'),
+      path.resolve(__dirname, './assets/insis-server-rules'),
       path.resolve(__dirname, './assets'),
 
       /**

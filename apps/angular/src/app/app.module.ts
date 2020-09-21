@@ -100,19 +100,14 @@ import { ThemeService } from './services/theme.service';
   bootstrap: [AppComponent],
 })
 export class AppModule {
-  constructor(icePrincipalService: IcePrincipalService) {
-    const langCode = getDefaultLanguage();
-    /**
-     * TIP: Configure proper ICE principal
-     */
-    icePrincipalService.principal = new ClientPrincipal('n/a', langCode, [], {});
-
+  constructor() {
     /**
      * TIP: We need to register our custom rules to the client application
      */
     registerCustomRules();
 
-    moment.locale('en', {
+    const langCode = getDefaultLanguage();
+    moment.locale(langCode, {
       week: {
         dow: 1, // Monday is the first day of the week.
         doy: 4, // Used to determine first week of the year.

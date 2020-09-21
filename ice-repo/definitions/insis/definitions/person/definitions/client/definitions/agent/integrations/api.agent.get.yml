@@ -1,7 +1,7 @@
 integration:
   type: api
   requestHandler:
-    InsisApiForActiveRequestHandlerRule:
+    InsisPortalLoginRequestHandlerRule:
       activeIntegration: insis-get-agent
       endpoint:
         route: 'agent/:id'
@@ -28,6 +28,8 @@ integration:
               value: -1
             - payload: insis-agent-no
               element: person.agent-no
+            - payload: isAgent
+              value: true
       in:
         - mappings:
             - element: person.pid

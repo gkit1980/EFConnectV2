@@ -1,7 +1,7 @@
 integration:
   type: api
   requestHandler:
-    InsisApiForActiveRequestHandlerRule:
+    InsisPortalLoginRequestHandlerRule:
       activeIntegration: insis-get-client
       endpoint:
         route: 'client/:id'

@@ -1,5 +1,5 @@
 implementations:
-  InsisRestCallExchangeRule:
+  InsisRestPQCallExchangeRule:
     description: >
 
       This rule executes a RestCall based on the configuration in this _recipe_ to INSIS.

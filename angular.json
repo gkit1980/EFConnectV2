@@ -125,6 +125,16 @@
                 "output": "/assets/ice-insurance-rules/descriptors"
               },
               {
+                "glob": "**/*.yml",
+                "input": "node_modules/@impeo/ice-server-rules/descriptors",
+                "output": "/assets/ice-server-rules/descriptors"
+              },
+              {
+                "glob": "**/*.yml",
+                "input": "node_modules/@impeo/insis-server-rules/descriptors",
+                "output": "/assets/insis-server-rules/descriptors"
+              },
+              {
                 "glob": "**/*",
                 "input": "node_modules/@impeo/exp-ice/public",
                 "output": "/assets/public"

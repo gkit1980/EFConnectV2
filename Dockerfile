@@ -26,6 +26,9 @@ WORKDIR /usr/src/app
 ENV NODE_ENV=production
 ENV ICE_REPO_PATH=/usr/src/app/ice-repo
 ENV ENABLE_VISUAL_ICE=true
+# please replace passing static ENV files in the dockerfile to dinamically passed at docker container start
+# treat this a ssample only - especially for the sensitive data like JWT_SECRET
+ENV JWT_SECRET='Portal Secret'
 
 # copy applications dist files
 COPY dist/apps ./

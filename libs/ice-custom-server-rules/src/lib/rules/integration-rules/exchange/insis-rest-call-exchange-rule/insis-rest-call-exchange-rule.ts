@@ -1,6 +1,6 @@
-import { RestCallExchangeRule } from '@impeo/ice-core/default-rules/rules/integration-rules.server';
-import { isArray, includes, get } from 'lodash';
-import { ExchangeRule, IceConsole, IntegrationDataOut, IntegrationDataIn } from '@impeo/ice-core';
+import { RestCallExchangeRule } from '@impeo/ice-server-rules/rules/integration-rules';
+import { isArray, get } from 'lodash';
+import { IceConsole, IntegrationDataOut, IntegrationDataIn } from '@impeo/ice-core';
 import { AxiosRequestConfig } from 'axios';
 //
 //

@@ -1,0 +1,50 @@
+implementations:
+  InsisPortalLoginRequestHandlerRule:
+    description: >
+      unses an active integration for getting client information from insis and generates a JWT token.
+
+    params:
+      activeIntegration:
+        lable: Active integration
+        required: true
+        type: integration
+      endpoint:
+        route:
+          label: Endpoint route
+          required: true
+          type: text
+        method:
+          label: Endpoint method
+          required: true
+          type: text
+
+    icel: >
+      ```
+        integration:
+          type: api
+          requestHandler:
+            InsisPortalLoginRequestHandlerRule:
+              activeIntegration: insis-get-client
+              endpoint:
+                route: 'client/:id'
+                method: GET
+          transformation:
+            DefaultTransformationRule:
+              dateFormat: YYYY-MM-DD
+              dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
+              out:
+                - mappings:
+                    - payload: pid
+                      element: client.personal-data.pid
+                    - payload: gender
+                      element: client.personal-data.gender
+                    - payload: firstName
+                      element: client.personal-data.first-name
+                    - payload: lastName
+                      element: client.personal-data.last-name
+              in:
+                - mappings:
+                    - element: client.personal-data.pid
+                      params: id
+
+      ```

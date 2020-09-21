@@ -1,5 +1,5 @@
 import { IntegrationDataOut, IntegrationDataIn } from '@impeo/ice-core';
-import { SoapCallExchangeRule } from '@impeo/ice-core/default-rules/rules/integration-rules.server';
+import { SoapCallExchangeRule } from '@impeo/ice-server-rules/rules/integration-rules';
 import { includes, set, get } from 'lodash';
 
 //

@@ -15,7 +15,6 @@
 @import '../components/page-components/insis-confirmation-page/insis-confirmation-page.mixin.scss';
 @import '../components/page-components/insis-two-level-stepper-navigation-page/insis-two-level-stepper-navigation-page.mixin';
 @import '../components/page-components/insis-one-level-tabs-navigation-page/insis-one-level-tabs-navigation-page.mixin';
-@import '../components/section-components/insis-chart/insis-chart.mixin';
 @import '../components/section-components/insis-datagrid-section/insis-datagrid-section.mixin';
 @import '../components/section-components/insis-paginator-section/insis-paginator-section.mixin';
 @import '../components/section-components/insis-policy-summary-section/insis-policy-summary-section.mixin.scss';
@@ -51,7 +50,6 @@
   @include insis-datagrid-section-mixin($theme);
   @include insis-file-upload-mixin($theme);
   @include insis-info-button-mixin($theme);
-  @include insis-chart-mixin($theme);
   @include insis-summary-section-detail-container-mixin($theme);
   @include insis-button-toggle-mixin($theme);
   @include insis-one-level-tabs-navigation-page-mixin($theme);

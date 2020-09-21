@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PageComponentImplementation } from '@impeo/ng-ice';
-import { get } from 'lodash';
+import { get, first } from 'lodash';
 import { Router } from '@angular/router';
 
 @Component({
@@ -18,7 +18,7 @@ export class InsisConfirmationPageComponent extends PageComponentImplementation 
 
   navigateToPolicyDetails() {
     const policyNumber = this.context.dataModel.getValue('policy.contract.policy-number');
-    const role = this.context.principal.data.role;
+    const role = first(this.context.principal.roles);
     const policyDetailsLink = `${policyNumber}/ice/insis.products.policy-details.${role}/summary`;
     this.router.navigate([policyDetailsLink]);
   }

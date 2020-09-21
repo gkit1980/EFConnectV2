@@ -21,7 +21,7 @@ integration:
               element: lob~products~product-code
             - payload: file.lob[n].products[n].definition-customer
               element: lob~products~definition
-        - if: principal.role == 'agent'
+        - if: principal.hasRole('agent') == true
           fromIdx:
             array: payload.file.lob
             fromIdx:
