@@ -28,7 +28,7 @@ integration:
             - param: p_insured_object
               value: null
             - param: policy_state
-              value: null
+              value: 'Quotation'
             - param: p_insr_end
               value: null
 

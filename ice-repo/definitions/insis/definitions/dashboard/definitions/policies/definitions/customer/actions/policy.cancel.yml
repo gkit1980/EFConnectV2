@@ -5,5 +5,7 @@ action:
     - ResetElementValueExecutionRule:
         elements:
           - policies
-    - IntegrationExecutionRule:
-        integration: policies.load
+    - InsisParallelIntegrationExecutionRule:
+        integrations:
+          - policies.active.load
+          - policies.expired.load

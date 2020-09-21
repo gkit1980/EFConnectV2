@@ -73,7 +73,7 @@ SELECT JSON_OBJECT(
               CASE WHEN od.open_date > pol.insr_end THEN 1 ELSE 0 END AS is_expired,
               CASE WHEN pol.policy_state IN (-3, -2, -1) THEN 'Application'
                             WHEN pol.policy_state = -4 THEN 'Quotation'
-                            WHEN pol.policy_state = -30 THEN 'Canceled'
+                            WHEN pol.policy_state IN (-34, -30, 30) THEN 'Canceled'
                             ELSE 'Policy' END AS policy_state_name, pn.client_id,
               CASE WHEN pol.policy_state = 11 THEN 'True'
                    ELSE 'False' END AS payment_completed,
