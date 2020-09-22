@@ -85,7 +85,9 @@ export class AuthenticationService {
   private principalFromToken(token: string, locale: string): IcePrincipal {
     const tokenParts = split(token, '.');
     if (tokenParts.length !== 3) return null;
-    const payload = JSON.parse(atob(tokenParts[1]));
+
+    const payload = JSON.parse(decodeURIComponent(escape(atob(tokenParts[1]))));
+
     return new ClientPrincipal(payload.id, token, locale, payload.roles, payload.data);
   }
 }
