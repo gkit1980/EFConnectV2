@@ -25,6 +25,18 @@ description: >
     - hint
     - tooltip
 
+_themeColorOptions: &themeColorOptions
+  none: None
+  primary: Primary
+  accent: Accent
+  warn: Warn
+
+_variantOptions: &variantOptions
+  default: Default
+  raised: Raised
+  flat: Flat
+  stroked: Stroked
+
 params:
   accesskey:
     label: Access Key
@@ -38,3 +50,15 @@ params:
       The name of the Angular Material icon that should be displayed.
       For full list of the available names go to
       https://www.angularjswiki.com/angular/angular-material-icons-list-mat-icon-list/
+
+  themeColor:
+    label: Color
+    type: select
+    info: Color of the button
+    options: *themeColorOptions
+
+  variant:
+    label: Variant
+    type: select
+    info: Variant of the button
+    options: *variantOptions

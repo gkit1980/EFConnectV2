@@ -14,6 +14,7 @@ element:
       component:
         InsisButtonDropdown:
           matIcon: keyboard_arrow_down
+          variant: stroked
   values:
     ListValuesRule:
       list: insis.contact.type

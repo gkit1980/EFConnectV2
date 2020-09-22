@@ -1,9 +1,52 @@
 <div class="button-dropdown" *ngIf="isVisible">
-  <ng-container *ngIf="!isOutput">
+  <ng-container *ngIf="!isOutput" [ngSwitch]="variant">
     <base target="_blank" />
     <button
+      *ngSwitchCase="'stroked'"
+      mat-stroked-button
+      [color]="themeColor"
+      [matMenuTriggerFor]="menu"
+      [disabled]="isDisabled"
+      [matTooltip]="tooltip"
+      matTooltipClass="ice-tooltip"
+      [attr.accesskey]="accesskey"
+    >
+      {{ label }}
+      <mat-icon>{{ icon }}</mat-icon>
+    </button>
+
+    <button
+      *ngSwitchCase="'raised'"
+      mat-raised-button
+      [color]="themeColor"
+      [matMenuTriggerFor]="menu"
+      [disabled]="isDisabled"
+      [matTooltip]="tooltip"
+      matTooltipClass="ice-tooltip"
+      [attr.accesskey]="accesskey"
+    >
+      {{ label }}
+      <mat-icon>{{ icon }}</mat-icon>
+    </button>
+
+    <button
+      *ngSwitchCase="'flat'"
+      mat-flat-button
+      [color]="themeColor"
+      [matMenuTriggerFor]="menu"
+      [disabled]="isDisabled"
+      [matTooltip]="tooltip"
+      matTooltipClass="ice-tooltip"
+      [attr.accesskey]="accesskey"
+    >
+      {{ label }}
+      <mat-icon>{{ icon }}</mat-icon>
+    </button>
+
+    <button
+      *ngSwitchDefault
       mat-button
-      color="accent"
+      [color]="themeColor"
       [matMenuTriggerFor]="menu"
       [disabled]="isDisabled"
       [matTooltip]="tooltip"
