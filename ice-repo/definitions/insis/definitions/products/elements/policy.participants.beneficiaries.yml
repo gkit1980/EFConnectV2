@@ -12,3 +12,6 @@ element:
   array:
     StaticArrayRule:
       default: '1'
+  change:
+    - DistributePercentagesEquallyExecutionRule:
+        percentageElement: policy.participants.beneficiaries~percentage

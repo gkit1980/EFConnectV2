@@ -1,6 +1,11 @@
 element:
   title: gender of beneficiary
   type: text
-  viewMode: required
-  component: IceButtonToggle
   values: insis.gender
+  component:
+    StaticComponentRule:
+      component:
+        IceDropdown: {}
+  viewMode:
+    DtViewModeRule:
+      dt: policy.participants.beneficiaries.person.viewmode

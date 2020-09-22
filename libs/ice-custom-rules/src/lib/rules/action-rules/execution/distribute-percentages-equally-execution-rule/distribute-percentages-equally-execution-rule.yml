@@ -1,0 +1,17 @@
+implementations:
+  DistributePercentagesEquallyExecutionRule:
+    description: >-
+      Distributes a percentage value equally to all array item elements.
+      Percentage value is calculated as an integer.
+    params:
+      percentageElement:
+        label: Percentage Element
+        type: element
+        required: true
+    icel: >
+      ```
+        action:
+          execution:
+            - DistributePercentagesEquallyExecutionRule:
+                  percentageElement: incident.requests~percentage
+      ```

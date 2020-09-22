@@ -14,6 +14,49 @@ integration:
             array: payload.Insureds.Insured
             apppend: true
           mappings:
+            - element: policy.contract.begin
+              payload: Insureds.Insured[n].InsrBegin
+            - element: policy.insured.currency
+              payload: Insureds.Insured[n].Currency
+            - element: policy.insured.person-objects~insured-amount
+              payload: Insureds.Insured[n].InsuredAmount
+            - element: policy.insured.person-objects~object.id
+              payload: Insureds.Insured[n].InsuredObjectID
+            - element: policy.insured.person-objects~entity-id
+              payload: Insureds.Insured[n].InsuredEntity.ObjectID
+            - element: policy.insured.person-objects~entity-type
+              payload: Insureds.Insured[n].InsuredEntity.ObjectType
+            - element: policy.insured.person-objects~entity-accident-insured.type
+              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.AccinsType
+
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+            condition: person.pid != ""
+          toIdx:
+            useSourceIndex: true
+          mappings:
+            - element: policy.insured.person-objects~person.pid
+              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.PID
+
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+            condition: person.man-id != -1 && person.pid == ""
+          toIdx:
+            useSourceIndex: true
+          mappings:
+            - element: policy.insured.person-objects~person.man-id
+              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.PersonID
+            - value: ' '
+              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.PID
+
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+            condition: person.pid == "" && person.man-id == -1
+          toIdx:
+            useSourceIndex: true
+          mappings:
+            - value: ' '
+              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.PID
             - element: policy.insured.person-objects~person.gender
               payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.Gender
             - element: policy.insured.person-objects~person.date-of-birth
@@ -26,57 +69,6 @@ integration:
               payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.AccinsType
             - element: policy.insured.person-objects~person.address.country
               payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.HomeCountry
-            - element: policy.contract.begin
-              payload: Insureds.Insured[n].InsrBegin
-            - element: policy.insured.currency
-              payload: Insureds.Insured[n].Currency
-            - element: policy.insured.person-objects~insured-amount
-              payload: Insureds.Insured[n].InsuredAmount
-            - element: policy.insured.person-objects~object.id
-              payload: Insureds.Insured[n].InsuredObjectID
-            - element: policy.insured.person-objects~entity-id
-              payload: Insureds.Insured[n].InsuredEntity.ObjectID
-            - value: 18
-              payload: Insureds.Insured[n].InsuredEntity.ObjectType
-            - element: policy.insured.person-objects~entity-accident-insured.type
-              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.AccinsType
-        - fromIdx:
-            array: datamodel.policy.insured.person-objects
-            condition: person.pid != ""
-          toIdx:
-            useSourceIndex: true
-          mappings:
-            - element: policy.insured.person-objects~person.pid
-              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.PID
-
-        - fromIdx:
-            array: datamodel.policy.insured.person-objects
-            condition: person.pid != ""
-          toIdx:
-            useSourceIndex: true
-          mappings:
-            - element: policy.insured.person-objects~person.pid
-              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.PID
-
-        - fromIdx:
-            array: datamodel.policy.insured.person-objects
-            condition: person.man-id != -1 && person.pid == ""
-          toIdx:
-            useSourceIndex: true
-          mappings:
-            - element: policy.insured.person-objects~person.man-id
-              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.PersonID
-            - value: " "
-              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.PID
-
-        - fromIdx:
-            array: datamodel.policy.insured.person-objects
-            condition: person.pid == "" && person.man-id == -1
-          toIdx:
-            useSourceIndex: true
-          mappings:
-            - value: ' '
-              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.Entity.PersonalData.PID
 
         - mappings:
             - element: policy.contract.payment.frequency
@@ -89,3 +81,74 @@ integration:
               payload: InsuranceConditions.Billings.Billing[0].PaymentDuration
             - element: policy.contract.payment.term.years.units
               payload: InsuranceConditions.Billings.Billing[0].PaymentDurUnits
+
+        - fromIdx:
+            array: datamodel.policy.participants.beneficiaries
+          toIdx:
+            array: payload.InsuranceConditions.Participants.Participant
+            append: true
+          if: datamodel.policy.participants.is-standard-beneficiary == false
+          mappings:
+            - value: 'BENEFICENT'
+              payload: InsuranceConditions.Participants.Participant[n].ParticipantRole
+            - value: 'ACTIVE'
+              payload: InsuranceConditions.Participants.Participant[n].Status
+            - value: 'ENGLISH'
+              payload: InsuranceConditions.Participants.Participant[n].Language
+            - element: policy.participants.beneficiaries~percentage
+              payload: InsuranceConditions.Participants.Participant[n].PremiumShare
+
+        - fromIdx:
+            array: datamodel.policy.participants.beneficiaries
+            condition: is-company == false && person.pid == null
+          toIdx:
+            useSourceIndex: true
+          if: datamodel.policy.participants.is-standard-beneficiary == false
+          mappings:
+            - element: policy.participants.beneficiaries~person.gender
+              payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.Gender
+            - element: policy.participants.beneficiaries~person.birthdate
+              payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.BirthDate
+            - element: policy.participants.beneficiaries~person.last-name
+              payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.Name.Family
+            - element: policy.participants.beneficiaries~person.first-name
+              payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.Name.Given
+            - value: ''
+              payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.PID
+
+        - fromIdx:
+            array: datamodel.policy.participants.beneficiaries
+            condition: is-company == false && person.pid != null
+          toIdx:
+            useSourceIndex: true
+          if: datamodel.policy.participants.is-standard-beneficiary == false
+          mappings:
+            - element: policy.participants.beneficiaries~person.pid
+              payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.PID
+
+        - fromIdx:
+            array: datamodel.policy.participants.beneficiaries
+            condition: is-company == true
+          toIdx:
+            useSourceIndex: true
+          if: datamodel.policy.participants.is-standard-beneficiary == false
+          mappings:
+            - element: policy.participants.beneficiaries~company.name
+              payload: InsuranceConditions.Participants.Participant[n].Entity.CompanyData.Name
+            - value: ''
+              payload: InsuranceConditions.Participants.Participant[n].Entity.CompanyData.CustomerID
+            - value: ''
+              payload: InsuranceConditions.Participants.Participant[n].Entity.CompanyData.CompType
+
+        - toIdx:
+            array: payload.InsuranceConditions.Participants.Participant
+            append: true
+          mappings:
+            - element: policy.participants.holder.person.pid
+              payload: InsuranceConditions.Participants.Participant[n].Entity.PersonalData.PID
+            - value: 'PHOLDER'
+              payload: InsuranceConditions.Participants.Participant[n].ParticipantRole
+            - value: 'ACTIVE'
+              payload: InsuranceConditions.Participants.Participant[n].Status
+            - value: 'ENGLISH'
+              payload: InsuranceConditions.Participants.Participant[n].Language

@@ -1,9 +1,0 @@
-element:
-  type: text
-  component:
-    StaticComponentRule:
-      component:
-        IceDropdown: {}
-  viewMode:
-    DtViewModeRule:
-      dt: policy.participants.beneficiaries.person.viewmode
