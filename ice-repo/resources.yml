@@ -326,6 +326,10 @@ entries:
           label:
             - en: Phone number
               de: Phone number
+        email:
+          label:
+            - en: Email
+              de: Email
         type:
           label:
             - en: Contact type

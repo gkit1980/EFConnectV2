@@ -1,0 +1,16 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: person.contacts~contact-type
+  outputs:
+    - id: label
+      type: string
+  rules:
+    - inputs:
+        - EMAIL
+      outputs:
+        - elements.new-client.contact.email.label
+    - inputs:
+        - '-'
+      outputs:
+        - elements.new-client.contact.phone-number.label
