@@ -1490,12 +1490,12 @@ entries:
                       de: Premium return by survival
               death-acc-addon-info:
                 label:
-                  - en: Only available if main insured person has it
-                    de: Only available if main insured person has it
+                  - en: Only available if main insured person has it.
+                    de: Only available if main insured person has it.
               tpdaccd-addon-info:
                 label:
-                  - en: Only available if main insured person has it
-                    de: Only available if main insured person has it
+                  - en: Only available if main insured person has it.
+                    de: Only available if main insured person has it.
               covers-info-above-seventy:
                 label:
                   - en: >-

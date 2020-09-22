@@ -210,17 +210,6 @@ confirmation-dialog-layout {
   }
 }
 
-.cover-addon-info {
-  ice-none {
-    font: 400 12px/20px Roboto !important;
-    letter-spacing: 0.0383em !important;
-    color: rgba(40, 40, 40, 0.6) !important;
-    .ice-none {
-      margin: 10px 0px !important;
-    }
-  }
-}
-
 .insured-amount-slider {
   mat-slider {
     width: 300px;

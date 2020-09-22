@@ -251,7 +251,6 @@
     }
   }
 
-
   .no-outline {
     .mat-form-field-disabled .mat-form-field-outline-start,
     .mat-form-field-disabled .mat-form-field-outline-gap,
@@ -274,7 +273,17 @@
     margin-bottom: 15px;
     .mat-button-wrapper {
       font-size: 12px;
+    }
+  }
 
+  .cover-addon-info {
+    ice-none {
+      font: 400 12px/20px Roboto !important;
+      letter-spacing: 0.0383em !important;
+      color: get-color($theme, 'text-disabled') !important;
+      .ice-none {
+        margin: 10px 0px !important;
+      }
     }
   }
 }
