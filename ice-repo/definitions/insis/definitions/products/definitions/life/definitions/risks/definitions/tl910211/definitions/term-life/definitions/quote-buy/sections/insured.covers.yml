@@ -111,3 +111,4 @@ section:
                       policy.insured.person-objects~cover.premret.premium
       arrayElement: policy.insured.person-objects
       css: main-side
+      behaviourForEmptyRows: hide
