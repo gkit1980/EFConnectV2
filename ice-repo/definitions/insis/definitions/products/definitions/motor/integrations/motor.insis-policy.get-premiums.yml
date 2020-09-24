@@ -12,7 +12,7 @@ integration:
             array: payload.Policy.Insureds.Insured
           toIdx:
             array: datamodel.policy.insured.vehicle-objects
-            condition: 1 == 1
+            useSourceIndex: true
           mappings:
             - element: policy.insured.vehicle-objects~object.id
               payload: Policy.Insureds.Insured[n].InsuredObjectID

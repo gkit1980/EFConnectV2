@@ -26,7 +26,7 @@ integration:
             array: payload.Policy.Insureds.Insured
           toIdx:
             array: datamodel.policy.insured.vehicle-objects
-            condition: 1 == 1
+            useSourceIndex: true
           mappings:
             - element: policy.insured.vehicle-objects~entity-type
               payload: Policy.Insureds.Insured[n].InsuredEntity.ObjectType
@@ -37,7 +37,7 @@ integration:
               condition: EquipmentType == '1001'
           toIdx:
             array: datamodel.policy.insured.vehicle-objects
-            condition: 1 == 1
+            useSourceIndex: true
           mappings:
             - element: policy.insured.vehicle-objects~car.additional-equipment-car-audio-parent-id
               payload: Policy.Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].ParentObjectID
@@ -48,7 +48,7 @@ integration:
               condition: EquipmentType == '1002'
           toIdx:
             array: datamodel.policy.insured.vehicle-objects
-            condition: 1 == 1
+            useSourceIndex: true
           mappings:
             - element: policy.insured.vehicle-objects~car.additional-equipment-alloy-wheels-parent-id
               payload: Policy.Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].ParentObjectID
@@ -59,7 +59,7 @@ integration:
               condition: EquipmentType == '1003'
           toIdx:
             array: datamodel.policy.insured.vehicle-objects
-            condition: 1 == 1
+            useSourceIndex: true
           mappings:
             - element: policy.insured.vehicle-objects~car.additional-equipment-other-parent-id
               payload: Policy.Insureds.Insured[n].InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment[n].ParentObjectID
@@ -70,7 +70,7 @@ integration:
               condition: CoverCode == 'MTPL'
           toIdx:
             array: datamodel.policy.insured.vehicle-objects
-            condition: 1 == 1
+            useSourceIndex: true
           mappings:
             - element: policy.insured.vehicle-objects~cover.mtpl.grc-id
               payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].GrcID'
@@ -85,7 +85,7 @@ integration:
               condition: CoverCode == 'PA'
           toIdx:
             array: datamodel.policy.insured.vehicle-objects
-            condition: 1 == 1
+            useSourceIndex: true
           mappings:
             - element: policy.insured.vehicle-objects~cover.pa.grc-id
               payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].GrcID'
@@ -100,7 +100,7 @@ integration:
               condition: CoverCode == 'ROAD_ASSIS'
           toIdx:
             array: datamodel.policy.insured.vehicle-objects
-            condition: 1 == 1
+            useSourceIndex: true
           mappings:
             - element: policy.insured.vehicle-objects~cover.road_assis.grc-id
               payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].GrcID'
@@ -115,7 +115,7 @@ integration:
               condition: CoverCode == 'VANDALISM'
           toIdx:
             array: datamodel.policy.insured.vehicle-objects
-            condition: 1 == 1
+            useSourceIndex: true
           mappings:
             - element: policy.insured.vehicle-objects~cover.vandalism.grc-id
               payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].GrcID'
@@ -132,7 +132,7 @@ integration:
                 array: Discounts.Discount
           toIdx:
             array: datamodel.policy.insured.vehicle-objects
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: cover.mtpl.discounts
               append: true
@@ -148,7 +148,7 @@ integration:
               condition: CoverCode == 'OWNDAMAGE'
           toIdx:
             array: datamodel.policy.insured.vehicle-objects
-            condition: 1 == 1
+            useSourceIndex: true
           mappings:
             - element: policy.insured.vehicle-objects~cover.owndamage.grc-id
               payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].GrcID'
@@ -166,7 +166,7 @@ integration:
                 append: true
           toIdx:
             array: datamodel.policy.insured.vehicle-objects
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: cover.owndamage.discounts
               append: true
@@ -185,7 +185,7 @@ integration:
                 append: true
           toIdx:
             array: datamodel.policy.insured.vehicle-objects
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: cover.pa.discounts
               append: true
@@ -204,7 +204,7 @@ integration:
                 append: true
           toIdx:
             array: datamodel.policy.insured.vehicle-objects
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: cover.road_assis.discounts
               append: true
@@ -223,7 +223,7 @@ integration:
                 append: true
           toIdx:
             array: datamodel.policy.insured.vehicle-objects
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: cover.vandalism.discounts
               append: true
@@ -241,7 +241,7 @@ integration:
                 array: Taxes.Tax
             toIdx:
               array: datamodel.policy.insured.vehicle-objects
-              condition: 1 == 1
+              useSourceIndex: true
               toIdx:
                 array: cover.mtpl.taxes
                 append: true
@@ -259,7 +259,7 @@ integration:
                 array: Taxes.Tax
             toIdx:
               array: datamodel.policy.insured.vehicle-objects
-              condition: 1 == 1
+              useSourceIndex: true
               toIdx:
                 array: cover.mtpl.taxes
                 append: true
@@ -277,7 +277,7 @@ integration:
                 array: Taxes.Tax
             toIdx:
               array: datamodel.policy.insured.vehicle-objects
-              condition: 1 == 1
+              useSourceIndex: true
               toIdx:
                 array: cover.pa.taxes
                 append: true
@@ -295,7 +295,7 @@ integration:
                 array: Taxes.Tax
             toIdx:
               array: datamodel.policy.insured.vehicle-objects
-              condition: 1 == 1
+              useSourceIndex: true
               toIdx:
                 array: cover.road_asiss.taxes
                 append: true
@@ -313,7 +313,7 @@ integration:
                 array: Taxes.Tax
             toIdx:
               array: datamodel.policy.insured.vehicle-objects
-              condition: 1 == 1
+              useSourceIndex: true
               toIdx:
                 array: cover.vandalism.taxes
                 append: true

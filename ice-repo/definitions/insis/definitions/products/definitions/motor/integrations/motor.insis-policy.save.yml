@@ -67,7 +67,7 @@ integration:
             condition: owner.options == "policyholder"
           toIdx:
             array: payload.Insureds.Insured
-            condition: 1==1
+            useSourceIndex: true
             toIdx:
               array: InsuredEntity.Owners.Owner
               append: true
@@ -101,7 +101,7 @@ integration:
               array: drivers
           toIdx:
             array: payload.Insureds.Insured
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: Drivers.Driver
               append: true

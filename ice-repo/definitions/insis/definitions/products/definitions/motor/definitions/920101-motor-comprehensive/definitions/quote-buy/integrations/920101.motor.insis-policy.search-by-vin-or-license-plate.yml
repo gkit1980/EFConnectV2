@@ -62,6 +62,8 @@ integration:
               element: policy.insured.vehicle-objects~car.usage
             - payload: Objects.Object[0].OCar.CCMTon
               element: policy.insured.vehicle-objects~car.ccm-ton
+            - value: true
+              element: policy.insured.vehicle-objects~existing-vehicle
         - fromIdx:
             array: payload.Objects.Object[0].OCar.CustomProperties.CustomProperty
             condition: FieldName == 'OCP2'

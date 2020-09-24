@@ -31,7 +31,7 @@ integration:
             array: datamodel.policy.insured.vehicle-objects
           toIdx:
             array: payload.Insureds.Insured
-            condition: 1 == 1
+            useSourceIndex: true
           mappings:
             - value: null
               payload: Insureds.Insured[n].InsuredObjectID
