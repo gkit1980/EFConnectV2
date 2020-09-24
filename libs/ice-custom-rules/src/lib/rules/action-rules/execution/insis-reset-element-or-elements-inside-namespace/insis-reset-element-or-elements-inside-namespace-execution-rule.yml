@@ -10,3 +10,7 @@ implementations:
         label: Index
         type: text
         info: If not supplied, it will use actionContext's index
+      excludingNamespaces:
+        label: excluded namespaces
+        type: array
+        info: Namespaces that are not going to be reset

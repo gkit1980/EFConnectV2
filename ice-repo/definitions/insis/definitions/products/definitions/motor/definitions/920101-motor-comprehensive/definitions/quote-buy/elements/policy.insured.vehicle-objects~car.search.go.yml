@@ -1,0 +1,11 @@
+element:
+  type: action
+  defaultValue:
+    StaticValueRule:
+      value: quote.search-by-vin-or-license-plate
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.insured.vehicle-objects~car.search.type
+      conditionValue: ''
+      conditionViewMode: hidden
+      elseViewMode: default

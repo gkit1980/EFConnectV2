@@ -6,3 +6,6 @@ element:
   defaultValue: 0
   fake:
     value: 5000
+  validation:
+    - IceExpressionValidationRule:
+        expression: 'element("policy.insured.vehicle-objects~insured-amount", "0") > 1'

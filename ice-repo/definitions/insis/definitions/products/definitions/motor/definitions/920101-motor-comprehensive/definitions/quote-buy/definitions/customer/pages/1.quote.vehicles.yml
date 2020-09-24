@@ -9,7 +9,7 @@ page:
     InsisTwoLevelStepperNavigationPage: {}
   sections:
     - header
-    - vehicles.basic-info
+    - vehicles.container
     - vehicles.add-another
     - go-to-next-page
   label:

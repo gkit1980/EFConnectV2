@@ -1,0 +1,26 @@
+section:
+  component:
+    IceArrayFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                sections:
+                  - name: vehicles.search-or-create
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                sections:
+                  - name: vehicles.basic-info
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.vehicle-objects~remove
+            css: u-mt-6
+      behaviourForEmptyRows: render
+      arrayElement: policy.insured.vehicle-objects

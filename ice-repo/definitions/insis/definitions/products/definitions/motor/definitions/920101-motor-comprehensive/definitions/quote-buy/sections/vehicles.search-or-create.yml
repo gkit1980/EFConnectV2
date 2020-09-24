@@ -1,0 +1,35 @@
+section:
+  component:
+    IceArrayItemFlexSection:
+      grid:
+        rows:
+          - gap: 0px
+            gap.xs: 0px
+            css: u-mt-4
+            cols:
+              - size: none
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.insured.vehicle-objects~car.search.type
+            align: start
+          - cols:
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.vehicle-objects~car.search.input
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.vehicle-objects~car.search.vin-info
+                css: u-ml-1
+              - size: none
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.vehicle-objects~car.search.go
+                css: u-ml-3
+            align: start
+      behaviourForEmptyRows: render

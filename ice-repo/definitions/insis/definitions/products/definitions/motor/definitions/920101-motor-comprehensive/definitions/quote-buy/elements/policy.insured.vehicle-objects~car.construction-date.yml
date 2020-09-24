@@ -13,3 +13,9 @@ element:
     StaticComponentRule:
       component:
         IceDropdown: {}
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.insured.vehicle-objects~existing-vehicle
+      conditionValue: 'true'
+      conditionViewMode: disabled
+      elseViewMode: default

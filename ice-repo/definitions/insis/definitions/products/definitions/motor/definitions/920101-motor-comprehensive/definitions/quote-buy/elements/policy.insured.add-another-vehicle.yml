@@ -4,10 +4,13 @@ element:
     StaticComponentRule:
       component:
         IceButton:
-          action: add-another-vehicle
+          action: vehicle.add
   label:
     ResourceLabelRule:
       key: elements.policy.insured.add-another-vehicle.label
   viewMode:
     StaticViewModeRule:
-      viewMode: hidden
+      viewMode: default
+  defaultValue:
+    StaticValueRule:
+      value: vehicle.add

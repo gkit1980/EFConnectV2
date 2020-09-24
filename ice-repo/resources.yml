@@ -1195,6 +1195,34 @@ entries:
 
                     <more details if necessary>
                   de: null
+              search:
+                input:
+                  license-plate:
+                    label:
+                      - en: License plate
+                        de: License plate
+                  vin:
+                    label:
+                      - en: VIN
+                        de: VIN
+                go:
+                  label:
+                    - en: Go
+                      de: Go
+                vin-info:
+                  info:
+                    - en: |-
+                        # Vehicle Identification Number
+
+                        The Vehicle Identification Number (VIN)  
+                        is a uniqe identifier of your vehicle. It can  
+                        be found on your vehicle registration certificate.
+                      de: |-
+                        # Vehicle Identification Number
+
+                        The Vehicle Identification Number (VIN)  
+                        is a uniqe identifier of your vehicle. It can  
+                        be found on your vehicle registration certificate.
             drivers:
               items:
                 person:
@@ -1218,6 +1246,10 @@ entries:
                     label:
                       - en: Driving license copy (optional)
                         de: null
+            remove:
+              label:
+                - en: REMOVE VEHICLE
+                  de: REMOVE VEHICLE
         add-another-vehicle:
           label:
             - en: ADD ANOTHER VEHICLE
@@ -1854,6 +1886,9 @@ entries:
               Upon clicking this button the policy will be issued and the
               provided bank account will be debited as per the selected
               preferences.
+      label:
+        - en: Buy insurance
+          de: Buy insurance
     terms-and-conditions:
       description:
         label:
@@ -2459,6 +2494,18 @@ entries:
         label:
           - en: Submit claim
             de: Submit claim
+    go-to-application:
+      label:
+        - en: Continue
+          de: Continue
+    buy-insurance-description:
+      label:
+        - en: >-
+            Upon clicking this button the policy will be issued and the provided
+            bank account will be debited as per the selected preferences.
+          de: >-
+            Upon clicking this button the policy will be issued and the provided
+            bank account will be debited as per the selected preferences.
   pagination:
     claims:
       - en: claims
@@ -2493,9 +2540,9 @@ entries:
         - en: Please confirm
           de: Bitte bestätigen
       not_allowed_here:
-        - en: "'${value}' not allowed here"
+        - en: '''${value}'' not allowed here'
       regexp:
-        - en: "'${value}' does not matches regular expression ${regexp}"
+        - en: '''${value}'' does not matches regular expression ${regexp}'
       array:
         min:
           - en: 'must have at least ${min} entries'
@@ -2976,6 +3023,11 @@ entries:
                     de: |-
                       # Critical illness
                       Insured sum: ${param1} &euro;
+      vehicle-objects:
+        items:
+          car:
+            search:
+              vin-info: {}
     title: {}
     remove:
       label:

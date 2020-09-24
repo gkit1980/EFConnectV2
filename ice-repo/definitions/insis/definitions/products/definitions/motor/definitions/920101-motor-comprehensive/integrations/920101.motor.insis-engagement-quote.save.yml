@@ -36,7 +36,7 @@ integration:
             array: datamodel.policy.insured.vehicle-objects
           toIdx:
             array: payload.Policies.Policy[0].Insureds.Insured
-            condition: 1 == 1
+            useSourceIndex: true
           mappings:
             - element: policy.insured.vehicle-objects~entity-type
               payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.ObjectType
@@ -44,7 +44,7 @@ integration:
             array: datamodel.policy.insured.vehicle-objects
           toIdx:
             array: 'payload.Policies.Policy[0].Insureds.Insured'
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: InsuredEntity.OCar.CustomProperties.CustomProperty
               append: true
@@ -58,7 +58,7 @@ integration:
             condition: car.additional-equipment-car-audio > 0
           toIdx:
             array: payload.Policies.Policy[0].Insureds.Insured
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment
               append: true
@@ -82,7 +82,7 @@ integration:
             condition: 'car.additional-equipment-alloy-wheels > 0'
           toIdx:
             array: payload.Policies.Policy[0].Insureds.Insured
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment
               append: true
@@ -106,7 +106,7 @@ integration:
             condition: 'car.additional-equipment-other > 0'
           toIdx:
             array: payload.Policies.Policy[0].Insureds.Insured
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: InsuredEntity.OCar.SupplementaryEquipment.OAdditionalEquipment
               append: true
@@ -130,7 +130,7 @@ integration:
             condition: cover.mtpl.active == true
           toIdx:
             array: payload.Policies.Policy[0].Insureds.Insured
-            condition: 1 == 1
+            useSourceIndex: true
             toIdx:
               array: Covers.Cover
               append: true

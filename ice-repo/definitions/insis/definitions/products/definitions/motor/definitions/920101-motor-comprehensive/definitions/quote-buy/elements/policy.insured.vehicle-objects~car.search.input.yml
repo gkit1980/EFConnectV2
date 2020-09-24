@@ -1,4 +1,9 @@
 element:
   type: text
   label:
-    NoLabelRule: {}
+    DtResourceLabelRule:
+      dt: policy.insured.vehicle-objects~car.search.input.label
+  viewMode:
+    DtViewModeRule:
+      dt: policy.insured.vehicle-objects~car.search.input.viewmode
+      output: null

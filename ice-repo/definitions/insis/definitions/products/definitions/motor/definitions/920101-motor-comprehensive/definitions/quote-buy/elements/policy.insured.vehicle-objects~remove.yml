@@ -1,0 +1,12 @@
+element:
+  type: action
+  defaultValue:
+    StaticValueRule:
+      value: vehicle.remove
+  viewMode:
+    InsisChangeViewModeBasedOnArrayLengthRule:
+      array: policy.insured.vehicle-objects
+      condition: greater
+      conditionValue: '1'
+      viewMode: default
+      elseViewMode: hidden

@@ -1,0 +1,22 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policy.insured.vehicle-objects~car.search.type
+  outputs:
+    - id: label
+      type: string
+  rules:
+    - inputs:
+        - REG_NO
+      outputs:
+        - >-
+          elements.policy.insured.vehicle-objects.items.car.search.input.license-plate.label
+    - inputs:
+        - CHASSIS
+      outputs:
+        - >-
+          elements.policy.insured.vehicle-objects.items.car.search.input.vin.label
+    - inputs:
+        - '-'
+      outputs:
+        - null

@@ -1,0 +1,29 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        InsisInfoButton:
+          width: '300'
+          height: '190'
+          maxHeight: '190'
+          maxWidth: '300'
+          minHeight: '190'
+          minWidth: '300'
+          scrollStrategy: NoopScrollStrategy
+          originX: center
+          originY: bottom
+          hasBackdrop: false
+          offsetX: '215'
+          offsetY: '-15'
+          overlayY: center
+          overlayX: center
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.insured.vehicle-objects~car.search.type
+      conditionValue: CHASSIS
+      conditionViewMode: default
+      elseViewMode: hidden
+  text:
+    ResourceTextRule:
+      info: elements.policy.insured.vehicle-objects.items.car.search.vin-info.info

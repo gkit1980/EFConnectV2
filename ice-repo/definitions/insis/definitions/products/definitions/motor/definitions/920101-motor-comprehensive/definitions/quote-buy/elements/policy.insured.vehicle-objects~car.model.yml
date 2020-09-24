@@ -8,3 +8,9 @@ element:
       pathElements:
         - policy.insured.vehicle-objects~car.brand
         - policy.insured.path-models
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.insured.vehicle-objects~existing-vehicle
+      conditionValue: 'true'
+      conditionViewMode: disabled
+      elseViewMode: default

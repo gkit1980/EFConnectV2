@@ -1,13 +1,16 @@
 list:
   items:
     - value: REG_NO
-      label_en: Licence Plate
-      label_de: Autokennzeichen
+      label_en: Detect car based on license Plate
+      label_de: Detect car based on license Plate
       insis: REG_NO
     - value: CHASSIS
-      label_en: VIN
-      label_de: VIN
+      label_en: Detect car based on VIN (Vehicle Identification Number)
+      label_de: Detect car based on VIN (Vehicle Identification Number)
       insis: CHASSIS
+    - value: ''
+      label_en: 'Enter make / model / year'
+      label_de: 'Enter make / model / year'
   type: text
   additionals:
     label_en:

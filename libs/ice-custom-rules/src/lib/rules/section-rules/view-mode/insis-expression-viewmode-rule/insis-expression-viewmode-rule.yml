@@ -23,3 +23,8 @@ implementations:
         required: true
         type: select
         options: *view_mode_options
+      useIndex:
+        info: Should it use actionContext index or not
+        required: false
+        type: boolean
+        default: false

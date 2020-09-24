@@ -8,3 +8,7 @@ section:
                 size.xs: auto
                 elements:
                   - name: policy.insured.add-another-vehicle
+                css: ''
+            css: u-mt-2
+      behaviourForEmptyRows: render
+  description: ''

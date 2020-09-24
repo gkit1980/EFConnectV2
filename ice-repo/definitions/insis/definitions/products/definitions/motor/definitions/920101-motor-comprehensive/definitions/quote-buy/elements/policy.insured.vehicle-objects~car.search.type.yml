@@ -3,7 +3,7 @@ element:
   component:
     StaticComponentRule:
       component:
-        IceDropdown: {}
+        IceRadiobuttonGroup: {}
   values:
     ListValuesRule:
       list: insis.car.search.types
@@ -13,3 +13,14 @@ element:
   defaultValue:
     StaticValueRule:
       value: REG_NO
+  change:
+    - InsisResetElementOrElementsInsideNamespaceExecutionRule:
+        elementOrNamespace: policy.insured.vehicle-objects~car
+        excludingNamespaces:
+          - policy.insured.vehicle-objects~car.search
+    - InsisResetElementOrElementsInsideNamespaceExecutionRule:
+        elementOrNamespace: policy.insured.vehicle-objects~cover
+    - InsisResetElementOrElementsInsideNamespaceExecutionRule:
+        elementOrNamespace: policy.insured.vehicle-objects~question
+    - InsisResetElementOrElementsInsideNamespaceExecutionRule:
+        elementOrNamespace: policy.insured.vehicle-objects~existing-vehicle

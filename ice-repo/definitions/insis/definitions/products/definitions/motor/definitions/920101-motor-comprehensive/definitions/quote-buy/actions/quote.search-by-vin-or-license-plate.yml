@@ -1,15 +1,4 @@
 action:
-  trigger:
-    - ElementChangeTriggerRule:
-        originsToExclude:
-          - DATAMODEL
-          - EXTERNAL
-          - INTERNAL
-          - INSIGHT
-          - UNKNOWN
-          - DEFAULTVALUE
-        elements:
-          - policy.insured.vehicle-objects~car.search.input
   execution:
     - InsisCopyValueExecutionRule:
         source: policy.insured.vehicle-objects~car.index

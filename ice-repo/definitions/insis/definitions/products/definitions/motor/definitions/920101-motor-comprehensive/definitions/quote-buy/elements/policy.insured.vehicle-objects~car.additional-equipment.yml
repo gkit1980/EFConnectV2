@@ -1,5 +1,4 @@
 element:
-  viewMode: default
   component: IceCheckbox
   defaultValue:
     StaticValueRule:
@@ -8,9 +7,11 @@ element:
   change:
     - ResetElementValueExecutionRule:
         elements:
-          - policy.insured.vehicle-objects~car.additional-equipment-alloy-wheels-included
+          - >-
+            policy.insured.vehicle-objects~car.additional-equipment-alloy-wheels-included
           - policy.insured.vehicle-objects~car.additional-equipment-alloy-wheels
-          - policy.insured.vehicle-objects~car.additional-equipment-car-audio-included
+          - >-
+            policy.insured.vehicle-objects~car.additional-equipment-car-audio-included
           - policy.insured.vehicle-objects~car.additional-equipment-audio-video
           - policy.insured.vehicle-objects~car.additional-equipment-car-audio
           - policy.insured.vehicle-objects~car.additional-equipment-other
