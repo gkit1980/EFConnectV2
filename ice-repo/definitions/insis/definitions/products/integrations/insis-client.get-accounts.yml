@@ -38,7 +38,7 @@ integration:
             - element: policy.participants.holder.person.manid
               payload: Entity.ManID
             - element: policy.participants.holder.person.address.country
-              payload: Addresses.Address[0].CountryCode
+              payload: Entity.PersonalData.HomeCountry
         - fromIdx:
             array: payload.BankAccounts.BankAccount
           toIdx:
