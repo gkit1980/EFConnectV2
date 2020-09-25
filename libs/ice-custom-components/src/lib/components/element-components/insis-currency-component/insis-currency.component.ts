@@ -45,7 +45,9 @@ export class InsisCurrencyComponent extends IceCurrencyComponent implements OnIn
   }
 
   setComponentValue(value: any): void {
-    this.value = `${value || 0} ${this.currencyCode}`;
+    this.value = `${Number(value).toFixed(this.getRecipeParam('numberOfDecimalPoints', 2)) || 0} ${
+      this.currencyCode
+    }`;
   }
 
   //

@@ -13,3 +13,8 @@ params:
       If not specified, the component will search for an element named like this element replacing
       the last part after the last . with "currency".
       If no currency element is found the currency code defined in the resource file us used.
+
+  numberOfDecimalPoints:
+    label: Number of decimal points
+    info: Number of decimal points to display in output mode, defaults to 2
+    type: integer
