@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MarkdownToHtmlModule } from 'markdown-to-html-pipe';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 import { InsisTwoLevelStepperNavigationPageComponent } from './components/page-components/insis-two-level-stepper-navigation-page/insis-two-level-stepper-navigation-page.component';
 import { InsisConfirmationPageComponent } from './components/page-components/insis-confirmation-page/insis-confirmation-page.component';
@@ -66,6 +67,7 @@ import { InsisPaymentsSection } from './components/section-components/insis-paym
 import { InsisNullOutputComponent } from './components/element-components/insis-null-output-component/insis-null-output.component';
 import { InsisIBANOutputComponent } from './components/element-components/insis-iban-output-component/insis-iban-output.component';
 import { InsisPaginatorSectionComponent } from './components/section-components/insis-paginator-section/insis-paginator-section.component';
+import { InsisAutocompleteComponent } from './components/element-components/insis-autocomplete-component/insis-autocomplete.component';
 
 /**
  * TIP: You will need to include in this array any new component you create.
@@ -111,6 +113,7 @@ export const iceCustomComponents = [
   InsisPaymentsSection,
   InsisNullOutputComponent,
   InsisIBANOutputComponent,
+  InsisAutocompleteComponent,
 ];
 
 /**
@@ -153,6 +156,7 @@ export function registerComponents(componentService: IceComponentsService) {
     FlexLayoutModule,
     MatIconModule,
     MatBadgeModule,
+    MatAutocompleteModule,
   ],
 
   declarations: [

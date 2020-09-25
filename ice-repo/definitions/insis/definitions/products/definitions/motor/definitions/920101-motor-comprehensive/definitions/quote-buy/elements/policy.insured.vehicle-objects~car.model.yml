@@ -14,3 +14,8 @@ element:
       conditionValue: 'true'
       conditionViewMode: disabled
       elseViewMode: default
+  component:
+    StaticComponentRule:
+      component:
+        IceAutocomplete:
+          allowInvalidInput: true

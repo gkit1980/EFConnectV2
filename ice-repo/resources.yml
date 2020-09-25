@@ -986,9 +986,13 @@ entries:
                     - en: Lessor name
                       de: null
             insured-amount:
+              invalid:
+                label:
+                  - en: The value must be positive number
+                    de: The value must be positive number
               label:
                 - en: Actual value of the car
-                  de: Aktueller Wert des Fahrzeuges
+                  de: Actual value of the car
             cover:
               mtpl:
                 active:

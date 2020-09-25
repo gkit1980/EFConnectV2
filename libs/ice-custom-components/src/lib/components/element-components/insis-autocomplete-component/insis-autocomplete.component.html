@@ -1,0 +1,46 @@
+<div class="ice-autocomplete" *ngIf="isVisible">
+  <mat-form-field
+    *ngIf="!isOutput"
+    [attr.data-required]="isRequired"
+    hideRequiredMarker="true"
+    [hintLabel]="hint"
+  >
+    <mat-label [attr.data-required]="isRequired">{{ label }}</mat-label>
+   <input
+     [matTooltip]="tooltip"
+      matTooltipClass="ice-tooltip"
+      #iceInput
+      matInput
+      type="text"
+      [placeholder]="placeholder"
+      [matAutocomplete]="auto"
+      [required]="isRequired"
+      [disabled]="isDisabled"
+      (keyup)="onKeyup($event)"
+      (blur)="onBlur($event)"
+	  [(ngModel)]="query"/>
+	  <span matPrefix class="ice-prefix">{{ prefix }}</span>
+	  <span matSuffix class="ice-suffix">{{ suffix }}</span>
+  </mat-form-field>
+  <ng-container *ngIf="showValidationErrors">
+    <mat-error *ngFor="let message of validation?.getMessagesFor(element.name, index)">
+      {{ message }}
+    </mat-error>
+  </ng-container>
+
+  <mat-autocomplete
+    #auto="matAutocomplete"
+    (optionSelected)="selectItem($event.option.value)"
+    [displayWith]="displayFunction">
+    <mat-option *ngFor="let option of filteredOptions" [value]="option">
+      {{ option.label }}
+    </mat-option>
+  </mat-autocomplete>
+
+  <mat-output
+  *ngIf="isOutput"
+  [isOutput]="isOutput"
+  [label]="label"
+  [value]="textValue">
+ </mat-output>
+</div>
