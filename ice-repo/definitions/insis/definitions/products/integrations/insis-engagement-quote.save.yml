@@ -14,6 +14,8 @@ integration:
               payload: Client.Entity.CompanyData.CustomerID
         - if: datamodel.policy.participants.holder.company.name == null
           mappings:
+            - payload: Client.Entity
+              datastore: person
             - element: policy.participants.holder.person.pid
               payload: Client.Entity.PersonalData.PID
         - mappings:

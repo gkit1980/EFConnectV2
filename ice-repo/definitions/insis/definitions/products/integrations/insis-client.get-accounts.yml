@@ -3,9 +3,9 @@ integration:
     SoapCallExchangeRule:
       endpoint: insis_pdm_endpoint
       securityMode: UsernamePassword
-      username: 'insis-username'
-      password: 'insis-password'
-      ignoreNamespaces: 'insis-ignoreNamespaces'
+      username: insis-username
+      password: insis-password
+      ignoreNamespaces: insis-ignoreNamespaces
       jsonSchema: InsisPDM
   transformation:
     DefaultTransformationRule:
@@ -38,7 +38,9 @@ integration:
             - element: policy.participants.holder.person.manid
               payload: Entity.ManID
             - element: policy.participants.holder.person.address.country
-              payload: Entity.PersonalData.HomeCountry
+              payload: 'Entity.PersonalData.HomeCountry'
+            - payload: 'Entity'
+              datastore: person
         - fromIdx:
             array: payload.BankAccounts.BankAccount
           toIdx:
