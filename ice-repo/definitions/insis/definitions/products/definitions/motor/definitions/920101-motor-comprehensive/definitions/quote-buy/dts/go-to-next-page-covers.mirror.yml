@@ -1,0 +1,17 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - label: new label
+      element: policy.status.policy-status
+  outputs:
+    - id: mirror
+      type: string
+  rules:
+    - inputs:
+        - -2
+      outputs:
+        - application.modify
+    - inputs:
+        - -4
+      outputs:
+        - application.register

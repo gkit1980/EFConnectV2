@@ -1,14 +1,9 @@
 action:
   title: calls the application calculation for insis
-  condition:
-    DtConditionRule:
-      dt: insis.calculate.application
-      output: calculate
   execution:
     - IntegrationExecutionRule:
         integration: 920101.motor.insis-policy.application.modify
     - IntegrationExecutionRule:
         integration: 920101.motor.insis-policy.get-premiums
-  trigger:
-    - BucketValidTriggerRule:
-        bucket: insis-quote-motor
+    - NavigateToPageExecutionRule:
+        direction: next

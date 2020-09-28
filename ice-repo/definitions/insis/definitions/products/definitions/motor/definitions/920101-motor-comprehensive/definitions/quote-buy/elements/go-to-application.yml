@@ -6,4 +6,7 @@ element:
         IceButton:
           themeColor: primary
           variant: flat
-  defaultValue: application.register
+  #defaultValue: application.register
+  mirror:
+    DtMirrorRule:
+      dt: go-to-next-page-covers.mirror

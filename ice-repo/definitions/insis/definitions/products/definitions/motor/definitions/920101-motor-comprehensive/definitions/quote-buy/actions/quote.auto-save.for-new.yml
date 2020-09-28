@@ -7,3 +7,6 @@ action:
   execution:
     - IntegrationExecutionRule:
         integration: 920101.motor.insis-policy.engagement-quote.register
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ICE_CONTEXT_DEACTIVATED
