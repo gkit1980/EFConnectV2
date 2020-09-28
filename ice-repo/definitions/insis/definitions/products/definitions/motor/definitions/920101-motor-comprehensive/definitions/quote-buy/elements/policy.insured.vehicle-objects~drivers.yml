@@ -6,5 +6,5 @@ element:
     StaticArrayRule:
       default: '1'
       min: '1'
-      max: '3'
+      max: '1'
   type: array

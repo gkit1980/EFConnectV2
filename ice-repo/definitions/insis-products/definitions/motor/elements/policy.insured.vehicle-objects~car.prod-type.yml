@@ -1,4 +1,0 @@
-element:
-  title: car prod type
-  type: integer
-  defaultValue: 2

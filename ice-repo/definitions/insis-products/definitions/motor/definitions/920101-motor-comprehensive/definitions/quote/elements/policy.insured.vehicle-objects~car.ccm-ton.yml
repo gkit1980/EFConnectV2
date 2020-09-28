@@ -1,9 +1,0 @@
-element:
-  viewMode: required
-  component: IceDropdown
-  values:
-    ListValuesRule:
-      list: engine-capacity
-  type: integer
-  fake:
-    value: 2800

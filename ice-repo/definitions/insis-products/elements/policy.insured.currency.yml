@@ -1,6 +1,0 @@
-element:
-  title: Currency
-  type: text
-  defaultValue: EUR
-  buckets:
-    insis-quote: {}

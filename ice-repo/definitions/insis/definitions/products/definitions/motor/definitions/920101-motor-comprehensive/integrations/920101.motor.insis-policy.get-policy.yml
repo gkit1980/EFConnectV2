@@ -404,3 +404,11 @@ integration:
               payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Discounts.Discount[n].DiscountType'
             - element: policy.insured.vehicle-objects~cover.vandalism.discounts~amount
               payload: 'Policy.Insureds.Insured[n].Covers.Cover[n].Discounts.Discount[n].LumpSumDiscount'
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+          toIdx:
+            array: payload.Policy.Insureds.Insured
+            useSourceIndex: true
+          mappings:
+            - element: policy.insured.vehicle-objects~car.search.input
+              payload: Policy.Insureds.Insured[n].InsuredEntity.OCar.RegNo

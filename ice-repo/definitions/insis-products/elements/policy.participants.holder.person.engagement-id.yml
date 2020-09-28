@@ -1,6 +1,0 @@
-element:
-  title: Engagement ID for policy holder person
-  type: text
-  defaultValue:
-    PrincipalDataValueRule:
-      path: engagementId

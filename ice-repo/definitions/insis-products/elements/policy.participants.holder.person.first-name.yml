@@ -1,7 +1,0 @@
-element:
-  title: First name of policy holder person
-  type: text
-  defaultValue:
-    PrincipalDataValueRule:
-      path: firstName
-  viewMode: disabled

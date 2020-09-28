@@ -1,7 +1,0 @@
-element:
-  fake:
-    value: AUDI
-  type: text
-  values:
-    InsisDynamicValuesListRule:
-      datastoreRootPath: vehicles-data

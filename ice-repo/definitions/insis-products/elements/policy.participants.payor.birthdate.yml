@@ -1,9 +1,0 @@
-element:
-  type: date
-  viewMode:
-    ConditionalViewModeRule:
-      conditionValue: 'true'
-      conditionElement: policy.is-user-bank-account-holder
-      conditionViewMode: hidden
-      elseViewMode: required
-  component: IceDatepicker

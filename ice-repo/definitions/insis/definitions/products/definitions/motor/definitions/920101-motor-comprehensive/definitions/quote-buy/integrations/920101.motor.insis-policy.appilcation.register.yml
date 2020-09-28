@@ -37,3 +37,75 @@ integration:
               payload: Insureds.Insured[n].InsuredObjectID
             - value: '-1'
               payload: Insureds.Insured[n].InsuredEntity.ObjectID
+        - fromIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            condition: 1 == 1
+            fromIdx:
+              condition: 1 == 1
+              array: drivers
+          toIdx:
+            array: payload.Insureds.Insured.Drivers.Driver
+            useSourceIndex: true
+            toIdx:
+              array: Drivers.Driver
+              useSourceIndex: true
+          mappings:
+            - element: policy.insured.vehicle-objects~drivers~person.driver-license-nb
+              payload: Insureds.Insured[n].Drivers.Driver[n].LicenseID
+
+        - fromIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            condition: 1 == 1
+            fromIdx:
+              condition: person.pid != null
+              array: drivers
+          toIdx:
+            array: payload.Insureds.Insured.Drivers.Driver
+            useSourceIndex: true
+            toIdx:
+              array: Drivers.Driver
+              useSourceIndex: true
+          mappings:
+            - element: policy.insured.vehicle-objects~drivers~person.pid
+              payload: Insureds.Insured[n].Drivers.Driver[n].PID
+
+        - fromIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            condition: 1 == 1
+            fromIdx:
+              condition: person.man-id != -1 && person.pid == null
+              array: drivers
+          toIdx:
+            array: payload.Insureds.Insured.Drivers.Driver
+            useSourceIndex: true
+            toIdx:
+              array: Drivers.Driver
+              useSourceIndex: true
+          mappings:
+            - element: policy.insured.vehicle-objects~drivers~person.man-id
+              payload: Insureds.Insured[n].Drivers.Driver[n].ManID
+
+        - fromIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            condition: 1 == 1
+            fromIdx:
+              condition: person.pid == null && person.man-id == -1
+              array: drivers
+          toIdx:
+            array: payload.Insureds.Insured.Drivers.Driver
+            useSourceIndex: true
+            toIdx:
+              array: Drivers.Driver
+              useSourceIndex: true
+          mappings:
+            - element: policy.insured.vehicle-objects~drivers~person.first-name
+              payload: Insureds.Insured[n].Drivers.Driver[n].Entity.PersonalData.Name.Given
+
+            - element: policy.insured.vehicle-objects~drivers~person.last-name
+              payload: Insureds.Insured[n].Drivers.Driver[n].Entity.PersonalData.Name.Family
+
+            - element: policy.insured.vehicle-objects~drivers~person.date-of-birth
+              payload: Insureds.Insured[n].Drivers.Driver[n].Entity.PersonalData.BirthDate
+
+            - value: ' '
+              payload: Insureds.Insured[n].Drivers.Driver[n].Entity.PersonalData.PID

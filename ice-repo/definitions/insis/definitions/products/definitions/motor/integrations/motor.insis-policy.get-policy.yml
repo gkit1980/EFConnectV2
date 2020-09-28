@@ -12,6 +12,7 @@ integration:
             array: payload.Policy.Insureds.Insured
           toIdx:
             array: payload.Policy.Insureds.Insured
+            useSourceIndex: true
           mappings:
             - element: policy.insured.vehicle-objects~insured-amount
               payload: 'Policy.Insureds.Insured[n].InsuredAmount'
@@ -65,25 +66,25 @@ integration:
               array: Drivers.Driver
           toIdx:
             array: datamodel.policy.insured.vehicle-objects
-            condition: 1==1
+            useSourceIndex: true
             toIdx:
-              array: drivers
-              append: true
+              array: drivers.driver
+              useSourceIndex: true
           mappings:
             - element: policy.insured.vehicle-objects~drivers~person.driver-id
-              payload: Insureds.Insured[n].Drivers.Driver[n].DriverID
+              payload: Policy.Insureds.Insured[n].Drivers.Driver[n].DriverID
             - element: policy.insured.vehicle-objects~drivers~person.pid
-              payload: Insureds.Insured[n].Drivers.Driver[n].PID
+              payload: Policy.Insureds.Insured[n].Drivers.Driver[n].PID
+            - element: policy.insured.vehicle-objects~drivers~person.man-id
+              payload: Policy.Insureds.Insured[n].Drivers.Driver[n].ManID
             - element: policy.insured.vehicle-objects~drivers~person.first-name
-              payload: Insureds.Insured[n].Drivers.Driver[n].Entity.PersonalData.Name.Given
+              payload: Policy.Insureds.Insured[n].Drivers.Driver[n].Entity.PersonalData.Name.Given
             - element: policy.insured.vehicle-objects~drivers~person.last-name
-              payload: Insureds.Insured[n].Drivers.Driver[n].Entity.PersonalData.Name.Family
-            - element: policy.insured.vehicle-objects~drivers~person.pid
-              payload: Insureds.Insured[n].Drivers.Driver[n].Entity.PersonalData.PID
+              payload: Policy.Insureds.Insured[n].Drivers.Driver[n].Entity.PersonalData.Name.Family
             - element: policy.insured.vehicle-objects~drivers~person.date-of-birth
-              payload: Insureds.Insured[n].Drivers.Driver[n].Entity.PersonalData.BirthDate
+              payload: Policy.Insureds.Insured[n].Drivers.Driver[n].Entity.PersonalData.BirthDate
             - element: policy.insured.vehicle-objects~drivers~person.driver-license-nb
-              payload: Insureds.Insured[n].Drivers.Driver[n].LicenseID
+              payload: Policy.Insureds.Insured[n].Drivers.Driver[n].LicenseID
         - fromIdx:
             array: payload.Policy.Insureds.Insured
             fromIdx:

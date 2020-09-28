@@ -1,6 +1,0 @@
-element:
-  title: agent of the policy
-  type: text
-  defaultValue:
-    PrincipalDataValueRule:
-      path: insis-agent-no

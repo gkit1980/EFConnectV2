@@ -1,6 +1,0 @@
-element:
-  viewMode: default
-  defaultValue:
-    StaticValueRule:
-      value: false
-  type: boolean

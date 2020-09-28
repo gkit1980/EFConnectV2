@@ -1,5 +1,8 @@
 element:
   type: date
+  viewMode:
+    DtViewModeRule:
+      dt: policy.insured.vehicle-objects~drivers~person.first-name.viewmode
   defaultValue:
     InsisElementValueRule:
       element: policy.participants.holder.person.date-of-birth

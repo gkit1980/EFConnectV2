@@ -7,3 +7,9 @@ action:
           - policy.insured.vehicle-objects
     - IntegrationExecutionRule:
         integration: 920101.motor.insis-policy.load-policy
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ICE_CONTEXT_ACTIVATED
+  condition:
+    DynIdConditionRule:
+      element: policy.contract.policy-id

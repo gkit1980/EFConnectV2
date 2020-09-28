@@ -1,4 +1,0 @@
-element:
-  title: insured entity object id
-  type: integer
-  defaultValue: -1

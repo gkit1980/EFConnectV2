@@ -1,9 +1,0 @@
-element:
-  type: integer
-  viewMode: required
-  defaultValue:
-    StaticValueRule:
-      value: 1
-  buckets:
-    insis-quote:
-      trigger: true

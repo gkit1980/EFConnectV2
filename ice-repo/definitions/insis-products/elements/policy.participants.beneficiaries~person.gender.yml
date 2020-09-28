@@ -1,6 +1,0 @@
-element:
-  title: gender of beneficiary
-  type: text
-  viewMode: required
-  component: IceButtonToggle
-  values: insis.gender

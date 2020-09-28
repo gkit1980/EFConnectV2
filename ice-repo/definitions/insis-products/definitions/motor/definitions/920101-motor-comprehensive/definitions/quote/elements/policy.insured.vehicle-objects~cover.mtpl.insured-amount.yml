@@ -1,6 +1,0 @@
-element:
-  type: currency
-  defaultValue: 0
-  mirror:
-    CopyValueMirrorRule:
-      originElement: policy.insured.vehicle-objects~insured-amount

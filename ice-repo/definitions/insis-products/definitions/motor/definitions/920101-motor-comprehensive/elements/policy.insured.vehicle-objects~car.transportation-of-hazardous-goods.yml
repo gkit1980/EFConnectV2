@@ -1,8 +1,0 @@
-element:
-  type: boolean
-  viewMode: required
-  component: IceCheckbox
-  values: insis.policy.insured.vehicle-objects~car.transportation-of-hazardous-goods
-  buckets:
-    insis-quote:
-      trigger: true

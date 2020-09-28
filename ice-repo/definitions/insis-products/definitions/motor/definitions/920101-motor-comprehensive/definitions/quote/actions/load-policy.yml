@@ -1,9 +1,0 @@
-action:
-  title: loads the policy data
-  execution:
-    - ResetElementValueExecutionRule:
-        elements:
-          - policy.contract.policy-id
-          - policy.insured.vehicle-objects
-    - IntegrationExecutionRule:
-        integration: 920101.motor.insis-policy.load-policy

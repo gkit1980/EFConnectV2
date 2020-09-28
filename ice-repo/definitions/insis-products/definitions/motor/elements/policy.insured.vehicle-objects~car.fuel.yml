@@ -1,8 +1,0 @@
-element:
-  type: text
-  component: IceDropdown
-  viewMode: required
-  values: insis.car.fuels
-  buckets:
-    insis-quote:
-      trigger: true

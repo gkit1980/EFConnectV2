@@ -4,5 +4,8 @@ element:
     InsisElementValueRule:
       element: policy.participants.holder.person.last-name
       index: 0
+  viewMode:
+    DtViewModeRule:
+      dt: policy.insured.vehicle-objects~drivers~person.first-name.viewmode
   fake:
     value: Smith

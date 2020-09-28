@@ -1,9 +1,0 @@
-element:
-  type: text
-  component: IceDropdown
-  viewMode: required
-  defaultValue: Private
-  values: insis.car.usage
-  buckets:
-    insis-quote:
-      trigger: true

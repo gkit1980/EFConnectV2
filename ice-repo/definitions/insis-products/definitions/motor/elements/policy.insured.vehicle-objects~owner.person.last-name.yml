@@ -1,8 +1,0 @@
-element:
-  type: text
-  viewMode:
-    ConditionalViewModeRule:
-      conditionValue: owner
-      conditionViewMode: required
-      elseViewMode: hidden
-      conditionElement: policy.insured.vehicle-objects~owner.options

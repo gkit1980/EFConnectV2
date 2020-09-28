@@ -1,7 +1,0 @@
-element:
-  viewMode:
-    StaticViewModeRule:
-      viewMode: required
-  type: currency
-  fake:
-    value: 5000

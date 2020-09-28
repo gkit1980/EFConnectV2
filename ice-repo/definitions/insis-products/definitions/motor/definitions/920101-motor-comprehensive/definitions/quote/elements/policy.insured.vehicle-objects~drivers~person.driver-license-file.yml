@@ -1,7 +1,0 @@
-element:
-  title: Picture of License number of a driver
-  type: text
-  component:
-    StaticComponentRule:
-      component:
-        InsisFileUpload: {}

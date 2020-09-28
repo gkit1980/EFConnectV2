@@ -1,7 +1,0 @@
-element:
-  type: text
-  component: IceDropdown
-  viewMode: required
-  buckets:
-    insis-quote:
-      trigger: true

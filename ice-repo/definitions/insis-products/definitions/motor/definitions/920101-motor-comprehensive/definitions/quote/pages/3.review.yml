@@ -1,9 +1,0 @@
-page:
-  component:
-    InsisTwoLevelStepperNavigationPage: {}
-  validation:
-    onElementComponentChange: true
-    behaviour: forward
-    showMessages: none
-    showGrowl: false
-    showElementValidation: true

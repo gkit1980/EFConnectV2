@@ -1,9 +1,0 @@
-element:
-  defaultValue:
-    DateExpressionValueRule:
-      expression: date('2015-12-12')
-  range:
-    FeelExpressionRangeRule:
-      expressionMin: date('2015-12-12')
-      expressionMax: date('2015-12-12') + duration('P3M')
-  type: date

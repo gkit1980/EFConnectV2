@@ -1,0 +1,24 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policy.insured.vehicle-objects~drivers~person.pid
+    - element: policy.insured.vehicle-objects~drivers~person.man-id
+  outputs:
+    - id: viewMode
+      type: string
+  rules:
+    - inputs:
+        - not(null)
+        - '-'
+      outputs:
+        - disabled
+    - inputs:
+        - '-'
+        - not(-1)
+      outputs:
+        - disabled
+    - inputs:
+        - '-'
+        - '-'
+      outputs:
+        - required

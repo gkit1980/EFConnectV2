@@ -6,3 +6,6 @@ element:
       index: 0
   fake:
     value: JohnY
+  viewMode:
+    DtViewModeRule:
+      dt: policy.insured.vehicle-objects~drivers~person.first-name.viewmode

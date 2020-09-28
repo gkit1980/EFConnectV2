@@ -1,8 +1,0 @@
-element:
-  title: Insurance End
-  type: date
-  mirror:
-    InsuranceEndMirrorRule:
-      beginElement: policy.contract.begin
-      termElement: policy.contract.term.years
-  viewMode: disabled

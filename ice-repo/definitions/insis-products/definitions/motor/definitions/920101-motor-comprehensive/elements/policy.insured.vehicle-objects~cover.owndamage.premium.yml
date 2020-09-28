@@ -1,8 +1,0 @@
-element:
-  type: currency
-  viewMode:
-    ConditionalViewModeRule:
-      conditionElement: policy.insured.vehicle-objects~cover.owndamage.active
-      conditionValue: true
-      conditionViewMode: output
-      elseViewMode: hidden

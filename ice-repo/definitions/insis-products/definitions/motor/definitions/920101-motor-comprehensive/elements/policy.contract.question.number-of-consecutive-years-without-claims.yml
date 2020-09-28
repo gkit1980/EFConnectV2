@@ -1,6 +1,0 @@
-element:
-  type: text
-  component: IceTextInput
-  viewMode: required
-  questId: '1000.1'
-  values: insis.policy.contract.question.number-of-consecutive-years-without-claims

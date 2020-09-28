@@ -1,7 +1,0 @@
-element:
-  type: currency
-  component: IceNumber
-  viewMode: output
-  label:
-    NoLabelRule: {}
-  defaultValue: 0
