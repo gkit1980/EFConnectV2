@@ -8,6 +8,6 @@ element:
     value: 5000
   validation:
     - IceExpressionValidationRule:
-        expression: 'element("policy.insured.vehicle-objects~insured-amount", "0") > 1'
+        expression: 'element("policy.insured.vehicle-objects~insured-amount") > 1'
         messageKey: >-
           elements.policy.insured.vehicle-objects.items.insured-amount.invalid.label
