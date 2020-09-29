@@ -1,0 +1,9 @@
+action:
+  execution:
+    - IntegrationExecutionRule:
+        integration: load-holder-data
+    - IntegrationExecutionRule:
+        integration: load-policy
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ICE_CONTEXT_ACTIVATED

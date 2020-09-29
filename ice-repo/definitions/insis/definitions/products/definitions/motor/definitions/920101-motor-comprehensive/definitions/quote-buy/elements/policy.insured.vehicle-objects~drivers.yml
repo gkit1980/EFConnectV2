@@ -1,5 +1,11 @@
 element:
-  component: InsisArray
+  component:
+    StaticComponentRule:
+      component:
+        InsisArray:
+          showIndex: true
+          confirmOnRemove: false
+          hideRemoveButtonOnOneItem: true
   viewMode: default
   label: Driver
   array:

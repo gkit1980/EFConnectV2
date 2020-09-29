@@ -21,7 +21,7 @@ integration:
             - element: policy.insured.vehicle-objects~entity-id
               payload: Policy.Insureds.Insured[n].InsuredEntity.ObjectID
             - element: policy.insured.vehicle-objects~entity-type
-              payload: Insureds.Insured[n].InsuredEntity.ObjectType
+              payload: Policy.Insureds.Insured[n].InsuredEntity.ObjectType
             - element: policy.insured.vehicle-objects~car.bonus-malus
               payload: Policy.Insureds.Insured[n].InsuredEntity.OCar.BonusMalus
             - element: policy.insured.vehicle-objects~car.ccm-ton
@@ -52,9 +52,9 @@ integration:
               payload: Policy.Insureds.Insured[n].InsuredEntity.OCar.FuelType
             - element: policy.insured.vehicle-objects~car.model
               payload: Policy.Insureds.Insured[n].InsuredEntity.OCar.Model
-            - element: policy.insured.vehicle-objects~car.type
+            - element: policy.insured.vehicle-objects~car.vehicle-type
               payload: Policy.Insureds.Insured[n].InsuredEntity.OCar.CarType
-            - element: policy.insured.vehicle-objects~car.subtype
+            - element: policy.insured.vehicle-objects~car.vehicle-subtype
               payload: Policy.Insureds.Insured[n].InsuredEntity.OCar.CarSubtype
             - element: policy.insured.vehicle-objects~car.usage
               payload: Policy.Insureds.Insured[n].InsuredEntity.OCar.CarUsage

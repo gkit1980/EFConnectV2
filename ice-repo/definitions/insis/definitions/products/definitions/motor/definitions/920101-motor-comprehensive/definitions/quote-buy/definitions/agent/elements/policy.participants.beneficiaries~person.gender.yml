@@ -1,0 +1,9 @@
+element:
+  title: gender of beneficiary
+  viewMode:
+    DtViewModeRule:
+      dt: policy.participants.beneficiaries.person.viewmode
+  component:
+    StaticComponentRule:
+      component:
+        IceDropdown: {}

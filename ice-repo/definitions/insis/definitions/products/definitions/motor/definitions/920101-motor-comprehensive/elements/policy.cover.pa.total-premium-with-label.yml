@@ -1,0 +1,20 @@
+element:
+  type: currency
+  mirror:
+    InsisArrayItemTotalSumMirrorRule:
+      originElement: policy.insured.vehicle-objects~cover.pa.premium-with-label
+      conditionElement: policy.insured.vehicle-objects~cover.pa.active
+      conditionValue: true
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.cover.pa.total-premium-with-label
+      conditionValue: '0'
+      conditionViewMode: hidden
+      elseViewMode: output
+  label:
+    ResourceLabelRule:
+      key: >-
+        elements.policy.insured.vehicle-objects.items.cover.pa.premium-with-label.label
+  defaultValue:
+    StaticValueRule:
+      value: 0

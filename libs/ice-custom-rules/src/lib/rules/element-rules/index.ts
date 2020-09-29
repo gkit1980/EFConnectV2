@@ -20,7 +20,7 @@ export * from './mirror/insis-resolve-element-value-as-resource-path-mirror-rule
 export * from './validation/insis-unique-value-validation-rule/insis-unique-value-validation-rule';
 export * from './values/insis-array-item-based-values-rule/insis-array-item-based-values-rule';
 export * from './values/insis-array-item-to-list-values-rule/insis-array-item-to-list-values-rule';
-export * from './values/insis-dt-list-values-rule.spec/insis-dt-list-values-rule';
+export * from './values/insis-dt-list-values-rule/insis-dt-list-values-rule';
 export * from './values/insis-dynamic-values-list-rule/insis-dynamic-values-list-rule';
 export * from './view-mode/insis-all-array-index-dt-view-mode-rule/insis-all-array-index-dt-view-mode-rule';
 export * from './view-mode/insis-conditonal-index-view-mode-rule/insis-conditonal-index-view-mode-rule';

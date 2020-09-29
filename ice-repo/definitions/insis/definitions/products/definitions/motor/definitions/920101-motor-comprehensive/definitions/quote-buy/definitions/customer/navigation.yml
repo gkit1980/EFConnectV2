@@ -14,6 +14,8 @@ pages:
         firstChild: true
         pages:
           - page: 2.application.vehicle-details
+          - page: 2.application.beneficiaries
+          - page: 2.application.payment
       - page: 3.review
         firstChild: true
         pages:

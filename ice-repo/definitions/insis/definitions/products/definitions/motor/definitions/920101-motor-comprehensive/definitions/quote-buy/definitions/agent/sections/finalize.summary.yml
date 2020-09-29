@@ -1,0 +1,9 @@
+section:
+  component:
+    InsisPolicySummarySection:
+      type: motor
+      columns: four
+      css: summary-finalize
+  label:
+    ResourceSectionLabelRule:
+      labelKey: section.policy-details.label

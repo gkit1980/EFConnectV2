@@ -43,11 +43,12 @@ integration:
         - fromIdx:
             array: datamodel.policy.insured.vehicle-objects
           toIdx:
+            # array: payload.Policies.Policy[0].Insureds.Insured
             array: payload.Insureds.Insured
             useSourceIndex: true
           mappings:
             - element: policy.insured.vehicle-objects~entity-type
-              payload: Insureds.Insured[n].InsuredEntity.ObjectType
+              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.ObjectType
         - fromIdx:
             array: datamodel.policy.insured.vehicle-objects
           toIdx:

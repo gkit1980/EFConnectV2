@@ -11,9 +11,13 @@ dt:
     - label: pid
       id: pid
       type: string
+    - label: full-name
+      id: full-name
+      type: string
   rules:
     - inputs:
         - '-'
       outputs:
         - person.policy.add-new
         - person.pid
+        - person.full-name

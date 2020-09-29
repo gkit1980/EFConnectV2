@@ -1,0 +1,14 @@
+element:
+  type: currency
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.insured.vehicle-objects~cover.mtpl.active
+      conditionViewMode: hidden
+      elseViewMode: output
+      conditionValue: false
+  mirror:
+    CopyValueMirrorRule:
+      originElement: policy.insured.vehicle-objects~cover.mtpl.premium
+  defaultValue:
+    StaticValueRule:
+      value: 0

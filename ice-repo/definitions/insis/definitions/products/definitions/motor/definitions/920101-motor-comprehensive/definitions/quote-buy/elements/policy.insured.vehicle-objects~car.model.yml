@@ -10,10 +10,10 @@ element:
         - policy.insured.path-models
   viewMode:
     ConditionalViewModeRule:
-      conditionElement: policy.insured.vehicle-objects~existing-vehicle
-      conditionValue: 'true'
-      conditionViewMode: disabled
-      elseViewMode: default
+      conditionElement: policy.insured.vehicle-objects~car.search.type
+      conditionValue: ''
+      conditionViewMode: default
+      elseViewMode: disabled
   component:
     StaticComponentRule:
       component:

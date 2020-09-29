@@ -33,6 +33,8 @@ integration:
             array: payload.Insureds.Insured
             useSourceIndex: true
           mappings:
+            - element: policy.insured.vehicle-objects~entity-type
+              payload: Insureds.Insured[n].InsuredEntity.ObjectType
             - value: null
               payload: Insureds.Insured[n].InsuredObjectID
             - value: '-1'

@@ -1,0 +1,84 @@
+integration:
+  exchange:
+    SoapCallExchangeRule:
+      endpoint: insis_oom_endpoint
+      securityMode: UsernamePassword
+      username: insis-username
+      password: insis-password
+      ignoreNamespaces: insis-ignoreNamespaces
+      jsonSchema: InsisOMM
+  transformation:
+    DefaultTransformationRule:
+      additional: insis
+      dateFormat: YYYY-MM-DD
+      dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
+      out:
+        - mappings:
+            - param: soapAction
+              value: findObject
+            - param: requestType
+              value: FindObjectRqType
+            - param: responseType
+              value: FindObjectsRsType
+            # - param: page_size
+            #   datastore: insis.products.motor.920101-motor-comprehensive.quote-buy.agent.pagination.vehicles.page-size
+            # - param: offset
+            #   datastore: insis.products.motor.920101-motor-comprehensive.quote-buy.agent.pagination.vehicles.offset
+        - mappings:
+            - value: 3
+              payload: CustomOID.ObjectType
+        # - mappings:
+        #     - value: EQ
+        #       payload: CustomOID.FilterCriteria.FilterCriterion.attributes.operation
+        #     - element: vehicle.search.client.pid
+        #       payload: CustomOID.FilterCriteria.FilterCriterion.attributes.value
+        #     - value: 'PID'
+        #       payload: CustomOID.FilterCriteria.FilterCriterion.attributes.field
+        #     - value: AND
+        #       payload: CustomOID.FilterCriteria.FilterCriterion.attributes.conjunction
+        - mappings:
+            - value: EQ
+              payload: CustomOID.FilterCriteria.FilterCriterion[0].operation
+            - element: vehicle.search.vin
+              payload: CustomOID.FilterCriteria.FilterCriterion[0].value
+            - value: 'CHASSIS'
+              payload: CustomOID.FilterCriteria.FilterCriterion[0].field
+            - value: OR
+              payload: CustomOID.FilterCriteria.FilterCriterion[0].conjunction
+        - mappings:
+            - value: EQ
+              payload: CustomOID.FilterCriteria.FilterCriterion[1].operation
+            - element: vehicle.search.reg-no
+              payload: CustomOID.FilterCriteria.FilterCriterion[1].value
+            - value: 'REG_NO'
+              payload: CustomOID.FilterCriteria.FilterCriterion[1].field
+            - value: OR
+              payload: CustomOID.FilterCriteria.FilterCriterion[1].conjunction
+      in:
+        - toIdx:
+            array: datamodel.vehicles
+          mappings:
+            - payload: 'Objects.Object.ObjectID'
+              element: vehicles~object-id
+            - payload: 'Objects.Object.OCar.Chassis'
+              element: vehicles~vin
+            - payload: 'Objects.Object.OCar.RegNo'
+              element: vehicles~reg-no
+            - payload: 'Objects.Object.OCar.Make'
+              element: vehicles~make
+            - payload: 'Objects.Object.OCar.Model'
+              element: vehicles~model
+            - payload: 'Objects.Object.OCar.ProdYear'
+              element: vehicles~year
+            - payload: 'Objects.Object.OCar.EnginePower'
+              element: vehicles~engine-power
+            - payload: 'Objects.Object.OCar.FuelType'
+              element: vehicles~fuel
+            - payload: 'Objects.Object.OCar.CCMTon'
+              element: vehicles~ccm-ton
+            - payload: 'Objects.Object.OCar.CarType'
+              element: vehicles~vehicle-type
+        # - mappings:
+        #     - payload: 'TotalRowCount'
+        #       datastore: 'pagination.vehicles.results-length'
+      ignoreNull: true

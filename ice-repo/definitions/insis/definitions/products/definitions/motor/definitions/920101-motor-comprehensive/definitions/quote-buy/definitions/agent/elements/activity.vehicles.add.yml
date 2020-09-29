@@ -1,0 +1,9 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          themeColor: accent
+          variant: flat
+  defaultValue: add-existing-vehicle

@@ -1,0 +1,61 @@
+section:
+  component:
+    InsisDatagridSection:
+      arrayElement: vehicles
+      css: grid-with-paginator
+      grid:
+        rows:
+          - gap: 10px
+            cols:
+              - size: 50px
+                caption: ''
+                elements:
+                  - name: vehicles~selected
+                css: u-ml-5 hide-label-of-radio-box
+              # - size: 120px
+              #   caption: elements.vehicles.items.client.label
+              #   elements:
+              #     - name: vehicles~client
+              #   css: ''
+              # - size: 120px
+              #   caption: elements.vehicles.items.pid.label
+              #   elements:
+              #     - name: vehicles~pid
+              # css: ''
+              - size: 120px
+                caption: elements.vehicles.items.type.label
+                elements:
+                  - name: vehicles~vehicle-type
+                css: ''
+              - size: 120px
+                caption: elements.vehicles.items.make.label
+                elements:
+                  - name: vehicles~make
+                css: ''
+              - size: 120px
+                caption: elements.vehicles.items.model.label
+                elements:
+                  - name: vehicles~model
+                css: ''
+              - size: 60px
+                caption: elements.vehicles.items.year.label
+                elements:
+                  - name: vehicles~year
+                css: ''
+              - size: 180px
+                caption: elements.vehicles.items.reg-no.label
+                elements:
+                  - name: vehicles~reg-no
+                css: ''
+              - size: 180px
+                caption: elements.vehicles.items.vin.label
+                elements:
+                  - name: vehicles~vin
+                css: ''
+  viewMode:
+    InsisChangeViewModeBasedOnArrayLengthRule:
+      array: vehicles
+      condition: equals
+      conditionValue: '0'
+      viewMode: hidden
+      elseViewMode: default

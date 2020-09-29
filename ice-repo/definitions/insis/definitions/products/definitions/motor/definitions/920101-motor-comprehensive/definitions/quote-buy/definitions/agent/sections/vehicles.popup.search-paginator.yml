@@ -1,0 +1,19 @@
+section:
+  component:
+    InsisPaginatorSection:
+      paginationAction: vehicles-popup.search-from-pagination
+      resultsLengthDatastorePath: pagination.vehicles.results-length
+      pageSizeDatastorePath: pagination.vehicles.page-size
+      offsetDatastorePath: pagination.vehicles.offset
+      pageIndexDatastorePath: pagination.vehicles.page-index
+      searchCriteriaChangedDatastorePath: pagination.vehicles.search-criteria-changed
+      paginationObjectsKey: pagination.vehicles
+      scopeToDefinition: true
+      css: insis-paginator-with-datagrid grid-paginator
+  viewMode:
+    InsisChangeViewModeBasedOnArrayLengthRule:
+      array: vehicles
+      condition: greater
+      conditionValue: '0'
+      viewMode: default
+      elseViewMode: hidden

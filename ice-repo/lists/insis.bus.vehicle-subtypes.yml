@@ -1,0 +1,16 @@
+list:
+  items:
+    - value: 333
+      label_en: Single-decker
+      label_de: Single-decker
+    - value: 334
+      label_en: Double-decker
+      label_de: Double-decker
+  type: integer
+  additionals:
+    label_en:
+      label: label_en
+      type: text
+    label_de:
+      label: label_de
+      type: text

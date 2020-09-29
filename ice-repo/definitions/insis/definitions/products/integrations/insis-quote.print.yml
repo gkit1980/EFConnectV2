@@ -1,0 +1,20 @@
+integration:
+  type: active
+  exchange:
+    InsisPrintExchangeRule:
+      endpointBaseurl: 'insis_print_endpoint'
+      verb: post
+  transformation:
+    DefaultTransformationRule:
+      additional: insis
+      dateFormat: YYYY-MM-DD
+      out:
+        - mappings:
+            - element: policy.contract.policy-id
+              payload: reportParams.P_POLICY_ID
+            - value: pdf
+              payload: outputFormat
+      in:
+        - mappings:
+            - datastore: printData
+              payload: data

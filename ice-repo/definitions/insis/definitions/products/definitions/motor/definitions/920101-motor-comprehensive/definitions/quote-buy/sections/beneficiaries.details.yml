@@ -1,0 +1,60 @@
+section:
+  component:
+    IceArrayFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                size.xs: auto
+                css: u-mb-2 application-person-details-questions u-text-normal beneficiaries-details-radio-buttons
+                size.sm: auto
+                elements:
+                  - name: policy.participants.beneficiaries~is-company
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.participants.beneficiaries~person.first-name
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.participants.beneficiaries~person.last-name
+                css: u-mb-2
+            gap: 12px
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.participants.beneficiaries~person.gender
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.participants.beneficiaries~person.birthdate
+                css: u-mb-2
+            gap: 12px
+          - cols:
+              - size: 372px
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.participants.beneficiaries~person.country
+                css: u-mb-2
+          - cols:
+              - size: 372px
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.participants.beneficiaries~company.name
+                css: u-mb-2
+      arrayElement: policy.participants.beneficiaries
+      css: u-mt-6 u-ml-8 u-text-medium beneficiaries-list
+  viewMode:
+    ConditionalSectionViewModeRule:
+      conditionElement: policy.participants.is-standard-beneficiary
+      conditionValue: true
+      conditionViewMode: hidden
+      elseViewMode: default

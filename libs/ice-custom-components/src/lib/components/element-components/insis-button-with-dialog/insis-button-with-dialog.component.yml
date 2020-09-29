@@ -25,10 +25,10 @@ _iconPositionOptions: &iconPositionOptions
   right: Right
 
 params:
-  section:
-    label: Section name
+  sections:
+    label: Section names
     required: true
-    type: text
+    type: texts
 
   width:
     label: Dialog Width

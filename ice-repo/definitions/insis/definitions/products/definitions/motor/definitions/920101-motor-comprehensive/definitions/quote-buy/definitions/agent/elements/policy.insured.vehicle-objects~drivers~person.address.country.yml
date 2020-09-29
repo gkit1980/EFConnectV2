@@ -1,0 +1,8 @@
+element:
+  type: text
+  values:
+    ListValuesRule:
+      list: common.countries
+  component:
+    StaticComponentRule:
+      component: IceDropdown

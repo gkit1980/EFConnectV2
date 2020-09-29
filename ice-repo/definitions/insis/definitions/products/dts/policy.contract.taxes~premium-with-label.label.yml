@@ -29,3 +29,8 @@ dt:
       outputs:
         - :Reinstatement fee
         - :Reinstatement fee
+    - inputs:
+        - INSF
+      outputs:
+        - :INSF
+        - :INSF

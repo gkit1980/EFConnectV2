@@ -287,6 +287,14 @@
     }
   }
 
+  .grid-with-paginator {
+    margin-bottom: 0px;
+    border-radius: 20px 20px 0px 0px;
+  }
+  .grid-paginator {
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+  }
   .mat-checkbox-frame {
     border-width: 2px !important;
   }

@@ -1,0 +1,19 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        InsisButtonWithDialog:
+          width: 1140px
+          sections:
+            - vehicles.popup.search-fields
+            - vehicles.popup.search-paginator
+            - vehicles.popup.add-or-cancel
+          actionName: vehicles-popup.close
+  viewMode:
+    InsisChangeViewModeBasedOnArrayLengthRule:
+      array: policy.insured.vehicle-objects
+      condition: lesser
+      conditionValue: '4'
+      viewMode: default
+      elseViewMode: hidden

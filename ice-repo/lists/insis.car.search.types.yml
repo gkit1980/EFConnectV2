@@ -1,8 +1,8 @@
 list:
   items:
     - value: REG_NO
-      label_en: Detect car based on license Plate
-      label_de: Detect car based on license Plate
+      label_en: Detect car based on license plate
+      label_de: Detect car based on license plate
       insis: REG_NO
     - value: CHASSIS
       label_en: Detect car based on VIN (Vehicle Identification Number)

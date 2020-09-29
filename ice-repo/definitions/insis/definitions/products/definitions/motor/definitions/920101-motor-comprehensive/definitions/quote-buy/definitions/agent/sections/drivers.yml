@@ -1,0 +1,102 @@
+section:
+  viewMode: default
+  component:
+    IceArrayFlexSection:
+      arrayElement: policy.insured.vehicle-objects~drivers
+      grid:
+        rows:
+          - gap: 24px
+            gap.xs: 0
+            cols:
+              - size: 190px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.insured.vehicle-objects~drivers~person.first-name
+              - size: 190px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.insured.vehicle-objects~drivers~person.last-name
+          - gap: 24px
+            gap.xs: 0px
+            cols:
+              - size: 190px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.insured.vehicle-objects~drivers~person.gender
+              - size: 190px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: >-
+                      policy.insured.vehicle-objects~drivers~person.date-of-birth
+          - gap: 24px
+            gap.xs: 0px
+            cols:
+              - size: 190px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.insured.vehicle-objects~drivers~person.nationality
+              - size: 190px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: >-
+                      policy.insured.vehicle-objects~drivers~person.language
+          - gap: 24px
+            gap.xs: 0px
+            cols:
+              - size: 190px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: >-
+                      policy.insured.vehicle-objects~drivers~person.driver-license-nb
+              - size: auto
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: >-
+                      policy.insured.vehicle-objects~drivers~person.driver-license-file
+          - gap: 24px
+            gap.xs: 0px
+            cols:
+              - size: 190px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: >-
+                      policy.insured.vehicle-objects~drivers~person.address.type
+              - size: 190px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: >-
+                      policy.insured.vehicle-objects~drivers~person.address.city
+          - gap: 24px
+            gap.xs: 0px
+            cols:
+              - size: 190px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: >-
+                      policy.insured.vehicle-objects~drivers~person.address.country
+              - size: 190px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: >-
+                      policy.insured.vehicle-objects~drivers~person.address.post-code
+          # - gap: 24px
+          #   gap.xs: 0px
+          #   cols:
+          #     - size: 190px
+          #       size.xs: 100%
+          #       css: u-mb-4
+          #       elements:
+          #         - name: >-
+          #             policy.insured.vehicle-objects~drivers~remove

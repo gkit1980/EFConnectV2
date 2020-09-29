@@ -1,0 +1,23 @@
+element:
+  type: array
+  array:
+    StaticArrayRule:
+      default: '0'
+      min: '0'
+      max: '4'
+  viewMode:
+    StaticViewModeRule:
+      viewMode: output
+  pages:
+    1.quote.vehicles:
+      viewMode:
+        StaticViewModeRule:
+          viewMode: default
+      component:
+        StaticComponentRule:
+          component:
+            InsisArrayCardsLayout:
+              addButtonLabelResourceKey: elements.policy.insured.add-another-vehicle.label
+              removeButtonLabelResourceKey: elements.policy.insured.remove-vehicle.label
+              cardLayout: onMultipleItems
+              confirmOnRemove: false

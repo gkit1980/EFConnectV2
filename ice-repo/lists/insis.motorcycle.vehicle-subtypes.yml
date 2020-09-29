@@ -1,0 +1,19 @@
+list:
+  items:
+    - value: 330
+      label_en: Motorcycle
+      label_de: Motorcycle
+    - value: 331
+      label_en: Three-wheel motorcycle
+      label_de: Three-wheel motorcycle
+    - value: 332
+      label_en: ATV
+      label_de: ATV
+  type: integer
+  additionals:
+    label_en:
+      label: label_en
+      type: text
+    label_de:
+      label: label_de
+      type: text

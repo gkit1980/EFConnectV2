@@ -54,9 +54,9 @@ integration:
               payload: Insureds.Insured[n].InsuredEntity.OCar.FuelType
             - element: policy.insured.vehicle-objects~car.model
               payload: Insureds.Insured[n].InsuredEntity.OCar.Model
-            - element: policy.insured.vehicle-objects~car.type
+            - element: policy.insured.vehicle-objects~car.vehicle-type
               payload: Insureds.Insured[n].InsuredEntity.OCar.CarType
-            - element: policy.insured.vehicle-objects~car.subtype
+            - element: policy.insured.vehicle-objects~car.vehicle-subtype
               payload: Insureds.Insured[n].InsuredEntity.OCar.CarSubtype
             - element: policy.insured.vehicle-objects~car.usage
               payload: Insureds.Insured[n].InsuredEntity.OCar.CarUsage

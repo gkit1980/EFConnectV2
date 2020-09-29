@@ -3,6 +3,19 @@ section:
     IceArrayItemFlexSection:
       grid:
         rows:
+          - css: u-mt-4
+            gap: 24px
+            cols:
+              - size: 190px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.insured.vehicle-objects~car.vehicle-type
+              - size: 190px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.insured.vehicle-objects~car.vehicle-subtype
           - gap: 24px
             gap.xs: 0px
             css: u-mt-4
@@ -149,12 +162,19 @@ section:
                 elements:
                   - name: >-
                       policy.insured.vehicle-objects~car.additional-equipment-other
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.vehicle-objects~remove
+            css: u-mt-6
       behaviourForEmptyRows: hide
+      arrayElement: policy.insured.vehicle-objects
   viewMode:
-    InsisExpressionViewModeRule:
-      expression: >-
-        element('policy.insured.vehicle-objects~car.search.type') === '' ||
-        element('policy.insured.vehicle-objects~car.brand') !== null
-      viewMode: default
-      elseViewMode: hidden
-      useIndex: true
+    InsisChangeViewModeBasedOnArrayLengthRule:
+      array: policy.insured.vehicle-objects
+      condition: equals
+      conditionValue: 0
+      viewMode: hidden
+      elseViewMode: default

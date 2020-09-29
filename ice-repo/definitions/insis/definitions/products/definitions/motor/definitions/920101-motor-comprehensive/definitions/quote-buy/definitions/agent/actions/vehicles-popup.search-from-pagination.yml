@@ -1,0 +1,7 @@
+action:
+  execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - vehicles
+    - IntegrationExecutionRule:
+        integration: 920101.motor.insis-policy.load-vehicles

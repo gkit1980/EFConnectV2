@@ -1,0 +1,11 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          themeColor: accent
+          variant: default
+  change:
+    - AddArrayItemExecutionRule:
+        element: policy.insured.vehicle-objects

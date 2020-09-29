@@ -40,6 +40,10 @@ params:
     type: elements
     info: >
       Elements that contain premium amount.
+  activeElementNameBase:
+    label: Name base to determine the name of 'active' element
+    required: false
+    type: text
   taxesAndFeesCategoryTitleResourceKey:
     label: Title thats going to be diplay above all taxes and fees
     required: true

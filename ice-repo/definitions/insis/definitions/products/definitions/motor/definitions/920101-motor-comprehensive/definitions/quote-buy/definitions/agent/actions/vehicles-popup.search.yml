@@ -1,0 +1,21 @@
+action:
+  execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - vehicles
+    - InsisResetDatastoreValueExecutionRule:
+        paths:
+          - pagination.vehicles.page-index
+          - pagination.vehicles.offset
+          - pagination.vehicles.results-length
+        defaultValue: 0
+        scopeToDefinition: false
+        skipIfValueIsSet: false
+    - InsisResetDatastoreValueExecutionRule:
+        paths:
+          - pagination.vehicles.page-size
+        defaultValue: 10
+        scopeToDefinition: false
+        skipIfValueIsSet: false
+    - IntegrationExecutionRule:
+        integration: 920101.motor.insis-policy.load-vehicles

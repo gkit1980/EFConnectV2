@@ -30,7 +30,14 @@ export class InsisPremiumSummarySection extends SectionComponentImplementation
   public registerTotalElementsChange() {
     this.unregisterTotalElementsChange();
     this.totalElementSubscriptions = [];
-    const activePremiumElements = this.premiumElements.map(this.getActivePremiumElement);
+    const activePremiumElements: string[] = new Array<string>();
+    this.premiumElements.forEach((premiumElement) => {
+      activePremiumElements.push(
+        this.activeElementNameBase
+          ? this.getActivePremiumElement2(premiumElement)
+          : this.getActivePremiumElement(premiumElement)
+      );
+    });
     const elementNames = [
       ...this.premiumElements,
       ...activePremiumElements,
@@ -48,11 +55,28 @@ export class InsisPremiumSummarySection extends SectionComponentImplementation
     });
   }
 
-  public getActivePremiumElement(name) {
+  // If premium element is array item, eg:
+  // policy.insured.person-objects~cover.critic-ill.premium-with-label
+  // we assume that element that controls if this premium is active is:
+  // policy.insured.person-objects~cover.critic-ill.active
+  public getActivePremiumElement(name): string {
     const parts = name.split('.');
     parts.pop();
     parts.push('active');
     return parts.join('.');
+  }
+
+  // If premium element is not an array item, eg:
+  // policy.cover.mtpl.total-premium-with-label
+  // and 'activeElementNameBase' param is set in the recipe, eg:
+  // policy.insured.vehicle-objects~cover
+  // we assume that element that controls if this premium is active is:
+  // policy.insured.vehicle-objects~cover.mtp.active
+  public getActivePremiumElement2(name): string {
+    const parts = name.split('.');
+    parts.pop();
+    const coverName = parts.pop();
+    return `${this.activeElementNameBase}.${coverName}.active`;
   }
 
   public unregisterTotalElementsChange() {
@@ -74,6 +98,10 @@ export class InsisPremiumSummarySection extends SectionComponentImplementation
             amount += elementValue;
           }
         });
+      } else {
+        const element = this.iceModel.elements[elementName];
+        const elementValue = element.getValue().values[0].value;
+        amount += elementValue;
       }
     });
 
@@ -82,6 +110,14 @@ export class InsisPremiumSummarySection extends SectionComponentImplementation
 
   get css() {
     return get(this.recipe, 'component.InsisPremiumSummarySection.css');
+  }
+
+  get activeElementNameBase() {
+    return get(
+      this.recipe,
+      ['component', InsisPremiumSummarySection.componentName, 'activeElementNameBase'],
+      null
+    );
   }
 
   get premiumElements(): string[] {

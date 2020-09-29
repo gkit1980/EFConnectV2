@@ -37,3 +37,26 @@ dt:
         - insis.products.policy-details.agent/summary
         - policies~policy-id
         - policies~client-pid
+    - inputs:
+        - 920101
+        - Quotation
+      outputs:
+        - >-
+          insis.products.motor.920101-motor-comprehensive.quote-buy.agent/1.quote.vehicles
+        - policies~policy-id
+        - policies~client-pid
+    - inputs:
+        - 920101
+        - Application
+      outputs:
+        - >-
+          insis.products.motor.920101-motor-comprehensive.quote-buy.agent/2.application.vehicle-details
+        - policies~policy-id
+        - policies~client-pid
+    - inputs:
+        - 920101
+        - Policy
+      outputs:
+        - insis.products.policy-details.agent/summary
+        - policies~policy-id
+        - policies~client-pid

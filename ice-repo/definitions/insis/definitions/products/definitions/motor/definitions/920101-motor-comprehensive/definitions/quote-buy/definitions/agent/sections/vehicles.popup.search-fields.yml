@@ -1,0 +1,20 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                sections:
+                  - name: vehicles.search
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                sections:
+                  - name: vehicles.datagrid
+  label:
+    ResourceSectionLabelRule:
+      labelKey: section.vehicles.popup.label

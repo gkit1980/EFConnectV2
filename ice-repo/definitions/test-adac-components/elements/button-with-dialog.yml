@@ -4,7 +4,8 @@ element:
     StaticComponentRule:
       component:
         InsisButtonWithDialog:
-          section: dialog-section
+          sections:
+            - dialog-section
           width: '500'
           themeColor: primary
           variant: default

@@ -1,0 +1,32 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policy.insured.vehicle-objects~car.vehicle-type
+  outputs:
+    - id: output
+      type: ''
+  rules:
+    - inputs:
+        - 31
+      outputs:
+        - insis.car.vehicle-subtypes
+    - inputs:
+        - 32
+      outputs:
+        - insis.truck.vehicle-subtypes
+    - inputs:
+        - 33
+      outputs:
+        - insis.motorcycle.vehicle-subtypes
+    - inputs:
+        - 34
+      outputs:
+        - insis.bus.vehicle-subtypes
+    - inputs:
+        - 35
+      outputs:
+        - insis.spv.vehicle-subtypes
+    - inputs:
+        - '-'
+      outputs:
+        - insis.empty

@@ -49,8 +49,12 @@ export class InsisButtonWithDialogComponent extends IceButtonComponent {
   //
   //
   onClick() {
-    const section = get(this.context.iceModel.recipe, ['sections', this.getRecipeParam('section')]);
-    const dialogData = { section: section, page: this.context.iceModel.navigation.currentPage };
+    const sections: any[] = new Array<any>();
+    this.getRecipeParam('sections').forEach((section) => {
+      sections.push(get(this.context.iceModel.recipe, ['sections', section]));
+    });
+
+    const dialogData = { sections: sections, page: this.context.iceModel.navigation.currentPage };
 
     let lifecycleSubscription: Subscription;
 

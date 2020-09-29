@@ -1,0 +1,66 @@
+integration:
+  exchange:
+    InsisNoopExchangeRule: {}
+  transformation:
+    DefaultTransformationRule:
+      out:
+        - fromIdx:
+            array: datamodel.vehicles
+            condition: selected == true
+          mappings:
+            - element: vehicles~ccm-ton
+              payload: ccm-ton
+            - element: vehicles~client
+              payload: full-name
+            - element: vehicles~engine-power
+              payload: engine-power
+            - element: vehicles~fuel
+              payload: fuel
+            - element: vehicles~pid
+              payload: pid
+            - element: vehicles~make
+              payload: make
+            - element: vehicles~model
+              payload: model
+            - element: vehicles~year
+              payload: year
+            - element: vehicles~reg-no
+              payload: reg-no
+            - element: vehicles~vin
+              payload: vin
+            - element: vehicles~object-id
+              payload: object-id
+            - element: vehicles~vehicle-type
+              payload: vehicle-type
+      in:
+        - toIdx:
+            index: '[ datamodel.policy.insured["vehicle-objects"].length - 1]'
+          mappings:
+            - payload: ccm-ton
+              element: policy.insured.vehicle-objects~car.ccm-ton
+            - payload: full-name
+              element: policy.insured.vehicle-objects~car.full-name
+            - payload: engine-power
+              element: policy.insured.vehicle-objects~car.engine-power
+            - payload: fuel
+              element: policy.insured.vehicle-objects~car.fuel
+            - payload: pid
+              element: policy.insured.vehicle-objects~car.pid
+            - payload: make
+              element: policy.insured.vehicle-objects~car.brand
+            - payload: model
+              element: policy.insured.vehicle-objects~car.model
+            - payload: year
+              element: policy.insured.vehicle-objects~car.construction-date
+            - payload: reg-no
+              element: policy.insured.vehicle-objects~car.regno
+            - payload: vin
+              element: policy.insured.vehicle-objects~car.chassis
+            - value: false
+              element: policy.insured.vehicle-objects~car.editable
+            - value: 3
+              element: policy.insured.vehicle-objects~entity-type
+            - payload: object-id
+              element: policy.insured.vehicle-objects~entity-id
+            - payload: vehicle-type
+              element: policy.insured.vehicle-objects~car.vehicle-type

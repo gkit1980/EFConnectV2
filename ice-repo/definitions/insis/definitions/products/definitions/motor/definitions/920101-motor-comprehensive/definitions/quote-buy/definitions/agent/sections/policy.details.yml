@@ -1,0 +1,33 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: calc(25% - 20px)
+                size.xs: 100%
+                css: u-mb-4-sm
+                elements:
+                  - name: policy.contract.begin
+              - size: calc(25% - 20px)
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.contract.term.duration
+              - size: calc(25% - 20px)
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.contract.payment.frequency
+              - size: calc(25% - 20px)
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.contract.previous-insurer
+            align: space-between
+            layout.xs: column
+            gap: 20px
+      css: card main-side u-pb-1 u-mb-4
+  label:
+    ResourceSectionLabelRule:
+      labelKey: section.policy-details.label

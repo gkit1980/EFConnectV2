@@ -9,11 +9,11 @@ page:
     showElementValidation: true
   label:
     ResourcePageLabelRule:
-      navigationTitleKey: pages.3.review.payment.title
-      pageTitleKey: pages.3.review.payment.title
-      shortTitleKey: pages.3.review.payment.title
+      navigationTitleKey: pages.3.review.terms.title
+      pageTitleKey: pages.3.review.terms.title
+      shortTitleKey: pages.3.review.terms.title
   sections:
     - header
-    - payment.details
-    - go-to-next-page
-    - policy.summary
+    - finalize.premiums-taxes-fees-discounts-loadings
+    - finalize.summary
+    - finalize.buttons

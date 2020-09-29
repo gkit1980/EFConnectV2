@@ -1,0 +1,15 @@
+section:
+  component:
+    InsisPremiumSummarySection:
+      expanded: true
+      premiumElement: policy.insured.premium.total
+      paymentFrequencyElement: policy.contract.payment.frequency-for-premium-panel
+      premiumElements:
+        - policy.insured.vehicle-objects~cover.mtpl.premium-with-label
+        - policy.insured.vehicle-objects~cover.owndamage.premium-with-label
+        - policy.insured.vehicle-objects~cover.pa.premium-with-label
+        - policy.insured.vehicle-objects~cover.road_assis.premium-with-label
+      taxesAndFeesElements:
+        - policy.contract.taxes~premium-with-label
+
+      css: summary-finalize

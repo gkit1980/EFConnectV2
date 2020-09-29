@@ -1,0 +1,6 @@
+action:
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ACTION_FINISHED
+        payload:
+          action: add-existing-vehicle

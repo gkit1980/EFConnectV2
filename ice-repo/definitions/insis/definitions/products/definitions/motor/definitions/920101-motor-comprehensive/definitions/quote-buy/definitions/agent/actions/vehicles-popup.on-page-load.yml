@@ -1,0 +1,17 @@
+action:
+  execution:
+    - CopyDatastoreValueToElementExecutionRule:
+        datastorePath: >-
+          insis.products.motor.920101-motor-comprehensive.quote-buy.agent.query.pid
+        element: vehicle.search.client.pid
+    - CopyDatastoreValueToElementExecutionRule:
+        datastorePath: >-
+          insis.products.motor.920101-motor-comprehensive.quote-buy.agent.query.full-name
+        element: vehicle.search.client.full-name
+  # trigger:
+  #   - ElementChangeTriggerRule:
+  #       elements:
+  #         - activity.add-existing-vehicle
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ICE_CONTEXT_ACTIVATED

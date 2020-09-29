@@ -3,6 +3,40 @@ locales:
   - de
 entries:
   elements:
+    vehicles:
+      items:
+        client:
+          label:
+            - en: Client
+              de: null
+        make:
+          label:
+            - en: Make
+              de: null
+        model:
+          label:
+            - en: Model
+              de: null
+        type:
+          label:
+            - en: Type
+              de: null
+        year:
+          label:
+            - en: Year
+              de: null
+        reg-no:
+          label:
+            - en: License plate
+              de: null
+        vin:
+          label:
+            - en: VIN
+              de: null
+        pid:
+          label:
+            - en: National ID
+              de: null
     download:
       quote:
         label:
@@ -1013,6 +1047,10 @@ entries:
                       > [See more about risks and limits]()
                       ![](/assets/icons/link-in-tooltip.svg)
                     de: null
+                premium-with-label:
+                  label:
+                    - en: Motor Third Party Liability
+                      de: Motor Third Party Liability
               owndamage:
                 active:
                   label:
@@ -1047,6 +1085,10 @@ entries:
                       > [See more about risks and limits]()
                       ![](/assets/icons/link-in-tooltip.svg)
                     de: null
+                premium-with-label:
+                  label:
+                    - en: Vehicle Own Damage
+                      de: Vehicle Own Damage
               pa:
                 active:
                   label:
@@ -1067,6 +1109,10 @@ entries:
                       > [See more about risks and limits]()
                       ![](/assets/icons/link-in-tooltip.svg)
                     de: null
+                premium-with-label:
+                  label:
+                    - en: Personal Assistance
+                      de: Personal Assistance
               road_assis:
                 active:
                   label:
@@ -1087,6 +1133,10 @@ entries:
                       > [See more about risks and limits]()
                       ![](/assets/icons/link-in-tooltip.svg)
                     de: null
+                premium-with-label:
+                  label:
+                    - en: Road Assistance
+                      de: Road Assistance
             question:
               number-of-consecutive-years-without-claims:
                 label:
@@ -1199,6 +1249,10 @@ entries:
 
                     <more details if necessary>
                   de: null
+              vehicle-type:
+                label:
+                  - en: Vehicle type
+                    de: Vehicle type
               search:
                 input:
                   license-plate:
@@ -1218,15 +1272,19 @@ entries:
                     - en: |-
                         # Vehicle Identification Number
 
-                        The Vehicle Identification Number (VIN)  
-                        is a uniqe identifier of your vehicle. It can  
+                        The Vehicle Identification Number (VIN)
+                        is a uniqe identifier of your vehicle. It can
                         be found on your vehicle registration certificate.
                       de: |-
                         # Vehicle Identification Number
 
-                        The Vehicle Identification Number (VIN)  
-                        is a uniqe identifier of your vehicle. It can  
+                        The Vehicle Identification Number (VIN)
+                        is a uniqe identifier of your vehicle. It can
                         be found on your vehicle registration certificate.
+              vehicle-subtype:
+                label:
+                  - en: Vehicle subtype
+                    de: Vehicle subtype
             drivers:
               items:
                 person:
@@ -1250,6 +1308,39 @@ entries:
                     label:
                       - en: Driving license copy (optional)
                         de: null
+                  gender:
+                    label:
+                      - en: Gender
+                        de: Gender
+                  nationality:
+                    label:
+                      - en: Nationality
+                        de: Nationality
+                  language:
+                    label:
+                      - en: Language
+                        de: Language
+                  address:
+                    city:
+                      label:
+                        - en: City
+                          de: City
+                    country:
+                      label:
+                        - en: Country
+                          de: Country
+                    post-code:
+                      label:
+                        - en: Post code
+                          de: Post code
+                    type:
+                      label:
+                        - en: Address type
+                          de: Address type
+                  remove:
+                    label:
+                      - en: REMOVE
+                        de: REMOVE
             remove:
               label:
                 - en: REMOVE VEHICLE
@@ -1707,6 +1798,10 @@ entries:
           label:
             - en: Taxes and fees
               de: Taxes and fees
+        previous-insurer:
+          label:
+            - en: Previous insurer
+              de: Previous insurer
       participants:
         holder:
           person:
@@ -2342,6 +2437,27 @@ entries:
         label:
           - en: CANCEL
             de: null
+      add-existing-vehicle:
+        label:
+          - en: ADD EXISTING VEHICLE
+            de: ADD EXISTING VEHICLE
+      add-new-vehicle:
+        label:
+          - en: ADD NEW VEHICLE
+            de: ADD NEW VEHICLE
+      vehicles:
+        add:
+          label:
+            - en: ADD
+              de: ADD
+        cancel:
+          label:
+            - en: CANCEL
+              de: CANCEL
+        search:
+          label:
+            - en: SEARCH
+              de: SEARCH
     no-active-policies-title:
       label:
         - en: You have no active policies
@@ -2498,10 +2614,33 @@ entries:
         label:
           - en: Submit claim
             de: Submit claim
+    navigate-back:
+      label:
+        - en: BACK TO ALL POLICIES
+          de: BACK TO ALL POLICIES
+    vehicle:
+      search:
+        client:
+          full-name:
+            label:
+              - en: Client
+                de: Client
+          pid:
+            label:
+              - en: National ID number
+                de: National ID number
+        reg-no:
+          label:
+            - en: License plate
+              de: License plate
+        vin:
+          label:
+            - en: VIN
+              de: VIN
     go-to-application:
       label:
-        - en: Continue
-          de: Continue
+        - en: CONTINUE TO APPLICATION
+          de: CONTINUE TO APPLICATION
     buy-insurance-description:
       label:
         - en: >-
@@ -2522,6 +2661,9 @@ entries:
         de: null
     quotes:
       - en: quotes
+        de: null
+    vehicles:
+      - en: vehicles
         de: null
     separator:
       - en: of
@@ -2615,6 +2757,11 @@ entries:
         label:
           - en: Event location (optional)
             de: null
+    vehicles:
+      popup:
+        label:
+          - en: Add vehicles
+            de: Add vehicles
   pages:
     '1':
       quote:
@@ -2628,6 +2775,10 @@ entries:
           title:
             - en: Application details
               de: Application details
+        agent:
+          title:
+            - en: Vehicle details
+              de: Vehicle details
     footer:
       terms-and-conditions:
         - en: Terms and Conditions

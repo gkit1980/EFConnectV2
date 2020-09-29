@@ -42,6 +42,8 @@ integration:
           mappings:
             - payload: Objects.Object[0].OCar.Chassis
               element: policy.insured.vehicle-objects~car.chassis
+            - payload: Objects.Object[0].OCar.CarType
+              element: policy.insured.vehicle-objects~car.vehicle-type
             - payload: Objects.Object[0].OCar.RegNo
               element: policy.insured.vehicle-objects~car.regno
             - payload: Objects.Object[0].OCar.Make
@@ -51,6 +53,7 @@ integration:
             - payload: Objects.Object[0].OCar.ProdYear
               element: policy.insured.vehicle-objects~car.construction-date
             - payload: Objects.Object[0].OCar.CarSubtype
+              element: policy.insured.vehicle-objects~car.vehicle-subtype
             - payload: Objects.Object[0].OCar.Engine
             - payload: Objects.Object[0].OCar.EnginePower
               element: policy.insured.vehicle-objects~car.engine-power

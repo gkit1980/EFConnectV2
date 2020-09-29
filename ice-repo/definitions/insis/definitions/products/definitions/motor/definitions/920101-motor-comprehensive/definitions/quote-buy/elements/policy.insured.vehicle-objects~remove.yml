@@ -7,6 +7,6 @@ element:
     InsisChangeViewModeBasedOnArrayLengthRule:
       array: policy.insured.vehicle-objects
       condition: greater
-      conditionValue: '1'
+      conditionValue: 1
       viewMode: default
       elseViewMode: hidden

@@ -1,0 +1,15 @@
+element:
+  type: integer
+  component:
+    StaticComponentRule:
+      component:
+        IceDropdown: {}
+  values:
+    ListValuesRule:
+      list: insis.car.vehicle-types
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.insured.vehicle-objects~car.search.type
+      conditionValue: ''
+      conditionViewMode: default
+      elseViewMode: disabled

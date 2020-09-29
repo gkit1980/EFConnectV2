@@ -5,7 +5,8 @@ element:
       component:
         InsisButtonWithDialog:
           width: 800px
-          section: clients.popup
+          sections:
+            - clients.popup
           actionName: close-client-popup
   viewMode:
     InsisChangeViewModeBasedOnArrayLengthRule:

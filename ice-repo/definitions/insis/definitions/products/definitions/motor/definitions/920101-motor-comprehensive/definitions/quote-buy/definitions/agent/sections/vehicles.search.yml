@@ -1,0 +1,31 @@
+section:
+  component:
+    InsisFormFlexSection:
+      grid:
+        rows:
+          - gap: 20px
+            cols:
+              # - size: 20%
+              #   size.xs: auto
+              #   size.sm: auto
+              #   css: u-mt-1
+              #   elements:
+              #     - name: vehicle.search.client.full-name
+              # - size: 20%
+              #   size.xs: auto
+              #   size.sm: auto
+              #   css: u-mt-1
+              #   elements:
+              #     - name: vehicle.search.client.pid
+              - size: 20%
+                css: u-mt-1
+                elements:
+                  - name: vehicle.search.reg-no
+              - size: 20%
+                css: u-mt-1
+                elements:
+                  - name: vehicle.search.vin
+              - size: 10%
+                css: u-mt-2
+                elements:
+                  - name: activity.vehicles.search

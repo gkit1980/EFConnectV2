@@ -1,0 +1,5 @@
+element:
+  type: action
+  change:
+    - RemoveArrayItemExecutionRule:
+        element: policy.insured.vehicle-objects~drivers

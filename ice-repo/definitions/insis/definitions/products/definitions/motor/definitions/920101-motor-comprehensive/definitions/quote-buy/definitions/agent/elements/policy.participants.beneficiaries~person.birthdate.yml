@@ -1,0 +1,5 @@
+element:
+  type: date
+  viewMode:
+    DtViewModeRule:
+      dt: policy.participants.beneficiaries.person.viewmode

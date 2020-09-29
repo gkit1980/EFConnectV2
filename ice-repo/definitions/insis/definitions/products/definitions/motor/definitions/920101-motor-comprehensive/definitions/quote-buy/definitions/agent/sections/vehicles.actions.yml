@@ -1,0 +1,14 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - align: end
+            gap: 20px
+            cols:
+              - size: 'none'
+                elements:
+                  - name: activity.vehicles.cancel
+              - size: 'none'
+                elements:
+                  - name: activity.vehicles.add

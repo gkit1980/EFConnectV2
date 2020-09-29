@@ -1,0 +1,7 @@
+element:
+  type: text
+  label:
+    NoLabelRule: {}
+  viewMode:
+    StaticViewModeRule:
+      viewMode: output

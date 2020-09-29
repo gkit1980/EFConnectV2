@@ -1,0 +1,34 @@
+list:
+  items:
+    - value: 320
+      label_de: Towing Truck
+      label_en: Towing Truck
+    - value: 321
+      label_de: Tractor
+      label_en: Tractor
+    - value: 322
+      label_de: Straight Truck
+      label_en: Straight Truck
+    - value: 323
+      label_de: Tank/Cistern
+      label_en: Tank/Cistern
+    - value: 324
+      label_de: Dump Truck
+      label_en: Dump Truck
+    - value: 325
+      label_de: Concrete Mixer
+      label_en: Concrete Mixer
+    - value: 326
+      label_de: Garbage Collector
+      label_en: Garbage Collector
+    - value: 327
+      label_de: Flat Bed Truck
+      label_en: Flat Bed Truck
+  type: integer
+  additionals:
+    label_de:
+      label: label_de
+      type: text
+    label_en:
+      label: label_en
+      type: text

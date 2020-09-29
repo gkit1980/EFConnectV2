@@ -1,0 +1,22 @@
+list:
+  items:
+    - value: '335'
+      label_en: Excavation machine
+      label_de: Excavation machine
+    - value: '336'
+      label_en: Construction vehicle
+      label_de: Construction vehicle
+    - value: '337'
+      label_en: Fire-truck
+      label_de: Fire-truck
+    - value: '338'
+      label_en: Ambulance
+      label_de: Ambulance
+  type: integer
+  additionals:
+    label_en:
+      label: label_en
+      type: text
+    label_de:
+      label: label_de
+      type: text

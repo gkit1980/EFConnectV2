@@ -1,0 +1,9 @@
+element:
+  type: boolean
+  label:
+    NoLabelRule: {}
+  component:
+    StaticComponentRule:
+      component:
+        IceCheckbox: {}
+  defaultValue: false

@@ -1,0 +1,14 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: none
+                size.xs: auto
+                elements:
+                  - name: activity.add-new-vehicle
+              - size: none
+                size.xs: auto
+                elements:
+                  - name: activity.add-existing-vehicle

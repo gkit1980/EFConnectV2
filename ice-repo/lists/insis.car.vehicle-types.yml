@@ -1,0 +1,25 @@
+list:
+  items:
+    - value: 31
+      label_de: Car
+      label_en: Car
+    - value: 32
+      label_de: Truck
+      label_en: Truck
+    - value: 33
+      label_de: Motorcycle
+      label_en: Motorcycle
+    - value: 34
+      label_de: Bus
+      label_en: Bus
+    - value: 35
+      label_de: SPV
+      label_en: SPV
+  type: integer
+  additionals:
+    label_de:
+      label: label_de
+      type: text
+    label_en:
+      label: label_en
+      type: text

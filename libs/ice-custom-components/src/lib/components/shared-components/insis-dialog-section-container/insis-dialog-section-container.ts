@@ -8,14 +8,17 @@ import { IcePage, IceSection } from '@impeo/ice-core';
   templateUrl: 'insis-dialog-section-container.html',
 })
 export class InsisDialogSectionContainer {
-  section: IceSection;
+  sections: IceSection[] = new Array<IceSection>();
 
   constructor(
     public dialogRef: MatDialogRef<InsisDialogSectionContainer>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
-    this.section = IceSection.build(data.page, data.page, data['section']);
-    (data.page as IcePage).sections.pop();
+    const sections: any[] = data['sections'];
+    sections.forEach((section) => {
+      this.sections.push(IceSection.build(data.page, data.page, section));
+      (data.page as IcePage).sections.pop();
+    });
   }
 
   close(): void {
