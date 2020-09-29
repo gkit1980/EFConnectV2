@@ -14,7 +14,7 @@ page:
       shortTitleKey: pages.2.application.vehicle-details.title
   sections:
     - header
-    - vehicle.ownership
+    - vehicle.details
     - continue
     - need-more-info
     - policy.premiums-taxes-fees-discounts-loadings
