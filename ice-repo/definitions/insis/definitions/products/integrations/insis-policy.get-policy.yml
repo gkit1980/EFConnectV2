@@ -114,6 +114,9 @@ integration:
             - element: policy.participants.holder.person.address.state
               payload: >-
                 Policy.InsuranceConditions.Participants.Participant[n].Addresses.Address[0].Region
+            - element: policy.participants.holder.participant-id
+              payload: >-
+                Policy.InsuranceConditions.Participants.Participant[n].ParticipantID
         - fromIdx:
             array: payload.Policy.InsuranceConditions.Discounts.Discount
             append: true

@@ -1,3 +1,5 @@
 element:
   type: action
-  defaultValue: quote.download-pdf
+  mirror:
+    DtMirrorRule:
+      dt: download.quote.mirror

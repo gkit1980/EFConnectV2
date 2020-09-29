@@ -1,0 +1,30 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policy.contract.policy-id
+    - label: new label
+      element: policy.status.policy-status
+  outputs:
+    - id: output
+      type: string
+  rules:
+    - inputs:
+        - not(null)
+        - -4
+      outputs:
+        - quote.modify-and-download-pdf
+    - inputs:
+        - '-'
+        - -4
+      outputs:
+        - quote.register-and-download-pdf
+    - inputs:
+        - '-'
+        - -2
+      outputs:
+        - application.download-pdf
+    - inputs:
+        - '-'
+        - null
+      outputs:
+        - quote.download-pdf

@@ -1,6 +1,6 @@
 element:
   type: action
-  defaultValue: quote.download-pdf
+  defaultValue: application.download-pdf
   component:
     StaticComponentRule:
       component:

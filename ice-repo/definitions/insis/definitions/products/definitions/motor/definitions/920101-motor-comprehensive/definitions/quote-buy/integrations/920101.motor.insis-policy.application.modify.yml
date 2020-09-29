@@ -28,12 +28,10 @@ integration:
           toIdx:
             array: payload.InsuranceConditions.Participants.Participant
             condition: ParticipantRole == 'PHOLDER'
-          mappings:
+         mappings:
+            - element: policy.participants.holder.participant-id
+              payload: InsuranceConditions.Participants.Participant[n].ParticipantID
             - element: policy.participants.holder.person.accounts~bank-id
-              payload: InsuranceConditions.Participants.Participant[n].PolicyBankAccounts.PolicyBankAccount[0].BankAccount.BankAccID
-            - element: policy.participants.holder.person.accounts~bankpid
-              payload: InsuranceConditions.Participants.Participant[n].PolicyBankAccounts.PolicyBankAccount[0].BankAccount.BankPID
-            - element: policy.participants.holder.person.accounts~iban
-              payload: InsuranceConditions.Participants.Participant[n].PolicyBankAccounts.PolicyBankAccount[0].BankAccount.AccountNo
+              payload: InsuranceConditions.Participants.Participant[n].PolicyBankAccounts.PolicyBankAccount[0].BankAccID
             - value: 'BILLING'
               payload: InsuranceConditions.Participants.Participant[n].PolicyBankAccounts.PolicyBankAccount[0].AccountPurpose
