@@ -6,6 +6,7 @@ integration:
       verb: GET
   transformation:
     DefaultTransformationRule:
+      additional: insis
       out:
         - mappings:
             - param: POLICY_NUMBER
@@ -46,10 +47,13 @@ integration:
               payload: 'policyAnnexes[0].installments[0].currency'
         - fromIdx:
             array: 'payload.policyAnnexes[0].insuredObjects'
+            condition: insuredEntity.oAccinsured !=  null
           toIdx:
             array: policy.insured.objects
             useSourceIndex: true
           mappings:
+            - element: policy.insured.objects~type
+              value: 'life'
             - element: policy.insured.objects~person-data.pid
               payload: >-
                 policyAnnexes[0].insuredObjects[n].insuredEntity.oAccinsured.manId
@@ -71,6 +75,46 @@ integration:
             - element: policy.insured.objects~person-data.country
               payload: >-
                 policyAnnexes[0].insuredObjects[n].insuredEntity.oAccinsured.pPeopleComplex.homeCountry
+            - element: policy.insured.objects~activities.goto-covers
+              value: navigate.to-covers
+
+        - fromIdx:
+            array: 'payload.policyAnnexes[0].insuredObjects'
+            condition: insuredEntity.oCar !=  null
+          toIdx:
+            array: policy.insured.objects
+            useSourceIndex: true
+          mappings:
+            - element: policy.insured.objects~type
+              value: 'motor'
+
+            - element: policy.insured.objects~vehicle-data.brand
+              payload: policyAnnexes[0].insuredObjects[n].insuredEntity.oCar.make
+
+            - element: policy.insured.objects~vehicle-data.ccm-ton
+              payload: policyAnnexes[0].insuredObjects[n].insuredEntity.oCar.ccmTon
+
+            - element: policy.insured.objects~vehicle-data.chassis
+              payload: policyAnnexes[0].insuredObjects[n].insuredEntity.oCar.chassis
+
+            - element: policy.insured.objects~vehicle-data.construction-date
+              payload: policyAnnexes[0].insuredObjects[n].insuredEntity.oCar.prodYear
+
+            - element: policy.insured.objects~vehicle-data.model
+              payload: policyAnnexes[0].insuredObjects[n].insuredEntity.oCar.model
+
+            - element: policy.insured.objects~vehicle-data.regno
+              payload: policyAnnexes[0].insuredObjects[n].insuredEntity.oCar.regNo
+
+            - element: policy.insured.objects~vehicle-data.usage
+              payload: policyAnnexes[0].insuredObjects[n].insuredEntity.oCar.carUsage
+
+            - element: policy.insured.objects~vehicle-data.transportation-of-hazardous-goods
+              payload: policyAnnexes[0].insuredObjects[n].insuredEntity.oCar.ocp2
+
+            - element: policy.insured.objects~vehicle-data.driver
+              payload: pClients.pPeopleComplex.name
+
             - element: policy.insured.objects~activities.goto-covers
               value: navigate.to-covers
         - fromIdx:

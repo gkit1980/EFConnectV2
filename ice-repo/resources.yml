@@ -1741,6 +1741,51 @@ entries:
                     - en: 'Sum insured:'
                       de: 'Sum insured:'
             covers~insured-amount: {}
+            vehicle-data:
+              title:
+                label:
+                  - en: '${param1} ${param2}, ${param3}'
+                    de: '${param1} ${param2}, ${param3}'
+              regno:
+                label:
+                  - en: License plate
+                    de: License plate
+              model:
+                label:
+                  - en: Model
+                    de: Model
+              brand:
+                label:
+                  - en: Make
+                    de: Make
+              ccm-ton:
+                label:
+                  - en: Engine
+                    de: Engine
+              chassis:
+                label:
+                  - en: VIN
+                    de: VIN
+              construction-date:
+                label:
+                  - en: Year
+                    de: Year
+              usage:
+                label:
+                  - en: Primary use
+                    de: Primary use
+              covers-title:
+                label:
+                  - en: '${param1} ${param2}, ${param3} - ${param4}'
+                    de: '${param1} ${param2}, ${param3} - ${param4}'
+              transportation-of-hazardous-goods:
+                label:
+                  - en: Transportation of hazardous goods
+                    de: Transportation of hazardous goods
+              driver:
+                label:
+                  - en: Driver
+                    de: Driver
         objects~covers~insured-amount: {}
       contract:
         begin:

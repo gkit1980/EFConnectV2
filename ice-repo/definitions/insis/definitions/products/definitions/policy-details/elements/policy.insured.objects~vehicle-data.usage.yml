@@ -1,12 +1,10 @@
 element:
   type: text
   viewMode: output
-  label:
-    NoLabelRule: {}
-  values:
-    ListValuesRule:
-      list: insis.covers
   component:
     StaticComponentRule:
       component:
         IceDropdown: {}
+  values:
+    ListValuesRule:
+      list: insis.car.usage.customer

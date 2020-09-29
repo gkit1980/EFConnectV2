@@ -1,0 +1,14 @@
+element:
+  type: text
+  viewMode: output
+  label:
+    ResourceWithElementValuesLabelRule:
+      key: elements.policy.insured.objects.items.vehicle-data.title.label
+      elements:
+        - policy.insured.objects~vehicle-data.brand
+        - policy.insured.objects~vehicle-data.model
+        - policy.insured.objects~vehicle-data.construction-date
+  component:
+    StaticComponentRule:
+      component:
+        IceNone: {}

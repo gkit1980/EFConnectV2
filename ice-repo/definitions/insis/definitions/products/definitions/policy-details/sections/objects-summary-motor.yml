@@ -1,0 +1,42 @@
+section:
+  component:
+    IceArrayItemFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                css: mat-headline u-mb-4 u-mt-1
+                elements:
+                  - name: policy.insured.objects~vehicle-data.title
+              - size: none
+                elements:
+                  - name: policy.insured.objects~activities.goto-covers
+
+          - css: output-element
+            cols:
+              - size: 33%
+                elements:
+                  - name: policy.insured.objects~vehicle-data.regno
+              - size: auto
+                elements:
+                  - name: policy.insured.objects~vehicle-data.chassis
+              - size: 25%
+                elements:
+                  - name: policy.insured.objects~vehicle-data.ccm-ton
+          - css: output-element u-mt-2
+            cols:
+              - size: 33%
+                elements:
+                  - name: policy.insured.objects~vehicle-data.usage
+              - size: auto
+                elements:
+                  - name: policy.insured.objects~vehicle-data.transportation-of-hazardous-goods
+              - size: auto
+                elements:
+                  - name: policy.insured.objects~vehicle-data.driver
+  viewMode:
+    ConditionalSectionViewModeRule:
+      conditionElement: policy.insured.objects~type
+      conditionValue: motor
+      conditionViewMode: default
+      elseViewMode: hidden

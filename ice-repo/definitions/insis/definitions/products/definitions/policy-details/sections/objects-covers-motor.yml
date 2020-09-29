@@ -1,0 +1,20 @@
+section:
+  viewMode:
+    ConditionalSectionViewModeRule:
+      conditionElement: policy.insured.objects~type
+      conditionValue: motor
+      conditionViewMode: default
+      elseViewMode: hidden
+  component:
+    IceArrayItemFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                css: mat-headline u-mb-4 u-mt-1
+                elements:
+                  - name: policy.insured.objects~vehicle-data.covers-title
+          - cols:
+              - size: auto
+                sections:
+                  - name: objects-covers-list

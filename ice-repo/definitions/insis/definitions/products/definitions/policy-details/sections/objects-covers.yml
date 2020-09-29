@@ -6,16 +6,7 @@ section:
       grid:
         rows:
           - cols:
-              - size: auto
-                css: mat-headline u-mb-4 u-mt-1
-                elements:
-                  - name: policy.insured.objects~person-data.title
-          - cols:
-              - size: auto
-                css: mat-caption
-                elements:
-                  - name: policy.insured.objects~person-data.covers-subtitle
-          - cols:
-              - size: auto
+              - size: 100%
                 sections:
-                  - name: objects-covers-list
+                  - name: objects-covers-life
+                  - name: objects-covers-motor

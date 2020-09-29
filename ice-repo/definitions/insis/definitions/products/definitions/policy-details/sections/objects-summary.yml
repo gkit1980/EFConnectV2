@@ -6,34 +6,7 @@ section:
       grid:
         rows:
           - cols:
-              - size: auto
-                css: mat-headline u-mb-4 u-mt-1
-                elements:
-                  - name: policy.insured.objects~person-data.title
-              - size: none
-                elements:
-                  - name: policy.insured.objects~activities.goto-covers
-
-          - css: output-element
-            cols:
-              - size: 33%
-                elements:
-                  - name: policy.insured.objects~person-data.first-name
-              - size: 33%
-                elements:
-                  - name: policy.insured.objects~person-data.last-name
-              - size: 33%
-                elements:
-                  - name: policy.insured.objects~person-data.gender
-
-          - css: output-element u-mt-2
-            cols:
-              - size: 33%
-                elements:
-                  - name: policy.insured.objects~person-data.birth-date
-              - size: 33%
-                elements:
-                  - name: policy.insured.objects~person-data.country
-              - size: 33%
-                elements:
-                  - name: policy.insured.objects~person-data.pid
+              - size: 100%
+                sections:
+                  - name: objects-summary-life
+                  - name: objects-summary-motor

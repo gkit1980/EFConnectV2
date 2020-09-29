@@ -18,9 +18,18 @@ list:
     - value: TPDACCD
       label_en: Total and permanent disability due to accident over 75%
       label_de: Total and permanent disability due to accident over 75%
-    - value: WOP_TOTAL
-      label_en: Waiver of premium due to permanent disability any cause
-      label_de: Waiver of premium due to permanent disability any cause
+    - value: MTPL
+      label_en: Motor Third Party Liability
+      label_de: Motor Third Party Liability
+    - value: OWNDAMAGE
+      label_en: Motor Own Damage
+      label_de: Motor Own Damage
+    - value: PA
+      label_en: Personal Accident
+      label_de: Personal Accident
+    - value: ROAD_ASSIS
+      label_en: Road Assistance
+      label_de: Road Assistance
   type: string
   additionals:
     label_en:

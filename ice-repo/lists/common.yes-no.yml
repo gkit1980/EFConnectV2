@@ -7,10 +7,15 @@ list:
     label_de:
       label: Label de
       type: text
+    insis:
+      label: insis
+      type: text
   items:
     - value: true
       label_en: 'Yes'
       label_de: Ja
+      insis: '1'
     - value: false
       label_en: 'No'
       label_de: Nein
+      insis: '2'
