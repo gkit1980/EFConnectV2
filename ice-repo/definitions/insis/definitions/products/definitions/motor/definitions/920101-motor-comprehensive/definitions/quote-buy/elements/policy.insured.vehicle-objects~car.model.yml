@@ -2,18 +2,16 @@ element:
   type: text
   fake:
     value: A1
-  values:
-    InsisDynamicValuesListRule:
-      datastoreRootPath: vehicles-data
-      pathElements:
-        - policy.insured.vehicle-objects~car.brand
-        - policy.insured.path-models
+  # values:
+  #   InsisDynamicValuesListRule:
+  #     datastoreRootPath: vehicles-data
+  #     pathElements:
+  #       - policy.insured.vehicle-objects~car.brand
+  #       - policy.insured.path-models
   viewMode:
-    ConditionalViewModeRule:
-      conditionElement: policy.insured.vehicle-objects~car.search.type
-      conditionValue: ''
-      conditionViewMode: default
-      elseViewMode: disabled
+    DtViewModeRule:
+      dt: vehicle-fields.viewmode
+      output: output-required
   component:
     StaticComponentRule:
       component:

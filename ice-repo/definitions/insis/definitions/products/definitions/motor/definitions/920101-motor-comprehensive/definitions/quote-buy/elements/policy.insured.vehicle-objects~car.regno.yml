@@ -5,8 +5,6 @@ element:
   validation:
     - InsisUniqueValueValidationRule: {}
   viewMode:
-    ConditionalViewModeRule:
-      conditionElement: policy.insured.vehicle-objects~car.search.type
-      conditionValue: ''
-      conditionViewMode: required
-      elseViewMode: hidden
+    DtViewModeRule:
+      dt: vehicle-fields.viewmode
+      output: output-required

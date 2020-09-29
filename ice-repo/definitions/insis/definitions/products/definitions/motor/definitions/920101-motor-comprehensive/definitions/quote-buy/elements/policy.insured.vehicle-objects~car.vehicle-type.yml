@@ -8,8 +8,6 @@ element:
     ListValuesRule:
       list: insis.car.vehicle-types
   viewMode:
-    ConditionalViewModeRule:
-      conditionElement: policy.insured.vehicle-objects~car.search.type
-      conditionValue: ''
-      conditionViewMode: default
-      elseViewMode: disabled
+    DtViewModeRule:
+      dt: vehicle-fields.viewmode
+      output: output-required

@@ -2,12 +2,6 @@ element:
   fake:
     value: Sedan
   type: integer
-  viewMode:
-    ConditionalViewModeRule:
-      conditionElement: policy.insured.vehicle-objects~car.search.type
-      conditionValue: ''
-      conditionViewMode: default
-      elseViewMode: disabled
   values:
     InsisDtListValuesRule:
       dtElement: policy.insured.vehicle-objects~car.vehicle-type
@@ -16,3 +10,7 @@ element:
     StaticComponentRule:
       component:
         IceDropdown: {}
+  viewMode:
+    DtViewModeRule:
+      dt: vehicle-fields.viewmode
+      output: output-required

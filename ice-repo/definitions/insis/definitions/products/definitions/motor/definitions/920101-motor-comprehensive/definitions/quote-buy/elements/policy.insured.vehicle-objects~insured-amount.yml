@@ -1,7 +1,4 @@
 element:
-  viewMode:
-    StaticViewModeRule:
-      viewMode: required
   type: currency
   defaultValue: 0
   fake:
@@ -11,3 +8,7 @@ element:
         expression: 'element("policy.insured.vehicle-objects~insured-amount") > 1'
         messageKey: >-
           elements.policy.insured.vehicle-objects.items.insured-amount.invalid.label
+  viewMode:
+    DtViewModeRule:
+      dt: vehicle-fields.viewmode
+      output: output-editable

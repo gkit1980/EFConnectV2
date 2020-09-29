@@ -1,6 +1,9 @@
 element:
-  viewMode: default
   defaultValue:
     StaticValueRule:
       value: false
   type: boolean
+  viewMode:
+    DtViewModeRule:
+      dt: vehicle-fields.viewmode
+      output: output-editable

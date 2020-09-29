@@ -5,3 +5,6 @@ action:
         destination: selected-vehicle-index
     - IntegrationExecutionRule:
         integration: 920101.motor.insis-policy.search-by-vin-or-license-plate
+    - InsisCopyValueExecutionRule:
+        destination: policy.insured.vehicle-objects~car.search.go-pressed
+        source: policy.insured.vehicle-objects~car.search.type

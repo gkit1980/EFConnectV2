@@ -16,3 +16,7 @@ element:
           - policy.insured.vehicle-objects~car.additional-equipment-car-audio
           - policy.insured.vehicle-objects~car.additional-equipment-other
           - policy.insured.vehicle-objects~car.additional-equipment-other
+  viewMode:
+    DtViewModeRule:
+      dt: vehicle-fields.viewmode
+      output: output-editable

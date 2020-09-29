@@ -5,3 +5,7 @@ element:
   type: integer
   fake:
     value: 10000
+  viewMode:
+    DtViewModeRule:
+      dt: vehicle-fields.viewmode
+      output: output-editable

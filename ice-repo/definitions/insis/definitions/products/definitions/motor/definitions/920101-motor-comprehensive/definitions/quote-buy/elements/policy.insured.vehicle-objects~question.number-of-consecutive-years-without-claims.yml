@@ -3,3 +3,7 @@ element:
   type: text
   fake:
     value: 0
+  viewMode:
+    DtViewModeRule:
+      dt: vehicle-fields.viewmode
+      output: output-editable

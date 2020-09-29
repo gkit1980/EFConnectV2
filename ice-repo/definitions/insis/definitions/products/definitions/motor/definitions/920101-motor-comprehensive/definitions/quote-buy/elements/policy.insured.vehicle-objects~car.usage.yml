@@ -2,3 +2,7 @@ element:
   fake:
     value: Private
   type: text
+  viewMode:
+    DtViewModeRule:
+      dt: vehicle-fields.viewmode
+      output: output-editable

@@ -1,0 +1,36 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policy.insured.vehicle-objects~car.search.type
+    - element: policy.insured.vehicle-objects~car.search.go-pressed
+  outputs:
+    - id: output-required
+      type: ''
+    - label: new label
+      default: ''
+      id: output-default
+    - label: new label
+      default: ''
+      id: output-editable
+  rules:
+    - inputs:
+        - ''
+        - '-'
+      outputs:
+        - required
+        - default
+        - default
+    - inputs:
+        - '-'
+        - null
+      outputs:
+        - hidden
+        - hidden
+        - hidden
+    - inputs:
+        - '-'
+        - '-'
+      outputs:
+        - disabled
+        - disabled
+        - default
