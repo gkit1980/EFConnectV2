@@ -17,4 +17,5 @@ page:
     - vehicle.ownership
     - continue
     - need-more-info
+    - policy.premiums-taxes-fees-discounts-loadings
     - policy.summary

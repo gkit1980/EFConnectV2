@@ -13,7 +13,9 @@ page:
     - vehicles.covers
     - create-application
     - need-more-info
+    - policy.premiums-taxes-fees-discounts-loadings
     - policy.summary
+
   label:
     ResourcePageLabelRule:
       navigationTitleKey: pages.1.quote.covers.title
