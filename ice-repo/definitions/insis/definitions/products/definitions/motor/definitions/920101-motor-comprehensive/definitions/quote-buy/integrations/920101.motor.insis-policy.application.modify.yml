@@ -28,7 +28,7 @@ integration:
           toIdx:
             array: payload.InsuranceConditions.Participants.Participant
             condition: ParticipantRole == 'PHOLDER'
-         mappings:
+          mappings:
             - element: policy.participants.holder.participant-id
               payload: InsuranceConditions.Participants.Participant[n].ParticipantID
             - element: policy.participants.holder.person.accounts~bank-id
