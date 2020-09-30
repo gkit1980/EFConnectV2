@@ -6,12 +6,12 @@ dt:
   outputs:
     - id: output-required
       type: ''
-    - label: new label
-      default: ''
+    - default: ''
       id: output-default
-    - label: new label
-      default: ''
+    - default: ''
       id: output-editable
+    - default: ''
+      id: output-editable-required
   rules:
     - inputs:
         - ''
@@ -20,10 +20,12 @@ dt:
         - required
         - default
         - default
+        - required
     - inputs:
         - '-'
         - null
       outputs:
+        - hidden
         - hidden
         - hidden
         - hidden
@@ -34,3 +36,4 @@ dt:
         - disabled
         - disabled
         - default
+        - required

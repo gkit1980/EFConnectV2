@@ -6,12 +6,12 @@ section:
           - css: u-mt-4
             gap: 24px
             cols:
-              - size: 190px
+              - size: 270px
                 size.xs: 100%
                 css: u-mb-4
                 elements:
                   - name: policy.insured.vehicle-objects~car.vehicle-type
-              - size: 190px
+              - size: 270px
                 size.xs: 100%
                 css: u-mb-4
                 elements:
@@ -20,12 +20,12 @@ section:
             gap.xs: 0px
             css: u-mt-4
             cols:
-              - size: 190px
+              - size: 270px
                 size.xs: 100%
                 css: u-mb-4
                 elements:
                   - name: policy.insured.vehicle-objects~car.regno
-              - size: 190px
+              - size: 270px
                 size.xs: 100%
                 css: u-mb-4
                 elements:
@@ -33,12 +33,12 @@ section:
           - gap: 24px
             gap.xs: 0px
             cols:
-              - size: 190px
+              - size: 270px
                 size.xs: 100%
                 css: u-mb-4
                 elements:
                   - name: policy.insured.vehicle-objects~car.construction-date
-              - size: 190px
+              - size: 270px
                 size.xs: 100%
                 css: u-mb-4
                 elements:
@@ -46,12 +46,12 @@ section:
           - gap: 24px
             gap.xs: 0px
             cols:
-              - size: 190px
+              - size: 270px
                 size.xs: 100%
                 css: u-mb-4
                 elements:
                   - name: policy.insured.vehicle-objects~car.model
-              - size: 190px
+              - size: 270px
                 size.xs: 100%
                 css: u-mb-4
                 elements:
@@ -59,12 +59,12 @@ section:
           - gap: 24px
             gap.xs: 0px
             cols:
-              - size: 190px
+              - size: 270px
                 size.xs: 100%
                 css: u-mb-4
                 elements:
                   - name: policy.insured.vehicle-objects~car.engine-power
-              - size: 190px
+              - size: 270px
                 size.xs: 100%
                 css: u-mb-4
                 elements:
@@ -72,12 +72,12 @@ section:
           - gap: 24px
             gap.xs: 0px
             cols:
-              - size: 190px
+              - size: 270px
                 size.xs: 100%
                 css: u-mb-4
                 elements:
                   - name: policy.insured.vehicle-objects~car.usage
-              - size: 190px
+              - size: 270px
                 size.xs: 100%
                 css: u-mb-4
                 elements:

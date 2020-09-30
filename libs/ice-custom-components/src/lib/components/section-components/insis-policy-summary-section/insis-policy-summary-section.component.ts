@@ -11,6 +11,13 @@ import * as moment from 'moment';
 export class InsisPolicySummarySectionComponent extends SectionComponentImplementation {
   static componentName = 'InsisPolicySummarySection';
 
+  get showDrivers(): boolean {
+    return (get(this.recipe, 'component.InsisPolicySummarySection.driverPages', [
+      '3.review.finalize',
+      '3.review.payment',
+    ]) as Array<string>).includes(this.iceModel.navigation.currentPage.name);
+  }
+
   get type() {
     return get(this.recipe, 'component.InsisPolicySummarySection.type');
   }

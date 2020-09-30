@@ -1,6 +1,4 @@
 element:
-  fake:
-    value: Sedan
   type: integer
   values:
     InsisDtListValuesRule:
@@ -14,3 +12,5 @@ element:
     DtViewModeRule:
       dt: vehicle-fields.viewmode
       output: output-required
+  fake:
+    value: 311

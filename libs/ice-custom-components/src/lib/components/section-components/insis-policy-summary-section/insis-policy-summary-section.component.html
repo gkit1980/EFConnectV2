@@ -79,42 +79,43 @@
           </div>
         </div>
       </ng-container>
-
-      <ng-container
-        *ngFor="let objectIndex of getArrayElementIndexes('policy.insured.vehicle-objects')"
-      >
+      <ng-container *ngIf="showDrivers">
         <ng-container
-          *ngFor="
-            let driverIndex of getArrayElementIndexes('policy.insured.vehicle-objects~drivers')
-          "
+          *ngFor="let objectIndex of getArrayElementIndexes('policy.insured.vehicle-objects')"
         >
-          <div
-            fxFlex="{{ fxFlexValue }}"
-            fxFlex.xs="100%"
-            class="u-mb-4"
-            *ngIf="
-              getElementValue('policy.insured.vehicle-objects~drivers~person.first-name', [
-                objectIndex,
-                driverIndex
-              ])
+          <ng-container
+            *ngFor="
+              let driverIndex of getArrayElementIndexes('policy.insured.vehicle-objects~drivers')
             "
           >
-            <div class="label mat-caption">Driver</div>
-            <div class="value">
-              {{
+            <div
+              fxFlex="{{ fxFlexValue }}"
+              fxFlex.xs="100%"
+              class="u-mb-4"
+              *ngIf="
                 getElementValue('policy.insured.vehicle-objects~drivers~person.first-name', [
                   objectIndex,
                   driverIndex
                 ])
-              }}
-              {{
-                getElementValue('policy.insured.vehicle-objects~drivers~person.last-name', [
-                  objectIndex,
-                  driverIndex
-                ])
-              }}
+              "
+            >
+              <div class="label mat-caption">Driver</div>
+              <div class="value">
+                {{
+                  getElementValue('policy.insured.vehicle-objects~drivers~person.first-name', [
+                    objectIndex,
+                    driverIndex
+                  ])
+                }}
+                {{
+                  getElementValue('policy.insured.vehicle-objects~drivers~person.last-name', [
+                    objectIndex,
+                    driverIndex
+                  ])
+                }}
+              </div>
             </div>
-          </div>
+          </ng-container>
         </ng-container>
       </ng-container>
     </ng-container>

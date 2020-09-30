@@ -11,3 +11,5 @@ element:
     DtViewModeRule:
       dt: vehicle-fields.viewmode
       output: output-required
+  fake:
+    value: 31

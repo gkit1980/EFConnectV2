@@ -1,7 +1,7 @@
 label: InsisPolicySummarySection
 component: InsisPolicySummarySection
 description: >
-  A section which shows summary of motor policy
+  A section which shows summary of motor / life / property policy
 
 params:
   type:
@@ -20,6 +20,11 @@ params:
     options:
       two: 'two'
       four: 'four'
+  driverPages:
+    label: Pages that contain drivers (for motor product)
+    required: false
+    info: If nothing is set, drivers are shown on 3.review.finalize, 3.review.payment.
+    type: texts
   tags:
     label: Additional section tags
     required: false
