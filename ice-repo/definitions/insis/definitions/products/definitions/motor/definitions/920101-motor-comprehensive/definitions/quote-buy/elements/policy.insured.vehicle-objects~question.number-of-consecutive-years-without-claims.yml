@@ -6,4 +6,4 @@ element:
   viewMode:
     DtViewModeRule:
       dt: vehicle-fields.viewmode
-      output: output-editable
+      output: output-editable-required

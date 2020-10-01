@@ -18,7 +18,6 @@ section:
                   - name: policy.insured.vehicle-objects~car.vehicle-subtype
           - gap: 24px
             gap.xs: 0px
-            css: u-mt-4
             cols:
               - size: 270px
                 size.xs: 100%
@@ -83,20 +82,18 @@ section:
                 elements:
                   - name: >-
                       policy.insured.vehicle-objects~question.number-of-consecutive-years-without-claims
-          - cols:
-              - size: auto
-                size.xs: auto
-                size.sm: auto
+          - gap: 24px
+            gap.xs: 0px
+            css: u-mb-4
+            cols:
+              - size: 270px
+                size.xs: 100%
                 elements:
                   - name: policy.insured.vehicle-objects~car.ccm-ton
-            css: u-mb-2
-          - cols:
-              - size: auto
-                size.xs: auto
-                size.sm: auto
+              - size: 270px
+                size.xs: 100%
                 elements:
                   - name: policy.insured.vehicle-objects~insured-amount
-            css: u-mb-4
           - gap: 10px
             css: u-mb-4
             cols:
