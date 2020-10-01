@@ -1,9 +1,0 @@
-element:
-  type: text
-  values:
-    ListValuesRule:
-      list: previous-insurers
-  component:
-    StaticComponentRule:
-      component:
-        IceDropdown: {}

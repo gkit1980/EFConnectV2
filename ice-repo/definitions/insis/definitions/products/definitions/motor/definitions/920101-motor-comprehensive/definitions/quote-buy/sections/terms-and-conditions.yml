@@ -13,7 +13,7 @@ section:
                 size.xs: 100%
                 css: u-mb-6
                 elements:
-                  - name: previous-insurer
+                  - name: policy.contract.question.previous-mtpl-insurer
           - cols:
               - size: auto
                 elements:

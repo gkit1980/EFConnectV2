@@ -100,3 +100,42 @@ integration:
               payload: Insureds.Insured[n].Discounts.Discount[n].DiscountType
             - element: policy.insured.vehicle-objects~discounts~amount
               payload: Insureds.Insured[n].Discounts.Discount[n].LumpSumDiscount
+
+        - fromIdx:
+            array: payload.Policy.InsuranceConditions.Participants.Participant
+            condition: ParticipantRole == 'BENEFICENT' && Entity.PersonalData.PID != null
+          toIdx:
+            array: datamodel.policy.participants.beneficiaries
+            append: true
+          mappings:
+            - element: policy.participants.is-standard-beneficiary
+              value: false
+            - element: policy.participants.beneficiaries~is-company
+              value: false
+            - element: policy.participants.beneficiaries~person.gender
+              payload: Policy.InsuranceConditions.Participants.Participant[n].Entity.PersonalData.Gender
+            - element: policy.participants.beneficiaries~person.birthdate
+              payload: Policy.InsuranceConditions.Participants.Participant[n].Entity.PersonalData.BirthDate
+            - element: policy.participants.beneficiaries~person.last-name
+              payload: Policy.InsuranceConditions.Participants.Participant[n].Entity.PersonalData.Name.Family
+            - element: policy.participants.beneficiaries~person.first-name
+              payload: Policy.InsuranceConditions.Participants.Participant[n].Entity.PersonalData.Name.Given
+            - element: policy.participants.beneficiaries~person.pid
+              payload: Policy.InsuranceConditions.Participants.Participant[n].Entity.PersonalData.PID
+            - element: policy.participants.beneficiaries~percentage
+              payload: Policy.InsuranceConditions.Participants.Participant[n].Percentage
+        - fromIdx:
+            array: payload.Policy.InsuranceConditions.Participants.Participant
+            condition: ParticipantRole == 'BENEFICENT' && Entity.PersonalData.PID == null
+          toIdx:
+            array: datamodel.policy.participants.beneficiaries
+            append: true
+          mappings:
+            - element: policy.participants.is-standard-beneficiary
+              value: false
+            - element: policy.participants.beneficiaries~is-company
+              value: true
+            - element: policy.participants.beneficiaries~company.name
+              payload: Policy.InsuranceConditions.Participants.Participant[n].Entity.CompanyData.Name
+            - element: policy.participants.beneficiaries~percentage
+              payload: Policy.InsuranceConditions.Participants.Participant[n].PremiumShare

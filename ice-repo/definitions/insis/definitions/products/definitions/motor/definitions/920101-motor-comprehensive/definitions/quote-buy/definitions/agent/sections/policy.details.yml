@@ -23,7 +23,7 @@ section:
                 size.xs: auto
                 size.sm: auto
                 elements:
-                  - name: policy.contract.previous-insurer
+                  - name: policy.contract.question.previous-mtpl-insurer
             align: space-between
             layout.xs: column
             gap: 20px

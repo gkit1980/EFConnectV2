@@ -12,7 +12,7 @@ integration:
             array: 'payload.InsuranceConditions.Questionary.Question'
             append: true
           mappings:
-            - value: '1000'
+            - value: '10000'
               payload: 'InsuranceConditions.Questionary.Question[n].ID'
             - element: policy.contract.question.previous-mtpl-insurer
               payload: 'InsuranceConditions.Questionary.Question[n].Answer'
