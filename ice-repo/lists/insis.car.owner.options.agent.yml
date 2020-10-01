@@ -9,7 +9,6 @@ list:
     - value: leased
       label_de: This vehicles is leased
       label_en: This vehicles is leased
-  type: string
   additionals:
     label_de:
       label: label_de

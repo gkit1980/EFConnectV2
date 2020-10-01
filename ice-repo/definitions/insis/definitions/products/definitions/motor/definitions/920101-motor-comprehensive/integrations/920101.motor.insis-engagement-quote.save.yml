@@ -10,17 +10,6 @@ integration:
       out:
         - fromIdx:
             array: datamodel.policy.insured.vehicle-objects
-            index: 0
-          toIdx:
-            array: 'payload.Policies.Policy[0].InsuranceConditions.Questionary.Question'
-            append: true
-          mappings:
-            - value: '1000.1'
-              payload: 'Policies.Policy[0].InsuranceConditions.Questionary.Question[n].ID'
-            - element: policy.insured.vehicle-objects~question.number-of-consecutive-years-without-claims
-              payload: 'Policies.Policy[0].InsuranceConditions.Questionary.Question[n].Answer'
-        - fromIdx:
-            array: datamodel.policy.insured.vehicle-objects
           toIdx:
             array: 'payload.Policies.Policy[0].Insureds.Insured'
             useSourceIndex: true

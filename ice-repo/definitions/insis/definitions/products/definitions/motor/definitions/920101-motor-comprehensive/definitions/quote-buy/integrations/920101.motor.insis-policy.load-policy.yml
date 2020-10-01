@@ -13,7 +13,19 @@ integration:
       dateFormat: YYYY-MM-DD
       dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
       extends: 920101.motor.insis-policy.get-policy
-      in: {}
+      in:
+        - fromIdx:
+            array: payload.Policy.Insureds.Insured
+          toIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            useSourceIndex: true
+          mappings:
+            - element: policy.insured.vehicle-objects~car.search.type
+              value: 'REG_NO'
+            - element: policy.insured.vehicle-objects~car.search.go-pressed
+              value: 'REG_NO'
+            - element: policy.insured.vehicle-objects~owner.options
+              value: 'policyholder'
       out:
         - mappings:
             - param: soapAction

@@ -18,17 +18,6 @@ integration:
               payload: 'InsuranceConditions.Questionary.Question[n].Answer'
         - fromIdx:
             array: datamodel.policy.insured.vehicle-objects
-            index: [0]
-          toIdx:
-            array: 'payload.InsuranceConditions.Questionary.Question'
-            append: true
-          mappings:
-            - value: '1000.1'
-              payload: 'InsuranceConditions.Questionary.Question[n].ID'
-            - element: policy.insured.vehicle-objects~question.number-of-consecutive-years-without-claims
-              payload: 'InsuranceConditions.Questionary.Question[n].Answer'
-        - fromIdx:
-            array: datamodel.policy.insured.vehicle-objects
           toIdx:
             array: 'payload.Insureds.Insured'
             useSourceIndex: true
@@ -43,16 +32,15 @@ integration:
         - fromIdx:
             array: datamodel.policy.insured.vehicle-objects
           toIdx:
-            # array: payload.Policies.Policy[0].Insureds.Insured
             array: payload.Insureds.Insured
             useSourceIndex: true
           mappings:
             - element: policy.insured.vehicle-objects~entity-type
-              payload: Policies.Policy[0].Insureds.Insured[n].InsuredEntity.ObjectType
+              payload: Insureds.Insured[n].InsuredEntity.ObjectType
         - fromIdx:
             array: datamodel.policy.insured.vehicle-objects
           toIdx:
-            array: 'payload.Policies.Policy[0].Insureds.Insured'
+            array: 'payload.Insureds.Insured'
             useSourceIndex: true
             toIdx:
               array: InsuredEntity.OCar.CustomProperties.CustomProperty
