@@ -1,0 +1,18 @@
+section:
+  component:
+    IceArrayItemFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                sections:
+                  - name: document-drvlicence-attachments
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                css: u-mb-3
+                elements:
+                  - name: policy.insured.vehicle-objects~document.drvlicence.browse

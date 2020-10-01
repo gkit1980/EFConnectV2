@@ -1345,6 +1345,22 @@ entries:
               label:
                 - en: REMOVE VEHICLE
                   de: REMOVE VEHICLE
+            document:
+              drvlicence:
+                browse:
+                  label:
+                    - en: Driving license copy (optional)
+                      de: Driving license copy (optional)
+              carinvoice:
+                browse:
+                  label:
+                    - en: Purchase Invoice
+                      de: Purchase Invoice
+              vehcrefcer:
+                browse:
+                  label:
+                    - en: Vehicle registration 
+                      de: Vehicle registration
         add-another-vehicle:
           label:
             - en: ADD ANOTHER VEHICLE
@@ -2694,6 +2710,11 @@ entries:
           de: >-
             Upon clicking this button the policy will be issued and the provided
             bank account will be debited as per the selected preferences.
+    insured-object-documents:
+      title:
+        label:
+          - en: Documents
+            de: Documents
   pagination:
     claims:
       - en: claims
@@ -2731,9 +2752,9 @@ entries:
         - en: Please confirm
           de: Bitte bestätigen
       not_allowed_here:
-        - en: "'${value}' not allowed here"
+        - en: '''${value}'' not allowed here'
       regexp:
-        - en: "'${value}' does not matches regular expression ${regexp}"
+        - en: '''${value}'' does not matches regular expression ${regexp}'
       array:
         min:
           - en: 'must have at least ${min} entries'

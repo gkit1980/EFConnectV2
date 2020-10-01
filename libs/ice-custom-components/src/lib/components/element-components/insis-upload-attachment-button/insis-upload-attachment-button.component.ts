@@ -17,7 +17,6 @@ export class InsisUploadAttachmentButtonComponent extends MaterialElementCompone
 
   async uploadEvent(event) {
     const files: File[] = event.target.files;
-
     const promises: Promise<FileDataType>[] = Array.prototype.map.call(files, (file) =>
       this.loadDataFromFile(file)
     );

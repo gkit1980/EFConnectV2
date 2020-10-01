@@ -1,0 +1,5 @@
+action:
+  async: true
+  execution:
+    - IntegrationExecutionRule:
+        integration: upload-vehcrefcer-attachment

@@ -1,0 +1,9 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        InsisUploadButtonAttachment:
+          attachmentNameElement: policy.insured.vehicle-objects~document.carinvoice.attachments~name
+          attachmentDataElement: policy.insured.vehicle-objects~document.carinvoice.attachments~data
+          action: upload-carinvoice-attachments

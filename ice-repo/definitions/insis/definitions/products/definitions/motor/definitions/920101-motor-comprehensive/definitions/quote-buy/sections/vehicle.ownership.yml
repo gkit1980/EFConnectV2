@@ -17,7 +17,7 @@ section:
             cols:
               - size: 100%
                 size.xs: 100%
-                css: u-mb-4
+                css: u-mb-6
                 elements:
                   - name: policy.insured.vehicle-objects~owner.options
           - gap: 24px

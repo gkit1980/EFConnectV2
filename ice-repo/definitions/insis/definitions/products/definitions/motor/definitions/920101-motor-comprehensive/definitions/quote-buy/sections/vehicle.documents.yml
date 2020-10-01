@@ -1,0 +1,35 @@
+section:
+  component:
+    IceArrayItemFlexSection:
+      # behaviourForEmptyRows: hide
+      grid:
+        rows:
+          - gap: 24px
+            gap.xs: 0px
+            cols:
+              - size: 190px
+                elements:
+                  - name: policy.insured.vehicle-objects~car.regno
+              - size: 190px
+                elements:
+                  - name: policy.insured.vehicle-objects~car.chassis
+          - gap: 24px
+            gap.xs: 0px
+            css: u-mt-3
+            cols:
+              - size: 190px
+                sections:
+                  - name: document-carinvoice-attachments
+              - size: 190px
+                sections:
+                  - name: document-vehcrefcer-attachments
+          - gap: 24px
+            gap.xs: 0px
+            css: u-mb-5
+            cols:
+              - size: 190px
+                elements:
+                  - name: policy.insured.vehicle-objects~document.carinvoice.browse
+              - size: 190px
+                elements:
+                  - name: policy.insured.vehicle-objects~document.vehcrefcer.browse

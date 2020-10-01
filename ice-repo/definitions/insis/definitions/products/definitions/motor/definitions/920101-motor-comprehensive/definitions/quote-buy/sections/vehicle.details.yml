@@ -9,10 +9,15 @@ section:
       behaviourForEmptyRows: hide
       grid:
         rows:
-          # - cols:
-          #     - size: 100%
-          #       sections:
-          #         - name: vehicle.ownership
+          - cols:
+              - size: 100%
+                size.xs: 100%
+                sections:
+                  - name: vehicle.documents
+          - cols:
+              - size: 100%
+                sections:
+                  - name: vehicle.ownership
           - cols:
               - size: 100%
                 sections:
@@ -24,3 +29,4 @@ section:
                 size.xs: 100%
                 sections:
                   - name: vehicle.drivers
+                  - name: vehicle.drivers-license-upload

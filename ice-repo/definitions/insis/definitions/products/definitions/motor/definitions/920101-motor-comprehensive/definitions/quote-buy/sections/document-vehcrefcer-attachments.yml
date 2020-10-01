@@ -1,0 +1,14 @@
+section:
+  component:
+    IceArrayFlexSection:
+      css: documents-list
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: >-
+                      policy.insured.vehicle-objects~document.vehcrefcer.attachments~name
+      arrayElement: policy.insured.vehicle-objects~document.vehcrefcer.attachments

@@ -1,0 +1,64 @@
+integration:
+  exchange:
+    SoapCallExchangeRule:
+      endpoint: insis_generic_endpoint
+      securityMode: UsernamePassword
+      username: 'insis-username'
+      password: 'insis-password'
+      ignoreNamespaces: 'insis-ignoreNamespaces'
+  transformation:
+    DefaultTransformationRule:
+      additional: insis
+      dateFormat: YYYY-MM-DD
+      dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
+      out:
+        - mappings:
+            - param: soapAction
+              value: uploadAttachments
+            - param: requestType
+              value: UploadAttachmentsRqType
+        - fromIdx:
+            index: actionContext.index
+          mappings:
+            - value: PolicyId
+              payload: ReferenceID.IDComponent[0].attributes.name
+            - element: policy.contract.policy-id
+              payload: ReferenceID.IDComponent[0].$value
+            - value: InsuredId
+              payload: ReferenceID.IDComponent[1].attributes.name
+            - element: policy.insured.vehicle-objects~object.id
+              payload: ReferenceID.IDComponent[1].$value
+            - value: AttachmentType
+              payload: ReferenceID.IDComponent[2].attributes.name
+            - value: 1
+              payload: ReferenceID.IDComponent[2].$value
+            - value: DocId
+              payload: ReferenceID.IDComponent[3].attributes.name
+            - element: policy.insured.vehicle-objects~document.vehcrefcer.document-state
+              payload: ReferenceID.IDComponent[3].$value
+        - mappings:
+            - value: 'POLICY'
+              payload: ReferenceType
+            - value: 'BINARY_DATA'
+              payload: ContainerType
+        - fromIdx:
+            index: actionContext.index
+          toIdx:
+            index: 0
+          mappings:
+            - element: policy.insured.vehicle-objects~document.vehcrefcer.attachments~name
+              payload: 'BinaryAttachments.BinaryAttachment[n].FileName'
+            - value: 'plain/text'
+              payload: 'BinaryAttachments.BinaryAttachment[n].MimeType'
+            - element: policy.insured.vehicle-objects~document.vehcrefcer.attachments~data
+              payload: 'BinaryAttachments.BinaryAttachment[n].Data'
+      in:
+        - toIdx:
+            index: actionContext.index
+          mappings:
+            - payload: 'BinaryAttachments.Id'
+              element: policy.insured.vehicle-objects~document.vehcrefcer.attachments~id
+            - value: true
+              element: policy.insured.vehicle-objects~document.vehcrefcer.attachments~uploaded
+            - value: 2
+              element: policy.insured.vehicle-objects~document.vehcrefcer.document-state

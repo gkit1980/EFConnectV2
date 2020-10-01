@@ -234,3 +234,45 @@ integration:
               payload: 'Insureds.Insured[n].Covers.Cover[n].Currency'
             - element: policy.insured.vehicle-objects~cover.vandalism.insured-amount
               payload: 'Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
+        - fromIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            condition: document.carinvoice.document-id != null
+          toIdx:
+            array: payload.Insureds.Insured
+            useSourceIndex: true
+            toIdx:
+              array: Documents.Document
+              append: true
+          mappings:
+            - element: policy.insured.vehicle-objects~document.carinvoice.document-state
+              payload: 'Insureds.Insured[n].Documents.Document[n].DocState'
+            - element: policy.insured.vehicle-objects~document.carinvoice.document-id
+              payload: 'Insureds.Insured[n].Documents.Document[n].DocumentID'
+        - fromIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            condition: document.drvlicence.document-id != null
+          toIdx:
+            array: payload.Insureds.Insured
+            useSourceIndex: true
+            toIdx:
+              array: Documents.Document
+              append: true
+          mappings:
+            - element: policy.insured.vehicle-objects~document.drvlicence.document-state
+              payload: 'Insureds.Insured[n].Documents.Document[n].DocState'
+            - element: policy.insured.vehicle-objects~document.drvlicence.document-id
+              payload: 'Insureds.Insured[n].Documents.Document[n].DocumentID'
+        - fromIdx:
+            array: datamodel.policy.insured.vehicle-objects
+            condition: document.vehcrefcer.document-id != null
+          toIdx:
+            array: payload.Insureds.Insured
+            useSourceIndex: true
+            toIdx:
+              array: Documents.Document
+              append: true
+          mappings:
+            - element: policy.insured.vehicle-objects~document.vehcrefcer.document-state
+              payload: 'Insureds.Insured[n].Documents.Document[n].DocState'
+            - element: policy.insured.vehicle-objects~document.vehcrefcer.document-id
+              payload: 'Insureds.Insured[n].Documents.Document[n].DocumentID'

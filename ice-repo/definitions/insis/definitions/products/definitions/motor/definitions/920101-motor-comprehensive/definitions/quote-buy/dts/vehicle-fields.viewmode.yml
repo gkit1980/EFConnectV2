@@ -3,6 +3,7 @@ dt:
   inputs:
     - element: policy.insured.vehicle-objects~car.search.type
     - element: policy.insured.vehicle-objects~car.search.go-pressed
+    - page: true
   outputs:
     - id: output-required
       type: ''
@@ -14,7 +15,17 @@ dt:
       id: output-editable-required
   rules:
     - inputs:
+        - '-'
+        - '-'
+        - '2.application.vehicle-details'
+      outputs:
+        - required
+        - default
+        - default
+        - required
+    - inputs:
         - ''
+        - '-'
         - '-'
       outputs:
         - required
@@ -24,12 +35,14 @@ dt:
     - inputs:
         - '-'
         - null
+        - '-'
       outputs:
         - hidden
         - hidden
         - hidden
         - hidden
     - inputs:
+        - '-'
         - '-'
         - '-'
       outputs:
