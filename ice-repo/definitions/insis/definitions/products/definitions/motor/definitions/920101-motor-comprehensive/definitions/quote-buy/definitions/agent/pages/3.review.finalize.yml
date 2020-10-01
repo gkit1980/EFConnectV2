@@ -15,5 +15,6 @@ page:
   sections:
     - header
     - finalize.premiums-taxes-fees-discounts-loadings
+    - quote.download
     - finalize.summary
     - finalize.buttons

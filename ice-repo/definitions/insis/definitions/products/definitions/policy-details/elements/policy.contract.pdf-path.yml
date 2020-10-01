@@ -1,0 +1,8 @@
+element:
+  type: text
+  viewMode:
+    StaticViewModeRule:
+      viewMode: hidden
+  mirror:
+    DtMirrorRule:
+      dt: policy.contract.pdf-path.mirrorvalue

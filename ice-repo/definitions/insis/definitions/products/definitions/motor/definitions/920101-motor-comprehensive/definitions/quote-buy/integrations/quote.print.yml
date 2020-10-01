@@ -11,6 +11,6 @@ integration:
       extends: insis-quote.print
       out:
         - mappings:
-            - value: /std/gen/printouts_v10/std_bas_life_quote.xdo
+            - value: /std/gen/printouts_v10/std_nl_p_demo_quote.xdo
               payload: reportFullPath
       in: {}

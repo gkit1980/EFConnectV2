@@ -1,0 +1,10 @@
+action:
+  execution:
+    - IntegrationExecutionRule:
+        integration: 920101.motor.insis-policy.engagement-quote.modify
+    - IntegrationExecutionRule:
+        integration: quote.print
+    - InsisOpenPdfExecutionRule:
+        datastorePath: printData.0.data
+        mode: download
+        filename: Quote.pdf

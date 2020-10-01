@@ -1,0 +1,13 @@
+section:
+  component:
+    IceFlexSection:
+      css: download-quote-btn
+      grid:
+        rows:
+          - cols:
+              - size: 100%
+                css: u-mt-4
+                elements:
+                  - name: quote.download
+      tags:
+        - pull-right

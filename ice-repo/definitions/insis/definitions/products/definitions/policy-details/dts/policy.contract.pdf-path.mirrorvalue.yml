@@ -1,0 +1,20 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policy.contract.product-code
+  outputs:
+    - id: defaultValue
+      type: string
+  rules:
+    - inputs:
+        - 920101
+      outputs:
+        - '/std/gen/printouts_v10/std_nl_p_demo_policy.xdo'
+    - inputs:
+        - 910211
+      outputs:
+        - '/std/gen/printouts_v10/std_bas_term_pol.xdo'
+    - inputs:
+        - '-'
+      outputs:
+        - '/std/gen/printouts_v10/std_nl_p_demo_policy.xdo'
