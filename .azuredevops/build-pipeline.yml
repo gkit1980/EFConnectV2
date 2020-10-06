@@ -6,7 +6,6 @@ trigger:
       - releases/*
       - release/*
 
-
 variables:
   DOCKER_REPO: mmun/repo
   VERSION_MAJOR: 1
@@ -128,13 +127,10 @@ stages:
                     if [ "$(docker ps -aq -f name=$DOCKER_CONTAINER)" ]; then
                       docker container rm -f $DOCKER_CONTAINER
                     fi
-                    docker run -d --name $DOCKER_CONTAINER -p :3000 --restart always $DOCKER_IMAGE
+                    docker run -d --name $DOCKER_CONTAINER -p :3000 --restart always $(DOCKER_REPO):$(Build.DefinitionName)_$(Build.BuildNumber)
+                    docker network connect dct $DOCKER_CONTAINER
                   displayName: docker run
-                  env:
-                    DOCKER_IMAGE: '$(DOCKER_REPO):$(Build.DefinitionName)_$(Build.BuildNumber)'
-                
-                - script: 'docker network connect dct $DOCKER_CONTAINER'
-                  displayName: docker connect    
+
   - stage: pr
     dependsOn: build
     condition: and(succeeded(), eq(variables['Build.Reason'], 'PullRequest'))
@@ -159,10 +155,6 @@ stages:
                     if [ "$(docker ps -aq -f name=$DOCKER_CONTAINER)" ]; then
                       docker container rm -f $DOCKER_CONTAINER
                     fi
-                    docker run -d --name $DOCKER_CONTAINER -p :3000 --restart always $DOCKER_IMAGE
+                    docker run -d --name $DOCKER_CONTAINER -p :3000 --restart always $(DOCKER_REPO):$(Build.DefinitionName)_$(Build.BuildNumber)
+                    docker network connect dct $DOCKER_CONTAINER
                   displayName: docker run
-                  env:
-                    DOCKER_IMAGE: '$(DOCKER_REPO):$(Build.DefinitionName)_$(Build.BuildNumber)'
-                
-                - script: 'docker network connect dct $DOCKER_CONTAINER'
-                  displayName: docker connect
