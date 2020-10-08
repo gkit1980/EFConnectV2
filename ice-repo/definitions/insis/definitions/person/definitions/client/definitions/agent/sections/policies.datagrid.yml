@@ -1,6 +1,7 @@
 section:
   component:
     InsisDatagridSection:
+      css: insis-datagrid-with-pagination
       grid:
         rows:
           - cols:

@@ -32,9 +32,9 @@ integration:
             - param: p_insured_object
               element: person.search-policies.insured-object
             - param: page_size
-              datastore: insis.person.client.agent.pagination.page-size
+              datastore: pagination.policies.page-size
             - param: offset
-              datastore: insis.person.client.agent.pagination.offset
+              datastore: pagination.policies.offset
       in:
         - fromIdx:
             array: payload.rows
@@ -65,7 +65,7 @@ integration:
             - payload: 'rows[n].insr_type'
               element: person.policies~insr-type
             - payload: 'rows[n].total'
-              datastore: 'insis.person.client.agent.pagination.results-length'
+              datastore: 'pagination.policies.results-length'
         - fromIdx:
             array: payload.rows
             fromIdx:

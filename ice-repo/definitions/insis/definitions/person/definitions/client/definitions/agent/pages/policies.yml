@@ -8,3 +8,4 @@ page:
     - policies.search
     - policies.new-policy
     - policies.datagrid
+    - policies.pagination

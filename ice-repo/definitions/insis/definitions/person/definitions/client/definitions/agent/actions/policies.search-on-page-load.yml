@@ -5,14 +5,16 @@ action:
           - person.policies
     - InsisResetDatastoreValueExecutionRule:
         paths:
-          - insis.person.client.agent.pagination.page-index
-          - insis.person.client.agent.pagination.offset
-          - insis.person.client.agent.pagination.results-length
+          - pagination.policies.page-index
+          - pagination.policies.offset
+          - pagination.policies.results-length
         defaultValue: 0
+        scopeToDefinition: false
     - InsisResetDatastoreValueExecutionRule:
         paths:
-          - insis.person.client.agent.pagination.page-size
+          - pagination.policies.page-size
         defaultValue: 10
+        scopeToDefinition: false
     - IntegrationExecutionRule:
         integration: insurance-products.load
     - IntegrationExecutionRule:
