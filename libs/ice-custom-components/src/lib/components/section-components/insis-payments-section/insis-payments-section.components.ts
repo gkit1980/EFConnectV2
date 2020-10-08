@@ -39,7 +39,7 @@ export class InsisPaymentsSection extends SectionComponentImplementation impleme
   //
   private resolveResourceFromRecipe(paramName: string, defaultIfNotPresent: string) {
     const resourceKey = this.getRecipeParam(paramName);
-    return this.context.iceResource.resolve(paramName, defaultIfNotPresent);
+    return this.context.iceResource.resolve(resourceKey, defaultIfNotPresent);
   }
 
   //

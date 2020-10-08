@@ -260,6 +260,12 @@ confirmation-dialog-layout {
   }
 }
 
+.elements-space {
+  ice-element div {
+    padding-right: 2px;
+  }
+}
+
 .beneficiaries-details-radio-buttons {
   .ice-radiobutton-qroup {
     line-height: 0px;

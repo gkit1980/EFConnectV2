@@ -55,7 +55,7 @@ params:
     label: Payment plan text
     required: false
     type: resourceKey
-  taxesAndFeesResourceKey:
+  taxesAndFeesLabel:
     label: Taxes and fees label
     required: false
     type: resourceKey

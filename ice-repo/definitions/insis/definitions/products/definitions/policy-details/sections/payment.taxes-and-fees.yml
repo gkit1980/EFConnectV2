@@ -4,28 +4,22 @@ section:
       grid:
         rows:
           - cols:
-              - size: 33.33
+              - size: 60
                 size.xs: auto
                 size.sm: auto
                 elements:
                   - name: policy.contract.taxes~type
-              - size: 33.33
+              - size: 10
                 size.xs: auto
                 size.sm: auto
-              - size: calc(33.33% - 130px)
+              - size: calc(30% - 130px)
                 size.xs: auto
                 size.sm: auto
                 elements:
                   - name: policy.contract.taxes~amount
                 align: ''
                 css: text-align-right
-              - size: 123px
-                size.xs: auto
-                size.sm: auto
-                elements:
-                  - name: policy-details.per-installment-label
-                css: u-ml-1
-            css: underscore u-mb-2 u-ml-2
+            css: underscore u-mb-2 u-ml-4
             align: space-between
       arrayElement: policy.contract.taxes
       behaviourForEmptyRows: render

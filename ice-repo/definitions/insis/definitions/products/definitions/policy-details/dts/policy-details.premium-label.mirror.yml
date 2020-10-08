@@ -1,0 +1,12 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policy.contract.product-code
+  outputs:
+    - id: mirror
+      type: string
+  rules:
+    - inputs:
+        - '-'
+      outputs:
+        - premium-summary-section.dues.label

@@ -9,5 +9,5 @@ section:
       insuredsSection: payment.insureds
       taxesAndFeesSection: payment.taxes-and-fees
       paymentPlanLabel: section.policy-details.payment.plan.label
-      taxesAndFeesResourceKey: section.policy-details.payment.plan.taxes-and-fees.label
+      taxesAndFeesLabel: section.policy-details.payment.plan.taxes-and-fees.label
       nextPaymentDateElement: null

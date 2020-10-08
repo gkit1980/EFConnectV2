@@ -2568,8 +2568,8 @@ entries:
     policy-details:
       per-installment-label:
         label:
-          - en: ' (per installment)'
-            de: ' (per installment)'
+          - en: ' (price per installment)'
+            de: ' (price per installment)'
     new-claim:
       title:
         label:
@@ -2818,8 +2818,8 @@ entries:
               de: Payment plan
           taxes-and-fees:
             label:
-              - en: Taxes and fees
-                de: Taxes and fees
+              - en: Taxes and fees (price per installment)
+                de: Taxes and fees (price per installment)
     event:
       location:
         label:

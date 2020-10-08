@@ -4,16 +4,15 @@ section:
       grid:
         rows:
           - cols:
-              - size: none
+              - size: auto
                 size.xs: auto
                 size.sm: auto
                 elements:
-                  - name: policy.insured.objects~type
-              - size: none
-                size.xs: auto
-                size.sm: auto
-                elements:
+                  - name: policy-details.premium-label
+                  - name: policy.contract.product-name
                   - name: policy.insured.objects~person-data.full-name
+                  - name: policy-details.per-installment-label
+                css: nowrap elements-space
             gap: 5px
             css: u-text-medium u-mb-4
           - cols:
