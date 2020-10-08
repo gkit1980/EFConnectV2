@@ -1,0 +1,8 @@
+element:
+  type: text
+  viewMode: output
+  label:
+    NoLabelRule: {}
+  defaultValue:
+    ResourceValueRule:
+      key: elements.policy.insured.objects.items.covers.items.insured-amount.label

@@ -302,4 +302,10 @@
   .ice-radiobutton-qroup mat-label:empty {
     display: none;
   }
+
+  .mat-output-align-end {
+    mat-output div {
+      text-align: end;
+    }
+  }
 }

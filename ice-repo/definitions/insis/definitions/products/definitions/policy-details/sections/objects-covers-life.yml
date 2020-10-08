@@ -10,16 +10,20 @@ section:
       grid:
         rows:
           - cols:
-              - size: auto
+              - size: 100%
                 css: mat-headline u-mb-4 u-mt-1
                 elements:
                   - name: policy.insured.objects~person-data.title
           - cols:
-              - size: auto
+              - size: 80%
                 css: mat-caption
                 elements:
                   - name: policy.insured.objects~person-data.covers-subtitle
+              - size: 20%
+                css: mat-caption mat-output-align-end
+                elements:
+                  - name: policy.insured.sum-insured-title
           - cols:
-              - size: auto
+              - size: 100%
                 sections:
                   - name: objects-covers-list
