@@ -1,23 +1,27 @@
 integration:
-  type: active
   exchange:
-    InsisDBExchangeRule:
-      connectString: 'insis-db-url'
-      username: 'insis-db-username'
-      password: 'insis-db-password'
-      queryFileURL: data/event-types.get.sql
-      queryType: SQL
-      query: ''
+    InsisRestPQCallExchangeRule:
+      endpointBaseurl: 'insis-rest-endpoint'
+      verb: post
+      url: '/util/query/paginated-query'
   transformation:
     DefaultTransformationRule:
       out:
         - mappings:
+            - param: queryId
+              value: event-types.get
+
             - param: page_size
               value: 10
+
             - param: offset
               value: 0
+
             - param: event_type
               element: claim.event.type
+
+            - param: p_fulltext
+              value: ''
       in:
         - fromIdx:
             array: payload.rows

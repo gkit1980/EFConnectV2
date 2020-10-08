@@ -1,15 +1,17 @@
 integration:
   exchange:
-    InsisDBExchangeRule:
-      connectString: 'insis-db-url'
-      username: 'insis-db-username'
-      password: 'insis-db-password'
-      queryFileURL: data/banks.get.sql
-      queryType: SQL
+    InsisRestPQCallExchangeRule:
+      endpointBaseurl: 'insis-rest-endpoint'
+      verb: post
+      url: '/util/query/paginated-query'
   transformation:
     DefaultTransformationRule:
       additional: insis
       dateFormat: YYYY-MM-DD
+      out:
+        - mappings:
+            - param: queryId
+              value: banks.get
       in:
         - fromIdx:
             array: payload.rows

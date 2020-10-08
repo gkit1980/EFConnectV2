@@ -32,7 +32,7 @@ SELECT
                         AND ((:p_fulltext IS NULL) OR (cs.name LIKE :p_fulltext))
                         ),
 
-    'total' is ceil(count(*) over ()) )
+    'total' is ceil(count(*) over ()) ) as jsonRowItem
 FROM (
     WITH cldata AS (select p.policy_id, p.policy_no, p.insr_type, it.name as itname, c.claim_id, c.claim_regid, c.registration_date,
        c.event_date,c.event_type, c.event_place, c.event_country, e.name as ename, pn.client_pid, peo.man_comp, c.claim_id AS claim_side,

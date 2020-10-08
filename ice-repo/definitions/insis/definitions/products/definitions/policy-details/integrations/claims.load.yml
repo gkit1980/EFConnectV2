@@ -1,16 +1,16 @@
 integration:
   exchange:
-    InsisDBExchangeRule:
-      connectString: 'insis-db-url'
-      username: 'insis-db-username'
-      password: 'insis-db-password'
-      queryFileURL: data/claims.agent.get.sql
-      queryType: JSON
+    InsisRestPQCallExchangeRule:
+      endpointBaseurl: 'insis-rest-endpoint'
+      verb: post
+      url: '/util/query/paginated-query'
   transformation:
     DefaultTransformationRule:
       dateFormat: YYYY-MM-DD
       out:
         - mappings:
+            - param: queryId
+              value: claims.agent.get
             - param: client_pid
               element: policy.participants.holder.person.pid
             - param: client_name
