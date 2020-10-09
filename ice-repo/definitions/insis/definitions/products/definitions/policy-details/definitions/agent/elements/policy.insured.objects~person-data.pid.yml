@@ -1,0 +1,18 @@
+element:
+  type: text
+  viewMode: output
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          variant: default
+  action:
+    execution:
+      - DtNavigateToDefinitionExecutionRule:
+          dt: insis.products.policy-details.navigate.to-person
+          definitionOutput: url
+  label:
+    ResourceWithElementValuesLabelRule:
+      elements:
+        - policy.insured.objects~person-data.pid
+      key: elements.policy.insured.objects.items.person-data.pid.label-param

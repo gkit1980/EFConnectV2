@@ -56,7 +56,7 @@ integration:
               value: 'life'
             - element: policy.insured.objects~person-data.pid
               payload: >-
-                policyAnnexes[0].insuredObjects[n].insuredEntity.oAccinsured.manId
+                policyAnnexes[0].insuredObjects[n].insuredEntity.oAccinsured.pPeopleComplex.egn
             - element: policy.insured.objects~person-data.accident
               payload: >-
                 policyAnnexes[0].insuredObjects[n].insuredEntity.oAccinsured.accinsType

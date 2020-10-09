@@ -32,8 +32,11 @@ section:
                 elements:
                   - name: policy.insured.objects~person-data.country
               - size: 33%
+                css: label-link
                 elements:
+                  - name: policy.insured.objects~person-data.pid-label
                   - name: policy.insured.objects~person-data.pid
+
   viewMode:
     ConditionalSectionViewModeRule:
       conditionElement: policy.insured.objects~type

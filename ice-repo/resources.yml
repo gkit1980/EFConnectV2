@@ -1736,12 +1736,19 @@ entries:
                     de: Country
               pid:
                 label:
-                  - en: Client ID
-                    de: Client ID
+                  - en: 'Client id'
+                    de: 'Client id'
+                label-param:
+                  - en: '${param1}'
+                    de: '${param1}'
               covers-subtitle:
                 label:
                   - en: '${param1} will be ${param2} at the end of the insurance.'
                     de: '${param1} will be ${param2} at the end of the insurance.'
+              pid-label:
+                label:
+                  - en: Client id
+                    de: Client id
             covers:
               items:
                 premium:
