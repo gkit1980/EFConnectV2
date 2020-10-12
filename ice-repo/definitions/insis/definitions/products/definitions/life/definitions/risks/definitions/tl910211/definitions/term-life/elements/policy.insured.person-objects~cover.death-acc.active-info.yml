@@ -21,3 +21,7 @@ element:
           offsetX: '35'
           offsetY: '45'
           scrollStrategy: BlockScrollStrategy
+  viewMode:
+    DtViewModeRule:
+      dt: policy.insured.person-objects~cover.cover-death-acc.viewmode
+      output: viewmode

@@ -1,0 +1,22 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policy.insured.person-objects~entity-accident-insured.type
+    - element: policy.contract.term.duration
+    - element: policy.insured.person-objects~cover.premret.insured-amount
+  outputs:
+    - id: viewmode
+      type: string
+  rules:
+    - inputs:
+        - 1
+        - '>10'
+        - '>0'
+      outputs:
+        - default
+    - inputs:
+        - '-'
+        - '-'
+        - '-'
+      outputs:
+        - hidden

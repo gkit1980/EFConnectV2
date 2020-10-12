@@ -1,0 +1,19 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policy.insured.person-objects~entity-accident-insured.type
+    - element: policy.insured.person-objects~cover.death-acc.insured-amount
+  outputs:
+    - id: viewmode
+      type: string
+  rules:
+    - inputs:
+        - 1
+        - '>0'
+      outputs:
+        - default
+    - inputs:
+        - '-'
+        - '-'
+      outputs:
+        - hidden

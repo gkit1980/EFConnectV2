@@ -49,7 +49,7 @@ section:
                 css: u-ml-7 u-d-inlineblock slider-mirror-labels
                 align: center
             css: u-mb-4 insured-amount-slider
-          - css: inline-cell-elements
+          - css: inline-cell-elements cover-row
             cols:
               - size: auto
                 elements:
@@ -59,7 +59,7 @@ section:
                 elements:
                   - name: policy.insured.person-objects~cover.wop-total.premium
             align: space-between
-          - css: inline-cell-elements
+          - css: inline-cell-elements cover-row
             cols:
               - size: auto
                 elements:
@@ -69,7 +69,7 @@ section:
                 elements:
                   - name: >-
                       policy.insured.person-objects~cover.tpdill.premium
-          - css: inline-cell-elements cover-addon-info
+          - css: inline-cell-elements cover-addon-info cover-row
             cols:
               - size: auto
                 elements:
@@ -79,7 +79,7 @@ section:
                 elements:
                   - name: policy.insured.person-objects~cover.tpdaccd.premium
                   - name: policy.insured.person-objects~cover.tpdaccd-addon-info
-          - css: inline-cell-elements cover-addon-info
+          - css: inline-cell-elements cover-addon-info cover-row
             cols:
               - size: auto
                 elements:
@@ -89,7 +89,7 @@ section:
                 elements:
                   - name: policy.insured.person-objects~cover.death-acc.premium
                   - name: policy.insured.person-objects~cover.death-acc-addon-info
-          - css: inline-cell-elements
+          - css: inline-cell-elements cover-row
             cols:
               - size: auto
                 elements:
@@ -99,7 +99,7 @@ section:
                 elements:
                   - name: >-
                       policy.insured.person-objects~cover.critic-ill.premium
-          - css: inline-cell-elements
+          - css: inline-cell-elements cover-row
             cols:
               - size: auto
                 elements:

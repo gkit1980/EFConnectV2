@@ -23,5 +23,5 @@ element:
           scrollStrategy: BlockScrollStrategy
   viewMode:
     DtViewModeRule:
-      dt: policy.insured.person-objects~cover.additional-person-covers.viewmode
+      dt: policy.insured.person-objects~cover.cover-tpdill.viewmode
       output: viewmode
