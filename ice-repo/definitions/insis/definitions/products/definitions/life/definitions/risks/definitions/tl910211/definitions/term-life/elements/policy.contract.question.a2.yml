@@ -1,0 +1,9 @@
+element:
+  title: Are you a politically exposed person?
+  type: boolean
+  component:
+    StaticComponentRule:
+      component:
+        IceRadiobuttonGroup: {}
+  viewMode: required
+  values: insis.policy.contract.question.a2

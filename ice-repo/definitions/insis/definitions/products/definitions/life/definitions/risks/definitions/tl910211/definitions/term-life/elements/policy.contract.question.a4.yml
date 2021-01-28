@@ -1,0 +1,9 @@
+element:
+  title: I consent to receive marketing material
+  type: boolean
+  component:
+    StaticComponentRule:
+      component:
+        IceRadiobuttonGroup: {}
+  viewMode: default
+  values: insis.policy.contract.question.a4

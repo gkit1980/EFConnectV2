@@ -1,0 +1,12 @@
+element:
+  title: I declare that I am a tax resident in the USA.
+  type: boolean
+  component: IceCheckbox
+  values: insis.policy.contract.question.fatca2
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.contract.question.fatca1
+      conditionValue: false
+      conditionViewMode: required
+      elseViewMode: hidden
+  defaultValue: false

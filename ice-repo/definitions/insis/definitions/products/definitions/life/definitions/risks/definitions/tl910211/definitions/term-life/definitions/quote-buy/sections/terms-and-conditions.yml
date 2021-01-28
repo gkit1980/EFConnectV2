@@ -20,5 +20,23 @@ section:
                   - name: terms-and-conditions.access-personal-information
             gap: 10px
             css: u-mb-4
+          - cols:
+              - size: auto
+                elements:
+                  - name: policy.contract.question.a5
+            gap: 10px
+            css: u-mb-4
+          - cols:
+              - size: auto
+                elements:
+                  - name: policy.contract.question.fatca1
+            gap: 10px
+            css: u-mb-4
+          - cols:
+              - size: auto
+                elements:
+                  - name: policy.contract.question.fatca2
+            gap: 10px
+            css: u-mb-4
       behaviourForEmptyRows: render
   viewMode: default

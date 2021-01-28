@@ -8,6 +8,51 @@ integration:
       extends: life.insis-policy.save
       in: {}
       out:
+        - mappings:
+            - value: 'F1'
+              payload: InsuranceConditions.Questionary.Question[0].ID
+            - element: policy.contract.question.a1
+              payload: InsuranceConditions.Questionary.Question[0].Answer
+
+            - value: 'F1.1'
+              payload: InsuranceConditions.Questionary.Question[1].ID
+            - element: policy.contract.question.a3-1
+              payload: InsuranceConditions.Questionary.Question[1].Answer
+
+            - value: 'F2'
+              payload: InsuranceConditions.Questionary.Question[2].ID
+            - element: policy.contract.question.a2
+              payload: InsuranceConditions.Questionary.Question[2].Answer
+
+            - value: 'F2.1'
+              payload: InsuranceConditions.Questionary.Question[3].ID
+            - element: policy.contract.question.a2-1
+              payload: InsuranceConditions.Questionary.Question[3].Answer
+
+            - value: 'F3'
+              payload: InsuranceConditions.Questionary.Question[4].ID
+            - element: policy.contract.question.a4
+              payload: InsuranceConditions.Questionary.Question[4].Answer
+
+            - value: 'F3.1'
+              payload: InsuranceConditions.Questionary.Question[5].ID
+            - element: policy.contract.question.a4-1
+              payload: InsuranceConditions.Questionary.Question[5].Answer
+
+            - value: 'F4'
+              payload: InsuranceConditions.Questionary.Question[6].ID
+            - element: policy.contract.question.a5
+              payload: InsuranceConditions.Questionary.Question[6].Answer
+
+            - value: 'FATCA1'
+              payload: InsuranceConditions.Questionary.Question[7].ID
+            - element: policy.contract.question.fatca1
+              payload: InsuranceConditions.Questionary.Question[7].Answer
+
+            - value: 'FATCA2'
+              payload: InsuranceConditions.Questionary.Question[8].ID
+            - element: policy.contract.question.fatca2
+              payload: InsuranceConditions.Questionary.Question[8].Answer
         - toIdx:
             array: 'payload.InsuranceConditions.Questionary.Question'
             append: true

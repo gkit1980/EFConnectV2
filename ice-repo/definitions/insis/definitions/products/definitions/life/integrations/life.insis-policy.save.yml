@@ -37,6 +37,8 @@ integration:
           mappings:
             - element: policy.insured.person-objects~person.pid
               payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.PID
+            - element: policy.insured.person-objects~person.gender
+              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.Gender
 
         - fromIdx:
             array: datamodel.policy.insured.person-objects
@@ -46,8 +48,8 @@ integration:
           mappings:
             - element: policy.insured.person-objects~person.man-id
               payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.PersonID
-            - value: ' '
-              payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.PID
+            # - value: ' '
+            #   payload: Insureds.Insured[n].InsuredEntity.OAccidentInsured.PID
 
         - fromIdx:
             array: datamodel.policy.insured.person-objects

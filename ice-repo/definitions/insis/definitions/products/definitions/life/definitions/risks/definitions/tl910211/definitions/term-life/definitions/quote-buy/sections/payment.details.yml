@@ -8,37 +8,65 @@ section:
                 size.xs: auto
                 size.sm: auto
                 elements:
-                  - name: payment-details.financial-questions.first
+                  - name: policy.contract.question.a1
                 css: u-mb-2
           - cols:
               - size: auto
                 size.xs: auto
                 size.sm: auto
                 elements:
-                  - name: payment-details.financial-questions.second
+                  - name: policy.contract.question.a3-1
                 css: u-mb-6
-          - gap: 24px
-            gap.xs: 0px
-            align: start
-            cols:
-              - size: 100%
-                size.xs: 100%
-                css: u-mb-4 medical-documents-label
-                elements:
-                  - name: payment-labels.icd-documents
-          - cols:
-              - size: auto
-                size.xs: auto
-                size.sm: auto
-                sections:
-                  - name: document-icd-attachments
           - cols:
               - size: auto
                 size.xs: auto
                 size.sm: auto
                 elements:
-                  - name: browse-icd-button
+                  - name: policy.contract.question.a2
                 css: u-mb-6
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.contract.question.a2-1
+                css: u-mb-6
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.contract.question.a4
+                css: u-mb-6
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.contract.question.a4-1
+                css: u-mb-6
+          # - gap: 24px
+          #   gap.xs: 0px
+          #   align: start
+          #   cols:
+          #     - size: 100%
+          #       size.xs: 100%
+          #       css: u-mb-4 medical-documents-label
+          #       elements:
+          #         - name: payment-labels.icd-documents
+          # - cols:
+          #     - size: auto
+          #       size.xs: auto
+          #       size.sm: auto
+          #       sections:
+          #         - name: document-icd-attachments
+          # - cols:
+          #     - size: auto
+          #       size.xs: auto
+          #       size.sm: auto
+          #       elements:
+          #         - name: browse-icd-button
+          #       css: u-mb-6
           - cols:
               - size: 40%
                 size.xs: auto

@@ -1,0 +1,23 @@
+list:
+  type: text
+  additionals:
+    label:
+      label: Label
+      type: text
+  items:
+    - value: F1.01
+      label: Salary
+    - value: F1.02
+      label: Savings
+    - value: F1.03
+      label: Sale of property/car
+    - value: F1.04
+      label: Inheritance
+    - value: F1.05
+      label: Sale of investment/shares/bonds
+    - value: F1.06
+      label: Company/business sale
+    - value: F1.07
+      label: Divorce settlement
+    - value: F1.08
+      label: Lottery/gaming winnings

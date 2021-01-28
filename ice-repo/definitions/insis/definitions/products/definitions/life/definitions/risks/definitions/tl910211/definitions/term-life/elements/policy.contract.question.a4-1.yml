@@ -1,0 +1,9 @@
+element:
+  title: Preferred method of communication/marketing
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        IceRadiobuttonGroup: {}
+  defaultValue: '1'
+  values: insis.policy.contract.question.a4-1

@@ -1,0 +1,10 @@
+element:
+  title: What is your monthly income?
+  type: currency
+  component: IceCurrency
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.contract.question.a1
+      conditionValue: F1.01
+      conditionViewMode: required
+      elseViewMode: hidden

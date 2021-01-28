@@ -17,6 +17,62 @@ integration:
           mappings:
             - element: policy.contract.question.q-01
               payload: 'Policy.InsuranceConditions.Questionary.Question[n].Answer'
+
+        - fromIdx:
+            array: payload.policy.InsuranceConditions.Questionary.Question
+            condition: ID == 'F1'
+          mappings:
+            - element: policy.contract.question.a1
+              payload: Policy.InsuranceConditions.Questionary.Question[n].Answer
+
+        - fromIdx:
+            array: payload.policy.InsuranceConditions.Questionary.Question
+            condition: ID == 'F1.1'
+          mappings:
+            - element: policy.contract.question.a3-1
+              payload: Policy.InsuranceConditions.Questionary.Question[n].Answer
+        - fromIdx:
+            array: payload.policy.InsuranceConditions.Questionary.Question
+            condition: ID == 'F2'
+          mappings:
+            - element: policy.contract.question.a2
+              payload: Policy.InsuranceConditions.Questionary.Question[n].Answer
+        - fromIdx:
+            array: payload.policy.InsuranceConditions.Questionary.Question
+            condition: ID == 'F2.1'
+          mappings:
+            - element: policy.contract.question.a2-1
+              payload: Policy.InsuranceConditions.Questionary.Question[n].Answer
+        - fromIdx:
+            array: payload.policy.InsuranceConditions.Questionary.Question
+            condition: ID == 'F3'
+          mappings:
+            - element: policy.contract.question.a3
+              payload: Policy.InsuranceConditions.Questionary.Question[n].Answer
+        - fromIdx:
+            array: payload.policy.InsuranceConditions.Questionary.Question
+            condition: ID == 'F3.1'
+          mappings:
+            - element: policy.contract.question.a3-1
+              payload: Policy.InsuranceConditions.Questionary.Question[n].Answer
+        - fromIdx:
+            array: payload.policy.InsuranceConditions.Questionary.Question
+            condition: ID == 'F4'
+          mappings:
+            - element: policy.contract.question.a4
+              payload: Policy.InsuranceConditions.Questionary.Question[n].Answer
+        - fromIdx:
+            array: payload.Policy.InsuranceConditions.Questionary.Question
+            condition: ID == 'FATCA1'
+          mappings:
+            - element: policy.contract.question.fatca1
+              payload: Policy.InsuranceConditions.Questionary.Question[n].Answer
+        - fromIdx:
+            array: payload.Policy.InsuranceConditions.Questionary.Question
+            condition: ID == 'FATCA2'
+          mappings:
+            - element: policy.contract.question.fatca2
+              payload: Policy.InsuranceConditions.Questionary.Question[n].Answer
         - fromIdx:
             array: payload.Policy.Insureds.Insured
             fromIdx:

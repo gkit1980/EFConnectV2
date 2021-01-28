@@ -41,8 +41,6 @@ section:
                 elements:
                   - name: >-
                       policy.insured.person-objects~cover.death-any.insured-amount
-                  - name: >-
-                      policy.insured.person-objects~cover.death-any.insured-amount-mirror
               - size: calc(40% - 28px)
                 size.xs: 100%
                 size.sm: 100%

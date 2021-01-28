@@ -1,0 +1,14 @@
+element:
+  title: >-
+    I declare that I am not a citizen of the US and I am not a tax resident in
+    the USA
+  type: boolean
+  component: IceCheckbox
+  values: insis.policy.contract.question.fatca1
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.contract.question.fatca2
+      conditionValue: true
+      conditionViewMode: hidden
+      elseViewMode: required
+  defaultValue: true

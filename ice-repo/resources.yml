@@ -1867,6 +1867,57 @@ entries:
             label:
               - en: Previous insurer
                 de: Previous insurer
+          a1:
+            label:
+              - en: Source of Funds?
+                de: Source of Funds?
+          a2:
+            label:
+              - en: Are you a politically exposed person?
+                de: Are you a politically exposed person?
+          a2-1:
+            label:
+              - en: Please give details
+                de: Please give details
+          a3:
+            label:
+              - en: 'Please, select reason for chosing Death coverage'
+                de: null
+          a3-1:
+            label:
+              - en: What is your monthly income?
+                de: null
+          a4:
+            label:
+              - en: I consent to receive marketing material
+                de: I consent to receive marketing material
+          a4-1:
+            label:
+              - en: Preferred method of communication/marketing?
+                de: Preferred method of communication/marketing?
+          a5:
+            label:
+              - en: >-
+                  I have read, understood and accept all the terms, conditions
+                  and contents of
+                    the proposal form and other product related information
+                de: >-
+                  I have read, understood and accept all the terms, conditions
+                  and contents of
+                    the proposal form and other product related information
+          fatca1:
+            label:
+              - en: >-
+                  I declare that I am not a citizen of the US and I am not a tax
+                  resident in the USA.
+                de: >-
+                  I declare that I am not a citizen of the US and I am not a tax
+                  resident in the USA.
+          fatca2:
+            label:
+              - en: I declare that I am a tax resident in the USA.
+                de: I declare that I am a tax resident in the USA.
+
       participants:
         holder:
           person:
