@@ -1,5 +1,5 @@
 element:
   title: Height
-  type: integer
+  type: decimal
   component: IceNumber
   viewMode: required

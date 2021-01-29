@@ -5,10 +5,10 @@ element:
       conditionValue: '1'
       conditionViewMode: required
       elseViewMode: hidden
-  type: integer
+  type: decimal
   fake:
-    value: 185
+    value: 1.85
   range:
     StaticRangeRule:
-      min: '45'
-      max: '245'
+      min: '0.45'
+      max: '2.45'

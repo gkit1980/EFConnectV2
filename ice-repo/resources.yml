@@ -1449,12 +1449,12 @@ entries:
                     de: Hauptsportaktivitäten
               q-02:
                 label:
-                  - en: Height
-                    de: Höhe
+                  - en: 'Height [m]'
+                    de: 'Höhe [m]'
               q-03:
                 label:
-                  - en: Weight
-                    de: Gewicht
+                  - en: 'Weight [kg]'
+                    de: 'Gewicht [kg]'
               q-08:
                 label:
                   - en: How often does this person consume alcohol?
@@ -1736,8 +1736,8 @@ entries:
                     de: Country
               pid:
                 label:
-                  - en: 'Client id'
-                    de: 'Client id'
+                  - en: Client id
+                    de: Client id
                 label-param:
                   - en: '${param1}'
                     de: '${param1}'
@@ -1917,7 +1917,6 @@ entries:
             label:
               - en: I declare that I am a tax resident in the USA.
                 de: I declare that I am a tax resident in the USA.
-
       participants:
         holder:
           person:
@@ -2812,9 +2811,9 @@ entries:
         - en: Please confirm
           de: Bitte bestätigen
       not_allowed_here:
-        - en: "'${value}' not allowed here"
+        - en: '''${value}'' not allowed here'
       regexp:
-        - en: "'${value}' does not matches regular expression ${regexp}"
+        - en: '''${value}'' does not matches regular expression ${regexp}'
       array:
         min:
           - en: 'must have at least ${min} entries'
