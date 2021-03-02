@@ -5,5 +5,7 @@
   background: map-get($colors, 'background') !important;
   .app-container {
     color: map-get($colors, 'text') !important;
+
+    min-height: calc(100vh - 138px);
   }
 }
