@@ -1,6 +1,6 @@
 definition:
   title: insis.person.client.agent
   executable: true
-  showInsights: true
+  showInsights: false
   elementOnPageCheck: false
   api: true

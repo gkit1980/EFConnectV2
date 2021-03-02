@@ -1,5 +1,5 @@
 definition:
   title: insis.dashboard
   executable: true
-  showInsights: true
+  showInsights: false
   elementOnPageCheck: false
