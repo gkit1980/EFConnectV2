@@ -4,7 +4,7 @@ integration:
       endpointBaseurl: insis-rest-endpoint
       verb: get
       url: >-
-        /people-dir/person/?startRow=${OFFSET}&rowCount=${PAGE_SIZE}&name=${NAME
+        people-dir/person/?startRow=${OFFSET}&rowCount=${PAGE_SIZE}&name=${NAME
         ? NAME + "%" : ""}&egn=${PID ? PID : ""}&manComp=${MAN_COMP ? MAN_COMP :
         ""}
   transformation:

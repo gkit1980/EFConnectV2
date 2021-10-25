@@ -9,653 +9,809 @@ entries:
           label:
             - en: Client
               de: null
+              nl: ''
         make:
           label:
             - en: Make
               de: null
+              nl: ''
         model:
           label:
             - en: Model
               de: null
+              nl: ''
         type:
           label:
             - en: Type
               de: null
+              nl: ''
         year:
           label:
             - en: Year
               de: null
+              nl: ''
         reg-no:
           label:
             - en: License plate
               de: null
+              nl: ''
         vin:
           label:
             - en: VIN
               de: null
+              nl: ''
         pid:
           label:
             - en: National ID
               de: null
+              nl: ''
     download:
       quote:
         label:
           - en: Download quote
             de: Download quote
+            nl: ''
     agent-claims:
       items:
         case-id:
           label:
             - en: Claim number
               de: null
+              nl: ''
         claim-state:
           label:
             - en: State
               de: null
+              nl: ''
         event-type:
           label:
             - en: Event type
               de: null
+              nl: ''
         claim-date:
           label:
             - en: Claim date
               de: null
+              nl: ''
         event-date:
           label:
             - en: Event date
               de: null
+              nl: ''
         client:
           label:
             - en: Client
               de: null
+              nl: ''
         policy:
           label:
             - en: Policy
               de: null
+              nl: ''
     client:
       open-popup:
         label:
           - en: ADD ANOTHER PERSON
             de: ADD ANOTHER PERSON
+            nl: ''
       search:
         name:
           label:
             - en: Search by Name
               de: Search by Name
+              nl: ''
         pid:
           label:
             - en: Search by National ID
               de: Search by National ID
+              nl: ''
         submit:
           label:
             - en: Search
               de: Search
+              nl: ''
         pid-and-name:
           label:
             - en: '${param1} ${param2}'
               de: '${param1} ${param2}'
+              nl: ''
       list:
         items:
           name:
             label:
               - en: Name
                 de: Name
+                nl: ''
           pid:
             label:
               - en: National ID
                 de: National ID
+                nl: ''
       action:
         add-new:
           label:
             - en: Add new person
               de: Add new person
+              nl: ''
         add-selected:
           label:
             - en: Add
               de: Add
+              nl: ''
         cancel:
           label:
             - en: Cancel
               de: Cancel
+              nl: ''
       claims:
         no-claims-text:
           label:
             - en: No claims
               de: null
+              nl: ''
     clients:
       items:
         view-more:
           label:
             - en: '${param1}'
               de: '${param1}'
+              nl: ''
     new-policy:
       label:
         - en: NEW POLICY
           de: NEUE POLICE
+          nl: ''
     search-policies:
       product-id:
         label:
           - en: Product
             de: Produkt
+            nl: ''
         empty:
           - en: Any
             de: Any
+            nl: ''
       policy-state:
         label:
           - en: State
             de: State
+            nl: ''
       insr-begin:
         label:
           - en: Insurance begin
             de: Vers.Beginn
+            nl: ''
       insr-end:
         label:
           - en: Insurance end
             de: Vers.Ende
+            nl: ''
       policy-no:
         label:
           - en: Policy number
             de: Police nummer
+            nl: ''
       client-name:
         label:
           - en: Client name
             de: Kunde Name
+            nl: ''
       client-id:
         label:
           - en: Client ID
             de: Kunde ID
+            nl: ''
       insured-object:
         label:
           - en: Insured object
             de: Insured object
+            nl: ''
       search:
         label:
           - en: SEARCH
             de: SUCHEN
+            nl: ''
         tooltip:
           - en: Alt+S
             de: Alt+S
+            nl: ''
         placeholder:
           - en: Search...
             de: Search...
+            nl: ''
     search:
       fulltext:
         placeholder:
           - en: Search...
             de: Suche...
+            nl: ''
       type:
         label:
           - en: Type
             de: Typ
+            nl: ''
       active-policies:
         label:
           - en: Active policies
             de: Aktive Policen
+            nl: ''
       name:
         label:
           - en: Name
             de: Kunde
+            nl: ''
       id:
         label:
           - en: Client id
             de: Kunden-ID
+            nl: ''
       see-less-options:
         label:
           - en: See less options
             de: See less options
+            nl: ''
       see-more-options:
         label:
           - en: See more options
             de: See more options
+            nl: ''
       cases:
         product-id:
           empty:
             - en: Any product
               de: null
+              nl: ''
           label:
             - en: Product
               de: null
+              nl: ''
         policy-no:
           label:
             - en: Policy number
               de: null
+              nl: ''
         client-name:
           label:
             - en: Client name
               de: null
+              nl: ''
         case-id:
           label:
             - en: Claim id
               de: null
+              nl: ''
         client-id:
           label:
             - en: Client ID
               de: null
+              nl: ''
         claim:
           status:
             label:
               - en: State
                 de: null
+                nl: ''
           number:
             label:
               - en: Claim number
                 de: null
+                nl: ''
           date-from:
             label:
               - en: Claim date from
                 de: null
+                nl: ''
           date-to:
             label:
               - en: Claim date to
                 de: null
+                nl: ''
         event:
           date-from:
             label:
               - en: Event date from
                 de: null
+                nl: ''
           date-to:
             label:
               - en: Event date to
                 de: null
+                nl: ''
           type:
             label:
               - en: Event type
                 de: null
+                nl: ''
     new-client:
       label:
         - en: NEW CLIENT
           de: NEUER KUNDE
+          nl: ''
       title:
         label:
           - en: New client
             de: New client
+            nl: ''
       person-data:
         title:
           label:
             - en: Person data
               de: Person data
+              nl: ''
         birthdate:
           label:
             - en: Birth date
               de: Birth date
+              nl: ''
         first-name:
           label:
             - en: First name
               de: First name
+              nl: ''
         gender:
           label:
             - en: Gender
               de: Gender
+              nl: ''
         industry:
           label:
             - en: Industry (optional)
               de: Industry (optional)
+              nl: ''
         last-name:
           label:
             - en: Last name
               de: Last name
+              nl: ''
         middle-name:
           label:
             - en: Middle name (optional)
               de: Middle name (optional)
+              nl: ''
         name-prefix:
           label:
             - en: Name prefix (optional)
               de: Name prefix (optional)
+              nl: ''
         name-suffix:
           label:
             - en: Name suffix (optional)
               de: Name suffix (optional)
+              nl: ''
         nationality:
           label:
             - en: Nationality
               de: Nationality
+              nl: ''
         preferred-language:
           label:
             - en: Preferred language
               de: Preferred language
+              nl: ''
         subindustry:
           label:
             - en: Subindustry (optional)
               de: Subindustry (optional)
+              nl: ''
       company-data:
         title:
           label:
             - en: Company data
               de: Company data
+              nl: ''
         home-country:
           label:
             - en: Home country
               de: Home country
+              nl: ''
         industry:
           label:
             - en: Industry
               de: Industry
+              nl: ''
         name:
           label:
             - en: Name
               de: Name
+              nl: ''
         nationality:
           label:
             - en: Nationality
               de: Nationality
+              nl: ''
         preferred-language:
           label:
             - en: Preferred language
               de: Preferred language
+              nl: ''
         subindustry:
           label:
             - en: Subindustry (optional)
               de: Subindustry (optional)
+              nl: ''
         type:
           label:
             - en: Company type
               de: Company type
+              nl: ''
       contact:
         title:
           label:
             - en: Contact
               de: Contact
+              nl: ''
         phone-number:
           label:
             - en: Phone number
               de: Phone number
+              nl: ''
         email:
           label:
             - en: Email
               de: Email
+              nl: ''
         type:
           label:
             - en: Contact type
               de: Contact type
+              nl: ''
       address:
         title:
           label:
             - en: Address
               de: Address
+              nl: ''
         apartment-number:
           label:
             - en: Apartment number (optional)
               de: Apartment number (optional)
+              nl: ''
         block-number:
           label:
             - en: Block number (optional)
               de: Block number (optional)
+              nl: ''
         city:
           label:
             - en: City
               de: City
+              nl: ''
         country:
           label:
             - en: Country
               de: Country
+              nl: ''
         entrance-number:
           label:
             - en: Entrance number (optional)
               de: Entrance number (optional)
+              nl: ''
         floor-number:
           label:
             - en: Floor number (optional)
               de: Floor number (optional)
+              nl: ''
         post-code:
           label:
             - en: Post code
               de: Post code
+              nl: ''
         region:
           label:
             - en: Region (optional)
               de: Region (optional)
+              nl: ''
         state:
           label:
             - en: State (optional)
               de: State (optional)
+              nl: ''
         street-number:
           label:
             - en: Street number (optional)
               de: Street number (optional)
+              nl: ''
         street:
           label:
             - en: Street (optional)
               de: Street (optional)
+              nl: ''
         type:
           label:
             - en: Address type
               de: Address type
+              nl: ''
       see-more-options:
         label:
           - en: See more options
             de: See more options
+            nl: ''
       activity:
         cancel:
           label:
             - en: Cancel
               de: Cancel
+              nl: ''
         create:
           label:
             - en: Create
               de: Create
+              nl: ''
         navigate-to-all-clients:
           label:
             - en: BACK TO ALL CLIENTS
               de: BACK TO ALL CLIENTS
+              nl: ''
       client-type:
         label:
           - en: Client type
             de: Client type
+            nl: ''
     expired-policies:
       items:
         more-actions:
           icon:
             - en: more_horiz.svg
               de: more_horiz.svg
+              nl: ''
         insured:
           premium:
             total:
               label:
                 - en: Price
                   de: null
+                  nl: ''
         insured-object:
           label:
             - en: Insured object
               de: null
+              nl: ''
         link:
           label:
             - en: '${param1}'
               de: '${param1}'
+              nl: ''
         contract:
           payment:
             completed:
               label:
                 - en: Completed
                   de: null
+                  nl: ''
             frequency:
               label:
                 - en: Payment
                   de: null
+                  nl: ''
           end:
             label:
               - en: Expired on
                 de: null
+                nl: ''
           product-name:
             label:
               - en: Type
                 de: null
+                nl: ''
           policy-id:
             label:
               - en: Policy number
                 de: null
+                nl: ''
     policies:
       items:
         insured-objects-formatted:
           label:
             - en: '${param1} objects'
               de: '${param1} Objekte'
+              nl: ''
         client-view-more:
           label:
             - en: '${param1} ${param2}'
               de: '${param1} ${param2}'
+              nl: ''
         client-name:
           label:
             - en: Client
               de: Kunde
+              nl: ''
         view-more:
           label:
             - en: View
               de: View
+              nl: ''
         submit-claim:
           label:
             - en: Submit claim
               de: Submit claim
+              nl: ''
         more-actions:
           icon:
             - en: more_horiz.svg
               de: more_horiz.svg
+              nl: ''
         insr_end:
           label:
             - en: Valid until
               de: Valid until
+              nl: ''
         insured-objects:
           items:
             item:
               label:
                 - en: Insured Objects
                   de: Insured Objects
+                  nl: ''
           main-insured:
             - en: Main insured
               de: null
+              nl: ''
           additional-insured:
             - en: Additional insured
               de: null
+              nl: ''
         policy-no:
           label:
             - en: Policy number
               de: Policy number
+              nl: ''
         policy-state-name:
           label:
             - en: State
               de: Status
+              nl: ''
         insr-begin:
           label:
             - en: Insurance begin
               de: Insurance begin
+              nl: ''
         insr-end:
           label:
             - en: Insurance end
               de: Insurance end
+              nl: ''
         insured-objects~item:
           label:
             - en: Insured Object
               de: Insured Object
+              nl: ''
         product-formatted-long:
           content:
             - en: '${param1} - ${param2} ${param3}'
               de: '${param1} - ${param2} ${param3}'
+              nl: ''
         product-formatted:
           content:
             - en: '${param1} - ${param2}'
               de: '${param1} - ${param2}'
+              nl: ''
           label:
             - en: Product
               de: Produkt
+              nl: ''
         next-payment:
           summary:
             value:
               - en: '${param1} EUR, ${param2}'
                 de: '${param1} EUR, ${param2}'
+                nl: ''
             label:
               - en: 'Next payment (${param1})'
                 de: 'Next payment (${param1})'
+                nl: ''
         payment-completed-text:
           label:
             - en: Payment
               de: null
+              nl: ''
     claims-in-progress:
       submit-a-claim:
         label:
           - en: Submit a claim here
             de: null
+            nl: ''
         icon:
           - en: thunder.svg
             de: thunder.svg
+            nl: ''
       summary:
         label:
           - en: '${param1} claims in progress'
             de: null
+            nl: ''
         icon:
           - en: thunder.svg
             de: thunder.svg
+            nl: ''
     claims:
       items:
         claim-no:
           label:
             - en: Claim number
               de: Claim number
+              nl: ''
         claim-state-name:
           label:
             - en: Status
               de: Status
+              nl: ''
         policy-label:
           label:
             - en: Policy
               de: Policy
+              nl: ''
         event-date:
           label:
             - en: Event date
               de: Event date
+              nl: ''
         go-to-details:
           label:
             - en: View
               de: View
+              nl: ''
         button-dropdown:
           label:
             - en: ...
               de: ...
+              nl: ''
           icon:
             - en: more_horiz.svg
               de: more_horiz.svg
+              nl: ''
     resolved-claims:
       items:
         claim-no:
           label:
             - en: Claim number
               de: Claim number
+              nl: ''
         claim-link:
           label:
             - en: '${param1}'
               de: '${param1}'
+              nl: ''
         claim-state-name:
           label:
             - en: Status
               de: Status
+              nl: ''
         date-resolved:
           label:
             - en: Date resolved
               de: Date resolved
+              nl: ''
         policy-link:
           label:
             - en: '${param1} ${param2}'
               de: '${param1} ${param2}'
+              nl: ''
         policy-label:
           label:
             - en: Policy
               de: Policy
+              nl: ''
         event-date:
           label:
             - en: Event date
               de: Event date
+              nl: ''
         button-view-more:
           label:
             - en: View
               de: View
+              nl: ''
         button-dropdown:
           label:
             - en: ...
               de: ...
+              nl: ''
     additional-audio-video-equipment:
       title:
         label:
           - en: Additional audio/video equipment
             de: Additional audio/video equipment
+            nl: ''
     previous-insurer-heading:
       label:
         - en: >-
@@ -668,320 +824,393 @@ entries:
       label:
         - en: continue
           de: null
+          nl: ''
     go-to-next-page:
       label:
         - en: Next
           de: Next
+          nl: ''
     more-information-needed:
       label:
         - en: >-
             We are going to need some more information about the vehicle and
             yourself to be able to issue the insurance policy.
           de: null
+          nl: ''
     person:
       search-policies:
         product-id:
           empty:
             - en: Any
               de: Any
+              nl: ''
         fulltext:
           placeholder:
             - en: Search...
               de: Search...
+              nl: ''
       first-name:
         label:
           - en: First Name
             de: null
+            nl: ''
       last-name:
         label:
           - en: Last Name
             de: null
+            nl: ''
       birthdate:
         label:
           - en: Birthdate
             de: null
+            nl: ''
       gender:
         label:
           - en: Gender
             de: null
+            nl: ''
       finalize:
         label:
           - en: Submit
             de: null
+            nl: ''
       name-prefix:
         label:
           - en: Name prefix
             de: Name prefix
+            nl: ''
       given-name:
         label:
           - en: First name
             de: First name
+            nl: ''
       family-name:
         label:
           - en: Last name
             de: Last name
+            nl: ''
       second-name:
         label:
           - en: Middle name
             de: Middle name
+            nl: ''
       sex:
         label:
           - en: Gender
             de: Gender
+            nl: ''
       birth-date:
         label:
           - en: Date of birth
             de: Date of birth
+            nl: ''
       nationality:
         label:
           - en: Nationality
             de: Nationality
+            nl: ''
       home-country:
         label:
           - en: Country
             de: Country
+            nl: ''
       language:
         label:
           - en: Preferred language
             de: Preferred language
+            nl: ''
       industry-code:
         label:
           - en: Industry
             de: Industry
+            nl: ''
         empty:
           - en: ''
             de: ''
+            nl: ''
       sub-industry-code:
         label:
           - en: Subindustry
             de: Subindustry
+            nl: ''
         empty:
           - en: ''
             de: ''
+            nl: ''
       name-suffix:
         label:
           - en: Name suffix
             de: Name suffix
+            nl: ''
       addresses:
         items:
           address-type:
             label:
               - en: Type
                 de: Type
+                nl: ''
           state-name:
             label:
               - en: State
                 de: State
+                nl: ''
           region-name:
             label:
               - en: Region
                 de: Region
+                nl: ''
           city:
             label:
               - en: City
                 de: City
+                nl: ''
           post-code:
             label:
               - en: Post code
                 de: Post code
+                nl: ''
           street-name:
             label:
               - en: Street
                 de: Street
+                nl: ''
           street-number:
             label:
               - en: Street number
                 de: Street number
+                nl: ''
           entrance-number:
             label:
               - en: Entrance number
                 de: Entrance number
+                nl: ''
           floor-number:
             label:
               - en: Floor number
                 de: Floor number
+                nl: ''
           apartment-number:
             label:
               - en: Apartment number
                 de: Apartment number
+                nl: ''
           block-number:
             label:
               - en: Block number
                 de: Block number
+                nl: ''
           country-code:
             label:
               - en: Country
                 de: Country
+                nl: ''
       contacts:
         items:
           details:
             label:
               - en: Details
                 de: Details
+                nl: ''
           contact-type:
             label:
               - en: Contact type
                 de: Contact type
+                nl: ''
       bank-accounts:
         items:
           account-currency:
             label:
               - en: Currency
                 de: Currency
+                nl: ''
           account-num:
             label:
               - en: IBAN
                 de: IBAN
+                nl: ''
           bank-id:
             label:
               - en: Bank name
                 de: Bank name
+                nl: ''
       man-comp:
         label:
           - en: Client type
             de: Client type
+            nl: ''
       activity:
         navigate-back:
           label:
             - en: BACK TO ALL CLIENTS
               de: BACK TO ALL CLIENTS
+              nl: ''
       primary:
         contact:
           email:
             label:
               - en: Email
                 de: Email
+                nl: ''
           phone:
             label:
               - en: Phone
                 de: Phone
+                nl: ''
         address:
           full:
             label:
               - en: Address
                 de: Address
+                nl: ''
       full-name-summary:
         label:
           - en: Name
             de: Name
+            nl: ''
       type:
         label:
           - en: Client type
             de: Client type
+            nl: ''
     payment:
       title:
         label:
           - en: Past payments
             de: Past payments
+            nl: ''
       activity:
         to-details:
           label:
             - en: Details
               de: Details
+              nl: ''
         goto-details:
           label:
             - en: Details
               de: Details
+              nl: ''
       objects:
         items:
           status:
             label:
               - en: Status
                 de: Status
+                nl: ''
           payment-date:
             label:
               - en: Payment date
                 de: Payment date
+                nl: ''
           amount:
             label:
               - en: Amount
                 de: Amount
+                nl: ''
           method:
             label:
               - en: Method
                 de: Method
+                nl: ''
       search:
         from:
           label:
             - en: From
               de: From
+              nl: ''
         to:
           label:
             - en: To
               de: To
+              nl: ''
         status:
           label:
             - en: Status
               de: Status
+              nl: ''
         payment-method:
           label:
             - en: Payment method
               de: Payment method
+              nl: ''
         filter:
           label:
             - en: Filter
               de: Filter
+              nl: ''
     address:
       title:
         label:
           - en: Address
             de: Address
+            nl: ''
       activity:
         to-details:
           label:
             - en: Details
               de: Details
+              nl: ''
     contact:
       title:
         label:
           - en: Contacts
             de: Contacts
+            nl: ''
       activity:
         to-details:
           label:
             - en: Details
               de: Details
+              nl: ''
     personal:
       title:
         label:
           - en: Personal details
             de: Personal details
+            nl: ''
       activity:
         to-details:
           label:
             - en: Details
               de: Details
+              nl: ''
     policy:
       registration-date:
         label:
           - en: Issue date
             de: Issue date
+            nl: ''
       updated-date:
         label:
           - en: Last modified
             de: Issue date
+            nl: ''
       activity:
         download:
           label:
             - en: Download
               de: Download
+              nl: ''
         cancel:
           label:
             - en: Cancel
               de: Cancel
+              nl: ''
         navigate-back:
           label:
             - en: back to all policies
               de: back to all policies
+              nl: ''
       insured:
         currency:
           label:
             - en: '${param1}/payment'
               de: null
+              nl: ''
         vehicle-objects:
           label:
             - en: Give us some information about the vehicles you want to insure.
               de: null
+              nl: ''
           items:
             owner:
               address:
@@ -989,46 +1218,56 @@ entries:
                   label:
                     - en: City
                       de: null
+                      nl: ''
                 zip:
                   label:
                     - en: ZIP
                       de: null
+                      nl: ''
               options-title:
                 label:
                   - en: Vehicle ownership
                     de: null
+                    nl: ''
               person:
                 first-name:
                   label:
                     - en: Owner first name
                       de: null
+                      nl: ''
                 last-name:
                   label:
                     - en: Owner last name
                       de: null
+                      nl: ''
                 birthdate:
                   label:
                     - en: Birthdate
                       de: null
+                      nl: ''
               lessor:
                 name:
                   label:
                     - en: Lessor name
                       de: null
+                      nl: ''
             insured-amount:
               invalid:
                 label:
                   - en: The value must be positive number
                     de: The value must be positive number
+                    nl: ''
               label:
                 - en: Actual value of the car
                   de: Actual value of the car
+                  nl: ''
             cover:
               mtpl:
                 active:
                   label:
                     - en: Motor Third Party Liability
                       de: Motor Third Party Liability
+                      nl: ''
                 active-info:
                   - en: >-
                       # Motor Third Party Liability
@@ -1043,23 +1282,28 @@ entries:
                       > [See more about risks and limits]()
                       ![](/assets/icons/link-in-tooltip.svg)
                     de: null
+                    nl: ''
                 premium-with-label:
                   label:
                     - en: Motor Third Party Liability
                       de: Motor Third Party Liability
+                      nl: ''
               owndamage:
                 active:
                   label:
                     - en: Motor Own Damage
                       de: Motor Own Damage
+                      nl: ''
                 deductible:
                   label:
                     - en: Deductible
                       de: Deductible
+                      nl: ''
                 insured-amount:
                   label:
                     - en: Insured Amount
                       de: Insured Amount
+                      nl: ''
                 active-info:
                   - en: >-
                       # Motor Own Damage
@@ -1081,15 +1325,18 @@ entries:
                       > [See more about risks and limits]()
                       ![](/assets/icons/link-in-tooltip.svg)
                     de: null
+                    nl: ''
                 premium-with-label:
                   label:
                     - en: Vehicle Own Damage
                       de: Vehicle Own Damage
+                      nl: ''
               pa:
                 active:
                   label:
                     - en: Personal Accident
                       de: Personal Accident
+                      nl: ''
                 active-info:
                   - en: >-
                       # Personal Accident
@@ -1105,15 +1352,18 @@ entries:
                       > [See more about risks and limits]()
                       ![](/assets/icons/link-in-tooltip.svg)
                     de: null
+                    nl: ''
                 premium-with-label:
                   label:
                     - en: Personal Assistance
                       de: Personal Assistance
+                      nl: ''
               road_assis:
                 active:
                   label:
                     - en: Road Assistance
                       de: Road Assistance
+                      nl: ''
                 active-info:
                   - en: >-
                       # Road Assistance
@@ -1129,112 +1379,138 @@ entries:
                       > [See more about risks and limits]()
                       ![](/assets/icons/link-in-tooltip.svg)
                     de: null
+                    nl: ''
                 premium-with-label:
                   label:
                     - en: Road Assistance
                       de: Road Assistance
+                      nl: ''
             question:
               number-of-consecutive-years-without-claims:
                 label:
                   - en: Consecutive years without accidents
                     de: null
+                    nl: ''
             car:
               covers-title:
                 label:
                   - en: 'Covers for ${param1} ${param2}'
                     de: 'Covers for ${param1} ${param2}'
+                    nl: ''
               regno:
                 label:
                   - en: License plate
                     de: null
+                    nl: ''
               brand:
                 label:
                   - en: Make
                     de: null
+                    nl: ''
               model:
                 label:
                   - en: Model
                     de: null
+                    nl: ''
               construction-date:
                 label:
                   - en: Year
                     de: null
+                    nl: ''
               subtype:
                 label:
                   - en: Body type
                     de: null
+                    nl: ''
               chassis:
                 label:
                   - en: VIN
                     de: null
+                    nl: ''
               ccm-ton:
                 label:
                   - en: Engine
                     de: null
+                    nl: ''
               engine-power:
                 label:
                   - en: Power
                     de: null
+                    nl: ''
               fuel:
                 label:
                   - en: Fuel type
                     de: null
+                    nl: ''
               seats-number:
                 label:
                   - en: Number of seats
                     de: null
+                    nl: ''
               millage:
                 label:
                   - en: Kilometers driven per year
                     de: null
+                    nl: ''
               usage:
                 label:
                   - en: Primary usage
                     de: null
+                    nl: ''
               transportation-of-hazardous-goods:
                 label:
                   - en: The car is used for transportation of hazardous goods
                     de: null
+                    nl: ''
               additional-equipment:
                 label:
                   - en: >-
                       Insure additional equipment like audio systems, alloy
                       wheels, etc.
                     de: null
+                    nl: ''
               additional-equipment-car-audio-included:
                 label:
                   - en: Audio/Video system
                     de: null
+                    nl: ''
               additional-equipment-car-audio:
                 label:
                   - en: Insured value (EUR)
                     de: null
+                    nl: ''
               additional-equipment-alloy-wheels-included:
                 label:
                   - en: Alloy wheels
                     de: null
+                    nl: ''
               additional-equipment-alloy-wheels:
                 label:
                   - en: Insured value (EUR)
                     de: null
+                    nl: ''
               additional-equipment-other-included:
                 label:
                   - en: Other
                     de: null
+                    nl: ''
               additional-equipment-other:
                 label:
                   - en: Insured value (EUR)
                     de: null
+                    nl: ''
               additional-equipment-audio-video:
                 items:
                   name:
                     label:
                       - en: Model
                         de: null
+                        nl: ''
                   serial-no:
                     label:
                       - en: Serial number
                         de: null
+                        nl: ''
               chassis-info:
                 - en: >-
                     # Vehicle Identification Number
@@ -1245,24 +1521,29 @@ entries:
 
                     <more details if necessary>
                   de: null
+                  nl: ''
               vehicle-type:
                 label:
                   - en: Vehicle type
                     de: Vehicle type
+                    nl: ''
               search:
                 input:
                   license-plate:
                     label:
                       - en: License plate
                         de: License plate
+                        nl: ''
                   vin:
                     label:
                       - en: VIN
                         de: VIN
+                        nl: ''
                 go:
                   label:
                     - en: Go
                       de: Go
+                      nl: ''
                 vin-info:
                   info:
                     - en: |-
@@ -1281,6 +1562,7 @@ entries:
                 label:
                   - en: Vehicle subtype
                     de: Vehicle subtype
+                    nl: ''
             drivers:
               items:
                 person:
@@ -1288,100 +1570,123 @@ entries:
                     label:
                       - en: First name
                         de: Vorname
+                        nl: ''
                   last-name:
                     label:
                       - en: Last name
                         de: Nachname
+                        nl: ''
                   date-of-birth:
                     label:
                       - en: Birthdate
                         de: null
+                        nl: ''
                   driver-license-nb:
                     label:
                       - en: Driving license number
                         de: null
+                        nl: ''
                   driver-license-file:
                     label:
                       - en: Driving license copy (optional)
                         de: null
+                        nl: ''
                   gender:
                     label:
                       - en: Gender
                         de: Gender
+                        nl: ''
                   nationality:
                     label:
                       - en: Nationality
                         de: Nationality
+                        nl: ''
                   language:
                     label:
                       - en: Language
                         de: Language
+                        nl: ''
                   address:
                     city:
                       label:
                         - en: City
                           de: City
+                          nl: ''
                     country:
                       label:
                         - en: Country
                           de: Country
+                          nl: ''
                     post-code:
                       label:
                         - en: Post code
                           de: Post code
+                          nl: ''
                     type:
                       label:
                         - en: Address type
                           de: Address type
+                          nl: ''
                   remove:
                     label:
                       - en: REMOVE
                         de: REMOVE
+                        nl: ''
             remove:
               label:
                 - en: REMOVE VEHICLE
                   de: REMOVE VEHICLE
+                  nl: ''
             document:
               drvlicence:
                 browse:
                   label:
                     - en: Driving license copy (optional)
                       de: Driving license copy (optional)
+                      nl: ''
               carinvoice:
                 browse:
                   label:
                     - en: Purchase Invoice
                       de: Purchase Invoice
+                      nl: ''
               vehcrefcer:
                 browse:
                   label:
                     - en: Vehicle registration
                       de: Vehicle registration
+                      nl: ''
         add-another-vehicle:
           label:
             - en: ADD ANOTHER VEHICLE
               de: null
+              nl: ''
         remove-vehicle:
           label:
             - en: REMOVE VEHICLE
               de: null
+              nl: ''
         add-another-additional-equipment-audio-video:
           label:
             - en: ADD MORE
               de: null
+              nl: ''
         remove-additional-equipment-audio-video:
           label:
             - en: REMOVE
               de: null
+              nl: ''
         premium:
           total:
             label:
               - en: Price
                 de: null
+                nl: ''
             policy-details:
               label:
                 - en: Total
                   de: Total
+                  nl: ''
         person-objects:
           items:
             person:
@@ -1390,75 +1695,93 @@ entries:
                   'on':
                     - en: null
                       de: null
+                      nl: ''
                   'off':
                     - en: MAKE THIS PERSON MAIN INSURED
                       de: MAKE THIS PERSON MAIN INSUREDr
+                      nl: ''
               first-name:
                 label:
                   - en: First name
                     de: Vorname
+                    nl: ''
               last-name:
                 label:
                   - en: Last name
                     de: Nachname
+                    nl: ''
               gender:
                 label:
                   - en: Gender
                     de: Geschlecht
+                    nl: ''
               date-of-birth:
                 label:
                   - en: Date of birth
                     de: Geburtsdatum
+                    nl: ''
               address:
                 country:
                   label:
                     - en: Country
                       de: Land
+                      nl: ''
               height:
                 label:
                   - en: Height
                     de: Höhe
+                    nl: ''
               weight:
                 label:
                   - en: Weight
                     de: Gewicht
+                    nl: ''
               clear-person:
                 label:
                   - en: Clear person
                     de: Clear person
+                    nl: ''
               age-at-begin:
                 label:
                   - en: Age
                     de: Age
+                    nl: ''
             question:
               q-04:
                 label:
                   - en: The person is a smoker
                     de: Die Person ist Raucher
+                    nl: ''
               q-05:
                 label:
                   - en: Occupation
                     de: Besetzung
+                    nl: ''
               q-07:
                 label:
                   - en: Do you have hobby (sports)?
                     de: Do you have hobby (sports)?
+                    nl: ''
               q-07-1:
                 label:
                   - en: Main sport activites
                     de: Hauptsportaktivitäten
+                    nl: ''
               q-02:
                 label:
                   - en: 'Height [m]'
                     de: 'Höhe [m]'
+                    nl: ''
               q-03:
                 label:
                   - en: 'Weight [kg]'
                     de: 'Gewicht [kg]'
+                    nl: ''
               q-08:
                 label:
                   - en: How often does this person consume alcohol?
                     de: How often does this person consume alcohol?
+                    nl: ''
               q-09:
                 '1': {}
                 label:
@@ -1472,6 +1795,7 @@ entries:
                 label:
                   - en: Please describe
                     de: Please describe
+                    nl: ''
               q-10:
                 label:
                   - en: >-
@@ -1496,6 +1820,7 @@ entries:
                 label:
                   - en: Does this person currently take any medications?
                     de: Does this person currently take any medications?
+                    nl: ''
               q-13:
                 label:
                   - en: >-
@@ -1512,6 +1837,7 @@ entries:
                 label:
                   - en: Select date
                     de: Select date
+                    nl: ''
               q-06:
                 label:
                   - en: >-
@@ -1527,114 +1853,140 @@ entries:
               label:
                 - en: 'Covers ${param1} ${param2}'
                   de: 'Covers ${param1} ${param2}'
+                  nl: ''
             cover:
               death-any:
                 active:
                   label:
                     - en: Death any cause (mandatory)
                       de: Death any cause (mandatory)
+                      nl: ''
                 insured-amount:
                   label:
                     - en: Sum insured
                       de: Sum insured
+                      nl: ''
                 premium-with-label:
                   label:
                     - en: Death any cause
                       de: Death any cause
+                      nl: ''
                 discounts:
                   label:
                     - en: 'Death any cause '
                       de: 'Death any cause '
+                      nl: ''
               wop-total:
                 active:
                   label:
                     - en: Waiver of premium due to permanent disability any cause
                       de: Waiver of premium due to permanent disability any cause
+                      nl: ''
                 premium-duplicate:
                   label:
                     - en: null
                       de: null
+                      nl: ''
                 premium-with-label:
                   label:
                     - en: Waiver of premium due ot permanent disability any cause
                       de: Waiver of premium due ot permanent disability any cause
+                      nl: ''
                 discounts:
                   label:
                     - en: Waiver of premium due ot permanent disability any cause
                       de: Waiver of premium due ot permanent disability
+                      nl: ''
               tpdill:
                 active:
                   label:
                     - en: Total and permanent disability due to illness over 75%
                       de: Total and permanent disability due to illness over 75%
+                      nl: ''
                 premium-with-label:
                   label:
                     - en: Total and permanent disability due to illness over 75%
                       de: Total and permanent disability due to illness over 75%
+                      nl: ''
                 discounts:
                   label:
                     - en: Total and permanent disability due to illness over 75%
                       de: Total and permanent disability due to illness over 75%
+                      nl: ''
               tpdaccd:
                 active:
                   label:
                     - en: Total and permanent disability due to accident over 75%
                       de: Total and permanent disability due to accident over 75%
+                      nl: ''
                 premium-with-label:
                   label:
                     - en: Total and permanent disability due to accident over 75%
                       de: Total and permanent disability due to accident over 75%
+                      nl: ''
                 discounts:
                   label:
                     - en: Total and permanent disability due to accident over 75%
                       de: Total and permanent disability due to accident over 75%
+                      nl: ''
               death-acc:
                 active:
                   label:
                     - en: Accidental death
                       de: Accidental death
+                      nl: ''
                 premium-with-label:
                   label:
                     - en: Accidental death
                       de: Accidental death
+                      nl: ''
                 discounts:
                   label:
                     - en: Accidental death
                       de: Accidental death
+                      nl: ''
               critic-ill:
                 active:
                   label:
                     - en: Critical illness
                       de: Critical illness
+                      nl: ''
                 premium-with-label:
                   label:
                     - en: Critical illness
                       de: Critical illness
+                      nl: ''
                 discounts:
                   label:
                     - en: Critical illness
                       de: Critical illness
+                      nl: ''
               premret:
                 active:
                   label:
                     - en: Premium return by survival
                       de: Premium return by survival
+                      nl: ''
                 premium-with-label:
                   label:
                     - en: Premium return by survival
                       de: Premium return by survival
+                      nl: ''
                 discounts:
                   label:
                     - en: Premium return by survival
                       de: Premium return by survival
+                      nl: ''
               death-acc-addon-info:
                 label:
                   - en: Only available if main insured person has it.
                     de: Only available if main insured person has it.
+                    nl: ''
               tpdaccd-addon-info:
                 label:
                   - en: Only available if main insured person has it.
                     de: Only available if main insured person has it.
+                    nl: ''
               covers-info-above-seventy:
                 label:
                   - en: >-
@@ -1657,51 +2009,62 @@ entries:
                 label:
                   - en: '${param1} will be ${param2} at the end of their insurance.'
                     de: '${param1} will be ${param2} at the end of their insurance.'
+                    nl: ''
             remove-insured-person:
               label:
                 - en: REMOVE PERSON
                   de: REMOVE PERSON
+                  nl: ''
             make-this-main-insured:
               label:
                 - en: Make this person main insured
                   de: Make this person main insured
+                  nl: ''
             address:
               value:
                 label:
                   - en: Address
                     de: Address
+                    nl: ''
             email:
               value:
                 label:
                   - en: Email
                     de: Email
+                    nl: ''
             phone:
               value:
                 label:
                   - en: Phone
                     de: Phone
+                    nl: ''
         add-another-person:
           label:
             - en: Add another person
               de: Add another person
+              nl: ''
         remove-person:
           label:
             - en: Remove person
               de: Remove person
+              nl: ''
         main-insured-title:
           label:
             - en: Main insured person
               de: Hauptversicherte
+              nl: ''
         additional-insured-title:
           label:
             - en: Additional insured person
               de: Zusätzliche versicherte Person
+              nl: ''
         document:
           icd:
             document-file:
               label:
                 - en: Upload your income statement
                   de: Laden Sie Ihre Gewinn- und Verlustrechnung hoch
+                  nl: ''
         objects:
           items:
             activities:
@@ -1709,192 +2072,237 @@ entries:
                 label:
                   - en: See covers
                     de: See covers
+                    nl: ''
             person-data:
               title:
                 label:
                   - en: Insured object
                     de: Insured object
+                    nl: ''
               first-name:
                 label:
                   - en: First name
                     de: First name
+                    nl: ''
               last-name:
                 label:
                   - en: Last name
                     de: Last name
+                    nl: ''
               gender:
                 label:
                   - en: Gender
                     de: Gender
+                    nl: ''
               birth-date:
                 label:
                   - en: Birth date
                     de: Birth date
+                    nl: ''
               country:
                 label:
                   - en: Country
                     de: Country
+                    nl: ''
               pid:
                 label:
                   - en: Client id
                     de: Client id
+                    nl: ''
                 label-param:
                   - en: '${param1}'
                     de: '${param1}'
+                    nl: ''
               covers-subtitle:
                 label:
                   - en: '${param1} will be ${param2} at the end of the insurance.'
                     de: '${param1} will be ${param2} at the end of the insurance.'
+                    nl: ''
               pid-label:
                 label:
                   - en: Client id
                     de: Client id
+                    nl: ''
             covers:
               items:
                 premium:
                   label:
                     - en: 'Sum Insured: '
                       de: 'Sum Insured: '
+                      nl: ''
                 insured-amount:
                   label:
                     - en: 'Sum insured:'
                       de: 'Sum insured:'
+                      nl: ''
             covers~insured-amount: {}
             vehicle-data:
               title:
                 label:
                   - en: '${param1} ${param2}, ${param3}'
                     de: '${param1} ${param2}, ${param3}'
+                    nl: ''
               regno:
                 label:
                   - en: License plate
                     de: License plate
+                    nl: ''
               model:
                 label:
                   - en: Model
                     de: Model
+                    nl: ''
               brand:
                 label:
                   - en: Make
                     de: Make
+                    nl: ''
               ccm-ton:
                 label:
                   - en: Engine
                     de: Engine
+                    nl: ''
               chassis:
                 label:
                   - en: VIN
                     de: VIN
+                    nl: ''
               construction-date:
                 label:
                   - en: Year
                     de: Year
+                    nl: ''
               usage:
                 label:
                   - en: Primary use
                     de: Primary use
+                    nl: ''
               covers-title:
                 label:
                   - en: '${param1} ${param2}, ${param3} - ${param4}'
                     de: '${param1} ${param2}, ${param3} - ${param4}'
+                    nl: ''
               transportation-of-hazardous-goods:
                 label:
                   - en: Transportation of hazardous goods
                     de: Transportation of hazardous goods
+                    nl: ''
               driver:
                 label:
                   - en: Driver
                     de: Driver
+                    nl: ''
         objects~covers~insured-amount: {}
       contract:
         begin:
           label:
             - en: Insurance start
               de: Insurance start
+              nl: ''
         payment:
           frequency:
             label:
               - en: Number of installments
                 de: Number of installments
+                nl: ''
             policy-details:
               label:
                 - en: Installments
                   de: Installments
+                  nl: ''
           term:
             duration:
               label:
                 - en: Payment duration
                   de: Payment duration
+                  nl: ''
           duration:
             label:
               - en: Payment duration
                 de: Payment duration
+                nl: ''
           installment-amount:
             label:
               - en: Installment amount
                 de: Installment amount
+                nl: ''
           tax-value:
             label:
               - en: Installment amount
                 de: Installment amount
+                nl: ''
         term:
           duration:
             label:
               - en: Insurance duration
                 de: Insurance duration
+                nl: ''
           duration-and-units:
             label:
               - en: Payment duration
                 de: Payment duration
+                nl: ''
         end:
           label:
             - en: Valid until
               de: null
+              nl: ''
           policy-details:
             label:
               - en: Insurance end
                 de: Insurance end
+                nl: ''
         product-full-name:
           label:
             - en: Product
               de: Product
+              nl: ''
         taxes:
           label:
             - en: Taxes and fees
               de: Taxes and fees
+              nl: ''
         question:
           previous-mtpl-insurer:
             label:
               - en: Previous insurer
                 de: Previous insurer
+                nl: ''
           a1:
             label:
               - en: Source of Funds?
                 de: Source of Funds?
+                nl: ''
           a2:
             label:
               - en: Are you a politically exposed person?
                 de: Are you a politically exposed person?
+                nl: ''
           a2-1:
             label:
               - en: Please give details
                 de: Please give details
+                nl: ''
           a3:
             label:
               - en: 'Please, select reason for chosing Death coverage'
                 de: null
+                nl: ''
           a3-1:
             label:
               - en: What is your monthly income?
                 de: null
+                nl: ''
           a4:
             label:
               - en: I consent to receive marketing material
                 de: I consent to receive marketing material
+                nl: ''
           a4-1:
             label:
               - en: Preferred method of communication/marketing?
                 de: Preferred method of communication/marketing?
+                nl: ''
           a5:
             label:
               - en: >-
@@ -1917,6 +2325,7 @@ entries:
             label:
               - en: I declare that I am a tax resident in the USA.
                 de: I declare that I am a tax resident in the USA.
+                nl: ''
       participants:
         holder:
           person:
@@ -1924,68 +2333,84 @@ entries:
               label:
                 - en: Policy holder
                   de: Policy holder
+                  nl: ''
               policy-details:
                 label:
                   - en: Client
                     de: Client
+                    nl: ''
               display-label:
                 - en: '${param1} ${param2} ${param3}'
                   de: '${param1} ${param2} ${param3}'
+                  nl: ''
             email:
               label:
                 - en: Email
                   de: Email
+                  nl: ''
             phone:
               label:
                 - en: Phone
                   de: Phone
+                  nl: ''
             address:
               label:
                 - en: Address
                   de: Address
+                  nl: ''
             full-name-label:
               label:
                 - en: Client
                   de: Client
+                  nl: ''
         beneficiaries:
           label:
             - en: Beneficiary
               de: Beneficiary
+              nl: ''
           items:
             company:
               name:
                 label:
                   - en: Company name
                     de: Company name
+                    nl: ''
             person:
               gender:
                 label:
                   - en: Gender
                     de: Gender
+                    nl: ''
               first-name:
                 label:
                   - en: First name
                     de: null
+                    nl: ''
               last-name:
                 label:
                   - en: Last name
                     de: null
+                    nl: ''
               country:
                 label:
                   - en: Country
                     de: Country
+                    nl: ''
               birthdate:
                 label:
                   - en: Birthdate
                     de: Birthdate
+                    nl: ''
             title:
               label:
                 - en: Beneficiary
                   de: null
+                  nl: ''
           add:
             label:
               - en: ADD BENEFICIARY
                 de: ADD BENEFICIARY
+                nl: ''
         payor:
           agreed-on-terms-and-conditions:
             label:
@@ -1999,97 +2424,120 @@ entries:
             label:
               - en: DD/MM/YYYY
                 de: DD/MM/YYYY
+                nl: ''
           city:
             label:
               - en: City
                 de: City
+                nl: ''
           first-name:
             label:
               - en: First name
                 de: First name
+                nl: ''
           iban:
             label:
               - en: IBAN
                 de: IBAN
+                nl: ''
           bank:
             label:
               - en: Bank
                 de: Bank
+                nl: ''
           add-account:
             label:
               - en: Add account
                 de: Add account
+                nl: ''
           iban-selection:
             label:
               - en: Select a bank account to use for insurance payment
                 de: Select a bank account to use for insurance payment
+                nl: ''
             empty:
               - en: Use a different bank account
                 de: Use a different bank account
+                nl: ''
           last-name:
             label:
               - en: Last name
                 de: Last name
+                nl: ''
           zip:
             label:
               - en: ZIP
                 de: ZIP
+                nl: ''
           swift:
             label:
               - en: SWIFT
                 de: SWIFT
+                nl: ''
         is-standard-beneficiary:
           label:
             - en: Who would you like to protect?
               de: Who would you like to protect?
+              nl: ''
         add-beneficiary:
           label:
             - en: ADD BENEFICIARY
               de: ADD BENEFICIARY
+              nl: ''
       claims:
         card-title:
           label:
             - en: Claims
               de: Claims
+              nl: ''
         no-claims-text:
           label:
             - en: No claims
               de: No claims
+              nl: ''
         activity:
           details:
             label:
               - en: Details
                 de: Details
+                nl: ''
           submit-claim:
             label:
               - en: Submit claim
                 de: Submit claim
+                nl: ''
         details:
           label:
             - en: Details
               de: Details
+              nl: ''
         submit-claim:
           label:
             - en: Submit claim
               de: Submit claim
+              nl: ''
       history:
         card-title:
           label:
             - en: History
               de: History
+              nl: ''
         no-changes-text:
           label:
             - en: No changes
               de: No changes
+              nl: ''
         details:
           label:
             - en: Details
               de: Details
+              nl: ''
     buy-insurance:
       btn:
         label:
           - en: Buy insurance
             de: Versicherung kaufen
+            nl: ''
       description:
         label:
           - en: >-
@@ -2103,11 +2551,13 @@ entries:
       label:
         - en: Buy insurance
           de: Buy insurance
+          nl: ''
     terms-and-conditions:
       description:
         label:
           - en: We need your consent to finalize the purchase.
             de: 'Wir benötigen Ihre Zustimmung, um den Kauf abzuschließen.'
+            nl: ''
       access-personal-information:
         label:
           - en: >-
@@ -2130,87 +2580,107 @@ entries:
       label:
         - en: Bank account holder details
           de: Angaben zum Kontoinhaber
+          nl: ''
     checbox-card:
       label:
         - en: Checkbox component
           de: null
+          nl: ''
       description:
         - en: >-
             Such as furniture, kitchen appliances, audio/video, valuable items,
             tools, etc.
           de: null
+          nl: ''
       icon:
         - en: person.svg
     view-policy:
       label:
         - en: VIEW
           de: null
+          nl: ''
     submit-claim:
       label:
         - en: SUBMIT CLAIM
           de: null
+          nl: ''
     more-actions:
       label:
         - en: ...
           de: null
+          nl: ''
     cancel-policy:
       label:
         - en: Cancel policy
           de: null
+          nl: ''
     download-pdf:
       label:
         - en: Download
           de: null
+          nl: ''
     button-dropdown: null
     quotes:
       label:
         - en: Quotes in progress
           de: Quotes in progress
+          nl: ''
       items:
         insurance-start-and-duration:
           label:
             - en: Insurance start and duration
               de: Insurance start and duration
+              nl: ''
         continue:
           label:
             - en: Continue
               de: Continue
+              nl: ''
         vehicles:
           label:
             - en: Vehicles
               de: Vehicles
+              nl: ''
         more-options:
           icon:
             - en: more_horiz.svg
               de: more_horiz.svg
+              nl: ''
           label:
             - en: More options
               de: More options
+              nl: ''
         currency: {}
         price:
           label:
             - en: Price
               de: Price
+              nl: ''
         start-and-duration:
           mirror:
             - en: '${param1}, ${param2} ${param3}'
               de: '${param1}, ${param2} ${param3}'
+              nl: ''
         insured_objects:
           label:
             - en: Insured objects
               de: Insured objects
+              nl: ''
           dynamiclabel:
             - en: '${param1} people'
               de: '${param1} people'
+              nl: ''
         insurance:
           start-and-duration:
             label:
               - en: Insurance start and duration
                 de: Insurance start and duration
+                nl: ''
     quotes-title:
       label:
         - en: Quotes in Progress
           de: Quotes in Progress
+          nl: ''
     motor-insurance:
       description:
         label:
@@ -2218,35 +2688,43 @@ entries:
               Some description here some description here some description here
               some description here some description here some description here
             de: null
+            nl: ''
       title:
         label:
           - en: Motor insurance
             de: Motor insurance
+            nl: ''
       button:
         label:
           - en: MOTOR INSURANCE
             de: MOTOR INSURANCE
+            nl: ''
     welcome-back:
       label:
         - en: 'Welcome back, ${param1} ${param2}!'
           de: null
+          nl: ''
     claims-in-progress-title:
       label:
         - en: Claims in Progress
           de: null
+          nl: ''
     quotes-in-progress-title:
       label:
         - en: Quotes in Progress
           de: null
+          nl: ''
     test-dropdown:
       icon:
         - en: more_horiz.svg
           de: more_horiz.svg
+          nl: ''
     property-insurance:
       button:
         label:
           - en: PROPERTY INSURANCE
             de: PROPERTY INSURANCE
+            nl: ''
       description:
         label:
           - en: >-
@@ -2259,6 +2737,7 @@ entries:
         label:
           - en: Property insurance
             de: Property insurance
+            nl: ''
     health-insurance:
       description:
         label:
@@ -2272,15 +2751,18 @@ entries:
         label:
           - en: Health insurance
             de: Health insurance
+            nl: ''
       button:
         label:
           - en: HEALTH INSURANCE
             de: HEALTH INSURANCE
+            nl: ''
     life-insurance:
       title:
         label:
           - en: Life insurance
             de: Life insurance
+            nl: ''
       description:
         label:
           - en: >-
@@ -2294,33 +2776,41 @@ entries:
           label:
             - en: ENDOWMENT INSURANCE
               de: ENDOWMENT INSURANCE
+              nl: ''
         term-life:
           label:
             - en: TERM LIFE INSURANCE
               de: TERM LIFE INSURANCE
+              nl: ''
         unit-link:
           label:
             - en: UNIT LINK INSURANCE
               de: UNIT LINK INSURANCE
+              nl: ''
         whole-life:
           label:
             - en: WHOLE LIFE INSURANCE
               de: WHOLE LIFE INSURANCE
+              nl: ''
     policies-title:
       label:
         - en: Active policies
           de: Active policies
+          nl: ''
     search-car-by:
       - en: Give us some information about the vehicles you want to insure.
         de: Give us some information about the vehicles you want to insure.
+        nl: ''
     image-button:
       label:
         - en: 'http://localhost:4200/visual-ice/assets/logo.png'
           de: 'http://localhost:4200/visual-ice/assets/logo.png'
+          nl: ''
     badge:
       label:
         - en: Label
           de: Label
+          nl: ''
     markdown-output:
       label:
         - en: |-
@@ -2340,10 +2830,12 @@ entries:
       label:
         - en: '< ALL POLICIES '
           de: < ALLE POLICEN
+          nl: ''
     insured-people-give-us-information:
       label:
         - en: Give us some information about the people you want to insure.
           de: Give us some information about the people you want to insure.
+          nl: ''
     more-information-needed-life:
       label:
         - en: >-
@@ -2358,27 +2850,33 @@ entries:
           label:
             - en: Financial question 1
               de: Financial question 1
+              nl: ''
         second:
           label:
             - en: Financial question 2
               de: Financial question 2
+              nl: ''
       address:
         label:
           - en: Address
             de: Address
+            nl: ''
       email:
         label:
           - en: Email
             de: Email
+            nl: ''
       phone:
         label:
           - en: Phone number
             de: Phone number
+            nl: ''
     application-details-labels:
       contact-information:
         label:
           - en: Contact information
             de: Contact information
+            nl: ''
       more-info-needed:
         addon:
           label:
@@ -2400,6 +2898,7 @@ entries:
         label:
           - en: Medical examination documents
             de: Medical examination documents
+            nl: ''
         value:
           - en: >-
               Please attach documents (.jpg, .pdf) presenting the results of
@@ -2412,13 +2911,16 @@ entries:
         label:
           - en: Upload your income statement
             de: Upload your income statement
+            nl: ''
         value:
           - en: 'Please attach documents (.jpg, .pdf)'
             de: 'Please attach documents (.jpg, .pdf)'
+            nl: ''
     go-to-next-page-covers:
       label:
         - en: NEXT
           de: NEXT
+          nl: ''
       confirmation:
         - en: >-
             Warning
@@ -2442,177 +2944,219 @@ entries:
         label:
           - en: CONTINUE TO APPLICATION
             de: CONTINUE TO APPLICATION
+            nl: ''
     finalize-buttons:
       issue-policy:
         label:
           - en: ISSUE POLICY
             de: ISSUE POLICY
+            nl: ''
       dowload-pdf:
         label:
           - en: DOWNLOAD QUOTE
             de: DOWNLOAD QUOTE
+            nl: ''
       upload-application:
         label:
           - en: UPLOAD SIGNED APPLICATION
             de: UPLOAD SIGNED APPLICATION
+            nl: ''
     go-to-next-page-payment:
       agent:
         label:
           - en: NEXT
             de: NEXT
+            nl: ''
     add-client:
       label:
         - en: Add client
           de: Add client
+          nl: ''
     unfinished-quotes:
       get-more-insurance:
         label:
           - en: Get more insurance
             de: null
+            nl: ''
         icon:
           - en: page-of-text.svg
             de: page-of-text.svg
+            nl: ''
       summary:
         label:
           - en: '${param1} unfinished quotes'
             de: null
+            nl: ''
         icon:
           - en: page-of-text.svg
             de: page-of-text.svg
+            nl: ''
     active-policies:
       summary:
         label:
           - en: '${param1} active policies'
             de: null
+            nl: ''
         icon:
           - en: umbrella.svg
             de: umbrella.svg
+            nl: ''
     products-title:
       label:
         - en: Insurance Products
           de: Insurance Products
+          nl: ''
     activity:
       show-expired-policies:
         label:
           - en: SHOW EXPIRED POLICIES
             de: null
+            nl: ''
       hide-expired-policies:
         label:
           - en: HIDE EXPIRED POLICIES
             de: null
+            nl: ''
       add-claim:
         label:
           - en: Submit a new claim
             de: null
+            nl: ''
       show-resolved-claims:
         label:
           - en: Show resolved claims
             de: Show resolved claims
+            nl: ''
       hide-resolved-claims:
         label:
           - en: Hide resolved claims
             de: Hide resolved claims
+            nl: ''
       get-more-insurance:
         label:
           - en: Get more insurance
             de: null
+            nl: ''
       search:
         label:
           - en: SEARCH
             de: SUCHE
+            nl: ''
       search-clients:
         label:
           - en: SEARCH
             de: SUCHEN
+            nl: ''
         tooltip:
           - en: Alt+S
             de: Alt+S
+            nl: ''
       new-client:
         label:
           - en: NEW CLIENT
             de: NEUER KUNDE
+            nl: ''
       search-cases:
         label:
           - en: SEARCH
             de: null
+            nl: ''
       new-claim:
         label:
           - en: NEW CLAIM
             de: null
+            nl: ''
       back-to-all-claims:
         label:
           - en: < BACK TO ALL CLAIMS
             de: null
+            nl: ''
       claim:
         submit:
           label:
             - en: SUBMIT CLAIM
               de: null
+              nl: ''
       cancel:
         label:
           - en: CANCEL
             de: null
+            nl: ''
       add-existing-vehicle:
         label:
           - en: ADD EXISTING VEHICLE
             de: ADD EXISTING VEHICLE
+            nl: ''
       add-new-vehicle:
         label:
           - en: ADD NEW VEHICLE
             de: ADD NEW VEHICLE
+            nl: ''
       vehicles:
         add:
           label:
             - en: ADD
               de: ADD
+              nl: ''
         cancel:
           label:
             - en: CANCEL
               de: CANCEL
+              nl: ''
         search:
           label:
             - en: SEARCH
               de: SEARCH
+              nl: ''
     no-active-policies-title:
       label:
         - en: You have no active policies
           de: You have no active policies
+          nl: ''
     my-profile-label:
       label:
         - en: My profile
           de: My profile
+          nl: ''
     personal-information:
       cancel:
         label:
           - en: CANCEL
             de: CANCEL
+            nl: ''
       save:
         label:
           - en: SAVE
             de: SAVE
+            nl: ''
       edit:
         label:
           - en: EDIT
             de: EDIT
+            nl: ''
     addresses:
       add-new-address:
         label:
           - en: ADD ADDRESS
             de: ADD ADDRESS
+            nl: ''
     contacts:
       add-new-contact:
         label:
           - en: ADD CONTACT
             de: ADD CONTACT
+            nl: ''
     bank-accounts:
       add-new-bank-account:
         label:
           - en: ADD BANK ACCOUNT
             de: ADD BANK ACCOUNT
+            nl: ''
     navigate-to-all-clients:
       label:
         - en: < BACK TO ALL CLIENTS
           de: < BACK TO ALL CLIENTS
+          nl: ''
     ' policy':
       participants:
         holder:
@@ -2622,117 +3166,144 @@ entries:
                 label:
                   - en: Client
                     de: Client
+                    nl: ''
     policy-details:
       per-installment-label:
         label:
           - en: ' (price per installment)'
             de: ' (price per installment)'
+            nl: ''
     new-claim:
       title:
         label:
           - en: New claim
             de: null
+            nl: ''
     claim:
       search-policy-method:
         based-on-policy:
           - en: based on policy
             de: null
+            nl: ''
         based-on-client:
           - en: based on client
             de: null
+            nl: ''
       policy-search-method:
         label:
           - en: Identify policy
             de: null
+            nl: ''
       even:
         type:
           label:
             - en: Event type
               de: null
+              nl: ''
         date: {}
       event:
         date:
           label:
             - en: Event date (optional)
               de: null
+              nl: ''
         description:
           label:
             - en: Event description
               de: null
+              nl: ''
         type:
           label:
             - en: Event type
               de: null
+              nl: ''
         location:
           address:
             label:
               - en: Address
                 de: null
+                nl: ''
           country:
             label:
               - en: Country
                 de: null
+                nl: ''
       client:
         search-criteria:
           - en: '${param1}%'
             de: null
+            nl: ''
         search:
           label:
             - en: Client
               de: null
+              nl: ''
           empty:
             - en: Client
               de: null
+              nl: ''
         name:
           label:
             - en: Name
               de: null
+              nl: ''
         id:
           label:
             - en: Client ID
               de: null
+              nl: ''
         number:
           label:
             - en: Client number
               de: null
+              nl: ''
         type:
           label:
             - en: Type
               de: null
+              nl: ''
         product-formatted:
           label:
             - en: Policy (optional)
               de: Policy (optional)
+              nl: ''
       policy:
         search:
           label:
             - en: Policy number
               de: null
+              nl: ''
         client-name:
           label:
             - en: Client name
               de: null
+              nl: ''
         client-id:
           label:
             - en: Client ID
               de: null
+              nl: ''
         client-no:
           label:
             - en: Client number
               de: null
+              nl: ''
         product:
           label:
             - en: Product
               de: null
+              nl: ''
     new-claim-customer:
       title:
         label:
           - en: Submit claim
             de: Submit claim
+            nl: ''
     navigate-back:
       label:
         - en: BACK TO ALL POLICIES
           de: BACK TO ALL POLICIES
+          nl: ''
     vehicle:
       search:
         client:
@@ -2740,22 +3311,27 @@ entries:
             label:
               - en: Client
                 de: Client
+                nl: ''
           pid:
             label:
               - en: National ID number
                 de: National ID number
+                nl: ''
         reg-no:
           label:
             - en: License plate
               de: License plate
+              nl: ''
         vin:
           label:
             - en: VIN
               de: VIN
+              nl: ''
     go-to-application:
       label:
         - en: CONTINUE TO APPLICATION
           de: CONTINUE TO APPLICATION
+          nl: ''
     buy-insurance-description:
       label:
         - en: >-
@@ -2769,30 +3345,38 @@ entries:
         label:
           - en: Documents
             de: Documents
+            nl: ''
     quote:
       download:
         label:
           - en: DOWNLOAD QUOTE
             de: DOWNLOAD QUOTE
+            nl: ''
   pagination:
     claims:
       - en: claims
         de: null
+        nl: ''
     policies:
       - en: policies
         de: Policen
+        nl: ''
     clients:
       - en: clients
         de: null
+        nl: ''
     quotes:
       - en: quotes
         de: null
+        nl: ''
     vehicles:
       - en: vehicles
         de: null
+        nl: ''
     separator:
       - en: of
         de: von
+        nl: ''
   validation:
     pageValidation:
       summary:
@@ -2810,6 +3394,7 @@ entries:
       comply:
         - en: Please confirm
           de: Bitte bestätigen
+          nl: ''
       not_allowed_here:
         - en: '''${value}'' not allowed here'
       regexp:
@@ -2838,19 +3423,23 @@ entries:
       email:
         - en: Please enter a valid email address
           de: Bitte geben Sie eine gültige Email-Adresse ein.
+          nl: ''
       iban:
         - en: Please enter a valid IBAN.
           de: Bitte geben Sie eine gültige Iban ein.
+          nl: ''
   page-navigation:
     back:
       to-all-products:
         label:
           - en: Back to all products
             de: Back to all products
+            nl: ''
       to-all-policies:
         label:
           - en: Back to all policies
             de: Back to all policies
+            nl: ''
     page-pagination:
       first:
         - en: First
@@ -2863,30 +3452,36 @@ entries:
       demo:
         - en: Portal demo
           de: null
+          nl: ''
   section:
     policy-details:
       label:
         - en: Policy details
           de: Policy details
+          nl: ''
       payment:
         plan:
           label:
             - en: Payment plan
               de: Payment plan
+              nl: ''
           taxes-and-fees:
             label:
               - en: Taxes and fees (price per installment)
                 de: Taxes and fees (price per installment)
+                nl: ''
     event:
       location:
         label:
           - en: Event location (optional)
             de: null
+            nl: ''
     vehicles:
       popup:
         label:
           - en: Add vehicles
             de: Add vehicles
+            nl: ''
   pages:
     '1':
       quote:
@@ -2894,280 +3489,351 @@ entries:
           title:
             - en: Insureds people
               de: Versicherte personen
+              nl: ''
     '2':
       application:
         details:
           title:
             - en: Application details
               de: Application details
+              nl: ''
         agent:
           title:
             - en: Vehicle details
               de: Vehicle details
+              nl: ''
     footer:
       terms-and-conditions:
         - en: Terms and Conditions
           de: I dont know what terms and conditions is in german
+          nl: ''
     1.quote:
       title:
         - en: See Price
           de: null
+          nl: ''
       agent:
         title:
           - en: Quote
             de: Quote
+            nl: ''
     1.quote.vehicles:
       title:
         - en: Insured vehicles
           de: null
+          nl: ''
     1.quote.covers:
       title:
         - en: Covers
           de: null
+          nl: ''
     1.quote.buildings:
       title:
         - en: Buildings
           de: null
+          nl: ''
     1.quote.contents:
       title:
         - en: Contents
           de: null
+          nl: ''
     1.quote.property-type:
       title:
         - en: Insured property type
           de: null
+          nl: ''
     2.application:
       title:
         - en: Additional Details
           de: null
+          nl: ''
       agent:
         title:
           - en: Application
             de: Application
+            nl: ''
     2.application.vehicle-details:
       title:
         - en: Vehicle details
           de: null
+          nl: ''
       section-title:
         - en: >-
             A bit more information for this vehicle would be required to be able
             to identify it.
           de: null
+          nl: ''
     2.application.participants:
       title:
         - en: Participants
           de: null
+          nl: ''
     2.application.buildings-details:
       title:
         - en: Buildings details
           de: null
+          nl: ''
     2.application.contents-details:
       title:
         - en: Contents details
           de: null
+          nl: ''
     2.application.person-details:
       title:
         - en: Person details
           de: null
+          nl: ''
     2.application.beneficiaries:
       title:
         - en: Beneficiaries
           de: Beneficiaries
+          nl: ''
     3.review:
       title:
         - en: Review and Buy
           de: null
+          nl: ''
       agent:
         title:
           - en: Review
             de: Review
+            nl: ''
     3.review.payment:
       title:
         - en: Payment details
           de: null
+          nl: ''
     3.review.terms:
       title:
         - en: Finalize
           de: null
+          nl: ''
     3.review.finalize:
       title:
         - en: Terms and conditions
           de: null
+          nl: ''
     policy-details:
       summary:
         title:
           - en: Summary
             de: Summary
+            nl: ''
       covers:
         title:
           - en: Objects and Covers
             de: Objects and Covers
+            nl: ''
       payments:
         title:
           - en: Payments
             de: Payments
+            nl: ''
       claims:
         title:
           - en: Claims
             de: Claims
+            nl: ''
     header:
       agent:
         dashboard:
           label:
             - en: Home
               de: Home
+              nl: ''
           link:
             - en: /ice/insis.dashboard.home.agent/home
               de: /ice/insis.dashboard.home.agent/home
+              nl: ''
         clients:
           label:
             - en: Clients
               de: null
+              nl: ''
           link:
             - en: /ice/insis.dashboard.clients.agent/home
               de: /ice/insis.dashboard.clients.agent/home
+              nl: ''
         policies:
           label:
             - en: Policies
               de: null
+              nl: ''
           link:
             - en: /ice/insis.dashboard.policies.agent/home
               de: /ice/insis.dashboard.policies.agent/home
+              nl: ''
         claims:
           label:
             - en: Claims
               de: null
+              nl: ''
           link:
             - en: /ice/insis.dashboard.claims.agent/home
               de: /ice/insis.dashboard.claims.agent/home
+              nl: ''
         products:
           label:
             - en: Products
               de: Products
+              nl: ''
           link:
             - en: /ice/insis.dashboard.products.agent/home
               de: /ice/insis.dashboard.products.agent/home
+              nl: ''
       customer:
         dashboard:
           label:
             - en: Home
               de: null
+              nl: ''
           link:
             - en: /ice/insis.dashboard.home.customer/home
               de: /ice/insis.dashboard.home.customer/home
+              nl: ''
         policies:
           label:
             - en: Policies
               de: null
+              nl: ''
           link:
             - en: /ice/insis.dashboard.policies.customer/home
               de: /ice/insis.dashboard.policies.customer/home
+              nl: ''
         payments:
           label:
             - en: Payments
               de: null
+              nl: ''
           link:
             - en: /ice/insis.dashboard.payments.customer/home
               de: /ice/insis.dashboard.payments.customer/home
+              nl: ''
         claims:
           label:
             - en: Claims
               de: null
+              nl: ''
           link:
             - en: /ice/insis.dashboard.claims.customer/home
               de: /ice/insis.dashboard.claims.customer/home
+              nl: ''
         products:
           label:
             - en: Products
               de: Products
+              nl: ''
           link:
             - en: /ice/insis.dashboard.products.customer/home
               de: /ice/insis.dashboard.products.customer/home
+              nl: ''
       menu:
         logout:
           - en: Logout
             de: null
+            nl: ''
         my-profile:
           - en: My profile
             de: My profile
+            nl: ''
         switch-theme:
           - en: Switch theme
             de: Switch theme
+            nl: ''
     insurances:
       title:
         - en: Quotes in Progress
           de: Quotes in Progress
+          nl: ''
     addresses:
       title:
         - en: Adressess
           de: Adressess
+          nl: ''
     contacts:
       title:
         - en: contact information
           de: contact information
+          nl: ''
     bank-accounts:
       title:
         - en: payment information
           de: payment information
+          nl: ''
     personal-information:
       title:
         - en: personal information
           de: personal information
+          nl: ''
     summary:
       title:
         - en: summary
           de: summary
+          nl: ''
     policies:
       title:
         - en: Policies
           de: Policen
+          nl: ''
     claims:
       title:
         - en: Claims
           de: Claims
+          nl: ''
   lists:
     gender:
       diverse:
         - en: Diverse
           de: null
+          nl: ''
       male:
         - en: Male
           de: null
+          nl: ''
       female:
         - en: Female
           de: null
+          nl: ''
   formats:
     date:
       default:
         - en: DD.MM.YYYY
           de: DD.MM.YYYY
+          nl: ''
     number:
       fractionDelimiter:
         - en: .
           de: ','
+          nl: ''
       thousandDelimiter:
         - en: ','
           de: .
+          nl: ''
   currency-code:
     - en: EUR
       de: EUR
+      nl: ''
   portal:
     title:
       term-life:
         - en: Term Life Insurance
           de: Term Life Insurance
+          nl: ''
       motor:
         - en: Motor Insurance
           de: Motor Insurance
+          nl: ''
     home:
       title:
         - en: INSIS Portal
           de: INSIS Portal
+          nl: ''
     languages:
       dialog:
         title:
           - en: Warning
             de: Warning
+            nl: ''
         message:
           - en: >-
               Are you sure you want to change language. The page will refresh
@@ -3178,48 +3844,60 @@ entries:
         confirm:
           - en: Confirm
             de: Confirm
+            nl: ''
         discard:
           - en: Discard
             de: Discard
+            nl: ''
   policy:
     payment:
       per-month:
         - en: month
           de: monat
+          nl: ''
       per-quarter:
         - en: quarter
           de: quartal
+          nl: ''
       per-half-year:
         - en: half year
           de: halbes jahr
+          nl: ''
     covers:
       short-name-to-long-name:
         mtpl:
           - en: Motor Third Party Liability
             de: Motor Third Party Liability
+            nl: ''
         owndamage:
           - en: Motor Own Damage
             de: Motor Own Damage
+            nl: ''
         road_assis:
           - en: Road Assistance
             de: Road Assistance
+            nl: ''
         pa:
           - en: Personal Accident
             de: Personal Accident
+            nl: ''
         vandalism:
           - en: Vandalism
             de: Vandalism
+            nl: ''
     participants:
       payor:
         iban-selection:
           empty:
             - en: Use a different bank account
               de: Use a different bank account
+              nl: ''
       holder:
         person:
           full-name:
             - en: Client
               de: Client
+              nl: ''
     insured:
       person-objects~cover:
         wop-total:
@@ -3313,70 +3991,87 @@ entries:
       label:
         - en: Remove
           de: Remove
+          nl: ''
     contract:
       begin:
         policy-details:
           label:
             - en: Insurance begin
               de: Insurance begin
+              nl: ''
   claims:
     hide-resolved:
       - en: Hide resolved
         de: Hide resolved
+        nl: ''
     show-resolved:
       - en: Show resolved
         de: Show resolved
+        nl: ''
   insuranse-duration-unit:
     year:
       label:
         - en: year
           de: Jahr
+          nl: ''
     years:
       label:
         - en: years
           de: Jahre
+          nl: ''
     month:
       label:
         - en: month
           de: Monat
+          nl: ''
     months:
       label:
         - en: months
           de: Monate
+          nl: ''
     day:
       label:
         - en: day
           de: Tag
+          nl: ''
     days:
       label:
         - en: days
           de: Tage
+          nl: ''
   premium-summary-section:
     dues:
       label:
         - en: Premiums
           de: Premiums
+          nl: ''
     discounts:
       label:
         - en: Discounts
           de: Discounts
+          nl: ''
     payment-frequency:
       annually:
         - en: Annually
           de: jährlich
+          nl: ''
       semiannual:
         - en: Semiannually
           de: halbjährlich
+          nl: ''
       quarterly:
         - en: Quarterly
           de: vierteljährlich
+          nl: ''
       monthly:
         - en: Monthly
           de: monatlich
+          nl: ''
     taxes-and-fees:
       label:
         - en: Taxes and fees
           de: Taxes and fees
+          nl: ''
   main-insured:
     info:
       text:
@@ -3403,107 +4098,131 @@ entries:
       title:
         - en: Motor insurance
           de: null
+          nl: ''
       description:
         - en: >-
             A comprehensive policy that not only offers optimum protection to
             your vehicle, but also helps you financially in case of any
             unfortunate occurrence.
           de: null
+          nl: ''
       motor-comprehensive:
         title:
           - en: Motor Comprehensive
             de: null
+            nl: ''
     life:
       title:
         - en: Life insurance
           de: null
+          nl: ''
       description:
         - en: >-
             What if... something were to happen to you? A stroke of fate can
             change the life of your family drastically. Prepare now.
           de: null
+          nl: ''
       term-life:
         title:
           - en: Term Life
             de: null
+            nl: ''
       whole-life:
         title:
           - en: Whole Life
             de: null
+            nl: ''
       unit-link:
         title:
           - en: Unit Link
             de: null
+            nl: ''
       endowment:
         title:
           - en: Endowment
             de: null
+            nl: ''
     property:
       title:
         - en: Property insurance
           de: null
+          nl: ''
       description:
         - en: >-
             Most people simply can't afford to rebuild their home and replace
             everything in it if there's a disaster. A home insurance policy can
             protect your property, some of your personal possessions and you.
           de: null
+          nl: ''
       household:
         title:
           - en: Household Property
             de: Household Property
+            nl: ''
     health:
       title:
         - en: Health insurance
           de: null
+          nl: ''
       description:
         - en: >-
             The world that we live in today is full of uncertainties. Anything
             can happen to anyone, at any point of time. Hence it is highly
             recommended to insure you and your family's health.
           de: null
+          nl: ''
       health:
         title:
           - en: Health insurance
             de: null
+            nl: ''
   person:
     addresses:
       item-label:
         primary-address:
           - en: Primary address
             de: Primary address
+            nl: ''
         secondary-address:
           - en: Secondary address
             de: Secondary address
+            nl: ''
     contacts:
       item-label:
         primary-contact:
           - en: Primary contact
             de: Primary contact
+            nl: ''
         secondary-contact:
           - en: Secondary contact
             de: Secondary contact
+            nl: ''
     activity:
       edit:
         label:
           - en: EDIT
             de: EDIT
+            nl: ''
       cancel:
         label:
           - en: CANCEL
             de: CANCEL
+            nl: ''
       save:
         label:
           - en: SAVE
             de: SAVE
+            nl: ''
     bank-accounts:
       item-label:
         primary-bank-acc:
           - en: Primary bank account
             de: Primary bank account
+            nl: ''
         secondary-bank-acc:
           - en: Secondary bank account
             de: Secondary bank account
+            nl: ''
   policies:
     items:
       next-payment: {}
