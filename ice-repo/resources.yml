@@ -3662,7 +3662,7 @@ entries:
           link:
             - en: /ice/insis.dashboard.home.agent/home
               de: /ice/insis.dashboard.home.agent/home
-              nl: ''
+              nl: /ice/insis.dashboard.home.agent/home
         clients:
           label:
             - en: Clients
@@ -3671,7 +3671,7 @@ entries:
           link:
             - en: /ice/insis.dashboard.clients.agent/home
               de: /ice/insis.dashboard.clients.agent/home
-              nl: ''
+              nl: /ice/insis.dashboard.clients.agent/home
         policies:
           label:
             - en: Policies
@@ -3680,7 +3680,7 @@ entries:
           link:
             - en: /ice/insis.dashboard.policies.agent/home
               de: /ice/insis.dashboard.policies.agent/home
-              nl: ''
+              nl: /ice/insis.dashboard.policies.agent/home
         claims:
           label:
             - en: Claims
@@ -3689,7 +3689,7 @@ entries:
           link:
             - en: /ice/insis.dashboard.claims.agent/home
               de: /ice/insis.dashboard.claims.agent/home
-              nl: ''
+              nl: /ice/insis.dashboard.claims.agent/home
         products:
           label:
             - en: Products
@@ -3698,7 +3698,7 @@ entries:
           link:
             - en: /ice/insis.dashboard.products.agent/home
               de: /ice/insis.dashboard.products.agent/home
-              nl: ''
+              nl: /ice/insis.dashboard.products.agent/home
       customer:
         dashboard:
           label:
@@ -3708,7 +3708,7 @@ entries:
           link:
             - en: /ice/insis.dashboard.home.customer/home
               de: /ice/insis.dashboard.home.customer/home
-              nl: ''
+              nl: /ice/insis.dashboard.home.customer/home
         policies:
           label:
             - en: Policies
@@ -3717,7 +3717,7 @@ entries:
           link:
             - en: /ice/insis.dashboard.policies.customer/home
               de: /ice/insis.dashboard.policies.customer/home
-              nl: ''
+              nl: /ice/insis.dashboard.policies.customer/home
         payments:
           label:
             - en: Payments
@@ -3726,7 +3726,7 @@ entries:
           link:
             - en: /ice/insis.dashboard.payments.customer/home
               de: /ice/insis.dashboard.payments.customer/home
-              nl: ''
+              nl: /ice/insis.dashboard.payments.customer/home
         claims:
           label:
             - en: Claims
@@ -3735,7 +3735,7 @@ entries:
           link:
             - en: /ice/insis.dashboard.claims.customer/home
               de: /ice/insis.dashboard.claims.customer/home
-              nl: ''
+              nl: /ice/insis.dashboard.claims.customer/home
         products:
           label:
             - en: Products
@@ -3744,7 +3744,7 @@ entries:
           link:
             - en: /ice/insis.dashboard.products.customer/home
               de: /ice/insis.dashboard.products.customer/home
-              nl: ''
+              nl: /ice/insis.dashboard.products.customer/home
       menu:
         logout:
           - en: Logout
