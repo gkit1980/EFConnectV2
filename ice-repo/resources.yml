@@ -196,7 +196,7 @@ entries:
         label:
           - en: Client name
             de: Kunde Name
-            nl: 'Naam klant' 
+            nl: 'Naam klant'
       client-id:
         label:
           - en: Client ID
@@ -554,7 +554,7 @@ entries:
           icon:
             - en: more_horiz.svg
               de: more_horiz.svg
-              nl: ''
+              nl: more_horiz.svg
         insured:
           premium:
             total:
@@ -630,7 +630,7 @@ entries:
           icon:
             - en: more_horiz.svg
               de: more_horiz.svg
-              nl: ''
+              nl: more_horiz.svg
         insr_end:
           label:
             - en: Valid until
@@ -714,7 +714,7 @@ entries:
         icon:
           - en: thunder.svg
             de: thunder.svg
-            nl: ''
+            nl: thunder.svg
       summary:
         label:
           - en: '${param1} claims in progress'
@@ -723,7 +723,7 @@ entries:
         icon:
           - en: thunder.svg
             de: thunder.svg
-            nl: ''
+            nl: thunder.svg
     claims:
       items:
         claim-no:
@@ -759,7 +759,7 @@ entries:
           icon:
             - en: more_horiz.svg
               de: more_horiz.svg
-              nl: ''
+              nl: more_horiz.svg
     resolved-claims:
       items:
         claim-no:
@@ -1178,7 +1178,7 @@ entries:
         label:
           - en: Issue date
             de: Issue date
-            nl: 'Datum Afgifte' 
+            nl: 'Datum Afgifte'
       updated-date:
         label:
           - en: Last modified
@@ -2258,7 +2258,7 @@ entries:
             label:
               - en: Insurance end
                 de: Insurance end
-                nl: 'Einddatum verzekering'  
+                nl: 'Einddatum verzekering'
         product-full-name:
           label:
             - en: Product
@@ -2488,12 +2488,12 @@ entries:
           label:
             - en: Who would you like to protect?
               de: Who would you like to protect?
-              nl: 'Voor welke begunstigde wil je de verzekering afsluiten?'        
+              nl: 'Voor welke begunstigde wil je de verzekering afsluiten?'
         add-beneficiary:
           label:
             - en: ADD BENEFICIARY
               de: ADD BENEFICIARY
-              nl: 'Begunstigde TOEVOEGEN'    
+              nl: 'Begunstigde TOEVOEGEN'
       claims:
         card-title:
           label:
@@ -2547,7 +2547,7 @@ entries:
         label:
           - en: Buy insurance
             de: Versicherung kaufen
-            nl: 'Verzekering afsluiten'       
+            nl: 'Verzekering afsluiten'
       description:
         label:
           - en: >-
@@ -2562,7 +2562,7 @@ entries:
       label:
         - en: Buy insurance
           de: Buy insurance
-          nl: 'Verzekering kopen' 
+          nl: 'Verzekering kopen'
     terms-and-conditions:
       description:
         label:
@@ -2607,6 +2607,8 @@ entries:
           nl: ''
       icon:
         - en: person.svg
+          de: person.svg
+          nl: person.svg
     view-policy:
       label:
         - en: VIEW
@@ -2658,7 +2660,7 @@ entries:
           icon:
             - en: more_horiz.svg
               de: more_horiz.svg
-              nl: ''
+              nl: more_horiz.svg
           label:
             - en: More options
               de: More options
@@ -2731,7 +2733,7 @@ entries:
       icon:
         - en: more_horiz.svg
           de: more_horiz.svg
-          nl: ''
+          nl: more_horiz.svg
     property-insurance:
       button:
         label:
@@ -2802,7 +2804,7 @@ entries:
           label:
             - en: UNIT LINK INSURANCE
               de: UNIT LINK INSURANCE
-              nl: 'UNIT LINKED VERZEKERING'  
+              nl: 'UNIT LINKED VERZEKERING'
         whole-life:
           label:
             - en: WHOLE LIFE INSURANCE
@@ -2816,7 +2818,7 @@ entries:
     search-car-by:
       - en: Give us some information about the vehicles you want to insure.
         de: Give us some information about the vehicles you want to insure.
-        nl:  'Informatie over de voertuigen die u wilt verzekeren.'   
+        nl:  'Informatie over de voertuigen die u wilt verzekeren.'
     image-button:
       label:
         - en: 'http://localhost:4200/visual-ice/assets/logo.png'
@@ -2845,7 +2847,7 @@ entries:
       label:
         - en: Give us some information about the people you want to insure.
           de: Give us some information about the people you want to insure.
-          nl: 'Informatie over de te verzekeren personen.' 
+          nl: 'Informatie over de te verzekeren personen.'
     more-information-needed-life:
       label:
         - en: >-
@@ -2996,7 +2998,7 @@ entries:
         icon:
           - en: page-of-text.svg
             de: page-of-text.svg
-            nl: ''
+            nl: page-of-text.svg
       summary:
         label:
           - en: '${param1} unfinished quotes'
@@ -3005,7 +3007,7 @@ entries:
         icon:
           - en: page-of-text.svg
             de: page-of-text.svg
-            nl: ''
+            nl: page-of-text.svg
     active-policies:
       summary:
         label:
@@ -3015,7 +3017,7 @@ entries:
         icon:
           - en: umbrella.svg
             de: umbrella.svg
-            nl: ''
+            nl: umbrella.svg
     products-title:
       label:
         - en: Insurance Products
