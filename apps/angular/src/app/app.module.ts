@@ -44,6 +44,11 @@ import { MatSelectModule } from '@angular/material/select';
 import { RoleGuard } from './guards/role.guard';
 import { ThemeService } from './services/theme.service';
 
+import localeNl from '@angular/common/locales/nl';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(localeNl);
+
 @NgModule({
   declarations: [
     AppComponent,
