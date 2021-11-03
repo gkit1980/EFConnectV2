@@ -10,107 +10,107 @@ entries:
           label:
             - en: Client
               de: null
-              nl: 'Klant'
+              nl: Klant
         make:
           label:
             - en: Make
               de: null
-              nl: 'Maak'
+              nl: Maak
         model:
           label:
             - en: Model
               de: null
-              nl: 'Model'
+              nl: Model
         type:
           label:
             - en: Type
               de: null
-              nl: 'Type'
+              nl: Type
         year:
           label:
             - en: Year
               de: null
-              nl: 'Jaar'
+              nl: Jaar
         reg-no:
           label:
             - en: License plate
               de: null
-              nl: 'Kenteken'
+              nl: Kenteken
         vin:
           label:
             - en: VIN
               de: null
-              nl: 'VIN'
+              nl: VIN
         pid:
           label:
             - en: National ID
               de: null
-              nl: 'BSN'
+              nl: BSN
     download:
       quote:
         label:
           - en: Download quote
             de: Download quote
-            nl: 'Download offerte'
+            nl: Download offerte
     agent-claims:
       items:
         case-id:
           label:
             - en: Claim number
               de: null
-              nl: 'Claimnummer'
+              nl: Claimnummer
         claim-state:
           label:
             - en: State
               de: null
-              nl: 'Status'
+              nl: Status
         event-type:
           label:
             - en: Event type
               de: null
-              nl: 'Type gebeurtenis'
+              nl: Type gebeurtenis
         claim-date:
           label:
             - en: Claim date
               de: null
-              nl: 'Claim datum'
+              nl: Claim datum
         event-date:
           label:
             - en: Event date
               de: null
-              nl: 'Datum van gebeurtenis'
+              nl: Datum van gebeurtenis
         client:
           label:
             - en: Client
               de: null
-              nl: 'Klant'
+              nl: Klant
         policy:
           label:
             - en: Policy
               de: null
-              nl: 'Polis'
+              nl: Polis
     client:
       open-popup:
         label:
           - en: ADD ANOTHER PERSON
             de: ADD ANOTHER PERSON
-            nl: 'Voeg persoon toe'
+            nl: Voeg persoon toe
       search:
         name:
           label:
             - en: Search by Name
               de: Search by Name
-              nl: 'Zoek op naam'
+              nl: Zoek op naam
         pid:
           label:
             - en: Search by National ID
               de: Search by National ID
-              nl: 'Zoek op BSN'
+              nl: Zoek op BSN
         submit:
           label:
             - en: Search
               de: Search
-              nl: 'Zoeken'
+              nl: Zoeken
         pid-and-name:
           label:
             - en: '${param1} ${param2}'
@@ -122,351 +122,351 @@ entries:
             label:
               - en: Name
                 de: Name
-                nl: 'Naam'
+                nl: Naam
           pid:
             label:
               - en: National ID
                 de: National ID
-                nl: 'BSN'
+                nl: BSN
       action:
         add-new:
           label:
             - en: Add new person
               de: Add new person
-              nl: 'Voeg nieuwe persoon toe'
+              nl: Voeg nieuwe persoon toe
         add-selected:
           label:
             - en: Add
               de: Add
-              nl: 'Toevoegen'
+              nl: Toevoegen
         cancel:
           label:
             - en: Cancel
               de: Cancel
-              nl: 'Annuleren'
+              nl: Annuleren
       claims:
         no-claims-text:
           label:
             - en: No claims
               de: null
-              nl: 'Geen claims'
+              nl: Geen claims
     clients:
       items:
         view-more:
           label:
             - en: '${param1}'
               de: '${param1}'
-              nl: ''
+              nl: '${param1}'
     new-policy:
       label:
         - en: NEW POLICY
           de: NEUE POLICE
-          nl: 'Nieuwe polis'
+          nl: Nieuwe polis
     search-policies:
       product-id:
         label:
           - en: Product
             de: Produkt
-            nl: 'Product'
+            nl: Product
         empty:
           - en: Any
             de: Any
-            nl: 'Elk'
+            nl: Elk
       policy-state:
         label:
           - en: State
             de: State
-            nl: 'Status'
+            nl: Status
       insr-begin:
         label:
           - en: Insurance begin
             de: Vers.Beginn
-            nl: 'Startdatum verzekering'
+            nl: Startdatum verzekering
       insr-end:
         label:
           - en: Insurance end
             de: Vers.Ende
-            nl: 'Einddatum verzekering'
+            nl: Einddatum verzekering
       policy-no:
         label:
           - en: Policy number
             de: Police nummer
-            nl: 'Polisnummer'
+            nl: Polisnummer
       client-name:
         label:
           - en: Client name
             de: Kunde Name
-            nl: 'Naam klant'
+            nl: Naam klant
       client-id:
         label:
           - en: Client ID
             de: Kunde ID
-            nl: 'KlantID'
+            nl: KlantID
       insured-object:
         label:
           - en: Insured object
             de: Insured object
-            nl: 'Verzekerd object'
+            nl: Verzekerd object
       search:
         label:
           - en: SEARCH
             de: SUCHEN
-            nl: 'ZOEKEN'
+            nl: ZOEKEN
         tooltip:
           - en: Alt+S
             de: Alt+S
-            nl: 'Alt+S'
+            nl: Alt+S
         placeholder:
           - en: Search...
             de: Search...
-            nl: 'Zoeken...'
+            nl: Zoeken...
     search:
       fulltext:
         placeholder:
           - en: Search...
             de: Suche...
-            nl: 'Zoeken...'
+            nl: Zoeken...
       type:
         label:
           - en: Type
             de: Typ
-            nl: 'Type'
+            nl: Type
       active-policies:
         label:
           - en: Active policies
             de: Aktive Policen
-            nl: 'Actieve polissen'
+            nl: Actieve polissen
       name:
         label:
           - en: Name
             de: Kunde
-            nl: 'Naam'
+            nl: Naam
       id:
         label:
           - en: Client id
             de: Kunden-ID
-            nl: 'KlantID'
+            nl: KlantID
       see-less-options:
         label:
           - en: See less options
             de: See less options
-            nl: 'Zie minder opties'
+            nl: Zie minder opties
       see-more-options:
         label:
           - en: See more options
             de: See more options
-            nl: 'Zie meer opties'
+            nl: Zie meer opties
       cases:
         product-id:
           empty:
             - en: Any product
               de: null
-              nl: 'Elk product'
+              nl: Elk product
           label:
             - en: Product
               de: null
-              nl: 'Product'
+              nl: Product
         policy-no:
           label:
             - en: Policy number
               de: null
-              nl: 'polisnummer'
+              nl: polisnummer
         client-name:
           label:
             - en: Client name
               de: null
-              nl: 'Naam klant'
+              nl: Naam klant
         case-id:
           label:
             - en: Claim id
               de: null
-              nl: 'ClaimID'
+              nl: ClaimID
         client-id:
           label:
             - en: Client ID
               de: null
-              nl: 'KlantID'
+              nl: KlantID
         claim:
           status:
             label:
               - en: State
                 de: null
-                nl: 'Status'
+                nl: Status
           number:
             label:
               - en: Claim number
                 de: null
-                nl: 'Claimnummer'
+                nl: Claimnummer
           date-from:
             label:
               - en: Claim date from
                 de: null
-                nl: 'Claimdatum van'
+                nl: Claimdatum van
           date-to:
             label:
               - en: Claim date to
                 de: null
-                nl: 'Claimdatum tot'
+                nl: Claimdatum tot
         event:
           date-from:
             label:
               - en: Event date from
                 de: null
-                nl: 'Datum gebeurtenis van'
+                nl: Datum gebeurtenis van
           date-to:
             label:
               - en: Event date to
                 de: null
-                nl: 'Datum gebeurtenis tot'
+                nl: Datum gebeurtenis tot
           type:
             label:
               - en: Event type
                 de: null
-                nl: 'Type gebeurtenis'
+                nl: Type gebeurtenis
     new-client:
       label:
         - en: NEW CLIENT
           de: NEUER KUNDE
-          nl: 'NIEUWE KLANT'
+          nl: NIEUWE KLANT
       title:
         label:
           - en: New client
             de: New client
-            nl: 'Nieuwe klant'
+            nl: Nieuwe klant
       person-data:
         title:
           label:
             - en: Person data
               de: Person data
-              nl: 'Persoonsgegevens'
+              nl: Persoonsgegevens
         birthdate:
           label:
             - en: Birth date
               de: Birth date
-              nl: 'Geboortedatum'
+              nl: Geboortedatum
         first-name:
           label:
             - en: First name
               de: First name
-              nl: 'Voornaam'
+              nl: Voornaam
         gender:
           label:
             - en: Gender
               de: Gender
-              nl: 'Geslacht'
+              nl: Geslacht
         industry:
           label:
             - en: Industry (optional)
               de: Industry (optional)
-              nl: 'Sector'
+              nl: Sector
         last-name:
           label:
             - en: Last name
               de: Last name
-              nl: 'Achternaam'
+              nl: Achternaam
         middle-name:
           label:
             - en: Middle name (optional)
               de: Middle name (optional)
-              nl: 'Tussenvoegsel'
+              nl: Tussenvoegsel
         name-prefix:
           label:
             - en: Name prefix (optional)
               de: Name prefix (optional)
-              nl: 'Voorvoegsel'
+              nl: Voorvoegsel
         name-suffix:
           label:
             - en: Name suffix (optional)
               de: Name suffix (optional)
-              nl: 'Achtervoegsel'
+              nl: Achtervoegsel
         nationality:
           label:
             - en: Nationality
               de: Nationality
-              nl: 'nationaliteit'
+              nl: nationaliteit
         preferred-language:
           label:
             - en: Preferred language
               de: Preferred language
-              nl: 'Voorkeurstaal'
+              nl: Voorkeurstaal
         subindustry:
           label:
             - en: Subindustry (optional)
               de: Subindustry (optional)
-              nl: 'Subsector'
+              nl: Subsector
       company-data:
         title:
           label:
             - en: Company data
               de: Company data
-              nl: 'Bedrijfsgegevens'
+              nl: Bedrijfsgegevens
         home-country:
           label:
             - en: Home country
               de: Home country
-              nl: 'Thuisland'
+              nl: Thuisland
         industry:
           label:
             - en: Industry
               de: Industry
-              nl: 'Sector'
+              nl: Sector
         name:
           label:
             - en: Name
               de: Name
-              nl: 'Naam'
+              nl: Naam
         nationality:
           label:
             - en: Nationality
               de: Nationality
-              nl: 'Nationaliteit'
+              nl: Nationaliteit
         preferred-language:
           label:
             - en: Preferred language
               de: Preferred language
-              nl: 'Voorkeurstaal'
+              nl: Voorkeurstaal
         subindustry:
           label:
             - en: Subindustry (optional)
               de: Subindustry (optional)
-              nl: 'Subsector'
+              nl: Subsector
         type:
           label:
             - en: Company type
               de: Company type
-              nl: 'Type bedrijf'
+              nl: Type bedrijf
       contact:
         title:
           label:
             - en: Contact
               de: Contact
-              nl: 'Contact'
+              nl: Contact
         phone-number:
           label:
             - en: Phone number
               de: Phone number
-              nl: 'Telefoonnummer'
+              nl: Telefoonnummer
         email:
           label:
             - en: Email
               de: Email
-              nl: 'Email'
+              nl: Email
         type:
           label:
             - en: Contact type
               de: Contact type
-              nl: 'Type contact'
+              nl: Type contact
       address:
         title:
           label:
             - en: Address
               de: Address
-              nl: 'Adres'
+              nl: Adres
         apartment-number:
           label:
             - en: Apartment number (optional)
               de: Apartment number (optional)
-              nl: 'Huisnummer'
+              nl: Huisnummer
         block-number:
           label:
             - en: Block number (optional)
@@ -476,78 +476,78 @@ entries:
           label:
             - en: City
               de: City
-              nl: 'Stad'
+              nl: Stad
         country:
           label:
             - en: Country
               de: Country
-              nl: 'Land'
+              nl: Land
         entrance-number:
           label:
             - en: Entrance number (optional)
               de: Entrance number (optional)
-              nl: 'Ingangsnummer'
+              nl: Ingangsnummer
         floor-number:
           label:
             - en: Floor number (optional)
               de: Floor number (optional)
-              nl: 'Verdieping nummer'
+              nl: Verdieping nummer
         post-code:
           label:
             - en: Post code
               de: Post code
-              nl: 'Postcode'
+              nl: Postcode
         region:
           label:
             - en: Region (optional)
               de: Region (optional)
-              nl: 'Regio'
+              nl: Regio
         state:
           label:
             - en: State (optional)
               de: State (optional)
-              nl: 'Provincie'
+              nl: Provincie
         street-number:
           label:
             - en: Street number (optional)
               de: Street number (optional)
-              nl: 'Straatnummer'
+              nl: Straatnummer
         street:
           label:
             - en: Street (optional)
               de: Street (optional)
-              nl: 'Straat'
+              nl: Straat
         type:
           label:
             - en: Address type
               de: Address type
-              nl: 'Type adres'
+              nl: Type adres
       see-more-options:
         label:
           - en: See more options
             de: See more options
-            nl: 'Zie meer opties'
+            nl: Zie meer opties
       activity:
         cancel:
           label:
             - en: Cancel
               de: Cancel
-              nl: 'Annuleren'
+              nl: Annuleren
         create:
           label:
             - en: Create
               de: Create
-              nl: 'Creëren'
+              nl: Creëren
         navigate-to-all-clients:
           label:
             - en: BACK TO ALL CLIENTS
               de: BACK TO ALL CLIENTS
-              nl: 'Terug naar alle klanten'
+              nl: Terug naar alle klanten
       client-type:
         label:
           - en: Client type
             de: Client type
-            nl: 'Type klant'
+            nl: Type klant
     expired-policies:
       items:
         more-actions:
@@ -561,12 +561,12 @@ entries:
               label:
                 - en: Price
                   de: null
-                  nl: 'Prijs'
+                  nl: Prijs
         insured-object:
           label:
             - en: Insured object
               de: null
-              nl: 'Verzekerd object'
+              nl: Verzekerd object
         link:
           label:
             - en: '${param1}'
@@ -578,27 +578,27 @@ entries:
               label:
                 - en: Completed
                   de: null
-                  nl: 'Voltooid'
+                  nl: Voltooid
             frequency:
               label:
                 - en: Payment
                   de: null
-                  nl: 'Betaling'
+                  nl: Betaling
           end:
             label:
               - en: Expired on
                 de: null
-                nl: 'Verlopen op'
+                nl: Verlopen op
           product-name:
             label:
               - en: Type
                 de: null
-                nl: 'Productnaam'
+                nl: Productnaam
           policy-id:
             label:
               - en: Policy number
                 de: null
-                nl: 'Polisnummer'
+                nl: Polisnummer
     policies:
       items:
         insured-objects-formatted:
@@ -615,17 +615,17 @@ entries:
           label:
             - en: Client
               de: Kunde
-              nl: 'Klant'
+              nl: Klant
         view-more:
           label:
             - en: View
               de: View
-              nl: 'Weergeven'
+              nl: Weergeven
         submit-claim:
           label:
             - en: Submit claim
               de: Submit claim
-              nl: 'Claim indienen'
+              nl: Claim indienen
         more-actions:
           icon:
             - en: more_horiz.svg
@@ -635,47 +635,47 @@ entries:
           label:
             - en: Valid until
               de: Valid until
-              nl: 'Geldig tot'
+              nl: Geldig tot
         insured-objects:
           items:
             item:
               label:
                 - en: Insured Objects
                   de: Insured Objects
-                  nl: 'Verzekerde objecten'
+                  nl: Verzekerde objecten
           main-insured:
             - en: Main insured
               de: null
-              nl: 'Hoofdverzekerde'
+              nl: Hoofdverzekerde
           additional-insured:
             - en: Additional insured
               de: null
-              nl: 'Extra verzekerde'
+              nl: Extra verzekerde
         policy-no:
           label:
             - en: Policy number
               de: Policy number
-              nl: 'Polisnummer'
+              nl: Polisnummer
         policy-state-name:
           label:
             - en: State
               de: Status
-              nl: 'Status'
+              nl: Status
         insr-begin:
           label:
             - en: Insurance begin
               de: Insurance begin
-              nl: 'Startdatum verzekering'
+              nl: Startdatum verzekering
         insr-end:
           label:
             - en: Insurance end
               de: Insurance end
-              nl: 'Einddatum verzekering'
+              nl: Einddatum verzekering
         insured-objects~item:
           label:
             - en: Insured Object
               de: Insured Object
-              nl: 'Verzekerd object'
+              nl: Verzekerd object
         product-formatted-long:
           content:
             - en: '${param1} - ${param2} ${param3}'
@@ -689,7 +689,7 @@ entries:
           label:
             - en: Product
               de: Produkt
-              nl: 'Product'
+              nl: Product
         next-payment:
           summary:
             value:
@@ -704,13 +704,13 @@ entries:
           label:
             - en: Payment
               de: null
-              nl: 'Betaling'
+              nl: Betaling
     claims-in-progress:
       submit-a-claim:
         label:
           - en: Submit a claim here
             de: null
-            nl: 'Dien hier een claim in'
+            nl: Dien hier een claim in
         icon:
           - en: thunder.svg
             de: thunder.svg
@@ -730,27 +730,27 @@ entries:
           label:
             - en: Claim number
               de: Claim number
-              nl: 'Claimnummer'
+              nl: Claimnummer
         claim-state-name:
           label:
             - en: Status
               de: Status
-              nl: 'Status'
+              nl: Status
         policy-label:
           label:
             - en: Policy
               de: Policy
-              nl: 'Polis'
+              nl: Polis
         event-date:
           label:
             - en: Event date
               de: Event date
-              nl: 'Datum gebeurtenis'
+              nl: Datum gebeurtenis
         go-to-details:
           label:
             - en: View
               de: View
-              nl: 'Weergeven'
+              nl: Weergeven
         button-dropdown:
           label:
             - en: ...
@@ -766,7 +766,7 @@ entries:
           label:
             - en: Claim number
               de: Claim number
-              nl: 'Claimnummer'
+              nl: Claimnummer
         claim-link:
           label:
             - en: '${param1}'
@@ -776,12 +776,12 @@ entries:
           label:
             - en: Status
               de: Status
-              nl: 'Status'
+              nl: Status
         date-resolved:
           label:
             - en: Date resolved
               de: Date resolved
-              nl: 'Datum opgelost'
+              nl: Datum opgelost
         policy-link:
           label:
             - en: '${param1} ${param2}'
@@ -791,17 +791,17 @@ entries:
           label:
             - en: Policy
               de: Policy
-              nl: 'Polis'
+              nl: Polis
         event-date:
           label:
             - en: Event date
               de: Event date
-              nl: 'Datum gebeurtenis'
+              nl: Datum gebeurtenis
         button-view-more:
           label:
             - en: View
               de: View
-              nl: 'Weergeven'
+              nl: Weergeven
         button-dropdown:
           label:
             - en: ...
@@ -812,7 +812,7 @@ entries:
         label:
           - en: Additional audio/video equipment
             de: Additional audio/video equipment
-            nl: 'Additionele audio/video apparatuur'
+            nl: Additionele audio/video apparatuur
     previous-insurer-heading:
       label:
         - en: >-
@@ -824,12 +824,12 @@ entries:
       label:
         - en: continue
           de: null
-          nl: 'Doorgaan'
+          nl: Doorgaan
     go-to-next-page:
       label:
         - en: Next
           de: Next
-          nl: 'Volgende'
+          nl: Volgende
     more-information-needed:
       label:
         - en: >-
@@ -843,87 +843,87 @@ entries:
           empty:
             - en: Any
               de: Any
-              nl: 'Elk'
+              nl: Elk
         fulltext:
           placeholder:
             - en: Search...
               de: Search...
-              nl: 'Zoeken...'
+              nl: Zoeken...
       first-name:
         label:
           - en: First Name
             de: null
-            nl: 'Voornaam'
+            nl: Voornaam
       last-name:
         label:
           - en: Last Name
             de: null
-            nl: 'Achternaam'
+            nl: Achternaam
       birthdate:
         label:
           - en: Birthdate
             de: null
-            nl: 'Geboortedatum'
+            nl: Geboortedatum
       gender:
         label:
           - en: Gender
             de: null
-            nl: 'Geslacht'
+            nl: Geslacht
       finalize:
         label:
           - en: Submit
             de: null
-            nl: 'Indienen'
+            nl: Indienen
       name-prefix:
         label:
           - en: Name prefix
             de: Name prefix
-            nl: 'Voorvoegsel'
+            nl: Voorvoegsel
       given-name:
         label:
           - en: First name
             de: First name
-            nl: 'Voornaam'
+            nl: Voornaam
       family-name:
         label:
           - en: Last name
             de: Last name
-            nl: 'Achternaam'
+            nl: Achternaam
       second-name:
         label:
           - en: Middle name
             de: Middle name
-            nl: 'Tussenvoegsel'
+            nl: Tussenvoegsel
       sex:
         label:
           - en: Gender
             de: Gender
-            nl: 'Geslacht'
+            nl: Geslacht
       birth-date:
         label:
           - en: Date of birth
             de: Date of birth
-            nl: 'Geboortedatum'
+            nl: Geboortedatum
       nationality:
         label:
           - en: Nationality
             de: Nationality
-            nl: 'Nationaliteit'
+            nl: Nationaliteit
       home-country:
         label:
           - en: Country
             de: Country
-            nl: 'Land'
+            nl: Land
       language:
         label:
           - en: Preferred language
             de: Preferred language
-            nl: 'Gewenste taal'
+            nl: Gewenste taal
       industry-code:
         label:
           - en: Industry
             de: Industry
-            nl: 'Sector'
+            nl: Sector
         empty:
           - en: ''
             de: ''
@@ -932,7 +932,7 @@ entries:
         label:
           - en: Subindustry
             de: Subindustry
-            nl: 'Subsector'
+            nl: Subsector
         empty:
           - en: ''
             de: ''
@@ -941,59 +941,59 @@ entries:
         label:
           - en: Name suffix
             de: Name suffix
-            nl: 'Achtervoegsel'
+            nl: Achtervoegsel
       addresses:
         items:
           address-type:
             label:
               - en: Type
                 de: Type
-                nl: 'Type'
+                nl: Type
           state-name:
             label:
               - en: State
                 de: State
-                nl: 'Status'
+                nl: Status
           region-name:
             label:
               - en: Region
                 de: Region
-                nl: 'Regio'
+                nl: Regio
           city:
             label:
               - en: City
                 de: City
-                nl: 'Stad'
+                nl: Stad
           post-code:
             label:
               - en: Post code
                 de: Post code
-                nl: 'Postcode'
+                nl: Postcode
           street-name:
             label:
               - en: Street
                 de: Street
-                nl: 'Straat'
+                nl: Straat
           street-number:
             label:
               - en: Street number
                 de: Street number
-                nl: 'Straatnummer'
+                nl: Straatnummer
           entrance-number:
             label:
               - en: Entrance number
                 de: Entrance number
-                nl: 'Ingangsnummer'
+                nl: Ingangsnummer
           floor-number:
             label:
               - en: Floor number
                 de: Floor number
-                nl: 'Verdieping nummer'
+                nl: Verdieping nummer
           apartment-number:
             label:
               - en: Apartment number
                 de: Apartment number
-                nl: 'Appartement nummer'
+                nl: Appartement nummer
           block-number:
             label:
               - en: Block number
@@ -1003,203 +1003,203 @@ entries:
             label:
               - en: Country
                 de: Country
-                nl: 'Land'
+                nl: Land
       contacts:
         items:
           details:
             label:
               - en: Details
                 de: Details
-                nl: 'Details'
+                nl: Details
           contact-type:
             label:
               - en: Contact type
                 de: Contact type
-                nl: 'Contact type'
+                nl: Contact type
       bank-accounts:
         items:
           account-currency:
             label:
               - en: Currency
                 de: Currency
-                nl: 'Munteenheid'
+                nl: Munteenheid
           account-num:
             label:
               - en: IBAN
                 de: IBAN
-                nl: 'IBAN'
+                nl: IBAN
           bank-id:
             label:
               - en: Bank name
                 de: Bank name
-                nl: 'Bank naam'
+                nl: Bank naam
       man-comp:
         label:
           - en: Client type
             de: Client type
-            nl: 'Klant type'
+            nl: Klant type
       activity:
         navigate-back:
           label:
             - en: BACK TO ALL CLIENTS
               de: BACK TO ALL CLIENTS
-              nl: 'Terug naar alle klanten'
+              nl: Terug naar alle klanten
       primary:
         contact:
           email:
             label:
               - en: Email
                 de: Email
-                nl: 'Email'
+                nl: Email
           phone:
             label:
               - en: Phone
                 de: Phone
-                nl: 'Telefoon'
+                nl: Telefoon
         address:
           full:
             label:
               - en: Address
                 de: Address
-                nl: 'Adres'
+                nl: Adres
       full-name-summary:
         label:
           - en: Name
             de: Name
-            nl: 'Naam'
+            nl: Naam
       type:
         label:
           - en: Client type
             de: Client type
-            nl: 'Klant type'
+            nl: Klant type
     payment:
       title:
         label:
           - en: Past payments
             de: Past payments
-            nl: 'Vorige betalingen'
+            nl: Vorige betalingen
       activity:
         to-details:
           label:
             - en: Details
               de: Details
-              nl: 'Details'
+              nl: Details
         goto-details:
           label:
             - en: Details
               de: Details
-              nl: 'Details'
+              nl: Details
       objects:
         items:
           status:
             label:
               - en: Status
                 de: Status
-                nl: 'Status'
+                nl: Status
           payment-date:
             label:
               - en: Payment date
                 de: Payment date
-                nl: 'Betalingsdatum'
+                nl: Betalingsdatum
           amount:
             label:
               - en: Amount
                 de: Amount
-                nl: 'Bedrag'
+                nl: Bedrag
           method:
             label:
               - en: Method
                 de: Method
-                nl: 'Methode'
+                nl: Methode
       search:
         from:
           label:
             - en: From
               de: From
-              nl: 'Van'
+              nl: Van
         to:
           label:
             - en: To
               de: To
-              nl: 'Van'
+              nl: Van
         status:
           label:
             - en: Status
               de: Status
-              nl: 'Status'
+              nl: Status
         payment-method:
           label:
             - en: Payment method
               de: Payment method
-              nl: 'Betalingsmethode'
+              nl: Betalingsmethode
         filter:
           label:
             - en: Filter
               de: Filter
-              nl: 'Filter'
+              nl: Filter
     address:
       title:
         label:
           - en: Address
             de: Address
-            nl: 'Adres'
+            nl: Adres
       activity:
         to-details:
           label:
             - en: Details
               de: Details
-              nl: 'Details'
+              nl: Details
     contact:
       title:
         label:
           - en: Contacts
             de: Contacts
-            nl: 'Contacten'
+            nl: Contacten
       activity:
         to-details:
           label:
             - en: Details
               de: Details
-              nl: 'Details'
+              nl: Details
     personal:
       title:
         label:
           - en: Personal details
             de: Personal details
-            nl: 'Persoonlijke details'
+            nl: Persoonlijke details
       activity:
         to-details:
           label:
             - en: Details
               de: Details
-              nl: 'Details'
+              nl: Details
     policy:
       registration-date:
         label:
           - en: Issue date
             de: Issue date
-            nl: 'Datum Afgifte'
+            nl: Datum Afgifte
       updated-date:
         label:
           - en: Last modified
             de: Issue date
-            nl: 'Laatst bijgewerkt'
+            nl: Laatst bijgewerkt
       activity:
         download:
           label:
             - en: Download
               de: Download
-              nl: 'Download'
+              nl: Download
         cancel:
           label:
             - en: Cancel
               de: Cancel
-              nl: 'Annuleren'
+              nl: Annuleren
         navigate-back:
           label:
             - en: back to all policies
               de: back to all policies
-              nl: 'Terug naar polissen'
+              nl: Terug naar polissen
       insured:
         currency:
           label:
@@ -1210,7 +1210,7 @@ entries:
           label:
             - en: Give us some information about the vehicles you want to insure.
               de: null
-              nl: 'Informatie over de voertuigen die u wilt verzekeren.'
+              nl: Informatie over de voertuigen die u wilt verzekeren.
           items:
             owner:
               address:
@@ -1218,56 +1218,56 @@ entries:
                   label:
                     - en: City
                       de: null
-                      nl: 'Stad'
+                      nl: Stad
                 zip:
                   label:
                     - en: ZIP
                       de: null
-                      nl: 'Postcode'
+                      nl: Postcode
               options-title:
                 label:
                   - en: Vehicle ownership
                     de: null
-                    nl: 'Voertuig eigenaar'
+                    nl: Voertuig eigenaar
               person:
                 first-name:
                   label:
                     - en: Owner first name
                       de: null
-                      nl: 'Voornaam eigenaar'
+                      nl: Voornaam eigenaar
                 last-name:
                   label:
                     - en: Owner last name
                       de: null
-                      nl: 'Achternaam eigenaar'
+                      nl: Achternaam eigenaar
                 birthdate:
                   label:
                     - en: Birthdate
                       de: null
-                      nl: 'Geboortedatum'
+                      nl: Geboortedatum
               lessor:
                 name:
                   label:
                     - en: Lessor name
                       de: null
-                      nl: 'Naam verhuurder'
+                      nl: Naam verhuurder
             insured-amount:
               invalid:
                 label:
                   - en: The value must be positive number
                     de: The value must be positive number
-                    nl: 'De waarde moet een positief getal zijn'
+                    nl: De waarde moet een positief getal zijn
               label:
                 - en: Actual value of the car
                   de: Actual value of the car
-                  nl: 'Werkelijke waarde van de auto'
+                  nl: Werkelijke waarde van de auto
             cover:
               mtpl:
                 active:
                   label:
                     - en: Motor Third Party Liability
                       de: Motor Third Party Liability
-                      nl: 'Aansprakelijkheid voor Motorvoertuigen'
+                      nl: Aansprakelijkheid voor Motorvoertuigen
                 active-info:
                   - en: >-
                       # Motor Third Party Liability
@@ -1287,23 +1287,23 @@ entries:
                   label:
                     - en: Motor Third Party Liability
                       de: Motor Third Party Liability
-                      nl: 'Aansprakelijkheid voor Motorvoertuigen'
+                      nl: Aansprakelijkheid voor Motorvoertuigen
               owndamage:
                 active:
                   label:
                     - en: Motor Own Damage
                       de: Motor Own Damage
-                      nl: 'Motor eigen schade'
+                      nl: Motor eigen schade
                 deductible:
                   label:
                     - en: Deductible
                       de: Deductible
-                      nl: 'Eigen risico'
+                      nl: Eigen risico
                 insured-amount:
                   label:
                     - en: Insured Amount
                       de: Insured Amount
-                      nl: 'Verzekerd bedrag'
+                      nl: Verzekerd bedrag
                 active-info:
                   - en: >-
                       # Motor Own Damage
@@ -1330,13 +1330,13 @@ entries:
                   label:
                     - en: Vehicle Own Damage
                       de: Vehicle Own Damage
-                      nl: 'Eigen schade aan het voertuig'
+                      nl: Eigen schade aan het voertuig
               pa:
                 active:
                   label:
                     - en: Personal Accident
                       de: Personal Accident
-                      nl: 'Persoonlijk ongeluk'
+                      nl: Persoonlijk ongeluk
                 active-info:
                   - en: >-
                       # Personal Accident
@@ -1357,13 +1357,13 @@ entries:
                   label:
                     - en: Personal Assistance
                       de: Personal Assistance
-                      nl: 'Persoonlijke assistentie'
+                      nl: Persoonlijke assistentie
               road_assis:
                 active:
                   label:
                     - en: Road Assistance
                       de: Road Assistance
-                      nl: 'Wegenwacht'
+                      nl: Wegenwacht
                 active-info:
                   - en: >-
                       # Road Assistance
@@ -1384,13 +1384,13 @@ entries:
                   label:
                     - en: Road Assistance
                       de: Road Assistance
-                      nl: 'Wegenwacht'
+                      nl: Wegenwacht
             question:
               number-of-consecutive-years-without-claims:
                 label:
                   - en: Consecutive years without accidents
                     de: null
-                    nl: 'Opeenvolgende jaren zonder ongevallen'
+                    nl: Opeenvolgende jaren zonder ongevallen
             car:
               covers-title:
                 label:
@@ -1401,67 +1401,69 @@ entries:
                 label:
                   - en: License plate
                     de: null
-                    nl: 'Kentekenplaat'
+                    nl: Kentekenplaat
               brand:
                 label:
                   - en: Make
                     de: null
-                    nl: 'Maak'
+                    nl: Maak
               model:
                 label:
                   - en: Model
                     de: null
-                    nl: 'Model'
+                    nl: Model
               construction-date:
                 label:
                   - en: Year
                     de: null
-                    nl: 'Jaar'
+                    nl: Jaar
               subtype:
                 label:
                   - en: Body type
                     de: null
-                    nl: 'Carrosserie'
+                    nl: Carrosserie
               chassis:
                 label:
                   - en: VIN
                     de: null
-                    nl: 'VIN'
+                    nl: VIN
               ccm-ton:
                 label:
                   - en: Engine
                     de: null
-                    nl: 'Motor'
+                    nl: Motor
               engine-power:
                 label:
                   - en: Power
                     de: null
-                    nl: 'Kracht'
+                    nl: Kracht
               fuel:
                 label:
                   - en: Fuel type
                     de: null
-                    nl: 'Brandstoftype'
+                    nl: Brandstoftype
               seats-number:
                 label:
                   - en: Number of seats
                     de: null
-                    nl: 'Aantal zitplaatsen'
+                    nl: Aantal zitplaatsen
               millage:
                 label:
                   - en: Kilometers driven per year
                     de: null
-                    nl: 'Kilometer gereden per jaar'
+                    nl: Kilometer gereden per jaar
               usage:
                 label:
                   - en: Primary usage
                     de: null
-                    nl: 'Primair gebruik'
+                    nl: Primair gebruik
               transportation-of-hazardous-goods:
                 label:
                   - en: The car is used for transportation of hazardous goods
                     de: null
-                    nl: 'De auto wordt gebruikt voor het vervoer van gevaarlijke goederen'
+                    nl: >-
+                      De auto wordt gebruikt voor het vervoer van gevaarlijke
+                      goederen
               additional-equipment:
                 label:
                   - en: >-
@@ -1473,44 +1475,44 @@ entries:
                 label:
                   - en: Audio/Video system
                     de: null
-                    nl: 'Audio/Video-systeem'
+                    nl: Audio/Video-systeem
               additional-equipment-car-audio:
                 label:
                   - en: Insured value (EUR)
                     de: null
-                    nl: 'Verzekerde waarde (EUR)'
+                    nl: Verzekerde waarde (EUR)
               additional-equipment-alloy-wheels-included:
                 label:
                   - en: Alloy wheels
                     de: null
-                    nl: 'Lichtmetalen velgen'
+                    nl: Lichtmetalen velgen
               additional-equipment-alloy-wheels:
                 label:
                   - en: Insured value (EUR)
                     de: null
-                    nl: 'Verzekerde waarde (EUR)'
+                    nl: Verzekerde waarde (EUR)
               additional-equipment-other-included:
                 label:
                   - en: Other
                     de: null
-                    nl: 'Anders'
+                    nl: Anders
               additional-equipment-other:
                 label:
                   - en: Insured value (EUR)
                     de: null
-                    nl: 'Verzekerde waarde (EUR)'
+                    nl: Verzekerde waarde (EUR)
               additional-equipment-audio-video:
                 items:
                   name:
                     label:
                       - en: Model
                         de: null
-                        nl: 'Model'
+                        nl: Model
                   serial-no:
                     label:
                       - en: Serial number
                         de: null
-                        nl: 'Serienummer'
+                        nl: Serienummer
               chassis-info:
                 - en: >-
                     # Vehicle Identification Number
@@ -1526,24 +1528,24 @@ entries:
                 label:
                   - en: Vehicle type
                     de: Vehicle type
-                    nl: 'Type voertuig'
+                    nl: Type voertuig
               search:
                 input:
                   license-plate:
                     label:
                       - en: License plate
                         de: License plate
-                        nl: 'Kentekenplaat'
+                        nl: Kentekenplaat
                   vin:
                     label:
                       - en: VIN
                         de: VIN
-                        nl: 'VIN'
+                        nl: VIN
                 go:
                   label:
                     - en: Go
                       de: Go
-                      nl: 'Ga'
+                      nl: Ga
                 vin-info:
                   info:
                     - en: |-
@@ -1562,7 +1564,7 @@ entries:
                 label:
                   - en: Vehicle subtype
                     de: Vehicle subtype
-                    nl: 'Voertuig subtype'
+                    nl: Voertuig subtype
             drivers:
               items:
                 person:
@@ -1570,123 +1572,123 @@ entries:
                     label:
                       - en: First name
                         de: Vorname
-                        nl: 'Voornaam'
+                        nl: Voornaam
                   last-name:
                     label:
                       - en: Last name
                         de: Nachname
-                        nl: 'Achternaam'
+                        nl: Achternaam
                   date-of-birth:
                     label:
                       - en: Birthdate
                         de: null
-                        nl: 'Geboortedatum'
+                        nl: Geboortedatum
                   driver-license-nb:
                     label:
                       - en: Driving license number
                         de: null
-                        nl: 'Nummer rijbewijs'
+                        nl: Nummer rijbewijs
                   driver-license-file:
                     label:
                       - en: Driving license copy (optional)
                         de: null
-                        nl: 'Kopie rijbewijs'
+                        nl: Kopie rijbewijs
                   gender:
                     label:
                       - en: Gender
                         de: Gender
-                        nl: 'Geslacht'
+                        nl: Geslacht
                   nationality:
                     label:
                       - en: Nationality
                         de: Nationality
-                        nl: 'Nationaliteit'
+                        nl: Nationaliteit
                   language:
                     label:
                       - en: Language
                         de: Language
-                        nl: 'Taal'
+                        nl: Taal
                   address:
                     city:
                       label:
                         - en: City
                           de: City
-                          nl: 'Stad'
+                          nl: Stad
                     country:
                       label:
                         - en: Country
                           de: Country
-                          nl: 'Land'
+                          nl: Land
                     post-code:
                       label:
                         - en: Post code
                           de: Post code
-                          nl: 'Postcode'
+                          nl: Postcode
                     type:
                       label:
                         - en: Address type
                           de: Address type
-                          nl: 'Adres type'
+                          nl: Adres type
                   remove:
                     label:
                       - en: REMOVE
                         de: REMOVE
-                        nl: 'VERWIJDEREN'
+                        nl: VERWIJDEREN
             remove:
               label:
                 - en: REMOVE VEHICLE
                   de: REMOVE VEHICLE
-                  nl: 'VERWIJDER VOERTUIG'
+                  nl: VERWIJDER VOERTUIG
             document:
               drvlicence:
                 browse:
                   label:
                     - en: Driving license copy (optional)
                       de: Driving license copy (optional)
-                      nl: 'Kopie rijbewijs'
+                      nl: Kopie rijbewijs
               carinvoice:
                 browse:
                   label:
                     - en: Purchase Invoice
                       de: Purchase Invoice
-                      nl: 'Aankoopfactuur'
+                      nl: Aankoopfactuur
               vehcrefcer:
                 browse:
                   label:
                     - en: Vehicle registration
                       de: Vehicle registration
-                      nl: 'Voertuig registratie'
+                      nl: Voertuig registratie
         add-another-vehicle:
           label:
             - en: ADD ANOTHER VEHICLE
               de: null
-              nl: 'ANDERE VOERTUIG TOEVOEGEN'
+              nl: ANDERE VOERTUIG TOEVOEGEN
         remove-vehicle:
           label:
             - en: REMOVE VEHICLE
               de: null
-              nl: 'VERWIJDER VOERTUIG'
+              nl: VERWIJDER VOERTUIG
         add-another-additional-equipment-audio-video:
           label:
             - en: ADD MORE
               de: null
-              nl: 'MEER TOEVOEGEN'
+              nl: MEER TOEVOEGEN
         remove-additional-equipment-audio-video:
           label:
             - en: REMOVE
               de: null
-              nl: 'VERWIJDEREN'
+              nl: VERWIJDEREN
         premium:
           total:
             label:
               - en: Price
                 de: null
-                nl: 'Prijs'
+                nl: Prijs
             policy-details:
               label:
                 - en: Total
                   de: Total
-                  nl: 'Totaal'
+                  nl: Totaal
         person-objects:
           items:
             person:
@@ -1699,74 +1701,74 @@ entries:
                   'off':
                     - en: MAKE THIS PERSON MAIN INSURED
                       de: MAKE THIS PERSON MAIN INSURED
-                      nl: 'MAAK DEZE PERSOON HOOFDVERZEKERDE'
+                      nl: MAAK DEZE PERSOON HOOFDVERZEKERDE
               first-name:
                 label:
                   - en: First name
                     de: Vorname
-                    nl: 'Voornaam'
+                    nl: Voornaam
               last-name:
                 label:
                   - en: Last name
                     de: Nachname
-                    nl: 'Achternaam'
+                    nl: Achternaam
               gender:
                 label:
                   - en: Gender
                     de: Geschlecht
-                    nl: 'Geslacht'
+                    nl: Geslacht
               date-of-birth:
                 label:
                   - en: Date of birth
                     de: Geburtsdatum
-                    nl: 'Geboortedatum'
+                    nl: Geboortedatum
               address:
                 country:
                   label:
                     - en: Country
                       de: Land
-                      nl: 'Land'
+                      nl: Land
               height:
                 label:
                   - en: Height
                     de: Höhe
-                    nl: 'Hoogte'
+                    nl: Hoogte
               weight:
                 label:
                   - en: Weight
                     de: Gewicht
-                    nl: 'Gewicht'
+                    nl: Gewicht
               clear-person:
                 label:
                   - en: Clear person
                     de: Clear person
-                    nl: 'Verwijder persoon'
+                    nl: Verwijder persoon
               age-at-begin:
                 label:
                   - en: Age
                     de: Age
-                    nl: 'Leeftijd'
+                    nl: Leeftijd
             question:
               q-04:
                 label:
                   - en: The person is a smoker
                     de: Die Person ist Raucher
-                    nl: 'De persoon is een roker'
+                    nl: De persoon is een roker
               q-05:
                 label:
                   - en: Occupation
                     de: Besetzung
-                    nl: 'Bezigheid'
+                    nl: Bezigheid
               q-07:
                 label:
                   - en: Do you have hobby (sports)?
                     de: Do you have hobby (sports)?
-                    nl: 'Heb je een hobby (sport)?'
+                    nl: Heb je een hobby (sport)?
               q-07-1:
                 label:
                   - en: Main sport activites
                     de: Hauptsportaktivitäten
-                    nl: 'Belangrijkste sportactiviteiten'
+                    nl: Belangrijkste sportactiviteiten
               q-02:
                 label:
                   - en: 'Height [m]'
@@ -1781,7 +1783,7 @@ entries:
                 label:
                   - en: How often does this person consume alcohol?
                     de: How often does this person consume alcohol?
-                    nl: 'Hoe vaak drinkt deze persoon alcohol?'
+                    nl: Hoe vaak drinkt deze persoon alcohol?
               q-09:
                 '1': {}
                 label:
@@ -1796,7 +1798,7 @@ entries:
                 label:
                   - en: Please describe
                     de: Please describe
-                    nl: 'Beschrijving'
+                    nl: Beschrijving
               q-10:
                 label:
                   - en: >-
@@ -1823,7 +1825,7 @@ entries:
                 label:
                   - en: Does this person currently take any medications?
                     de: Does this person currently take any medications?
-                    nl: 'Gebruikt deze persoon momenteel medicijnen?'
+                    nl: Gebruikt deze persoon momenteel medicijnen?
               q-13:
                 label:
                   - en: >-
@@ -1841,7 +1843,7 @@ entries:
                 label:
                   - en: Select date
                     de: Select date
-                    nl: 'Selecteer datum'
+                    nl: Selecteer datum
               q-06:
                 label:
                   - en: >-
@@ -1865,12 +1867,12 @@ entries:
                   label:
                     - en: Death any cause (mandatory)
                       de: Death any cause (mandatory)
-                      nl: 'Dood door welke oorzaak dan ook (verplicht)'
+                      nl: Dood door welke oorzaak dan ook (verplicht)
                 insured-amount:
                   label:
                     - en: Sum insured
                       de: Sum insured
-                      nl: 'Verzekerd bedrag'
+                      nl: Verzekerd bedrag
                 premium-with-label:
                   label:
                     - en: Death any cause
@@ -1886,7 +1888,9 @@ entries:
                   label:
                     - en: Waiver of premium due to permanent disability any cause
                       de: Waiver of premium due to permanent disability any cause
-                      nl: 'Premievrijstelling wegens blijvende invaliditeit door welke oorzaak dan ook'
+                      nl: >-
+                        Premievrijstelling wegens blijvende invaliditeit door
+                        welke oorzaak dan ook
                 premium-duplicate:
                   label:
                     - en: null
@@ -1896,102 +1900,120 @@ entries:
                   label:
                     - en: Waiver of premium due ot permanent disability any cause
                       de: Waiver of premium due ot permanent disability any cause
-                      nl: 'Premievrijstelling wegens blijvende invaliditeit door welke oorzaak dan ook'
+                      nl: >-
+                        Premievrijstelling wegens blijvende invaliditeit door
+                        welke oorzaak dan ook
                 discounts:
                   label:
                     - en: Waiver of premium due ot permanent disability any cause
                       de: Waiver of premium due ot permanent disability
-                      nl: 'Premievrijstelling wegens blijvende invaliditeit door welke oorzaak dan ook'
+                      nl: >-
+                        Premievrijstelling wegens blijvende invaliditeit door
+                        welke oorzaak dan ook
               tpdill:
                 active:
                   label:
                     - en: Total and permanent disability due to illness over 75%
                       de: Total and permanent disability due to illness over 75%
-                      nl: 'Totale en blijvende arbeidsongeschiktheid door ziekte meer dan 75%'
+                      nl: >-
+                        Totale en blijvende arbeidsongeschiktheid door ziekte
+                        meer dan 75%
                 premium-with-label:
                   label:
                     - en: Total and permanent disability due to illness over 75%
                       de: Total and permanent disability due to illness over 75%
-                      nl: 'Totale en blijvende arbeidsongeschiktheid door ziekte meer dan 75%'
+                      nl: >-
+                        Totale en blijvende arbeidsongeschiktheid door ziekte
+                        meer dan 75%
                 discounts:
                   label:
                     - en: Total and permanent disability due to illness over 75%
                       de: Total and permanent disability due to illness over 75%
-                      nl: 'Totale en blijvende arbeidsongeschiktheid door ziekte meer dan 75%'
+                      nl: >-
+                        Totale en blijvende arbeidsongeschiktheid door ziekte
+                        meer dan 75%
               tpdaccd:
                 active:
                   label:
                     - en: Total and permanent disability due to accident over 75%
                       de: Total and permanent disability due to accident over 75%
-                      nl: 'Totale en blijvende arbeidsongeschiktheid door ziekte meer dan 75%'
+                      nl: >-
+                        Totale en blijvende arbeidsongeschiktheid door ziekte
+                        meer dan 75%
                 premium-with-label:
                   label:
                     - en: Total and permanent disability due to accident over 75%
                       de: Total and permanent disability due to accident over 75%
-                      nl: 'Totale en blijvende arbeidsongeschiktheid door ziekte meer dan 75%'
+                      nl: >-
+                        Totale en blijvende arbeidsongeschiktheid door ziekte
+                        meer dan 75%
                 discounts:
                   label:
                     - en: Total and permanent disability due to accident over 75%
                       de: Total and permanent disability due to accident over 75%
-                      nl: 'Totale en blijvende arbeidsongeschiktheid door ziekte meer dan 75%'
+                      nl: >-
+                        Totale en blijvende arbeidsongeschiktheid door ziekte
+                        meer dan 75%
               death-acc:
                 active:
                   label:
                     - en: Accidental death
                       de: Accidental death
-                      nl: 'Onopzettelijke dood'
+                      nl: Onopzettelijke dood
                 premium-with-label:
                   label:
                     - en: Accidental death
                       de: Accidental death
-                      nl: 'Onopzettelijke dood'
+                      nl: Onopzettelijke dood
                 discounts:
                   label:
                     - en: Accidental death
                       de: Accidental death
-                      nl: 'Onopzettelijke dood'
+                      nl: Onopzettelijke dood
               critic-ill:
                 active:
                   label:
                     - en: Critical illness
                       de: Critical illness
-                      nl: 'Kritieke ziekte'
+                      nl: Kritieke ziekte
                 premium-with-label:
                   label:
                     - en: Critical illness
                       de: Critical illness
-                      nl: 'Kritieke ziekte'
+                      nl: Kritieke ziekte
                 discounts:
                   label:
                     - en: Critical illness
                       de: Critical illness
-                      nl: 'Kritieke ziekte'
+                      nl: Kritieke ziekte
               premret:
                 active:
                   label:
                     - en: Premium return by survival
                       de: Premium return by survival
-                      nl: 'Premierestitutie ten gevolge van bereiken einddatum verzekering'
+                      nl: >-
+                        Premierestitutie ten gevolge van bereiken einddatum
+                        verzekering
                 premium-with-label:
                   label:
                     - en: Premium return by survival
                       de: Premium return by survival
-                      nl: 'Premie teruggave door te overleven'
+                      nl: Premie teruggave door te overleven
                 discounts:
                   label:
                     - en: Premium return by survival
                       de: Premium return by survival
-                      nl: 'Premie teruggave door te overleven'
+                      nl: Premie teruggave door te overleven
               death-acc-addon-info:
                 label:
                   - en: Only available if main insured person has it.
                     de: Only available if main insured person has it.
-                    nl: 'Alleen beschikbaar als hoofdverzekerde deze heeft'
+                    nl: Alleen beschikbaar als hoofdverzekerde deze heeft
               tpdaccd-addon-info:
                 label:
                   - en: Only available if main insured person has it.
                     de: Only available if main insured person has it.
-                    nl: 'Alleen beschikbaar als hoofdverzekerde deze heeft'
+                    nl: Alleen beschikbaar als hoofdverzekerde deze heeft
               covers-info-above-seventy:
                 label:
                   - en: >-
@@ -2021,57 +2043,57 @@ entries:
               label:
                 - en: REMOVE PERSON
                   de: REMOVE PERSON
-                  nl: 'VERWIJDER PERSOON'
+                  nl: VERWIJDER PERSOON
             make-this-main-insured:
               label:
                 - en: Make this person main insured
                   de: Make this person main insured
-                  nl: 'Maak deze persoon hoofdverzekerde'
+                  nl: Maak deze persoon hoofdverzekerde
             address:
               value:
                 label:
                   - en: Address
                     de: Address
-                    nl: 'Adres'
+                    nl: Adres
             email:
               value:
                 label:
                   - en: Email
                     de: Email
-                    nl: 'Email'
+                    nl: Email
             phone:
               value:
                 label:
                   - en: Phone
                     de: Phone
-                    nl: 'Telefoon'
+                    nl: Telefoon
         add-another-person:
           label:
             - en: Add another person
               de: Add another person
-              nl: 'Voeg andere persoon toe'
+              nl: Voeg andere persoon toe
         remove-person:
           label:
             - en: Remove person
               de: Remove person
-              nl: 'Verwijder persoon'
+              nl: Verwijder persoon
         main-insured-title:
           label:
             - en: Main insured person
               de: Hauptversicherte
-              nl: 'Hoofdverzekerde'
+              nl: Hoofdverzekerde
         additional-insured-title:
           label:
             - en: Additional insured person
               de: Zusätzliche versicherte Person
-              nl: 'Extra verzekerde'
+              nl: Extra verzekerde
         document:
           icd:
             document-file:
               label:
                 - en: Upload your income statement
                   de: Laden Sie Ihre Gewinn- und Verlustrechnung hoch
-                  nl: 'Upload uw inkomensverklaring'
+                  nl: Upload uw inkomensverklaring
         objects:
           items:
             activities:
@@ -2079,43 +2101,43 @@ entries:
                 label:
                   - en: See covers
                     de: See covers
-                    nl: 'Zie dekkingen'
+                    nl: Zie dekkingen
             person-data:
               title:
                 label:
                   - en: Insured object
                     de: Insured object
-                    nl: 'Verzekerd object'
+                    nl: Verzekerd object
               first-name:
                 label:
                   - en: First name
                     de: First name
-                    nl: 'Voornaam'
+                    nl: Voornaam
               last-name:
                 label:
                   - en: Last name
                     de: Last name
-                    nl: 'Achternaam'
+                    nl: Achternaam
               gender:
                 label:
                   - en: Gender
                     de: Gender
-                    nl: 'Geslacht'
+                    nl: Geslacht
               birth-date:
                 label:
                   - en: Birth date
                     de: Birth date
-                    nl: 'Geboortedatum'
+                    nl: Geboortedatum
               country:
                 label:
                   - en: Country
                     de: Country
-                    nl: 'Land'
+                    nl: Land
               pid:
                 label:
                   - en: Client id
                     de: Client id
-                    nl: 'Klantnummer'
+                    nl: Klantnummer
                 label-param:
                   - en: '${param1}'
                     de: '${param1}'
@@ -2124,12 +2146,14 @@ entries:
                 label:
                   - en: '${param1} will be ${param2} at the end of the insurance.'
                     de: '${param1} will be ${param2} at the end of the insurance.'
-                    nl: '${param1} wordt ${param2} aan het einde van de verzekering.'
+                    nl: >-
+                      ${param1} wordt ${param2} aan het einde van de
+                      verzekering.
               pid-label:
                 label:
                   - en: Client id
                     de: Client id
-                    nl: 'Klantnummer'
+                    nl: Klantnummer
             covers:
               items:
                 premium:
@@ -2153,37 +2177,37 @@ entries:
                 label:
                   - en: License plate
                     de: License plate
-                    nl: 'Kentekenplaat'
+                    nl: Kentekenplaat
               model:
                 label:
                   - en: Model
                     de: Model
-                    nl: 'Model'
+                    nl: Model
               brand:
                 label:
                   - en: Make
                     de: Make
-                    nl: 'Make'
+                    nl: Make
               ccm-ton:
                 label:
                   - en: Engine
                     de: Engine
-                    nl: 'Motor'
+                    nl: Motor
               chassis:
                 label:
                   - en: VIN
                     de: VIN
-                    nl: 'VIN'
+                    nl: VIN
               construction-date:
                 label:
                   - en: Year
                     de: Year
-                    nl: 'Jaar'
+                    nl: Jaar
               usage:
                 label:
                   - en: Primary use
                     de: Primary use
-                    nl: 'Primair gebruik'
+                    nl: Primair gebruik
               covers-title:
                 label:
                   - en: '${param1} ${param2}, ${param3} - ${param4}'
@@ -2193,123 +2217,123 @@ entries:
                 label:
                   - en: Transportation of hazardous goods
                     de: Transportation of hazardous goods
-                    nl: 'Vervoer van gevaarlijke goederen'
+                    nl: Vervoer van gevaarlijke goederen
               driver:
                 label:
                   - en: Driver
                     de: Driver
-                    nl: 'Bestuurder'
+                    nl: Bestuurder
         objects~covers~insured-amount: {}
       contract:
         begin:
           label:
             - en: Insurance start
               de: Insurance start
-              nl: 'Startdatum verzekering'
+              nl: Startdatum verzekering
         payment:
           frequency:
             label:
               - en: Number of installments
                 de: Number of installments
-                nl: 'Aantal termijnen'
+                nl: Aantal termijnen
             policy-details:
               label:
                 - en: Installments
                   de: Installments
-                  nl: 'Termijnen'
+                  nl: Termijnen
           term:
             duration:
               label:
                 - en: Payment duration
                   de: Payment duration
-                  nl: 'Betalingsduur'
+                  nl: Betalingsduur
           duration:
             label:
               - en: Payment duration
                 de: Payment duration
-                nl: 'Betalingsduur'
+                nl: Betalingsduur
           installment-amount:
             label:
               - en: Installment amount
                 de: Installment amount
-                nl: 'Termijnbedrag'
+                nl: Termijnbedrag
           tax-value:
             label:
               - en: Installment amount
                 de: Installment amount
-                nl: 'Termijnbedrag'
+                nl: Termijnbedrag
         term:
           duration:
             label:
               - en: Insurance duration
                 de: Insurance duration
-                nl: 'Verzekeringsduur'
+                nl: Verzekeringsduur
           duration-and-units:
             label:
               - en: Payment duration
                 de: Payment duration
-                nl: 'Betalingsduur'
+                nl: Betalingsduur
         end:
           label:
             - en: Valid until
               de: null
-              nl: 'Geldig tot'
+              nl: Geldig tot
           policy-details:
             label:
               - en: Insurance end
                 de: Insurance end
-                nl: 'Einddatum verzekering'
+                nl: Einddatum verzekering
         product-full-name:
           label:
             - en: Product
               de: Product
-              nl: 'Product'
+              nl: Product
         taxes:
           label:
             - en: Taxes and fees
               de: Taxes and fees
-              nl: 'Belastingen en heffingen'
+              nl: Belastingen en heffingen
         question:
           previous-mtpl-insurer:
             label:
               - en: Previous insurer
                 de: Previous insurer
-                nl: 'Vorige verzekeraar'
+                nl: Vorige verzekeraar
           a1:
             label:
               - en: Source of Funds?
                 de: Source of Funds?
-                nl: 'Bron van inkomsten'
+                nl: Bron van inkomsten
           a2:
             label:
               - en: Are you a politically exposed person?
                 de: Are you a politically exposed person?
-                nl: 'Bent u een politiek prominent persoon?'
+                nl: Bent u een politiek prominent persoon?
           a2-1:
             label:
               - en: Please give details
                 de: Please give details
-                nl: 'Geef details a.u.b'
+                nl: Geef details a.u.b
           a3:
             label:
               - en: 'Please, select reason for chosing Death coverage'
                 de: null
-                nl: 'Selecteer de reden voor het kiezen van de overlijdensdekking'
+                nl: Selecteer de reden voor het kiezen van de overlijdensdekking
           a3-1:
             label:
               - en: What is your monthly income?
                 de: null
-                nl: 'Wat is uw maandinkomen?'
+                nl: Wat is uw maandinkomen?
           a4:
             label:
               - en: I consent to receive marketing material
                 de: I consent to receive marketing material
-                nl: 'Ik geef toestemming om marketingmateriaal te ontvangen'
+                nl: Ik geef toestemming om marketingmateriaal te ontvangen
           a4-1:
             label:
               - en: Preferred method of communication/marketing?
                 de: Preferred method of communication/marketing?
-                nl: 'Voorkeur voor methode communicatie/marketing'
+                nl: Voorkeur voor methode communicatie/marketing
           a5:
             label:
               - en: >-
@@ -2334,7 +2358,7 @@ entries:
             label:
               - en: I declare that I am a tax resident in the USA.
                 de: I declare that I am a tax resident in the USA.
-                nl: 'Ik verklaar dat ik fiscaal inwoner ben van de VS.'
+                nl: Ik verklaar dat ik fiscaal inwoner ben van de VS.
       participants:
         holder:
           person:
@@ -2342,12 +2366,12 @@ entries:
               label:
                 - en: Policy holder
                   de: Policy holder
-                  nl: 'Polishouder'
+                  nl: Polishouder
               policy-details:
                 label:
                   - en: Client
                     de: Client
-                    nl: 'Klant'
+                    nl: Klant
               display-label:
                 - en: '${param1} ${param2} ${param3}'
                   de: '${param1} ${param2} ${param3}'
@@ -2356,70 +2380,70 @@ entries:
               label:
                 - en: Email
                   de: Email
-                  nl: 'Email'
+                  nl: Email
             phone:
               label:
                 - en: Phone
                   de: Phone
-                  nl: 'Telefoon'
+                  nl: Telefoon
             address:
               label:
                 - en: Address
                   de: Address
-                  nl: 'Adres'
+                  nl: Adres
             full-name-label:
               label:
                 - en: Client
                   de: Client
-                  nl: 'Klant'
+                  nl: Klant
         beneficiaries:
           label:
             - en: Beneficiary
               de: Beneficiary
-              nl: 'Begunstigde'
+              nl: Begunstigde
           items:
             company:
               name:
                 label:
                   - en: Company name
                     de: Company name
-                    nl: 'Bedrijfsnaam'
+                    nl: Bedrijfsnaam
             person:
               gender:
                 label:
                   - en: Gender
                     de: Gender
-                    nl: 'Geslacht'
+                    nl: Geslacht
               first-name:
                 label:
                   - en: First name
                     de: null
-                    nl: 'Voornaam'
+                    nl: Voornaam
               last-name:
                 label:
                   - en: Last name
                     de: null
-                    nl: 'Achternaam'
+                    nl: Achternaam
               country:
                 label:
                   - en: Country
                     de: Country
-                    nl: 'Land'
+                    nl: Land
               birthdate:
                 label:
                   - en: Birthdate
                     de: Birthdate
-                    nl: 'Geboortedatum'
+                    nl: Geboortedatum
             title:
               label:
                 - en: Beneficiary
                   de: null
-                  nl: 'Begunstigde'
+                  nl: Begunstigde
           add:
             label:
               - en: ADD BENEFICIARY
                 de: ADD BENEFICIARY
-                nl: 'BEGUNSTIGDE TOEVOEGEN'
+                nl: BEGUNSTIGDE TOEVOEGEN
         payor:
           agreed-on-terms-and-conditions:
             label:
@@ -2434,120 +2458,120 @@ entries:
             label:
               - en: DD/MM/YYYY
                 de: DD/MM/YYYY
-                nl: 'DD/MM/YYYY'
+                nl: DD/MM/YYYY
           city:
             label:
               - en: City
                 de: City
-                nl: 'Stad'
+                nl: Stad
           first-name:
             label:
               - en: First name
                 de: First name
-                nl: 'Voornaam'
+                nl: Voornaam
           iban:
             label:
               - en: IBAN
                 de: IBAN
-                nl: 'IBAN'
+                nl: IBAN
           bank:
             label:
               - en: Bank
                 de: Bank
-                nl: 'Bank'
+                nl: Bank
           add-account:
             label:
               - en: Add account
                 de: Add account
-                nl: 'Begunstigde toevoegen'
+                nl: Begunstigde toevoegen
           iban-selection:
             label:
               - en: Select a bank account to use for insurance payment
                 de: Select a bank account to use for insurance payment
-                nl: 'Selecteer een bankrekening voor de premiebetalingen'
+                nl: Selecteer een bankrekening voor de premiebetalingen
             empty:
               - en: Use a different bank account
                 de: Use a different bank account
-                nl: 'Een andere bankrekening gebruiken'
+                nl: Een andere bankrekening gebruiken
           last-name:
             label:
               - en: Last name
                 de: Last name
-                nl: 'Achternaam'
+                nl: Achternaam
           zip:
             label:
               - en: ZIP
                 de: ZIP
-                nl: 'Postcode'
+                nl: Postcode
           swift:
             label:
               - en: SWIFT
                 de: SWIFT
-                nl: 'SWIFT'
+                nl: SWIFT
         is-standard-beneficiary:
           label:
             - en: Who would you like to protect?
               de: Who would you like to protect?
-              nl: 'Voor welke begunstigde wil je de verzekering afsluiten?'
+              nl: Voor welke begunstigde wil je de verzekering afsluiten?
         add-beneficiary:
           label:
             - en: ADD BENEFICIARY
               de: ADD BENEFICIARY
-              nl: 'Begunstigde TOEVOEGEN'
+              nl: Begunstigde TOEVOEGEN
       claims:
         card-title:
           label:
             - en: Claims
               de: Claims
-              nl: 'Claims'
+              nl: Claims
         no-claims-text:
           label:
             - en: No claims
               de: No claims
-              nl: 'Geen claims'
+              nl: Geen claims
         activity:
           details:
             label:
               - en: Details
                 de: Details
-                nl: 'Details'
+                nl: Details
           submit-claim:
             label:
               - en: Submit claim
                 de: Submit claim
-                nl: 'Claim indienen'
+                nl: Claim indienen
         details:
           label:
             - en: Details
               de: Details
-              nl: 'Details'
+              nl: Details
         submit-claim:
           label:
             - en: Submit claim
               de: Submit claim
-              nl: 'Claim indienen'
+              nl: Claim indienen
       history:
         card-title:
           label:
             - en: History
               de: History
-              nl: 'Geschiedenis'
+              nl: Geschiedenis
         no-changes-text:
           label:
             - en: No changes
               de: No changes
-              nl: 'Geen wijzigingen'
+              nl: Geen wijzigingen
         details:
           label:
             - en: Details
               de: Details
-              nl: 'Details'
+              nl: Details
     buy-insurance:
       btn:
         label:
           - en: Buy insurance
             de: Versicherung kaufen
-            nl: 'Verzekering afsluiten'
+            nl: Verzekering afsluiten
       description:
         label:
           - en: >-
@@ -2562,13 +2586,15 @@ entries:
       label:
         - en: Buy insurance
           de: Buy insurance
-          nl: 'Verzekering kopen'
+          nl: Verzekering kopen
     terms-and-conditions:
       description:
         label:
           - en: We need your consent to finalize the purchase.
             de: 'Wir benötigen Ihre Zustimmung, um den Kauf abzuschließen.'
-            nl: 'We hebben uw toestemming nodig om de transactie/aanvraag af te ronden.'
+            nl: >-
+              We hebben uw toestemming nodig om de transactie/aanvraag af te
+              ronden.
       access-personal-information:
         label:
           - en: >-
@@ -2593,12 +2619,12 @@ entries:
       label:
         - en: Bank account holder details
           de: Angaben zum Kontoinhaber
-          nl: 'Gegevens bankrekeninghouder'
+          nl: Gegevens bankrekeninghouder
     checbox-card:
       label:
         - en: Checkbox component
           de: null
-          nl: 'Selectievakje onderdeel'
+          nl: Selectievakje onderdeel
       description:
         - en: >-
             Such as furniture, kitchen appliances, audio/video, valuable items,
@@ -2613,12 +2639,12 @@ entries:
       label:
         - en: VIEW
           de: null
-          nl: 'WEERGEVEN'
+          nl: WEERGEVEN
     submit-claim:
       label:
         - en: SUBMIT CLAIM
           de: null
-          nl: 'CLAIM INDIENEN'
+          nl: CLAIM INDIENEN
     more-actions:
       label:
         - en: ...
@@ -2628,34 +2654,34 @@ entries:
       label:
         - en: Cancel policy
           de: null
-          nl: 'Polis verwijderen'
+          nl: Polis verwijderen
     download-pdf:
       label:
         - en: Download
           de: null
-          nl: 'Download'
+          nl: Download
     button-dropdown: null
     quotes:
       label:
         - en: Quotes in progress
           de: Quotes in progress
-          nl: 'Offertes in verwerking'
+          nl: Offertes in verwerking
       items:
         insurance-start-and-duration:
           label:
             - en: Insurance start and duration
               de: Insurance start and duration
-              nl: 'Verzekering start en duur'
+              nl: Verzekering start en duur
         continue:
           label:
             - en: Continue
               de: Continue
-              nl: 'Doorgaan'
+              nl: Doorgaan
         vehicles:
           label:
             - en: Vehicles
               de: Vehicles
-              nl: 'Voertuigen'
+              nl: Voertuigen
         more-options:
           icon:
             - en: more_horiz.svg
@@ -2664,13 +2690,13 @@ entries:
           label:
             - en: More options
               de: More options
-              nl: 'Meer opties'
+              nl: Meer opties
         currency: {}
         price:
           label:
             - en: Price
               de: Price
-              nl: 'Prijs'
+              nl: Prijs
         start-and-duration:
           mirror:
             - en: '${param1}, ${param2} ${param3}'
@@ -2680,7 +2706,7 @@ entries:
           label:
             - en: Insured objects
               de: Insured objects
-              nl: 'Verzekerde objecten'
+              nl: Verzekerde objecten
           dynamiclabel:
             - en: '${param1} people'
               de: '${param1} people'
@@ -2690,12 +2716,12 @@ entries:
             label:
               - en: Insurance start and duration
                 de: Insurance start and duration
-                nl: 'Verzekering start en duur'
+                nl: Verzekering start en duur
     quotes-title:
       label:
         - en: Quotes in Progress
           de: Quotes in Progress
-          nl: 'Offertes in verwerking'
+          nl: Offertes in verwerking
     motor-insurance:
       description:
         label:
@@ -2708,12 +2734,12 @@ entries:
         label:
           - en: Motor insurance
             de: Motor insurance
-            nl: 'Motorvoertuigenverzekering'
+            nl: Motorvoertuigenverzekering
       button:
         label:
           - en: MOTOR INSURANCE
             de: MOTOR INSURANCE
-            nl: 'MotorvoertuigenVERZEKERING'
+            nl: MotorvoertuigenVERZEKERING
     welcome-back:
       label:
         - en: 'Welcome back, ${param1} ${param2}!'
@@ -2723,12 +2749,12 @@ entries:
       label:
         - en: Claims in Progress
           de: null
-          nl: 'Claims in verwerking'
+          nl: Claims in verwerking
     quotes-in-progress-title:
       label:
         - en: Quotes in Progress
           de: null
-          nl: 'Offertes in verwerking'
+          nl: Offertes in verwerking
     test-dropdown:
       icon:
         - en: more_horiz.svg
@@ -2739,7 +2765,7 @@ entries:
         label:
           - en: PROPERTY INSURANCE
             de: PROPERTY INSURANCE
-            nl: 'INBOEDELVERZEKERING'
+            nl: INBOEDELVERZEKERING
       description:
         label:
           - en: >-
@@ -2753,7 +2779,7 @@ entries:
         label:
           - en: Property insurance
             de: Property insurance
-            nl: 'Inboedelverzekering'
+            nl: Inboedelverzekering
     health-insurance:
       description:
         label:
@@ -2768,18 +2794,18 @@ entries:
         label:
           - en: Health insurance
             de: Health insurance
-            nl: 'Zorgverzekering'
+            nl: Zorgverzekering
       button:
         label:
           - en: HEALTH INSURANCE
             de: HEALTH INSURANCE
-            nl: 'ZORGVERZEKERING'
+            nl: ZORGVERZEKERING
     life-insurance:
       title:
         label:
           - en: Life insurance
             de: Life insurance
-            nl: 'Levensverzekering'
+            nl: Levensverzekering
       description:
         label:
           - en: >-
@@ -2794,31 +2820,31 @@ entries:
           label:
             - en: ENDOWMENT INSURANCE
               de: ENDOWMENT INSURANCE
-              nl: 'KAPITAALVERZEKERING'
+              nl: KAPITAALVERZEKERING
         term-life:
           label:
             - en: TERM LIFE INSURANCE
               de: TERM LIFE INSURANCE
-              nl: 'OVERLIJDENSVERZEKERING'
+              nl: OVERLIJDENSVERZEKERING
         unit-link:
           label:
             - en: UNIT LINK INSURANCE
               de: UNIT LINK INSURANCE
-              nl: 'UNIT LINKED VERZEKERING'
+              nl: UNIT LINKED VERZEKERING
         whole-life:
           label:
             - en: WHOLE LIFE INSURANCE
               de: WHOLE LIFE INSURANCE
-              nl: 'LEVENSLANGE OVERLIJDENSRISICOVERZEKERING'
+              nl: LEVENSLANGE OVERLIJDENSRISICOVERZEKERING
     policies-title:
       label:
         - en: Active policies
           de: Active policies
-          nl: 'Actieve polissen'
+          nl: Actieve polissen
     search-car-by:
       - en: Give us some information about the vehicles you want to insure.
         de: Give us some information about the vehicles you want to insure.
-        nl:  'Informatie over de voertuigen die u wilt verzekeren.'
+        nl: Informatie over de voertuigen die u wilt verzekeren.
     image-button:
       label:
         - en: 'http://localhost:4200/visual-ice/assets/logo.png'
@@ -2828,7 +2854,7 @@ entries:
       label:
         - en: Label
           de: Label
-          nl: 'Label'
+          nl: Label
     markdown-output:
       label:
         - en: |-
@@ -2847,7 +2873,7 @@ entries:
       label:
         - en: Give us some information about the people you want to insure.
           de: Give us some information about the people you want to insure.
-          nl: 'Informatie over de te verzekeren personen.'
+          nl: Informatie over de te verzekeren personen.
     more-information-needed-life:
       label:
         - en: >-
@@ -2863,33 +2889,33 @@ entries:
           label:
             - en: Financial question 1
               de: Financial question 1
-              nl: 'Financiële vraag 1'
+              nl: Financiële vraag 1
         second:
           label:
             - en: Financial question 2
               de: Financial question 2
-              nl: 'Financiële vraag 2'
+              nl: Financiële vraag 2
       address:
         label:
           - en: Address
             de: Address
-            nl: 'Adres'
+            nl: Adres
       email:
         label:
           - en: Email
             de: Email
-            nl: 'Email'
+            nl: Email
       phone:
         label:
           - en: Phone number
             de: Phone number
-            nl: 'Telefoonnummer'
+            nl: Telefoonnummer
     application-details-labels:
       contact-information:
         label:
           - en: Contact information
             de: Contact information
-            nl: 'Contactgegevens'
+            nl: Contactgegevens
       more-info-needed:
         addon:
           label:
@@ -2913,7 +2939,7 @@ entries:
         label:
           - en: Medical examination documents
             de: Medical examination documents
-            nl: 'Medische keuringsdocumenten'
+            nl: Medische keuringsdocumenten
         value:
           - en: >-
               Please attach documents (.jpg, .pdf) presenting the results of
@@ -2927,7 +2953,7 @@ entries:
         label:
           - en: Upload your income statement
             de: Upload your income statement
-            nl: 'Upload uw inkomensverklaring'
+            nl: Upload uw inkomensverklaring
         value:
           - en: 'Please attach documents (.jpg, .pdf)'
             de: 'Please attach documents (.jpg, .pdf)'
@@ -2936,7 +2962,7 @@ entries:
       label:
         - en: NEXT
           de: NEXT
-          nl: 'VOLGENDE'
+          nl: VOLGENDE
       confirmation:
         - en: >-
             Warning
@@ -2961,40 +2987,40 @@ entries:
         label:
           - en: CONTINUE TO APPLICATION
             de: CONTINUE TO APPLICATION
-            nl: 'GA DOOR NAAR TOEPASSING'
+            nl: GA DOOR NAAR TOEPASSING
     finalize-buttons:
       issue-policy:
         label:
           - en: ISSUE POLICY
             de: ISSUE POLICY
-            nl: 'POLIS UITGEVEN'
+            nl: POLIS UITGEVEN
       dowload-pdf:
         label:
           - en: DOWNLOAD QUOTE
             de: DOWNLOAD QUOTE
-            nl: 'DOWNLOAD OFFERTE'
+            nl: DOWNLOAD OFFERTE
       upload-application:
         label:
           - en: UPLOAD SIGNED APPLICATION
             de: UPLOAD SIGNED APPLICATION
-            nl: 'ONDERTEKENDE AANVRAAG UPLOADEN'
+            nl: ONDERTEKENDE AANVRAAG UPLOADEN
     go-to-next-page-payment:
       agent:
         label:
           - en: NEXT
             de: NEXT
-            nl: 'VOLGENDE'
+            nl: VOLGENDE
     add-client:
       label:
         - en: Add client
           de: Add client
-          nl: 'Klant toevoegen'
+          nl: Klant toevoegen
     unfinished-quotes:
       get-more-insurance:
         label:
           - en: Get more insurance
             de: null
-            nl: 'Meer verzekeringen'
+            nl: Meer verzekeringen
         icon:
           - en: page-of-text.svg
             de: page-of-text.svg
@@ -3022,158 +3048,158 @@ entries:
       label:
         - en: Insurance Products
           de: Insurance Products
-          nl: 'Verzekerde producten'
+          nl: Verzekerde producten
     activity:
       show-expired-policies:
         label:
           - en: SHOW EXPIRED POLICIES
             de: null
-            nl: 'TOON VERLOPEN POLISSEN'
+            nl: TOON VERLOPEN POLISSEN
       hide-expired-policies:
         label:
           - en: HIDE EXPIRED POLICIES
             de: null
-            nl: 'VERBERG VERLOPEN BELEID'
+            nl: VERBERG VERLOPEN BELEID
       add-claim:
         label:
           - en: Submit a new claim
             de: null
-            nl: 'Een nieuwe claim indienen'
+            nl: Een nieuwe claim indienen
       show-resolved-claims:
         label:
           - en: Show resolved claims
             de: Show resolved claims
-            nl: 'Toon verwerkte claims'
+            nl: Toon verwerkte claims
       hide-resolved-claims:
         label:
           - en: Hide resolved claims
             de: Hide resolved claims
-            nl: 'Verberg verwerkte claims'
+            nl: Verberg verwerkte claims
       get-more-insurance:
         label:
           - en: Get more insurance
             de: null
-            nl: 'Zie meer verzekeringen'
+            nl: Zie meer verzekeringen
       search:
         label:
           - en: SEARCH
             de: SUCHE
-            nl: 'ZOEKEN'
+            nl: ZOEKEN
       search-clients:
         label:
           - en: SEARCH
             de: SUCHEN
-            nl: 'ZOEKEN'
+            nl: ZOEKEN
         tooltip:
           - en: Alt+S
             de: Alt+S
-            nl: 'Alt+S'
+            nl: Alt+S
       new-client:
         label:
           - en: NEW CLIENT
             de: NEUER KUNDE
-            nl: 'Nieuwe klant'
+            nl: Nieuwe klant
       search-cases:
         label:
           - en: SEARCH
             de: null
-            nl: 'ZOEKEN'
+            nl: ZOEKEN
       new-claim:
         label:
           - en: NEW CLAIM
             de: null
-            nl: 'NIEUWE CLAIM'
+            nl: NIEUWE CLAIM
       back-to-all-claims:
         label:
           - en: < BACK TO ALL CLAIMS
             de: null
-            nl: 'TERUG NAAR CLAIMS'
+            nl: TERUG NAAR CLAIMS
       claim:
         submit:
           label:
             - en: SUBMIT CLAIM
               de: null
-              nl: 'CLAIM INDIENEN'
+              nl: CLAIM INDIENEN
       cancel:
         label:
           - en: CANCEL
             de: null
-            nl: 'VERWIJDEREN'
+            nl: VERWIJDEREN
       add-existing-vehicle:
         label:
           - en: ADD EXISTING VEHICLE
             de: ADD EXISTING VEHICLE
-            nl: 'VOEG BESTAANDE VOERTUIG TOE'
+            nl: VOEG BESTAANDE VOERTUIG TOE
       add-new-vehicle:
         label:
           - en: ADD NEW VEHICLE
             de: ADD NEW VEHICLE
-            nl: 'NIEUWE VOERTUIG TOEVOEGEN'
+            nl: NIEUWE VOERTUIG TOEVOEGEN
       vehicles:
         add:
           label:
             - en: ADD
               de: ADD
-              nl: 'TOEVOEGEN'
+              nl: TOEVOEGEN
         cancel:
           label:
             - en: CANCEL
               de: CANCEL
-              nl: 'VERWIJDEREN'
+              nl: VERWIJDEREN
         search:
           label:
             - en: SEARCH
               de: SEARCH
-              nl: 'ZOEKEN'
+              nl: ZOEKEN
     no-active-policies-title:
       label:
         - en: You have no active policies
           de: You have no active policies
-          nl: 'U heeft geen actieve polissen'
+          nl: U heeft geen actieve polissen
     my-profile-label:
       label:
         - en: My profile
           de: My profile
-          nl: 'Mijn profiel'
+          nl: Mijn profiel
     personal-information:
       cancel:
         label:
           - en: CANCEL
             de: CANCEL
-            nl: 'VERWIJDEREN'
+            nl: VERWIJDEREN
       save:
         label:
           - en: SAVE
             de: SAVE
-            nl: 'OPSLAAN'
+            nl: OPSLAAN
       edit:
         label:
           - en: EDIT
             de: EDIT
-            nl: 'WIJZIGEN'
+            nl: WIJZIGEN
     addresses:
       add-new-address:
         label:
           - en: ADD ADDRESS
             de: ADD ADDRESS
-            nl: 'ADRES TOEVOEGEN'
+            nl: ADRES TOEVOEGEN
     contacts:
       add-new-contact:
         label:
           - en: ADD CONTACT
             de: ADD CONTACT
-            nl: 'CONTACT TOEVOEGEN'
+            nl: CONTACT TOEVOEGEN
     bank-accounts:
       add-new-bank-account:
         label:
           - en: ADD BANK ACCOUNT
             de: ADD BANK ACCOUNT
-            nl: 'BANKREKENING TOEVOEGEN'
+            nl: BANKREKENING TOEVOEGEN
     navigate-to-all-clients:
       label:
         - en: < BACK TO ALL CLIENTS
           de: < BACK TO ALL CLIENTS
-          nl: 'TERUG NAAR KLANTEN'
+          nl: TERUG NAAR KLANTEN
     ' policy':
       participants:
         holder:
@@ -3183,7 +3209,7 @@ entries:
                 label:
                   - en: Client
                     de: Client
-                    nl: 'Klant'
+                    nl: Klant
     policy-details:
       per-installment-label:
         label:
@@ -3195,56 +3221,56 @@ entries:
         label:
           - en: New claim
             de: null
-            nl: 'Nieuwe claim'
+            nl: Nieuwe claim
     claim:
       search-policy-method:
         based-on-policy:
           - en: based on policy
             de: null
-            nl: 'Op basis van polis'
+            nl: Op basis van polis
         based-on-client:
           - en: based on client
             de: null
-            nl: 'Op basis van klant'
+            nl: Op basis van klant
       policy-search-method:
         label:
           - en: Identify policy
             de: null
-            nl: 'Identificeer polis'
+            nl: Identificeer polis
       even:
         type:
           label:
             - en: Event type
               de: null
-              nl: 'Type gebeurtenis'
+              nl: Type gebeurtenis
         date: {}
       event:
         date:
           label:
             - en: Event date (optional)
               de: null
-              nl: 'Datum gebeurtenis'
+              nl: Datum gebeurtenis
         description:
           label:
             - en: Event description
               de: null
-              nl: 'Beschrijving gebeurtenis'
+              nl: Beschrijving gebeurtenis
         type:
           label:
             - en: Event type
               de: null
-              nl: 'Type gebeurtenis'
+              nl: Type gebeurtenis
         location:
           address:
             label:
               - en: Address
                 de: null
-                nl: 'Adres'
+                nl: Adres
           country:
             label:
               - en: Country
                 de: null
-                nl: 'Land'
+                nl: Land
       client:
         search-criteria:
           - en: '${param1}%'
@@ -3254,73 +3280,73 @@ entries:
           label:
             - en: Client
               de: null
-              nl: 'Klant'
+              nl: Klant
           empty:
             - en: Client
               de: null
-              nl: 'Klant'
+              nl: Klant
         name:
           label:
             - en: Name
               de: null
-              nl: 'Naam'
+              nl: Naam
         id:
           label:
             - en: Client ID
               de: null
-              nl: 'KlantID'
+              nl: KlantID
         number:
           label:
             - en: Client number
               de: null
-              nl: 'Klantnummer'
+              nl: Klantnummer
         type:
           label:
             - en: Type
               de: null
-              nl: 'Type'
+              nl: Type
         product-formatted:
           label:
             - en: Policy (optional)
               de: Policy (optional)
-              nl: 'Polis (optioneel)'
+              nl: Polis (optioneel)
       policy:
         search:
           label:
             - en: Policy number
               de: null
-              nl: 'Polisnummer'
+              nl: Polisnummer
         client-name:
           label:
             - en: Client name
               de: null
-              nl: 'Naam klant'
+              nl: Naam klant
         client-id:
           label:
             - en: Client ID
               de: null
-              nl: 'KlantID'
+              nl: KlantID
         client-no:
           label:
             - en: Client number
               de: null
-              nl: 'Klantnummer'
+              nl: Klantnummer
         product:
           label:
             - en: Product
               de: null
-              nl: 'Product'
+              nl: Product
     new-claim-customer:
       title:
         label:
           - en: Submit claim
             de: Submit claim
-            nl: 'Claim indienen'
+            nl: Claim indienen
     navigate-back:
       label:
         - en: BACK TO ALL POLICIES
           de: BACK TO ALL POLICIES
-          nl: 'TERUG NAAR POLISSEN'
+          nl: TERUG NAAR POLISSEN
     vehicle:
       search:
         client:
@@ -3328,27 +3354,27 @@ entries:
             label:
               - en: Client
                 de: Client
-                nl: 'Klant'
+                nl: Klant
           pid:
             label:
               - en: National ID number
                 de: National ID number
-                nl: 'BSN'
+                nl: BSN
         reg-no:
           label:
             - en: License plate
               de: License plate
-              nl: 'Kentekenplaat'
+              nl: Kentekenplaat
         vin:
           label:
             - en: VIN
               de: VIN
-              nl: 'VIN'
+              nl: VIN
     go-to-application:
       label:
         - en: CONTINUE TO APPLICATION
           de: CONTINUE TO APPLICATION
-          nl: 'DOORGAAN NAAR AANVRAAG'
+          nl: DOORGAAN NAAR AANVRAAG
     buy-insurance-description:
       label:
         - en: >-
@@ -3363,38 +3389,38 @@ entries:
         label:
           - en: Documents
             de: Documents
-            nl: 'Documenten'
+            nl: Documenten
     quote:
       download:
         label:
           - en: DOWNLOAD QUOTE
             de: DOWNLOAD QUOTE
-            nl: 'DOWNLOAD OFFERTE'
+            nl: DOWNLOAD OFFERTE
   pagination:
     claims:
       - en: claims
         de: null
-        nl: 'claims'
+        nl: claims
     policies:
       - en: policies
         de: Policen
-        nl: 'polissen'
+        nl: polissen
     clients:
       - en: clients
         de: null
-        nl: 'klanten'
+        nl: klanten
     quotes:
       - en: quotes
         de: null
-        nl: 'offertes'
+        nl: offertes
     vehicles:
       - en: vehicles
         de: null
-        nl: 'voertuigen'
+        nl: voertuigen
     separator:
       - en: of
         de: von
-        nl: 'van'
+        nl: van
   validation:
     pageValidation:
       summary:
@@ -3414,7 +3440,7 @@ entries:
       comply:
         - en: Please confirm
           de: Bitte bestätigen
-          nl: 'Bevestigen'
+          nl: Bevestigen
       not_allowed_here:
         - en: '''${value}'' not allowed here'
       regexp:
@@ -3443,23 +3469,23 @@ entries:
       email:
         - en: Please enter a valid email address
           de: Bitte geben Sie eine gültige Email-Adresse ein.
-          nl: 'Vul een geldig e-mailadres in'
+          nl: Vul een geldig e-mailadres in
       iban:
         - en: Please enter a valid IBAN.
           de: Bitte geben Sie eine gültige Iban ein.
-          nl: 'Voer een geldig bankrekeningnummer (IBAN) in.'
+          nl: Voer een geldig bankrekeningnummer (IBAN) in.
   page-navigation:
     back:
       to-all-products:
         label:
           - en: Back to all products
             de: Back to all products
-            nl: 'Terug naar alle producten'
+            nl: Terug naar alle producten
       to-all-policies:
         label:
           - en: Back to all policies
             de: Back to all policies
-            nl: 'Terug naar alle polissen'
+            nl: Terug naar alle polissen
     page-pagination:
       first:
         - en: First
@@ -3472,36 +3498,36 @@ entries:
       demo:
         - en: Portal demo
           de: null
-          nl: 'Demo portaal'
+          nl: Demo portaal
   section:
     policy-details:
       label:
         - en: Policy details
           de: Policy details
-          nl: 'Polisdetails'
+          nl: Polisdetails
       payment:
         plan:
           label:
             - en: Payment plan
               de: Payment plan
-              nl: 'Overzicht betalingen'
+              nl: Overzicht betalingen
           taxes-and-fees:
             label:
               - en: Taxes and fees (price per installment)
                 de: Taxes and fees (price per installment)
-                nl: 'Belastingen en toeslagen (prijs per termijn)'
+                nl: Belastingen en toeslagen (prijs per termijn)
     event:
       location:
         label:
           - en: Event location (optional)
             de: null
-            nl: 'Locatie gebeurtenis (optioneel)'
+            nl: Locatie gebeurtenis (optioneel)
     vehicles:
       popup:
         label:
           - en: Add vehicles
             de: Add vehicles
-            nl: 'Voertuig toevoegen'
+            nl: Voertuig toevoegen
   pages:
     '1':
       quote:
@@ -3509,74 +3535,74 @@ entries:
           title:
             - en: Insureds people
               de: Versicherte personen
-              nl: 'Verzekerden'
+              nl: Verzekerden
     '2':
       application:
         details:
           title:
             - en: Application details
               de: Application details
-              nl: 'Details aanvraag'
+              nl: Details aanvraag
         agent:
           title:
             - en: Vehicle details
               de: Vehicle details
-              nl: 'Details voertuig'
+              nl: Details voertuig
     footer:
       terms-and-conditions:
         - en: Terms and Conditions
           de: I dont know what terms and conditions is in german
-          nl: 'Voorwaarden'
+          nl: Voorwaarden
     1.quote:
       title:
         - en: See Price
           de: null
-          nl: 'Zie prijzen'
+          nl: Zie prijzen
       agent:
         title:
           - en: Quote
             de: Quote
-            nl: 'Offerte'
+            nl: Offerte
     1.quote.vehicles:
       title:
         - en: Insured vehicles
           de: null
-          nl: 'Verzekerde voertuigen'
+          nl: Verzekerde voertuigen
     1.quote.covers:
       title:
         - en: Covers
           de: null
-          nl: 'Dekkingen'
+          nl: Dekkingen
     1.quote.buildings:
       title:
         - en: Buildings
           de: null
-          nl: 'Gebouwen'
+          nl: Gebouwen
     1.quote.contents:
       title:
         - en: Contents
           de: null
-          nl: 'Inhoud'
+          nl: Inhoud
     1.quote.property-type:
       title:
         - en: Insured property type
           de: null
-          nl: 'Type verzekerd eigendom'
+          nl: Type verzekerd eigendom
     2.application:
       title:
         - en: Additional Details
           de: null
-          nl: 'Aanvullende details'
+          nl: Aanvullende details
       agent:
         title:
           - en: Application
             de: Application
-            nl: 'Aanvraag'
+            nl: Aanvraag
     2.application.vehicle-details:
       title:
         - en: Vehicle details
           de: null
-          nl: 'Voertuig details'
+          nl: Voertuig details
       section-title:
         - en: >-
             A bit more information for this vehicle would be required to be able
@@ -3587,80 +3613,80 @@ entries:
       title:
         - en: Participants
           de: null
-          nl: 'Deelnemers'
+          nl: Deelnemers
     2.application.buildings-details:
       title:
         - en: Buildings details
           de: null
-          nl: 'Gebouwen details'
+          nl: Gebouwen details
     2.application.contents-details:
       title:
         - en: Contents details
           de: null
-          nl: 'Inhouds details'
+          nl: Inhouds details
     2.application.person-details:
       title:
         - en: Person details
           de: null
-          nl: 'Persoonlijke gegevens'
+          nl: Persoonlijke gegevens
     2.application.beneficiaries:
       title:
         - en: Beneficiaries
           de: Beneficiaries
-          nl: 'Begunstigden'
+          nl: Begunstigden
     3.review:
       title:
         - en: Review and Buy
           de: null
-          nl: 'Overzicht en kopen'
+          nl: Overzicht en kopen
       agent:
         title:
           - en: Review
             de: Review
-            nl: 'overzicht'
+            nl: overzicht
     3.review.payment:
       title:
         - en: Payment details
           de: null
-          nl: 'Betalingsdetails'
+          nl: Betalingsdetails
     3.review.terms:
       title:
         - en: Finalize
           de: null
-          nl: 'Afronden'
+          nl: Afronden
     3.review.finalize:
       title:
         - en: Terms and conditions
           de: null
-          nl: 'Voorwaarden'
+          nl: Voorwaarden
     policy-details:
       summary:
         title:
           - en: Summary
             de: Summary
-            nl: 'Samenvatting'
+            nl: Samenvatting
       covers:
         title:
           - en: Objects and Covers
             de: Objects and Covers
-            nl: 'Objecten and dekkingen'
+            nl: Objecten and dekkingen
       payments:
         title:
           - en: Payments
             de: Payments
-            nl: 'Betalingen'
+            nl: Betalingen
       claims:
         title:
           - en: Claims
             de: Claims
-            nl: 'Claims'
+            nl: Claims
     header:
       agent:
         dashboard:
           label:
             - en: Home
               de: Home
-              nl: 'Home'
+              nl: Home
           link:
             - en: /ice/insis.dashboard.home.agent/home
               de: /ice/insis.dashboard.home.agent/home
@@ -3669,7 +3695,7 @@ entries:
           label:
             - en: Clients
               de: null
-              nl: 'Klanten'
+              nl: Klanten
           link:
             - en: /ice/insis.dashboard.clients.agent/home
               de: /ice/insis.dashboard.clients.agent/home
@@ -3678,7 +3704,7 @@ entries:
           label:
             - en: Policies
               de: null
-              nl: 'Polissen'
+              nl: Polissen
           link:
             - en: /ice/insis.dashboard.policies.agent/home
               de: /ice/insis.dashboard.policies.agent/home
@@ -3687,7 +3713,7 @@ entries:
           label:
             - en: Claims
               de: null
-              nl: 'Claims'
+              nl: Claims
           link:
             - en: /ice/insis.dashboard.claims.agent/home
               de: /ice/insis.dashboard.claims.agent/home
@@ -3696,7 +3722,7 @@ entries:
           label:
             - en: Products
               de: Products
-              nl: 'Producten'
+              nl: Producten
           link:
             - en: /ice/insis.dashboard.products.agent/home
               de: /ice/insis.dashboard.products.agent/home
@@ -3706,7 +3732,7 @@ entries:
           label:
             - en: Home
               de: null
-              nl: 'Home'
+              nl: Home
           link:
             - en: /ice/insis.dashboard.home.customer/home
               de: /ice/insis.dashboard.home.customer/home
@@ -3715,7 +3741,7 @@ entries:
           label:
             - en: Policies
               de: null
-              nl: 'Polissen'
+              nl: Polissen
           link:
             - en: /ice/insis.dashboard.policies.customer/home
               de: /ice/insis.dashboard.policies.customer/home
@@ -3724,7 +3750,7 @@ entries:
           label:
             - en: Payments
               de: null
-              nl: 'Betalingen'
+              nl: Betalingen
           link:
             - en: /ice/insis.dashboard.payments.customer/home
               de: /ice/insis.dashboard.payments.customer/home
@@ -3733,7 +3759,7 @@ entries:
           label:
             - en: Claims
               de: null
-              nl: 'Claims'
+              nl: Claims
           link:
             - en: /ice/insis.dashboard.claims.customer/home
               de: /ice/insis.dashboard.claims.customer/home
@@ -3742,7 +3768,7 @@ entries:
           label:
             - en: Products
               de: Products
-              nl: 'Producten'
+              nl: Producten
           link:
             - en: /ice/insis.dashboard.products.customer/home
               de: /ice/insis.dashboard.products.customer/home
@@ -3751,75 +3777,75 @@ entries:
         logout:
           - en: Logout
             de: null
-            nl: 'Uitloggen'
+            nl: Uitloggen
         my-profile:
           - en: My profile
             de: My profile
-            nl: 'Mijn profiel'
+            nl: Mijn profiel
         switch-theme:
           - en: Switch theme
             de: Switch theme
-            nl: 'Wissel van thema'
+            nl: Wissel van thema
     insurances:
       title:
         - en: Quotes in Progress
           de: Quotes in Progress
-          nl: 'Offertes in verwerking'
+          nl: Offertes in verwerking
     addresses:
       title:
         - en: Adressess
           de: Adressess
-          nl: 'Adressen'
+          nl: Adressen
     contacts:
       title:
         - en: contact information
           de: contact information
-          nl: 'contact informatie'
+          nl: contact informatie
     bank-accounts:
       title:
         - en: payment information
           de: payment information
-          nl: 'betalingsinformatie'
+          nl: betalingsinformatie
     personal-information:
       title:
         - en: personal information
           de: personal information
-          nl: 'persoonlijke informatie'
+          nl: persoonlijke informatie
     summary:
       title:
         - en: summary
           de: summary
-          nl: 'samenvatting'
+          nl: samenvatting
     policies:
       title:
         - en: Policies
           de: Policen
-          nl: 'Polissen'
+          nl: Polissen
     claims:
       title:
         - en: Claims
           de: Claims
-          nl: 'Claims'
+          nl: Claims
   lists:
     gender:
       diverse:
         - en: Diverse
           de: null
-          nl: 'Verschillend'
+          nl: Verschillend
       male:
         - en: Male
           de: null
-          nl: 'Man'
+          nl: Man
       female:
         - en: Female
           de: null
-          nl: 'Vrouw'
+          nl: Vrouw
   formats:
     date:
       default:
         - en: DD.MM.YYYY
           de: DD.MM.YYYY
-          nl: 'DD.MM.YYYY'
+          nl: DD.MM.YYYY
     number:
       fractionDelimiter:
         - en: .
@@ -3838,22 +3864,22 @@ entries:
       term-life:
         - en: Term Life Insurance
           de: Term Life Insurance
-          nl: 'Overlijdensrisicoverzekering'
+          nl: Overlijdensrisicoverzekering
       motor:
         - en: Motor Insurance
           de: Motor Insurance
-          nl: 'Motorvoertuigenverzekering'
+          nl: Motorvoertuigenverzekering
     home:
       title:
         - en: INSIS Portal
           de: INSIS Portal
-          nl: 'INSIS Portal'
+          nl: INSIS Portal
     languages:
       dialog:
         title:
           - en: Warning
             de: Warning
-            nl: 'Waarschuwing'
+            nl: Waarschuwing
         message:
           - en: >-
               Are you sure you want to change language. The page will refresh
@@ -3865,60 +3891,60 @@ entries:
         confirm:
           - en: Confirm
             de: Confirm
-            nl: 'Bevestigen'
+            nl: Bevestigen
         discard:
           - en: Discard
             de: Discard
-            nl: 'Weggooien'
+            nl: Weggooien
   policy:
     payment:
       per-month:
         - en: month
           de: monat
-          nl: 'Maand'
+          nl: Maand
       per-quarter:
         - en: quarter
           de: quartal
-          nl: 'Kwartaal'
+          nl: Kwartaal
       per-half-year:
         - en: half year
           de: halbes jahr
-          nl: 'half jaar'
+          nl: half jaar
     covers:
       short-name-to-long-name:
         mtpl:
           - en: Motor Third Party Liability
             de: Motor Third Party Liability
-            nl: 'Wettelijke Aansprakelijkheid voor Motorvoertuigen (WAM)'
+            nl: Wettelijke Aansprakelijkheid voor Motorvoertuigen (WAM)
         owndamage:
           - en: Motor Own Damage
             de: Motor Own Damage
-            nl: 'Motorvoertuigen eigen schade'
+            nl: Motorvoertuigen eigen schade
         road_assis:
           - en: Road Assistance
             de: Road Assistance
-            nl: 'Wegenwacht'
+            nl: Wegenwacht
         pa:
           - en: Personal Accident
             de: Personal Accident
-            nl: 'Persoonlijk ongeluk'
+            nl: Persoonlijk ongeluk
         vandalism:
           - en: Vandalism
             de: Vandalism
-            nl: 'Vandalisme'
+            nl: Vandalisme
     participants:
       payor:
         iban-selection:
           empty:
             - en: Use a different bank account
               de: Use a different bank account
-              nl: 'Een andere bankrekening gebruiken'
+              nl: Een andere bankrekening gebruiken
       holder:
         person:
           full-name:
             - en: Client
               de: Client
-              nl: 'Klant'
+              nl: Klant
     insured:
       person-objects~cover:
         wop-total:
@@ -4020,87 +4046,87 @@ entries:
       label:
         - en: Remove
           de: Remove
-          nl: 'Verwijderen'
+          nl: Verwijderen
     contract:
       begin:
         policy-details:
           label:
             - en: Insurance begin
               de: Insurance begin
-              nl: 'Begin verzekering'
+              nl: Begin verzekering
   claims:
     hide-resolved:
       - en: Hide resolved
         de: Hide resolved
-        nl: 'Verberg opgelost'
+        nl: Verberg opgelost
     show-resolved:
       - en: Show resolved
         de: Show resolved
-        nl: 'Toon opgelost'
+        nl: Toon opgelost
   insuranse-duration-unit:
     year:
       label:
         - en: year
           de: Jahr
-          nl: 'jaar'
+          nl: jaar
     years:
       label:
         - en: years
           de: Jahre
-          nl: 'jaren'
+          nl: jaren
     month:
       label:
         - en: month
           de: Monat
-          nl: 'maand'
+          nl: maand
     months:
       label:
         - en: months
           de: Monate
-          nl: 'maanden'
+          nl: maanden
     day:
       label:
         - en: day
           de: Tag
-          nl: 'dag'
+          nl: dag
     days:
       label:
         - en: days
           de: Tage
-          nl: 'dagen'
+          nl: dagen
   premium-summary-section:
     dues:
       label:
         - en: Premiums
           de: Premiums
-          nl: 'Premies'
+          nl: Premies
     discounts:
       label:
         - en: Discounts
           de: Discounts
-          nl: 'Kortingen'
+          nl: Kortingen
     payment-frequency:
       annually:
         - en: Annually
           de: jährlich
-          nl: 'Jaarlijks'
+          nl: Jaarlijks
       semiannual:
         - en: Semiannually
           de: halbjährlich
-          nl: 'Halfjaarlijks'
+          nl: Halfjaarlijks
       quarterly:
         - en: Quarterly
           de: vierteljährlich
-          nl: 'Per kwartaal'
+          nl: Per kwartaal
       monthly:
         - en: Monthly
           de: monatlich
-          nl: 'Maandelijks'
+          nl: Maandelijks
     taxes-and-fees:
       label:
         - en: Taxes and fees
           de: Taxes and fees
-          nl: 'Belastingen en heffingen'
+          nl: Belastingen en heffingen
   main-insured:
     info:
       text:
@@ -4129,7 +4155,7 @@ entries:
       title:
         - en: Motor insurance
           de: null
-          nl: 'Motorvoertuigenverzekering'
+          nl: Motorvoertuigenverzekering
       description:
         - en: >-
             A comprehensive policy that not only offers optimum protection to
@@ -4141,12 +4167,12 @@ entries:
         title:
           - en: Motor Comprehensive
             de: null
-            nl: 'Motorvoertuigen uitgebreid'
+            nl: Motorvoertuigen uitgebreid
     life:
       title:
         - en: Life insurance
           de: null
-          nl: 'Levensverzekering'
+          nl: Levensverzekering
       description:
         - en: >-
             What if... something were to happen to you? A stroke of fate can
@@ -4157,27 +4183,27 @@ entries:
         title:
           - en: Term Life
             de: null
-            nl: 'Termijn leven'
+            nl: Termijn leven
       whole-life:
         title:
           - en: Whole Life
             de: null
-            nl: 'permanent life insurance'
+            nl: permanent life insurance
       unit-link:
         title:
           - en: Unit Link
             de: null
-            nl: 'United link verzekering'
+            nl: United link verzekering
       endowment:
         title:
           - en: Endowment
             de: null
-            nl: 'Schenking'
+            nl: Schenking
     property:
       title:
         - en: Property insurance
           de: null
-          nl: 'Inboedelverzekering'
+          nl: Inboedelverzekering
       description:
         - en: >-
             Most people simply can't afford to rebuild their home and replace
@@ -4189,12 +4215,12 @@ entries:
         title:
           - en: Household Property
             de: Household Property
-            nl: 'Huishoudelijke eigendommen'
+            nl: Huishoudelijke eigendommen
     health:
       title:
         - en: Health insurance
           de: null
-          nl: 'Zorgverzekering'
+          nl: Zorgverzekering
       description:
         - en: >-
             The world that we live in today is full of uncertainties. Anything
@@ -4206,7 +4232,7 @@ entries:
         title:
           - en: Health insurance
             de: null
-            nl: 'Zorgverzekering'
+            nl: Zorgverzekering
   person:
     addresses:
       item-label:
@@ -4233,27 +4259,27 @@ entries:
         label:
           - en: EDIT
             de: EDIT
-            nl: 'WIJZIGEN'
+            nl: WIJZIGEN
       cancel:
         label:
           - en: CANCEL
             de: CANCEL
-            nl: 'VERWIJDEREN'
+            nl: VERWIJDEREN
       save:
         label:
           - en: SAVE
             de: SAVE
-            nl: 'OPSLAAN'
+            nl: OPSLAAN
     bank-accounts:
       item-label:
         primary-bank-acc:
           - en: Primary bank account
             de: Primary bank account
-            nl: 'Primaire bankrekening'
+            nl: Primaire bankrekening
         secondary-bank-acc:
           - en: Secondary bank account
             de: Secondary bank account
-            nl: 'Secundaire bankrekening'
+            nl: Secundaire bankrekening
   policies:
     items:
       next-payment: {}
