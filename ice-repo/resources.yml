@@ -3409,6 +3409,8 @@ entries:
     messages:
       blank:
         - en: must be given
+          de: ''
+          nl: ''
       comply:
         - en: Please confirm
           de: Bitte bestätigen
