@@ -7,13 +7,19 @@ list:
     label_de:
       label: label_de
       type: text
+    label_nl:
+      label: label_nl
+      type: text
   items:
     - value: 4
       label_en: Direct Debit
       label_de: Lastschrift
+      label_nl: Automatische incasso
     - value: 2
       label_en: Credit Card
       label_de: Kreditkarte
+      label_nl: Kredietkaart
     - value: 1
       label_en: Apple Pay
       label_de: Apple Pay
+      label_nl: Apple Pay
