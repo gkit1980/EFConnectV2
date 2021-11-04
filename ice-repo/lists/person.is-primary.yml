@@ -7,6 +7,9 @@ list:
     label_de:
       label: Label de
       type: text
+    label_nl:
+      label: label_nl
+      type: text
     insis:
       label: insis
       type: text
@@ -14,12 +17,15 @@ list:
     - value: true
       label_en: 'Yes'
       label_de: Ja
+      label_nl: Ja
       insis: 'Y'
     - value: false
       label_en: 'No'
       label_de: Nein
+      label_nl: Nee
       insis: 'N'
     - value: false
       label_en: 'No'
       label_de: Nein
+      label_nl: Nee
       insis: null
