@@ -7,6 +7,9 @@ list:
     label_de:
       label: Label DE
       type: text
+    label_nl:
+      label: Label NL
+      type: text
     insis:
       label: Insis
       type: text
@@ -14,12 +17,15 @@ list:
     - value: home
       label_en: Home
       label_de: Privat
+      label_nl: Thuis
       insis: H
     - value: correspondence
       label_en: Correspondence
       label_de: Korrespondenz
+      label_nl: Correspondentie
       insis: C
     - value: business
       label_en: Business
       label_de: Geschäftsadresse
+      label_nl: Business
       insis: W
