@@ -1,39 +1,58 @@
 list:
   type: text
   additionals:
-    label:
-      label: Label
+    label_en:
+      label: Label_en
+      type: text
+    label_nl:
+      label: label_nl
       type: text
   items:
     - value: '1'
-      label: Wholesale and retail trade
+      label_en: Wholesale and retail trade
+      label_nl: Groot- en detailhandel
     - value: '2'
-      label: Public Officials
+      label_en: Public Officials
+      label_nl: Ambtenaren
     - value: '3'
-      label: Financial assistance
+      label_en: Financial assistance
+      label_nl: Financiële bijstand
     - value: '4'
-      label: Rental activities
+      label_en: Rental activities
+      label_nl: Huuractiviteiten
     - value: '5'
-      label: Administration
+      label_en: Administration
+      label_nl: Administratie
     - value: '6'
-      label: Agriculture
+      label_en: Agriculture
+      label_nl: Landbouw
     - value: '7'
-      label: Health services/medical
+      label_en: Health services/medical
+      label_nl: Gezondheidsdiensten/medisch
     - value: '8'
-      label: Hunting/fishing and forestry
+      label_en: Hunting/fishing and forestry
+      label_nl: Jacht/visserij en bosbouw
     - value: '9'
-      label: Hotels and Restaurants
+      label_en: Hotels and Restaurants
+      label_nl: Hotels en restaurants
     - value: '10'
-      label: Mining and quarry
+      label_en: Mining and quarry
+      label_nl: Mijnbouw en steengroeven
     - value: '11'
-      label: Manufacturing Industry
+      label_en: Manufacturing Industry
+      label_nl: Be- en verwerkende industrie
     - value: '12'
-      label: 'Electricity, gas and water supply'
+      label_en: 'Electricity, gas and water supply'
+      label_nl: Elektriciteit, gas en watervoorziening
     - value: '13'
-      label: Construction
+      label_en: Construction
+      label_nl: Bouw
     - value: '14'
-      label: Military
+      label_en: Military
+      label_nl: Militairen
     - value: '15'
-      label: Repair of automotive vehicles
+      label_en: Repair of automotive vehicles
+      label_nl: Reparatie van automobielen
     - value: '16'
-      label: Transportation
+      label_en: Transportation
+      label_nl: Vervoer
