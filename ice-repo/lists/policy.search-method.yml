@@ -3,9 +3,11 @@ list:
     - value: c
       label_en: based on client
       label_de: based on client
+      label_nl: gebaseerd op cliënt
     - value: p
       label_en: based on policy number
       label_de: based on policy number
+      label_nl: gebaseerd op polisnummer
   type: text
   additionals:
     label_en:
@@ -13,4 +15,7 @@ list:
       type: text
     label_de:
       label: label_de
+      type: text
+    label_nl:
+      label: label_nl
       type: text
