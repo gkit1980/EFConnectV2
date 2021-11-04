@@ -2021,19 +2021,14 @@ entries:
                       insurance duration. The covers will only be valid until
                       the age of 70.
                     de: ''
-                    nl: >-
-                      ${param1} will be ${param2} at the end of the selected
-                      insurance duration. The covers will only be valid until
-                      the age of 70.
+                    nl: ''
               policy-details-info:
                 label:
                   - en: >-
                       *The maximum age at which a person can still be insured is
                       70 years old.
                     de: ''
-                    nl: >-
-                      *The maximum age at which a person can still be insured is
-                      70 years old.
+                    nl: ''
               covers-info:
                 label:
                   - en: '${param1} will be ${param2} at the end of their insurance.'
@@ -2880,9 +2875,7 @@ entries:
             We are going to need some more information about you to be able to
             issue the insurance policy.
           de: ''
-          nl: >-
-            We are going to need some more information about you to be able to
-            issue the insurance policy.
+
     payment-details:
       financial-questions:
         first:
