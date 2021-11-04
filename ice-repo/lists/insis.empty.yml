@@ -7,6 +7,9 @@ list:
     label_de:
       label: Label DE
       type: text
+    label_nl:
+      label: label_nl
+      type: text
     insis:
       label: Insis
       type: integer
@@ -14,4 +17,5 @@ list:
     - value: null
       label_en: ''
       label_de: ''
+      label_nl: ''
       insis: 1
