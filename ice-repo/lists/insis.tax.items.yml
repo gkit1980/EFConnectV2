@@ -3,15 +3,19 @@ list:
     - value: INIFEE
       label_en: Initial Issue Fee
       label_de: Initial Issue Fee
+      label_nl: Vergoeding voor eerste uitgifte
     - value: IPT_TAX
       label_en: IPT (Insurance Premium Tax)
       label_de: IPT (Insurance Premium Tax)
+      label_nl: IPT (belasting op verzekeringspremies)
     - value: MREASS_FEE
       label_en: Reassessment fee
       label_de: Reassessment fee
+      label_nl: Herbeoordelingsvergoeding
     - value: REINST_TAX
       label_en: Reinstatement fee
       label_de: Reinstatement fee
+      label_nl: Herinvoeringstaks
   type: string
   additionals:
     label_en:
@@ -19,4 +23,7 @@ list:
       type: string
     label_de:
       label: label_de
+      type: string
+    label_nl:
+      label: label_nl
       type: string
