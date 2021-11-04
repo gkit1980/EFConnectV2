@@ -1,31 +1,46 @@
 list:
   type: text
   additionals:
-    label:
-      label: Label
+    label_en:
+      label: Label_en
+      type: text
+    label_nl:
+      label: label_nl
       type: text
   items:
     - value: '11'
-      label: Boxing
+      label_en: Boxing
+      label_nl: Boksen
     - value: '12'
-      label: Chess
+      label_en: Chess
+      label_nl: Schaken
     - value: '1'
-      label: Swimming
+      label_en: Swimming
+      label_nl: Zwemmen
     - value: '2'
-      label: Dancing
+      label_en: Dancing
+      label_nl: Dansen
     - value: '3'
-      label: Skiing and all winter sports
+      label_en: Skiing and all winter sports
+      label_nl: Skiën en alle wintersporten
     - value: '4'
-      label: Badminton
+      label_en: Badminton
+      label_nl: Badminton
     - value: '5'
-      label: Basketball
+      label_en: Basketball
+      label_nl: Basketbal
     - value: '6'
-      label: Football
+      label_en: Football
+      label_nl: Voetbal
     - value: '7'
-      label: Motor sports
+      label_en: Motor sports
+      label_nl: Motorsport
     - value: '8'
-      label: Wrestling
+      label_en: Wrestling
+      label_nl: Worstelen
     - value: '9'
-      label: Surfing
+      label_en: Surfing
+      label_nl: Surfen
     - value: '10'
-      label: Judo
+      label_en: Judo
+      label_nl: Judo
