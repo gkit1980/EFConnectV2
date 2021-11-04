@@ -1,11 +1,16 @@
 list:
   items:
     - value: m
-      label: Months
+      label_en: Months
+      label_nl: Maanden
     - value: 'y'
       label: Years
+      label_nl: Jaren
   type: text
   additionals:
-    label:
-      label: label
+    label_en:
+      label: label_en
+      type: text
+    label_nl:
+      label: label_nl
       type: text
