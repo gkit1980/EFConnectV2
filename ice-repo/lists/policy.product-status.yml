@@ -3,15 +3,19 @@ list:
     - value: ''
       label_en: Any
       label_de: Alle
+      label_nl: elke
     - value: Quotation
       label_en: Quotation
       label_de: Angebot
+      label_nl: Offerte
     - value: Application
       label_en: Application
       label_de: Antrag
+      label_nl: Toepassing
     - value: Policy
       label_en: Policy
       label_de: Police
+      label_nl: Beleid
   type: string
   additionals:
     label_en:
@@ -19,4 +23,7 @@ list:
       type: string
     label_de:
       label: label_de
+      type: string
+    label_nl:
+      label: label_nl
       type: string
