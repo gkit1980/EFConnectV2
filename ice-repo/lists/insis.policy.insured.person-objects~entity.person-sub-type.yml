@@ -7,7 +7,11 @@ list:
     label_de:
       label: label_de
       type: text
+    label_nl:
+      label: label_nl
+      type: text
   items:
     - value: '11811'
       label_en: Person
       label_de: Person
+      label_nl: Persoon
