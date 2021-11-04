@@ -3,15 +3,19 @@ list:
     - value: 1
       label_en: annually
       label_de: annually
+      label_nl: jaarlijks
     - value: 2
       label_en: semiannually
       label_de: semiannually
+      label_nl:
     - value: 4
       label_en: quarterly
       label_de: quarterly
+      label_nl: halfjaarlijks
     - value: 12
       label_en: monthly
       label_de: monthly
+      label_nl: maandelijks
   type: integer
   additionals:
     label_en:
@@ -19,4 +23,7 @@ list:
       type: string
     label_de:
       label: label_de
+      type: string
+    label_nl:
+      label: label_nl
       type: string
