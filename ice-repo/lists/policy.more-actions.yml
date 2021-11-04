@@ -3,9 +3,11 @@ list:
     - value: policy.active.download-pdf
       label_en: Download
       label_de: ''
+      label_nl: Downloaden
     - value: policy.cancel
       label_en: Cancel policy
       label_de: ''
+      label_nl: Beleid annuleren
   type: text
   additionals:
     label_en:
@@ -13,4 +15,7 @@ list:
       type: text
     label_de:
       label: label_de
+      type: text
+    label_nl:
+      label: label_nl
       type: text
