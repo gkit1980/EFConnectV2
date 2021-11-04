@@ -3,12 +3,15 @@ list:
     - value: ''
       label_en: Any type
       label_de: Alle
+      label_nl: Elke type
     - value: '1'
       label_en: Person
       label_de: Person
+      label_nl: Persoon
     - value: '2'
       label_en: Company
       label_de: Firma
+      label_nl: Bedrijf
   type: text
   additionals:
     label_en:
@@ -16,4 +19,7 @@ list:
       type: text
     label_de:
       label: label_de
+      type: text
+    label_nl:
+      label: label_nl
       type: text
