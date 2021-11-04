@@ -7,10 +7,15 @@ list:
     label_de:
       label: label_de
       type: text
+    label_nl:
+      label: label_nl
+      type: text   
   items:
     - value: '41'
       label_en: Buildings
       label_de: Buildings
+      label_nl: Gebouwen
     - value: '42'
       label_en: Contents
       label_de: Contents
+      label_nl: Inhoud
