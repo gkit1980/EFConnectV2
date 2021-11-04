@@ -3,9 +3,11 @@ list:
     - value: 'true'
       label_de: I am the bank account holder
       label_en: I am the bank account holder
+      label_nl: Ik ben de bankrekeninghouder
     - value: 'false'
       label_de: I am not the bank account holder
       label_en: I am not the bank account holder
+      label_nl: Ik ben niet de bankrekeninghouder
   type: boolean
   additionals:
     label_de:
@@ -13,4 +15,7 @@ list:
       type: text
     label_en:
       label: label_en
+      type: text
+    label_nl:
+      label: label_nl
       type: text
