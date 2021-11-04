@@ -7,16 +7,23 @@ list:
     label_de:
       label: Label DE
       type: text
+    label_nl:
+      label: label_nl
+      type: text
   items:
     - value: 1
       label_en: Annually
       label_de: jährlich
+      label_nl: Jaarlijks
     - value: 2
       label_en: Semiannually
       label_de: halbjährlich
+      label_nl: Halfjaarlijks
     - value: 4
       label_en: Quarterly
       label_de: vierteljährlich
+      label_nl: Driemaandelijks
     - value: 12
       label_en: Monthly
       label_de: monatlich
+      label_nl: Maandelijks
