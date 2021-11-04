@@ -8,7 +8,7 @@ list:
       label: Label DE
       type: text
     label_nl:
-      label: label_nl
+      label: label NL
       type: text
   items:
     - value: 1
