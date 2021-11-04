@@ -7,6 +7,9 @@ list:
     label_de:
       label: Label DE
       type: text
+    label_nl:
+      label: Label NL
+      type: text
     insis:
       label: Insis
       type: integer
@@ -14,8 +17,10 @@ list:
     - value: m
       label_en: Male
       label_de: männlich
+      label_nl: Mannelijk
       insis: 1
     - value: f
       label_en: Female
       label_de: weiblich
+      label_nl: Vrouwelijk
       insis: 2
