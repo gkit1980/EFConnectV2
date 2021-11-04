@@ -7,10 +7,14 @@ list:
     label_de:
       label: Label DE
       type: text
+    label_nl:
+      label: Label NL
+      type: text
   items:
     - value: 0
       label_en: single payment
       label_de: single payment
+      label_nl: enkele betaling
     - value: 1
       label_en: 1 year
       label_de: 1 year
