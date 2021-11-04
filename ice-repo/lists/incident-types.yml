@@ -15,5 +15,5 @@ list:
       label: label_de
       type: text
     label_nl:
-      label: Label nl
+      label: label_nl
       type: text
