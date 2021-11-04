@@ -1,11 +1,16 @@
 list:
   type: text
   additionals:
-    label:
-      label: Label
+    label_en:
+      label: Label_en
       type: text
+    label_nl:
+      label: label_nl
+      type: text      
   items:
     - value: '1'
-      label: 'Yes'
+      label_en: 'Yes'
+      label_nl: 'Ja'
     - value: '2'
-      label: 'Yes'
+      label_en: 'Yes'
+      label_nl: 'Yes'
