@@ -3,9 +3,11 @@ list:
     - value: YEAR
       label_en: Year
       label_de: Year
+      label_nl: Jaar
     - value: MONTH
       label_en: Months
       label_de: Months
+      label_nl: Maanden
   type: text
   additionals:
     label_en:
@@ -13,4 +15,7 @@ list:
       type: text
     label_de:
       label: label_de
+      type: text
+    label_nl:
+      label: label_nl
       type: text
