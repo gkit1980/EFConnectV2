@@ -3,15 +3,19 @@ list:
     - value: MOBILE
       label_de: Mobile phone
       label_en: Mobile phone
+      label_nl: Mobiele telefoon
     - value: HOME
       label_de: Home phone
       label_en: Home phone
+      label_nl: Huistelefoon
     - value: OFFICE
       label_de: Office phone
       label_en: Office phone
+      label_nl: Telefoon op kantoor
     - value: EMAIL
       label_de: E-mail
       label_en: E-mail
+      label_nl: E-mail
   type: text
   additionals:
     label_de:
@@ -19,4 +23,7 @@ list:
       type: text
     label_en:
       label: label_en
+      type: text
+    label_nl:
+      label: Label nl
       type: text
