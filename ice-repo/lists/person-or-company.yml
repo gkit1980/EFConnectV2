@@ -3,9 +3,11 @@ list:
     - value: false
       label_en: Person
       label_de: Person
+      label_nl: Persoon
     - value: true
       label_en: Company
       label_de: Company
+      label_nl: Bedrijf
   type: boolean
   additionals:
     label_en:
@@ -13,4 +15,7 @@ list:
       type: text
     label_de:
       label: label_de
+      type: text
+    label_nl:
+      label: label_nl
       type: text
