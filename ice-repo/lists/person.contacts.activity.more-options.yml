@@ -3,6 +3,7 @@ list:
     - value: person.contacts.remove
       label_en: Remove
       label_de: Remove
+      label_nl: Verwijder
   type: string
   additionals:
     label_en:
@@ -10,4 +11,7 @@ list:
       type: string
     label_de:
       label: label_de
+      type: string
+    label_nl:
+      label: label_nl
       type: string
