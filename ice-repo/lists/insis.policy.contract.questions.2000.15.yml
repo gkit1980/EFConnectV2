@@ -4,7 +4,7 @@ list:
     label_en:
       label: Label_en
       type: text
-        label_nl:
+    label_nl:
       label: label_nl
       type: text
   items:
