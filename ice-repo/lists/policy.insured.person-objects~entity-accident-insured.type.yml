@@ -7,10 +7,15 @@ list:
     label_de:
       label: label_de
       type: text
+    label_nl:
+      label: label_nl
+      type: text
   items:
     - value: 1
       label_en: Main Insured Person
       label_de: Versicherte Person
+      label_nl: Hoofdverzekerde
     - value: 2
       label_en: Additional insured
       label_de: Mitversicherte Person
+      label_nl: Extra verzekerde
