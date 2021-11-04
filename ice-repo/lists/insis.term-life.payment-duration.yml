@@ -18,21 +18,28 @@ list:
     - value: 1
       label_en: 1 year
       label_de: 1 year
+      label_nl: 1 jaar
     - value: 5
       label_en: 5 years
       label_de: 5 years
+      label_nl: 5 jaren
     - value: 10
       label_en: 10 years
       label_de: 10 years
+      label_nl: 10 jaren
     - value: 15
       label_en: 15 years
       label_de: 15 years
+      label_nl: 15 jaren
     - value: 20
       label_en: 20 years
       label_de: 20 years
+      label_nl: 20 jaren
     - value: 25
       label_en: 25 years
       label_de: 25 years
+      label_nl: 25 jaren
     - value: 30
       label_en: 30 years
       label_de: 30 years
+      label_nl: 30 jaren
