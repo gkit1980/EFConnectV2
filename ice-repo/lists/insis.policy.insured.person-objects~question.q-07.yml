@@ -1,16 +1,21 @@
 list:
   type: boolean
   additionals:
-    label:
-      label: Label
+    label_en:
+      label_en: Label
+      type: text
+    label_nl:
+      label: label_nl
       type: text
     insis:
       label: Insis
       type: text
   items:
     - value: true
-      label: 'YES'
-      insis: '2'
+      label_en: 'YES'
+      label_nl: 'JA'
+      insis: '1'
     - value: false
       label: 'NO'
-      insis: '1'
+      label_nl: 'NEE'
+      insis: '2'
