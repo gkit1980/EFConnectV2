@@ -3,6 +3,7 @@ list:
     - value: application.cancel
       label_en: Remove
       label_de: Remove
+      label_nl: Verwijder
   type: text
   additionals:
     label_en:
@@ -10,4 +11,7 @@ list:
       type: text
     label_de:
       label: label_de
+      type: text
+    label_nl:
+      label: label_nl
       type: text
