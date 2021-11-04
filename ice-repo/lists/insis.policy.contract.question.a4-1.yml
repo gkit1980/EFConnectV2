@@ -1,11 +1,16 @@
 list:
   type: text
   additionals:
-    label:
-      label: Label
+    label_en:
+      label_en: Label
+      type: text
+    label_nl:
+      label: label_nl
       type: text
   items:
     - value: '1'
-      label: SMS
+      label_en: SMS
+      label_nl: SMS
     - value: '2'
-      label: Email
+      label_en: Email
+      label_nl: Email
