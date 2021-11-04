@@ -3,6 +3,7 @@ list:
     - value: claim.cancel
       label_en: Cancel claim
       label_de: Cancel claim
+      label_nl: Annuleer vordering
   type: text
   additionals:
     label_en:
@@ -11,3 +12,7 @@ list:
     label_de:
       label: label_de
       type: text
+    label_nl:
+      label: label_nl
+      type: text
+
