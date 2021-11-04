@@ -3,33 +3,43 @@ list:
     - value: DEATH_ANY
       label_en: Death any cause
       label_de: Death any cause
+      label_nl: Dood door elke oorzaak
     - value: CRITIC_ILL
       label_en: Critical illness
       label_de: Critical illness
+      label_nl: Kritieke ziekte
     - value: DEATH_ACC
       label_en: Accidental death
       label_de: Accidental death
+      label_nl: Overlijden door ongeval
     - value: PREMRET
       label_en: Premium return by survival
       label_de: Premium return by survival
+      label_nl: Premierendement naar overleving
     - value: TPDILL
       label_en: Total and permanent disability due to illness over 75%
       label_de: Total and permanent disability due to illness over 75%
+      label_nl: Totale en blijvende invaliditeit ten gevolge van ziekte van meer dan 75%
     - value: TPDACCD
       label_en: Total and permanent disability due to accident over 75%
       label_de: Total and permanent disability due to accident over 75%
+      label_nl: Totale en blijvende invaliditeit ten gevolge van ongeval meer dan 75%
     - value: MTPL
       label_en: Motor Third Party Liability
       label_de: Motor Third Party Liability
+      label_nl: Wettelijke aansprakelijkheid motorrijtuigen
     - value: OWNDAMAGE
       label_en: Motor Own Damage
       label_de: Motor Own Damage
+      label_nl: Motor Eigen Schade
     - value: PA
       label_en: Personal Accident
       label_de: Personal Accident
+      label_nl: Persoonlijk ongeval
     - value: ROAD_ASSIS
       label_en: Road Assistance
       label_de: Road Assistance
+      label_nl: Bijstand op de weg
   type: string
   additionals:
     label_en:
@@ -37,4 +47,7 @@ list:
       type: string
     label_de:
       label: label_de
+      type: string
+    label_nl:
+      label: label_nl
       type: string
