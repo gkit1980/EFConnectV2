@@ -5,10 +5,15 @@ list:
         Remove
       label_de: >
         Remove
+      label_nl: >
+        Verwijder
   additionals:
     label_en:
       label: label_en
       type: text
     label_de:
       label: label_de
+      type: text
+    label_nl:
+      label: Label nl
       type: text
