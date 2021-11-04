@@ -1,23 +1,34 @@
 list:
   type: text
   additionals:
-    label:
-      label: Label
+    label_en:
+      label: Label_en
+      type: text
+    label_nl:
+      label: label_nl
       type: text
   items:
     - value: F1.01
-      label: Salary
+      label_en: Salary
+      label_nl: Salaris
     - value: F1.02
-      label: Savings
+      label_en: Savings
+      label_nl: Sparen
     - value: F1.03
-      label: Sale of property/car
+      label_en: Sale of property/car
+      label_nl: Verkoop van eigendom/auto
     - value: F1.04
-      label: Inheritance
+      label_en: Inheritance
+      label_nl: Erfenis
     - value: F1.05
-      label: Sale of investment/shares/bonds
+      label_en: Sale of investment/shares/bonds
+      label_nl: Verkoop van beleggingen/aandelen/obligaties
     - value: F1.06
-      label: Company/business sale
+      label_en: Company/business sale
+      label_nl: Verkoop bedrijf/onderneming
     - value: F1.07
-      label: Divorce settlement
+      label_en: Divorce settlement
+      label_nl: Echtscheidingsregeling
     - value: F1.08
-      label: Lottery/gaming winnings
+      label_en: Lottery/gaming winnings
+      label_nl: Winsten uit loterij/gokken
