@@ -3,33 +3,43 @@ list:
     - value: ''
       label_en: Any
       label_de: Alle
+      label_nl: Elke
     - value: '5'
       label_en: Traffic accident
       label_de: Verkehrsunfall
+      label_nl: Verkeersongeval
     - value: '9'
       label_en: Accident
       label_de: Unfall
+      label_nl: Ongeval
     - value: '11'
       label_en: Lightning
       label_de: Blitz
+      label_nl: Lightning
     - value: '14'
       label_en: Road or traffic accident
       label_de: Straßen- oder Verkehrsunfall
+      label_nl: Weg- of verkeersongeval
     - value: '15'
       label_en: Flood
       label_de: Flut
+      label_nl: Overstroming
     - value: '198'
       label_en: Illness
       label_de: Erkrankung
+      label_nl: Ziekte
     - value: '249'
       label_en: Injury Trauma
       label_de: Verletzungstrauma
+      label_nl: Letsel Trauma
     - value: '803'
       label_en: Legal defence costs
       label_de: Verteidigungs-RS-Fall
+      label_nl: Kosten voor juridische verdediging
     - value: '804'
       label_en: Indemnity costs
       label_de: Schadenersatzfall
+      label_nl: Schadevergoedingskosten
   type: text
   additionals:
     label_en:
@@ -37,4 +47,7 @@ list:
       type: text
     label_de:
       label: label_de
+      type: text
+    label_nl:
+      label: label_nl
       type: text
