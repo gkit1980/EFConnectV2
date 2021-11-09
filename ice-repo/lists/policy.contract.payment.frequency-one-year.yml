@@ -1,7 +1,7 @@
 list:
   items:
     - value: 2
- label_en: semiannually
+      label_en: semiannually
       label_de: semiannually
       label_nl:
     - value: 4

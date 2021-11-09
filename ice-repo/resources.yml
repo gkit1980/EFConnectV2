@@ -1340,23 +1340,23 @@ entries:
                       ![](/assets/icons/link-in-tooltip.svg)
                     de: null
                     nl: >-
-                     # Motor Eigen Schade
+                        # Motor Eigen Schade
 
-                      Uw voertuig is beschermd tot aan de verzekeringswaarde
-                      tegen:
+                          Uw voertuig is beschermd tot aan de verzekeringswaarde
+                          tegen:
 
-                        - Brand
-                        - Blikseminslag
-                        - Ontploffing
-                        - Natuurrampen (overstroming, storm, zware regenval, zware sneeuwval, vallende bomen of voorwerpen)
-                        - Diefstal
-                        - Verkeersongeval
-                        - Kwaadwillige daden van derden
+                            - Brand
+                            - Blikseminslag
+                            - Ontploffing
+                            - Natuurrampen (overstroming, storm, zware regenval, zware sneeuwval, vallende bomen of voorwerpen)
+                            - Diefstal
+                            - Verkeersongeval
+                            - Kwaadwillige daden van derden
 
-                      > Het eigen risico is het bedrag dat wordt ingehouden voor elk schadegeval.
+                          > Het eigen risico is het bedrag dat wordt ingehouden voor elk schadegeval.
 
 
-                      > [Zie meer over risico's en limieten]()
+                          > [Zie meer over risico's en limieten]()
                 premium-with-label:
                   label:
                     - en: Vehicle Own Damage
@@ -2084,9 +2084,9 @@ entries:
                       the age of 70.
                     de: ''
                     nl: >-
-                     ${param1} zal ${param2} zijn aan het einde van de gekozen
-                      verzekeringsduur. De dekkingen zullen slechts geldig zijn tot
-                      de leeftijd van 70 jaar.
+                        ${param1} zal ${param2} zijn aan het einde van de gekozen
+                          verzekeringsduur. De dekkingen zullen slechts geldig zijn tot
+                          de leeftijd van 70 jaar.
               policy-details-info:
                 label:
                   - en: >-
@@ -3824,7 +3824,7 @@ entries:
         dashboard:
           label:
             - en: Home
-              de: null
+              de: Home
               nl: Home
           link:
             - en: /ice/insis.dashboard.home.customer/home
@@ -3833,7 +3833,7 @@ entries:
         policies:
           label:
             - en: Policies
-              de: null
+              de: Policies
               nl: Polissen
           link:
             - en: /ice/insis.dashboard.policies.customer/home
