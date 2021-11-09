@@ -719,7 +719,7 @@ entries:
         label:
           - en: '${param1} claims in progress'
             de: null
-            nl: ''
+            nl: '${param1} claims in progress'
         icon:
           - en: thunder.svg
             de: thunder.svg
