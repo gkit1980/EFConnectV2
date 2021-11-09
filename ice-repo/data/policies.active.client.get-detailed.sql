@@ -1,4 +1,4 @@
-SELECT JSON_OBJECT(
+                    SELECT JSON_OBJECT(
               'total' is datacount,
               'policy_state' is policy_state,
               'policy_id' is policy_id,
@@ -57,7 +57,7 @@ SELECT JSON_OBJECT(
                             ON ion.insured_obj_id = io.insured_obj_id
                           LEFT JOIN o_accinsured oac
                             ON oac.object_id = io.object_id
-                        WHERE io.policy_id = policy_id_for_object) )
+                        WHERE io.policy_id = policy_id_for_object) ) as jsonRowItem
           FROM (
         WITH od AS (SELECT sys_days.get_open_date AS open_date FROM dual)
         SELECT pol.policy_state, pol.policy_id, pol.policy_id AS policy_id_for_object, pol.policy_no, pol.policy_name, pol.insr_type,
@@ -73,7 +73,7 @@ SELECT JSON_OBJECT(
               CASE WHEN od.open_date > pol.insr_end THEN 1 ELSE 0 END AS is_expired,
               CASE WHEN pol.policy_state IN (-3, -2, -1) THEN 'Application'
                             WHEN pol.policy_state = -4 THEN 'Quotation'
-                            WHEN pol.policy_state IN (-34, -30, 30) THEN 'Canceled'
+                            WHEN pol.policy_state = -30 THEN 'Canceled'
                             ELSE 'Policy' END AS policy_state_name, pn.client_id,
               CASE WHEN pol.policy_state = 11 THEN 'True'
                    ELSE 'False' END AS payment_completed,
@@ -138,3 +138,4 @@ SELECT JSON_OBJECT(
           ORDER BY policy_id DESC
           OFFSET :offset ROWS
           FETCH first :page_size ROWS ONLY )
+
