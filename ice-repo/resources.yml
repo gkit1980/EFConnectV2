@@ -115,7 +115,7 @@ entries:
           label:
             - en: '${param1} ${param2}'
               de: '${param1} ${param2}'
-              nl: ''
+              nl: '${param1} ${param2}'
       list:
         items:
           name:
@@ -571,7 +571,7 @@ entries:
           label:
             - en: '${param1}'
               de: '${param1}'
-              nl: ''
+              nl: '${param1}'
         contract:
           payment:
             completed:
@@ -605,12 +605,12 @@ entries:
           label:
             - en: '${param1} objects'
               de: '${param1} Objekte'
-              nl: ''
+              nl: '${param1} objects'
         client-view-more:
           label:
             - en: '${param1} ${param2}'
               de: '${param1} ${param2}'
-              nl: ''
+              nl: '${param1} ${param2}'
         client-name:
           label:
             - en: Client
@@ -680,12 +680,12 @@ entries:
           content:
             - en: '${param1} - ${param2} ${param3}'
               de: '${param1} - ${param2} ${param3}'
-              nl: ''
+              nl: '${param1} - ${param2} ${param3}'
         product-formatted:
           content:
             - en: '${param1} - ${param2}'
               de: '${param1} - ${param2}'
-              nl: ''
+              nl: '${param1} - ${param2}'
           label:
             - en: Product
               de: Produkt
@@ -695,11 +695,11 @@ entries:
             value:
               - en: '${param1} EUR, ${param2}'
                 de: '${param1} EUR, ${param2}'
-                nl: ''
+                nl: '${param1} EUR, ${param2}'
             label:
               - en: 'Next payment (${param1})'
                 de: 'Next payment (${param1})'
-                nl: ''
+                nl: 'Volgende betaling (${param1})'
         payment-completed-text:
           label:
             - en: Payment
@@ -719,7 +719,7 @@ entries:
         label:
           - en: '${param1} claims in progress'
             de: null
-            nl: '${param1} claims in progress'
+            nl: '${param1} vorderingen in behandeling'
         icon:
           - en: thunder.svg
             de: thunder.svg
@@ -755,7 +755,7 @@ entries:
           label:
             - en: ...
               de: ...
-              nl: ''
+              nl: ...
           icon:
             - en: more_horiz.svg
               de: more_horiz.svg
@@ -771,7 +771,7 @@ entries:
           label:
             - en: '${param1}'
               de: '${param1}'
-              nl: ''
+              nl: '${param1}'
         claim-state-name:
           label:
             - en: Status
@@ -786,7 +786,7 @@ entries:
           label:
             - en: '${param1} ${param2}'
               de: '${param1} ${param2}'
-              nl: ''
+              nl: '${param1} ${param2}'
         policy-label:
           label:
             - en: Policy
@@ -806,7 +806,7 @@ entries:
           label:
             - en: ...
               de: ...
-              nl: ''
+              nl: ...
     additional-audio-video-equipment:
       title:
         label:
@@ -819,7 +819,9 @@ entries:
             What is the name of your previous Motor and Third Party Liability
             insurer?
           de: ''
-          nl: ''
+          nl: >-
+            Wat is de naam van uw vorige verzekeraar voor motorrijtuigen- en wettelijke aansprakelijkheid
+            verzekeraar?
     continue:
       label:
         - en: continue
@@ -836,7 +838,9 @@ entries:
             We are going to need some more information about the vehicle and
             yourself to be able to issue the insurance policy.
           de: null
-          nl: ''
+          nl: >-
+            We hebben wat meer informatie nodig over het voertuig en
+            uzelf om de verzekeringspolis uit te kunnen geven.
     person:
       search-policies:
         product-id:
@@ -1205,7 +1209,7 @@ entries:
           label:
             - en: '${param1}/payment'
               de: null
-              nl: ''
+              nl: '${param1}/betaling'
         vehicle-objects:
           label:
             - en: Give us some information about the vehicles you want to insure.
@@ -1282,7 +1286,17 @@ entries:
                       > [See more about risks and limits]()
                       ![](/assets/icons/link-in-tooltip.svg)
                     de: null
-                    nl: ''
+                    nl: >-
+                      # Wettelijke Aansprakelijkheid Motorrijtuigen
+
+                      In geval van een verkeersongeval zijn de volgende risico's
+                      gedekt:
+
+                        - Materiële schade als gevolg van
+                        - Dood of lichamelijk letsel
+
+
+                      > [Zie meer over risico's en limieten]()
                 premium-with-label:
                   label:
                     - en: Motor Third Party Liability
@@ -1325,7 +1339,24 @@ entries:
                       > [See more about risks and limits]()
                       ![](/assets/icons/link-in-tooltip.svg)
                     de: null
-                    nl: ''
+                    nl: >-
+                     # Motor Eigen Schade
+
+                      Uw voertuig is beschermd tot aan de verzekeringswaarde
+                      tegen:
+
+                        - Brand
+                        - Blikseminslag
+                        - Ontploffing
+                        - Natuurrampen (overstroming, storm, zware regenval, zware sneeuwval, vallende bomen of voorwerpen)
+                        - Diefstal
+                        - Verkeersongeval
+                        - Kwaadwillige daden van derden
+
+                      > Het eigen risico is het bedrag dat wordt ingehouden voor elk schadegeval.
+
+
+                      > [Zie meer over risico's en limieten]()
                 premium-with-label:
                   label:
                     - en: Vehicle Own Damage
@@ -1352,7 +1383,18 @@ entries:
                       > [See more about risks and limits]()
                       ![](/assets/icons/link-in-tooltip.svg)
                     de: null
-                    nl: ''
+                    nl: >-
+                      # Persoonlijk ongeval
+
+                      In geval van een verkeersongeval zijn de volgende risico's
+                      gedekt:
+
+                        - Tijdelijke invaliditeit
+                        - Blijvende invaliditeit
+                        - Overlijden
+
+
+                      > [Zie meer over risico's en limieten]()
                 premium-with-label:
                   label:
                     - en: Personal Assistance
@@ -1379,7 +1421,18 @@ entries:
                       > [See more about risks and limits]()
                       ![](/assets/icons/link-in-tooltip.svg)
                     de: null
-                    nl: ''
+                    nl: >-
+                      # Road Assistance
+
+                      In the event of a road accident or natural hazards, the
+                      following risks are covered:
+
+                        - Towing of the vehicle (only for road accident)
+                        - On-site repair costs
+                        - Accommodation and transportation costs
+
+
+                      > [See more about risks and limits]()
                 premium-with-label:
                   label:
                     - en: Road Assistance
@@ -1470,7 +1523,9 @@ entries:
                       Insure additional equipment like audio systems, alloy
                       wheels, etc.
                     de: null
-                    nl: ''
+                    nl: >-
+                      Verzeker extra uitrusting zoals audiosystemen, lichtmetalen
+                      wielen, enz.
               additional-equipment-car-audio-included:
                 label:
                   - en: Audio/Video system
@@ -1523,7 +1578,14 @@ entries:
 
                     <more details if necessary>
                   de: null
-                  nl: ''
+                  nl: >-
+                    # VoertuigIdentificatieNummer
+
+                    Het VoertuigIdentificatieNummer (VIN) is een unieke
+                    identificatie van uw voertuig. Het kan worden gevonden op uw
+                    kentekenbewijs.
+
+                    <meer details indien nodig>
               vehicle-type:
                 label:
                   - en: Vehicle type
@@ -1792,8 +1854,8 @@ entries:
                       treatment, medical observation or hospitalization?
                     de: ''
                     nl: >-
-                      Does this person currently have any illness that requires
-                      treatment, medical observation or hospitalization?
+                      Heeft deze persoon momenteel een ziekte die
+                      behandeling, medische observatie of ziekenhuisopname vereist?
               describe:
                 label:
                   - en: Please describe
@@ -1807,9 +1869,9 @@ entries:
                       hospotalizations and/or observation?
                     de: ''
                     nl: >-
-                      Has this person suffered in the past from any illness that
-                      required treatment and/or medical examinations and/or
-                      hospotalizations and/or observation?
+                      Heeft deze persoon in het verleden geleden aan een ziekte die
+                      behandeling en/of medische onderzoeken en/of
+                      hospotalisatie en/of observatie?
               q-11:
                 label:
                   - en: >-
@@ -1818,9 +1880,9 @@ entries:
                       blood sugar?
                     de: ''
                     nl: >-
-                      Does the person have or had liver disease, hepatitis B or
-                      C, kidney, pancreas, ulcers or diabetes mellitus (high
-                      blood sugar?
+                      Heeft of had de persoon een leveraandoening, hepatitis B of
+                      C, nieren, alvleesklier, maagzweren of diabetes mellitus (hoge
+                      bloedsuiker?
               q-12:
                 label:
                   - en: Does this person currently take any medications?
@@ -1835,10 +1897,10 @@ entries:
                       nervous system disease?
                     de: ''
                     nl: >-
-                      Does this person suffer or has suffered or been treated
-                      previously of epilepsy, convulsions, paralysis, mental or
-                      nervous illness, dizziness, headache, fainting or other
-                      nervous system disease?
+                      Lijdt of heeft deze persoon geleden of is hij behandeld
+                      aan epilepsie, convulsies, verlamming, mentale of
+                      zenuwziekte, duizeligheid, hoofdpijn, flauwvallen of een andere
+                      ziekte van het zenuwstelsel?
               q-13-1:
                 label:
                   - en: Select date
@@ -1852,15 +1914,15 @@ entries:
                       accepted on special terms?
                     de: ''
                     nl: >-
-                      Has any application for insurance on this person's life
-                      (life, accident, health) been declined, postponed or
-                      accepted on special terms?
+                      Is een aanvraag voor een verzekering op het leven van deze persoon
+                      (leven, ongeval, gezondheid) afgewezen, uitgesteld of
+                      aanvaard onder speciale voorwaarden?
             height: {}
             covers-title:
               label:
                 - en: 'Covers ${param1} ${param2}'
                   de: 'Covers ${param1} ${param2}'
-                  nl: ''
+                  nl: 'Covers ${param1} ${param2}'
             cover:
               death-any:
                 active:
@@ -2021,19 +2083,24 @@ entries:
                       insurance duration. The covers will only be valid until
                       the age of 70.
                     de: ''
-                    nl: ''
+                    nl: >-
+                     ${param1} zal ${param2} zijn aan het einde van de gekozen
+                      verzekeringsduur. De dekkingen zullen slechts geldig zijn tot
+                      de leeftijd van 70 jaar.
               policy-details-info:
                 label:
                   - en: >-
                       *The maximum age at which a person can still be insured is
                       70 years old.
                     de: ''
-                    nl: ''
+                    nl: >-
+                     *De maximumleeftijd waarop iemand nog kan worden verzekerd is
+                      70 jaar.
               covers-info:
                 label:
                   - en: '${param1} will be ${param2} at the end of their insurance.'
                     de: '${param1} will be ${param2} at the end of their insurance.'
-                    nl: ''
+                    nl: '${param1} zal ${param2} zijn aan het einde van hun verzekering.'
             remove-insured-person:
               label:
                 - en: REMOVE PERSON
@@ -2136,7 +2203,7 @@ entries:
                 label-param:
                   - en: '${param1}'
                     de: '${param1}'
-                    nl: ''
+                    nl: '${param1}'
               covers-subtitle:
                 label:
                   - en: '${param1} will be ${param2} at the end of the insurance.'
@@ -2167,7 +2234,7 @@ entries:
                 label:
                   - en: '${param1} ${param2}, ${param3}'
                     de: '${param1} ${param2}, ${param3}'
-                    nl: ''
+                    nl: '${param1} ${param2}, ${param3}'
               regno:
                 label:
                   - en: License plate
@@ -2207,7 +2274,7 @@ entries:
                 label:
                   - en: '${param1} ${param2}, ${param3} - ${param4}'
                     de: '${param1} ${param2}, ${param3} - ${param4}'
-                    nl: ''
+                    nl: '${param1} ${param2}, ${param3} - ${param4}'
               transportation-of-hazardous-goods:
                 label:
                   - en: Transportation of hazardous goods
@@ -2337,9 +2404,9 @@ entries:
                     the proposal form and other product related information
                 de: ''
                 nl: >-
-                  I have read, understood and accept all the terms, conditions
-                  and contents of
-                    the proposal form and other product related information
+                  Ik heb alle voorwaarden gelezen, begrepen en aanvaard
+                  en inhoud van
+                    het voorstelformulier en andere productgerelateerde informatie
           fatca1:
             label:
               - en: >-
@@ -2347,8 +2414,8 @@ entries:
                   resident in the USA.
                 de: ''
                 nl: >-
-                  I declare that I am not a citizen of the US and I am not a tax
-                  resident in the USA.
+                  Ik verklaar dat ik geen staatsburger van de VS ben en dat ik geen fiscaal
+                  ingezetene in de VS ben
           fatca2:
             label:
               - en: I declare that I am a tax resident in the USA.
@@ -2370,7 +2437,7 @@ entries:
               display-label:
                 - en: '${param1} ${param2} ${param3}'
                   de: '${param1} ${param2} ${param3}'
-                  nl: ''
+                  nl: '${param1} ${param2} ${param3}'
             email:
               label:
                 - en: Email
@@ -2447,8 +2514,8 @@ entries:
                   insurance policy
                 de: ''
                 nl: >-
-                  The owner agrees to use this account for the purposes of this
-                  insurance policy
+                  De eigenaar stemt ermee in deze rekening te gebruiken voor de doeleinden van deze
+                  verzekeringspolis
           birthdate:
             label:
               - en: DD/MM/YYYY
@@ -2518,7 +2585,7 @@ entries:
           label:
             - en: Claims
               de: Claims
-              nl: Claims
+              nl: Vorderingen
         no-claims-text:
           label:
             - en: No claims
@@ -2575,9 +2642,9 @@ entries:
               preferences.
             de: ''
             nl: >-
-              Upon clicking this button the policy will be issued and the
-              provided bank account will be debited as per the selected
-              preferences.
+              Na het klikken op deze knop wordt de polis uitgegeven en de
+              opgegeven bankrekening zal worden gedebiteerd volgens de gekozen
+              voorkeur
       label:
         - en: Buy insurance
           de: Buy insurance
@@ -2598,9 +2665,9 @@ entries:
               the purposes of verification and administration of insurance
             de: ''
             nl: >-
-              I consent to the Insurance Company using, storing and disclosing
-              my personal information to its affiliates and trusted partners for
-              the purposes of verification and administration of insurance
+              Ik geef de verzekeringsmaatschappij toestemming om mijn persoonlijke informatie te gebruiken, op te slaan en door te geven
+              mijn persoonlijke informatie aan haar gelieerde ondernemingen en vertrouwde partners voor
+              de doeleinden van verificatie en administratie van de verzekering
       truthy-and-valid-information:
         label:
           - en: >-
@@ -2608,8 +2675,8 @@ entries:
               application is true and complete
             de: ''
             nl: >-
-              I declare that the information provided by me in this insurance
-              application is true and complete
+              Ik verklaar dat de door mij verstrekte informatie in deze verzekerings
+              aanvraag juist en volledig is
     bank-holder-details-title:
       label:
         - en: Bank account holder details
@@ -2625,7 +2692,9 @@ entries:
             Such as furniture, kitchen appliances, audio/video, valuable items,
             tools, etc.
           de: null
-          nl: ''
+          nl: >-
+            Zoals meubels, keukenapparatuur, audio/video, waardevolle spullen,
+            gereedschap, enz.
       icon:
         - en: person.svg
           de: person.svg
@@ -2644,7 +2713,7 @@ entries:
       label:
         - en: ...
           de: null
-          nl: ''
+          nl: ...
     cancel-policy:
       label:
         - en: Cancel policy
@@ -2696,7 +2765,7 @@ entries:
           mirror:
             - en: '${param1}, ${param2} ${param3}'
               de: '${param1}, ${param2} ${param3}'
-              nl: ''
+              nl: '${param1}, ${param2} ${param3}'
         insured_objects:
           label:
             - en: Insured objects
@@ -2724,7 +2793,9 @@ entries:
               Some description here some description here some description here
               some description here some description here some description here
             de: null
-            nl: ''
+            nl: >-
+              Wat beschrijving hier Wat beschrijving hier Wat beschrijving hier
+              Wat beschrijving hier Wat beschrijving hier Wat beschrijving hier
       title:
         label:
           - en: Motor insurance
@@ -2768,8 +2839,8 @@ entries:
               some description here some description here some description here
             de: ''
             nl: >-
-              Some description here some description here some description here
-              some description here some description here some description here
+              Wat beschrijving hier Wat beschrijving hier Wat beschrijving hier
+              Wat beschrijving hier Wat beschrijving hier Wat beschrijving hier
       title:
         label:
           - en: Property insurance
@@ -2825,7 +2896,7 @@ entries:
           label:
             - en: UNIT LINK INSURANCE
               de: UNIT LINK INSURANCE
-              nl: UNIT LINKED VERZEKERING
+              nl: UNIT VERBONDEN VERZEKERING
         whole-life:
           label:
             - en: WHOLE LIFE INSURANCE
@@ -2844,7 +2915,7 @@ entries:
       label:
         - en: 'http://localhost:4200/visual-ice/assets/logo.png'
           de: 'http://localhost:4200/visual-ice/assets/logo.png'
-          nl: ''
+          nl: 'http://localhost:4200/visual-ice/assets/logo.png'
     badge:
       label:
         - en: Label
@@ -2858,6 +2929,12 @@ entries:
             - list
             - of
             - something
+          nl: |-
+            # Test markdown
+
+            - lijst
+            - van
+            - iets
     no-policies: {}
     navigate-to-all-policies:
       label:
@@ -2875,7 +2952,9 @@ entries:
             We are going to need some more information about you to be able to
             issue the insurance policy.
           de: ''
-
+          nl: >-
+            We hebben wat meer informatie over u nodig om in staat te zijn
+            de verzekeringspolis uit te geven.
     payment-details:
       financial-questions:
         first:
@@ -2917,8 +2996,8 @@ entries:
                 necessary.
               de: ''
               nl: >-
-                A bit more information about the additional insured person is
-                necessary.
+                Een beetje meer informatie over de extra verzekerde persoon is
+                noodzakelijk.
         main:
           label:
             - en: >-
@@ -2926,8 +3005,8 @@ entries:
                 necessary.
               de: ''
               nl: >-
-                A bit more information about the main insured person is
-                necessary.
+                Een beetje meer informatie over de hoofdverzekerde is
+                noodzakelijk.
       medical-documents:
         label:
           - en: Medical examination documents
@@ -2939,8 +3018,8 @@ entries:
               medical examinations, containing:
             de: ''
             nl: >-
-              Please attach documents (.jpg, .pdf) presenting the results of
-              medical examinations, containing:
+              Gelieve documenten bij te voegen (.jpg, .pdf) met de resultaten van
+              medische onderzoeken, met daarin:
     payment-labels:
       icd-documents:
         label:
@@ -2968,14 +3047,14 @@ entries:
             policy.
           de: ''
           nl: >-
-            Warning
+            Waarschuwing
 
 
-            No covers have been selected for ${name}.
+            Er zijn geen dekkingen geselecteerd voor ${name}.
 
 
-            If you decide to continue ${name} will be removed from the insurance
-            policy.
+            Als u besluit door te gaan zal ${name} verwijderd worden van de verzekering
+            polis.
       agent:
         label:
           - en: CONTINUE TO APPLICATION
@@ -3268,7 +3347,7 @@ entries:
         search-criteria:
           - en: '${param1}%'
             de: null
-            nl: ''
+            nl: '${param1}%'
         search:
           label:
             - en: Client
@@ -3375,8 +3454,8 @@ entries:
             bank account will be debited as per the selected preferences.
           de: ''
           nl: >-
-            Upon clicking this button the policy will be issued and the provided
-            bank account will be debited as per the selected preferences.
+            Na het klikken op deze knop zal de polis worden uitgegeven en de opgegeven
+            bankrekening zal worden gedebiteerd volgens de geselecteerde voorkeuren.
     insured-object-documents:
       title:
         label:
@@ -3420,45 +3499,61 @@ entries:
         - en: >-
             There ${errors > 1 ? 'are' : 'is' } ${errors} ${errors > 1 ?
             'Errors' : 'Error' } on this page
+          nl: >-
+            Er ${errors > 1 ? 'zijn' : 'is' } ${errors} ${errors > 1 ?
+            'Errors' : 'Error' } op deze pagina
       growl:
         summary:
           - en: Validation failed
+            nl: Validatie mislukt
         detail:
           - en: Please correct the input before leaving this page
+            nl: Corrigeer de invoer voordat u deze pagina verlaat
     messages:
       blank:
         - en: must be given
           de: ''
-          nl: ''
+          nl: moet worden gegeven
       comply:
         - en: Please confirm
           de: Bitte bestätigen
           nl: Bevestigen
       not_allowed_here:
         - en: '''${value}'' not allowed here'
+          nl: '''${value}'' hier niet toegestaan'
       regexp:
         - en: '''${value}'' does not matches regular expression ${regexp}'
+          nl: '''${value}'' komt niet overeen met reguliere expressie ${regexp}'
       array:
         min:
           - en: 'must have at least ${min} entries'
+            nl: 'moet ten minste ${min} vermeldingen hebben'
         max:
           - en: 'can have max ${max} entries'
+            nl: 'kan max ${max} entries hebben'
       range:
         currency:
           min:
             - en: 'may not be smaller than ${number}'
+              nl: 'mag niet kleiner zijn dan ${number}'
           max:
             - en: 'may not be more than ${number}'
+              nl:  'mag niet meer zijn dan ${number}'
         integer:
           min:
             - en: 'may not be smaller than ${number}'
+              nl: 'mag niet kleiner zijn dan ${number}'
           max:
             - en: 'may not be more than ${number}'
+              nl: 'mag niet meer zijn dan ${number}'
         date:
           min:
             - en: 'may not be less than ${date}'
+              nl: 'mag niet lager zijn dan ${date}'
+
           max:
             - en: 'may not be greater than ${date}'
+              nl: 'mag niet groter zijn dan ${date}''
       email:
         - en: Please enter a valid email address
           de: Bitte geben Sie eine gültige Email-Adresse ein.
@@ -3482,10 +3577,13 @@ entries:
     page-pagination:
       first:
         - en: First
+          nl: Eerste
       prev:
         - en: Back
+          nl: Terug
       next:
         - en: Next
+          nl: Volgende
   common:
     definitions:
       demo:
@@ -3544,8 +3642,8 @@ entries:
     footer:
       terms-and-conditions:
         - en: Terms and Conditions
-          de: I dont know what terms and conditions is in german
-          nl: Voorwaarden
+          de: Bedingungen und Konditionen
+          nl: Voorwaarden en Condities
     1.quote:
       title:
         - en: See Price
@@ -3601,7 +3699,9 @@ entries:
             A bit more information for this vehicle would be required to be able
             to identify it.
           de: null
-          nl: ''
+          nl: >-
+            Een beetje meer informatie voor dit voertuig zou nodig zijn om het te kunnen
+            om het te identificeren.
     2.application.participants:
       title:
         - en: Participants
@@ -3651,7 +3751,7 @@ entries:
       title:
         - en: Terms and conditions
           de: null
-          nl: Voorwaarden
+          nl: Voorwaarden en bepalingen
     policy-details:
       summary:
         title:
@@ -3843,11 +3943,11 @@ entries:
       fractionDelimiter:
         - en: .
           de: ','
-          nl: ''
+          nl: .
       thousandDelimiter:
         - en: ','
           de: .
-          nl: ''
+          nl: ','
   currency-code:
     - en: EUR
       de: EUR
@@ -3879,8 +3979,8 @@ entries:
               and you will lose all unsaved information.
             de: ''
             nl: >-
-              Are you sure you want to change language. The page will refresh
-              and you will lose all unsaved information.
+              Weet u zeker dat u de taal wilt veranderen. De pagina zal vernieuwen
+              en u zult alle niet opgeslagen informatie verliezen.
         confirm:
           - en: Confirm
             de: Confirm
@@ -3949,9 +4049,9 @@ entries:
                   Sum insured: ${param1}
                 de: ''
                 nl: |-
-                  Waiver of premium due to permanent disability any cause
+                  Kwijtschelding van premie wegens blijvende invaliditeit, ongeacht de oorzaak
 
-                  Sum insured: ${param1}
+                  Verzekerd bedrag: ${param1}
       person-objects~covers:
         text: {}
       person-objects:
@@ -3965,8 +4065,8 @@ entries:
                       Sum insured: ${param1} &euro;
                     de: ''
                     nl: |-
-                      # Waiver of premium due to permanent disability any cause
-                      Sum insured: ${param1} &euro;
+                      Kwijtschelding van premie wegens blijvende invaliditeit door welke oorzaak ook
+                      Verzekerd bedrag: ${param1} &euro;
             tpdill-total:
               active-info: {}
             tpdill:
@@ -3977,8 +4077,8 @@ entries:
                       Sum insured: ${param1} &euro;
                     de: ''
                     nl: |-
-                      # Total and permanent disability due to illness over 75%
-                      Sum insured: ${param1} &euro;
+                      # Totale en blijvende invaliditeit ten gevolge van ziekte van meer dan 75%
+                      Verzekerd bedrag: ${param1} &euro;
             tpdaccd:
               active-info:
                 info:
@@ -3987,8 +4087,8 @@ entries:
                       Insured sum: ${param1} &euro;
                     de: ''
                     nl: |-
-                      # Total and permanent disability to accident over 75%
-                      Insured sum: ${param1} &euro;
+                      # Totale en blijvende invaliditeit door ongeval meer dan 75%
+                      Verzekerd bedrag: ${param1} &euro;
             premret:
               active-info:
                 info:
@@ -3997,8 +4097,8 @@ entries:
                       Insured sum: ${param1} &euro;
                     de: ''
                     nl: |-
-                      # Premium return by survival
-                      Insured sum: ${param1} &euro;
+                      # Premierendement bij overleven
+                      Verzekerd bedrag: ${param1} &euro;
             death-any:
               active-info:
                 info:
@@ -4007,8 +4107,8 @@ entries:
                       Insured sum: ${param1} &euro;
                     de: ''
                     nl: |-
-                      # Death any cause
-                      Insured sum: ${param1} &euro;
+                      # Overlijden door welke oorzaak ook
+                      Verzekerd bedrag: ${param1} &euro;
             death-acc:
               active-info:
                 info:
@@ -4017,8 +4117,8 @@ entries:
                       Insured sum: ${param1} &euro;
                     de: ''
                     nl: |-
-                      # Accidental death
-                      Insured sum: ${param1} &euro;
+                      # Overlijden door ongeval
+                      Verzekerd bedrag: ${param1} &euro;
             critic-ill:
               active-info:
                 info:
@@ -4027,8 +4127,8 @@ entries:
                       Insured sum: ${param1} &euro;
                     de: ''
                     nl: |-
-                      # Critical illness
-                      Insured sum: ${param1} &euro;
+                      # Kritieke ziekte
+                      Verzekerd bedrag: ${param1} &euro;
       vehicle-objects:
         items:
           car:
@@ -4155,7 +4255,10 @@ entries:
             your vehicle, but also helps you financially in case of any
             unfortunate occurrence.
           de: null
-          nl: ''
+          nl: >-
+            Een allesomvattende polis die niet alleen een optimale bescherming biedt aan
+              uw voertuig, maar u ook financieel helpt in geval van een
+              onfortuinlijk voorval.
       motor-comprehensive:
         title:
           - en: Motor Comprehensive
@@ -4171,7 +4274,9 @@ entries:
             What if... something were to happen to you? A stroke of fate can
             change the life of your family drastically. Prepare now.
           de: null
-          nl: ''
+          nl: >-
+            Wat als... er iets met je zou gebeuren? Een speling van het lot kan
+            kan het leven van je familie drastisch veranderen. Bereid je nu voor.
       term-life:
         title:
           - en: Term Life
@@ -4203,7 +4308,10 @@ entries:
             everything in it if there's a disaster. A home insurance policy can
             protect your property, some of your personal possessions and you.
           de: null
-          nl: ''
+          nl: >-
+            De meeste mensen kunnen het zich gewoon niet veroorloven om hun huis te herbouwen en alles te vervangen
+            alles in huis te vervangen als er een ramp gebeurt. Een opstalverzekering kan
+            uw eigendom, sommige van uw persoonlijke bezittingen en uzelf beschermen.
       household:
         title:
           - en: Household Property
@@ -4220,7 +4328,10 @@ entries:
             can happen to anyone, at any point of time. Hence it is highly
             recommended to insure you and your family's health.
           de: null
-          nl: ''
+          nl: >-
+            De wereld waarin wij vandaag leven is vol onzekerheden. Alles
+            kan iedereen overkomen, op elk moment van de tijd. Daarom is het sterk
+            aan te raden om de gezondheid van u en uw familie te verzekeren.
       health:
         title:
           - en: Health insurance
