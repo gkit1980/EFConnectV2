@@ -3,3 +3,4 @@ definition:
   executable: true
   showInsights: false
   elementOnPageCheck: false
+  defaultGrowlDuration: 10000
