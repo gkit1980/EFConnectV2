@@ -1,0 +1,2098 @@
+<Configuration>
+    <Queries cacheDir="queryCache">
+        <CacheCleanup pollingInterval="60" cacheExpirationTime="600" />
+        <Query id="0008">
+            <Description>
+                Query for persons by birth date
+            </Description>
+
+            <FilterCriteria>
+                <FilterCriterion mandatory="true" searchField="from_date">From</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="to_date">To</FilterCriterion>
+            </FilterCriteria>
+            <SQL>
+                <![CDATA[
+                SELECT
+                    man_id AS ID,
+                    egn AS PID,
+                    man_comp AS ENTITY_TYPE,
+                    NAME,
+                    birth_date
+                FROM p_people
+                WHERE birth_date BETWEEN to_date(:from_date, 'YYYY-MM-DD') AND to_date(:to_date, 'YYYY-MM-DD')
+            ]]>
+            </SQL>
+        </Query>
+        <Query id="0001">
+            <Description>
+                Query retrievs [rn] first person records together with phones and emails by name or pid
+            </Description>
+            <FilterCriteria>
+                <FilterCriterion mandatory="false" searchField="name">name</FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="pid">pid</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="rn">rownum</FilterCriterion>
+            </FilterCriteria>
+            <SQL>
+                <![CDATA[
+            WITH a AS (
+                        SELECT pp.man_id AS ID,
+                               pp.egn AS PID,
+                               pp.man_comp AS ENTITY_TYPE,
+                               pp.name
+                          FROM p_people pp
+                         WHERE upper(pp.name) like upper(NVL(:name,pp.name))
+                           AND upper(pp.egn) like upper(NVL(:pid,pp.egn))
+                           AND ROWNUM < :rn + 1
+                        )
+                , b AS (
+                         SELECT DECODE(pc.contact_type,'EMAIL','email','phone') AS contact_type_grp
+                              , pc.man_id, pc.details,
+                                SUM(LENGTH(pc.details)+2) OVER(PARTITION BY pc.man_id
+                                                               ORDER BY DECODE(pc.contact_type,'EMAIL','email','phone')
+                                                               ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS sm
+                           FROM p_contacts pc, a
+                          WHERE pc.contact_type IN ('MOBILE','EMAIL','OFFICE','HOME')
+                            AND pc.details IS NOT NULL
+                            AND pc.man_id = a.id
+                        )
+                , c AS (
+                          SELECT LISTAGG(b.details, '; ')
+                                  WITHIN GROUP(ORDER BY b.contact_type_grp)
+                                  OVER (PARTITION BY b.man_id, b.contact_type_grp) contacts
+                               , b.man_id, b.contact_type_grp
+                            FROM b
+                           WHERE sm < 2000
+                        )
+                , d AS (
+                         SELECT decode(contact_type_grp,'email',contacts,'') AS email
+                              , decode(contact_type_grp,'phone',contacts,'') AS phone
+                              , man_id
+                           FROM c
+                        )
+                , e AS (
+                         SELECT MAX(email) AS email, MAX(phone) AS phone, man_id
+                           FROM d
+                          GROUP BY man_id
+                        )
+            SELECT a.*, e.phone, e.email
+              FROM a, e
+             WHERE a.id = e.man_id(+)
+            ]]>
+            </SQL>
+        </Query>
+        <Query id="0002">
+            <Description>
+                Query retrievs [rn] first person records together with phones and emails by phone or email
+            </Description>
+            <FilterCriteria>
+                <FilterCriterion mandatory="true" searchField="contact">contact</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="rn">rownum</FilterCriterion>
+            </FilterCriteria>
+            <SQL>
+                <![CDATA[
+            WITH a AS (
+                        SELECT pp.man_id AS ID,
+                               pp.egn AS PID,
+                               pp.man_comp AS ENTITY_TYPE,
+                               pp.name
+                          FROM p_people pp, p_contacts pc
+                         WHERE upper(pc.details) LIKE upper(:contact)
+                           AND pc.man_id = pp.man_id
+                           AND pc.details IS NOT NULL
+                       )
+                , b AS (
+                         SELECT DECODE(pc.contact_type,'EMAIL','email','phone') AS contact_type_grp
+                              , pc.man_id, pc.details,
+                                SUM(LENGTH(pc.details)+2) OVER(PARTITION BY pc.man_id
+                                                               ORDER BY DECODE(pc.contact_type,'EMAIL','email','phone')
+                                                               ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS sm
+                           FROM p_contacts pc, a
+                          WHERE pc.contact_type IN ('MOBILE','EMAIL','OFFICE','HOME')
+                            AND pc.details IS NOT NULL
+                            AND pc.man_id = a.id
+                        )
+                , c AS (
+                          SELECT LISTAGG(b.details, '; ')
+                                  WITHIN GROUP(ORDER BY b.contact_type_grp)
+                                  OVER (PARTITION BY b.man_id, b.contact_type_grp) contacts
+                               , b.man_id, b.contact_type_grp
+                            FROM b
+                           WHERE sm < 2000
+                        )
+                , d AS (
+                         SELECT decode(contact_type_grp,'email',contacts,'') AS email
+                              , decode(contact_type_grp,'phone',contacts,'') AS phone
+                              , man_id
+                           FROM c
+                        )
+                , e AS (
+                         SELECT MAX(email) AS email, MAX(phone) AS phone, man_id
+                           FROM d
+                          GROUP BY man_id
+                        )
+            SELECT a.id, a.pid, a.entity_type, a.name, e.phone, e.email
+              FROM a, e
+             WHERE a.id = e.man_id
+               AND ROWNUM < :rn + 1
+            ]]>
+            </SQL>
+        </Query>
+        <Query id="enhanced-tasks.find">
+            <Description>
+                Retrievs the tasks for the current user
+            </Description>
+            <FilterCriteria>
+                <FilterCriterion mandatory="true" searchField="privateGroupFlag">
+                    Flag for task ownership. Possible values: group, both, private, myteam.
+                </FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="groupList">
+                    List of groups to which the task is assigned. The privateGroupFlag should be group, both, or myteam.
+                </FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="status">
+                    Search by status if the task.
+                </FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="taskAttributeName">?</FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="taskAttributeValue">?</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="userName">
+                    Search by user name. The privateGroupFlag should be private.
+                </FilterCriterion>
+            </FilterCriteria>
+            <SQL>
+                <![CDATA[
+                SELECT
+                    nvl(activationtime,to_date('01-01-1900','dd-mm-yyyy')) as activationtime,
+                    actualowner_id,
+                    allowedtodelegate,
+                    nvl(archived,-1) as archived,
+                    createdby_id,
+                    nvl(createdon,to_date('01-01-1900','dd-mm-yyyy')) as createdon,
+                    deploymentid,
+                    description,
+                    nvl(documentaccesstype,-1) as documentaccesstype,
+                    documentcontentid,
+                    documenttype,
+                    nvl(expirationtime,to_date('01-01-1900','dd-mm-yyyy')) as expirationtime,
+                    nvl(faultaccesstype,-1) as faultaccesstype,
+                    faultcontentid,
+                    faultname,
+                    faulttype,
+                    formname,
+                    id,
+                    name,
+                    nvl(optlock,-1) as optlock,
+                    nvl(outputaccesstype,-1) as outputaccesstype,
+                    outputcontentid,
+                    outputtype,
+                    parentid,
+                    nvl(previousstatus,-1) as previousstatus,
+                    priority,
+                    processid,
+                    processinstanceid,
+                    processsessionid,
+                    skipable,
+                    status,
+                    subject,
+                    subtaskstrategy,
+                    taskinitiator_id,
+                    tasktype,
+                    workitemid
+                FROM task t
+                WHERE t.archived = 0
+                   AND ((INSTR( ',group,both,', :privateGroupFlag) > 0
+                         AND t.actualowner_id IS NULL
+                         AND EXISTS ( SELECT 1
+                                        FROM peopleassignments_potowners o
+                                       WHERE o.task_Id = t.id
+                                         AND instr( :groupList, ','||lower(o.entity_id)||',' ) > 0
+                                     )
+                         AND NOT EXISTS (
+                                          SELECT 1
+                                            FROM peopleassignments_exclowners e
+                                           WHERE e.task_Id = t.id
+                                             AND e.entity_Id = :userName
+                                         )
+                        )
+                        OR (INSTR( ',private,both,', :privateGroupFlag ) > 0
+                            AND t.actualowner_id = :userName)
+                        OR (INSTR( ',myteam,', :privateGroupFlag ) > 0
+                            AND EXISTS ( SELECT 1
+                                           FROM peopleassignments_bas a
+                                          WHERE a.task_Id = t.id
+                                            AND instr( :groupList, ','||lower(a.entity_id)||',' ) > 0
+                                      )))
+                   AND EXISTS ( SELECT 1
+                                  FROM cfg_task_statuses_mapping m
+                                 WHERE lower(m.bpm_task_status) = lower(t.status)
+                                   AND (( instr( :status, ','||lower(m.ui_task_status)||',' ) > 0
+                                          AND :status is not null) OR :status is null)
+                                )
+                   AND ((EXISTS (
+                                 SELECT 1
+                                   FROM task_attributes a
+                                  WHERE a.task_id = t.id
+                                    AND nvl(lower(:taskAttributeName), lower(a.task_attribute_name)) = lower(task_attribute_name)
+                                    AND (( instr( :taskAttributeValue, ','||lower(a.task_attribute_value)||',' ) > 0
+                                           AND :taskAttributeValue is not null) OR :taskAttributeValue is null)
+                               ) AND :taskAttributeName IS NOT NULL) OR :taskAttributeName IS NULL)
+            ]]>
+            </SQL>
+        </Query>
+        <Query id="search-people">
+            <Description>
+                Retrieves people data and related primary phone and email
+            </Description>
+            <FilterCriteria>
+                <FilterCriterion mandatory="false" searchField="conjunction">Conjunction</FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="validityDate">
+                    Validity date of people contact details
+                </FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="pid">Person Identifier</FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="name">Person Name</FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="phone">Phone</FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="email">e-mail</FilterCriterion>
+            </FilterCriteria>
+            <SQL>
+                <![CDATA[
+                SELECT p.man_id, p.man_comp, p.egn AS pid,
+                       p.name, p.gname, p.sname, p.fname, p.birth_date, p.sex, p.notes, p.nationality,
+                       p.comp_type, p.name_suffix, p.name_prefix, p.data_source, p.language, p.home_country, p.registration_date,
+                       p.industry_code, p.sub_industry_code, p.fiscal_period, p.class_code, p.class_sub_code, p.attr1, p.attr2, p.attr3,
+                       p.attr4, p.attr5, pp.details AS primary_phone, pe.details AS primary_email
+                  FROM people_contacts_view p,
+                       (SELECT DISTINCT man_id, FIRST_VALUE (details)
+                                                OVER (PARTITION BY man_id
+                                                ORDER BY CASE primary_flag
+                                                         WHEN 'Y' THEN 1
+                                                         ELSE 0 END DESC) AS details
+                          FROM p_contacts
+                         WHERE contact_type IN ('HOME', 'OFFICE', 'VOICE', 'MOBILE')) pp,
+                       (SELECT DISTINCT man_id, FIRST_VALUE (details)
+                                                OVER (PARTITION BY man_id
+                                                ORDER BY CASE primary_flag
+                                                         WHEN 'Y' THEN 1
+                                                         ELSE 0 END DESC) AS details
+                       FROM p_contacts
+                      WHERE contact_type = 'EMAIL') pe
+                WHERE pp.man_id (+) = p.man_id
+                   AND pe.man_id (+) = p.man_id
+                   AND (:validityDate IS NULL
+                        OR (:validityDate IS NOT NULL
+                            AND NVL(valid_to, TO_DATE(:validityDate, 'YYYY-MM-DD') + 1) > TO_DATE(:validityDate, 'YYYY-MM-DD')
+                            AND NVL(valid_from, TO_DATE(:validityDate, 'YYYY-MM-DD') - 1) < TO_DATE(:validityDate, 'YYYY-MM-DD')))
+                   AND ((NVL(:conjunction, 'OR') = 'OR'
+                            AND ( (:pid IS NOT NULL AND p.egn LIKE :pid)
+                             OR (:name IS NOT NULL AND p.name LIKE :name)
+                             OR (:phone IS NOT NULL AND contact_type IN ('HOME', 'OFFICE', 'VOICE', 'MOBILE')
+                                    AND REGEXP_REPLACE(p.details, '[/+ -]', '') LIKE REGEXP_REPLACE(:phone, '[/+ -]', ''))
+                             OR (:email IS NOT NULL AND contact_type = 'EMAIL' AND p.details LIKE :email)))
+                        OR (:conjunction = 'AND'
+                            AND ( (:pid IS NULL OR p.egn LIKE :pid)
+                             AND (:name IS NULL OR p.name LIKE :name)
+                             AND (:phone IS NULL OR (contact_type IN ('HOME', 'OFFICE', 'VOICE', 'MOBILE')
+                                    AND REGEXP_REPLACE(p.details, '[/+ -]', '') LIKE REGEXP_REPLACE(:phone, '[/+ -]', '')))
+                             AND (:email IS NULL OR (contact_type = 'EMAIL' AND p.details LIKE :email)))))
+                  GROUP BY p.man_id, p.man_comp, p.egn, p.name, p.gname, p.sname, p.fname, p.birth_date, p.sex, p.notes, p.nationality,
+                           p.comp_type, p.name_suffix, p.name_prefix, p.data_source, p.language, p.home_country, p.registration_date,
+                           p.industry_code, p.sub_industry_code, p.fiscal_period, p.class_code, p.class_sub_code, p.attr1, p.attr2, p.attr3,
+                           p.attr4, p.attr5, pp.details, pe.details
+            ]]>
+            </SQL>
+        </Query>
+        <Query id="claims-list-find">
+            <Description>
+                Query for searching in claims list
+            </Description>
+
+            <FilterCriteria>
+                <FilterCriterion mandatory="false" searchField="conjunction">Conjunction</FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="claimNo">Claim No</FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="fromDate"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="toDate"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="clmStatus"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="policyNo"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="polHolderName"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="polHolderPid"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="insrType"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="mainObjectType"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="name"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="regNo"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="chassis"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="make"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="model"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="postCode"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="streetName"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="notes"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="description"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="pid"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="email"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="phone"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="objectKind"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="objectSubType"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="objectType"></FilterCriterion>
+            </FilterCriteria>
+            <SQL>
+                <![CDATA[
+                  SELECT c.claim_id, c.claim_no, c.notif_date, c.loss_date, c.event_date, c.event_type, c.event_country,
+                       c.event_description, c.catastrophic_id, c.policy_operation, c.stage, c.status, c.status_aux, c.claim_comment,
+                       c.application_source, c.notif_source, c.attr1, c.attr2, c.attr3, c.attr4, c.attr5, c.attrn1, c.attrn2, c.attrn3,
+                       c.attrn4, c.attrd1, c.attrd2, c.attrd3, c.username, c.registration_date, event_name, catastrophic_name,
+                       c.status_name, c.status_aux_name, c.clm_status, c.participant_name, c.participant_role,
+                       CASE WHEN MAX(pol_c.cnt_dist_policy) > 1 THEN 'MULTIPLE' ELSE MAX(c.policy_no) END AS policy_no,
+                       CASE WHEN MAX(cp_cnt.cnt_dist_man_id) > 1 THEN 'MULTIPLE' ELSE MAX(cp_cnt.pol_holder_name) END AS policy_holder,
+                       CASE WHEN MAX(cio_cnt.cnt_dist_inj_obj) > 1 THEN 'MULTIPLE'
+                            WHEN MAX(cio_cnt.cnt_dist_inj_obj) = 1 THEN MAX(injured_object_name || ' - ' || injured_object_descr)
+                            ELSE NULL END AS injured_object
+                  FROM claims_list_view c,
+                       (SELECT c.claim_id, COUNT(DISTINCT cc.policy_id) AS cnt_dist_policy
+                          FROM claim c, claim_covers cc
+                         WHERE cc.claim_id (+) = c.claim_id
+                         GROUP BY c.claim_id) pol_c,
+                       (SELECT c.claim_id, COUNT(DISTINCT cp.man_id) AS cnt_dist_man_id,  MAX(NAME) AS pol_holder_name
+                          FROM claim c, claim_participants cp
+                         WHERE cp.claim_id (+) = c.claim_id
+                           AND cp.participant_role (+) = 'PHOLDER'
+                         GROUP BY c.claim_id) cp_cnt,
+                       (SELECT c.claim_id, COUNT(DISTINCT cio.object_type || cio.object_descr) cnt_dist_inj_obj
+                          FROM claim c, claim_injured_object cio
+                         WHERE cio.claim_id (+) = c.claim_id
+                         GROUP BY c.claim_id) cio_cnt
+                 WHERE pol_c.claim_id (+) = c.claim_id
+                   AND cp_cnt.claim_id (+) = c.claim_id
+                   AND cio_cnt.claim_id (+) = c.claim_id
+                   AND ( ( NVL( :conjunction, 'AND' ) = 'AND'
+                          --search by Claim number
+                          AND ( c.claim_no LIKE NVL(:claimNo, c.claim_no) )
+                          --search by From Date
+                          AND (TO_TIMESTAMP_TZ(:fromDate, 'YYYY-MM-DD"T"HH24:MI:SS.TZH:TZM') IS NULL
+                               OR (TO_TIMESTAMP_TZ(:fromDate, 'YYYY-MM-DD"T"HH24:MI:SS.TZH:TZM') IS NOT NULL
+                                   AND ((TO_TIMESTAMP_TZ(:fromDate, 'YYYY-MM-DD"T"HH24:MI:SS.TZH:TZM') <= notif_date)
+                                        OR (TO_TIMESTAMP_TZ(:fromDate, 'YYYY-MM-DD"T"HH24:MI:SS.TZH:TZM') <= event_date))))
+                          --search by To Date
+                          AND (:toDate IS NULL
+                               OR (:toDate IS NOT NULL
+                                   AND ((TO_TIMESTAMP_TZ(:toDate, 'YYYY-MM-DD"T"HH24:MI:SS.TZH:TZM') + 1 > notif_date)
+                                        OR (TO_TIMESTAMP_TZ(:toDate, 'YYYY-MM-DD"T"HH24:MI:SS.TZH:TZM') + 1 > event_date))))
+                          --search by Clm Status
+                          AND (:clmStatus IS NULL
+                               OR (:clmStatus IS NOT NULL
+                                   AND ((:clmStatus = 'FNOL' AND stage = :clmStatus)
+                                        OR (:clmStatus != 'FNOL' AND stage != 'FNOL' AND status = :clmStatus) ) ) )
+                          --search by policy no --Add policy no in the search!!!
+                          AND (:policyNo IS NULL
+                               OR (:policyNo IS NOT NULL AND policy_no LIKE :policyNo) )
+                          --search by Policy Holder Name
+                          AND (:polHolderName IS NULL
+                               OR (:polHolderName IS NOT NULL
+                                   AND participant_role = 'PHOLDER'
+                                   AND participant_name LIKE :polHolderName ) )
+                          --search by Policy Holder PID
+                          AND (:polHolderPid IS NULL
+                               OR (:polHolderPid IS NOT NULL
+                                   AND participant_role = 'PHOLDER'
+                                   AND pid_id LIKE :polHolderPid ) )
+                          --search by insr_type
+                          AND (:insrType IS NULL
+                               OR (:insrType IS NOT NULL AND insr_type = :insrType) )
+                          --search by Injured Main Object Type
+                          AND (:mainObjectType IS NULL
+                               OR (:mainObjectType IS NOT NULL AND main_object_type = :mainObjectType) )
+                          AND (:objectType IS NULL
+                               OR (:objectType IS NOT NULL AND injured_object_type = :objectType) )
+                          --search by injured person name
+                          AND (:name IS NULL
+                               OR (:name IS NOT NULL AND main_object_type = 1 AND injured_object_descr LIKE :name) )
+                          --search for object by Vehicle attributes: :regNo, :chassis
+                          AND ( ( :regNo IS NULL AND :chassis IS NULL AND :make IS NULL AND :model IS NULL )
+                               OR ( ( :regNo IS NOT NULL OR :chassis IS NOT NULL OR :make IS NOT NULL OR :model IS NOT NULL )
+                                    AND ( EXISTS (SELECT object_id
+                                                    FROM o_car
+                                                   WHERE object_id = c.injured_object_id
+                                                     AND (:regNo IS NULL OR ( :regNo IS NOT NULL AND reg_no LIKE :regNo ) )
+                                                     AND (:chassis IS NULL OR ( :chassis IS NOT NULL AND chassis LIKE :chassis ) )
+                                                     AND (:make IS NULL OR ( :make IS NOT NULL AND make LIKE :make ) )
+                                                     AND (:model IS NULL OR ( :model IS NOT NULL AND model LIKE :model ) ) ) ) ) )
+                          --search for object by Property attributes:
+                          AND ( ( :objectKind IS NULL AND :objectSubType IS NULL AND :postCode IS NULL AND :streetName IS NULL )
+                               OR ( ( :objectKind IS NOT NULL OR :objectSubType IS NOT NULL OR :postCode IS NOT NULL OR :streetName IS NOT NULL )
+                                    AND ( EXISTS (SELECT p.object_id
+                                                    FROM o_property p, o_property_address pa
+                                                   WHERE pa.address_id = p.address_id
+                                                     AND p.object_id = c.injured_object_id
+                                                     AND (:objectKind IS NULL OR ( :objectKind IS NOT NULL AND p.property_kind = :objectKind ) )
+                                                     AND (:objectSubType IS NULL OR ( :objectSubType IS NOT NULL AND p.property_type = :objectSubType ) )
+                                                     AND (:postCode IS NULL OR ( :postCode IS NOT NULL AND pa.post_code LIKE :postCode ) )
+                                                     AND (:streetName IS NULL OR ( :streetName IS NOT NULL AND pa.street_name LIKE :streetName ) ) ) ) ) )
+                          --search for object by Loss attributes: :description, :notes
+                          AND ( ( :description IS NULL AND :notes IS NULL )
+                               OR ( ( :description IS NOT NULL OR :notes IS NOT NULL )
+                                    AND ( EXISTS (SELECT object_id
+                                                    FROM o_loss
+                                                   WHERE object_id = c.injured_object_id
+                                                     AND (:description IS NULL OR ( :description IS NOT NULL AND description LIKE :description ) )
+                                                     AND (:notes IS NULL OR ( :notes IS NOT NULL AND notes LIKE :notes ) ) ) ) ) )
+                          --search for person by attributes :
+                          AND ( ( :pid IS NULL AND :email IS NULL AND :phone IS NULL )
+                               OR ( ( :pid IS NOT NULL OR :email IS NOT NULL OR :phone IS NOT NULL )
+                                    AND ( EXISTS (SELECT p.man_id
+                                                    FROM p_people p, p_contacts c
+                                                   WHERE c.man_id(+) = p.man_id
+                                                     AND p.man_id = c.injured_man_id
+                                                     AND (:pid IS NULL OR ( :pid IS NOT NULL AND p.egn LIKE :pid ) )
+                                                     AND (:email IS NULL OR ( :email IS NOT NULL AND c.contact_type = 'EMAIL' AND details LIKE :email ) )
+                                                     AND (:phone IS NULL OR ( :phone IS NOT NULL AND c.contact_type IN ('HOME', 'MOBILE') AND details LIKE :phone ) )
+                                                      ) ) ) )
+                         )
+                        OR
+                        (
+                         :conjunction = 'OR' AND
+                         (
+                          ( :claimNo IS NOT NULL AND c.claim_no LIKE :claimNo ) OR
+                          ( :fromDate IS NOT NULL AND ( (TO_TIMESTAMP_TZ(:fromDate, 'YYYY-MM-DD"T"HH24:MI:SS.TZH:TZM') <= notif_date ) OR ( TO_TIMESTAMP_TZ(:fromDate, 'YYYY-MM-DD"T"HH24:MI:SS.TZH:TZM') <= event_date ) ) ) OR
+                          ( :toDate IS NOT NULL AND ( (TO_TIMESTAMP_TZ(:toDate, 'YYYY-MM-DD"T"HH24:MI:SS.TZH:TZM') + 1 > notif_date) OR (TO_TIMESTAMP_TZ(:toDate, 'YYYY-MM-DD"T"HH24:MI:SS.TZH:TZM') + 1 > event_date ) ) ) OR
+                          ( :clmStatus IS NOT NULL AND ( ( :clmStatus = 'FNOL' AND stage = :clmStatus ) OR ( :clmStatus != 'FNOL' AND stage != 'FNOL' AND status = :clmStatus ) ) ) OR
+                          ( :policyNo IS NOT NULL AND policy_no LIKE :policyNo ) OR
+                          ( :polHolderName IS NOT NULL AND participant_role = 'PHOLDER' AND participant_name LIKE :polHolderName ) OR
+                          ( :polHolderPid IS NOT NULL AND participant_role = 'PHOLDER' AND pid_id LIKE :polHolderPid ) OR
+                          ( :insrType IS NOT NULL AND insr_type = :insrType ) OR
+                          ( :mainObjectType IS NOT NULL AND main_object_type = :mainObjectType ) OR
+                          ( :objectType IS NOT NULL AND injured_object_type = :objectType ) OR
+                          --search by injured person name
+                          ( :name IS NOT NULL AND main_object_type = 1 AND injured_object_descr LIKE :name ) OR
+                          --search for object by Vehicle attributes
+                          ( ( :regNo IS NOT NULL OR :chassis IS NOT NULL OR :make IS NOT NULL OR :model IS NOT NULL )
+                            AND EXISTS (SELECT object_id
+                                          FROM o_car
+                                         WHERE object_id = c.injured_object_id
+                                           AND ( (:regNo IS NOT NULL AND reg_no LIKE :regNo )
+                                                  OR ( :chassis IS NOT NULL AND chassis LIKE :chassis )
+                                                  OR ( :make IS NOT NULL AND make LIKE :make )
+                                                  OR ( :model IS NOT NULL AND model LIKE :model ) ) ) ) OR
+                          --search for object by Property attributes: :city, :streetName
+                          ( ( :objectKind IS NOT NULL OR :objectSubType IS NOT NULL OR :postCode IS NOT NULL OR :streetName IS NOT NULL )
+                            AND EXISTS (SELECT p.object_id
+                                          FROM o_property p, o_property_address pa
+                                         WHERE pa.address_id = p.address_id
+                                           AND p.object_id = c.injured_object_id
+                                           AND (    (:objectKind IS NOT NULL AND p.property_kind = :objectKind)
+                                                 OR (:objectSubType IS NOT NULL AND p.property_type = :objectSubType)
+                                                 OR ( :postCode IS NOT NULL AND pa.post_code LIKE :postCode )
+                                                 OR (:streetName IS NOT NULL AND street_name LIKE :streetName ) ) ) ) OR
+                          --search for object by Loss attributes:
+                          ( ( :description IS NOT NULL OR :notes IS NOT NULL )
+                            AND EXISTS (SELECT object_id
+                                          FROM o_loss
+                                         WHERE object_id = c.injured_object_id
+                                           AND ( (:description IS NOT NULL AND description LIKE :description )
+                                                  OR ( :notes IS NOT NULL AND notes LIKE :notes ) ) ) ) OR
+                          --search for person by attributes :
+                          ( ( :pid IS NOT NULL OR :email IS NOT NULL OR :phone IS NOT NULL )
+                            AND EXISTS (SELECT p.man_id
+                                          FROM p_people p, p_contacts c
+                                         WHERE c.man_id(+) = p.man_id
+                                           AND p.man_id = c.injured_man_id
+                                           AND ( (:pid IS NOT NULL AND p.egn LIKE :pid )
+                                                  OR ( :email IS NOT NULL AND c.contact_type = 'EMAIL' AND details LIKE :email )
+                                                  OR ( :phone IS NOT NULL AND c.contact_type IN ('HOME', 'MOBILE') AND details LIKE :phone )
+                                                  ) ) ) OR
+                          --show all rows when no criteria has been specified
+                          ( :claimNo IS NULL AND :fromDate IS NULL AND :toDate IS NULL AND :clmStatus IS NULL AND :policyNo IS NULL
+                            AND :polHolderName IS NULL AND :polHolderPid IS NULL AND :insrType IS NULL
+                            AND :mainObjectType IS NULL AND :regNo IS NULL AND :chassis IS NULL AND :make IS NULL AND :model IS NULL
+                            AND :objectType IS NULL AND :objectKind IS NULL AND :objectSubType IS NULL AND :postCode IS NULL AND :streetName IS NULL 
+                            AND :notes IS NULL AND :name IS NULL AND :pid IS NULL AND :email IS NULL AND :phone IS NULL )
+                         )
+                        )
+                       )
+                 GROUP BY c.claim_id, c.claim_no, c.notif_date, c.loss_date, c.event_date, c.event_type, c.event_country,
+                          c.event_description, c.catastrophic_id, c.policy_operation, c.stage, c.status, c.status_aux, c.claim_comment,
+                          c.application_source, c.notif_source, c.attr1, c.attr2, c.attr3, c.attr4, c.attr5, c.attrn1, c.attrn2, c.attrn3,
+                          c.attrn4, c.attrd1, c.attrd2, c.attrd3, c.username, c.registration_date, event_name, catastrophic_name,
+                          c.status_name, c.status_aux_name, c.clm_status, c.participant_name, c.participant_role
+                 ORDER BY c.registration_date DESC
+            ]]>
+            </SQL>
+        </Query>
+        <Query id="get-cars">
+            <Description>
+                Query for searching cars by criteria.
+            </Description>
+
+            <FilterCriteria>
+                <FilterCriterion mandatory="false" searchField="regNo"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="carType"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="carSubtype"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="model"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="make"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="modification"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="chassis"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="engine"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="ccmTon"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="tonage"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="carUsage"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="regType"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="engineType"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="fuelType"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="driveType"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="carbodyType"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="windowColor"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="seatsNum"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="doorNum"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="paintType"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="prodYear"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="carAge"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="prodType"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="carColour"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="enginePower"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="bonusMalus"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="modified"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="notes"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="vehicleKey"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="ocp1"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="ocp2"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="ocp3"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="ocp4"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="ocp5"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="ocp6"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="ocp7"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="ocp8"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="ocp9"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="ocp10"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="ocp11"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="ocp12"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="ocp13"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="ocp14"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="ocp15"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="ocp16"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="ocp17"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="ocp18"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="ocp19"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="ocp20"></FilterCriterion>
+            </FilterCriteria>
+            <SQL>
+                <![CDATA[
+                SELECT * FROM o_car
+                WHERE ( :regNo IS NULL OR ( :regNo IS NOT NULL AND reg_no LIKE :regNo  ) )
+                    AND ( :carType IS NULL OR ( :carType IS NOT NULL AND car_type LIKE :carType) )
+                    AND ( :carSubtype IS NULL OR ( :carSubtype IS NOT NULL AND car_type LIKE :carSubtype) )
+                    AND ( :model IS NULL OR ( :model IS NOT NULL AND model LIKE :model) )
+                    AND ( :make IS NULL OR ( :make IS NOT NULL AND make LIKE :make) )
+                    AND ( :modification IS NULL or ( :modification IS NOT NULL AND modification LIKE :modification) )
+                    AND ( :chassis IS NULL OR ( :chassis IS NOT NULL AND chassis LIKE :chassis) )
+                    AND ( :engine IS NULL OR ( :engine IS NOT NULL AND engine LIKE :engine) )
+                    AND ( :ccmTon IS NULL OR ( :ccmTon IS NOT NULL AND ccm_ton LIKE :ccmTon) )
+                    AND ( :tonage IS NULL OR ( :tonage IS NOT NULL AND tonage LIKE :tonage) )
+                    AND ( :carUsage IS NULL OR ( :carUsage IS NOT NULL AND car_usage LIKE :carUsage) )
+                    AND ( :regType IS NULL OR ( :regType IS NOT NULL AND reg_type LIKE :regType) )
+                    AND ( :engineType IS NULL OR ( :engineType IS NOT NULL AND engine_type LIKE :engineType) )
+                    AND ( :fuelType IS NULL OR ( :fuelType IS NOT NULL AND fuel_type LIKE :fuelType) )
+                    AND ( :driveType IS NULL OR ( :driveType IS NOT NULL AND drive_type LIKE :driveType) )
+                    AND ( :carbodyType IS NULL OR ( :carbodyType IS NOT NULL AND carbody_type LIKE :carbodyType) )
+                    AND ( :windowColor IS NULL OR ( :windowColor IS NOT NULL AND window_color LIKE :windowColor) )
+                    AND ( :seatsNum IS NULL OR ( :seatsNum IS NOT NULL AND seats_num LIKE :seatsNum) )
+                    AND ( :doorNum IS NULL OR ( :doorNum IS NOT NULL AND door_num LIKE :doorNum) )
+                    AND ( :paintType IS NULL OR ( :paintType IS NOT NULL AND paint_type LIKE :paintType) )
+                    AND ( :prodYear IS NULL OR ( :prodYear IS NOT NULL AND prod_year LIKE :prodYear) )
+                    AND ( :carAge IS NULL OR ( :carAge IS NOT NULL AND car_age LIKE :carAge) )
+                    AND ( :prodType IS NULL OR ( :prodType IS NOT NULL AND prod_type LIKE :prodType) )
+                    AND ( :carColour IS NULL OR ( :carColour IS NOT NULL AND car_colour LIKE :carColour) )
+                    AND ( :enginePower IS NULL OR ( :enginePower IS NOT NULL AND engine_power LIKE :enginePower) )
+                    AND ( :bonusMalus IS NULL OR ( :bonusMalus IS NOT NULL AND bonus_malus LIKE :bonusMalus) )
+                    AND ( :modified IS NULL OR ( :modified IS NOT NULL AND modified LIKE :modified) )
+                    AND ( :notes IS NULL OR ( :notes IS NOT NULL AND notes LIKE :notes) )
+                    AND ( :vehicleKey IS NULL OR ( :vehicleKey IS NOT NULL AND vehicle_key LIKE :vehicleKey) )
+                    --
+                    AND ( :ocp1 IS NULL OR ( :ocp1 IS NOT NULL AND ocp1 LIKE :ocp1) )
+                    AND ( :ocp2 IS NULL OR ( :ocp2 IS NOT NULL AND ocp2 LIKE :ocp2) )
+                    AND ( :ocp3 IS NULL OR ( :ocp3 IS NOT NULL AND ocp3 LIKE :ocp3) )
+                    AND ( :ocp4 IS NULL OR ( :ocp4 IS NOT NULL AND ocp4 LIKE :ocp4) )
+                    AND ( :ocp5 IS NULL OR ( :ocp5 IS NOT NULL AND ocp5 LIKE :ocp5) )
+                    AND ( :ocp6 IS NULL OR ( :ocp6 IS NOT NULL AND ocp6 LIKE :ocp6) )
+                    AND ( :ocp7 IS NULL OR ( :ocp7 IS NOT NULL AND ocp7 LIKE :ocp7) )
+                    AND ( :ocp8 IS NULL OR ( :ocp8 IS NOT NULL AND ocp8 LIKE :ocp8) )
+                    AND ( :ocp9 IS NULL OR ( :ocp9 IS NOT NULL AND ocp9 LIKE :ocp9) )
+                    AND ( :ocp10 IS NULL OR ( :ocp10 IS NOT NULL AND ocp10 LIKE :ocp10) )
+                    AND ( :ocp11 IS NULL OR ( :ocp11 IS NOT NULL AND ocp11 LIKE :ocp11) )
+                    AND ( :ocp12 IS NULL OR ( :ocp12 IS NOT NULL AND ocp12 LIKE :ocp12) )
+                    AND ( :ocp13 IS NULL OR ( :ocp13 IS NOT NULL AND ocp13 LIKE :ocp13) )
+                    AND ( :ocp14 IS NULL OR ( :ocp14 IS NOT NULL AND ocp14 LIKE :ocp14) )
+                    AND ( :ocp15 IS NULL OR ( :ocp15 IS NOT NULL AND ocp15 LIKE :ocp15) )
+                    AND ( :ocp16 IS NULL OR ( :ocp16 IS NOT NULL AND ocp16 LIKE :ocp16) )
+                    AND ( :ocp17 IS NULL OR ( :ocp17 IS NOT NULL AND ocp17 LIKE :ocp17) )
+                    AND ( :ocp18 IS NULL OR ( :ocp18 IS NOT NULL AND ocp18 LIKE :ocp18) )
+                    AND ( :ocp19 IS NULL OR ( :ocp19 IS NOT NULL AND ocp19 LIKE :ocp19) )
+                    AND ( :ocp20 IS NULL OR ( :ocp20 IS NOT NULL AND ocp20 LIKE :ocp20) )
+            ]]>
+            </SQL>
+        </Query>
+
+        <Query id="get-properties">
+            <Description>
+                Query for searching properties by criteria. Criteria can be any field from o_property and o_property_address table.
+            </Description>
+
+            <FilterCriteria>
+                <FilterCriterion mandatory="false" searchField="name"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="propertyKind"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="propertyType"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="riskLocationId"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="address"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="country"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="city"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="postCode"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="phone"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="countryCode"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="countryState"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="stateRegion"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="territoryClassification"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="cityCode"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="streetId"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="streetNumber"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="blockNumber"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="entranceNumber"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="floorNumber"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="apartmentNumber"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="quarterId"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="stateName"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="regionName"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="quarterName"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="streetName"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="floodFactor"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="zipEarthquake"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="earthquakeFactor"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="opp1"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="opp2"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="opp3"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="opp4"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="opp5"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="opp6"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="opp7"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="opp8"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="opp9"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="opp10"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="opp11"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="opp12"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="opp13"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="opp14"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="opp15"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="opp16"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="opp17"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="opp18"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="opp19"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="opp20"></FilterCriterion>
+            </FilterCriteria>
+            <SQL>
+                <![CDATA[
+                SELECT  p.*,
+                        pa.country,
+                        pa.city,
+                        pa.address,
+                        pa.post_code,
+                        pa.phone,
+                        pa.zip_earthquake,
+                        pa.earthquake_factor,
+                        pa.country_code,
+                        pa.country_state,
+                        pa.state_region,
+                        pa.territory_classification,
+                        pa.city_code,
+                        pa.street_id,
+                        pa.street_number,
+                        pa.block_number,
+                        pa.entrance_number,
+                        pa.floor_number,
+                        pa.apartment_number,
+                        pa.quarter_id,
+                        pa.state_name,
+                        pa.region_name,
+                        pa.quarter_name,
+                        pa.street_name,
+                        pa.flood_factor
+                FROM o_property p, o_property_address pa
+                WHERE p.address_id = pa.address_id
+                    AND ( :name IS NULL OR ( :name IS NOT NULL AND p.name LIKE :name) )
+                    AND ( :propertyKind IS NULL OR ( :propertyKind IS NOT NULL AND p.property_kind LIKE :propertyKind) )
+                    AND ( :propertyType IS NULL OR ( :propertyType IS NOT NULL AND p.property_type LIKE :propertyType) )
+                    AND ( :riskLocationId IS NULL OR ( :riskLocationId IS NOT NULL AND p.risk_location_id LIKE :riskLocationId) )
+                    AND ( :address IS NULL or ( :address IS NOT NULL AND pa.address LIKE :address) )
+                    AND ( :country IS NULL or ( :country IS NOT NULL AND pa.country LIKE :country) )
+                    AND ( :city IS NULL or ( :city IS NOT NULL AND pa.city LIKE :city) )
+                    AND ( :postCode IS NULL or ( :postCode IS NOT NULL AND pa.post_code LIKE :postCode) )
+                    AND ( :phone IS NULL or ( :phone IS NOT NULL AND pa.phone LIKE :phone) )
+                    AND ( :zipEarthquake IS NULL or ( :zipEarthquake IS NOT NULL AND pa.zip_earthquake LIKE :zipEarthquake) )
+                    AND ( :earthquakeFactor IS NULL or ( :earthquakeFactor IS NOT NULL AND pa.earthquake_factor LIKE :earthquakeFactor) )
+                    AND ( :countryCode IS NULL or ( :countryCode IS NOT NULL AND pa.country_code LIKE :countryCode) )
+                    AND ( :countryState IS NULL or ( :countryState IS NOT NULL AND pa.country_state LIKE :countryState) )
+                    AND ( :stateRegion IS NULL or ( :stateRegion IS NOT NULL AND pa.state_region LIKE :stateRegion) )
+                    AND ( :territoryClassification IS NULL or ( :territoryClassification IS NOT NULL AND pa.territory_classification LIKE :territoryClassification) )
+                    AND ( :cityCode IS NULL or ( :cityCode IS NOT NULL AND pa.city_code LIKE :cityCode) )
+                    AND ( :streetId IS NULL or ( :streetId IS NOT NULL AND pa.street_id LIKE :streetId) )
+                    AND ( :streetNumber IS NULL or ( :streetNumber IS NOT NULL AND pa.street_number LIKE :streetNumber) )
+                    AND ( :blockNumber IS NULL or ( :blockNumber IS NOT NULL AND pa.block_number LIKE :blockNumber) )
+                    AND ( :entranceNumber IS NULL or ( :entranceNumber IS NOT NULL AND pa.entrance_number LIKE :entranceNumber) )
+                    AND ( :floorNumber IS NULL or ( :floorNumber IS NOT NULL AND pa.floor_number LIKE :floorNumber) )
+                    AND ( :apartmentNumber IS NULL or ( :apartmentNumber IS NOT NULL AND pa.apartment_number LIKE :apartmentNumber) )
+                    AND ( :quarterId IS NULL or ( :quarterId IS NOT NULL AND pa.quarter_id LIKE :quarterId) )
+                    AND ( :stateName IS NULL or ( :stateName IS NOT NULL AND pa.state_name LIKE :stateName) )
+                    AND ( :regionName IS NULL or ( :regionName IS NOT NULL AND pa.region_name LIKE :regionName) )
+                    AND ( :quarterName IS NULL or ( :quarterName IS NOT NULL AND pa.quarter_name LIKE :quarterName) )
+                    AND ( :streetName IS NULL or ( :streetName IS NOT NULL AND pa.street_name LIKE :streetName) )
+                    AND ( :floodFactor IS NULL or ( :floodFactor IS NOT NULL AND pa.flood_factor LIKE :floodFactor) )
+                    AND ( :opp1 IS NULL OR ( :opp1 IS NOT NULL AND p.opp1 LIKE :opp1) )
+                    AND ( :opp2 IS NULL OR ( :opp2 IS NOT NULL AND p.opp2 LIKE :opp2) )
+                    AND ( :opp3 IS NULL OR ( :opp3 IS NOT NULL AND p.opp3 LIKE :opp3) )
+                    AND ( :opp4 IS NULL OR ( :opp4 IS NOT NULL AND p.opp4 LIKE :opp4) )
+                    AND ( :opp5 IS NULL OR ( :opp5 IS NOT NULL AND p.opp5 LIKE :opp5) )
+                    AND ( :opp6 IS NULL OR ( :opp6 IS NOT NULL AND p.opp6 LIKE :opp6) )
+                    AND ( :opp7 IS NULL OR ( :opp7 IS NOT NULL AND p.opp7 LIKE :opp7) )
+                    AND ( :opp8 IS NULL OR ( :opp8 IS NOT NULL AND p.opp8 LIKE :opp8) )
+                    AND ( :opp9 IS NULL OR ( :opp9 IS NOT NULL AND p.opp9 LIKE :opp9) )
+                    AND ( :opp10 IS NULL OR ( :opp10 IS NOT NULL AND p.opp10 LIKE :opp10) )
+                    AND ( :opp11 IS NULL OR ( :opp11 IS NOT NULL AND p.opp11 LIKE :opp11) )
+                    AND ( :opp12 IS NULL OR ( :opp12 IS NOT NULL AND p.opp12 LIKE :opp12) )
+                    AND ( :opp13 IS NULL OR ( :opp13 IS NOT NULL AND p.opp13 LIKE :opp13) )
+                    AND ( :opp14 IS NULL OR ( :opp14 IS NOT NULL AND p.opp14 LIKE :opp14) )
+                    AND ( :opp15 IS NULL OR ( :opp15 IS NOT NULL AND p.opp15 LIKE :opp15) )
+                    AND ( :opp16 IS NULL OR ( :opp16 IS NOT NULL AND p.opp16 LIKE :opp16) )
+                    AND ( :opp17 IS NULL OR ( :opp17 IS NOT NULL AND p.opp17 LIKE :opp17) )
+                    AND ( :opp18 IS NULL OR ( :opp18 IS NOT NULL AND p.opp18 LIKE :opp18) )
+                    AND ( :opp19 IS NULL OR ( :opp19 IS NOT NULL AND p.opp19 LIKE :opp19) )
+                    AND ( :opp20 IS NULL OR ( :opp20 IS NOT NULL AND p.opp20 LIKE :opp20) )
+            ]]>
+            </SQL>
+        </Query>
+        <Query id="get-losses">
+            <Description>
+                Query for searching loss by criteria. Criteria can be any field from o_loss table.
+            </Description>
+            <FilterCriteria>
+                <FilterCriterion mandatory="false" searchField="description"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="notes"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="olsp1"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="olsp2"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="olsp3"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="olsp4"></FilterCriterion>
+            </FilterCriteria>
+            <SQL>
+                <![CDATA[
+                SELECT * FROM o_loss
+                WHERE ( :description IS NULL OR ( :description IS NOT NULL AND description LIKE :description  ) )
+                    AND ( :notes IS NULL OR ( :notes IS NOT NULL AND notes LIKE :notes) )
+                    AND ( :olsp1 IS NULL OR ( :olsp1 IS NOT NULL AND o_lsp1 LIKE :olsp1) )
+                    AND ( :olsp2 IS NULL OR ( :olsp2 IS NOT NULL AND o_lsp2 LIKE :olsp2) )
+                    AND ( :olsp3 IS NULL OR ( :olsp3 IS NOT NULL AND o_lsp3 LIKE :olsp3) )
+                    AND ( :olsp4 IS NULL or ( :olsp4 IS NOT NULL AND o_lsp4 LIKE :olsp4) )
+            ]]>
+            </SQL>
+        </Query>
+        <Query id="get-insured-objects">
+            <Description>
+                Query for acquiring insured objects by criteria
+            </Description>
+            <FilterCriteria>
+                <FilterCriterion mandatory="false" searchField="policyNo"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="pid"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="regNo"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="eventDate"></FilterCriterion>
+            </FilterCriteria>
+            <SQL>
+                <![CDATA[
+            SELECT io.object_id,
+                   io.object_type,
+                   ion.object_name,
+                   pn.client_pid,
+                   oc.reg_no,
+                   p.policy_no,
+                   round(dbms_random.value(0,1)) as active -- TBD Viara to update this based on object validity for event date (should consider annexes too)
+              FROM insured_object io,
+                   insured_object_names ion,
+                   policy_participants pp,
+                   policy_names pn,
+                   policy p,
+                   o_car oc
+             WHERE io.insured_obj_id = ion.insured_obj_id(+)
+                   AND p.policy_state IN (0, 11,12,30)
+                   AND p.policy_id = io.policy_id
+                   AND pp.particpant_role = 'PHOLDER'
+                   AND pp.policy_id = io.policy_id
+                   AND pn.policy_id = io.policy_id
+                   AND io.object_id = oc.object_id (+)
+                   AND (:policyNo IS NULL OR ( :policyNo IS NOT NULL AND p.policy_no LIKE :policyNo))
+                   AND (:pid IS NULL OR ( :pid IS NOT NULL AND pn.client_pid = :pid))
+                   AND (:regNo IS NULL OR ( :regNo IS NOT NULL AND oc.reg_no LIKE :regNo))
+                   AND (:eventDate IS NULL OR(TO_TIMESTAMP_TZ(:eventDate, 'YYYY-MM-DD"T"HH24:MI:SS.TZH:TZM') BETWEEN io.insr_begin AND io.insr_end))
+                   AND io.object_type NOT IN (SELECT id FROM hs_object_type
+                                               WHERE grp_usage = 'RISKPROFIL')
+             GROUP BY io.object_id, io.object_type, ion.object_name, pn.client_pid, oc.reg_no, p.policy_no
+             ORDER BY policy_no
+            ]]>
+            </SQL>
+        </Query>
+        <Query id="get-people">
+            <Description>
+                Query for searching people by criteria.
+            </Description>
+
+            <FilterCriteria>
+                <FilterCriterion mandatory="false" searchField="egn"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="manComp"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="name"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="gname"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="sname"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="fname"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="birthDate"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="sex"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="notes"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="namePrefix"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="nameSuffix"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="nationality"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="homeCountry"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="language"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="classCode"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="classSubCode"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="compType"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="dataSource"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="fiscalPeriod"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="industryCode"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="subIndustryCode"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="registrationDate"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="attr1"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="attr2"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="attr3"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="attr4"></FilterCriterion>
+                <FilterCriterion mandatory="false" searchField="attr5"></FilterCriterion>
+            </FilterCriteria>
+            <SQL>
+                <![CDATA[
+                SELECT * FROM p_people
+                WHERE ( :egn IS NULL OR ( :egn IS NOT NULL AND egn LIKE :egn  ) )
+                    AND ( :manComp IS NULL OR ( :manComp IS NOT NULL AND man_comp = :manComp) )
+                    AND ( :name IS NULL OR ( :name IS NOT NULL AND name LIKE :name) )
+                    AND ( :gname IS NULL OR ( :gname IS NOT NULL AND gname LIKE :gname) )
+                    AND ( :sname IS NULL OR ( :sname IS NOT NULL AND sname LIKE :sname) )
+                    AND ( :fname IS NULL OR ( :fname IS NOT NULL AND fname LIKE :fname) )
+                    AND ( :birthDate IS NULL or ( :birthDate IS NOT NULL AND birth_date = TO_DATE(:birthDate, 'YYYY-MM-DD')) )
+                    AND ( :sex IS NULL OR ( :sex IS NOT NULL AND sex LIKE :sex) )
+                    AND ( :notes IS NULL OR ( :notes IS NOT NULL AND notes LIKE :notes) )
+                    AND ( :namePrefix IS NULL OR ( :namePrefix IS NOT NULL AND name_prefix LIKE :namePrefix) )
+                    AND ( :nameSuffix IS NULL OR ( :nameSuffix IS NOT NULL AND name_suffix LIKE :nameSuffix) )
+                    AND ( :nationality IS NULL OR ( :nationality IS NOT NULL AND nationality LIKE :nationality) )
+                    AND ( :homeCountry IS NULL OR ( :homeCountry IS NOT NULL AND home_country LIKE :homeCountry) )
+                    AND ( :language IS NULL OR ( :language IS NOT NULL AND language LIKE :language) )
+                    AND ( :classCode IS NULL OR ( :classCode IS NOT NULL AND class_code LIKE :classCode) )
+                    AND ( :classSubCode IS NULL OR ( :classSubCode IS NOT NULL AND class_sub_code LIKE :classSubCode) )
+                    AND ( :compType IS NULL OR ( :compType IS NOT NULL AND comp_type LIKE :compType) )
+                    AND ( :dataSource IS NULL OR ( :dataSource IS NOT NULL AND data_source LIKE :dataSource) )
+                    AND ( :fiscalPeriod IS NULL OR ( :fiscalPeriod IS NOT NULL AND fiscal_period LIKE :fiscalPeriod) )
+                    AND ( :industryCode IS NULL OR ( :industryCode IS NOT NULL AND industry_code LIKE :industryCode) )
+                    AND ( :subIndustryCode IS NULL OR ( :subIndustryCode IS NOT NULL AND sub_industry_code LIKE :subIndustryCode) )
+                    AND ( :registrationDate IS NULL OR ( :registrationDate IS NOT NULL
+                        AND registration_date BETWEEN TO_TIMESTAMP_TZ(:registrationDate, 'YYYY-MM-DD"T"HH24:MI:SS.TZH:TZM')
+                            AND TO_TIMESTAMP_TZ(:registrationDate, 'YYYY-MM-DD"T"HH24:MI:SS.TZH:TZM') + 1) )
+                    --
+                    AND ( :attr1 IS NULL OR ( :attr1 IS NOT NULL AND attr1 LIKE :attr1) )
+                    AND ( :attr2 IS NULL OR ( :attr2 IS NOT NULL AND attr2 LIKE :attr2) )
+                    AND ( :attr3 IS NULL OR ( :attr3 IS NOT NULL AND attr3 LIKE :attr3) )
+                    AND ( :attr4 IS NULL OR ( :attr4 IS NOT NULL AND attr4 LIKE :attr4) )
+                    AND ( :attr5 IS NULL OR ( :attr5 IS NOT NULL AND attr5 LIKE :attr5) )
+            ]]>
+            </SQL>
+        </Query>
+
+        <Query id="banks.get">
+            <Description>
+                Query for banks.get.sql
+            </Description>
+          
+            <FilterCriteria>
+            </FilterCriteria>
+
+            <SQL>
+                <![CDATA[
+
+                SELECT a.bank_id,
+                          a.man_id,
+                          (SELECT bank_code
+                            FROM p_banks WHERE main_bank_id IS NULL
+                          CONNECT BY PRIOR main_bank_id= bank_id
+                            START WITH bank_id=nvl(a.main_bank_id, a.bank_id)) AS bank_code,
+                          (select p_people.name
+                            FROM p_banks, p_people
+                          WHERE p_people.man_id= p_banks.man_id AND main_bank_id IS NULL
+                          CONNECT BY PRIOR main_bank_id= bank_id
+                            START WITH bank_id=nvl(a.main_bank_id, a.bank_id)) AS bank_name,
+                          decode(main_bank_id, NULL, NULL, bank_code ) AS branch_code,
+                          decode(main_bank_id, NULL, NULL, pp.name ) AS branch_name
+                  FROM p_banks a, p_people pp
+                  WHERE a.man_id = pp.man_id
+
+                ]]>
+            </SQL>
+        </Query>
+
+        <Query id="claims.agent.get">
+            <Description>
+                Query for claims.agent.get.sql
+            </Description>
+
+            <FilterCriteria>
+                <FilterCriterion mandatory="true" searchField="client_pid">client_pid</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="client_name">client_name</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="event_date_from">event_date_from</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="event_date_to">event_date_to</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="claim_date_from">claim_date_from</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="claim_date_to">claim_date_to</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="event_type">event_type</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="claim_status">claim_status</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="policy_no">policy_no</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="product_id">product_id</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="claim_no">claim_no</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="p_fulltext">p_fulltext</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="offset">offset</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="page_size">page_size</FilterCriterion>
+            </FilterCriteria>
+            <SQL>
+                <![CDATA[
+
+                    SELECT
+    JSON_OBJECT('policy_id' IS p.policy_id,
+    'policy_no' IS p.policy_no,
+    'insr_type' IS p.insr_type,
+    'insr_type_name' IS it.name,
+    'claim_id' IS c.claim_id,
+    'claim_no' IS c.claim_regid,
+    'registration_date' IS c.registration_date,
+    'event_date' IS c.event_date,
+    'event_type' IS c.event_type,
+    'event_place' IS c.event_place,
+    'event_country' IS c.event_country,
+    'event_type_name' IS e.name,
+    'client_id' IS pn.client_pid,
+    'client_type' IS peo.man_comp,
+    'client_name' IS peo.name,
+    'claim_state' IS cr.claim_state,
+    'claim_state_name' IS  cs.name,
+    'claim_state_aux' IS  cr.claim_state_aux,
+    'total' is ceil(count(*) over ()),
+    'claim_state_aux_name' IS csa.name ) as jsonRowItem
+FROM claim c
+INNER JOIN claim_request cr ON c.claim_id=cr.claim_id
+INNER JOIN p_clients cl ON c.client_id=cl.client_id
+INNER JOIN p_people peo ON cl.man_id=peo.man_id
+INNER JOIN policy_names pn ON pn.policy_id = c.policy_id
+INNER JOIN policy p ON c.policy_id=p.policy_id
+INNER JOIN h_insr_type it ON p.insr_type=it.id
+INNER JOIN h_event_list e ON c.event_type=e.id
+INNER JOIN hs_claim_state cs ON cr.claim_state=cs.id
+LEFT OUTER JOIN hs_claim_state_aux csa ON cr.claim_state_aux=csa.id
+WHERE pn.client_pid LIKE NVL(:client_pid, pn.client_pid)
+  AND peo.name LIKE NVL(:client_name, peo.name)
+  AND (:event_date_from IS NULL OR (c.event_date >= to_date(:event_date_from, 'yyyy-MM-dd')))
+  AND (:event_date_to IS NULL OR (c.event_date <= to_date(:event_date_to, 'yyyy-MM-dd')))
+  AND (:claim_date_from IS NULL OR (c.registration_date >= to_date(:claim_date_from, 'yyyy-MM-dd')))
+  AND (:claim_date_to IS NULL OR (c.registration_date <= to_date(:claim_date_to , 'yyyy-MM-dd')))
+  AND e.name LIKE NVL(:event_type, e.name)
+  AND cs.name LIKE NVL(:claim_status, cs.name)
+  AND p.policy_no LIKE NVL(:policy_no, p.policy_no)
+  AND p.insr_type LIKE NVL(:product_id, p.insr_type)
+  AND c.claim_regid LIKE NVL(:claim_no, c.claim_regid)
+  AND ((:p_fulltext IS NULL) OR (
+    p.policy_no LIKE :p_fulltext OR
+    p.insr_type LIKE :p_fulltext OR
+    c.claim_regid LIKE :p_fulltext OR
+    cs.name LIKE :p_fulltext OR
+    e.name LIKE :p_fulltext OR
+    peo.name LIKE :p_fulltext OR
+    pn.client_pid LIKE :p_fulltext))
+ORDER BY p.policy_id DESC
+OFFSET :offset ROWS
+FETCH first :page_size ROWS ONLY
+
+
+
+
+                ]]>
+            </SQL>
+        </Query>
+
+        <Query id="claims.client.get">
+            <Description>
+                Query for claims.client.get.sql
+            </Description>
+
+            <FilterCriteria>
+                <FilterCriterion mandatory="true" searchField="PID">PID</FilterCriterion>
+            </FilterCriteria>
+            <SQL>
+                <![CDATA[
+
+                    SELECT
+    p.policy_id,
+    p.policy_no,
+    p.insr_type,
+    it.name AS insr_type_name,
+    c.claim_id,
+    c.claim_regid AS claim_no,
+    c.registration_date,
+    c.event_date,
+    c.event_type,
+    c.event_place,
+    c.event_country,
+    e.name AS event_type_name,
+    cr.claim_state,
+    cs.name AS claim_state_name,
+    cr.claim_state_aux,
+    csa.name AS claim_state_aux_name
+FROM claim c
+INNER JOIN claim_request cr ON c.claim_id=cr.claim_id
+INNER JOIN p_clients cl ON c.client_id=cl.client_id
+INNER JOIN p_people peo ON cl.man_id=peo.man_id
+INNER JOIN policy p ON c.policy_id=p.policy_id
+INNER JOIN h_insr_type it ON p.insr_type=it.id
+INNER JOIN h_event_list e ON c.event_type=e.id
+INNER JOIN hs_claim_state cs ON cr.claim_state=cs.id
+LEFT OUTER JOIN hs_claim_state_aux csa ON cr.claim_state_aux=csa.id
+WHERE
+    peo.egn=:PID
+
+
+                ]]>
+            </SQL>
+        </Query>
+
+        <Query id="client.get">
+            <Description>
+                Query for client.get.sql
+            </Description>
+
+            <FilterCriteria>
+                <FilterCriterion mandatory="true" searchField="manid">manid</FilterCriterion>
+            </FilterCriteria>
+            <SQL>
+                <![CDATA[
+
+                    SELECT
+    p.GNAME,
+    p.FNAME,
+    p.BIRTH_DATE,
+    p.SEX,
+    p.egn as pid,
+    MAX(a.COUNTRY_CODE) as country_code,
+    MAX(a.ADDRESS) as ADDRESS,
+    MAX(c1.DETAILS) AS phone,
+    MAX(c2.DETAILS) AS email
+FROM p_people p
+LEFT JOIN p_address a ON a.man_id = p.man_id
+LEFT JOIN p_contacts c1 ON c1.man_id = p.man_id AND c1.contact_type = 'MOBILE' and c1.primary_flag = 'Y'
+LEFT JOIN p_contacts c2 ON c2.man_id = p.man_id AND c2.contact_type = 'EMAIL' and c2.primary_flag = 'Y'
+WHERE p.man_id = :manid
+GROUP BY p.GNAME,
+    p.FNAME,
+    p.BIRTH_DATE,
+    p.SEX,
+    p.egn
+FETCH first 1 ROWS ONLY
+
+
+                ]]>
+            </SQL>
+        </Query>
+
+        <Query id="industries.get">
+            <Description>
+                Query for industries.get.sql
+            </Description>
+
+            <FilterCriteria>
+                <FilterCriterion mandatory="true" searchField="man_comp">man_comp</FilterCriterion>
+            </FilterCriteria>
+            <SQL>
+                <![CDATA[
+
+                    SELECT code, name
+from HT_PEOPLE_OCCUP_CODE
+WHERE status = 'A' and man_comp = :man_comp
+
+
+                ]]>
+            </SQL>
+        </Query>
+
+        <Query id="policies.active.client.get-detailed">
+            <Description>
+                Query for policies.active.client.get-detailed.sql
+            </Description>
+
+            <FilterCriteria>
+                <FilterCriterion mandatory="true" searchField="policy_id">policy_id</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="policy_no">policy_no</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="policy_name">policy_name</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="insr_type">insr_type</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="p_insured_object">p_insured_object</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="policy_state">policy_state</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="p_client">p_client</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="p_insr_end">p_insr_end</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="offset">offset</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="page_size">page_size</FilterCriterion>
+            </FilterCriteria>
+            <SQL>
+                <![CDATA[
+
+                    SELECT JSON_OBJECT(
+              'total' is datacount,
+              'policy_state' is policy_state,
+              'policy_id' is policy_id,
+              'policy_no' is policy_no,
+              'policy_name' IS policy_name,
+              'insr_type' is insr_type,
+              'product_name' is product_name,
+              'package_code' IS package_code,
+              'is_expired' IS is_expired,
+              'policy_state_name' is policy_state_name,
+              'client_id' IS client_id,
+              'pid' is pid,
+              'man_id' IS man_id,
+              'client_name' is client_name,
+              'insr_begin' is insr_begin,
+              'insr_end' is insr_end,
+              'insr_duration' is insr_duration,
+              'insr_duration_unit' is insr_duration_unit,
+              'premium_amnt' IS premium_amnt,
+              'active_claims' is active_claims,
+              'engagement_id' is engagement_id,
+              'engagement_no' is engagement_no,
+              'engagement_name' is engagement_name,
+              'quote_id' is quote_id,
+              'quote_no' is quote_no,
+              'quote_status' is quote_status,
+              'quote_status_name' is quote_status_name,
+              'next_payment' is (
+                    SELECT JSON_OBJECT('amnt' is Sum(bpp.amount), 'due_date' is bpp.due_date, 'frequency' is hpm.name)
+                      FROM policy_engagement_billing pebi
+                      LEFT JOIN hst_payment_mode hpm
+                        ON pebi.payment_way = hpm.id
+                      LEFT JOIN blc_policy_payment_plan bpp
+                        ON pebi.policy_id = bpp.policy_id
+                     WHERE pebi.engagement_id = engagement_id_to_billing
+                       AND pebi.policy_id     = policy_id_for_object
+                       AND pebi.annex_id = NVL((SELECT MAX(gax.annex_id)
+                                                FROM gen_annex gax
+                                                WHERE gax.policy_id = policy_id_for_object
+                                                ) , 0 )
+                       AND bpp.amnt_type ='DUE'
+                       AND bpp.due_date = (SELECT MIN(pplan.due_date)
+                                             FROM blc_policy_payment_plan pplan
+                                            WHERE pplan.policy_id = policy_id_for_object
+                                              AND pplan.annex_id  = pebi.annex_id
+                                              AND pplan.amnt_type ='DUE')
+                       GROUP by bpp.due_date, hpm.name
+                       ),
+              'payment_completed' is payment_completed,
+              'insured_objects' is (
+                    SELECT JSON_ARRAYAGG( JSON_OBJECT('object_id' is io.object_id,
+                    'object_name' is object_name,
+                    'object_type' is CASE NVL(oac.dependent_on, 0) WHEN 0 THEN 'main_insr' ELSE 'additional_insr' END ))
+                      FROM insured_object io
+                          LEFT JOIN insured_object_names ion
+                            ON ion.insured_obj_id = io.insured_obj_id
+                          LEFT JOIN o_accinsured oac
+                            ON oac.object_id = io.object_id
+                        WHERE io.policy_id = policy_id_for_object) ) as jsonRowItem
+          FROM (
+        WITH od AS (SELECT sys_days.get_open_date AS open_date FROM dual)
+        SELECT pol.policy_state, pol.policy_id, pol.policy_id AS policy_id_for_object, pol.policy_no, pol.policy_name, pol.insr_type,
+              hit.name AS product_name,
+              ceil(count(*) over ()) as datacount,
+              (SELECT package_type
+                  FROM ( SELECT package_type, rank() over (ORDER BY PACKAGE_id desc) AS rnk
+                          FROM gen_packages GP
+                          WHERE policy_id = pol.policy_id
+                            AND annex_id = 0
+                            AND selected_package = 'Y' )
+                WHERE rnk = 1) AS package_code,
+              CASE WHEN od.open_date > pol.insr_end THEN 1 ELSE 0 END AS is_expired,
+              CASE WHEN pol.policy_state IN (-3, -2, -1) THEN 'Application'
+                            WHEN pol.policy_state = -4 THEN 'Quotation'
+                            WHEN pol.policy_state = -30 THEN 'Canceled'
+                            ELSE 'Policy' END AS policy_state_name, pn.client_id,
+              CASE WHEN pol.policy_state = 11 THEN 'True'
+                   ELSE 'False' END AS payment_completed,
+              pn.client_pid AS pid, pn.client_man_id AS man_id, pn.client_name, pol.insr_begin, pol.insr_end, pol.insr_duration, pol.dur_dimension as insr_duration_unit,
+              LTRIM(TO_CHAR( (SELECT SUM(risk_amnt)
+                              FROM prem_inst_wp
+                              WHERE policy_id = NVL(:policy_id, pol.policy_id) ), 9999990.99 )) AS premium_amnt,
+             ( SELECT NVL( SUM( DECODE( clm.claim_state, -1, 1, 1, 1, 0)), 0 )
+                 FROM ( SELECT c.claim_id, MIN(cr.claim_state) AS claim_state
+                          FROM insis_gen_v10.claim c
+                                    INNER JOIN insis_gen_v10.claim_request cr ON c.claim_id = cr.claim_id
+                         WHERE c.policy_id = pol.policy_id
+                         GROUP BY c.claim_id ) clm ) AS active_claims, pe.engagement_id, pe.engagement_id as engagement_id_to_billing,  pe.engagement_no, pe.engagement_name,
+              peq.quote_id, peq.quote_no, peq.status as quote_status, hsv.NAME AS quote_status_name, od.open_date
+          FROM policy pol
+        CROSS JOIN od
+          LEFT JOIN h_insr_type hit
+            ON hit.id = pol.insr_type
+          LEFT JOIN policy_names pn
+            ON pn.policy_id = pol.policy_id
+          LEFT JOIN policy_eng_policies pep
+            ON pep.policy_id = pol.policy_id
+          LEFT JOIN policy_engagement pe
+            ON pe.engagement_id = pep.engagement_id
+          LEFT JOIN policy_engagement_quote peq
+            ON peq.quote_id = pep.quote_id
+          LEFT JOIN hst_status_value hsv
+            ON hsv.id = peq.status
+        WHERE pol.policy_state <> -10
+          AND pol.policy_id LIKE NVL(:policy_id, pol.policy_id)
+            AND pol.policy_no LIKE NVL(:policy_no, pol.policy_no)
+            AND pol.policy_name LIKE NVL(:policy_name, pol.policy_name)
+            AND pol.insr_type = NVL(:insr_type, pol.insr_type)
+            AND ( ( :p_insured_object is not null
+                    AND EXISTS(SELECT io.policy_id
+                                 FROM insured_object io
+                                 LEFT JOIN insured_object_names ion
+                                   ON ion.insured_obj_id = io.insured_obj_id
+                                WHERE io.policy_id = NVL(:policy_id, pol.policy_id)
+                                  AND ion.object_name LIKE NVL(:p_insured_object, ion.object_name))
+                                  --
+                    AND pol.policy_id in (SELECT io.policy_id
+                                 FROM insured_object io
+                                 LEFT JOIN insured_object_names ion
+                                   ON ion.insured_obj_id = io.insured_obj_id
+                                WHERE io.policy_id = NVL(:policy_id, pol.policy_id)
+                                  AND ion.object_name LIKE NVL(:p_insured_object, ion.object_name))
+                    )
+                  OR
+                  ( :p_insured_object is null
+                    AND pol.policy_id = NVL(:policy_id, pol.policy_id)
+                    )
+                )
+            --
+            AND (:policy_state IS NULL
+                  OR :policy_state = CASE WHEN pol.policy_state = -4 THEN 'Quotation'
+                                          WHEN pol.policy_state IN (-3, -2, -1) THEN 'Application'
+                                          WHEN pol.policy_state IN (-30) THEN 'Canceled'
+                                          ELSE 'Policy' END)
+            AND (:p_client IS NULL OR pn.client_pid = :p_client OR pn.client_name LIKE :p_client)
+            AND (:p_insr_end IS NULL OR pol.insr_end < to_date( :p_insr_end, 'yyyy-MM-dd' ) + 1)
+          ORDER BY policy_id DESC
+          OFFSET :offset ROWS
+          FETCH first :page_size ROWS ONLY )
+
+
+                ]]>
+            </SQL>
+        </Query>
+
+        <Query id="policies.client.get-detailed">
+            <Description>
+                Query for policies.client.get-detailed.sql
+            </Description>
+
+            <FilterCriteria>
+                <FilterCriterion mandatory="true" searchField="policy_id">policy_id</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="policy_no">policy_no</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="policy_name">policy_name</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="insr_type">insr_type</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="p_insured_object">p_insured_object</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="policy_state">policy_state</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="p_client">p_client</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="p_insr_end">p_insr_end</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="offset">offset</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="page_size">page_size</FilterCriterion>
+            </FilterCriteria>
+            <SQL>
+                <![CDATA[
+
+                    SELECT JSON_OBJECT(
+              'policy_state' is policy_state,
+              'policy_id' is policy_id,
+              'policy_no' is policy_no,
+              'policy_name' IS policy_name,
+              'total' is datacount,
+              'insr_type' is insr_type,
+              'product_name' is product_name,
+              'package_code' IS package_code,
+              'is_expired' IS is_expired,
+              'policy_state_name' is policy_state_name,
+              'client_id' IS client_id,
+              'pid' is pid,
+              'man_id' IS man_id,
+              'client_name' is client_name,
+              'insr_begin' is insr_begin,
+              'insr_end' is insr_end,
+              'insr_duration' is insr_duration,
+              'insr_duration_unit' is insr_duration_unit,
+              'premium_amnt' IS premium_amnt,
+              'active_claims' is active_claims,
+              'engagement_id' is engagement_id,
+              'engagement_no' is engagement_no,
+              'engagement_name' is engagement_name,
+              'quote_id' is quote_id,
+              'quote_no' is quote_no,
+              'quote_status' is quote_status,
+              'quote_status_name' is quote_status_name,
+              'next_payment' is (
+                    SELECT JSON_OBJECT('amnt' is Sum(bpp.amount), 'due_date' is bpp.due_date, 'frequency' is hpm.name)
+                      FROM policy_engagement_billing pebi
+                      LEFT JOIN hst_payment_mode hpm
+                        ON pebi.payment_way = hpm.id
+                      LEFT JOIN blc_policy_payment_plan bpp
+                        ON pebi.policy_id = bpp.policy_id
+                     WHERE pebi.engagement_id = engagement_id_to_billing
+                       AND pebi.policy_id     = policy_id_for_object
+                       AND pebi.annex_id = NVL((SELECT MAX(gax.annex_id)
+                                                FROM gen_annex gax
+                                                WHERE gax.policy_id = policy_id_for_object
+                                                ) , 0 )
+                       AND bpp.amnt_type ='DUE'
+                       AND bpp.due_date = (SELECT MIN(pplan.due_date)
+                                             FROM blc_policy_payment_plan pplan
+                                            WHERE pplan.policy_id = policy_id_for_object
+                                              AND pplan.annex_id  = pebi.annex_id
+                                              AND pplan.amnt_type ='DUE')
+                       GROUP by bpp.due_date, hpm.name
+                       ),
+              'payment_completed' is payment_completed,
+              'insured_objects' is (
+                    SELECT JSON_ARRAYAGG( JSON_OBJECT('object_id' is io.object_id, 'object_name' is object_name
+                                                     ,'object_type' is CASE NVL(oac.dependent_on, 0) WHEN 0 THEN 'main_insr' ELSE 'additional_insr' END ) )
+                      FROM insured_object io
+                          LEFT JOIN insured_object_names ion
+                            ON ion.insured_obj_id = io.insured_obj_id
+                          LEFT JOIN o_accinsured oac
+                            ON oac.object_id = io.object_id
+                        WHERE io.policy_id = policy_id_for_object) ) as jsonRowItem
+          FROM (
+        WITH od AS (SELECT sys_days.get_open_date AS open_date FROM dual)
+        SELECT pol.policy_state, pol.policy_id, pol.policy_id AS policy_id_for_object, pol.policy_no, pol.policy_name, pol.insr_type,
+              hit.name AS product_name,
+              ceil(count(*) over ()) as datacount,
+              (SELECT package_type
+                  FROM ( SELECT package_type, rank() over (ORDER BY PACKAGE_id desc) AS rnk
+                          FROM gen_packages GP
+                          WHERE policy_id = pol.policy_id
+                            AND annex_id = 0
+                            AND selected_package = 'Y' )
+                WHERE rnk = 1) AS package_code, CASE WHEN od.open_date > pol.insr_end THEN 1 ELSE 0 END AS is_expired,
+              CASE WHEN pol.policy_state IN (-3, -2, -1) THEN 'Application'
+                            WHEN pol.policy_state = -4 THEN 'Quotation'
+                            WHEN pol.policy_state = -30 THEN 'Canceled'
+                            ELSE 'Policy' END AS policy_state_name, pn.client_id,
+              CASE WHEN pol.policy_state = 11 THEN 'True'
+                   ELSE 'False' END AS payment_completed,
+              pn.client_pid AS pid, pn.client_man_id AS man_id, pn.client_name, pol.insr_begin, pol.insr_end, pol.insr_duration, pol.dur_dimension as insr_duration_unit,
+              LTRIM(TO_CHAR( (SELECT SUM(risk_amnt)
+                              FROM prem_inst_wp
+                              WHERE policy_id = NVL(:policy_id, pol.policy_id) ), 9999990.99 )) AS premium_amnt,
+             ( SELECT NVL( SUM( DECODE( clm.claim_state, -1, 1, 1, 1, 0)), 0 )
+                 FROM ( SELECT c.claim_id, MIN(cr.claim_state) AS claim_state
+                          FROM insis_gen_v10.claim c
+                                    INNER JOIN insis_gen_v10.claim_request cr ON c.claim_id = cr.claim_id
+                         WHERE c.policy_id = pol.policy_id
+                         GROUP BY c.claim_id ) clm ) AS active_claims, pe.engagement_id, pe.engagement_id as engagement_id_to_billing,  pe.engagement_no, pe.engagement_name,
+              peq.quote_id, peq.quote_no, peq.status as quote_status, hsv.NAME AS quote_status_name, od.open_date
+          FROM policy pol
+        CROSS JOIN od
+          LEFT JOIN h_insr_type hit
+            ON hit.id = pol.insr_type
+          LEFT JOIN policy_names pn
+            ON pn.policy_id = pol.policy_id
+          LEFT JOIN policy_eng_policies pep
+            ON pep.policy_id = pol.policy_id
+          LEFT JOIN policy_engagement pe
+            ON pe.engagement_id = pep.engagement_id
+          LEFT JOIN policy_engagement_quote peq
+            ON peq.quote_id = pep.quote_id
+          LEFT JOIN hst_status_value hsv
+            ON hsv.id = peq.status
+        WHERE pol.policy_state <> -10
+          AND pol.policy_state < 0
+          AND pol.policy_id LIKE NVL(:policy_id, pol.policy_id)
+            AND pol.policy_no LIKE NVL(:policy_no, pol.policy_no)
+            AND pol.policy_name LIKE NVL(:policy_name, pol.policy_name)
+            AND pol.insr_type = NVL(:insr_type, pol.insr_type)
+            AND ( ( :p_insured_object is not null
+                    AND EXISTS(SELECT io.policy_id
+                                 FROM insured_object io
+                                 LEFT JOIN insured_object_names ion
+                                   ON ion.insured_obj_id = io.insured_obj_id
+                                WHERE io.policy_id = NVL(:policy_id, pol.policy_id)
+                                  AND ion.object_name LIKE NVL(:p_insured_object, ion.object_name))
+                                  --
+                    AND pol.policy_id in (SELECT io.policy_id
+                                 FROM insured_object io
+                                 LEFT JOIN insured_object_names ion
+                                   ON ion.insured_obj_id = io.insured_obj_id
+                                WHERE io.policy_id = NVL(:policy_id, pol.policy_id)
+                                  AND ion.object_name LIKE NVL(:p_insured_object, ion.object_name))
+                    )
+                  OR
+                  ( :p_insured_object is null
+                    AND pol.policy_id = NVL(:policy_id, pol.policy_id)
+                    )
+                )
+            --
+            AND (:policy_state IS NULL
+                  OR :policy_state = CASE WHEN pol.policy_state = -4 THEN 'Quotation'
+                                          WHEN pol.policy_state IN (-3, -2, -1) THEN 'Application'
+                                          WHEN pol.policy_state IN (-30) THEN 'Canceled'
+                                          ELSE 'Policy' END)
+            AND (:p_client IS NULL OR pn.client_pid = :p_client OR pn.client_name LIKE :p_client)
+            AND (:p_insr_end IS NULL OR pol.insr_end < to_date( :p_insr_end, 'yyyy-MM-dd' ) + 1)
+          ORDER BY policy_id DESC
+          OFFSET :offset ROWS
+          FETCH first :page_size ROWS ONLY)
+
+
+                ]]>
+            </SQL>
+        </Query>
+
+        <Query id="policies.client.get">
+            <Description>
+                Query for policies.client.get.sql
+            </Description>
+
+            <FilterCriteria>
+                <FilterCriterion mandatory="true" searchField="pid">pid</FilterCriterion>
+            </FilterCriteria>
+            <SQL>
+                <![CDATA[
+
+                    SELECT insr_type,
+       product_name,
+       policy_id,
+       policy_no,
+       policy_state,
+       policy_state_name,
+       insr_begin,
+       insr_end,
+       premium,
+       currency,
+       engagement_id,
+       engagement_no,
+       engagement_name,
+       quote_id,
+       quote_no,
+       quote_status,
+       quote_status_name,
+       rejection_reason_id,
+       rejection_reason_name
+  FROM (WITH pol_info
+             AS (SELECT p.*, pn.client_pid
+                   FROM policy p, policy_names pn
+                  WHERE pn.policy_id = p.policy_id
+                    AND sys_days.get_open_date between p.insr_begin AND p.insr_end
+                    AND pn.client_pid = :pid),
+             eng_info
+             AS (SELECT pe.engagement_id,
+                        pe.engagement_no,
+                        pe.engagement_name,
+                        peq.quote_id,
+                        peq.quote_no,
+                        peq.status,
+                        pep.policy_id,
+                        peq.rejection_reason,
+                        hrr.name,
+                        hsv.name AS quote_status_name
+                   FROM policy_eng_policies pep,
+                        policy_engagement_quote peq,
+                        policy_engagement pe,
+                        h_reject_reason hrr,
+                        hst_status_value hsv,
+                        pol_info pi
+                  WHERE pep.quote_id = peq.quote_id
+                        AND pe.engagement_id = pep.engagement_id
+                        AND pep.policy_id = pi.policy_id
+                        AND peq.rejection_reason = hrr.id(+)
+                        AND peq.status = hsv.id(+)),
+             grc
+             AS (SELECT a.policy_id,
+                        SUM (
+                              full_premium
+                            * DECODE (
+                                  a.currency,
+                                  io.iv_currency, 1,
+                                  currency.cross_rate (
+                                      a.currency,
+                                      io.iv_currency,
+                                      NVL (ga.date_given, p.date_given))))
+                            AS grc_premium,
+                        SUM (
+                              add_premium
+                            * DECODE (
+                                  a.currency,
+                                  io.iv_currency, 1,
+                                  currency.cross_rate (
+                                      a.currency,
+                                      io.iv_currency,
+                                      NVL (ga.date_given, p.date_given))))
+                            AS add_premium
+                   FROM gen_risk_covered a,
+                        gen_annex ga,
+                        insured_object io,
+                        pol_info p
+                  WHERE a.policy_id = ga.policy_id(+)
+                        AND a.annex_id = ga.annex_id(+)
+                        AND a.insured_obj_id = io.insured_obj_id
+                        AND p.policy_id = a.policy_id
+                 GROUP BY a.policy_id),
+             wp
+             AS (SELECT a.policy_id,
+                        SUM (
+                              risk_amnt
+                            * DECODE (
+                                  a.currency,
+                                  io.iv_currency, 1,
+                                  currency.cross_rate (
+                                      a.currency,
+                                      io.iv_currency,
+                                      NVL (ga.date_given, p.date_given))))
+                            AS wp_premium
+                   FROM prem_inst_wp a,
+                        gen_annex ga,
+                        insured_object io,
+                        pol_info p
+                  WHERE a.policy_id = ga.policy_id(+)
+                        AND a.annex_id = ga.annex_id(+)
+                        AND a.insured_obj_id = io.insured_obj_id
+                        AND p.policy_id = a.policy_id
+                        AND fraction_type NOT IN (SELECT tax_type
+                                                    FROM gen_premium_taxes
+                                                   WHERE     policy_id =
+                                                                 a.policy_id
+                                                         AND included = 'NO')
+                 GROUP BY a.policy_id),
+             prem_tab
+             AS (SELECT grc.policy_id,
+                        CASE
+                            WHEN NVL (grc.add_premium, 0) = 0
+                            THEN
+                                GREATEST (
+                                    NVL (wp.wp_premium, grc.grc_premium),
+                                    0)
+                            ELSE
+                                GREATEST (grc.grc_premium, 0)
+                        END
+                            AS prm
+                   FROM grc, wp
+                  WHERE grc.policy_id = wp.policy_id)
+        SELECT pi.client_pid AS pid,
+               p.client_id,
+               p.insr_type,
+               hit.name AS product_name,
+               p.policy_id,
+               p.policy_no,
+               p.policy_state,
+               hps.name AS policy_state_name,
+               p.insr_begin,
+               p.insr_end,
+               NVL (prem_tab.prm, 0) AS premium,
+               pol_values.get_policy_currency (p.policy_id) AS currency,
+               eng_info.engagement_id,
+               eng_info.engagement_no,
+               eng_info.engagement_name,
+               eng_info.quote_id,
+               eng_info.quote_no,
+               eng_info.status AS quote_status,
+               eng_info.quote_status_name,
+               eng_info.rejection_reason AS rejection_reason_id,
+               eng_info.name AS rejection_reason_name
+          FROM policy p,
+               h_insr_type hit,
+               pol_info pi,
+               hs_policy_state hps,
+               prem_tab,
+               eng_info
+         WHERE p.policy_state IN (0, 11, 12)
+               AND hit.id = p.insr_type
+               AND pi.policy_id = p.policy_id
+               AND sys_days.get_open_date BETWEEN pi.insr_begin AND pi.insr_end
+               AND p.policy_id = prem_tab.policy_id(+)
+               AND p.policy_state = hps.id(+)
+               AND p.policy_id = eng_info.policy_id(+)
+        ORDER BY p.policy_id DESC)
+
+
+                ]]>
+            </SQL>
+        </Query>
+
+        <Query id="policies.expired.client.get-detailed">
+            <Description>
+                Query for policies.expired.client.get-detailed.sql
+            </Description>
+
+            <FilterCriteria>
+                <FilterCriterion mandatory="true" searchField="policy_id">policy_id</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="policy_no">policy_no</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="policy_name">policy_name</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="insr_type">insr_type</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="policy_state">policy_state</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="p_client">p_client</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="p_insr_end">p_insr_end</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="offset">offset</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="page_size">page_size</FilterCriterion>
+            </FilterCriteria>
+            <SQL>
+                <![CDATA[
+
+                    SELECT JSON_OBJECT(
+              'total' is datacount,
+              'policy_state' is policy_state,
+              'policy_id' is policy_id,
+              'policy_no' is policy_no,
+              'policy_name' IS policy_name,
+              'insr_type' is insr_type,
+              'product_name' is product_name,
+              'package_code' IS package_code,
+              'is_expired' IS is_expired,
+              'policy_state_name' is policy_state_name,
+              'client_id' IS client_id,
+              'pid' is pid,
+              'man_id' IS man_id,
+              'client_name' is client_name,
+              'insr_begin' is insr_begin,
+              'insr_end' is insr_end,
+              'insr_duration' is insr_duration,
+              'insr_duration_unit' is insr_duration_unit,
+              'premium_amnt' IS premium_amnt,
+              'active_claims' is active_claims,
+              'engagement_id' is engagement_id,
+              'engagement_no' is engagement_no,
+              'engagement_name' is engagement_name,
+              'quote_id' is quote_id,
+              'quote_no' is quote_no,
+              'quote_status' is quote_status,
+              'quote_status_name' is quote_status_name,
+              'next_payment' is (
+                    SELECT JSON_OBJECT('amnt' is Sum(bpp.amount), 'due_date' is bpp.due_date, 'frequency' is hpm.name)
+                      FROM policy_engagement_billing pebi
+                      LEFT JOIN hst_payment_mode hpm
+                        ON pebi.payment_way = hpm.id
+                      LEFT JOIN blc_policy_payment_plan bpp
+                        ON pebi.policy_id = bpp.policy_id
+                     WHERE pebi.engagement_id = engagement_id_to_billing
+                       AND pebi.policy_id     = policy_id_for_object
+                       AND pebi.annex_id = NVL((SELECT MAX(gax.annex_id)
+                                                FROM gen_annex gax
+                                                WHERE gax.policy_id = policy_id_for_object
+                                                ) , 0 )
+                       AND bpp.amnt_type ='DUE'
+                       AND bpp.due_date = (SELECT MIN(pplan.due_date)
+                                             FROM blc_policy_payment_plan pplan
+                                            WHERE pplan.policy_id = policy_id_for_object
+                                              AND pplan.annex_id  = pebi.annex_id
+                                              AND pplan.amnt_type ='DUE')
+                       GROUP by bpp.due_date, hpm.name
+                       ),
+              'payment_completed' is payment_completed,
+              'insured_objects' is (
+                    SELECT JSON_ARRAYAGG( JSON_OBJECT('object_id' is io.object_id, 'object_name' is object_name) )
+                      FROM insured_object io
+                          LEFT JOIN insured_object_names ion
+                            ON ion.insured_obj_id = io.insured_obj_id
+                        WHERE io.policy_id = policy_id_for_object
+                          AND open_date >= io.insr_begin
+                          AND open_date <= io.insr_end ) ) as jsonRowItem
+          FROM (
+        WITH od AS (SELECT sys_days.get_open_date AS open_date FROM dual)
+        SELECT pol.policy_state, pol.policy_id, pol.policy_id AS policy_id_for_object, pol.policy_no, pol.policy_name, pol.insr_type,
+              hit.name AS product_name,
+              ceil(count(*) over ()) as datacount,
+              (SELECT package_type
+                  FROM ( SELECT package_type, rank() over (ORDER BY PACKAGE_id desc) AS rnk
+                          FROM gen_packages GP
+                          WHERE policy_id = pol.policy_id
+                            AND annex_id = 0
+                            AND selected_package = 'Y' )
+                WHERE rnk = 1) AS package_code, CASE WHEN od.open_date > pol.insr_end THEN 1 ELSE 0 END AS is_expired,
+              CASE WHEN pol.policy_state IN (-3, -2, -1) THEN 'Application'
+                            WHEN pol.policy_state = -4 THEN 'Quotation'
+                            WHEN pol.policy_state = -30 THEN 'Canceled'
+                            ELSE 'Policy' END AS policy_state_name, pn.client_id,
+              CASE WHEN pol.policy_state = 11 THEN 'True'
+                   ELSE 'False' END AS payment_completed,
+              pn.client_pid AS pid, pn.client_man_id AS man_id, pn.client_name, pol.insr_begin, pol.insr_end, pol.insr_duration, pol.dur_dimension as insr_duration_unit,
+              LTRIM(TO_CHAR( (SELECT SUM(risk_amnt)
+                              FROM prem_inst_wp
+                              WHERE policy_id = pol.policy_id ), 9999990.99 )) AS premium_amnt,
+             ( SELECT NVL( SUM( DECODE( clm.claim_state, -1, 1, 1, 1, 0)), 0 )
+                 FROM ( SELECT c.claim_id, MIN(cr.claim_state) AS claim_state
+                          FROM insis_gen_v10.claim c
+                                    INNER JOIN insis_gen_v10.claim_request cr ON c.claim_id = cr.claim_id
+                         WHERE c.policy_id = pol.policy_id
+                         GROUP BY c.claim_id ) clm ) AS active_claims, pe.engagement_id, pe.engagement_id as engagement_id_to_billing,  pe.engagement_no, pe.engagement_name,
+              peq.quote_id, peq.quote_no, peq.status as quote_status, hsv.NAME AS quote_status_name, od.open_date
+          FROM policy pol
+        CROSS JOIN od
+          LEFT JOIN h_insr_type hit
+            ON hit.id = pol.insr_type
+          LEFT JOIN policy_names pn
+            ON pn.policy_id = pol.policy_id
+          LEFT JOIN policy_eng_policies pep
+            ON pep.policy_id = pol.policy_id
+          LEFT JOIN policy_engagement pe
+            ON pe.engagement_id = pep.engagement_id
+          LEFT JOIN policy_engagement_quote peq
+            ON peq.quote_id = pep.quote_id
+          LEFT JOIN hst_status_value hsv
+            ON hsv.id = peq.status
+        WHERE pol.policy_state <> -10
+          AND pol.policy_id LIKE NVL(:policy_id, pol.policy_id)
+            AND pol.policy_no LIKE NVL(:policy_no, pol.policy_no)
+            AND pol.policy_name LIKE NVL(:policy_name, pol.policy_name)
+            AND pol.insr_type = NVL(:insr_type, pol.insr_type)
+            AND od.open_date > pol.insr_end
+            AND (:policy_state IS NULL
+                  OR :policy_state = CASE WHEN pol.policy_state = -4 THEN 'Quotation'
+                                          WHEN pol.policy_state IN (-3, -2, -1) THEN 'Application'
+                                          WHEN pol.policy_state IN (-30) THEN 'Canceled'
+                                          ELSE 'Policy' END)
+            AND (:p_client IS NULL OR pn.client_pid = :p_client OR pn.client_name LIKE :p_client)
+            AND (:p_insr_end IS NULL OR pol.insr_end < to_date( :p_insr_end, 'yyyy-MM-dd' ) + 1)
+          ORDER BY policy_id DESC
+          OFFSET :offset ROWS
+          FETCH first :page_size ROWS ONLY )
+
+
+                ]]>
+            </SQL>
+        </Query>
+
+        <Query id="policies.get">
+            <Description>
+                Query for policies.get.sql
+            </Description>
+
+            <FilterCriteria>
+                <FilterCriterion mandatory="true" searchField="policy_id">policy_id</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="policy_no">policy_no</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="policy_name">policy_name</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="p_client_pid">p_client_pid</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="p_client_name">p_client_name</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="insr_type">insr_type</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="p_insured_object">p_insured_object</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="policy_state">policy_state</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="p_fulltext">p_fulltext</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="p_insr_end">p_insr_end</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="offset">offset</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="page_size">page_size</FilterCriterion>
+            </FilterCriteria>
+            <SQL>
+                <![CDATA[
+
+                    SELECT JSON_OBJECT(
+              'policy_state' is policy_state,
+              'policy_id' is policy_id,
+              'policy_no' is policy_no,
+              'policy_name' IS policy_name,
+              'insr_type' is insr_type,
+              'product_name' is product_name,
+              'package_code' IS package_code,
+              'is_expired' IS is_expired,
+              'policy_state_name' is policy_state_name,
+              'client_id' IS client_id,
+              'pid' is pid,
+              'total' is datacount,
+              'man_id' IS man_id,
+              'client_name' is client_name,
+              'insr_begin' is insr_begin,
+              'insr_end' is insr_end,
+              'premium_amnt' IS premium_amnt,
+              'active_claims' is active_claims,
+              'engagement_id' is engagement_id,
+              'engagement_no' is engagement_no,
+              'engagement_name' is engagement_name,
+              'quote_id' is quote_id,
+              'quote_no' is quote_no,
+              'quote_status' is quote_status,
+              'quote_status_name' is quote_status_name,
+              'insured_objects' is (
+                    SELECT JSON_ARRAYAGG( JSON_OBJECT('object_id' is io.object_id, 'object_name' is object_name) )
+                      FROM insured_object io
+                          LEFT JOIN insured_object_names ion
+                            ON ion.insured_obj_id = io.insured_obj_id
+                        WHERE io.policy_id = policy_id_for_object
+                          )  ) as jsonRowItem
+          FROM (
+        WITH od AS (SELECT sys_days.get_open_date AS open_date FROM dual)
+        SELECT pol.policy_state, pol.policy_id, pol.policy_id AS policy_id_for_object, pol.policy_no, pol.policy_name, pol.insr_type,
+              hit.name AS product_name,
+              ceil(count(*) over ()) as datacount,
+              (SELECT package_type
+                  FROM ( SELECT package_type, rank() over (ORDER BY PACKAGE_id desc) AS rnk
+                          FROM gen_packages GP
+                          WHERE policy_id = pol.policy_id
+                            AND annex_id = 0
+                            AND selected_package = 'Y' )
+                WHERE rnk = 1) AS package_code, CASE WHEN od.open_date > pol.insr_end THEN 1 ELSE 0 END AS is_expired,
+              CASE WHEN pol.policy_state IN (-3, -2, -1) THEN 'Application'
+                            WHEN pol.policy_state = -4 THEN 'Quotation'
+                            WHEN pol.policy_state = -30 THEN 'Canceled'
+                            ELSE 'Policy' END AS policy_state_name, pn.client_id,
+              pn.client_pid AS pid, pn.client_man_id AS man_id, pn.client_name, pol.insr_begin, pol.insr_end,
+              LTRIM(TO_CHAR( (SELECT SUM(amount)
+                                  FROM blc_policy_payment_plan
+                                WHERE policy_id = pol.policy_id
+                                  AND amnt_type = 'DUE' ), 9999990.99 )) AS premium_amnt,
+             ( SELECT NVL( SUM( DECODE( clm.claim_state, -1, 1, 1, 1, 0)), 0 )
+                 FROM ( SELECT c.claim_id, MIN(cr.claim_state) AS claim_state
+                          FROM insis_gen_v10.claim c
+                                    INNER JOIN insis_gen_v10.claim_request cr ON c.claim_id = cr.claim_id
+                         WHERE c.policy_id = pol.policy_id
+                         GROUP BY c.claim_id ) clm ) AS active_claims, pe.engagement_id, pe.engagement_no, pe.engagement_name,
+              peq.quote_id, peq.quote_no, peq.status as quote_status, hsv.NAME AS quote_status_name, od.open_date
+          FROM policy pol
+        CROSS JOIN od
+          LEFT JOIN h_insr_type hit
+            ON hit.id = pol.insr_type
+          LEFT JOIN policy_names pn
+            ON pn.policy_id = pol.policy_id
+          LEFT JOIN policy_eng_policies pep
+            ON pep.policy_id = pol.policy_id
+          LEFT JOIN policy_engagement pe
+            ON pe.engagement_id = pep.engagement_id
+          LEFT JOIN policy_engagement_quote peq
+            ON peq.quote_id = pep.quote_id
+          LEFT JOIN hst_status_value hsv
+            ON hsv.id = peq.status
+        WHERE pol.policy_state <> -10
+            --AND pol.policy_id LIKE NVL(:policy_id, pol.policy_id)
+            AND pol.policy_no LIKE NVL(:policy_no, pol.policy_no)
+            AND pol.policy_name LIKE NVL(:policy_name, pol.policy_name)
+            AND pn.client_pid LIKE NVL(:p_client_pid, pn.client_pid)
+            AND pn.client_name LIKE NVL(:p_client_name, pn.client_name)
+            AND pol.insr_type = NVL(:insr_type, pol.insr_type)
+            AND ( ( :p_insured_object is not null    
+                    AND EXISTS(SELECT io.policy_id  
+                                 FROM insured_object io
+                                 LEFT JOIN insured_object_names ion
+                                   ON ion.insured_obj_id = io.insured_obj_id
+                                WHERE io.policy_id = NVL(:policy_id, pol.policy_id)
+                                  AND ion.object_name LIKE NVL(:p_insured_object, ion.object_name))
+                                  --      
+                    AND pol.policy_id in (SELECT io.policy_id                    
+                                 FROM insured_object io
+                                 LEFT JOIN insured_object_names ion
+                                   ON ion.insured_obj_id = io.insured_obj_id
+                                WHERE io.policy_id = NVL(:policy_id, pol.policy_id)
+                                  AND ion.object_name LIKE NVL(:p_insured_object, ion.object_name))
+                    ) 
+                  OR
+                  ( :p_insured_object is null
+                    AND pol.policy_id = NVL(:policy_id, pol.policy_id)
+                    )
+                )
+            --
+            AND (:policy_state IS NULL
+                  OR :policy_state = CASE WHEN pol.policy_state = -4 THEN 'Quotation'
+                                          WHEN pol.policy_state IN (-3, -2, -1) THEN 'Application'
+                                          WHEN pol.policy_state IN (-30) THEN 'Canceled'
+                                          ELSE 'Policy' END)
+            AND ((:p_fulltext IS NULL) OR (
+              pol.policy_id LIKE :p_fulltext OR
+              pol.policy_no LIKE :p_fulltext OR
+              pol.policy_name LIKE :p_fulltext OR
+              pol.insr_type LIKE :p_fulltext OR
+              pn.client_pid LIKE :p_fulltext OR
+              pn.client_name LIKE :p_fulltext OR
+              :p_fulltext = CASE WHEN pol.policy_state = -4 THEN 'Quotation'
+                                          WHEN pol.policy_state IN (-3, -2, -1) THEN 'Application'
+                                          WHEN pol.policy_state IN (-30) THEN 'Canceled'
+                                          ELSE 'Policy' END
+            ))
+            AND (:p_insr_end IS NULL OR pol.insr_end < to_date( :p_insr_end, 'yyyy-MM-dd' ) + 1)
+          ORDER BY policy_id DESC
+          OFFSET :offset ROWS
+          FETCH first :page_size ROWS ONLY )
+
+
+                ]]>
+            </SQL>
+        </Query>
+
+        <Query id="quotes.client.get">
+            <Description>
+                Query for quotes.client.get.sql
+            </Description>
+
+            <FilterCriteria>
+                <FilterCriterion mandatory="true" searchField="PID">PID</FilterCriterion>
+            </FilterCriteria>
+            <SQL>
+                <![CDATA[
+
+                    SELECT insr_type,
+    product_name,
+    policy_id,
+    policy_no,
+    policy_state,
+    policy_state_name,
+    insr_begin,
+    insr_end,
+    premium,
+    currency,
+    engagement_id,
+    engagement_no,
+    engagement_name,
+    quote_id,
+    quote_no,
+    quote_status,
+    quote_status_name,
+    rejection_reason_id,
+    rejection_reason_name
+FROM (
+    WITH
+    pol_info AS
+( SELECT p.*, pn.client_pid
+FROM policy p, policy_names pn
+WHERE pn.policy_id = p.policy_id
+    AND pn.client_pid = :PID )
+,
+    eng_info AS
+( SELECT pe.engagement_id, pe.engagement_no, pe.engagement_name, peq.quote_id, peq.quote_no, peq.status, pep.policy_id,
+    peq.rejection_reason, hrr.NAME, hsv.NAME AS quote_status_name
+FROM policy_eng_policies pep,
+    policy_engagement_quote peq,
+    policy_engagement pe,
+    h_reject_reason hrr,
+    hst_status_value hsv,
+    pol_info pi
+WHERE pep.quote_id = peq.quote_id
+    AND pe.engagement_id = pep.engagement_id
+    AND pep.policy_id = pi.policy_id
+    AND peq.rejection_reason = hrr.id(+)
+    AND peq.status = hsv.id(+) )
+,
+    grc AS
+(SELECT a.policy_id
+                       , SUM(full_premium *
+                                decode(a.currency ,io.iv_currency ,1
+                                    ,currency.cross_rate(a.currency, io.iv_currency, nvl(ga.date_given, p.date_given)))) AS grc_premium
+                       , SUM(add_premium  *
+                                    decode(a.currency ,io.iv_currency , 1
+                                    ,currency.cross_rate(a.currency, io.iv_currency, nvl(ga.date_given, p.date_given)))) AS add_premium
+FROM gen_risk_covered a, gen_annex ga, insured_object io, pol_info p
+WHERE a.policy_id = ga.policy_id(+)
+    AND a.annex_id = ga.annex_id(+)
+    AND a.insured_obj_id = io.insured_obj_id
+    AND p.policy_id = a.policy_id
+GROUP BY  a.policy_id)
+,
+            wp AS
+(SELECT a.policy_id
+                       , SUM(risk_amnt *
+                            decode(a.currency
+                           ,io.iv_currency
+                           ,1
+                           ,currency.cross_rate(a.currency, io.iv_currency, nvl(ga.date_given, p.date_given)))) AS wp_premium
+FROM prem_inst_wp a, gen_annex ga, insured_object io, pol_info p
+WHERE a.policy_id = ga.policy_id(+)
+    AND a.annex_id = ga.annex_id(+)
+    AND a.insured_obj_id = io.insured_obj_id
+    AND p.policy_id = a.policy_id
+    AND fraction_type NOT IN (SELECT tax_type
+    FROM gen_premium_taxes
+    WHERE policy_id = a.policy_id
+        AND included = 'NO'
+                                                )
+GROUP BY a.policy_id )
+,
+            prem_tab AS
+( SELECT grc.policy_id,
+    CASE WHEN NVL(grc.add_premium, 0) = 0
+                      THEN GREATEST ( NVL( wp.wp_premium, grc.grc_premium), 0)
+                      ELSE GREATEST ( grc.grc_premium, 0)
+                  END AS prm
+FROM grc, wp
+WHERE grc.policy_id = wp.policy_id )
+
+SELECT pi.client_pid AS pid,
+    p.client_id,
+    p.insr_type,
+    hit.name AS product_name,
+    p.policy_id,
+    p.policy_no,
+    p.policy_state,
+    hps.NAME AS policy_state_name,
+    p.insr_begin,
+    p.insr_end,
+    NVL( prem_tab.prm, 0 ) AS premium,
+    pol_values.Get_policy_currency( p.policy_id ) AS currency,
+    eng_info.engagement_id,
+    eng_info.engagement_no,
+    eng_info.engagement_name,
+    eng_info.quote_id,
+    eng_info.quote_no,
+    eng_info.status AS quote_status,
+    eng_info.quote_status_name,
+    eng_info.rejection_reason AS rejection_reason_id,
+    eng_info.NAME AS rejection_reason_name
+FROM policy p,
+    h_insr_type hit,
+    pol_info pi,
+    hs_policy_state hps,
+    prem_tab,
+    eng_info
+WHERE p.policy_state <> -10
+    AND p.policy_state < 0
+    AND hit.id = p.insr_type
+    AND pi.policy_id = p.policy_id
+    AND p.policy_id = prem_tab.policy_id(+)
+    AND p.policy_state = hps.id(+)
+    AND p.policy_id = eng_info.policy_id(+)
+ORDER BY p.policy_id DESC
+)
+
+
+                ]]>
+            </SQL>
+        </Query>
+
+        <Query id="subindustries.get">
+            <Description>
+                Query for subindustries.get.sql
+            </Description>
+
+            <FilterCriteria>
+                <FilterCriterion mandatory="true" searchField="man_comp">man_comp</FilterCriterion>
+                <FilterCriterion mandatory="true" searchField="code">code</FilterCriterion>
+            </FilterCriteria>
+            <SQL>
+                <![CDATA[
+
+                    SELECT subcode as code, name
+FROM HT_PEOPLE_OCCUP_SUBCODE
+WHERE status = 'A' and man_comp = :man_comp and code = :code
+
+
+                ]]>
+            </SQL>
+        </Query>
+
+        <Query id="test">
+            <Description>
+                Query for test.sql
+            </Description>
+
+            <FilterCriteria>
+                <FilterCriterion mandatory="true" searchField="fname">fname</FilterCriterion>
+            </FilterCriteria>
+            <SQL>
+                <![CDATA[
+
+                    
+SELECT
+    gname,
+    fname
+FROM p_people
+WHERE p_people.fname != :fname
+
+                ]]>
+            </SQL>
+        </Query>
+
+
+    </Queries>
+</Configuration>
