@@ -32,9 +32,9 @@ stages:
             condition: eq(variables['Build.Reason'], 'PullRequest')
 
           # prevent the default cleaning done by Devops: it is radical and leads to node_modules getting deleted, which causes npm install to take much longer
-          # - checkout: self
-          #   clean: false
-          #   persistCredentials: true
+          - checkout: self
+            clean: true
+            persistCredentials: true
 
           - script: git tag $(Build.BuildNumber) && git push origin $(Build.BuildNumber)
             displayName: git tag
