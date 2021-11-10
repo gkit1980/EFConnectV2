@@ -5,7 +5,7 @@ list:
       label_en: Label
       type: text
     label_nl:
-      label: label_nl
+      label_nl: Label
       type: text
     insis:
       label: Insis
@@ -16,6 +16,6 @@ list:
       label_nl: 'JA'
       insis: '1'
     - value: false
-      label: 'NO'
+      label_en: 'NO'
       label_nl: 'NEE'
       insis: '2'
