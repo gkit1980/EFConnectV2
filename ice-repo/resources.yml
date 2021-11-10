@@ -1957,7 +1957,7 @@ entries:
                   label:
                     - en: null
                       de: null
-                      nl: 'null'
+                      nl: null
                 premium-with-label:
                   label:
                     - en: Waiver of premium due ot permanent disability any cause
@@ -2365,7 +2365,7 @@ entries:
             label:
               - en: Source of Funds?
                 de: Source of Funds?
-                nl: Bron van inkomsten
+                nl: Bron van inkomsten?
           a2:
             label:
               - en: Are you a politically exposed person?
@@ -2395,7 +2395,7 @@ entries:
             label:
               - en: Preferred method of communication/marketing?
                 de: Preferred method of communication/marketing?
-                nl: Voorkeur voor methode communicatie/marketing
+                nl: Voorkeur voor methode communicatie/marketing?
           a5:
             label:
               - en: >-
@@ -3271,7 +3271,7 @@ entries:
       label:
         - en: < BACK TO ALL CLIENTS
           de: < BACK TO ALL CLIENTS
-          nl: TERUG NAAR KLANTEN
+          nl: < TERUG NAAR KLANTEN
     ' policy':
       participants:
         holder:
