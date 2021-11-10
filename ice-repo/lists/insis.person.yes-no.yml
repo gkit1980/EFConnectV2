@@ -17,10 +17,10 @@ list:
     - value: true
       label_en: 'Yes'
       label_de: Ja
-      label_nl: Ja
+      label_nl: JA
       insis: 'Y'
     - value: false
       label_en: 'No'
       label_de: Nein
-      label_nl: Nee
+      label_nl: NEE
       insis: 'N'

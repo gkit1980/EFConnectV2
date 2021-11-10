@@ -5,7 +5,7 @@ list:
       label_en: Label
       type: text
     label_nl:
-      label: label_nl
+      label_nl: Label
       type: text
     insis:
       label: Insis

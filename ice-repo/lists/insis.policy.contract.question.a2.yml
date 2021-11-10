@@ -13,9 +13,9 @@ list:
   items:
     - value: true
       label_en: 'YES'
-      label_nl: Ja
+      label_nl: JA
       insis: '1'
     - value: false
       label_en: 'NO'
-      label_nl: Nee
+      label_nl: NEE
       insis: '2'

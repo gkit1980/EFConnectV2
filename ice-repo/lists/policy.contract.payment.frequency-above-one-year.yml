@@ -7,7 +7,7 @@ list:
     - value: 2
       label_en: semiannually
       label_de: semiannually
-      label_nl:
+      label_nl: halfjaarlijks
     - value: 4
       label_en: quarterly
       label_de: quarterly
