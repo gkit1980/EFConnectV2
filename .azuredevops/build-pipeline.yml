@@ -45,7 +45,7 @@ stages:
             displayName: git clean complete
             condition: eq(variables['GIT_CLEAN_COMPLETE'], true)
 
-          - script: git clean -d -x -e node_modules -e .cache -f
+          - script: git clean -d -x -e .cache -f
             displayName: git clean
             condition: ne(variables['GIT_CLEAN_COMPLETE'], true)
 

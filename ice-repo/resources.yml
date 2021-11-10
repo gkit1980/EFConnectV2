@@ -3553,7 +3553,7 @@ entries:
 
           max:
             - en: 'may not be greater than ${date}'
-              nl: 'mag niet groter zijn dan ${date}''
+              nl: 'mag niet groter zijn dan ${date}'
       email:
         - en: Please enter a valid email address
           de: Bitte geben Sie eine gültige Email-Adresse ein.
