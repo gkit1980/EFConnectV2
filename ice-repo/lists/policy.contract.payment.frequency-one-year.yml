@@ -7,7 +7,7 @@ list:
     - value: 4
       label_en: quarterly
       label_de: quarterly
-      label_nl: halfjaarlijks
+      label_nl: driemaandelijks
     - value: 12
       label_en: monthly
       label_de: monthly
