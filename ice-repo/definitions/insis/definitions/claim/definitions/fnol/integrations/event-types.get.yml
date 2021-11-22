@@ -22,6 +22,9 @@ integration:
 
             - param: p_fulltext
               value: ''
+
+            - param: insr_type
+              value: ''
       in:
         - fromIdx:
             array: payload.rows
