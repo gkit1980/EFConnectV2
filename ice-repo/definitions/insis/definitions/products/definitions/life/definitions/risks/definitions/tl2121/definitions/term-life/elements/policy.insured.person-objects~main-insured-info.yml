@@ -1,0 +1,26 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        InsisInfoButton:
+          height: 200
+          width: 400
+          originX: start
+          originY: bottom
+          overlayX: start
+          overlayY: bottom
+          offsetX: '36'
+          offsetY: '130'
+          scrollStrategy: BlockScrollStrategy
+  label:
+    NoLabelRule: {}
+  text:
+    ResourceTextRule:
+      info: main-insured.info.text
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.insured.person-objects~entity-accident-insured.type
+      conditionValue: '1'
+      conditionViewMode: output
+      elseViewMode: hidden
