@@ -1,0 +1,29 @@
+page:
+  validation:
+    onElementComponentChange: true
+    behaviour: forward
+    showMessages: none
+    showGrowl: false
+    showElementValidation: true
+  component:
+    InsisTwoLevelStepperNavigationPage: {}
+  sections:
+    - header
+    - insured.give-us-information
+    - insureds
+    - component:
+        IceFlexSection:
+          grid:
+            rows:
+              - cols:
+                  - size: none
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: add-client
+                  - size: auto
+                    size.xs: auto
+                    size.sm: auto
+                    elements:
+                      - name: client.open-popup
+    - go-to-next-page

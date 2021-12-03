@@ -1,0 +1,15 @@
+page:
+  validation:
+    onElementComponentChange: true
+    behaviour: forward
+    showMessages: none
+    showGrowl: false
+    showElementValidation: true
+  component:
+    InsisTwoLevelStepperNavigationPage: {}
+  sections:
+    - header
+    - insured.questions-and-documents
+    - insured.next-page-and-modify
+    - policy.premiums-taxes-fees-discounts-loadings
+    - policy.summary

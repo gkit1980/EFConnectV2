@@ -1,0 +1,21 @@
+page:
+  component:
+    InsisTwoLevelStepperNavigationPage: {}
+  validation:
+    onElementComponentChange: true
+    behaviour: forward
+    showMessages: none
+    showGrowl: false
+    showElementValidation: true
+  label:
+    ResourcePageLabelRule:
+      navigationTitleKey: pages.3.review.payment.title
+      pageTitleKey: pages.3.review.payment.title
+      shortTitleKey: pages.3.review.payment.title
+  sections:
+    - header
+    - contact-information
+    - payment.details
+    - payment.go-to-next-page
+    - policy.premiums-taxes-fees-discounts-loadings
+    - policy.summary

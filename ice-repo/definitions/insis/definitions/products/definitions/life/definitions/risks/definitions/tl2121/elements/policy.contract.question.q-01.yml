@@ -1,0 +1,9 @@
+element:
+  title: >-
+    Was the policy accepted with a surcharge for the withdrawal of any
+    exclusions?
+  type: boolean
+  component: IceCheckbox
+  viewMode: required
+  defaultValue: false
+  values: insis.policy.contract.question.q-01

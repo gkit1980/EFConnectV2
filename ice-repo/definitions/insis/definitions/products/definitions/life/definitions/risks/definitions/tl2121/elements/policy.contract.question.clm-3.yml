@@ -1,0 +1,7 @@
+element:
+  title: Was the claim caused by benign or pre-cancerous tumors?
+  type: boolean
+  component: IceCheckbox
+  viewMode: required
+  defaultValue: false
+  values: insis.policy.contract.question.clm-3

@@ -1,0 +1,11 @@
+element:
+  title: Preferred method of communication/marketing?
+  type: text
+  component: IceDropdown
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.contract.question.f3
+      conditionValue: true
+      conditionViewMode: default
+      elseViewMode: hidden
+  values: insis.policy.contract.question.f3-1

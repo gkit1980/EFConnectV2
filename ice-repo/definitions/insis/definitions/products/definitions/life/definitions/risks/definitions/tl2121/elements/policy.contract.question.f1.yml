@@ -1,0 +1,6 @@
+element:
+  title: Source of funds?
+  type: text
+  component: IceDropdown
+  viewMode: default
+  values: insis.policy.contract.question.f1

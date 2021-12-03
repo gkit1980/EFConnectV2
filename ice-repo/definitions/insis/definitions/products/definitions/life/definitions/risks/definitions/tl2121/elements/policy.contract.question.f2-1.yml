@@ -1,0 +1,10 @@
+element:
+  title: Please give details
+  type: text
+  component: IceTextInput
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.contract.question.f2
+      conditionValue: true
+      conditionViewMode: default
+      elseViewMode: hidden

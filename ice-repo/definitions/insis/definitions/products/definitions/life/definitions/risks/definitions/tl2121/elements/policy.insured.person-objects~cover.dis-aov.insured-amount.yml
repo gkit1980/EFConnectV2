@@ -1,0 +1,8 @@
+element:
+  type: currency
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.insured.person-objects~cover.dis-aov.active
+      conditionValue: true
+      conditionViewMode: required
+      elseViewMode: hidden

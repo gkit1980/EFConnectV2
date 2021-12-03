@@ -1,0 +1,5 @@
+element:
+  type: text
+  defaultValue: >-
+    Medical Exam 3 (Including  Medical Exam 1 and 2 plus chest x-ray, lungs,
+    plus stress test)

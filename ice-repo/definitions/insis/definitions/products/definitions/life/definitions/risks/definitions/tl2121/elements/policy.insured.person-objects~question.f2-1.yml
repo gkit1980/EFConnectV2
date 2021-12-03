@@ -1,0 +1,5 @@
+element:
+  title: Please give details
+  type: text
+  component: IceTextInput
+  viewMode: default

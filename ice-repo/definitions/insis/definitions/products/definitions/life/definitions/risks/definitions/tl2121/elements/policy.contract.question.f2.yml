@@ -1,0 +1,6 @@
+element:
+  title: Are you a politically exposed person?
+  type: boolean
+  component: IceCheckbox
+  viewMode: default
+  values: insis.policy.contract.question.f2

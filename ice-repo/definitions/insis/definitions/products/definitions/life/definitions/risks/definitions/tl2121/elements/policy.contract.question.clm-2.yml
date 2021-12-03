@@ -1,0 +1,7 @@
+element:
+  title: Was the claim caused by self-inflicted injuries by the Insured?
+  type: boolean
+  component: IceCheckbox
+  viewMode: required
+  defaultValue: true
+  values: insis.policy.contract.question.clm-2

@@ -1,0 +1,8 @@
+element:
+  title: >-
+    I have read, understood and accept all the terms, conditions and contents of
+    the proposal form and other product related information
+  type: boolean
+  component: IceCheckbox
+  viewMode: default
+  values: insis.policy.contract.question.f4

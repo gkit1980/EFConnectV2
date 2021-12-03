@@ -1,0 +1,10 @@
+element:
+  title: >-
+    Was the claim caused by injuries occurring while committing a crime,
+    reckless acts, maneuvers, experiments, exhibitions, challenges or activities
+    that are notoriously risky?
+  type: boolean
+  component: IceCheckbox
+  viewMode: required
+  defaultValue: true
+  values: insis.policy.contract.question.clm-4

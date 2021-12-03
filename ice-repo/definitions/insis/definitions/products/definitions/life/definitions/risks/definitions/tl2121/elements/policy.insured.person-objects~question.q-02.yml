@@ -1,0 +1,5 @@
+element:
+  title: Height
+  type: integer
+  component: IceNumber
+  viewMode: required

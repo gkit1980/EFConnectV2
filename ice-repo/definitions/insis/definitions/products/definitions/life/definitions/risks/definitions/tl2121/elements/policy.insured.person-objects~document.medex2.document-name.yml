@@ -1,0 +1,5 @@
+element:
+  type: text
+  defaultValue: >-
+    Medical Exam 2 (Including Medical Exam 1 plus complete urine analysis and
+    electrocardiogram)

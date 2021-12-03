@@ -1,0 +1,17 @@
+page:
+  validation:
+    onElementComponentChange: true
+    behaviour: forward
+    showMessages: none
+    showGrowl: false
+    showElementValidation: true
+  component:
+    InsisTwoLevelStepperNavigationPage: {}
+  sections:
+    - header
+    - beneficiaries.go-to-next-page-pulled-right
+    - beneficiaries.is-standard-beneficiary
+    - beneficiaries.details
+    - policy.premiums-taxes-fees-discounts-loadings
+    - quote.download
+    - policy.summary

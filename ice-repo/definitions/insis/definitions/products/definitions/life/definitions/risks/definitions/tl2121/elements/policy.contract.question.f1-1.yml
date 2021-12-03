@@ -1,0 +1,5 @@
+element:
+  title: What is your monthly income?
+  type: integer
+  component: IceNumber
+  viewMode: default
