@@ -1,0 +1,17 @@
+element:
+  type: integer
+  mirror:
+    AgeAtInsuranceDateMirrorRule:
+      birthdateElement: policy.insured.person-objects~person.date-of-birth
+      dateElement: policy.contract.begin
+      ageCalculationMethod: month
+  range:
+    StaticRangeRule:
+      min: '18'
+      max: '65'
+  viewMode: required
+  component:
+    StaticComponentRule:
+      component:
+        InsisNumber:
+          shouldRenderAsDisabled: true

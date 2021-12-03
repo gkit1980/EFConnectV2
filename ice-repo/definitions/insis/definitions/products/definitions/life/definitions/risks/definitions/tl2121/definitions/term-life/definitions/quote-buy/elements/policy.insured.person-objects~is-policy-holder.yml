@@ -1,0 +1,5 @@
+element:
+  type: boolean
+  mirror:
+    DtMirrorRule:
+      dt: policy.insured.person-objects~is-policy-holder.mirror
