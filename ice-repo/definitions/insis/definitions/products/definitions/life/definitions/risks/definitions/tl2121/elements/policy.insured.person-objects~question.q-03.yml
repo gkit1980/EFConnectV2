@@ -1,5 +1,0 @@
-element:
-  title: Weight
-  type: integer
-  component: IceNumber
-  viewMode: required

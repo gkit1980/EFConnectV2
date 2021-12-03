@@ -5,5 +5,5 @@ element:
       component:
         IceCheckbox:
           labelPosition: after
-  viewMode: default
-  defaultValue: false
+  viewMode: disabled
+  defaultValue: true

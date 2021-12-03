@@ -1,7 +1,0 @@
-element:
-  title: Do you currently take any medications?
-  type: boolean
-  component: IceCheckbox
-  viewMode: default
-  defaultValue: false
-  values: insis.policy.insured.person-objects~question.q-12

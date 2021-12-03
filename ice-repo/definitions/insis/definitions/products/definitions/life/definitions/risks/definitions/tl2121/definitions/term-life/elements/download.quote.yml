@@ -1,0 +1,5 @@
+element:
+  type: action
+  mirror:
+    DtMirrorRule:
+      dt: download.quote.mirror

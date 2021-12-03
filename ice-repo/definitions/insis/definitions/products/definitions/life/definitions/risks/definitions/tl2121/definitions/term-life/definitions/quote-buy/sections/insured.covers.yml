@@ -57,56 +57,6 @@ section:
                 elements:
                   - name: policy.insured.person-objects~cover.wop-total.premium
             align: space-between
-          - css: inline-cell-elements cover-row
-            cols:
-              - size: auto
-                elements:
-                  - name: policy.insured.person-objects~cover.tpdill.active
-                  - name: policy.insured.person-objects~cover.tpdill.active-info
-              - size: none
-                elements:
-                  - name: >-
-                      policy.insured.person-objects~cover.tpdill.premium
-          - css: inline-cell-elements cover-addon-info cover-row
-            cols:
-              - size: auto
-                elements:
-                  - name: policy.insured.person-objects~cover.tpdaccd.active
-                  - name: policy.insured.person-objects~cover.tpdaccd.active-info
-              - size: none
-                elements:
-                  - name: policy.insured.person-objects~cover.tpdaccd.premium
-                  - name: policy.insured.person-objects~cover.tpdaccd-addon-info
-          - css: inline-cell-elements cover-addon-info cover-row
-            cols:
-              - size: auto
-                elements:
-                  - name: policy.insured.person-objects~cover.death-acc.active
-                  - name: policy.insured.person-objects~cover.death-acc.active-info
-              - size: none
-                elements:
-                  - name: policy.insured.person-objects~cover.death-acc.premium
-                  - name: policy.insured.person-objects~cover.death-acc-addon-info
-          - css: inline-cell-elements cover-row
-            cols:
-              - size: auto
-                elements:
-                  - name: policy.insured.person-objects~cover.critic-ill.active
-                  - name: policy.insured.person-objects~cover.critic-ill.active-info
-              - size: none
-                elements:
-                  - name: >-
-                      policy.insured.person-objects~cover.critic-ill.premium
-          - css: inline-cell-elements cover-row
-            cols:
-              - size: auto
-                elements:
-                  - name: policy.insured.person-objects~cover.premret.active
-                  - name: policy.insured.person-objects~cover.premret.active-info
-              - size: none
-                elements:
-                  - name: >-
-                      policy.insured.person-objects~cover.premret.premium
       arrayElement: policy.insured.person-objects
       css: main-side
       behaviourForEmptyRows: hide

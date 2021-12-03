@@ -1,0 +1,14 @@
+element:
+  type: currency
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.insured.person-objects~cover.death-any.active
+      conditionViewMode: hidden
+      elseViewMode: output
+      conditionValue: false
+  mirror:
+    CopyValueMirrorRule:
+      originElement: policy.insured.person-objects~cover.death-any.premium
+  defaultValue:
+    StaticValueRule:
+      value: 0

@@ -1,7 +1,0 @@
-element:
-  title: Detail of work activity
-  type: text
-  component: IceDropdown
-  viewMode: required
-  defaultValue: '5'
-  values: insis.policy.insured.person-objects~question.q-05

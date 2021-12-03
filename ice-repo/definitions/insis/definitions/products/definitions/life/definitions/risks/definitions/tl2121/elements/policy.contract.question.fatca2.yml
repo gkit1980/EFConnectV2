@@ -1,6 +1,0 @@
-element:
-  title: I declare that I am a tax resident in the USA.
-  type: boolean
-  component: IceCheckbox
-  viewMode: default
-  values: insis.policy.contract.question.fatca2

@@ -59,47 +59,8 @@ section:
                 size.sm: auto
                 elements:
                   - name: policy.insured.person-objects~person.address.country
-              - size: auto
-                size.xs: auto
-                size.sm: auto
-                elements:
-                  - name: policy.insured.person-objects~question.q-05
             gap: 15px
             css: u-mb-2
-          - cols:
-              - size: auto
-                size.xs: auto
-                size.sm: auto
-                elements:
-                  - name: policy.insured.person-objects~question.q-02
-              - size: auto
-                size.xs: auto
-                size.sm: auto
-                elements:
-                  - name: policy.insured.person-objects~question.q-03
-            gap: 15px
-            css: u-mb-2
-          - cols:
-              - size: auto
-                size.xs: auto
-                size.sm: auto
-                elements:
-                  - name: policy.insured.person-objects~question.q-07
-            css: u-mb-2
-          - cols:
-              - size: auto
-                size.xs: auto
-                size.sm: auto
-                elements:
-                  - name: policy.insured.person-objects~question.q-07-1
-            css: u-mb-2 u-mt-2
-          - cols:
-              - size: auto
-                size.xs: auto
-                size.sm: auto
-                elements:
-                  - name: policy.insured.person-objects~question.q-04
-            css: u-mb-4
           - cols:
               - size: auto
                 size.xs: auto

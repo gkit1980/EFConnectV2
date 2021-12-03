@@ -1,0 +1,10 @@
+element:
+  title: >-
+    Furthermore I declare that I on this moment am in good health and that this
+    form, together with the application form and the previously delivered health
+    guarantees, it forms the basis for the contract between me and De Goudse.
+  type: boolean
+  component: IceCheckbox
+  viewMode: required
+  defaultValue: true
+  values: insis.policy.insured.person-objects~question.q-26

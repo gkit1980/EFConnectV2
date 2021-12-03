@@ -1,5 +1,0 @@
-element:
-  title: How often do you ingest alcoholic beverages?
-  type: text
-  component: IceTextInput
-  viewMode: default

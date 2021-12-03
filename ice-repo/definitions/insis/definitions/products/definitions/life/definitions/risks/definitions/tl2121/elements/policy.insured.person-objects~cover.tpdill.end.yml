@@ -1,7 +1,0 @@
-element:
-  type: datetime
-  mirror:
-    CoverInsuranceEndMirrorRule:
-      dateOfBirth: policy.insured.person-objects~person.date-of-birth
-      endElement: policy.contract.end
-      maxEndAge: '75'

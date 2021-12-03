@@ -1,9 +1,0 @@
-element:
-  type: integer
-  mirror:
-    CopyValueMirrorRule:
-      originElement: policy.insured.person-objects~person.age-at-begin
-  range:
-    StaticRangeRule:
-      min: 18
-      max: 60

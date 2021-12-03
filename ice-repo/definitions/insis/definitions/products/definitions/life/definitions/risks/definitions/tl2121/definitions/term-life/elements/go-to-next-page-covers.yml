@@ -1,0 +1,20 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          themeColor: primary
+          variant: flat
+  defaultValue: application.register
+  confirmation:
+    InsisDtConfirmationRule:
+      dt: go-to-next-page-covers.confirmation
+      dtIndex: '1'
+      elementForResourceValue: policy.insured.person-objects~person.full-name
+      elementIndex: '1'
+      messageKey: elements.go-to-next-page-covers.confirmation
+      confirmAction: remove-additional-person
+  mirror:
+    DtMirrorRule:
+      dt: go-to-next-page-covers.mirror

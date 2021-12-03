@@ -1,0 +1,27 @@
+element:
+  type: text
+  text:
+    InsisFillResourceWithElementValuesTextRule:
+      info:
+        resourceKey: policy.insured.person-objects.items.cover.wop-total.active-info.info
+        elements:
+          - policy.insured.person-objects~cover.wop-total.insured-amount
+  label:
+    NoLabelRule: {}
+  component:
+    StaticComponentRule:
+      component:
+        InsisInfoButton:
+          height: 200
+          width: 400
+          originX: start
+          originY: center
+          overlayX: start
+          overlayY: center
+          offsetX: '35'
+          offsetY: '30'
+          scrollStrategy: BlockScrollStrategy
+  viewMode:
+    DtViewModeRule:
+      dt: policy.insured.person-objects~cover.cover-wop-total.viewmode
+      output: viewmode

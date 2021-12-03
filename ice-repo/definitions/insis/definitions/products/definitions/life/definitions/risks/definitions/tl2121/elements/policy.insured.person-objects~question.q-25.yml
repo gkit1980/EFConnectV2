@@ -1,0 +1,9 @@
+element:
+  title: >-
+    I hereby declare that in the past 24 months, or since the date of the health
+    declaration or the inspection:
+  type: text
+  component: IceDropdown
+  viewMode: required
+  defaultValue: '2'
+  values: insis.policy.insured.person-objects~question.q-25

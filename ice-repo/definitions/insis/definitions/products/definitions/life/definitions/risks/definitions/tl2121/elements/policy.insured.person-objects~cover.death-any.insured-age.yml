@@ -5,5 +5,5 @@ element:
       originElement: policy.insured.person-objects~person.age-at-begin
   range:
     StaticRangeRule:
-      min: 18
-      max: 65
+      min: 25
+      max: 50

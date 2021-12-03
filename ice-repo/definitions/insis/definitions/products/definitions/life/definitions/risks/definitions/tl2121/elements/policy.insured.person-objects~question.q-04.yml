@@ -1,7 +1,0 @@
-element:
-  title: Are you a smoker?
-  type: boolean
-  component: IceCheckbox
-  viewMode: required
-  defaultValue: false
-  values: insis.policy.insured.person-objects~question.q-04

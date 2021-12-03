@@ -1,6 +1,0 @@
-element:
-  title: I consent to receive marketing materials
-  type: boolean
-  component: IceCheckbox
-  viewMode: default
-  values: insis.policy.contract.question.f3

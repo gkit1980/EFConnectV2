@@ -1,0 +1,43 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: 100%
+                elements:
+                  - name: insis.error
+          - cols:
+              - size: 175px
+                size.xs: 100%
+                css: u-mb-4-sm
+                elements:
+                  - name: policy.contract.begin
+              - size: 175px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.contract.term.duration
+              - size: 175px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.contract.payment.term.duration
+              - size: 175px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.contract.payment.frequency
+            align: space-between
+            layout.xs: column
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.person-objects~cover.policy-details-info
+                css: mat-small
+      css: card main-side u-pb-1 u-mb-4
+  label:
+    ResourceSectionLabelRule:
+      labelKey: section.policy-details.label
