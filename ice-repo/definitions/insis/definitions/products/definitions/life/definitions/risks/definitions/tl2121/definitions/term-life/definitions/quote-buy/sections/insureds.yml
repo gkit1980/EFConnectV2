@@ -20,7 +20,7 @@ section:
                   - name: policy.insured.person-objects~additional-insured-info
                 align: end
                 css: u-mb-2
-            css: ''
+            css: ""
             align: start
           - cols:
               - size: auto
@@ -100,12 +100,6 @@ section:
                 elements:
                   - name: policy.insured.person-objects~question.q-04
             css: u-mb-4
-          - cols:
-              - size: auto
-                size.xs: auto
-                size.sm: auto
-                sections:
-                  - name: modify-insured-person
           - cols:
               - size: auto
                 size.xs: auto
