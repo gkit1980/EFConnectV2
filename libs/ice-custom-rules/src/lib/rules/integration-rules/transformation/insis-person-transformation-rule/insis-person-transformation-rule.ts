@@ -13,7 +13,7 @@ const getAddress = (address) => {
       return smallChunks.map((part) => getAddressPart(address, part)).join(' ');
     }
   );
-  return parts.filter((p) => p !== '').join(', ');
+  return parts.filter(p => p.trim() !== '').join(', ');
 };
 
 //
