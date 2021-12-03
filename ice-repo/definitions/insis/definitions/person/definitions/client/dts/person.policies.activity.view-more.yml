@@ -52,8 +52,8 @@ dt:
         - person.policies~policy-id
         - person.pid
     - inputs:
-        - 920101
-        - 'Policy'
+        - 2121
+        - '-'
       outputs:
         - insis.products.policy-details.agent/summary
         - person.policies~policy-id
