@@ -1,0 +1,19 @@
+list:
+  items:
+    - value: linear
+      label_en: Linear
+      label_nl: Linear
+    - value: no-decrease
+      label_en: No decrease
+      label_nl: No decrease
+    - value: annuity
+      label_en: Annuity
+      label_nl: Annuity
+  type: text
+  additionals:
+    label_en:
+      label: label_en
+      type: string
+    label_nl:
+      label: label_nl
+      type: string

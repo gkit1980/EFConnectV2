@@ -1,0 +1,16 @@
+list:
+  items:
+    - value: monthly
+      label_en: Monthly
+      label_nl: Monthly
+    - value: annual
+      label_en: Annual
+      label_nl: Annual
+  type: text
+  additionals:
+    label_en:
+      label: label_en
+      type: string
+    label_nl:
+      label: label_nl
+      type: string
