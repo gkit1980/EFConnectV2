@@ -1,0 +1,7 @@
+element:
+  type: integer
+  mirror:
+    AgeAtInsuranceDateMirrorRule:
+      birthdateElement: policy.insured.person-objects~person.date-of-birth
+      dateElement: policy.contract.end
+      ageCalculationMethod: month

@@ -1,0 +1,10 @@
+action:
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ACTIVE_INTEGRATION_SUCCESS
+        payload: insis-client.get-accounts
+  execution:
+    - IntegrationExecutionRule:
+        integration: fill-policy-holder-information
+  condition:
+    HasNoDynIdConditionRule: {}
