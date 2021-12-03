@@ -1,0 +1,16 @@
+list:
+  type: boolean
+  additionals:
+    label:
+      label: Label
+      type: text
+    insis:
+      label: Insis
+      type: text
+  items:
+    - value: false
+      label: 'No'
+      insis: '2'
+    - value: true
+      label: 'Yes'
+      insis: '1'

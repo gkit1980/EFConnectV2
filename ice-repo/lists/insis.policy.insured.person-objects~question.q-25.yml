@@ -1,0 +1,11 @@
+list:
+  type: text
+  additionals:
+    label:
+      label: Label
+      type: text
+  items:
+    - value: '1'
+      label: have consulted a general practitioner/specialist
+    - value: '2'
+      label: have not consulted a general practitioner/specialist
