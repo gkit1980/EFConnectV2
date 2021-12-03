@@ -23,3 +23,7 @@ dt:
         - '910211'
       outputs:
         - /assets/icons/family.svg
+    - inputs:
+        - '9112'
+      outputs:
+        - /assets/icons/family.svg
