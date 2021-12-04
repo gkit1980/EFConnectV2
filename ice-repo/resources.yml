@@ -3491,9 +3491,9 @@ entries:
             nl: DOWNLOAD OFFERTE
     reject:
       label:
-        - en: Reject offer
-          de: Reject offer
-          nl: Reject offer
+        - en: Reject the quotation
+          de: Reject the quotation
+          nl: Reject the quotation
   pagination:
     claims:
       - en: claims
