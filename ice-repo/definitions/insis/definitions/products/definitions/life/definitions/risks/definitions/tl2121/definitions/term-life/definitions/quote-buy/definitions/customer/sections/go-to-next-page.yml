@@ -1,0 +1,19 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: ''
+                size.xs: auto
+                css: ''
+                elements:
+                  - name: go-to-next-page
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: reject
+                css: negative-ml
+            css: u-mt-4
+            gap: ''

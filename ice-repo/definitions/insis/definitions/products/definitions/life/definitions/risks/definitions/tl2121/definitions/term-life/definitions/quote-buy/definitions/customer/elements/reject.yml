@@ -1,0 +1,12 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          themeColor: accent
+          variant: stroked
+  change:
+    - NavigateToDefinitionExecutionRule:
+        definition: insis.dashboard.home.customer
+        page: home

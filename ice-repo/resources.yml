@@ -837,6 +837,11 @@ entries:
           - en: Save quote and send to customer
             de: Save quote and send to customer
             nl: Save quote and send to customer
+      client:
+        label:
+          - en: I accept this quotation and want to proceed to the application
+            de: I accept this quotation and want to proceed to the application
+            nl: I accept this quotation and want to proceed to the application
     more-information-needed:
       label:
         - en: >-
@@ -3484,6 +3489,11 @@ entries:
           - en: DOWNLOAD QUOTE
             de: DOWNLOAD QUOTE
             nl: DOWNLOAD OFFERTE
+    reject:
+      label:
+        - en: Reject offer
+          de: Reject offer
+          nl: Reject offer
   pagination:
     claims:
       - en: claims

@@ -1,0 +1,7 @@
+element:
+  type: action
+  label:
+    ResourceLabelRule:
+      key: elements.go-to-next-page.client.label
+  change:
+    - MessageActionRule: {}
