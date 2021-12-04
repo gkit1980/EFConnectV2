@@ -1,0 +1,5 @@
+element:
+  type: currency
+  viewMode:
+    StaticViewModeRule:
+      viewMode: disabled

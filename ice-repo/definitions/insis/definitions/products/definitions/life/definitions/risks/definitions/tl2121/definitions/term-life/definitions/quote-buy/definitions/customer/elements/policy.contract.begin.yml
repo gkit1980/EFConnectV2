@@ -1,0 +1,5 @@
+element:
+  type: date
+  viewMode:
+    StaticViewModeRule:
+      viewMode: disabled
