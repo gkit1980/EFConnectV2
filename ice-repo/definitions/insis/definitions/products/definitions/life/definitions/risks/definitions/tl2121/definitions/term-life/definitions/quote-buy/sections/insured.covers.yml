@@ -20,7 +20,8 @@ section:
                 size.xs: auto
                 size.sm: auto
                 elements:
-                  - name: policy.insured.person-objects~cover.covers-info-above-seventy
+                  - name: >-
+                      policy.insured.person-objects~cover.covers-info-above-seventy
                 css: mat-small info-above-seventy
           - cols:
               - size: auto
@@ -47,16 +48,6 @@ section:
                 css: u-ml-7 u-d-inlineblock slider-mirror-labels
                 align: center
             css: u-mb-4 insured-amount-slider
-          - css: inline-cell-elements cover-row
-            cols:
-              - size: auto
-                elements:
-                  - name: policy.insured.person-objects~cover.wop-total.active
-                  - name: policy.insured.person-objects~cover.wop-total.active-info
-              - size: none
-                elements:
-                  - name: policy.insured.person-objects~cover.wop-total.premium
-            align: space-between
       arrayElement: policy.insured.person-objects
       css: main-side
       behaviourForEmptyRows: hide
