@@ -1,2 +1,3 @@
 element:
   label: null
+  type: currency

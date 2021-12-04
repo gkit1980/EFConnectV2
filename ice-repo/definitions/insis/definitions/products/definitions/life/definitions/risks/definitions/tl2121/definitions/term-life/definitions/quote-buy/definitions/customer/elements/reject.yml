@@ -6,7 +6,3 @@ element:
         IceButton:
           themeColor: accent
           variant: stroked
-  change:
-    - NavigateToDefinitionExecutionRule:
-        definition: insis.dashboard.home.customer
-        page: home

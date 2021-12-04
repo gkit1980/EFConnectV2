@@ -22,6 +22,8 @@ element:
           cardLayout: always
           confirmOnRemove: false
           showRemoveButton: false
+          showAddButton: false
       elseComponent:
         InsisArrayCardsLayout:
-          showRemoveButton: null
+          showRemoveButton: false
+          showAddButton: false
