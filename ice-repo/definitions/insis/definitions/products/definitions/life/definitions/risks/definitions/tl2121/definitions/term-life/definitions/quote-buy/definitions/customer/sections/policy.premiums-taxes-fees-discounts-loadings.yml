@@ -1,0 +1,13 @@
+section:
+  component:
+    InsisPremiumSummarySection:
+      tags: pull-right
+      expanded: true
+      premiumElement: policy.insured.premium.total
+      paymentFrequencyElementLabel: policy.contract.payment.frequency-for-premium-panel
+      paymentFrequencyElement: policy.contract.payment.frequency
+      premiumElements:
+        - policy.insured.person-objects~cover.death-any.premium-with-label
+        - policy.insured.person-objects~cover.wop-total.premium-with-label
+      taxesAndFeesElements:
+        - policy.contract.taxes~premium-with-label

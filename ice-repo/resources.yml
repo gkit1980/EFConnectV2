@@ -829,9 +829,9 @@ entries:
           nl: Doorgaan
     go-to-next-page:
       label:
-        - en: I accept this quotation and want to proceed to the application
-          de: I accept this quotation and want to proceed to the application
-          nl: I accept this quotation and want to proceed to the application
+        - en: Next
+          de: Next
+          nl: Next
       agent:
         label:
           - en: Save quote and send to customer
@@ -3071,6 +3071,11 @@ entries:
             de: 'Please attach documents (.jpg, .pdf)'
             nl: 'Gelieve documenten bij te voegen (.jpg, .pdf)'
     go-to-next-page-covers:
+      '2121':
+        label:
+          - en: I accept the quotation
+            de: I accept the quotation
+            nl: I accept the quotation
       label:
         - en: NEXT
           de: NEXT

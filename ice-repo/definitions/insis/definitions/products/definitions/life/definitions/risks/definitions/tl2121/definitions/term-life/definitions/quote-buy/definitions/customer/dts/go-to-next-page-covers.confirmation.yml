@@ -1,0 +1,12 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: an.element
+  outputs:
+    - id: confirmation
+      type: string
+  rules:
+    - inputs:
+        - 'null'
+      outputs:
+        - 'null'
