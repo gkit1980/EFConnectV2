@@ -37,18 +37,6 @@ section:
                   - name: policy.insured.objects~person-data.pid-label
                   - name: policy.insured.objects~person-data.pid
 
-          - css: output-element u-mt-2
-            cols:
-              - size: 33%
-                elements:
-                  - name: policy.contract.decrease-type
-              - size: 33%
-                elements:
-                  - name: policy.contract.decrease-pattern
-              - size: 33%
-                elements:
-                  - name: policy.contract.decrease-interest
-
   viewMode:
     ConditionalSectionViewModeRule:
       conditionElement: policy.insured.objects~type

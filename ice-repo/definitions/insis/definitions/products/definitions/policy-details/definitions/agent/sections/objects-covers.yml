@@ -6,7 +6,15 @@ section:
       grid:
         rows:
           - cols:
-              - size: 100%
+              - size: 50
                 sections:
                   - name: objects-covers-life
                   - name: objects-covers-motor
+                css: card
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                sections:
+                  - name: objects-life-decr-info
+                css: card
+            gap: 20px

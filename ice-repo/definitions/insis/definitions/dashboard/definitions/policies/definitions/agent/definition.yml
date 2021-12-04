@@ -1,6 +1,6 @@
 definition:
   title: insis.dashboard.policies.agent
   executable: true
-  showInsights: false
+  showInsights: true
   elementOnPageCheck: false
   defaultGrowlDuration: 10000

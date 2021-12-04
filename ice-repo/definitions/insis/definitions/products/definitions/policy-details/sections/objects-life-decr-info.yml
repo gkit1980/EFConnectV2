@@ -1,0 +1,21 @@
+section:
+  component:
+    IceFlexSection:
+      grid:
+        rows:
+          - cols:
+              - size: auto
+                css: mat-headline u-mb-4 u-mt-1
+                elements:
+                  - name: policy.contract.decrease-label
+          - css: output-element u-mt-2
+            cols:
+              - size: 33%
+                elements:
+                  - name: policy.contract.decrease-type
+              - size: 33%
+                elements:
+                  - name: policy.contract.decrease-pattern
+              - size: 33%
+                elements:
+                  - name: policy.contract.decrease-interest

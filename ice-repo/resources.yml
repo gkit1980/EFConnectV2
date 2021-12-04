@@ -2439,6 +2439,26 @@ entries:
               - en: I declare that I am a tax resident in the USA.
                 de: I declare that I am a tax resident in the USA.
                 nl: Ik verklaar dat ik fiscaal inwoner ben van de VS.
+        decrease-type:
+          label:
+            - en: Decrease type
+              de: Decrease type
+              nl: Decrease type
+        decrease-pattern:
+          label:
+            - en: Decrease pattern
+              de: Decrease pattern
+              nl: Decrease pattern
+        decrease-interest:
+          label:
+            - en: Interest
+              de: Interest
+              nl: Interest
+        decrease-label:
+          label:
+            - en: Decrease parameters
+              de: Decrease parameters
+              nl: Decrease parameters
       participants:
         holder:
           person:
