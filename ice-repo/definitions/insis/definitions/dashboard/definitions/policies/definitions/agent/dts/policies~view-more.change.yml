@@ -60,3 +60,25 @@ dt:
         - insis.products.policy-details.agent/summary
         - policies~policy-id
         - policies~client-pid
+    - inputs:
+        - 2121
+        - Quotation
+      outputs:
+        - insis.products.life.risks.tl2121.term-life.quote-buy.agent/1.quote.people
+        - policies~policy-id
+        - policies~client-pid
+    - inputs:
+        - 2121
+        - Policy
+      outputs:
+        - insis.products.policy-details.agent/summary
+        - policies~policy-id
+        - policies~client-pid
+    - inputs:
+        - 2121
+        - Application
+      outputs:
+        - >-
+          insis.products.life.risks.tl2121.term-life.quote-buy.agent/2.application.details
+        - policies~policy-id
+        - policies~client-pid
