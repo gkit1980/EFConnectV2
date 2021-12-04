@@ -128,6 +128,10 @@
     }
   }
   .product-card {
+    > ice-element > .ice-element > ice-array > .ice-array > .ice-array-item {
+      min-height: 700px;
+    }
+
     .ice-array-item {
       display: inline-flex;
       width: 50%;
