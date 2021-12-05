@@ -2341,6 +2341,11 @@ entries:
               - en: Decrease Mode
                 de: Fallender Verlauf
                 nl: Vallend verloop
+          decrease-type:
+            label:
+              - en: Decrease Type
+                de: Verlaufstyp
+                nl: Vallend type
         begin:
           label:
             - en: Insurance start

@@ -44,6 +44,8 @@ section:
               - size: 175px
                 size.xs: 100%
                 css: u-mb-4
+                elements:
+                  - name: policy.contract.custom.decrease-type
               - size: 175px
                 size.xs: 100%
                 css: u-mb-4

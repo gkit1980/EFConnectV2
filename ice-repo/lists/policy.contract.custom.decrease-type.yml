@@ -4,15 +4,15 @@ list:
       label_en: "Please choose"
       label_de: "Bitte auswählen"
       label_nl: "Maak een keuze"
-    - value: Y
-      label_en: annually
-      label_de: annually
-      label_nl: jaarlijks
-    - value: M
-      label_en: monthly
-      label_de: monthly
-      label_nl: maandelijks
-  type: text
+    - value: 0
+      label_en: Annuity
+      label_de: Jahresrente
+      label_nl: Lijfrente
+    - value: l
+      label_en: Linearly
+      label_de: Linear
+      label_nl: Lineair
+  type: integer
   additionals:
     label_en:
       label: label_en
