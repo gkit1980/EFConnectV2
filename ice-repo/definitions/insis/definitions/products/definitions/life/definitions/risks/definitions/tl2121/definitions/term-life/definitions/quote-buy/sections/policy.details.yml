@@ -31,6 +31,25 @@ section:
             align: space-between
             layout.xs: column
           - cols:
+              - size: 175px
+                size.xs: 100%
+                css: u-mb-4-sm
+                elements:
+                  - name: policy.contract.custom.interest-rate
+              - size: 175px
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.contract.custom.decrease-mode
+              - size: 175px
+                size.xs: 100%
+                css: u-mb-4
+              - size: 175px
+                size.xs: 100%
+                css: u-mb-4
+            align: space-between
+            layout.xs: column
+          - cols:
               - size: auto
                 size.xs: auto
                 size.sm: auto

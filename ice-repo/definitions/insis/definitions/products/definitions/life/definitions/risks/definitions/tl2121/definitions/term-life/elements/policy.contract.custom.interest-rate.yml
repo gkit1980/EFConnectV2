@@ -1,0 +1,13 @@
+element:
+  type: decimal
+  viewMode: required
+  range:
+    StaticRangeRule:
+      min: 0
+      max: 12
+  component:
+    StaticComponentRule:
+      component:
+        IceNumber:
+          separateThousands: false
+          fractionSize: 2

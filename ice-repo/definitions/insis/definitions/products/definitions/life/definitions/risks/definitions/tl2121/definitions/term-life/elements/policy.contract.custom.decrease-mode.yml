@@ -1,0 +1,5 @@
+element:
+  type: text
+  viewMode: required
+  component: IceDropdown
+  values: policy.contract.custom.decrease-mode

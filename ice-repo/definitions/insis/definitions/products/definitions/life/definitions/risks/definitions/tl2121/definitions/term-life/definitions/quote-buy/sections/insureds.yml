@@ -59,6 +59,11 @@ section:
                 size.sm: auto
                 elements:
                   - name: policy.insured.person-objects~person.address.country
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: policy.insured.person-objects~question.q-04
             gap: 15px
             css: u-mb-2
           - cols:

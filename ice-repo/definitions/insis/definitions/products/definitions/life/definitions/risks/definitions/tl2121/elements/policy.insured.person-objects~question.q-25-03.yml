@@ -1,0 +1,12 @@
+element:
+  title: >-
+    3. What was the reason/cause for consulting the general
+    practitioner/specialist?
+  type: text
+  component: IceTextInput
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.insured.person-objects~question.q-25
+      conditionValue: "1"
+      conditionViewMode: default
+      elseViewMode: hidden

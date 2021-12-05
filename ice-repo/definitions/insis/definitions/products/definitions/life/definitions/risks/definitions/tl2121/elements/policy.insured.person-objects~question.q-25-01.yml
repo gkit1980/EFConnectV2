@@ -1,0 +1,10 @@
+element:
+  title: 1. Which practitioner have you consulted?
+  type: text
+  component: IceTextInput
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.insured.person-objects~question.q-25
+      conditionValue: "1"
+      conditionViewMode: default
+      elseViewMode: hidden

@@ -25,11 +25,29 @@ section:
           - gap: 24px
             gap.xs: 0px
             cols:
-              - size: 56.5%
+              - size: 100%
                 size.xs: 100%
                 css: u-mb-4
                 elements:
                   - name: policy.insured.person-objects~question.q-25
+              - size: 100%
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.insured.person-objects~question.q-25-01
+          - gap: 24px
+            gap.xs: 0px
+            cols:
+              - size: 100%
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.insured.person-objects~question.q-25-02
+              - size: 100%
+                size.xs: 100%
+                css: u-mb-4
+                elements:
+                  - name: policy.insured.person-objects~question.q-25-03
           - gap: 24px
             gap.xs: 0px
             align: start
