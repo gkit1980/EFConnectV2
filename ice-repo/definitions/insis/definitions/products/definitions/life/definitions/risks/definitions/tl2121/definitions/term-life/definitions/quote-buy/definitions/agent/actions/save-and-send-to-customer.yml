@@ -1,0 +1,13 @@
+action:
+  execution:
+    - IntegrationExecutionRule:
+        integration: application.register
+    - NavigateToDefinitionExecutionRule:
+        definition: insis.person.client.agent
+        page: summary
+        queryParams:
+          manComp: 1
+        dynIdElement: policy.participants.holder.person.pid
+  condition:
+    InsisIsPageValidConditionRule:
+      page: 1.quote.covers

@@ -1,0 +1,12 @@
+section:
+  component:
+    IceFlexSection:
+      tags:
+        - pull-right
+      grid:
+        rows:
+          - cols:
+              - size: 100%
+                elements:
+                  - name: save-quote
+      css: button-width-100 u-mb-3

@@ -1,0 +1,11 @@
+element:
+  type: action
+  defaultValue:
+    StaticValueRule:
+      value: save-and-send-to-customer
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          variant: flat
+          themeColor: primary
