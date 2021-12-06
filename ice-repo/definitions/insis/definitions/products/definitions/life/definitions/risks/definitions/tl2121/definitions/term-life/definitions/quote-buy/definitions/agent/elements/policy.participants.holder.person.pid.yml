@@ -1,0 +1,6 @@
+element:
+  type: text
+  defaultValue:
+    DataStoreValueRule:
+      scopeToDefintion: true
+      path: query.pid
