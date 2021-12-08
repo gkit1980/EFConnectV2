@@ -1,0 +1,6 @@
+action:
+  execution:
+    - IntegrationExecutionRule:
+        integration: application.register
+    - NavigateToPageExecutionRule:
+        page: 2.application.beneficiaries
