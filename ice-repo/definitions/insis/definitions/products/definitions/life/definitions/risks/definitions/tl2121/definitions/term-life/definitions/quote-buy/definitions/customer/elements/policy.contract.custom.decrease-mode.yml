@@ -1,5 +1,2 @@
 element:
   type: text
-  viewMode:
-    StaticViewModeRule:
-      viewMode: disabled

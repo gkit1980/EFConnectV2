@@ -1,5 +1,2 @@
 element:
   type: decimal
-  viewMode:
-    StaticViewModeRule:
-      viewMode: disabled
