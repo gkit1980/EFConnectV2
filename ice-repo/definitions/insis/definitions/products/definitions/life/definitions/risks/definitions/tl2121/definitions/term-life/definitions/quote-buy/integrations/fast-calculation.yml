@@ -57,4 +57,4 @@ integration:
             useSourceIndex: true
           mappings:
             - element: policy.insured.person-objects~cover.death-any.premium
-              payload: rules[n].outputParams.DEATH_ANY_PREM
+              payload: rules[n].outputParams.PREM
