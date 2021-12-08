@@ -1,5 +1,8 @@
 element:
   type: date
+  defaultValue:
+    DateExpressionValueRule:
+      expression: insis.openday
   mirror:
     CopyValueMirrorRule:
       originElement: insis.openday
