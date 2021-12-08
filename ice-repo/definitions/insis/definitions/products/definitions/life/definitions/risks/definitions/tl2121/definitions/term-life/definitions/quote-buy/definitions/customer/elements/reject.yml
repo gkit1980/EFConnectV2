@@ -6,3 +6,6 @@ element:
         IceButton:
           themeColor: accent
           variant: stroked
+  defaultValue:
+    StaticValueRule:
+      value: navigate.back
