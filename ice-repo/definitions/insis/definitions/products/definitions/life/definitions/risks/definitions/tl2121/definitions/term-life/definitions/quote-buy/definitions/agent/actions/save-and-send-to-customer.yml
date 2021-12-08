@@ -1,7 +1,7 @@
 action:
   execution:
     - IntegrationExecutionRule:
-        integration: application.register
+        integration: quotation.register
     - NavigateToDefinitionExecutionRule:
         definition: insis.person.client.agent
         page: summary

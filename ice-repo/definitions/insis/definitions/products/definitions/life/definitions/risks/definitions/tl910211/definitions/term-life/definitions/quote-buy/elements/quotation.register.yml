@@ -1,0 +1,9 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          themeColor: primary
+          variant: flat
+  defaultValue: quotation.register
