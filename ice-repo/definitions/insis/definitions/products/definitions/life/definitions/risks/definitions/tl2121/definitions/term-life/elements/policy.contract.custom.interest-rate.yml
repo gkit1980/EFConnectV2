@@ -1,6 +1,7 @@
 element:
   type: decimal
   viewMode: required
+  defaultValue: 2
   range:
     StaticRangeRule:
       min: 0
@@ -11,3 +12,6 @@ element:
         IceNumber:
           separateThousands: false
           fractionSize: 2
+  buckets:
+    insis-quote:
+      trigger: true

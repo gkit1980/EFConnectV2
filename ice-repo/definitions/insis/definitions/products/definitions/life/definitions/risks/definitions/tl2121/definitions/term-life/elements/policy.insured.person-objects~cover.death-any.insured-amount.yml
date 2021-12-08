@@ -1,0 +1,10 @@
+element:
+  type: currency
+  defaultValue: 100000
+  range:
+    StaticRangeRule:
+      min: 100000
+      max: 750000
+  buckets:
+    insis-quote:
+      trigger: true

@@ -1,2 +1,8 @@
 element:
   type: text
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.contract.policy-id
+      conditionViewMode: required
+      elseViewMode: disabled
+      conditionValue: null

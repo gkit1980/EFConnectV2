@@ -3,3 +3,4 @@ element:
   viewMode: required
   component: IceDropdown
   values: policy.contract.custom.decrease-type
+  defaultValue: 0
