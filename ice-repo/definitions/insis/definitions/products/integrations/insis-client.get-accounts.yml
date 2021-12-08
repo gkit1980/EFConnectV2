@@ -24,6 +24,12 @@ integration:
             - element: policy.participants.holder.person.pid
               payload: PID
       in:
+        - fromIdx:
+            array: payload.Addresses.Address
+            condition: PrimaryFlag === 'Y'
+          mappings:
+            - element: policy.participants.holder.person.address.country
+              payload: Addresses.Address[n].CountryCode
         - mappings:
             - element: policy.participants.holder.person.first-name
               payload: Entity.PersonalData.Name.Given
