@@ -1,0 +1,5 @@
+action:
+  execution:
+    - NavigateToUrlExecutionRule:
+        url: /ice/insis.dashboard.policies.customer/home
+        definition: ''
