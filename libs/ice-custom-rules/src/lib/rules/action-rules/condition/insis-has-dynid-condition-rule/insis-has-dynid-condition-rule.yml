@@ -1,0 +1,5 @@
+implementations:
+  InsisHasDynIdConditionRule:
+    description: >
+      Executes only when there is dynid
+

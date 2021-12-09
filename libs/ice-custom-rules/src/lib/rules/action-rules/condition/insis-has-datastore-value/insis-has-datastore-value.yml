@@ -1,0 +1,9 @@
+implementations:
+  InsisHasDatastoreValue:
+    description: >
+      Executes only when datastore has certain value at path
+    params:
+      path:
+        type: string
+        required: true
+        label: Path
