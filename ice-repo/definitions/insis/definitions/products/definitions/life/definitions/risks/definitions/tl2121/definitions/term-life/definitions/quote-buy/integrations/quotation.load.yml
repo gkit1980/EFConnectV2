@@ -1,0 +1,23 @@
+integration:
+  exchange:
+    SoapCallExchangeRule:
+      endpoint: insis_pam_endpoint
+      securityMode: UsernamePassword
+      username: insis-username
+      password: insis-password
+      ignoreNamespaces: insis-ignoreNamespaces
+      jsonSchema: InsisPAM
+  transformation:
+    DefaultTransformationRule:
+      in: {}
+      out:
+        - mappings:
+            - param: soapAction
+              value: findEngagement
+            - param: requestType
+              value: FindEngagementRqType
+            - param: responseType
+              value: FindEngagementRsType
+            - payload: EngagementID
+              datastore: insis.products.life.risks.tl2121.term-life.quote-buy.customer.query.engagementId
+      extends: risks.life.insis-engagement-quote.save
