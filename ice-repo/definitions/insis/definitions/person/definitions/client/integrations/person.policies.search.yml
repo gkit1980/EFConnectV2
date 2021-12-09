@@ -66,6 +66,8 @@ integration:
               element: person.policies~insr-type
             - payload: 'rows[n].total'
               datastore: 'pagination.policies.results-length'
+            - payload: 'rows[n].engagement_id'
+              element: person.policies~engagement-id
         - fromIdx:
             array: payload.rows
             fromIdx:

@@ -20,4 +20,6 @@ integration:
               value: FindEngagementRsType
             - payload: EngagementID
               datastore: insis.products.life.risks.tl2121.term-life.quote-buy.customer.query.engagementId
+            - payload: EngagementID
+              datastore: insis.products.life.risks.tl2121.term-life.quote-buy.agent.query.engagementId
       extends: risks.life.insis-engagement-quote.save

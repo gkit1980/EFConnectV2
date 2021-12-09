@@ -7,12 +7,15 @@ dt:
   outputs:
     - id: definition
       type: string
-    - label: new label
+    - label: dynId
       default: ''
       id: dynId
     - label: pid
       type: string
       id: pid
+    - label: engagementId
+      id: engagementId
+      type: string
   rules:
     - inputs:
         - 910211
@@ -53,8 +56,17 @@ dt:
         - person.pid
     - inputs:
         - 2121
-        - '-'
+        - 'Quotation'
       outputs:
-        - insis.products.policy-details.agent/summary
+        - insis.products.life.risks.tl2121.term-life.quote-buy.agent/1.quote.covers
+        -
+        -
+        - person.policies~engagement-id
+    - inputs:
+        - 2121
+        - 'Application'
+      outputs:
+        - insis.products.life.risks.tl2121.term-life.quote-buy.agent/1.quote.covers
         - person.policies~policy-id
-        - person.pid
+        -
+        -
