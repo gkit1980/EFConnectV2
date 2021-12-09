@@ -1,0 +1,5 @@
+element:
+  type: text
+  label:
+    ResourceLabelRule:
+      key: portal.title.decr-term-life

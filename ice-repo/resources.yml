@@ -4088,6 +4088,10 @@ entries:
         - en: Motor Insurance
           de: Motor Insurance
           nl: Motorvoertuigenverzekering
+      decr-term-life:
+        - en: Decreasing term life
+          de: Decreasing term life
+          nl: Decreasing term life
     home:
       title:
         - en: INSIS Portal
