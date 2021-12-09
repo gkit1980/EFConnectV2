@@ -7,3 +7,6 @@ element:
         IceNumber:
           keyboardType: text
   viewMode: required
+  buckets:
+    insis-quote:
+      trigger: true

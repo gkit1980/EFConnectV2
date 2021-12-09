@@ -2,4 +2,8 @@ element:
   type: text
   viewMode: required
   component: IceDropdown
+  defaultValue: M
   values: policy.contract.custom.decrease-mode
+  buckets:
+    insis-quote:
+      trigger: true

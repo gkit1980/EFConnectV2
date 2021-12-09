@@ -1,36 +1,37 @@
 integration:
   exchange:
     InsisRulesRestExchangeRule:
-      endpointBaseurl: 'insis-rest-endpoint'
+      endpointBaseurl: "insis-rest-endpoint"
       verb: post
-      url: '/util/generic/rules'
+      url: "/util/generic/rules"
   transformation:
     DefaultTransformationRule:
       dateFormat: DD-MM-YYYY
+      additional: insis
       out:
         - mappings:
-            - payload: params.POL_VALID_FROM
+            - payload: params.BEGIN
               element: policy.contract.begin
 
-            - payload: params.POL_NUM_INST
+            - payload: params.K
               element: policy.contract.payment.frequency
 
-            - payload: params.RP_DURATION
+            - payload: params.N
               element: policy.contract.term.duration
 
-            - payload: params.RP_SUBSCR_TYPE
-              value: '1'
+            - payload: params.M
+              element: policy.contract.payment.term.duration
 
-            - payload: params.RP_SA_LEVEL
-              value: '1'
+            - payload: params.DECR
+              element: policy.contract.custom.decrease-type
 
-            - payload: params.INSIS_PORTAL
-              value: 'Yes'
+            - payload: params.INT
+              element: policy.contract.custom.interest-rate
 
         - fromIdx:
-            index: '[0]'
+            index: "[0]"
           mappings:
-            - payload: params.IV_DEATH_ANY
+            - payload: params.SA
               element: policy.insured.person-objects~cover.death-any.insured-amount
 
         - fromIdx:
@@ -39,18 +40,15 @@ integration:
             useSourceIndex: true
           mappings:
             - payload: rules[n].ruleRef
-              value: TERM_LIFE_TRF_SEQ
+              value: GET_RATE_PARAM_DEC_TERM
 
-            - payload: rules[n].params.INSURED_ROLE
-              element: policy.insured.person-objects~entity-accident-insured.type
+            - payload: rules[n].params.BDATE
+              element: policy.insured.person-objects~person.date-of-birth
 
-            - payload: rules[n].params.RP_AGE
-              element: policy.insured.person-objects~person.age-at-begin
-
-            - payload: rules[n].params.RP_SMOKER
+            - payload: rules[n].params.SMOK
               element: policy.insured.person-objects~question.q-04
 
-            - payload: rules[n].params.IO_AGE_WOP
+            - payload: rules[n].params.X
               element: policy.insured.person-objects~person.age-at-begin
 
       in:
@@ -60,7 +58,4 @@ integration:
             useSourceIndex: true
           mappings:
             - element: policy.insured.person-objects~cover.death-any.premium
-              payload: rules[n].outputParams.DEATH_ANY_PREM
-
-            - element: policy.insured.person-objects~cover.wop-total.premium
-              payload: rules[n].outputParams.WOP_TOTAL_PREM
+              payload: rules[n].outputParams.PREM

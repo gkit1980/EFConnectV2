@@ -1,9 +1,0 @@
-element:
-  type: text
-  component:
-    StaticComponentRule:
-      component:
-        IceDropdown: {}
-  values:
-    ListValuesRule:
-      list: policy.insured.person-objects.question.decrease-pattern

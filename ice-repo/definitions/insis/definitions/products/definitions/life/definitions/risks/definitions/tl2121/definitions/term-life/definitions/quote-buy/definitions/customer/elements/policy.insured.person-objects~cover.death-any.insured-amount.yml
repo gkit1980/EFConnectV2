@@ -1,5 +1,11 @@
 element:
   type: currency
   viewMode:
-    StaticViewModeRule:
-      viewMode: disabled
+    ConditionalViewModeRule:
+      conditionElement: policy.contract.policy-id
+      conditionViewMode: required
+      elseViewMode: disabled
+      conditionValue: null
+  buckets:
+    insis-quote:
+      trigger: true

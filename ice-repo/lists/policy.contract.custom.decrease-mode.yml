@@ -5,13 +5,13 @@ list:
       label_de: "Bitte auswählen"
       label_nl: "Maak een keuze"
     - value: Y
-      label_en: annually
-      label_de: annually
-      label_nl: jaarlijks
+      label_en: Annually
+      label_de: Annually
+      label_nl: Jaarlijks
     - value: M
-      label_en: monthly
-      label_de: monthly
-      label_nl: maandelijks
+      label_en: Monthly
+      label_de: Monthly
+      label_nl: Maandelijks
   type: text
   additionals:
     label_en:

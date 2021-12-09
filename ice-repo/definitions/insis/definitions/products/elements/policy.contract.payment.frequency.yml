@@ -2,7 +2,7 @@ element:
   title: number of installments for the policy
   type: integer
   component: IceDropdown
-  defaultValue: 1
+  defaultValue: 12
   buckets:
     insis-quote:
       trigger: true
