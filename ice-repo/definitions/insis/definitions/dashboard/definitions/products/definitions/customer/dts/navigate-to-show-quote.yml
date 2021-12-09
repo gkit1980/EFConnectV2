@@ -19,52 +19,58 @@ dt:
   rules:
     - inputs:
         - -2
-        - '920101'
+        - "920101"
       outputs:
         - insis.products.motor.920101-motor-comprehensive.quote-buy.customer/3.review.payment
         - quotes~policy-number
     - inputs:
         - -3
-        - '920101'
+        - "920101"
       outputs:
         - >-
           insis.products.motor.920101-motor-comprehensive.quote-buy.customer/2.application.vehicle-details
         - quotes~policy-number
     - inputs:
         - -4
-        - '920101'
+        - "920101"
       outputs:
         - insis.products.motor.920101-motor-comprehensive.quote-buy.customer/1.quote.vehicles
         - quotes~policy-number
     - inputs:
         - -2
-        - '910211'
+        - "910211"
       outputs:
         - insis.products.life.risks.tl910211.term-life.quote-buy.customer/2.application.details
         - quotes~policy-number
     - inputs:
         - -3
-        - '910211'
+        - "910211"
       outputs:
         - >-
           insis.products.life.risks.tl910211.term-life.quote-buy.customer/2.application.details
         - quotes~policy-number
     - inputs:
         - -4
-        - '910211'
+        - "910211"
       outputs:
         - insis.products.life.risks.tl910211.term-life.quote-buy.customer/1.quote.people
         - quotes~policy-number
     - inputs:
         - -4
-        - '2121'
+        - "2121"
       outputs:
         - insis.products.life.risks.tl2121.term-life.quote-buy.customer/1.quote.people
         - quotes~policy-number
         - quotes~engagement-id
     - inputs:
         - -2
-        - '2121'
+        - "2121"
+      outputs:
+        - insis.products.life.risks.tl2121.term-life.quote-buy.customer/2.application.details
+        - quotes~policy-number
+    - inputs:
+        - -3
+        - "2121"
       outputs:
         - insis.products.life.risks.tl2121.term-life.quote-buy.customer/2.application.details
         - quotes~policy-number
