@@ -5,4 +5,4 @@ element:
       key: elements.go-to-next-page-covers.2121.label
   defaultValue:
     StaticValueRule:
-      value: accept-offer
+      value: offer.accept
