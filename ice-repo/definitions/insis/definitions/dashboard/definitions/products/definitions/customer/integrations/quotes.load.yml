@@ -1,9 +1,9 @@
 integration:
   exchange:
     InsisRestPQCallExchangeRule:
-      endpointBaseurl: 'insis-rest-endpoint'
+      endpointBaseurl: "insis-rest-endpoint"
       verb: post
-      url: '/util/query/paginated-query'
+      url: "/util/query/paginated-query"
   transformation:
     DefaultTransformationRule:
       out:
@@ -28,44 +28,45 @@ integration:
             - param: p_insured_object
               value: null
             - param: policy_state
-              value: 'Quotation'
+              value: null
             - param: p_insr_end
               value: null
 
       in:
         - fromIdx:
             array: payload.rows
+            condition: policy_state < -1
           toIdx:
             array: datamodel.quotes
-            useSourceIndex: true
+            append: true
           mappings:
-            - payload: 'rows[n].engagement_id'
+            - payload: "rows[n].engagement_id"
               element: quotes~engagement-id
-            - payload: 'rows[n].insured_objects'
+            - payload: "rows[n].insured_objects"
               element: quotes~insured_objects
-            - payload: 'rows[n].policy_state'
+            - payload: "rows[n].policy_state"
               element: quotes~state
-            - payload: 'rows[n].policy_state_name'
+            - payload: "rows[n].policy_state_name"
               element: quotes~state-name
-            - payload: 'rows[n].product_name'
+            - payload: "rows[n].product_name"
               element: quotes~product.name
-            - payload: 'rows[n].insr_type'
+            - payload: "rows[n].insr_type"
               element: quotes~product.code
-            - payload: 'rows[n].insr_begin'
+            - payload: "rows[n].insr_begin"
               element: quotes~insurance.start
-            - payload: 'rows[n].insr_duration'
+            - payload: "rows[n].insr_duration"
               element: quotes~insurance.duration
-            - payload: 'rows[n].insr_duration_unit'
+            - payload: "rows[n].insr_duration_unit"
               element: quotes~insurance.duration-unit
-            - payload: 'rows[n].policy_no'
+            - payload: "rows[n].policy_no"
               element: quotes~policy-number
-            - payload: 'rows[n].premium_amnt'
+            - payload: "rows[n].premium_amnt"
               element: quotes~price
-            - payload: 'rows[n].quote_id'
+            - payload: "rows[n].quote_id"
               element: quotes~id
             - value: quote.navigate-to-details
               element: quotes~continue
-            - payload: 'rows[n].total'
+            - payload: "rows[n].total"
               datastore: pagination.quotes.results-length
         - fromIdx:
             array: payload.rows
@@ -78,5 +79,5 @@ integration:
               array: insured_objects
               useSourceIndex: true
           mappings:
-            - payload: 'rows[n].insured_objects[n].object_name'
+            - payload: "rows[n].insured_objects[n].object_name"
               element: quotes~insured_objects~object_name
