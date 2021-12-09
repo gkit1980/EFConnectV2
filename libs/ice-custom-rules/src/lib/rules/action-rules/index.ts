@@ -23,3 +23,4 @@ export * from './execution/distribute-percentages-equally-execution-rule/distrib
 
 export * from './condition/insis-is-page-valid-condition-rule/insis-is-page-valid-condition-rule';
 export * from './execution/insis-reset-other-indexes-of-element-execution-rule/insis-reset-other-indexes-of-element-execution-rule';
+export * from './condition/insis-has-dynid-condition-rule/insis-has-dynid-condition-rule';

@@ -1,0 +1,9 @@
+action:
+  condition:
+    InsisHasDynIdConditionRule: {}
+  execution:
+    - IntegrationExecutionRule:
+        integration: quotation.load
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ICE_CONTEXT_ACTIVATED

@@ -55,3 +55,36 @@ integration:
           mappings:
             - element: insis.error
               value: ''
+        - if: datamodel.policy.participants.holder.company.name != null
+          mappings:
+            - element: policy.participants.holder.company.name
+              payload: Client.Entity.CompanyData.Name
+            - element: policy.participants.holder.person.pid
+              payload: Client.Entity.CompanyData.CustomerID
+        - if: datamodel.policy.participants.holder.company.name == null
+          mappings:
+            - payload: Client.Entity
+              datastore: person
+            - element: policy.participants.holder.person.pid
+              payload: Client.Entity.PersonalData.PID
+        - mappings:
+            - element: policy.participants.holder.person.engagement-id
+              payload: EngagementData.EngagementID
+            - element: policy.contract.agent-no
+              payload: Policies.Policy[0].InsuranceConditions.AgentNO
+            - element: policy.contract.payment.frequency
+              payload: Policies.Policy[0].InsuranceConditions.Installments
+            - element: policy.contract.payment.way
+              payload: Policies.Policy[0].InsuranceConditions.PaymentWay
+            - element: policy.contract.policy-number
+              payload: Policies.Policy[0].InsuranceConditions.PolicyNo
+            - element: policy.contract.product-code
+              payload: Policies.Policy[0].InsuranceConditions.ProductCode
+            - element: policy.contract.renewal
+              payload: Policies.Policy[0].InsuranceConditions.Renewal
+            - element: policy.contract.term.units
+              payload: Policies.Policy[0].InsuranceConditions.DurationUnits
+            - element: policy.contract.term.duration
+              payload: Policies.Policy[0].InsuranceConditions.Duration
+            - element: policy.status.policy-status
+              payload: Policies.Policy[0].InsuranceConditions.PolicyState
