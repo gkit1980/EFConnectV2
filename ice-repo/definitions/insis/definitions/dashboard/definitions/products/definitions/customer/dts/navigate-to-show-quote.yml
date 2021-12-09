@@ -52,3 +52,15 @@ dt:
       outputs:
         - insis.products.life.risks.tl910211.term-life.quote-buy.customer/1.quote.people
         - quotes~policy-number
+    - inputs:
+        - -4
+        - '2121'
+      outputs:
+        - insis.products.life.risks.tl2121.term-life.quote-buy.customer/1.quote.people
+        - quotes~engagement-id
+    - inputs:
+        - -2
+        - '2121'
+      outputs:
+        - insis.products.life.risks.tl2121.term-life.quote-buy.customer/2.application.details
+        - quotes~policy-number
