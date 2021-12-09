@@ -3,4 +3,4 @@ action:
     - IntegrationExecutionRule:
         integration: application.register
     - NavigateToPageExecutionRule:
-        page: 2.application.beneficiaries
+        page: 2.application.details
