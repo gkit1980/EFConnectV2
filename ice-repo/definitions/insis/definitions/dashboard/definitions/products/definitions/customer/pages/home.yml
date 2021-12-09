@@ -26,6 +26,7 @@ page:
                     size.xs: auto
                     size.sm: auto
                     elements:
+                      - name: quotes~policy-number
                       - name: quotes~product.name
                     align: center
                   - size: 20%
