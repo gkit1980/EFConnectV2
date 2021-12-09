@@ -1,9 +1,11 @@
 action:
-  condition:
-    InsisHasDynIdConditionRule: {}
   execution:
     - IntegrationExecutionRule:
         integration: quotation.load
   trigger:
     - IceLifecycleEventTriggerRule:
         event: ICE_CONTEXT_ACTIVATED
+  condition:
+    InsisHasDatastoreValue:
+      path: >-
+        insis.products.life.risks.tl2121.term-life.quote-buy.customer.query.engagementId

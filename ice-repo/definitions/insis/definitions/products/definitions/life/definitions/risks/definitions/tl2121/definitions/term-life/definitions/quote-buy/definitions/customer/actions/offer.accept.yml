@@ -2,5 +2,7 @@ action:
   execution:
     - IntegrationExecutionRule:
         integration: application.register
-    - NavigateToPageExecutionRule:
-        page: 2.application.details
+    - NavigateToDefinitionExecutionRule:
+        dynIdElement: policy.contract.policy-id
+        page: 2.application.detail
+        definition: insis.products.life.risks.tl2121.term-life.quote-buy.customer

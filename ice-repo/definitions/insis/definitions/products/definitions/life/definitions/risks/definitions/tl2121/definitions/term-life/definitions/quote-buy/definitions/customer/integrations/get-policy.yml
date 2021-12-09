@@ -9,15 +9,12 @@ integration:
       jsonSchema: InsisPAM
   transformation:
     DefaultTransformationRule:
-      in: {}
+      extends: risks.life.insis-policy.get-policy
       out:
         - mappings:
             - param: soapAction
-              value: findEngagement
+              value: findPolicyByNumber
             - param: requestType
-              value: FindEngagementRqType
+              value: FndPlcyByNumRqType
             - param: responseType
-              value: FindEngagementRsType
-            - payload: EngagementID
-              datastore: insis.products.life.risks.tl2121.term-life.quote-buy.customer.query.engagementId
-      extends: risks.life.insis-engagement-quote.save
+              value: FndPlcyByNumRsType

@@ -13,6 +13,9 @@ dt:
     - label: dynId
       id: dynId
       type: string
+    - label: engagementId
+      id: engagementId
+      type: string
   rules:
     - inputs:
         - -2
@@ -57,6 +60,7 @@ dt:
         - '2121'
       outputs:
         - insis.products.life.risks.tl2121.term-life.quote-buy.customer/1.quote.people
+        - quotes~policy-number
         - quotes~engagement-id
     - inputs:
         - -2

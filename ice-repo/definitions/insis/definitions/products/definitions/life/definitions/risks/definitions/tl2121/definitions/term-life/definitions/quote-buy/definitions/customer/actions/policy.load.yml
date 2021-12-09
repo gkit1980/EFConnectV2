@@ -1,0 +1,12 @@
+action:
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ICE_CONTEXT_ACTIVATED
+  condition:
+    InsisHasDynIdConditionRule: {}
+  execution:
+    - IntegrationExecutionRule:
+        integration: get-policy
+    - InsisArrayIterationIntegrationExecutionRule:
+        integration: load-insurer-rest
+        arrayElement: policy.insured.person-objects
