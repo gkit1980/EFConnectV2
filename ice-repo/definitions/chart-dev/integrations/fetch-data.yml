@@ -1,0 +1,10 @@
+integration:
+  exchange:
+    InsisLoadYmlFileExchangeRule:
+      dataFileURL: data/chart-data.json
+  transformation:
+    DefaultTransformationRule:
+      in:
+        - mappings:
+            - payload: 'file'
+              datastore: 'chart'

@@ -1,0 +1,7 @@
+action:
+  execution:
+    - IntegrationExecutionRule:
+        integration: fetch-data
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ICE_CONTEXT_ACTIVATED

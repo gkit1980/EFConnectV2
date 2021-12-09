@@ -1,0 +1,5 @@
+element:
+  type: action
+  defaultValue:
+    StaticValueRule:
+      value: fetch-data
