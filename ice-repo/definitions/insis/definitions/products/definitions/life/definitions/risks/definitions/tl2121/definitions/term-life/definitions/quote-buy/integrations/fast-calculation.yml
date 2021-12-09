@@ -51,6 +51,24 @@ integration:
             - payload: rules[n].params.X
               element: policy.insured.person-objects~person.age-at-begin
 
+            - payload: rules[n].params.BEGIN
+              element: policy.contract.begin
+
+            - payload: rules[n].params.K
+              element: policy.contract.payment.frequency
+
+            - payload: rules[n].params.N
+              element: policy.contract.term.duration
+
+            - payload: rules[n].params.M
+              element: policy.contract.payment.term.duration
+
+            - payload: rules[n].params.DECR
+              element: policy.contract.custom.decrease-type
+
+            - payload: rules[n].params.INT
+              element: policy.contract.custom.interest-rate
+
       in:
         - fromIdx:
             array: payload.rules
