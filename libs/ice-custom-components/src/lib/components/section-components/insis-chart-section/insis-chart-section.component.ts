@@ -4,7 +4,8 @@ import {IceConsole, IceElement} from '@impeo/ice-core';
 import {get, uniq, set, cloneDeep, merge, has, extend} from 'lodash';
 import {EChartOption} from 'echarts';
 import {debounceTime} from 'rxjs/operators';
-import {Subscription} from 'rxjs';
+import {BehaviorSubject, Subscription} from 'rxjs';
+import _ from 'lodash';
 
 
 enum ChartTypes {
@@ -24,58 +25,83 @@ export class InsisChartSectionComponent extends SectionComponentImplementation i
   static componentName = 'InsisChart';
 
   options: any;
-  private changeElementSubscriptions: Subscription[] = [];
+  private $dataStoreUpdate = new BehaviorSubject<any>(null);
+  private changeDataStoreSubscription: Subscription;
+  private isInitialized = false;
+  xAxisData:any=[];
+  data1:any=[];
+  data2:any=[];
 
 
   ngOnInit(): void {
-    const xAxisData = [];
-    const data1 = [];
-    const data2 = [];
-
-    for (let i = 0; i < 100; i++) {
-      xAxisData.push('category' + i);
-      data1.push((Math.sin(i / 5) * (i / 5 - 10) + i / 6) * 5);
-      data2.push((Math.cos(i / 5) * (i / 5 - 10) + i / 6) * 5);
-    }
-
-    this.options = {
-      legend: {
-        data: ['bar', 'bar2'],
-        align: 'left',
-      },
-      tooltip: {},
-      xAxis: {
-        data: xAxisData,
-        silent: false,
-        splitLine: {
-          show: false,
-        },
-      },
-      yAxis: {},
-      series: [
+   
+   
+    this.changeDataStoreSubscription = this.context.dataStore.subscribe(this.datastorePath, {
+      next: () => {
+        if (!this.isInitialized) 
         {
-          name: 'bar',
-          type: 'bar',
-          data: data1,
-          animationDelay: (idx) => idx * 10,
-        },
-        {
-          name: 'bar2',
-          type: 'bar',
-          data: data2,
-          animationDelay: (idx) => idx * 10 + 100,
-        },
-      ],
-      animationEasing: 'elasticOut',
-      animationDelayUpdate: (idx) => idx * 5,
-    };
+          this.setOptions();
+         // this.$reevaluate.next();
+        }
+        this.$dataStoreUpdate.next(this.context.dataStore.get(this.datastorePath));
+      },
+    });
+
+ 
+    const dataStoreData = _.get(this.context.dataStore.data, this.datastorePath);
+
+    
+
+    
+
+
+
   }
 
   ngOnDestroy(): void {
-    this.changeElementSubscriptions.forEach(subscription => {
-        subscription.unsubscribe();
-    });
-    this.changeElementSubscriptions.length = 0;
+  
+}
+
+setOptions()
+{
+  for (let i = 0; i < 100; i++) {
+    this.xAxisData.push('category' + i);
+    this.data1.push((Math.sin(i / 5) * (i / 5 - 10) + i / 6) * 5);
+    this.data2.push((Math.cos(i / 5) * (i / 5 - 10) + i / 6) * 5);
+  }
+
+  this.options = {
+    legend: {
+      data: ['Fund1', 'Fund2'],
+      align: 'left',
+    },
+    tooltip: {},
+    xAxis: {
+      data: this.xAxisData,
+      silent: false,
+      splitLine: {
+        show: false,
+      },
+    },
+    yAxis: {},
+    series: [
+      {
+        name: 'Fund1',
+        type: 'line',
+        data: this.data1,
+        animationDelay: (idx) => idx * 10,
+      },
+      {
+        name: 'Fund2',
+        type: 'line',
+        data: this.data2,
+        animationDelay: (idx) => idx * 10 + 100,
+      },
+    ],
+    animationEasing: 'elasticOut',
+    animationDelayUpdate: (idx) => idx * 5,
+  };
+
 }
 
 
@@ -85,6 +111,10 @@ get recipeParams(): { elements?: string[] } {
 
 get chartType(): ChartTypes {
     return get(this.recipeParams, 'type', ChartTypes.line);
+}
+
+get datastorePath():string {
+  return get(this.recipeParams, 'datastorePath','chart');
 }
 
 get dataAxis(): string {
@@ -120,18 +150,7 @@ getElementValues(element: IceElement): any[] {
     return [...element.getValue().values.map(indexed => indexed.value)];
 }
 
-private getDataProvidingElements(recipe: any): IceElement[] {
-    let elements = get(recipe, 'elements');
-    if (!elements) {
-        IceConsole.error('Missing data elements for Chart Section!');
-        return [];
-    }
 
-    elements = elements.map(elementName => {
-        return get(this.context.iceModel.elements, elementName);
-    }).filter(element => !!element);
-    return uniq(elements);
-}
 
 private getResourceFromParam(paramName: string): string | false {
   const key = get(this.recipeParams, paramName, false);

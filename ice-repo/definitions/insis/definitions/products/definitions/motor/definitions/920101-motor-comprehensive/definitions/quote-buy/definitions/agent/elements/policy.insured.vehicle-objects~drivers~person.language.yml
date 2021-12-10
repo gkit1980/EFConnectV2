@@ -1,9 +1,0 @@
-element:
-  type: text
-  values:
-    ListValuesRule:
-      list: common.languages
-  component:
-    StaticComponentRule:
-      component:
-        IceDropdown: {}

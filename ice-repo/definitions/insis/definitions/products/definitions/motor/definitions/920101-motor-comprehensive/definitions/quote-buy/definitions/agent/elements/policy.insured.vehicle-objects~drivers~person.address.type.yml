@@ -1,8 +1,0 @@
-element:
-  type: text
-  values:
-    ListValuesRule:
-      list: insis.address-types
-  component:
-    StaticComponentRule:
-      component: IceDropdown

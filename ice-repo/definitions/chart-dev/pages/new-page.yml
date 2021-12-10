@@ -14,9 +14,7 @@ page:
       label: Fetch data
     - component:
         InsisChart:
-          elements:
-            - mydata~expected-fund-return
-            - mydata~actual-fund-return
+          datastorePath: chart
           label: mydata~labels
           dataAxis: yAxis
           title: Test-Title

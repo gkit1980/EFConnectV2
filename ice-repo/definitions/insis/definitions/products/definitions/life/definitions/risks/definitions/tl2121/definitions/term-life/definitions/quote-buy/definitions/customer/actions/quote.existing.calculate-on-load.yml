@@ -1,8 +1,0 @@
-action:
-  trigger:
-    - IceLifecycleEventTriggerRule:
-        event: ACTIVE_INTEGRATION_SUCCESS
-        payload: quotation.load
-  execution:
-    - IntegrationExecutionRule:
-        integration: fast-calculation
