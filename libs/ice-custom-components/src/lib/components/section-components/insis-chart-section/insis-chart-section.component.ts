@@ -40,7 +40,8 @@ export class InsisChartSectionComponent extends SectionComponentImplementation i
       next: () => {
         if (!this.isInitialized) 
         {
-          this.setOptions();
+          const dataStoreData = _.get(this.context.dataStore.data, this.datastorePath);
+          this.setOptions(dataStoreData);
          // this.$reevaluate.next();
         }
         this.$dataStoreUpdate.next(this.context.dataStore.get(this.datastorePath));
@@ -62,45 +63,40 @@ export class InsisChartSectionComponent extends SectionComponentImplementation i
   
 }
 
-setOptions()
+setOptions(data:any)
 {
-  for (let i = 0; i < 100; i++) {
-    this.xAxisData.push('category' + i);
-    this.data1.push((Math.sin(i / 5) * (i / 5 - 10) + i / 6) * 5);
-    this.data2.push((Math.cos(i / 5) * (i / 5 - 10) + i / 6) * 5);
-  }
+ 
+    this.xAxisData=data.Periods;
+    
+  
 
   this.options = {
     legend: {
-      data: ['Fund1', 'Fund2'],
+      data: data.Fundnames,
       align: 'left',
     },
     tooltip: {},
     xAxis: {
-      data: this.xAxisData,
+      data: data.Periods,
       silent: false,
       splitLine: {
         show: false,
       },
     },
     yAxis: {},
-    series: [
-      {
-        name: 'Fund1',
-        type: 'line',
-        data: this.data1,
-        animationDelay: (idx) => idx * 10,
-      },
-      {
-        name: 'Fund2',
-        type: 'line',
-        data: this.data2,
-        animationDelay: (idx) => idx * 10 + 100,
-      },
-    ],
-    animationEasing: 'elasticOut',
-    animationDelayUpdate: (idx) => idx * 5,
+    series:[]
   };
+
+   for(let item of data.Funds)
+      {
+               var fundDetails={
+                 name: item.fundname,
+                 type: 'line',
+                 data: item.values,
+                 animationDelay: (idx) => idx * 10,
+               }
+               this.options.series.push(fundDetails);
+      }
 
 }
 

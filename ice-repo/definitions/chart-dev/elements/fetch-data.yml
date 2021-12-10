@@ -2,4 +2,4 @@ element:
   type: action
   defaultValue:
     StaticValueRule:
-      value: fetch-data
+      value: fetch-sql-data

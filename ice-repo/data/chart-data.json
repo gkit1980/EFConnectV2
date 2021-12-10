@@ -1,1 +1,19 @@
-[{ "val": 1 }, { "val": 2 }, { "val": 3 }]
+{
+    "FundsNames": ["European Retirement Fund","French Executive Portfolio","Global Value Fund","Institutional Index Fund"],
+    "Periods": ["0027-05-13T00:00:00", "0027-05-14T00:00:00", "0027-05-15T00:00:00", "0027-05-16T00:00:00"],
+    "Funds": [{
+            "fundname": "European Retirement Fund",
+            "values": [0.42, 0.41, 0.41, 0.43]
+        }, {
+            "fundname": "French Executive Portfolio",
+            "values": [1.08, 1.04, 1.07, 1.04]
+        }, {
+            "fundname": "Global Value Fund",
+            "values": [0.15, 0.15, 0.15, 0.14]
+        }, {
+            "fundname": "Institutional Index Fund",
+            "values": [0.39, 0.39, 0.4, 0.42]
+        }
+    ]
+}
+

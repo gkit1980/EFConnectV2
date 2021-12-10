@@ -1,0 +1,29 @@
+integration:
+  exchange:
+    InsisRestPQCallExchangeRule:
+      endpointBaseurl: 'insis-rest-endpoint'
+      verb: post
+      url: '/util/query/paginated-query'
+  transformation:
+    DefaultTransformationRule:
+      out:
+        - mappings:
+            - param: queryId
+              value: funds.data
+            - param: price_date
+              value: '01/01/00'
+            - param: page_size
+              datastore: insis.dashboard.policies.customer.pagination.expired.page-size
+            - param: offset
+              datastore: insis.dashboard.policies.customer.pagination.expired.offset
+      in:
+        - fromIdx:
+            array: payload.rows.FundNames
+          toIdx:
+            array: datamodel.fund.names
+            append: true
+        - fromIdx:
+            array: payload.rows.Funds
+          toIdx:
+            array: datamodel.fund.array
+            append: true
