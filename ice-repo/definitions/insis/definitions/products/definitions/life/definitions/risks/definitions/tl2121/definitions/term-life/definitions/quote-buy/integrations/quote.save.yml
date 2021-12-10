@@ -8,13 +8,13 @@ integration:
       extends: life.insis-engagement-quote.save
       out:
         - mappings:
-            - payload: Client.Entity.PersonalData.CustomProperties.CustomProperty[0].FieldName
+            - payload: Policies.Policy[0].InsuranceConditions.CustomProperties.CustomProperty[0].FieldName
               value: attrn1
-            - payload: Client.Entity.PersonalData.CustomProperties.CustomProperty[0].FieldValue
+            - payload: Policies.Policy[0].InsuranceConditions.CustomProperties.CustomProperty[0].Value
               element: policy.contract.custom.interest-rate
-            - payload: Client.Entity.PersonalData.CustomProperties.CustomProperty[1].FieldName
+            - payload: Policies.Policy[0].InsuranceConditions.CustomProperties.CustomProperty[1].FieldName
               value: attrc1
-            - payload: Client.Entity.PersonalData.CustomProperties.CustomProperty[1].FieldValue
+            - payload: Policies.Policy[0].InsuranceConditions.CustomProperties.CustomProperty[1].Value
               element: policy.contract.custom.decrease-mode
         - fromIdx:
             array: datamodel.policy.insured.person-objects

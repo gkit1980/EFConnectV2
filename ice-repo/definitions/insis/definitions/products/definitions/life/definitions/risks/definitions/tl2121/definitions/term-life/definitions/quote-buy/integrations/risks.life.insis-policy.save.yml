@@ -3,19 +3,19 @@ integration:
     DefaultTransformationRule:
       additional: insis
       dateFormat: YYYY-MM-DD
-      dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
+      dateTimeFormat: "YYYY-MM-DDThh:mm:ss"
       extends: life.insis-policy.save
       in: {}
       out:
         - mappings:
-          - payload: Client.Entity.PersonalData.CustomProperties.CustomProperty[0].FieldName
-            value: attrn1
-          - payload: Client.Entity.PersonalData.CustomProperties.CustomProperty[0].FieldValue
-            element: policy.contract.custom.interest-rate
-          - payload: Client.Entity.PersonalData.CustomProperties.CustomProperty[1].FieldName
-            value: attrc1
-          - payload: Client.Entity.PersonalData.CustomProperties.CustomProperty[1].FieldValue
-            element: policy.contract.custom.decrease-mode
+            - payload: InsuranceConditions.CustomProperties.CustomProperty[0].FieldName
+              value: attrn1
+            - payload: InsuranceConditions.CustomProperties.CustomProperty[0].Value
+              element: policy.contract.custom.interest-rate
+            - payload: InsuranceConditions.CustomProperties.CustomProperty[1].FieldName
+              value: attrc1
+            - payload: InsuranceConditions.CustomProperties.CustomProperty[1].Value
+              element: policy.contract.custom.decrease-mode
         - fromIdx:
             array: datamodel.policy.insured.person-objects
           toIdx:
@@ -23,7 +23,7 @@ integration:
             useSourceIndex: true
           mappings:
             - element: policy.insured.person-objects~cover.death-any.insured-amount
-              payload: 'Insureds.Insured[n].InsuredAmount'
+              payload: "Insureds.Insured[n].InsuredAmount"
         - fromIdx:
             array: datamodel.policy.insured.person-objects
           toIdx:
@@ -34,9 +34,74 @@ integration:
               append: true
           mappings:
             - value: Q_04
-              payload: 'Insureds.Insured[n].Questionary.Question[n].ID'
+              payload: "Insureds.Insured[n].Questionary.Question[n].ID"
             - element: policy.insured.person-objects~question.q-04
-              payload: 'Insureds.Insured[n].Questionary.Question[n].Answer'
+              payload: "Insureds.Insured[n].Questionary.Question[n].Answer"
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            array: payload.Insureds.Insured
+            useSourceIndex: true
+            toIdx:
+              array: Questionary.Question
+              append: true
+          mappings:
+            - value: Q_25
+              payload: "Insureds.Insured[n].Questionary.Question[n].ID"
+            - element: policy.insured.person-objects~question.q-25
+              payload: "Insureds.Insured[n].Questionary.Question[n].Answer"
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            array: payload.Insureds.Insured
+            useSourceIndex: true
+            toIdx:
+              array: Questionary.Question
+              append: true
+          mappings:
+            - value: Q_25.01
+              payload: "Insureds.Insured[n].Questionary.Question[n].ID"
+            - element: policy.insured.person-objects~question.q-25-01
+              payload: "Insureds.Insured[n].Questionary.Question[n].Answer"
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            array: payload.Insureds.Insured
+            useSourceIndex: true
+            toIdx:
+              array: Questionary.Question
+              append: true
+          mappings:
+            - value: Q_25.02
+              payload: "Insureds.Insured[n].Questionary.Question[n].ID"
+            - element: policy.insured.person-objects~question.q-25-02
+              payload: "Insureds.Insured[n].Questionary.Question[n].Answer"
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            array: payload.Insureds.Insured
+            useSourceIndex: true
+            toIdx:
+              array: Questionary.Question
+              append: true
+          mappings:
+            - value: Q_25.03
+              payload: "Insureds.Insured[n].Questionary.Question[n].ID"
+            - element: policy.insured.person-objects~question.q-25-03
+              payload: "Insureds.Insured[n].Questionary.Question[n].Answer"
+        - fromIdx:
+            array: datamodel.policy.insured.person-objects
+          toIdx:
+            array: payload.Insureds.Insured
+            useSourceIndex: true
+            toIdx:
+              array: Questionary.Question
+              append: true
+          mappings:
+            - value: Q_26
+              payload: "Insureds.Insured[n].Questionary.Question[n].ID"
+            - element: policy.insured.person-objects~question.q-26
+              payload: "Insureds.Insured[n].Questionary.Question[n].Answer"
         - fromIdx:
             array: datamodel.policy.insured.person-objects
             condition: cover.death-any.active == true
@@ -48,17 +113,17 @@ integration:
               append: true
           mappings:
             - element: policy.insured.person-objects~cover.death-any.grc-id
-              payload: 'Insureds.Insured[n].Covers.Cover[n].GrcID'
+              payload: "Insureds.Insured[n].Covers.Cover[n].GrcID"
             - element: policy.insured.person-objects~cover.death-any.annex-id
-              payload: 'Insureds.Insured[n].Covers.Cover[n].AnnexID'
+              payload: "Insureds.Insured[n].Covers.Cover[n].AnnexID"
             - element: policy.insured.person-objects~cover.death-any.code
-              payload: 'Insureds.Insured[n].Covers.Cover[n].CoverCode'
+              payload: "Insureds.Insured[n].Covers.Cover[n].CoverCode"
             - element: policy.insured.person-objects~cover.death-any.currency
-              payload: 'Insureds.Insured[n].Covers.Cover[n].Currency'
+              payload: "Insureds.Insured[n].Covers.Cover[n].Currency"
             - element: policy.insured.person-objects~cover.death-any.insured-amount
-              payload: 'Insureds.Insured[n].Covers.Cover[n].InsuredAmount'
+              payload: "Insureds.Insured[n].Covers.Cover[n].InsuredAmount"
             - element: policy.insured.person-objects~cover.death-any.end
-              payload: 'Insureds.Insured[n].Covers.Cover[n].InsrEnd'
+              payload: "Insureds.Insured[n].Covers.Cover[n].InsrEnd"
         - fromIdx:
             array: datamodel.policy.insured.person-objects
             condition: document.medex1.document-id != null
@@ -70,9 +135,9 @@ integration:
               append: true
           mappings:
             - element: policy.insured.person-objects~document.medex1.document-state
-              payload: 'Insureds.Insured[n].Documents.Document[n].DocState'
+              payload: "Insureds.Insured[n].Documents.Document[n].DocState"
             - element: policy.insured.person-objects~document.medex1.document-id
-              payload: 'Insureds.Insured[n].Documents.Document[n].DocumentID'
+              payload: "Insureds.Insured[n].Documents.Document[n].DocumentID"
         - fromIdx:
             array: datamodel.policy.insured.person-objects
             condition: document.medex2.document-id != null
@@ -84,9 +149,9 @@ integration:
               append: true
           mappings:
             - element: policy.insured.person-objects~document.medex2.document-state
-              payload: 'Insureds.Insured[n].Documents.Document[n].DocState'
+              payload: "Insureds.Insured[n].Documents.Document[n].DocState"
             - element: policy.insured.person-objects~document.medex2.document-id
-              payload: 'Insureds.Insured[n].Documents.Document[n].DocumentID'
+              payload: "Insureds.Insured[n].Documents.Document[n].DocumentID"
         - fromIdx:
             array: datamodel.policy.insured.person-objects
             condition: document.medex3.document-id != null
@@ -98,9 +163,9 @@ integration:
               append: true
           mappings:
             - element: policy.insured.person-objects~document.medex3.document-state
-              payload: 'Insureds.Insured[n].Documents.Document[n].DocState'
+              payload: "Insureds.Insured[n].Documents.Document[n].DocState"
             - element: policy.insured.person-objects~document.medex3.document-id
-              payload: 'Insureds.Insured[n].Documents.Document[n].DocumentID'
+              payload: "Insureds.Insured[n].Documents.Document[n].DocumentID"
         - fromIdx:
             array: datamodel.policy.insured.person-objects
             condition: document.l-medex.document-id != null
@@ -112,9 +177,9 @@ integration:
               append: true
           mappings:
             - element: policy.insured.person-objects~document.l-medex.document-state
-              payload: 'Insureds.Insured[n].Documents.Document[n].DocState'
+              payload: "Insureds.Insured[n].Documents.Document[n].DocState"
             - element: policy.insured.person-objects~document.l-medex.document-id
-              payload: 'Insureds.Insured[n].Documents.Document[n].DocumentID'
+              payload: "Insureds.Insured[n].Documents.Document[n].DocumentID"
         - fromIdx:
             array: datamodel.policy.insured.person-objects
             condition: document.smd.document-id != null
@@ -126,14 +191,14 @@ integration:
               append: true
           mappings:
             - element: policy.insured.person-objects~document.smd.document-state
-              payload: 'Insureds.Insured[n].Documents.Document[n].DocState'
+              payload: "Insureds.Insured[n].Documents.Document[n].DocState"
             - element: policy.insured.person-objects~document.smd.document-id
-              payload: 'Insureds.Insured[n].Documents.Document[n].DocumentID'
+              payload: "Insureds.Insured[n].Documents.Document[n].DocumentID"
         - toIdx:
             array: Documents.Document
             append: true
           mappings:
             - element: policy.insured.document.icd.document-id
-              payload: 'InsuranceConditions.Documents.Document[n].DocumentID'
+              payload: "InsuranceConditions.Documents.Document[n].DocumentID"
             - element: policy.insured.document.icd.document-state
-              payload: 'InsuranceConditions.Documents.Document[n].DocState'
+              payload: "InsuranceConditions.Documents.Document[n].DocState"

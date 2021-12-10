@@ -7,6 +7,10 @@ action:
     - MessageActionRule:
         message: "Your application needs to be verified by a backoffice underwriter, we will inform you."
         severity: error
+    - IntegrationExecutionRule:
+        integration: application.update
+    - IntegrationExecutionRule:
+        integration: start-process-medical-approval
   trigger:
     - ElementChangeTriggerRule:
         elements:

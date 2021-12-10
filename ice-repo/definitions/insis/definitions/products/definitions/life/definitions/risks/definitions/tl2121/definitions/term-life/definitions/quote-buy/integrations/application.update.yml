@@ -11,7 +11,7 @@ integration:
     DefaultTransformationRule:
       additional: insis
       dateFormat: YYYY-MM-DD
-      dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
+      dateTimeFormat: "YYYY-MM-DDThh:mm:ss"
       extends: risks.life.insis-policy.save
       in: {}
       out:
@@ -23,16 +23,5 @@ integration:
             - param: responseType
               value: ModifyApplRsType
         - mappings:
-            - value: null
-              payload: InsuranceConditions.PolicyNo
-            - value: '-4'
+            - value: "-2"
               payload: InsuranceConditions.PolicyState
-        - fromIdx:
-            array: datamodel.policy.insured.person-objects
-          toIdx:
-            useSourceIndex: true
-          mappings:
-            - value: null
-              payload: 'Insureds.Insured[n].InsuredObjectID'
-            - value: '-1'
-              payload: 'Insureds.Insured[n].InsuredEntity.ObjectID'

@@ -1,0 +1,28 @@
+integration:
+  exchange:
+    InsisRestCallExchangeRule:
+      endpointBaseurl: insis-rest-endpoint
+      url: util/generic/invoke-event
+      verb: post
+  transformation:
+    DefaultTransformationRule:
+      additional: insis
+      dateFormat: YYYY-MM-DD
+      dateTimeFormat: "YYYY-MM-DDThh:mm:ss"
+      in: {}
+      out:
+        - mappings:
+            - payload: eventType
+              value: START_PROCESS_MEDICAL_APPROVAL
+            - payload: parameters.parameter[0].content[0]
+              element: policy.contract.policy-id
+            - payload: parameters.parameter[0].type
+              value: java.math.BigDecimal
+            - payload: parameters.parameter[0].name
+              value: POLICY_ID
+            - payload: parameters.parameter[1].content[0]
+              value: APPR_NEEDED
+            - payload: parameters.parameter[0].type
+              value: java.lang.String
+            - payload: parameters.parameter[0].name
+              value: MEDICAL_APPR_STEP
