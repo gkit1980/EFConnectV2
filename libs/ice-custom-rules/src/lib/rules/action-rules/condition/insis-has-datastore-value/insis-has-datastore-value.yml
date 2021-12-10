@@ -7,3 +7,7 @@ implementations:
         type: string
         required: true
         label: Path
+      scopeToDefinition:
+        type: boolean
+        required: false
+        label: Should the path be relative to the definition or not
