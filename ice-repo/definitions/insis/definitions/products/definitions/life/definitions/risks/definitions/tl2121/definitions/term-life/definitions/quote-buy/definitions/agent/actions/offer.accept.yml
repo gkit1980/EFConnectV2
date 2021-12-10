@@ -2,6 +2,8 @@ action:
   execution:
     - IntegrationExecutionRule:
         integration: quotation.register
+    - IntegrationExecutionRule:
+        integration: send-email-quote-to-client
     - NavigateToDefinitionExecutionRule:
         dynIdElement: policy.contract.policy-id
         page: 2.application.details

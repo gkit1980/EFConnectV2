@@ -78,6 +78,8 @@ integration:
               payload: Engagement.Client.Entity.PersonalData.PID
             - element: policy.participants.holder.person.engagement-id
               payload: Engagement.EngagementData.EngagementID
+            - element: quote-id
+              payload: Engagement.Policies.Policy[0].QuoteID
             - element: policy.contract.agent-no
               payload: Engagement.Policies.Policy[0].InsuranceConditions.AgentNO
             - element: policy.contract.payment.frequency
