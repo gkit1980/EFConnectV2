@@ -1,0 +1,13 @@
+action:
+  condition:
+    DtConditionRule:
+      value: false
+      dt: underwriting.not-accept.medical-questions
+  execution:
+    - MessageActionRule:
+        message: "Your application needs to be verified by a backoffice underwriter, we will inform you."
+        severity: error
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - policy.insured.person-objects~activity.submit-questions
