@@ -99,7 +99,9 @@
     "validator": "^10.11.0",
     "xlsx": "^0.14.2",
     "xml2js": "^0.4.23",
-    "zone.js": "~0.10.2"
+    "zone.js": "~0.10.2",
+    "ngx-echarts": "^4.2.2",
+    "echarts": "^4.6.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "0.901.7",

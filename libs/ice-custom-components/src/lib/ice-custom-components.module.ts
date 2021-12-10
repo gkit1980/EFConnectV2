@@ -9,6 +9,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
+import {NgxEchartsModule} from 'ngx-echarts';
 
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
@@ -68,6 +69,7 @@ import { InsisNullOutputComponent } from './components/element-components/insis-
 import { InsisIBANOutputComponent } from './components/element-components/insis-iban-output-component/insis-iban-output.component';
 import { InsisPaginatorSectionComponent } from './components/section-components/insis-paginator-section/insis-paginator-section.component';
 import { InsisAutocompleteComponent } from './components/element-components/insis-autocomplete-component/insis-autocomplete.component';
+import { InsisChartComponentComponent } from './components/section-components/insis-chart-component/insis-chart-component.component';
 
 /**
  * TIP: You will need to include in this array any new component you create.
@@ -157,6 +159,7 @@ export function registerComponents(componentService: IceComponentsService) {
     MatIconModule,
     MatBadgeModule,
     MatAutocompleteModule,
+    NgxEchartsModule
   ],
 
   declarations: [
@@ -166,6 +169,7 @@ export function registerComponents(componentService: IceComponentsService) {
     InsisVerticalStepperNavigationComponent,
     InsisDialogSectionContainer,
     InsisHorizontalTabsNavigationComponent,
+    InsisChartComponentComponent,
   ],
   exports: [...iceCustomComponents],
   entryComponents: [
