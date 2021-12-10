@@ -9,4 +9,11 @@ section:
               - size: 100%
                 elements:
                   - name: save-quote
+          - cols:
+              - size: auto
+                size.xs: auto
+                size.sm: auto
+                elements:
+                  - name: go-to-next-page-covers
+                css: u-mt-2
       css: button-width-100 u-mb-3
