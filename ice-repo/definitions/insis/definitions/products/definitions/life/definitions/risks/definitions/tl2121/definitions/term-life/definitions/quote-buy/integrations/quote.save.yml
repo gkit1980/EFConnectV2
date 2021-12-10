@@ -7,22 +7,20 @@ integration:
       dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
       extends: life.insis-engagement-quote.save
       out:
-        - payload: Client.Entity.PersonalData.CustomProperties.CustomProperty[0].FieldName
-          value: attrn1
-        - payload: Client.Entity.PersonalData.CustomProperties.CustomProperty[0].FieldValue
-          element: policy.contract.custom.interest-rate
-        - payload: Client.Entity.PersonalData.CustomProperties.CustomProperty[1].FieldName
-          value: attrc1
-        - payload: Client.Entity.PersonalData.CustomProperties.CustomProperty[1].FieldValue
-          element: policy.contract.custom.decrease-mode
+        - mappings:
+          - payload: Client.Entity.PersonalData.CustomProperties.CustomProperty[0].FieldName
+            value: attrn1
+          - payload: Client.Entity.PersonalData.CustomProperties.CustomProperty[0].FieldValue
+            element: policy.contract.custom.interest-rate
+          - payload: Client.Entity.PersonalData.CustomProperties.CustomProperty[1].FieldName
+            value: attrc1
+          - payload: Client.Entity.PersonalData.CustomProperties.CustomProperty[1].FieldValue
+            element: policy.contract.custom.decrease-mode
         - fromIdx:
             array: datamodel.policy.insured.person-objects
-          toIdx:
-            array: payload.Insureds.Insured
-            useSourceIndex: true
           mappings:
             - element: policy.insured.person-objects~cover.death-any.insured-amount
-              payload: 'Policies.Policy[0].Insureds.Insured[n].InsuredAmount'
+              payload: 'Policies.Policy[0].Insureds.Insured[0].InsuredAmount'
         - fromIdx:
             array: datamodel.policy.insured.person-objects
             condition: entity-accident-insured.type == 1
