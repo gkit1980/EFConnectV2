@@ -1,7 +1,5 @@
 action:
   execution:
-    - IntegrationExecutionRule:
-        integration: quotation.register
     - NavigateToDefinitionExecutionRule:
         dynIdElement: policy.contract.policy-id
         page: 2.application.details
