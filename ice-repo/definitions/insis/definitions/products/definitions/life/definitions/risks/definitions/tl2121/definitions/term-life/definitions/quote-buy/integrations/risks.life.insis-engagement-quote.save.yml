@@ -7,6 +7,15 @@ integration:
       dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
       extends: life.insis-engagement-quote.save
       in:
+        - mappings:
+            - payload: Client.Entity.PersonalData.CustomProperties.CustomProperty[0].FieldName
+              value: attrn1
+            - payload: Client.Entity.PersonalData.CustomProperties.CustomProperty[0].FieldValue
+              element: policy.contract.custom.interest-rate
+            - payload: Client.Entity.PersonalData.CustomProperties.CustomProperty[1].FieldName
+              value: attrc1
+            - payload: Client.Entity.PersonalData.CustomProperties.CustomProperty[1].FieldValue
+              element: policy.contract.custom.decrease-mode
         - toIdx:
             index: '[0]'
           mappings:
@@ -69,6 +78,8 @@ integration:
               payload: Engagement.Client.Entity.PersonalData.PID
             - element: policy.participants.holder.person.engagement-id
               payload: Engagement.EngagementData.EngagementID
+            - element: quote-id
+              payload: Engagement.Policies.Policy[0].QuoteID
             - element: policy.contract.agent-no
               payload: Engagement.Policies.Policy[0].InsuranceConditions.AgentNO
             - element: policy.contract.payment.frequency
@@ -185,7 +196,6 @@ integration:
               payload: 'Policies.Policy[0].Insureds.Insured[n].Questionary.Question[n].Answer'
         - fromIdx:
             array: datamodel.policy.insured.person-objects
-            condition: cover.death-any.active == true
           toIdx:
             array: payload.Policies.Policy[0].Insureds.Insured
             useSourceIndex: true

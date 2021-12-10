@@ -82,3 +82,11 @@ dt:
           insis.products.life.risks.tl2121.term-life.quote-buy.agent/2.application.details
         - policies~policy-id
         - policies~client-pid
+    - inputs:
+        - '-'
+        - '-'
+      outputs:
+        - >-
+          insis.products.policy-details.agent/summary
+        - policies~policy-id
+        - policies~client-pid

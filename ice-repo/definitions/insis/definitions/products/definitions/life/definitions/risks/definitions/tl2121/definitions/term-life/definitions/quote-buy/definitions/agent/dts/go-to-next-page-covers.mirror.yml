@@ -1,0 +1,16 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policy.participants.holder.person.engagement-id
+  outputs:
+    - id: mirror
+      type: string
+  rules:
+    - inputs:
+        - null
+      outputs:
+        - offer.accept
+    - inputs:
+        - '-'
+      outputs:
+        - offer.accept-existing

@@ -7,4 +7,4 @@ action:
     - NavigateToDefinitionExecutionRule:
         dynIdElement: policy.contract.policy-id
         page: 2.application.details
-        definition: insis.products.life.risks.tl2121.term-life.quote-buy.customer
+        definition: insis.products.life.risks.tl2121.term-life.quote-buy.agent
