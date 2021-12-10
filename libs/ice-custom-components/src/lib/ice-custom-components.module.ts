@@ -69,7 +69,7 @@ import { InsisNullOutputComponent } from './components/element-components/insis-
 import { InsisIBANOutputComponent } from './components/element-components/insis-iban-output-component/insis-iban-output.component';
 import { InsisPaginatorSectionComponent } from './components/section-components/insis-paginator-section/insis-paginator-section.component';
 import { InsisAutocompleteComponent } from './components/element-components/insis-autocomplete-component/insis-autocomplete.component';
-import { InsisChartComponentComponent } from './components/section-components/insis-chart-component/insis-chart-component.component';
+import { InsisChartSectionComponent } from './components/section-components/insis-chart-section/insis-chart-section.component';
 
 /**
  * TIP: You will need to include in this array any new component you create.
@@ -116,6 +116,7 @@ export const iceCustomComponents = [
   InsisNullOutputComponent,
   InsisIBANOutputComponent,
   InsisAutocompleteComponent,
+  InsisChartSectionComponent
 ];
 
 /**
@@ -168,8 +169,7 @@ export function registerComponents(componentService: IceComponentsService) {
     InsisHorizontalStepperNavigationComponent,
     InsisVerticalStepperNavigationComponent,
     InsisDialogSectionContainer,
-    InsisHorizontalTabsNavigationComponent,
-    InsisChartComponentComponent,
+    InsisHorizontalTabsNavigationComponent
   ],
   exports: [...iceCustomComponents],
   entryComponents: [

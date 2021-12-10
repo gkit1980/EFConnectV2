@@ -12,3 +12,15 @@ page:
                     element: fetch-data
                   - col: 6
       label: Fetch data
+    - component:
+        InsisChart:
+          elements:
+            - mydata~expected-fund-return
+            - mydata~actual-fund-return
+          label: mydata~labels
+          dataAxis: yAxis
+          title: Test-Title
+          subTitle: Test-Subtitle
+          information: Info
+          type: line
+          legendLabels:   

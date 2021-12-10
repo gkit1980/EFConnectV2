@@ -1,0 +1,13 @@
+<mat-card class="container">
+    <mat-card-header>
+        <mat-card-title *ngIf="chartTitle">{{ chartTitle }}</mat-card-title>
+        <mat-card-subtitle *ngIf="chartSubTitle" >{{chartSubTitle}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="chart-container">
+            <div echarts [options]="options" autoResize="autoResize"  style="height: 100%"></div>
+        </div>
+        <p *ngIf="chartInfomation">{{chartInfomation}}</p>
+    </mat-card-content>
+</mat-card>
+
