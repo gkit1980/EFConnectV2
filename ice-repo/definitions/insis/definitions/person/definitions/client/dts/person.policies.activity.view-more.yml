@@ -60,7 +60,7 @@ dt:
       outputs:
         - insis.products.life.risks.tl2121.term-life.quote-buy.agent/1.quote.covers
         -
-        -
+        - person.pid
         - person.policies~engagement-id
     - inputs:
         - 2121
@@ -68,5 +68,5 @@ dt:
       outputs:
         - insis.products.life.risks.tl2121.term-life.quote-buy.agent/1.quote.covers
         - person.policies~policy-id
-        -
+        - person.pid
         -
