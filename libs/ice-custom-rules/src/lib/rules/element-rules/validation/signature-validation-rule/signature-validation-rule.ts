@@ -1,35 +1,28 @@
-import {
-  ValidationRule,
-  ValidationMessages,
-  IndexedValue
-} from '@impeo/ice-core';
+import { ValidationRule, ValidationMessages, IndexedValue } from '@impeo/ice-core';
 
 //
 //
 export class SignatureValidationRule extends ValidationRule {
-
   //
   //
   validateValue(messages: ValidationMessages, value: IndexedValue): void {
-    this.validateCanvas(messages, value )
+    this.validateCanvas(messages, value);
   }
 
-  private validateCanvas(messages: ValidationMessages, value: IndexedValue){
-
+  private validateCanvas(messages: ValidationMessages, value: IndexedValue) {
     return new Promise<void>((resolve, reject) => {
       //get recipe values
-      const minCountOfPixels = parseInt(this.requireParam("minCountOfPixels"), 10);
-      const ignorePixelValue = parseInt(this.requireParam("ignorePixelValue"), 10);
-      const messageKey = this.requireParam("messageKey");
-    
+      const minCountOfPixels = parseInt(this.requireParam('minCountOfPixels'), 10);
+      const ignorePixelValue = parseInt(this.requireParam('ignorePixelValue'), 10);
+      const messageKey = this.requireParam('messageKey');
 
       //create canvas and render image
-      var canvas = document.createElement("canvas");
+      var canvas = document.createElement('canvas');
 
       // load image from data url
       var imageObj = new Image();
       imageObj.onload = () => {
-        //adjust canvas w h 
+        //adjust canvas w h
         canvas.width = imageObj.width;
         canvas.height = imageObj.height;
 
@@ -46,7 +39,10 @@ export class SignatureValidationRule extends ValidationRule {
         //validate
         if (setPixels < minCountOfPixels) {
           // console.log("nonWhite", setPixels);
-          let message = this.resource.resolve(messageKey, `Signature is not valid. Set pixels ${setPixels}`);
+          let message = this.resource.resolve(
+            messageKey,
+            `Signature is not valid. Set pixels ${setPixels}`
+          );
           messages.addMessage(message, this.element.name, value.index);
         }
         resolve();

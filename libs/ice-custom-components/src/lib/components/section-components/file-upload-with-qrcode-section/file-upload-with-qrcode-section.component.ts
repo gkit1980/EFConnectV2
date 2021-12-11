@@ -1,25 +1,7 @@
-import {
-  SectionComponentImplementation,
-  IceSectionComponent
-} from '@impeo/ng-ice';
-import {
-  Component,
-  OnDestroy,
-  ChangeDetectionStrategy,
-  ChangeDetectorRef
-} from '@angular/core';
-import {
-  DomSanitizer,
-  SafeResourceUrl,
-  SafeUrl
-} from '@angular/platform-browser';
-import {
-  IceElement,
-  IndexedValue,
-  ItemElement,
-  ValueOrigin,
-  ArrayElement
-} from '@impeo/ice-core';
+import { SectionComponentImplementation, IceSectionComponent } from '@impeo/ng-ice';
+import { Component, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
+import { IceElement, IndexedValue, ItemElement, ValueOrigin, ArrayElement } from '@impeo/ice-core';
 import { get } from 'lodash';
 import { resolve } from 'url';
 import { Subscription, fromEvent } from 'rxjs';
@@ -29,7 +11,7 @@ import * as _ from 'lodash';
 @Component({
   selector: 'file-upload-with-qrcode-section',
   templateUrl: './file-upload-with-qrcode-section.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FileUploadWithQrCodeSection extends SectionComponentImplementation {
   static componentName = 'FileUploadWithQrCodeSection';
@@ -46,7 +28,7 @@ export class FileUploadWithQrCodeSection extends SectionComponentImplementation 
   captionStaticResource: string;
   captionSelectionPictureLinkResource: string;
   private postMessageSubscription: Subscription;
-  qrCodeUrlElementValue: string
+  qrCodeUrlElementValue: string;
 
   fileName(index: number) {
     return this.arrayElementFileName.getValue().forIndex([index]);
@@ -61,21 +43,34 @@ export class FileUploadWithQrCodeSection extends SectionComponentImplementation 
   }
 
   private recipeParam(name: string): string {
-    return _.get(this.recipe, 'component.' + FileUploadWithQrCodeSection.componentName + '.' + name);
+    return _.get(
+      this.recipe,
+      'component.' + FileUploadWithQrCodeSection.componentName + '.' + name
+    );
   }
   ngOnInit(): void {
     super.ngOnInit();
 
     this.arrayElement = this.iceModel.elements[this.recipeParam('arrayElement')] as ArrayElement;
-    this.arrayElementFileName = this.iceModel.elements[this.recipeParam('arrayElementFileName')] as ItemElement;
-    this.arrayElementMimeType = this.iceModel.elements[this.recipeParam('arrayElementMimeType')] as ItemElement;
-    this.arrayElementBase64Data = this.iceModel.elements[this.recipeParam('arrayElementBase64Data')] as ItemElement;
+    this.arrayElementFileName = this.iceModel.elements[
+      this.recipeParam('arrayElementFileName')
+    ] as ItemElement;
+    this.arrayElementMimeType = this.iceModel.elements[
+      this.recipeParam('arrayElementMimeType')
+    ] as ItemElement;
+    this.arrayElementBase64Data = this.iceModel.elements[
+      this.recipeParam('arrayElementBase64Data')
+    ] as ItemElement;
     if (this.recipeParam('qrCodeUrlElement'))
-      this.qrCodeUrlElement = this.iceModel.elements[this.recipeParam('qrCodeUrlElement')] as ItemElement;
+      this.qrCodeUrlElement = this.iceModel.elements[
+        this.recipeParam('qrCodeUrlElement')
+      ] as ItemElement;
     this.qrCodeResource = this.resource.getEntry(this.recipeParam('qrCodeResource'));
     this.hideQrCodeOnMobile = this.recipeParam('hideQrCodeOnMobile') === 'true';
     this.captionStaticResource = this.resource.getEntry(this.recipeParam('captionStaticResource'));
-    this.captionSelectionPictureLinkResource = this.resource.getEntry(this.recipeParam('captionSelectionPictureLinkResource'));
+    this.captionSelectionPictureLinkResource = this.resource.getEntry(
+      this.recipeParam('captionSelectionPictureLinkResource')
+    );
 
     this.registerPostEvent();
 
@@ -106,34 +101,19 @@ export class FileUploadWithQrCodeSection extends SectionComponentImplementation 
         const content = payload.image.split(',')[1];
 
         this.arrayElementFileName.setValue(
-          new IndexedValue(
-            this.arrayElementFileName,
-            `file-${index + 1}.jpg`,
-            [index],
-            origin
-          )
+          new IndexedValue(this.arrayElementFileName, `file-${index + 1}.jpg`, [index], origin)
         );
         this.arrayElementMimeType.setValue(
-          new IndexedValue(
-            this.arrayElementMimeType,
-            'image/jpeg',
-            [index],
-            origin
-          )
+          new IndexedValue(this.arrayElementMimeType, 'image/jpeg', [index], origin)
         );
         this.arrayElementBase64Data.setValue(
-          new IndexedValue(
-            this.arrayElementBase64Data,
-            content,
-            [index],
-            origin
-          )
+          new IndexedValue(this.arrayElementBase64Data, content, [index], origin)
         );
       });
   }
 
   deleteFile(index: number) {
-    this.arrayElement.removeItem( null, index, ValueOrigin.UI );
+    this.arrayElement.removeItem(null, index, ValueOrigin.UI);
   }
 
   onFileInputClick(event: any) {
@@ -151,9 +131,7 @@ export class FileUploadWithQrCodeSection extends SectionComponentImplementation 
     for (let i = 0; i < files.length; i++) {
       const file = files.item(i);
       const index = currentFilesCount + i;
-      fetchFilesPromises.push(
-        this.saveFileAsBase64ToDataModel(file, index, ValueOrigin.UI)
-      );
+      fetchFilesPromises.push(this.saveFileAsBase64ToDataModel(file, index, ValueOrigin.UI));
     }
     const indexes = await Promise.all(fetchFilesPromises);
     for (let i = 0; i < indexes.length; i++) {
@@ -169,26 +147,16 @@ export class FileUploadWithQrCodeSection extends SectionComponentImplementation 
   ): Promise<number> {
     return new Promise<number>((resolve, reject) => {
       const myReader = new FileReader();
-      myReader.onloadend = e => {
+      myReader.onloadend = (e) => {
         try {
           // This is due to the specification of FileReader.readAsDataURL() method, which return not a plain base64 file content
           // but adds tha meta in-front of it.
           const data = (myReader.result as string).split(',')[1];
           this.arrayElementFileName.setValue(
-            new IndexedValue(
-              this.arrayElementFileName,
-              file.name,
-              [index],
-              origin
-            )
+            new IndexedValue(this.arrayElementFileName, file.name, [index], origin)
           );
           this.arrayElementMimeType.setValue(
-            new IndexedValue(
-              this.arrayElementMimeType,
-              file.type,
-              [index],
-              origin
-            )
+            new IndexedValue(this.arrayElementMimeType, file.type, [index], origin)
           );
           this.arrayElementBase64Data.setValue(
             new IndexedValue(this.arrayElementBase64Data, data, [index], origin)
@@ -205,28 +173,29 @@ export class FileUploadWithQrCodeSection extends SectionComponentImplementation 
 
   uploadFile(index: number[]) {
     const action = this.iceModel.actions[this.recipe['action']];
-    return action ? action.execute({ index }): null;
+    return action ? action.execute({ index }) : null;
   }
-
 
   qrCodeImageUrl() {
     if (!this.qrCodeUrlElement) return;
     const elementValue = this.qrCodeUrlElement.getValue().forIndex(null);
     if (!elementValue) return;
-    const url = `https://chart.googleapis.com/chart?chs=352x352&cht=qr&choe=UTF-8&chl=${encodeURIComponent(elementValue)}`;
+    const url = `https://chart.googleapis.com/chart?chs=352x352&cht=qr&choe=UTF-8&chl=${encodeURIComponent(
+      elementValue
+    )}`;
     // console.log(url);
     return url;
   }
 
   copyQrToClipboard() {
-    if ( !this.qrCodeUrlElement ) return;
+    if (!this.qrCodeUrlElement) return;
     const elementValue = this.qrCodeUrlElement.getValue().forIndex([0]);
 
-    var dummy = document.createElement("textarea");
+    var dummy = document.createElement('textarea');
     document.body.appendChild(dummy);
     dummy.value = elementValue;
     dummy.select();
-    document.execCommand("copy");
+    document.execCommand('copy');
     document.body.removeChild(dummy);
 
     // not working:
@@ -234,6 +203,9 @@ export class FileUploadWithQrCodeSection extends SectionComponentImplementation 
   }
 
   isMobile() {
-    return this.hideQrCodeOnMobile && (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+    return (
+      this.hideQrCodeOnMobile &&
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    );
   }
 }

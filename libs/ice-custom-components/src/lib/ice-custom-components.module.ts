@@ -73,7 +73,6 @@ import { FileUploadWithQrCodeSection } from './components/section-components/fil
 import { InsisCaptureSignatureComponent } from './components/element-components/insis-capture-signature-component/insis-capture-signature.component';
 import { InsisPhotoCaptureComponent } from './components/element-components/insis-photo-capture-component/insis-photo-capture.component';
 
-
 /**
  * TIP: You will need to include in this array any new component you create.
  */
@@ -121,7 +120,7 @@ export const iceCustomComponents = [
   InsisAutocompleteComponent,
   FileUploadWithQrCodeSection,
   InsisCaptureSignatureComponent,
-  InsisPhotoCaptureComponent
+  InsisPhotoCaptureComponent,
 ];
 
 /**
