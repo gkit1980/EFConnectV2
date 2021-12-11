@@ -1,0 +1,16 @@
+integration:
+  exchange:
+    BrowserRestCallExchangeRule:
+      verb: put
+      url: /api/v1/cross-device?id=${id}&flag=${flag}
+  type: active
+  transformation:
+    DefaultTransformationRule:
+        out:
+          - mappings:
+              - query: id
+                param: id
+              - query: flag
+                param: flag
+              - element: upload-data
+                payload: payload.data

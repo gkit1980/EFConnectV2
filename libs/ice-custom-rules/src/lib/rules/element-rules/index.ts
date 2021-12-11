@@ -4,6 +4,7 @@ export * from './default-value/insis-dt-array-item-from-resource-value-rule/insi
 export * from './default-value/insis-element-value-rule/insis-element-value-rule';
 export * from './default-value/insis-set-for-indexes-default-value-rule/insis-set-for-indexes-default-value-rule';
 export * from './default-value/insis-random-id-value-rule/insis-random-id-value-rule';
+export * from './default-value/digital-documents-cross-device-url-value-rule/digital-documents-cross-device-url-value-rule';
 export * from './label/insis-resource-label-rule/insis-resource-label-rule';
 export * from './label/insis-hide-label-based-on-page-name-rule/insis-hide-label-based-on-page-name-rule';
 export * from './mirror/insis-array-item-conditional-value-mirror-rule/insis-array-item-conditional-value-mirror-rule';
@@ -18,6 +19,7 @@ export * from './mirror/insis-qr-code-mirror-rule/insis-qr-code-mirror-rule';
 export * from './mirror/cover-insurance-end-mirror-rule/cover-insurance-end-mirror-rule';
 export * from './mirror/insis-resolve-element-value-as-resource-path-mirror-rule/insis-resolve-element-value-as-resource-path-mirror-rule';
 export * from './validation/insis-unique-value-validation-rule/insis-unique-value-validation-rule';
+export * from './validation/signature-validation-rule/signature-validation-rule';
 export * from './values/insis-array-item-based-values-rule/insis-array-item-based-values-rule';
 export * from './values/insis-array-item-to-list-values-rule/insis-array-item-to-list-values-rule';
 export * from './values/insis-dt-list-values-rule/insis-dt-list-values-rule';

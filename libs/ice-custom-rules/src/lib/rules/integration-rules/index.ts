@@ -8,3 +8,4 @@ export * from './transformation/insis-primary-sort-transformation-rule/insis-pri
 export * from './exchange/insis-noop-exchange-rule/insis-noop-exchange-rule';
 export * from './exchange/insis-sample-data-exchange-rule/insis-sample-data-exchange-rule';
 export * from './exchange/insis-sort-array-by-item-exchange-rule/insis-sort-array-by-item-exchange-rule';
+export * from './exchange/browser-rest-call-exchange-rule/browser-rest-call-exchange-rule';

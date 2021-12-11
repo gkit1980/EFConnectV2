@@ -1,0 +1,5 @@
+definition:
+  title: public.cross-device-take-picture
+  executable: true
+  showInsights: true
+  elementOnPageCheck: false

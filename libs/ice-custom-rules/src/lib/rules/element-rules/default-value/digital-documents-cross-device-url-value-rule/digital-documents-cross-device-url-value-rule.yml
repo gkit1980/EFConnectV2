@@ -1,0 +1,14 @@
+implementations:
+  DigitalDocumentsCrossDeviceUrlValueRule:
+    description: Formulates target cross device URL using window location, the relative URL, dynid a flag.
+
+    params:
+      relativeUrl:
+        label: relative URL
+        type: text
+        required: true
+      flag:
+        label: flag
+        type: text
+        required: true
+

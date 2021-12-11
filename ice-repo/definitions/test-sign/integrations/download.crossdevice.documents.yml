@@ -1,0 +1,21 @@
+integration:
+  exchange:
+    BrowserRestCallExchangeRule:
+      verb: get
+      urlElement: documents-download-url
+  type: active
+  transformation:
+    DefaultTransformationRule:
+        in:
+          - fromIdx:
+              index: 0
+            toIdx:
+              array: datamodel.documents
+            mappings:
+              - element: documents~content
+                payload: payload.data
+              - element: documents~content-type
+                payload: payload.mime-type
+              - element: documents~name
+                payload: payload.filename
+

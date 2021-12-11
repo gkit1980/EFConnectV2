@@ -1,0 +1,12 @@
+integration:
+  exchange:
+    BrowserRestCallExchangeRule:
+      verb: get
+      urlElement: signature-download-url
+  type: active
+  transformation:
+    DefaultTransformationRule:
+      in:
+        - mappings:
+            - element: client-signature
+              payload: payload.data

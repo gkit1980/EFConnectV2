@@ -19,7 +19,7 @@ export class InsisPrintExchangeRule extends InsisRestCallExchangeRule {
     try {
       response = await this.request(config);
     } catch (error) {
-      IceConsole.error(`Error while accessing ${config.baseURL}/${config.url}`, error);
+      IceConsole.error(`Error while accessing ${config.baseURL}/${config.url}`, error.code);
     }
     return this.buildAsyncResponseData(response);
   }

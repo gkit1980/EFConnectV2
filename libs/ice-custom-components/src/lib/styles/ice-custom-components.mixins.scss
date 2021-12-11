@@ -29,6 +29,12 @@
 @import '../components/section-components/insis-premium-summary-section/insis-premium-summary-section.mixin.scss';
 @import '../components/element-components/insis-alert-component/insis-alert.mixin.scss';
 @import '../components/element-components/insis-null-output-component/insis-null-output.mixin.scss';
+
+@import '../components/element-components/insis-photo-capture-component/insis-photo-capture.mixin.scss';
+@import '../components/section-components/file-upload-with-qrcode-section/file-upload-qrcode-section.mixin.scss';
+@import '../components/section-components/file-upload-with-qrcode-section/file-upload-with-qrcode-section.mixin.scss';
+
+
 /**
  * TIP: You will need to @include here any new mixin you add to the ice-custom-component library.
  * This file here will be loaded by theme.scss which is part of theming structure inside application styles.
@@ -62,4 +68,8 @@
   @include insis-chip-mixin($theme);
   @include insis-alert-mixin($theme);
   @include insis-null-output-mixin($theme);
+  @include insis-photo-capture-mixin($theme);
+  @include file-upload-with-qrcode-section-mixin($theme);
+  @include file-upload-qrcode-section-mixin($theme);
+
 }

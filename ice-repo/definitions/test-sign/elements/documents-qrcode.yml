@@ -1,0 +1,6 @@
+element:
+  type: text
+  defaultValue:
+    DigitalDocumentsCrossDeviceUrlValueRule:
+      relativeUrl: /#/ice/public.cross-device-take-picture/home
+      flag: tstpic

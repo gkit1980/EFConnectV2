@@ -1,0 +1,8 @@
+action:
+  execution:
+    - IntegrationExecutionRule:
+        integration: upload-cross-device-signature
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - upload-data

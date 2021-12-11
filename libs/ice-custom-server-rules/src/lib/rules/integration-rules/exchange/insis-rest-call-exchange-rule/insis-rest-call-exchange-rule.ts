@@ -29,7 +29,7 @@ export class InsisRestCallExchangeRule extends RestCallExchangeRule {
     try {
       response = await this.request(config);
     } catch (error) {
-      IceConsole.error(`Error while accessing ${config.baseURL}/${config.url}`, error);
+      IceConsole.error(`Error while accessing ${config.baseURL}/${config.url}`, error.code);
       return this.buildResponseData(error);
     }
 

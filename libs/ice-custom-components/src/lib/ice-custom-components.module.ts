@@ -69,6 +69,11 @@ import { InsisIBANOutputComponent } from './components/element-components/insis-
 import { InsisPaginatorSectionComponent } from './components/section-components/insis-paginator-section/insis-paginator-section.component';
 import { InsisAutocompleteComponent } from './components/element-components/insis-autocomplete-component/insis-autocomplete.component';
 
+import { FileUploadWithQrCodeSection } from './components/section-components/file-upload-with-qrcode-section/file-upload-with-qrcode-section.component';
+import { InsisCaptureSignatureComponent } from './components/element-components/insis-capture-signature-component/insis-capture-signature.component';
+import { InsisPhotoCaptureComponent } from './components/element-components/insis-photo-capture-component/insis-photo-capture.component';
+
+
 /**
  * TIP: You will need to include in this array any new component you create.
  */
@@ -114,6 +119,9 @@ export const iceCustomComponents = [
   InsisNullOutputComponent,
   InsisIBANOutputComponent,
   InsisAutocompleteComponent,
+  FileUploadWithQrCodeSection,
+  InsisCaptureSignatureComponent,
+  InsisPhotoCaptureComponent
 ];
 
 /**
