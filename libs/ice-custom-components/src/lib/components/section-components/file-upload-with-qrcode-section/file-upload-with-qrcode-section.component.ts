@@ -1,5 +1,11 @@
 import { SectionComponentImplementation, IceSectionComponent } from '@impeo/ng-ice';
-import { Component, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, OnInit } from '@angular/core';
+import {
+  Component,
+  OnDestroy,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  OnInit,
+} from '@angular/core';
 import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 import { IceElement, IndexedValue, ItemElement, ValueOrigin, ArrayElement } from '@impeo/ice-core';
 import { get } from 'lodash';
@@ -13,7 +19,8 @@ import * as _ from 'lodash';
   templateUrl: './file-upload-with-qrcode-section.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FileUploadWithQrCodeSection extends SectionComponentImplementation implements OnInit, OnDestroy {
+export class FileUploadWithQrCodeSection extends SectionComponentImplementation
+  implements OnInit, OnDestroy {
   static componentName = 'FileUploadWithQrCodeSection';
 
   public files: any[] = [];
@@ -24,7 +31,7 @@ export class FileUploadWithQrCodeSection extends SectionComponentImplementation 
   arrayElementBase64Data: ItemElement;
   qrCodeUrlElement: ItemElement;
   qrCodeResource: string;
-  hideQrCodeOnMobile:  true;
+  hideQrCodeOnMobile: true;
   captionStaticResource: string;
   captionSelectionPictureLinkResource: string;
   private postMessageSubscription: Subscription;
