@@ -17,29 +17,29 @@ export class SignatureValidationRule extends ValidationRule {
       const messageKey = this.requireParam('messageKey');
 
       //create canvas and render image
-      var canvas = document.createElement('canvas');
+      const canvas = document.createElement('canvas');
 
       // load image from data url
-      var imageObj = new Image();
+      const imageObj = new Image();
       imageObj.onload = () => {
         //adjust canvas w h
         canvas.width = imageObj.width;
         canvas.height = imageObj.height;
 
         //get and draw into 2dContext
-        var context = canvas.getContext('2d');
+        const context = canvas.getContext('2d');
         context.drawImage(imageObj, 0, 0);
 
         //count set pixels
         // console.log("img width height", imageObj.width, imageObj.height);
         // console.log("canvas width height", canvas.width, canvas.height);
-        var imgData = context.getImageData(0, 0, canvas.width, canvas.height);
+        const imgData = context.getImageData(0, 0, canvas.width, canvas.height);
         const setPixels = this.countSetPixels(imgData.data, ignorePixelValue);
 
         //validate
         if (setPixels < minCountOfPixels) {
           // console.log("nonWhite", setPixels);
-          let message = this.resource.resolve(
+          const message = this.resource.resolve(
             messageKey,
             `Signature is not valid. Set pixels ${setPixels}`
           );
@@ -56,9 +56,9 @@ export class SignatureValidationRule extends ValidationRule {
   protected countSetPixels(data: Uint8ClampedArray, ignorePixelValue: number) {
     let setPixels = 0;
 
-    for (var i = 0; i < data.length; i += 4) {
+    for (let i = 0; i < data.length; i += 4) {
       //no need to check every pixel value, only checking RED
-      if (data[i] != ignorePixelValue) {
+      if (data[i] !== ignorePixelValue) {
         setPixels++;
       }
     }

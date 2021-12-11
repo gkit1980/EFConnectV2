@@ -17,8 +17,8 @@ import { IceElement, IndexedValue, ItemElement, ValueOrigin } from '@impeo/ice-c
 import { get } from 'lodash';
 import { distinctUntilChanged } from 'rxjs/operators';
 
-declare var require: any;
-var signature = require('signature_pad');
+declare const require: any;
+const signature = require('signature_pad');
 
 import x from 'signature_pad';
 import {
@@ -46,7 +46,7 @@ export class InsisCaptureSignatureComponent extends MaterialElementComponentImpl
   ctx: any;
   signaturePad: any;
   coord: any = { x: 0, y: 0 }; /// Stores the initial position of the cursor
-  paint: boolean = false; // This is the flag that we are going to use to
+  paint: false; // This is the flag that we are going to use to
 
   ignoreDataChange = false;
   clearButtonlabel: string;
@@ -75,8 +75,8 @@ export class InsisCaptureSignatureComponent extends MaterialElementComponentImpl
 
       // this adjust the size of canvas for screens with higher pixel dencity
       if (window.devicePixelRatio > 1) {
-        var canvasWidth = this.canvas.width;
-        var canvasHeight = this.canvas.height;
+        const canvasWidth = this.canvas.width;
+        const canvasHeight = this.canvas.height;
 
         this.canvas.width = canvasWidth * window.devicePixelRatio;
         this.canvas.height = canvasHeight * window.devicePixelRatio;
@@ -136,7 +136,7 @@ export class InsisCaptureSignatureComponent extends MaterialElementComponentImpl
   }
 
   determineLabels() {
-    let recipe = this.getComponentRecipe();
+    const recipe = this.getComponentRecipe();
     this.clearButtonlabel = this.resource.resolve(get(recipe, 'clearLabel'), 'Clear signiture');
   }
 
@@ -154,7 +154,7 @@ export class InsisCaptureSignatureComponent extends MaterialElementComponentImpl
   copyQrToClipboard() {
     if (!this.qrCodeUrlElement) return;
     const elementValue = this.qrCodeUrlElement.getValue().forIndex([0]);
-    var dummy = document.createElement('textarea');
+    const dummy = document.createElement('textarea');
     document.body.appendChild(dummy);
     dummy.value = elementValue;
     dummy.select();

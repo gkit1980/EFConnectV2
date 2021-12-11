@@ -1,5 +1,5 @@
 import { SectionComponentImplementation, IceSectionComponent } from '@impeo/ng-ice';
-import { Component, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 import { IceElement, IndexedValue, ItemElement, ValueOrigin, ArrayElement } from '@impeo/ice-core';
 import { get } from 'lodash';
@@ -9,11 +9,11 @@ import { filter } from 'rxjs/operators';
 import * as _ from 'lodash';
 
 @Component({
-  selector: 'file-upload-with-qrcode-section',
+  selector: 'insis-file-upload-with-qrcode-section',
   templateUrl: './file-upload-with-qrcode-section.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FileUploadWithQrCodeSection extends SectionComponentImplementation {
+export class FileUploadWithQrCodeSection extends SectionComponentImplementation implements OnInit, OnDestroy {
   static componentName = 'FileUploadWithQrCodeSection';
 
   public files: any[] = [];
@@ -24,7 +24,7 @@ export class FileUploadWithQrCodeSection extends SectionComponentImplementation 
   arrayElementBase64Data: ItemElement;
   qrCodeUrlElement: ItemElement;
   qrCodeResource: string;
-  hideQrCodeOnMobile: boolean = true;
+  hideQrCodeOnMobile:  true;
   captionStaticResource: string;
   captionSelectionPictureLinkResource: string;
   private postMessageSubscription: Subscription;
@@ -91,7 +91,7 @@ export class FileUploadWithQrCodeSection extends SectionComponentImplementation 
     this.postMessageSubscription = fromEvent(window, 'message')
       .pipe(
         filter(({ data }: MessageEvent) => {
-          return get(data, 'type') === 'ice' && get(data, 'event') == eventName;
+          return get(data, 'type') === 'ice' && get(data, 'event') === eventName;
         })
       )
       .subscribe(({ data }) => {
@@ -145,7 +145,7 @@ export class FileUploadWithQrCodeSection extends SectionComponentImplementation 
     index: number,
     origin: ValueOrigin = ValueOrigin.UNKNOWN
   ): Promise<number> {
-    return new Promise<number>((resolve, reject) => {
+    return new Promise<number>((resolvex, reject) => {
       const myReader = new FileReader();
       myReader.onloadend = (e) => {
         try {
@@ -161,7 +161,7 @@ export class FileUploadWithQrCodeSection extends SectionComponentImplementation 
           this.arrayElementBase64Data.setValue(
             new IndexedValue(this.arrayElementBase64Data, data, [index], origin)
           );
-          resolve(index);
+          resolvex(index);
         } catch (error) {
           console.error('Could not extract base64 data for file', file);
           reject(index);
@@ -191,7 +191,7 @@ export class FileUploadWithQrCodeSection extends SectionComponentImplementation 
     if (!this.qrCodeUrlElement) return;
     const elementValue = this.qrCodeUrlElement.getValue().forIndex([0]);
 
-    var dummy = document.createElement('textarea');
+    const dummy = document.createElement('textarea');
     document.body.appendChild(dummy);
     dummy.value = elementValue;
     dummy.select();

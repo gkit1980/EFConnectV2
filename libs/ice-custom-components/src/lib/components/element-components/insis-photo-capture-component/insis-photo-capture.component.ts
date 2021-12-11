@@ -24,7 +24,7 @@ export class InsisPhotoCaptureComponent extends IceButtonComponent {
     const fileReader: FileReader = new FileReader();
     fileReader.readAsDataURL(file);
     fileReader.onloadend = async () => {
-      let dataUrl = fileReader.result as string;
+      const dataUrl = fileReader.result as string;
       // dataUrl = await this.reizeImage(dataUrl, 100);
       const data = this.removeDataUrlHeaderAndAdjustPadding(dataUrl);
 

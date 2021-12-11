@@ -61,7 +61,7 @@ export class BrowserRestCallExchangeRule extends ExchangeRule {
    * @returns the url (probably with dynamic params filled) for the rest call
    */
   protected getUrl(request: IntegrationDataOut): string {
-    let url =
+    const url =
       (this.getParam('url') as string) ??
       (this.getElement('urlElement')?.getValue().forIndex(null) as string) ??
       '';
