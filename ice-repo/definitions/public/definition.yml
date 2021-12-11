@@ -1,0 +1,5 @@
+definition:
+  title: public
+  executable: false
+  showInsights: true
+  elementOnPageCheck: false

@@ -1,0 +1,34 @@
+label: InsisPhotoCapture
+
+component: InsisPhotoCapture
+
+types:
+  - text
+  - action
+
+description: >
+  Upload file/image using device camera, the component implements floating action button style
+
+
+  Supported text aspect keys:
+    - hint
+    - tooltip
+
+params:
+  filenameElement:
+    label: File name element
+    info: Element in the datamodel where to store file name
+    type: element
+    required: false
+
+  mimeTypeElement:
+    label: Mime type element
+    info: Element in the datamodel where to store mime type of the uploaded file
+    type: element
+    required: false
+
+  fileContentElement:
+    label: File content element
+    info: Element to store file content (as base64)
+    type: element
+    required: false

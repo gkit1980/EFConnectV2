@@ -1,0 +1,49 @@
+label: FileUploadWithQrCodeSection
+component: FileUploadWithQrCodeSection
+description: >
+  Section that is used to add and delete files or use qrcode for uploading files
+
+params:
+  arrayElement:
+    label: Array element
+    info: Element from the data model that represents an array of elements
+    type: element
+    required: true
+
+  arrayElementFileName:
+    label: File Name Element
+    info: Element item in the array that represent file name property
+    type: element
+    required: true
+
+  arrayElementMimeType:
+    label: Mime Type Element
+    info: Element item in the array that represent type of the file uploaded
+    type: element
+    required: true
+
+  arrayElementBase64Data:
+    label: Base64 string Data
+    info: Element item in the array that represent data of the file, encoded as base64 string
+    type: element
+    required: true
+
+  qrCodeUrlElement:
+    label: Element that contains qr code url
+    type: element
+
+  qrCodeResource:
+    label: Resource for label to display on the side of the qr code
+    type: resourceKey
+
+  hideQrCodeOnMobile:
+    label: Hide QR code on mobile device
+    type: boolean
+
+  captionStaticResource:
+    label: Caption - resource for static part
+    type: resourceKey
+
+  captionSelectionPictureLinkResource:
+    label: Caption - resource for picture link part
+    type: resourceKey

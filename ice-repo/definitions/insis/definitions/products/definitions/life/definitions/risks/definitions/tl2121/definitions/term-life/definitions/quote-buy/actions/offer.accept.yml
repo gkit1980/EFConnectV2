@@ -1,0 +1,4 @@
+action:
+  execution:
+    - IntegrationExecutionRule:
+        integration: quotation.register

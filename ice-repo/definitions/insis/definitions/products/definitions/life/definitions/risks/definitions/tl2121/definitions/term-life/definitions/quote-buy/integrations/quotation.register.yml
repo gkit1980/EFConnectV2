@@ -24,11 +24,6 @@ integration:
               value: RegisterEngagementQuoteRqType
             - param: responseType
               value: RegisterEngagementQuoteRsType
-        # - mappings:
-        #     - value: null
-        #       payload: InsuranceConditions.PolicyNo
-        #     - value: '-2'
-        #       payload: InsuranceConditions.PolicyState
         - fromIdx:
             array: datamodel.policy.insured.person-objects
           toIdx:

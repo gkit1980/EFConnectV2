@@ -1,0 +1,90 @@
+@mixin file-upload-qrcode-section-mixin($theme) {
+  $primary: map-get($theme, primary);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  file-upload-qrcode-section {
+
+    .card {
+      animation-name: fade-in;
+      animation-timing-function: ease;
+      animation-duration: 1.5s;
+      margin-bottom: 20px;
+
+      .card-image {
+        width: 100%;
+        padding: 10px;
+      }
+
+      .mat-card-header .mat-card-title {
+        font-size: 9px;
+        margin: 0px;
+        padding: 0px;
+      }
+
+      .mat-card-header .mat-card-subtitle:not(:first-child) {
+        margin-top: 0px;
+      }
+
+      .mat-card-subtitle:not(:first-child), .mat-card-title:not(:first-child) {
+        margin-top: 0px;
+      }
+
+      .mat-card-subtitle {
+        margin-bottom: 0px;
+        font-size: 10px;
+      }
+
+      .mat-card-actions, .mat-card-content, .mat-card-subtitle {
+        display: block;
+      }
+
+      .mat-card-header-text {
+        margin: 0px;
+        padding: 10px;
+      }
+
+      .file-thumbnail {
+        cursor: pointer;
+
+        div {
+          pointer-events: none;
+        }
+      }
+    }
+
+    .emptyDropArea {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      min-height: 169px;
+      border: 1px dashed #7E7E7E;
+      background: #FFFFFF;
+      max-width: 495px;
+      
+    }
+
+
+    .filesContainer {
+      padding: 20px;
+      padding-bottom: 0px;
+      border-radius: 10px;
+    }
+
+    .actionIcon {
+      position: absolute;
+      top: -10px;
+      cursor: pointer;
+    }
+
+    .closeIcon {
+      right: -10px;
+      color: red;
+    }
+    .approveIcon {
+      right: 20px;
+      color: green;
+    }
+  }
+}

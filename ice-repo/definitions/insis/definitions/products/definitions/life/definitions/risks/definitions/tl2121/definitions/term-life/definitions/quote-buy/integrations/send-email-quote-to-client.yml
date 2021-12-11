@@ -1,0 +1,22 @@
+integration:
+  exchange:
+    InsisRestCallExchangeRule:
+      endpointBaseurl: insis-rest-endpoint
+      url: util/generic/invoke-event
+      verb: post
+  transformation:
+    DefaultTransformationRule:
+      additional: insis
+      dateFormat: YYYY-MM-DD
+      dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
+      in: {}
+      out:
+        - mappings:
+            - payload: eventType
+              value: QUOTE_TO_CLIENT
+            - payload: parameters.parameter[0].content[0]
+              element: quote-id
+            - payload: parameters.parameter[0].type
+              value: java.math.BigDecimal
+            - payload: parameters.parameter[0].name
+              value: QUOTE_ID

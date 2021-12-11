@@ -1,0 +1,28 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: policy.insured.person-objects~question.q-25
+    - element: policy.insured.person-objects~question.q-26
+    - element: policy.contract.custom.underwiting-confirm
+  outputs:
+    - id: output
+      type: boolean
+  rules:
+    - inputs:
+        - "2"
+        - true
+        - "-"
+      outputs:
+        - false
+    - inputs:
+        - "-"
+        - "-"
+        - true
+      outputs:
+        - false
+    - inputs:
+        - "-"
+        - "-"
+        - false
+      outputs:
+        - true

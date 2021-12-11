@@ -8,4 +8,5 @@ action:
   condition:
     InsisHasDatastoreValue:
       path: >-
-        insis.products.life.risks.tl2121.term-life.quote-buy.customer.query.engagementId
+        query.engagementId
+      scopeToDefinition: true

@@ -1,0 +1,10 @@
+implementations:
+  TimerTriggerRule:
+    description: >-
+      Fires after a configured ms amount
+      
+    params:
+      intervalMs:
+        label: Interval in MS
+        type: integer
+        required: true

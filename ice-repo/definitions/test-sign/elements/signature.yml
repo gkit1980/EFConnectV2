@@ -1,0 +1,18 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        InsisCaptureSignature:
+          qrCodeUrlElement: signature-qrcode-url
+          hideQrCodeOnMobile: true
+          qrCodeResource: qrcode
+          clearLabel: elements.client-signature.clear-signature
+  viewMode:
+    StaticViewModeRule:
+      viewMode: required
+  validation:
+    - SignatureValidationRule:
+        minCountOfPixels: 10000
+        ignorePixelValue: 255
+        messageKey: validation.messages.signature-invalid

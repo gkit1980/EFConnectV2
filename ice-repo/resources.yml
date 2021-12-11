@@ -3,6 +3,17 @@ locales:
   - de
   - nl
 entries:
+  drag:
+    - en: drag or
+      de: Datei hineinziehen oder
+  select-from-library:
+    - en: choose
+      de: Auswahl aus Explorer
+  qrcode:
+    - en: Scan the QR code with your device to take photo of the document
+      de: >-
+        Scannen Sie den QR-Code mit Ihrem Handy. Danach können Sie das Dokument
+        an Ihrem Handy unterschreiben
   elements:
     vehicles:
       items:
@@ -1820,6 +1831,12 @@ entries:
                   - en: Age
                     de: Age
                     nl: Leeftijd
+            activity:
+              submit-questions:
+                label:
+                  - en: Next
+                    de: Next
+                    nl: Next
             question:
               q-04:
                 label:
@@ -3688,6 +3705,10 @@ entries:
         - en: Please enter a valid IBAN.
           de: Bitte geben Sie eine gültige Iban ein.
           nl: Voer een geldig bankrekeningnummer (IBAN) in.
+      signature-invalid:
+        - en: signature-invalid
+          de: signature-invalid
+          nl: signature-invalid
   page-navigation:
     back:
       to-all-products:

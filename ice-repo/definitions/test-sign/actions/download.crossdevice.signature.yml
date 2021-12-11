@@ -1,0 +1,7 @@
+action:
+  execution:
+    - IntegrationExecutionRule:
+        integration: download.crossdevice.signature
+  trigger:
+    - TimerTriggerRule:
+        intervalMs: 3000

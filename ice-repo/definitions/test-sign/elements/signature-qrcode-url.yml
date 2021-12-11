@@ -1,0 +1,8 @@
+element:
+  type: text
+  label:
+    NoLabelRule: {}
+  defaultValue:
+    DigitalDocumentsCrossDeviceUrlValueRule:
+      relativeUrl: /#/ice/public.cross-device-sign/home
+      flag: tstsgn

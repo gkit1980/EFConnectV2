@@ -1,0 +1,21 @@
+implementations:
+  SignatureValidationRule:
+    description: Ensure enough pixels have been "painted" in a signature
+
+    params:
+      minCountOfPixels:
+        label: Minimal amount of set pixels for the signature to be valid
+        type: integer
+        required: true
+        default: 5000
+
+      ignorePixelValue:
+        label: Ignore pixels with this value form the count
+        type: integer
+        required: true
+        default: 255
+
+      messageKey:
+        label: Resource Key of error message
+        type: resourceKey
+        required: true

@@ -1,0 +1,7 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        InsisCaptureSignature:
+          clearLabel: elements.client-signature.label

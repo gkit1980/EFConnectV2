@@ -1,0 +1,12 @@
+element:
+  type: action
+  component:
+    StaticComponentRule:
+      component:
+        InsisPhotoCapture:
+          filenameElement: upload-filename
+          mimeTypeElement: upload-mime-type
+          fileContentElement: upload-data
+  defaultValue:
+    StaticValueRule:
+      value: upload-cross-device-picture

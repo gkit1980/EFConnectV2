@@ -1,0 +1,8 @@
+action:
+  execution:
+    - IntegrationExecutionRule:
+        integration: upload-cross-device-picture
+    - MessageActionRule:
+        dismiss: 1000
+        severity: info
+        message: Ihr Bild wurde hochgeladen

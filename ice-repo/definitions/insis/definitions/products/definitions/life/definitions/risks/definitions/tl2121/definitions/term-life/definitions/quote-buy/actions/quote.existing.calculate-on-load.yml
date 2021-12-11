@@ -1,0 +1,12 @@
+action:
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ACTIVE_INTEGRATION_SUCCESS
+        payload: quotation.load
+    - IceLifecycleEventTriggerRule:
+        event: ACTION_FINISHED
+        payload:
+          action: policy.load
+  execution:
+    - IntegrationExecutionRule:
+        integration: fast-calculation

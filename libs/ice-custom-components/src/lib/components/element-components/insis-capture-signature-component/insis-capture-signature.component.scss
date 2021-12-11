@@ -1,0 +1,72 @@
+.insis-capture-signiture {
+  .wrapper {
+    position: relative;
+    height: 250px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 100%;
+    .qr-code-container {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 250px;
+      width: 120px;
+      img {
+        width: 120px;
+      }
+      .qr-code-text{
+        font-size: small;
+      }
+    }
+  }
+
+  .signature-pad {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: auto;
+    height: 250px;
+    width: 100%;
+    border: solid 0.5px #e0dcdc;
+  }
+  .signature-pad-with-qr {
+    width: calc(100% - 130px);
+  }
+  .clear-signature {
+    display: flex;
+    align-self: flex-end;
+    color: #e0dcdc;
+    justify-content: flex-end;
+    position: absolute;
+    bottom: 10px;
+    right: 7px;
+    a {
+      cursor: pointer;
+      text-decoration: underline;
+      font-size: small;
+      font-weight: 400;
+      color: gray;
+    }
+  }
+
+  .clear-signature-with-qr{
+    right: 137px;
+  }
+
+  .set-signature {
+    display: flex;
+    align-self: flex-end;
+    color: #e0dcdc;
+    justify-content: flex-end;
+
+    a {
+      cursor: pointer;
+      cursor: pointer;
+      text-decoration: underline;
+      font-size: small;
+      font-weight: 400;
+    }
+  }
+}

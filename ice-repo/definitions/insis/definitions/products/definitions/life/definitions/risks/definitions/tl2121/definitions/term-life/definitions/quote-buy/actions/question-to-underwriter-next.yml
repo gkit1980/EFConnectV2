@@ -1,0 +1,12 @@
+action:
+  condition:
+    DtConditionRule:
+      value: false
+      dt: underwriting.accept.medical-questions
+  execution:
+    - NavigateToPageExecutionRule:
+        direction: next
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - policy.insured.person-objects~activity.submit-questions

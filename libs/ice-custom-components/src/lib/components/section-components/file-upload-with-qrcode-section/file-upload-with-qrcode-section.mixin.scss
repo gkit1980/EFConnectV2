@@ -1,0 +1,74 @@
+@mixin file-upload-with-qrcode-section-mixin($theme) {
+  $primary: map-get($theme, primary);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  file-upload-with-qrcode-section {
+
+    div.file-upload-with-qrcode-section {
+      padding-left: 50px;
+    }
+
+    @media only screen and (max-width: 615px) {
+      div.file-upload-with-qrcode-section {
+        padding-left: 0px;
+      }
+    }
+
+    .width-50 {
+      width: calc(50px + 50%);
+    }
+
+    .width-100 {
+      width: 100%;
+    }
+
+    div.emptyDropArea {
+      border-style: dashed;
+      border-color: gray;
+      border-width: 1px;
+      margin: 5px;
+      padding: 15px;
+
+      .header {
+        padding-bottom: 15px;
+        justify-content: center;
+      }
+    }
+
+    div.document-names {
+      border-bottom: 1px lightgray solid;
+      padding: 5px;
+    }
+
+    .attach-link {
+      text-decoration: underline;
+      color: rgb(55, 114, 224);
+      display: contents;
+      cursor: pointer;
+    }
+
+    div.trashbin-wrapper {
+      display: block;
+      text-align: end;
+    }
+
+    .fa-trash {
+      cursor: pointer;
+      align-self: flex-end;
+    }
+
+    .qr-code-container {
+      height: 200px;
+    }
+
+    img {
+      max-height: 100%;
+    }
+
+    .qr-code-text {
+      width: 150px;
+      padding: 15px;
+    }
+  }
+}

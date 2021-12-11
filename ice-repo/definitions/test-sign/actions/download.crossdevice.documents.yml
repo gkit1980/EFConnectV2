@@ -1,0 +1,7 @@
+action:
+  execution:
+    - IntegrationExecutionRule:
+        integration: download.crossdevice.documents
+  trigger:
+    - TimerTriggerRule:
+        intervalMs: 3000

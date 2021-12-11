@@ -1,0 +1,28 @@
+page:
+  validation:
+    onElementComponentChange: true
+    behaviour: forward
+    showMessages: none
+    showGrowl: false
+    showElementValidation: true
+  component: OnePage
+  sections:
+    - component:
+        GridView:
+          grid:
+            rows:
+              - css: null
+                cols:
+                  - col: 12
+                    element: signature
+    - component:
+        FileUploadWithQrCodeSection:
+          arrayElement: documents
+          arrayElementFileName: documents~name
+          arrayElementMimeType: documents~content-type
+          arrayElementBase64Data: documents~content
+          qrCodeUrlElement: documents-qrcode
+          captionSelectionPictureLinkResource: select-from-library
+          captionStaticResource: drag
+          qrCodeResource: qrcode
+          hideQrCodeOnMobile: true

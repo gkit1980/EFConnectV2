@@ -1,0 +1,24 @@
+implementations:
+  BrowserRestCallExchangeRule:
+    description: >
+      Performs a Rest call on the browser. See RestCallExecutionRule for details on usage.
+      This rule supports relative URLs.
+
+    params:
+      url: 
+        label: URL
+        required: false
+        info: the URL for the request.
+      urlElement:
+        label: URL element
+        type: element
+        required: false
+        info: the URL for the request, supplied by an element
+      verb:
+        label: Http verb
+        type: select
+        options:
+            get: get
+            post: post
+            put: put
+            delete: delete

@@ -1,0 +1,6 @@
+element:
+  type: text
+  defaultValue:
+    DigitalDocumentsCrossDeviceUrlValueRule:
+      relativeUrl: /api/v1/cross-device
+      flag: tstsgn

@@ -1,0 +1,29 @@
+<div class="insis-capture-signiture mb-4">
+  <div class="h6 mt-3">{{ label }}</div>
+  <div class="wrapper">
+    <div>
+      <canvas #canvas id="signature-pad" class="signature-pad" height="200"
+        [ngClass]="qrCodeUrlElement && (!(isMobile())) ? 'signature-pad-with-qr' : ''">
+      </canvas>
+    </div>
+    <div class="clear-signature" *ngIf="isVisible"
+      [ngClass]="qrCodeUrlElement && (!(isMobile())) ? 'clear-signature-with-qr' : ''">
+      <a (click)="clear()">
+        {{clearButtonlabel}}
+      </a>
+    </div>
+    <div class="qr-code-container" *ngIf="qrCodeUrlElement && (!(isMobile()))">
+      <div (click)="copyQrToClipboard()">
+        <img [src]="qrCodeImageUrl()" />
+      </div>
+      <div>
+        <p class="qr-code-text">{{qrCodeResource}}</p>
+      </div>
+    </div>
+  </div>
+  <div>
+      <mat-error *ngFor="let message of validation?.getMessagesFor(element.name, index)">
+        {{ message }}
+      </mat-error>
+  </div>
+</div>
