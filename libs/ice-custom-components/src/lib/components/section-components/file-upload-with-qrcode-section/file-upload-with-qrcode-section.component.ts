@@ -31,7 +31,7 @@ export class FileUploadWithQrCodeSection extends SectionComponentImplementation
   arrayElementBase64Data: ItemElement;
   qrCodeUrlElement: ItemElement;
   qrCodeResource: string;
-  hideQrCodeOnMobile: true;
+  hideQrCodeOnMobile: boolean;
   captionStaticResource: string;
   captionSelectionPictureLinkResource: string;
   private postMessageSubscription: Subscription;
