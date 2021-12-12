@@ -1,0 +1,11 @@
+element:
+  type: action
+  defaultValue:
+    StaticValueRule:
+      value: policies.search
+  component:
+    StaticComponentRule:
+      component:
+        IceButton:
+          themeColor: primary
+          variant: stroked

@@ -3039,6 +3039,16 @@ entries:
       - en: Give us some information about the vehicles you want to insure.
         de: Give us some information about the vehicles you want to insure.
         nl: Informatie over de voertuigen die u wilt verzekeren.
+    fund-values-confirmation-header:
+      - en: >-
+          I want to receive a written confirmation of the execution of this
+          order
+        de: >-
+          I want to receive a written confirmation of the execution of this
+          order
+        nl: >-
+          I want to receive a written confirmation of the execution of this
+          order
     image-button:
       label:
         - en: 'http://localhost:4200/visual-ice/assets/logo.png'
@@ -3612,6 +3622,69 @@ entries:
         - en: Save quote and send to customer
           de: Save quote and send to customer
           nl: Save quote and send to customer
+    funds:
+      title:
+        label:
+          - en: Fund
+            de: Fund
+            nl: Fund
+      isin:
+        title:
+          label:
+            - en: ISIN
+              de: ISIN
+              nl: ISIN
+      bulsat:
+        title:
+          label:
+            - en: Bulsat
+              de: Bulsat
+              nl: Bulsat
+      quantity:
+        title:
+          label:
+            - en: Quantity
+              de: Quantity
+              nl: Quantity
+        amount:
+          title:
+            label:
+              - en: Amount
+                de: Amount
+                nl: Amount
+          description:
+            label:
+              - en: It is recommennded for inestors....
+                de: It is recommennded for inestors....
+                nl: It is recommennded for inestors....
+        account:
+          title:
+            label:
+              - en: Account
+                de: Account
+                nl: Account
+      confirmation:
+        title:
+          label:
+            - en: Confirmation
+              de: Confirmation
+              nl: Confirmation
+        values:
+          label:
+            - en: >-
+                I want to receive a written confirmation of the execution of
+                this order
+              de: >-
+                I want to receive a written confirmation of the execution of
+                this order
+              nl: >-
+                I want to receive a written confirmation of the execution of
+                this order
+      submit:
+        label:
+          - en: Submit
+            de: Submit
+            nl: Submit
   pagination:
     claims:
       - en: claims
@@ -3920,6 +3993,11 @@ entries:
           - en: Claims
             de: Claims
             nl: Claims
+      fund-values:
+        title:
+          - en: Fund Values
+            de: Fund Values
+            nl: Fund Values
     header:
       agent:
         dashboard:

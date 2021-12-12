@@ -11,7 +11,7 @@ integration:
             - param: queryId
               value: funds.data
             - param: price_date
-              value: '01/01/00'
+              value: '01/12/2035'
             - param: page_size
               datastore: insis.dashboard.policies.customer.pagination.expired.page-size
             - param: offset

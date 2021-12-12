@@ -1,0 +1,12 @@
+list:
+  type: text
+  items:
+    - value: following_email
+      label_en: To the following e-mail address
+      label_de: To the following e-mail address
+    - value: specify_email
+      label_en: At the specified email address
+      label_de: At the specified email address
+    - value: bank_office
+      label_en: In the Bank Office
+      label_de: In the Bank Office

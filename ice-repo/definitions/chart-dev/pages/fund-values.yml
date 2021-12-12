@@ -1,0 +1,74 @@
+page:
+  component:
+    InsisOneLevelTabsNavigationPage: {}
+  validation: {}
+  css: align-navigation-start
+  sections:
+    - header
+    - component:
+        GridView:
+          grid:
+            rows:
+              - css: null
+                cols:
+                  - col: 6
+                    element: funds.title
+                  - col: 6
+              - css: null
+                cols:
+                  - col: 5
+                  - col: 4
+                    element: funds.values
+              - css: null
+                cols:
+                  - col: 6
+                    element: funds.isin.title
+                  - col: 4
+              - css: null
+                cols:
+                  - col: 6
+                    element: funds.bulsat.title
+                  - col: 4
+              - css: null
+                cols:
+                  - col: 6
+                    element: funds.quantity.title
+                  - col: 4
+              - css: null
+                cols:
+                  - col: 3
+                  - col: 2
+                    css: mat-output-align-end mt-2
+                    element: funds.quantity.amount.title
+                  - col: 4
+                    css: null
+                    element: funds.quantity.amount.input
+              - css: null
+                cols:
+                  - col: 3
+                  - col: 2
+                    css: mat-output-align-end mt-2
+                    element: funds.quantity.account.title
+                  - col: 4
+                    css: null
+                    element: funds.quantity.account.input
+              - css: null
+                cols:
+                  - col: 5
+                    element: funds.confirmation.title
+                  - col: 7
+                    css: null
+                    element: null
+              - css: null
+                cols:
+                  - col: 5
+                  - col: 7
+                    element: funds.confirmation.values
+              - css: mt-5
+                cols:
+                  - col: 12
+                    element: funds.submit
+                    css: text-align-center
+  label:
+    ResourcePageLabelRule:
+      navigationTitleKey: pages.policy-details.fund-values.title

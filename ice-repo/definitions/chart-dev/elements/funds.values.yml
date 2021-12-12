@@ -1,0 +1,15 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        IceDropdown: {}
+  label:
+    NoLabelRule: {}      
+  values:
+    StaticValuesRule:
+      values:
+        - European Retirement Fund
+        - French Executive Portfolio
+        - Global Value Fund
+
