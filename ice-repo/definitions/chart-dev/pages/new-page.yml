@@ -24,7 +24,7 @@ page:
           datastorePath: chart
           dataAxis: yAxis
           title: Chart-2
-          subTitle: Fund 
+          subTitle: Fund Participation
           type: bar
           
            

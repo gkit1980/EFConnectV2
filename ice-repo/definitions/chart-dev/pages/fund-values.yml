@@ -22,16 +22,6 @@ page:
               - css: null
                 cols:
                   - col: 6
-                    element: funds.isin.title
-                  - col: 4
-              - css: null
-                cols:
-                  - col: 6
-                    element: funds.bulsat.title
-                  - col: 4
-              - css: null
-                cols:
-                  - col: 6
                     element: funds.quantity.title
                   - col: 4
               - css: null
