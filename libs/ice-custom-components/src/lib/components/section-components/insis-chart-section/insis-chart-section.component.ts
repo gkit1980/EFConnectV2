@@ -2,7 +2,6 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {SectionComponentImplementation} from '@impeo/ng-ice';
 import {IceConsole, IceElement} from '@impeo/ice-core';
 import {get, uniq, set, cloneDeep, merge, has, extend} from 'lodash';
-import {EChartOption} from 'echarts';
 import {debounceTime} from 'rxjs/operators';
 import {BehaviorSubject, Subscription} from 'rxjs';
 import _ from 'lodash';
@@ -11,7 +10,8 @@ import _ from 'lodash';
 enum ChartTypes {
   line = 'line',
   bar = 'bar',
-  pie = 'pie'
+  pie = 'pie',
+  horizontalbar='horizontalbar'
 }
 
 
@@ -35,6 +35,7 @@ export class InsisChartSectionComponent extends SectionComponentImplementation i
 
   ngOnInit(): void {
    
+
    
     this.changeDataStoreSubscription = this.context.dataStore.subscribe(this.datastorePath, {
       next: () => {
@@ -66,10 +67,12 @@ export class InsisChartSectionComponent extends SectionComponentImplementation i
 setOptions(data:any)
 {
  
-    this.xAxisData=data.Periods;
-    
   
-
+   ///line Chart
+   if(this.chartType==ChartTypes.line)
+   {
+  
+  this.xAxisData=data.Periods;
   this.options = {
     legend: {
       data: data.Fundnames,
@@ -97,7 +100,46 @@ setOptions(data:any)
                }
                this.options.series.push(fundDetails);
       }
+  
+    }
+     //end line chart  
+    if(this.chartType==ChartTypes.bar)
+    {
+        
 
+      this.options = {
+        legend: {
+          data: data.FundsNames,
+          align: 'left',
+        },
+        tooltip: {},
+        xAxis: [{
+          data: data.FundsNames,
+          axisTick: {
+            alignWithLabel: true,
+            show: false
+          }
+        }],
+        yAxis: [{
+          type: 'value'
+        }],
+        series: []
+      };
+      
+      let dataSeries :any=[];
+      for(let item of data.FundsPercentage)
+        dataSeries.push(item.value);
+  
+      this.options.series=
+        [  
+          {
+            type: ChartTypes.bar,
+            barWidth: '30%',
+            data: dataSeries,
+          }
+        ]
+  
+    }
 }
 
 
@@ -128,15 +170,15 @@ get legendLabels(): string[] {
 }
 
 get chartTitle() {
-    return this.getResourceFromParam('title');
+return get(this.recipe, `component.InsisChart.title`);
 }
 
 get chartSubTitle() {
-    return this.getResourceFromParam('subTitle');
+  return get(this.recipe, `component.InsisChart.subTitle`);
 }
 
 get chartInfomation() {
-    return this.getResourceFromParam('information');
+  return get(this.recipe, `component.InsisChart.information`);
 }
 
 
@@ -148,10 +190,6 @@ getElementValues(element: IceElement): any[] {
 
 
 
-private getResourceFromParam(paramName: string): string | false {
-  const key = get(this.recipeParams, paramName, false);
-  if (!key) return false;
-  return this.resource.resolve(key);
-}
+
 
 }

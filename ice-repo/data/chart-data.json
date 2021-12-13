@@ -14,6 +14,23 @@
             "fundname": "Institutional Index Fund",
             "values": [0.39, 0.39, 0.4, 0.42]
         }
-    ]
+    ],
+    "FundsPercentage": [{
+        "fundname": "European Retirement Fund",
+        "value": 30
+    }, 
+    {
+        "fundname": "French Executive Portfolio",
+        "value": 20
+    }, 
+    {
+        "fundname": "Global Value Fund",
+        "value": 15
+    }, 
+    {
+        "fundname": "Institutional Index Fund",
+        "value": 35
+    }
+]
 }
 

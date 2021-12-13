@@ -15,10 +15,16 @@ page:
     - component:
         InsisChart:
           datastorePath: chart
-          label: mydata~labels
           dataAxis: yAxis
-          title: Test-Title
-          subTitle: Test-Subtitle
-          information: Info
+          title: Chart-1
+          subTitle: Fund Values per specific Period
           type: line
-          legendLabels:   
+    - component:
+        InsisChart:
+          datastorePath: chart
+          dataAxis: yAxis
+          title: Chart-2
+          subTitle: Fund 
+          type: bar
+          
+           
