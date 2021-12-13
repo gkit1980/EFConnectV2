@@ -1,0 +1,15 @@
+list:
+  type: text
+  items:
+    - value: Salary
+      label_en: Salary
+      label_de: Salary
+    - value: Inheritance
+      label_en: Inheritance
+      label_de: Inheritance
+    - value: Capital
+      label_en: Capital
+      label_de: Capital
+    - value: Other
+      label_en: Other
+      label_de: Other

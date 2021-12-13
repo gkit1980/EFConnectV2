@@ -1,0 +1,12 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        IceRadiobuttonGroup: {}
+  values:
+    ListValuesRule:
+      list: insis.fund.values.consent.line_3.options
+  label:
+    ResourceLabelRule:
+      key:  elements.fund-values-consent-line-3

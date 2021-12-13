@@ -3049,6 +3049,27 @@ entries:
         nl: >-
           I want to receive a written confirmation of the execution of this
           order
+    fund-values-consent-line-2:
+      - en: >-
+          2.
+        de: >-
+          2.
+        nl: >-
+          2.
+    fund-values-consent-line-3:
+      - en: >-
+          3.
+        de: >-
+          3.
+        nl: >-
+          3.     
+    fund-values-consent-line-4:
+      - en: >-
+          4.The source of money for this purchase is
+        de: >-
+          4.The source of money for this purchase is
+        nl: >-
+          4.The source of money for this purchase is   
     image-button:
       label:
         - en: 'http://localhost:4200/visual-ice/assets/logo.png'
@@ -3685,6 +3706,34 @@ entries:
           - en: Submit
             de: Submit
             nl: Submit
+      consent:
+        line_1:
+          label:
+            - en: >-
+                1.I reviewed:The last published issue price/redemption price of
+                the units of Mutual Fund
+              de: >-
+                2.I reviewed:The last published issue price/redemption price of
+                the units of Mutual Fund
+              nl: >-
+                3.I reviewed:The last published issue price/redemption price of
+                the units of Mutual Fund
+        title:
+          label:
+            - en: Consent
+              de: Consent
+              nl: Consent
+        line_5:
+          label:
+            - en: >-
+                5. The order was submitted exclusively and only upon my own
+                intention
+              de: >-
+                5. The order was submitted exclusively and only upon my own
+                intention
+              nl: >-
+                5. The order was submitted exclusively and only upon my own
+                intention
   pagination:
     claims:
       - en: claims

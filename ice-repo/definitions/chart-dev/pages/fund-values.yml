@@ -57,8 +57,40 @@ page:
               - css: mt-5
                 cols:
                   - col: 12
+                    element: funds.consent.title
+                    css: ''
+              - css: null
+                cols:
+                  - col: 5
+                    element: null
+                  - col: 7
+                    css: null
+                    element: funds.consent.line_1
+              - css: null
+                cols:
+                  - col: 5
+                  - col: 7
+                    element: funds.consent.line_2
+              - css: null
+                cols:
+                  - col: 5
+                  - col: 7
+                    element: funds.consent.line_3
+              - css: null
+                cols:
+                  - col: 5
+                  - col: 7
+                    element: funds.consent.line_4
+              - css: null
+                cols:
+                  - col: 5
+                  - col: 7
+                    element: funds.consent.line_5
+              - css: null
+                cols:
+                  - col: 12
                     element: funds.submit
-                    css: text-align-center
+                    css: text-align-center mt-5
   label:
     ResourcePageLabelRule:
       navigationTitleKey: pages.policy-details.fund-values.title

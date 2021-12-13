@@ -1,0 +1,12 @@
+list:
+  type: text
+  items:
+    - value: possess_info
+      label_en: I do not possess inside information about Mutual Fund.
+      label_de: I do not possess inside information about Mutual Fund.
+    - value: not_possess_info
+      label_en: I possess inside information about Mutual Fund
+                or its units under article 4 of the Law on Measures again Market Abuse with Financial Instruments.
+      label_de: I possess inside information about Mutual Fund
+                or its units under article 4 of the Law on Measures again Market Abuse with Financial Instruments.
+   

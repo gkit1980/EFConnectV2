@@ -1,0 +1,12 @@
+list:
+  type: text
+  items:
+    - value: not_insider
+      label_en: I am not an insider of Mutual Fund.
+      label_de: I am not an insider of Mutual Fund.
+    - value: insider
+      label_en: I am an insider of Mutual Fund
+                under article 8 and article 10 of the Law on Measures again Market Abuse with Financial Instruments.
+      label_de: I am an insider of Mutual Fund
+                under article 8 and article 10 of the Law on Measures again Market Abuse with Financial Instruments.
+    
