@@ -45,7 +45,7 @@ integration:
             - payload: parameters.parameter[4].name
               value: SIP_SOURCE_MONEY
             - payload: parameters.parameter[5].content[0] #param6
-              value: 2000
+              value: funds.quantity.amount.input
             - payload: parameters.parameter[5].type
               value: java.math.BigDecimal
             - payload: parameters.parameter[5].name
