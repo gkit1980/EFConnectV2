@@ -2092,7 +2092,66 @@ WHERE p_people.fname != :fname
                 ]]>
             </SQL>
         </Query>
-
+     <Query id="policy.noZeroFundPrices">
+          <Description>
+           Query for retrieveing the given policy fund structure and the fund values from the date covered onwards
+          </Description>
+          <FilterCriteria>
+            <FilterCriterion mandatory="true" searchField="policy_id">policy_id</FilterCriterion>
+            <FilterCriterion mandatory="true" searchField="offset">offset</FilterCriterion>
+            <FilterCriterion mandatory="true" searchField="page_size">page_size</FilterCriterion>
+          </FilterCriteria>
+ <SQL>
+<![CDATA[
+WITH cte AS (
+							SELECT p.date_covered,
+								   ias.fund_id  
+							FROM insis_gen_v10.policy p,
+								 inv_account_structure ias
+							WHERE p.policy_id = ias.policy_id
+								  AND p.policy_id =:policy_id
+								  AND percentage>0
+						),cnt AS (
+							SELECT COUNT(1) numOfFunds
+							FROM  cte
+						),periods AS (
+							SELECT /*+MATERIALIZE*/ DISTINCT TO_DATE(trunc(price_date),'dd/mm/yyyy') price_date
+							FROM insis_ul_v10.ul_unit_prices
+							WHERE price_date >= (SELECT date_covered FROM  cte WHERE ROWNUM = 1)
+								AND price_type = 'SELL'
+							ORDER BY TO_DATE(trunc(price_date),'dd/mm/yyyy') ASC
+						OFFSET :offset ROWS FETCH NEXT :page_size ROWS ONLY
+						),
+						fundPriceData as (
+							SELECT /*+MATERIALIZE*/  fund_id,PRICE, PRICE_DATE 
+							FROM insis_ul_v10.ul_unit_prices 
+							WHERE  PRICE_TYPE='SELL' 
+								AND price_date>= (SELECT date_covered FROM cte WHERE rownum =1)
+								AND fund_id in (SELECT fund_id FROM cte)
+							ORDER BY PRICE_DATE ASC   
+							OFFSET :offset ROWS FETCH NEXT :page_size*(SELECT numOfFunds FROM cnt) ROWS ONLY
+						)
+						SELECT JSON_OBJECT( 'FundsNames' is (SELECT JSON_ARRAYAGG(ul_funds.fund_name) fund_name FROM insis_ul_v10.ul_funds WHERE fund_id in (select fund_id from cte)),
+											'periods' is (SELECT JSON_ARRAYAGG(to_char(price_date,'dd/mm/yy') ORDER BY price_date asc RETURNING CLOB) FROM periods),
+											'Funds' is (SELECT JSON_ARRAYAGG( JSON_OBJECT('fundname' IS (SELECT FUND_NAME FROM insis_ul_v10.ul_funds S WHERE B.fund_id=S.FUND_ID),
+																						  'Values' IS JSON_ARRAYAGG(price ORDER BY price_date asc RETURNING CLOB)
+																						 )RETURNING CLOB
+																			)
+														FROM  fundPriceData B                          
+														GROUP BY  fund_id
+														),
+											'FundsPercentage' is (SELECT JSON_ARRAYAGG(JSON_OBJECT('name' is (SELECT fund_name FROM insis_ul_v10.ul_funds s WHERE ias.fund_id = s.fund_id),
+																								   'value'is percentage
+																								   )
+																					  )
+																  FROM inv_account_structure ias
+																  WHERE policy_id =:policy_id and percentage >0
+																  ) 
+										  ) 
+						FROM dual
+]]>
+</SQL>
+</Query>
 
     </Queries>
 </Configuration>
