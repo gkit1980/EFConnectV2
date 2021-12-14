@@ -2103,7 +2103,7 @@ WHERE p_people.fname != :fname
           </FilterCriteria>
  <SQL>
 <![CDATA[
-WITH cte AS (
+SELECT * FROM (WITH cte AS (
 							SELECT p.date_covered,
 								   ias.fund_id  
 							FROM insis_gen_v10.policy p,
@@ -2148,7 +2148,8 @@ WITH cte AS (
 																  WHERE policy_id =:policy_id and percentage >0
 																  ) 
 										  ) 
-						FROM dual
+						FROM dual)
+
 ]]>
 </SQL>
 </Query>
