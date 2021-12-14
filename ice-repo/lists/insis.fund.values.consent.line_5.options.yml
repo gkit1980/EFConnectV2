@@ -1,0 +1,6 @@
+list:
+  type: text
+  items:
+    - value: I Agree
+      label_en:  I Agree
+      label_de: I Agree

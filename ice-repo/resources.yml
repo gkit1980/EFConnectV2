@@ -3070,6 +3070,13 @@ entries:
           4.The source of money for this purchase is
         nl: >-
           4.The source of money for this purchase is   
+    fund-values-consent-line-5:
+      - en: >-
+          5. The order was submitted exclusively and only upon my own intention
+        de: >-
+          5. The order was submitted exclusively and only upon my own intention
+        nl: >-
+          5. The order was submitted exclusively and only upon my own intention         
     image-button:
       label:
         - en: 'http://localhost:4200/visual-ice/assets/logo.png'
