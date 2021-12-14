@@ -1,10 +1,22 @@
 integration:
   exchange:
-    InsisLoadYmlFileExchangeRule:
-      dataFileURL: data/chart-data.json
+    InsisRestPQCallExchangeRule:
+      endpointBaseurl: "insis-rest-endpoint"
+      verb: post
+      url: "/util/query/paginated-query"
   transformation:
     DefaultTransformationRule:
+      out:
+        - mappings:
+            - param: queryId
+              value: policy.noZeroFundPrices
+            - param: policy_id
+              value: 100000052932
+            - param: offset
+              value: 0
+            - param: page_size
+              value: 10
       in:
         - mappings:
-            - payload: 'file'
-              datastore: 'chart'
+            - payload: "file"
+              datastore: "chart"

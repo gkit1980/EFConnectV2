@@ -1,29 +1,18 @@
 integration:
   exchange:
-    InsisRestPQCallExchangeRule:
-      endpointBaseurl: 'insis-rest-endpoint'
-      verb: post
-      url: '/util/query/paginated-query'
+    InsisDBExchangeRule:
+      connectString: "insis-db-url"
+      username: "insis-db-username"
+      password: "insis-db-password"
+      queryType: SQL
+      queryFileURL: "data/funds.data.sql"
   transformation:
     DefaultTransformationRule:
       out:
         - mappings:
-            - param: queryId
-              value: funds.data
-            - param: price_date
-              value: '01/12/20'
-            - param: page_size
-              datastore: insis.dashboard.policies.customer.pagination.expired.page-size
-            - param: offset
-              datastore: insis.dashboard.policies.customer.pagination.expired.offset
+            - param: policy_id
+              value: 100000052932
       in:
-        - fromIdx:
-            array: payload.rows.FundNames
-          toIdx:
-            array: datamodel.fund.names
-            append: true
-        - fromIdx:
-            array: payload.rows.Funds
-          toIdx:
-            array: datamodel.fund.array
-            append: true
+        - mappings:
+            datastore: chart
+            payload: foo
