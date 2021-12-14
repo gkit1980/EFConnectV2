@@ -1,0 +1,7 @@
+action:
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: ICE_CONTEXT_CREATED
+  execution:
+    - IntegrationExecutionRule:
+        integration: insis-get-open-date

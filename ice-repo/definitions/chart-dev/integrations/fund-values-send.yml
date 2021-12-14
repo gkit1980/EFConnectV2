@@ -8,59 +8,57 @@ integration:
     DefaultTransformationRule:
       additional: insis
       dateFormat: YYYY-MM-DD
-      dateTimeFormat: 'YYYY-MM-DDThh:mm:ss'
+      dateTimeFormat: "YYYY-MM-DDThh:mm:ss"
       in: {}
       out:
         - mappings:
             - payload: eventType
               value: START_PROCESS_DUE_SIP
-            - payload: parameters.parameter[0].content[0]       #param1
-              element: policy.contract.policy-id
+            - payload: parameters.parameter[0].content[0] #param1
+              value: 100000052932
             - payload: parameters.parameter[0].type
               value: java.math.BigDecimal
             - payload: parameters.parameter[0].name
               value: POLICY_ID
-            - payload: parameters.parameter[1].content[0]        #param2
+            - payload: parameters.parameter[1].content[0] #param2
               value: funds.values
             - payload: parameters.parameter[1].type
               value: java.lang.String
             - payload: parameters.parameter[1].name
               value: SIP_FUND
-            - payload: parameters.parameter[2].content[0]        #param3
+            - payload: parameters.parameter[2].content[0] #param3
               value: "N"
             - payload: parameters.parameter[2].type
               value: java.lang.String
             - payload: parameters.parameter[2].name
               value: SIP_NEW_INSTANCE
-            - payload: parameters.parameter[3].content[0]        #param4
+            - payload: parameters.parameter[3].content[0] #param4
               value: "EUR"
             - payload: parameters.parameter[3].type
               value: java.lang.String
             - payload: parameters.parameter[3].name
               value: SIP_PAY_CURRENCY
-            - payload: parameters.parameter[4].content[0]        #param5
+            - payload: parameters.parameter[4].content[0] #param5
               value: "Salary"
             - payload: parameters.parameter[4].type
               value: java.lang.String
             - payload: parameters.parameter[4].name
               value: SIP_SOURCE_MONEY
-            - payload: parameters.parameter[5].content[0]        #param6
+            - payload: parameters.parameter[5].content[0] #param6
               value: 2000
             - payload: parameters.parameter[5].type
               value: java.math.BigDecimal
             - payload: parameters.parameter[5].name
-              value: SIP_PAY_AMOUNT  
-            - payload: parameters.parameter[6].content[0]        #param7
+              value: SIP_PAY_AMOUNT
+            - payload: parameters.parameter[6].content[0] #param7
               value: 3
             - payload: parameters.parameter[6].type
               value: java.math.BigDecimal
             - payload: parameters.parameter[6].name
               value: SIP_PAY_WAY
-            - payload: parameters.parameter[7].content[0]        #param8
-              value: "2016-04-20T00:00:00+02:00"
+            - payload: parameters.parameter[7].content[0] #param8
+              element: insis.openday
             - payload: parameters.parameter[7].type
-              value: java.util.Date
+              value: java.lang.String
             - payload: parameters.parameter[7].name
-              value: SIP_PAY_DATE  
-    
-  
+              value: SIP_PAY_DATE
