@@ -1,5 +1,0 @@
-element:
-  type: date
-  mirror:
-    CopyValueMirrorRule:
-      originElement: insis.openday
