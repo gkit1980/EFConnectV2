@@ -1,0 +1,40 @@
+<div class="simple-page">
+  <page-validation [page]="page"></page-validation>
+  <div class="row" [ngClass]="getColorBackground()">
+    <div class="col-sm-12 no-paddings-fix">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <ice-section class="topSection" [section]="getTopSection()"> </ice-section>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+
+
+            <h3  joyrideStep="viewClaims_firstStep"   [doneTemplate]="doneButton" title="Αιτήματα Αποζημιώσεων"  text="Εάν έχετε ζητήσει αποζημίωση, θα μπορείτε να την παρακολουθήσετε μέσω αυτής της περιοχής. Εμφανίζεται ο αριθμός των αιτημάτων που βρίσκονται σε εξέλιξη και, πατώντας, μεταφέρεστε σε σελίδα όπου βλέπετε την πορεία της διαδικασίας."
+                 class="page-title" [ngClass]="flag ? 'no-margin-bottom' : ''" *ngIf="showTitle">{{ page.labelRule?.getPageTitle() }}
+             </h3>
+             
+             <!-- joy-ride -->
+             <ng-template #doneButton>
+                <button  class="joyride-button"  style="background-color: #fff; color: #000; border-color: transparent;left: 260px;
+                position: relative;">ΤΕΛΟΣ</button>
+              </ng-template>
+
+            <ice-section *ngFor="let section of getMainPageSection()" [section]="section">
+            </ice-section>
+
+            <div *ngIf="showInsights">
+              <hr>
+              <ice-page-insight [page]="page"></ice-page-insight>
+            </div>
+            <ice-confirmation-dialog [page]="page"></ice-confirmation-dialog>
+            <!-- <ice-message [page]="page"></ice-message> -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

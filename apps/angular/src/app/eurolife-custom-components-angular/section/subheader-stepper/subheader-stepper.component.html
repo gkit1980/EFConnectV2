@@ -1,0 +1,543 @@
+<!-- ΠΕΡΙΟΥΣΙΑ -->
+
+<div class="container" *ngIf="currentContract.Branch == 'ΠΕΡΙΟΥΣΙΑΣ'">
+
+  <div class="row mt-5 mb-5 mobile-center w-100 no-margins">
+
+    <div class="col-sm-1 home">
+    </div>
+
+    <div class="col-sm-7 header-top">
+
+      <div class="row">
+        <div class="col-sm-12">
+          <div *ngFor="let row of recipe.rows">
+            <div class="column" *ngFor="let col of row.PropertyFolderID">
+
+              <h3>
+                <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                  [component]="col.component">
+                </ice-element>
+              </h3>
+              <div *ngFor="let row of recipe.rows">
+                <div class="column Caption3 opacity" *ngFor="let col of row.ContractKey">
+                  <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                    [component]="col.component" class="contract-key">
+                  </ice-element>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="col-sm-4">
+      <div *ngFor="let row of recipe.rows">
+        <div class="specific column" *ngFor="let col of row.PropertyAddressForHeader">
+          <h4><strong>
+              <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                [component]="col.component">
+              </ice-element>
+            </strong></h4>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="stepper-container">
+    <div class="step" *ngFor="let step of stepperState.stepsState; let i=index">
+      <div class="circle" [ngClass]="checkOuterCircle(i)">
+        <div class="inside-circle red-cicle" *ngIf="checkActive(i) == 'active'"></div>
+        <div class="inside-circle success_property" *ngIf="checkActive(i) == 'done'" aria-label="icon"
+          [inlineSVG]="svgIcon" [onSVGLoaded]="handleSVG">
+        </div>
+      </div>
+      <div class="bar-left" [ngClass]="checkActiveLeftLine(i)"></div>
+      <div class="bar-right" [ngClass]="checkActiveRightLine(i)"></div>
+      <div class="step-title h6-active" [ngClass]="checkActive(i)">{{ step.title }}</div>
+      <div class="step-title Caption1" [ngClass]="checkActive(i)">{{ calculateDate(step.content) }}</div>
+    </div>
+  </div>
+
+  <div class="stepper-mobile-container">
+    <ng-container *ngFor="let step of stepperState.stepsState; let i=index">
+      <div *ngIf=" stepperState.step === 0 && i === 0 " class="stepper-full-gap"></div>
+      <div
+        *ngIf="stepperState.step === 0 && (i===0 || i===1) || stepperState.step == 1 || stepperState.step === 2 && (i === 0 || i === 1)"
+        class="step-mobile" [ngClass]="getClassStepperState(i)">
+        <div class="circle" [ngClass]="checkOuterCircle(i)">
+          <div class="inside-circle red-cicle" *ngIf="checkActive(i) == 'active'"></div>
+          <div class="inside-circle success_property" *ngIf="checkActive(i) == 'done'" aria-label="icon"
+            [inlineSVG]="svgIcon" [onSVGLoaded]="handleSVG">
+          </div>
+        </div>
+        <!-- <div class="bar-left" [ngClass]="i == 2 ? checkActive(i) : checkActive(i+1)"></div>
+              <div class="bar-right" [ngClass]="i == 2 ? checkActive(i) : checkActive(i+1)"></div> -->
+        <!-- <div class="step-title Typeface" [ngClass]="checkActive(i)">{{ step.title }}</div> -->
+      </div>
+      <div
+        *ngIf="stepperState.step === 0 && i===0 || stepperState.step === 1 && ( i===0 || i===1 ) || stepperState.step === 2 && i === 0"
+        [ngClass]="checkActiveLine(i)" class="mobile-bar"></div>
+      <div *ngIf=" stepperState.step === 2 && i === 2 " class="stepper-full-gap"></div>
+    </ng-container>
+  </div>
+
+  <div class="mobile-dots-container">
+    <div class="dot-item" [ngClass]="getClassDotItemActive1()"></div>
+    <div class="dot-item" [ngClass]="getClassDotItemActive2()"></div>
+    <div class="dot-item" [ngClass]="getClassDotItemActive3()"></div>
+  </div>
+
+  <div *ngIf="showAmount" class="mt-48px">
+    <div *ngFor="let row of recipe.rows">
+      <div class="column" *ngFor="let col of row.ClaimAmount">
+        <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element" [component]="col.component">
+        </ice-element>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row light-background mt64px" *ngIf="currentContract.Branch == 'ΠΕΡΙΟΥΣΙΑΣ'">
+  <div class="col-sm-12">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="section-breaks-property Typeface">
+            <h5>
+              <div class="row-header">{{ incidentDetails1 | resourcePipe }}</div>
+            </h5>
+          </div>
+
+          <div *ngFor="let row of recipe.rows">
+            <div class="column" *ngFor="let col of row.ClaimClassDescription">
+              <h4><strong>
+                  <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                    [component]="col.component">
+                  </ice-element>
+                </strong></h4>
+            </div>
+            <div class="column" *ngFor="let col of row.ClaimTypeDescription">
+              <h4><strong>
+                  <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                    [component]="col.component">
+                  </ice-element>
+                </strong></h4>
+            </div>
+            <div class="column" *ngFor="let col of row.ClaimNameSurname">
+              <h4><strong>
+                  <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                    [component]="col.component">
+                  </ice-element>
+                </strong></h4>
+            </div>
+            <div class="column" *ngFor="let col of row.ClaimAssignmentDate">
+              <h4><strong>
+                  <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                    [component]="col.component">
+                  </ice-element>
+                </strong></h4>
+            </div>
+            <div class="column" *ngFor="let col of row.ClaimSurveyor">
+              <h4><strong>
+                  <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                    [component]="col.component">
+                  </ice-element>
+                </strong></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ΖΩΗ/ΥΓΕΙΑΣ -->
+
+<div class="container" *ngIf="(currentContract.Branch == 'ΖΩΗΣ' || currentContract.Branch == 'ΥΓΕΙΑΣ')">
+
+  <div class="row mt-5 mb-5 mobile-center w-100 no-margins">
+
+    <div class="col-sm-1 health">
+    </div>
+
+    <div class="col-sm-7 header-top">
+
+      <div class="row">
+        <div class="col-sm-12">
+          <div *ngFor="let row of recipe.rows">
+            <div class="column" *ngFor="let col of row.LifeFolderID">
+
+              <h3>
+                <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                  [component]="col.component">
+                </ice-element>
+              </h3>
+              <div *ngFor="let row of recipe.rows">
+                <div class="column Caption3 opacity" *ngFor="let col of row.ContractKey">
+                  <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                    [component]="col.component" class="contract-key">
+                  </ice-element>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="col-sm-4">
+      <div *ngFor="let row of recipe.rows">
+        <div class="specific column" *ngFor="let col of row.InsuredPersonForHeader">
+          <h4><strong>
+              <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                [component]="col.component">
+              </ice-element>
+            </strong></h4>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="stepper-container">
+    <div class="step" *ngFor="let step of stepperState.stepsState; let i=index">
+      <div class="circle" [ngClass]="checkOuterCircle(i)">
+        <div class="inside-circle red-cicle" *ngIf="checkActive(i) == 'active'"></div>
+        <div class="inside-circle success_life" *ngIf="checkActive(i) == 'done'" aria-label="icon" [inlineSVG]="svgIcon"
+          [onSVGLoaded]="handleSVG">
+        </div>
+      </div>
+      <div class="bar-left" [ngClass]="checkActiveLeftLine(i)"></div>
+      <div class="bar-right" [ngClass]="checkActiveRightLine(i)"></div>
+      <div class="step-title h6-active" [ngClass]="checkActive(i)">{{ step.title }}</div>
+      <div class="step-title Caption1" [ngClass]="checkActive(i)">{{ calculateDate(step.content) }}</div>
+    </div>
+  </div>
+
+  <div class="stepper-mobile-container">
+    <ng-container *ngFor="let step of stepperState.stepsState; let i=index">
+      <div *ngIf=" stepperState.step === 0 && i === 0 " class="stepper-full-gap"></div>
+      <div
+        *ngIf="stepperState.step === 0 && (i===0 || i===1) || stepperState.step == 1 || stepperState.step === 2 && (i === 0 || i === 1)"
+        class="step-mobile" [ngClass]=" getClassStepperState(i)">
+        <div class="circle" [ngClass]="checkOuterCircle(i)">
+          <div class="inside-circle red-cicle" *ngIf="checkActive(i) == 'active'"></div>
+          <div class="inside-circle success_life" *ngIf="checkActive(i) == 'done'" aria-label="icon"
+            [inlineSVG]="svgIcon" [onSVGLoaded]="handleSVG">
+          </div>
+        </div>
+        <!-- <div class="bar-left" [ngClass]="i == 2 ? checkActive(i) : checkActive(i+1)"></div>
+              <div class="bar-right" [ngClass]="i == 2 ? checkActive(i) : checkActive(i+1)"></div> -->
+        <!-- <div class="step-title Typeface" [ngClass]="checkActive(i)">{{ step.title }}</div> -->
+      </div>
+      <div
+        *ngIf="stepperState.step === 0 && i===0 || stepperState.step === 1 && ( i===0 || i===1 ) || stepperState.step === 2 && i === 0"
+        [ngClass]="checkActiveLine(i)" class="mobile-bar"></div>
+      <div *ngIf=" stepperState.step === 2 && i === 2 " class="stepper-full-gap"></div>
+    </ng-container>
+  </div>
+
+  <div class="mobile-dots-container">
+    <div class="dot-item" [ngClass]="getClassDotItemActive1()"></div>
+    <div class="dot-item" [ngClass]="getClassDotItemActive2()"></div>
+    <div class="dot-item" [ngClass]="getClassDotItemActive3()"></div>
+  </div>
+
+  <div class="col mt-6 no-paddings">
+
+    <div *ngIf="showAmount" class="mt-48px">
+      <div *ngFor="let row of recipe.rows">
+        <div class="column" *ngFor="let col of row.CompensationLifeAmount">
+          <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element" [component]="col.component">
+          </ice-element>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Remove Incident details from life/health -->
+
+<div class="row light-background mt-64px"
+  *ngIf="(currentContract.Branch == 'ΖΩΗΣ' || currentContract.Branch == 'ΥΓΕΙΑΣ')">
+  <div class="col-sm-12">
+    <div class="container">
+      <!-- <div class="row">
+        <div class="col-sm-12">
+          <div class="section-breaks-life Typeface">
+            <h5>
+              <div class="row-header">{{ incidentDetails2 | resourcePipe }}</div>
+            </h5>
+          </div>
+
+          <div *ngFor="let row of recipe.rows">
+            <div class="column" *ngFor="let col of row.ClaimStatusDescription">
+              <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                [component]="col.component">
+              </ice-element>
+            </div>
+            <div class="column" *ngFor="let col of row.InsuredPerson">
+              <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                [component]="col.component">
+              </ice-element>
+            </div>
+            <div class="column" *ngFor="let col of row.InsuredPersonBirthDate">
+              <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                [component]="col.component">
+              </ice-element>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+
+
+  </div>
+</div>
+
+
+
+
+<!--ΑΥΤΟΚΙΝΗΤΩΝ-->
+<div class="container" *ngIf="currentContract.Branch == 'ΑΥΤΟΚΙΝΗΤΩΝ'">
+
+  <div class="row mt-5 mb-5 mobile-center w-100 no-margins">
+
+    <div class="col-sm-1 motor">
+    </div>
+    <div class="col-sm-7 header-top">
+
+      <div class="row">
+        <div class="col-sm-12">
+          <div *ngFor="let row of recipe.rows">
+            <div class="column" *ngFor="let col of row.MotorFolderID">
+              <h3>
+                <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                  [component]="col.component">
+                </ice-element>
+              </h3>
+            </div>
+          </div>
+          <div *ngFor="let row of recipe.rows">
+            <div class="column Caption3 opacity" *ngFor="let col of row.ContractKey">
+              <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                [component]="col.component" class="contract-key">
+              </ice-element>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="col-sm-4">
+      <div *ngFor="let row of recipe.rows">
+        <div class="specific column" *ngFor="let col of row.ClaimMotorLicencePlateForHeader">
+          <h4><strong>
+              <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                [component]="col.component">
+              </ice-element>
+            </strong></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stepper-container">
+
+    <div class="step" *ngFor="let step of stepperState.stepsState; let i=index">
+      <div class="circle" [ngClass]="checkOuterCircle(i)">
+        <div class="inside-circle red-cicle" *ngIf="checkActive(i) == 'active'"></div>
+        <div class="inside-circle success_motor" *ngIf="checkActive(i) == 'done'" aria-label="icon"
+          [inlineSVG]="svgIcon" [onSVGLoaded]="handleSVG">
+        </div>
+      </div>
+      <div class="bar-left" [ngClass]="checkActiveLeftLine(i)"></div>
+      <div class="bar-right" [ngClass]="checkActiveRightLine(i)"></div>
+      <div class="step-title h6-active" [ngClass]="checkActive(i)">{{ step.title }}</div>
+      <div class="step-title Caption1" [ngClass]="checkActive(i)">{{ calculateDate(step.content) }}</div>
+    </div>
+
+  </div>
+
+  <div class="stepper-mobile-container">
+    <ng-container *ngFor="let step of stepperState.stepsState; let i=index">
+      <div *ngIf=" stepperState.step === 0 && i === 0 " class="stepper-full-gap"></div>
+      <div
+        *ngIf="stepperState.step === 0 && (i===0 || i===1) || stepperState.step == 1 || stepperState.step === 2 && (i === 0 || i === 1)"
+        class="step-mobile" [ngClass]="getClassStepperState(i)">
+        <div class="circle" [ngClass]="checkOuterCircle(i)">
+          <div class="inside-circle red-cicle" *ngIf="checkActive(i) == 'active'"></div>
+          <div class="inside-circle success_motor" *ngIf="checkActive(i) == 'done'" aria-label="icon"
+            [inlineSVG]="svgIcon" [onSVGLoaded]="handleSVG">
+          </div>
+        </div>
+        <!-- <div class="bar-left" [ngClass]="i == 2 ? checkActive(i) : checkActive(i+1)"></div>
+              <div class="bar-right" [ngClass]="i == 2 ? checkActive(i) : checkActive(i+1)"></div> -->
+        <!-- <div class="step-title Typeface" [ngClass]="checkActive(i)">{{ step.title }}</div> -->
+      </div>
+      <div
+        *ngIf="stepperState.step === 0 && i===0 || stepperState.step === 1 && ( i===0 || i===1 ) || stepperState.step === 2 && i === 0"
+        [ngClass]="checkActiveLine(i)" class="mobile-bar"></div>
+      <div *ngIf=" stepperState.step === 2 && i === 2 " class="stepper-full-gap"></div>
+    </ng-container>
+  </div>
+
+  <div class="mobile-dots-container">
+    <div class="dot-item" [ngClass]="getClassDotItemActive1()"></div>
+    <div class="dot-item" [ngClass]="getClassDotItemActive2()"></div>
+    <div class="dot-item" [ngClass]="getClassDotItemActive3()"></div>
+  </div>
+
+  <div *ngIf="showAmount" class="mt-48px">
+    <div *ngFor="let row of recipe.rows">
+      <div class="column" *ngFor="let col of row.ClaimAmount">
+        <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element" [component]="col.component">
+        </ice-element>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="container-fluid"> -->
+<div class="row light-background mt-64px" *ngIf="currentContract.Branch == 'ΑΥΤΟΚΙΝΗΤΩΝ'">
+  <div class="col-sm-12">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="section-breaks-motor Typeface">
+            <h5>
+              <div class="row-header">{{ incidentDetails3 | resourcePipe }}</div>
+            </h5>
+          </div>
+
+          <div *ngFor="let row of recipe.rows">
+            <div class="column" *ngFor="let col of row.ClaimMotorAccidentLocation">
+              <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                [component]="col.component">
+              </ice-element>
+            </div>
+            <div class="column" *ngFor="let col of row.ClaimMotorAccidentTown">
+              <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                [component]="col.component">
+              </ice-element>
+            </div>
+            <div class="column" *ngFor="let col of row.ClaimMotorDriverName">
+              <h4><strong>
+                  <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                    [component]="col.component">
+                  </ice-element>
+                </strong></h4>
+            </div>
+            <div class="column" *ngFor="let col of row.ClaimClassDescription">
+              <h4><strong>
+                  <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                    [component]="col.component">
+                  </ice-element>
+                </strong></h4>
+            </div>
+            <div class="column" *ngFor="let col of row.ClaimTypeDescription">
+              <h4><strong>
+                  <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                    [component]="col.component">
+                  </ice-element>
+                </strong></h4>
+            </div>
+            <div class="column" *ngFor="let col of row.ClaimNameSurname">
+              <h4><strong>
+                  <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                    [component]="col.component">
+                  </ice-element>
+                </strong></h4>
+            </div>
+            <div class="column" *ngFor="let col of row.ClaimAssignmentDate">
+              <h4><strong>
+                  <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                    [component]="col.component">
+                  </ice-element>
+                </strong></h4>
+            </div>
+            <div class="column" *ngFor="let col of row.ClaimSurveyor">
+              <h4><strong>
+                  <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                    [component]="col.component">
+                  </ice-element>
+                </strong></h4>
+            </div>
+          </div>
+
+          <div class="section-breaks-motor Typeface">
+            <div class="h5 row-header">{{ carDetails | resourcePipe }}</div>
+          </div>
+
+          <div *ngFor="let row of recipe.rows">
+            <div class="column" *ngFor="let col of row.ClaimMotorLicencePlate">
+              <h4><strong>
+                  <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                    [component]="col.component">
+                  </ice-element>
+                </strong></h4>
+            </div>
+            <div class="column" *ngFor="let col of row.ClaimMotorBrand">
+              <h4><strong>
+                  <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                    [component]="col.component">
+                  </ice-element>
+                </strong></h4>
+            </div>
+            <div class="column" *ngFor="let col of row.ClaimMotorModel">
+              <h4><strong>
+                  <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                    [component]="col.component">
+                  </ice-element>
+                </strong></h4>
+            </div>
+          </div>
+
+          <div *ngIf="getfriendlySettlementIndicator()">
+
+            <div class="section-breaks-motor Typeface">
+              <div class="h5 row-header">{{ compliantSettlement | resourcePipe}}</div>
+            </div>
+
+            <div *ngFor="let row of recipe.rows">
+              <div class="column" *ngFor="let col of row.SapAskDate">
+                <h4><strong>
+                    <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                      [component]="col.component">
+                    </ice-element>
+                  </strong></h4>
+              </div>
+              <div class="column" *ngFor="let col of row.SapReplyDate">
+                <h4><strong>
+                    <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                      [component]="col.component">
+                    </ice-element>
+                  </strong></h4>
+              </div>
+              <!-- <div class="column" *ngFor="let col of row.SapHmerEntaxis">
+                <h4><strong>
+                    <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                      [component]="col.component">
+                    </ice-element>
+                  </strong></h4>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </div> -->

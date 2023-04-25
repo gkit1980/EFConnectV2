@@ -1,0 +1,53 @@
+@mixin time-picker-mixin() {
+    .ice-timepicker {
+        border: 0.8px solid #DFE4E8;
+        border-radius: 6.4px;
+        background-color: #FFFFFF;
+        padding: 0 8px;
+
+        .navigation {
+            display: flex;
+            height: 65px;
+            padding-top: 18px;
+            margin: 0 -8px;
+            .ngb-dp-arrow {
+                padding-left: 26.5px
+            }
+            .ngb-dp-arrow.right {
+                padding-right: 26.5px
+            }
+            .btn-link {
+                color: #979797;
+            }
+        }
+        .times {
+            display: flex;
+            flex-wrap: wrap;
+
+            .time-box{
+                height: 36px;
+                width: calc(100% / 3.3);
+                border: 1px #485294 solid;
+                border-radius: 2px;
+                text-align: center;
+                margin-bottom: 8px;
+                margin-right: 8px;
+                cursor: pointer;
+
+                &:hover{
+                    background-color: #fdeaeb;
+                    opacity: 0.8;
+                }
+
+                &.selected {
+                    background-color: #fdeaeb;
+                }
+
+                label {
+                    position: relative;
+                    color: #485294;
+                }
+            }
+        }
+    }
+}

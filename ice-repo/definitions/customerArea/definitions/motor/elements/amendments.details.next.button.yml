@@ -1,0 +1,13 @@
+element:
+  component: EurolifeButtonComponent
+  type: text
+  label: Επόμενο
+  additionalClasses: eurolife_btn-default amendmets-next-btn
+  defaultValue: action-amendments-changestep
+  viewMode:
+    DtViewModeRule:
+      dt: amendments.next.view-mode
+  pages:
+    viewAmendmentDetails: null
+    # viewAmendmentHomeDetails: null
+  #amendments.details.PolicyNumberHeader

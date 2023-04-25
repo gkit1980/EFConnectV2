@@ -1,0 +1,11 @@
+element:
+  type: text
+  viewMode: hidden
+  # defaultValue: 'none'
+  buckets:
+    VerifyChangeEmailSMS: # it take's the return value from ChangeMEmail for Errors
+      transformation:
+        responsePath: Errors[0].ErrorCode
+  pages:
+    changeEmailPopUp: null
+  label: null

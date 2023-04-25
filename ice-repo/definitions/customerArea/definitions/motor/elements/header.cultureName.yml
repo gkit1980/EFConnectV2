@@ -1,0 +1,37 @@
+element:
+  type: text
+  defaultValue: "GR"
+  buckets:
+    GetPaymentURLRedirector:
+      transformation:
+        dataPath: Header.CultureName
+    GetTransactionInfoAEGA:
+      transformation:
+        dataPath: Header.CultureName
+    ChangePassword:
+      transformation:
+        dataPath: Header.CultureName
+    ChangeMobile:
+      transformation:
+        dataPath: Header.CultureName
+    VerifyChangeMobile:
+      transformation:
+        dataPath: Header.CultureName
+    ChangeEmail:
+      transformation:
+        dataPath: Header.CultureName
+    VerifyChangeEmailSMS:
+      transformation:
+        dataPath: Header.CultureName
+    VerifyChangeEmail:
+      transformation:
+        dataPath: Header.CultureName
+    OptOut:
+      transformation:
+        dataPath: Header.CultureName
+    GetOptOut:
+      transformation:
+        dataPath: Header.CultureName
+    GetPaymentURLRedirectorAEAZ:
+      transformation:
+        dataPath: Header.CultureName

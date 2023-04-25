@@ -1,0 +1,541 @@
+<!--Πληρωμές σε εκκρεμότητα-->
+<div class="ice-simple-table">
+
+  <h5 *ngIf="showUnpaidReceipts">{{ title | resourcePipe }}</h5>
+
+  <div class="only-desktop">
+
+    <div class="row grey-background-unpaid mb-5" *ngFor="let row of allUnpaidReceipts; let i=index">
+      <div class="row w-100 align-items-center no-wrap">
+        <div class="col first-col">
+          <div class="product">
+            <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('0F0E1AC2A2AC45A7906897CCB41B5580')"
+              [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΑΥΤΟΚΙΝΗΤΩΝ'">
+            </div>
+            <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('5B16FD8598BC4750B8E058C8BDC2528A')"
+              [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΥΓΕΙΑΣ'">
+            </div>
+            <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('4412D69B78B5460B8E25F2FEAFA0105A')"
+              [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΖΩΗΣ'">
+            </div>
+            <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('D2F9D495BF194ED0BC3F23078CA4B07E')"
+              [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΠΕΡΙΟΥΣΙΑΣ'">
+            </div>
+            <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('55575BDF0CF94677A59ADCF3F1ECF1AB')"
+              [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΔΙΑΦΟΡΑ ΕΠΕΝΔΥΤΙΚΑ'">
+            </div>
+            <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('9C798E9E7D62478294D477734D3D65B6')"
+              [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ'  ||  row.branch === 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ' || row.branch === 'ΑΣΤΙΚΗ ΕΥΘΥΝΗ'">
+            </div>
+            <div class="h5 product-description otherpc_text" *ngIf="row.branch === 'ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ'  ||  row.branch === 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ' || row.branch === 'ΑΣΤΙΚΗ ΕΥΘΥΝΗ'; else productDescription">
+              {{row.branch}}
+            </div>
+            <ng-template #productDescription>
+              <div class="h5 product-description" [ngClass]="getBranchClass(row.branch)">{{row.contract}}</div>
+            </ng-template>
+          </div>
+        </div>
+        <div class="col no-margins">
+          <p class="Caption3 opacity no-margins">{{ dateR | resourcePipe }}</p>
+          <p class="Caption3  no-margins value-bold  distance-fix">{{row.renewal}}</p>
+        </div>
+        <div class="col no-margins"
+          *ngIf="row.paymentCode != null && (row.paymentType === 'ΜΕΤΡΗΤΑ' || row.paymentType === 'ΕΛΤΑ')">
+          <p class=" Caption3 opacity no-margins">{{ paymentCode | resourcePipe }}</p>
+          <p class="Caption3 value-bold  no-margins distance-fix">{{row.paymentCode}}</p>
+        </div>
+        <div class="col no-margins">
+          <p class="Caption3 opacity no-margins">{{ totalAmount | resourcePipe }}</p>
+          <p class="Caption3 value-bold  no-margins distance-fix">&euro; {{row.amount}}</p>
+        </div>
+        <div class="col unpaid-btn-col">
+          <div *ngIf="showDownloadButton(row.receiptKey)" class="col">
+            <button class="eurolife_btn eurolife_btn-stroke payments padding-fix" (click)="getPdfLink(row.receiptKey)">{{
+              alert | resourcePipe }}
+              <div class="button-icon" aria-label="icon" [inlineSVG]="getIcon('3D4C3EE53B51434B9A9C20E02FA3B340')"
+                [onSVGLoaded]="handleSVGButton">
+              </div>
+            </button>
+          </div>
+          <!-- row.paymentCode != null && (row.paymentType === 'ΜΕΤΡΗΤΑ' || row.paymentType === 'ΕΛΤΑ') -->
+          <div *ngIf="redirectPaymentCondition(row)"
+            class="col" [ngClass]="{'btn-top-distance': showDownloadButton(row.receiptKey)}">
+            <button class="eurolife_btn eurolife_btn-default payments" (click)=redirectToPayment(row)>{{
+              paymentButton | resourcePipe }}
+            </button>
+          </div>
+          <div *ngIf="row.paymentType == 'ΠΑΓΙΑ ΕΝΤΟΛΗ'" class="row w-100 direct-group">
+            <div class="direct-col">Πάγια εντολή</div>
+            <div [ngbTooltip]="row.AccountNumber" placement="bottom" class="info-svg-payment-code" aria-label="icon"
+              [inlineSVG]="getIcon('0B8BF05BD9C54878807163B1050D5AF3')" [onSVGLoaded]="handleSVGPaymentCode">
+            </div>
+          </div>
+        </div>
+        <div *ngIf="(row.paymentType == 'ΠΑΓΙΑ ΕΝΤΟΛΗ' || row.paymentType == 'ΛΟΓΑΡΙΑΣΜΟΣ ΔΑΝΕΙΟΥ' || row.paymentType == 'ΠΙΣΤΩΤΙΚΗ ΚΑΡΤΑ') && !(showDownloadButton(row.receiptKey))" class="col no-right-margins">
+          <!--arrow to redirect to specific receipt-->
+          <div (click)="onReceipts(row)">
+            <div class="col-md-1" aria-label="icon" [inlineSVG]="getIcon('C8705EB508D542E59548EF002F938768')"
+              [onSVGLoaded]="handleSVGLastPay">
+            </div>
+          </div>
+          <!----->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="only-mobile row not-paid-outer">
+    <div class="col grey-background mb-1 not-paid-container" *ngFor="let row of allUnpaidReceipts; let i = index">
+      <div class="row">
+
+        <div class="col-md-11">
+          <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('0F0E1AC2A2AC45A7906897CCB41B5580')"
+            [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΑΥΤΟΚΙΝΗΤΩΝ'">
+          </div>
+          <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('5B16FD8598BC4750B8E058C8BDC2528A')"
+            [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΥΓΕΙΑΣ'">
+          </div>
+          <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('4412D69B78B5460B8E25F2FEAFA0105A')"
+            [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΖΩΗΣ'">
+          </div>
+          <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('D2F9D495BF194ED0BC3F23078CA4B07E')"
+            [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΠΕΡΙΟΥΣΙΑΣ'">
+          </div>
+          <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('55575BDF0CF94677A59ADCF3F1ECF1AB')"
+            [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΔΙΑΦΟΡΑ ΕΠΕΝΔΥΤΙΚΑ'">
+          </div>
+          <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('9C798E9E7D62478294D477734D3D65B6')"
+            [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ'  ||  row.branch === 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ' || row.branch === 'ΑΣΤΙΚΗ ΕΥΘΥΝΗ'">
+          </div>
+        </div>
+        <div *ngIf="(row.paymentType == 'ΠΑΓΙΑ ΕΝΤΟΛΗ' || row.paymentType == 'ΛΟΓΑΡΙΑΣΜΟΣ ΔΑΝΕΙΟΥ' || row.paymentType == 'ΠΙΣΤΩΤΙΚΗ ΚΑΡΤΑ') && !(showDownloadButton(row.receiptKey))" class="col-md-1">
+          <div (click)="onReceipts(row)">
+            <!--arrow to redirect to specific receipt-->
+            <div class="chevron-right" aria-label="icon" [inlineSVG]="getIcon('C8705EB508D542E59548EF002F938768')"
+              [onSVGLoaded]="handleSVGLastPay">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="h5 product-description otherpc_text product-distance"
+            *ngIf="row.branch === 'ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ'  ||  row.branch === 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ' || row.branch === 'ΑΣΤΙΚΗ ΕΥΘΥΝΗ'; else productDescription">
+            {{row.branch}}
+          </div>
+          <ng-template #productDescription>
+            <div class="h5 product-description product-distance" [ngClass]="{life_text: row.branch === 'ΖΩΗΣ',
+            health_text: row.branch === 'ΥΓΕΙΑΣ',
+            motor_text: row.branch === 'ΑΥΤΟΚΙΝΗΤΩΝ',
+            house_text: row.branch === 'ΠΕΡΙΟΥΣΙΑΣ',
+            savings_text: row.branch === 'ΔΙΑΦΟΡΑ ΕΠΕΝΔΥΤΙΚΑ',
+            otherpc_text: row.branch === 'ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ'  ||  row.branch === 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ' || row.branch === 'ΑΣΤΙΚΗ ΕΥΘΥΝΗ'}">{{row.contract}}</div>
+          </ng-template>
+        </div>
+        <div class="col-md-12 no-margins">
+          <p class="Caption3 opacity no-margins">{{ dateR | resourcePipe }}</p>
+          <p class="Caption3 no-opacity value-bold  no-margins distance-fix">{{row.renewal}}</p>
+        </div>
+        <div class="w-100 line-seperator">
+        </div>
+        <div class="col-md-12 no-margins"
+          *ngIf="row.paymentCode != null && (row.paymentType === 'ΜΕΤΡΗΤΑ' || row.paymentType === 'ΕΛΤΑ')">
+          <p class="Caption3 opacity no-margins">{{ paymentCode | resourcePipe }}</p>
+          <p class="Caption3 no-opacity value-bold  no-margins distance-fix">{{row.paymentCode}}</p>
+        </div>
+        <div class="w-100 line-seperator" *ngIf="row.paymentType === 'ΜΕΤΡΗΤΑ' || row.paymentType === 'ΕΛΤΑ'">
+        </div>
+        <div class="col-md-12 no-margins">
+          <p class="Caption3 opacity no-margins">{{ totalAmount | resourcePipe }}</p>
+          <p class="Caption3 no-opacity value-bold  no-margins distance-fix">&euro; {{row.amount}}</p>
+        </div>
+        <!-- showDownloadButton(row.receiptKey) -->
+        <div *ngIf="showDownloadButton(row.receiptKey)" class="col-12 align-items-center justify-content-center">
+          <button class="eurolife_btn eurolife_btn-stroke payments padding-fix not-paid-btn"
+            (click)=getPdfLink(row.receiptKey)>{{
+            alert | resourcePipe }}
+            <div class="button-icon" aria-label="icon" [inlineSVG]="getIcon('3D4C3EE53B51434B9A9C20E02FA3B340')"
+              [onSVGLoaded]="handleSVGButton">
+            </div>
+          </button>
+        </div>
+        <div *ngIf="redirectPaymentCondition(row)"
+          class="col-12 mobile-payment-btn align-items-center justify-content-center"
+          [ngClass]="{'btn-top-distance': showDownloadButton(row.receiptKey)}">
+          <button class="eurolife_btn eurolife_btn-default payments" (click)=redirectToPayment(row)>{{ paymentButton
+            | resourcePipe }}
+          </button>
+        </div>
+        <div *ngIf="row.paymentType == 'ΠΑΓΙΑ ΕΝΤΟΛΗ'" class="row w-100 direct-group">
+          <div class="direct-col">Πάγια εντολή</div>
+          <div [ngbTooltip]="row.AccountNumber" placement="bottom" class="info-svg-payment-code" aria-label="icon"
+            [inlineSVG]="getIcon('0B8BF05BD9C54878807163B1050D5AF3')" [onSVGLoaded]="handleSVGPaymentCode">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Τελευταία Ειδοποιητήρια 90 ημέρες-->
+<div class="ice-simple-table">
+
+  <h5 *ngIf="showLastNotes">{{ lastNotes | resourcePipe }}
+  </h5>
+
+  <!--Desktop with amendments and Last Notes...change joy ride step -->
+  <div  *ngIf="getJoyrideStep=='fourthStep'"  class="only-desktop" joyrideStep="home_fourthStep" stepPosition="bottom" title="Πρόσφατα Ειδοποιητήρια"  text="Στην περιοχή αυτή εμφανίζονται όλα τα ειδοποιητήρια οφειλής ασφαλίστρων που έχουν δημιουργηθεί τους τελευταίους 3 μήνες.">
+
+    <div class="row grey-background-unpaid mb-5" *ngFor="let row of allLastNotes; let i=index" >
+      <div class="row w-100 align-items-center no-wrap">
+        <div class="col first-col">
+          <div class="product">
+            <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('0F0E1AC2A2AC45A7906897CCB41B5580')"
+              [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΑΥΤΟΚΙΝΗΤΩΝ'">
+            </div>
+            <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('5B16FD8598BC4750B8E058C8BDC2528A')"
+              [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΥΓΕΙΑΣ'">
+            </div>
+            <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('4412D69B78B5460B8E25F2FEAFA0105A')"
+              [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΖΩΗΣ'">
+            </div>
+            <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('D2F9D495BF194ED0BC3F23078CA4B07E')"
+              [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΠΕΡΙΟΥΣΙΑΣ'">
+            </div>
+            <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('55575BDF0CF94677A59ADCF3F1ECF1AB')"
+              [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΔΙΑΦΟΡΑ ΕΠΕΝΔΥΤΙΚΑ'">
+            </div>
+            <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('9C798E9E7D62478294D477734D3D65B6')"
+              [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ'  ||  row.branch === 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ' || row.branch === 'ΑΣΤΙΚΗ ΕΥΘΥΝΗ'">
+            </div>
+            <div class="h5 product-description otherpc_text" *ngIf="row.branch === 'ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ'  ||  row.branch === 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ' || row.branch === 'ΑΣΤΙΚΗ ΕΥΘΥΝΗ'; else productDescription">
+              {{row.branch}}
+            </div>
+            <ng-template #productDescription>
+              <div class="h5 product-description" [ngClass]="{life_text: row.branch === 'ΖΩΗΣ',
+                      health_text: row.branch === 'ΥΓΕΙΑΣ',
+                      motor_text: row.branch === 'ΑΥΤΟΚΙΝΗΤΩΝ',
+                      house_text: row.branch === 'ΠΕΡΙΟΥΣΙΑΣ',
+                      savings_text: row.branch === 'ΔΙΑΦΟΡΑ ΕΠΕΝΔΥΤΙΚΑ',
+                      otherpc_text: row.branch === 'ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ'  ||  row.branch === 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ' || row.branch === 'ΑΣΤΙΚΗ ΕΥΘΥΝΗ'}">{{row.contract}}</div>
+            </ng-template>
+          </div>
+        </div>
+        <div class="col no-margins">
+          <p class="Caption3 opacity no-margins">{{ dateP | resourcePipe }}</p>
+          <p class="Caption3  no-margins value-bold  distance-fix">{{row.docDate}}</p>
+        </div>
+        <div class="col no-margins">
+          <p class="Caption3 opacity no-margins">{{ contractKey | resourcePipe }}</p>
+          <p class="Caption3  no-margins value-bold  distance-fix">{{row.contractKey}}</p>
+        </div>
+
+
+        <div class="col unpaid-btn-col">
+          <div *ngIf="showLastNoteButton(row.urlNote)" class="col">
+            <button class="eurolife_btn eurolife_btn-stroke payments padding-fix"
+              (click)="getLastNotePdfLink(row.urlNote)">{{
+              alert | resourcePipe }}
+              <div class="button-icon" aria-label="icon" [inlineSVG]="getIcon('3D4C3EE53B51434B9A9C20E02FA3B340')"
+                [onSVGLoaded]="handleSVGButton">
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!--Desktop without amendments but has Last Notes...change joy ride step -->
+    <div *ngIf="getJoyrideStep=='thirdStep'" class="only-desktop" joyrideStep="home_thirdStep" stepPosition="bottom" title="Πρόσφατα Ειδοποιητήρια"  text="Στην περιοχή αυτή εμφανίζονται όλα τα ειδοποιητήρια οφειλής ασφαλίστρων που έχουν δημιουργηθεί τους τελευταίους 3 μήνες.">
+
+      <div class="row grey-background-unpaid mb-5" *ngFor="let row of allLastNotes; let i=index" >
+        <div class="row w-100 align-items-center no-wrap">
+          <div class="col first-col">
+            <div class="product">
+              <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('0F0E1AC2A2AC45A7906897CCB41B5580')"
+                [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΑΥΤΟΚΙΝΗΤΩΝ'">
+              </div>
+              <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('5B16FD8598BC4750B8E058C8BDC2528A')"
+                [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΥΓΕΙΑΣ'">
+              </div>
+              <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('4412D69B78B5460B8E25F2FEAFA0105A')"
+                [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΖΩΗΣ'">
+              </div>
+              <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('D2F9D495BF194ED0BC3F23078CA4B07E')"
+                [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΠΕΡΙΟΥΣΙΑΣ'">
+              </div>
+              <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('55575BDF0CF94677A59ADCF3F1ECF1AB')"
+                [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΔΙΑΦΟΡΑ ΕΠΕΝΔΥΤΙΚΑ'">
+              </div>
+              <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('9C798E9E7D62478294D477734D3D65B6')"
+                [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ'  ||  row.branch === 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ' || row.branch === 'ΑΣΤΙΚΗ ΕΥΘΥΝΗ'">
+              </div>
+              <div class="h5 product-description otherpc_text" *ngIf="row.branch === 'ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ'  ||  row.branch === 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ' || row.branch === 'ΑΣΤΙΚΗ ΕΥΘΥΝΗ'; else productDescription">
+                {{row.branch}}
+              </div>
+              <ng-template #productDescription>
+                <div class="h5 product-description" [ngClass]="{life_text: row.branch === 'ΖΩΗΣ',
+                        health_text: row.branch === 'ΥΓΕΙΑΣ',
+                        motor_text: row.branch === 'ΑΥΤΟΚΙΝΗΤΩΝ',
+                        house_text: row.branch === 'ΠΕΡΙΟΥΣΙΑΣ',
+                        savings_text: row.branch === 'ΔΙΑΦΟΡΑ ΕΠΕΝΔΥΤΙΚΑ',
+                        otherpc_text: row.branch === 'ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ'  ||  row.branch === 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ' || row.branch === 'ΑΣΤΙΚΗ ΕΥΘΥΝΗ'}">{{row.contract}}</div>
+              </ng-template>
+            </div>
+          </div>
+          <div class="col no-margins">
+            <p class="Caption3 opacity no-margins">{{ dateP | resourcePipe }}</p>
+            <p class="Caption3  no-margins value-bold  distance-fix">{{row.docDate}}</p>
+          </div>
+          <div class="col no-margins">
+            <p class="Caption3 opacity no-margins">{{ contractKey | resourcePipe }}</p>
+            <p class="Caption3  no-margins value-bold  distance-fix">{{row.contractKey}}</p>
+          </div>
+  
+  
+          <div class="col unpaid-btn-col">
+            <div *ngIf="showLastNoteButton(row.urlNote)" class="col">
+              <button class="eurolife_btn eurolife_btn-stroke payments padding-fix"
+                (click)="getLastNotePdfLink(row.urlNote)">{{
+                alert | resourcePipe }}
+                <div class="button-icon" aria-label="icon" [inlineSVG]="getIcon('3D4C3EE53B51434B9A9C20E02FA3B340')"
+                  [onSVGLoaded]="handleSVGButton">
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+       <!--Desktop without amendments and Without Last Notes...change joy ride step -->
+    <div *ngIf="getJoyrideStep==''" class="only-desktop">
+
+    <div class="row grey-background-unpaid mb-5" *ngFor="let row of allLastNotes; let i=index" >
+      <div class="row w-100 align-items-center no-wrap">
+        <div class="col first-col">
+          <div class="product">
+            <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('0F0E1AC2A2AC45A7906897CCB41B5580')"
+              [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΑΥΤΟΚΙΝΗΤΩΝ'">
+            </div>
+            <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('5B16FD8598BC4750B8E058C8BDC2528A')"
+              [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΥΓΕΙΑΣ'">
+            </div>
+            <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('4412D69B78B5460B8E25F2FEAFA0105A')"
+              [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΖΩΗΣ'">
+            </div>
+            <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('D2F9D495BF194ED0BC3F23078CA4B07E')"
+              [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΠΕΡΙΟΥΣΙΑΣ'">
+            </div>
+            <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('55575BDF0CF94677A59ADCF3F1ECF1AB')"
+              [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΔΙΑΦΟΡΑ ΕΠΕΝΔΥΤΙΚΑ'">
+            </div>
+            <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('9C798E9E7D62478294D477734D3D65B6')"
+              [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ'  ||  row.branch === 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ' || row.branch === 'ΑΣΤΙΚΗ ΕΥΘΥΝΗ'">
+            </div>
+            <div class="h5 product-description otherpc_text" *ngIf="row.branch === 'ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ'  ||  row.branch === 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ' || row.branch === 'ΑΣΤΙΚΗ ΕΥΘΥΝΗ'; else productDescription">
+              {{row.branch}}
+            </div>
+            <ng-template #productDescription>
+              <div class="h5 product-description" [ngClass]="{life_text: row.branch === 'ΖΩΗΣ',
+                      health_text: row.branch === 'ΥΓΕΙΑΣ',
+                      motor_text: row.branch === 'ΑΥΤΟΚΙΝΗΤΩΝ',
+                      house_text: row.branch === 'ΠΕΡΙΟΥΣΙΑΣ',
+                      savings_text: row.branch === 'ΔΙΑΦΟΡΑ ΕΠΕΝΔΥΤΙΚΑ',
+                      otherpc_text: row.branch === 'ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ'  ||  row.branch === 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ' || row.branch === 'ΑΣΤΙΚΗ ΕΥΘΥΝΗ'}">{{row.contract}}</div>
+            </ng-template>
+          </div>
+        </div>
+        <div class="col no-margins">
+          <p class="Caption3 opacity no-margins">{{ dateP | resourcePipe }}</p>
+          <p class="Caption3  no-margins value-bold  distance-fix">{{row.docDate}}</p>
+        </div>
+        <div class="col no-margins">
+          <p class="Caption3 opacity no-margins">{{ contractKey | resourcePipe }}</p>
+          <p class="Caption3  no-margins value-bold  distance-fix">{{row.contractKey}}</p>
+        </div>
+
+
+        <div class="col unpaid-btn-col">
+          <div *ngIf="showLastNoteButton(row.urlNote)" class="col">
+            <button class="eurolife_btn eurolife_btn-stroke payments padding-fix"
+              (click)="getLastNotePdfLink(row.urlNote)">{{
+              alert | resourcePipe }}
+              <div class="button-icon" aria-label="icon" [inlineSVG]="getIcon('3D4C3EE53B51434B9A9C20E02FA3B340')"
+                [onSVGLoaded]="handleSVGButton">
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  
+
+  <!--Mobile-->
+  <div class="only-mobile row not-paid-outer" >
+    <div class="col grey-background mb-1 not-paid-container" *ngFor="let row of allLastNotes">
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('0F0E1AC2A2AC45A7906897CCB41B5580')"
+            [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΑΥΤΟΚΙΝΗΤΩΝ'">
+          </div>
+          <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('5B16FD8598BC4750B8E058C8BDC2528A')"
+            [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΥΓΕΙΑΣ'">
+          </div>
+          <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('4412D69B78B5460B8E25F2FEAFA0105A')"
+            [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΖΩΗΣ'">
+          </div>
+          <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('D2F9D495BF194ED0BC3F23078CA4B07E')"
+            [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΠΕΡΙΟΥΣΙΑΣ'">
+          </div>
+          <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('55575BDF0CF94677A59ADCF3F1ECF1AB')"
+            [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΔΙΑΦΟΡΑ ΕΠΕΝΔΥΤΙΚΑ'">
+          </div>
+          <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('9C798E9E7D62478294D477734D3D65B6')"
+            [onSVGLoaded]="handleSVGProduct" *ngIf="row.branch =='ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ'  ||  row.branch === 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ' || row.branch === 'ΑΣΤΙΚΗ ΕΥΘΥΝΗ'">
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="h5 product-description otherpc_text product-distance"
+            *ngIf="row.branch === 'ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ'  ||  row.branch === 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ' || row.branch === 'ΑΣΤΙΚΗ ΕΥΘΥΝΗ'; else productDescription">
+            {{row.branch}}
+          </div>
+          <ng-template #productDescription>
+            <div class="h5 product-description product-distance" [ngClass]="{life_text: row.branch === 'ΖΩΗΣ',
+            health_text: row.branch === 'ΥΓΕΙΑΣ',
+            motor_text: row.branch === 'ΑΥΤΟΚΙΝΗΤΩΝ',
+            house_text: row.branch === 'ΠΕΡΙΟΥΣΙΑΣ',
+            savings_text: row.branch === 'ΔΙΑΦΟΡΑ ΕΠΕΝΔΥΤΙΚΑ',
+            otherpc_text: row.branch === 'ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ'  ||  row.branch === 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ' || row.branch === 'ΑΣΤΙΚΗ ΕΥΘΥΝΗ'}">{{row.contract}}</div>
+          </ng-template>
+        </div>
+        <div class="col-md-12 no-margins">
+          <p class="Caption3 opacity no-margins">{{ dateP | resourcePipe }}</p>
+          <p class="Caption3 no-opacity value-bold  no-margins distance-fix">{{row.docDate}}</p>
+        </div>
+        <div class="w-100 line-seperator">
+        </div>
+        <div class="col-md-12 no-margins">
+          <p class="Caption3 opacity no-margins">{{ contractKey | resourcePipe }}</p>
+          <p class="Caption3 no-opacity value-bold  no-margins distance-fix">{{row.contractKey}}</p>
+        </div>
+
+        <div class="w-100 line-seperator" *ngIf="row.paymentType === 'ΜΕΤΡΗΤΑ' || row.paymentType === 'ΕΛΤΑ'">
+        </div>
+
+        <div *ngIf="showLastNoteButton(row.urlNote)" class="col-12 align-items-center justify-content-center">
+          <button class="eurolife_btn eurolife_btn-stroke payments padding-fix not-paid-btn"
+            (click)=getLastNotePdfLink(row.urlNote)>{{
+            alert | resourcePipe }}
+            <div class="button-icon" aria-label="icon" [inlineSVG]="getIcon('3D4C3EE53B51434B9A9C20E02FA3B340')"
+              [onSVGLoaded]="handleSVGButton">
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Τελευταίες Πληρωμές-->
+<h5 *ngIf="showLastReceipts">{{ lastPayments | resourcePipe }}</h5>
+<div class="only-desktop mb-5" *ngIf="showLastReceipts">
+  <div class="row">
+    <div class="col-md-11">
+      <div class="row">
+        <div class="col last-payments-headers" [ngClass]="{'first-col': i===0}"
+          *ngFor="let col of filterCols; let i=index">
+          <div class="Typeface">{{ getLabelName(col) }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div (click)="onReceipts(row)" class="row grey-background mb-1 row-container cursor-type"
+    *ngFor="let row of allReceipts" [ngClass]="{life: row.branch === 'ΖΩΗΣ',
+                health: row.branch === 'ΥΓΕΙΑΣ',
+                motor: row.branch === 'ΑΥΤΟΚΙΝΗΤΩΝ',
+                house: row.branch === 'ΠΕΡΙΟΥΣΙΑΣ',
+                savings: row.branch === 'ΔΙΑΦΟΡΑ ΕΠΕΝΔΥΤΙΚΑ',
+                otherpc: row.branch === 'ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ'  ||  row.branch === 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ' || row.branch === 'ΑΣΤΙΚΗ ΕΥΘΥΝΗ'}">
+    <div class="col-md-11">
+      <div class="row">
+        <div class="col first-col">
+          <div class="h6-active contractName" [ngClass]="{life_text: row.branch === 'ΖΩΗΣ',
+                      health_text: row.branch === 'ΥΓΕΙΑΣ',
+                      motor_text: row.branch === 'ΑΥΤΟΚΙΝΗΤΩΝ',
+                      house_text: row.branch === 'ΠΕΡΙΟΥΣΙΑΣ',
+                      savings_text: row.branch === 'ΔΙΑΦΟΡΑ ΕΠΕΝΔΥΤΙΚΑ',
+                      otherpc_text: row.branch === 'ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ'  ||  row.branch === 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ' || row.branch === 'ΑΣΤΙΚΗ ΕΥΘΥΝΗ'}">
+            <!-- {{row.contract}} ? {{row.branch}} === 'ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ'  ||  row.branch === 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ' || row.branch === 'ΑΣΤΙΚΗ ΕΥΘΥΝΗ' : row.contract -->
+            {{row.branch === 'ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ'  ||  row.branch === 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ' || row.branch === 'ΑΣΤΙΚΗ ΕΥΘΥΝΗ' ? row.branch : row.contract}}
+            <!-- {{'Skata' ? row.branch ==='ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ'  ||  row.branch === 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ' || row.branch === 'ΑΣΤΙΚΗ ΕΥΘΥΝΗ' : row.contract }} -->
+          </div>
+          <div class="Caption3 contractNumber">{{getLabelName("contractNum")+': '}}{{row.contractNum}}</div>
+        </div>
+        <div class="col center-text">
+          <div class="Caption3 paymentDate">{{row.paymentDate}}</div>
+        </div>
+        <div class="col center-text">
+          <div class="Caption3 paymentType">{{row.paymentType}}</div>
+        </div>
+        <div class="col center-text">
+          <div class="Caption3 value-bold paymentAmount">&euro; {{row.amount}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-1" aria-label="icon" [inlineSVG]="getIcon('C8705EB508D542E59548EF002F938768')"
+      [onSVGLoaded]="handleSVGLastPay">
+    </div>
+
+  </div>
+</div>
+<div class="row only-mobile last-payments-container" *ngIf="showLastReceipts">
+  <div (click)="onReceipts(row)" class="col grey-background mb-1 last-payments" [ngClass]="{life: row.branch === 'ΖΩΗΣ',
+              health: row.branch === 'ΥΓΕΙΑΣ',
+              motor: row.branch === 'ΑΥΤΟΚΙΝΗΤΩΝ',
+              house: row.branch === 'ΠΕΡΙΟΥΣΙΑΣ',
+              savings: row.branch === 'ΔΙΑΦΟΡΑ ΕΠΕΝΔΥΤΙΚΑ',
+              otherpc: row.branch === 'ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ'  ||  row.branch === 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ' || row.branch === 'ΑΣΤΙΚΗ ΕΥΘΥΝΗ'}" *ngFor="let row of allReceipts">
+    <div class="row inside-last-payments">
+      <div class="col-10 ">
+        <div class="row">
+          <div class="col-lg-3">
+            <p class="h6-active contractName" [ngClass]="{life_text: row.branch === 'ΖΩΗΣ',
+                        health_text: row.branch === 'ΥΓΕΙΑΣ',
+                        motor_text: row.branch === 'ΑΥΤΟΚΙΝΗΤΩΝ',
+                        house_text: row.branch === 'ΠΕΡΙΟΥΣΙΑΣ',
+                        savings_text: row.branch === 'ΔΙΑΦΟΡΑ ΕΠΕΝΔΥΤΙΚΑ',
+                        otherpc_text: row.branch === 'ΠΡΟΣΩΠΙΚΟΥ
+                        ΑΤΥΧΗΜΑΤΟΣ'}">
+              {{row.branch === 'ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ'  ||  row.branch === 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ' || row.branch === 'ΑΣΤΙΚΗ ΕΥΘΥΝΗ' ? row.branch : row.contract}}
+            </p>
+            <p class="Caption3 contractNumber">{{getLabelName("contractNum")+': '}}{{row.contractNum}}</p>
+          </div>
+
+          <div id="first" class="col-lg-3 slightly-right">
+            <p class="Caption3 no-margins">{{ dateSub | resourcePipe }}</p>
+            <p class="Caption1 distance-fix">{{row.paymentDate}}</p>
+            <hr>
+          </div>
+          <div class="col-lg-3 slightly-right">
+            <p class="Caption3 no-margins">{{ wayPayment | resourcePipe }}</p>
+            <p class="Caption1 distance-fix">{{row.paymentType}}</p>
+            <hr>
+          </div>
+          <div class="col-lg-3 slightly-right">
+            <p class="Caption3 no-margins">{{ request | resourcePipe }}</p>
+            <p class="Caption1 value-bold distance-fix">&euro; {{row.amount}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-2 chevron-right" aria-label="icon" [inlineSVG]="getIcon('C8705EB508D542E59548EF002F938768')"
+        [onSVGLoaded]="handleSVGLastPay">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Walkthrough-->

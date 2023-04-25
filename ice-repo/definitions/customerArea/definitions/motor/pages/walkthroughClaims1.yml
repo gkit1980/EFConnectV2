@@ -1,0 +1,20 @@
+page:
+  component: PopUpPage
+  flag: walkthrough claims1
+  showTriangle: true
+  validation:
+    onElementComponentChange: true
+    behaviour: page
+  sections:
+    - component: SimpleGridViewComponent
+      rows:
+        - cols:
+            - css: header-title-pop-up-walkthrough text-center walkthrough-header-mb
+              col: 12
+              element: claims.walkthrough.header1
+    - component: ContentWalkthroughComponent
+      text: "Εάν έχετε ζητήσει αποζημίωση, θα μπορείτε να την παρακολουθήσετε μέσω αυτής της περιοχής. Εμφανίζεται ο αριθμός των αιτημάτων που βρίσκονται σε εξέλιξη και, πατώντας, μεταφέρεστε σε σελίδα όπου βλέπετε την πορεία της διαδικασίας."
+      pageNum: 1
+      numberOfScreens: claims.walkthrough.screens
+      next:
+      previous:

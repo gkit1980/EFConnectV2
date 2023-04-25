@@ -1,0 +1,47 @@
+<div class="email-form-container">
+  <div class="basic-info-header">
+    <!-- <div class="sign-up-container">
+        <p class="h4">{{ signin | resourcePipe }}</p>
+      </div> -->
+    <div class="confirmation_email" aria-label="email" [inlineSVG]="imageSource" [onSVGLoaded]="handleSVG"></div>
+    <p class="h4">{{ text1 | resourcePipe }} {{email}}</p>
+    <p class="h5">{{ text2 | resourcePipe }}</p>
+  </div>
+
+  <div class="mobile-container">
+    <div class="row justify-content-center counter">
+      <div class="clock" aria-label="Clock Icon" [inlineSVG]="imageSourceClock" [onSVGLoaded]="handleClockSVG"></div>
+      <div class="time">{{ interval | async | formatTime }}</div>
+    </div>
+    <div class="second-info-header">
+      <p class="h6">{{ text3 | resourcePipe }}</p>
+      <div class="h6">
+        <div class="a-link" (click)="ResendEmail()">
+            <div *ngIf="!showSpinnerBtn">{{ text3_1 | resourcePipe }} </div>  
+            <div *ngIf="showSpinnerBtn" class="button-icon">
+              <i class="fa fa-spinner fa-spin fa-lg"></i>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="third-info-header">
+      <p class="h6">
+        Βεβαιωθείτε πως το email δεν βρίσκεται στο φάκελο Ανεπιθύμητα (Spam) και ότι έχετε πληκτρολογήσει σωστά το email. Εναλλακτικά επιλέξτε
+        <a href=""> επιστροφή στην αρχική</a>.
+      </p>
+    </div>
+  </div>
+
+  <!-- <div class="confirmation_email" aria-label="email" [inlineSVG]="imageSource" [onSVGLoaded]="handleSVG"></div>
+    <p class="h6-active">{{ text1 | resourcePipe }}</p>
+    <div class="sign-up-confirmation-text">
+      <p class="Caption1">{{ text2 | resourcePipe }} {{email}}</p>
+      <p class="Caption1">{{ text3 | resourcePipe }}</p>
+    </div>
+    <div class="notification-informed">
+      <div class="information_icon" aria-label="email" [inlineSVG]="imageSourceNotification"
+        [onSVGLoaded]="handleNotificationSVG"></div>
+      <p class="Caption3">{{ text4  | resourcePipe }}</p>
+    </div> -->
+</div>

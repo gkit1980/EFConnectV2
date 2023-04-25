@@ -1,0 +1,30 @@
+action:
+  title: calls a rest service to get the customer contracts
+  execution:
+    - RestCallExecutionRule:
+        baseUrl: BASEURL
+        # baseUrl: https://lifeuatna.eurolife.gr/CustomerDataProvider/api/CustomerData
+        url: GetCustomerFullData
+        verb: post
+        bucket: GetCustomerFullData
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+  # condition:
+  # FeelConditionRule:
+  # expression: policy.contract.general.info.ContractID != null
+  condition:
+      FeelConditionRule:
+        expression: customer.details.CustomerID = null
+  trigger:
+    - PageTriggerRule:
+        enter:
+         # - customerProfile
+          - communicationService
+          - viewMyPolicies 
+          - policyDetails
+          - home
+          - viewClaimDetails
+          - viewMyPolicies
+          - viewClaims
+          - viewAmendments

@@ -1,0 +1,11 @@
+page:
+  component: PopUpPage
+  showTopSection: false
+  validation:
+    onElementComponentChange: true
+    behaviour: page
+  sections:
+    - component: EclaimsCoveragesComponent
+      componentFlag: Coverages
+      dataStoreProperty: clientContracts  
+      

@@ -1,0 +1,13 @@
+list:
+  type: text
+  additionals:
+    label_en:
+      label: label_en
+      type: text
+    label_el:
+      label: label_el
+      type: text
+  items:
+    - value: 1
+      label_en: Αλλαγές στο Ασφαλισμένο Όχημα
+      label_el: Αλλαγές στο Ασφαλισμένο Όχημα

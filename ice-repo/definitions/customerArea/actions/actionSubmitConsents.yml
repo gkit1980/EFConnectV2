@@ -1,0 +1,10 @@
+action:
+  execution:
+    - SubmitConsentsRule:
+        baseUrl: BASEURL
+        verb: post
+        url: CommitCustomerGDPR
+        bucket: GetGdprData
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDatastore: true

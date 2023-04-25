@@ -1,0 +1,92 @@
+<!--Show my Agents -- Start-->
+
+<h5>{{ title | resourcePipe }}</h5>
+
+<div
+  *ngIf="
+    checkSalesChannelPerContract(
+      'Εν Ισχύ',
+      'Ελεύθερο',
+      'Ελεύθερο (Λήξη Πληρωμών)',
+      'Μερική Εξαγορά Μεριδίων Α/Κ',
+      'Αλλαγή επενδυτικού σεναρίου',
+      'Μερική Εξαγορά',
+      'Εξαγορά'
+    ) != 'eurolife'
+  "
+  class="ice-simple-table"
+>
+  <div *ngIf="!showMyAgents; else addAgentsSection"></div>
+
+  <ng-template #addAgentsSection>
+    <div
+      class="row grey-background mb-5"
+      *ngFor="
+        let item of filterContractStatus(
+          'Εν Ισχύ',
+          'Ελεύθερο',
+          'Ελεύθερο (Λήξη Πληρωμών)',
+          'Μερική Εξαγορά Μεριδίων Α/Κ',
+          'Αλλαγή επενδυτικού σεναρίου',
+          'Μερική Εξαγορά',
+          'Εξαγορά'
+        );
+        let i = index
+      "
+    >
+      <div class="row w-100 align-items-center no-wrap" *ngIf="findSalesChannel(i) == 'broker' || findSalesChannel(i) == 'bank'">
+        <div class="col first-col">
+          <div class="agent">
+            <div
+              class="agent-icon background-circle keep-size"
+              [ngClass]="getAgentBranchClass(item.Branch)"
+              aria-label="icon"
+              [inlineSVG]="getIcon('587B1CA564EA46D085F1C755786E2E16')"
+              [onSVGLoaded]="handleSVGAgent"
+            ></div>
+            <div [ngClass]="getBranchClass(item.Branch)">
+              <div class="h5">{{ getAgentName(i) }}</div>
+              <div class="Caption3">{{ getAgentDetails(i).email }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <p class="Caption3 opacity no-margins">{{ phones | resourcePipe }}</p>
+          <p class="Caption3 no-margins value-bold distance-fix" *ngIf="getAgentDetails(i).phoneNumber1 != undefined">
+            {{ getAgentDetails(i).phoneNumber1 }}
+          </p>
+          <p class="Caption3 no-margins value-bold distance-fix" *ngIf="getAgentDetails(i).phoneNumber2 != undefined">
+            {{ getAgentDetails(i).phoneNumber2 }}
+          </p>
+          <p class="Caption3 no-margins value-bold distance-fix" *ngIf="getAgentDetails(i).mobile != undefined">
+            {{ getAgentDetails(i).mobile }}
+          </p>
+        </div>
+        <div class="col">
+          <p class="Caption3 opacity no-margins">{{ subject | resourcePipe }}</p>
+          <div class="details" [ngClass]="getBranchClass(item.Branch)">
+            <div *ngIf="item.Branch == 'ΑΥΤΟΚΙΝΗΤΩΝ'">
+              <div class="h6-active">{{ getLicensePlate(i) }}</div>
+            </div>
+            <div *ngIf="item.Branch == 'ΠΕΡΙΟΥΣΙΑΣ'">
+              <div class="h6-active">{{ getAddress(i) }}</div>
+            </div>
+            <div
+              *ngIf="
+                item.Branch == 'ΖΩΗΣ' ||
+                item.Branch == 'ΥΓΕΙΑΣ' ||
+                item.Branch == 'ΔΙΑΦΟΡΑ ΕΠΕΝΔΥΤΙΚΑ' ||
+                item.Branch == 'ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ' ||
+                item.Branch == 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ'
+              "
+            >
+              <div class="h6-active">{{ findParticipantFirstName(item) }} {{ findParticipantLastName(item) }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+<!--Show my Agents -- End -->

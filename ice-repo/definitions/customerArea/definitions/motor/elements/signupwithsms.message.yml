@@ -1,0 +1,10 @@
+element:
+  type: text
+  label: Your Mobile is Verified. We've sent you an email. Please check your inbox and click on the link in that email to continue.
+  viewMode: 
+    DtViewModeRule:
+      dt: view-signup-with-sms
+      output: viewmode
+  # defaultValue: Your Mobile is Verified. We've sent you an email. Please check your inbox and click on the link in that email to continue.
+  pages:
+    signupwithsms: null

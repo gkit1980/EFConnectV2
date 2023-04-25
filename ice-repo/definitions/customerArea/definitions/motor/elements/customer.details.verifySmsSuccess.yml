@@ -1,0 +1,10 @@
+element:
+  type: boolean
+  defaultValue: false 
+  viewMode: output
+  buckets:
+    VerifyChangeMobile: # it take's the return value from VerifyChangeMobile for changing the mobile with the sms code
+      transformation:
+        responsePath: Success
+  pages:
+    changeMobilePhonePopUp: null

@@ -1,0 +1,1 @@
+Sections are defined inside pages for now

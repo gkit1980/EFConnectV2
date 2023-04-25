@@ -1,0 +1,9 @@
+element:
+  type: boolean
+  viewMode: output
+  buckets:
+    GetGdprData:
+      transformation:{}
+  defaultValue: false 
+  pages:
+    consent: null

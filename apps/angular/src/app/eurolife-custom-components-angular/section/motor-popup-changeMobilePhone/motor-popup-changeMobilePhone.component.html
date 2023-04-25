@@ -1,0 +1,10 @@
+<!-- <h1 mat-dialog-title><strong>{{ changeMobilePhone | resourcePipe }}</strong> </h1> -->
+
+<div class="row">
+        <div class="col-sm-12 mt-xs-0 mt-sm-5 mx-3 mx-sm-auto">
+                <ice-section *ngFor="let section of page.sections" [section]="section">
+
+                </ice-section>
+                <button *ngIf="showButton" class="eurolife_btn eurolife_btn-link" (click)="onNoClick()">ΤΕΛΟΣ</button>
+        </div>
+</div>

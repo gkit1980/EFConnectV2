@@ -1,0 +1,21 @@
+<div class="basic-info-header">
+  <form>
+    <div class="column">
+      <p class="error-msg">{{errorMsgVerifyMob}}</p>
+      <div *ngIf="showVerify">
+        <div class="col-sm-12 mobile_code form-group">
+          <div class="clock" aria-label="Clock Icon" [inlineSVG]="imageSourceClock" [onSVGLoaded]="handleClockSVG">
+          </div>
+          <p class="time">{{interval | async | formatTimeForMobile}}</p>
+        </div>
+        <div class="col-sm-12" class="otp">
+          <app-otp-input (onInputComplete)="VerifySmsCode($event)"></app-otp-input>
+          <p class="error-msg"> {{errorMsgVerifySms}} </p>
+          <button *ngIf="showVerify" class="eurolife_btn eurolife_btn-link" (click)="VerifyMobile()">{{ insertCodeTimer
+            | resourcePipe }}</button>
+        </div>
+      </div>
+      <p class="success" *ngIf="showSuccess"> {{successMsgMobileVerification}} </p>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,15 @@
+action:
+  title: calls a rest service to get the agent info
+  execution:
+    - GetDocumentUrlNoteRule:
+        baseUrl: BASEURL
+        url: GetReceiptsByContractID
+        verb: post
+        bucket: GetUrlNote
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: true
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - triggerActionGetReceipts

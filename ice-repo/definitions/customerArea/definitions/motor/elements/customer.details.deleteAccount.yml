@@ -1,0 +1,6 @@
+element:
+  type: text
+  component: MotorDeleteAccount
+  pages:
+    customerProfile: null
+  viewMode: output

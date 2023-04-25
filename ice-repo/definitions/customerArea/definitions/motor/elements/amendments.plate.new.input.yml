@@ -1,0 +1,14 @@
+element:
+  type: text
+  label: Εισάγεται το νέο αριθμό
+  viewMode: required
+  buckets:
+    AmendmentsCreateCase:
+      transformation: {}
+  component:
+    StaticComponentRule:
+      component:
+        AmendmentinputfieldComponent:
+          elementName: amendmentsNewLicencePlate
+  pages:
+    viewAmendmentDetails: null

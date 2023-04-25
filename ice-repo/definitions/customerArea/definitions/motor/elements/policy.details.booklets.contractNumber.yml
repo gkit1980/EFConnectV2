@@ -1,0 +1,11 @@
+element:
+  type: text
+  buckets:
+    GetBookletsExist:
+      transformation:
+        paramName: contractNumber
+    GetBookletsPDF:
+      transformation:
+        paramName: contractNumber
+  pages:
+    policyDetails: null

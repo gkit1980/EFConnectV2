@@ -1,0 +1,9 @@
+action:
+  title: calls a rest service to get the dafs
+  execution:
+    - GetDafsUrlRule:
+        baseUrl: BASEURLDOCS
+        bucket: GetDafs
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDatastore: true

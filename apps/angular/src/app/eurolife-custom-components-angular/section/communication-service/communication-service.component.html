@@ -1,0 +1,103 @@
+<div class="ice-grid-view">
+  <!-- <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ label }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content> -->
+  <div class="communication-service">
+    <div class="info-container">
+        <div class="contact-container">
+
+          <div *ngFor="let row of recipe.phoneNumber" class="row no-wrap" [ngClass]="row.css">
+            <div class="column fix-text-padding" *ngFor="let col of row.cols" [ngClass]="getGridColumnClass(col)">
+              <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                [component]="col.component" [ngClass]="col.css">
+              </ice-element>
+            </div>
+          </div>
+          <div *ngFor="let row of recipe.Email" class="row no-wrap" [ngClass]="row.css">
+            <div class="column fix-text-padding" *ngFor="let col of row.cols" [ngClass]="getGridColumnClass(col)">
+              <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                [component]="col.component" [ngClass]="col.css">
+              </ice-element>
+            </div>
+          </div>
+        </div>
+        <div class="adress-container">
+          <div id="adress-row" *ngFor="let row of recipe.Address no-wrap" class="row" [ngClass]="row.css">
+            <div id="adress-col" class="column" *ngFor="let col of row.cols" [ngClass]="getGridColumnClass(col)">
+              <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                [component]="col.component" [ngClass]="col.css">
+              </ice-element>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="redBackground" joyrideStep="communicationService_secondStep" stepPosition="left"  [doneTemplate]="doneButton"  [prevTemplate]="prevButton" title="Click 2 Call - Click 2 Chat"  text="Στο κάτω δεξιά μέρος της οθόνης σας βρίσκετε πάντα τις υπηρεσίες μας Click 2 Call και Click 2 Chat. Μπορείτε να μιλήσετε άμεσα με έναν εκπρόσωπό μας ή να ζητήσετε τηλεφωνικό ραντεβού για να σας καλέσουμε.">
+      
+      <ng-template #prevButton>
+        <div style="display: flex;justify-content: center;">
+        <div
+         style="position: relative;left:-5px;margin-bottom:7px;transform: rotate(180deg);"
+         aria-label="icon()" 
+         [inlineSVG]="icon()" 
+         [onSVGLoaded]="handleSVGIndexIcon">
+        </div>   
+        <button  class="joyride-button"  style="background-color: #fff; color: #000;border-color: transparent;left: -12px;
+        position: relative;">ΠΡΟΗΓΟΥΜΕΝΟ</button>
+        </div>
+       </ng-template>
+      <ng-template #doneButton>
+        <div class="walkthrough-buttons">
+          <div class="walkthrough-dots">
+            <span class="dot"></span>
+            <span class="dot dot-active"></span>
+          </div>
+          <button  class="joyride-button"  style="background-color: #fff; color: #000; border-color: transparent;left: 85px;
+          position: relative;">ΤΕΛΟΣ</button>
+        </div>
+        <!-- <button  class="joyride-button"  style="background-color: rgb(59, 85, 96); color: rgb(255, 255, 255); border-color: transparent;left: 130px;
+        position: relative;">ΤΕΛΟΣ</button> -->
+       </ng-template>
+
+      <div *ngFor="let row of recipe.contactDetails" class="row" [ngClass]="row.css">
+        <div class="column" *ngFor="let col of row.cols" [ngClass]="getGridColumnClass(col)">
+          <ice-element class="margins" *ngIf="col.element" [section]="section" [elementName]="col.element"
+            [component]="col.component" [ngClass]="col.css">
+          </ice-element>
+        </div>
+      </div>
+      <div *ngFor="let row of recipe.contactButtons" class="row btn-container" [ngClass]="row.css">
+        <div class="column btn-container-cols" *ngFor="let col of row.cols">
+          <ice-element class="margin-left" *ngIf="col.element" [section]="section" [elementName]="col.element"
+            [component]="col.component" [ngClass]="col.css">
+          </ice-element>
+        </div>
+      </div>
+      <div>
+      </div>
+      <!-- <div class="row">
+        <div class="column col-12">
+          <div class="ice-element margins_child">
+            <p class="ice-text-input Caption3"> -->
+              <!-- <span (click)="openDialog()">φόρμα επικοινωνίας</span> -->
+              <!-- <div class="ice-output">
+              <label>Εάν θέλετε να επικοινωνήσετε μαζί μας γραπτώς, μπορείτε να συμπληρώσετε το αίτημά σας και
+                να το
+                αποστείλετε, χρησιμοποιώντας τη φόρμα επικοινωνίας</label></div> -->
+            <!-- </p>
+          </div>
+        </div>
+      </div> -->
+      <!-- <div *ngFor="let row of recipe.formDetails" class="row" [ngClass]="row.css">
+        <div class="column" *ngFor="let col of row.cols" [ngClass]="getGridColumnClass(col)">
+          <ice-element class="margins_child" *ngIf="col.element" [section]="section" [elementName]="col.element"
+            [component]="col.component">
+          </ice-element>
+        </div>
+      </div> -->
+    </div>
+  </div>
+  <!-- </mat-card-content>
+  </mat-card> -->
+</div>

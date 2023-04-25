@@ -1,0 +1,6 @@
+action:
+  execution:
+    - WriteLogRule:
+        bucket: WriteLog
+        inputElement: eclaims.start.upload.time
+        inputName: 'Upload Start Time'

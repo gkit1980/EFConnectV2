@@ -1,0 +1,6 @@
+element:
+  type: text
+  viewMode: output
+  label: null
+  pages:
+    paymentManagement: null

@@ -1,0 +1,9 @@
+element:
+  type: integer
+  viewMode: output
+  buckets:
+    GetClaim:
+      transformation:
+        property: ClaimID    
+  pages:
+    viewClaims: null 

@@ -1,0 +1,87 @@
+dt:
+  output-label: defaultValue
+  hit-policy: F
+  inputs:
+    - label: input elememnt for default
+      element: selectedcontractbranch
+  outputs:
+    - label: defaultValue
+      id: defaultValue
+      type: text
+  rules:
+    # - inputs:
+    #     - null
+    #   outputs:
+    #     - null
+    - inputs:
+        - 1,99
+      outputs:
+        - "health_header_tiles_color"
+    - inputs:
+        - 2
+      outputs:
+        - "finance_header_tiles_color"
+    - inputs:
+        - 3
+      outputs:
+        - "motor_header_tiles_color"
+    - inputs:
+        - 4
+      outputs:
+        - "home_header_tiles_color"
+    - inputs:
+        - 5
+      outputs:
+        - "other_pc_header_tiles_color"
+    - inputs:
+        - 6
+      outputs:
+        - "other_pc_header_tiles_color"
+    - inputs:
+        - 7
+      outputs:
+        - "other_pc_header_tiles_color"
+    - inputs:
+        - 8
+      outputs:
+        - "other_pc_header_tiles_color"
+    - inputs:
+        - 9
+      outputs:
+        - "life_header_tiles_color"
+    - inputs:
+        - 10
+      outputs:
+        - "other_pc_header_tiles_color"
+    - inputs:
+        - 11
+      outputs:
+        - "finance_header_tiles_color"
+    - inputs:
+        - 12
+      outputs:
+        - "life_header_tiles_color"
+    - inputs:
+        - 13
+      outputs:
+        - "home_header_tiles_color"
+    - inputs:
+        - 14
+      outputs:
+        - "life_header_tiles_color"
+    - inputs:
+        - 15
+      outputs:
+        - "life_header_tiles_color"
+    - inputs:
+        - 16
+      outputs:
+        - "life_header_tiles_color"
+    - inputs:
+        - 17
+      outputs:
+        - "life_header_tiles_color"
+    # - inputs:
+    #     - "-"
+    #   outputs:
+    #     - null

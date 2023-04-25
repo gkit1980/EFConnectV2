@@ -1,0 +1,15 @@
+element:
+  type: integer
+  label: Εισάγεται το ποσό έκτακτης
+  viewMode: required
+  buckets:
+    AmendmentsCreateFinanceCase:
+      transformation: {}
+  component:
+    StaticComponentRule:
+      component:
+        #todo change with property
+        AmendmentinputlifefieldComponent:
+          elementName: amendmentsExtraPaymentValue
+  pages:
+    viewAmendmentFinanceDetails: null

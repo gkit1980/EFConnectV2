@@ -1,0 +1,10 @@
+element:
+  type: text
+  viewMode: output  
+  buckets:
+    GetContractBeneficiaries:
+      transformation:
+        property: Relationship
+    GetContractBeneficiariesForAmendments:
+      transformation:
+        property: Relationship        

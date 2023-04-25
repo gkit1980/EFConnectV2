@@ -1,0 +1,4 @@
+element:
+  type: boolean
+  defaultValue: false
+  viewMode: hidden 

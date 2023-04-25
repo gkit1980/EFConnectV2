@@ -1,0 +1,54 @@
+element:
+  type: integer
+  # viewMode:
+  #   ConditionalViewModeRule:
+  #     conditionElement: policy.selectedBranch
+  #     conditionValue: 4
+  #     conditionViewMode: hidden
+  #     elseViewMode: output
+  viewMode:
+    DtViewModeRule:
+      dt: dt_policy_details_insurance_duration
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent
+  buckets:
+    GetContractMotorDetails:
+      transformation:
+        responsePath: ContractMotorDetails.InsuranceDuration
+    GetContractIndividualDetails:
+      transformation:
+        responsePath: ContractIndividualDetails.InsuranceDuration
+    GetContractMortgageDetails:
+      transformation:
+        responsePath: ContractMortgageDetails.InsuranceDuration
+    GetPensionContractDetails:
+      transformation:
+        responsePath: PensionContractDetails.InsuranceDuration
+    GetHealthContractDetails:
+      transformation:
+        responsePath: HealthContractDetails.InsuranceDuration
+    GetLifeHealthContractDetails:
+      transformation:
+        responsePath: LifeHealthContractDetails.InsuranceDuration
+    GetContractDeathDetails:
+      transformation:
+        responsePath: ContractDeathDetails.InsuranceDuration
+    GetContractConsumerDetails:
+      transformation:
+        responsePath: ContractConsumerDetails.InsuranceDuration
+    GetContractAccidentDetails:
+      transformation:
+        responsePath: ContractAccidentDetails.InsuranceDuration
+    GetContractCargoDetails:
+      transformation:
+        responsePath: ContractCargoDetails.InsuranceDuration
+    GetContractCargoPrudDetails:
+      transformation:
+        responsePath: ContractCargoPrudDetails.InsuranceDuration
+    GetContractDetailsPrudDetails:
+      transformation:
+        responsePath: ContractDetailsPrudDetails.InsuranceDuration
+    GetContractFirePrudDetails:
+      transformation:
+        responsePath: ContractFirePrudDetails.InsuranceDuration

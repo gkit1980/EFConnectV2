@@ -1,0 +1,18 @@
+element:
+  type: text
+  buckets:
+    AmendmentsCreateCase:
+      transformation: {}
+    AmendmentsCreatePropertyCase:
+      transformation: {}
+  component:
+    StaticComponentRule:
+      component:
+        EurolifeDropdownComponent:
+          elementName: amendmentChangeFrequencyOfPayment
+  pages:
+    viewAmendmentDetails: null
+    viewAmendmentHomeDetails: null
+  # component: IceDropdown
+  # viewMode: enable
+  # values: amendments.fop.duration

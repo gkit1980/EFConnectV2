@@ -1,0 +1,13 @@
+element:
+  type: text
+  viewMode:
+    # ConditionalViewModeRule: # if the return value from ChangeMobile service is Success: true then show this element
+    #     conditionElement: customer.details.verifyMobileSuccess
+    #     conditionValue: true
+    #     conditionViewMode: output
+    #     elseViewMode: hidden
+    DtViewModeRule:
+      dt: dt.mobile.phone.afterMobilePhoneVerification
+      output: viewmode
+  pages:
+    changeMobilePhonePopUp: null

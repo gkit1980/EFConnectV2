@@ -1,0 +1,7 @@
+element:
+  type: text
+  component: MotorChangeMobilePhone
+  dialogpage: changeMobilePhonePopUp
+  pages:
+    customerProfile: null
+  viewMode: output

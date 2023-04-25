@@ -1,0 +1,18 @@
+action:
+  title: calls a rest service to get the contract beneficiaries
+  execution: 
+      - RestCallExecutionRule:
+          baseUrl: http://platformsuat.eurolife.gr/CustomerAreaLogin/api/CustomerAreaApi
+          url: GetRegistrationCode
+          verb: post
+          bucket: GetRegistrationCode
+          encryptMessage: true
+          encryptSecretElement: token
+          needsDataStore: false
+ #     - NavigateToPageExecutionRule:
+ #         page: viewMyBeneficiaries
+ #         omitValidation: true
+#  trigger:
+#    - ElementChangeTriggerRule:
+#        elements: 
+#          - signup.vatNo

@@ -1,0 +1,6 @@
+element:
+  type: text
+  label: null
+  pages:
+    policyDetails: null
+  dtName: dt.titles.border.product-color

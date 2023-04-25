@@ -1,0 +1,32 @@
+dt:
+  output-label: viewMode
+  hit-policy: F
+  inputs:
+    - label: input elememnt for mobile phone regexp verification
+      element: customer.details.VerifyMobilePhone
+    - label: input elememnt for mobile phone service verification
+      element: customer.details.verifyMobileSuccess
+  outputs:
+    - id: viewmode
+      type: ""
+  rules:
+    - inputs:
+        - not(true)
+        - not(true)
+      outputs:
+        - disabled
+    - inputs:
+        - not(false)
+        - not(true)
+      outputs:
+        - default
+    - inputs:
+        - not(false)
+        - not(false)
+      outputs:
+        - default
+    - inputs:
+        - not(true)
+        - not(false)
+      outputs:
+        - default

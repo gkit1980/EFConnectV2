@@ -1,0 +1,8 @@
+element:
+  type: boolean
+  defaultValue: false
+  viewMode: hidden
+  pages:
+    viewAmendmentHealthDetails: null
+    viewAmendmentLifeDetails: null
+    viewAmendmentFinanceDetails: null

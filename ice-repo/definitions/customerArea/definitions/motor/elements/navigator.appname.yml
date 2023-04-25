@@ -1,0 +1,8 @@
+element:
+  title: Navigator appname
+  type: text
+  component: IceTextInput
+  viewMode: required
+  buckets:
+    ProcessChatRequest:
+      transformation:{}

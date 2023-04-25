@@ -1,0 +1,9 @@
+element:
+  type: text
+  viewMode: output  
+  buckets:
+    GetCoolgenClaimDetails:
+      transformation:
+        responsePath: ClaimCoolgen.Amount
+  pages:
+    viewClaimDetails: null

@@ -1,0 +1,173 @@
+<div class="main-container">
+  <div class="header h5">Σε εξέλιξη</div>
+</div>
+<ng-container *ngIf="contentLoaded; else loadDataTempl1">
+  <div *ngIf="!inProgressEmpty" class="amend-desktop">
+    <div class="card-headers">
+      <div class="col-md-4 Typeface">
+        Συμβόλαιο
+      </div>
+      <div class="col-md-2 Typeface">
+        Αριθμός Αιτήματος
+      </div>
+      <div class="col-md-4 Typeface">
+        Αίτημα
+      </div>
+      <div class="col-md-2 Typeface">
+        Ημερομηνία Υποβολής
+      </div>
+    </div>
+    <div *ngFor="let item of dataToShow" class="amendments-card">
+      <div class="col-md-4 product-container" *ngIf="item.RC_General_Types__c === 'Motor'">
+        <div class="product-icon" aria-label="icon" [inlineSVG]="('0F0E1AC2A2AC45A7906897CCB41B5580' | pipeFunction: getIcon: this)"
+          [onSVGLoaded]="handleSVGProduct" *ngIf="item.RC_General_Types__c === 'Motor'"></div>
+        <div class="description-container">
+          <div class="h5 product-description">
+            {{item.ProductDescription}}
+          </div>
+          <div class="contract-num">Αριθμός Συμβολαίου: {{ item.Contract_Name__c }}</div>
+        </div>
+      </div>
+      <div class="col-md-4 product-container" *ngIf="item.RC_General_Types__c === 'Non-Motor'">
+        <div class="product-icon" aria-label="icon" [inlineSVG]="('D2F9D495BF194ED0BC3F23078CA4B07E' | pipeFunction: getIcon: this)"
+          [onSVGLoaded]="handleSVGProduct" *ngIf="item.RC_General_Types__c === 'Non-Motor'"></div>
+        <div class="description-container">
+          <div class="h5 product-property-description">
+            {{item.ProductDescription}}
+          </div>
+          <div class="contract-num">Αριθμός Συμβολαίου: {{ item.Contract_Name__c }}</div>
+        </div>
+      </div>
+      <div class="col-md-4 product-container" *ngIf="item.RC_General_Types__c === 'Life-Health-Finance' && item.Branch === 'ΥΓΕΙΑΣ'">
+        <div class="product-icon" aria-label="icon" [inlineSVG]="('5B16FD8598BC4750B8E058C8BDC2528A' | pipeFunction: getIcon: this)"
+          [onSVGLoaded]="handleSVGProduct" *ngIf="item.Branch === 'ΥΓΕΙΑΣ'"></div>
+        <div class="description-container">
+          <div class="h5 product-health-description">
+            {{item.ProductDescription}}
+          </div>
+          <div class="contract-num">Αριθμός Συμβολαίου: {{ item.Contract_Name__c }}</div>
+        </div>
+      </div>
+      <div class="col-md-4 product-container" *ngIf="item.RC_General_Types__c === 'Life-Health-Finance' && item.Branch === 'ΔΙΑΦΟΡΑ ΕΠΕΝΔΥΤΙΚΑ'">
+        <div class="product-icon" aria-label="icon" [inlineSVG]="('55575BDF0CF94677A59ADCF3F1ECF1AB' | pipeFunction: getIcon: this)"
+          [onSVGLoaded]="handleSVGProduct" *ngIf="item.Branch === 'ΔΙΑΦΟΡΑ ΕΠΕΝΔΥΤΙΚΑ'"></div>
+        <div class="description-container">
+          <div class="h5 product-finance-description">
+            {{item.ProductDescription}}
+          </div>
+          <div class="contract-num">Αριθμός Συμβολαίου: {{ item.Contract_Name__c }}</div>
+        </div>
+      </div>
+      <div class="col-md-4 product-container" *ngIf="item.RC_General_Types__c === 'Life-Health-Finance' && item.Branch === 'ΖΩΗΣ'">
+        <div class="product-icon" aria-label="icon" [inlineSVG]="('4412D69B78B5460B8E25F2FEAFA0105A' | pipeFunction: getIcon: this)"
+          [onSVGLoaded]="handleSVGProduct" *ngIf="item.Branch === 'ΖΩΗΣ'"></div>
+        <div class="description-container">
+          <div class="h5 product-life-description">
+            {{item.ProductDescription}}
+          </div>
+          <div class="contract-num">Αριθμός Συμβολαίου: {{ item.Contract_Name__c }}</div>
+        </div>
+      </div>
+      <div class="col-md-2 card-text">
+        {{ item.CaseNumber }}
+      </div>
+      <div class="col-md-4 card-text">
+        {{ item.Subject }}
+      </div>
+      <div class="col-md-2 card-text">
+        {{ (item.CreatedDate | pipeFunction: formatDate: this) | date: "dd/MM/yyyy" }}
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!inProgressEmpty" class="amend-mobile">
+    <div class="amendments-card" *ngFor="let item of dataToShow">
+      <div class="col product-container" *ngIf="item.RC_General_Types__c === 'Motor'">
+        <div class="product-icon" aria-label="icon" [inlineSVG]="('0F0E1AC2A2AC45A7906897CCB41B5580' | pipeFunction: getIcon: this)"
+          [onSVGLoaded]="handleSVGProduct" *ngIf="item.RC_General_Types__c === 'Motor'"></div>
+        <div class="description-container">
+          <div class="h5 product-description">
+            {{item.ProductDescription}}
+          </div>
+          <div class="contract-num">Αρ. Συμβολαίου: {{ item.Contract_Name__c }}</div>
+        </div>
+      </div>
+      <div class="col product-container" *ngIf="item.RC_General_Types__c === 'Non-Motor'">
+        <div class="product-icon" aria-label="icon" [inlineSVG]="('D2F9D495BF194ED0BC3F23078CA4B07E' | pipeFunction: getIcon: this)"
+          [onSVGLoaded]="handleSVGProduct" *ngIf="item.RC_General_Types__c === 'Non-Motor'"></div>
+        <div class="description-container">
+          <div class="h5 product-property-description">
+            {{item.ProductDescription}}
+          </div>
+          <div class="contract-num">Αρ. Συμβολαίου: {{ item.Contract_Name__c }}</div>
+        </div>
+      </div>
+      <div class="col-md-4 product-container" *ngIf="item.RC_General_Types__c === 'Life-Health-Finance' && item.Branch === 'ΥΓΕΙΑΣ'">
+        <div class="product-icon" aria-label="icon" [inlineSVG]="('5B16FD8598BC4750B8E058C8BDC2528A' | pipeFunction: getIcon: this)"
+          [onSVGLoaded]="handleSVGProduct" *ngIf="item.Branch === 'ΥΓΕΙΑΣ'"></div>
+        <div class="description-container">
+          <div class="h5 product-health-description">
+            {{item.ProductDescription}}
+          </div>
+          <div class="contract-num">Αριθμός Συμβολαίου: {{ item.Contract_Name__c }}</div>
+        </div>
+      </div>
+      <div class="col-md-4 product-container" *ngIf="item.RC_General_Types__c === 'Life-Health-Finance' && item.Branch === 'ΔΙΑΦΟΡΑ ΕΠΕΝΔΥΤΙΚΑ'">
+        <div class="product-icon" aria-label="icon" [inlineSVG]="('55575BDF0CF94677A59ADCF3F1ECF1AB' | pipeFunction: getIcon: this)"
+          [onSVGLoaded]="handleSVGProduct" *ngIf="item.Branch === 'ΔΙΑΦΟΡΑ ΕΠΕΝΔΥΤΙΚΑ'"></div>
+        <div class="description-container">
+          <div class="h5 product-finance-description">
+            {{item.ProductDescription}}
+          </div>
+          <div class="contract-num">Αριθμός Συμβολαίου: {{ item.Contract_Name__c }}</div>
+        </div>
+      </div>
+      <div class="col-md-4 product-container" *ngIf="item.RC_General_Types__c === 'Life-Health-Finance' && item.Branch === 'ΖΩΗΣ'">
+        <div class="product-icon" aria-label="icon" [inlineSVG]="('4412D69B78B5460B8E25F2FEAFA0105A' | pipeFunction: getIcon: this)"
+          [onSVGLoaded]="handleSVGProduct" *ngIf="item.Branch === 'ΖΩΗΣ'"></div>
+        <div class="description-container">
+          <div class="h5 product-life-description">
+            {{item.ProductDescription}}
+          </div>
+          <div class="contract-num">Αριθμός Συμβολαίου: {{ item.Contract_Name__c }}</div>
+        </div>
+      </div>
+      <div class="col contract-num header-distance">
+        Αριθμός Αιτήματος
+      </div>
+      <div class="col card-text">
+        {{ item.CaseNumber }}
+      </div>
+      <div class="hor-line"></div>
+      <div class="col contract-num header-distance">
+        Αίτημα
+      </div>
+      <div class="col card-text">
+        {{ item.Subject }}
+      </div>
+      <div class="hor-line"></div>
+      <div class="col contract-num header-distance">
+        Ημερομηνία Υποβολής
+      </div>
+      <div class="col card-text">
+        {{ (item.CreatedDate | pipeFunction: formatDate: this) | date: "dd/MM/yyyy" }}
+      </div>
+    </div>
+  </div>
+  <div *ngIf="inProgressEmpty">Δεν υπάρχουν αιτήματα σε εξέλιξη</div>
+</ng-container>
+
+<ng-template #loadDataTempl1>
+  <div class="ice-simple-table">
+    <ngx-skeleton-loader
+      count="1"
+      [theme]="{ 'background-color': '#dadada', width: '70%', height: '25px', 'border-radius': '10px' }"
+    >
+    </ngx-skeleton-loader>
+
+    <ngx-skeleton-loader
+      count="2"
+      [theme]="{ 'background-color': '#dadada', width: '100%', height: '25px', 'border-radius': '10px' }"
+    >
+    </ngx-skeleton-loader>
+  </div>
+</ng-template>

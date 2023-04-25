@@ -1,0 +1,4 @@
+element:
+  type: text
+  label: • Άδεια Κυκλοφορίας ή Βεβαίωση Υπουργείου
+  viewMode: output

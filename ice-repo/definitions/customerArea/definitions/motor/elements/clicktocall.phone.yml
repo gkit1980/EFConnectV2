@@ -1,0 +1,11 @@
+element:
+  title: Phone of Person
+  type: text
+  component: IceTextInput
+  viewMode: required
+  pages:
+    clicktocall: null
+  buckets:
+    ProcessCallbackRequest:
+      transformation:{}
+  label: Το Τηλέφωνό σας

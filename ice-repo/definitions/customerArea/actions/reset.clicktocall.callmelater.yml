@@ -1,0 +1,12 @@
+action:
+  condition:
+    FeelConditionRule:
+      expression: clicktocall.callmenow = true
+  execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - clicktocall.callmelater
+  trigger:
+    - ElementChangeTriggerRule:
+        elements: 
+          - clicktocall.callmenow

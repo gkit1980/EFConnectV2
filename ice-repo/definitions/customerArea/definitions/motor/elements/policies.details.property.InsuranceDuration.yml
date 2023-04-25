@@ -1,0 +1,4 @@
+element:
+  type: date
+  component: CalculatePropertyDurationDateComponent
+  viewMode: output

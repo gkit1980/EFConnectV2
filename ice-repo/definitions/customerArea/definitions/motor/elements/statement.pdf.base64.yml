@@ -1,0 +1,12 @@
+element:
+  type: text
+  viewMode: output
+  buckets:
+    DownloadPdf:
+      transformation:{}  
+    GetPrintGroupHealthPDF:
+      transformation:{}
+    GetPrintMondialPDF:
+      transformation:{}    
+  pages:
+    myDocuments: null

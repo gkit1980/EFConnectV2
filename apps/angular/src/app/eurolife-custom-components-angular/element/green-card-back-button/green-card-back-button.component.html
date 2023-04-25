@@ -1,0 +1,12 @@
+<div [ngClass]="alignmentClass">
+  <div [ngClass]="additionalClasses" (click)="onClick()">
+    <div class="Button clickable">
+      <div class="back-svg" aria-label="icon" [inlineSVG]="getIcon('AB7AD067ECBF48FFA0DEC42C9DC88E5B')" [onSVGLoaded]="handleSVG">
+      </div>
+    </div>
+    <div class="button-icon" [ngClass]="svgFillColor" aria-label="icon" [inlineSVG]="imageSource" [onSVGLoaded]="handleSVG"
+      *ngIf="imageSource != ''">
+    </div>
+  </div>
+
+</div>

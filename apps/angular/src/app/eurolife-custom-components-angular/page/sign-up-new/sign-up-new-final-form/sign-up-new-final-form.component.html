@@ -1,0 +1,102 @@
+
+<div class="email-form-container">
+  
+  <div class="basic-info-header">
+    <div class="sign-up-container">
+      <p class="h4">Ολοκλήρωση εγγραφής</p>
+    </div>
+  </div>
+
+  <app-sign-up-new-stepper></app-sign-up-new-stepper> 
+
+   <div class="second-info-header">
+    <p class="h6">Για την ολοκλήρωση της εγγραφής, θα χρειαστεί να ορίσετε τον προσωπικό σας κωδικό.</p>
+   </div>
+
+
+   <div>
+    <div class="mobile-container">
+
+      <mat-form-field>
+        <mat-label> {{ vatText | resourcePipe }} </mat-label>
+        <input class="Caption1" matInput name="vat" [(ngModel)]="vatNo" pattern="[0-9]{9}" [formControl]="vatno"
+          placeholder="Πληκτρολογήστε τον αριθμό του ΑΦΜ σας" (ngModelChange)="onVatChange()">
+        <mat-error *ngIf="vatno.invalid">{{ vatError | resourcePipe }}</mat-error>
+      </mat-form-field>
+    
+      <mat-form-field>
+        <mat-label class="info-star-hide"> {{ signupCreatePasswordText | resourcePipe }} </mat-label>
+        <mat-label class="info-star-show"> {{ signupCreatePasswordText | resourcePipe }} * </mat-label>
+        <div class="groupping">
+          <input *ngIf="!showPassword" class="Caption1" id="password" type="password" matInput name="password"
+            placeholder="Ορίστε τον κωδικό ασφαλείας" [(ngModel)]="password" (ngModelChange)="checkPasswordMatchRegex()"
+            (ngModelChange)="checkPasswordMatchConfirm()">
+          <!-- <mat-label> {{ signupCreateConfirmPasswordText2 | resourcePipe }} </mat-label> -->
+          <input *ngIf="showPassword" class="Caption1" id="passwordcopy" type="text" matInput name="password" placeholder="Πληκτρολογήστε ξανά τον κωδικό"
+            [(ngModel)]="password">
+          <div class="eye-svg" aria-label="icon" [inlineSVG]="getIcon('C8DC57AED3BC40B38A65371B554A3A45')" ngbTooltip="Εμφάνιση κωδικού"
+            [onSVGLoaded]="handleEyeSVG" (mousedown)="onShowPassword(true)" (mouseup)="onShowPassword(false)"
+            (touchstart)="onShowPassword(true)" (touchend)="onShowPassword(false)">
+          </div>
+        </div>
+        <!-- <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error> -->
+      </mat-form-field>
+
+      <div class="password-strength-container">
+        <!-- <p *ngIf="!isPasswordPassedRules">password dont meet the requirements</p> -->
+        <div *ngFor="let str of passwordStrength;let i=index;" [ngClass]="getStrengthColor(i)" class="password-strength-line">
+        </div>
+        <div class="infobutton" aria-label="My icon" [inlineSVG]="imageSourceIcon" [onSVGLoaded]="handleSVGInfo"
+          ngbTooltip="Ο κωδικός θα πρέπει να είναι το λιγότερο 8 χαρακτήρες και να περιέχει τουλάχιστον
+          Κεφαλαία γράμματα (A-Z), Πεζά γράμματα (a-z), Αριθμούς ή/ και σύμβολα (όπως !, $, #, %)">
+        </div>
+      </div>
+      <div class="strength-text" [ngClass]="getStrengthColorText(passwordStrendthColor)">
+        {{getStrengthText(currentStrength)}}
+      </div>
+      <div class="note">
+        *Ο κωδικός θα πρέπει να είναι το λιγότερο 8 χαρακτήρες και να περιέχει τουλάχιστον
+          Κεφαλαία γράμματα (A-Z), Πεζά γράμματα (a-z), Αριθμούς ή/ και σύμβολα (όπως !, $, #, %)
+      </div>
+    
+      <mat-form-field>
+        <mat-label> {{ signupCreateConfirmPasswordText1 | resourcePipe }} </mat-label>
+        <input class="Caption1" type="password" matInput name="confirm-password" [(ngModel)]="confirmPassword"
+          (ngModelChange)="checkPasswordMatchConfirm()">
+        <!-- <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error> -->
+      </mat-form-field>
+      <div *ngIf="!isPasswordConfirmed" class="error-msg">{{errMsgPasswordMatch}}</div>
+
+
+      <div class="create-account-terms">
+        <input type="checkbox" id="terms" name="terms" (change)="checkBoxHandle($event)">
+        <label class="Typeface">{{ terms1 | resourcePipe }} <span class="clickable colorT" (click)="openTermsDialog()">{{
+            terms2 | resourcePipe }}</span></label>
+      </div>
+      <div class="create-account-terms">
+        <input type="checkbox" id="privacy" name="privacy" (change)="checkBoxHandle($event)">
+        <label class="Typeface">{{ privacy1 | resourcePipe }} <span class="colorT clickable" (click)="openDialogLegal()">{{
+            privacy2 | resourcePipe }}</span></label>
+      </div>
+      
+      <div class="create-account-button-container">
+        <button class="eurolife_btn eurolife_btn-default" (click)="onSubmit()" [disabled]="!checkPrivacy || !checkTerms || !isPasswordConfirmed || !isPasswordPassedRules || !gotVatNo || showSpinnerBtn">
+          <div *ngIf="!showSpinnerBtn">
+            {{ myEurolife | resourcePipe }}
+          </div>
+          <div *ngIf="showSpinnerBtn" class="button-icon">
+            <i class="fa fa-spinner fa-spin fa-lg"></i>
+          </div>
+        </button>
+      </div>
+      <div *ngIf="errMsgService !== '' " class="error-msg-create">{{errMsgService}}</div>
+    </div>
+    
+    
+   </div>
+</div>
+
+
+
+
+

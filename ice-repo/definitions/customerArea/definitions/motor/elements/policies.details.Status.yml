@@ -1,0 +1,49 @@
+element:
+  type: text
+  viewMode: output
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent
+  buckets:
+    GetContractMotorDetails:
+      transformation:
+        responsePath: ContractMotorDetails.Status
+    GetContractIndividualDetails:
+      transformation:
+        responsePath: ContractIndividualDetails.Status
+    GetContractPropertyCoolgenDetails:
+      transformation:
+        responsePath: ContractPropertyCoolgenDetails.Status
+    GetContractMortgageDetails:
+      transformation:
+        responsePath: ContractMortgageDetails.Status
+    GetPensionContractDetails:
+      transformation:
+        responsePath: PensionContractDetails.Status
+    GetHealthContractDetails:
+      transformation:
+        responsePath: HealthContractDetails.Status
+    GetLifeHealthContractDetails:
+      transformation:
+        responsePath: LifeHealthContractDetails.Status
+    GetContractDeathDetails:
+      transformation:
+        responsePath: ContractDeathDetails.Status
+    GetContractConsumerDetails:
+      transformation:
+        responsePath: ContractConsumerDetails.Status
+    GetContractAccidentDetails:
+      transformation:
+        responsePath: ContractAccidentDetails.Status
+    GetContractCargoDetails:
+      transformation:
+        responsePath: ContractCargoDetails.Status
+    GetContractCargoPrudDetails:
+      transformation:
+        responsePath: ContractCargoPrudDetails.Status
+    GetContractDetailsPrudDetails:
+      transformation:
+        responsePath: ContractDetailsPrudDetails.Status
+    GetContractFirePrudDetails:
+      transformation:
+        responsePath: ContractFirePrudDetails.Status

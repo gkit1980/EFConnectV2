@@ -1,0 +1,10 @@
+element:
+  # component: EurolifeButtonComponent
+  component: GreenCardButtonComponent
+  type: text
+  label: ΑΚΥΡΩΣΗ ΚΑΡΤΑΣ
+  additionalClasses: eurolife_btn-stroke gc-button mr-3 greencard-cancel-btn
+  defaultValue: action-greencard-changestep
+  alignmentClass: dt_greencard_cancel_btn
+  pages:
+    greenCard: null

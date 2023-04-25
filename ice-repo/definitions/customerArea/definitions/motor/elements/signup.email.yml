@@ -1,0 +1,21 @@
+element:
+  type: text
+  viewMode: default
+  buckets:
+    EmailExists:
+      transformation:
+        dataPath: Email
+    InitSignUp:
+      transformation:
+        dataPath: Email
+    VerifySMS:
+      transformation:
+        dataPath: Email        
+    VerifyEmail:
+      transformation:
+        dataPath: Email       
+    CreateUser:
+      transformation:
+        dataPath: Email            
+  pages:
+    sign-up: null

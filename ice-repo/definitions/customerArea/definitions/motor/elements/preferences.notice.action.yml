@@ -1,0 +1,9 @@
+element:
+  type: text
+  label: View Privacy Notice
+  component: IceButton
+  action: 
+    execution:
+      - NavigateToUrlExecutionRule: 
+          url: /ice/default/customerArea.motor/viewPolicyParticipants
+  #defaultValue: view.privacy.notice

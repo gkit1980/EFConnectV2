@@ -1,0 +1,11 @@
+element:
+  type: text
+  label: contract
+  component: IceTextInput
+  viewMode: disabled
+  buckets:
+    GreenCardData:
+      transformation:
+        dataPath: greencard.contract
+  pages:
+    greenCard: null

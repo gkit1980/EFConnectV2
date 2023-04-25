@@ -1,0 +1,12 @@
+action:
+  execution:
+    - GreenCardServices:
+        baseUrl: GREENCARDBASEURL
+        url: GetGreenCardOrActiveContract
+        method: POST
+        bucket: GreenCardData
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+  pages:
+    greenCard: null

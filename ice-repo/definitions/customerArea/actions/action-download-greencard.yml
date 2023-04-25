@@ -1,0 +1,16 @@
+action:
+  title: green card download
+  execution:
+    - EnableSpinnerRule:
+        actionrule: action-download-greencard
+    - GreenCardServices:
+        baseUrl: GREENCARDBASEURL
+        url: PrintGreenCardJson
+        method: POST
+        bucket: GreenCardData
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+    - GreenCardDownloadPDF: {}
+    - DisableSpinnerRule:
+        actionrule: action-download-greencard

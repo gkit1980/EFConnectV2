@@ -1,0 +1,55 @@
+button {
+    display: flex;
+    align-items: center;
+
+}
+ 
+.left {
+        flex-direction: row-reverse;
+}
+
+.button-icon {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.corporate_color {
+    fill: #ef3340;
+}
+
+.motor_color {
+    fill: #479463;
+}
+
+.home_color {
+    fill: #f2b100;
+}
+
+.disable_color {
+    fill: #8d8d8d;
+}
+
+.disable-btn {
+    cursor: not-allowed;
+    pointer-events: none;
+    color: #8d8d8d;
+    background-color: #cccbcb;
+}
+
+.disable-dnl {
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.btn-minw {
+    min-width: 300px;
+    justify-content: center;
+}
+
+.btn-minh-load {
+    min-height: 57.6px;
+}
+
+.dispNone {
+    display: none !important;
+  }

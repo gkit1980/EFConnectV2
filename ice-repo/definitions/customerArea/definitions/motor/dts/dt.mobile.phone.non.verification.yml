@@ -1,0 +1,18 @@
+dt:
+  output-label: viewMode
+  hit-policy: F
+  inputs:
+    - label: input elememnt for mobile phone service verification
+      element: customer.details.verifyMobileFailure
+  outputs:
+    - id: viewmode
+      type: ""
+  rules:
+    - inputs:
+        - not(true)
+      outputs:
+        - output
+    - inputs:
+        - not(false)
+      outputs:
+        - hidden

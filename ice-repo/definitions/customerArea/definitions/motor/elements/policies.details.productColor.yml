@@ -1,0 +1,4 @@
+element:
+  type: text
+  label: null
+  dtName: dt_product_text_color

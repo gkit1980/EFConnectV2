@@ -1,0 +1,5 @@
+<div class="ice-calendar" *ngIf="isVisible">
+  <ngb-datepicker #dp [(ngModel)]="dateValue" navigation="arrows" [maxDate]="maxDate" [minDate]="minDate"
+    (select)="change($event)">
+  </ngb-datepicker>
+</div>

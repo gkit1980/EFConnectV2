@@ -1,0 +1,6 @@
+<div *ngFor="let row of recipe.rows" class="row" [ngClass]="row.css">
+	<div class="column no-padding" *ngFor="let col of row.cols" [ngClass]="getGridColumnClass(col)">
+		<ice-element [section]="section" [elementName]="col.element"></ice-element>
+		<a href="{{getValueFromElement(col.element)}}" target="_blank">{{ linkLabel | resourcePipe }}</a>
+	</div>
+</div>

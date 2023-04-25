@@ -1,0 +1,118 @@
+<div class="container">
+
+    <div class="main-container">
+      <div class="header h5">{{ this.recipe.header }}</div>
+      <div class="header Caption3">{{ this.recipe.innerheader }}</div>
+      <div class="subheader Caption3">{{this.recipe.innersubheader}}</div>
+    </div>
+    
+    <ng-container *ngIf="getContentLoaded(); else loadDataTempl1">
+      <div *ngFor="let item of contentData">
+        <div class="eclaims-card" [ngClass]="addStyleMoreContracts()" *ngIf="item.Branch == 'ΖΩΗΣ' && item.ContractGroupHealthDetails">
+       
+          <div class="product-container">
+            <div class="product-icon" *ngIf="item.Branch == 'ΖΩΗΣ'">
+            </div>
+        
+            <div class="description-container">
+        
+              <div class="h5 product-description product-distance" [ngClass]="{
+                  motor_text: item.Branch === 'ΖΩΗΣ'
+                }">
+                {{item.ProductDescritpion }}
+              </div>
+              <!-- </ng-template> -->
+              <div class="contract-num">Αριθμός Συμβολαίου {{ item.ContractKey }}</div>
+            </div>
+          </div>
+
+          <div class="description-container mobile-space" [ngClass]="addStyleMoreContracts()">
+        
+            <div class="h5 contract-num product-distance">
+             Μέλη
+            </div>
+            <!-- </ng-template> -->
+    
+            <div class="contract-num add-boldness" *ngIf="getExistingMembers(item); else loadDataMembers">{{ item.FilterGroupHealthInsured.length}}</div>
+           
+
+          </div>
+
+          <div class="btn-container" *ngIf="getNumberOfGroupHealthContracts()">
+            <mat-radio-button class="" [value]="item" (change)="radioChange($event,item)">
+            </mat-radio-button>
+          </div>
+
+        </div>
+        
+        <!--Participants-->
+        <div class="eclaims-card-members" *ngIf="item.active && item.Branch == 'ΖΩΗΣ'">
+          <div class="hor-line"></div>
+          <div class="description-dropdown-container">Επιλογή ασφαλιζόμενου μέλους που αφορά το αίτημα αποζημίωσης:</div>
+      
+          <div class="hor-line"></div>
+            <mat-form-field appearance="fill">
+              <mat-label>Ασφαλισμένος</mat-label>
+              <mat-select [(ngModel)]="selectedGroupHealthParticipant" (selectionChange)="onChange($event)">
+                <mat-option *ngFor="let obj of item.FilterGroupHealthInsured" [value]="obj">
+                {{obj.Fullname}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <div class="consents-card" *ngIf="checkParticipantSelected()">
+           
+                <div class="consents-description">
+                  Δηλώνω ότι τα δεδομένα αιτήματος αποζημίωσης του εξαρτώμενου μέλους που διαβιβάζω (συμπεριλαμβανομένου των δεδομένων υγείας) έχουν έρθει νόμιμα στην κατοχή μου και τα διαβιβάζω είτε ως ο έχων τη γονική μέριμνα είτε διότι το εξαρτώμενο μέλος έχει συναινέσει στη διαβίβαση των δεδομένων αποζημίωσης του στην Eurolife FFH ΑΕΑΖ, αφού έχει ενημερωθεί για την επεξεργασία των προσωπικών του δεδομένων.
+                </div>
+             
+              <div class="toggle-container">
+                <div class="Typeface consent-text">Συμφωνώ</div>
+                <mat-slide-toggle class="toggle" 
+                                  (change)="toggle($event)" 
+                                  [checked]="false"
+                >
+              </mat-slide-toggle>
+              </div>
+            </div>
+
+            <div class="description-container-row half-width">Δείτε το σύνολο των καλύψεων για τις οποίες δικαιούστε αποζημίωση βάσει του συμβόλαιού σας 
+              <!-- <div class="Typeface ml-1 add-style"> -->
+               <a class="Typeface ml-1 add-style" (click)="openDialog(item)">εδώ</a>.
+              <!-- </div> -->
+            </div>
+
+         
+       </div>
+
+      </div>
+    </ng-container>
+
+</div>
+
+<ng-template #loadDataTempl1>
+  <div class="ice-simple-table">
+    <ngx-skeleton-loader
+      count="1"
+      [theme]="{ 'background-color': '#dadada', width: '70%', height: '25px', 'border-radius': '10px' }"
+    >
+    </ngx-skeleton-loader>
+
+    <ngx-skeleton-loader
+      count="2"
+      [theme]="{ 'background-color': '#dadada', width: '100%', height: '25px', 'border-radius': '10px' }"
+    >
+    </ngx-skeleton-loader>
+  </div>
+</ng-template>
+
+
+<ng-template #loadDataMembers>
+    <ngx-skeleton-loader
+      count="1"
+      [theme]="{ width: '20px', height: '20px', 'border-radius': '10px', 'background-color': '#dadada' }"
+    >
+    </ngx-skeleton-loader>
+ 
+</ng-template>
+

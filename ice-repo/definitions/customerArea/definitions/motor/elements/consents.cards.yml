@@ -1,0 +1,8 @@
+element:
+  type: text
+  viewMode: output
+  component: ConsentsCardsComponent
+  dataStorePropertyItems: clientContracts
+  dataStorePropertyGdprData: GdprData 
+
+      

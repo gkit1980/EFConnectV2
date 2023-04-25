@@ -1,0 +1,20 @@
+page:
+  component: PopUpPage
+  flag: walkthrough home4
+  showTriangle: true
+  validation:
+    onElementComponentChange: true
+    behaviour: page
+  sections:
+    - component: SimpleGridViewComponent
+      rows:
+        - cols:
+            - css: header-title-pop-up-walkthrough text-center walkthrough-header-mb
+              col: 12
+              element: home.walkthrough.header4
+    - component: ContentWalkthroughComponent
+      text: "Στην περιοχή αυτή βρίσκεται ο αριθμός των τροποποιήσεων. Με ένα κλικ μεταφέρεστε σε σελίδα όπου βλέπετε όλες τις τροποποιήσεις (ολοκληρωμένες ή τρέχουσες), που έχετε αιτηθεί ανά συμβόλαιο. Έχετε επίσης δυνατότητα να ζητήσετε επιπλέον αλλαγές στα συμβόλαιά σας."
+      pageNum: 4
+      numberOfScreens: home.walkthrough.screens
+      next: ΕΠΟΜΕΝΟ
+      previous: ΠΡΟΗΓΟΥΜΕΝΟ

@@ -1,0 +1,22 @@
+action:
+  title: calls a rest service to get the customer contract details
+  execution:
+    - RestCallExecutionRule:
+        baseUrl: BASEURL
+        # baseUrl: https://lifeuatna.eurolife.gr/CustomerDataProvider/api/CustomerData
+        url: GetMotorContractCover
+        verb: post
+        bucket: GetMotorContractCover
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+    #   - NavigateToPageExecutionRule:
+    #       page: viewPolicyCoverages
+    #       omitValidation: true
+  condition:
+    FeelConditionRule:
+      expression: policy.selectedBranch = 3
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - policy.selectedBranch

@@ -1,0 +1,11 @@
+element:
+  type: text
+  label: url
+  component: IceTextInput
+  viewMode: disabled
+  buckets:
+    GreenCardData:
+      transformation:
+        dataPath: greencard.url
+  pages:
+    greenCard: null

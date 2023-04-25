@@ -1,0 +1,133 @@
+<div class="ice-simple-table">
+
+  <!-- <div class="mat-elevation-z8"> -->
+
+  <!-- <table mat-table [dataSource]="dataSource">
+
+      <ng-container *ngFor="let col of cols" [matColumnDef]="col">
+        <th mat-header-cell *matHeaderCellDef> {{ getLabelName(col) }} </th>
+        <td mat-cell *matCellDef="let element">
+          <div *ngIf="showIcon(col)" class="custom-icon">
+            <mat-icon>home</mat-icon>
+          </div> {{element[col]}}
+        </td> -->
+  <!-- <td mat-cell *matCellDef="let element"> {{element[col]}} </td> -->
+  <!-- </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="cols"></tr>
+      <tr mat-row [ngClass]="{ 'selected': row === selectedRow }" (click)="selectRow(row)"
+        *matRowDef="let row; columns: cols;">
+      </tr>
+
+    </table>
+
+  </div> -->
+  <h5>{{ homeUnpaid | resourcePipe }}</h5>
+
+  <div class="only-desktop">
+    <div class="row grey-background">
+      <div class="col-sm-4">
+        <div class="row">
+          <div class="col-sm-12">
+            <!-- <div class="product-icon" aria-label="icon"
+              [inlineSVG]="'https://cockpit.dev.ips.impeo.info/storage/uploads/2019/03/22/5c94bd92b94f6car-with-bg.svg'"
+              [onSVGLoaded]="handleSVG" *ngIf="item.Branch =='ΑΥΤΟΚΙΝΗΤΩΝ'">
+            </div>
+            <div class="product-icon" aria-label="icon"
+              [inlineSVG]="'https://cockpit.dev.ips.impeo.info/storage/uploads/2019/04/16/5cb52851051e6health-with-bg.svg'"
+              [onSVGLoaded]="handleSVG" *ngIf="item.Branch =='ΖΩΗΣ'">
+            </div>
+            <div class="product-icon" aria-label="icon"
+              [inlineSVG]="'https://cockpit.dev.ips.impeo.info/storage/uploads/2019/04/18/5cb8469d8557ficons-propeties-house-with-bg.svg'"
+              [onSVGLoaded]="handleSVG" *ngIf="item.Branch =='ΠΕΡΙΟΥΣΙΑΣ'">
+            </div>
+            <div class="product-icon" aria-label="icon"
+              [inlineSVG]="'https://cockpit.dev.ips.impeo.info/storage/uploads/2019/04/18/5cb8469d96d8aicons-propeties-saving-with-bg.svg'"
+              [onSVGLoaded]="handleSVG" *ngIf="item.Branch =='ΔΙΑΦΟΡΑ ΕΠΕΝΔΥΤΙΚΑ'">
+            </div>
+            <div class="h5 product-description">{{item.ProductDescritpion}}
+              <div class="Caption3 opacity">Αρ. Συμβολαίου: {{item.ContractKey}}</div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="row">
+        <div class="col-sm-6"></div>
+        <div class="col-sm-6"></div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="col-sm-12"></div>
+      <div class="col-sm-12"></div>
+    </div>
+
+    <!-- <div class="col-sm-11">
+        <div class="row">
+          <div class="col-sm-3" *ngFor="let col of filterCols">
+            <p class="Typeface">{{ getLabelName(col) }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row grey-background mb-1" *ngFor="let row of allReceipts">
+      <div class="col-sm-11">
+        <div class="row">
+          <div class="col-sm-3">
+            <p class="h6-active contractName">{{row.contract}}</p>
+            <p class="Caption3 contractNumber">{{getLabelName("contractNum")+':'}}{{row.contractNum}}</p>
+          </div>
+          <div class="col-sm-3">
+            <p class="Caption3 paymentDate">{{row.paymentDate}}</p>
+          </div>
+          <div class="col-sm-3">
+            <p class="Caption3 paymentType">{{row.paymentType}}</p>
+          </div>
+          <div class="col-sm-3">
+            <p class="Caption3 paymentAmount">{{row.amount}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-1 chevron-right" aria-label="icon"
+        [inlineSVG]="'https://scp.eurolife.gr/~/media/C8705EB508D542E59548EF002F938768.ashx'"
+        [onSVGLoaded]="handleSVG">
+      </div> -->
+
+  </div>
+</div>
+<div class="only-mobile">
+  <!-- <div class="row grey-background mb-1" *ngFor="let row of allReceipts"> -->
+  <div class="col-10">
+    <div class="row">
+      <!-- <div class="col-sm-3">
+          <p class="h6-active contractName">{{row.contract}}</p>
+          <p class="Caption3 contractNumber">{{row.contractName}}</p>
+        </div>
+
+        <div id="first" class="col-sm-3 slightly-right">
+          <p class="Caption3">Ημερ. Υποβολής</p>
+          <p class="Caption1">{{row.paymentDate}}</p>
+          <hr>
+        </div>
+        <div class="col-sm-3 slightly-right">
+          <p class="Caption3">Τρόπος Πληρωμής</p>
+          <p class="Caption1">{{row.paymentType}}</p>
+          <hr>
+        </div>
+        <div class="col-sm-3 slightly-right">
+          <p class="Caption3">Αίτημα</p>
+          <p class="Caption1">{{row.amount}}</p>
+        </div>
+      </div> -->
+
+    </div>
+
+
+    <div class="col-2 chevron-right" aria-label="icon" [inlineSVG]="getIcon('C8705EB508D542E59548EF002F938768')"
+      [onSVGLoaded]="handleSVG">
+    </div>
+
+  </div>
+</div>

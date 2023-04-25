@@ -1,0 +1,19 @@
+page:
+  component: SimplePageComponent
+  flag: viewAmendments
+  showTitle: true
+  sections:
+    - component: SimpleGridViewComponent
+      rows:
+        - css: text-left Caption3
+          cols:
+            - css: text-left Caption3
+              col: 12
+              element: ammendments.title
+    - component: AmendmentsInprogressComponent
+      inprogresstitle: amendments.inprogress.header.title
+      dataStoreProperty: amendmentsInprogress
+    - component: AmendmentsRequestsComponent
+      header: amendments.requests.header.title
+      innerheader: amendments.requests.subheader.title
+      dataStoreProperty: clientContracts

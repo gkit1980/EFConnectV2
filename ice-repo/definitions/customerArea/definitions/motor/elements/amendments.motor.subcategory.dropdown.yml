@@ -1,0 +1,12 @@
+element:
+  type: text
+  component: IceDropdown
+  viewMode: enable
+  buckets:
+    AmendmentsCreateCase:
+      transformation: {}
+  values:
+    DtValuesRule:
+      dt: dt_amendments_dropdown_motor_subcategory
+      list: label
+  label: Υποκατηγορία

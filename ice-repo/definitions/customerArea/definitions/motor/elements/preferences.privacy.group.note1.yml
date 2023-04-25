@@ -1,0 +1,11 @@
+element:
+  type: text
+  viewMode: output
+  label: "<br>*Ως στοχευμένες προωθητικές ενέργειες ορίζουμε προωθητικές ενέργειες προϊόντων που θεωρούμε ότι σας ταιριάζουν σύμφωνα με πληροφορίες που μας έχετε ήδη παράσχει ή έχουν προκύψει από τη σχέση σας μαζί μας."
+  component:
+    StaticComponentRule:
+      component:
+        TextWithLinkComponent:
+          target: label
+  pages:
+    customerProfile: null

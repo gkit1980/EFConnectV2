@@ -1,0 +1,24 @@
+<div class="ice-dropdown" *ngIf="isVisible">
+	<mat-form-field [attr.data-required]="isRequired" [appearance]="appearance" hideRequiredMarker="true" *ngIf="!isOutput" [hintLabel]="hint"
+	style="margin: 0px 0px 0px 0px;">
+		<mat-label [attr.data-required]="isRequired">{{label}}</mat-label>
+		<mat-select 
+				#matSelect 
+				[placeholder]="placeholder"
+				[required]="isRequired"
+				[errorStateMatcher]="errorStateMatcher"
+				(blur)="onBlur()"
+				[(ngModel)]="value"
+				(selectionChange)="onChange($event)"
+				[disabled]="isDisabled"
+				[compareWith]="compare">
+			<mat-option *ngFor="let option of options" [value]="option.value">
+				{{ option.label_el}}
+			</mat-option>
+		</mat-select>
+		<!-- <mat-error *ngFor="let message of validation?.getMessagesFor(element.name, index)"> -->
+			<!-- {{ message }}
+		</mat-error> -->
+	</mat-form-field>
+	<mat-output *ngIf="isOutput" [isOutput]="isOutput" [label]="label" [value]="textValue"></mat-output>
+</div> 

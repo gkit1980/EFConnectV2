@@ -1,0 +1,11 @@
+element:
+  type: text
+  label: Υπόλοιποι Οδηγοί
+  viewMode: 
+    ConditionalViewModeRule:
+        conditionElement: greencard.page.index
+        conditionValue: 2
+        conditionViewMode: output
+        elseViewMode: hidden
+  pages:
+    greenCard: null

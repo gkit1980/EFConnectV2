@@ -1,0 +1,12 @@
+element:
+  type: text
+  viewMode: output
+  buckets:
+    GetTransactionInfoAEGA:
+      transformation:
+        responsePath: ConfigID
+    # executePayment:
+    #   transformation:
+    #     dataPath: configID
+  pages:
+    paymentManagement: null

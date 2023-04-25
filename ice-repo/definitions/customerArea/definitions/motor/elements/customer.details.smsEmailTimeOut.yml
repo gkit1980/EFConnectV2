@@ -1,0 +1,10 @@
+element:
+  type: integer
+  viewMode: output
+  defaultValue: 60
+  buckets:
+    ChangeEmail: # it take's the return value from ChangeEmail for the timer
+      transformation:
+        responsePath: SMSTimeOut
+  pages:
+    changeEmailPopUp: null

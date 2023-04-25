@@ -1,0 +1,9 @@
+element:
+  type: text
+  viewMode: output
+  buckets:
+    GetClaim:
+      transformation:
+        property: SourceSystemDescription
+  pages:
+    viewClaims: null     

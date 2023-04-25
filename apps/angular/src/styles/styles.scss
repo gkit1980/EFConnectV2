@@ -1,390 +1,699 @@
-// Import bootstrap as a single file - ideally, we would import parts only and in between, override bootstrap variables
-@import '../../../../node_modules/bootstrap/scss/bootstrap-grid';
+//import bootsstrap as a single file - ideally, we would import parts only and in between, override bootstrap variables
+@import "node_modules/bootstrap/scss/bootstrap";
+
+//import fontawesome, adjust the path for finding fonts
+$fa-font-path: "node_modules/font-awesome/fonts";
+@import "node_modules/font-awesome/scss/font-awesome";
+
+//import primeng
+//todo: omega should not be used
+@import "node_modules/primeng/resources/primeng.min.css";
+@import "node_modules/primeng/resources/themes/omega/theme.css";
+
+//internal imports
+@import "colors2";
+
+//import ICE material theme
+$ice-demo-page-set-background-image: false;
+$ice-demo-page-background-image-url: "../../../node_modules/@impeo/ng-ice/assets-webpacked/page-content/demo-page.jpg";
+$ice-one-page-set-background-image: false;
+$ice-one-page-background-image-url: "../../../node_modules/@impeo/ng-ice/assets-webpacked/page-content/demo-page.jpg";
+$ice-registration-page-set-background-image: true;
+$ice-registration-page-background-image-url: "../assets-webpacked/demo/registration_page_background_image.jpg";
+$ice-registration-page-background-logo: "../assets-webpacked/eurolife/erb_logo_new.png";
+
+@import "./themes/themes";
+@import "chat";
+@import "crm-chat";
+@import "lwc-create-case";
+// @import './themes/themes.scss';
+
+// @import url("https://fonts.googleapis.com/css?family=Ubuntu&subset=greek");
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500&subset=greek');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "vendors/animate";
+@import "general";
+@import "abstracts/mixins";
+@import "base/typography";
+@import "vendors/hamburger";
+@import "components/buttons";
+// @import "components/buttons";
 
-// Internal imports
-@import 'variables';
-@import 'mixins';
-@import 'reset';
-@import 'utilities';
+//Nebo: This is a first draft of global grid system:
+// For pc resolutions (1024px to 1920px) max-width of the content is set to 1024px and resizing the window, only left and right margin is changed
+// for ipads resolutions (up to 1024) max width of the content is set to 768px and resizing the window, only left and right margin is changed
+// for screen smaller than 768px (small ipad portraits and iphones) width will change and follow the widht of the page, but margins will be set to 15px on each side
+// .container-fluid,
+// .container {
+//   max-width: 1180px;
+//   padding: 30px;
+// }
+// .container {
+//     max-width: 1440px;
+// }
+// header.container-fluid {
+//   padding-bottom: 0px;
+//   padding-top: 0px;
+// }
 
-/**
- * TIP: We need to import the themes.scss in order to force its logic execution. Which is in fact
- * logic needed for generating Angular Material Themes.
- */
-@import 'themes/themes';
+// @media (max-width: 1024px) {
+//   .container-fluid,
+//   .container {
+//     max-width: 768px !important;
+//   }
+// }
 
-/**
- * TIP: You will need to import here only the themes you plan to use inside your application.
- */
-@import 'themes/defualt/default-theme';
-@import 'themes/defualt/dark-theme';
+// @media (max-width: 768px) {
+//   .container-fluid,
+//   .container {
+//     max-width: 100% !important;
+//   }
+// }
+
+// hr {
+//   margin: 15px 0;
+//   border-top: 1px solid $color-hr;
+// }
+
+// //headline definitions
+
+// h1 {
+//   color: $color-impeo;
+//   padding: 7px;
+//   font-size: 1.75rem;
+// }
+
+// h2 {
+//   color: $color-impeo;
+//   font-size: 1.35rem;
+// }
+
+// .edit-container-button-row {
+//   position: absolute;
+//   right: 20px;
+//   top: 20px;
+// }
 
 .container {
-  width: 100%;
-  max-width: 1328px; // 1280 max width + padding 24px
-  padding: 16px;
-
-  @include respond-from('md') {
-    padding: 24px;
-  }
+    max-width: 1100px !important;
+    // @media (max-width: 1024px) {
+    //     max-width: unset !important;
+    // }
 }
 
-/**
- * TIP: We create here a root level CSS class which when applied on body (html tag) will
- * lead to actually apply this theme to all children of the body/root-level components.
- * You could change the actual application theme by changing this theme class.
- *
- * Examples of applying theme on body.
- * <body class="default-light-theme">...</body>
- *
- * Example fo apply theme on root application level component
- * app.component.html
- * <div class="app-root container-fluid default-light-theme">
- *     <router-outlet></router-outlet>
- * </div>
- */
-.default-light-theme {
-  @include all_mixins($default-light-theme);
+
+.xlRegistrationModal>.modal-dialog {
+    // max-width: 1490px !important;
+    min-width: 768px !important;
+    max-height: 538px !important;
+    height: 538px !important;
+
+
+    // width: 95% !important;
+    @media screen and (max-width: 780px) {
+        // width: 100% !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-height: unset !important;
+        margin: 0;
+        padding: 0;
+
+    }
+
+    .modal-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        pointer-events: auto;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: none;
+        border-radius: 0;
+        outline: 0;
+        box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.15);
+        background-color: rgb(255, 255, 255);
+        height:100%;
+
+        @media screen and (max-width: 780px) {
+            height: auto;
+            min-height: 100%;
+            width: 100vw;
+            border-radius: 0;
+        }
+    }
 }
 
-.dark-theme {
-  @include all_mixins($dark-theme);
+
+.xlModal>.modal-dialog {
+    // max-width: 1490px !important;
+    min-width: 768px !important;
+    max-height: 338px !important;
+
+
+    // width: 95% !important;
+    @media screen and (max-width: 780px) {
+        // width: 100% !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-height: unset !important;
+        margin: 0;
+        padding: 0;
+
+    }
+
+    .modal-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        pointer-events: auto;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: none;
+        border-radius: 0;
+        outline: 0;
+        box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.15);
+        background-color: rgb(255, 255, 255);
+
+        @media screen and (max-width: 780px) {
+            height: auto;
+            min-height: 100%;
+            width: 100vw;
+            border-radius: 0;
+        }
+    }
 }
 
-.ice-datepicker {
-  // it needs relative position on the contaienr, otherwise the icon is off the screen
-  position: relative;
+.xlVideoModal>.modal-dialog {
+    // max-width: 1490px !important;
+    min-width: 768px !important;
+    max-height: 338px !important;
 
-  .mat-form-field-suffix {
-    position: absolute;
-    bottom: auto !important;
-    top: 2.5px !important;
-    right: 2px !important;
-  }
+
+    // width: 95% !important;
+    @media screen and (max-width: 780px) {
+        // width: 100% !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-height: unset !important;
+        margin: 0;
+        padding: 0;
+
+    }
+
+    .modal-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 73%;
+        pointer-events: auto;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: none;
+        border-radius: 0;
+        outline: 0;
+        box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.15);
+        background-color: rgb(255, 255, 255);
+
+        @media screen and (max-width: 780px) {
+            height: auto;
+            min-height: 100%;
+            width: 100vw;
+            border-radius: 0;
+        }
+    }
 }
 
-// TODO: This is temporary solution, we need to add option to add custom class to the IceFlexSection
-// maybe we should remove default styling of ice-array-item so we don't need to override it in every project
-.ice-flex-section,
-.default-light-theme .ice-array .ice-array-item {
-  // TODO
+.xlModal-icon>.modal-dialog {
+    min-width: 768px !important;
+    max-height: 338px !important;
+
+    @media screen and (max-width: 780px) {
+        width: 100vw;
+        margin-right: 0;
+        margin-left: 0;
+        overflow-y: hidden;
+
+    }
+
+    .modal-content {
+
+        @media screen and (max-width: 780px) {
+            height: calc(100vh - 110px);
+            width: 100vw;
+            margin-bottom: -110px;
+        }
+
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        pointer-events: auto;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: none;
+        border-radius: 0;
+        outline: 0;
+        box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.15);
+        background-color: rgb(255, 255, 255);
+    }
+
+    .modal-container {
+
+
+        @media screen and (max-width: 780px) {
+            width: 100vw;
+        }
+
+    }
+
 }
 
-.small-title {
-  h2 {
-    font-size: 16px;
+
+.notModal>.modal-dialog {
+   // min-width: 220px !important;
+    text-align: center;
+    display: block;
+    box-shadow: 0 0 10px 2px rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: 220px;
+    z-index: 900;
+    position: fixed;
+    background-color: rgba(255,255,255,1);
+    bottom: auto;
+    right: 75px;
     font-weight: normal;
-  }
-}
-
-.button-width-100 {
-  button {
-    width: 100%;
-  }
-}
-
-.button-width-small {
-  button {
-    width: 70px;
-  }
-}
-
-.text-align-center {
-  text-align: center;
-}
-
-.text-align-right {
-  text-align: right;
-}
-
-.text-align-left {
-  text-align: left;
-}
-
-mat-radio-button {
-  width: 100%;
-}
-
-.hide-label .ice-radiobutton-qroup mat-label {
-  display: none !important;
-}
-
-.ice-radiobutton-qroup mat-label {
-  transform: none !important;
-  width: 100% !important;
-  margin-bottom: 10px;
-}
-
-.slider-mirror-labels {
-  display: flex;
-  align-items: center;
-
-  mat-slider {
-    width: calc(100% - 100px);
-  }
-
-  mat-output {
-    height: 19px;
-    display: inline-block;
-    margin-top: 23px;
-    margin-left: 20px;
-  }
-}
-
-.user-name {
-  text-transform: none !important;
-}
-
-.insis-array-item > div > label {
-  @extend .mat-h3;
-  @extend .u-mb-3;
-  @extend .u-text-medium;
-  display: inline-block;
-}
-
-.half-column {
-  .ice-array-item {
-    display: inline-block;
-    width: 50%;
-  }
-}
-
-.car-image {
-  background-image: url('/assets/icons/car-with-bubbles.png');
-  background-repeat: no-repeat;
-  height: 209px;
-  background-size: contain;
-  background-position: center;
-}
-.inline-cell-elements {
-  .ice-element {
-    display: inline-block;
-    .ice-checkbox {
-      display: inline-block;
-    }
-
-    .ice-currency {
-      padding: 8px 0px;
-    }
-  }
-}
-
-.cover-row {
-  min-height: 40px;
-}
-
-.application-person-details-questions {
-  mat-radio-button,
-  .mat-radio-label {
-    width: auto;
-  }
-}
-
-.medical-documents-label {
-  .ice-output > label {
-    display: block;
-    font-weight: bold;
-  }
-}
-
-.info-above-seventy {
-  background-color: rgba(153, 107, 15, 0.149019607843137);
-  box-sizing: border-box;
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgba(153, 107, 15, 1);
-  border-radius: 4px;
-  padding: 3px;
-
-  .mat-icon {
-    height: 15px;
-    width: 15px;
+    top: 20vh;
+    left: auto;
+    padding: 20px;
+    border-radius: 35px;
     font-size: 13px;
-    margin: 0px 3px;
-    color: rgba(153, 107, 15, 1);
-  }
-}
 
-confirmation-dialog-layout {
-  h2 {
-    white-space: break-spaces !important;
-    font-size: large !important;
-    line-height: normal !important;
-  }
-}
 
-.insured-amount-slider {
-  mat-slider {
-    width: 300px;
-  }
-}
+    // width: 95% !important;
+    @media screen and (max-width: 780px) {
+        // width: 100% !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-height: unset !important;
+        margin: 0;
+        padding: 0;
 
-.summary-finalize {
-  margin: 0px 290px;
-  width: 700px;
-}
-
-.width-100-array-item {
-  .ice-array-item {
-    width: 100%;
-  }
-}
-
-.beneficiaries-list {
-  .ice-element > ice-element > ice-array .ice-array > label {
-    display: block;
-  }
-
-  .ice-array-item {
-    width: 100%;
-  }
-
-  .insis-array .insis-array-item:not(:first-child) {
-    margin-top: 20px !important;
-  }
-}
-
-.documents-list {
-  .ice-array-item {
-    display: inline-block;
-    padding-right: 0.5em;
-  }
-}
-
-.nowrap {
-  display: flex;
-  justify-content: flex-start;
-  flex-flow: nowrap;
-  align-items: center;
-  .mat-form-field {
-    display: block;
-    padding-right: 10px;
-    max-width: 180px;
-  }
-}
-
-.elements-space {
-  ice-element div {
-    padding-right: 2px;
-  }
-}
-
-.beneficiaries-details-radio-buttons {
-  .ice-radiobutton-qroup {
-    line-height: 0px;
-    mat-label {
-      margin-bottom: 0px;
     }
-  }
+
+    .modal-content {
+        text-align: center;
+        display: block;
+        box-shadow: 0 0 10px 2px rgba(0,0,0,0.1);
+        overflow: hidden;
+        width: 220px;
+        z-index: 900;
+        position: fixed;
+        background-color: rgba(255,255,255,1);
+        bottom: auto;
+        right: 75px;
+        font-weight: normal;
+        top: 20vh;
+        left: auto;
+        padding: 20px;
+        border-radius: 35px;
+        font-size: 13px;
+
+        @media screen and (max-width: 780px) {
+            height: auto;
+            min-height: 100%;
+            width: 100vw;
+            border-radius: 0;
+        }
+    }
 }
 
-.overflow-visible {
-  overflow: visible !important;
+.notModal-icon>.modal-dialog {
+    text-align: center;
+    display: block;
+    box-shadow: 0 0 10px 2px rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: 220px;
+    z-index: 900;
+    position: fixed;
+    background-color: rgba(255,255,255,1);
+    bottom: auto;
+    right: 75px;
+    font-weight: normal;
+    top: 20vh;
+    left: auto;
+    padding: 20px;
+    border-radius: 35px;
+    font-size: 10px;
+
+    @media screen and (max-width: 780px) {
+        width: 100vw;
+        margin-right: 0;
+        margin-left: 0;
+        overflow-y: hidden;
+
+    }
+
+    .modal-content {
+
+        @media screen and (max-width: 780px) {
+            height: calc(100vh - 110px);
+            width: 100vw;
+            margin-bottom: -110px;
+        }
+
+        text-align: center;
+        display: block;
+        box-shadow: 0 0 10px 2px rgba(0,0,0,0.1);
+        overflow: hidden;
+        width: 220px;
+        z-index: 900;
+        position: fixed;
+        background-color: rgba(255,255,255,1);
+        bottom: auto;
+        right: 75px;
+        font-weight: normal;
+        top: 20vh;
+        left: auto;
+        padding: 20px;
+        border-radius: 35px;
+        font-size: 10px;
+    }
+
+    .modal-container {
+        @media screen and (max-width: 780px) {
+            width: 100vw;
+        }
+    }
+
 }
 
-.align-navigation-start .insis-one-level-tabs-navigation-page .mat-tab-labels {
-  justify-content: start;
+
+.xxlModal>.modal-dialog {
+    // max-width: 1490px !important;
+    min-width: 738px !important;
+    max-height: 602px !important;
+
+    // width: 95% !important;
+    @media screen and (max-width: 780px) {
+        width: 100% !important;
+        height: 100% !important;
+        max-height: unset !important;
+        margin: 0;
+        padding: 0;
+        // width: 100% !important;
+    }
+
+    .modal-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        pointer-events: auto;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: none;
+        border-radius: 0;
+        outline: 0;
+        box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.15);
+        background-color: rgb(255, 255, 255);
+
+        @media screen and (max-width: 780px) {
+            height: auto;
+            min-height: 100%;
+            width: 100vw;
+        }
+    }
 }
 
-.underscore {
-  border-bottom: 1px solid rgb(144, 144, 144);
+.documentModal>.modal-dialog {
+    // max-width: 1490px !important;
+    min-width: 738px !important;
+    max-height: 602px !important;
+
+    // width: 95% !important;
+    @media screen and (max-width: 780px) {
+        width: 100% !important;
+        height: 100% !important;
+        max-height: unset !important;
+        margin: 0;
+        padding: 0;
+        // width: 100% !important;
+    }
+
+    .modal-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        pointer-events: auto;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: none;
+        border-radius: 0;
+        outline: 0;
+        box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.15);
+        background-color: rgb(255, 255, 255);
+
+        @media screen and (max-width: 780px) {
+            height: auto;
+            min-height: 100%;
+            width: 100vw;
+            margin: 180px 0px 0px 0px;
+        }
+    }
 }
 
-.hide-label-of-radio-box {
-  mat-label {
+.xxxlModal>.modal-dialog {
+    // max-width: 1490px !important;
+    min-width: 1100px !important;
+    max-height: 602px !important;
+
+    // width: 95% !important;
+    @media screen and (max-width: 780px) {
+        width: 100% !important;
+        height: 100% !important;
+        max-height: unset !important;
+        margin: 0;
+        padding: 0;
+        // width: 100% !important;
+    }
+
+    .modal-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        pointer-events: auto;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: none;
+        border-radius: 0;
+        outline: 0;
+        box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.15);
+        background-color: rgb(255, 255, 255);
+
+        @media screen and (max-width: 780px) {
+            margin-top: 1080px;
+            height: auto;
+            min-height: 100%;
+            width: 100vw;
+        }
+
+        @media screen and (max-width: 500px) {
+            margin-top: 1800px;
+        }
+    }
+}
+
+.customerModal>.modal-dialog{
+    min-width: 1150px !important;
+    max-height: 338px !important;
+    zoom: 90%;
+    min-height: calc(0% - 380px);
+
+    @media screen and (max-width: 780px) {
+        // width: 100% !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-height: unset !important;
+        margin: 0;
+        padding: 0;
+
+    }
+    .modal-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        top:500px;
+        pointer-events: auto;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: none;
+        border-radius: 0;
+        outline: 0;
+        box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.15);
+        background-color: rgb(255, 255, 255);
+
+        @media screen and (max-width: 780px) {
+            height: auto;
+            min-height: 100%;
+            width: 100vw;
+            top: 860px;
+            right: -20px;
+            border-radius: 0;
+        }
+    }
+}
+
+
+
+.wtModal>.modal-dialog {
+    // max-width: 1490px !important;
+    min-width: 768px !important;
+    max-height: 338px !important;
+
+
+    // width: 95% !important;
+    @media screen and (max-width: 780px) {
+        // width: 100% !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-height: unset !important;
+        margin: 0;
+        padding: 0;
+
+    }
+
+    .modal-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        top:500px;
+        pointer-events: auto;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: none;
+        border-radius: 0;
+        outline: 0;
+        box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.15);
+        background-color: rgb(255, 255, 255);
+
+        @media screen and (max-width: 780px) {
+            height: auto;
+            min-height: 100%;
+            width: 40vw;
+            top: 860px;
+            left: 200px;
+            border-radius: 0;
+        }
+    }
+}
+
+.eclaimsModal>.modal-dialog {
+    // max-width: 1490px !important;
+    min-width: 730px !important;
+    max-height: 602px !important;
+
+    // width: 95% !important;
+    @media screen and (max-width: 780px) {
+        width: 100% !important;
+        height: 100% !important;
+        max-height: unset !important;
+        margin: 0;
+        padding: 0;
+        // width: 100% !important;
+    }
+
+    .modal-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        pointer-events: auto;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: none;
+        border-radius: 0;
+        outline: 0;
+        box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.15);
+        background-color: rgb(255, 255, 255);
+
+        @media screen and (max-width: 780px) {
+            margin-top: 600px;
+            height: auto;
+            min-height: 100%;
+            width: 100vw;
+        }
+
+        @media screen and (max-width: 500px) {
+            margin-top: 885px;
+        }
+    }
+
+    .modal-container {
+
+        .close{
+            display: none;
+        }
+
+        @media screen and (max-width: 780px) {
+            width: 100vw;
+        }
+
+    }
+}
+
+
+.backgroundClass {
+    mix-blend-mode: multiply;
+    background-color: #d8d8d8;
+    opacity: 0.7;
+}
+
+.grecaptcha-badge {
     display: none !important;
-  }
-  .mat-radio-label-content {
-    display: none;
-  }
 }
-.grid-objects {
-  .ice-array {
-    display: flex;
 
-    .ice-array-item:nth-of-type(n + 2) {
-      display: flex;
-      white-space: break-spaces;
-      &::before {
-        content: ', ';
-      }
+.popupMultiContractClass{
+
+    opacity: 0 !important;
+  }
+
+.optanon-alert-box-wrapper .optanon-button-more .optanon-alert-box-button-middle button {
+    color: getColor(grey, dark) !important;
+
+    &::before {
+        color: getColor(grey, dark) !important;
     }
-  }
 }
 
-.label-font-size-small {
-  mat-label {
-    font-size: 14px;
-  }
+.optanon-alert-box-wrapper .optanon-alert-box-body {
+    padding-right: 30px;
 }
 
-.insis-icon-assignment_late {
-  .mat-icon {
-    color: red;
-    display: inline-flex;
-    vertical-align: middle;
-  }
+//joy ride css
+
+.joyride-step__header {
+
+    display: flex;
+    justify-content: center;
 }
 
-.insis-icon-Open {
-  .mat-icon {
-    display: none;
-  }
+
+
+.joyride-step__body {
+    text-align: justify !important;
 }
 
-.insis-icon-assignment_turned_in {
-  .mat-icon {
-    color: #42841d;
-    display: inline-flex;
-    vertical-align: middle;
-  }
-}
-
-.ice-hint {
-  color: rgba(0, 0, 0, 0.6);
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-}
-
-.ice-tooltip {
-  padding: 3px 5px !important;
-  margin-top: 6px !important;
-  background-color: #e6e5e5 !important;
-  box-shadow: 0 0 6px #979696 !important;
-  color: rgb(87, 85, 85) !important;
-  border-radius: 5px !important;
-  overflow: visible;
-}
-
-.ice-tooltip:after {
-  position: absolute;
-  content: ' ';
-  bottom: 100%;
-  left: calc(50% - 5px);
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 10px 10px 10px;
-  border-color: transparent transparent #e6e5e5 transparent !important;
-}
-
-.fnol mat-radio-group {
-  display: flex;
-  flex-direction: row;
-  margin: 15px 0;
-}
-
-.fnol-section h2 {
-  font-size: 16px !important;
-  font-weight: 500;
-}
-
-.remove-radiogroup-margin mat-radio-group {
-  margin: 0;
-}
-
-.label-bold mat-label {
-  font-weight: 500;
+.joyride-step__container
+{
+    max-width: 400px;
+    width: 381.353px;
+    height: 374.647px;
 }

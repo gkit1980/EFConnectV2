@@ -1,0 +1,20 @@
+page:
+  component: PopUpPage
+  flag: walkthrough home5
+  showTriangle: true
+  validation:
+    onElementComponentChange: true
+    behaviour: page
+  sections:
+    - component: SimpleGridViewComponent
+      rows:
+        - cols:
+            - css: header-title-pop-up-walkthrough text-center walkthrough-header-mb
+              col: 12
+              element: home.walkthrough.header5
+    - component: ContentWalkthroughComponent
+      text: "Πατώντας εδώ μπορείτε να οδηγηθείτε στην ενότητα των Βεβαιώσεων, όπου μπορείτε να δείτε και να κατεβάσετε τις Βεβαιώσεις Καταβολής Ασφαλίστρων, Τόκων, τις Ετήσιες Ενημερώσεις, κλπ."
+      pageNum: 5
+      numberOfScreens: home.walkthrough.screens
+      next: ΤΕΛΟΣ
+      previous: ΠΡΟΗΓΟΥΜΕΝΟ

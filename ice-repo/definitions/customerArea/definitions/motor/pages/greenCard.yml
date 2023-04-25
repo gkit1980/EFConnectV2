@@ -1,0 +1,156 @@
+page:
+  component: SimplePageComponent
+  label: null
+  backColor: unset
+  sections:
+    # - component: GridView
+    #   viewMode: hidden
+    #   rows:
+    #     - css: null
+    #       cols:
+    #         - col: 12
+    #           element: policies.empty
+    - component: SimpleGridViewComponent
+      rows:
+        - cols:
+            - css: h5 text-center mt-5
+              col: 12
+              element: greencard.request.header
+        - cols:
+            - css: Caption2 text-center mb-1
+              col: 12
+              element: greencard.request.subheader
+    - component: GreenCardStepperComponent #Stepper
+    - component: SimpleGridViewComponent #Στοιχεια Οδηγού
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_greencard_sections_1
+      rows:
+        - cols:
+            - css: gc-step1-notification-bar
+              col: 12
+              element: greencard.step1.notification.bar
+    - component: SimpleGridViewComponent #Στοιχεια Οδηγού
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_greencard_sections_1
+      rows:
+        - cols:
+            - css: gc-driver-label h5
+              col: 12
+              element: greencard.motor.driver.label
+        - cols:
+            - css: gc-input-field
+              col: 12
+              element: greencard.plate.dropdown
+        - css: gc-input-field
+          cols:
+            - col: 12
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: gc-nopaddings
+                      internalCol: 6
+                      element: greencard.motor.duration.from
+                    - css: gc-nopaddings
+                      internalCol: 6
+                      element: greencard.motor.duration.to
+        - cols:
+            - css: gc-checkbox
+              col: 12
+              element: greencard.motor.check.duration
+    - component: SimpleGridViewComponent #Στοιχεια Ασφαλισμένου Οδηγού
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_greencard_sections_2
+      rows:
+        - css: gc-back-wrapper
+          cols:
+            - css: gc-driver-label h5 gc-driver-back
+              col:
+              element: greencard.motor.security.driver.back
+            - css: gc-driver-label h5 gc-driver-label-back
+              col:
+              element: greencard.motor.security.driver.label
+    - component: SimpleGridViewComponent #Στοιχεια Ασφαλισμένου Οδηγού
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_greencard_sections_2
+      rows:
+        - cols:
+            - css: gc-input-field
+              col: 12
+              element: greencard.motor.security.fullname
+        - cols:
+            - css: gc-input-field
+              col: 12
+              element: greencard.motor.security.address
+        - css: gc-input-field
+          cols:
+            - col: 12
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: gc-nopaddings
+                      internalCol: 8
+                      element: greencard.motor.security.town
+                    - css: gc-nopaddings
+                      internalCol: 4
+                      element: greencard.motor.security.postnum
+        - cols:
+            - css: gc-input-field
+              col: 12
+              element: greencard.motor.security.country
+    - component: SimpleGridViewComponent #Υπόλοιποι Οδηγοί
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_greencard_sections_3
+      rows:
+        - css: gc-back-wrapper
+          cols:
+            - css: gc-driver-label h5 gc-driver-back
+              col:
+              element: greencard.motor.security.driver.back
+            - css: gc-driver-label h5 gc-driver-label-back
+              col:
+              element: greencard.motor.other.driver.label
+    - component: SimpleGridViewComponent #Υπόλοιποι Οδηγοί
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_greencard_sections_3
+      rows:
+        - cols:
+            - css:
+              col: 12
+              element: greencard.motor.other.check.drivers
+        - cols:
+            - css:
+              col: 12
+              element: greencard.motor.other.drivers
+        - cols:
+            - css:
+              col: 12
+              element: greencard.motor.other.add.drivers
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_greencard_sections_4
+      rows:
+        - cols:
+            - css: gc-notification-bar
+              col: 12
+              element: greencard.result.notification
+    - component: SimpleGridViewComponent #Green Card Button
+      viewMode: output
+      rows:
+        - css: gc-btn-wrapper
+          cols:
+            - css:
+              col:
+              element: greencard.motor.download.button
+            - css:
+              col:
+              element: greencard.motor.cancel.button
+            - css:
+              col:
+              element: greencard.motor.button

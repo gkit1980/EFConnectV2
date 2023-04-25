@@ -1,0 +1,150 @@
+.header {
+  margin-bottom: 8px;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: -15px;
+  width: 100%;
+  @media screen and (max-width: 600px) {
+    width: calc(100% + 30px);
+  }
+}
+
+.subheader {
+  margin-bottom: 24px;
+}
+
+.consents-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #eeeeee;
+  width: calc(100% + 30px);
+  height: 80px;
+  padding: 0 8px;
+  margin: 8px 0;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+
+  .product-container {
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: 600px) {
+      padding: 15px;
+      margin-right: auto;
+      margin-left: 30px;
+    }
+  }
+  .product-description {
+    font-family: Ubuntu;
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.39;
+    letter-spacing: normal;
+    margin-bottom: 0;
+  }
+
+  .description-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 16px;
+    margin-bottom: 5px;
+    @media screen and (max-width: 600px) {
+      margin: 16px 0 8px 10px;
+    }
+  }
+
+  .contract-num {
+    opacity: 0.6;
+    font-family: Ubuntu;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.36;
+    letter-spacing: normal;
+    color: #383b38;
+    margin-top: 5px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .horizontal-line {
+      border-bottom: 1px solid #dddddd;
+      width: 100%;
+    }
+  }
+
+  .toggle-container {
+    display: flex;
+    align-items: center;
+    margin-right: 28px;
+
+    .consent-text {
+      margin-right: 16px;
+      margin-bottom: 0;
+    }
+
+    @media screen and (max-width: 600px) {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      margin: 12px 0;
+      button {
+        width: 288px;
+        height: 36px;
+        padding: 0;
+      }
+    }
+  }
+}
+
+.card-headers {
+  display: flex;
+  padding: 0 24px;
+}
+
+.life_text {
+  // color: ;
+  color: getColor(life);
+}
+
+.otherpc_text {
+  color: getColor(sme);
+}
+
+.health_text {
+  // color: ;
+  color: getColor(health);
+}
+
+.motor_text {
+  color: getColor(motor);
+}
+
+.house_text {
+  color: getColor(home);
+}
+
+.savings_text {
+  color: getColor(finance);
+}
+
+.other_pc_text {
+  color: getColor(sme);
+}
+
+.toggle{
+  @media screen and (max-width: 600px) {
+    margin-right: 10px;
+  }
+}

@@ -1,0 +1,13 @@
+element:
+  type: text
+  viewMode: output
+  defaultValue: '6'
+  buckets:
+    GetPaymentURLRedirector:
+      transformation:
+        dataPath: CardBank
+    GetPaymentURLRedirectorAEAZ:
+      transformation:
+        dataPath: CardBank
+  pages:
+    paymentManagement: null

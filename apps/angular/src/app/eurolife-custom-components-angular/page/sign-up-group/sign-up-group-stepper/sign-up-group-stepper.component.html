@@ -1,0 +1,154 @@
+<div class="stepper-container">
+
+    <!--Step1-->
+  <div class="step">
+      <div class="circle" [ngClass]="checkActive(0)">
+          <div class="inside-circle red-cicle" *ngIf="checkActive(0) == 'active'"></div>
+          <div class="inside-circle success" *ngIf="checkActive(0) == 'done'" aria-label="icon" [inlineSVG]="svgIcon"
+              [onSVGLoaded]="handleSVG">
+          </div>
+      </div>
+      <div class="bar-right" [ngClass]="checkActive(0)"></div>
+      <div class="step-title Typeface" [ngClass]="checkActive(0)">{{ stepperState.stepsState[0].title }}</div>
+  </div>
+ <!--Step2-->
+ <div class="step">
+    <div class="circle" [ngClass]="checkActive(1)">
+        <div class="inside-circle red-cicle" *ngIf="checkActive(1) == 'active'"></div>
+        <div class="inside-circle success" *ngIf="checkActive(1) == 'done'" aria-label="icon" [inlineSVG]="svgIcon"
+            [onSVGLoaded]="handleSVG">
+        </div>
+    </div>
+    <div class="bar-left" [ngClass]="checkActiveLeft(1)"></div>
+    <div class="bar-right" [ngClass]="checkActiveRight(1)"></div>
+    <div class="step-title Typeface" [ngClass]="checkActive(1)">{{ stepperState.stepsState[1].title  }}</div>
+</div>
+<!--Step3-->
+<div class="step">
+    <div class="circle" [ngClass]="checkActive(2)">
+        <div class="inside-circle red-cicle" *ngIf="checkActive(2) == 'active'"></div>
+        <div class="inside-circle success" *ngIf="checkActive(2) == 'done'" aria-label="icon" [inlineSVG]="svgIcon"
+            [onSVGLoaded]="handleSVG">
+        </div>
+    </div>
+    <div class="bar-left" [ngClass]="checkActiveLeft(2)"></div>
+    <div class="bar-right" [ngClass]="checkActiveRight(2)"></div>
+    <div class="step-title Typeface" [ngClass]="checkActive(2)">{{ stepperState.stepsState[2].title  }}</div>
+</div>
+
+<!--Step4-->
+<div class="step">
+    <div class="circle" [ngClass]="checkActive(3)">
+        <div class="inside-circle red-cicle" *ngIf="checkActive(3) == 'active'"></div>
+        <div class="inside-circle success" *ngIf="checkActive(3) == 'done'" aria-label="icon" [inlineSVG]="svgIcon"
+            [onSVGLoaded]="handleSVG">
+        </div>
+    </div>
+    <div class="bar-left" [ngClass]="checkActiveLeft(3)"></div>
+    <div class="step-title Typeface" [ngClass]="checkActive(3)">{{ stepperState.stepsState[3].title  }}</div>
+</div>
+
+
+
+
+</div>
+
+
+ <div class="stepper-mobile-container">
+    <!--step 1-->
+
+    <ng-container *ngIf="getStepperStep() == 0">
+        <div class="stepper-full-gap"></div>
+
+          <!--step 1-->
+          <div class="step-mobile">
+                    <div class="circle active">
+                        <div class="mobile-red-cicle"></div>
+                    </div>      
+           </div> 
+
+           <div class="mobile-bar"></div>
+
+           <div class="step-mobile step-overextend-right">
+            <div class="circle inactive"></div>
+           </div>
+            
+          
+    </ng-container>
+    
+   <!--step 2-->   
+   <ng-container *ngIf="getStepperStep() == 1">
+       
+          <div class="step-mobile step-overextend-left">
+                    <div class="circle active">
+                        <div class="inside-circle success"  aria-label="icon" [inlineSVG]="svgIcon" [onSVGLoaded]="handleSVG"> </div>
+                    </div>      
+          </div> 
+
+           <div class="mobile-bar active"></div>
+
+           <div class="step-mobile">
+                <div class="circle active">
+                    <div class="mobile-red-cicle"></div>
+                </div>      
+           </div> 
+
+           <div class="mobile-bar"></div>
+
+          <div class="step-mobile step-overextend-right">
+           <div class="circle inactive"></div>
+          </div>
+            
+          
+    </ng-container>
+
+     <!--step 2-->   
+   <ng-container *ngIf="getStepperStep() == 2">
+       
+    <div class="step-mobile step-overextend-left">
+              <div class="circle active">
+                  <div class="inside-circle success"  aria-label="icon" [inlineSVG]="svgIcon" [onSVGLoaded]="handleSVG"> </div>
+              </div>      
+    </div> 
+
+     <div class="mobile-bar active"></div>
+
+     <div class="step-mobile">
+          <div class="circle active">
+              <div class="mobile-red-cicle"></div>
+          </div>      
+     </div> 
+
+     <div class="stepper-full-gap"></div>
+     
+    
+ </ng-container>
+
+ <ng-container *ngIf="getStepperStep() == 3">
+       
+    <div class="step-mobile step-overextend-left">
+              <div class="circle active">
+                  <div class="inside-circle success"  aria-label="icon" [inlineSVG]="svgIcon" [onSVGLoaded]="handleSVG"> </div>
+              </div>      
+    </div> 
+
+     <div class="mobile-bar active"></div>
+
+     <div class="step-mobile">
+          <div class="circle active">
+              <div class="mobile-red-cicle"></div>
+          </div>      
+     </div> 
+
+     <div class="stepper-full-gap"></div>
+     
+    
+ </ng-container>
+     
+
+  </div>
+  
+
+
+
+

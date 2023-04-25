@@ -1,0 +1,18 @@
+action:
+  title: calls a rest service to get URL redirector
+  execution:
+    - RestCallExecutionRule:
+        baseUrl: BASEURLCARDLINK
+        url: InitializePaymentAEGA
+        verb: post
+        bucket: GetPaymentURLRedirector
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+  condition:
+    FeelConditionRule:
+      expression: payment.InitializePaymentAEGA = 1
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - payment.InitializePaymentAEGA

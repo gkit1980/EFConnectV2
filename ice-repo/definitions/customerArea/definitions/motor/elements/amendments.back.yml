@@ -1,0 +1,11 @@
+element:
+  component: AmendmentsBackButtonComponent
+  # viewMode:
+  #   ConditionalViewModeRule:
+  #     conditionElement: amendments.details.step.status
+  #     conditionValue: 1
+  #     conditionViewMode: output
+  #     elseViewMode: hidden
+  type: text
+  pages:
+    greenCard: null

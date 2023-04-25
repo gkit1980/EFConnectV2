@@ -1,0 +1,19 @@
+element:
+  type: text
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.selectedBranch
+      conditionValue: 99
+      conditionViewMode: output
+      elseViewMode: hidden
+  change:
+    - ResetElementValueExecutionRule:
+        elements:
+          - policy.selectedBranch
+          - policy.contract.general.info.ContractID
+  label: >-
+   Ανάλωση
+  buckets:
+    GetGroupHealthContractCover:
+      transformation:
+        property: RemainingAmount  

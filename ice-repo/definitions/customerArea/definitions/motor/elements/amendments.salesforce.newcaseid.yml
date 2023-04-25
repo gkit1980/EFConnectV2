@@ -1,0 +1,22 @@
+element:
+  type: text
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: amendments.details.step.status
+      conditionValue: 10
+      conditionViewMode: output
+      elseViewMode: hidden
+  buckets:
+    AmendmentsCreateCase:
+      transformation: {}
+    AmendmentsCreatePropertyCase:
+      transformation: {}
+    AmendmentsCreateLifeCase:
+      transformation: {}
+    AmendmentsCreateHealthCase:
+      transformation: {}
+    AmendmentsCreateFinanceCase:
+      transformation: {}
+    AmendmentsUploadFiles:
+      transformation: {}
+      

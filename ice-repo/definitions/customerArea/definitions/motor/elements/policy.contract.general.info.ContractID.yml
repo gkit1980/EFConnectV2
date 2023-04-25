@@ -1,0 +1,79 @@
+element:
+  type: integer
+  buckets:
+    GetContractBeneficiaries:
+      transformation:
+        dataPath: ContractID
+    GetCustomerContractDetails:
+      transformation:
+        dataPath: ContractID
+    GetReceiptsByContractID:
+      transformation:
+        dataPath: ContractID
+    GetContractParticipants:
+      transformation:
+        dataPath: ContractID
+    GetLifeContractCover:
+      transformation:
+        dataPath: ContractID
+    GetMotorContractCover:
+      transformation:
+        dataPath: ContractID
+    GetContractEndorsement:
+      transformation:
+        dataPath: ContractID
+    GetContractMotorDetails:
+      transformation:
+        dataPath: ContractID
+    GetContractIndividualDetails:
+      transformation:
+        dataPath: ContractID
+    GetContractPropertyCoolgenDetails:
+      transformation:
+        dataPath: ContractID
+    GetPropertyCoolgenContractCover:
+      transformation:
+        dataPath: ContractID
+    GetContractMortgageDetails:
+      transformation:
+        dataPath: ContractID
+    GetPensionContractDetails:
+      transformation:
+        dataPath: ContractID
+    GetHealthContractDetails:
+      transformation:
+        dataPath: ContractID
+    GetLifeHealthContractDetails:
+      transformation:
+        dataPath: ContractID
+    GetContractDeathDetails:
+      transformation:
+        dataPath: ContractID
+    GetContractConsumerDetails:
+      transformation:
+        dataPath: ContractID
+    GetContractAccidentDetails:
+      transformation:
+        dataPath: ContractID
+    GetContractCargoDetails:
+      transformation:
+        dataPath: ContractID
+    GetContractCargoPrudDetails:
+      transformation:
+        dataPath: ContractID
+    GetContractDetailsPrudDetails:
+      transformation:
+        dataPath: ContractID
+    GetContractFirePrudDetails:
+      transformation:
+        dataPath: ContractID
+    GetAccidentContractCover:
+      transformation:
+        dataPath: ContractID
+    GetGroupHealthContractCover:
+      transformation:
+        dataPath: ContractID   
+    GetContractGroupHealthDetails:
+      transformation:
+        dataPath: ContractID         
+    GetContractParticipantsForClaims: transformation:{}

@@ -1,0 +1,97 @@
+page:
+  component: PopUpPage
+  flag: consents
+  showTopSection: false
+  validation:
+    onElementComponentChange: true
+    behaviour: page
+  sections:
+    - component: SimpleGridViewComponent
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: consent.popupdialog
+          conditionValue: false
+          conditionViewMode: default
+          elseViewMode: hidden   
+      rows:
+        - cols:
+            - css: header-title-pop-up-consents text-left consent-header-mb
+              col: 12
+              element: consent.header.info              
+    - component: ConsentGridViewComponent
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: consent.popupdialog
+          conditionValue: false
+          conditionViewMode: default
+          elseViewMode: hidden   
+      rows:
+        # - cols:
+        #     - css: text-left consent-info-mb consent-lr
+        #       col: 12
+        #       element: consent.notification.bar
+        - cols:
+            - css: Subtitle2 text-left consent-label-fix consent-lr
+              col: 12
+              element: consent.compliance1.info
+        - cols:
+            - css: Subtitle2 text-left consent-label-fix  consent-lr
+              col: 12
+              element: consent.compliance2.info
+        - cols:
+            - css: Subtitle2 text-left consent-label-fix consent-info-mb consent-lr
+              col: 12
+              element: consent.compliance3.info
+        - cols:
+            - css:
+              col: 12
+              element: consents.cards
+        # - cols:
+            # - css: text-left consent-grey-background h5 no-margin-bottom
+            #   col: 12
+            #   element: consent.details.info.header
+        - cols:
+            - col: 12
+              element: consent.details.info.par1
+        # - cols:
+        #     - css: text-left consent-grey-background
+        #       col: 12
+        #       element: consent.details.info.par2
+    - component: ConsentFooterComponent
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: consent.popupdialog
+          conditionValue: false
+          conditionViewMode: default
+          elseViewMode: hidden   
+      rows:
+        - cols:
+            - css: consents-btn-left
+              col:
+              element: consent.details.left.button
+            - css: consents-btn-right
+              col:
+              element: consent.details.right.button               
+    - component: SimpleGridViewComponent
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: consent.popupdialog
+          conditionValue: true
+          conditionViewMode: output
+          elseViewMode: hidden    
+      rows:
+        - cols:
+            - css: consent-text-center h6 consent-fail-msg
+              col: 12
+              element: consent.discard.msg
+            - cols:
+            - css: consent-text-center h6 mt-1 font-s
+              col: 12
+              element: consent.discard.msg2
+        - cols:
+            - css:
+              col: 6
+              element: consent.discard.okbtn
+            - css:
+              col: 6
+              element: consent.discard.cancelbtn 

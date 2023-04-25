@@ -1,0 +1,6 @@
+element:
+  type: text
+  viewMode: output
+  defaultValue: 'Λέοντος Σοφού 18 - 3ος όροφος, 54625'
+  pages:
+    communicationService: null

@@ -1,0 +1,62 @@
+<div class="modal-container">
+  <div class="close" aria-label="My icon" [inlineSVG]="closeImageSource" [onSVGLoaded]="handlecloseSVG"
+    (click)="onNoClick()">
+  </div>
+</div>
+
+<div class="basic-info-header">
+  <div class="sign-up-container">
+    <p class="h4">Προώθηση Προϊόντων ή Υπηρεσιών (Προωθητικές Ενέργειες) </p>
+  </div>
+</div>
+
+<div class="mobile-container">
+  <div class="row">
+    <div class="consent-label">
+      <mat-label class="Caption3 opacity">Ενημερώθηκα για την επεξεργασία προσωπικών μου δεδομένων με σκοπό την εμπορική προώθηση υπηρεσιών ή προϊόντων που προσφέρει η εταιρεία Eurolife FFH Insurance Group Α.Ε. Συμμετοχών και οι θυγατρικές της εταιρείες στην Ελλάδα και</mat-label>
+    </div>
+    <div class="line-style">
+      <input type="radio" class="radio-button-productOption" name="promo" id="no_promo" [value]="no_promo"
+        (change)="checkBoxHandle($event)">
+      <div class="text-radio-button-productOption">ΔΕΝ ΣΥΝΑΙΝΩ</div>
+      <input type="radio" class="radio-button-productOption" name="promo" id="yes_only_promo" [value]="yes_only_promo"
+        (change)="checkBoxHandle($event)">
+      <div class="text-radio-button-productOption">ΣΥΝΑΙΝΩ ΓΙΑ ΑΠΛΕΣ ΠΡΟΩΘΗΤΙΚΕΣ ΕΝΕΡΓΕΙΕΣ</div>
+      <input type="radio" class="radio-button-productOption" name="promo" id="yes_target_promo"
+        [value]="yes_target_promo" (change)="checkBoxHandle($event)">
+      <div class="text-radio-button-productOption">ΣΥΝΑΙΝΩ ΓΙΑ ΑΠΛΕΣ & ΣΤΟΧΕΥΜΕΝΕΣ ΠΡΟΩΘΗΤΙΚΕΣ ΕΝΕΡΓΕΙΕΣ</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="consent-label">
+      <mat-label class="Caption3 opacity">Ενημερώθηκα για την επεξεργασία προσωπικών μου δεδομένων με σκοπό την εμπορική προώθηση υπηρεσιών ή προϊόντων που προσφέρουν τρίτοι συνεργαζόμενοι με τις ως άνω εταιρείες (όπως χρηματοοικονομικοί οργανισμοί, τηλεπικοινωνιακοί πάροχοι, εταιρείες παροχής ρεύματος) και</mat-label>
+    </div>
+    <div class="line-style">
+      <input type="radio" class="radio-button-productOption" name="accepted" id="yes" [value]="yes"
+        (change)="checkBoxHandle($event)">
+      <div class="text-radio-button-productOption">ΣΥΝΑΙΝΩ</div>
+      <input type="radio" class="radio-button-productOption" name="accepted" id="no" [value]="no"
+        (change)="checkBoxHandle($event)">
+      <div class="text-radio-button-productOption">ΔΕΝ ΣΥΝΑΙΝΩ</div>     
+    </div>
+  </div>
+  <div class="row">
+    <div class="consent-label">
+      <mat-label class="Caption3 opacity"> Η συγκατάθεση αφορά όλα τα μέσα επικοινωνίας που έχω παράσχει στην ασφαλιστική εταιρεία και εφόσον παρασχεθεί μπορεί να  ανακληθεί οποτεδήποτε. Η ανάκληση θα ισχύει για το μέλλον.</mat-label>
+    </div>
+  </div>
+  <div class="create-account-button-container">
+    <button class="eurolife_btn eurolife_btn-default" (click)="onSubmit()"
+      [disabled]="!promoConsent || !thirdPartyConsent|| showSpinnerBtn">
+      <div *ngIf="!showSpinnerBtn">
+        OK
+      </div>
+      <div *ngIf="showSpinnerBtn" class="button-icon">
+        <i class="fa fa-spinner fa-spin fa-lg"></i>
+        <!-- H διαδικασία διαρκεί έως 1 λεπτό -->
+      </div>
+    </button>
+  </div>
+  <div *ngIf="errMsgService !== '' " class="error-msg-create">{{errMsgService}}</div>
+</div>

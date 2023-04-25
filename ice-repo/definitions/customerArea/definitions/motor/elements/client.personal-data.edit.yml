@@ -1,0 +1,4 @@
+element:
+  type: text
+  title: make fields editable
+  defaultValue: nein

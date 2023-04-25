@@ -1,0 +1,10 @@
+action:
+  execution:
+    - EnableSpinnerRule: 
+        actionrule: action-amendments-create-life-case
+    - AmendmentsCreateLifeCaseRule:
+        getAmendmentsUrl: AMENDMENTSLIFEURL
+        method: post
+        bucket: AmendmentsCreateLifeCase
+    - DisableSpinnerRule: 
+        actionrule: action-amendments-create-life-case

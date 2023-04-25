@@ -1,0 +1,9 @@
+element:
+  type: text
+  label: Οδηγος 2
+  viewMode: required
+  buckets:
+    GreenCardData:
+      transformation: {}
+  pages:
+    greenCard: null

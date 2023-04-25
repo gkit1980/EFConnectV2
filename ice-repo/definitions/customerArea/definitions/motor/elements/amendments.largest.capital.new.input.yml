@@ -1,0 +1,13 @@
+element:
+  type: integer
+  viewMode: enable
+  component:
+    StaticComponentRule:
+      component:
+        AmendmentinputfieldComponent:
+          elementName: amendmentsNewLargestCapital
+  buckets:
+    AmendmentsCreateCase:
+      transformation: {}
+  pages:
+    viewAmendmentDetails: null

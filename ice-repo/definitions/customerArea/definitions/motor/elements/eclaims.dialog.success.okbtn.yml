@@ -1,0 +1,10 @@
+element:
+  component: EurolifeButtonComponent
+  additionalClasses: eurolife_btn-default amendmets-dialog-fail-btn
+  svgFillColor: corporate_color
+  type: text
+  label: "ΟΚ"
+  defaultValue: action-eclaims-close-dialog
+  redirectUrl: "/#/ice/default/customerArea.motor/viewClaims?section=group"
+  pages:
+    viewEclaimsDetails: null

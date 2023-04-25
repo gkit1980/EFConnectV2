@@ -1,0 +1,63 @@
+<div *ngIf="show">
+
+  <div *ngFor="let item of insured; let i = index">
+    <div class="row light-background">
+      <div class="col-sm-12">
+        <div class="container">
+          <div class="w-100">
+            <div class="col-sm-12">
+              <div class="row">
+                <div [ngClass]="getSectionBreaksClass()">
+                  <div class="row-header">{{ Insured | resourcePipe }}</div>
+                </div>
+              </div>
+              <ng-template #multipleParticipants>
+                <div style="padding-top:60px;">
+                </div>
+              </ng-template>
+              <div class="row" *ngIf="item.FirstName">
+                <div class="col-sm-3">
+                  <label class="label">{{ FirstName2 | resourcePipe }}</label>
+                </div>
+                <div class="col sm-9">
+                  <span class="value">{{item.FirstName}}</span>
+                </div>
+                <hr>
+              </div>
+              <div class="row" *ngIf="item.LastName">
+                <div class="col-sm-3">
+                  <label class="label">{{ LastName | resourcePipe }}</label>
+                </div>
+                <div class="col sm-9">
+                  <span class="value">{{item.LastName}}</span>
+                </div>
+                <hr>
+              </div>
+              <div class="row" *ngIf="item.FatherName">
+                <div class="col-sm-3">
+                  <label class="label">{{ FatherName | resourcePipe }}</label>
+                </div>
+                <div class="col sm-9">
+                  <span class="value">{{item.FatherName}}</span>
+                </div>
+                <hr>
+              </div>
+              <div class="row" *ngIf="item.BirthDate">
+                <div class="col-sm-3">
+                  <label class="label">{{ BirthDate | resourcePipe }}</label>
+                </div>
+                <div class="col sm-9">
+                  <span class="value">{{formatDate(item.BirthDate) | date: 'dd/MM/yyyy'}}</span>
+                </div>
+                <hr>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+</div>

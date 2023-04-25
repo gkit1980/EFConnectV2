@@ -1,0 +1,12 @@
+element:
+  type: text
+  component: IceDropdown
+  ConditionalViewModeRule: 
+      conditionElement: payment.branch
+      conditionValue: "ΑΥΤΟΚΙΝΗΤΩΝ"
+      conditionViewMode: output
+      elseViewMode: hidden
+  defaultValue: 1
+  values: installment-types
+  pages:
+    paymentManagement: null

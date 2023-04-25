@@ -1,0 +1,12 @@
+element:
+  type: text
+  defaultValue: 0
+  buckets:
+    GetBookletsExist:
+      transformation:
+        paramName: RenewalNumber
+    GetBookletsPDF:
+      transformation:
+        paramName: RenewalNumber
+  pages:
+    policyDetails: null

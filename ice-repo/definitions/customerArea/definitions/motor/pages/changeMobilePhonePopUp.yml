@@ -1,0 +1,45 @@
+page:
+  component: PopUpPage
+  showTopSection: false
+  validation:
+    onElementComponentChange: true
+    behaviour: page
+  sections:
+    - component: SimpleGridViewComponent
+      rows:
+        - cols:
+            - css: header-title-pop-up text-center
+              col: 12
+              element: customer.details.headerCngMobilePhone
+        - cols:
+            - css: text-center
+              col: 12
+              element: customer.details.standarMsgMobilePhone
+        - cols:
+            - css: text-center
+              col: 12
+              element: customer.details.finalMsgMobilePhone
+        # - cols:
+        #   - col: 12
+        #     element: customer.details.mphone
+        - cols:
+            - col: 12
+              element: customer.details.MobilePhoneI
+        # - cols:
+        #     - css: errorClass
+        #       col: 12
+        #       element: customer.details.afterMobilePhoneNonVerification
+        - cols:
+            - css: errorClass
+              col: 12
+              element: customer.details.outputMobileErrors
+        - cols:
+            - css: 
+              col: 12
+              element: customer.details.mobilePhoneButton
+        - cols:
+            - col: 12
+              element: customer.details.afterMobilePhoneVerification
+        - cols:
+            - col: 12
+              element: customer.details.insertCodeTimer

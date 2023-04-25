@@ -1,0 +1,27 @@
+action:
+  title: calls a rest service to get the agent info
+  execution:
+    - WriteFromOtherSourcesToDatastoreExecutionRule:
+        baseUrl: BASEURL
+        verb: post
+        url: GetCustomerContracts
+        bucket: WriteFromOther
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: true
+    - GetAgentInfoRule:
+        baseUrl: BASEURL
+        # baseUrl: https://lifeuatna.eurolife.gr/CustomerDataProvider/api/CustomerData
+        url: GetAgentInfo
+        verb: post
+        bucket: GetAgentInfo
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: true
+  # condition:
+  #   FeelConditionRule:
+  #     expression: token != null
+  trigger:
+    - PageTriggerRule:
+        enter:
+          - communicationService

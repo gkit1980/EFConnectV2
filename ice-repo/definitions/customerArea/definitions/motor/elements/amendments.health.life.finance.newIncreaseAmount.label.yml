@@ -1,0 +1,4 @@
+element:
+  type: text
+  label: "Νέο Ποσό Δόσης (Αύξηση)"
+  viewMode: output

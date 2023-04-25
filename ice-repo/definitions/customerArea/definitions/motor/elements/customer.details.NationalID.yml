@@ -1,0 +1,12 @@
+element:
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent
+  type: text
+  viewMode: output
+  buckets:
+    GetCustomerFullData:
+      transformation:
+        responsePath: Customer.NationalID
+  pages:
+   customerProfile: null

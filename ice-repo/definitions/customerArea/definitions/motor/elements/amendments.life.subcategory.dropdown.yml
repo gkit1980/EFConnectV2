@@ -1,0 +1,13 @@
+element:
+  title: Selected life subcategory
+  type: text
+  component: IceDropdown
+  buckets:
+    AmendmentsCreateLifeCase:
+      transformation: {}
+  values:
+    DtValuesRule:
+      dt: dt_amendments_dropdown_life_subcategory
+      list: label
+  viewMode: enable
+  label: Υποκατηγορία

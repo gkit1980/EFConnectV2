@@ -1,0 +1,32 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - label: clicktocall.go-to-calendar
+      element: clicktocall.go-to-calendar
+    - label: clicktocall.go-to-time-picker
+      element: clicktocall.go-to-time-picker
+  outputs:
+    - label: viewMode
+      id: viewMode
+      type: string
+  rules:
+    - inputs:
+        - null
+        - null
+      outputs:
+        - default
+    - inputs:
+        - not(true)
+        - not(true)
+      outputs:
+        - default
+    - inputs:
+        - true
+        - '-'
+      outputs:
+        - hidden
+    - inputs:
+        - '-'
+        - true
+      outputs:
+        - hidden

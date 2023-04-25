@@ -1,0 +1,10 @@
+element:
+  type: decimal
+  viewMode: output  
+  buckets:
+    GetContractBeneficiaries:
+      transformation:
+        property: Percentage
+    GetContractBeneficiariesForAmendments:
+      transformation:
+        property: Percentage    

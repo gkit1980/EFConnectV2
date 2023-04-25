@@ -1,0 +1,43 @@
+page:
+  component: SimplePageComponent
+  sections:
+    - component: PaymentManagementStatusBarComponent
+      rows:
+        - cols:               
+            - col: 12
+              element: payment.success.amount
+    - component: HeaderComponent
+      rows:
+        - css: whiteBackground
+          cols:
+            - col: 2
+              element: productSvgImage
+            - col: 6
+              internalRows:
+                - css: null
+                  internalCols:
+                    - internalCol: 12
+                      css: test
+                      element: policies.details.ProductName
+                    - internalCol: 12
+                      element: policies.details.PolicyNumberHeader
+    - component: PaymentManagementSuccessComponent
+      rows:
+        - cols:               
+            - col: 12
+              element: payment.success.header
+        - cols:               
+            - col: 12
+              element: payment.success.amount
+        - cols:               
+            - col: 12
+              element: payment.success.duration
+        - cols:               
+            - col: 12
+              element: payment.success.date
+        - cols:               
+            - col: 12
+              element: payment.success.code
+        - cols:               
+            - col: 12
+              element: payment.success.from

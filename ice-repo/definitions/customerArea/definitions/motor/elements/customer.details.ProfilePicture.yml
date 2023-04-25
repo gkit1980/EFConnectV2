@@ -1,0 +1,6 @@
+element:
+  type: text
+  component: MotorProfilePicture
+  pages:
+    customerProfile: null
+  viewMode: output

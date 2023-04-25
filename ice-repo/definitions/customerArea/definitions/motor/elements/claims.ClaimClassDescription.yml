@@ -1,0 +1,15 @@
+element:
+  type: text
+  viewMode: output
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent  
+  buckets:
+    GetCoolgenClaimDetails:
+      transformation:
+        responsePath: ClaimCoolgen.ClaimClassDescription
+    GetLifeClaimDetails:
+      transformation:
+        responsePath: ClaimLife.ClaimsStatusDescription
+  pages:
+    viewClaimDetails: null

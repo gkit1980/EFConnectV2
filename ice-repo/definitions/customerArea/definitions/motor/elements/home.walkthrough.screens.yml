@@ -1,0 +1,11 @@
+element:
+  # type: array
+  # component: IceArray
+  # label: null
+  # array:
+  #   StaticArrayRule:
+  #     default: 5
+  #     min: 5
+  #     max: 5
+  type: integer
+  defaultValue: 5

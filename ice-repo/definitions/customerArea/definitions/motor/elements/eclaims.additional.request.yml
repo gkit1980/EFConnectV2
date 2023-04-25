@@ -1,0 +1,5 @@
+element:
+  type: integer
+  defaultValue: 0
+  pages:
+    viewEclaimsDetails: null

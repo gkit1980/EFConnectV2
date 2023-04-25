@@ -1,0 +1,11 @@
+element:
+  type: text
+  label: Τ.Κ
+  component: IceTextInput
+  viewMode: disabled
+  buckets:
+    GreenCardData:
+      transformation:
+        dataPath: greencard.refNum
+  pages:
+    greenCard: null

@@ -1,0 +1,13 @@
+action:
+  title: Eclaims initialize requests
+  execution:
+    - GetSalesforceTokenRule:
+        fromProcess: eclaims
+        salesforceLoginUrl: BASEURLSALESFORCELOGIN
+        methodLogin: post
+        getAmendmentsUrl: AMENDMENTSURL
+        methodGetAmendments: get
+        bucket: EclaimsSfLogin
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false

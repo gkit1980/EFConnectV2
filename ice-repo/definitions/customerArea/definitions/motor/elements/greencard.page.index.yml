@@ -1,0 +1,10 @@
+element:
+  type: integer
+  viewMode: output
+  defaultValue: 0
+  label: null
+  buckets:
+    GreenCardData:
+      transformation: {}
+  pages:
+    greenCard: null

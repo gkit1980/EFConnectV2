@@ -1,0 +1,5 @@
+element:
+  component: GreenCardDynamicComponent
+  type: text    
+  pages:
+    greenCard: null

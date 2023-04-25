@@ -1,0 +1,9 @@
+element:
+  type: text
+  viewMode: output  
+  buckets:
+    GetLifeClaimDetails:
+      transformation:
+        responsePath: ClaimLife.ClaimPaymentAmount
+  pages:
+    viewClaimDetails: null

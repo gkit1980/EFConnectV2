@@ -1,0 +1,18 @@
+action:
+  execution:
+    - EnableSpinnerRule: 
+        actionrule: action-commit-customer-consents
+    - SubmitMarketConsentsRule:
+        getCustomerConsentsUrl: CUSTOMERCONSENTSURL
+        method: post
+        bucket: SubmitCustomerConsents
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDatastore: false
+    - DisableSpinnerRule: 
+        actionrule: action-commit-customer-consents       
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - preferences.privacy.brokers.products
+          - preferences.privacy.group.products

@@ -1,0 +1,14 @@
+<div class="eurolife-output-color" *ngIf="isOutput">
+  <div class="row">
+    <div class="col-sm-3" *ngIf="label">
+      <label class="label" [ngClass]="labelClass">{{ label }}</label>
+      <!-- <label class="label">{{ label }}</label> -->
+    </div>
+    <div class="col sm-9">
+      <span class="value" [ngClass]="valueClass">{{ values }}</span>
+      <!-- <span class="value">{{ values }}</span> -->
+    </div>
+
+  </div>
+
+</div>

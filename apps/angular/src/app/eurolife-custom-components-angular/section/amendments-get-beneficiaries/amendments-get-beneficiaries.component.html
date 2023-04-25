@@ -1,0 +1,67 @@
+<div class="main-container">
+  <div *ngIf="showBenef">
+    <div class="container">
+      <div class="padding-label">
+        <div class="center">
+          <div class="header h5">Δικαιούχοι</div>
+        </div>
+      </div>
+      <div class="header-row row">
+        <div class="col" *ngFor="let header of headers">
+          {{ header }}
+        </div>
+      </div>
+      <div class="data-row row" *ngFor="let row of data">
+        <div class="col cover-key">
+          {{ row.BenefName }}
+        </div>
+        <div class="col row-rest-data">
+          {{ row.Relationship }}
+        </div>
+        <div class="col row-rest-data">{{ row.Percentage }} %</div>
+      </div>
+    </div>
+    <div class="icon-output-container">
+      <div class="icon" aria-label="icon" [inlineSVG]="getIcon('01D8EA7C762A44E0A8FF3E4FFF8D1C72')"
+        [onSVGLoaded]="handleSVG"></div>
+        <div *ngIf="showChangeBeneficiariesText" class="text Caption3">Έχετε ήδη ορίσει Δικαιούχους. Eπιλέγοντας "Προσθήκη Δικαιούχου" θα διαγραφούν οι υπάρχουσες εγγραφές και θα αντικατασταθούν από την νέα σας Τροποποίηση.</div> <!--Change beneficiaries text -->
+        <div *ngIf="showAddBeneficiariesText" class="text Caption3">Έχετε ήδη ορίσει Δικαιούχους. Eπιλέγοντας "Προσθήκη Δικαιούχου" θα πρέπει να δηλώσετε ξανά τους υπάρχοντες δικαιούχους και να ορίσετε το νέο ποσοστό που επιθυμείτε να λάβουν.</div> <!--Add beneficiaries text -->
+    </div>
+  </div>
+</div>
+
+<div class="mobile-container" *ngIf="showBenef">
+  <div class="padding-label">
+    <div class="center">
+      <div class="header h5">Δικαιούχοι</div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="mobile-box" *ngFor="let row of data">
+      <div class="mobile-label">
+        {{ headersParticipants[0] }}
+      </div>
+      <div class="mobile-value">
+        {{ row.BenefName }}
+      </div>
+      <div class="line-seperator"></div>
+      <div class="mobile-label">
+        {{ headersParticipants[1] }}
+      </div>
+      <div class="mobile-value">
+        {{ row.Relationship }}
+      </div>
+      <div class="line-seperator"></div>
+      <div class="mobile-label">
+        {{ headersParticipants[2] }}
+      </div>
+      <div class="mobile-value">{{ row.Percentage }} %</div>
+    </div>
+  </div>
+  <div class="icon-output-container">
+    <div class="icon" aria-label="icon" [inlineSVG]="getIcon('01D8EA7C762A44E0A8FF3E4FFF8D1C72')"
+      [onSVGLoaded]="handleSVG"></div>
+     <div *ngIf="showChangeBeneficiariesText" class="text Caption3">Έχετε ήδη ορίσει Δικαιούχους. Eπιλέγοντας "Προσθήκη Δικαιούχου" θα διαγραφούν οι υπάρχουσες εγγραφές και θα αντικατασταθούν από την νέα σας Τροποποίηση.</div> <!--Change beneficiaries text -->
+     <div *ngIf="showAddBeneficiariesText" class="text Caption3">Έχετε ήδη ορίσει Δικαιούχους. Eπιλέγοντας "Προσθήκη Δικαιούχου" θα πρέπει να δηλώσετε ξανά τους υπάρχοντες δικαιούχους και να ορίσετε το νέο ποσοστό που επιθυμείτε να λάβουν.</div> <!--Add beneficiaries text -->
+  </div>
+</div>

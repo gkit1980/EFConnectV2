@@ -1,0 +1,5 @@
+definition:
+  title: Policies
+  labelKey: definitions.policies
+  executable: true
+  showInsights: false

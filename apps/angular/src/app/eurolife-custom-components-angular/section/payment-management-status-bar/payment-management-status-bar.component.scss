@@ -1,0 +1,27 @@
+.status-bar-container{
+    height: 64px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #cc046c;
+    .success{
+        background-color: #2bea9b;
+    }
+    .fail{
+
+        background-color: #cc046c;
+    }
+
+    .notification-bar-svg-info{
+        background-color: #cc046c;
+        margin: 0 24px 0 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .status-bar-content{
+        color: #fff;
+    }
+}

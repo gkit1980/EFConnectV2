@@ -1,0 +1,161 @@
+.example-card {
+    max-width: 800px;
+    height: 340px;
+    cursor: pointer;
+  }
+
+  .card {
+    background-color: none;
+  }
+  
+  .card-header {
+    // background-color: black;
+    width: 18%;
+    padding-left: 10px;
+    text-align: center;
+  }
+
+  .sub-header{
+    display: flex;
+    flex-direction: row;
+    @media screen and (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+    }
+    &:first-child{
+      @media screen and (max-width: 768px) {
+        margin-top: -13px;
+      }
+      margin-top: 45px;
+    }
+  }
+  
+  .card-text {
+    color: white;
+    font-size: 15px;
+  }
+  
+  h4 {
+    color: black;
+    // background-color: white;
+  }
+  
+  .card {
+    cursor: pointer;
+    border: none;
+    // width: 358px;
+  }
+  
+  // .card-subtitle {
+  //   padding: 20px 0 20px 0;
+
+  // }
+.inside-card {
+  display: flex;
+  background-color: #91cca3; 
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.my-icon {
+  display: flex;
+  align-items: center;
+    justify-content: center;
+  height: 73px;
+  width: 73px;
+  border-radius: 50%;
+  background-color: #ffffff33;
+}
+
+.ice-output {
+  label {
+      // height: 19px;
+  font-family: Ubuntu;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.36;
+  letter-spacing: normal;
+  color: #ffffff;
+
+  }
+  span {
+      // height: 27px;
+  font-family: Ubuntu;
+  font-size: 22px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.23;
+  letter-spacing: normal;
+  color: #ffffff;
+  }
+}
+
+
+.my-icon {
+  svg {
+    path {
+      fill: #91cca3 !important;
+    }
+  }
+}
+
+.imageClass {
+  fill: #91cca3 !important;
+}
+
+.sub-header-container{
+  display: flex;
+  min-width: 200px;
+  width: 100%;
+  height: 124px;
+  @media screen and (max-width: 768px){
+    width: 100%;
+  }
+}
+
+.col-container{
+  width: 100%;
+  &:nth-child(1){
+    margin-right: 13px;
+    margin-top: 13px;
+  }
+  &:nth-child(2){
+    margin-top: 13px;
+    margin-right: 13px;
+  }
+  &:nth-child(3){
+    margin-top: 13px;
+  }
+  @media screen and (max-width: 768px){
+    &:nth-child(1){
+      margin-right: 0;
+      margin-top: 13px;
+    }
+    &:nth-child(2){
+      margin-top: 13px;
+      margin-right: 0;
+    }
+    &:nth-child(3){
+      margin-top: 13px;
+    }
+  }
+}
+
+.element-info-container{
+  width: 100%;
+}
+
+:host ::ng-deep [data-element="policies.details.first.header-tile"] {
+  @media screen and (max-width: 768px){
+    .eurolife-header-tile{
+       padding-right: 20px !important;
+    }
+    
+  }
+
+}

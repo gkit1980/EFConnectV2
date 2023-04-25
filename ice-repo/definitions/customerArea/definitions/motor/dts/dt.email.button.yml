@@ -1,0 +1,32 @@
+dt:
+  output-label: viewMode
+  hit-policy: F
+  inputs:
+    - label: input elememnt for email regexp verification
+      element: customer.details.verifyEmailBoolean
+    - label: input elememnt for email service verification
+      element: customer.details.changeEmailSuccess
+  outputs:
+    - id: viewmode
+      type: ""
+  rules:
+    - inputs:
+        - not(true)
+        - not(true)
+      outputs:
+        - disabled #kanonika disabled apla thelw na kanw test
+    - inputs:
+        - not(false)
+        - not(true)
+      outputs:
+        - default
+    - inputs:
+        - not(false)
+        - not(false)
+      outputs:
+        - default
+    - inputs:
+        - not(true)
+        - not(false)
+      outputs:
+        - hidden

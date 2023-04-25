@@ -1,0 +1,46 @@
+page:
+  component: DemoPage
+  label: null
+  sections:
+    - component: GridView
+      rows:
+        - css: null
+          cols:
+            - col: 2
+              element: payment.icon
+            - col: 6
+              element: payment.message
+    - component: PaymentManagementComponent
+      rows:
+        - cols:
+            - col: 12
+              element: payment.branch
+        - cols:
+            - col: 6
+              element: payment.productDescription
+            - col: 6
+              element: payment.contractKey
+        - motorCols:
+            - col: 12
+              element: payment.licencePlate
+        - cols:
+            - col: 12
+              element: payment.paymentCode
+        - cols:
+            - col: 12
+              element: payment.currentPayment
+    - component: PaymentdetailsComponent
+      rows:
+        # - css: null
+        #   cols:
+        #     - col: 12
+        #       element: payment.details.dateTime
+        - css: null
+          cols:
+            - col: 12
+              element: payment.details.paymentFrom
+      footer:
+        - css: null
+          cols:
+            - col: 12
+              element: payment.details.back

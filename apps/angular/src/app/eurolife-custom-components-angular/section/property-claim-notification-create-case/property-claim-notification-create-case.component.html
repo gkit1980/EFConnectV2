@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="main-container">
+    <ng-container *ngIf="getPropertyContentLoaded(); else loadDataTempl1">
+      <div *ngFor="let row of contentPropertyData">
+        <div class="amendments-card">
+          <!--filteredData  SOS!!!-->
+          <div class="product-container">
+            <div class="product-icon" aria-label="icon"
+              [inlineSVG]="( 'D2F9D495BF194ED0BC3F23078CA4B07E' | pipeFunction: getIcon: this )"
+              [onSVGLoaded]="handleSVGProduct" *ngIf="row.Branch == 'ΠΕΡΙΟΥΣΙΑΣ'">
+            </div>
+            <div class="description-container">
+              <div class="h5 product-description product-distance" [ngClass]="{house_text: row.Branch === 'ΠΕΡΙΟΥΣΙΑΣ'}">
+                {{ row.ProductDescritpion }}
+              </div>
+              <!-- </ng-template> -->
+              <div class="contract-num">Αριθμός Συμβολαίου {{ row.ContractKey }}</div>
+            </div>
+            <div class="description-container address-section">            
+              <div class="contract-num">Διεύθυνση Κινδύνου</div> 
+              <div class="bold-address">{{ row.ContractPropertyCoolgenDetails.PropertyStreet }}, {{row.ContractPropertyCoolgenDetails.PropertyZipCode
+              }}, {{ row.ContractPropertyCoolgenDetails.PropertyCity }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <div class="row">
+      <div class="col-md-6" no-padding>
+        <div class="header h5">{{this.recipe.accidentHeader}}</div>
+        <div class="header Caption3">{{ this.recipe.accidentDateHeader }}</div>
+      </div>
+      <div class="col-md-6" no-padding>
+        <div class="header h5">{{this.recipe.communicationDetails}}</div>
+        <div class="header Caption3">{{ this.recipe.communicationDetailsSubheader }}</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 no-padding">
+        <div *ngFor="let row of recipe.rows" class="row" [ngClass]="getSectionClass(row)">
+          <div class="column" *ngFor="let col of row.cols" [ngClass]="getGridColumnClass(col)">
+            <ng-container *ngIf="col.internalRows">
+              <div class="row" *ngFor="let internalRow of col.internalRows">
+                <div class="column" *ngFor="let internalCol of internalRow.internalCols;" [ngClass]="getGridInternalColumnClass(internalCol)">
+                  <ice-element *ngIf="internalCol.element" [section]="section" [elementName]="internalCol.element"
+                    [component]="internalCol.component" [index]="internalCol.index" [ngClass]="internalCol.css"></ice-element>
+                </div>
+              </div>
+            </ng-container>
+            <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element" [component]="col.component">
+            </ice-element>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loadDataTempl1>
+  <div class="ice-simple-table">
+    <ngx-skeleton-loader count="1"
+      [theme]="{ 'background-color': '#dadada', width: '70%', height: '25px', 'border-radius': '10px' }">
+    </ngx-skeleton-loader>
+
+    <ngx-skeleton-loader count="2"
+      [theme]="{ 'background-color': '#dadada', width: '100%', height: '25px', 'border-radius': '10px' }">
+    </ngx-skeleton-loader>
+  </div>
+</ng-template>
+
+    

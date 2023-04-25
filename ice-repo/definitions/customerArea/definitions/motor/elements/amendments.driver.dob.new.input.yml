@@ -1,0 +1,13 @@
+element:
+  type: text
+  viewMode: default
+  component:
+    StaticComponentRule:
+      component:
+        AmendmentinputfieldComponent:
+          elementName: amendmentsNewDriverDOB
+  buckets:
+    AmendmentsCreateCase:
+      transformation: {}
+  pages:
+    viewAmendmentDetails: null

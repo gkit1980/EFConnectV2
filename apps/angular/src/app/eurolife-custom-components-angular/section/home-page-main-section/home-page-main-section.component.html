@@ -1,0 +1,9 @@
+<h5>Quick Links</h5>
+<div class="home-page-main-section">
+  <div *ngFor="let row of recipe.rows" class="row" [ngClass]="row.css">
+    <div class="column" *ngFor="let col of row.cols" [ngClass]="getGridColumnClass(col)">
+      <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element" [component]="col.component">
+      </ice-element>
+    </div>
+  </div>
+</div>

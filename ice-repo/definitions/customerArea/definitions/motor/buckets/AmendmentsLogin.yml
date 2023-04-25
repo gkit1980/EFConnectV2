@@ -1,0 +1,5 @@
+bucket:
+  transformation:
+    AmendmentTokenTransformationRule: null
+      # dataStoreProperty: amendmentsInprogress
+      # responseToDatastore: true

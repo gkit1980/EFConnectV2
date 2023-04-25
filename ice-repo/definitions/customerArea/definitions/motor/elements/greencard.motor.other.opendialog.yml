@@ -1,0 +1,8 @@
+element:
+  type: boolean
+  viewmode: output
+  defaultValue:  
+    StaticValueRule:
+      value: false
+  pages:
+    greenCard: null

@@ -1,0 +1,38 @@
+.otp {
+    border: none;
+    height: 30px;
+    border-bottom: 1px solid #383b38;
+    margin: 0 1.35625rem 0 0;
+    display: inline-block;
+    text-align: center;
+    padding: 0 1.35625px;
+    width: 45.2px;
+    &:nth-child(6){
+        margin: 0;
+    }
+}
+
+.otp_div {
+    display: flex;
+    margin-bottom: 24px;
+    @media (max-width: 575.98px) {
+        justify-content: center;
+    }
+}
+
+.otp-box{
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    margin-bottom: 24px;
+    display: flex;
+    letter-spacing: 12px;
+    text-align: center;
+    padding-left: 15px;
+    @media (max-width: 575.98px) {
+        justify-content: center;
+    }
+}
+
+

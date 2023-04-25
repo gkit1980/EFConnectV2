@@ -1,0 +1,15 @@
+element:
+  type: text
+  label: null
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: customer.details.changeEmailSuccess
+      conditionValue: false
+      conditionViewMode: output
+      elseViewMode: hidden
+  mirror:
+    DtMirrorRule:
+      dt: dt_email_firstStep_emailErrors
+  # viewMode:
+  #   DtViewModeRule:
+  #     dt: dt_mobile_errors

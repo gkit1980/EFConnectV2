@@ -1,0 +1,16 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: signupwithsms.status
+  outputs:
+    - id: viewmode
+      type: ''
+  rules:
+    - inputs:
+        - true
+      outputs:
+        - output
+    - inputs:
+        - false
+      outputs:
+        - hidden

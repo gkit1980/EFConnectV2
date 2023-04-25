@@ -1,0 +1,27 @@
+<div class="ice-one-page">
+	<div class="row visual-wrapper">
+		<div class="col-sm-12">
+			<div class="visual">
+				<h1> </h1>
+			</div>
+		</div>
+	</div>
+
+	<h4>
+		{{ page.labelRule?.getPageTitle() }}
+	</h4>
+
+	<hr>
+
+	<page-validation [page]="page"></page-validation>
+
+	<ice-section *ngFor="let section of page.sections" [section]="section">
+	</ice-section>
+
+	<div *ngIf="showInsights">
+		<hr>
+		<ice-page-insight [page]="page"></ice-page-insight>
+	</div>
+	<ice-confirmation-dialog [page]="page"></ice-confirmation-dialog>
+	<!-- <ice-message [page]="page"></ice-message> -->
+</div>

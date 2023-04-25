@@ -1,0 +1,61 @@
+element:
+  type: text
+  viewMode: output
+  change:
+    - ResetElementValueExecutionRule:
+        elements:
+          - policy.selectedBranch
+          - policy.contract.general.info.ContractID
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent
+  buckets:
+    GetContractMotorDetails:
+      transformation:
+        responsePath: ContractMotorDetails.ContractKey
+    GetContractIndividualDetails:
+      transformation:
+        responsePath: ContractIndividualDetails.ContractKey
+    GetContractPropertyCoolgenDetails:
+      transformation:
+        responsePath: ContractPropertyCoolgenDetails.ContractKey
+    GetContractMortgageDetails:
+      transformation:
+        responsePath: ContractMortgageDetails.ContractKey
+    GetPensionContractDetails:
+      transformation:
+        responsePath: PensionContractDetails.ContractKey
+    GetHealthContractDetails:
+      transformation:
+        responsePath: HealthContractDetails.ContractKey
+    GetLifeHealthContractDetails:
+      transformation:
+        responsePath: LifeHealthContractDetails.ContractKey
+    GetContractDeathDetails:
+      transformation:
+        responsePath: ContractDeathDetails.ContractKey
+    GetContractConsumerDetails:
+      transformation:
+        responsePath: ContractConsumerDetails.ContractKey
+    GetContractAccidentDetails:
+      transformation:
+        responsePath: ContractAccidentDetails.ContractKey
+    GetContractCargoDetails:
+      transformation:
+        responsePath: ContractCargoDetails.ContractKey
+    GetContractCargoPrudDetails:
+      transformation:
+        responsePath: ContractCargoPrudDetails.ContractKey
+    GetContractDetailsPrudDetails:
+      transformation:
+        responsePath: ContractDetailsPrudDetails.ContractKey
+    GetContractFirePrudDetails:
+      transformation:
+        responsePath: ContractFirePrudDetails.ContractKey
+    GetContractGroupHealthDetails:
+      transformation:
+        responsePath: ContractGroupHealthDetails.ContractKey         
+  # mirror:
+  #   DtMirrorRule:
+  #     dt: dt_second_test
+  #     output: testing

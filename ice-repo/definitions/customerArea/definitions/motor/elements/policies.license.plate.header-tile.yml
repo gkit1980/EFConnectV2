@@ -1,0 +1,10 @@
+element:
+  type: text
+  pages:
+    policyDetails: null
+  component:
+    StaticComponentRule:
+      component:
+        EurolifeHeaderTileComponent:
+          headingClass: dt_product_text_color
+  label: Αριθμός Πινακίδας

@@ -1,30 +1,98 @@
-// Material
-@import '~@angular/material/theming';
+@import 'node_modules/@angular/material/theming';
+@import 'node_modules/@impeo/ng-ice/styles/ng-ice.mixin';
+//@import 'node_modules/@impeo/visual-ice/styles/visual-ice.mixin';
 
-// ICE
-@import '~@impeo/ng-ice/styles/ng-ice.mixin';
-@import '~@impeo/ng-ice/styles/variables';
 
-// All mixins
-@import '../application.mixins';
+//@import '../../../../node_modules/@impeo/ng-ice/styles/components/ice-page-navigation.mixin.scss';
+//@import '../../../../node_modules/@impeo/impeo-custom-components/styles/impeo-custom-components.mixin';
 
-// All mixins from ice-custom-components library
-@import '../../../../../libs/ice-custom-components/src/lib/styles/ice-custom-components.mixins';
+@import './ice-master-material-light.scss';
+@import './ice-master-material-custom.scss';
+@import '../Mixin/ice-registration-page-component.mixin.scss';
 
-@import '../material-overrides.mixin';
-@import '../ice-overrides.mixin';
+@import '../../app/eurolife-custom-components-angular/element/calendar/calendar.mixin.scss';
+@import '../../app/eurolife-custom-components-angular/element/output-with-action/output-with-action.mixin.scss';
+@import '../../app/eurolife-custom-components-angular/section/motor-custom-table/motor-custom-table.section.mixin.scss';
+@import '../../app/eurolife-custom-components-angular/element/time-picker/time-picker.mixin.scss';
 
-@import 'defualt/default-theme';
-@import 'defualt/dark-theme';
+@import '../../app/eurolife-custom-components-angular/element/avatar-element.component/avatar-element.component.scss';
+
+$show-required-label-suffix: true;
+$show-required-bottom-border: false;
 
 @include mat-core();
 
-@mixin all_mixins($theme) {
-  @include angular-material-theme($theme);
-  @include ng-ice-mixin($theme);
-  @include all-ice-custom-component-mixins($theme);
-  @include all-application-mixins($theme);
+//@include angular-material-theme($ice-master-light-app-theme);
+//@include ng-ice-mixin($ice-master-light-app-theme);
+//@include impeo-custom-components-mixin($ice-master-light-app-theme);
 
-  @include material-override-mixin($theme);
-  @include ice-override-mixin($theme);
+@include angular-material-theme($ice-master-light-app-theme);
+@include ng-ice-mixin($ice-master-light-app-theme);
+// @include visual-ice-mixin($ice-master-light-app-theme);
+@include ice-element-insight-mixin($ice-master-light-app-theme);
+@include ice-registration-page-component-mixin($ice-master-light-app-theme);
+
+@include ice-calendar-mixin();
+@include avatar-element-mixin();
+
+
+@include output-with-action-mixin();
+@include time-picker-mixin();
+@include motor-custom-table-section-mixin($ice-master-light-app-theme);
+
+$background: map-get($ice-master-light-app-theme, background);
+$primary: map-get($ice-master-light-app-theme, primary);
+
+
+html{
+    @media screen and (max-width: 768px) {
+        overflow-x: hidden;
+        max-width: 100vw;
+     }
+}
+
+body{
+    background-image: map-get($background, gradient);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+mat-card{
+    background-color: transparent !important;
+}
+
+.mat-raised-button {
+    color: mat-color($primary, 700);
+}
+
+.mat-button-toggle{
+    border: solid 1px;
+    min-width: 80px;
+}
+
+.mat-button-toggle-group .mat-button-toggle:first-child{
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.mat-button-toggle-group .mat-button-toggle:last-child{
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.mat-button-toggle-checked {
+    color: mat-color($primary, 700);
+    border-color: white;
+}
+
+.mat-button-toggle-group{
+    box-shadow: none !important;
+}
+
+.mat-button-toggle-button{
+    width: 100%;
+}
+
+.mat-button-toggle-disabled.mat-button-toggle-checked{
+    background: white;
 }

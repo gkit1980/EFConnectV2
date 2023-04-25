@@ -1,0 +1,6 @@
+element:
+  type: text
+  viewMode: output
+  defaultValue: 'Πανεπιστημίου 33-35 & Κοραή 10564'
+  pages:
+    communicationService: null

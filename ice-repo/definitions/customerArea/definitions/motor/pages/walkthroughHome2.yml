@@ -1,0 +1,20 @@
+page:
+  component: PopUpPage
+  flag: walkthrough home2
+  showTriangle: true
+  validation:
+    onElementComponentChange: true
+    behaviour: page
+  sections:
+    - component: SimpleGridViewComponent
+      rows:
+        - cols:
+            - css: header-title-pop-up-walkthrough text-center walkthrough-header-mb
+              col: 12
+              element: home.walkthrough.header2
+    - component: ContentWalkthroughComponent
+      text: "Στην περιοχή αυτή εμφανίζονται όλα τα ειδοποιητήρια οφειλής ασφαλίστρων που έχουν δημιουργηθεί τους τελευταίους 3 μήνες."
+      pageNum: 2
+      numberOfScreens: home.walkthrough.screens
+      next: ΕΠΟΜΕΝΟ
+      previous: ΠΡΟΗΓΟΥΜΕΝΟ

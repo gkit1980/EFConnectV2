@@ -1,0 +1,13 @@
+action:
+  title: calls a rest service to get the statements
+  execution:
+    - GetStatementsUrlRule:
+        baseUrl: BASEURLDOCS
+        bucket: GetStatements
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: true
+  # trigger:
+  #   - PageTriggerRule:
+  #       enter:
+  #         - myDocuments

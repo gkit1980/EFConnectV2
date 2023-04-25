@@ -1,0 +1,7 @@
+element:
+  type: boolean
+  component: PopupConsentComponent
+  dialogpage: consent
+  pages:
+    home: null
+  viewMode: output

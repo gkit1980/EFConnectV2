@@ -1,0 +1,13 @@
+<div class="avatar-element" *ngIf="isVisible">
+    <!-- <div class="outer-cicle">
+        <img class="avatar-img" [src]="value">
+    </div> -->
+    <div class="cicle">
+        <div *ngIf="(!isProfilePicture || label==='Eurolife') else showProfilePicture" class="outer_profile" [inlineSVG]="value" [onSVGLoaded]="handleSVG">
+        </div>
+        <ng-template #showProfilePicture>
+            <img class="image" [src]="value">
+          </ng-template>
+    </div>
+    <div class="avatar-name">{{label}}</div>
+</div>

@@ -1,0 +1,14 @@
+element:
+  type: integer
+  defaultValue: 0
+  buckets:
+    AmendmentsCreatePropertyCase:
+      transformation: {}
+    AmendmentsCreateFinanceCase:
+      transformation: {}
+    AmendmentsCreateHealthCase:
+      transformation: {}
+    AmendmentsCreateLifeCase:
+      transformation: {}
+  pages:
+    viewAmendments: null

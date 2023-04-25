@@ -1,0 +1,7 @@
+element:
+  type: text
+  component: MotorChangeEmail
+  dialogpage: changeEmailPopUp
+  pages:
+    customerProfile: null
+  viewMode: output

@@ -1,0 +1,19 @@
+action:
+  title: calls a rest service to download mondial pdf
+  execution:
+    - DownloadGuidePdfRule:
+        typeOfContract: healthmondial
+        bucket: GetPrintMondialPDF
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+    - OpenPdfExecutionRule:
+        element: statement.pdf.base64
+        mode: download
+        filename: document
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDatastore: true
+    - ResetElementValueExecutionRule:
+        elements:
+          - statement.pdf.base64

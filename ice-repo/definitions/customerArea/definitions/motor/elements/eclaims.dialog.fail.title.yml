@@ -1,0 +1,6 @@
+element:
+  type: text
+  viewMode: output
+  pages:
+    viewAmendmentDetails: null
+    viewAmendmentHomeDetails: null

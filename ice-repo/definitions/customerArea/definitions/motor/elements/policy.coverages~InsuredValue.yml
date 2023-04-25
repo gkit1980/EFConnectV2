@@ -1,0 +1,23 @@
+element:
+  type: text
+  viewmode: output
+  change:
+    - ResetElementValueExecutionRule:
+        elements:
+          - policy.selectedBranch
+          - policy.contract.general.info.ContractID
+  label: >-
+    Κεφάλαιο Κάλυψης
+  buckets:
+    GetMotorContractCover:
+      transformation:
+        property: MaterialDamageCapital
+    GetLifeContractCover:
+      transformation:
+        property: CapitalAmount
+    GetPropertyCoolgenContractCover:
+      transformation:
+        property: CapitalAmount
+    GetAccidentContractCover:
+      transformation:
+        property: NetPremium

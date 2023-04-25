@@ -1,0 +1,20 @@
+page:
+  component: PopUpPage
+  flag: walkthrough communication1
+  showTriangle: true
+  validation:
+    onElementComponentChange: true
+    behaviour: page
+  sections:
+    - component: SimpleGridViewComponent
+      rows:
+        - cols:
+            - css: header-title-pop-up-walkthrough text-center walkthrough-header-mb
+              col: 12
+              element: communication.walkthrough.header1
+    - component: ContentWalkthroughComponent
+      text: "Επιλέγοντας ‘Επικοινωνία’ στο μενού θα βρείτε όλους τους τρόπους με τους οποίους μπορείτε να έρθετε σε επαφή μαζί μας, ακόμη και να ζητήσετε να σας καλέσουμε ή να κάνετε live chat με έναν εκπρόσωπό μας. Επίσης, θα βρείτε τα στοιχεία επικοινωνίας του Ασφαλιστικού Διαμεσολαβητή ή των υπαλλήλων της εταιρείας που πραγματοποίησαν την πώληση για κάθε συμβόλαιό σας."
+      pageNum: 1
+      numberOfScreens: communication.walkthrough.screens
+      next: ΕΠΟΜΕΝΟ
+      previous:

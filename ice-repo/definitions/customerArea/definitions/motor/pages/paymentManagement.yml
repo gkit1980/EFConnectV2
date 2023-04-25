@@ -1,0 +1,38 @@
+page:
+  component: SimplePageComponent
+  sections:
+    - component: PaymentManagementComponent
+      dataStoreProperty: clientContracts
+      rows:
+        - cols:               
+            - col: 12
+              element: payment.branch
+        - cols:               
+            - col: 6
+              element: payment.productDescription
+            - col: 6
+              element: payment.contractKey
+        - motorCols:               
+            - col: 12
+              element: payment.licencePlate
+        - cols:               
+            - col: 12
+              element: payment.paymentCode    
+        - cols:               
+            - col: 12
+              element: payment.currentPayment   
+    # - component: GridView
+      motorSections:
+        - cols:               
+            - col: 12
+              element: payment.card.type
+        - cols:               
+            - col: 12
+              element: payment.installments.type
+    # - component: GridView
+    #   rows:
+    #     - cols:               
+    #         - col: 6
+    #           element: payment.redirect
+    #         - col: 6
+    #           element: payment.button

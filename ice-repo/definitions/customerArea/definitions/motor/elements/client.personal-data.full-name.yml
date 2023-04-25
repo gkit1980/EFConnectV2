@@ -1,0 +1,7 @@
+element:
+  title: full name of the policy holder
+  type: text
+  viewMode:
+    DtViewModeRule:
+      dt: dt.element.viewmode-from-dt
+      output: viewmode

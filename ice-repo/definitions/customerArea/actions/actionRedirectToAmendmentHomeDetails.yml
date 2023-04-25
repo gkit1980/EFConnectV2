@@ -1,0 +1,5 @@
+action:
+  execution: 
+      - NavigateToUrlExecutionRule:
+          url: '/ice/default/customerArea.motor/viewAmendmentHomeDetails'
+          definition: customerArea  

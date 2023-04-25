@@ -1,0 +1,106 @@
+dt:
+  hitPolicy: C
+  inputs:
+    - element: amendments.property.category.dropdown
+  outputs:
+    - id: value
+    - id: label
+    - id: label_en
+      type: text
+  rules:
+    - inputs:
+        - "1"
+      outputs:
+        - 1
+        - Κεφαλαίου Ασφαλισμένου Αντικειμένου
+        - Risk_Details
+    - inputs:
+        - "2"
+      outputs:
+        - 2
+        - Ονόματος/Επιθέτου/Πατρωνύμου Ασφαλισμένου
+        - Customer/Insured details
+    - inputs:
+        - "3"
+      outputs:
+        - 3
+        - Ενυπόθηκου Δανειστή
+        - Mortgage_Buyer
+    - inputs:
+        - "3"
+      outputs:
+        - 4
+        - Δανειακής Σύμβασης
+        - Other
+    - inputs:
+        - "3"
+      outputs:
+        - 5
+        - Αφαίρεση Δανειακής Σύμβασης
+        - Other
+    - inputs:
+        - "3"
+      outputs:
+        - 6
+        - Προσθήκη Δανειακής Σύμβασης
+        - Other
+    - inputs:
+        - "4"
+      outputs:
+        - 7
+        - Αριθμού Διαμερίσματος
+        - Risk_Details
+    - inputs:
+        - "4"
+      outputs:
+        - 8
+        - Έτους Κατασκευής Ακινήτου
+        - Risk_Details
+    - inputs:
+        - "4"
+      outputs:
+        - 9
+        - Αριθμού Χώρου Στάθμευσης
+        - Risk_Details
+    - inputs:
+        - "4"
+      outputs:
+        - 10
+        - Τετραγωνικών Μέτρων Διαμερίσματος/Οικοδομής
+        - Risk_Details
+    - inputs:
+        - "4"
+      outputs:
+        - 11
+        - Αριθμού Αποθήκης
+        - Risk_Details
+    - inputs:
+        - "4"
+      outputs:
+        - 12
+        - Διεύθυνσης Κινδύνου
+        - Risk_Details
+    - inputs:
+        - "4"
+      outputs:
+        - 13
+        - Τετραγωνικών Μέτρων Αποθήκης/ων
+        - Risk_Details
+    - inputs:
+        - "4"
+      outputs:
+        - 14
+        - Τετραγωνικών Μέτρων Χώρου/ων Στάθμευσης
+        - Risk_Details
+    - inputs:
+        - "4"
+      outputs:
+        - 15
+        - Κωδικού Ακινήτου 
+        - Risk_Details
+    - inputs:
+        - "5"
+      outputs:
+        - 16
+        - Συχνότητα Πληρωμής Ασφαλίστρων
+        - Payment method/frequency

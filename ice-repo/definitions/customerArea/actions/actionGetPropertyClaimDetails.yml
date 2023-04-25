@@ -1,0 +1,22 @@
+action:
+  title: calls a rest service to get the customer contract details
+  execution:
+    - RestCallExecutionRule:
+        baseUrl: BASEURL
+        # baseUrl: customer_data
+        url: GetCoolgenClaimDetails
+        verb: post
+        bucket: GetCoolgenClaimDetails
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+    - NavigateToPageExecutionRule:
+        page: viewClaimDetails
+        omitValidation: true
+  condition:
+    FeelConditionRule:
+      expression: policy.claims.selectedBranch = 4
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - policy.contract.general.info.ClaimID

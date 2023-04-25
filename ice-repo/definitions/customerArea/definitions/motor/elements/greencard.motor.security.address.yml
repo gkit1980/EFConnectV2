@@ -1,0 +1,11 @@
+element:
+  type: text
+  label: Διεύθυνση
+  component: IceTextInput
+  viewMode: disabled
+  buckets:
+    GreenCardData:
+      transformation:
+        dataPath: greencard.address
+  pages:
+    greenCard: null

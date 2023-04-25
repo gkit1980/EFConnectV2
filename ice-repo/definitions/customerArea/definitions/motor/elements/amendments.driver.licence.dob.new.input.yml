@@ -1,0 +1,14 @@
+element:
+  type: text
+  viewMode: enable
+  component:
+    StaticComponentRule:
+      component:
+        AmendmentinputfieldComponent:
+          elementName: amendmentsNewDriverLicenceDate
+  buckets:
+    AmendmentsCreateCase:
+      transformation: {}
+  pages:
+    viewAmendmentDetails: null
+    

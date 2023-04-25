@@ -1,0 +1,14 @@
+action:
+  title: calls a soap service to get the contract receipts
+  execution: 
+      - ProcessCallbackRequestRule:
+          bucket: ProcessCallbackRequest              
+      - NavigateToPageExecutionRule:
+          page: viewRequestRegister
+  # condition:
+    # FeelConditionRule: 
+      # expression: policy.contract.general.info.ContractID != null
+  trigger:
+    - ElementChangeTriggerRule:
+        elements: 
+          - clicktocall.btnsubmit

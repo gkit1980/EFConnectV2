@@ -1,0 +1,9 @@
+<div *ngIf="isVisible && isSet" class="table" (click)="onClick()" title="{{hint}}">
+	<div class="table-row" [ngClass]="{'is-disabled': isDisabled}">
+		<span class="pdf"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></span>
+		
+	</div>
+	<div class="table-row" [ngClass]="{'is-disabled': isDisabled}">
+		<div class="table-cell">{{label}}</div>
+	</div>
+</div>

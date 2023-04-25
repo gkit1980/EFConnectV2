@@ -1,0 +1,259 @@
+.redBackground {
+    background-color: #ef3340;
+    // height: 383px;
+    padding: 32px 41px 38px 43px;
+
+    @media screen and (max-width: 580px) {
+        // height: 484px;
+        margin: 0 -30px;
+    }
+
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+}
+
+.adress-container>#adress-row>#adress-col {
+    padding-left: 0;
+}
+
+.contact-container {
+    margin-right: 30px;
+}
+
+.communication-service {
+    margin-bottom: 66px;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+
+    @media screen and (max-width: 983px) {
+        flex-direction: column;
+    }
+}
+
+.no-wrap {
+    flex-wrap: unset;
+}
+
+.fix-text-padding {
+    @media screen and (max-width: 580px) {
+        &:nth-child(even) {
+            padding-left: 5px;
+        }
+    }
+}
+
+.info-container {
+    display: flex;
+    flex-basis: 50%;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 48px;
+    padding-right: 37px;
+
+    @media screen and (min-width: 984px) {
+        margin-top: 51px;
+        margin-bottom: 48px;
+    }
+
+    @media screen and (max-width: 983px) {
+        margin-top: 51px;
+        margin-bottom: 48px;
+        margin-left: 26px;
+    }
+
+    @media screen and (max-width: 580px) {
+        margin-left: 0;
+        flex-direction: column;
+        margin: 0 auto;
+        margin-bottom: 48px;
+    }
+
+}
+
+.btn-container {
+    justify-content: flex-start !important;
+    margin: -15px 0 0 0;
+}
+
+.btn-container-cols {
+    &:first-child {
+        margin: 15px 15px 0 0;
+    }
+
+    &:nth-child(2) {
+        margin: 15px 0 0 0;
+    }
+}
+
+:host ::ng-deep [data-element="communication.contact.details.call.button"] {
+    .eurolife-button {
+        .eurolife_btn-stroke-red {
+            width: 158px;
+            height: 48px;
+            padding: 0;
+
+            .button-icon {
+                margin: 0;
+            }
+        }
+
+        button {
+            justify-content: center;
+        }
+    }
+}
+
+:host ::ng-deep [data-element="communication.contact.details.chat.button"] {
+    .eurolife-button {
+        .eurolife_btn-stroke-red {
+            width: 158px;
+            height: 48px;
+            padding: 0;
+
+            .button-icon {
+                margin: 0;
+            }
+        }
+
+        button {
+            justify-content: center;
+        }
+    }
+}
+
+:host ::ng-deep [data-element="communication.contact.details.form.button"] {
+    .eurolife-button {
+        .eurolife_btn-stroke-red {
+            width: 215px;
+            height: 48px;
+            padding: 0;
+
+            .button-icon {
+                margin: 0;
+            }
+        }
+
+        button {
+            justify-content: center;
+        }
+    }
+    .eurolife_btn-default:focus, .eurolife_btn-default.focus {
+        box-shadow: unset;
+    }
+}
+
+
+// ::ng-deep .ice-output {
+//     span {
+//         display: block;
+//     }
+//     label {
+//         font-weight: 600;
+//         margin-bottom: 0px;
+//     }
+// }
+
+:host ::ng-deep [data-element="communication.contact.phone.number"] {
+    label {
+        margin-bottom: 0 !important;
+    }
+
+    .value {
+        line-height: normal;
+    }
+}
+
+:host ::ng-deep [data-element="communication.contact.address1"] {
+    label {
+        margin-bottom: 0 !important;
+    }
+
+    .value {
+        line-height: normal;
+    }
+}
+
+:host ::ng-deep [data-element="communication.contact.email"] {
+    label {
+        margin-bottom: 0 !important;
+    }
+
+    .value {
+        line-height: normal;
+    }
+}
+
+:host ::ng-deep [data-element="communication.contact.address2"] {
+    label {
+        margin-bottom: 0 !important;
+    }
+
+    .value {
+        line-height: normal;
+    }
+}
+
+
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
+    #adress-row {
+        width: 100%;
+    }
+
+    .adress-container {
+        width: 160px;
+    }
+
+    .contact-container {
+        width: 44%;
+    }
+
+    :host ::ng-deep [data-element="communication.contact.address1"] {
+
+        span .value {
+            width: 200px;
+        }
+
+    }
+
+    :host ::ng-deep [data-element="communication.contact.address2"] {
+
+        span .value {
+            width: 200px;
+        }
+
+    }
+}
+
+.walkthrough-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .walkthrough-dots {
+    width: max-content;
+    position: relative;
+    left: 25px;
+  }
+
+  .dot {
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 3px;
+  }
+
+  .dot-active{
+    background-color: #000;
+  }
+
+
+

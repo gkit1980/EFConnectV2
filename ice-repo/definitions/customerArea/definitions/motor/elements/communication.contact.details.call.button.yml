@@ -1,0 +1,11 @@
+element:
+  component: EurolifeButtonComponent
+  buttonIcon: https://scp.eurolife.gr/~/media/5493B343B88D4379A228295D850C3C6A
+  type: text
+  additionalClasses: eurolife_btn-default left eurolife_btn-stroke-red
+  svgFillColor: corporate_color
+  dialogpage: clicktocall
+  modalDialog: motorCustomTableComponent
+  dialogcloseaction: actionClickToCallNow
+  pages:
+    communicationService: null

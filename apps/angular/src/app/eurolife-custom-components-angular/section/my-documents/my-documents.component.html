@@ -1,0 +1,127 @@
+<div *ngIf="contentLoaded; else loadDataTempl1" class="filter-list">
+  <mat-form-field class="select-field-container">
+    <mat-select name="year" [(ngModel)]="selectedYear" (ngModelChange)="onOptionChange()" placeholder="Όλα τα έτη">
+      <mat-option [value]="0">
+        {{ allYears1 | resourcePipe }}
+      </mat-option>
+      <mat-option *ngFor="let year of filterYears" [value]="year">
+        {{ year }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="select-field-container">
+    <mat-select name="doc" [(ngModel)]="selectedDoc" (ngModelChange)="onOptionChange()" placeholder="Όλα τα έγγραφα">
+      <mat-option [value]="'none'">
+        {{ allDocuments | resourcePipe }}
+      </mat-option>
+      <mat-option *ngFor="let doc of filterDocs" [value]="doc">
+        {{ doc }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div class="mat-elevation-z8">
+  <table matSort class="table-container" mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="docType">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ contentLoaded ? (documentType1 | resourcePipe) : '' }}</th>
+      <td class="td-doctype" mat-cell *matCellDef="let row">
+        {{ row.docType }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="year">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ contentLoaded ? (year | resourcePipe) : '' }}</th>
+      <td class="td-year" mat-cell *matCellDef="let row">
+        {{ row.year }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="url">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td [class.disable-btn]="showSpinnerBtnArr[idx]" (click)="getPdfLink(row.url, idx)" mat-cell *matCellDef="let row; let idx=index">
+        <div class="download-btn" [class.disable-btn]="showSpinnerBtnArr[idx]">
+          <!-- {{ download1 | resourcePipe }} -->
+          <div *ngIf="!showSpinnerBtnArr[idx]" aria-label="icon" class="button-icon"
+            [inlineSVG]="'https://scp.eurolife.gr/~/media/3D4C3EE53B51434B9A9C20E02FA3B340.ashx'"
+            [onSVGLoaded]="handleSVGButton">
+          </div>
+          <div *ngIf="showSpinnerBtnArr[idx]" class="button-icon">
+            <i class="fa fa-spinner fa-spin fa-lg"></i>
+          </div>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <!-- *ngIf="filteredData.length < 5"  -->
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>
+
+<div class="table-mobile-container">
+  <ng-container *ngIf="contentLoaded">
+    <mat-form-field class="select-field-container">
+      <mat-select name="year" [(ngModel)]="selectedYear" (ngModelChange)="onOptionChange()" placeholder="Όλα τα έτη">
+        <mat-option [value]="0">
+          {{ allYears2 | resourcePipe }}
+        </mat-option>
+        <mat-option *ngFor="let year of filterYears" [value]="year">
+          {{ year }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="select-field-container">
+      <mat-select name="doc" [(ngModel)]="selectedDoc" (ngModelChange)="onOptionChange()" placeholder="Όλα τα έγγραφα">
+        <mat-option [value]="'none'">
+          {{ documentType2 | resourcePipe }}
+        </mat-option>
+        <mat-option *ngFor="let doc of filterDocs" [value]="doc">
+          {{ doc }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </ng-container>  
+  <div *ngIf="contentLoaded" class="items-main-container">
+    <ng-container *ngFor="let item of filteredData; let idx = index">
+      <div class="main-container">
+        <div class="doctype-container td-doctype">
+          {{ item.docType }}
+        </div>
+        <div class="year-container td-year">
+          {{ item.year }}
+        </div>
+        <button [class.disable-btn]="showSpinnerBtnArr[idx]" class="eurolife_btn eurolife_btn-default download-mobile-btn" (click)="getPdfLink(item.url, idx)">
+          <!-- {{ download2 | resourcePipe }} -->
+          <div *ngIf="!showSpinnerBtnArr[idx]" aria-label="icon" class="button-icon"
+            [inlineSVG]="'https://scp.eurolife.gr/~/media/3D4C3EE53B51434B9A9C20E02FA3B340.ashx'"
+            [onSVGLoaded]="handleSVGButton">
+          </div>
+          <div *ngIf="showSpinnerBtnArr[idx]" class="button-icon">
+            <i class="fa fa-spinner fa-spin fa-lg"></i>
+          </div>
+        </button>
+      </div>
+    </ng-container>
+  </div>
+  <!-- *ngIf="filteredData.length < 5" -->
+  <button *ngIf="contentLoaded" (click)="showMore()" class="eurolife_btn eurolife_btn-link show-more-container">
+    {{ loadMore | resourcePipe }}
+  </button>
+</div>
+
+<ng-template #loadDataTempl1>
+  <div class="ice-simple-table">
+    <ngx-skeleton-loader
+      count="1"
+      [theme]="{ 'background-color': '#dadada', width: '70%', height: '25px', 'border-radius': '10px' }"
+    >
+    </ngx-skeleton-loader>
+
+    <ngx-skeleton-loader
+      count="2"
+      [theme]="{ 'background-color': '#dadada', width: '100%', height: '25px', 'border-radius': '10px' }"
+    >
+    </ngx-skeleton-loader>
+  </div>
+</ng-template>

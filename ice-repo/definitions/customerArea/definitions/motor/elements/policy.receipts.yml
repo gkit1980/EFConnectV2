@@ -1,0 +1,8 @@
+element:
+  type: array
+  component: IceArray
+  viewMode: output  
+  buckets:
+    GetReceiptsByContractID:
+      transformation:
+        responsePath: Receipts

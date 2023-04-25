@@ -1,0 +1,7 @@
+element:
+  component: IceButton
+  type: text
+  # defaultValue: action-redirect-to-successfull-registration
+  defaultValue: actionInitSignUp
+  pages:
+    sign-up: null

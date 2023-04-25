@@ -1,0 +1,28 @@
+.grey-background {
+  background-color: #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 48px;
+  max-width: 444px;
+  padding-left: 16px;
+  margin: auto;
+  cursor: pointer;
+}
+
+.icon-container {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.svg-color{
+  fill: #485294;
+}
+
+.disabled-color{
+  fill: #DEDEDE !important;
+}
+

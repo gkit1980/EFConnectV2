@@ -1,0 +1,16 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - element: client.personal-data.edit
+  outputs:
+    - id: viewmode
+      type: ''
+  rules:
+    - inputs:
+        - ja
+      outputs:
+        - default
+    - inputs:
+        - nein
+      outputs:
+        - hidden

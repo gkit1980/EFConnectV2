@@ -1,0 +1,19 @@
+dt:
+  output-label: defaultValue
+  hitPolicy: F
+  inputs:
+    - label: input element for viewMode
+      element: policies~license-plate
+  outputs:
+    - label: viewMode
+      id: viewMode
+      type: text
+  rules:
+    - inputs:
+        - null
+      outputs:
+        - hidden
+    - inputs:
+        - '-'
+      outputs:
+        - output

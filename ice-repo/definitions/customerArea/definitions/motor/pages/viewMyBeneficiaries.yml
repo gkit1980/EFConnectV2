@@ -1,0 +1,14 @@
+  page:
+    component: DemoPage
+    sections:
+      - component: ArrayView
+        element: policy.beneficiaries
+        rows:
+          - css: null
+            cols:
+              - col: 4              
+                element: policy.beneficiaries~BenefName
+              - col: 4
+                element: policy.beneficiaries~Percentage
+              - col: 4
+                element: policy.beneficiaries~Relationship

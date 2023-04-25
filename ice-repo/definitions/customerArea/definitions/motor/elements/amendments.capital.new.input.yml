@@ -1,0 +1,15 @@
+element:
+  type: integer
+  label: null
+  viewMode: enable
+  component:
+    StaticComponentRule:
+      component:
+        AmendmentinputfieldComponent:
+          elementName: amendmentsNewCapital
+  buckets:
+    AmendmentsCreateCase:
+      transformation: {}
+  pages:
+    viewAmendmentDetails: null
+    

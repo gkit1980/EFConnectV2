@@ -1,0 +1,23 @@
+element:
+  type: text
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.selectedBranch
+      conditionValue: 3
+      conditionViewMode: output
+      elseViewMode: hidden
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent
+  buckets:
+    # GetContractMotorDetails:
+    #   transformation:
+    #     responsePath: ContractMotorDetails.Renewal
+    GetReprintedPDF:
+      transformation:
+        dataPath: RenewalKey
+    GetContractEndorsement:
+      transformation:
+        dataPath: RenewalKey
+  pages:
+    policyDetails: null

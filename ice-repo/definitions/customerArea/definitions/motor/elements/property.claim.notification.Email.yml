@@ -1,0 +1,12 @@
+element:
+  type: text
+  viewMode: enable
+  label: email
+  component:
+    StaticComponentRule:
+      component:
+        PropertyClaimNotificationInputFieldComponent:
+          elementName: customerEmail
+  buckets:
+    PropertyClaimNotificationCreateCase:
+      transformation: {} 

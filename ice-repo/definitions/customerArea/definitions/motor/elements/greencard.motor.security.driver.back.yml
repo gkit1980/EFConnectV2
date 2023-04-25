@@ -1,0 +1,11 @@
+element:
+  component: GreenCardBackButtonComponent
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: greencard.page.index
+      conditionValue: 1
+      conditionViewMode: output
+      elseViewMode: hidden
+  type: text
+  pages:
+    greenCard: null

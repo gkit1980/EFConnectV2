@@ -1,0 +1,11 @@
+element:
+  type: text
+  label: greencardnewno
+  component: IceTextInput
+  viewMode: disabled
+  buckets:
+    GreenCardData:
+      transformation:
+        dataPath: greencard.greenCardNewNo
+  pages:
+    greenCard: null

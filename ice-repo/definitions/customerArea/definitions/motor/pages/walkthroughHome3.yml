@@ -1,0 +1,20 @@
+page:
+  component: PopUpPage
+  flag: walkthrough home3
+  showTriangle: true
+  validation:
+    onElementComponentChange: true
+    behaviour: page
+  sections:
+    - component: SimpleGridViewComponent
+      rows:
+        - cols:
+            - css: header-title-pop-up-walkthrough text-center walkthrough-header-mb
+              col: 12
+              element: home.walkthrough.header3
+    - component: ContentWalkthroughComponent
+      text: "Στην ενότητα αυτή βρίσκετε τις αποζημιώσεις που έχετε αιτηθεί (αν υπάρχουν), μαζί με το ιστορικό τους. Μπορείτε επίσης να παρακολουθήσετε την εξέλιξή τους, δηλαδή το άνοιγμα του φακέλου ζημιάς, κλπ."
+      pageNum: 3
+      numberOfScreens: home.walkthrough.screens
+      next: ΕΠΟΜΕΝΟ
+      previous: ΠΡΟΗΓΟΥΜΕΝΟ

@@ -1,0 +1,4 @@
+element:
+  type: text
+  label: "Περιγράψτε την ζημιά"
+  viewMode: output

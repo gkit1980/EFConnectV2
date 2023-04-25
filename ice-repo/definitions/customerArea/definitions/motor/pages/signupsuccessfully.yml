@@ -1,0 +1,18 @@
+page:
+  component: RegistrationPageComponent
+  label: null
+  sections:
+    - component: GridView
+      rows:
+        - css: null
+          cols:
+            - col: 12
+              element: signupsuccessfully.message
+        - css: null
+          cols:
+            - col: 12
+              element: null
+        - css: null
+          cols:
+            - col: 12
+              element: signupsuccessfully.signin.button

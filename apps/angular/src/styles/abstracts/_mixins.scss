@@ -1,0 +1,23 @@
+@mixin font-styling($tag) {
+  font-size: getFontStyles(size, $tag);
+  font-weight: getFontStyles(weight, $tag);
+  line-height: getFontStyles(height, $tag);
+  // opacity: getFontStyles(opacity, $tag);
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+}
+
+@mixin button-stroke($color, $color_hover) {
+  color: getColor(buttons, $color);
+  border: solid 1px getColor(buttons, $color);
+  background-color: getColor(grey, white);
+  &:hover {
+    color: getColor(grey, white);
+    background-color: getColor(buttons, $color_hover);
+    border: solid 1px getColor(grey, white);
+    .button-icon {
+      fill: white;
+    }
+  }
+}

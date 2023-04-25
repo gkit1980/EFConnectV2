@@ -1,0 +1,7 @@
+element:
+  type: text
+  label: Άκυρο
+  component: IceButton
+  viewMode: default
+  pages:
+    communicationService: null

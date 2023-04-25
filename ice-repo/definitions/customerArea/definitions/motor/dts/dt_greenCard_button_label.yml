@@ -1,0 +1,30 @@
+dt:
+  hit-policy: F
+  inputs:
+    - label: greencard index
+      element: greencard.page.index
+  outputs:
+    - id: label
+      label: label
+      type: string
+  rules:
+    - inputs:
+        - 0
+      outputs:
+        - >-
+          "ΔΗΜΙΟΥΡΓΙΑ ΝΕΑΣ"
+    - inputs:
+        - 1
+      outputs:
+        - >-
+          "ΕΠΟΜΕΝΟ"
+    - inputs:
+        - 2
+      outputs:
+        - >-
+          "ΕΚΔΟΣΗ ΚΑΡΤΑΣ"
+    - inputs:
+        - 3
+      outputs:
+        - >-
+          "ΛΗΨΗ ΚΑΡΤΑΣ"

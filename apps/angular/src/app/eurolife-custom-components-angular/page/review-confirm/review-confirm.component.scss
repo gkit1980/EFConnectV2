@@ -1,0 +1,61 @@
+.close {
+    margin-right: 16px;
+    // margin-bottom: 13px;
+    width: 27px;
+    height: 27px;
+    fill: #003b4d;
+    z-index: 999999;
+    position: relative;
+    left:6x;
+    bottom: 73px;
+
+}
+
+.modal-container{
+    display: none;
+    height: 44px;
+    z-index: 999999;
+    position: relative;
+    margin-top: -15px;
+
+
+}
+
+.bounceInRight
+{
+    animation-name: bounceInRight;
+}
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+
+}
+
+
+.modal-header
+{
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    padding-top: 0rem !important;
+    padding-bottom: 0rem !important;
+   
+}
+
+.modal-body{
+    margin-bottom: -50px !important;
+
+}
+
+.modal-title {
+
+    position: relative !important;
+    left: 25px !important;
+}
+
+p {
+    text-align: justify !important;
+}

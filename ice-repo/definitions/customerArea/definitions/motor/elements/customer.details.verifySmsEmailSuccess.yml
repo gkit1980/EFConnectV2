@@ -1,0 +1,10 @@
+element:
+  type: boolean
+  defaultValue: false 
+  viewMode: output
+  buckets:
+    VerifyChangeEmailSMS: # it take's the return value from VerifyChangeEmailSMS for changing the email with the sms code
+      transformation:
+        responsePath: Success
+  pages:
+    changeEmailPopUp: null

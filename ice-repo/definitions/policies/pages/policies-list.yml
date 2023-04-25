@@ -1,0 +1,16 @@
+page:
+  component: SimplePageComponent
+  sections:
+    - component: CardWithRightIconComponent
+      arrayElement: policies
+      branchClassElement: policies~branch-class
+      subtitleElement: policies~state
+      rows:
+        - css: null
+          cols:
+            - col: 12
+              element: policies~branch
+        - css: null
+          cols:
+            - col: 12
+              element: policies~license-plate

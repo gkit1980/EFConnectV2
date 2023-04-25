@@ -1,0 +1,12 @@
+element:
+  type: text
+  label: Περιγράψτε τη ζημιά όσο πιο αναλυτικά γίνεται
+  viewMode: enable
+  component:
+    StaticComponentRule:
+      component:
+        PropertyClaimNotificationInputFieldComponent:
+          elementName: description
+  buckets:
+    PropertyClaimNotificationCreateCase:
+      transformation: {} 

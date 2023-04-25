@@ -1,0 +1,10 @@
+<!-- <div class="otp_div">
+    <input #otpInput (focus)="focus(i)" class="otp" maxlength="1" type='text' *ngFor="let c of numbers; let i = index" autocomplete='off'
+        (keyup)='onKeyUp(i, $event)' (keydown)='onKeyDown(i, $event)' (touchstart)="focus(i)"
+        (touchend)="focus(i)" id='otpInput{{i}}' name='otpInput{{i}}'
+        appOnlyDigits>
+</div> -->
+
+<div>
+    <input class="otp-box" maxlength="6" [(ngModel)]="otpDigits" (ngModelChange)="onOtpChange()">
+</div>

@@ -1,0 +1,16 @@
+element:
+  type: boolean
+  component: 
+    StaticComponentRule:
+      component:
+        IceCheckbox:
+          labelPosition: after
+  label: Καλέστε με το συντομότερο δυνατό
+  defaultValue:  
+    StaticValueRule:
+      value: false
+  buckets:
+    ProcessCallbackRequest:
+      transformation:{}
+  pages:
+    clicktocall: null

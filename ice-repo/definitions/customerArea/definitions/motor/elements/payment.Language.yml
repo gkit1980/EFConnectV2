@@ -1,0 +1,11 @@
+element:
+  type: text
+  buckets:
+    GetTransactionInfoAEGA:
+      transformation:
+        responsePath: Language
+    # executePayment:
+    #   transformation:
+    #     dataPath: mid
+  pages:
+    paymentManagement: null

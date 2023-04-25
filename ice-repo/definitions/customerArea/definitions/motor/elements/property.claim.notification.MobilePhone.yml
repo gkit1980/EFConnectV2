@@ -1,0 +1,12 @@
+element:
+  type: text
+  viewMode: enable
+  label: mobile phone
+  component:
+    StaticComponentRule:
+      component:
+        PropertyClaimNotificationInputFieldComponent:
+          elementName: customerPhone
+  buckets:
+    PropertyClaimNotificationCreateCase:
+      transformation: {}

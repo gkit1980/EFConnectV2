@@ -1,0 +1,17 @@
+action:
+  execution:
+    - EclaimsGetAllFilesRule:
+        baseUrl: UPLOADFILESLOGIN
+        getAllFiles: GETALLDOCUMENTS
+        method: post
+        dowloadFile: DOWNLOADFILESURL
+        bucket: EclaimsDownloadDocument 
+        download: true
+    - OpenFileExecutionRule:
+        element: eclaims.document.base64
+        filetype: eclaims.document.filetype
+        filename: filename
+        mode: download
+        needsDatastore: false    
+
+

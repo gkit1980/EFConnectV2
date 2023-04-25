@@ -1,0 +1,14 @@
+element:
+  title: Date Call me later
+  type: date
+  component: Calendar
+  label: null
+  mirror:
+    CopyValueMirrorRule:
+      originElement: clicktocall.callmelaterdate
+  range:
+    FeelExpressionRangeRule:
+      expressionMin: date(today) + duration('P1D') 
+      expressionMax: date(today) + duration('P2M') 
+  pages:
+    clicktocall: null

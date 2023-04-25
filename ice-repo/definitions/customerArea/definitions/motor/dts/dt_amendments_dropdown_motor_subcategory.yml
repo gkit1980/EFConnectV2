@@ -1,0 +1,39 @@
+dt:
+  hitPolicy: C
+  inputs:
+    - element: amendments.motor.category.dropdown
+  outputs:
+    - id: value
+    - id: label
+      type: text
+  rules:
+    - inputs:
+        - "1"
+      outputs:
+        - 1
+        - Αλλαγή ή Διόρθωση Αριθμού Κυκλοφορίας
+    - inputs:
+        - "2"
+      outputs:
+        - 2
+        - Μείωση Ασφαλισμένης Αξίας
+    - inputs:
+        - "2"
+      outputs:
+        - 3
+        - Αύξηση Ασφαλισμένης Αξίας
+    - inputs:
+        - "3"
+      outputs:
+        - 4
+        - Έτος Γέννησης Οδηγού
+    - inputs:
+        - "3"
+      outputs:
+        - 5
+        - Έτος Έκδοσης Διπλώματος Οδηγού
+    - inputs:
+        - "4"
+      outputs:
+        - 6
+        - Αλλαγή Συχνότητας Πληρωμών

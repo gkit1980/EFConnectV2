@@ -1,0 +1,12 @@
+element:
+  type: text
+  viewMode: output
+  buckets:
+    GetTransactionInfoAEGA:
+      transformation:
+        responsePath: Installments
+    # executePayment:
+    #   transformation:
+    #     dataPath: extInstallmentoffset
+  pages:
+    paymentManagement: null

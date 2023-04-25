@@ -1,0 +1,20 @@
+list:
+  additionals:
+    eurolife:
+      type: text
+      label: Branch
+    label_el:
+      label: label_el
+      type: text
+    label_en:
+      label: label_en
+      type: text
+  items:
+    - value: health
+      label_el: ΖΩΗΣ
+      label_en:
+      eurolife: ΖΩΗΣ
+    - value: motor
+      label_el: ΑΥΤΟΚΙΝΗΤΩΝ
+      label_en:
+      eurolife: ΑΥΤΟΚΙΝΗΤΩΝ

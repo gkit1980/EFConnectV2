@@ -1,0 +1,12 @@
+element:
+  type: text
+  viewMode: output
+  defaultValue: '[210-9303800](210-9303800)'
+  component:
+    StaticComponentRule: 
+      component:
+        TextWithLinkComponent:
+          target: value
+          linkType: telephone
+  pages:
+    communicationService: null

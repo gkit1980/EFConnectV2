@@ -1,0 +1,4 @@
+element:
+  type: text
+  label: "Επιλέξτε την αιτία της ζημιάς από την ακόλουθη λίστα"
+  viewMode: output

@@ -1,0 +1,17 @@
+<!-- <h1 mat-dialog-title><strong>{{ textEmail | resourcePipe }}</strong> </h1> -->
+<!-- <mat-form-field>
+        <input matInput placeholder="Enter your Email">
+</mat-form-field>
+<div mat-dialog-actions>
+        <button mat-button><strong>Change Email</strong></button>
+</div> -->
+<div class="row">
+        <div class="col-sm-12 mt-xs-0 mt-sm-5 mx-3 mx-sm-auto">
+                <ice-section *ngFor="let section of page.sections" [section]="section">
+
+                </ice-section>
+
+                <button *ngIf="showButton" class="eurolife_btn eurolife_btn-link"
+                        (click)="onNoClick()">{{ okEmail | resourcePipe }}</button>
+        </div>
+</div>

@@ -1,0 +1,3 @@
+bucket:
+  transformation:
+    GreenCardTokenTransformationRule: null

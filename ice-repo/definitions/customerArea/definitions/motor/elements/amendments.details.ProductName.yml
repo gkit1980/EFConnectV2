@@ -1,0 +1,17 @@
+element:
+  type: text
+  viewMode: output
+  pages:
+    viewAmendmentDetails: null
+    viewAmendmentHomeDetails: null
+    viewAmendmentHealthDetails: null
+    viewAmendmentLifeDetails: null
+    viewAmendmentFinanceDetails: null
+  label:
+    NoLabelRule: {}
+  component:
+    StaticComponentRule:
+      component:
+        EurolifeH3Component:
+          headingClass: dt_product_text_color
+          headingType: h3 text-align-center-md no-margin-bottom

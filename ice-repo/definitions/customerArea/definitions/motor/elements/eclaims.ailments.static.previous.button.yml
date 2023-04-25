@@ -1,0 +1,12 @@
+element:
+  component: EclaimsSubmitButtonComponent
+  type: text
+  label: " "
+  additionalClasses: eclaims-ailments-success-scan-prv-btn eclaim-prev-btn
+  defaultValue: action-eclaims-previousstep 
+  viewMode:
+    DtViewModeRule:
+      dt: eclaims.ailments.static.previous.view-mode
+  pages:
+    viewEclaimsDetails: null
+  #amendments.details.PolicyNumberHeader

@@ -1,0 +1,146 @@
+.payment-container{
+    margin-top: 24px;
+    // height: 128px;
+    width: 100%;
+    // max-width: 1168px;
+    background-color: #ffff;
+    margin-top: 19px;
+    margin-bottom: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    
+    @media (max-width: 770px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.info-svg{
+    padding-right: 15px;
+    z-index: 10;
+    @media (max-width: 770px) {
+        margin-bottom: 24px;
+    }
+    @media screen and (max-width: 600px) {
+        padding-right: 0;
+    }
+}
+
+.info-svg-payment-code{
+    display: flex;
+    margin-left: 5px;
+}
+
+.payment-btn-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 36px;
+    @media (max-width: 770px) {
+        margin-right: 0px;
+
+    }
+    .eurolife_btn{
+        padding: 15px !important;
+    }
+    .payment-btn{
+        display: flex;
+        justify-content: center;
+        @media (max-width: 770px) {
+            margin-top: 24px;
+
+        }
+        margin-top: 32px;
+        margin-bottom: 9px;
+        width: 252px;
+        height: 48px;
+    }
+}
+
+.arrow-svg{
+    
+}
+
+:host .ice-output label {
+
+    color: unset !important;
+    margin-right: 10px;
+
+}
+
+.test[_ngcontent-erl-c35] {
+    width: 126px;
+    opacity: 0.6;
+}
+
+.payment-info-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// .cost-label{
+//     margin-left: 37px;
+//     margin-right: 17px;
+// }
+
+.payment-code {
+}
+
+:host ::ng-deep [data-element="policies.details.paymentCode"] {
+    .ice-output {
+        opacity: 0.6;
+        font-family: Ubuntu;
+        font-size: 12px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.58;
+        letter-spacing: normal;
+        color: #0491db;
+
+        label{
+            color: #0491db !important;
+        }
+    }
+}
+
+:host ::ng-deep [data-element="policies.details.TotalUnpaidAmount"] {
+    @media screen and (max-width: 600px){
+        .test2 {
+           flex-direction: column !important;
+        }
+    
+        .test1{
+             padding-left: unset !important;
+             padding-top: unset !important;
+        }
+        
+    }
+
+   
+}
+
+
+::ng-deep .tooltip > .tooltip-inner {
+    background-color: #fff !important;
+    font-family: Ubuntu;
+    font-size: 12px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.4;
+    letter-spacing: normal;
+    color: #383b38;
+    padding: 16px 15px 16px 19px;
+    border-radius: 4px;
+    box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.1);
+    opacity: unset;
+  }
+  
+  ::ng-deep .tooltip > .arrow {
+    display: none;
+  }

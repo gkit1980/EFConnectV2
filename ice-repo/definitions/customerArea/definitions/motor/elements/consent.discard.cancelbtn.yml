@@ -1,0 +1,8 @@
+element:
+  component: EurolifeButtonComponent
+  additionalClasses:  eurolife_btn-default middle consent-discard-cancel-btn
+  svgFillColor: corporate_color
+  defaultValue: action-consent-discard-cancel 
+  type: text
+  pages:
+    consent: null

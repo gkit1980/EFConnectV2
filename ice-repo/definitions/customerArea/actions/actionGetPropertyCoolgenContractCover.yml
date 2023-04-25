@@ -1,0 +1,19 @@
+action:
+  title: calls a rest service to get the customer contract details
+  execution:
+    - RestCallExecutionRule:
+        baseUrl: BASEURL
+        # baseUrl: customer_data
+        url: GetPropertyCoolgenContractCover
+        verb: post
+        bucket: GetPropertyCoolgenContractCover
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+  condition:
+    FeelConditionRule:
+      expression: policy.selectedBranch = 4
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - policy.contract.general.info.ContractID

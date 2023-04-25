@@ -1,0 +1,108 @@
+@import '../abstracts/variables';
+@import '../abstracts/functions';
+@import '../abstracts/mixins';
+
+.ice-button {
+    button:before {
+        font-family: fontAwesome;
+        content: "\f044\00a0";
+    }
+}
+
+.eurolife_btn {
+    display: inline-block;
+    @include font-styling(Button);
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .88125rem 2.096rem;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    cursor: pointer;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+.eurolife_btn {
+        transition: none;
+    }
+}
+
+.eurolife_btn:hover, .eurolife_btn:focus {
+    text-decoration: none;
+}
+
+.eurolife_btn:focus, .eurolife_btn.focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.eurolife_btn.disabled, .eurolife_btn:disabled {
+    // background-color: #dedede;
+    opacity: 0.65;
+}
+
+.eurolife_btn-link {
+    color: getColor(buttons, button_link);
+}
+
+.eurolife_btn-default {
+    color: getColor(grey, white);
+    background-color: getColor(buttons, default_normal);
+}
+
+
+.eurolife_btn-default:hover {
+    color: getColor(grey, white);
+    background-color: getColor(buttons, default_hover);
+}
+
+.eurolife_btn-stroke {
+    color: getColor(buttons, default_normal);
+    border: solid 1px getColor(buttons, default_normal);
+    background-color: getColor(grey, white);
+}
+
+.eurolife_btn-stroke:hover {
+    color: getColor(grey, white);
+    background-color: getColor(buttons, stroke_hover);
+}
+
+.eurolife_btn-default:focus, .eurolife_btn-default.focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); 
+}
+
+.eurolife_btn-default.disabled, .btn-default:disabled {
+    color: getColor(grey, white);
+    background-color: getColor(buttons, default_disabled);
+}
+
+.eurolife_btn-default:not(:disabled):not(.disabled):active, .btn-default:not(:disabled):not(.disabled).active,
+.show > .eurolife_btn-default.dropdown-toggle {
+    color: getColor(grey, white);
+    background-color: getColor(buttons, default_normal);
+}
+
+.eurolife_btn-default:not(:disabled):not(.disabled):active:focus, .btn-default:not(:disabled):not(.disabled).active:focus,
+.show > .eurolife_btn-default.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+
+.eurolife_btn-stroke-red {
+    @include button-stroke(stroke_red, stroke_red_hover);
+}
+
+.eurolife_btn-stroke-green {
+    @include button-stroke(stroke_green, stroke_green_hover);
+}
+
+.eurolife_btn-stroke-blue {
+    @include button-stroke(stroke_blue, stroke_blue_hover);
+}
+
+.eurolife_btn-stroke-home {
+    @include button-stroke(stroke_home, stroke_home_hover);
+}

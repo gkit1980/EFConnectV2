@@ -1,0 +1,55 @@
+<div class="container"  *ngIf="!condition">
+  <div class="row homepage-cards-margin-fix">
+    <div class="col-md-12 no-paddings">
+      <div *ngFor="let row of recipe.rows | slice:0:1" class="row" [ngClass]="getSectionClass(row)">
+
+        <div class="column col-md-4 red-card">     
+          <ice-element 
+             [section]="section" 
+             [elementName]="row.cols[0].element" 
+             [component]="row.cols[0].component">
+          </ice-element>
+        </div>
+      
+        <div class="column col-md-4 dark-blue-card">   
+          <ice-element 
+            [section]="section" 
+            [elementName]="row.cols[1].element" 
+            [component]="row.cols[1].component">
+          </ice-element>
+        </div>
+
+        <div class="column col-md-4 grey-card">
+          <ice-element
+            [section]="section"
+            [elementName]="row.cols[2].element"
+            [component]="row.cols[2].component">
+          </ice-element>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+
+  <div class="row">      <!--Dialog Consent-->
+    <div class="col-sm-12">
+      <div *ngFor="let row of recipe.rows | slice:1:2" class="row" [ngClass]="getSectionClass(row)">
+        <div class="column w-100">
+          <ice-element *ngIf="row.cols[0].element" [section]="section" [elementName]="row.cols[0].element" [component]="row.cols[0].component">
+          </ice-element>
+      </div>
+    </div>
+    </div>
+   </div>
+
+  <div class="row">   <!--DAF-->
+    <div class="col-sm-12">
+      <div *ngFor="let row of recipe.rows | slice:2:3" class="row" [ngClass]="getSectionClass(row)">
+        <div class="column w-100">
+          <ice-element *ngIf="row.cols[0].element" [section]="section" [elementName]="row.cols[0].element" [component]="row.cols[0].component">
+          </ice-element>
+      </div>
+    </div>
+    </div>
+   </div>
+</div>

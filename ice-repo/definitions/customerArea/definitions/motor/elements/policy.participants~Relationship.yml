@@ -1,0 +1,7 @@
+element:
+  type: text
+  viewMode: output 
+  buckets:
+    GetContractParticipants:
+      transformation:
+        property: Relationship

@@ -1,0 +1,6 @@
+element:
+  type: text
+  # defaultValue: Online κίνηση λογαριασμού
+  pages:
+    customerProfile: null
+  viewMode: output

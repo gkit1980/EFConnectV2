@@ -1,0 +1,26 @@
+element:
+  type: text
+  label: null      
+  component: OutputWithAction
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: clicktocall.callmelater
+      conditionValue: true
+      conditionViewMode: output
+      elseViewMode: hidden      
+  mirror:
+    CopyValueMirrorRule:
+      originElement: clicktocall.select-time
+  action:
+    execution:
+      - SetElementValueExecutionRule:
+          element: clicktocall.go-to-calendar
+          value: false
+      - SetElementValueExecutionRule:
+          element: clicktocall.go-to-time-picker
+          value: true
+  buckets:
+    ProcessCallbackRequest:
+      transformation:{}      
+  pages:
+    clicktocall: null

@@ -1,0 +1,7 @@
+action:
+  execution:
+    - ResetPolicyDetailsElementsRule:
+  trigger:
+    - PageTriggerRule:
+        enter:
+          - viewMyPolicies

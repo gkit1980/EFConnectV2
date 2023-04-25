@@ -1,0 +1,112 @@
+pages:
+  DynamicNavigationPagesRule:
+    pages:
+      - page: viewMyPolicies_primary
+        firstChild: true
+        pages:
+          - page: viewMyPolicies
+          - page: viewClaims
+          - page: communicationService
+      - page: viewPolicyDetails_primary
+        firstChild: true
+        pages:
+          - page: policyDetails
+            tabs:
+              - tab: Πληροφορίες Συμβολαίου
+                excludedBranch:
+                sections:
+                  - section: Details section1
+                  - section: Details section2
+                  - section: Details section3
+                  - section: Details section4
+                  - section: Details section5
+              - tab: Λογαριασμός Επένδυσης   # UL Product 
+                excludedBranch:  
+                tabProductName: My Investment Plan
+                sections:
+                  - section: UL section1
+                  - section: UL section2
+                  - section: UL section3
+                  - section: UL section4
+                  - section: UL section5
+              - tab: Λογαριασμός Επένδυσης  # Tipp Product
+                excludedBranch:  
+                tabProductName: Εξασφαλίζω επένδυση με Δυναμική Προστασία
+                sections:
+                  - section: Tipp section1
+                  - section: Tipp section2
+                  - section: Tipp section3
+                  - section: Tipp section4
+              - tab: Λογαριασμός Επένδυσης  #Lifecycle Product
+                excludedBranch:  
+                tabProductName: Εξασφαλίζω επένδυση για το μέλλον II 
+                sections:
+                  - section: Lifecycle section1
+                  - section: Lifecycle section2
+                  - section: Lifecycle section3
+                  - section: Lifecycle section4   
+                  - section: Lifecycle section5  
+              - tab: Συμμετέχοντες & Δικαιούχοι
+                excludedBranch: "99"
+                sections:
+                  - section: Participants section1
+                  - section: Participants section2
+                  - section: Participants section3
+                  - section: Participants section4
+              - tab: Ασφαλισμένα Μέλη
+                excludedBranch: "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17"
+                sections:
+                  - section: Participants section1
+                  - section: Participants section2
+                  - section: Participants section3
+                  - section: Participants section4    
+              - tab: Καλύψεις
+                excludedBranch: "5"
+                sections:
+                  - section: Coverages section1
+              - tab: Τροποποιήσεις
+                excludedBranch: "99"
+                sections:
+                  - section: Amendements section1
+                  - section: Amendements section2
+              - tab: Οικονομικά Στοιχεία
+                excludedBranch: "99"
+                sections:
+                  - section: Receipts section1
+  DynamicNavigationPagesRuleForCustomerProfile:
+    pages:
+      - page: viewCustomerProfile_primary
+        firstChild: true
+        pages:
+          - page: customerProfile
+            tabs:
+              - tab: Πληροφορίες Προφίλ
+                excludedBranch:
+                sections:
+                  - section: Details section1
+                  - section: Details section2
+                  - section: Details section3
+              - tab: Προτιμήσεις
+                excludedBranch:
+                sections:
+                  - section: Preferences section1
+                  - section: Preferences section2
+                  - section: Preferences section3
+                  - section: Preferences section4
+                  # - section: Preferences section5
+  DynamicNavigationPagesRuleForClaims:
+    pages:
+      - page: viewCClaims_primary
+        firstChild: true
+        pages:
+          - page: customerProfile
+            tabs:
+              - tab: Ατομικά
+                excludedBranch:
+                sections:
+                  - section: Individual Claims
+              - tab: Ομαδικά
+                excludedBranch:
+                sections:
+                  - section: Group Claims
+                           

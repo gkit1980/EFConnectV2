@@ -1,0 +1,5 @@
+element:
+  type: integer
+  defaultValue:
+    DtValueRule:
+      dt: dt.element.default-from-dt

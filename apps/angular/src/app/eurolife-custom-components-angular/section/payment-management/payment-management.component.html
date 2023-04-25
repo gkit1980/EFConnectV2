@@ -1,0 +1,126 @@
+<div class="payment-general-container payment-header">
+  <div class="icon-container">
+    <div class="product-icon" aria-label="icon" [ngClass]="getBranchClass(branch)">
+    </div>
+  </div>
+  <div class="info-container">
+    <div class="left-container">
+      <div class="h4" [ngClass]="getPaymentBranchClass(branch)">
+        <div *ngIf="branch !== 'ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ'; else personalAccident">
+          {{productDescription}}
+        </div>
+        <ng-template #personalAccident>
+          Λοιποί Κλάδοι Γενικών Ασφαλειών
+        </ng-template>
+
+
+      </div>
+      <div class="typeface caption3" [ngClass]="getPaymentBranchClass(branch)">
+        Αριθμός Συμβολαίου: {{contractKey}}
+      </div>
+    </div>
+    <div class="right-container" [ngClass]="getPaymentBranchClass(branch)">
+      <div class="duration-text">
+        <div class="duration-id-label typeface caption3">
+          Διάρκεια κάλυψης
+        </div>
+        <div class="duration-id-value typeface h6">
+          {{(startDate!==null) ? (formatDate(startDate) | date: "dd/MM/yyyy") :"" }} -
+          {{ (endDate !==null) ? (formatDate(endDate) | date: "dd/MM/yyyy") : "" }}
+        </div>
+      </div>
+      <div *ngIf="branch === 'ΑΥΤΟΚΙΝΗΤΩΝ'" class="id-text">
+        <div class="duration-id-label typeface caption3">
+          Πινακίδα
+        </div>
+        <div class="duration-id-value typeface h6">
+          {{ vehicleLicensePlate }}
+        </div>
+      </div>
+      <div *ngIf="branch === 'ΥΓΕΙΑΣ' || branch === 'ΖΩΗΣ'" class="id-text">
+        <div class="duration-id-label typeface caption3">
+          Ασφαλισμένος
+        </div>
+        <div class="duration-id-value typeface h6">
+          {{ insuredPerson }}
+        </div>
+      </div>
+      <div *ngIf="branch === 'ΠΕΡΙΟΥΣΙΑΣ'" class="id-text">
+        <div class="duration-id-label typeface caption3">
+          Διευθυνση Κινδύνου
+        </div>
+        <div class="duration-id-value typeface h6">
+          {{ dangerAddressData }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="payment-info-container payment-general-container">
+  <div class="info-left-container">
+    <div class="Typeface Button info-left-label">
+      {{ currentPayments | resourcePipe }}
+    </div>
+    <div class="h4 info-left-value">
+      &euro;{{amount}}
+    </div>
+  </div>
+  <div class="info-right-container">
+    <div class="Caption3 info-right-typography date"><span class="Caption3 addOpacity">{{ date1 | resourcePipe }}</span>
+      {{(endDate!==null) ? (formatDate(endDate) | date: "dd/MM/yyyy") :"" }}</div>
+    <div class="payment-icon">
+      <div (click)="copyToClipBoard(paymentCode)" id="paymentCode" class="Typeface info-right-typography code">
+        {{ paymentCodes | resourcePipe }} {{paymentCode}}</div>
+      <div ngbTooltip="Χρησιμοποιείστε αυτό τον κωδικό για εξόφληση μέσω e-banking ή Τράπεζας" class="info-infobutton  info-right-typography"
+        aria-label="My icon" [inlineSVG]="imageSource" [onSVGLoaded]="handleSVG">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div *ngIf="(branch == 'ΑΥΤΟΚΙΝΗΤΩΝ' || branch == '8')" class="payment-action-container payment-general-container">
+  <div class="Typeface checkbox-label">
+    {{ typeOfCard | resourcePipe }}
+  </div>
+  <div class="payment-checkbox">
+    <div (click)="onClickCheckBox(0)" class="check-circle">
+      <div [ngClass]="{'checked': !isCreditCard}">
+      </div>
+    </div>
+    <div>{{ depitPrepaidCard | resourcePipe }}</div>
+    <div (click)="onClickCheckBox(1)" class="check-circle">
+      <div [ngClass]="{'checked': isCreditCard}">
+      </div>
+    </div>
+    <div>{{ creditCard | resourcePipe }}</div>
+  </div>
+  <div class="Typeface installments-label">
+    {{ payOff | resourcePipe }}
+  </div>
+  <div class="payment-dropdown">
+    <mat-form-field>
+      <mat-label>{{ onetime | resourcePipe }}</mat-label>
+      <mat-select>
+        <mat-option *ngFor="" [value]="">
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div> -->
+
+
+<div class="payment-continue-container payment-general-container">
+  <div class="Caption3 continue-left-label">
+    {{ text1 | resourcePipe }}
+  </div>
+  <div class="continue-right-container">
+    <div class="Caption3 continue-cancel" (click)=returnToHome()>
+      {{ cancel | resourcePipe }}
+    </div>
+    <div class="continue-btn eurolife_btn eurolife_btn-default" (click)=postFormToCardLink()>
+      {{ continue | resourcePipe }}
+    </div>
+  </div>
+</div>

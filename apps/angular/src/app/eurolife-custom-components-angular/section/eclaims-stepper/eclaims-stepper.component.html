@@ -1,0 +1,58 @@
+
+<div class="main-stepper">
+
+    <div class="stepper-container">
+      <div class="step" *ngFor="let step of stepperState.stepsState; let i=index">
+          <div class="circle" [ngClass]="checkActive(i)">
+              <div class="inside-circle red-cicle" *ngIf="checkActive(i) == 'active'"></div>
+              <div class="inside-circle success" *ngIf="checkActive(i) == 'done'" aria-label="icon" [inlineSVG]="svgIcon"
+                  [onSVGLoaded]="handleSVG">
+              </div>
+          </div>
+          <div class="bar-left" [ngClass]="i == 2 ? checkActive(i) : checkActive(i+1)"></div>
+          <div class="bar-right" [ngClass]="i == 2 ? checkActive(i) : checkActive(i+1)"></div>
+          <div class="step-title Typeface" [ngClass]="checkActive(i)">{{ step.title }}</div>
+      </div>
+    </div>
+
+
+    <div class="stepper-mobile-container">
+        <ng-container *ngFor="let step of stepperState.stepsState; let i = index">
+            <div *ngIf="stepperState.step === 0 && i === 0" class="stepper-full-gap"></div>
+            <div *ngIf="
+                (stepperState.step === 0 && (i === 0 || i === 1)) ||
+                stepperState.step == 1 ||
+                (stepperState.step === 2 && (i === 0 || i === 1))
+              " class="step-mobile" [ngClass]="
+                stepperState.step === 0 && i === 1
+                  ? 'step-overextend-right'
+                  : stepperState.step === 1 && i === 0
+                  ? 'step-overextend-left'
+                  : stepperState.step === 1 && i === 2
+                  ? 'step-overextend-right'
+                  : stepperState.step === 2 && i === 0
+                  ? 'step-overextend-left'
+                  : null
+              ">
+              <div class="circle" [ngClass]="checkActive(i)">
+                <div class="inside-circle red-cicle" *ngIf="checkActive(i) == 'active'"></div>
+                <div class="inside-circle success" *ngIf="checkActive(i) == 'done'" aria-label="icon" [inlineSVG]="svgIcon"
+                  [onSVGLoaded]="handleSVG"></div>
+              </div>
+              <!-- <div class="bar-left" [ngClass]="i == 2 ? checkActive(i) : checkActive(i+1)"></div>
+                <div class="bar-right" [ngClass]="i == 2 ? checkActive(i) : checkActive(i+1)"></div> -->
+              <!-- <div class="step-title Typeface" [ngClass]="checkActive(i)">{{ step.title }}</div> -->
+            </div>
+            <div *ngIf="
+                (stepperState.step === 0 && i === 0) ||
+                (stepperState.step === 1 && (i === 0 || i === 1)) ||
+                (stepperState.step === 2 && i === 0)
+              " [ngClass]="stepperState.stepsState[i + 1].state" class="mobile-bar"></div>
+            <div *ngIf="stepperState.step === 2 && i === 2" class="stepper-full-gap"></div>
+        </ng-container>
+    </div>
+    <!-- <div class="stepper-mobile-step-name">{{getStepperStepName()}}</div> -->
+
+</div>
+  
+

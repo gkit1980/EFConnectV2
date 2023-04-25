@@ -1,0 +1,10 @@
+element:
+  type: text
+  viewMode: 
+    ConditionalViewModeRule: # if the return value from verifySmsSuccess service is Success: true then show this element
+        conditionElement: customer.details.verifySmsSuccess
+        conditionValue: false
+        conditionViewMode: output
+        elseViewMode: hidden
+  pages:
+    changeMobilePhonePopUp: null

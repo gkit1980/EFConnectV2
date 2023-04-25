@@ -1,0 +1,6 @@
+page:
+  component: DemoPage
+  validation:
+    behaviour: page
+  sections:
+    - component: LoginComponent

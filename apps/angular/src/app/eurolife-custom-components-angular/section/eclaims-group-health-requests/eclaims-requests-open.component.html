@@ -1,0 +1,256 @@
+
+<div class="info-open-text only-desktop">
+  <div class="button-style">
+    <h5>Διαχείριση Ομαδικών Συμβολαίων Ζωής και Υγείας </h5>
+    <p>
+      Δημιουργήστε νέο αίτημα και παρακολουθήστε την εξέλιξή του από εδώ.
+    </p>
+  </div> 
+  <div class="row-header">
+    <button [class.disable-btn]="!hasGroupHealthPolicyDetails" class="eurolife_btn eurolife_btn-default eurolife_btn-claims" (click)="redirectGroupDetails()">
+      ΝΕΟ ΑΙΤΗΜΑ ΑΠΟΖΗΜΙΩΣΗΣ
+      <div *ngIf="!hasGroupHealthPolicyDetails" class="button-icon spinner-btn">
+        <i class="fa fa-spinner fa-spin fa-lg"></i>
+      </div>
+    </button>
+  </div>
+</div>
+
+<div class="only-mobile row card-oute extra-padding">
+  <div class="button-style-mobile">
+    <h5 class="h5-style">Διαχείριση Ομαδικών Συμβολαίων Ζωής και Υγείας </h5>
+    <p class="label">
+      Δημιουργήστε νέο αίτημα και παρακολουθήστε την εξέλιξή του από εδώ.
+    </p>
+  </div> 
+  <div class="row-header">
+    <button [class.disable-btn]="!hasGroupHealthPolicyDetails" class="eurolife_btn eurolife_btn-default eurolife_btn-claims" (click)="redirectGroupDetails()">
+      ΝΕΟ ΑΙΤΗΜΑ ΑΠΟΖΗΜΙΩΣΗΣ
+      <div *ngIf="!hasGroupHealthPolicyDetails" class="button-icon spinner-btn">
+        <i class="fa fa-spinner fa-spin fa-lg"></i>
+      </div>
+    </button>
+  </div>
+</div>
+
+<div class="ice-simple-table" *ngIf="contentLoaded; else loadDataTempl1">
+
+  <div
+    *ngIf="!groupClaimsExist; else claimTempl"
+    class=""
+  >
+    <!-- {{ groupClaimsMessage }} -->
+  </div>
+
+  <ng-template #claimTempl>
+    <!-- Desktop -->
+      <div class="only-desktop">
+        <h5>Αιτήματα σε εκκρεμότητα</h5>
+      <p class="label">
+        Εδώ εμφανίζονται τα αιτήματα για τα οποία πρέπει να επισυνάψετε έγγραφα για
+        την ολοκλήρωσή τους.
+      </p>
+      <div
+        class="row white-background-desk mb-5"
+        *ngFor="let row of Requests; let idx = index"
+      >
+        <div class="row w-110 align-items-center no-wrap">
+          <div class="col first-col">
+            <div class="product">
+              <div class="product-icon group-icon"></div>
+              <div class="h5 product-description">
+                Αρ. Αιτήματος: {{ row.CaseNumber }}
+              </div>
+            </div>
+            <div class="Caption3 contractNumber">
+              Αριθμός Συμβολαίου: {{ row.Contract }}
+            </div>
+          </div>
+          <div class="col pl-0">
+            <p class="Caption3 opacity no-margins">Ονοματεπώνυμο Πελάτη</p>
+            <p class="Caption3 no-margins value-bold distance-fix">
+              {{ row.InsuredName }}
+            </p>
+          </div>
+          <div class="col pl-0">
+            <p class="Caption3 opacity no-margins">Ημερομηνία Συμβάντος</p>
+            <p class="Caption3 no-margins value-bold distance-fix">
+              {{ row.IncidentDate }}
+            </p>
+          </div>
+          <div class="col pl-0">
+            <p class="Caption3 opacity no-margins">Επισυναπτόμενα</p>
+            <p class="Caption3 no-margins value-bold distance-fix text-link" (click)="DocumentsPopUp(row)">
+              {{ docText }}
+            </p>
+          </div>
+          <div class="upload-col">
+            <button
+              class="eurolife_btn eurolife_btn-stroke upload-btn padding-fix"
+              (click)="goToUpload(row, idx)"
+            >
+              ΕΠΙΣΥΝΑΨΗ
+            </button>
+          </div>
+        </div>
+        <div
+          class="notification-bar warning"
+          *ngIf="row.OwnerId == ownerId; else templateNonOwnerId"
+        >
+          <div
+            class="notification-icon"
+            aria-label="icon"
+            [onSVGLoaded]="handleSVGInfo"
+            [inlineSVG]="getIcon('01D8EA7C762A44E0A8FF3E4FFF8D1C72')"
+          ></div>
+          <div>
+            <p class="Caption3">
+              Για να εκκινήσει η διαδικασία αποζημίωσης χρειαζόμαστε τα
+              απαραίτητα δικαιολογητικά, τα οποία μπορείτε να επισυνάψετε
+              πατώντας “Επισύναψη”. Σε περίπτωση που δεν προβείτε σε κάποια
+              ενέργεια το αίτημα θα διαγραφεί αυτόματα σε 24 ώρες.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="only-mobile row card-outer">
+      <h5>Αιτήματα σε εκκρεμότητα</h5>
+      <p class="label">
+        Εδώ εμφανίζονται τα αιτήματα για τα οποία πρέπει να επισυνάψετε έγγραφα για
+        την ολοκλήρωσή τους.
+      </p>
+      <div
+        class="row white-background-desk mb-1 card-container"
+        *ngFor="let row of Requests; let idx = index"
+      >
+        <div class="row">
+          <div class="mobile-first-row">
+            <div class="col-md-12">
+              <div class="product-icon group-icon"></div>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="h5 product-description">
+              Αρ. Αιτήματος: {{ row.CaseNumber }}
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="Caption3 contractNumber">
+              Αριθμός Συμβολαίου: {{ row.Contract }}
+            </div>
+          </div>
+
+          <div class="col-md-12 no-margins">
+            <p class="Caption3 opacity no-margins">Ονοματεπώνυμο Πελάτη</p>
+            <p class="Caption3 no-margins value-bold distance-fix">
+              {{ row.Name }}
+            </p>
+          </div>
+          <div class="w-100 line-seperator"></div>
+
+          <div class="col-md-12 no-margins">
+            <p class="Caption3 opacity no-margins">Ημερομηνία Συμβάντος</p>
+            <p class="Caption3 no-margins value-bold distance-fix">
+              {{ row.IncidentDate }}
+            </p>
+          </div>
+          <div class="w-100 line-seperator"></div>
+
+          <div class="col-md-12 no-margins">
+            <p class="Caption3 opacity no-margins">Επισυναπτόμενα</p>
+            <p class="Caption3 no-margins value-bold distance-fix text-link" (click)="DocumentsPopUp(row)">
+              {{ docText }}
+            </p>
+          </div>
+          <div class="w-100 line-seperator"></div>
+
+          <div class="col-md-12">
+            <button
+              class="eurolife_btn eurolife_btn-stroke upload-btn padding-fix"
+              (click)="goToUpload(row, idx)"
+            >
+              ΕΠΙΣΥΝΑΨΗ
+            </button>
+          </div>
+
+          <div class="col-md-12">
+            <div
+              class="notification-bar warning"
+              *ngIf="row.OwnerId == ownerId; else templateNonOwnerId"
+            >
+              <div
+                class="notification-icon"
+                aria-label="icon"
+                [onSVGLoaded]="handleSVGInfo"
+                [inlineSVG]="getIcon('01D8EA7C762A44E0A8FF3E4FFF8D1C72')"
+              ></div>
+              <div>
+                <p class="Caption3">
+                  Για να εκκινήσει η διαδικασία αποζημίωσης χρειαζόμαστε τα
+                  απαραίτητα δικαιολογητικά, τα οποία μπορείτε να επισυνάψετε
+                  πατώντας “Επισύναψη”. Σε περίπτωση που δεν προβείτε σε κάποια
+                  ενέργεια το αίτημα θα διαγραφεί αυτόματα.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #templateNonOwnerId>
+    <div class="notification-bar info">
+      <div
+        class="notification-icon"
+        aria-label="icon"
+        [onSVGLoaded]="handleSVGInfo"
+        [inlineSVG]="getIcon('01D8EA7C762A44E0A8FF3E4FFF8D1C72')"
+      ></div>
+      <div>
+        <p class="Caption3">
+          Το αίτημά σας είναι σε εκκρεμότητα. Παρακαλούμε να ελέγξετε την
+          ηλεκτρονική αλληλογραφία σας και να μας απαντήσετε. Εναλλακτικά,
+          επικοινωνήστε μαζί μας στο 2109303888 (επιλογή 4) ή στο 16888-4
+          (εσωτερικό).
+        </p>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+<ng-template #loadDataTempl1>
+  <div class="container ice-simple-table">
+    <!-- <h5>Αιτήματα σε εκκρεμότητα</h5> -->
+    <!-- <p class="label">
+      Εδώ εμφανίζονται τα αιτήματα για τα οποία πρέπει να επισυνάψετε έγγραφα
+      για την ολοκλήρωσή τους.
+    </p> -->
+
+    <ngx-skeleton-loader
+      count="1"
+      [theme]="{
+        'background-color': '#dadada',
+        width: '70%',
+        height: '25px',
+        'border-radius': '10px'
+      }"
+    >
+    </ngx-skeleton-loader>
+
+    <ngx-skeleton-loader
+      count="2"
+      [theme]="{
+        'background-color': '#dadada',
+        width: '100%',
+        height: '25px',
+        'border-radius': '10px'
+      }"
+    >
+    </ngx-skeleton-loader>
+  </div>
+</ng-template>

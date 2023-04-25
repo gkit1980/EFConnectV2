@@ -1,0 +1,59 @@
+page:
+  validation:
+    onElementComponentChange: true
+    behaviour: page
+  component: SimplePageComponent
+  showTitle: true
+  testValue: TESTI
+  sections:
+    - component: MotorCoversEditorCardComponent
+      element: token
+      dataStoreProperty: clientContracts
+      selectedElementName: policy.contract.general.info.ContractID
+      selectedElementNameType: policy.ContractType
+      branchElement: policy.selectedBranch
+      selectedElementNameKey: policy.contractKey
+      indexElement: policy.contract.general.info.indexHolder
+    # - component: CardWithRightIconComponent
+    #   arrayElement: policies
+    #   dataStoreProperty: clientContracts
+    #   rows:
+    #     - css: null
+    #       cols:
+    #         - col: 12
+    #           internalRows:
+    #             - css: null
+    #               internalCols:
+    #                 - internalCol: 8
+    #                   element: policies~Branch
+    #                 - internalCol: 4
+    #                   element: policies~Branch
+    #         - col: 8
+    #           element: policies~Branch
+    #         - col: 4
+    #           element: svgImage
+    # rows:
+    #   - css: null
+    #     cols:
+    #       - col: 8
+    #         element: policies.DetailsOfInsuredCustomer.title
+    #   - css: null
+    #     cols:
+    #       - col: 8
+    #         element: policies.DetailsOfInsuredCustomer.FullName
+    #   - css: null
+    #     cols:
+    #       - col: 8
+    #         element: policies.DetailsOfInsuredCustomer.TaxIdNumber
+    #   - css: null
+    #     cols:
+    #       - col: 8
+    #         element: policies.DetailsOfInsuredCustomer.YearOfBirth
+    #   - css: null
+    #     cols:
+    #       - col: 8
+    #         element: policies.DetailsOfInsuredCustomer.YearOfDrivingLicence
+    #   - css: null
+    #     cols:
+    #       - col: 4
+    #         element: policies.DetailsOfInsuredCustomer.YearOfDrivingLicence

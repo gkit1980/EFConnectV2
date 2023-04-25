@@ -1,0 +1,37 @@
+element:
+  type: text
+  defaultValue: "1"
+  buckets:
+    GetPaymentURLRedirector:
+      transformation:
+        dataPath: Header.ServicesVersion
+    GetTransactionInfoAEGA:
+      transformation:
+        dataPath: Header.ServicesVersion
+    ChangePassword:
+      transformation:
+        dataPath: Header.ServicesVersion
+    ChangeMobile:
+      transformation:
+        dataPath: Header.ServicesVersion
+    VerifyChangeMobile:
+      transformation:
+        dataPath: Header.ServicesVersion
+    ChangeEmail:
+      transformation:
+        dataPath: Header.ServicesVersion
+    VerifyChangeEmailSMS:
+      transformation:
+        dataPath: Header.ServicesVersion
+    VerifyChangeEmail:
+      transformation:
+        dataPath: Header.ServicesVersion
+    OptOut:
+      transformation:
+        dataPath: Header.ServicesVersion
+    GetOptOut:
+      transformation:
+        dataPath: Header.ServicesVersion
+    GetPaymentURLRedirectorAEAZ:
+      transformation:
+        dataPath: Header.ServicesVersion

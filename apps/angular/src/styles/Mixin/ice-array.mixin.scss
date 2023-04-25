@@ -1,0 +1,22 @@
+@import '~@angular/material/theming';
+
+@mixin ice-array-mixin($theme) {
+    $foreground: map-get($theme, foreground);
+
+    .ice-array {
+
+        .ice-array-item {
+            margin-top: 10px;
+            padding: 10px;
+            border: 5px solid mat-color($foreground, secondary-text);;
+        }
+        
+        i.fa {
+            cursor: pointer;
+        }
+        
+        .hidden {
+            display: none;
+        }
+    }
+}

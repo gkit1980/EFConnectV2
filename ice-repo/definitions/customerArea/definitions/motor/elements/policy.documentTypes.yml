@@ -1,0 +1,14 @@
+element:
+  type: array
+  component: IceArray
+  #afterChange:
+  #- ResetDefaultValueRule:
+  #elements:
+  #- policy.insured.object.motor.ModelGroupName
+  #- policy.insured.object.motor.EurotaxModelCode
+  pages:
+    viewMyDocumentTypes: null
+  buckets:
+    getUserDocumentTypes:
+      transformation:
+        responsePath: docTypes

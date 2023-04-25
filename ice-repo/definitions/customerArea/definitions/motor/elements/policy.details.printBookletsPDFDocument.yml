@@ -1,0 +1,7 @@
+element:
+  type: text
+  viewMode: hidden
+  buckets:
+    GetBookletsPDF:
+      transformation:
+        responsePath: responseData

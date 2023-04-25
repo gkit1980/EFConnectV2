@@ -1,0 +1,532 @@
+page:
+  component: SimplePageNoTitleComponent
+  componentFlag: amendmentHealthDetails
+  label: null
+  sections:
+    - component: GridView
+      viewMode: hidden
+      rows:
+        - css: null
+          cols:
+            - col: 12
+              element: policies.empty
+    - component: AmendmentDetailsHeaderComponent
+      componentFlag: amendmentHealthDetails
+      rows:
+        - css: firstSVG
+          cols:
+            - col: 2
+              css: header-svg-img
+              element: productSvgImage
+            - col: 7
+              internalRows:
+                - css: test-product
+                  internalCols:
+                    - internalCol: 12
+                      element: amendments.details.ProductName
+                - css: amendments.details.header.tiles.productColor
+                  internalCols:
+                    - css: text-align-center-bp opacity
+                      internalCol: 12
+                      element: amendments.details.PolicyNumberHeader
+      dataStoreProperty: clientContracts
+    - component: SimpleGridViewComponent
+      rows:
+        - cols:
+            - css: h5 text-center mt-5
+              col: 12
+              element: amendments.change.request.header
+        - cols:
+            - css: Caption3 text-center
+              col: 12
+              element: amendments.change.request.subheader
+    - component: AmendmentsStepperHealthComponent
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_health_sections_1
+      rows:
+        - cols:
+            - css: h6-active text-center mt-5
+              col: 12
+              element: amendments.select.request.header
+        - cols:
+            - css: Caption3 text-center mb-4
+              col: 12
+              element: amendments.select.request.subheader
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_health_sections_header_2
+      rows:
+        - css: gc-back-wrapper
+          cols:
+            - css: h6-active text-center mt-5
+              col:
+              element: amendments.back
+            - css: h6-active text-center mt-5
+              col:
+              element: amendments.select.request.step2.header
+        - css:
+          cols:
+            - css: Caption3 text-center mb-4
+              col: 12
+              element: amendments.select.request.step2.subheader
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_health_sections_header_3
+      rows:
+        - css: gc-back-wrapper
+          cols:
+            - css: h6-active text-center mt-5
+              col:
+              element: amendments.back
+            - css: h6-active text-center mt-5
+              col:
+              element: amendments.select.request.step3.header
+        - css:
+          cols:
+            - css: Caption3 text-center mb-4
+              col: 12
+              element: amendments.select.request.step3.subheader
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_health_sections_1
+      rows:
+        - cols:
+            - css: amendments-dropdown mb-2 ml-auto mr-auto
+              col: 12
+              element: amendments.health.category.dropdown
+        - cols:
+            - css: amendments-dropdown ml-auto mr-auto
+              col: 12
+              element: amendments.health.subcategory.dropdown
+    - component: AmendmentsGetBeneficiariesComponent
+      name: Participants section4
+      componentFlag: Participants
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: policy.beneficiaries.length
+          conditionValue: 0
+          conditionViewMode: hidden
+      element: policy.beneficiaries
+      rows:
+        - css: null
+          cols:
+            - col: 4
+              element: policy.beneficiaries~BenefName
+            - col: 4
+              element: policy.beneficiaries~Relationship
+            - col: 4
+              element: policy.beneficiaries~Percentage
+      dataStoreProperty: clientContractsWithParticipants
+    - component: AmendmentsLifeBeneficiariesComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_health_sections_2
+      # header: Δικαιούχοι
+      rows:
+        - css: amendments-grey-container
+          cols:
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.name.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.name.input1
+            - col: 3
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.relationship.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.relationship.input1
+            - col: 3
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container-per plate-label
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.percentage.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container-per amendments-border-grey-container-per-padding
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.percentage.input1
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container-per amendments-symbol
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.percentage.symbol
+        - css: amendments-grey-container
+          cols:
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.name.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.name.input2
+            - col: 3
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.relationship.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.relationship.input2
+            - col: 3
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container-per plate-label
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.percentage.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container-per amendments-border-grey-container-per-padding amendments-border-grey-container-per-padding1
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.percentage.input2
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container-per amendments-symbol
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.percentage.symbol
+        - css: amendments-grey-container
+          cols:
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.name.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.name.input3
+            - col: 3
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.relationship.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.relationship.input3
+            - col: 3
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container-per plate-label
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.percentage.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container-per amendments-border-grey-container-per-padding amendments-border-grey-container-per-padding1
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.percentage.input3
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container-per amendments-symbol
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.percentage.symbol
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_health_sections_2
+      rows:
+        - cols:
+            - css: text-center mt-5
+              col: 12
+              element: amendments.add.comment
+    - component: AmendmentsLifeBeneficiariesComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_health_sections2_1_2
+      # header: Δικαιούχοι
+      rows:
+        - css: amendments-grey-container
+          cols:
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.name.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.name.input1
+            - col: 3
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.relationship.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.relationship.input1
+            - col: 3
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container-per plate-label
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.percentage.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container-per amendments-border-grey-container-per-padding
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.percentage.input1
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container-per amendments-symbol
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.percentage.symbol
+        - css: amendments-grey-container
+          cols:
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.name.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.name.input2
+            - col: 3
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.relationship.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.relationship.input2
+            - col: 3
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container-per plate-label
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.percentage.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container-per amendments-border-grey-container-per-padding amendments-border-grey-container-per-padding1
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.percentage.input2
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container-per amendments-symbol
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.percentage.symbol
+        - css: amendments-grey-container
+          cols:
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.name.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.name.input3
+            - col: 3
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.relationship.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.relationship.input3
+            - col: 3
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container-per plate-label
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.percentage.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container-per amendments-border-grey-container-per-padding amendments-border-grey-container-per-padding1
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.percentage.input3
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container-per amendments-symbol
+                      internalCol: 12
+                      element: amendments.health.life.finance.addBeneficiaries.percentage.symbol
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_health_sections2_2_1
+      rows:
+        - cols:
+            - css: text-center mt-5
+              col: 12
+              element: amendments.add.comment
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_health_sections2_2_2
+      rows:
+        - cols:
+            - css: text-center mt-5
+              col: 12
+              element: amendments.add.comment
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_health_sections2_3_1
+      rows:
+        - css: amendments-grey-container
+          cols:
+            - col: 12
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.health.life.finance.birthdate.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.health.life.finance.new.birthdate.input
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_health_sections2_3_1
+      rows:
+        - cols:
+            - css: text-center mt-5
+              col: 12
+              element: amendments.health.life.finance.file.upload
+        - cols:
+            - css: text-center mt-5
+              col: 12
+              element: amendments.add.comment
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_health_sections2_4_1
+      rows:
+        - css: amendments-grey-container
+          cols:
+            - col: 12
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp insurance-style font-amendments
+                      internalCol: 12
+                      element: amendments.health.life.finance.insuranceliability.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp
+                      internalCol: 12
+                      element: amendments.add.comment
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_health_sections2_5_1
+      rows:
+        - css: amendments-grey-container
+          cols:
+            - col: 12
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.health.life.finance.insuranceFrequencyPayment.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.health.life.finance.frequencyOfPayment.input
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container frequency-info-label
+                      internalCol: 12
+                      element: amendments.health.life.finance.insuranceFrequencyPayment.info.label
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_health_sections2_5_1
+      rows:
+        - cols:
+            - css: text-center mt-5
+              col: 12
+              element: amendments.add.comment
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_health_sections_3
+      rows:
+        - cols:
+            - css: Caption3 text-center mb-4
+              col: 12
+              element: amendments.customer.mobile
+            - css:
+              col: 12
+              element: amendments.otp.timer
+    - component: SimpleGridViewComponent
+      rows:
+        - cols:
+            - css: h5 text-center mt-5
+              col: 12
+              element: amendments.details.infoMessage
+        - cols:
+            - css:
+              col: 12
+              element: amendments.health.details.next.button 
+        - cols:
+            - css:
+              col: 12
+              element: amendments.details.dialog
+

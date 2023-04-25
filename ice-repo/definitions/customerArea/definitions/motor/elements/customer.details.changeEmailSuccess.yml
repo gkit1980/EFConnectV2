@@ -1,0 +1,10 @@
+element:
+  type: boolean
+  viewMode: default
+  defaultValue: false #kanonika einia false , to vazw true giati den mporw na allaxw to kinhto gia ton kwdiko
+  buckets:
+    ChangeEmail:
+      transformation:
+        responsePath: Success
+  pages:
+    changeEmailPopUp: null

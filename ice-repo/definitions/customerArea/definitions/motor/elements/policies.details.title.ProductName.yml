@@ -1,0 +1,55 @@
+element:
+  type: text
+  viewMode: output
+  #  label: Ασφαλιστικό Προϊόν
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent
+  change:
+    - ResetElementValueExecutionRule:
+        elements:
+          - policy.selectedBranch
+          - policy.contract.general.info.ContractID
+  buckets:
+    GetContractMotorDetails:
+      transformation:
+        responsePath: ContractMotorDetails.ProductDescritpion
+    GetContractIndividualDetails:
+      transformation:
+        responsePath: ContractIndividualDetails.ProductDescritpion
+    GetContractPropertyCoolgenDetails:
+      transformation:
+        responsePath: ContractPropertyCoolgenDetails.ProductDescritpion
+    GetContractMortgageDetails:
+      transformation:
+        responsePath: ContractMortgageDetails.ProductDescritpion
+    GetPensionContractDetails:
+      transformation:
+        responsePath: PensionContractDetails.ProductDescritpion
+    GetHealthContractDetails:
+      transformation:
+        responsePath: HealthContractDetails.ProductDescritpion
+    GetLifeHealthContractDetails:
+      transformation:
+        responsePath: LifeHealthContractDetails.ProductDescritpion
+    GetContractDeathDetails:
+      transformation:
+        responsePath: ContractDeathDetails.ProductDescritpion
+    GetContractConsumerDetails:
+      transformation:
+        responsePath: ContractConsumerDetails.ProductDescritpion
+    GetContractCargoDetails:
+      transformation:
+        responsePath: ContractCargoDetails.ProductDescritpion
+    GetContractCargoPrudDetails:
+      transformation:
+        responsePath: ContractCargoPrudDetails.ProductDescritpion
+    GetContractDetailsPrudDetails:
+      transformation:
+        responsePath: ContractDetailsPrudDetails.ProductDescritpion
+    GetContractFirePrudDetails:
+      transformation:
+        responsePath: ContractFirePrudDetails.ProductDescritpion
+    GetContractGroupHealthDetails:
+      transformation:
+        responsePath: ContractGroupHealthDetails.ProductDescription        

@@ -1,0 +1,21 @@
+list:
+  additionals:
+    label_el:
+      label: label_el
+      type: text
+    label_en:
+      label: label_en
+      type: text
+  items:
+    - value: divident
+      label_el: divident
+      label_en:
+    - value: note
+      label_el: note
+      label_en:
+    - value: taxLife
+      label_el: taxLife
+      label_en:
+    - value: taxDivLife
+      label_el: taxDivLife
+      label_en: taxDivLife

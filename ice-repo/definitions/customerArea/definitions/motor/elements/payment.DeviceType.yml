@@ -1,0 +1,11 @@
+element:
+  type: text
+  buckets:
+    GetTransactionInfoAEGA:
+      transformation:
+        responsePath: DeviceType
+    # executePayment:
+    #   transformation:
+    #     dataPath: deviceCategory
+  pages:
+    paymentManagement: null

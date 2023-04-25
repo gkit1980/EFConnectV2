@@ -1,0 +1,12 @@
+element:
+  type: date
+  viewMode: output
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent
+  buckets:
+    GetCustomerFullData:
+      transformation:
+        responsePath: Customer.BirthDate
+  pages:
+    viewClaimDetails: null

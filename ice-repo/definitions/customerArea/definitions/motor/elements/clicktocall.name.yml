@@ -1,0 +1,10 @@
+element:
+  title: Name of Person
+  type: text
+  component: IceTextInput
+  viewMode: required
+  pages:
+    clicktocall: null
+  buckets:
+    ProcessCallbackRequest:
+      transformation:{}

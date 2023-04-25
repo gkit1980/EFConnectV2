@@ -1,0 +1,32 @@
+list:
+  type: text
+  additionals:
+    label_en:
+      label: label_en
+      type: text
+    label_el:
+      label: label_el
+      type: text
+  items:
+    - value: 1
+      label_en: Δικαίωμα Πρόσβασης
+      label_el: Δικαίωμα Πρόσβασης
+    - value: 2
+      label_en: Δικαίωμα Διόρθωσης
+      label_el: Δικαίωμα Διόρθωσης
+    - value: 3
+      label_en: Δικαίωμα Διαγραφής ("δικαίωμα στη λήθη")
+      label_el: Δικαίωμα Διαγραφής ("δικαίωμα στη λήθη")
+    - value: 4
+      label_en: Δικαίωμα Περιορισμού της επεξεργασίας
+      label_el: Δικαίωμα Περιορισμού της επεξεργασίας
+    - value: 5
+      label_en: Δικαίωμα στη φορητότητα των δεδομένων
+      label_el: Δικαίωμα στη φορητότητα των δεδομένων
+    - value: 6
+      label_en: Δικαίωμα εναντίωσης
+      label_el: Δικαίωμα εναντίωσης
+    - value: 7
+      label_en: Άλλο
+      label_el: Άλλο
+

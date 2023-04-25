@@ -1,0 +1,9 @@
+element:
+  type: date
+  viewMode: output  
+  buckets:
+    GetCoolgenClaimDetails:
+      transformation:
+        responsePath: ClaimCoolgen.ClosingClaimDateCA
+  pages:
+    viewPropertyClaimDetails: null

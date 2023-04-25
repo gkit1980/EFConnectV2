@@ -1,0 +1,9 @@
+element:
+  type: array
+  component: IceArray
+  label: null
+  viewMode: output
+  buckets:
+    GetHealthCards:
+      transformation:
+        responsePath: DigitalCardDocuments

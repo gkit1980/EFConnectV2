@@ -1,0 +1,25 @@
+action:
+  title: Get individual property claims requests
+  execution:
+    - GetSalesforceTokenRule:
+        fromProcess: eclaims
+        salesforceLoginUrl: BASEURLSALESFORCELOGIN
+        methodLogin: post
+        getAmendmentsUrl: AMENDMENTSURL
+        methodGetAmendments: get
+        bucket: EclaimsSfLogin
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+    - PropertyNotificationClaimsInprogressRequestsRule:
+        baseurl: BASESALESFORCEURLECLAIMSERVICES
+        methodGetInprogressPropertyClaims: get
+        bucket: PropertyClaimsInprogressRequests
+        activeCustomerId: eclaims.customerID  
+        activecontract: eclaims.contractKey 
+    - PropertyNotificationClaimsValuationInprogressRequestsRule:   
+  trigger:
+    - PageTriggerRule:
+        enter:
+          - viewClaims
+      

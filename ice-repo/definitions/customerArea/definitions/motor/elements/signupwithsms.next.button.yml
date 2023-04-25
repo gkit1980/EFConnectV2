@@ -1,0 +1,11 @@
+element:
+  component: IceButton
+  type: text
+  viewMode: 
+    DtViewModeRule:
+      dt: view-button-signupwithsms
+      output: viewmode
+  defaultValue: actionVerifySMS
+  pages:
+    signupsuccessfully: null
+    signupwithsms: null

@@ -1,0 +1,19 @@
+<div *ngIf="show" class="gc-container" [ngClass]="labelClass" id="static-component" #otherDriver>
+  <div class="submitted-info">
+    <div class="user-icon" [inlineSVG]="getIcon('9A06F0D6D58A4CDE9356E4B8A07A73E8')" [onSVGLoaded]="handleSVGUser"></div>
+    <div class="driver">{{ value ? value : defaultHeaderDriver }}</div>
+    <div (click)="editDriver()" class="accordion-icon" [ngClass]="{'disabled-color': !isEnabledArrow}" [inlineSVG]="isSubmitted ? getIcon('E97E07C9E80A45528750C6A254AE4699') : getIcon('F44ADB6DE97E4E8AA4C07EE14F921673')"
+      [onSVGLoaded]="handleSVG"></div>
+  </div>
+  <div *ngIf="!isSubmitted" class="input-info">
+    <input [(ngModel)]="value" (keydown)="validateLatin($event)"  class="myInput" placeholder="Ονοματεπώνυμο" />
+  </div>
+<div class="error-msg" *ngIf="error">{{textError}}</div>
+  <div *ngIf="!isSubmitted" class="more-actions">
+    <div (click)="deleteDriver()" class="action-icon" [inlineSVG]="getIcon('47C7355F821B454BA65B86F6BB8C728A')"
+      [onSVGLoaded]="handleSVG"></div>
+    <div (click)="submitDriver()" class="action-icon" [ngClass]="{'disabled-background': isEnableBack}" [inlineSVG]="getIcon('B383E677215D4C9F8F7AB3267A8566D2')"
+      [onSVGLoaded]="handleSVG"></div>
+  </div>
+</div>
+

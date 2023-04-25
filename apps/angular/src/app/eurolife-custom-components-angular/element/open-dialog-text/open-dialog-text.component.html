@@ -1,0 +1,4 @@
+<div *ngIf="!currentPageAmendments">{{ text1 | resourcePipe }} <u><b><span class="myrights" (click)="openDialog()">{{ text2 | resourcePipe }}</span></b></u>
+</div>
+<div *ngIf="currentPageAmendments"><u><b><span class="myrights" (click)="openDialog()"></span></b></u>
+</div>

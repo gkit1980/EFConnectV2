@@ -1,0 +1,9 @@
+// Get color function
+@function getColor($scheme, $tone: primary) {
+  @return map-get(map-get($colors, $scheme), $tone);
+}
+
+// Get font styles function
+@function getFontStyles($type, $tag) {
+  @return map-get(map-get($fonts, $type), $tag);
+}

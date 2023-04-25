@@ -1,0 +1,12 @@
+action:
+  execution: 
+      - NavigateToUrlExecutionRule:
+          url: '/ice/default/customerArea.motor/signupsuccessfully'
+          definition: customerArea         
+  condition:
+    FeelConditionRule: 
+      expression: createUserStatus = true
+  trigger:
+    - ElementChangeTriggerRule:
+        elements: 
+          - createUserStatus

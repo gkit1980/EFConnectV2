@@ -1,0 +1,18 @@
+action:
+  title: calls a rest service to get the cash values
+  execution:
+    - RestCallExecutionRule:
+        baseUrl: BASEURL
+        url: GetContractCashValue
+        verb: post
+        bucket: GetContractCashValue
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+  condition:
+    FeelConditionRule:
+      expression: policy.selectedBranch = 11
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - policy.selectedBranch

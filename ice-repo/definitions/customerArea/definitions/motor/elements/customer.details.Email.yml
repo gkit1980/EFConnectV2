@@ -1,0 +1,18 @@
+element:
+  type: text
+  viewMode: output
+  # buckets:
+  #   GetCustomerFullData:
+  #     transformation:
+  #       responsePath: Customer.Email
+    # ChangePassword:
+    #   transformation:
+    #     dataPath: UserName
+    # ChangeMobile:
+    #   transformation:
+    #     dataPath: Email
+    # ChangeEmail:
+    #   transformation:
+    #     dataPath: CurrentEmail
+  pages:
+    customerProfile: null

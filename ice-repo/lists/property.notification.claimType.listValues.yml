@@ -1,0 +1,23 @@
+list:
+  type: text
+  additionals:
+    label_el:
+      label: label_el
+      type: text
+  items:
+    - value: 0
+      label_el: ΕΠΙΛΟΓΗ ΖΗΜΙΑΣ
+    - value: 1
+      label_el: Πυρκαγιά
+    - value: 2
+      label_el: Σεισμός
+    - value: 3
+      label_el: Φυσικά Φαινόμενα (πλημμύρα, θύελλα, καταιγιδα, παγετός, χαλάζι, χίονι)
+    - value: 4
+      label_el: Διάρρηξη Σωληνώσεων
+    - value: 5
+      label_el: Θραύση Κρυστάλλων
+    - value: 6
+      label_el: Βραχυκύκλωμα
+    - value: 7
+      label_el: Άλλο

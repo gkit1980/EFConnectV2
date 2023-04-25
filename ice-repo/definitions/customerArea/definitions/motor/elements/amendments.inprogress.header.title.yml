@@ -1,0 +1,4 @@
+element:
+  type: text
+  label: Σε εξέλιξη
+  viewMode: output

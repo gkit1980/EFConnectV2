@@ -1,0 +1,9 @@
+element:
+  type: array
+  component: IceArray
+  viewMode: output
+  label: null
+  buckets:
+    get-contracts: 
+      transformation:
+        responsePath: clientContracts

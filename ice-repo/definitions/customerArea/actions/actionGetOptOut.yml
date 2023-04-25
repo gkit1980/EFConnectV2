@@ -1,0 +1,15 @@
+action:
+  title: calls a rest service to get the opt out functionality
+  execution:
+    - RestCallExecutionRule:
+        baseUrl: BASEURLCHANGECREDENTIALS
+        url: GetOptOut
+        verb: post
+        bucket: GetOptOut
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+  trigger:
+    - PageTriggerRule:
+        enter:
+          - customerProfile

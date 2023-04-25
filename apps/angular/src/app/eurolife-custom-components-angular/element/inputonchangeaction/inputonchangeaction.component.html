@@ -1,0 +1,11 @@
+<div class="column form-group">
+  <mat-form-field>
+    <mat-label> {{ changeFlow ? (newMobile | resourcePipe) : newEmail | resourcePipe}} </mat-label>
+    <input class="Caption1" matInput name="email" id="email" [(ngModel)]="email" (ngModelChange)="onEmailChange(email)">
+    <!-- <mat-error *ngIf="email.invalid">{{emailError | resourcePipe}}</mat-error> -->
+  </mat-form-field>
+
+
+
+
+</div>

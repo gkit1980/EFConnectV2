@@ -1,0 +1,10 @@
+element:
+  component: DragDropFileComponent
+  arrayElement: documents
+  arrayElementFileName: documents~name
+  arrayElementSize: documents~size
+  arrayElementSizeEncoded: documents~size-encoded
+  arrayElementMimeType: documents~content-type
+  arrayElementBase64Data: documents~content
+  pages:
+    viewEclaimsDetails: null

@@ -1,0 +1,148 @@
+<ng-container *ngIf="contentLoaded; else elseTemplate">
+  <div [ngClass]="type == 'amendisabled' ? 'isDisabled' : ''">
+    <a
+      [ngClass]="type != 'amendisabled' ? 'block-link' : ''"
+      (click)="fillDatastore()"
+      class="block-link"
+      href="{{ cardLink }}"
+    >
+      <div class="card" [ngClass]="cardColor">
+        <div class="card-body">
+          <div class="outer-flex">
+            <div class="left-side">
+              <div [ngClass]="type == 'amendisabled' ? 'isHidden' : ''" class="Typeface">
+                <span class="h1">{{ cardValue }}</span> {{ cardComplementText }}
+              </div>
+              <h5 class="card-title h5">{{ cardTitle }}</h5>
+              <div *ngIf="!getNotificationClaim()" class="Caption3">{{ cardContent }}</div>      <!--Contracts and Amendments-->
+              
+              <div *ngIf="getNotificationClaim()" class="notification-bar warning">    <!--Claims with positive number of claims-->
+                <div
+                  class="notification-icon"
+                  aria-label="icon"
+                  [onSVGLoaded]="handleSVGInfo"
+                  [inlineSVG]="getIcon('01D8EA7C762A44E0A8FF3E4FFF8D1C72')"
+                ></div>
+                <div>
+                  <p class="Caption3 m-auto color-font">
+                   Αιτήματα σε εκκρεμότητα
+                  </p>
+                </div>
+           </div>
+
+
+            </div>
+
+            <div class="right-side" [ngClass]="type == 'amendisabled' ? 'isHidden' : ''">
+              <div
+                class="chevron-right"
+                aria-label="icon"
+                [inlineSVG]="getIcon('C8705EB508D542E59548EF002F938768')"
+                [onSVGLoaded]="handleSVG"
+              ></div>
+            </div>
+
+            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</ng-container>
+
+<ng-template #elseTemplate>
+  <!-- <div> Added the ngclass below -->
+  <div [ngClass]="type == 'amendisabled' ? 'isDisabled' : ''">
+    <a *ngIf="type != 'amendisabled'" class="block-link" href="{{ cardLink }}">
+      <!-- Loading Items -->
+      <div class="card" [ngClass]="cardColor">
+        <div class="card-body">
+          <div class="outer-flex">
+            <div class="left-side">
+              <div class="Typeface skeleton-screen">
+                <!--Contracts-->
+                <div *ngIf="type == 'contracts'">
+                  <ngx-skeleton-loader
+                    appearance="circle"
+                    [theme]="{ width: '60px', height: '60px', 'border-radius': '10px', 'background-color': '#ef3340' }"
+                  >
+                  </ngx-skeleton-loader>
+                </div>
+
+                <!--End Contracts-->
+
+                <!--Claims-->
+                <div *ngIf="type == 'claims'">
+                  <ngx-skeleton-loader
+                    appearance="circle"
+                    [theme]="{ width: '60px', height: '60px', 'border-radius': '10px', 'background-color': '#003b4d' }"
+                  >
+                  </ngx-skeleton-loader>
+                </div>
+
+                <!--End Claims-->
+
+                <!--Amendments-->
+                <div *ngIf="type == 'amendments'">
+                  <ngx-skeleton-loader
+                    appearance="circle"
+                    [theme]="{ width: '60px', height: '60px', 'border-radius': '10px', 'background-color': '#485294' }"
+                  >
+                  </ngx-skeleton-loader>
+                </div>
+                <!--End Amendments-->
+
+                {{ cardComplementText }}
+              </div>
+              <h5 class="card-title h5">{{ cardTitle }}</h5>
+              <div class="Caption3">{{ cardContent }}</div>
+            </div>
+
+            <div class="right-side">
+              <div
+                class="chevron-right"
+                aria-label="icon"
+                [inlineSVG]="getIcon('C8705EB508D542E59548EF002F938768')"
+                [onSVGLoaded]="handleSVG"
+              ></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <a *ngIf="type == 'amendisabled'" href="">
+      <div class="card" [ngClass]="cardColor">
+        <div class="card-body">
+          <div class="outer-flex">
+            <div class="left-side">
+              <div class="Typeface skeleton-screen isHidden">
+                <div>
+                  <ngx-skeleton-loader
+                    appearance="circle"
+                    [theme]="{ width: '60px', height: '60px', 'border-radius': '10px', 'background-color': '#dee2e6' }"
+                  >
+                  </ngx-skeleton-loader>
+                </div>
+
+                {{ cardComplementText }}
+              </div>
+              <h5 class="card-title h5">{{ cardTitle }}</h5>
+              <div class="Caption3">{{ cardContent }}</div>
+            </div>
+
+            <div class="right-side isHidden">
+              <div
+                class="chevron-right"
+                aria-label="icon"
+                [inlineSVG]="getIcon('C8705EB508D542E59548EF002F938768')"
+                [onSVGLoaded]="handleSVG"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</ng-template>

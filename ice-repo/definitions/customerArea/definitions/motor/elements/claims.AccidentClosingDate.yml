@@ -1,0 +1,9 @@
+element:
+  type: date
+  viewMode: output  
+  buckets:
+    GetLifeClaimDetails:
+      transformation:
+        responsePath: ClaimLife.AccidentClosingDate
+  pages:
+    viewClaimDetails: null

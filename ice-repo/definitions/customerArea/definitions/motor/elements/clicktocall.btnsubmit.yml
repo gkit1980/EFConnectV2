@@ -1,0 +1,16 @@
+element:
+  component: IceButton
+  type: text
+  label: Υποβολή
+  # additionalClasses: eurolife_btn-default middle
+  viewMode:
+    DtViewModeRule:
+      dt: clicktocall.btnsubmit.view-mode
+  action:
+    execution:
+      - ProcessCallbackRequestRule:
+          bucket: ProcessCallbackRequest
+      - MessageInfoClicktocallRule:
+          needsDatastore: true
+  pages:
+    clicktocall: null

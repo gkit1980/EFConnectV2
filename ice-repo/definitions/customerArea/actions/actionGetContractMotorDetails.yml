@@ -1,0 +1,27 @@
+action:
+    title: calls a rest service to get the contract motor details
+    execution:
+        - RestCallExecutionRule:
+              baseUrl: BASEURL
+              #   baseUrl: https://lifeuatna.eurolife.gr/CustomerDataProvider/api/CustomerData
+              url: GetContractMotorDetails
+              verb: post
+              bucket: GetContractMotorDetails
+              encryptMessage: true
+              encryptSecretElement: token
+              needsDataStore: false
+        - NavigateToPageExecutionRule:
+              #   page: viewPolicyDetails
+              page: policyDetails
+              omitValidation: true
+    condition:
+        FeelConditionRule:
+            #   expression: policy.contract.general.info.ContractID = 7825042
+            expression: policy.selectedBranch = 3
+    # condition:
+    #   FeelConditionRule:
+    #     expression: policy.contract.general.info.ContractID != null
+    trigger:
+        - ElementChangeTriggerRule:
+              elements:
+                  - policy.selectedBranch

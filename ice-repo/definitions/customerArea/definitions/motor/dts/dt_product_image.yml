@@ -1,0 +1,99 @@
+dt:
+  hit-policy: F
+  inputs:
+    - label: input element for default
+      element: selectedcontractbranch
+  outputs:
+    - id: svgImageValue
+      type: string
+  rules:
+    - inputs:
+        - 1
+      outputs:
+        - >-
+          "https://scp.eurolife.gr/~/media/5B16FD8598BC4750B8E058C8BDC2528A.ashx"
+    - inputs:
+        - 2
+      outputs:
+        - >-
+          "https://scp.eurolife.gr/~/media/55575BDF0CF94677A59ADCF3F1ECF1AB.ashx"
+    - inputs:
+        - 3
+      outputs:
+        - >-
+          "https://scp.eurolife.gr/~/media/0F0E1AC2A2AC45A7906897CCB41B5580.ashx"
+    - inputs:
+        - 4
+      outputs:
+        - >-
+          "https://scp.eurolife.gr/~/media/D2F9D495BF194ED0BC3F23078CA4B07E.ashx"
+    - inputs:
+        - 5
+      outputs:
+        - >-
+          "https://scp.eurolife.gr/~/media/9C798E9E7D62478294D477734D3D65B6.ashx"
+    - inputs:
+        - 6
+      outputs:
+        - >-
+          "https://scp.eurolife.gr/~/media/9C798E9E7D62478294D477734D3D65B6.ashx"
+    - inputs:
+        - 7
+      outputs:
+        - >-
+          "https://scp.eurolife.gr/~/media/9C798E9E7D62478294D477734D3D65B6.ashx"
+    - inputs:
+        - 8
+      outputs:
+        - >-
+          "https://scp.eurolife.gr/~/media/9C798E9E7D62478294D477734D3D65B6.ashx"
+    - inputs:
+        - 9
+      outputs:
+        - >-
+          "https://scp.eurolife.gr/~/media/4412D69B78B5460B8E25F2FEAFA0105A.ashx"
+    - inputs:
+        - 10,98
+      outputs:
+        - >-
+          "https://scp.eurolife.gr/~/media/1A6F51F8DAAB4D96A817A96E6EE61B6C.ashx"
+    - inputs:
+        - 11
+      outputs:
+        - >-
+          "https://scp.eurolife.gr/~/media/55575BDF0CF94677A59ADCF3F1ECF1AB.ashx"
+    - inputs:
+        - 12
+      outputs:
+        - >-
+          "https://scp.eurolife.gr/~/media/4412D69B78B5460B8E25F2FEAFA0105A.ashx"
+    - inputs:
+        - 13
+      outputs:
+        - >-
+          "https://scp.eurolife.gr/~/media/D2F9D495BF194ED0BC3F23078CA4B07E.ashx"
+    - inputs:
+        - 14
+      outputs:
+        - >-
+          "https://scp.eurolife.gr/~/media/4412D69B78B5460B8E25F2FEAFA0105A.ashx"
+    - inputs:
+        - 15
+      outputs:
+        - >-
+          "https://scp.eurolife.gr/~/media/4412D69B78B5460B8E25F2FEAFA0105A.ashx"
+    - inputs:
+        - 16
+      outputs:
+        - >-
+          "https://scp.eurolife.gr/~/media/4412D69B78B5460B8E25F2FEAFA0105A.ashx"
+    - inputs:
+        - 17
+      outputs:
+        - >-
+          "https://scp.eurolife.gr/~/media/4412D69B78B5460B8E25F2FEAFA0105A.ashx"
+    - inputs:
+        - 99
+      outputs:
+        - >-
+           "https://scp.eurolife.gr/~/media/3F439F3E1A604108B6D37ED18D52218A.ashx"      

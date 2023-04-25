@@ -1,0 +1,30 @@
+page:
+  component: PopUpPage
+  flag: consents
+  showTopSection: false
+  validation:
+    onElementComponentChange: true
+    behaviour: page
+  sections:        
+    - component: SimpleGridViewComponent
+      rows:
+        - cols:
+            - css: consent-text-center consent-init-firstdialog h4 middle
+              col: 12
+              element: consent.firstdialog.header.info
+        - cols:
+            - css: consent-text-center consent-init-msg1 Typeface middle
+              col: 12
+              element: consent.initial.msg1
+        - cols:
+            - css: consent-text-center consent-init-msg2 h6-active middle
+              col: 12
+              element: consent.initial.msg2      
+        - cols:
+            - css:
+              col: 12
+              element: consent-initial-steps    
+        - cols:
+            - css: 
+              col: 12
+              element: consent.initial.nextbtn

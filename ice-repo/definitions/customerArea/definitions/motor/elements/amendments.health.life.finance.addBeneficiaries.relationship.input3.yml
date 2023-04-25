@@ -1,0 +1,17 @@
+element:
+  type: text
+  label: 
+  values: amendments.relationship.listValues
+  viewMode: enable
+  buckets:
+    AmendmentsCreateLifeCase:
+      transformation: {}
+    AmendmentsCreateHealthCase:
+      transformation: {}
+    AmendmentsCreateFinanceCase:
+      transformation: {}
+  component: AmendmentsRelationshipComponent
+  pages:
+    viewAmendmentFinanceDetails: null
+    viewAmendmentHealthDetails: null
+    viewAmendmentLifeDetails: null

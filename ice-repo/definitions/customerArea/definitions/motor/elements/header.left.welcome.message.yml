@@ -1,0 +1,7 @@
+element:
+  type: text
+  component: HeaderWelcomeComponent
+  dataStoreProperty: clientContractsUpd
+  pages:
+    home: null 
+          

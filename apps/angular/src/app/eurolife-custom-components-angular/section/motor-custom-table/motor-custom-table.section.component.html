@@ -1,0 +1,70 @@
+<!-- <mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ label }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div *ngFor="let row of recipe.rows" class="row" [ngClass]="row.css">
+      <div class="column" *ngFor="let col of row.cols" [ngClass]="getGridColumnClass(col)">
+        <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element" [component]="col.component">
+        </ice-element>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card> -->
+
+<!-- <h1 mat-dialog-title><strong>Φόρμα Επικοινωνίας</strong> </h1>
+<div mat-dialog-content>
+  <p>Είμαστε εδώ για εσάς. Στείλτε μας το σχόλιο σας και σύντομα <br>ένας συνεργάτης μας θα επικοινωνήσει μαζί σας.<br></p>
+</div>
+<p>Θέμα</p>
+<mat-form-field>
+  <input matInput placeholder="Enter your password">
+</mat-form-field>
+<div mat-dialog-actions>
+  <mat-checkbox>I understand that deleting my account is permanent and cannot be undone</mat-checkbox>
+</div>
+<br>
+<div mat-dialog-actions>
+  <button mat-button><strong>Delete account</strong></button>
+</div> -->
+
+<div class="popup-page">
+  <div class="top_div">
+    <div
+      class="headset"
+      aria-label="My icon"
+      [inlineSVG]="headsetImageSource"
+      [onSVGLoaded]="handleHeadsetSVG"
+    ></div>
+    <div class="title">{{ page.labelRule?.getPageTitle() }}</div>
+    <div
+      class="close"
+      aria-label="My icon"
+      [inlineSVG]="closeImageSource"
+      [onSVGLoaded]="handlecloseSVG"
+      (click)="onNoClick()"
+    ></div>
+    <!-- <span class="fa fa-close" (click)="onNoClick()"></span> -->
+  </div>
+  <!-- <h3 mat-dialog-title><strong>Funds Management</strong> </h3> -->
+  <div
+    [ngClass]="{
+      'custom-page-content-container-ctc':
+        this.recipe.name === 'clicktochat' || this.recipe.name === 'clicktocall'
+    }"
+    class="custom-page-content-container"
+  >
+    <div
+      class="col-sm-12 mt-xs-0 mt-sm-5 mx-sm-auto mt-5"
+      [ngClass]="{
+        'mx-3':
+          this.recipe.name !== 'clicktochat' &&
+          this.recipe.name !== 'clicktocall'
+      }"
+    >
+      <!-- <page-validation [page]="page"></page-validation> -->
+      <ice-section *ngFor="let section of page.sections" [section]="section">
+      </ice-section>
+    </div>
+  </div>
+</div>

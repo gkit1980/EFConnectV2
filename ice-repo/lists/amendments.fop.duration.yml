@@ -1,0 +1,19 @@
+list:
+  type: text
+  additionals:
+    label_en:
+      label: label_en
+      type: text
+    label_el:
+      label: label_el
+      type: text
+  items:
+    - value: 1
+      label_en: 3 μήνες
+      label_el: 3 μήνες
+    - value: 2
+      label_en: 6 μήνες
+      label_el: 6 μήνες
+    - value: 3
+      label_en: 12 μήνες
+      label_el: 12 μήνες

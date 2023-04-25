@@ -1,0 +1,6 @@
+element:
+  type: integer
+  viewMode: hidden
+  defaultValue: 0
+  pages:
+    viewEclaimsDetails: null

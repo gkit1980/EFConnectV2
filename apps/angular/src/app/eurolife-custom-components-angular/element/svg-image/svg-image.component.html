@@ -1,0 +1,10 @@
+<div class="svg-image">
+    <div class="background-circle" *ngIf="showBackground">
+        <div class="my-icon" aria-label="icon" [inlineSVG]="imageSource" [ngClass]="imageClass"
+            [onSVGLoaded]="handleSVG">
+        </div>
+    </div>
+    <div class="my-icon" aria-label="icon" [inlineSVG]="imageSource" [ngClass]="imageClass" [onSVGLoaded]="handleSVG"
+        *ngIf="!showBackground">
+    </div>
+</div>

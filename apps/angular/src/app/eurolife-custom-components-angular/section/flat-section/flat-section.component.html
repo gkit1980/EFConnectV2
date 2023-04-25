@@ -1,0 +1,8 @@
+<div class="flat-section">
+  <div *ngFor="let row of recipe.skatoules" class="row" [ngClass]="row.css">
+    <div class="column" *ngFor="let col of row.cols" [ngClass]="getGridColumnClass(col)">
+      <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element" [component]="col.component">
+      </ice-element>
+    </div>
+  </div>
+</div>

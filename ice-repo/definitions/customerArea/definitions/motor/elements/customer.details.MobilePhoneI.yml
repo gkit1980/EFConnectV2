@@ -1,0 +1,22 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        InputonchangeactionComponent:
+          elementName: myMobile
+  viewMode:
+    ConditionalViewModeRule: # if the return value from ChangeMobile service is Success: true then show this element
+      conditionElement: customer.details.verifyMobileSuccess
+      conditionValue: true
+      conditionViewMode: disabled
+      elseViewMode: default
+  buckets:
+    ChangeMobile:
+      transformation:
+        dataPath: Mobile
+    VerifyChangeMobile:
+      transformation:
+        dataPath: Mobile
+  pages:
+    changeMobilePhonePopUp: null

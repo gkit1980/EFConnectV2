@@ -1,0 +1,9 @@
+element:
+  type: boolean
+  viewMode: hidden
+  buckets:
+    VerifyChangeEmailSMS:
+      transformation:
+        responsePath: Success
+  pages:
+    changeEmailConfirmation: null

@@ -1,0 +1,8 @@
+element:
+  type: boolean
+  label: Ενημερώθηκα Σχετικά με την επεξεργασία των Προσωπικών μου δεδομένων
+  defaultValue: false
+  component: IceCheckbox
+  viewMode: default
+  pages:
+    communicationService: null

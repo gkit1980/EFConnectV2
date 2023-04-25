@@ -1,0 +1,46 @@
+dt:
+  hitPolicy: C
+  inputs:
+    - element: amendments.life.category.dropdown
+  outputs:
+    - id: value
+    - id: label
+    - id: label_en
+      type: text
+  rules:
+    - inputs:
+        - "1"
+      outputs:
+        - 1
+        - Αλλαγή Δικαιούχων
+        - Change_of_Beneficiaries
+    - inputs:
+        - "1"
+      outputs:
+        - 2
+        - Προσθήκη Δικαιούχων
+        - Change_of_Beneficiaries
+    - inputs:
+        - "2"
+      outputs:
+        - 3
+        - Από πάγια κάρτας σε Μετρητά
+        - Payment_Method
+    - inputs:
+        - "2"
+      outputs:
+        - 4
+        - Από πάγια λογ/σμού σε Μετρητά
+        - Payment_Method
+    - inputs:
+        - "4"
+      outputs:
+        - 5
+        - Συχνότητα Πληρωμών
+        - Payment_Frequency
+    - inputs:
+        - "3"
+      outputs:
+        - 6
+        - Ημερομηνία Γεννήσεως
+        - Customer_Details

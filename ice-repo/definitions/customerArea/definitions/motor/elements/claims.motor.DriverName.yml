@@ -1,0 +1,12 @@
+element:
+  type: text
+  viewMode: output  
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent
+  buckets:
+    GetCoolgenClaimDetails:
+      transformation:
+        responsePath: ClaimCoolgen.DriverFullName
+  pages:
+    viewClaimDetails: null

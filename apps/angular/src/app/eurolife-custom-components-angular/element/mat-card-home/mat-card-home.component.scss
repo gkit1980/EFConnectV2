@@ -1,0 +1,198 @@
+
+$notification-colors: (
+  background: (
+    warning: rgb(249, 229, 240),
+    success: rgb(233, 252, 245),
+    info: rgba(4, 158, 204, 0.1),
+  ),
+  fill: (
+    warning: rgb(204, 4, 108),
+    success: rgb(43, 234, 155),
+    info: rgb(4, 158, 204),
+  ),
+);
+
+:host ::ng-deep .glyphicon {
+  line-height: 1.5 !important;
+  padding-left: 3px !important;
+}
+
+.card-body {
+  padding: 15px;
+  @media screen and (max-width: 769px) and (max-width: 1024px) {
+    padding: 7px 24px 24px 27px;
+  }
+  @media screen and (max-width: 1025px) and (max-width: 1439px) {
+    padding: 7px 8px 24px 27px;
+  }
+  @media screen and (max-width: 767px) {
+    padding: 15px;
+  }
+}
+
+:host ::ng-deep .card {
+  width: 100%;
+  height: 180px;
+}
+
+.block-link {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.skeleton-screen
+{
+  display: flex;
+  align-items: center;
+}
+
+:host ::ng-deep .myH2 {
+  font-size: large;
+}
+
+@media screen and (max-width: 837px) {
+  .card {
+    margin-bottom: 16px !important;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .card {
+    height: 212px;
+  }
+}
+
+// @media screen and (min-width: 768px) and (max-width: 860px) {
+//   .card {
+//     // min-height: 237px;
+//   }
+// }
+
+@media screen and (min-width: 768px) and (max-width: 1061px) {
+  .card {
+    height: 220px;
+  }
+}
+
+.red-card {
+  background-color: #ef3340 !important;
+}
+
+.purple-card {
+  background-color: #485294 !important;
+}
+
+.dark-blue-card {
+  background-color: #003b4d !important;
+}
+
+.grey-card {
+  background-color: #eeeeee !important;
+}
+
+.card {
+  border-radius: 0px 40px 0px 0px;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+}
+
+.outer-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-text {
+  opacity: 0.6;
+}
+
+.isDisabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  
+  >a {
+    color: currentColor;
+    display: block;
+    pointer-events: none;
+    text-decoration: none;
+  }
+}
+
+.isHidden {
+  visibility: hidden;
+}
+
+.gravatar {
+  width: 20px;
+  height: 10px;
+}
+
+.gravatar-title {
+  width: 77%;
+  height: 10px;
+  margin-left: 71px;
+  margin-top: 10px;
+}
+
+///Eclaims purpose
+.notification-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  margin-top: 0px;
+  padding: 0px 13px 0 11px;
+  width: 100%;
+}
+
+.notification-icon {
+  padding-left: 9px;
+  padding-right: 9px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.warning {
+  background-color: map-get(map-get($notification-colors, background), warning);
+  fill: map-get(map-get($notification-colors, fill), warning);
+}
+
+@media screen and (max-width: 1125px) {
+  .gravatar-title {
+    width: 70%;
+    height: 10px;
+    margin-left: 71px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .gravatar-title {
+    width: 60%;
+    height: 10px;
+    margin-left: 71px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .gravatar-title {
+    width: 50%;
+    height: 10px;
+    margin-left: 71px;
+    margin-top: 10px;
+  }
+}
+
+.gravatar-details {
+  margin-top: 45px;
+}
+
+.color-font{
+  color: #000;
+}
+

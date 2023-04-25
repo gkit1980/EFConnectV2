@@ -1,0 +1,7 @@
+element:
+  label: null
+  type: text
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent
+  viewMode: output

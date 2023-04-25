@@ -1,0 +1,10 @@
+element:
+  type: boolean
+  viewMode: hidden
+  defaultValue: false
+  buckets:
+    VerifyChangeEmail:
+      transformation:
+        responsePath: Success
+  pages:
+    changeEmailConfirmation: null

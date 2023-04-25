@@ -1,0 +1,24 @@
+<div class="sub-header">
+  <div class="row">
+    <div class="col-sm-12">
+      <div *ngFor="let row of recipe.rows" class="row" [ngClass]="row.css">
+        <div class="column" *ngFor="let col of row.cols" [ngClass]="getGridColumnClass(col)">
+          <ng-container *ngIf="col.internalRows">
+            <div class="row align-items-center justify-content-center no-gutters"
+              [ngClass]="getInternalRowClass(internalRow)" *ngFor="let internalRow of col.internalRows">
+              <div class="column" *ngFor="let internalCol of internalRow.internalCols"
+                [ngClass]="getGridInternalColumnClass(internalCol)">
+
+                <ice-element *ngIf="internalCol.element" [section]="section" [elementName]="internalCol.element"
+                  [component]="internalCol.component" [ngClass]="getElementClass(internalCol)"></ice-element>
+
+              </div>
+            </div>
+          </ng-container>
+          <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element" [component]="col.component">
+          </ice-element>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

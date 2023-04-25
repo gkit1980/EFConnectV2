@@ -1,0 +1,23 @@
+action:
+  title: calls a rest service to get the customer docs
+  execution:
+    - RestCallExecutionRule:
+        baseUrl: BASEURLDOCS
+        # baseUrl: customer_documents
+        url: getUserDocument
+        verb: post
+        bucket: getUserDocument
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+    - OpenPdfExecutionRule:
+        element: policy.Documents.print.dividentPDFDocument
+        mode: download
+        filename: document
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDatastore: false
+  # trigger:
+  #   - ElementChangeTriggerRule:
+  #       elements:
+  #         - policy.selectedNote

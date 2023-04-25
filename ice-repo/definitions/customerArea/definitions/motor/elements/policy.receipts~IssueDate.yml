@@ -1,0 +1,8 @@
+element:
+  type: date
+  component: IceDatepicker
+  viewMode: output  
+  buckets:
+    GetReceiptsByContractID:
+      transformation:
+        property: IssueDate

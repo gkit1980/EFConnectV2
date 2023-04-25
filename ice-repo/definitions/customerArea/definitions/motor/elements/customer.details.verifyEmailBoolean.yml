@@ -1,0 +1,6 @@
+element:
+  type: boolean
+  viewMode: hidden
+  defaultValue: false # it's value changes accordingly the regexp validation
+  pages:
+    changeEmailPopUp: null

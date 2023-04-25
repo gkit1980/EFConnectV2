@@ -1,0 +1,26 @@
+<div class="eurolife-button mb-5" [ngClass]="alignmentClass">
+  <button
+    class="eurolife_btn"
+    [ngClass]="additionalClasses"
+    [disabled]="isDisabled"
+    [class.btn-minh-load]="showSpinnerBtn"
+    [class.disable-dnl]="showSpinnerBtn"
+    (click)="onClick()"
+  >
+  
+  <div class="Button">{{ btnLabel }}</div>
+    <div
+      class="button-icon"
+      [ngClass]="svgFillColor"
+      aria-label="icon"
+      [inlineSVG]="imageSource"
+      [onSVGLoaded]="handleSVG"
+      *ngIf="imageSource != '' && !showSpinnerBtn"
+    ></div>
+    <div *ngIf="showSpinnerBtn" class="button-icon">
+      <i class="fa fa-spinner fa-spin fa-lg"></i>
+    </div>
+  </button>
+</div>
+
+

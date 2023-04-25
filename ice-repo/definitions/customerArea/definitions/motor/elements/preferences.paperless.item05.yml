@@ -1,0 +1,16 @@
+element:
+  type: boolean
+  buckets:
+    OptOut:
+      transformation:
+        dataPath: Enable
+    GetOptOut:
+      transformation:
+        responsePath: OptOut
+  component:
+    StaticComponentRule:
+      component:
+        IceToggle:
+          labelTrue: common.boolean.true
+          labelFalse: common.boolean.false
+  label: null

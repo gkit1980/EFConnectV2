@@ -1,0 +1,8 @@
+element:
+  type: text
+  buckets:
+    EclaimsInprogressRequests:
+      transformation:
+        property: PaymentAmount
+
+

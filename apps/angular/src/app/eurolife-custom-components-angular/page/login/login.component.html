@@ -1,0 +1,119 @@
+<div class="row">
+    <div class="col-md-5 left-container-desktop">
+        <!-- <p class="Eurolife-ERB">{{ eurolife | resourcePipe }}</p> -->
+        <div class="eurolife-logo">
+            <img class="image-logo" [src]='LOGIN_LOGO' alt="EurolifeConnect">
+        </div>
+        <div class="form-layout">
+            <div *ngIf="fromLogoutFlag" class="from-logout-message">
+                <div class="tick-svg-container">
+                    <div class="tick-svg" aria-label="icon" [inlineSVG]="getIcon('F7877569C4C74C9F9D432D5A01DDC0A0')"
+                        [onSVGLoaded]="handleTickSVG">
+                    </div>
+                </div>
+                <div class="typeface Caption3">{{logoutText | resourcePipe}}</div>
+            </div>
+            <div *ngIf="serverError" class="notification-informed">
+                <div class="information_icon" aria-label="email" [inlineSVG]="imageSourceNotification"
+                    [onSVGLoaded]="handleNotificationSVG"></div>
+                <div class="inside-text">
+                    <p class="Caption3">{{ noAccount | resourcePipe }} <a class="tel-link" href="tel:+302109303800">
+                            {{ telephone | resourcePipe }}</a></p>
+                </div>
+            </div>
+            <div [ngClass]="{'h4-from-logout': (serverError || fromLogoutFlag)}" class="h4 form-header">
+                {{ loginSectionHeader | resourcePipe }}
+            </div>
+
+
+
+            <form class="form-container" #loginForm="ngForm">
+                <mat-form-field>
+                    <mat-label>{{ emailText | resourcePipe }}</mat-label>
+                    <input id="email" class="Caption1" matInput placeholder="Πληκτρολογήστε το email σας"
+                        [formControl]="email" #mail name="username">
+                    <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+                </mat-form-field>
+                <mat-form-field *ngIf="!showPassword">
+                    <mat-label>{{ loginPasswordText | resourcePipe }}</mat-label>
+                    <div class="groupping">
+
+                        <input id="password" placeholder="Πληκτρολογήστε τον κωδικό σας" class="Caption1" matInput
+                            type="password" [formControl]="pwd" (keyup.enter)="executeLogintAction()">
+                        <div class="eye-svg" aria-label="icon" [inlineSVG]="getIcon('C8DC57AED3BC40B38A65371B554A3A45')"
+                            [onSVGLoaded]="handleEyeSVG" (mousedown)="onShowPassword(true)"
+                            (touchstart)="onShowPassword(true)" (touchend)="onShowPassword(false)"
+                            (mouseup)="onShowPassword(false)" ngbTooltip="Εμφάνιση κωδικού">
+                        </div>
+                    </div>
+                    <mat-error *ngIf="pwd.invalid">{{getPwdErrorMessage()}}</mat-error>
+                </mat-form-field>
+
+                <mat-form-field *ngIf="showPassword">
+                    <div class="groupping">
+                        <input id="password" class="Caption1" placeholder="Πληκτρολογήστε τον κωδικό σας" matInput
+                            type="text" [formControl]="pwd" (keyup.enter)="executeLogintAction()">
+                        <div class="eye-svg" aria-label="icon" [inlineSVG]="getIcon('C8DC57AED3BC40B38A65371B554A3A45')"
+                            [onSVGLoaded]="handleEyeSVG" (mousedown)="onShowPassword(true)"
+                            (touchstart)="onShowPassword(true)" (touchend)="onShowPassword(false)"
+                            (mouseup)="onShowPassword(false)">
+                        </div>
+                    </div>
+                    <mat-error *ngIf="pwd.invalid">{{getPwdErrorMessage()}}</mat-error>
+                </mat-form-field>
+              
+                <div class="button-row">
+                    <button
+                      type="submit"
+                      id="btnSubmit"
+                      name="submit"
+                      class="eurolife_btn eurolife_btn-default"
+                      (click)="executeLogintAction()"
+                    >
+                      {{ okSubmit | resourcePipe }}
+                    </button>
+                </div>
+            </form>
+
+            <div class="content">
+                <a href="#" [routerLink]="['/forgotUsername']"
+                    class="forgot_username">{{ forgotUser | resourcePipe }}</a>
+                <span class="Caption1">&nbsp;&nbsp;ή&nbsp;&nbsp;</span>
+                <a href="#" [routerLink]="['/forgotPassword']"
+                    class="forgot_password">{{ forgotPass | resourcePipe }}</a>
+            </div>
+
+            <div class="down-divider"></div>
+
+            <div class="button-row">
+                <button (click)="signUp()" class="eurolife_btn eurolife_btn-stroke">{{ newUser | resourcePipe }}</button>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-7 right-side">
+        <div class="informatory">
+            <div class="video_card">
+                <div class="video">
+                    <div class="overlay">
+                        <div (click)="playVideo()" class="play" aria-label="icon" [inlineSVG]="imageSource"
+                            [onSVGLoaded]="handleSVG"></div>
+                    </div>
+                </div>
+                <div class="text-content">
+                    <p class="h6-active">{{ newUserText1 | resourcePipe }}</p>
+                    <p class="Caption3">{{ newUserText2 | resourcePipe }}</p>
+                </div>
+            </div>
+            <div class="legal Typeface">
+                <div class="left-container">
+                    <p class="Tag Typeface clickable" (click)="openDialog()">{{ oroiXrishs | resourcePipe }} | </p>
+                    <p class="Tag Typeface clickable" (click)="openDialogLegal()">
+                        {{ prostasiadedomenwn | resourcePipe }}</p>
+                    <p (click)="cookieClick()" class="Tag Typeface clickable">{{ politikicookies | resourcePipe }}</p>
+                </div>
+                <p class="Tag Typeface">{{ copyright | resourcePipe }}</p>
+            </div>
+        </div>
+    </div>
+</div>

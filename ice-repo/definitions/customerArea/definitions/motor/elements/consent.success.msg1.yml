@@ -1,0 +1,10 @@
+element:
+  type: text
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: consent.succesfull.difference.contracts
+      conditionValue: true
+      conditionViewMode: hidden
+      elseViewMode: output  
+  pages:
+    consentClose: null

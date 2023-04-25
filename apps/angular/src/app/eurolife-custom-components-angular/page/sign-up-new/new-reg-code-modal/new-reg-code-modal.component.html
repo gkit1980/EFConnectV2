@@ -1,0 +1,74 @@
+<div class="modal-container">
+  <div class="close" aria-label="My icon" [inlineSVG]="closeImageSource" [onSVGLoaded]="handlecloseSVG"
+    (click)="onNoClick()">
+  </div>
+  <div class="circle">
+    <div class="regCodeModal" aria-label="icon" [inlineSVG]="imageSource">
+    </div>
+  </div>
+  <div class="reg-code-modal-container" *ngIf="!success">
+    <div class="container">
+      <div class="row">
+
+        <h4 class="reg-code-header">{{ registration | resourcePipe }}</h4>
+        <p class="Body1">{{ text1 | resourcePipe }}</p>
+        <div *ngIf="errorMsg !== '' " class="error-msg">{{errorMsg}}
+          <a *ngIf="errorMsgHere !== '' " href="https://www.eurolife.gr/exipiretisi/forma-epikoinwnias/" target="_blank">{{errorMsgHere}}</a>
+        </div>
+    
+            <div class="col-sm-12 form-group">
+              <!-- <label for="vat">VAT</label> -->
+              <mat-form-field floatLabel="never">
+                <mat-label>{{ vatText | resourcePipe }}</mat-label>
+                <input class="Caption1" matInput name="vatNo" placeholder="Πληκτρολογήστε το ΑΦΜ σας" pattern="[0-9]{9}"
+                [(ngModel)]="vatNo" (ngModelChange)="onVatChange()" [formControl]="vatno">
+                <mat-error *ngIf="vatno.invalid">{{ vatError | resourcePipe }}</mat-error>
+              </mat-form-field>
+              <div class="Caption1 birth-date-label">{{ birthDateR | resourcePipe }}</div>
+              <div class="birthdate-container">
+                <mat-form-field class="select-field-container">
+                  <mat-label>{{ dayR | resourcePipe }}</mat-label>
+                  <mat-select name="day" [(ngModel)]="day" (ngModelChange)="onOptionChange()">
+                    <mat-option *ngFor="let item of days" [value]="item">
+                      {{item}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field class="select-field-container">
+                  <mat-label>{{ monthR | resourcePipe }}</mat-label>
+                  <mat-select name="month" [(ngModel)]="month" (ngModelChange)="onOptionChange()">
+                    <mat-option *ngFor="let item of months" [value]="item.value">
+                      {{item.viewValue}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field class="select-field-container">
+                  <mat-label>{{ yearR | resourcePipe }}</mat-label>
+                  <mat-select name="year" [(ngModel)]="year" (ngModelChange)="onOptionChange()">
+                    <mat-option *ngFor="let item of years" [value]="item">
+                      {{item}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <!-- <input type="text" id="birthDate" class="form-control" name="birthDate" [(ngModel)]="birthDate" required> -->
+            </div>
+             <div class="col-sm-12">
+                <button class="eurolife_btn eurolife_btn-default submit-btn" type="submit"
+                  [disabled]="!gotVatNo || !gotBirthDate" (click)="executeRegistrationCodeAction()">{{ next | resourcePipe }}
+                </button>
+              </div>
+              <div class="col-sm-12 modal-cancel-btn">
+                <a class="eurolife_btn-link cancel-color" (click)="onCancelClick()">{{ cancel | resourcePipe }}
+                </a>
+              </div>
+      </div>
+    </div>
+  </div>
+  <div class="reg-code-modal-container" *ngIf="success">
+    <div class="body1">{{ check | resourcePipe }}</div>
+    <div class="body1">{{ check2 | resourcePipe }}</div>
+    <button class="eurolife_btn eurolife_btn-default cancel-btn" (click)="onCancelClick()">{{ ok | resourcePipe }}
+    </button>
+  </div>
+</div>

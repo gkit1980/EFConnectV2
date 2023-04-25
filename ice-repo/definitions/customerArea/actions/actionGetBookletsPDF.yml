@@ -1,0 +1,19 @@
+action:
+  title: calls a rest service to print insurance guide booklet
+  execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - contracts.details.bookletsPDF
+    - DownloadGuidePdfRule:
+        baseUrl: GENIKESURL
+        url: generatepdf
+        verb: get
+        typeOfContract: individual
+        bucket: GetBookletsPDF
+        needsDataStore: false
+    - OpenGuidePdfExecutionRule:
+        element: policy.details.printBookletsPDFDocument
+        # datastorePath: bookletsGuidePdf
+        filename: Insurance_Guide
+        mode: download
+        needsDatastore: false

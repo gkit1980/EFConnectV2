@@ -1,0 +1,4 @@
+element:
+  type: text
+  label: "Νέο Αίτημα Ονόματος, Επιθέτου, Πατρωνύμου Ασφαλισμένου."
+  viewMode: output

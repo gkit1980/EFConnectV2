@@ -1,0 +1,12 @@
+element:
+  component: MatCardHomeComponent
+  title: Αιτήματα Τροποποιήσεων
+  content: Η λειτουργικότητα είναι διαθέσιμη για ατομικά συμβόλαια
+  link: null
+  dataStoreProperty: clientContracts 
+  colorCard: grey-card
+  fillDatastore: null
+  type: amendisabled
+  complementText: null
+  pages:
+    home: null

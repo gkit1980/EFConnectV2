@@ -1,0 +1,9 @@
+action:
+  execution:
+    - EnableSpinnerRule: 
+        actionrule: action-eclaims-get-aade-receipt-fields
+    - EclaimsGetAadeReceiptFields:
+        inputElement: eclaims.aade.scanned.url
+        bucket: EclaimsGetAadeReceiptFields
+    - DisableSpinnerRule: 
+        actionrule: action-eclaims-get-aade-receipt-fields    

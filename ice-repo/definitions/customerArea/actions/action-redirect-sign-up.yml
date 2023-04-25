@@ -1,0 +1,13 @@
+action:
+  execution: 
+      - NavigateToUrlExecutionRule:
+          url: '/ice/default/customerArea.motor/signupvalidated'
+          definition: customerArea
+#  condition:
+#    FeelConditionRule: 
+#      expression: signupwithsms.status = true
+#  trigger:
+#    - ElementChangeTriggerRule:
+#        elements: 
+#         - signupwithsms.status            
+      

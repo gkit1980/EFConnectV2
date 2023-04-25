@@ -1,0 +1,24 @@
+<div class="welcome-container">
+  <div class="welcome-header">Καλώς όρισες <br />{{ username }}</div>
+  <div class="welcome-text">Αποζημίωση online εύκολα και γρήγορα όσο ποτέ!</div>
+  <div class="welcome-mobile-text">Αξία έχει να είσαι συνδεδεμένος με κάθε χρήσιμη πληροφορία, κάθε στιγμή.</div>
+  <p class="welcome-text-secondary-heading">Με το ομαδικό πρόγραμμα ασφάλισης υγείας της Eurolife FFH, έχετε τη δυνατότητα να αποζημιωθείτε άμεσα για έξοδα παροχών υγείας έως <strong>150€!</strong></p>
+  <button  [class.disable-btn]="!showEclaimsButton" *ngIf="hasGroupHealthContract" class="eurolife_btn eurolife_btn-default eurolife_btn-claims home-btn" (click)="redirectGroupDetails()">
+      ΝΕΟ ΑΙΤΗΜΑ ΑΠΟΖΗΜΙΩΣΗΣ
+      <div *ngIf="!showEclaimsButton" class="button-icon spinner-btn">
+        <i class="fa fa-spinner fa-spin fa-lg"></i>
+      </div>
+  </button>
+  <div class="row align-items-center mt-3 showNudge" *ngIf="isShowNudge">
+    <span class="notification-bar-info">
+      <div class="svg-container" [inlineSVG]="imageSourceNotification" [onSVGLoaded]="handleNotificationSVG"></div>
+      <div class="col-sm-12 d-flex justify-content-start align-items-center flex-row">
+        <p class="Caption3 text-left">
+          {{ nudgeInform | resourcePipe }}
+        </p>
+      </div>
+    </span>
+  </div>
+</div>
+
+

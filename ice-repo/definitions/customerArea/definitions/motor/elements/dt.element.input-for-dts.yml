@@ -1,0 +1,6 @@
+element:
+  type: integer
+  change:
+    - ResetElementValueExecutionRule:
+        elements:
+          - dt.element.default-from-dt     

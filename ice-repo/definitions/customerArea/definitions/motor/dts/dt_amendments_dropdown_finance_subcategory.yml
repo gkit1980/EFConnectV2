@@ -1,0 +1,64 @@
+dt:
+  hitPolicy: C
+  inputs:
+    - element: amendments.finance.category.dropdown
+  outputs:
+    - id: value
+    - id: label
+    - id: label_en
+      type: text
+  rules:
+    - inputs:
+        - "1"
+      outputs:
+        - 1
+        - Αλλαγή Δικαιούχων
+        - Change_of_Beneficiaries
+    - inputs:
+        - "1"
+      outputs:
+        - 2
+        - Προσθήκη Δικαιούχων
+        - Change_of_Beneficiaries
+    - inputs:
+        - "2"
+      outputs:
+        - 3
+        - Από πάγια κάρτας σε Μετρητά
+        - Payment_Method
+    - inputs:
+        - "2"
+      outputs:
+        - 4
+        - Από πάγια λογ/σμού σε Μετρητά
+        - Payment_Method
+    - inputs:
+        - "6"
+      outputs:
+        - 5
+        - Συχνότητα Πληρωμών
+        - Payment_Frequency
+    - inputs:
+        - "3"
+      outputs:
+        - 6
+        - Έκτακτη καταβολή
+        - Extra_Payment
+    - inputs:
+        - "4"
+      outputs:
+        - 7
+        - Ημερομηνία Γεννήσεως
+        - Customer_Details
+    - inputs:
+        - "5"
+      outputs:
+        - 8
+        - Μείωση δόσης
+        - Premium_Increase_Decrease
+    - inputs:
+        - "5"
+      outputs:
+        - 9
+        - Αύξηση δόσης
+        - Premium_Increase_Decrease

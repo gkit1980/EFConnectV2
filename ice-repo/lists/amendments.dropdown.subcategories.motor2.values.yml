@@ -1,0 +1,16 @@
+list:
+  type: text
+  additionals:
+    label_en:
+      label: label_en
+      type: text
+    label_el:
+      label: label_el
+      type: text
+  items:
+    - value: 1
+      label_en: Μείωση ορίων ευθύνης κάλυψης , ασφάλισης κάλυψης  
+      label_el: Μείωση ορίων ευθύνης κάλυψης , ασφάλισης κάλυψης
+    - value: 2
+      label_en: Αύξηση ορίων ευθύνης κάλυψης , ασφάλισης κάλυψης  
+      label_el: Αύξηση ορίων ευθύνης κάλυψης , ασφάλισης κάλυψης          

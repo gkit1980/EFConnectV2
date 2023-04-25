@@ -1,0 +1,9 @@
+element:
+  type: boolean
+  viewMode: hidden
+  buckets:
+    CreateUser:
+      transformation:
+        responsePath: Success         
+  pages:
+    signupwithsms: null

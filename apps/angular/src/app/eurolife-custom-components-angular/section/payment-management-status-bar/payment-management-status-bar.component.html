@@ -1,0 +1,14 @@
+<div class="status-bar-container">
+  <div class="svg-container">
+    <svg class="notification-bar-svg-info" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      width="32" height="32" viewBox="0 0 60 60">
+      <defs>
+        <path id="w"
+          d="M30.5 4C15.859 4 4 15.859 4 30.5 4 45.128 15.859 57 30.5 57 45.128 57 57 45.128 57 30.5 57 15.859 45.128 4 30.5 4zm2.41 40.842H28V40h4.91v4.842zm0-10.158H28v-17h4.91v17z" />
+      </defs>
+      <use fill="#fff" fill-rule="nonzero" xlink:href="#w" />
+    </svg>
+  </div>
+  <div *ngIf="true" class="status-bar-content H6">{{ trueText | resourcePipe }}</div>
+  <div *ngIf="false" class="status-bar-content H6">{{ falseText | resourcePipe }}</div>
+</div>

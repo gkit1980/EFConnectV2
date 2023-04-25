@@ -1,0 +1,20 @@
+page:
+  component: PopUpPage
+  flag: walkthrough myprofile1
+  showTriangle: true
+  validation:
+    onElementComponentChange: true
+    behaviour: page
+  sections:
+    - component: SimpleGridViewComponent
+      rows:
+        - cols:
+            - css: header-title-pop-up-walkthrough text-center walkthrough-header-mb
+              col: 12
+              element: myprofile.walkthrough.header1
+    - component: ContentWalkthroughComponent
+      text: "Πατώντας στο ονοματεπώνυμό σας μπορείτε να διαχειριστείτε πληροφορίες για το Προφίλ σας, όπως τηλέφωνο, email, κωδικό ασφαλείας, κλπ. Μπορείτε επίσης να οδηγηθείτε στην ενότητα των Βεβαιώσεων, όπου μπορείτε να δείτε και να κατεβάσετε τις Βεβαιώσεις Καταβολής Ασφαλίστρων, Τόκων, Ετήσιες Ενημερώσεις, κλπ."
+      pageNum: 1
+      numberOfScreens: myprofile.walkthrough.screens
+      next:
+      previous:

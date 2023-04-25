@@ -1,0 +1,39 @@
+dt:
+  hitPolicy: C
+  inputs:
+    - element: amendments.motor.subcategory.dropdown
+  outputs:
+    - id: value
+    - id: label
+      type: text
+  rules:
+    - inputs:
+        - "1"
+      outputs:
+        - 1
+        - Άδεια Κυκλοφορίας ή Βεβαίωση Υπουργείου
+    - inputs:
+        - "2"
+      outputs:
+        - 2
+        - Άδεια κυκλοφορίας
+    - inputs:
+        - "3"
+      outputs:
+        - 3
+        - Αδεια κυκλοφορίας
+    - inputs:
+        - "3"
+      outputs:
+        - 4
+        - 4 περιμετρικές φωτογραφίες του οχήματος
+    - inputs:
+        - "4"
+      outputs:
+        - 5
+        - Δίπλωμα 2 όψεις
+    - inputs:
+        - "5"
+      outputs:
+        - 6
+        - Δίπλωμα 2 όψεις

@@ -1,0 +1,22 @@
+element:
+  type: text
+  buckets:
+    GetClaim:
+      transformation:
+        dataPath: Claim.ContractKey
+    GetContractCashValue:
+      transformation:
+        dataPath: ContractKey
+    GetReprintedPDF:
+      transformation:
+        dataPath: ContractKey
+    GetContractEndorsement:
+      transformation:
+        dataPath: ContractKey
+    GetLifeContractFundsValuation:
+      transformation:
+        dataPath: ContractKey
+    GetHealthCards:
+      transformation: {}  
+    GetGroupHealthCards:
+      transformation: {}    

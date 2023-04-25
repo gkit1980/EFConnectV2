@@ -1,0 +1,14 @@
+element:
+  type: text
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: claims.motor.Model
+      conditionValue: null
+      conditionViewMode: hidden
+      elseViewMode: output    
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent 
+  label: Model
+  pages:
+    viewClaimDetails: null

@@ -1,0 +1,84 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - label: clicktocall.name
+      element: clicktocall.name
+    - label: clicktocall.phone
+      element: clicktocall.phone
+    - label: clicktocall.callmenow
+      element: clicktocall.callmenow
+    - label: clicktocall.callmelater
+      element: clicktocall.callmelater
+    - label: clicktocall.callmelaterdate
+      element: clicktocall.callmelaterdate
+    - label: clicktocall.callmelatertime
+      element: clicktocall.callmelatertime
+  outputs:
+    - label: viewMode
+      id: viewMode
+      type: string
+  rules:
+    - inputs:
+        - null
+        - '-'
+        - '-'
+        - '-'
+        - '-'
+        - '-'
+      outputs:
+        - disabled
+    - inputs:
+        - '-'
+        - null
+        - '-'
+        - '-'
+        - '-'
+        - '-'
+      outputs:
+        - disabled
+    - inputs:
+        - '-'
+        - '-'
+        - not(true)
+        - not(true)
+        - '-'
+        - '-'
+      outputs:
+        - disabled
+    - inputs:
+        - '-'
+        - '-'
+        - '-'
+        - true
+        - null
+        - '-'
+      outputs:
+        - disabled
+    - inputs:
+        - '-'
+        - '-'
+        - '-'
+        - true
+        - '-'
+        - null
+      outputs:
+        - disabled
+    - inputs:
+        - not(null)
+        - not(null)
+        - true
+        - '-'
+        - '-'
+        - '-'
+      outputs:
+        - default
+    - inputs:
+        - not(null)
+        - not(null)
+        - '-'
+        - true
+        - not(null)
+        - not(null)
+      outputs:
+        - default
+    

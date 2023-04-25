@@ -1,0 +1,179 @@
+dt:
+  hit-policy: C
+  inputs:
+    - label: ReceiptStatus
+      element: policies.details.LastPayment
+    - label: PaymentType
+      element: policies.details.PaymentType
+    - label: ReceiptEndDate
+      element: policies.details.LastPaymentEndDate
+    - label: Number of days
+      element: policies.details.numberOfDays
+    - label: selected branch
+      element: selectedcontractbranch
+  outputs:
+    - id: notificationText
+      label: text
+      type: string
+    - id: notificationType
+      label: class
+      type: string
+    - id: svgImageValue
+      label: url
+      type: string
+  rules:
+    - inputs:
+        - "Εξοφλημένη"
+        - "-"
+        - "-"
+        - "over30Days"
+        - "-"
+      outputs:
+        - >-
+          "Το συμβόλαιό σας είναι εξοφλημένο."
+        - success
+        - "https://scp.eurolife.gr/~/media/F7877569C4C74C9F9D432D5A01DDC0A0.ashx"
+    - inputs:
+        - "Ανείσπρακτη"
+        - "ΠΑΓΙΑ ΕΝΤΟΛΗ"
+        - "bell_alert"
+        - "-"
+        - "-"
+      outputs:
+        - >-
+          'Σας ενημερώνουμε πως το συμβόλαιό σας παραμένει ανεξόφλητο. Παρακαλώ βεβαιωθείτε ότι το ποσό των ' + '€ '+ policies.details.TotalUnpaidAmount + ' είναι διαθέσιμο.'
+        - warning
+        - "https://scp.eurolife.gr/~/media/01D8EA7C762A44E0A8FF3E4FFF8D1C72.ashx"
+    - inputs:
+        - "Ανείσπρακτη"
+        - "ΛΟΓΑΡΙΑΣΜΟΣ ΔΑΝΕΙΟΥ"
+        - "bell_alert"
+        - "-"
+        - "-"
+      outputs:
+        - >-
+          'Σας ενημερώνουμε πως το συμβόλαιό σας παραμένει ανεξόφλητο. Παρακαλώ βεβαιωθείτε ότι το ποσό των ' + '€ '+ policies.details.TotalUnpaidAmount + ' είναι διαθέσιμο.'
+        - warning
+        - "https://scp.eurolife.gr/~/media/01D8EA7C762A44E0A8FF3E4FFF8D1C72.ashx"
+    - inputs:
+        - "Ανείσπρακτη"
+        - "ΠΙΣΤΩΤΙΚΗ ΚΑΡΤΑ"
+        - "bell_alert"
+        - "-"
+        - "-"
+      outputs:
+        - >-
+          'Σας ενημερώνουμε πως το συμβόλαιό σας παραμένει ανεξόφλητο. Παρακαλώ βεβαιωθείτε ότι το ποσό των ' + '€ '+ policies.details.TotalUnpaidAmount + ' είναι διαθέσιμο.'
+        - warning
+        - "https://scp.eurolife.gr/~/media/01D8EA7C762A44E0A8FF3E4FFF8D1C72.ashx"
+    - inputs:
+        - "Ανείσπρακτη"
+        - "ΕΛΤΑ"
+        - "bell_alert"
+        - "-"
+        - "-"
+      outputs:
+        - >-
+          'Σας ενημερώνουμε πως το συμβόλαιο σας παραμένει ανείσπρακτο.'
+        - warning
+        - "https://scp.eurolife.gr/~/media/01D8EA7C762A44E0A8FF3E4FFF8D1C72.ashx"
+    - inputs:
+        - "Ανείσπρακτη"
+        - "ΜΕΤΡΗΤΑ"
+        - "bell_alert"
+        - "-"
+        - "-"
+      outputs:
+        - >-
+          'Σας ενημερώνουμε πως το συμβόλαιο σας παραμένει ανείσπρακτο.'
+        - warning
+        - "https://scp.eurolife.gr/~/media/01D8EA7C762A44E0A8FF3E4FFF8D1C72.ashx"
+    - inputs:
+        - "Ανείσπρακτη"
+        - "-"
+        - "info_alert"
+        - "under30Days"
+        - "-"
+      outputs:
+        - >-
+          'Σας υπενθυμίζουμε ότι πλησιάζει η ανανέωση του Συμβολαίου σας.'
+        - info
+        - "https://scp.eurolife.gr/~/media/01D8EA7C762A44E0A8FF3E4FFF8D1C72.ashx"
+    - inputs:
+        - "-"
+        - "-"
+        - "info_alert"
+        - "under30Days"
+        - 3,4,5,6,7,8,13
+      outputs:
+        - >-
+          'Σας υπενθυμίζουμε ότι πλησιάζει η ανανέωση του Συμβολαίου σας.'
+        - info
+        - "https://scp.eurolife.gr/~/media/01D8EA7C762A44E0A8FF3E4FFF8D1C72.ashx"
+    - inputs:
+        - "Εξοφλημένη"
+        - "-"
+        - "-"
+        - "under30Days"
+        - "-"
+      outputs:
+        - >-
+          'Σας υπενθυμίζουμε ότι πλησιάζει η ανανέωση του Συμβολαίου σας.'
+        - info
+        - "https://scp.eurolife.gr/~/media/01D8EA7C762A44E0A8FF3E4FFF8D1C72.ashx"
+    - inputs:
+        - "Ανείσπρακτη"
+        - "-"
+        - "info_alert"
+        - "over30Days"
+        - "-"
+      outputs:
+        - >-
+          "Το συμβόλαιό σας είναι εξοφλημένο."
+        - success
+        - "https://scp.eurolife.gr/~/media/F7877569C4C74C9F9D432D5A01DDC0A0.ashx"
+    - inputs:
+        - "Ανείσπρακτη"
+        - "ΜΕΤΡΗΤΑ"
+        - "bell_alert"
+        - "under5Days"
+        - 3
+      outputs:
+        - >-
+          'Σας ενημερώνουμε πως το συμβόλαιο σας παραμένει ανείσπρακτο.'
+        - warning
+        - "https://scp.eurolife.gr/~/media/01D8EA7C762A44E0A8FF3E4FFF8D1C72.ashx"    
+    - inputs:
+        - "Ανείσπρακτη"
+        - "ΜΕΤΡΗΤΑ"
+        - "info_alert"
+        - "under30over5Days"
+        - 3
+      outputs:
+        - >-
+          'Σας υπενθυμίζουμε ότι πλησιάζει η ανανέωση του Συμβολαίου σας.'
+        - info
+        - "https://scp.eurolife.gr/~/media/01D8EA7C762A44E0A8FF3E4FFF8D1C72.ashx"      
+    - inputs:
+        - "Ανείσπρακτη"
+        - "ΕΛΤΑ"
+        - "bell_alert"
+        - "under5Days"
+        - 3
+      outputs:
+        - >-
+          'Σας ενημερώνουμε πως το συμβόλαιο σας παραμένει ανείσπρακτο.'
+        - warning
+        - "https://scp.eurolife.gr/~/media/01D8EA7C762A44E0A8FF3E4FFF8D1C72.ashx"    
+    - inputs:
+        - "Ανείσπρακτη"
+        - "ΕΛΤΑ"
+        - "info_alert"
+        - "under30over5Days"
+        - 3
+      outputs:
+        - >-
+          'Σας υπενθυμίζουμε ότι πλησιάζει η ανανέωση του Συμβολαίου σας.'
+        - info
+        - "https://scp.eurolife.gr/~/media/01D8EA7C762A44E0A8FF3E4FFF8D1C72.ashx"      
+

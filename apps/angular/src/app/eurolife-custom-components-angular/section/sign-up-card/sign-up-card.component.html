@@ -1,0 +1,51 @@
+<mat-card>
+  <mat-card-content>
+    
+      <!-- <form class="email-form">
+        <mat-form-field class="email-full-width">
+          <input matInput placeholder="Email" [formControl]="emailFormControl" [errorStateMatcher]="matcher">
+          <mat-error *ngIf="emailExists() == true">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </form> -->
+      <div class="column" *ngFor="let row of recipe.rows">
+        <div class="column" *ngFor="let col of row.Title">
+          <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element" [component]="col.component">
+          </ice-element>
+        </div>
+        <div class="column" *ngFor="let col of row.Email">
+          <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element" [component]="col.component">
+          </ice-element>
+          <mat-error *ngIf="emailExists() == true">{{getErrorMessage()}}</mat-error>
+        </div>
+        <div class="column" *ngFor="let col of row.Mobile">
+          <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element" [component]="col.component">
+          </ice-element>
+        </div>
+        <div class="column" *ngFor="let col of row.vatNo">
+          <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element" [component]="col.component">
+          </ice-element>
+        </div>
+        <div class="column" *ngFor="let col of row.RegistrationCode">
+          <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element" [component]="col.component">
+          </ice-element>
+        </div>
+        <br>
+        <div class="column" *ngFor="let col of row.SignupButton">
+          <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element" [component]="col.component">
+          </ice-element>
+          <p>{{getInitSignupStatus()}}</p>
+        </div>
+        <!-- <div class="column" *ngFor="let col of row.SignupStatus">
+          <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element" [component]="col.component">
+          </ice-element>
+        </div> -->
+
+
+      </div>
+    <div style=" color:white; background-color:white;">
+    <p>{{getEmail()}}</p>
+    <p>{{setEmailToLocalStorage()}}</p>
+    <p>{{getEmailFromLocalStorage()}}</p>
+  </div>
+  </mat-card-content>
+</mat-card>

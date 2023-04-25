@@ -1,0 +1,12 @@
+element:
+  type: integer
+  component: IceRadiobuttonGroup
+  defaultValue: 'Credit Card'
+  values:
+    StaticValuesRule:
+      values:
+        - ["Credit Card"]
+        - ["Debit Card"]
+        - ["Prepaid Card"]
+  pages:
+    paymentManagement: null

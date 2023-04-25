@@ -1,0 +1,8 @@
+element:
+  type: text
+  defaultValue: Ιστορικότητα εγγράφων
+  component:
+    StaticComponentRule:
+      component:
+        EurolifeH3Component:
+          headingType: h5

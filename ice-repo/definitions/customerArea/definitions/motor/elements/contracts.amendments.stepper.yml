@@ -1,0 +1,4 @@
+element:
+  type: text
+  component: SignUpStepperComponent
+  viewMode: output

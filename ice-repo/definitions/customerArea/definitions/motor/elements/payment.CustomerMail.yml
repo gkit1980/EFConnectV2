@@ -1,0 +1,19 @@
+element:
+  type: text
+  viewMode: output
+  # defaultValue: 'mzaras@eurolife.gr'
+  buckets:
+    GetPaymentURLRedirector:
+      transformation:
+        dataPath: CustomerMail
+    GetPaymentURLRedirectorAEAZ:
+      transformation:
+        dataPath: CustomerMail
+    # GetTransactionInfoAEGA:
+    #   transformation:
+    #     responsePath: CustomerMail
+    # executePayment:
+    #   transformation:
+    #     dataPath: payerEmail
+  pages:
+    paymentManagement: null

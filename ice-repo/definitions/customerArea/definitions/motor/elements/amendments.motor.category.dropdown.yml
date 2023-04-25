@@ -1,0 +1,14 @@
+element:
+  title: Home country of person
+  type: text
+  component: IceDropdown
+  buckets:
+    AmendmentsCreateCase:
+      transformation: {}
+  values:
+    DtValuesRule:
+      dt: dt_amendments_dropdown_motor_category
+      list: label
+  # values: amendments.dropdown.categories.motor.values
+  viewMode: enable
+  label: Κατηγορία

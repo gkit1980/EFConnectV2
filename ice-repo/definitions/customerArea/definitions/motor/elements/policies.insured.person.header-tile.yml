@@ -1,0 +1,11 @@
+element:
+  type: array
+  component: IceArray
+  pages:
+    policyDetails: null
+  # component:
+  #   StaticComponentRule:
+  #     component:
+  #       EurolifeHeaderTileComponent:
+  #         headingClass: dt_product_text_color
+  label: Ασφαλισμένος

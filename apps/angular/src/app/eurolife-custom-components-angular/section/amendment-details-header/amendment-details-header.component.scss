@@ -1,0 +1,115 @@
+.example-card {
+    max-width: 800px;
+    height: 340px;
+    cursor: pointer;
+  }
+
+  .card {
+    background-color: none;
+  }
+  
+  .card-header {
+    // background-color: black;
+    width: 18%;
+    padding-left: 10px;
+    text-align: center;
+  }
+  
+  .card-text {
+    color: white;
+    font-size: 15px;
+  }
+  
+  h4 {
+    color: black;
+    // background-color: white;
+  }
+  
+  .card {
+    cursor: pointer;
+    border: none;
+    // width: 358px;
+  }
+  
+  // .card-subtitle {
+  //   padding: 20px 0 20px 0;
+
+  // }
+.inside-card {
+  display: flex;
+  background-color: #91cca3;
+  
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.my-icon {
+  display: flex;
+  align-items: center;
+    justify-content: center;
+  height: 73px;
+  width: 73px;
+  border-radius: 50%;
+  background-color: #ffffff33;
+}
+
+.test {
+padding: 25px 13px 26px 21px;
+}
+
+
+.ice-output {
+  label {
+      // height: 19px;
+  font-family: Ubuntu;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.36;
+  letter-spacing: normal;
+  color: #ffffff;
+
+  }
+  span {
+      // height: 27px;
+  font-family: Ubuntu;
+  font-size: 22px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.23;
+  letter-spacing: normal;
+  color: #ffffff;
+  }
+}
+
+
+.my-icon {
+  svg {
+    path {
+      fill: #91cca3 !important;
+    }
+  }
+}
+
+.imageClass {
+  fill:  #91cca3 !important;
+}
+
+
+.whiteBackground {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+  max-width: 1100px;
+}
+
+.grey-background {
+    background-color: #eeeeee;
+    padding-bottom: 65px;
+    padding-top: 65px;
+    padding: 65px 0px;
+  }

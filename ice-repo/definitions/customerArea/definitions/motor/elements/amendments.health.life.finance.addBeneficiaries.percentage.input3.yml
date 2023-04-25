@@ -1,0 +1,21 @@
+element:
+  type: integer
+  label: " % "
+  viewMode: required
+  defaultValue: 0
+  buckets:
+    AmendmentsCreateLifeCase:
+      transformation: {}
+    AmendmentsCreateHealthCase:
+      transformation: {}
+    AmendmentsCreateFinanceCase:
+      transformation: {}
+  component:
+    StaticComponentRule:
+      component:
+        AmendmentinputlifefieldComponent:
+          elementName: amendmentsPercentageValue3
+  pages:
+    viewAmendmentFinanceDetails: null
+    viewAmendmentHealthDetails: null
+    viewAmendmentLifeDetails: null

@@ -1,0 +1,235 @@
+.grey-background {
+    background-color: #eeeeee;
+}
+
+.white-background {
+    background-color: #ffffff;
+}
+
+.background-unset{
+    background-color: unset;
+}
+
+
+.ice-output {
+    .value {
+        color: red;
+    }
+
+    label {
+        color: red;
+    }
+}
+
+.page-title {
+    padding: 8px 0px 11px 19px;
+    border-left: solid 2px rgb(239, 51, 64);
+    margin-top: 24px;
+    margin-bottom: 16px;
+    color: rgb(56, 59, 56);
+
+    @media screen and (max-width: 575.98px) {
+        margin-top: 24px;
+        margin-bottom: 24px;
+        font-size: 24px;
+    }
+}
+
+.container{
+    max-width: 1100px !important;
+    @media (max-width: 1024px) {
+        max-width: unset !important;
+    }
+}
+
+.no-margin-bottom{
+    margin-bottom: 8px;
+}
+
+.no-paddings-fix{
+    padding: 0;
+}
+
+.row-header{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.navigation-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 1px #479463;
+    }
+     
+    -webkit-scrollbar-thumb {
+      background-color: darkgrey;
+      outline: 1px solid slategrey;
+    }
+
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.space-start {
+    justify-content: start;
+}
+
+.links{
+    padding: 24px 24px 0px 24px;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    a {
+        display: block;
+        padding-bottom: 1.1875rem;
+    }
+}
+
+.notification-icon {
+    padding-left: 0px;
+    padding-top: 0px;
+    padding-bottom: 20px;
+    margin-left: -15px;
+    fill: #cc046c;
+  }
+  
+
+// ::ng-deep .ice-text-input 
+// {
+
+//     @media (max-width: 500px) {
+//         max-width: unset !important;
+//     }
+    
+// }
+
+ .btn-container{
+    @media (max-width: 500px) {
+        width:100%;
+      
+}
+ }
+
+
+
+.eurolife_btn-claims
+{
+    @media (max-width: 500px) 
+    {
+        width: inherit !important;
+    }
+}
+
+.disable-btn {
+    cursor: not-allowed;
+    pointer-events: none;
+    color: #8d8d8d;
+    background-color: #cccbcb;
+}
+
+
+:host ::ng-deep [data-element="claims.header"] 
+{
+    .ice-text-input  {
+        @media screen and (max-width: 575.98px) {
+         max-width: unset !important;
+         font-size: 14px !important;
+         font-weight: 400 !important;
+         line-height: 1.36 !important;
+         font-style: normal !important;
+         font-stretch: normal !important;
+         letter-spacing: normal !important;
+         margin-top: unset !important;
+     }
+    }
+
+  
+}
+
+
+.homepage-image{
+    background-image: url("https://scp.eurolife.gr/~/media/45E79B4252CD4CB4A10B0BC4E93A9DCB.ashx");
+    background-position: 8% 25%;;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-left: 0;
+    height: 330px;
+    width: 122vw;
+    max-width: 98%;
+    border-bottom-right-radius: 142px;
+    margin-left: -16px;
+    @media screen and (max-width : 480px){
+        display: none;
+    }
+
+}
+
+.red-banner {
+    position: absolute;
+    width: 508px;
+    height: 223px;
+    // left: 508px;
+    top: 0px;
+
+    background: rgba(239, 51, 64, 0.8);
+    border-radius: 0px 0px 0px 83.5px;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    @media screen and (min-width: 480px) and (max-width: 768px){
+        position: absolute;
+        width: 338px;
+        height: 158px;
+        top: 0px;
+        background: rgba(239, 51, 64, 0.8);
+        border-radius: 0px 0px 0px 83.5px;
+        -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
+    @media screen and (max-width : 480px){
+        display: none;
+    }
+}
+
+.red-banner-text {
+    position: absolute;
+    width: 300px;
+    height: 111px;
+    right: 166px;
+    top: 48px;
+
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 37px;
+    
+    color: #FFFFFF;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    @media screen and (min-width: 480px) and (max-width: 768px){
+        position: absolute;
+        width: 242px;
+        height: 111px;
+        right: 46px;
+        top: 16px;
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 37px;
+        color: #FFFFFF;
+        -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
+    @media screen and (max-width : 480px){
+        display: none;
+    }
+}

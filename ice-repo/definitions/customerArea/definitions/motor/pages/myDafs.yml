@@ -1,0 +1,27 @@
+page:
+  component: SimplePageComponent
+  showTitle: false
+  sections:
+    - component: HeaderComponent
+      rows:
+        - css: firstSVG align-items-center mt-48px
+          cols:
+            - col: 1
+              element: productSvgImage
+            - col: 8
+              internalRows:
+                - css: null
+                  internalCols:
+                    - internalCol: 12
+                      element: dafs.product.name
+            - css: dafs-text
+              col: 3
+              element: dafs.insured.name
+        - css: mt-66px dafs-title
+          cols:
+            - col: 12
+              element: dafs.page.title
+    - component: MyDafsComponent
+      dataStoreProperty: Dafs
+      downloadaction: actionGetDafPdf
+      getStatements: actionGetDafs

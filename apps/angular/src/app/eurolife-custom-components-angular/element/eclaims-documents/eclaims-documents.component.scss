@@ -1,0 +1,107 @@
+.table-container {
+    margin-top: 0px;
+    .row {
+      height: 50px;
+    }
+    .col {
+      margin: auto;
+    }
+    .header-row {
+      background-color: #eeeeee;
+      font-family: Ubuntu;
+      font-size: 16px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.38;
+      letter-spacing: normal;
+      color: #383b38;
+      height: 52px;
+    }
+  
+    .data-row {
+      border-bottom: solid 0.5px #b5b5b5;
+      height: 52px;
+      .cover-key {
+        opacity: 0.6;
+        font-family: Ubuntu;
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.36;
+        letter-spacing: normal;
+        color: #383b38;
+      }
+      .row-rest-data {
+        opacity: 0.6;
+        font-family: Ubuntu;
+        font-size: 14px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.36;
+        letter-spacing: normal;
+        color: #383b38;
+      }
+    }
+
+  }
+
+
+
+  mat-table.mat-table {
+    margin: 15px -60px 15px -60px;
+  }
+
+  .mat-cell, .mat-footer-cell {
+    font-size: 12px !important;
+    padding-left: unset !important;
+    @media screen and (max-width: 575.98px) {
+      padding-left: 40px;
+    }
+  }
+
+  .mat-header-cell {
+    color:  #000000 !important;
+    font-weight: 600;
+  }
+
+  .button-icon {
+    margin-left: 10px;
+  }
+
+  .button-spinner {
+    margin-left: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .disable-btn {
+    cursor: not-allowed;
+    pointer-events: none;
+    color: #000000;
+  }
+  
+  .disable-dnl {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+mat-header-row.disable-border.mat-header-row.ng-star-inserted {
+  @media screen and (max-width: 575.98px) {
+    margin: 0px 35px 0px 35px;
+  }
+}
+mat-row.mat-row.ng-star-inserted{
+  @media screen and (max-width: 575.98px) {
+    margin: 0px 35px 0px 35px;
+  }
+}
+
+mat-cell.mat-cell.cdk-column-Title.mat-column-Title.ng-star-inserted {
+  @media screen and (max-width: 575.98px) {
+    padding-top: 12px;
+    font-size: 10px !important;
+    display: revert;
+  }
+}

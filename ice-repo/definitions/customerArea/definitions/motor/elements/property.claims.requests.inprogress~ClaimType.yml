@@ -1,0 +1,8 @@
+element:
+  type: text
+  buckets:
+    PropertyClaimsInprogressRequests:
+      transformation:
+        property: ClaimType
+
+

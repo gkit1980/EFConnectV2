@@ -1,0 +1,21 @@
+action:
+  title: calls a rest service to get the contract receipts
+  execution:
+    - RestCallExecutionRule:
+        baseUrl: BASEURL
+        # baseUrl: https://lifeuatna.eurolife.gr/CustomerDataProvider/api/CustomerData
+        url: GetReceiptsByContractKey
+        verb: post
+        bucket: GetReceiptsByContractKey
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+    # - NavigateToPageExecutionRule:
+    #     page: viewMyReceipts
+  condition:
+    FeelConditionRule:
+      expression: policy.contract.general.info.ContractID != null
+  #trigger:
+  #- ElementChangeTriggerRule:
+  #elements:
+  #- policy.contract.general.info.ContractID

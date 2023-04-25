@@ -1,0 +1,18 @@
+action:
+  title: calls a rest service to get the customer contract details
+  execution: 
+      - RestCallExecutionRule:
+          baseUrl: https://lifeuatna.eurolife.gr/CustomerDataProvider/api/CustomerData
+          url: GetCoolgenClaimDetails
+          verb: post
+          bucket: GetCoolgenClaimDetails
+          encryptMessage: true
+          encryptSecretElement: token
+          needsDataStore: false
+  condition:
+    FeelConditionRule: 
+     expression: policy.claims.selectedBranch = 5
+  trigger:
+    - ElementChangeTriggerRule:
+        elements: 
+          - policy.contract.general.info.ClaimID

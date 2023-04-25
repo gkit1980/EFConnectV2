@@ -1,0 +1,30 @@
+element:
+  title: Date Call me later
+  type: date
+  component: OutputWithAction
+  label: null
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: clicktocall.callmelater
+      conditionValue: true
+      conditionViewMode: output
+      elseViewMode: hidden      
+  defaultValue:
+    DateExpressionValueRule:
+      expression: date(today) + duration('P1D')
+  mirror:
+    CopyValueMirrorRule:
+      originElement: clicktocall.select-date
+  action:
+    execution:
+      - SetElementValueExecutionRule:
+          element: clicktocall.go-to-time-picker
+          value: false
+      - SetElementValueExecutionRule:
+          element: clicktocall.go-to-calendar
+          value: true
+  buckets:
+    ProcessCallbackRequest:
+      transformation:{}    
+  pages:
+    clicktocall: null

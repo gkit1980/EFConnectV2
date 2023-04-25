@@ -1,0 +1,26 @@
+.comment-input-container{
+  max-width: 770px;
+  margin: auto;
+}
+
+.comment-input {
+  display: inline-block;
+  width: 100%;
+  word-wrap: break-word;
+  border: none;
+  overflow: hidden;
+  resize: none;
+  color: #383b38;
+  margin-top: 10px;
+  padding: 0 9px;
+  display: flex;
+}
+
+.horizontal-line {
+  border: solid 1px #979797;
+  width: 100%;
+}
+
+.letter-counter {
+  float: right;
+}

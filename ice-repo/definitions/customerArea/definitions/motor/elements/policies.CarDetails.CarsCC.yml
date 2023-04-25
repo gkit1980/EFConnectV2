@@ -1,0 +1,10 @@
+element:
+  type: integer
+  viewMode: output
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent
+  buckets:
+    GetContractMotorDetails:
+      transformation:
+        responsePath: ContractMotorDetails.VehicleCC

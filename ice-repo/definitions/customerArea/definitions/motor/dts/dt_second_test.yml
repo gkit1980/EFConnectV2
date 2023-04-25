@@ -1,0 +1,17 @@
+dt:
+  hit-policy: F
+  inputs:
+    - label: Product
+      element: policies.details.ProductName
+    - label: Number
+      element: policies.details.PolicyNumberHeader
+  outputs:
+    - id: testing
+      type: string
+  rules:
+    - inputs:
+        - not(null)
+        - not(null)
+      outputs:
+        - >-
+          policies.details.ProductName + " " + policies.details.PolicyNumberHeader

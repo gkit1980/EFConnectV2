@@ -1,0 +1,9 @@
+element:
+  component: EurolifeButtonComponent
+  additionalClasses: eurolife_btn-default amendmets-dialog-fail-btn
+  svgFillColor: corporate_color
+  type: text
+  label: "ΟΚ"
+  defaultValue: action-property-claim-notification-close-dialog
+  pages:
+    viewPropertyNotificationDetails: null

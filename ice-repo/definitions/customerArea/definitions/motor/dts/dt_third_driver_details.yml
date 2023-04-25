@@ -1,0 +1,14 @@
+dt:
+  hit-policy: F
+  inputs:
+    - label: input element for default
+      element: policies.details.Cdriver
+  outputs:
+    - id: elementClass
+      type: string
+  rules:
+    - inputs:
+        - "0"
+      outputs:
+        - >-
+          visibility_hidden

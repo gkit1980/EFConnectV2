@@ -1,0 +1,55 @@
+<div class="email-form-container">
+  <div class="basic-info-header">
+    <div class="sign-up-container">
+      <p class="h4">{{ signin | resourcePipe }}</p>
+    </div>
+  </div>
+
+  <app-sign-up-new-stepper></app-sign-up-new-stepper> 
+
+  <div class="second-info-header">
+    
+    <div (click)="onBack()">
+    <div class="Button clickable">
+      <div class="back-svg" aria-label="icon" [inlineSVG]="getIcon('AB7AD067ECBF48FFA0DEC42C9DC88E5B')" [onSVGLoaded]="handleSVG">
+      </div>
+    </div>
+    </div>
+    <!-- <div class="button-icon" [ngClass]="svgFillColor" aria-label="icon" [inlineSVG]="imageSource" [onSVGLoaded]="handleSVG"
+      *ngIf="imageSource != ''">
+    </div> -->
+  
+     <p class="h6">Πληκτρολογήστε τον κωδικό επιβεβαίωσης που έχετε λάβει με SMS στο <strong>{{this.mobileNo}}</strong> </p>
+  </div>
+
+  <div class="mobile-container">
+    <ng-container>
+      <div class="row justify-content-center counter">
+        <div class="clock" aria-label="Clock Icon" [inlineSVG]="imageSourceClock" [onSVGLoaded]="handleClockSVG"></div>
+        <div class="time">{{ interval | async | formatTime }}</div>
+      </div>
+      <div class="col-sm-12 no-padding">
+        <app-otp-partitioned-input (onInputComplete)="VerifySmsCode($event)" [clearOtp]="eventsSubject" ></app-otp-partitioned-input>
+        <div *ngIf="errorMsgSmsCode !== '' " class="error-msg">{{errorMsgSmsCode}}</div>
+        <!-- <input type="text" id="smscode" class="form-control" name="smscode" [(ngModel)]="smsCode" pattern="^\d{6}$"
+          required> -->
+        <a class="a-link" (click)="VerifyMobile()">{{ resend | resourcePipe }}</a>
+      </div>
+    </ng-container>
+
+  </div>
+
+<!-- 
+  <div class="basic-info-btn-container">
+      <div class="row basic-info-btns">
+        <div class="col-sm-12">
+    
+          <button class="eurolife_btn eurolife_btn-default" (click)="onSubmit()"
+            [disabled]="!regCodeValid || !emailValid">{{ next | resourcePipe }}
+          </button>
+        </div>
+       
+      </div>
+  </div> -->
+   
+</div> 

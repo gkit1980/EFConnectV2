@@ -1,0 +1,6 @@
+<div class="otp-partitioned-outer" tabindex="0">
+   <div class="otp-partitioned-inner">
+     <!-- <input class="otp-partitioned" id="box"  maxlength="6" [(ngModel)]="otpDigits" (ngModelChange)="onOtpChange()" tabindex="1" #textInput> -->
+     <ng-otp-input #ngOtpInput (onInputChange)="onOtpChange($event)" [config]="config"></ng-otp-input>
+   </div>
+</div>

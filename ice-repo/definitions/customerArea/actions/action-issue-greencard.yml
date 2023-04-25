@@ -1,0 +1,16 @@
+action:
+  execution:
+    - EnableSpinnerRule:
+        actionrule: action-issue-greencard
+    - GreenCardServices:
+        baseUrl: GREENCARDBASEURL
+        url: IssueGreenCard
+        method: POST
+        bucket: GreenCardData
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+    - DisableSpinnerRule:
+        actionrule: action-issue-greencard
+  pages:
+    greenCard: null

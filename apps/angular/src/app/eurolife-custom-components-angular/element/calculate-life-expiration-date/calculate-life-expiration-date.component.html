@@ -1,0 +1,15 @@
+<div class="eurolife-output" *ngIf="isOutput">
+  <div class="container" *ngIf="show">
+    <div class="row">
+      <div class="col-sm-3" *ngIf="label">
+        <label class="label opacity" [ngClass]="labelClass">{{ label }}</label>
+        <!-- <label class="label">{{ label }}</label> -->
+      </div>
+      <div class="col sm-9">
+        <span class="value" [ngClass]="valueClass">{{getExpirationValue()}}</span>
+        <!-- <span class="value">{{ values }}</span> -->
+      </div>
+      <hr *ngIf="showhr">
+    </div>
+  </div>
+</div>

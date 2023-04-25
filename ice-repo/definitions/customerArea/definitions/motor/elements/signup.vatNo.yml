@@ -1,0 +1,12 @@
+element:
+  type: text
+  viewMode: default
+  buckets:
+    InitSignUp:
+      transformation:
+        dataPath: TaxId  
+#  buckets:
+#    GetRegistrationCode:
+#      transformation:
+  pages:
+    sign-up: null

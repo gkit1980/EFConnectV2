@@ -1,0 +1,10 @@
+action:
+  execution:
+    - VerifyRegexRule:
+        element: amendments.plate.new.input
+        regexp: ^[Α-Ω]{0,3}[0-9]{0,4}?$
+        returnedElementBoolean: amendments.verifyLicencePlate
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - amendments.plate.new.input

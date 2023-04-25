@@ -1,0 +1,4 @@
+element:
+  type: text
+  label: Δεν Υπάρχουν Πρόσθετες Πράξεις 
+  viewMode: output

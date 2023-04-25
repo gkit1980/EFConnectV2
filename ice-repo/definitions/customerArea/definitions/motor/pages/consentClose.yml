@@ -1,0 +1,28 @@
+page:
+  component: PopUpPage
+  flag: consents
+  showTopSection: false
+  validation:
+    onElementComponentChange: true
+    behaviour: page
+  sections:
+    - component: SimpleGridViewComponent
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: consent.succesfull.submition
+          conditionValue: true
+          conditionViewMode: default
+          elseViewMode: hidden
+      rows:
+        - cols:
+            - css: consent-text-center h4 consent-success-msg
+              col: 12
+              element: consent.success.msg1
+        - cols:
+            - css: consent-text-center subtitle2
+              col: 12
+              element: consent.success.msg2   
+        - cols:
+            - css:
+              col: 12
+              element: consent.success.btn

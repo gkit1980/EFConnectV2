@@ -1,0 +1,8 @@
+element:
+  type: integer
+  defaultValue: 0
+  buckets:
+    WriteLog:
+      transformation: {}
+  pages:
+    viewEclaimsDetails: null

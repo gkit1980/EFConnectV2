@@ -1,0 +1,33 @@
+.gc-details-container{
+    background-color: #fff;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 46px 0 37px;
+    margin-top: 19px;
+    .label{
+    color: #383B38;
+    margin-right: 15px;
+    }
+    .btn{
+        height: 36px;
+        width: 111px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    @media screen and (max-width: 650px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        height: auto;
+        .label{
+            margin-right: 0;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+    }
+}

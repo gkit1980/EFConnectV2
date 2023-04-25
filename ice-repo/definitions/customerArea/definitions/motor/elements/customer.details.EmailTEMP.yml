@@ -1,0 +1,17 @@
+element:
+  type: text
+  viewMode: output
+  defaultValue: "paymentCode1214@gmail.com" #'vtsionis@hotmail.com'
+  # buckets:
+  # ForgetPassword:
+  #   transformation:
+  #     dataPath: UserName
+  # ChangeMobile:
+  #   transformation:
+  #     dataPath: Email
+  # VerifyChangeMobile:
+  #   transformation:
+  #     dataPath: Email
+
+  pages:
+    customerProfile: null

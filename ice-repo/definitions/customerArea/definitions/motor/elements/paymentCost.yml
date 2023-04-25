@@ -1,0 +1,9 @@
+# element:
+#   type: text
+#   defaultValue: 
+#     StaticValueRule: 
+#       value: "Συνολικό ποσό επόμενης πληρωμής"
+#   label:
+#   NoLabelRule: {}element:
+#   type: text
+#   viewMode: output

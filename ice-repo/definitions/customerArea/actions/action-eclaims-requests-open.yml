@@ -1,0 +1,26 @@
+action:
+  title: Get in open eclaims requests
+  execution:
+    - GetSalesforceTokenRule:
+        fromProcess: eclaims
+        salesforceLoginUrl: BASEURLSALESFORCELOGIN
+        methodLogin: post
+        getAmendmentsUrl: AMENDMENTSURL
+        methodGetAmendments: get
+        bucket: EclaimsSfLogin
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+    - EclaimsGetOpenRequestsRule:
+        baseurl: BASESALESFORCEURLECLAIMSERVICES
+        methodGetOpenEclaims: get
+        bucket: EclaimsOpenRequests
+        activeCustomerId: eclaims.customerID    
+        activecontract: eclaims.contractKey 
+        status: Waiting on Customer
+    - EclaimsValuationOpenRequestsRule:    
+  trigger:
+    - PageTriggerRule:
+        enter:
+          - viewClaims
+      

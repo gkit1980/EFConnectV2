@@ -1,0 +1,5 @@
+bucket:
+  transformation:
+    CustomerContractsTransformationRule:
+      dataStoreProperty: clientContracts
+      responseToDatastore: true

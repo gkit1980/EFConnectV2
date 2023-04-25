@@ -1,0 +1,250 @@
+
+  .container {
+    width: 100%;
+    background-color: white;
+    padding-top: 11px;
+    margin-top: 30px;
+    height: auto;
+    padding-bottom: 11px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    @media screen and (max-width: 700px) {
+     margin-left :-25px;
+     width: 92vw;
+     border-radius: 8px;
+    }
+    padding: unset;
+   
+  }
+
+  .switch-camera-button {
+    cursor: pointer;
+    background: none;
+    border-style: none!important;
+    outline: none;
+    opacity: 0;
+    animation: fadeIn 3s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+  }
+
+  .switch-camera {
+    position: relative;
+    left: 82%;
+    bottom: 12%;
+    opacity: 0;
+    animation: fadeIn 3s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+
+    @media screen and (max-width: 440px) {
+      left: 72%;
+      bottom: 16%;
+    }
+
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .main-container {
+    padding: 46px 40px 24px 40px;
+  }
+  
+  .header {
+    margin-bottom: 8px;
+  }
+  
+  .subheader {
+    padding: 40px 0px 40px 0px;
+    display:flex;
+    justify-content: center;
+    //font-weight: 600;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    @media screen and (max-width: 534px) {
+      padding: 32px 42px 42px 32px;
+    }
+  }
+
+.sub-container{
+  padding: 0px 40px 4px 40px;
+}  
+
+.subsubheader {
+  font-size: 16px!important;
+}
+
+.add-style{
+  font-size: 16px !important;
+  color:#0491DB !important;
+  cursor: pointer;
+  @media screen and (max-width: 700px) {
+    color:#0491DB !important;
+  }
+}
+
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: unset !important;
+}
+
+
+zxing-scanner {
+  max-width: 100%;
+  max-height: 315px;
+  position: relative;
+  @media screen and (max-width: 700px) {
+    max-height: 394px;
+  }
+}
+
+.show-switch-button {
+  top: 21px;
+}
+
+.one-camera-found {
+  display: none;
+}
+
+.results {
+  position: sticky;
+  bottom: 0;
+  padding: 15px;
+  background: #02c3c3;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  small {
+    font-weight: bolder;
+    display: block;
+    font-size: 60%;
+    margin: -0.6em 0 0 0;
+  }
+
+  button {
+    background: none;
+    border: none;
+    line-height: 1;
+    font-weight: bolder;
+    font-size: 120%;
+    float: right;
+    color: #fff;
+    $mg: 8px;
+    margin: (-$mg) (-$mg) (-$mg) $mg;
+  }
+}
+
+h2 {
+  padding: 0 16px;
+}
+
+.scanner{
+  width: 100%;
+  height: 315px;
+  min-height: 315px;
+  background-color: #d3d3d329;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  @media screen and (max-width: 700px) {
+    height: 394px;
+    min-height: 394px;
+  }
+}
+
+::ng-deep video {
+  max-height: 315px;
+  width: 766px;
+  object-fit: contain;
+  @media screen and (max-width: 700px) {
+    height: 394px;
+    max-height: 394px;
+    width: 100%;
+  }
+}
+
+.success_text {
+  color: #2BEA9B;
+  padding: 24px 24px 24px 24px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.error_text {
+  color: #cc046c;
+  padding: 32px 0px 0px 26px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.success {
+  margin-top: 28px;
+  // margin-bottom: 24px;
+}
+
+.start-scanner-button {
+    border: 1px solid #485294;
+    border-radius: 4px;
+    padding: 14px 32px;
+    background-color: #485294;
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    margin-bottom: 40px;
+    @media screen and (max-width: 440px) {
+      // padding: unset;
+    }
+}
+
+.img-scanner {
+  margin: 40px 0px 24px 0px;
+  width: 132px !important;
+  @media screen and (max-width: 440px) {
+    margin: 24px 0px 24px 0px;
+  }
+}
+
+.add-style {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px !important;;
+  line-height: 140%;
+}
+
+:host ::ng-deep .ice-section { 
+  padding-bottom: 1px;
+}
+
+.text-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+}
+
+
+.before-scanning-page-area{
+  background: #eeeeee;
+  height: 26px;
+}

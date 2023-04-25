@@ -1,0 +1,26 @@
+action:
+  title: Get in progress eclaims requests
+  execution:
+    - GetSalesforceTokenRule:
+        fromProcess: eclaims
+        salesforceLoginUrl: BASEURLSALESFORCELOGIN
+        methodLogin: post
+        getAmendmentsUrl: AMENDMENTSURL
+        methodGetAmendments: get
+        bucket: EclaimsSfLogin
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+    - EclaimsGetInprogressRequestsRule:
+        baseurl: BASESALESFORCEURLECLAIMSERVICES
+        methodGetInprogressEclaims: get
+        bucket: EclaimsInprogressRequests
+        activeCustomerId: eclaims.customerID  
+        activecontract: eclaims.contractKey 
+        status: New,In Progress,Waiting on Bank Broker,Waiting on Internal,Answer Received,Assigned
+    - EclaimsValuationInprogressRequestsRule:   
+  trigger:
+    - PageTriggerRule:
+        enter:
+          - viewClaims
+      

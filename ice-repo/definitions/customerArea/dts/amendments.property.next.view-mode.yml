@@ -1,0 +1,1869 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - label: amendments.details.step.status
+      element: amendments.details.step.status
+    - label: amendments.property.category.dropdown
+      element: amendments.property.category.dropdown
+    - label: amendments.property.subcategory.dropdown
+      element: amendments.property.subcategory.dropdown
+    - label: amendments.property.new.insured.input
+      element: amendments.property.new.insured.input
+    - label: amendments.add.insuredcomments
+      element: amendments.add.insuredcomments
+    - label:  amendments.property.new.apartment.number.input
+      element: amendments.property.new.apartment.number.input
+    - label:  amendments.property.new.year.construction.input
+      element: amendments.property.new.year.construction.input
+    - label:  amendments.property.new.parking.number.input
+      element: amendments.property.new.parking.number.input
+    - label:  amendments.property.new.building.measures.input
+      element: amendments.property.new.building.measures.input
+    - label:  amendments.property.new.storage.room.number.input
+      element: amendments.property.new.storage.room.number.input
+    - label:  amendments.property.new.storage.room.measures.input
+      element: amendments.property.new.storage.room.measures.input
+    - label:  amendments.property.new.parking.measures.input
+      element: amendments.property.new.parking.measures.input
+    - label:  amendments.property.new.property.code.input
+      element: amendments.property.new.property.code.input
+    - label: amendments.frequencyOfPayment.input
+      element: amendments.frequencyOfPayment.input
+    - label: amendments.verifieduser
+      element: amendments.verifieduser
+  outputs:
+    - label: viewMode
+      id: viewMode
+      type: string
+  rules:
+    # STEP 0
+    - inputs:
+        - 0
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - default
+    - inputs:
+        - 0
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 0
+        - "-"
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 0
+        - "-"
+        - "-"
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 0
+        - not(null)
+        - "-"
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 0
+        - "-"
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 0
+        - null
+        - "-"
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 0
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 0
+        - null
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    # End STEP 0
+    # STEP 1
+    #insured value field
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - default
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - "-"
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    #insured comments required field  
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - null
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - default
+    # - inputs:
+    #     - 1
+    #     - not(null)
+    #     - not(null)
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - false
+    #   outputs:
+    #     - disabled
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - null
+        - "-"
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    # new apartment number field
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - default
+    # - inputs:
+    #     - 1
+    #     - not(null)
+    #     - not(null)
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - false
+    #   outputs:
+    #     - disabled
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - "-"
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    # new year construction field
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - default
+    # - inputs:
+    #     - 1
+    #     - not(null)
+    #     - not(null)
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - false
+    #   outputs:
+    #     - disabled
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - "-"
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    #new parking number field
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - default
+    # - inputs:
+    #     - 1
+    #     - not(null)
+    #     - not(null)
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - false
+    #   outputs:
+    #     - disabled
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - "-"
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    #new building square meters field
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - default
+    # - inputs:
+    #     - 1
+    #     - not(null)
+    #     - not(null)
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - false
+    #   outputs:
+    #     - disabled
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - "-"
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    # new storage room number field
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - default
+    # - inputs:
+    #     - 1
+    #     - not(null)
+    #     - not(null)
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - false
+    #   outputs:
+    #     - disabled
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - "-"
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    # new storage room square meters fields
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - not(null)
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - default
+    # - inputs:
+    #     - 1
+    #     - not(null)
+    #     - not(null)
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - false
+    #   outputs:
+    #     - disabled
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - "-"
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    # new parking square meters field
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - not(null)
+        - null
+        - null
+        - false
+      outputs:
+        - default
+    # - inputs:
+    #     - 1
+    #     - not(null)
+    #     - not(null)
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - false
+    #   outputs:
+    #     - disabled
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - "-"
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    # new property code field
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - not(null)
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - default
+    # - inputs:
+    #     - 1
+    #     - not(null)
+    #     - not(null)
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - false
+    #   outputs:
+    #     - disabled
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - "-"
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    # new parking square meters field
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - not(null)
+        - null
+        - null
+        - false
+      outputs:
+        - default
+    # - inputs:
+    #     - 1
+    #     - not(null)
+    #     - not(null)
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - false
+    #   outputs:
+    #     - disabled
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - "-"
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    # new property code field
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - not(null)
+        - null
+        - false
+      outputs:
+        - default
+    # - inputs:
+    #     - 1
+    #     - not(null)
+    #     - not(null)
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - false
+    #   outputs:
+    #     - disabled
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - "-"
+        - null
+        - false
+      outputs:
+        - disabled
+    # new frequency Of Payment field
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - not(null)
+        - false
+      outputs:
+        - default
+    # - inputs:
+    #     - 1
+    #     - not(null)
+    #     - not(null)
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - false
+    #   outputs:
+    #     - disabled
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - "-"
+        - false
+      outputs:
+        - disabled
+    # End STEP 1
+    # # STEP 2
+    #insured value field
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - "-"
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - true
+      outputs:
+        - default
+    #insured comments required field  
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    # - inputs:
+    #     - 2
+    #     - not(null)
+    #     - not(null)
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - false
+    #   outputs:
+    #     - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - "-"
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - true
+      outputs:
+        - default
+  # new apartment number field
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    # - inputs:
+    #     - 2
+    #     - not(null)
+    #     - not(null)
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - false
+    #   outputs:
+    #     - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - "-"
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - true
+      outputs:
+        - default
+   # new year construction field
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    # - inputs:
+    #     - 2
+    #     - not(null)
+    #     - not(null)
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - false
+    #   outputs:
+    #     - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - "-"
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - true
+      outputs:
+        - default
+    #new parking number field
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    # - inputs:
+    #     - 2
+    #     - not(null)
+    #     - not(null)
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - false
+    #   outputs:
+    #     - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - "-"
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - true
+      outputs:
+        - default
+  #new building square meters field
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    # - inputs:
+    #     - 2
+    #     - not(null)
+    #     - not(null)
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - false
+    #   outputs:
+    #     - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - "-"
+        - null
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - true
+      outputs:
+        - default
+   # new storage room number field
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    # - inputs:
+    #     - 2
+    #     - not(null)
+    #     - not(null)
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - false
+    #   outputs:
+    #     - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - "-"
+        - null
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - true
+      outputs:
+        - default
+  # new storage room square meters fields
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - not(null)
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    # - inputs:
+    #     - 2
+    #     - not(null)
+    #     - not(null)
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - false
+    #   outputs:
+    #     - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - "-"
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - not(null)
+        - null
+        - null
+        - null
+        - true
+      outputs:
+        - default
+  # new parking square meters field
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - not(null)
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    # - inputs:
+    #     - 2
+    #     - not(null)
+    #     - not(null)
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - false
+    #   outputs:
+    #     - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - "-"
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - not(null)
+        - null
+        - null
+        - true
+      outputs:
+        - default
+  # new property code field
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - not(null)
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    # - inputs:
+    #     - 2
+    #     - not(null)
+    #     - not(null)
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - false
+    #   outputs:
+    #     - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - "-"
+        - null
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - not(null)
+        - null
+        - null
+        - null
+        - true
+      outputs:
+        - default
+  # new parking square meters field
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - not(null)
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    # - inputs:
+    #     - 2
+    #     - not(null)
+    #     - not(null)
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - false
+    #   outputs:
+    #     - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - "-"
+        - null
+        - null
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - not(null)
+        - null
+        - null
+        - true
+      outputs:
+        - default
+  # new property code field
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - not(null)
+        - null
+        - false
+      outputs:
+        - disabled
+    # - inputs:
+    #     - 2
+    #     - not(null)
+    #     - not(null)
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - false
+    #   outputs:
+    #     - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - "-"
+        - null
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - not(null)
+        - null
+        - true
+      outputs:
+        - default
+  # new frequency Of Payment field
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - not(null)
+        - false
+      outputs:
+        - disabled
+    # - inputs:
+    #     - 2
+    #     - not(null)
+    #     - not(null)
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - null
+    #     - false
+    #   outputs:
+    #     - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - "-"
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - null
+        - not(null)
+        - true
+      outputs:
+        - default
+  # END STEP 2  

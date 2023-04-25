@@ -1,0 +1,17 @@
+<h1 mat-dialog-title><strong>{{ delete | resourcePipe }}</strong> </h1>
+<div mat-dialog-content>
+        <p>{{ weAreSorrytext | resourcePipe }}<br></p>
+</div>
+<p><strong>{{ confirmText | resourcePipe }}</strong></p>
+<mat-form-field>
+        <mat-label>{{ motorPopUpDeletePasswordText | resourcePipe }}</mat-label>
+        <input matInput>
+</mat-form-field>
+<div mat-dialog-actions>
+        <mat-checkbox>{{ deletingAccountText | resourcePipe }}
+        </mat-checkbox>
+</div>
+<br>
+<div mat-dialog-actions>
+        <button mat-button><strong>{{ deleteAccountText | resourcePipe }}</strong></button>
+</div>

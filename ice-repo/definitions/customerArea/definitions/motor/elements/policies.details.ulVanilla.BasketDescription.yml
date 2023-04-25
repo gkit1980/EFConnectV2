@@ -1,0 +1,12 @@
+element:
+  type: text
+  viewMode: output
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent
+  buckets:
+    GetLifeContractFundsValuation:
+      transformation:
+        responsePath: BasketDescription
+  pages:
+    policyDetails: null

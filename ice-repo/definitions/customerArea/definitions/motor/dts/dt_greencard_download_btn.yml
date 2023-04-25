@@ -1,0 +1,31 @@
+dt:
+  hit-policy: F
+  inputs:
+    - label: greencard No
+      element: greencard.motor.security.greenCardNo
+    - label: greencard index
+      element: greencard.page.index
+  outputs:
+    - id: viewmode
+      type: ""
+  rules:
+    - inputs:
+        - null
+        - 0,1,2,3,4,5,6
+      outputs:
+        - gc-hidden
+    - inputs:
+        - not('-1')
+        - 0
+      outputs:
+        - output
+    - inputs:
+        - "-"
+        - 0,1,2,3,4,5,6
+      outputs:
+        - gc-hidden
+    - inputs:
+        - "-"
+        - "-"
+      outputs:
+        - gc-hidden

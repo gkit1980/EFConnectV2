@@ -1,0 +1,6 @@
+element:
+  type: text
+  viewMode: output
+  pages:
+    viewEclaimsDetails: null
+    viewPropertyNotificationDetails: null

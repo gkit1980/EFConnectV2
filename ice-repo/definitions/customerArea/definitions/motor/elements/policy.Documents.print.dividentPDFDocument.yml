@@ -1,0 +1,7 @@
+element:
+  type: text
+  viewMode: default
+  buckets:
+    getUserDocument:
+      transformation:
+        responsePath: Document

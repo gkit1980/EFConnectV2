@@ -1,0 +1,10 @@
+action:
+  execution:
+    - EnableSpinnerRule: 
+        actionrule: action-amendments-create-property-case
+    - AmendmentsCreatePropertyCaseRule:
+        getAmendmentsUrl: AMENDMENTSPROPERTYURL
+        method: post
+        bucket: AmendmentsCreatePropertyCase
+    - DisableSpinnerRule: 
+        actionrule: action-amendments-create-property-case

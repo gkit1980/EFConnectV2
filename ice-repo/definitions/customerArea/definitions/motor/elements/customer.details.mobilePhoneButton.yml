@@ -1,0 +1,21 @@
+element:
+  component: EurolifeEmailButtonComponentComponent
+  additionalClasses: eurolife_btn-default mb-5
+  svgFillColor: corporate_color
+  type: text
+  label: Επόμενο
+  defaultValue: actionChangeMobile
+  # action:
+  #   execution:
+  #     - RestCallExecutionRule:
+  #         # baseUrl: http://platformsuat.eurolife.gr/CustomerAreaLogin/api/CustomerAreaApi
+  #         baseUrl: BASEURLCHANGECREDENTIALS
+  #         url: ChangeMobile
+  #         verb: post
+  #         bucket: ChangeMobile
+  viewMode:
+    DtViewModeRule:
+      dt: dt.mobile.phone.button
+      output: viewmode
+  pages:
+    changeMobilePhonePopUp: null

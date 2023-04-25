@@ -1,0 +1,88 @@
+@import '~@angular/material/theming';
+
+//custom small pallete
+//$custom-blue-primary: #41B1E9;
+
+$custom-blue-primary: (
+  100: #41B1E9,
+  500: #41B1E9,
+  700: #0059AA,
+  contrast: (
+    100: #41B1E9,
+    500: #41B1E9,
+    700: #0059AA,
+  )
+);
+
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+
+//$ice-master-custom-app-accent: mat-pallete($custom-blue-secondary);
+
+// The warn palette is optional (defaults to red).
+$ice-master-custom-app-warn:    mat-palette($mat-red);
+
+// Define foreground and background palletes
+$mat-custom-theme-foreground: (
+  base:              #41B1E9,
+  divider:           $light-dividers,
+  dividers:          $light-dividers,
+  disabled:          $light-disabled-text,
+  disabled-button:   rgba(white, 0.3),
+  disabled-text:     $light-disabled-text,
+  hint-text:         $light-disabled-text,
+  secondary-text:    $light-primary-text,
+  icon:              white,
+  icons:             white,
+  text:              white,
+  slider-min:        white,
+  slider-off:        rgba(white, 0.3),
+  slider-off-active: rgba(white, 0.3),
+);
+
+$mat-custom-theme-background: (
+  status-bar: map_get($mat-grey, 300),
+  background: #0059AA,
+  background-tile: rgba(65,177,233, .5),
+  background-footer: rgba(0,89,170, .5),
+  gradient: linear-gradient(#0059AA, #41B1E9),
+  app-bar:    map_get($mat-grey, 900),
+  hover:      rgba(white, 0.04), // TODO(kara): check style with Material Design UX
+  card:       map_get($mat-grey, 800),
+  dialog:     map_get($mat-grey, 800),
+  disabled-button: rgba(white, 0.12),
+  raised-button: map-get($mat-grey, 50),
+  focused-button: $light-focused,
+  selected-button: white,
+  selected-disabled-button: transparent,
+  disabled-button-toggle: transparent,
+  unselected-chip: map_get($mat-grey, 700),
+  disabled-list-option: black,
+);
+
+$header-logo: (
+    logo-url: none,
+);
+
+// Define a custom sass map theme
+@function mat-custom-theme($primary, $accent, $warn: mat-palette($mat-red)) {
+    @return (
+      primary: $primary,
+      accent: $accent,
+      warn: $warn,
+      is-dark: false,
+      foreground: $mat-custom-theme-foreground,
+      background: $mat-custom-theme-background,
+      header-logo: $header-logo,
+    );
+  }
+
+// Create the theme object (a Sass map containing all of the palettes).
+$custom-app-theme: mat-custom-theme(mat-palette($custom-blue-primary), mat-palette($custom-blue-primary));

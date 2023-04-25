@@ -1,0 +1,13 @@
+element:
+  type: text
+  viewMode: output
+  buckets:
+    GetPaymentURLRedirector:
+      transformation:
+        dataPath: OrderID
+    GetTransactionInfoAEGA:
+      transformation:
+        dataPath: OrderID
+    GetPaymentURLRedirectorAEAZ:
+      transformation:
+        dataPath: OrderID

@@ -1,0 +1,35 @@
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
+
+hr {
+    width: 100%;
+    height: 1px;
+    border-top: solid 0.5px #b5b5b5;
+    margin: 0px;
+    padding: 0px;
+}
+
+label, span {
+    padding-left: 15px;
+    margin-bottom: 0em;
+
+    @include media-breakpoint-up(sm) {
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+}
+
+label {
+    @include media-breakpoint-down(sm) {
+        padding-top: 8px;
+        padding-bottom: 4px;
+    }
+}
+
+span {
+    display: inline-block;
+
+    @include media-breakpoint-down(sm) {
+        padding-top: 4px;
+        padding-bottom: 11px;
+    }
+}

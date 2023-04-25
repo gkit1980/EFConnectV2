@@ -1,0 +1,11 @@
+action:
+  execution:
+    - AmendmentsSetSubcategory: {}
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+           - amendments.motor.category.dropdown
+           - amendments.property.category.dropdown
+           - amendments.life.category.dropdown
+           - amendments.health.category.dropdown
+           - amendments.finance.category.dropdown

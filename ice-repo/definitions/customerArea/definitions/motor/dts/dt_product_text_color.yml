@@ -1,0 +1,95 @@
+dt:
+  hit-policy: F
+  inputs:
+    - label: input element for default
+      element: selectedcontractbranch
+  outputs:
+    - id: svgImageValue
+      type: string
+  rules:
+    - inputs:
+        - 1,99
+      outputs:
+        - >-
+          "health_text"
+    - inputs:
+        - 2
+      outputs:
+        - >-
+          "finance_text"
+    - inputs:
+        - 3
+      outputs:
+        - >-
+          "motor_text"
+    - inputs:
+        - 4
+      outputs:
+        - >-
+          "home_text"
+    - inputs:
+        - 5
+      outputs:
+        - >-
+          "other_pc_text"
+    - inputs:
+        - 6
+      outputs:
+        - >-
+          "other_pc_text"
+    - inputs:
+        - 7
+      outputs:
+        - >-
+          "other_pc_text"
+    - inputs:
+        - 8
+      outputs:
+        - >-
+          "other_pc_text"
+    - inputs:
+        - 9
+      outputs:
+        - >-
+          "life_text"
+    - inputs:
+        - 10
+      outputs:
+        - >-
+          "group_text"
+    - inputs:
+        - 11
+      outputs:
+        - >-
+          "finance_text"
+    - inputs:
+        - 12
+      outputs:
+        - >-
+          "life_text"
+    - inputs:
+        - 13
+      outputs:
+        - >-
+          "home_text"
+    - inputs:
+        - 14
+      outputs:
+        - >-
+          "life_text"
+    - inputs:
+        - 15
+      outputs:
+        - >-
+          "life_text"
+    - inputs:
+        - 16
+      outputs:
+        - >-
+          "life_text"
+    - inputs:
+        - 17
+      outputs:
+        - >-
+          "life_text"
+      

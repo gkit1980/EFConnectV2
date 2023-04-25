@@ -1,0 +1,9 @@
+action:
+  trigger:
+    - ElementChangeTriggerRule:
+        elements: 
+          - clicktocall.callmelater
+  execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - clicktocall.callmenow

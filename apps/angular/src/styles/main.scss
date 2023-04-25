@@ -1,0 +1,25 @@
+// Third party libraries
+// 1. Bootstrap
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+// 2. Font awesome
+@import "../../../node_modules/font-awesome/scss/font-awesome";
+
+// 3. Animate
+@import "../../src/styles/vendors/animate";
+
+// Abstracts
+// 1. Variables
+@import "abstracts/variables";
+
+// 2. Functions
+@import "abstracts/functions";
+
+// 3. Mixins
+@import "abstracts/mixins";
+
+// Base
+@import "base/typography";
+
+// Components
+@import "components/buttons";

@@ -1,0 +1,53 @@
+dt:
+  hitPolicy: C
+  inputs:
+    - element: property.notification.claimType.dropdown
+  outputs:
+    - id: value
+    - id: label
+    - id: label_en
+      type: text
+  rules:
+    - inputs:
+        - '1'
+      outputs:
+        - 1
+        - Πυρκαγιά
+        - Wildfire
+    - inputs:
+        - '2'
+      outputs:
+        - 2
+        - Σεισμός
+        - Earthquake
+    - inputs:
+        - '3'
+      outputs:
+        - 3
+        - Φυσικά Φαινόμενα
+        - Natural Phenomena
+    - inputs:
+        - '4'
+      outputs:
+        - 4
+        - Διάρρηξη Σωληνώσεων
+        - Burglary Pipes
+    - inputs:
+        - '5'
+      outputs:
+        - 5
+        - Θραύση Κρυστάλλων
+        - Break Glasses
+    - inputs:
+        - '6'
+      outputs:
+        - 6
+        - Βραχυκύκλωμα
+        - Short circuit
+    - inputs:
+        - '7'
+      outputs:
+        - 7
+        - Άλλο
+        - Other
+

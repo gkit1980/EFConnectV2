@@ -1,0 +1,10 @@
+<!-- This is where we will insert the dynamic components -->
+<div *ngIf="show" #container></div>
+
+<div *ngIf="show" class="grey-background mt-3">
+  <div class="add-driver-label">ΠΡΟΣΘΗΚΗ ΕΠΙΠΛΕΟΝ ΟΔΗΓΟΥ</div>
+  <div class="icon-container">
+    <div class="svg-color" [ngClass]="{'disabled-color': isEnableBack}" [inlineSVG]="getIcon('40857F326B8047F6B5CB0C771826448F')"
+    [onSVGLoaded]="handleSVG" (click)="addElement()"></div>
+  </div>
+</div>

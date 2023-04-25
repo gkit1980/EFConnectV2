@@ -1,0 +1,15 @@
+action:
+  title: get blog data from service-presenting home page
+  execution:
+    - GetBlogInfoRule:
+        baseUrl: https://www.eurolife.gr/api/feature/blog
+        verb: get
+        url: latest_articles
+        bucket: GetBlogInfo
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: true
+  # trigger:
+  #   - PageTriggerRule:
+  #       enter:
+  #         - home

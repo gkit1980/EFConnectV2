@@ -1,0 +1,23 @@
+<div class="eurolife-button" [ngClass]="alignmentClass">
+  <button
+    class="eurolife_btn"
+    [ngClass]="additionalClasses"
+    [disabled]="isValidated"
+    [class.btn-minh-load]="showSpinnerBtn"
+    [class.disable-dnl]="showSpinnerBtn"
+    (click)="onClick()"
+  >
+  <div class="Button">{{ labelDropdown }}</div>
+  <div class="arrow" *ngIf="!showSpinnerBtn"><i class="fa" [ngClass]="('null' | pipeFunction: getArrow : this)"></i></div>
+    <div *ngIf="showSpinnerBtn" class="button-icon">
+      <i class="fa fa-spinner fa-spin fa-lg"></i>
+    </div>
+  </button>
+  <div class="dropdown_content" [ngClass]="{'d-none': !dropdownOpen}">
+      <div class="d-item" *ngFor="let item of this.getDataList(); let i = index"  (click)="onSelectedItem(item)">
+        {{item}}
+      </div>
+  </div>
+
+</div>
+

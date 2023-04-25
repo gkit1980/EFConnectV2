@@ -1,0 +1,12 @@
+element:
+  type: text
+  viewMode: output
+  buckets:
+    GetGroupHealthCards:
+      transformation:
+        responsePath: DigitalCardDocuments[0].File
+    GetHealthCards:
+      transformation:
+        responsePath: DigitalCardDocuments[0].File    
+  pages:
+    policyDetails: null

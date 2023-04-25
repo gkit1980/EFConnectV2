@@ -1,0 +1,18 @@
+list:
+  additionals:
+    label_el:
+      label: label_el
+      type: text
+    label_en:
+      label: label_en
+      type: text
+  items:
+    - value: 1
+      label_el: Εφάπαξ
+      label_en: 
+    - value: 2
+      label_el: 3
+      label_en: 
+    - value: 3
+      label_el: 6
+      label_en: 

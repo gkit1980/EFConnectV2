@@ -1,0 +1,104 @@
+
+<nav class="navbar navbar-expand-xl">
+  <!-- <a class="navbar-brand h3" routerLink="/ice/default/customerArea.motor/home">
+    {{ myEurolife | resourcePipe }}
+  </a> -->
+  <div class="eurolife-logo" routerLink="/ice/default/customerArea.motor/home">
+    <img class="image-logo" [src]='HEADER_LOGO' alt="EurolifeConnect">
+  </div>
+
+  <!-- <div class="eurolife-logo">
+      <img src="../../../assets-webpacked/eurolife/EurolifeConnect_logo.png" alt="myEurolife">
+  </div> -->
+
+  <button class="hamburger hamburger--slider navbar-toggler order-1" type="button" (click)="toggleNavbar()"
+    [ngClass]="getIsActive()">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </button>
+  <div class="navbar-collapse collapse menucls order-2" [ngClass]="getShow_FullViewPort()">
+    <hr class=" d-xs-block d-sm-block d-md-block d-lg-block d-xl-none">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a (click)="fillDatastore(); toggleDropdown()" class="Body1 nav-link"
+          routerLink="/ice/default/customerArea.motor/viewMyPolicies"
+          routerLinkActive="active">{{ contracts | resourcePipe }}</a>
+      </li>
+      <li class="nav-item">
+        <div class="eclaims-layout">
+            <a (click)="fillDatastore(); toggleDropdown()" class="Body1 nav-link"
+              href="/#//ice/default/customerArea.motor/viewClaims">
+              {{ allowances | resourcePipe }}</a>
+            <!--notification icon for claims-->
+              <div *ngIf="getShowClaimsIcon()"
+              class="notification-icon"
+              aria-label="icon"
+              [onSVGLoaded]="handleSVGInfo"
+              [inlineSVG]="getIcon('01D8EA7C762A44E0A8FF3E4FFF8D1C72')"
+              >
+            </div>
+            
+        </div>
+      </li> 
+      <li *ngIf="showAmendments" class="nav-item">
+        <a (click)="fillDatastore(); toggleDropdown()" class="Body1 nav-link"
+          routerLink="/ice/default/customerArea.motor/viewAmendments"
+          routerLinkActive="active">{{ additives | resourcePipe }}</a>
+      </li>
+      <li class="nav-item">
+        <a (click)="fillDatastore(); toggleDropdown()" class="Body1 nav-link"
+          href="/#/ice/default/customerArea.motor/communicationService"
+          routerLinkActive="active">{{ communication | resourcePipe }}</a>
+      </li>
+    
+    </ul>
+    <hr class=" d-xs-block d-sm-block d-md-block d-lg-block d-xl-none">
+    <div class="d-xs-block d-sm-block d-md-block d-lg-block d-xl-none">
+      <div class="avatar">
+        <div class="cicle"><i class="fa fa-user avatar favicons"></i></div>
+        <div class="fullname">{{fullName}}</div>
+        <!-- <div class="avatar" [inlineSVG]="imageSource" [onSVGLoaded]="handleSVG"></div> -->
+        <div class="Caption1"></div>
+      </div>
+
+      <div class="dropdown_content">
+        <div class="first">
+          <div class="profile svg-icons" [inlineSVG]="getIcon('D2CAEF0FCE77415C91C4CAB23BE1513B')">
+          </div>
+          <a class="Caption3" (click)="toggleDropdown()"
+            routerLink="/ice/default/customerArea.motor/customerProfile">{{ profile | resourcePipe }}</a>
+        </div>
+
+        <div class="second">
+          <div class="documents svg-icons" [inlineSVG]="getIcon('4D068B5B677746318312AFCC4384DA07')">
+
+          </div>
+          <a class="Caption3" (click)="toggleDropdown()"
+            routerLink="/ice/default/customerArea.motor/myDocuments">{{ certificates | resourcePipe }}</a>
+        </div>
+
+        <div class="third">
+          <div class="settings svg-icons" [inlineSVG]="getIcon('0D1AE135F1E5400C8013000AEAF8AE91')">
+
+          </div>
+          <a class="Caption3 on-hover" (click)="toggleDropdown(); onPreferences()">{{ settings | resourcePipe }}</a>
+        </div>
+
+        <div class="forth">
+
+          <div class="logout svg-icons" [inlineSVG]="getIcon('EC208845F727483BA841E9F5DA958459')">
+          </div>
+          <a class="Caption3 on-hover" (click)="logoutFuction();toggleDropdown()">{{ logout | resourcePipe }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+
+  <app-eurolife-dropdown-menu class="account_menu d-none d-xs-none d-sm-none d-md-none d-lg-none d-xl-block order-last">
+  </app-eurolife-dropdown-menu>
+
+
+  
+</nav>

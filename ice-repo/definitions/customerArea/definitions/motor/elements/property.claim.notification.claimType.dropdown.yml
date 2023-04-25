@@ -1,0 +1,9 @@
+element:
+  type: text
+  label: 
+  values: property.notification.claimType.listValues
+  viewMode: enable
+  component: PropertyClaimTypeComponent
+  buckets:
+    PropertyClaimNotificationCreateCase:
+      transformation: {} 

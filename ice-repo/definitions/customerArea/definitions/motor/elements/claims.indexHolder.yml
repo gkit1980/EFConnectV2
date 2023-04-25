@@ -1,0 +1,9 @@
+element:
+  type: integer
+  pages:
+    viewClaims: null
+    viewClaimDetails: null
+  change:
+    - ResetElementValueExecutionRule:
+        elements:
+          - policy.contract.general.info.Branch

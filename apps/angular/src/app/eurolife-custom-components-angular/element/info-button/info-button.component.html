@@ -1,0 +1,13 @@
+<ng-template #notsmsCode>
+  <div>
+    <p><i class="fa fa-info-circle"></i> </p>
+  </div>
+</ng-template>
+<div *ngIf="smsCode; else notsmsCode">
+  <div>
+    <button class="mat-icon-button matTooltip" matTooltip="Please enter the SMS code you received" matTooltipPosition="right"
+      aria-label="Button that displays a tooltip that has custom delays through a default config">
+      <i class="fa fa-info-circle"></i>
+    </button>
+  </div>
+</div>

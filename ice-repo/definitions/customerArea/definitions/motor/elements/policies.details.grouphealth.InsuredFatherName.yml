@@ -1,0 +1,17 @@
+element:
+  type: text
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: selectedcontractbranch
+      conditionValue: 99
+      conditionViewMode: output
+      elseViewMode: hidden
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent
+  buckets:
+    GetContractGroupHealthDetails:
+      transformation:
+        responsePath: ContractGroupHealthDetails.InsuredFatherName  
+  pages:
+    policyDetails: null

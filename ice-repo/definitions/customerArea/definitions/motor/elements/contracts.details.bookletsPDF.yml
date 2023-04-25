@@ -1,0 +1,12 @@
+element:
+  component: EurolifeButtonComponent
+  type: text
+  label: ΟΔΗΓΟΣ ΑΣΦΑΛΙΣΗΣ
+  buttonIcon: https://scp.eurolife.gr/~/media/3D4C3EE53B51434B9A9C20E02FA3B340.ashx
+  additionalClasses: booklets-css
+  svgFillColor: booklets-css
+  defaultValue: actionGetBookletsPDF
+  alignmentClass: dt_visibility_booklets_pdf_button
+  typeScope: booklets-guide
+  pages:
+    policyDetails: null

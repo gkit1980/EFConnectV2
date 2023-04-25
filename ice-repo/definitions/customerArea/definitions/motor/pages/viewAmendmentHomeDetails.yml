@@ -1,0 +1,556 @@
+page:
+  component: SimplePageNoTitleComponent
+  componentFlag: amendmentHomeDetails
+  label: null
+  sections:
+    - component: GridView
+      viewMode: hidden
+      rows:
+        - css: null
+          cols:
+            - col: 12
+              element: policies.empty
+    - component: AmendmentDetailsHeaderComponent
+      componentFlag: amendmentHomeDetails
+      rows:
+        - css: firstSVG
+          cols:
+            - col: 2
+              css: header-svg-img
+              element: productSvgImage
+            - col: 7
+              internalRows:
+                - css: test-product
+                  internalCols:
+                    - internalCol: 12
+                      element: amendments.details.ProductName
+                - css: amendments.details.header.tiles.productColor
+                  internalCols:
+                    - css: text-align-center-bp opacity
+                      internalCol: 12
+                      element: amendments.details.PolicyNumberHeader
+      dataStoreProperty: clientContracts
+    - component: SimpleGridViewComponent
+      rows:
+        - cols:
+            - css: h5 text-center mt-5
+              col: 12
+              element: amendments.change.request.header
+        - cols:
+            - css: Caption3 text-center
+              col: 12
+              element: amendments.change.request.subheader
+        # - cols:
+        #     - css: header-title-pop-up text-center
+        #       col: 12
+        #       element: amendments.details.infoMessage
+    - component: AmendmentsStepperHomeComponent
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_property_sections_1
+      rows:
+        - cols:
+            - css: h6-active text-center mt-5
+              col: 12
+              element: amendments.select.request.header
+        - cols:
+            - css: Caption3 text-center mb-4
+              col: 12
+              element: amendments.select.request.subheader
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_property_sections_header_2
+      rows:
+        - css: gc-back-wrapper
+          cols:
+            - css: h6-active text-center mt-5
+              col:
+              element: amendments.back
+            - css: h6-active text-center mt-5
+              col:
+              element: amendments.select.request.step2.header
+        # - cols:
+        #     - css: h6-active text-center mt-5
+        #       col: 6
+        #       element: greencard.motor.security.driver.back
+        #     - css: h6-active text-center mt-5
+        #       col: 6
+        #       element: amendments.select.request.step2.header
+        - css:
+          cols:
+            - css: Caption3 text-center mb-4
+              col: 12
+              element: amendments.select.request.step2.subheader
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_property_sections_header_3
+      rows:
+        - css: gc-back-wrapper
+          cols:
+            - css: h6-active text-center mt-5
+              col:
+              element: amendments.back
+            - css: h6-active text-center mt-5
+              col:
+              element: amendments.select.request.step3.header
+        - css:
+          cols:
+            - css: Caption3 text-center mb-4
+              col: 12
+              element: amendments.select.request.step3.subheader
+        # - css:
+        #   cols:
+        #     - css: Caption3 text-center mb-4
+        #       col: 12
+        #       element: amendments.customer.mobile
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_property_sections_1
+      rows:
+        - cols:
+            - css: amendments-dropdown mb-2 ml-auto mr-auto
+              col: 12
+              element: amendments.property.category.dropdown
+        - cols:
+            - css: amendments-dropdown ml-auto mr-auto
+              col: 12
+              element: amendments.property.subcategory.dropdown
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_property_sections_2
+      rows:
+        - css: amendments-grey-container
+          cols:
+            - col: 12
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.property.new.insured.label
+                - css:
+                  internalCols:
+                    - css: text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.property.new.insured.input
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_property_sections_2
+      rows:
+        - cols:
+            - css: text-center mt-5
+              col: 12
+              element: amendments.add.comment
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_property_sections2_2_1
+      rows:
+        - css: amendments-grey-container
+          cols:
+            - col: 12
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.add.insuredcomments.mainData.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.add.insuredcomments
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_property_sections2_3_1
+      rows:
+        - css: amendments-grey-container
+          cols:
+            - col: 12
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.add.insuredcomments.MortgageLender.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.add.insuredcomments
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_property_sections2_3_2
+      rows:
+        - css: amendments-grey-container
+          cols:
+            - col: 12
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.add.insuredcomments.loanAgreement
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.add.insuredcomments
+    # - component: SimpleGridViewComponent
+    #   viewMode:
+    #     DtSectionViewModeRule:
+    #       dt: dt_amendments_property_sections2_3_3
+    #   rows:
+    #     - css: amendments-grey-container
+    #       cols:
+    #         - col: 12
+    #           internalRows:
+    #             - css:
+    #               internalCols:
+    #                 - css: Typeface text-align-center-bp amendments-border-grey-container
+    #                   internalCol: 12
+    #                   element: amendments.add.insuredcomments
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_property_sections2_3_3
+      rows:
+        - css: amendments-grey-container
+          cols:
+            - col: 12
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.add.insuredcomments.withdrawalLoanAgreement
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.add.insuredcomments
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_property_sections2_3_4
+      rows:
+        - css: amendments-grey-container
+          cols:
+            - col: 12
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.add.insuredcomments.addLoanAgreement
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.add.insuredcomments
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_property_sections2_4_1
+      rows:
+        - css: amendments-grey-container
+          cols:
+            - col: 12
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.property.new.apartment.number.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container 
+                      internalCol: 12
+                      element: amendments.property.new.apartment.number.input
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_property_sections2_4_1
+      rows:
+        - cols:
+            - css: text-center mt-5
+              col: 12
+              element: amendments.add.comment
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_property_sections2_4_2
+      rows:
+        - css: amendments-grey-container
+          cols:
+            - col: 12
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.property.new.year.construction.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container 
+                      internalCol: 12
+                      element: amendments.property.new.year.construction.input
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_property_sections2_4_2
+      rows:
+        - cols:
+            - css: text-center mt-5
+              col: 12
+              element: amendments.add.comment
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_property_sections2_4_3
+      rows:
+        - css: amendments-grey-container
+          cols:
+            - col: 12
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.property.new.parking.number.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.property.new.parking.number.input
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_property_sections2_4_3
+      rows:
+        - cols:
+            - css: text-center mt-5
+              col: 12
+              element: amendments.add.comment
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_property_sections2_4_4
+      rows:
+        - css: amendments-grey-container
+          cols:
+            - col: 12
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.property.new.building.measures.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.property.new.building.measures.input
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_property_sections2_4_4
+      rows:
+        - cols:
+            - css: text-center mt-5
+              col: 12
+              element: amendments.add.comment
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_property_sections2_4_5
+      rows:
+        - css: amendments-grey-container
+          cols:
+            - col: 12
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.property.new.storage.room.number.label  
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.property.new.storage.room.number.input
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_property_sections2_4_5
+      rows:
+        - cols:
+            - css: text-center mt-5
+              col: 12
+              element: amendments.add.comment
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_property_sections2_4_6
+      rows:
+        - css: amendments-grey-container
+          cols:
+            - col: 12
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.add.insuredcomments.riskManagement
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.add.insuredcomments
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_property_sections2_4_7
+      rows:
+        - css: amendments-grey-container
+          cols:
+            - col: 12
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.property.new.storage.room.measures.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.property.new.storage.room.measures.input
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_property_sections2_4_7
+      rows:
+        - cols:
+            - css: text-center mt-5
+              col: 12
+              element: amendments.add.comment
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_property_sections2_4_8
+      rows:
+        - css: amendments-grey-container
+          cols:
+            - col: 12
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.property.new.parking.measures.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.property.new.parking.measures.input
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_property_sections2_4_8
+      rows:
+        - cols:
+            - css: text-center mt-5
+              col: 12
+              element: amendments.add.comment
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_property_sections2_4_9
+      rows:
+        - css: amendments-grey-container
+          cols:
+            - col: 12
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.property.new.property.code.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.property.new.property.code.input
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_property_sections2_4_9
+      rows:
+        - cols:
+            - css: text-center mt-5
+              col: 12
+              element: amendments.add.comment
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_property_sections2_5_1
+      rows:
+        - css: amendments-grey-container
+          cols:
+            - col: 12
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.frequencyOfPayment.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.frequencyOfPayment.input
+    # - component: SimpleGridViewComponent
+    #   viewMode:
+    #     DtSectionViewModeRule:
+    #       dt: dt_amendments_property_sections2_5_1
+    #   rows:
+    #     - cols:
+    #         - css: text-center mt-5
+    #           col: 12
+    #           element: amendments.add.comment
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_property_sections_3
+      rows:
+        - cols:
+            - css: Caption3 text-center mb-4
+              col: 12
+              element: amendments.customer.mobile
+            - css:
+              col: 12
+              element: amendments.otp.timer
+    - component: SimpleGridViewComponent
+      rows:
+        - cols:
+            - css: h5 text-center mt-5
+              col: 12
+              element: amendments.details.infoMessage
+        - cols:
+            - css:
+              col: 12
+              element: amendments.property.details.next.button
+        - cols:
+            - css:
+              col: 12
+              element: amendments.details.dialog
+

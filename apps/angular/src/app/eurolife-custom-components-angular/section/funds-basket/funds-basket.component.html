@@ -1,0 +1,189 @@
+<div *ngIf="contentLoaded; else loadDataTempl1" class="main-container">
+  <div *ngIf="showData()"> 
+      <div class="header-container" [ngClass]="getSectionClass()">
+        <div class="ice-output">
+          <label class="ng-star-inserted">{{label}}</label>
+        </div>
+      </div>
+      <div class="header-row-grey row">
+        <span class="value" style="font-weight: 600 !important;">  {{this.basket}}</span>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4">
+        <div class="mat-header-cell mt-19 mb-50" [ngClass]="{ 'mb-30': ELEMENT_DATA.length == 1 }">Διάρθρωση</div>
+        <!-- <div style="display: block;margin-top: 63px;"> -->
+          <canvas baseChart [datasets]="barChartData"
+                            [labels]="barChartLabels"
+                            [options]="barChartOptions"
+                            [legend]="barChartLegend"
+                            [chartType]="barChartType"
+                            (chartHover)="chartHovered($event)"
+                            (chartClick)="chartClicked($event)">
+            </canvas>
+        <!-- </div> -->
+      </div>
+      <div class="col-sm-8">
+
+        <mat-table [dataSource]="dataSource" class="mat-elevation-z8 disable-box-shadow">
+            <!-- Fund Percentage -->
+          <ng-container matColumnDef="f_percentage">
+            <mat-header-cell style="flex: 0 0 55px;" *matHeaderCellDef> % </mat-header-cell>
+            <mat-cell style="flex: 0 0 55px;" *matCellDef="let element"> {{element.f_percentage}} </mat-cell>
+          </ng-container>
+
+          <!-- Fund Name Column -->
+          <ng-container matColumnDef="f_name">
+            <mat-header-cell  style="flex: 0 0 200px;justify-content: center;" *matHeaderCellDef> Funds of Funds </mat-header-cell>
+            <mat-cell  style="flex: 0 0 200px;text-align:center;justify-content: center" *matCellDef="let element"> {{element.f_name}} </mat-cell>
+          </ng-container>
+
+          <!-- Net Value Column -->
+          <ng-container matColumnDef="f_sharenetvalue">
+            <mat-header-cell style="justify-content: center;" *matHeaderCellDef> Καθαρή τιμή μερ. € </mat-header-cell>
+            <mat-cell style="justify-content: center;" *matCellDef="let element"> {{element.f_sharenetvalue}} </mat-cell>
+          </ng-container>
+
+          <!-- Number of shares -->
+          <ng-container matColumnDef="f_shares">
+            <mat-header-cell style="justify-content: center;" *matHeaderCellDef> Αριθμός Μεριδίων </mat-header-cell>
+            <mat-cell style="justify-content: center;" *matCellDef="let element">{{element.f_shares}}</mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="f_value">
+            <mat-header-cell style="justify-content: center;" *matHeaderCellDef> Αξία Λογαρ. € </mat-header-cell>
+            <mat-cell  style="justify-content: center;" *matCellDef="let element">{{element.f_value}}</mat-cell>
+          </ng-container>
+
+
+          <mat-header-row class="disable-border" *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+
+      </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3 pl-0 mt-2">
+            <label class="label opacity">Αξία Λογαριασμού</label>
+          </div>
+          <div class="col sm-9 pl-0 mt-2">
+            <span class="value">{{totalValue}} €</span>
+          </div>
+          <hr>
+        </div>
+        <div class="row">
+          <div class="col-sm-3 pl-0 mt-2">
+            <label class="label opacity">Αξία Εξαγοράς</label>
+          </div>
+          <div class="col sm-9 pl-0 mt-2">
+            <span class="value">{{totalSurrenderValue}} €</span>
+          </div>
+          <hr>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+<!-- Mobile Version -->
+
+<div class="table-mobile-container" *ngIf="contentLoaded">
+  <div *ngIf="showData()"> 
+
+      <div class="row mobile-padding">
+          <div class="header-container" [ngClass]="getSectionClass()">
+            <div class="ice-output">
+              <label class="ng-star-inserted">{{label}}</label>
+            </div>
+          </div>
+      </div>
+
+      <div class="col-sm-12">
+        <div class="mat-header-cell mt-19">Διάρθρωση</div>
+        <!-- <div style="display: block;margin-top: 5px;"> -->
+          <canvas baseChart [datasets]="barChartData"
+                            [labels]="barChartLabels"
+                            [options]="barChartOptions"
+                            [legend]="barChartLegend"
+                            [chartType]="barChartType"
+                            (chartHover)="chartHovered($event)"
+                            (chartClick)="chartClicked($event)">
+            </canvas>
+        <!-- </div> -->
+      </div>
+
+        <div class="fund-container" *ngFor="let element of ELEMENT_DATA">
+          <div class="status-btn-container">
+
+              <!-- <div class="status-text">....</div> -->
+            <div class="circle" [ngStyle]="{'background-color':element.f_colour}"></div>
+
+            <div (click)="fundCollapse(element)" class="profile svg-icons" [ngClass]="{'msg-click': element.f_active}"  [onSVGLoaded]="handleSVG" [inlineSVG]="getIcon('F9608FE2FC564FADADE1BF388EB367D9')">
+            </div>
+            <!-- <button (click)="mobileReceiptCollapse(i)">{{collapse | resourcePipe }}</button> -->
+          </div>
+            <div class="typeface caption3 receipt-mobile-label">Τίτλος(LF - FoF)</div>
+            <div class="h6 value">{{element.f_name}}</div>
+
+            <div *ngIf="element.f_active">
+                <div class="hor-line"></div>
+                <div class="h6 receipt-mobile-label">Ποσοστό %</div>
+                <div class="typeface caption3 receipt-mobile-value">{{element.f_percentage}}</div>
+
+                <div class="hor-line"></div>
+                <div class="h6 receipt-mobile-label">Καθ. Τιμή Μερ. €</div>
+                <div class="typeface caption3 receipt-mobile-value"> {{element.f_sharenetvalue}} €</div>
+
+                <div class="hor-line"></div>
+                <div class="h6 receipt-mobile-label">Μερίδια</div>
+                <div class="typeface caption3 receipt-mobile-value">{{element.f_shares}}</div>
+
+                <div class="hor-line"></div>
+                <div class="h6 receipt-mobile-label">Αξία Λογαριασμού €</div>
+                <div class="typeface caption3 receipt-mobile-value">{{element.f_value}}
+                </div>
+            </div>
+        </div>
+    
+
+        <div class="row mobile-padding">
+          <div class="col-sm-12">
+            <label class="label opacity">Αξία Λογαριασμού</label>
+          </div>
+          <div class="col sm-12">
+            <span class="value">{{totalValue}} €</span>
+          </div>
+          <hr>
+        </div>
+        <div class="row mobile-padding">
+          <div class="col-sm-12">
+            <label class="label opacity">Αξία Εξαγοράς</label>
+          </div>
+          <div class="col-sm-12">
+            <span class="value">{{totalSurrenderValue}} €</span>
+          </div>
+          <hr>
+        </div>
+
+ </div>  
+
+</div>
+
+
+<ng-template #loadDataTempl1>
+  <div class="ice-simple-table">
+    <ngx-skeleton-loader
+      count="1"
+      [theme]="{ 'background-color': '#dadada', width: '70%', height: '25px', 'border-radius': '10px' }"
+    >
+    </ngx-skeleton-loader>
+
+    <ngx-skeleton-loader
+      count="2"
+      [theme]="{ 'background-color': '#dadada', width: '100%', height: '25px', 'border-radius': '10px' }"
+    >
+    </ngx-skeleton-loader>
+  </div>
+</ng-template>

@@ -1,0 +1,289 @@
+<div class="container">
+  <div class="row">
+    <div *ngFor="let row of recipe.rows" class="row" [ngClass]="getSectionClass(row)">
+      <div class="column" *ngFor="let col of row.cols" [ngClass]="getGridColumnClass(col)">
+        <ice-element *ngIf="col.element === 'contract.details.receipts.title'" [section]="section" [elementName]="col.element"
+          [component]="col.component">
+        </ice-element>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="mat-elevation-z8">
+      <table class="table-container" mat-table [dataSource]="dataSource" matSort>
+        <!-- <ng-container matColumnDef="ReceiptTypeDescription">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ receiptType | resourcePipe }}</th>
+          <td mat-cell *matCellDef="let row">{{ row.ReceiptTypeDescription }}</td>
+        </ng-container> -->
+    
+        <ng-container matColumnDef="StartDate">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ startDate | resourcePipe }}</th>
+          <td mat-cell *matCellDef="let row">
+            {{ formatDate(row.StartDate) | date: "dd/MM/yyyy" }}
+          </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="EndDate">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ endDate | resourcePipe }}</th>
+          <td mat-cell *matCellDef="let row">
+            {{ formatDate(row.EndDate) | date: "dd/MM/yyyy" }}
+          </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="GrossPremium">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ grossPremium | resourcePipe }}</th>
+          <td mat-cell *matCellDef="let row" [style.color]="row.color">
+            {{ row.GrossPremium }}€
+          </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="ReceiptStatusDescription">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ receiptStatus | resourcePipe }}</th>
+          <td mat-cell *matCellDef="let row" [style.color]="row.color">
+            <div class="status-container" [ngClass]="{ 'status-not-paid': row.ReceiptStatusID != 2 }">
+              <div class="status-text">{{ row.ReceiptStatusDescription }}</div>
+            </div>
+          </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="PaymentDate">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ paymentDate | resourcePipe }}</th>
+          <td mat-cell *matCellDef="let row">
+            {{ formatDate(row.PaymentDate) | date: "dd/MM/yyyy" }}
+          </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="PaymentTypeDescription">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ paymentType | resourcePipe }}</th>
+          <td mat-cell *matCellDef="let row" [style.color]="row.color">
+            {{ row.PaymentTypeDescription }}
+          </td>
+        </ng-container>
+        <!-- Custom Col -->
+        <ng-container matColumnDef="UrlNote">
+          <th mat-header-cell *matHeaderCellDef>
+            <div class="icon-text-container">
+              <div class="urlnote-label">Ειδοποιητήρια</div>
+              <div aria-label="icon" class="pdf-icon" [inlineSVG]="'https://scp.eurolife.gr/~/media/FC1134966D274DF99C239E304EEAB55E'"
+                [onSVGLoaded]="handleSVG">
+              </div>
+            </div>
+          </th>
+          <td mat-cell *matCellDef="let rowTable; let idx = index">
+            <div
+              *ngFor="let row of recipe.rows"
+              class="row justify-content-center"
+              [class.disable-btn]="showSpinnerBtnArr[idx]"
+              (click)="getPdfLink(rowTable.UrlNote, idx)"
+            >
+              <div *ngIf="!isNoteUrlEmpty(rowTable.UrlNote); else other_content">
+                <div class="column" *ngFor="let col of row.cols">
+                  <ice-element
+                    *ngIf="!showSpinnerBtnArr[idx] && col.element && col.element != 'contract.details.receipts.title'"
+                    [section]="section"
+                    [elementName]="col.element"
+                    [component]="col.component"
+                    [class.disable-btn]="showSpinnerBtnArr[idx]"
+                    (click)="addClick(rowTable.UrlNote)"
+                  >
+                  </ice-element>
+                  <div
+                    *ngIf="showSpinnerBtnArr[idx] && col.element && col.element != 'contract.details.receipts.title'"
+                    class="button-icon"
+                  >
+                    <i class="fa fa-spinner fa-spin fa-lg"></i>
+                  </div>
+                </div>
+              </div>
+              <ng-template #other_content>
+                <div class="column" *ngIf="includeDash(row)">
+                  <p class="text-center">-</p>
+                </div>
+              </ng-template>
+            </div>
+          </td>
+          <!-- <td mat-cell *matCellDef="let row">    
+                    <a [routerLink]="" (click)=getPdfLink(row.ReceiptID)><span class="glyphicon glyphicon-download"></span></a>
+                    </td> -->
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="filter-list">
+  <mat-form-field class="select-field-container">
+    <mat-select
+      name="year"
+      [(ngModel)]="selectedYear"
+      (ngModelChange)="onOptionChange()"
+      placeholder="Όλα τα έτη"
+    >
+      <mat-option [value]="0">
+        Όλα τα έτη
+      </mat-option>
+      <mat-option *ngFor="let year of filterYears" [value]="year">
+        {{ year }}
+
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="select-field-container">
+
+    <mat-label>{{ status1 | resourcePipe }}</mat-label>
+    <mat-select>
+      <mat-option>
+        {{ test2 | resourcePipe }}
+
+    <mat-select
+      name="doc"
+      [(ngModel)]="selectedDoc"
+      (ngModelChange)="onOptionChange()"
+      placeholder="Όλα τα έγγραφα"
+    >
+      <mat-option [value]="'none'">
+        Όλα τα έγγραφα
+      </mat-option>
+      <mat-option *ngFor="let doc of filterDocs" [value]="doc">
+        {{ doc }}
+
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div> -->
+
+<div class="table-mobile-container">
+  <div class="sort-label">{{ sortBy | resourcePipe }}</div>
+  <mat-form-field class="select-field-container">
+    <mat-label>{{ newest | resourcePipe }}</mat-label>
+    <mat-select name="date" [(ngModel)]="selectedFitlerDate" (ngModelChange)="onOptionChange()">
+      <mat-option *ngFor="let filterDate of filterDates" [value]="filterDate">
+        {{ filterDate }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <!-- <mat-option *ngFor="let food of foods" [value]="food.value"> -->
+  <mat-form-field class="select-field-container">
+    <mat-label>Status</mat-label>
+    <mat-select name="date" [(ngModel)]="selectedFilterStatus" (ngModelChange)="onOptionChange()">
+      <mat-option *ngFor="let filterStatus of filterStatuses" [value]="filterStatus">
+        {{ filterStatus }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <ng-container *ngFor="let item of MobileReceiptsArray; let idx=index">
+    <div class="receipt-container">
+      <div class="status-btn-container">
+        <div class="status-container" [ngClass]="{ 'status-not-paid': item.ReceiptStatusID != 2 }">
+          <div class="status-text">{{ item.ReceiptStatusDescription }}</div>
+        </div>
+
+        <div (click)="mobileReceiptCollapse(idx)" class="profile svg-icons" [onSVGLoaded]="handleSVG" [inlineSVG]="getIcon('F9608FE2FC564FADADE1BF388EB367D9')">
+        </div>
+        <!-- <button (click)="mobileReceiptCollapse(i)">{{collapse | resourcePipe }}</button> -->
+      </div>
+      <div class="typeface caption3 receipt-mobile-label">{{ startDateReceipt | resourcePipe }}</div>
+      <div class="h6">{{item.StartDate | date: "dd/MM/yyyy"}}</div>
+      <div *ngIf="item.active">
+        <div class="hor-line"></div>
+        <div class="h6 receipt-mobile-label">{{ endDateReceipt | resourcePipe }}</div>
+        <div class="typeface caption3 receipt-mobile-value">{{ formatDate(item.EndDate) | date: "dd/MM/yyyy" }}</div>
+
+        <div class="hor-line"></div>
+        <div class="h6 receipt-mobile-label">{{ incurance | resourcePipe }}</div>
+        <div class="typeface caption3 receipt-mobile-value">{{ item.GrossPremium }}€</div>
+
+        <div class="hor-line"></div>
+        <div class="h6 receipt-mobile-label">{{ status2 | resourcePipe }}</div>
+        <div class="typeface caption3 receipt-mobile-value">{{na| resourcePipe }}</div>
+
+        <div class="hor-line"></div>
+        <div class="h6 receipt-mobile-label">{{ datePaymentReceipt | resourcePipe }}</div>
+        <div class="typeface caption3 receipt-mobile-value">{{ formatDate(item.PaymentDate) | date: "dd/MM/yyyy" }}
+        </div>
+
+        <div class="hor-line"></div>
+        <div class="h6 receipt-mobile-label">{{ autoPayment | resourcePipe }}</div>
+        <div class="typeface caption3 receipt-mobile-value">{{ item.PaymentTypeDescription }}</div>
+
+        <div *ngIf="!isNoteUrlEmpty(item.UrlNote)" class="hor-line"></div>
+        <div [class.disable-btn]="showSpinnerBtnArr[idx]" (click)="getPdfLink(item.UrlNote, idx)">
+          <div
+            *ngIf="!isNoteUrlEmpty(item.UrlNote)"
+            class="download-container"
+            [class.disable-btn]="showSpinnerBtnArr[idx]"
+            (click)="addClick(item.UrlNote)"
+          >
+            <div class="download-label caption3">
+              {{ downloadReceipt | resourcePipe }}
+            </div>
+            <div
+              *ngIf="!showSpinnerBtnArr[idx]"
+              class="profile svg-icons"
+              [onSVGLoaded]="handleSVG"
+              [inlineSVG]="getIcon('6DC4CC8E9D34448E93D43EA5DBD4E43C')"
+            ></div>
+            <div *ngIf="showSpinnerBtnArr[idx]" class="button-icon">
+              <i class="fa fa-spinner fa-spin fa-lg"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <button *ngIf="showShowMore()" (click)="showMore()" class="eurolife_btn eurolife_btn-link show-more-container">{{
+    showMoree | resourcePipe }}</button>
+
+</div>
+
+<!---->
+<!-- <table mat-table [dataSource]="dataSource" matSort>
+
+			<ng-container *ngFor="let col of cols" [matColumnDef]="col">
+				<th mat-header-cell *matHeaderCellDef> {{ getLabel(col) }} </th>
+				<td mat-cell *matCellDef="let element"> {{element[col]}} </td>
+			</ng-container>
+
+			<tr mat-header-row *matHeaderRowDef="cols"></tr>
+			<tr mat-row [ngClass]="{ 'selected': row === selectedRow }" (click)="selectRow(row)" *matRowDef="let row; columns: cols;">
+			</tr>
+
+	</table> -->
+
+<!-- <div class="ice-simple-table">
+	<div *ngIf="recipe.filter" class="mat-elevation-z8" style="padding: 20px;">
+		<mat-form-field>
+			<input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+		</mat-form-field>
+	</div>
+
+	<div class="mat-elevation-z8">
+
+		<table mat-table [dataSource]="dataSource">
+
+			<ng-container *ngFor="let col of cols" [matColumnDef]="col">
+				<th mat-header-cell *matHeaderCellDef> {{ getLabel(col) }} </th>
+				<td mat-cell *matCellDef="let element"> {{element[col]}} </td>
+			</ng-container>
+
+			<tr mat-header-row *matHeaderRowDef="cols"></tr>
+			<tr mat-row [ngClass]="{ 'selected': row === selectedRow }" (click)="selectRow(row)" *matRowDef="let row; columns: cols;">
+			</tr>
+
+		</table>
+
+		<mat-paginator [pageSizeOptions]="pageSizeOptions" showFirstLastButtons>
+		</mat-paginator>
+
+	</div>
+</div> -->

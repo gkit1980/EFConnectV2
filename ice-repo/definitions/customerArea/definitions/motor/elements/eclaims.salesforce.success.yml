@@ -1,0 +1,7 @@
+element:
+  type: boolean
+  viewMode: hidden
+  buckets:
+    EclaimsUploadFiles:
+      transformation: {}
+    

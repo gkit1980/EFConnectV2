@@ -1,0 +1,10 @@
+element:
+  type: text
+  viewMode: output
+  component:
+    StaticComponentRule:
+      component:
+        TextWithLinkComponent:
+          target: label
+  pages:
+    customerProfile: null

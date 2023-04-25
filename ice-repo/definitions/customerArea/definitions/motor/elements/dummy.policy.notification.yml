@@ -1,0 +1,11 @@
+# element:
+#   type: text
+#   viewMode: output
+#   component:
+#     StaticComponentRule:
+#       component:
+#         EurolifeNotificationBarComponent:
+#           url: dt_notification_bar_icon
+#   defaultValue:
+#     StaticValueRule:
+#       value: "To symbolaio sas einai eksoflimeno"

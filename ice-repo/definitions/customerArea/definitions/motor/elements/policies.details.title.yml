@@ -1,0 +1,9 @@
+element:
+  type: text
+  viewMode: output
+  label:
+    NoLabelRule: {}
+  defaultValue: 
+    StaticValueRule: 
+      value: >- 
+              Πληροφορίες Συμβολαίου

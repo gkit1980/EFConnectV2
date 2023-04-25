@@ -1,0 +1,13 @@
+element:
+  type: text
+  viewMode: output
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent
+  buckets:
+    GetContractPropertyCoolgenDetails:
+      transformation:
+        responsePath: ContractPropertyCoolgenDetails.PropertyUsageDescription
+    GetContractFirePrudDetails:
+      transformation:
+        responsePath: ContractFirePrudDetails.PropertyUsageDescription

@@ -1,0 +1,5 @@
+element:
+  label: null
+  type: text
+  # defaultValue: token?p=B2C_1_resource-owner&grant_type=password&client_id=668f01f7-aa44-41b0-9d99-4d7517c44296&username=vtsionis@hotmail.com&password=erbtest5%&scope=https://eurob2c.onmicrosoft.com/tasks/read https://eurob2c.onmicrosoft.com/tasks/write offline_access
+  # viewMode: hidden

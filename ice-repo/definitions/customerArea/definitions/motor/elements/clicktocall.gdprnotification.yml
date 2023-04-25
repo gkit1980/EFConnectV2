@@ -1,0 +1,11 @@
+element:
+  component: GdprNotificationComponent
+  type: boolean
+  # validation:
+    # - ComplyValidationRule:
+        # value: true
+  buckets:
+    ProcessCallbackRequest:
+      transformation:{}      
+  pages:
+    clicktocall: null

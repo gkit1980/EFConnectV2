@@ -1,0 +1,7 @@
+element:
+  viewMode: hidden
+  type: text
+  buckets:
+    getUserDocument:
+      transformation:
+        dataPath: docURL

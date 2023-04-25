@@ -1,0 +1,6 @@
+element:
+  type: text
+  viewMode: hidden
+  buckets:
+    EclaimsDocuments:
+      transformation: {}

@@ -1,0 +1,6 @@
+action:
+  execution:
+    - WriteLogRule:
+        bucket: WriteLog
+        inputElement: eclaims.selected.InsuredId
+        inputName: 'Insured Id'

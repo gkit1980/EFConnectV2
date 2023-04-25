@@ -1,0 +1,15 @@
+element:
+  type: text
+  buckets:
+    EclaimsClosedRequests:
+      transformation: {}
+    EclaimsOpenRequests:
+      transformation: {}  
+    EclaimsInprogressRequests:
+      transformation: {}   
+    PropertyClaimNotificationCreateCase:
+      transformation: {}  
+    PropertyClaimsInprogressRequests:
+      transformation: {}       
+  
+    

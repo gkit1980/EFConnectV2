@@ -1,0 +1,4 @@
+bucket:
+  transformation:
+    RestCallTransformationRule:
+      additionals: eurolife

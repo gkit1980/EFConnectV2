@@ -1,0 +1,9 @@
+element:
+  type: text
+  viewMode: hidden
+  buckets:
+    VerifyChangeEmail:
+      transformation:
+        dataPath: ChangeEmailCode
+  pages:
+    changeEmailConfirmation: null

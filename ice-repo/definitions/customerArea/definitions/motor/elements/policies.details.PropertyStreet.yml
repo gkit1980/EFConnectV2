@@ -1,0 +1,11 @@
+element:
+  type: text
+  viewMode: output
+  component: EurolifeOutputComponent
+  buckets:
+    GetContractPropertyCoolgenDetails:
+      transformation:
+        responsePath: ContractPropertyCoolgenDetails.PropertyStreet
+    GetContractFirePrudDetails:
+      transformation:
+        responsePath: ContractFirePrudDetails.PropertyStreet

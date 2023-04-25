@@ -1,0 +1,9 @@
+action:
+  title: when requested - custom event is sent to google analytics
+  execution:
+    - EurolifeGAProductEnteredRule:
+        eventCategory: QAA
+        eventAction: Product Entered
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: DEFINITION_INIT

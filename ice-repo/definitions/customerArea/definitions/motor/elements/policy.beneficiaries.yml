@@ -1,0 +1,11 @@
+element:
+  type: array
+  component: IceArray
+  viewMode: output  
+  buckets:
+    GetContractBeneficiaries:
+      transformation:
+        responsePath: Beneficiary
+    GetContractBeneficiariesForAmendments:
+      transformation:
+        responsePath: Beneficiary    

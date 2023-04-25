@@ -1,0 +1,18 @@
+action:
+  execution: 
+      - NavigateToUrlExecutionRule:
+          url: '/ice/default/customerArea.motor/signupwithsms'
+          definition: customerArea
+ #     - NavigateToPageExecutionRule:
+ #         page: viewMyBeneficiaries
+ #         omitValidation: true          
+  condition:
+    FeelConditionRule: 
+      expression: signup.initSignupStatusNumber = 1
+#  condition:
+#    StaticConditionRule:
+#        signup.InitSignupStatus 
+  trigger:
+    - ElementChangeTriggerRule:
+        elements: 
+          - signup.initSignupStatusNumber      

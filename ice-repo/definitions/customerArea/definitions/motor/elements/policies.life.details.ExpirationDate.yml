@@ -1,0 +1,15 @@
+element:
+  type: date
+  viewMode: output
+  component: CalculateLifeExpirationDateComponent
+  label:
+    ResourceLabelRule:
+      key: elements.policies.life.details.ExpirationDate.label
+  # viewMode:
+  #   ConditionalViewModeRule:
+  #     conditionElement: policy.selectedBranch
+  #     conditionValue: 1
+  #     conditionViewMode: output
+  #     elseViewMode: hidden
+  pages:
+    policyDetails: null

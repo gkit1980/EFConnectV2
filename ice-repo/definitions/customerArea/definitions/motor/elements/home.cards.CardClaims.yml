@@ -1,0 +1,12 @@
+element:
+  component: MatCardHomeComponent
+  title: Αιτήματα Αποζημιώσεων
+  link: /#/ice/default/customerArea.motor/viewClaims
+  content: Παρακολουθήστε την εξέλιξη των αποζημιώσεών σας
+  dataStoreProperty: clientContracts 
+  complementText: σε εξέλιξη
+  type: claims  
+  colorCard: dark-blue-card
+  fillDatastore: actionFillDatastore
+  pages:
+    home: null

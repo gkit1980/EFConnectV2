@@ -1,0 +1,6 @@
+element:
+  type: text
+  buckets:
+    getUserDocuments:
+      transformation:
+        dataPath: docType

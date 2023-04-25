@@ -1,0 +1,13 @@
+element:
+  title: Selected finance subcategory
+  type: text
+  component: IceDropdown
+  buckets:
+    AmendmentsCreateFinanceCase:
+      transformation: {}
+  values:
+    DtValuesRule:
+      dt: dt_amendments_dropdown_finance_subcategory
+      list: label
+  viewMode: enable
+  label: Υποκατηγορία

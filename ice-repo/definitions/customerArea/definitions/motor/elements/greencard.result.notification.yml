@@ -1,0 +1,10 @@
+element:
+  type: text
+  component: GreencardNotificationBarComponent
+  viewMode: output
+  notificationType: success
+  notificationText: Η Κάρτα Διεθνούς Ασφάλισης εκδόθηκε με αριθμό 
+  imageSource: https://scp.eurolife.gr/~/media/F7877569C4C74C9F9D432D5A01DDC0A0.ashx
+  step: 2
+  pages:
+    greenCard: null

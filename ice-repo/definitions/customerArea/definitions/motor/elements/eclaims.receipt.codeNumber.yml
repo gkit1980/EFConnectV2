@@ -1,0 +1,7 @@
+element:
+  type: text
+  default: "-"
+  viemode: hidden
+  buckets:
+    EclaimsGetAadeReceiptFields:
+      transformation: {}

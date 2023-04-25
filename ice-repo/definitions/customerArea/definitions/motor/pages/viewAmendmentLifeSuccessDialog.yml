@@ -1,0 +1,49 @@
+page:
+  component: PopUpPage
+  label: Επιτυχής Καταχώρηση
+  showTopSection: true
+  topImageID: E8D77F8BE0CC4427B18F0FD7EA8AFB96
+  topImageColour: rgb(74, 82, 148)
+  sections:
+    - component: SimpleGridViewComponent
+      label:
+        ResourceSectionLabelRule:
+          labelKey: sections.communication.service.contact.form.label
+      rows:
+        - css: text-center
+          cols:
+            - css: Typeface h2 text-center life-color-text
+              col: 12
+              element: amendments.dialog.success.title
+        - cols:
+            - css: Typeface h5 text-center amendments-dialog-text
+              col: 12
+              element: amendments.salesforce.newcaseid
+        - cols:
+            - css: Typeface h5 text-center amendments-dialog-text
+              col: 12
+              element: amendments.dialog.success.description
+        - cols:
+            - css: Typeface h5 text-center amendments-dialog-subcategory-text
+              col: 12
+              element: amendments.success.subcategory
+        - cols:
+            - css: Typeface h5 text-center amendments-dialog-text
+              col: 12
+              element: amendments.dialog.success.completed.description
+        - cols:
+            - css: Typeface h5 text-center amendments-dialog-text
+              col: 12
+              element: amendments.dialog.success.completed.info
+    - component: SimpleGridViewComponent
+      rows:
+        - css: center-buttons
+          cols:
+            - css: contact-form-btns text-center
+              col: 12
+              element: amendments.dialog.fail.okbtn
+        - css: text-center
+          cols:
+            - css: Typeface h5 text-center requestColor
+              col: 12
+              element: amendments.request.another.amendment

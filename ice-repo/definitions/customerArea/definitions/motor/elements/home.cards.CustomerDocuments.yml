@@ -1,0 +1,8 @@
+element:
+  component: MatCardHomeComponent
+  title: Οι βεβαιώσεις μου
+  link: /#/ice/default/customerArea.motor/viewMyPolicyAmendements
+  content: It was popularized in the 1960s with the release of the Letrashet..
+  dataStoreProperty: clientContracts 
+  pages:
+    home: null

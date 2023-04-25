@@ -1,0 +1,16 @@
+action:
+  title: calls a rest service to get the initial state of Consents
+  execution:
+    - GetGdprDataRule:
+        baseUrl: BASEURL
+        bucket: GetGdprData
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDatastore: false
+  # condition:
+    # FeelConditionRule:
+      # expression: consent.flag.openfirstdialog = true
+  # trigger:
+    # - ElementChangeTriggerRule:
+        # elements:
+          # - consent.flag.openfirstdialog

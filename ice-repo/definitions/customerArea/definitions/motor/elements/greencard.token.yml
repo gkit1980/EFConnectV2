@@ -1,0 +1,10 @@
+element:
+  type: text
+  viewMode: output
+  buckets:
+    GreenCard:
+      transformation:
+        responsePath: greencard.token
+    GreenCardData:
+      transformation:
+        responsePath: greencard.token

@@ -1,0 +1,6 @@
+bucket:
+  transformation:
+    RestCallTransformationRule:
+      null
+      # dataStoreProperty: bookletsGuidePdf
+      # responseToDatastore: true

@@ -1,0 +1,8 @@
+element:
+  type: integer
+  viewMode: hidden
+  defaultValue:  
+    StaticValueRule:
+      value: 1
+  pages:
+    greenCard: null

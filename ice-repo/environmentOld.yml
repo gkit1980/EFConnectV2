@@ -1,0 +1,18 @@
+environment:
+  insis_csm_endpoint: http://10.3.4.46:7808/insisws/InsisCSMPort
+  insis_pdm_endpoint: http://10.3.4.46:7808/insisws/InsisPDMPort
+  insis_pam_endpoint: http://10.3.4.46:7808/insisws/InsisPAMPort
+  insis_generic_endpoint: http://10.3.4.46:7808/insisws/InsisGenericWSPort
+  insis_oom_endpoint: http://10.3.4.46:7808/insisws/InsisOMMPort
+  insis-transpilation-endpoint: http://10.3.4.46:7804/insis-services/rest/configurator-export
+  insis-username: de1_ops_superuser
+  insis-password: welcome123
+  insis-ignoreNamespaces:
+    - insis
+  insis-db-url: 10.3.4.46/insispdb
+  insis-db-username: insis_gen_v10_rls
+  insis-db-password: insis_gen_v10_rls
+  insis_print_endpoint: http://10.3.4.46:7809/insis/util/print
+  insis-rest-endpoint: http://10.3.4.46:7809/insis/
+  insis-rest-username: insis_gen_v10
+  insis-rest-password: insis_gen_v10

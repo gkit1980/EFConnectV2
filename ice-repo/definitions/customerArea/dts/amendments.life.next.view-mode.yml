@@ -1,0 +1,388 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - label: amendments.details.step.status
+      element: amendments.details.step.status
+    - label: amendments.life.category.dropdown
+      element: amendments.life.category.dropdown
+    - label: amendments.life.subcategory.dropdown
+      element: amendments.life.subcategory.dropdown
+    - label: amendments.beneficiaries.filledInputs 
+      element: amendments.beneficiaries.filledInputs
+    - label: amendments.health.life.finance.frequencyOfPayment.input
+      element: amendments.health.life.finance.frequencyOfPayment.input
+    - label: amendments.health.life.finance.new.birthdate.input
+      element: amendments.health.life.finance.new.birthdate.input
+    - label: amendments.upload.file
+      element: amendments.upload.file
+    - label: amendments.commentuser
+      element: amendments.commentuser
+    - label: amendments.verifieduser
+      element: amendments.verifieduser
+  outputs:
+    - label: viewMode
+      id: viewMode
+      type: string
+  rules:
+    # STEP 0
+    - inputs:
+        - 0
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - null
+        - false
+        - false
+        - false
+      outputs:
+        - default
+    - inputs:
+        - 0
+        - null
+        - null
+        - false
+        - null
+        - null
+        - false
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 0
+        - "-"
+        - null
+        - false
+        - null
+        - null
+        - false
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 0
+        - "-"
+        - "-"
+        - false
+        - null
+        - null
+        - false
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 0
+        - not(null)
+        - "-"
+        - false
+        - null
+        - null
+        - false
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 0
+        - "-"
+        - not(null)
+        - false
+        - null
+        - null
+        - false
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 0
+        - null
+        - "-"
+        - false
+        - null
+        - null
+        - false
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 0
+        - not(null)
+        - null
+        - false
+        - null
+        - null
+        - false
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 0
+        - null
+        - not(null)
+        - false
+        - null
+        - null
+        - false
+        - false
+        - false
+      outputs:
+        - disabled
+    # End STEP 0
+    # STEP 1
+    #comment areas
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - null
+        - false
+        - true
+        - false
+      outputs:
+        - default
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - null
+        - false
+        - false
+        - false
+      outputs:
+        - disabled
+    # change beneficiaries 
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - true
+        - null
+        - null
+        - false
+        - false
+        - false
+      outputs:
+        - default
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - null
+        - false
+        - false
+        - false
+      outputs:
+        - disabled
+    # frequencyOfPayment field
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - false
+        - not(null)
+        - null
+        - false
+        - false
+        - false
+      outputs:
+        - default
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - false
+        - "-"
+        - null
+        - false
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - null
+        - false
+        - false
+        - false
+      outputs:
+        - disabled
+    # birthdate field
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - not(null)
+        - true
+        - false
+        - false
+      outputs:
+        - default
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - "-"
+        - false
+        - false
+        - false
+      outputs:
+        - disabled
+    # End STEP 1
+    # # STEP 2
+    #change beneficiaries field (?add)
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - true
+        - null
+        - null
+        - false
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - null
+        - false
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - true
+        - null
+        - null
+        - false
+        - false
+        - true
+      outputs:
+        - default
+    #frequencyOfPayment field  
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - false
+        - not(null)
+        - null
+        - false
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - false
+        - "-"
+        - null
+        - false
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - false
+        - not(null)
+        - null
+        - false
+        - false
+        - true
+      outputs:
+        - default
+  # birthdate field
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - not(null)
+        - true
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - "-"
+        - false
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - not(null)
+        - true
+        - false
+        - true
+      outputs:
+        - default
+    #comment areas
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - null
+        - false
+        - true
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - null
+        - false
+        - true
+        - true
+      outputs:
+        - default
+  # END STEP 2  

@@ -1,0 +1,19 @@
+action:
+  title: Change the Email and send confirmation link
+  execution:
+    - RestCallExecutionRule:
+        # baseUrl: http://platformsuat.eurolife.gr/CustomerAreaLogin/api/CustomerAreaApi
+        baseUrl: BASEURLCHANGECREDENTIALS
+        url: VerifyChangeEmail
+        verb: post
+        bucket: VerifyChangeEmail
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+  condition:
+    FeelConditionRule:
+      expression: customer.details.confirmationEmail = true # einai true kanonika , to kanw false gia na min allazw synexeia to email
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - customer.details.confirmationEmail

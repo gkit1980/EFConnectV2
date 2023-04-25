@@ -1,0 +1,14 @@
+element:
+  type: integer
+  label: Εισάγεται το νέο αριθμό
+  viewMode: required
+  buckets:
+    AmendmentsCreatePropertyCase:
+      transformation: {}
+  component:
+    StaticComponentRule:
+      component:
+        AmendmentinputpropertyfieldComponent:
+          elementName: amendmentsNewStorageMeasures
+  pages:
+    viewAmendmentHomeDetails: null

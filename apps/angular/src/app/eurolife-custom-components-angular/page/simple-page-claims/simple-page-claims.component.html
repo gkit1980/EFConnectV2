@@ -1,0 +1,91 @@
+<div class="simple-page">
+  <page-validation [page]="page"></page-validation>
+  <div class="row" [ngClass]="getColorBackground()">
+    <div class="col-sm-12 no-paddings-fix">
+      <div class="row white-background">
+        <div class="col-sm-12">
+          <div class="homepage-image">
+            <div class="red-banner">
+              <div  class="red-banner-text">
+                Άμεση αποζημίωση για ιατρικά έξοδα έως <strong class="h3">€150</strong> με την υπηρεσία e-Claims 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="white-background">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="row-header">
+                  <h3 class="page-title" [ngClass]="flag ? 'no-margin-bottom' : ''" *ngIf="showTitle">{{ page.labelRule?.getPageTitle() }}
+                  </h3>
+    
+                
+                    <!-- <div class="btn-container"> 
+                      <ng-container *ngIf="hasGroupHealthPolicies">
+                        <button class="eurolife_btn eurolife_btn-default eurolife_btn-claims"  (click)="redirectGroupDetails()">ΝΕΟ ΑΙΤΗΜΑ ΑΠΟΖΗΜΙΩΣΗΣ
+                        </button>
+                      </ng-container>
+                    </div> -->
+
+              </div>  
+              
+              <ice-section *ngFor="let section of getTopPageSection()" [section]="section"></ice-section>
+
+              <div *ngIf="showInsights">
+                <hr>
+                <ice-page-insight [page]="page"></ice-page-insight>
+              </div>
+              <ice-confirmation-dialog [page]="page"></ice-confirmation-dialog>
+              <!-- <ice-message [page]="page"></ice-message> -->
+
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+
+              <div class="navigation-wrapper space-start">
+                <div class="links" *ngFor="let tab of getTabs(); let i=index" id="tab_{{i}}" [ngClass]="getColorClass(i)">
+                  <a [ngClass]="getActiveIndex(i) ? 'h6-active' : 'h6'"
+                    (click)="toggleSection(tab.sections); setActiveLinkIndex(i)" id="tab-{{i}}">{{ tab.tab }}
+                  </a>     
+                </div>
+                <div *ngIf="getOpenRequestsExist()"
+                class="notification-icon"
+                aria-label="icon"
+                [onSVGLoaded]="handleSVGInfo"
+                [inlineSVG]="getIcon('01D8EA7C762A44E0A8FF3E4FFF8D1C72')"
+              ></div>
+              </div>
+            
+    
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row light-background">
+        <div class="col-sm-12">
+
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12">
+                <!-- <h3 class="pt-5 pb-4">{{ page.labelRule?.getPageTitle() }}</h3> -->
+
+                <ice-section *ngFor="let section of getMainPageSection()" [section]="section">
+                </ice-section>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

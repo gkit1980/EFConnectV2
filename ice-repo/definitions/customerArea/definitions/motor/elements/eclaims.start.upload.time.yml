@@ -1,0 +1,8 @@
+element:
+  type: text
+  viewMode: hidden
+  buckets:
+    EclaimsUploadFiles:
+      transformation: {}
+    WriteLog:  
+      transformation: {}

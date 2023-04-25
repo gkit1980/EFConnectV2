@@ -1,0 +1,4 @@
+element:
+  type: boolean
+  component: IceCheckbox
+  defaultValue: false

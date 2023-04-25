@@ -1,0 +1,19 @@
+dt:
+  hit-policy: F
+  inputs:
+    - label: input element for default
+      element: policies.details.ProductName
+  outputs:
+    - id: svgImageValue
+      type: string
+  rules:
+    - inputs:
+        - not(null)
+      outputs:
+        - >-
+          "https://upload.wikimedia.org/wikipedia/commons/9/9e/Exclamation_encircled.svg"
+    - inputs:
+        - null
+      outputs:
+        - >-
+          "https://v3.danielmall.com/articles/svg-workflow-for-designers/svg.svg"

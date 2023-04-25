@@ -1,0 +1,78 @@
+ ::ng-deep th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+::ng-deep .mat-icon {
+  
+    float:left !important;
+    margin-right: 10px;
+
+  }
+
+.grey-background {
+  // height: 80px;
+  background-color: #eeeeee;
+  border-left: solid 4px #ef3340;
+      justify-content: center;
+    align-items: center;
+}
+
+.ice-simple-table {
+  .contractName {
+    color: #ef3340;
+    margin-top: 16px;
+    margin-bottom: 0px;
+  }
+
+  .paymentDate {
+    margin-top: 31px;
+    font-weight: 400;
+  }
+
+  .paymentType {
+    margin-top: 31px;
+    font-weight: 400;
+  }
+
+  .paymentAmount {
+    margin-top: 31px;
+    font-weight: 500;
+  }
+
+  .contractNumber {
+    opacity: 0.6;
+  }
+}
+
+// Mobile
+  @media screen and (max-width: 580px) {
+  .only-desktop {
+      display: none;
+  }
+  .Caption3 {
+    opacity: 0.6;
+  }
+     .grey-background {
+    align-items: flex-start;
+  }
+  .chevron-right {
+    margin-top: 24px;
+  }
+  div.slightly-right {
+    margin-left: 29px;
+  }
+  #first {
+    margin-top: 43px;
+  }
+ 
+}
+
+// Desktop
+  @media screen and (min-width: 581px) {
+  .only-mobile {
+      display: none;
+  }
+
+}

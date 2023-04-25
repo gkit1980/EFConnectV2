@@ -1,0 +1,13 @@
+element:
+  viewMode: output
+  label: null
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        AmendmentMaskComponent: null
+  # mirror:
+  #   CopyValueMirrorRule:
+  #     originElement: customer.details.MobilePhone
+  pages:
+    changeEmailPopUp: null

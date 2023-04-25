@@ -1,0 +1,22 @@
+list:
+  type: text
+  additionals:
+    label_en:
+      label: label_en
+      type: text
+    label_el:
+      label: label_el
+      type: text
+  items:
+    - value: 1
+      label_en: Αλλαγές στο Ασφαλισμένο Όχημα
+      label_el: Αλλαγές στο Ασφαλισμένο Όχημα
+    - value: 2
+      label_en: Αλλαγή κεφαλαίων/επανατιμολόγηση
+      label_el: Αλλαγή κεφαλαίων/επανατιμολόγηση
+    - value: 3
+      label_en: Αλλαγή στα στοιχεία Oδηγών
+      label_el: Αλλαγή στα στοιχεία Oδηγών
+    - value: 4
+      label_en: Αλλαγή Τρόπου και στοιχείων Πληρωμής
+      label_el: Αλλαγή Τρόπου και στοιχείων Πληρωμής

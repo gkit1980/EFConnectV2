@@ -1,0 +1,16 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent
+  viewMode: output
+  buckets:
+    GetCustomerFullData:
+      transformation:
+        responsePath: Customer.TaxCode
+  pages:
+    policyDetails: null
+  # viewMode:
+  #   DtViewModeRule:
+  #     dt: dt_second_test
+  #     output: testing

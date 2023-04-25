@@ -1,0 +1,38 @@
+dt:
+  hit-policy: C
+  inputs:
+    - label: ReceiptStatus
+      element: policies.details.LastPayment
+    - label: PaymentType
+      element: policies.details.PaymentType
+    - label: ReceiptEndDate
+      element: policies.details.LastPaymentEndDate
+  outputs:
+    - id: svgImageValue
+      label: url
+      type: string
+    - id: notificationType
+      label: class
+      type: string
+    - id: notificationText
+      label: text
+      type: string
+  rules:
+    - inputs:
+        - "Εξοφλημένη"
+        - "ΕΛΤΑ"
+        - "bell_alert"
+      outputs:
+        - >-
+          "https://scp.eurolife.gr/~/media/F7877569C4C74C9F9D432D5A01DDC0A0.ashx"
+        - success
+        - "skata"
+    - inputs:
+        - "Ανείσπρακτη"
+        - "ΠΑΓΙΑ ΕΝΤΟΛΗ"
+        - "bell_alert"
+      outputs:
+        - >-
+          "https://scp.eurolife.gr/~/media/01D8EA7C762A44E0A8FF3E4FFF8D1C72.ashx"
+        - warning
+        - skata 1

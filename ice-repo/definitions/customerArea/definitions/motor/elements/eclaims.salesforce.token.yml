@@ -1,0 +1,16 @@
+element:
+  type: text
+  viewMode: hidden
+  buckets:
+    EclaimsSfLogin:
+      transformation: {}
+    EclaimsUploadFiles:
+      transformation: {}
+    EclaimsClosedRequests:
+      transformation: {}  
+    EclaimsInprogressRequests:
+      transformation: {}    
+    EclaimsOpenRequests:
+      transformation: {}  
+    PropertyClaimsInprogressRequests:
+      transformation: {}       

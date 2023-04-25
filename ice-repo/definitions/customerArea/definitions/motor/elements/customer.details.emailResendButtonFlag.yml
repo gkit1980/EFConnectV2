@@ -1,0 +1,6 @@
+element:
+  type: boolean
+  viewMode: hidden 
+  defaultValue: false
+  pages:
+    changeEmailPopUp: null

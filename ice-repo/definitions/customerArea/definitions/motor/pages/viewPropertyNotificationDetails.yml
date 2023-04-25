@@ -1,0 +1,135 @@
+page:
+  component: EclaimsPageComponent
+  componentFlag: propertyNotificationDetails
+  selectedBranch: ΠΕΡΙΟΥΣΙΑΣ
+  label: Property Claim Notification 
+  sections:
+    - component: SimpleGridViewComponent
+      backgroundcolor: 
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_property_claim_notification_header
+      rows:
+        - css: group-claims-details-button
+          cols:
+            - css: h6-active text-center mt-5
+              col:
+              element: property.claim.notification.back
+            - css: h6-active text-center mt-5 ml-3
+              col:
+              element: eclaims.back.button.header
+    - component: PropertyNotificationStepperComponent 
+      backgroundcolor:       
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_property_notification_stepper
+    - component: PropertyAvailableContractsComponent  
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_propertyClaims_available_contracts
+      backgroundcolor:  white-background 
+      cssClass: with-padding 
+      header: Διαθέσιμα Ασφαλιστήρια
+      innerheader: Επιλέξτε το συμβόλαιο του οποίου θέλετε να κάνετε την χρήση των καλύψεων.  
+      dataStoreProperty: clientContracts 
+    - component: PropertyClaimNotificationCreateCaseComponent  
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_property_notification_create_case
+      backgroundcolor:  white-background
+      cssClass: with-padding
+      # header: Διαθέσιμα Ασφαλιστήρια
+      # innerheader: Επιλέξετε το συμβόλαιο του οποίου θέλετε να κάνετε την χρήση των καλύψεων, καθώς και το ασφαλιζόμενο πρόσωπο.       
+      rows:
+        - css: white-background
+          cols:
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: accident_header 
+                      internalCol: 12
+                      element: property.claim.notification.accidentDateMainHeader.label
+                - css:
+                  internalCols:
+                    - css: accident_subheader 
+                      internalCol: 12
+                      element: property.claim.notification.accidentDateHeader.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp plate-label padding-claim-col
+                      internalCol: 12
+                      element: property.claim.notification.accidentDate.label
+                - css:
+                  internalCols:
+                    - css: text-align-center-bp plate-label amendment-value margin-check-prop-notification padding-claim-col
+                      internalCol: 12
+                      element: property.claim.notification.accidentDate.input
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp plate-label padding-claim-col
+                      internalCol: 12
+                      element: property.claim.notification.claimType.label
+                - css:
+                  internalCols:
+                    - css: text-align-center-bp plate-label amendment-value margin-check-prop-notification padding-claim-col
+                      internalCol: 12
+                      element: property.claim.notification.claimType.dropdown
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp plate-label padding-claim-col
+                      internalCol: 12
+                      element: property.claim.notification.description.label
+                - css:
+                  internalCols:
+                    - css: text-align-center-bp plate-label amendment-value margin-check-prop-notification padding-claim-col
+                      internalCol: 12
+                      element: property.claim.notification.description.input
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: accident_header 
+                      internalCol: 12
+                      element: property.claim.notification.communicationDetails.label
+                - css:
+                  internalCols:
+                    - css: accident_subheader 
+                      internalCol: 12
+                      element: property.claim.notification.communicationDetailsSubheader.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp plate-label
+                      internalCol: 12
+                      element: property.claim.notification.Email.label    
+                - css:
+                  internalCols:
+                    - css: text-align-center-bp plate-label amendment-value margin-check-prop-notification-comdetails
+                      internalCol: 10
+                      element: property.claim.notification.Email
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp plate-label
+                      internalCol: 12
+                      element: property.claim.notification.MobilePhone.label
+                - css:
+                  internalCols:
+                    - css: text-align-center-bp plate-label amendment-value margin-check-prop-notification-comdetails
+                      internalCol: 10
+                      element: property.claim.notification.MobilePhone
+      dataStoreProperty: clientContracts
+    - component: EclaimsGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt:  dt_property_notification_next_button
+      backgroundcolor:  grey-background  
+      cssClass: regular-padding
+      rows:
+        - css: property-claims-next-button
+          cols:
+            - css: h6-active mt-5
+              col: 3
+              element: property.notification.previous.button
+            - css: h6-active mt-5
+              col: 9
+              element: property.notification.next.button

@@ -1,0 +1,9 @@
+element:
+  type: integer
+  viewMode: hidden
+  buckets:
+    VerifyChangeEmailSMS:
+      transformation:
+        dataPath: SMSCode
+  pages:
+    changeEmailPopUp: null

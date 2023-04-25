@@ -1,0 +1,12 @@
+element:
+  type: text
+  component: 
+    StaticComponentRule:
+      component: 
+        IceImageComponent:
+          imageURL: "https://scp.eurolife.gr/~/media/2C49EA63740846488C098F76CCEF9FB6.ashx"
+  defaultValue:
+      StaticValueRule:
+        value: "Επικοινωνήστε μαζί μας"
+  pages:
+    communicationService: null

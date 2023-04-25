@@ -1,0 +1,27 @@
+element:
+  type: text
+  viewMode: output
+  buckets:
+    ChangePassword:
+      transformation:
+        dataPath: UserName
+    ChangeMobile:
+      transformation:
+        dataPath: Email
+    VerifyChangeMobile:
+      transformation:
+        dataPath: Email
+    ChangeEmail:
+      transformation:
+        dataPath: CurrentEmail
+    VerifyChangeEmailSMS:
+      transformation:
+        dataPath: Email
+    OptOut:
+      transformation:
+        dataPath: Email
+    GetOptOut:
+      transformation:
+        dataPath: Email
+  pages:
+    customerProfile: null

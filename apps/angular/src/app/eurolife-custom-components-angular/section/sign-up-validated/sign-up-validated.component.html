@@ -1,0 +1,47 @@
+<mat-card>
+  <mat-card-content>
+    
+      <div class="column" *ngFor="let row of recipe.rows">
+
+        <div class="column" *ngFor="let col of row.RegistrationMessage">
+          <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element" [component]="col.component">
+          </ice-element>
+        </div>
+        <div class="column" *ngFor="let col of row.Password">
+          <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element" [component]="col.component">
+          </ice-element>
+        </div>
+        <div class="column" *ngFor="let col of row.VerifyPassword">
+          <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element" [component]="col.component">
+          </ice-element>
+        </div>
+        <div class="column" *ngFor="let col of row.Terms">
+          <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element" [component]="col.component">
+          </ice-element>
+        </div>
+        <br><br>
+        <div class="column" *ngFor="let col of row.Button">
+          <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element" [component]="col.component">
+          </ice-element>
+        </div>
+        <!-- <div class="column" *ngFor="let col of row.CodeStatus">
+          <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element" [component]="col.component">
+          </ice-element>
+        </div>
+        <div class="column" *ngFor="let col of row.Code">
+          <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element" [component]="col.component">
+          </ice-element>
+        </div> -->
+        <!-- <div class="column" *ngFor="let col of row.email">
+          <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element" [component]="col.component">
+          </ice-element>
+        </div>         -->
+      </div>
+    
+    <div style=" color: white; background-color: white;">
+        <p>{{getEmail()}}</p>
+        <p>{{getCreateUserStatus()}}</p>
+      <!-- <button (click)="goQuery('hello')">TestQuery</button> -->
+    </div>
+  </mat-card-content>
+</mat-card>

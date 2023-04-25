@@ -1,0 +1,4 @@
+action:
+  title: calls a rest service to get the customer contract details
+  execution:
+    - ResetModalElements: null

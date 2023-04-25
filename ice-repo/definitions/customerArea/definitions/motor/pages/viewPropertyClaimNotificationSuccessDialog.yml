@@ -1,0 +1,34 @@
+page:
+  component: PopUpPage
+  label: Επιτυχής δημιουργία αιτήματος
+  showTopSection: true
+  topImageID: E8D77F8BE0CC4427B18F0FD7EA8AFB96
+  topImageColour: rgb(242, 177, 99)
+  sections:
+    - component: SimpleGridViewComponent
+      label:
+        ResourceSectionLabelRule:
+          labelKey: sections.communication.service.contact.form.label
+      rows:
+        - css: text-center
+          cols:
+            - css: Typeface h2 text-center yellow-text
+              col: 12
+              element: eclaims.dialog.success.title
+        - cols:
+            - css: Typeface h5 text-right eclaims-dialog-text
+              col: 7
+              element: eclaims.dialog.success.description
+            - css: Typeface h5 text-left eclaims-dialog-text ml-pc-minus25
+              col: 5
+              element: property.claims.salesforce.newcaseid
+            # - css: Typeface h5 text-center eclaims-dialog-text-subheader ml-pc-minus25 mt-5
+            #   col: 12
+            #   # element: eclaims.dialog.success.email        
+    - component: SimpleGridViewComponent
+      rows:
+        - css: center-buttons
+          cols:
+            - css: contact-form-btns text-center
+              col: 12
+              element: property.claim.notification.dialog.success.okbtn

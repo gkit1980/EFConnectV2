@@ -1,0 +1,6 @@
+action:
+    title: Redirect to Privacy Notices
+#   execution:
+#       - NavigateToPageExecutionRule:
+#           page: viewPolicyParticipants
+#omitValidation: true

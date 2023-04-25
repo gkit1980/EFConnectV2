@@ -1,0 +1,127 @@
+page:
+  component: SimplePageNoTitleComponent
+  componentFlag: claimsDetails
+  label: null
+  sections:
+    - component: GridView
+      viewMode: hidden
+      rows:
+        - css: null
+          cols:
+            - col: 12
+              element: policies.empty
+    - component: SubheaderStepperComponent
+      rows:
+        - ClaimAmount:
+            - col: 12
+              element: claims.Amount
+        - ProductDescritpion:
+            - col: 12
+              element: policies.details.ProductDescritpion
+        - LifeAddress:
+            - col: 12
+              element: claims.life.Address
+        - PropertyAddressForHeader:
+            - col: 12
+              element: claims.property.AddressForHeader
+        - PropertyAddress:
+            - col: 12
+              element: claims.property.Address
+        - MotorFolderID:
+            - col: 12
+              element: claims.motor.folderID
+        - LifeFolderID:
+            - col: 12
+              element: claims.life.folderID
+        - PropertyFolderID:
+            - col: 12
+              element: claims.property.folderID
+        - ClaimDate:
+            - col: 12
+            - col: 12
+              element: claims.claimDate
+        - ContractKey:
+            - col: 12
+              element: policies.details.ContractKey
+        - InsuredPersonForHeader:
+            - col: 12
+              element: claims.life.InsuredPersonForHeader
+        - InsuredPerson:
+            - col: 12
+              element: claims.life.InsuredPerson
+        - InsuredPersonBirthDate:
+            - col: 12
+              element: customer.details.BirthDate
+        - ClaimClassDescription:
+            - col: 12
+              element: claims.ClaimClassDescription
+        - ClaimNameSurname:
+            - col: 12
+              element: claims.ClaimNameSurname
+        - ClaimAnnouncementDate:
+            - col: 12
+              element: claims.motor.ClaimAnnouncementDate
+        - ClaimClosingDate:
+            - col: 12
+              element: claims.ClaimClosingDate
+        - ClaimAssignmentDate:
+            - col: 12
+              element: claims.motor.ClaimAssignmentDate
+        - ClaimSurveyor:
+            - col: 12
+              element: claims.ClaimSurveyor
+        - ClaimMotorAccidentLocation:
+            - col: 12
+              element: claims.motor.AccidentLocation
+        - ClaimTypeDescription:
+            - col: 12
+              element: claims.motor.ClaimTypeDescription
+        - ClaimMotorAccidentTown:
+            - col: 12
+              element: claims.motor.AccidentTown
+        - ClaimMotorDriverName:
+            - col: 12
+              element: claims.motor.DriverName
+        - ClaimMotorLicencePlate:
+            - col: 12
+              element: claims.motor.LicencePlate
+        - ClaimMotorLicencePlateForHeader:
+            - col: 12
+              element: claims.motor.LicencePlateHeader
+        - ClaimMotorBrand:
+            - col: 12
+              element: claims.motor.Brand
+        - ClaimMotorModel:
+            - col: 12
+              element: claims.motor.Model
+        - DateAssignmentToSurveyor:
+            - col: 12
+              element: claims.DateAssignmentToSurveyor
+        - CompensationAmount:
+            - col: 12
+              element: claims.CompensationAmount
+        - CompensationLifeAmount:
+            - col: 12
+              element: claims.life.CompensationAmount
+        - DateOpenFolder:
+            - col: 12
+              element: claims.DateOpenFolder
+        - SapAskDate:
+            - col: 12
+              element: claims.motor.SapAskDate
+        - SapReplyDate:
+            - col: 12
+              element: claims.motor.SapReplyDate
+        - SapHmerEntaxis:
+            - col: 12
+              element: claims.motor.SapHmerEntaxis
+        - SapReplyType:
+            - col: 12
+              element: claims.motor.SapReplyType
+      dataStoreProperty: clientContracts
+    - component: ParticipantViewClaimsComponent
+      label:
+        ResourceSectionLabelRule:
+          labelKey: sections.policy.participants.dependants.label
+      viewMode: visible
+      dataStoreProperty: clientContracts

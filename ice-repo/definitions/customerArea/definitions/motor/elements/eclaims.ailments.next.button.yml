@@ -1,0 +1,13 @@
+element:
+  component: EclaimsSubmitButtonComponent
+  type: text
+  label: ΕΠΟΜΕΝΟ
+  labelSec: ΥΠΟΒΟΛΗ
+  additionalClasses: eurolife_btn-default eclaims-ailments-next-btn
+  defaultValue: action-eclaims-changestep
+  viewMode:
+    DtViewModeRule:
+      dt: eclaims.ailments.next.view-mode
+  pages:
+    viewEclaimsDetails: null
+  #amendments.details.PolicyNumberHeader

@@ -1,0 +1,26 @@
+element:
+  type: text
+  viewMode: output
+  buckets:
+    AmendmentsCreateCase:
+      transformation: {}
+    AmendmentsCreatePropertyCase:
+      transformation: {}
+    AmendmentsCreateLifeCase:
+      transformation: {}
+    AmendmentsCreateHealthCase:
+      transformation: {}
+    AmendmentsCreateFinanceCase:
+      transformation: {}
+    PropertyClaimNotificationCreateCase:
+      transformation: {}
+  # AmendmentsCreateCase:
+  #   transformation:
+  #     dataPath: amendments.details.PolicyNumberHeader
+  pages:
+    viewAmendmentDetails: null
+    viewAmendmentHomeDetails: null
+    viewAmendmentHealthDetails: null
+    viewAmendmentLifeDetails: null
+    viewAmendmentFinanceDetails: null
+    

@@ -1,0 +1,6 @@
+element:
+  label: null
+  type: text
+  viewMode: output
+  pages:
+    viewClaims: 

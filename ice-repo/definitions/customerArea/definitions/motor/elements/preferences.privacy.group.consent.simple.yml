@@ -1,0 +1,7 @@
+element:
+  type: boolean
+  buckets:
+    GetCustomerFullData:
+      transformation:
+        responsePath: Customer.ConcentSimple 
+  viewMode: hidden

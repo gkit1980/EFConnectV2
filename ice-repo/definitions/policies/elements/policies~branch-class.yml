@@ -1,0 +1,10 @@
+element:
+  type: text
+  viewMode: output
+  values: policies-branch-classes
+  defaultValue:
+    ArrayItemValueRule:
+      values:
+        - Motor
+        - Life
+        - Motor

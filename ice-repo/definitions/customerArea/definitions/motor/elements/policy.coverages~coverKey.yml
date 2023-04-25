@@ -1,0 +1,28 @@
+element:
+  type: text
+  label: null
+  viewMode: output
+  change:
+    - ResetElementValueExecutionRule:
+        elements:
+          - policy.selectedBranch
+          - policy.contract.general.info.ContractID
+  buckets:
+    GetLifeContractCover:
+      transformation:
+        property: CoverKey
+    GetLifeContractCoverForAmendments:
+      transformation:
+        property: CoverKey    
+    GetAccidentContractCover:
+      transformation:
+        property: CoverKey
+    GetGroupHealthContractCover:
+      transformation:
+        property: CoverKey      
+  # ConditionalViewModeRule:
+  #     conditionElement: policy.selectedBranch
+  #     conditionValue: 1
+  #     conditionViewMode: output
+  #     elseViewMode: hidden
+

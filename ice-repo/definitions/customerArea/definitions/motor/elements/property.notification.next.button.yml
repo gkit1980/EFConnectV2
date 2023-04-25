@@ -1,0 +1,12 @@
+element:
+  component: PropertyClaimSubmitButtonComponent
+  type: text
+  label: ΕΠΟΜΕΝΟ
+  labelSec: ΟΛΟΚΛΗΡΩΣΗ
+  additionalClasses: eurolife_btn-default prop-next-btn
+  defaultValue: action-property-notification.changestep
+  viewMode:
+    DtViewModeRule:
+      dt: property.claim.notification.next.view-mode
+  pages:
+    viewPropertyNotificationDetails: null

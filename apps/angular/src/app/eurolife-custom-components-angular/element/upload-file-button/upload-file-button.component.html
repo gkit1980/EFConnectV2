@@ -1,0 +1,97 @@
+<div class="upload-container">
+  <div class="Typeface Caption3 upload-hdr" *ngIf="isExtraPaymentText" style="text-align: left !important;"> 
+    Παρακαλούμε κατεβάστε το απαραίτητο έντυπο, (Αυτοπιστοποίησης Φορολογικής Κατοικίας Φυσικού Προσώπου) ακολουθόντας τον παρακάτω σύνδεσμο: 
+    <a href="https://www.eurolife.gr/el-GR/exipiretisi/xrisima-eggrafa/#:~:text=Έντυπο Αυτοπιστοποίησης Φορολογικής Κατοικίας Φυσικού Προσώπου" target="_blank">Xρήσιμα Έντυπα</a>
+    <br/>
+    <br/>
+    Στη συνέχεια αφού διαβάσετε με προσοχή τις οδηγίες συμπλήρωσης του εντύπου, παρακαλούμε ανεβάστε από τα αρχεία σας τα ακόλουθα έγγραφα (σε μορφή jpg, png, pdf, doc):
+    <ul>
+      <li><b> Έντυπο Αυτοπιστοποίησης Φορολογικής Κατοικίας Φυσικού Προσώπου</b></li>
+    </ul>
+  </div>
+  <div class="Typeface Caption3 upload-hdr" *ngIf="!isExtraPaymentText">Παρακαλούμε ανεβάστε από τα αρχεία σας τα ακόλουθα έγγραφα (σε μορφή jpg,
+    png, pdf, doc):
+  </div>
+  <div class="Typeface Caption3 upload-hdr" *ngIf="isDisabledText"> Ταυτότητα ή Διαβατήριο</div>
+  <div class="info-cnt">
+    <ul>
+      <li class="Typeface" *ngFor="let item of items">{{item}}</li>
+    </ul>
+    <button (click)="fileInput.click()" class="eurolife_btn eurolife_btn-stroke upload-btn">
+      ΑΝΕΒΑΣΤΕ ΑΡΧΕΙΑ
+    </button>
+    <input type="file" #fileInput id="fileinput" multiple (change)="onFileImport($event.target.files)"
+      accept="application/pdf,image/*" style="display:none" (click)="onFileInputClick($event)" />
+  </div>
+  <div class="files-cnt">
+    <div *ngIf="numberOfFiles > 0" class="Typeface Caption3 files-hdr">
+      Έχετε ανεβάσει {{ numberOfFiles }}
+      {{ numberOfFiles === 1 ? "αρχείo" : "αρχεία" }}:
+    </div>
+    <div class="file-list">
+      <div *ngFor="let file of getFilesFromDataModel(); let i = index" class="upload-file-container mobile-center">
+        <div class="folder-icon" aria-label="My icon" [inlineSVG]="folderImageSource" [onSVGLoaded]="folderSVG"></div>
+        <div class="Typeface">{{ getFileName(i) }}</div>
+        <div class="btn-close" aria-label="My icon" [inlineSVG]="closeImageSource" [onSVGLoaded]="handlecloseSVG"
+          (click)="deleteFile(i)"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="ice-grid-view attach-file-view" *ngIf="showBrowse">
+  <div>
+    <div class="add-new-block-container">
+      <div class="Caption3 pr-2">{{ label }}</div>
+      <div class="browse-section" (click)="fileInput.click()">
+        <div
+          class="faq-svg"
+          aria-label="icon"
+          [inlineSVG]="getIcon('5CC8A933D20F48EF827B77E5947F730D')"
+          [onSVGLoaded]="handleFAQSVG"
+        ></div>
+        <div class="Typeface">
+          {{ browse | resourcePipe }}
+        </div>
+      </div>
+    </div>
+    <input
+      type="file"
+      #fileInput
+      id="fileinput"
+      multiple
+      (change)="onFileImport($event.target.files)"
+      accept="application/pdf,image/*"
+      style="display:none"
+      (click)="onFileInputClick($event)"
+    />
+  </div>
+</div>
+<div class="file-attachments">
+  <div
+    *ngFor="let file of getFilesFromDataModel(); let i = index"
+    class="file-block-container"
+  >
+    <p class="Caption3 mt-3 opacity" *ngIf="file">Έχετε ανεβάσει 1 αρχείο:</p>
+    <div class="file-data-container" *ngIf="file">
+      <div class="icon-container">
+        <i *ngIf="isType('image', i)" class="material-icons">{{
+          image | resourcePipe
+        }}</i>
+        <i *ngIf="!isType('image', i)" class="material-icons">{{
+          description | resourcePipe
+        }}</i>
+      </div>
+      <div class="description-container Typeface">
+        <span>{{ getFileName(i) }}</span>
+      </div>
+      <div
+        class="close"
+        aria-label="My icon"
+        [inlineSVG]="closeImageSource"
+        [onSVGLoaded]="handlecloseSVG"
+        (click)="deleteFile(i)"
+      ></div>
+    </div>
+  </div>
+</div> -->

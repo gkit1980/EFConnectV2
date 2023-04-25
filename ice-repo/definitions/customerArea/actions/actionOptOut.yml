@@ -1,0 +1,15 @@
+action:
+  title: calls a rest service to get the contract beneficiaries
+  execution:
+    - RestCallExecutionRule:
+        baseUrl: BASEURLCHANGECREDENTIALS
+        url: OptOut
+        verb: post
+        bucket: OptOut
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - preferences.paperless.item05

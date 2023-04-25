@@ -1,0 +1,6 @@
+element:
+  component: GreenCardOtherDriverToggleComponent
+  type: boolean
+  dedefaultValue: false
+  pages:
+    greenCard: null

@@ -1,0 +1,175 @@
+// @import '../../../../../node_modules/bootstrap/scss/mixins';
+// @import '../../../../../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../../../styles/abstracts/mixins';
+@import '../../../styles/abstracts/variables';
+
+// header {
+//   max-width: 1024px;
+//   width: 100%;
+//   z-index: 120;
+// }
+// .eurolife-container {
+//   width: 1100px;
+//   @include make-container();
+// }
+body {
+    overflow-x: hidden;
+}
+
+
+
+::ng-deep .mopinion-survey-content .btn-open-survey.tab {
+    @media screen and (max-width: 544px)
+{
+    right: 10px !important;
+}
+}
+
+    
+
+::ng-deep .cookie-dec-container-show-settings-popup-wrapper {
+    display: none !important;
+}
+
+#cookie-btn {
+    display: none;
+}
+
+body>.container-fluid {
+    max-width: 1440px;
+    padding: 0px 136px;
+
+    @media screen and (max-width: 1024px) {
+        padding: 0px 16px;
+    }
+}
+
+body>.container {
+    max-width: 1168px;
+}
+
+header {
+    position: relative;
+}
+
+.chat-icon-outline {
+    position: fixed;
+    bottom: 60px;
+    right: 65px;
+    width: 72px;
+    height: 72px;
+    border-radius: 44.5px;
+    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.15);
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+
+    @media screen and (max-width: 767px) {
+        right: 0;
+    }
+
+     @media screen and (max-width: 440px) {
+        right: 20px !important;
+        bottom: 32px;
+    }
+
+    .chat-text {
+        display: none;
+    }
+
+    cursor: pointer;
+
+    &:hover {
+        width: 350px;
+        height: 72px;
+
+        .chat-text {
+            display: block;
+            margin-right: 6px;
+            transition: 0.3s
+        }
+    }
+}
+
+.chat-icon-outline-active {
+    width: 350px;
+    height: 72px;
+
+    .chat-text {
+        display: block;
+        margin-right: 6px;
+        transition: 0.3s
+    }
+}
+
+.chat-icon {
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    width: 41px;
+    height: 36px;
+    z-index: 15;
+}
+
+#dialogs {
+    height: 36px;
+    width: 41px;
+}
+
+.blurEffect {
+    background-color: #ffffff;
+    filter: blur(14px);
+}
+
+.notblurEffect {
+    background-color: #ffffff;
+    filter: blur(2px);
+}
+
+
+
+.click-to-call-icon {
+    margin-left: 38px;
+    margin-bottom: 8px;
+}
+
+.click-to-chat-icon {
+    margin-left: 38px;
+    margin-bottom: 8px;
+}
+
+.click-to-call {
+    cursor: pointer;
+    position: fixed;
+    bottom: 141.3px;
+    right: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 233px;
+    height: 72px;
+    border-radius: 44.5px;
+    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.15);
+    background-color: rgb(239, 51, 64);
+    color: rgb(255, 255, 255);
+    z-index: 15;
+}
+
+.click-to-chat {
+    cursor: pointer;
+    position: fixed;
+    bottom: 224.3px;
+    right: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    width: 233px;
+    height: 72px;
+    border-radius: 44.5px;
+    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.15);
+    background-color: rgb(239, 51, 64);
+    z-index: 15;
+}

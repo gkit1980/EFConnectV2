@@ -1,0 +1,55 @@
+.white-background {
+    background-color: #ffffff;
+}
+
+
+.top-icon {
+    fill: rgb(239, 51, 64);
+    // svg {
+    //   width: 66px !important;
+    //   height: 61px !important;
+    // }/
+  }
+  
+  
+  .circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #ECF4EF;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .eurolife-button-error-script
+  {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+  }
+
+  .header-row-grey{
+    color: #383B38;
+    font-family: Ubuntu;
+    font-size: 16px;
+    line-height: 18px;
+}
+  
+  
+
+  .msg-alignment
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    padding: 0px 173px;
+
+    @media (max-width: 768px) {
+      
+        padding: unset;
+    }
+  }

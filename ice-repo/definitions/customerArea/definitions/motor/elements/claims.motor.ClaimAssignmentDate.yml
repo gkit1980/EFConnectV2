@@ -1,0 +1,12 @@
+element:
+  type: date
+  viewMode: output
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent  
+  buckets:
+    GetCoolgenClaimDetails:
+      transformation:
+        responsePath: ClaimCoolgen.PRAGMAT_ANATHESI_DATE
+  pages:
+    viewClaimDetails: null

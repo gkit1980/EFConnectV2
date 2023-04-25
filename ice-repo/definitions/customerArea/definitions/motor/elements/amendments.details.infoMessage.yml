@@ -1,0 +1,17 @@
+element:
+  type: text
+  viewMode: output
+  pages:
+    viewAmendmentDetails: null
+    viewAmendmentHomeDetails: null
+    viewAmendmentLifeDetails: null
+    viewAmendmentHealthDetails: null
+    viewAmendmentFinanceDetails: null
+  label:
+    NoLabelRule: {}
+  component:
+    StaticComponentRule:
+      component:
+        IconOutputComponent:
+          iconCode: 01D8EA7C762A44E0A8FF3E4FFF8D1C72
+          text: Συμπληρώστε όλα τα απαιτούμενα πεδία για να ολοκληρωθεί η καταχώριση.

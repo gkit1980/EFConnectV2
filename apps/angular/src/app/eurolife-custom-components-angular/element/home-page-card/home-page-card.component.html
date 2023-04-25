@@ -1,0 +1,18 @@
+<div *ngIf="showDaf" class="home-page-card mt-4" [ngClass]="getCardClass()">
+  <a class="block-link" href="{{cardLink}}" routerLink="/ice/default/customerArea.motor/myDafs" (click)="redirectToDafs()">
+    <div class="outer-flex">
+      <div class="left-side">
+        <div class="team-icon"></div>
+        <div class="small-card-title h6-active">{{ getcardTitle() }}</div>
+      </div>
+
+
+      <div class="right-side">
+
+        <div class="chevron-right" aria-label="icon" [inlineSVG]="getIcon('C8705EB508D542E59548EF002F938768')"
+          [onSVGLoaded]="handleSVG">
+        </div>
+      </div>
+    </div>
+  </a>
+</div>

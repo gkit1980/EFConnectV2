@@ -1,0 +1,135 @@
+<div class="main-container">
+  <div class="header-container" [ngClass]="getSectionClass()">
+    <div class="ice-output">
+      <label class="margin-refine">{{ header }}</label>
+    </div>
+  </div>
+  <div class="container table-container">
+    <div class="header-row row">
+      <div class="col" *ngFor="let header of headers">
+        {{ header }}
+      </div>
+    </div>
+    <div *ngIf="activeComponent === 'Coverages'">
+      <div *ngFor="let row of data">
+        <div class="data-row row">
+          <div class="col cover-key" *ngIf="showCoverKey">
+            {{ row.coverKey }}
+          </div>
+          <div class="col row-rest-data" #messageInput>      <!--messageInput for Group Health-->
+            {{ row.coverDescription }}
+          </div>
+          <div *ngIf="
+              hasAmount &&
+                row.InsuredValue != 0 &&
+                row.InsuredValue != undefined &&
+                showDataCoveragesSpecific  && 
+                !showDataCoveragesForGroupHealth;
+              else has0Amount
+            " class="col row-rest-data">
+            {{ getCurrencyFormat(row.InsuredValue) }}
+            <!-- {{row.InsuredValue}} -->
+          </div>
+          <ng-template #has0Amount>
+            <div *ngIf="showDataCoveragesSpecific && hasAmount  && !showDataCoveragesForGroupHealth" class="col row-rest-data">
+              Βάσει όρων ασφάλισης
+            </div>
+          </ng-template>
+
+          <!--Ομαδικα Συμβολαια-->
+
+          <div *ngIf="hasAmount && showDataCoveragesForGroupHealth" class="col row-rest-data" #messageInput>
+            {{ row.InsuredValue }}
+          </div>
+
+          <div *ngIf="hasAmount && showDataCoveragesForGroupHealth" class="col row-rest-data">
+             {{ getCurrencyFormat(row.RemainingAmount) }}
+         </div>
+
+          <!--Τελος Ομαδικα Συμβολαια-->
+
+        </div>
+      </div>
+    </div>
+    
+  
+  </div>
+  <div *ngIf="activeComponent === 'Coverages'" class="info-container">
+    <div class="info-svg" aria-label="icon" [inlineSVG]="getIcon('01D8EA7C762A44E0A8FF3E4FFF8D1C72')"
+      [onSVGLoaded]="handleSVG"></div>
+    <div class="info-text">
+      Τα κεφάλαια, οι απαλλαγές και οι καλύψεις σας περιγράφονται αναλυτικά στο
+      συμβόλαιο που σας έχουμε στείλει,σύμφωνα με τους όρους ασφάλισης.
+    </div>
+  </div>
+  
+</div>
+
+<!--Mobile Version-->
+<div class="mobile-container">
+  <div class="header-container" [ngClass]="getSectionClass()">
+    <div class="ice-output">
+      <label class="ng-star-inserted">{{ header }}</label>
+    </div>
+  </div>
+  <div class="column" *ngIf="activeComponent === 'Coverages' && !showDataCoveragesForGroupHealth">
+    <div class="mobile-box" *ngFor="let row of data">
+      <div *ngIf="showCoverKey" class="mobile-label">
+        {{ headersCoverages[0] }}
+      </div>
+      <div class="mobile-value" *ngIf="showCoverKey">
+        {{ row.coverKey }}
+      </div>
+      <div *ngIf="showCoverKey" class="line-seperator"></div>
+      <div class="mobile-label">
+        {{ showCoverKey ? headersCoverages[1] : headersCoverages[0] }}
+      </div>
+      <div class="mobile-value">
+        {{ row.coverDescription }}
+      </div>
+      <div *ngIf="hasAmount" class="line-seperator"></div>
+      <div *ngIf="hasAmount" class="mobile-label">
+        {{ showCoverKey ? headersCoverages[2] : headersCoverages[1] }}
+      </div>
+      <div class="mobile-value" *ngIf="hasAmount">
+        {{ row.InsuredValue | currency: "EUR":"symbol":"1.0" }}
+      </div>
+    </div>
+  </div>
+
+  <div class="column" *ngIf="activeComponent === 'Coverages' && showDataCoveragesForGroupHealth">
+    <div class="mobile-box" *ngFor="let row of data">
+      <div class="mobile-label">
+        {{ headers[0] }}
+      </div>
+      <div class="mobile-value">
+        {{ row.coverDescription }}
+      </div>
+      <div *ngIf="hasAmount" class="line-seperator"></div>
+      <div *ngIf="hasAmount" class="mobile-label">
+        {{  headers[1] }}
+      </div>
+      <div class="mobile-value" *ngIf="hasAmount" #messageInput>     <!--it needs an innerHtml-->
+      {{ row.InsuredValue}}
+      </div>
+      <div *ngIf="hasAmount" class="line-seperator"></div>
+      <div *ngIf="hasAmount" class="mobile-label">
+        {{ headers[2] }}
+      </div>
+      <div class="mobile-value" *ngIf="hasAmount">
+        {{getCurrencyFormat(row.RemainingValue) }}
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="activeComponent === 'Coverages'" class="info-container">
+    <div class="info-svg" aria-label="icon" [inlineSVG]="getIcon('01D8EA7C762A44E0A8FF3E4FFF8D1C72')"
+      [onSVGLoaded]="handleSVG"></div>
+    <div class="info-text">
+      Τα κεφάλαια, οι απαλλαγές και οι καλύψεις σας περιγράφονται αναλυτικά στο
+      συμβόλαιο που σας έχουμε στείλει,σύμφωνα με τους όρους ασφάλισης
+      <div class=""></div>
+    </div>
+  </div>
+ 
+</div>

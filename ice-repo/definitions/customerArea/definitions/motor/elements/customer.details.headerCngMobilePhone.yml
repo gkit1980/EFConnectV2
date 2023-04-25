@@ -1,0 +1,6 @@
+element:
+  type: text
+  label: Αλλαγή κινητού τηλεφώνου
+  viewMode: output
+  pages:
+    changeMobilePhonePopUp: null

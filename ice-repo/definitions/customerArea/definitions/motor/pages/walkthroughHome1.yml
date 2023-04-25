@@ -1,0 +1,20 @@
+page:
+  component: PopUpPage
+  flag: walkthrough home1
+  showTriangle: true
+  validation:
+    onElementComponentChange: true
+    behaviour: page
+  sections:
+    - component: SimpleGridViewComponent
+      rows:
+        - cols:
+            - css: header-title-pop-up-walkthrough text-center walkthrough-header-mb
+              col: 12
+              element: home.walkthrough.header1
+    - component: ContentWalkthroughComponent
+      text: "Στην περιοχή αυτή βλέπετε με μια ματιά τον συνολικό αριθμό των συμβολαίων σας. Πατώντας επάνω, οδηγείστε σε σελίδα με βασικές πληροφορίες σχετικά με αυτά, δηλαδή τρόπο πληρωμής, συχνότητα πληρωμής, κατάσταση συμβολαίου κλπ."
+      pageNum: 1
+      numberOfScreens: home.walkthrough.screens
+      next: ΕΠΟΜΕΝΟ
+      previous:

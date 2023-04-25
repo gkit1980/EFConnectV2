@@ -1,0 +1,12 @@
+element:
+  type: date
+  viewMode: output  
+  buckets:
+    GetCoolgenClaimDetails:
+      transformation:
+        responsePath: ClaimCoolgen.AnnouncementDate
+    GetLifeClaimDetails:
+      transformation:
+        responsePath: ClaimLife.ClaimAnnouncementDate
+  pages:
+    viewClaimDetails: null

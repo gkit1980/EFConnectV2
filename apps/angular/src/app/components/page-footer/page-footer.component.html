@@ -1,0 +1,168 @@
+<footer>
+  <div *ngIf="!showCommunicationPoint" [ngClass]="getDisclaimerWhite()" class="info-footer-background-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="Typeface disclaimer">
+            {{ information1 | resourcePipe }} <a routerLink="/ice/default/customerArea.motor/communicationService"
+              class="mailTo">{{
+              information2 | resourcePipe }}</a>.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid" [ngClass]="getCommunicationDisclaimerFixTop()">
+    <div class="row">
+      <div class="col-sm-12">
+        <hr class="divider">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row mt-48px">
+      <div class="col-sm-4 centering">
+        <img class="my-icon" [src]="imageSource('E9C3B37B417F4061B742A3D8AC36897E')" alt="EurolifeConnect"
+          style="display: block; width:145px; height: 62px;">
+        <!-- <img class="my-icon" [src]="{{getIcon("E9C3B37B417F4061B742A3D8AC36897E")}}" alt=" EurolifeConnect"> -->
+        <!-- <div class="my-icon" aria-label="icon" [inlineSVG]="getIcon('E9C3B37B417F4061B742A3D8AC36897E')"
+          [onSVGLoaded]="handleSVG">
+        </div> -->
+      </div>
+      <div class="col-sm-4 centering mobile-distance-fix">
+        <p class="Body1 link-pointer" routerLink="/ice/default/customerArea.motor/communicationService">
+          {{ communication | resourcePipe }}</p>
+        <p class="Body1 link-pointer" routerLink="/Faq">{{ questions | resourcePipe }}</p>
+        <p class="Body1 link-pointer" routerLink="/Glossary">{{ glossary | resourcePipe }}</p>
+      </div>
+      <div class="col-sm-4 centering">
+        <p class="Caption3 first-line m-0">{{ center | resourcePipe }}</p>
+        <p class="h3 telephone m-0">
+          <a class="tel-link" href="tel:+302109303800">
+            {{ telephone | resourcePipe }}</a>
+        </p>
+        <p class="infoeurolifegr">
+          <a class="mail-link" href="mailto:info@eurolife.gr">
+            {{ info | resourcePipe }}</a>
+        </p>
+        <div class="third social">
+          <div class="social" [inlineSVG]="getIcon('900295365D374EE1A0E52DB039934424')" (click)="onClick('linkedin')"
+            [onSVGLoaded]="handleSocialSVG">
+          </div>
+          <div class="social" [inlineSVG]="getIcon('951821F6A9174A11A8537488725A7742')" (click)="onClick('facebook')"
+            [onSVGLoaded]="handleSocialSVG">
+          </div>
+          <div class="social" [inlineSVG]="getIcon('BDAD900A0999417DA857D092B4847DFF')" (click)="onClick('youtube')"
+            [onSVGLoaded]="handleSocialSVG">
+          </div>
+          <!-- 
+          <i class="fa fa-facebook"></i>
+          <i class="fa fa-twitter"></i>
+          <i class="fa fa-youtube"></i> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row last-hr">
+      <div class="col-sm-12">
+        <hr>
+      </div>
+    </div>
+    <div class="legal-container">
+      <!-- <div class="col-sm-3 logo centering">
+        <p class="h3">Eurolife FFH</p>
+      </div> -->
+
+      <div class="left-side">
+        <div>
+          <p class="footer-links Caption3" (click)="openDialog()">{{ oroiXrishs | resourcePipe }}</p>
+        </div>
+        <div>
+          <p class="footer-links Caption3" (click)="openDialogLegal()">{{ prostasiadedomenwn | resourcePipe }}</p>
+        </div>
+        <div>
+          <p class="footer-links Caption3" (click)="cookieClick()">{{ politikicookies | resourcePipe }}</p>
+        </div>
+      </div>
+
+      <div class="at-end centering">
+        <p class="Caption3">{{ copyright | resourcePipe }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- <hr />
+  <div class="container-fluid">
+    <div class="row mt-3">
+      <div class="col-sm-6">
+        <p class="font-weight-bold">Επικοινωνία</p>
+        <hr />
+        <div class="row">
+          <div class="col-sm-6">
+            <p><i class="fa fa-phone"></i> Κέντρο Εξυπηρέτησης Πελατών</p>
+            <p class="font-weight-bold">210 9303800</p>
+          </div>
+          <div class="col-sm-6 order-last mb-5">
+            <p>Όλοι οι τρόποι επικοινωνίας</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <p class="font-weight-bold">
+              <i class="fa fa-envelope"></i> info@eurolife.gr
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <p class="font-weight-bold text-nowrap">Περισσότερες Πληροφορίες</p>
+        <hr />
+        <div class="row">
+          <div class="col-sm-12">
+            <p>Συχνές ερωτήσεις</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 mb-5">
+            <p>Glossary</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <p class="font-weight-bold">Social Media</p>
+        <hr />
+        <div class="row">
+          <div class="col-sm-12">
+            <p>Ακολουθήστε μας στα παρακάτω κοινωνικά δίκτυα</p>
+          </div>
+        </div>
+        <div class="row mb-5">
+          <div class="col-4">
+            <a class="fa fa-facebook" href="http://www.facebook.com"></a>
+          </div>
+          <div class="col-4"><i class="fa fa-twitter"></i></div>
+          <div class="col-4"><i class="fa fa-youtube"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-2 border-right font-weight-light text-left">
+        Όροι χρήσεως
+      </div>
+      <div class="col-sm-2 border-right font-weight-light text-left">
+        Προστασία προσωπικών δεδομένων
+      </div>
+      <div class="col-sm-2 border-right font-weight-light text-left mb-3">
+        Πολιτική cookies
+      </div>
+      <div class="col-sm-2 order-last font-weight-light text-left">
+        Copyright {{ year }} <i class="fa fa-copyright"></i>
+      </div>
+      <div class="col-sm-4 order-sm-first">Eurolife FFH</div>
+    </div>
+  </div> -->
+</footer>

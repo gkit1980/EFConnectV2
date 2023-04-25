@@ -1,0 +1,6 @@
+element:
+  label: Quick Links
+  type: text
+  viewMode: output
+  pages:
+    home: null

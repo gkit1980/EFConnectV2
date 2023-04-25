@@ -1,0 +1,10 @@
+element:
+  type: text
+  label: View Privacy Notice
+  component:
+    StaticComponentRule:
+      component:
+        SvgImageComponent:
+          url: https://scp.eurolife.gr/~/media/A4A45D001BC647638DC97921E239F2F7.ashx
+          fillColor: dt_product_color
+          showBackground: false

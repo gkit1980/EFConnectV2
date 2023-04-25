@@ -1,0 +1,11 @@
+element:
+  type: text
+  label: Στοιχεία Οχήματος
+  viewMode: 
+    ConditionalViewModeRule:
+        conditionElement: greencard.page.index
+        conditionValue: 0
+        conditionViewMode: output
+        elseViewMode: hidden
+  pages:
+    greenCard: null

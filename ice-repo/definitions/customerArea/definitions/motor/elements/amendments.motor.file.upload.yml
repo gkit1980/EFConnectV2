@@ -1,0 +1,12 @@
+element:
+  component: UploadFileButtonComponent
+  label: dt_amendments_file_upload_label
+  arrayElement: documents
+  arrayElementFileName: documents~name
+  arrayElementSize: documents~size
+  arrayElementSizeEncoded: documents~size-encoded
+  arrayElementMimeType: documents~content-type
+  arrayElementBase64Data: documents~content
+  pages:
+    viewAmendmentDetails: null
+    

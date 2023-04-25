@@ -1,0 +1,21 @@
+.pdf {
+	display: block;
+	font-size: 2em;
+    text-align: center;
+}
+.table {
+	display: table;
+	color: inherit;
+}
+.table-row {
+	display: table-row;
+	cursor: pointer;
+	text-align: center;
+}
+.table-cell {
+	display: table-cell;
+	vertical-align: middle;
+}
+.is-disabled {
+	cursor: default;
+}

@@ -1,0 +1,9 @@
+element:
+#  label: First Name
+  type: text
+  viewMode: output
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent
+  pages:
+    customerProfile: null

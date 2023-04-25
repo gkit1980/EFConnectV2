@@ -1,0 +1,6 @@
+element:
+  type: boolean
+  viewMode: hidden
+  buckets:
+    PropertyClaimNotificationCreateCase:
+      transformation: {}

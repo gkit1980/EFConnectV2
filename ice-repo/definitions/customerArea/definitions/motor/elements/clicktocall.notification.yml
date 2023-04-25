@@ -1,0 +1,5 @@
+element:
+  type: text
+  defaultValue: Καλώς ήρθατε στο Click to Call της Eurolife FFH
+  label: null
+  viewMode: output

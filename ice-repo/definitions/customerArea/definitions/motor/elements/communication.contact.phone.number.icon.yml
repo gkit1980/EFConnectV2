@@ -1,0 +1,6 @@
+element:
+  type: text
+  component: TelephoneiconComponent
+  viewMode: output
+  pages:
+    communicationService: null

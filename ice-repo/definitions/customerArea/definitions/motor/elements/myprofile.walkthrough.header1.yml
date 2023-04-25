@@ -1,0 +1,11 @@
+element:
+  type: text
+  viewMode: output
+  component:
+    StaticComponentRule:
+      component:
+        TextLabelComponent:
+          text: Το Προφίλ μου
+          AdditionalClasses: h5
+  pages:
+    customerProfile: null

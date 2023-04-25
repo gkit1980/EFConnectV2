@@ -1,0 +1,13 @@
+element:
+  type: text
+  # label: Σχόλιο
+  component:
+    StaticComponentRule:
+      component:
+        IceTextarea:
+          autosize: false
+          minRows: 2
+          maxRows: null
+  viewMode: default
+  pages:
+    contactForm: null

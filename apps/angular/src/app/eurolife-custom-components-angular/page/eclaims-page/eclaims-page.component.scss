@@ -1,0 +1,85 @@
+:host ::ng-deep .with-padding > .ice-section {
+    
+        background-color: #eeeeee !important;
+        // padding-bottom: 30px;
+        padding-top: 10px;
+        padding-right: 42px;
+        padding-left: 42px;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    :host ::ng-deep .no-padding > .ice-section {
+    
+        background-color: #eeeeee !important;
+        padding-bottom: 30px;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    :host ::ng-deep .regular-padding > .ice-section {
+    
+        background-color: #eeeeee !important;
+        // width: 85% !important;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-right: 42px;
+        padding-left: 42px;
+        padding-bottom: 50px;
+        width:100%;
+
+        @media screen and (max-width: 575.98px) {
+            width:100vw;
+        }
+
+    }
+
+
+.row {
+    margin-right: -30px !important;
+    margin-left: -30px !important;
+}
+
+.section-container{
+   display: flex;
+   flex-direction: column;
+    }
+
+
+.ice-output {
+    .value {
+        color: red;
+    }
+
+    label {
+        color: red;
+    }
+}
+
+.page-title {
+    padding: 8px 0px 11px 19px;
+    border-left: solid 2px rgb(239, 51, 64);
+    margin-top: 57px;
+    margin-bottom: 46px;
+    color: rgb(56, 59, 56);
+}
+
+.add-style{
+    font-size: 0.85rem !important;
+    color:#0491DB;
+    cursor: pointer;
+  }
+
+  .footer-coverages
+  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+
+    @media screen and (max-width: 575.98px) {
+        flex-direction: column;
+    }
+  }

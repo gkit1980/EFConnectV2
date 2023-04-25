@@ -1,0 +1,17 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component: 
+        ConsentInitialStepsComponent:
+          steps: 3
+          icon1: E742CD6842054DBE8CAB3D3D2035B2D3
+          icon2: E433D196DE3B484AAABEB81064DA4EDB
+          icon3: CE60E52E32AB47749BAFE8F8C6BB496A
+          text1: Ενημερωθείτε για τα προσωπικά σας δεδομένα
+          text2: Συναινέστε για τα εμφανιζόμενα συμβόλαια
+          text3: Υποβάλετε τις προτιμήσεις σας
+          label1: ΒΗΜΑ 1
+          label2: ΒΗΜΑ 2
+          label3: ΟΛΟΚΛΗΡΩΣΗ
+  viewMode: output

@@ -1,0 +1,6 @@
+element:
+  type: text
+  viewMode: output
+  defaultValue: 12345
+  pages:
+    greenCard: null

@@ -1,0 +1,15 @@
+
+
+  <div *ngIf="(isVisible$ | async) || (isLoading$ | async)" class="spinner"></div>
+  <div [ngStyle]="styleObj"  class="wrapper" #spinnerElement>
+  <div
+    *ngIf="(isVisible$ | async) || (isLoading$ | async)"
+    class="loading-spinner"
+  ></div>
+  <div 
+    *ngIf="(isVisible$ | async) || (isLoading$ | async)"
+    class="loading-spinner-message"
+  >
+    {{ messageChanged$ | async }}
+  </div>
+</div>

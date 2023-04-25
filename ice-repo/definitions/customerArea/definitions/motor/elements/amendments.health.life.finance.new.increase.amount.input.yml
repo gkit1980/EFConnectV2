@@ -1,0 +1,19 @@
+element:
+  type: integer
+  label: Εισάγεται τη νέα δόση
+  viewMode: required
+  buckets:
+    AmendmentsCreateLifeCase:
+      transformation: {}
+    AmendmentsCreateHealthCase:
+      transformation: {}
+    AmendmentsCreateFinanceCase:
+      transformation: {}
+  component:
+    StaticComponentRule:
+      component:
+        #todo change with property
+        AmendmentinputlifefieldComponent:
+          elementName: amendmentsNewIncreaseValue
+  pages:
+    viewAmendmentFinanceDetails: null

@@ -1,0 +1,36 @@
+action:
+  title: Participants
+  execution:
+    - GetParticipantsAllContractsRule:
+        baseUrl: BASEURL
+        url: GetContractParticipants
+        verb: post
+        bucket: GetAllContractsParticipants
+        encryptMessage: true
+        needsDataStore: true
+        encryptSecretElement: token    
+    - WriteFromOtherSourcesToDatastoreExecutionRule:
+        bucket: WriteFromOther
+        baseUrl: BASEURL
+        url: GetCustomerContracts
+        verb: post
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: true 
+    - GetAgentInfoRule:
+        baseUrl: BASEURL
+        url: GetAgentInfo
+        verb: post
+        bucket: GetAgentInfo
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: true  
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - amendments.showAmendments         
+  # trigger:
+  #   - PageTriggerRule:
+  #       enter:
+  #         - viewMyPolicies
+  #         - policyDetails

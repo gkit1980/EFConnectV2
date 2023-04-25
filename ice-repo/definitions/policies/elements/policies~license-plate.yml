@@ -1,0 +1,11 @@
+element:
+  type: text
+  viewMode:
+    DtViewModeRule:
+      dt: policies~license-plate.view-mode
+  defaultValue:
+    ArrayItemValueRule:
+      values:
+        - 20/12/2012
+        - null
+        - 20/12/2014

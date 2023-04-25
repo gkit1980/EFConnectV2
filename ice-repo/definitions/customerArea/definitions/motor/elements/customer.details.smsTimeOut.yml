@@ -1,0 +1,10 @@
+element:
+  type: integer
+  defaultValue: 0
+  viewMode: output
+  buckets:
+    ChangeMobile: # it take's the return value from ChangeMobile for the timer
+      transformation:
+        responsePath: SMSTimeOut
+  pages:
+    changeMobilePhonePopUp: null

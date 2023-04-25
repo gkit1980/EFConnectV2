@@ -1,0 +1,18 @@
+dt:
+  hit-policy: F
+  inputs:
+    - label: greencard.motor.driver.fullName
+      element: greencard.motor.driver.fullName
+  outputs:
+    - label: viewMode
+      id: viewMode
+      type: string
+  rules:
+    - inputs:
+        - null
+      outputs:
+        - disabled
+    - inputs:
+        - ""
+      outputs:
+        - disabled

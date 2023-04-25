@@ -1,0 +1,5 @@
+element:
+  viewMode: output
+  type: text
+  pages:
+    changeEmailPopUp: null

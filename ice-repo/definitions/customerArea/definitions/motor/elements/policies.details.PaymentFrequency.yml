@@ -1,0 +1,56 @@
+element:
+  type: text
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: selectedcontractbranch
+      conditionValue: 4
+      conditionViewMode: hidden
+      elseViewMode: output
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent
+  buckets:
+    GetContractMotorDetails:
+      transformation:
+        responsePath: ContractMotorDetails.PaymentFrequency
+    GetContractIndividualDetails:
+      transformation:
+        responsePath: ContractIndividualDetails.PaymentFrequency
+    GetContractPropertyCoolgenDetails:
+      transformation:
+        responsePath: ContractPropertyCoolgenDetails.PaymentFrequencyDescription
+    GetContractMortgageDetails:
+      transformation:
+        responsePath: ContractMortgageDetails.PaymentFrequency
+    GetPensionContractDetails:
+      transformation:
+        responsePath: PensionContractDetails.PaymentFrequency
+    GetHealthContractDetails:
+      transformation:
+        responsePath: HealthContractDetails.PaymentFrequency
+    GetLifeHealthContractDetails:
+      transformation:
+        responsePath: LifeHealthContractDetails.PaymentFrequency
+    GetContractDeathDetails:
+      transformation:
+        responsePath: ContractDeathDetails.PaymentFrequency
+    GetContractConsumerDetails:
+      transformation:
+        responsePath: ContractConsumerDetails.PaymentFrequency
+    GetContractAccidentDetails:
+      transformation:
+        responsePath: ContractAccidentDetails.PaymentFrequency
+    GetContractCargoDetails:
+      transformation:
+        responsePath: ContractCargoDetails.PaymentFrequency
+    GetContractCargoPrudDetails:
+      transformation:
+        responsePath: ContractCargoPrudDetails.PaymentFrequency
+    GetContractDetailsPrudDetails:
+      transformation:
+        responsePath: ContractDetailsPrudDetails.PaymentFrequency
+    GetContractFirePrudDetails:
+      transformation:
+        responsePath: ContractFirePrudDetails.PaymentFrequency
+  pages:
+    policyDetails: null

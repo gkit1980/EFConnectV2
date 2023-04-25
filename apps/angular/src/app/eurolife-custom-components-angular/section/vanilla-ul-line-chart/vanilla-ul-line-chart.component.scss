@@ -1,0 +1,160 @@
+
+.container {
+
+    @media (max-width: 700px) {
+    display: none;
+   }
+}
+
+.mat-row {
+
+border-style: none ;
+// margin-top: -20px;
+margin: auto;
+
+}
+
+
+.disable-box-shadow{
+    box-shadow: none;
+}
+
+
+.circle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right:5px;
+    background-color: red;
+}
+
+.item_description{
+
+  margin-left: 15px;
+  word-break: break-word;
+
+}
+
+.mobile_circle
+{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right:5px;
+    background-color: red;
+}
+
+.fa-color{
+    color: #007bffd9;
+}
+
+.orange_bg
+{
+    background-color: orange !important;
+}
+
+.red_bg
+{
+    background-color: red !important;
+}
+
+.hardgreen_bg
+{
+    background-color: green !important;
+}
+
+.blue_bg
+{
+    background-color: blue !important;
+}
+
+.green_bg
+{
+    background-color: greenyellow !important;
+}
+
+.disable-border{
+    border-style: none;
+}
+
+
+.table-mobile-container 
+{
+  display: none;
+
+  @media (max-width: 1100px) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  padding-bottom: 135px;
+
+}
+
+.fund-container {
+  width: 100%;
+  background-color: #eeeeee;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.status-btn-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.status-container {
+  width: 95px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 24px;
+  background-color: #2bea9b;
+  margin-right: 10px;
+  justify-content: center;
+  @media (max-width: 1100px) {
+    width: 100px;
+  }
+}
+
+.status-text {
+  color: white;
+}
+
+.svg-icons {
+  cursor: pointer;
+  transform: rotate(90deg);
+}
+
+.msg-click{
+ 
+  transform: rotate(-90deg);
+
+}
+
+.receipt-mobile-label {
+  margin: 8px 0;
+}
+
+.hor-line {
+  border-top: 0.5px solid #b5b5b5;
+  margin-right: 15px;
+  margin: 15px 15px 15px 0;
+}
+
+.mobile-padding {
+
+  margin-left: 0px;
+  align-self: start;
+}
+
+.fa-file-container {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,18 @@
+dt:
+  hit-policy: F
+  inputs:
+    - label: calculate visibility of insurance duration
+      element: selectedcontractbranch
+  outputs:
+    - label: viewMode
+      id: viewMode
+      type: string
+  rules:
+    - inputs:
+        - 1,9,11,12,14,15,16,17
+      outputs:
+        - output
+    - inputs:
+        - 3
+      outputs:
+        - hidden

@@ -1,0 +1,9 @@
+element:
+  type: integer
+  viewMode: hidden
+  buckets:
+    VerifyChangeMobile:
+      transformation:
+        dataPath: SMSCode
+  pages:
+    changeMobilePhonePopUp: null

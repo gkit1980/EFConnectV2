@@ -1,0 +1,30 @@
+.grey-background-no-pending-payments {
+  background-color: #eeeeee;
+  display: flex;
+  align-items: center;
+  padding: 15px 15px 15px 15px;
+  justify-content: start;
+  width: inherit;
+  margin-top: 80px;
+
+  @media screen and (max-width: 983px) {
+
+  }
+
+  @media screen and (max-width: 580px) {
+    text-align: justify;
+  }
+
+}
+
+.submit-btn{
+  margin-left: 220px;
+  
+  @media screen and (max-width: 983px) {
+    margin-left: 110px;
+  }
+
+  @media screen and (max-width: 580px) {
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,13 @@
+element:
+  type: text
+  component: IceRadiobuttonGroup
+  values:
+    StaticValuesRule:
+      values:
+        - ["ΟΧΙ"]
+        - ["ΝΑΙ"]
+  buckets:
+    SubmitCustomerConsents:
+      transformation: {}
+  pages:
+    customerProfile: null

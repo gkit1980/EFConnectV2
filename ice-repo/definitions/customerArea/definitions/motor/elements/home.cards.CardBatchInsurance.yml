@@ -1,0 +1,9 @@
+element:
+  component: HomePageCardComponent
+  title: Ομαδικο Ασφαλιστήριο Διαχείρισης Κεφαλαίου
+  link: /#/ice/default/customerArea.customer.policy/viewMyPolicies
+  dataStoreProperty: clientContracts
+  cardColor: grey-card
+  type: text
+  pages:
+    home: null

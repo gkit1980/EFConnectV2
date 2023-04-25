@@ -1,0 +1,8 @@
+element:
+  type: array
+  viewMode: output
+  component: IceArray
+  buckets:
+    GetContractParticipants:
+      transformation:
+        responsePath: Customer

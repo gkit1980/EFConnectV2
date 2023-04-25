@@ -1,0 +1,36 @@
+<div class="email-form-container">
+  <div class="basic-info-header">
+    <div class="sign-up-container">
+      <p class="h4">Συμμετοχή σε ομαδικό ασφ. Ζωής Ατυχημάτων & Υγείας <br/> Ασφαλιστήριο {{contractKey}} <br/> Αντισυμβαλλόμενος  {{ companyName }} </p>
+    </div>
+  </div>
+
+  <app-sign-up-group-stepper></app-sign-up-group-stepper> 
+
+  <div class="second-info-header">
+    
+    <div (click)="onBack()">
+    <div class="Button clickable">
+      <div class="back-svg" aria-label="icon" [inlineSVG]="getIcon('AB7AD067ECBF48FFA0DEC42C9DC88E5B')" [onSVGLoaded]="handleSVG">
+      </div>
+    </div>
+    </div>
+     <p class="h6">Πληκτρολογήστε τον κωδικό επιβεβαίωσης που έχετε λάβει με SMS στο <strong>{{this.mobileNo}}</strong> </p>
+  </div>
+
+  <div class="mobile-container">
+    <ng-container>
+      <div class="row justify-content-center counter">
+        <div class="clock" aria-label="Clock Icon" [inlineSVG]="imageSourceClock" [onSVGLoaded]="handleClockSVG"></div>
+        <div class="time">{{ interval | async | formatTime }}</div>
+      </div>
+      <div class="col-sm-12 no-padding">
+        <app-otp-partitioned-input (onInputComplete)="VerifySmsCode($event)" [clearOtp]="eventsSubject" ></app-otp-partitioned-input>
+        <div *ngIf="errorMsgSmsCode !== '' " class="error-msg">{{errorMsgSmsCode}}</div>
+        <a class="a-link" (click)="VerifyMobile()">{{ resend | resourcePipe }}</a>
+      </div>
+    </ng-container>
+
+  </div>
+  <!-- <div *ngIf="errMsgService !== '' " class="error-msg-create">{{errMsgService}}</div> -->
+</div> 

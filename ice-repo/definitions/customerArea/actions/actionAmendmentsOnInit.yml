@@ -1,0 +1,20 @@
+action:
+  title: Amendments initialize requests + get inprogress
+  execution:
+    - GetSalesforceTokenRule:
+        salesforceLoginUrl: BASEURLSALESFORCELOGIN
+        methodLogin: post
+        getAmendmentsUrl: AMENDMENTSURL
+        getAmendmentsPropertyUrl: AMENDMENTSPROPERTYURL
+        getAmendmentsLifeUrl: AMENDMENTSLIFEURL
+        methodGetAmendments: get
+        bucket: AmendmentsLogin
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+  trigger:
+    - PageTriggerRule:
+        enter:
+          - home
+          - viewAmendments
+          # - policyDetails

@@ -1,0 +1,15 @@
+action:
+  title: calls a rest service to get the agent info
+  execution:
+    - WriteFromOtherSourcesToDatastoreExecutionRule:
+        bucket: WriteFromOther
+        baseUrl: BASEURL
+        url: GetCustomerContracts
+        verb: post
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: true
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - triggerActionWriteFromOther

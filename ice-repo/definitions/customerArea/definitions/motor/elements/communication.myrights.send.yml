@@ -1,0 +1,16 @@
+element:
+  type: text
+  label: Αποστολή
+  component: SendEmailButtonComponent
+  viewMode: default
+  pages:
+    myRightsForm: null
+
+
+# element:
+#   type: text
+#   label: Αποστολή
+#   component: IceButton
+#   defaultValue: send-contact-form-comment
+#   pages:
+#     myRightsForm: null

@@ -1,0 +1,233 @@
+page:
+  component: SimplePageWithNavigationComponent
+  label: Profile Information
+  # validation:
+  #   onElementComponentChange: true
+  #   behaviour: default
+  navigationClass:
+  sections:
+    - component: HeaderComponent
+      name: Customer Profile Details section1
+      rows:
+        - css:
+          cols:
+            - col: 12
+              element: customer.details.ProfilePicture
+    - component: SimpleGridViewComponent
+      name: Customer Profile Details section2
+      rows:
+        - cols:
+            - css: 
+              col: 12
+              element: customer.details.GroupSection
+            - css: section-breaks-gen
+              col: 12
+              element: customer.details.ProfileHeader
+            - css: h5
+              col: 12
+              element: customer.details.Header
+            - col: 12
+              element: customer.details.FirstName
+            - col: 12
+              element: customer.details.LastName
+            - col: 12
+              element: customer.details.FathersName
+            - col: 12
+              element: customer.details.BirthDate
+            - col: 12
+              element: customer.details.NationalID
+            - col: 12
+              element: customer.details.TaxCode
+    - component: SimpleGridViewComponent
+      name: Customer Profile Details section3
+      rows:
+        - cols:
+            # - css: h5 header-title
+            #   col: 6
+            #   element: customer.details.HeaderContactDetails
+            - css: h5 header-title
+              col: 6
+              element: customer.details.HeaderAccountDetails
+        - css:
+          cols:
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: small-images
+                      internalCol: 1
+                      element: phonesvgImageProfile
+                    - css: smooth-icons-text
+                      internalCol: 9
+                      element: customer.details.MobilePhone
+                    - css: pencil opacity
+                      internalCol: 2
+                      element: customer.details.changeMobilePhone
+        - css:
+          cols:
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - internalCol: 1
+                      css: small-images
+                      element: emailsvgImageProfile
+                    - css: smooth-icons-text
+                      internalCol: 9
+                      element: customer.details.Email
+                    - css: pencil opacity
+                      internalCol: 2
+                      element: customer.details.changeEmail
+        # - css: mb-208px
+        #   cols:
+        #     - col: 6
+        #       internalRows:
+        #         - css:
+        #           internalCols:
+        #             - css: svg-image
+        #               internalCol: 1
+        #               element: phonesvgImage
+        #             - css: smooth-icons-text
+        #               internalCol: 9
+        #               element: customer.details.PhoneNumber
+        # - css: pencil opacity
+        #   internalCol: 2
+        #   element: customer.details.changeMobilePhone
+        - css:
+          cols:
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - internalCol: 1
+                      css: small-images
+                      element: unlocksvgImage
+                    - css: smooth-icons-text
+                      internalCol: 9
+                      element: customer.details.PasswordHeader
+                    - css: pencil opacity
+                      internalCol: 2
+                      element: customer.details.changePassword
+        - cols:
+            - css:
+              col: 12
+              element: customer.details.changedEmail.verifyMessage
+        # - cols:
+        #     - col: 2
+        #       element: phonesvgImage
+        #     - col: 4
+        #       element: customer.details.MobilePhone
+        #     - col: 2
+        #       element: customer.details.changeMobilePhone
+        #     - col: 6
+        #       element: customer.details.PhoneNumber
+    # - component: GridView
+    #   name: Customer Profile Details
+    #   rows:
+    #     - cols:
+    #         - col: 12
+    #           element: customer.details.HeaderAccountDetails
+    #         - col: 6
+    #           element: customer.details.Email
+    #         - col: 6
+    #           element: customer.details.changeEmail
+    #         - col: 12
+    #           element: customer.details.PasswordHeader
+    #         - col: 6
+    #           element: customer.details.PasswordContent
+    #         - col: 6
+    #           element: customer.details.changePassword
+    # - component: GridView
+    #   name: Customer Profile Details
+    #   rows:
+    #     - cols:
+    #         - col: 12
+    #           element: customer.details.HeaderAccountManagement
+    #         - col: 12
+    #           element: customer.details.deleteAccount
+    # - component: GridView
+    #   name: Preferences section1
+    #   rows:
+    #     - css: null
+    #       cols:
+    #         - col: 6
+    #           element: preferences.notifications
+    #     - css: null
+    #       cols:
+    #         - col: 4
+    #           element: preferences.notifications.item01
+    #         - col: 4
+    #           element: preferences.notifications.item01.email
+    #         - col: 4
+    #           element: preferences.notifications.item01.sms
+    #     - css: null
+    #       cols:
+    #         - col: 4
+    #           element: preferences.notifications.item02
+    #         - col: 4
+    #           element: preferences.notifications.item02.email
+    #         - col: 4
+    #           element: preferences.notifications.item02.sms
+    - component: SimpleGridViewComponent
+      name: Preferences section1
+      rows:
+        - cols:
+            - css: section-breaks-gen
+              col: 12
+              element: preferences.maintilte
+            - css: h5 mb-2 mt-2
+              col: 12
+              element: preferences.paperless.title
+            - css: Subtitle2 mb-2 fixed-width-label
+              col: 12
+              element: preferences.paperless.item01
+            - css: Subtitle2
+              col: 12
+              element: preferences.paperless.item05
+    - component: CustomerProfileComponent
+      name: Preferences Market Consents
+      rows:
+        - cols:
+            - css: h5 mt-4
+              col: 12
+              element: preferences.privacy.header
+            - css: Subtitle2 fixed-width-label mt-1
+              col: 12
+              element: preferences.privacy.header.info
+            - css: mt-4 privacy-group
+              col: 12
+              element: preferences.group.privacy.title
+            - css: eurolife-radiobutton
+              col: 12
+              element: preferences.privacy.group.products
+            - css: mt-4 privacy-group
+              col: 12
+              element: preferences.brokers.privacy.title
+            - css: eurolife-radiobutton
+              col: 12
+              element: preferences.privacy.brokers.products
+            - css: Caption3 opacity
+              col: 12
+              element: preferences.privacy.group.note1
+    - component: SimpleGridViewComponent
+      name: Preferences section3
+      rows:
+        - css: mt-3
+          cols:
+            - css: h5 mt-5
+              col: 12
+              element: preferences.notice
+            - css: Subtitle2 fixed-width-label mt-1
+              col: 12
+              element: preferences.notice.item01
+              #- css: null
+              #cols:
+              #- col: 12
+              #element: preferences.notice.action
+    - component: ExternalUrlComponent
+      name: Preferences section4
+      rows:
+        - cols:
+            - css: Typeface col-sm-12 preferences-margin-fix position-fix
+              col:
+              element: preferences.privacy.notice

@@ -1,0 +1,7 @@
+element:
+  type: text
+  viewMode: output
+  label: Ασφαλιστικό Προϊόν
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent

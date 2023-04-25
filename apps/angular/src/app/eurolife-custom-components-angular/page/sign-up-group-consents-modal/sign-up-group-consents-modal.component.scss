@@ -1,0 +1,124 @@
+.modal{
+    display: block !important; /* I added this to see the modal, you don't need this */
+}
+
+/* Important part */
+.modal-dialog{
+    overflow-y: initial !important
+}
+.modal-body{
+    min-height: auto;
+    overflow-y: auto;
+    margin: 16px;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.modal-win{
+    padding:120px 0px 0px 0px;
+}
+
+.modal-container{
+ position: sticky;
+ top:0;
+}
+
+.success-title{
+    color: #479463;
+    font-size: 32px;
+}
+
+.success-text{
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.div-style{
+    padding: 30px 0px 0px 250px;
+
+    @media screen and (max-width: 540px) {
+        padding:  30px 0px 0px 140px;
+    }
+
+    @media screen and (max-width : 414px) {
+        padding:  30px 0px 0px 80px;
+    }
+}
+
+.button-ok{
+    width: 160px;
+}
+
+.mobile-container {
+    margin-left: 100px;
+    margin-right: 80px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  
+    @media screen and (max-width: 768px) {
+      margin-left: 40px;
+      margin-right: 30px;
+    }
+}
+
+.radio-button-productOption{
+display: flex;
+height: 20px;
+width: 20px;
+}
+
+.text-radio-button-productOption{
+margin: -35px 20px 0px 25px;;
+}
+
+.line-style{
+line-height: 50px;
+font-size: 14px;
+margin-top: 20px;
+}
+
+.consent-label{
+margin-top: 15px;
+}
+
+div > input[type="radio"]:checked {
+    accent-color: #cc046c;
+}
+
+.create-account-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 25px;
+}
+
+.basic-info-header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    // text-align: center;
+    margin: 30px 70px 48px 85px;
+  
+    .h4 {
+      font-size: 18px;
+    }
+  
+    @media screen and (max-width: 768px) {
+        margin: 20px 70px 48px 70px;
+    }
+    @media screen and (max-width: 540px) {
+        margin: 20px 70px 48px 70px;
+    }
+  }
+
+  .error-msg-create {
+    font-size: 12px;
+    color: #ef3340ed;
+    margin-top: -1.34375em;
+    text-align: center;
+    margin-left: 7px;
+    margin-bottom: 35px;
+  }

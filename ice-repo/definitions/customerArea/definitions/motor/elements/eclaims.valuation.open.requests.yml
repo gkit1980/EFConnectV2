@@ -1,0 +1,7 @@
+element:
+  type: boolean
+  viewMode: hidden
+  defaultValue: false
+  pages:
+    viewEclaimsDetails: null
+    viewPropertyNotificationDetails: null

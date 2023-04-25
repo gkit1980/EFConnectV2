@@ -1,0 +1,30 @@
+dt:
+  hit-policy: C
+  inputs:
+    - label: calculate visibility of section in policy details
+      element: selectedcontractbranch
+  outputs:
+    - id: element
+      label: text
+      type: string
+  rules:
+    - inputs:
+        - 1,2,9,11,12,14,15,16,17
+      outputs:
+        - >-
+          "policies.life.details.renewalDate"
+    - inputs:
+        - 3,4,13
+      outputs:
+        - >-
+          "policies.details.renewalDate"
+    - inputs:
+        - 5,6
+      outputs:
+        - >-
+          "policies.P&Cdetails.ExpirationDate"
+    - inputs:
+        - 99
+      outputs:
+        - >-
+          "policies.details.grouphealth.ExpirationDate"      

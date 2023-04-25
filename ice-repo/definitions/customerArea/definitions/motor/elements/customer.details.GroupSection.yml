@@ -1,0 +1,7 @@
+element:
+  type: text
+  viewMode: output
+  label: Sign Up Group Section
+  component: SignUpGroupAreaComponent
+  pages:
+    customerProfile: null

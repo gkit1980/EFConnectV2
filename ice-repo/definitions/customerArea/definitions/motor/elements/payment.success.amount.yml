@@ -1,0 +1,9 @@
+element:
+  type: text
+  viewMode: output
+  defaultValue: test
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent
+  pages:
+    paymentManagementSuccess: null

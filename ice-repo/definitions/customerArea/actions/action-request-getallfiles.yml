@@ -1,0 +1,11 @@
+action:
+  execution:
+    - EclaimsGetAllFilesRule:
+        baseUrl: UPLOADFILESLOGIN
+        getAllFiles: GETALLDOCUMENTS
+        method: post
+        dowloadFile: DOWNLOADFILESURL
+        bucket: EclaimsDocuments 
+        download: false
+
+

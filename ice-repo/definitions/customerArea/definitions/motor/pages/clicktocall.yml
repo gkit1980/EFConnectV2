@@ -1,0 +1,94 @@
+page:
+  component: DemoPage
+  validation:
+    onElementComponentChange: true
+    behaviour: page
+  sections:
+    - component: GridView
+      dataStoreProperty: processCallback
+      viewMode:
+        DtSectionViewModeRule:
+          dt: clicktocall.first-section.view-mode
+      rows:
+        - css: headertext
+          cols:
+            - col: 12
+              element: clicktocall.notification
+        - css: caption3
+          cols:
+            - col: 12
+              element: clicktocall.thanksnotification
+        - css: null
+          cols:
+            - col: 12
+              element: clicktocall.name
+            - col: 12
+              element: clicktocall.phone
+        - css: null
+          cols:
+            - col: 12
+              element:
+        - css: null
+          cols:
+            - col: 12
+              element:
+        - css: typeface
+          cols:
+            - col: 12
+              element: clicktocall.callmenow
+    - component: GridView
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: clicktocall.go-to-calendar
+          conditionValue: true
+          conditionViewMode: default
+          elseViewMode: hidden
+      rows:
+        - cols:
+            - col: 12
+              element: clicktocall.select-date
+    - component: GridView
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: clicktocall.go-to-time-picker
+          conditionValue: true
+          conditionViewMode: default
+          elseViewMode: hidden
+      rows:
+        - cols:
+            - col: 12
+              element: clicktocall.select-time
+    - component: GridView
+      rows:
+        - css: typeface nowrap
+          cols:
+            - col: 6
+              element: clicktocall.callmelater
+            - col: 3
+              css: pl-0
+              element: clicktocall.callmelaterdate
+            - col: 3
+              css: pl-0
+              element: clicktocall.callmelatertime
+        - css: null
+          cols:
+            - col: 12
+              element:
+        # - css: null
+        # cols:
+        # - col: 12
+        # element: clicktocall.gdprnotification
+        - css: null
+          cols:
+            - col: 12
+              element:
+        - css: null
+          cols:
+            - col: 12
+              css: null
+              element: clicktocall.btnsubmit
+        - css: annex-info-row
+          cols:
+            - col: 12
+              css: error-msg-ctc
+              element: clicktocall.messageinfo

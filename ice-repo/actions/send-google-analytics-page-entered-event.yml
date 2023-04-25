@@ -1,0 +1,7 @@
+action:
+  title: when requested - custom event is sent to google analytics
+  execution:
+    - EurolifeGAPageEnteredRule: null
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: BEFORE_PAGE_LOAD

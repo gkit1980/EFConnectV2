@@ -1,0 +1,12 @@
+<div class="icon-output-container">
+  <div
+    (click)="back()"
+    [ngClass]="isConsentWithPageIndex()"
+    aria-label="icon()"
+    [inlineSVG]="icon()"
+    [onSVGLoaded]="handleSVG"
+  ></div>
+  <div [ngClass]="AdditionalClasses ? AdditionalClasses : 'text Caption3'">
+    {{ text }}
+  </div>
+</div>

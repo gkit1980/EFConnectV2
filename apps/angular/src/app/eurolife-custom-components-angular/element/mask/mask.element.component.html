@@ -1,0 +1,25 @@
+<div class="ice-text-input" *ngIf="isVisible">
+	<mat-form-field 
+			[attr.data-required]="isRequired" 
+			[appearance]='appearance' 
+			hideRequiredMarker="true" 
+			*ngIf="!isOutput" 
+			[hintLabel]="hint">
+		<mat-label [attr.data-required]="isRequired">{{label}}</mat-label>
+		<input 
+				#iceInput
+				matInput 
+				[required]="isRequired" 
+				[disabled]="isDisabled" 
+				[(ngModel)]="value" 
+				(ngModelChange)="textAdjust()"
+				(blur)="onBlur($event)" 
+				(focus)="onFocus($event)"
+				[placeholder]="placeholder"
+				[errorStateMatcher]="errorStateMatcher">		
+		<mat-error *ngFor="let message of validation?.getMessagesFor(element.name, index)">
+			{{ message }}
+		</mat-error>
+	</mat-form-field>
+	<mat-output *ngIf="isOutput" [isOutput]="isOutput" [label]="label" [value]="value"></mat-output>
+</div>

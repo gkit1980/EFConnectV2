@@ -1,0 +1,153 @@
+// Variables
+$font-weight-extra-bold: 600;
+$font-weight-bold: 500;
+$font-weight-regular: 400;
+$font-weight-light: 300;
+
+// Maps
+$colors: (
+  corporate: (
+    primary: rgb(239, 51, 64),
+    secondary: rgb(0, 59, 77),
+    support: rgb(72, 82, 148),
+    support_b: rgb(33, 196, 181),
+    light: rgb(252, 214, 217)
+  ),
+  grey: (
+    white: rgb(255, 255, 255),
+    light: rgb(238, 238, 238),
+    mild: rgb(222, 222, 222),
+    dark: rgb(56, 59, 56)
+  ),
+  health: (
+    primary: rgb(239, 51, 64),
+    light: rgb(255, 179, 171),
+    dark: rgb(174, 39, 47),
+    light_bg: rgb(250, 231, 228)
+  ),
+  sme: (
+    primary: rgb(235, 125, 46),
+    light: rgb(250, 196, 176),
+    dark: rgb(171, 69, 18)
+  ),
+  home: (
+    primary: rgb(242, 177, 0),
+    light: rgb(248, 213, 144),
+    dark: rgb(191, 133, 49),
+    light_bg: rgb(248, 239, 221)
+  ),
+  motor: (
+    primary: rgb(71, 148, 99),
+    light: rgb(145, 204, 163),
+    dark: rgb(48, 99, 64),
+    light_bg: rgb(236, 244, 239)
+  ),
+  generic: (
+    primary: rgb(33, 196, 181),
+    light: rgb(140, 227, 212),
+    dark: rgb(0, 110, 107)
+  ),
+  finance: (
+    primary: rgb(0, 128, 148),
+    light: rgb(115, 207, 212),
+    dark: rgb(0, 59, 77),
+    light_bg: rgb(236, 237, 244)
+  ),
+  life: (
+    primary: rgb(74, 82, 148),
+    light: rgb(143, 161, 212),
+    dark: rgb(38, 38, 97),
+    light_bg: rgb(143, 161, 212),
+  ),
+  buttons: (
+    default_normal: rgb(72, 82, 148),
+    default_hover: #5F5B8B,
+    stroke_normal: rgba(0, 59, 77, 0.2),
+    stroke_hover: rgb(72, 82, 148),
+    default_disabled: rgb(222, 222, 222),
+    button_link: rgb(0, 134, 214),
+    stroke_red: rgb(239, 51, 64),
+    stroke_red_hover: #ef3340,
+    stroke_green: rgb(71, 148, 99),
+    stroke_green_hover: rgba(172, 190, 206, 0.2),
+    stroke_blue: #21c4b5,
+    stroke_blue_hover: rgba(172, 190, 206, 0.2),
+    stroke_home: rgb(242, 177, 0),
+    stroke_home_hover: rgba(172, 190, 206, 0.2)
+  )
+);
+
+$fonts: (
+  size: (
+    h1: 3.25rem,
+    h2: 2.8125rem,
+    h3: 2rem,
+    h4: 1.75rem,
+    h5: 1.375rem,
+    h6: 1.125rem,
+    h6-active: 1.125rem,
+    title: .875rem,
+    subtitle: .875rem,
+    Caption1: .875rem,
+    Caption3: .875rem,
+    Tag: .75rem,
+    Typeface: .75rem,
+    Body1: 1rem,
+    Subtitle2: 1rem,
+    Button: .875rem
+  ),
+  weight: (
+    h1: $font-weight-bold,
+    h2: $font-weight-bold,
+    h3: $font-weight-bold,
+    h4: $font-weight-bold,
+    h5: $font-weight-bold,
+    h6: $font-weight-regular,
+    h6-active: $font-weight-bold,
+    title: $font-weight-regular,
+    subtitle: $font-weight-bold,
+    Caption1: $font-weight-bold,
+    Caption3: $font-weight-regular,
+    Tag: $font-weight-bold,
+    Typeface: $font-weight-bold,
+    Body1: $font-weight-light,
+    Subtitle2: $font-weight-light,
+    Button: $font-weight-bold
+  ),
+  height: (
+    h1: 1.19,
+    h2: 1.2,
+    h3: 1.31,
+    h4: 1.21,
+    h5: 1.23,
+    h6: 1.39,
+    h6-active: 1.39,
+    title: 1.36,
+    subtitle: 1.36,
+    Caption1: 1.36,
+    Caption3: 1.36,
+    Tag: 1.17,
+    Typeface: 1.17,
+    Body1: 1.75,
+    Subtitle2: 1.38,
+    Button: 1.36
+  ),
+  opacity: (
+    h1: 1,
+    h2: 1,
+    h3: 1,
+    h4: 1,
+    h5: 1,
+    h6: 1,
+    h6-active: 1,
+    title: 0.6,
+    subtitle: 1,
+    Caption1: 1,
+    Caption3: 1,
+    Tag: 1,
+    Typeface: 1,
+    Body1: 1,
+    Subtitle2: 1,
+    Button: 1
+  )
+);

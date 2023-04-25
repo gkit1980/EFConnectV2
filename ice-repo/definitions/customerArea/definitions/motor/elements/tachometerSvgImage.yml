@@ -1,0 +1,10 @@
+element:
+  type: text
+  label: View Privacy Notice
+  component:
+    StaticComponentRule:
+      component:
+        SvgImageComponent:
+          url: dt_tile_image
+          fillColor: dt_product_color
+          showBackground: true

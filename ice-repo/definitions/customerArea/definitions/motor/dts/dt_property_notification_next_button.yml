@@ -1,0 +1,19 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - label: property.claim.step
+      element: property.claim.step
+  outputs:
+    - label: viewMode
+      id: viewMode
+      type: string
+  rules:
+    - inputs:
+        - 0,1,2,3
+      outputs:
+        - output
+    - inputs:
+        - -1
+      outputs:
+        - hidden    
+ 

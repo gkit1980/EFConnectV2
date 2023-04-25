@@ -1,0 +1,13 @@
+action:
+  title: calls a rest service to check if a contract has insurance guide booklet
+  execution:
+    - BookletsExistRule:
+        baseUrl: GENIKESURL
+        url: api/booklets
+        verb: get
+        bucket: GetBookletsExist
+        needsDataStore: false
+  # trigger:
+  #   - ElementChangeTriggerRule:
+  #       elements:
+  #         - policy.details.booklets.contractNumber

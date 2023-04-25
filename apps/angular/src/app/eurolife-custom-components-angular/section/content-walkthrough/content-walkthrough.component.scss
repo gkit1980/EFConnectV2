@@ -1,0 +1,62 @@
+// button {
+//   display: flex;
+//   width: 155px;
+//   height: 48px;
+//   justify-content: space-around;
+//   padding: 0;
+//   border: unset !important;
+// }
+
+
+.no-paddings{
+    padding: 0;
+    margin-bottom: 5px;
+    display: contents;
+}
+
+.hide-space{
+visibility: hidden;
+
+}
+
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 3px;
+  }
+
+  .eurolife_btn-walkthrough {
+    color: #485294;
+    background-color: #fff;
+    padding-top: 1px;
+    padding-right: 3px !important;
+    padding-left: 3px !important;
+    margin-left: 10px;
+  }
+
+  .dot-active{
+    background-color: #000;
+  }
+
+  .margin-row 
+  {
+    margin-left: 15px !important;
+  }
+
+  .walkthrough-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .walkthrough-dots {
+    width: max-content;
+  }
+

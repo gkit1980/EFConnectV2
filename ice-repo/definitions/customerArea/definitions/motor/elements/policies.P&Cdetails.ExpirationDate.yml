@@ -1,0 +1,12 @@
+element:
+  type: date
+  label: Ημερομηνία Ανανέωσης
+  labelForEfapax: Ημερομηνία Λήξης
+  viewMode: output
+  pages:
+    policyDetails: null
+  component:
+    StaticComponentRule:
+      component:
+        EurolifeHeaderTileComponent:
+          headingClass: dt_product_text_color

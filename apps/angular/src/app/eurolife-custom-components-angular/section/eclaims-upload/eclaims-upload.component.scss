@@ -1,0 +1,55 @@
+.upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #ffffff;
+  max-width: 688px;
+  border: 1px solid #dedede;
+  border-bottom: 0px;
+  margin: 40px auto auto auto;
+  padding: 32px;
+
+  @media screen and (max-width: 688px) {
+    // align-items: center;
+    margin: 40px -28px auto -28px;
+    padding: 16px;
+  }
+}
+
+.upload-hdr {
+  max-width: 500px;
+  color: #383b38;
+  font-family: Ubuntu;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+ul {
+  padding-left: 17px;
+  color: #383b38;
+  font-family: Ubuntu;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 19px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 688px;
+  margin-bottom: 24px;
+}
+
+.papers-list {
+  margin-bottom: 24px;
+
+  p {
+    margin-top: -8px;
+    margin-bottom: 8px;
+  }
+}

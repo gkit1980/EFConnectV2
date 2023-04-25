@@ -1,0 +1,6 @@
+element:
+  type: boolean
+  buckets:
+    OptOut:
+      transformation:
+        responsePath: Success

@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu&subset=greek");
+@import '../abstracts/variables';
+@import '../abstracts/functions';
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 100%;
+  line-height: 1.75;
+}
+
+h1, .h1 {
+  @include font-styling(h1);
+}
+
+h2, .h2 {
+  @include font-styling(h2);
+}
+
+h3, .h3 {
+  @include font-styling(h3);
+}
+
+h4, .h4 {
+  @include font-styling(h4);
+}
+
+h5, .h5 {
+  @include font-styling(h5);
+}
+
+h6, .h6 {
+  @include font-styling(h6);
+}
+
+.h6-active {
+  @include font-styling(h6-active);
+}
+
+.Caption1 {
+  @include font-styling(Caption1);
+}
+
+.Caption3 {
+  @include font-styling(Caption3);
+}
+
+.Tag {
+  @include font-styling(Tag);
+}
+
+.Typeface {
+  @include font-styling(Typeface);
+  // text-align: center;
+}
+
+.Body1 {
+  @include font-styling(Body1);
+  letter-spacing: 0.5px;
+  // text-align: center;
+}
+
+.Subtitle2 {
+  @include font-styling(Subtitle2);
+}
+
+.forgot_username {
+  @include font-styling(Caption1);
+  color: #0086d6;
+  display: inline-block;
+}
+
+.forgot_password {
+  @include font-styling(Caption1);
+  color: #0491db;
+  display: inline-block;
+}
+
+.eurolife-output {
+  .label {
+    @include font-styling(title);
+  }
+  .value {
+    @include font-styling(subtitle);
+  }
+}
+
+.opacity {
+  opacity: 0.6;
+}
+
+.tel-link {
+  color: getColor('corporate');
+}
+
+.health_text_primary {
+  color: getColor('health');
+}
+
+.motor_text_primary {
+  color: getColor('motor');
+}
+
+.home_text_primary {
+  color: getColor('home');
+}
+
+.finance_text_primary {
+  color: getColor('finance');
+}

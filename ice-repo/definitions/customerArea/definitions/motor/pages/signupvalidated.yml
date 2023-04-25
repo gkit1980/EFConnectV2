@@ -1,0 +1,70 @@
+page:
+  component: RegistrationPageComponent
+  validation:
+    onElementComponentChange: true
+    behaviour: default
+    showElementValidation: true
+  label: null
+  sections:
+    - component: SignUpValidatedComponent
+      rows:
+        - RegistrationMessage:
+            - col: 12
+              element: signupvalidated.registration.message
+        - Password:
+            - col: 12
+              element: signupvalidated.password
+        - VerifyPassword:
+            - col: 12
+              element: signupvalidated.verify.password
+        - Terms:
+            - col: 12
+              element: signupvalidated.accept.termsandconditions
+        - Button:
+            - col: 12
+              element: signupvalidated.button
+        - CodeStatus:
+            - col: 12
+              element: emailCodeStatus
+        - Code:
+            - col: 12
+              element: emailCode
+        - email:
+            - col: 12
+              element: signup.email
+    # - component: GridView
+    #   rows:
+    #     - css: null
+    #       cols:
+    #         - col: 12
+    #           element: signupvalidated.registration.message
+    #     - css: null
+    #       cols:
+    #         - col: 12
+    #           element: signupvalidated.password
+    #     - css: null
+    #       cols:
+    #         - col: 12
+    #           element: signupvalidated.verify.password
+    #     - css: null
+    #       cols:
+    #         - col: 12
+    #           element: signupvalidated.accept.termsandconditions
+    #     - css: null
+    #       cols:
+    #         - col: 12
+    #           element: null
+    #     - css: null
+    #       cols:
+    #         - col: 12
+    #           element: null
+    #     - css: null
+    #       cols:
+    #         - col: 12
+    #           element: signupvalidated.button
+    # - component: SocialNetworkSignUpComponent
+    # social:
+    #   - css: null
+    #     cols:
+    #       - col: 12
+    #         element: payment.details.back

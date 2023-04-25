@@ -1,0 +1,95 @@
+dt:
+  hitPolicy: C
+  inputs:
+    - element: request.amendment.change.fop
+  outputs:
+    - id: value
+    - id: label
+    - id: label_en
+      type: text
+  rules:
+    - inputs:
+        - 3
+      outputs:
+        - 4
+        - Άλλο Αίτημα
+        - Other_Requests_CT
+    - inputs:
+        - 3
+      outputs:
+        - 5
+        - Αλλαγή Συχνότητας Πληρωμής Ασφαλίστρων
+        - Frequency_Payment_Method
+    - inputs:
+        - 2
+      outputs:
+        - 1
+        - Αλλαγή Στοιχείων Προσώπων Συμβολαίου
+        - Other_Requests_CT
+    - inputs:
+        - 2
+      outputs:
+        - 3
+        - Αλλαγή Στοιχείων Πελάτη
+        - Personal_Details_Changes
+    - inputs:
+        - 2
+      outputs:
+        - 4
+        - Άλλο Αίτημα
+        - Other_Requests_CT
+    - inputs:
+        - 2
+      outputs:
+        - 5
+        - Αλλαγή Συχνότητας Πληρωμής Ασφαλίστρων
+        - Frequency_Payment_Method
+    - inputs:
+        - 1
+      outputs:
+        - 1
+        - Αλλαγή Στοιχείων Προσώπων Συμβολαίου
+        - Other_Requests_CT
+    - inputs:
+        - 1
+      outputs:
+        - 2
+        - Αλλαγή Τρόπου και Στοιχείων Πληρωμής
+        - Frequency_Payment_Method
+    - inputs:
+        - 1
+      outputs:
+        - 3
+        - Αλλαγή Στοιχείων Πελάτη
+        - Personal_Details_Changes
+    - inputs:
+        - 1
+      outputs:
+        - 4
+        - Άλλο Αίτημα
+        - Other_Requests_CT
+    - inputs:
+        - 1
+      outputs:
+        - 5
+        - Αλλαγή Συχνότητας Πληρωμής Ασφαλίστρων
+        - Frequency_Payment_Method
+    - inputs:
+        - 0
+      outputs:
+        - 2
+        - Αλλαγή Τρόπου και Στοιχείων Πληρωμής
+        - Frequency_Payment_Method
+    - inputs:
+        - 0
+      outputs:
+        - 4
+        - Άλλο Αίτημα
+        - Other_Requests_CT
+    - inputs:
+        - 0
+      outputs:
+        - 5
+        - Αλλαγή Συχνότητας Πληρωμής Ασφαλίστρων
+        - Frequency_Payment_Method
+    

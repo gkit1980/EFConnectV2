@@ -1,0 +1,13 @@
+element:
+  type: text
+  viewMode: default
+  buckets:
+    InitSignUp:
+      transformation:
+        dataPath: RegistrationCode
+#  buckets:
+#    GetRegistrationCode:
+#      transformation:
+#        responsePath: RegistrationCode
+  pages:
+    sign-up: null

@@ -1,0 +1,9 @@
+element:
+  type: integer
+  buckets:
+    GetContractBeneficiariesForAmendments:
+      transformation:
+        dataPath: ContractID  
+    GetLifeContractCoverForAmendments:
+      transformation:
+        dataPath: ContractID    

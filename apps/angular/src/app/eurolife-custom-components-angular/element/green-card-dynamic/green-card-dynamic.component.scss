@@ -1,0 +1,159 @@
+.gc-container {
+  max-width: 444px;
+  margin: auto;
+  margin-bottom: 16px;
+
+  .input-info {
+    padding: 24px 16px;
+    background-color: rgba(238, 238, 238, 0.59);
+
+    input {
+      border: unset;
+      border-bottom: 1px solid rgba(151, 151, 151, 1);
+      background-color: rgb(244, 244, 244);
+      padding-left: 5px;
+      color: rgb(56, 59, 56);
+      width: 100%;
+    }
+  }
+
+  .submitted-info {
+    display: flex;
+    justify-content: flex-start;
+    background-color: rgba(238, 238, 238, 1);
+    .user-icon {
+      width: 48px;
+      height: 48px;
+      fill: #383B38;
+      display: flex;
+    }
+
+    .driver {
+      margin-left: 8px;
+      display: flex;
+      align-items: center;
+    }
+
+    .accordion-icon {
+      margin-left: auto;
+      display: flex;
+      width: 48px;
+      height: 48px;
+      cursor: pointer;
+      fill: #485294;
+    }
+  }
+
+  .more-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 16px 24px 16px;
+    background-color: rgba(238, 238, 238, 0.59);
+
+    .action-icon {
+      width: 36px;
+      height: 36px;
+      background-color: #485294;
+      border-radius: 4px;
+      display: flex;
+      fill: #fff;
+      cursor: pointer;
+      &:first-child {
+        border: 1px solid #485294;
+        background-color: unset;
+        margin-right: 8px;
+        fill: #485294;
+        
+      }
+    }
+  }
+
+  .disabled-background{
+    background-color: #dedede !important;
+    border-color: #dedede !important;
+  }
+
+  .disabled-color{
+    fill: #dedede !important;
+  }
+}
+
+.error-msg{
+    margin: -15px 0 0 20px;
+    font-size: 12px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.4;
+    letter-spacing: normal;
+    color: #ef3340;
+}
+
+// .greencard-input-container{
+//     max-width: 770px;
+//     margin-bottom : 60px;
+//   }
+
+//   .grey-background-unpaid {
+//     background-color: #eeeeee;
+//     display: flex;
+//     align-items: center;
+//     padding: 24px;
+//     justify-content: start;
+//     margin-top: 30px;
+//   }
+
+//   .greencard-input {
+//     width: 466px;
+//     word-wrap: break-word;
+//     border: none;
+//     overflow: hidden;
+//     resize: none;
+//     color: #383b38;
+//     padding: 0 4px;
+//     display: flex;
+//     background-color: #eeeeee;
+//   }
+
+//   .horizontal-line {
+//     border: solid 0.5px black;
+//     width: 100%;
+//   }
+
+//   .letter-counter {
+//     float: right;
+//   }
+
+//   .icon-container {
+//     display: flex;
+//     flex-direction: row-reverse;;
+//     width: 100%;
+//     margin-top: 15px;
+// }
+
+// .product-icon {
+//     margin-right: 80px;
+//     margin-top: 15px;
+// }
+
+// .selectSmall {
+//   width: 40px;
+//   height: 40px;
+//   background: url("../../../../assets-webpacked/eurolife/selectSmall.svg");
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   background-size: contain;
+//   border: 1px solid;
+//   margin-right: 16px;
+// }
+
+// .delete {
+//   width: 40px;
+//   height: 40px;
+//   background: url("../../../../assets-webpacked/eurolife/delete.svg");
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   background-size: contain;
+//   border: 1px solid;
+//   margin-right: 16px;
+// }

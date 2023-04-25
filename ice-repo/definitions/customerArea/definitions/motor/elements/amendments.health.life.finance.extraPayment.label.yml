@@ -1,0 +1,4 @@
+element:
+  type: text
+  label: "Ποσό Έκτακτης Καταβολής"
+  viewMode: output

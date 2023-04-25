@@ -1,0 +1,21 @@
+action:
+  title: calls a rest service to get the customer contract details
+  execution:
+    - RestCallExecutionRule:
+        baseUrl: BASEURL
+        url: GetPensionContractDetails
+        verb: post
+        bucket: GetPensionContractDetails
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+    - NavigateToPageExecutionRule:
+        page: policyDetails
+        omitValidation: true
+  condition:
+    FeelConditionRule:
+      expression: policy.selectedBranch = 11
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - policy.selectedBranch

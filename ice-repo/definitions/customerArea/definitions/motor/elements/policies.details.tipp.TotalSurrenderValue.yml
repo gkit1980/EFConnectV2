@@ -1,0 +1,14 @@
+element:
+  type: text
+  viewMode: output
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent
+  buckets:
+    GetLifeContractFundsValuation:
+      transformation:
+        responsePath: TotalSurrenderValue
+  additionalClasses: isHeader
+  typeValue: totalsurrender 
+  pages:
+    policyDetails: null

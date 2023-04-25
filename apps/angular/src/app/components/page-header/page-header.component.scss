@@ -1,0 +1,258 @@
+@import '../../../styles/abstracts/variables';
+@import '../../../styles/abstracts/mixins';
+@import '../../../styles/abstracts/functions';
+
+.avatar {
+svg {
+fill: #ef3340 !important;
+}
+}
+
+nav {
+background-color: #ffffff;
+// border-bottom: 6px solid #ef3340;
+}
+
+.eurolife-logo{
+  margin-left: 45px;
+  cursor: pointer;
+  height: 31px;
+  .image-logo{
+    height: 31px;
+  }
+  @media screen and (max-width : 440px){
+    margin-left: unset !important;
+  }
+}
+
+.navbar {
+padding-left: 0.5rem;
+padding-right: 0.5rem;
+padding-top: 0;
+padding-bottom: 0;
+z-index: 20;
+min-height: 81px;
+}
+
+.navbar-nav {
+  @media screen and (max-width : 1199px){
+    margin-left: 25px;
+  }
+}
+
+.hamburger {
+  padding: 24px;
+}
+
+.navbar-nav .nav-link {
+ font-family: Ubuntu;
+ font-size: 18px;
+ font-weight: normal;
+ font-style: normal;
+ font-stretch: normal;
+ line-height: 1.39;
+ letter-spacing: normal;
+ color: #383b38;
+}
+
+.fullname{
+  margin: 15px 0 0 8px;
+}
+
+.notification-icon {
+  padding-left: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-left: 0px;
+  margin-top: -13px;
+  fill: #cc046c;
+}
+
+
+hr {
+height: 2px;
+border-top: solid 1px #dedede;
+padding: 12px;
+margin: 20px 71px 0 46px;
+
+}
+
+.nav-item {
+padding: 24px 20px;
+// border: 1px solid black;
+  @media screen and (max-width : 440px){
+    padding: 16px 24px;
+  }
+}
+
+.walkthrough-item {
+padding: 24px 20px;
+  @media screen and (max-width : 440px){
+    padding: 16px 24px;
+  }
+}
+
+a {
+display: inline-flex;
+padding: 0px;
+padding-right: 2px;
+// border: 1px solid black;
+}
+
+.account_menu {
+z-index: 10;
+}
+
+.favicons {
+color: #ef3340;
+}
+
+.cicle {
+width: 40px;
+height: 40px;
+background-color: #ef334033;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: 16px;
+margin-left: 45px;
+margin-bottom: 9px;
+margin-top: 24px;
+
+i {
+padding-left: 16px;
+}
+}
+
+.avatar {
+display: flex;
+align-items: center;
+@media screen and (max-width : 440px){
+  display: none;
+}
+}
+
+.menucls {
+  justify-content: center;
+}
+
+.dropdown_content {
+padding-top: 3px;
+margin-left: 40px;
+@media screen and (max-width : 440px){
+  margin-left: 32px;
+}
+div {
+display: flex;
+align-items: center;
+padding-top: 12px;
+padding-bottom: 12px;
+i {
+padding-left: 16px;
+padding-right: 8px;
+}
+&.first {
+animation: xaxis 0.2s;
+}
+&.second {
+animation: xaxis 0.3s;
+}
+&.third {
+animation: xaxis 0.4s;
+}
+&.forth {
+animation: xaxis 0.5s;
+}
+}
+div:hover {
+background-color: #ffb3ab;
+text-decoration: none;
+}
+
+}
+
+.Caption1 {
+padding-left: 8px;
+}
+
+.full_view_port {
+height: 90vh;
+z-index: 20;
+@media screen and (min-height: 622px) and (max-height: 675px){
+  height: 88vh;
+  overflow-y: auto;
+}
+@media screen and (min-height: 581px) and (max-height: 621px){
+  height: 87vh;
+  overflow-y: auto;
+}
+@media screen and (min-height: 555px) and (max-height: 580px){
+  height: 86vh;
+  overflow-y: auto;
+}
+@media screen and (min-height: 500px) and (max-height: 554px){
+  height: 85vh;
+  overflow-y: auto;
+}
+@media screen and (max-height: 499px){
+  height: 83vh;
+  overflow-y: auto;
+}
+}
+
+.h3 {
+font-family: Ubuntu;
+font-size: 28px;
+font-weight: bold;
+font-style: normal;
+font-stretch: normal;
+line-height: normal;
+letter-spacing: normal;
+color: #ef3340;
+margin-left: 45px;
+@media screen and (max-width: 1199px){
+  margin-left: 16px;
+}
+}
+
+.svg-icons {
+margin: 0px 8px 0px 16px;
+fill:getColor(corporate);
+width: 17.9px;
+height: 17.2px;
+}
+
+.on-hover:hover{
+  text-decoration: underline !important;
+  cursor: pointer;
+}
+
+.Caption3 {
+color: rgb(56, 59, 56);
+}
+
+// Animations
+@keyframes xaxis {
+0% {
+transform: translateX(100vw);
+}
+
+100% {
+transform: translateX(0px);
+}
+}
+
+.disabled {
+  pointer-events:none; //This makes it not clickable
+  opacity:0.3;         //This grays it out to look disabled
+}
+
+.eclaims-layout{
+  display: flex;
+  justify-content: center;
+  align-items: unset;
+
+  @media screen and (max-width: 759px){
+    justify-content: flex-start;
+  }
+}

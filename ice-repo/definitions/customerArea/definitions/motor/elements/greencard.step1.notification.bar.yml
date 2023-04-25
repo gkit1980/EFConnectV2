@@ -1,0 +1,11 @@
+element:
+  type: text
+  component: GreencardNotificationBarComponent
+  viewMode: output
+  notificationType: info
+  notificationText: Έχει ήδη εκδοθεί κάρτα με αριθμό
+  notificationText2: Σε περίπτωση που επιλέξετε δημιουργία νέας, η προηγούμενη κάρτα σας θα διαγραφεί.
+  imageSource: https://scp.eurolife.gr/~/media/F7877569C4C74C9F9D432D5A01DDC0A0.ashx
+  step: 1
+  pages:
+    greenCard: null

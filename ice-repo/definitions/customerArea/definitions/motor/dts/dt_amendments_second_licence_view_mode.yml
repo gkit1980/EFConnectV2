@@ -1,0 +1,18 @@
+dt:
+  hit-policy: F
+  inputs:
+    - label: calculate visibility of elements in amendment details
+      element: amendments.licence.2nd.driver
+  outputs:
+    - label: viewMode
+      id: viewMode
+      type: string
+  rules:
+    - inputs:
+        - "0"
+      outputs:
+        - hidden
+    - inputs:
+        - "1"
+      outputs:
+        - output

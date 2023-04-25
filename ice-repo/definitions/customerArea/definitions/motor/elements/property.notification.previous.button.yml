@@ -1,0 +1,12 @@
+element:
+  component: PropertyClaimSubmitButtonComponent
+  type: text
+  label: ΠΡΟΗΓΟΥΜΕΝΟ
+  labelSec: ΟΛΟΚΛΗΡΩΣΗ
+  additionalClasses: eurolife_btn-default eurolife_btn-stroke ml-4 prop-previous-btn
+  defaultValue: action-property-notification.changestep
+  viewMode:
+    DtViewModeRule:
+      dt: property.claim.notification.previous.view-mode
+  pages:
+    viewPropertyNotificationDetails: null

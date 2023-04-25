@@ -1,0 +1,15 @@
+action:
+  title: green card download
+  execution:
+    - EnableSpinnerRule:
+        actionrule: action-cancel-greencard
+    - GreenCardServices:
+        baseUrl: GREENCARDBASEURL
+        url: CancelGreenCard
+        method: POST
+        bucket: GreenCardData
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+    - DisableSpinnerRule:
+        actionrule: action-cancel-greencard

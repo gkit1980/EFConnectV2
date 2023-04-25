@@ -1,0 +1,25 @@
+page:
+  component: PopUpPage
+  validation:
+    onElementComponentChange: true
+    behaviour: page
+  sections:
+    - component: SignUpGroupCustomerProfilePopUpComponent
+      name: Preferences Market Consents
+      rows:
+        - cols:
+            - css: mt-4 privacy-group Caption3 opacity
+              col: 12
+              element: popup.preferences.group.privacy.title
+            - css: eurolife-radiobutton
+              col: 12
+              element: preferences.privacy.group.products
+            - css: mt-4 privacy-group Caption3 opacity
+              col: 12
+              element: popup.preferences.brokers.privacy.title
+            - css: eurolife-radiobutton
+              col: 12
+              element: preferences.privacy.brokers.products
+
+
+

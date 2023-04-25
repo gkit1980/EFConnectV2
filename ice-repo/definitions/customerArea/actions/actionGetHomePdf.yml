@@ -1,0 +1,17 @@
+action: 
+  execution:
+    - DownloadHomePdfRule:
+        encryptMessage: true
+        encryptSecretElement: token
+        bucket: DownloadPdf    
+    - OpenPdfExecutionRule:
+        element: statement.pdf.base64
+        mode: download
+        filename: document
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDatastore: false
+  # trigger:
+  #   - ElementChangeTriggerRule:
+  #       elements:
+  #         - receipts.url  

@@ -1,0 +1,16 @@
+action:
+  title: Get GDPR data 
+  execution:
+    - GetGdprDataRule:
+        baseUrl: BASEURL
+        bucket: HomeConsent
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDatastore: false
+  condition:
+    FeelConditionRule:
+      expression: home.tokenwithconsent = null      
+  trigger:
+    - PageTriggerRule:
+        enter:
+          - home

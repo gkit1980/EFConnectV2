@@ -1,0 +1,8 @@
+element:
+  type: date
+  viewMode: output 
+  label: null 
+  buckets:
+    GetContractEndorsement:
+      transformation:
+        property: EffectiveDate

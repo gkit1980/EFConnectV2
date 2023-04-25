@@ -1,0 +1,7 @@
+element:
+  type: text
+  component: PdfDownloadComponent
+  pdfDownloadComponentDataElement: policy.Documents.print.dividentPDFDocument
+  pdfDownloadComponentMode: download
+  pdfDownloadComponentFileName: document.pdf
+    

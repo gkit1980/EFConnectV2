@@ -1,0 +1,11 @@
+element:
+  type: text
+  viewMode: output
+  component:
+    StaticComponentRule:
+      component:
+        TextLabelComponent:
+          text: Τα συμβόλαιά μου
+          AdditionalClasses: h5
+  pages:
+    policyDetails: null

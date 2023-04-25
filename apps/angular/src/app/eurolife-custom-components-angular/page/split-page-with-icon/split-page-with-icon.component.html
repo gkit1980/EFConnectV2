@@ -1,0 +1,61 @@
+<div class="split-page-with-icon">
+  <page-validation [page]="page"></page-validation>
+  <div class="row">
+    <div class="col-sm-12 mb-5">
+      <ice-section class="imgSection" [section]="getImgSection()"></ice-section>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <ice-section class="click-to-chat-section" [section]="getClickToChatSection()">
+            </ice-section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="showsection" class="row grey-background">
+    <div class="col-sm-12">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <ice-section class="brokers" [section]="getBrokerDetailsSection()"></ice-section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <ice-section class="faqs-section" [section]="getFaqSection()">
+            </ice-section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <ice-section class="faqs-section" [section]="getMyRightsFormSection()">
+            </ice-section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="showInsights">
+    <hr>
+    <ice-page-insight [page]="page"></ice-page-insight>
+  </div>
+  <ice-confirmation-dialog [page]="page"></ice-confirmation-dialog>
+  <!-- <ice-message [page]="page"></ice-message> -->
+</div>

@@ -1,0 +1,4 @@
+element:
+  type: text
+  label: "Προώθηση Προϊόντων ή Υπηρεσιών (Προωθητικές Ενέργειες)"
+  viewMode: output

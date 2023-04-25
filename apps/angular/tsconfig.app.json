@@ -2,7 +2,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
-    "types": []
+    "types": ["NODE"]
   },
   "files": ["src/main.ts", "src/polyfills.ts"],
   "include": ["**/*.d.ts"],

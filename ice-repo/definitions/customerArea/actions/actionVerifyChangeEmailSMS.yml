@@ -1,0 +1,19 @@
+action:
+  title: Change the Email and send confirmation link
+  execution:
+    - RestCallExecutionRule:
+        # baseUrl: http://platformsuat.eurolife.gr/CustomerAreaLogin/api/CustomerAreaApi
+        baseUrl: BASEURLCHANGECREDENTIALS
+        url: VerifyChangeEmailSMS
+        verb: post
+        bucket: VerifyChangeEmailSMS
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+  condition:
+    FeelConditionRule:
+      expression: customer.details.smsCodeEmail != null
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - customer.details.smsCodeEmail

@@ -1,0 +1,7 @@
+element:
+  type: text
+  viewMode: output
+  label: Αριθμός Συμβολαίου
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent

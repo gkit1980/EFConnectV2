@@ -1,0 +1,21 @@
+element:
+  component: EurolifeEmailButtonComponentComponent
+  additionalClasses: eurolife_btn-default mb-5
+  svgFillColor: corporate_color
+  type: text
+  defaultValue: actionChangeEmail
+  # label: Στείλτε μου τον κωδικό
+  # action:
+  #   execution:
+  #     - RestCallExecutionRule:
+  #         baseUrl: BASEURLCHANGECREDENTIALS
+  #         # baseUrl: http://platformsuat.eurolife.gr/CustomerAreaLogin/api/CustomerAreaApi
+  #         url: ChangeEmail
+  #         verb: post
+  #         bucket: ChangeEmail
+  viewMode:
+    DtViewModeRule:
+      dt: dt.email.button
+      output: viewmode
+  pages:
+    changeEmailPopUp: null

@@ -1,0 +1,6 @@
+element:
+  type: text
+  buckets:
+    GetLifeContractFundsValuation:
+      transformation:
+        property: RateDate

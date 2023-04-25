@@ -1,0 +1,11 @@
+<div class="ice-button" *ngIf="isVisible">	
+	<button 
+			mat-stroked-button
+			style="margin-top: -25px"
+			[disabled]="isDisabled" 
+			(click)="onClick()" >
+		{{label}}
+	</button>
+	<template #messagecontainer>
+	</template>
+</div>

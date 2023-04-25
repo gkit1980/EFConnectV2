@@ -1,0 +1,278 @@
+@import "../../../../styles/abstracts/functions";
+@import "../../../../styles/abstracts/variables";
+
+$step-status: (
+  active: rgb(71, 148, 99),
+  inactive: #dedede
+);
+
+@mixin outer_circle($status) {
+  width: 1.8125rem;
+  height: 1.8125rem;
+  border-radius: 50%;
+  border: 1px solid map-get($map: $step-status, $key: $status);
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+.main-stepper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 57px;
+}
+
+.stepper-container {
+  width: 652px;
+  display: flex;
+  flex-direction: row;
+
+  @media (max-width: 575.98px) {
+    display: none;
+  }
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 33.33333333%;
+
+  &:first-child {
+    .bar-left {
+      display: none;
+      // visibility: hidden;
+    }
+  }
+
+  &:nth-child(2) {
+    .bar-right {
+      display: none;
+    }
+
+    .bar-left {
+      left: 0;
+    }
+  }
+
+  &:last-child {
+    .bar-right {
+      display: none;
+    }
+  }
+}
+
+.circle {
+  @include outer_circle(inactive);
+
+  &.active {
+    @include outer_circle(active);
+  }
+
+  &.done {
+    @include outer_circle(active);
+  }
+}
+
+.inside-circle {
+  height: 1.3125rem;
+  width: 1.3125rem;
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+.success {
+  fill: rgb(71, 148, 99);
+}
+
+
+
+.step-title {
+  margin-top: 7px;
+  color: #dedede;
+
+  &.active {
+    color: rgb(71, 148, 99);
+  }
+  &.done {
+    color: rgb(71, 148, 99);
+  }
+
+}
+
+
+.bar-left {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  border-top: 1px solid #dedede;
+  top: -25%;
+  z-index: -2;
+  right: 50%;
+
+  @media (max-width: 575.98px) {
+    top: -15px;
+  }
+
+  &.active {
+    border-top: 1px solid rgb(71, 148, 99);
+    z-index: -1;
+  }
+  &.done {
+    border-top: 1px solid rgb(71, 148, 99);
+    z-index: -1;
+  }
+
+}
+
+.bar-right {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  border-top: 1px solid #dedede;
+  top: -25%;
+  z-index: -2;
+  left: 50%;
+  right: 0;
+
+  @media (max-width: 575.98px) {
+    top: -15px;
+  }
+
+  &.active {
+    border-top: 1px solid rgb(71, 148, 99);
+    z-index: -1;
+  }
+  &.done {
+    border-top: 1px solid rgb(71, 148, 99);
+    z-index: -1;
+  }
+
+}
+
+.red-cicle {
+  border-radius: 50%;
+  background-color: rgb(71, 148, 99);
+  height: 11px;
+  width: 11px;
+}
+
+// .cicle-bar {
+//     display: flex;
+//     flex-direction: row;
+//     align-content: center;
+// }
+
+.stepper-mobile-container {
+  display: none;
+  @media (max-width: 575.98px) {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    margin: 0px 40px 0px !important;
+  }
+}
+
+.step-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &:first-child {
+    .bar-left {
+      display: none;
+      // visibility: hidden;
+    }
+  }
+
+  &:nth-child(2) {
+    .bar-right {
+      display: none;
+    }
+
+    .bar-left {
+      left: 0;
+    }
+  }
+
+  &:nth-child(5) {
+    .bar-right {
+      display: none;
+    }
+  }
+}
+
+.step-node-not-visible {
+  visibility: hidden;
+}
+
+.mobile-bar {
+  flex-basis: 100%;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 0.85rem 0;
+  padding: 0;
+
+  &.active {
+    border-color: rgb(71, 148, 99);
+  }
+  &.done {
+    border-color: rgb(71, 148, 99);
+  }
+
+}
+
+.stepper-full-gap {
+  flex-basis: 100%;
+}
+
+.step-overextend-right {
+  margin-right: -30px;
+}
+
+.step-overextend-left {
+  margin-left: -30px;
+}
+
+.life_color {
+  // color: ;
+  color: getColor(life);
+  border-color: getColor(life);
+  background-color: getColor(life);
+}
+
+.otherpc_color {
+  color: getColor(sme);
+  border-color: getColor(sme);
+  background-color: getColor(sme);
+}
+
+.health_color {
+  // color: ;
+  color: getColor(health);
+  border-color: getColor(health);
+  background-color: getColor(health);
+}
+
+.motor_color {
+  color: getColor(motor);
+  border-color: getColor(motor);
+  background-color: getColor(motor);
+}
+
+.house_color {
+  color: getColor(home);
+  border-color: getColor(home);
+  background-color: getColor(home);
+}
+
+.savings_color {
+  color: getColor(finance);
+  border-color: getColor(finance);
+  background-color: getColor(finance);
+}

@@ -1,0 +1,9 @@
+element:
+  type: text
+  viewMode: output
+  buckets:
+    VerifyEmail:
+      transformation:
+        dataPath: EmailCode         
+  pages:
+    signupwithsms: null

@@ -1,0 +1,10 @@
+<div class="eurolife-header-tile">
+    <div class="tile-label">
+      <p class="Caption1">{{elementLabel}}</p>
+    </div>
+    <div class="tile-value">
+      <h5 *ngIf="!groupHealth" class="h5">{{getElementValue()}}</h5>
+      <h6 *ngIf="groupHealth" class="h6">{{getElementValue()}}</h6>
+      <!-- <span class="value">{{ values }}</span> -->
+    </div>
+</div>

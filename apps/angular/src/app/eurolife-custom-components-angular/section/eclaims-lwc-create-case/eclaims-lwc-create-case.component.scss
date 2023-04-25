@@ -1,0 +1,14 @@
+#eclaims-create {
+  background-color: #eeeeee !important;
+  border-radius: 8px !important;
+
+  .cEclaims{
+    background-color: #fff;
+    border-radius: 8px !important; 
+    margin:30px;
+  }
+
+  @media screen and (max-width: 575.98px) {
+    width: 100vw !important;
+  }
+}

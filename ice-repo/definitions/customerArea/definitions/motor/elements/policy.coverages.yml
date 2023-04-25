@@ -1,0 +1,39 @@
+element:
+  type: array
+  component: IceArray
+  label: null
+  viewMode: output
+  change:
+    - ResetElementValueExecutionRule:
+        elements:
+          - policy.selectedBranch
+          - policy.contract.general.info.ContractID
+          - selectedcontractbranch
+          - policy.contract.amendments.info.ContractID
+  buckets:
+    GetMotorContractCover:
+      transformation:
+        responsePath: MotorCoverContracts
+    GetLifeContractCover:
+      transformation:
+        responsePath: LifeCoverContracts
+    GetLifeContractCoverForAmendments:
+      transformation:
+        responsePath: LifeCoverContracts  
+    GetAccidentContractCover:
+      transformation:
+        responsePath: AccidentCoverContract
+    GetPropertyCoolgenContractCover:
+      transformation:
+        responsePath: PropertyCoolgenCoverContract
+    GetGroupHealthContractCover:
+      transformation:
+        responsePath: ContractGroupHealthInsuredCovers
+    WriteLog:
+       transformation: {}
+    AmendmentsCreateLifeCase:
+      transformation: {}
+    AmendmentsCreateHealthCase:
+      transformation: {}
+    AmendmentsCreateFinanceCase:
+      transformation: {}                

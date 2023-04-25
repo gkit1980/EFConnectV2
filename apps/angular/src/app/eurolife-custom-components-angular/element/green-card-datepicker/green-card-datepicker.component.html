@@ -1,0 +1,39 @@
+<div *ngIf="visible" class="spinner ">
+	<div class="loading-spinner"></div>
+</div>
+<div class="ice-datepicker" *ngIf="isVisible">
+	<ng-container *ngIf="!isOutput">
+		<mat-form-field 
+				[attr.data-required]="isRequired" 
+				[appearance]='appearance' 
+				hideRequiredMarker="true" 
+				[hintLabel]="hint">
+			<mat-label [attr.data-required]="isRequired">{{label}}</mat-label>
+			<input 
+					#iceInput
+					matInput 
+					[min]="min"
+					[max]="max"
+					[matDatepicker]="picker"
+					[errorStateMatcher]="errorStateMatcher"
+					[required]="isRequired"
+					[disabled]="isDisabledCustom"
+					[(ngModel)]="date"
+					(blur)="onBlur(iceInput)"
+					(focus)="onFocus()"
+					[placeholder]="placeholder">
+			<mat-datepicker 
+					#picker 
+					(opened)="initializeRanges()" 
+					(closed)="onDateEntered()">
+			</mat-datepicker>
+			<mat-error *ngFor="let message of validation?.getMessagesFor(element.name, index)">
+				{{ message }}
+			</mat-error>
+		</mat-form-field>
+		<div class="mat-form-field-suffix">
+			<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+		</div>
+	</ng-container>
+	<mat-output *ngIf="isOutput" [isOutput]="isOutput" [label]="label" [value]="dateString"></mat-output>
+</div>

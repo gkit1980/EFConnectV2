@@ -1,0 +1,147 @@
+.btn-close {
+  margin-left: auto;
+  margin-right: 26px;
+  cursor: pointer;
+}
+
+.folder-icon {
+  margin: 0 8px 0 10px;
+}
+
+.upload-file-container {
+  width: 310px;
+  height: 63px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  margin: 8px;
+}
+
+// .upload-hdr {
+//   // margin-top: 26px;
+// }
+
+.upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #eeeeee;
+  max-width: 770px;
+  margin: auto;
+  padding: 24px 23px 20px 23px;
+  @media screen and (max-width: 600px) {
+    align-items: center;
+  }
+}
+
+ul {
+  padding-left: 8px;
+}
+
+.files-hdr {
+  margin-bottom: 8px;
+  opacity: 0.6;
+  color: #383b38;
+  @media screen and (max-width: 600px) {
+    margin: 8px;
+  }
+}
+
+li {
+  margin-top: 8px;
+}
+
+.upload-btn {
+  // width: 170px;
+  height: 60px;
+  width: min-content;
+}
+
+.info-cnt {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+
+.files-cnt {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  @media screen and (max-width: 600px) {
+    align-items: center;
+  }
+}
+
+.file-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -8px;
+  @media screen and (max-width: 600px) {
+    justify-content: center;
+  }
+}
+
+// .attach-file-view {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   width: 100%;
+//   border: dashed 1px rgb(72, 82, 148);
+//   background-color: rgb(236, 237, 244);
+//   height: 73px;
+//   // width: 632px;
+//   margin: auto;
+//   cursor: pointer;
+// }
+
+// .add-new-block-container {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// .Typeface {
+//   color: rgb(72, 82, 148);
+// }
+
+// .browse-section {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// .file-attachments {
+//   margin-top: 8px;
+//   display: flex;
+// }
+
+// .file-data-container {
+//   display: flex;
+//   max-width: 210px;
+//   min-height: 63px;
+//   background-color: rgb(236, 237, 244);
+//   align-items: center;
+//   justify-content: center;
+//   margin-right: 16px;
+// }
+
+// .close {
+//   margin: 0px;
+//   align-self: unset;
+//   margin-right: 16px;
+//   margin-left: 8px;
+// }
+
+// .icon-container {
+//   margin-left: 10px;
+//   margin-right: 8px;
+// }
+
+// .material-icons {
+//   color: rgb(0, 59, 77);
+// }

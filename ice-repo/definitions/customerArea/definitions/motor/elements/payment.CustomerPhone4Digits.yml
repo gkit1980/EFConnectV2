@@ -1,0 +1,19 @@
+element:
+  type: text
+  viewMode: output
+  # defaultValue: '6950'
+  buckets:
+    GetPaymentURLRedirector:
+      transformation:
+        dataPath: CustomerPhone
+    GetPaymentURLRedirectorAEAZ:
+      transformation:
+        dataPath: CustomerPhone
+    # GetTransactionInfoAEGA:
+    #   transformation:
+    #     responsePath: CustomerPhone
+    # executePayment:
+    #   transformation:
+    #     dataPath: payerPhone
+  pages:
+    paymentManagement: null

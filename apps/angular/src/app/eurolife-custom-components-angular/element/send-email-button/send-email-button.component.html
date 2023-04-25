@@ -1,0 +1,8 @@
+<ng-container *ngIf="contactForm; else myRightsForm">
+  <button class="eurolife_btn eurolife_btn-default"
+    (click)="SendContactFormEmails()">{{ text1 | resourcePipe }}</button>
+</ng-container>
+<ng-template #myRightsForm>
+  <button class="eurolife_btn eurolife_btn-default"
+    (click)="SendMyRightsFormEmails()">{{ text2 | resourcePipe }}</button>
+</ng-template>

@@ -1,0 +1,6 @@
+element:
+  type: text
+  buckets:
+    EclaimsDownloadDocument:
+      transformation:
+        paramName: FileID

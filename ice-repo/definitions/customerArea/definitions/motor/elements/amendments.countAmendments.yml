@@ -1,0 +1,7 @@
+element:
+  type: text
+  defaultValue:
+  buckets:
+    AmendmentsLogin:
+      transformation:{}
+  viewMode: hidden

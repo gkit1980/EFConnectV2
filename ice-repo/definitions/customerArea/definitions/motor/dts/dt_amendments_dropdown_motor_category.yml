@@ -1,0 +1,44 @@
+dt:
+  hitPolicy: C
+  inputs:
+    - element: request.amendment.change.fop
+  outputs:
+    - id: value
+    - id: label
+      type: text
+  rules:
+    - inputs:
+        - 1
+      outputs:
+        - 1
+        - Αλλαγές στο ασφαλισμένο όχημα
+    - inputs:
+        - 1
+      outputs:
+        - 2
+        - Αλλαγή κεφαλαίων ασφάλισης
+    - inputs:
+        - 1
+      outputs:
+        - 3
+        - Αλλαγή στα στοιχεία οδηγών
+    - inputs:
+        - 1
+      outputs:
+        - 4
+        - Αλλαγή τρόπου και στοιχείων πληρωμής
+    - inputs:
+        - 0
+      outputs:
+        - 1
+        - Αλλαγές στο ασφαλισμένο όχημα
+    - inputs:
+        - 0
+      outputs:
+        - 2
+        - Αλλαγή κεφαλαίων ασφάλισης
+    - inputs:
+        - 0
+      outputs:
+        - 3
+        - Αλλαγή στα στοιχεία οδηγών

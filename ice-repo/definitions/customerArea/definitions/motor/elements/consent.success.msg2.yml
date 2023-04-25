@@ -1,0 +1,6 @@
+element:
+  type: text
+  component: ConsentsTextMsgComponent
+  viewMode: output
+  pages:
+    consentClose: null

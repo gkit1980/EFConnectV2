@@ -1,0 +1,913 @@
+page:
+  component: SimplePageWithNavigationComponent
+  navigationClass: dt_navigation_section_color
+  dataStoreProperty: clientContracts
+  sections:
+    - component: GridView
+      viewMode: hidden
+      rows:
+        - css: null
+          cols:
+            - col: 12
+              element: policies.empty
+    - component: HeaderComponent
+      componentFlag: policyDetails
+      rows:
+        - css: firstSVG
+          cols:
+            - col: 2
+              css: header-svg-img
+              element: productSvgImage
+            - col: 7
+              internalRows:
+                - css: test-product
+                  internalCols:
+                    - internalCol: 12
+                      element: policies.details.ProductName
+                - css: policies.details.header.tiles.productColor
+                  internalCols:
+                    - css: text-align-center-bp opacity
+                      internalCol: 12
+                      element: policies.details.PolicyNumberHeader
+            - col: 3
+              css: details-pdf-btn
+              element: contracts.details.digital.grouphealth.card.pdf              
+            - col: 3
+              css: details-pdf-btn
+              element: contracts.details.PDF
+            - col: 3
+              css: details-pdf-btn
+              element: contracts.details.digital.card.pdf 
+            - col: 3
+              css: details-pdf-btn
+              element: contracts.details.bookletsPDF
+            - col: 3
+              css: details-pdf-btn
+              element: contracts.details.grouphealthPDF    
+      dataStoreProperty: clientContracts
+    - component: SubHeaderComponent
+      rows:
+        # - css:
+        #   cols:
+        #     - col: 1
+        #       element: productSvgImage
+        #     - col: 8
+        #       internalRows:
+        #         - css: null
+        #           internalCols:
+        #             - internalCol: 12
+        #               element: policies.details.ProductName
+        #         - css:
+        #           internalCols:
+        #             - internalCol: 12
+        #               element: policies.details.PolicyNumberHeader
+        #     - col: 3
+        #       element: payment.button
+        - css: policies.details.header.tiles.productColor
+          cols:
+            - col: 4
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: details-tiles-svg
+                      internalCol:
+                      element: tachometerSvgImage
+                    - css:
+                      internalCol:
+                      element: policies.details.first.header-tile
+            - col: 4
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: details-tiles-svg
+                      internalCol:
+                      element: dateSvgImage
+                    - css:
+                      internalCol:
+                      element: policies.details.second.header-tile
+            - col: 4
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: details-tiles-svg
+                      internalCol:
+                      element: payMethodSvgImage
+                    - css:
+                      internalCol:
+                      element: policies.details.third.header-tile
+        - css: add-top-margin
+          cols:
+            - col: 12
+              element: contract.notification.bar
+            # policies.notification.bar
+            # - col: 12
+            #   element: policies.notification.bar.text
+      # rows:
+      #   - VehicleLicensePlate:
+      #       - col: 12
+      #         element: policies.details.VehicleLicensePlate
+      #   - renewalDate:
+      #       - col: 12
+      #         element: policies.details.renewalDate
+      #   - frequencyOfPayment:
+      #       - col: 12
+      #         element: policies.details.frequencyOfPayment
+      #   - ProductDescritpion:
+      #       - col: 12
+      #         element: policies.details.ProductDescritpion
+      #   - ContractKey:
+      #       - col: 12
+      #         element: policies.details.ContractKey
+      #   - EmergencyAddress:
+      #       - col: 12
+      #         element: policies.details.EmergencyAddress
+      #   - Notification:
+      #       - col: 12
+      #         element: dummy.policy.notification
+      #       - col: 12
+      #         element: policies.details.LastPayment
+      #       - col: 12
+      #         element: policies.details.PaymentType
+      #       - col: 12
+      #         element: policies.details.LastPaymentEndDate
+      dataStoreProperty: clientContracts
+    - component: PaymentComponent
+      # viewMode:
+      #   ConditionalSectionViewModeRule:
+      #     conditionElement: policies.details.LastPayment
+      #     conditionValue: 'Ανείσπρακτη'
+      #     conditionViewMode: output
+      #     elseViewMode: hidden
+      rows:
+        - paymentCost:
+            - col: 12
+              element: policies.details.TotalUnpaidAmount
+        - paymentCode:
+            - col: 12
+              element: policies.details.paymentCode
+        - notificationBar:
+            - col: 12
+              element: contract.notification.bar
+        # - css:
+        #   cols:
+        #     - col: 1
+        #       element: paymentCost
+        #     - col: 5
+        #       element: productSvgImage
+        #     - col: 3
+        #       element: payment.button
+        #     - col: 3
+        #       element: contract.notification.bar
+      dataStoreProperty: clientContracts
+    - component: RedirectionGreenCardComponent
+    - component: RedirectionEclaimsComponent
+    - component: SimpleGridViewComponent
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: selectedcontractbranch
+          conditionValue: 5
+          conditionViewMode: hidden
+          elseViewMode: output
+      name: Details section1
+      rows:
+        # - css: details-titles
+        #   # This is for motor & life & Property & Invest
+        #   cols:
+        #     - col: 12
+        #       element: policies.details.title
+        - css: policies.details.border.titles.color
+          cols:
+            - col: 12
+              element: policies.details.new.title
+        # - css: details-titles
+        #   # This is for motor & life & Property & Invest
+        #   cols:
+        #     - col: 12
+        #       element: policies.details.title
+        # - css: policies.details.border.titles.color
+        #   cols:
+        #     - col: 12
+        #       element: policies.details.title
+        - css: null
+          # This is for motor & life & Property & Invest
+          cols:
+            - col: 12
+              element: policies.details.title.ProductName
+        # - css: null
+        #   # This is for motor & life & Property & Invest
+        #   cols:
+        #     - col: 12
+        #       element: policies.details.ProductName
+        - css: null
+          # This is for motor & life & Property & Invest
+          cols:
+            - col: 12
+              element: policies.details.PolicyNumber
+        - css: null
+          # This is for motor
+          cols:
+            - col: 12
+              element: policies.details.RenewalNumber
+        - css: null
+          # This is for motor & life & Property & Invest
+          cols:
+            - col: 12
+              element: policies.details.Status
+        - css: null
+          # This is for Group Health
+          cols:
+            - col: 12
+              element: policies.details.grouphealth.CustomerName        
+        - css: null
+          # This is for motor & life & Property & Group Health
+          cols:
+            - col: 12
+              element: policies.details.StartDate
+        - css: null
+          # This is for Group Health
+          cols:
+            - col: 12
+              element: policies.details.grouphealth.StartDate      
+        - css: null
+          # This is for motor & Property
+          cols:
+            - col: 12
+              element: policies.details.ExpirationDate
+        - css: null
+          # This is for Group Health
+          cols:
+            - col: 12
+              element: policies.details.grouphealth.ExpirationDate      
+        - css: null
+          # This is for life & Invest
+          cols:
+            - col: 12
+              element: policies.life.details.ExpirationDate
+        - css: null
+          # This is for property
+          cols:
+            - col: 12
+              element: policies.details.property.InsuranceDuration
+        - css: null
+          # This is for motor & life & Invest
+          cols:
+            - col: 12
+              element: policies.details.InsuranceDuration
+        # - css: null
+        #   # This is for Group Health
+        #   cols:
+        #     - col: 12
+        #       element: policies.details.grouphealth.InsuranceYear      
+        # - css: null
+        #   # This is for motor & life & Invest
+        #   cols:
+        #     - col: 12
+        #       element: policies.details.PartnerName
+        - css: null
+          # This is for motor & life & Invest
+          cols:
+            - col: 12
+              element: policies.details.PaymentFrequency
+        - css: null
+          # This is for property
+          cols:
+            - col: 12
+              element: policies.details.property.PaymentFrequency
+      dataStoreProperty: clientContracts
+    # This section should be visible only for P&C
+    - component: SimpleGridViewComponent
+      name: Details section2
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: selectedcontractbranch
+          conditionValue: 5
+          conditionViewMode: output
+          elseViewMode: hidden
+      rows:
+        - css: policies.details.border.titles.color
+          cols:
+            - col: 12
+              element: policies.details.new.p&c.title
+        - css: null
+          cols:
+            - col: 12
+              element: policies.P&Cdetails.name
+        - css: null
+          cols:
+            - col: 12
+              element: policies.P&Cdetails.number
+        - css: null
+          cols:
+            - col: 12
+              element: policies.P&Cdetails.status
+        - css: null
+          cols:
+            - col: 12
+              element: policies.P&Cdetails.startDate
+        - css: null
+          cols:
+            - col: 12
+              element: policies.P&Cdetails.new.ExpirationDate
+        - css: null
+          cols:
+            - col: 12
+              element: policies.P&Cdetails.Duration
+        - css: null
+          cols:
+            - col: 12
+              element: policies.P&Cdetails.PartnersName
+    # This section should be visible only for P&CP&C
+    - component: SimpleGridViewComponent
+      name: Details section2
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: selectedcontractbranch
+          conditionValue: 6
+          conditionViewMode: output
+          elseViewMode: hidden
+      rows:
+        - css: policies.details.border.titles.color
+          cols:
+            - col: 12
+              element: policies.details.new.p&c.title
+        - css: null
+          cols:
+            - col: 12
+              element: policies.P&Cdetails.name
+        - css: null
+          cols:
+            - col: 12
+              element: policies.P&Cdetails.number
+        - css: null
+          cols:
+            - col: 12
+              element: policies.P&Cdetails.status
+        - css: null
+          cols:
+            - col: 12
+              element: policies.P&Cdetails.startDate
+        - css: null
+          cols:
+            - col: 12
+              element: policies.P&Cdetails.new.ExpirationDate
+        - css: null
+          cols:
+            - col: 12
+              element: policies.P&Cdetails.Duration
+        - css: null
+          cols:
+            - col: 12
+              element: policies.P&Cdetails.PartnersName
+    # This section should be visible only for Invest
+    - component: ExagoraComponent
+      name: Details section2
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: selectedcontractbranch
+          conditionValue: 2
+          conditionViewMode: output
+          elseViewMode: hidden
+    # This section should be visible for Invest and Pension
+    - component: ExagoraComponent
+      name: Details section2
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: selectedcontractbranch
+          conditionValue: 11
+          conditionViewMode: output
+          elseViewMode: hidden
+    # This section should be visible only for Property
+    - component: SimpleGridViewComponent
+      name: Details section2
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: selectedcontractbranch
+          conditionValue: 4
+          conditionViewMode: output
+          elseViewMode: hidden
+      rows:
+        - css: policies.details.border.titles.color
+          cols:
+            - css:
+              col: 12
+              element: policies.details.emergency.address.title
+        - css: null
+          cols:
+            - col: 12
+              element: policies.details.PropertyCity
+        - css: null
+          cols:
+            - col: 12
+              element: policies.details.PropertyStreet
+        - css: null
+          cols:
+            - col: 12
+              element: policies.details.PropertyZipCode
+    # This section should be visible only for Property
+    - component: SimpleGridViewComponent
+      name: Details section3
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: selectedcontractbranch
+          conditionValue: 4
+          conditionViewMode: output
+          elseViewMode: hidden
+      rows:
+        - css: policies.details.border.titles.color
+          cols:
+            - col: 12
+              element: policies.details.insured.property.title
+        # - css: null
+        #   cols:
+        #     - col: 12
+        #       element: policies.details.property.description.insured
+        # - css: null
+        #   cols:
+        #     - col: 12
+        #       element: policies.details.property.square.meters
+        - css: null
+          cols:
+            - col: 12
+              element: policies.details.property.mortage.loaner
+        # - css: null
+        #   cols:
+        #     - col: 12
+        #       element: policies.details.property.loan.aggreement
+        - css: null
+          cols:
+            - col: 12
+              element: policies.details.property.use
+    # This section should be visible only for Motor
+    - component: SimpleGridViewComponent
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: selectedcontractbranch
+          conditionValue: 3
+          conditionViewMode: output
+          elseViewMode: hidden
+      name: Details section2
+      rows:
+        - css: policies.details.border.titles.color
+          cols:
+            - col: 12
+              element: policies.CarDetails.title
+        - css: null
+          cols:
+            - col: 12
+              element: policies.CarDetails.CarsCC
+        - css: null
+          cols:
+            - col: 12
+              element: policies.CarDetails.CarModel
+        - css: null
+          cols:
+            - col: 12
+              element: policies.CarDetails.CarBrand
+        - css: null
+          cols:
+            - col: 12
+              element: policies.CarDetails.Color
+        - css: null
+          cols:
+            - col: 12
+              element: policies.CarDetails.InsuredValue
+        - css: null
+          cols:
+            - col: 12
+              element: policies.CarDetails.LicencePlate
+    # This section should be visible only for Motor
+    - component: SimpleGridViewComponent
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: selectedcontractbranch
+          conditionValue: 3
+          conditionViewMode: output
+          elseViewMode: hidden
+      name: Details section3
+      rows:
+        - css: policies.details.border.titles.color
+          cols:
+            - col: 12
+              element: policies.DetailsOfInsuredCustomer.title
+        - css: null
+          cols:
+            - col: 12
+              element: policies.DetailsOfInsuredCustomer.FullName
+        - css: null
+          cols:
+            - col: 12
+              element: policies.DetailsOfInsuredCustomer.TaxIdNumber
+        - css: null
+          cols:
+            - col: 12
+              element: policies.DetailsOfInsuredCustomer.YearOfBirth
+        - css: null
+          cols:
+            - col: 12
+              element: policies.DetailsOfInsuredCustomer.YearOfDrivingLicence
+    # This section should be visible only for Motor
+    - component: SimpleGridViewComponent
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: selectedcontractbranch
+          conditionValue: 3
+          conditionViewMode: output
+          elseViewMode: hidden
+      name: Details section4
+      rows:
+        - css: null
+          cols:
+            - css: detail-titles
+              col: 12
+              element: policies.CarDetails.SecondDriver
+        - css: null
+          cols:
+            - col: 12
+              element: policies.DetailsOfInsuredCustomer.YearOfBirthBdriver
+        - css: null
+          cols:
+            - col: 12
+              element: policies.DetailsOfInsuredCustomer.YearOfDrivingLicenceBdriver
+    # This section should be visible only for Motor
+    - component: SimpleGridViewComponent
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: selectedcontractbranch
+          conditionValue: 3
+          conditionViewMode: output
+          elseViewMode: hidden
+      name: Details section5
+      rows:
+        - css: null
+          cols:
+            - css: detail-titles
+              col: 12
+              element: policies.CarDetails.ThirdDriver
+        - css: null
+          cols:
+            - col: 12
+              element: policies.DetailsOfInsuredCustomer.YearOfBirthCdriver
+        - css: null
+          cols:
+            - col: 12
+              element: policies.DetailsOfInsuredCustomer.YearOfDrivingLicenceCdriver
+     # These sections are visible only for UL product           
+    - component: SimpleGridViewQuotationComponent
+      name: UL section1
+      quotationlabel: '* Ημερομηνία Αποτίμησης:'
+      quotation: policy.fundsvaluation~ratedate
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: policies.details.ProductName
+          conditionValue: 'My Investment Plan'
+          conditionViewMode: output
+          elseViewMode: hidden
+      rows:
+        - css: policies.details.border.titles.color
+          cols:
+            - col: 12
+              element: policies.details.ulVanilla.section1.title
+        - css: null
+          cols:
+            - col: 12
+              element: policies.details.ulVanilla.TotalInvestedAmount
+        - css: null
+          cols:
+            - col: 12
+              element: policies.details.ulVanilla.RegularInvestedAmount
+        - css: null
+          cols:
+            - col: 12
+              element: policies.details.ulVanilla.ExtraInvestedAmount
+        - css: null
+          cols:
+            - col: 12
+              element: policies.details.ulVanilla.TotalSurrenderValue
+        - css: null
+          cols:
+            - col: 12
+              element: policies.details.ulVanilla.RegularSurrenderValue
+        - css: null
+          cols:
+            - col: 12
+              element: policies.details.ulVanilla.ExtraSurrenderValue
+    - component: FundsBasketComponent
+      name: UL section2
+      type: RegularBasket
+      label:
+        ResourceSectionLabelRule:
+          labelKey: policies.details.ulVanilla.section2.title
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: policies.details.ProductName
+          conditionValue: 'My Investment Plan'
+          conditionViewMode: output
+          elseViewMode: hidden
+    - component: FundsBasketComponent
+      name: UL section3
+      type: ExtraBasket
+      label:
+        ResourceSectionLabelRule:
+          labelKey: policies.details.ulVanilla.section3.title
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: policies.details.ProductName
+          conditionValue: 'My Investment Plan'
+          conditionViewMode: output
+          elseViewMode: hidden     
+    - component: SimpleGridViewComponent
+      name: UL section4
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: policies.details.ProductName
+          conditionValue:  'My Investment Plan'
+          conditionViewMode: output
+          elseViewMode: hidden
+      rows:
+        - css: policies.details.border.titles.color
+          cols:
+            - col: 12
+              element: policies.details.ulVanilla.section4.title          
+    - component: VanillaUlLineChartComponent
+      name: UL section5
+      dataStoreProperty: clientContracts
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: policies.details.ProductName
+          conditionValue:  'My Investment Plan'
+          conditionViewMode: output
+          elseViewMode: hidden
+    # These sections are visible only for TIPP product      
+    - component: SimpleGridViewQuotationComponent
+      name: Tipp section1
+      quotationlabel: '* Ημερομηνία Αποτίμησης:'
+      quotation: policy.fundsvaluation~ratedate
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: policies.details.ProductName
+          conditionValue:  'Εξασφαλίζω επένδυση με Δυναμική Προστασία'
+          conditionViewMode: output
+          elseViewMode: hidden
+      rows:
+        - css: policies.details.border.titles.color
+          cols:
+            - col: 12
+              element: policies.details.tipp.section1.title
+        - css: null
+          cols:
+            - col: 12
+              element: policies.details.tipp.TotalInvestedAmount
+        - css: null
+          cols:
+            - col: 12
+              element: policies.details.tipp.TotalSurrenderValue
+    - component: FundsTippProductComponent
+      name: Tipp section2
+      type: RegularBasket
+      label:
+        ResourceSectionLabelRule:
+          labelKey: policies.details.tipp.section2.title
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: policies.details.ProductName
+          conditionValue: 'Εξασφαλίζω επένδυση με Δυναμική Προστασία'
+          conditionViewMode: output
+          elseViewMode: hidden
+    - component: SimpleGridViewComponent
+      name: Tipp section3
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement:  policies.details.ProductName
+          conditionValue: 'Εξασφαλίζω επένδυση με Δυναμική Προστασία'
+          conditionViewMode: output
+          elseViewMode: hidden
+      rows:
+        - css: policies.details.border.titles.color
+          cols:
+            - col: 12
+              element: policies.details.tipp.section3.title          
+    - component: TippLineChartComponent
+      name: Tipp section4
+      dataStoreProperty: clientContracts
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: policies.details.ProductName
+          conditionValue: 'Εξασφαλίζω επένδυση με Δυναμική Προστασία'
+          conditionViewMode: output
+          elseViewMode: hidden
+    # End TIPP product sections    
+    # These sections are visible only for LIFECYCLE product      
+    - component: SimpleGridViewQuotationComponent
+      name: Lifecycle section1
+      quotationlabel: '* Ημερομηνία Αποτίμησης:'
+      quotation: policy.fundsvaluation~ratedate
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: policies.details.ProductName
+          conditionValue:  'Εξασφαλίζω επένδυση για το μέλλον II'
+          conditionViewMode: output
+          elseViewMode: hidden
+      rows:
+        - css: policies.details.border.titles.color
+          cols:
+            - col: 12
+              element: policies.details.lifecycle.section1.title
+        - css: null
+          cols:
+            - col: 12
+              element: policies.details.lifecycle.TotalInvestedAmount
+        - css: null
+          cols:
+            - col: 12
+              element: policies.details.lifecycle.RegularInvestedAmount
+        - css: null
+          cols:
+            - col: 12
+              element: policies.details.ulVanilla.ExtraInvestedAmount
+        - css: null
+          cols:
+            - col: 12
+              element: policies.details.lifecycle.TotalSurrenderValue
+        - css: null
+          cols:
+            - col: 12
+              element: policies.details.ulVanilla.RegularSurrenderValue
+        - css: null
+          cols:
+            - col: 12
+              element: policies.details.ulVanilla.ExtraSurrenderValue       
+    - component: FundsLifecycleProductComponent
+      name: Lifecycle section2
+      type: RegularBasket
+      label:
+        ResourceSectionLabelRule:
+          labelKey: policies.details.lifecycle.section2.title
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: policies.details.ProductName
+          conditionValue: 'Εξασφαλίζω επένδυση για το μέλλον II'
+          conditionViewMode: output
+          elseViewMode: hidden
+    - component: FundsLifecycleProductComponent
+      name: Lifecycle section3
+      type: ExtraBasket
+      label:
+        ResourceSectionLabelRule:
+          labelKey: policies.details.lifecycle.section3.title
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: policies.details.ProductName
+          conditionValue: 'Εξασφαλίζω επένδυση για το μέλλον II'
+          conditionViewMode: output
+          elseViewMode: hidden          
+    - component: SimpleGridViewComponent
+      name: Lifecycle section4
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement:  policies.details.ProductName
+          conditionValue: 'Εξασφαλίζω επένδυση για το μέλλον II'
+          conditionViewMode: output
+          elseViewMode: hidden
+      rows:
+        - css: policies.details.border.titles.color
+          cols:
+            - col: 12
+              element: policies.details.lifecycle.section4.title          
+    - component: LifecycleLineChartComponent
+      name: Lifecycle section5
+      dataStoreProperty: clientContracts
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: policies.details.ProductName
+          conditionValue: 'Εξασφαλίζω επένδυση για το μέλλον II'
+          conditionViewMode: output
+          elseViewMode: hidden
+    # End Lifecycle product sections    
+    - component: SimpleGridViewComponent
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: selectedcontractbranch
+          conditionValue: 99
+          conditionViewMode: hidden
+          elseViewMode: output
+      name: Participants section1
+      rows:
+        - css: policies.details.border.titles.color
+          cols:
+            - col: 12
+              element: customer.details.title
+        - css: null
+          cols:
+            - col: 12
+              element: customer.details.FullName
+        - css: null
+          cols:
+            - col: 12
+              element: customer.details.TaxCode
+    - component: SimpleGridViewComponent
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: selectedcontractbranch
+          conditionValue: 99
+          conditionViewMode: hidden
+          elseViewMode: output
+      name: Participants section2
+      rows:
+        - css: policies.details.border.titles.color
+          cols:
+            - col: 12
+              element: contact.details.title
+        - css: null
+          cols:
+            - col: 12
+              element: customer.MobilePhone
+        - css: null
+          cols:
+            - col: 12
+              element: customer.PhoneNumber1
+        - css: null
+          cols:
+            - col: 12
+              element: customer.Email
+    - component: ParticipantsViewComponent
+      name: Participants section3
+      label:
+        ResourceSectionLabelRule:
+          labelKey: sections.policy.participants.dependants.label
+      dataStoreProperty: clientContractsWithParticipants
+    - component: DetailsCustomTableComponent
+      name: Participants section4
+      componentFlag: Participants
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: policy.beneficiaries.length
+          conditionValue: 0
+          conditionViewMode: hidden
+      element: policy.beneficiaries
+      rows:
+        - css: null
+          cols:
+            - col: 4
+              element: policy.beneficiaries~BenefName
+            - col: 4
+              element: policy.beneficiaries~Relationship
+            - col: 4
+              element: policy.beneficiaries~Percentage
+      dataStoreProperty: clientContractsWithParticipants
+    - component: DetailsCustomTableComponent
+      name: Coverages section1
+      componentFlag: Coverages
+      rows:
+        - css: policies.details.border.titles.color
+          cols:
+            - col: 12
+              element: contract.details.coverages.title
+        - css: null
+          cols:
+            - col: 12
+              element: policy.coverages
+              arrayElements:
+                - policy.coverages~coverKey
+                - policy.coverages~coverDescription
+                - policy.coverages~InsuredValue
+              arrayElementsWithoutCoverKey:
+                - policy.coverages~coverDescription
+                - policy.coverages~InsuredValue
+      dataStoreProperty: clientContracts
+    - component: DetailsCustomTableComponent
+      name: Amendements section1
+      componentFlag: Amendments
+      rows:
+        - css: null
+          cols:
+            - col: 4
+              element: policies.amendements.EffectiveDate.title
+            - col: 4
+              element: policies.amendements.EndorsementTypeDescription.title
+            - col: 4
+              element: policies.amendements.IssueDate.title
+      dataStoreProperty: clientContracts
+    # - component: ArrayView
+    #   name: Amendements section2
+    #   element: policy.Endorsements
+    #   rows:
+    #     - css: null
+    #       cols:
+    #         - col: 4
+    #           element: policy.Endorsements~EffectiveDate
+    #         - col: 4
+    #           element: policy.Endorsements~EndorsementTypeDescription
+    #         - col: 4
+    #           element: policy.Endorsements~IssueDate
+    - component: MotorCustomDetailTableComponent
+      name: Receipts section1
+      dataStoreProperty: clientContractsUpd
+      rows:
+        - css: policies.details.border.titles.color
+          cols:
+            - col: 12
+              element: contract.details.receipts.title
+        - css: null
+          cols:
+            - col: 4
+              element: policy.Documents.pdf-table-link-note

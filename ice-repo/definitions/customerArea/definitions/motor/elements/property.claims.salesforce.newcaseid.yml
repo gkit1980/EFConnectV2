@@ -1,0 +1,7 @@
+element:
+  type: text
+  label:
+  viewMode: output
+  buckets:
+    PropertyClaimNotificationCreateCase:
+      transformation: {}

@@ -1,0 +1,12 @@
+<div class="payment-success-container">
+  <div class="row">
+    <div class="col-md-12">
+      <div *ngFor="let row of recipe.rows">
+        <div class="column" *ngFor="let col of row.cols" [ngClass]="getGridColumnClass(col)">
+          <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element" [component]="col.component">
+          </ice-element>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+.modal{
+    display: block !important; /* I added this to see the modal, you don't need this */
+}
+
+/* Important part */
+.modal-dialog{
+    overflow-y: initial !important
+}
+.modal-body{
+    min-height: 500px;
+    overflow-y: auto;
+    margin: 16px;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+
+.modal-container{
+ position: sticky;
+ top:0;
+}

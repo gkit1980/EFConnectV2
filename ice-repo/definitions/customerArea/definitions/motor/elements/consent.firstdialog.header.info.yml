@@ -1,0 +1,9 @@
+element:
+  type: text
+  viewMode: output
+  component:
+    StaticComponentRule:
+      component:
+        IconOutputConsentComponent:
+          text: Συγκατάθεση για Επεξεργασία Δεδομένων Υγείας
+          AdditionalClasses: consent-text-center consent-init-firstdialog h4 middle

@@ -1,0 +1,13 @@
+element:
+  type: integer
+  buckets:
+    AmendmentsCreateCase:
+      transformation: {}
+    AmendmentsCreatePropertyCase:
+      transformation: {}
+    AmendmentsCreateLifeCase:
+      transformation: {}  
+    AmendmentsCreateHealthCase:
+      transformation: {}  
+    AmendmentsCreateFinanceCase:
+      transformation: {}  

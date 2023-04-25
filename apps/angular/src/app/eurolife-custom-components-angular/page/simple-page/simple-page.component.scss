@@ -1,0 +1,45 @@
+.grey-background {
+    background-color: #eeeeee;
+}
+
+.white-background {
+    background-color: #ffffff;
+}
+
+.background-unset{
+    background-color: unset;
+}
+
+
+.ice-output {
+    .value {
+        color: red;
+    }
+
+    label {
+        color: red;
+    }
+}
+
+.page-title {
+    padding: 8px 0px 11px 19px;
+    border-left: solid 2px rgb(239, 51, 64);
+    margin-top: 57px;
+    margin-bottom: 46px;
+    color: rgb(56, 59, 56);
+}
+
+.container{
+    max-width: 1100px !important;
+    @media (max-width: 1024px) {
+        max-width: unset !important;
+    }
+}
+
+.no-margin-bottom{
+    margin-bottom: 8px;
+}
+
+.no-paddings-fix{
+    padding: 0;
+}

@@ -1,0 +1,21 @@
+.icon-output-container {
+  display: flex;
+  align-items: center;
+}
+.text {
+  margin-left: 8px;
+}
+
+.icon-for-consents {
+  margin-right: 7px;
+  margin-left: -32px;
+  transform: rotate(180deg);
+  cursor: pointer;
+  fill: #003b4d;
+}
+
+
+.icon-for-consents-back
+  {
+  visibility:hidden;
+}

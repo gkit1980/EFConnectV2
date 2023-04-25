@@ -1,0 +1,8 @@
+element:
+  type: boolean
+  viewMode: output
+  defaultValue:  
+    StaticValueRule:
+      value: true
+  pages:
+    home: null

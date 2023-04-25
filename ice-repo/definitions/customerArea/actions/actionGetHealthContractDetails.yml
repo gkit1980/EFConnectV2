@@ -1,0 +1,22 @@
+action:
+  title: calls a rest service to get the customer contract details
+  execution:
+    - RestCallExecutionRule:
+        baseUrl: BASEURL
+        url: GetHealthContractDetails
+        verb: post
+        bucket: GetHealthContractDetails
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+    - NavigateToPageExecutionRule:
+        page: policyDetails
+        omitValidation: true
+  condition:
+    FeelConditionRule:
+      #   expression: policy.contract.general.info.ContractID = 1008468
+      expression: policy.selectedBranch = 16
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - policy.selectedBranch

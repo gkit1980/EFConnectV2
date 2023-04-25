@@ -1,0 +1,320 @@
+      <div *ngFor="let row of recipe.rows" class="sub-header">
+        <div class="col-container" *ngFor="let col of row.cols">
+          <ng-container *ngIf="col.internalRows">
+            <div class="align-items-center sub-header-container" [ngClass]="getInternalRowClass(row.css)"
+              *ngFor="let internalRow of col.internalRows">
+              <div class="column" *ngFor="let internalCol of internalRow.internalCols" [ngClass]="getGridInternalColumnClass(internalCol)">
+                <ice-element *ngIf="internalCol.element" [section]="section" [elementName]="internalCol.element"
+                  [component]="internalCol.component" [ngClass]="getElementClass(internalCol)"></ice-element>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h4><strong> </strong></h4>
+          </div>
+          <div class="row">
+            <div class="col-sm-2">
+              <div class="my-icon1" aria-label="icon"
+                [inlineSVG]="'https://cockpit.dev.ips.impeo.info/storage/uploads/2019/03/22/5c94bd92b94f6car-with-bg.svg'">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div *ngFor="let row of recipe.rows">
+                <div *ngIf="
+                    currentContract.Branch == 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ' ||
+                      currentContract.Branch == 'ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ';
+                    else PNCProductDescritpion
+                  ">
+                  <div class=" column" *ngFor="let col of row.PNCProductDescritpion">
+                    <h4>
+                      <strong>
+                        <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                          [component]="col.component">
+                        </ice-element>
+                      </strong>
+                    </h4>
+                  </div>
+                </div>
+                <ng-template #PNCProductDescritpion>
+                  <div class=" column" *ngFor="let col of row.ProductDescritpion">
+                    <h4>
+                      <strong>
+                        <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                          [component]="col.component">
+                        </ice-element>
+                      </strong>
+                    </h4>
+                  </div>
+                </ng-template>
+                <div class="column" *ngFor="let col of row.ContractKey">
+                  <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                    [component]="col.component">
+                  </ice-element>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-4" *ngIf="currentContract.Branch == 'ΑΥΤΟΚΙΝΗΤΩΝ'">
+              <button class="btn-primary">
+                <p>DOWNLOAD POLICY COPY [PDF]</p>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4" *ngIf="
+        currentContract.Branch != 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ' &&
+        currentContract.Branch != 'ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ'
+      ">
+      <div class="card">
+        <div class="card-body">
+          <div class="col-sm inside-card" *ngIf="currentContract.Branch == 'ΑΥΤΟΚΙΝΗΤΩΝ'">
+            <div class="test">
+              <div class="my-icon" aria-label="icon"
+                [inlineSVG]="'https://cockpit.dev.ips.impeo.info/storage/uploads/2019/03/22/5c94bda2b60balicence-plate.svg'">
+              </div>
+            </div>
+            <div *ngFor="let row of recipe.rows">
+              <div class="column" *ngFor="let col of row.VehicleLicensePlate">
+                <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                  [component]="col.component">
+                </ice-element>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm" *ngIf="currentContract.Branch == 'ΠΕΡΙΟΥΣΙΑΣ'">
+            <div *ngFor="let row of recipe.rows">
+              <div class="column" *ngFor="let col of row.EmergencyAddress">
+                <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                  [component]="col.component">
+                </ice-element>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm" *ngIf="currentContract.Branch == 'ΖΩΗΣ'">
+            <div *ngFor="let row of recipe.rows">
+              <div class="column" *ngFor="let col of row.InsuredPerson">
+                <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                  [component]="col.component">
+                </ice-element>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm" *ngIf="currentContract.Branch == 'ΔΙΑΦΟΡΑ ΕΠΕΝΔΥΤΙΚΑ'">
+            <div *ngFor="let row of recipe.rows">
+              <div class="column" *ngFor="let col of row.InsuredPerson">
+                <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                  [component]="col.component">
+                </ice-element>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="col-sm inside-card">
+            <div class="test">
+              <div class="my-icon3" aria-label="icon"
+                [inlineSVG]="'https://cockpit.dev.ips.impeo.info/storage/uploads/2019/03/22/5c94bd997b369icons-informed-date.svg'">
+              </div>
+            </div>
+            <div *ngFor="let row of recipe.rows">
+              <div *ngIf="
+                  currentContract.Branch == 'ΑΥΤΟΚΙΝΗΤΩΝ' ||
+                  currentContract.Branch == 'ΠΕΡΙΟΥΣΙΑΣ'
+                ">
+                <div class="column" *ngFor="let col of row.renewalDate">
+                  <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                    [component]="col.component">
+                  </ice-element>
+                </div>
+              </div>
+              <div *ngIf="currentContract.Branch == 'ΖΩΗΣ'">
+                <div class="column" *ngFor="let col of row.lifeRenewalDate">
+                  <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                    [component]="col.component">
+                  </ice-element>
+                </div>
+              </div>
+              <div *ngIf="currentContract.Branch == 'ΔΙΑΦΟΡΑ ΕΠΕΝΔΥΤΙΚΑ'">
+                <div class="column" *ngFor="let col of row.lifeRenewalDate">
+                  <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                    [component]="col.component">
+                  </ice-element>
+                </div>
+              </div>
+              <div *ngIf="
+                  currentContract.Branch == 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ' ||
+                  currentContract.Branch == 'ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ'
+                ">
+                <div class="column" *ngFor="let col of row.PNCRenewalDate">
+                  <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                    [component]="col.component">
+                  </ice-element>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="col-sm inside-card">
+            <div class="test">
+              <div class="my-icon4" aria-label="icon"
+                [inlineSVG]="'https://cockpit.dev.ips.impeo.info/storage/uploads/2019/03/22/5c94bd9e31960icons-informed-pay-method.svg'">
+              </div>
+            </div>
+            <div *ngFor="let row of recipe.rows">
+              <div class="column" *ngFor="let col of row.frequencyOfPayment">
+                <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+                  [component]="col.component">
+                </ice-element>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngFor="let row of recipe.rows">
+      <div class="column" *ngFor="let col of row.Beneficiaries">
+        <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element" [component]="col.component">
+        </ice-element>
+      </div>
+    </div>
+  </div>
+
+Below the new Code -->
+<!-- <ng-container *ngIf="flag; else paymentType">
+  <p></p>
+</ng-container>
+<ng-template #paymentType> </ng-template>
+<div class="row">
+  <div class="col-sm">
+    <div class="card">
+      <div class="card-body">
+        <div class="row" *ngIf="
+              currentContract.Receipts[0].ReceiptStatusDescription ==
+              'Εξοφλημένη'
+            ">
+          <div class="col-md-1">
+            <p><span class="glyphicon glyphicon-ok-sign"></span></p>
+          </div>
+          <div class="col-md-6">
+            <p><strong>Το συμβόλαιό σας είναι εξοφλημένο</strong></p>
+<div *ngFor="let row of recipe.rows">
+  <div class="column" *ngFor="let col of row.Notification">
+    <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element" [component]="col.component">
+    </ice-element>
+  </div>
+</div>
+</div>
+</div>
+<div class="row" *ngIf="
+              currentContract.Receipts[0].ReceiptStatusDescription ==
+                'Ανείσπρακτη' &&
+              compareDates(currentContract.Receipts[0].EndDate) ==
+                'bell_alert' &&
+              currentContract.Receipts[0].PaymentType == 'ΠΑΓΙΑ ΕΝΤΟΛΗ'
+            ">
+  <div class="col-md-1">
+    <p><span class="glyphicon glyphicon-bell"></span></p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      <strong>Στις {{ currentContract.YesterdayDate }} έγινε μια ανεπιτυχής
+        προσπάθεια χρέωσης {{ currentContract.TotalUnpaidAmount
+                  }}<span class="glyphicon glyphicon-euro"></span>.Παρακαλούμε
+        βεβαιωθείτε πως το ποσό είναι διαθέσιμο.</strong>
+    </p>
+  </div>
+</div>
+<div class="row" *ngIf="
+              currentContract.Receipts[0].ReceiptStatusDescription ==
+                'Ανείσπρακτη' &&
+              compareDates(currentContract.Receipts[0].EndDate) ==
+                'bell_alert' &&
+              currentContract.Receipts[0].PaymentType == 'ΜΕΤΡΗΤΑ'
+            ">
+  <div class="col-md-1">
+    <p><span class="glyphicon glyphicon-bell"></span></p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      <strong>Σας υπενθυμίζουμε πως το συμβόλαιό σας παραμένει
+        ανείσπρακτο!</strong>
+    </p>
+  </div>
+</div>
+<div class="row" *ngIf="
+              currentContract.Receipts[0].ReceiptStatusDescription ==
+                'Ανείσπρακτη' &&
+              (compareDates(currentContract.Receipts[0].EndDate) ==
+                'info_alert' ||
+                (calculateDiffOfDays(currentContract.Receipts[0].EndDate) <
+                  10 &&
+                  currentContract.Branch == 'ΑΥΤΟΚΙΝΗΤΩΝ'))
+            ">
+  <div class="col-md-1">
+    <p><span class="glyphicon glyphicon-info-sign"></span></p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      <strong>Σας υπενθυμίζουμε οτι πλησιάζει η ανανέωση του συμβολαίου
+        σας!</strong>
+    </p>
+  </div>
+</div>
+<div class="row" *ngIf="
+              currentContract.Receipts[0].PaymentTypeDescription == 'ΜΕΤΡΗΤΑ'
+            ">
+  <div class="col-md-4">
+    <p>
+      <strong>Τρέχουσα Πληρωμή</strong>
+    </p>
+  </div>
+  <div class="col-md-4">
+    <p>
+      <span class="glyphicon glyphicon-euro"></span>
+      <strong>{{ currentContract.TotalUnpaidAmount }}</strong>
+    </p>
+  </div>
+  <div class="col-md-4">
+    <button mat-raised-button>PAY NOW</button>
+  </div>
+</div>
+<div class="row" *ngIf="
+              currentContract.Receipts[0].PaymentTypeDescription == 'ΜΕΤΡΗΤΑ'
+            ">
+  <div class="col-md-3"></div>
+  <div class="col-md-5"></div>
+  <div class="col-md-4">
+    <p>
+      <strong>
+        <u class="glyphicon glyphicon-duplicate" (click)="copyText(item.paymentCode)">Payment code
+          {{ currentContract.UniquePaymentCode }}</u>
+      </strong>
+    </p>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> -->

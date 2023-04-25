@@ -1,0 +1,368 @@
+<div class="margin-bottom-container">
+  <div *ngIf="salesChannel === 'eurolife'; else addSalesChannelSection"></div>
+  <ng-template #addSalesChannelSection>
+    <h3
+      joyrideStep="communicationService_firstStep"
+      title="Επικοινωνία"
+      [nextTemplate]="nextButton"
+      text="Επιλέγοντας ‘Επικοινωνία’ στο μενού θα βρείτε όλους τους τρόπους με τους οποίους μπορείτε να έρθετε σε επαφή μαζί μας, ακόμη και να ζητήσετε να σας καλέσουμε ή να κάνετε live chat με έναν εκπρόσωπό μας. Επίσης, θα βρείτε τα στοιχεία επικοινωνίας του Ασφαλιστικού Διαμεσολαβητή ή των υπαλλήλων της εταιρείας που πραγματοποίησαν την πώληση για κάθε συμβόλαιό σας."
+      class="header-title"
+    >
+      {{ title | resourcePipe }}
+    </h3>
+
+    <ng-template #nextButton>
+      <div class="walkthrough-buttons">
+        <div class="walkthrough-dots">
+          <span class="dot dot-active"></span>
+          <span class="dot"></span>
+        </div>
+        <button
+          class="joyride-button"
+          style="background-color: #fff; color: #000; border-color: transparent; left: 210px; position: relative"
+        >
+          ΕΠΟΜΕΝΟ
+        </button>
+        <div
+          style="position: relative; left: 200px"
+          aria-label="icon()"
+          [inlineSVG]="icon()"
+          [onSVGLoaded]="handleSVGIndexIcon"
+        ></div>
+      </div>
+    </ng-template>
+
+    <p class="Caption3 mb-5">{{ additionalContactDetailsText | resourcePipe }}</p>
+    <ng-container *ngIf="contentLoaded; else loadDataTempl1">
+      <div *ngFor="let item of items; let i = index">
+        <div *ngIf="item.ContractType !== 99" class="container mb-3">
+          <div class="row">
+            <div class="column w-100">
+              <div
+                class="eurolife-card w-100"
+                *ngIf="
+                  (i | pipeFunction: findSalesChannel:this) === 'broker' ||
+                  (i | pipeFunction: findSalesChannel:this) === 'bank'
+                "
+              >
+                <div class="eurolife-card-body w-100">
+                  <div class="row row-center-alignment d-flex">
+                    <div
+                      class="col-sm-6 col-md-12 col-lg-12 col-xl-12"
+                      [ngClass]="item.Branch | pipeFunction: getBranchClass:this"
+                    >
+                      <div class="row w-100">
+                        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-3">
+                          <div class="product">
+                            <div
+                              class="product-icon"
+                              aria-label="icon"
+                              [inlineSVG]="'0F0E1AC2A2AC45A7906897CCB41B5580' | pipeFunction: getIcon:this"
+                              *ngIf="item.Branch == 'ΑΥΤΟΚΙΝΗΤΩΝ'"
+                            ></div>
+                            <div
+                              class="product-icon"
+                              aria-label="icon"
+                              [inlineSVG]="'4412D69B78B5460B8E25F2FEAFA0105A' | pipeFunction: getIcon:this"
+                              *ngIf="item.Branch == 'ΖΩΗΣ'"
+                            ></div>
+                            <div
+                              class="product-icon"
+                              aria-label="icon"
+                              [inlineSVG]="'5B16FD8598BC4750B8E058C8BDC2528A' | pipeFunction: getIcon:this"
+                              *ngIf="item.Branch == 'ΥΓΕΙΑΣ'"
+                            ></div>
+                            <div
+                              class="product-icon"
+                              aria-label="icon"
+                              [inlineSVG]="'D2F9D495BF194ED0BC3F23078CA4B07E' | pipeFunction: getIcon:this"
+                              *ngIf="item.Branch == 'ΠΕΡΙΟΥΣΙΑΣ'"
+                            ></div>
+                            <div
+                              class="product-icon"
+                              aria-label="icon"
+                              [inlineSVG]="'55575BDF0CF94677A59ADCF3F1ECF1AB' | pipeFunction: getIcon:this"
+                              *ngIf="item.Branch == 'ΔΙΑΦΟΡΑ ΕΠΕΝΔΥΤΙΚΑ'"
+                            ></div>
+                            <div
+                              class="product-icon"
+                              aria-label="icon"
+                              [inlineSVG]="'9C798E9E7D62478294D477734D3D65B6' | pipeFunction: getIcon:this"
+                              *ngIf="item.Branch == 'ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ' || item.Branch == 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ'"
+                            ></div>
+                            <div
+                              *ngIf="
+                                item.Branch == 'ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ' || item.Branch == 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ';
+                                else pcother
+                              "
+                            >
+                              <div class="h5 product-description">
+                                {{ item.Branch }}
+                                <div class="Caption3 opacity">
+                                  {{ numberContract | resourcePipe }} {{ item.ContractKey }}
+                                </div>
+                              </div>
+                            </div>
+                            <ng-template #pcother>
+                              <div class="h5 product-description">
+                                {{ item.ProductDescritpion }}
+                                <div class="Caption3 opacity">
+                                  {{ numberContract | resourcePipe }} {{ item.ContractKey }}
+                                </div>
+                              </div>
+                            </ng-template>
+                          </div>
+                        </div>
+                        <div class="col-sm-12 col-md-5 col-lg-4 col-xl-4 product mb-3">
+                          <div
+                            class="background-circle keep-size"
+                            [ngClass]="item.Branch | pipeFunction: getSalesBranchClass:this"
+                          >
+                            <div
+                              class="product-aux-icon"
+                              aria-label="icon"
+                              [inlineSVG]="'D6126333990F42B5AC5F44BDB6436456' | pipeFunction: getIcon:this"
+                              [onSVGLoaded]="handleSVG"
+                              *ngIf="item.Branch == 'ΑΥΤΟΚΙΝΗΤΩΝ'"
+                            ></div>
+                            <div
+                              class="product-aux-icon"
+                              aria-label="icon"
+                              [inlineSVG]="'332EA5B74C664CFABEA14E3FDC05CD98' | pipeFunction: getIcon:this"
+                              [onSVGLoaded]="handleSVG"
+                              *ngIf="
+                                item.Branch == 'ΖΩΗΣ' || item.Branch == 'ΥΓΕΙΑΣ'
+                              "
+                            ></div>
+                            <div
+                              class="product-aux-icon"
+                              aria-label="icon"
+                              [inlineSVG]="'55575BDF0CF94677A59ADCF3F1ECF1AB' | pipeFunction: getIcon:this"
+                              [onSVGLoaded]="handleSVG"
+                              *ngIf="item.Branch == 'ΔΙΑΦΟΡΑ ΕΠΕΝΔΥΤΙΚΑ'"
+                            ></div>
+                            <div
+                              class="product-aux-icon"
+                              aria-label="icon"
+                              [inlineSVG]="'38FAC7FB3943431CB2BB310053EFFFBA' | pipeFunction: getIcon:this"
+                              [onSVGLoaded]="handleSVG"
+                              *ngIf="item.Branch == 'ΠΕΡΙΟΥΣΙΑΣ'"
+                            ></div>
+                            <div
+                              class="product-aux-icon"
+                              aria-label="icon"
+                              [inlineSVG]="'332EA5B74C664CFABEA14E3FDC05CD98' | pipeFunction: getIcon:this"
+                              [onSVGLoaded]="handleSVG"
+                              *ngIf="item.Branch == 'ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ' || item.Branch == 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ'"
+                            ></div>
+                            <!-- <div class="product-aux-icon" aria-label="icon"
+                              [inlineSVG]="('0F0E1AC2A2AC45A7906897CCB41B5580' | pipeFunction: getIcon: this)'0F7402C7823E42B0BB0D3E7DC7C8945B')" [onSVGLoaded]="handleSVG"
+                              *ngIf="item.Branch =='ΔΙΑΦΟΡΑ ΕΠΕΝΔΥΤΙΚΑ'">
+                            </div> -->
+                          </div>
+                          <div class="details">
+                            <div *ngIf="item.Branch == 'ΑΥΤΟΚΙΝΗΤΩΝ'">
+                              <div class="Caption1">{{ communicationPlateNumber | resourcePipe }}</div>
+                              <div class="h6-active">{{ i | pipeFunction: getLicensePlate:this }}</div>
+                            </div>
+                            <div *ngIf="item.Branch == 'ΠΕΡΙΟΥΣΙΑΣ'">
+                              <div class="Caption1">{{ riskAddress | resourcePipe }}</div>
+                              <div class="h6-active">{{ i | pipeFunction: getAddress:this }}</div>
+                            </div>
+                            <div
+                              *ngIf="
+                                item.Branch == 'ΖΩΗΣ' ||
+                                item.Branch == 'ΥΓΕΙΑΣ' ||
+                                item.Branch == 'ΔΙΑΦΟΡΑ ΕΠΕΝΔΥΤΙΚΑ' ||
+                                item.Branch == 'ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ' ||
+                                item.Branch == 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ'
+                              "
+                            >
+                              <div class="Caption1">{{ insured | resourcePipe }}</div>
+                              <div class="h6-active">
+                                {{ item | pipeFunction: findParticipantLastName:this }}
+                                {{ item | pipeFunction: findParticipantFirstName:this }}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-12 col-md-3 col-lg-4 col-xl-4"></div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="col-sm-6 col-md-12 col-lg-12 col-xl-12 w-100"
+                      *ngIf="(i | pipeFunction: findSalesChannel:this) === 'broker'"
+                    >
+                      <div class="row second-row fix-top">
+                        <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 mb-3">
+                          <div class="row">
+                            <div class="col-2 p-0 float-left">
+                              <div
+                                class="product-aux-icon"
+                                aria-label="icon"
+                                [inlineSVG]="'0F7402C7823E42B0BB0D3E7DC7C8945B' | pipeFunction: getIcon:this"
+                                [onSVGLoaded]="handleSVGSecondRow"
+                              ></div>
+                            </div>
+
+                            <div class="col-10 p-0">
+                              <div class="h6-active">{{ i | pipeFunction: getBrokersName:this }}</div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div
+                          class="col-sm-12 col-md-3 col-lg-3 col-xl-3 mb-3"
+                          *ngIf="(i | pipeFunction: getBrokersDetails:this).phoneNumber1 != null"
+                        >
+                          <div class="row">
+                            <div class="col-2 p-0 float-left">
+                              <div
+                                class="product-aux-icon"
+                                aria-label="icon"
+                                [inlineSVG]="'F307FD1B08B4438AA07440347B334F98' | pipeFunction: getIcon:this"
+                                [onSVGLoaded]="handleSVGSecondRow"
+                              ></div>
+                            </div>
+                            <div class="col-10 p-0">
+                              <p class="h6-active">{{ telephone | resourcePipe }}</p>
+                              <p class="Subtitle2 links">
+                                <a href="tel:{{ (i | pipeFunction: getBrokersDetails:this).phoneNumber1 }}">{{
+                                  (i | pipeFunction: getBrokersDetails:this).phoneNumber1
+                                }}</a>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="col-sm-12 col-md-3 col-lg-3 col-xl-3 mb-3"
+                          *ngIf="(i | pipeFunction: getBrokersDetails:this).mobile != null"
+                        >
+                          <div class="row">
+                            <div class="col-2 p-0 float-left">
+                              <div
+                                class="product-aux-icon"
+                                aria-label="icon"
+                                [inlineSVG]="'F307FD1B08B4438AA07440347B334F98' | pipeFunction: getIcon:this"
+                                [onSVGLoaded]="handleSVGSecondRow"
+                              ></div>
+                            </div>
+                            <div class="col-10 p-0">
+                              <p class="h6-active">{{ mobileTelephone | resourcePipe }}</p>
+                              <p class="Subtitle2 links">
+                                <a href="tel:{{ (i | pipeFunction: getBrokersDetails:this).mobile }}">{{
+                                  (i | pipeFunction: getBrokersDetails:this).mobile
+                                }}</a>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="col-sm-12 col-md-3 col-lg-3 col-xl-3 mb-3"
+                          *ngIf="(i | pipeFunction: getBrokersDetails:this).email != null"
+                        >
+                          <div class="row">
+                            <div class="col-2 p-0 float-left">
+                              <div
+                                class="product-aux-icon"
+                                aria-label="icon"
+                                [inlineSVG]="'6A4B4AF02141409386D152E3D15FD8B3' | pipeFunction: getIcon:this"
+                                [onSVGLoaded]="handleSVGSecondRow"
+                              ></div>
+                            </div>
+                            <div class="col-10 p-0">
+                              <p class="h6-active">{{ mail | resourcePipe }}</p>
+                              <p class="Subtitle2 links">
+                                <a href="mailto:{{ (i | pipeFunction: getBrokersDetails:this).email }}">{{
+                                  (i | pipeFunction: getBrokersDetails:this).email
+                                }}</a>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="col-sm-6 col-md-12 col-lg-12 col-xl-12"
+                      *ngIf="(i | pipeFunction: findSalesChannel:this) === 'bank'"
+                    >
+                      <div class="row second-row">
+                        <div
+                          class="col-sm-12 col-md-4 col-lg-4 col-xl-4 h6-active mb-3"
+                          [ngClass]="item.Branch | pipeFunction: getSalesChannelClass:this"
+                        >
+                          <div class="row">
+                            <div class="col-2 p-0 float-left">
+                              <div
+                                class="product-aux-icon"
+                                aria-label="icon"
+                                [inlineSVG]="'0F7402C7823E42B0BB0D3E7DC7C8945B' | pipeFunction: getIcon:this"
+                                [onSVGLoaded]="handleSVGSecondRow"
+                              ></div>
+                            </div>
+                            <div class="col-10 p-0">
+                              <div>
+                                {{ branchStore | resourcePipe }} <br />
+                                {{ eurobank | resourcePipe }}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 h6-active mb-3">
+                          <div class="row">
+                            <div class="col-2 p-0 float-left">
+                              <div
+                                class="product-aux-icon"
+                                aria-label="icon"
+                                [inlineSVG]="'B470ACBD5DEF448C83922C619F1368C1' | pipeFunction: getIcon:this"
+                                [onSVGLoaded]="handleSVGSecondRow"
+                              ></div>
+                            </div>
+                            <div class="col-10 p-0">
+                              <a
+                                class="text-decoration-none"
+                                target="_blank"
+                                href="https://www.eurobank.gr/el/branch-locator#?tab=branch"
+                                >{{ supportPoints | resourcePipe }}</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-3">
+                          <div class="h6-active">{{ hours1 | resourcePipe }}</div>
+                          <div class="Subtitle2">
+                            {{ hours2 | resourcePipe }}
+                          </div>
+                          <!-- <div class="Subtitle2">
+                            {{hours3 | resourcePipe}}
+                          </div> -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </ng-template>
+
+  <ng-template #loadDataTempl1>
+    <div class="ice-simple-table">
+      <ngx-skeleton-loader
+        count="1"
+        [theme]="{ 'background-color': '#dadada', width: '70%', height: '25px', 'border-radius': '10px' }"
+      >
+      </ngx-skeleton-loader>
+
+      <ngx-skeleton-loader
+        count="2"
+        [theme]="{ 'background-color': '#dadada', width: '100%', height: '25px', 'border-radius': '10px' }"
+      >
+      </ngx-skeleton-loader>
+    </div>
+  </ng-template>
+</div>

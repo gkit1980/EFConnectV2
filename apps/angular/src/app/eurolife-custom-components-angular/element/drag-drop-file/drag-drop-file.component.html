@@ -1,0 +1,57 @@
+<div class="upload-container">
+  <div
+    class="uploadfilecontainer"
+    (click)="fileInput.click()"
+    appDragDrop
+    (onFileDropped)="onFileImport($event)"
+  >
+    <div class="add-note">
+      <div
+        class="browse-svg"
+        aria-label="icon"
+        [inlineSVG]="getIcon('5CC8A933D20F48EF827B77E5947F730D')"
+        [onSVGLoaded]="handleBrowseSVG"
+      ></div>
+      <div class="Typeface">Add file or Drag and drop files here</div>
+    </div>
+    <div class="files-note">
+      Αποδεκτοί τύποι αρχείων: jpg, png, pdf, doc. Μέγιστο μέγεθος αρχείων 25MB.
+    </div>
+    <input
+      hidden
+      type="file"
+      #fileInput
+      id="fileinput"
+      multiple
+      (change)="onFileImport($any($event.target).files)"
+      (click)="onFileInputClick($event)"
+    />
+  </div>
+  <div class="files-cnt">
+    <div *ngIf="getNumberOfFiles() > 0" class="Typeface files-hdr">
+      Έχετε ανεβάσει {{ getNumberOfFiles() }}
+      {{ getNumberOfFiles() === 1 ? 'αρχείo' : 'αρχεία' }}:
+    </div>
+    <div class="file-list">
+      <div
+        *ngFor="let file of getFilesFromDataModel(); let i = index"
+        class="uploaded-files-container mobile-center"
+      >
+        <div
+          class="folder-icon"
+          aria-label="My icon"
+          [inlineSVG]="folderImageSource"
+          [onSVGLoaded]="folderSVG"
+        ></div>
+        <div class="Typeface">{{ getFileName(i) }}</div>
+        <div
+          class="btn-close"
+          aria-label="My icon"
+          [inlineSVG]="closeImageSource"
+          [onSVGLoaded]="handlecloseSVG"
+          (click)="deleteFile(i)"
+        ></div>
+      </div>
+    </div>
+  </div>
+</div>

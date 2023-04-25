@@ -1,0 +1,10 @@
+element:
+  component:
+    StaticComponentRule:
+      component:
+        TextWithLinkComponent:
+          target: label
+  type: text
+  viewMode: output
+  pages:
+    communicationService: null

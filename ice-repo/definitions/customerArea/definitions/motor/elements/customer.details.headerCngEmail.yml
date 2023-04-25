@@ -1,0 +1,6 @@
+element:
+  type: text
+  label: Αλλαγή ηλεκτρονικής διεύθυνσης
+  viewMode: output
+  pages:
+    changeMobilePhonePopUp: null

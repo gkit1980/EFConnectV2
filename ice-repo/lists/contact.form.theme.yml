@@ -1,0 +1,31 @@
+list:
+  type: text
+  additionals:
+    label_en:
+      label: label_en
+      type: text
+    label_el:
+      label: label_el
+      type: text
+  items:
+    - value: 1
+      label_en: Ομαδικό Συμβόλαιο Ζωής & Υγείας
+      label_el: Ομαδικό Συμβόλαιο Ζωής & Υγείας
+    - value: 2
+      label_en: Τα Ασφαλιστήρια Συμβόλαιά Μου
+      label_el: Τα Ασφαλιστήρια Συμβόλαιά Μου
+    - value: 3
+      label_en: Οι Αποζημιώσεις Μου
+      label_el: Οι Αποζημιώσεις Μου
+    - value: 4
+      label_en: Αλλαγή Στοιχείων ή Επικαιροποίηση Πληροφορίας
+      label_el: Αλλαγή Στοιχείων ή Επικαιροποίηση Πληροφορίας
+    - value: 5
+      label_en: Βεβαιώσεις - Πληρωμές
+      label_el: Βεβαιώσεις - Πληρωμές
+    - value: 6
+      label_en: EurolifeConnect
+      label_el: EurolifeConnect
+    - value: 7
+      label_en: Άλλο
+      label_el: Άλλο

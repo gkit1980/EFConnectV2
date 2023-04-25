@@ -1,0 +1,11 @@
+element:
+  type: text
+  viewMode: output
+  component:
+    StaticComponentRule:
+      component:
+        TextLabelComponent:
+          text: Βεβαιώσεις & Ενημερώσεις
+          AdditionalClasses: h5
+  pages:
+    home: null

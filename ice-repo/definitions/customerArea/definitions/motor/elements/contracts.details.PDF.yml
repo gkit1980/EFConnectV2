@@ -1,0 +1,20 @@
+element:
+  component: EurolifeButtonComponent
+  type: text
+  label: ΑΝΤΙΓΡΑΦΟ ΣΥΜΒΟΛΑΙΟΥ
+  buttonIcon: https://scp.eurolife.gr/~/media/3D4C3EE53B51434B9A9C20E02FA3B340.ashx
+  additionalClasses: eurolife_btn-default eurolife_btn-stroke-green btn-minw
+  svgFillColor: motor_color
+  defaultValue: actionGetReprintedPDF
+  alignmentClass: dt_visibility_pdf_button
+  typeScope: contract-pdf-motor
+  pages:
+    policyDetails: null
+# element:
+#   component: IceButton
+#   type: text
+#   label: Print PDF
+#   defaultValue: actionGetReprintedPDF
+
+#   pages:
+#     viewPolicydetails: null

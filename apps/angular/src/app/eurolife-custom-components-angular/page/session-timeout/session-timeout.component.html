@@ -1,0 +1,24 @@
+<div class="modal-container">
+  <div class="close" aria-label="My icon" [inlineSVG]="closeImageSource" [onSVGLoaded]="handlecloseSVG"
+    (click)="onNoClick()">
+  </div>
+  <div class="top-section">
+    <div class="circle">
+      <div class="timeout" aria-label="icon" [inlineSVG]="imageSource">
+      </div>
+    </div>
+
+  </div>
+  <div class="reg-code-modal-container">
+    <h4 class="text-center">{{ endSession1 | resourcePipe }}</h4>
+    <p class="Body1">{{ endSession2 | resourcePipe }}</p>
+  </div>
+  <div class="reg-code-modal-container btns">
+    <div class="row">
+      <div class="col-sm-12">
+        <button class="eurolife_btn eurolife_btn-default" (click)="onOK()">OK
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

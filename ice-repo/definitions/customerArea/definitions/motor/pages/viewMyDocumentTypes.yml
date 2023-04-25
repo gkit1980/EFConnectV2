@@ -1,0 +1,15 @@
+  page:
+    component: DemoPage
+    sections:
+      - component: GridView
+        rows:
+          - css: null
+            cols:
+              - col: 6
+                element: policy.documentTypes  
+              - col: 6
+                element: policy.selectedDocType          
+          #- css: null
+            #cols:
+              #- col: 6
+                #element: policy.participants.holder.person.pid

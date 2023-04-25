@@ -1,0 +1,25 @@
+element:
+  type: date
+  component: GreenCardDatepickerComponent
+  viewMode: enable  
+  label: Έως
+  buckets:
+    GreenCardData:
+      transformation:{}   
+  action:
+    execution:
+      - EnableSpinnerRule:
+          actionrule: action-greencard-get-token
+      - GreenCardServices:
+          baseUrl: GREENCARDBASEURL
+          url: GetGreenCardOrActiveContract
+          method: POST
+          bucket: GreenCardData
+          encryptMessage: true
+          encryptSecretElement: token
+          needsDataStore: false
+      - DisableSpinnerRule:
+          actionrule: action-greencard-get-token       
+  pages:
+    greenCard: null
+

@@ -1,0 +1,5 @@
+element:
+  type: text
+  viewMode:
+    DtViewModeRule:
+      dt: dt_amendments_second_driver_view_mode

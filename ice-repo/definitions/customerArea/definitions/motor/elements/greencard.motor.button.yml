@@ -1,0 +1,12 @@
+element:
+  component: GreenCardButtonComponent
+  type: text
+  # label: ΔΗΜΙΟΥΡΓΙΑ ΝΕΑΣ
+  additionalClasses: eurolife_btn-default gc-button
+  defaultValue: action-greencard-changestep
+  dynamicLabel: dt_greenCard_button_label
+  viewMode:
+    DtViewModeRule:
+      dt: greenCard.next.view-mode
+  pages:
+    greenCard: null

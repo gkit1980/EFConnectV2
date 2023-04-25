@@ -1,0 +1,11 @@
+element:
+  type: text
+  pages:
+    policyDetails: null
+  component:
+    StaticComponentRule:
+      component:
+        EurolifeHeaderTileComponent:
+          dtName: dt_policy_details_third_tile_subheader
+  label:
+    NoLabelRule: {}

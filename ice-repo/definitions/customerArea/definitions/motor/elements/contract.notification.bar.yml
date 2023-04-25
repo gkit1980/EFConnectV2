@@ -1,0 +1,16 @@
+element:
+  type: text
+  viewMode: 
+    ConditionalViewModeRule:
+      conditionElement: selectedcontractbranch
+      conditionValue: 99
+      conditionViewMode: hidden
+      elseViewMode: output    
+  component:
+    StaticComponentRule:
+      component:
+        EurolifeNotificationBarComponent:
+          url: dt_notification_bar_icon
+  # defaultValue:
+  #   StaticValueRule:
+  #     value: "To symbolaio sas einai eksoflimeno"

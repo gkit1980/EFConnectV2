@@ -1,0 +1,89 @@
+dt:
+  hit-policy: F
+  inputs:
+    - label: input element for default
+      element: selectedcontractbranch
+  outputs:
+    - id: classes
+      type: string
+  rules:
+    - inputs:
+        - 1
+      outputs:
+        - >-
+          health_navigation
+    - inputs:
+        - 2
+      outputs:
+        - >-
+          finance_navigation
+    - inputs:
+        - 3
+      outputs:
+        - >-
+          motor_navigation
+    - inputs:
+        - 4
+      outputs:
+        - >-
+          home_navigation
+    - inputs:
+        - 5
+      outputs:
+        - >-
+          other_pc_navigation
+    - inputs:
+        - 6
+      outputs:
+        - >-
+          other_pc_navigation
+    - inputs:
+        - 7
+      outputs:
+        - >-
+          other_pc_navigation
+    - inputs:
+        - 8
+      outputs:
+        - >-
+          other_pc_navigation
+    - inputs:
+        - 9
+      outputs:
+        - >-
+          life_navigation
+    - inputs:
+        - 11
+      outputs:
+        - >-
+          finance_navigation
+    - inputs:
+        - 12
+      outputs:
+        - >-
+          life_navigation
+    - inputs:
+        - 13
+      outputs:
+        - >-
+          home_navigation
+    - inputs:
+        - 14
+      outputs:
+        - >-
+          life_navigation
+    - inputs:
+        - 15
+      outputs:
+        - >-
+          life_navigation
+    - inputs:
+        - 16
+      outputs:
+        - >-
+          life_navigation
+    - inputs:
+        - 17
+      outputs:
+        - >-
+          life_navigation

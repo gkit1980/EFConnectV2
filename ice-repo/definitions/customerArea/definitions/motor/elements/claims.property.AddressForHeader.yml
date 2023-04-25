@@ -1,0 +1,5 @@
+element:
+  type: text
+  viewMode: output
+  pages:
+    viewClaimDetails: null

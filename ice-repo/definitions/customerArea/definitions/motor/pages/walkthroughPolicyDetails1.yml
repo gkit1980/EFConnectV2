@@ -1,0 +1,20 @@
+page:
+  component: PopUpPage
+  flag: walkthrough policyDetails1
+  showTriangle: true
+  validation:
+    onElementComponentChange: true
+    behaviour: page
+  sections:
+    - component: SimpleGridViewComponent
+      rows:
+        - cols:
+            - css: header-title-pop-up-walkthrough text-center walkthrough-header-mb
+              col: 12
+              element: policies.details.walkthrough.header1
+    - component: ContentWalkthroughComponent
+      text: "Στην ενότητα αυτή μπορείτε να δείτε όλα τα ενεργά σας συμβόλαια με τις πληροφορίες τους: Δικαιούχους, Καλύψεις που έχετε, Ειδοποιητήρια, Τροποποιήσεις (αν έχουν ολοκληρωθεί). Επίσης, μπορείτε να δείτε τα Οικονομικά Στοιχεία του Συμβολαίου, δηλαδή το ιστορικό τους."
+      pageNum: 1
+      numberOfScreens: policyDetails.walkthrough.screens
+      next: ΤΕΛΟΣ
+      previous:

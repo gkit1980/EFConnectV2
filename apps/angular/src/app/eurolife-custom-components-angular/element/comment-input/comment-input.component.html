@@ -1,0 +1,7 @@
+<div class="comment-input-container">
+  <!-- <textarea id="textarea" maxlength="300" [(ngModel)]="value" (ngModelChange)="textAreaAdjust()" -->
+    <textarea id="textarea" maxlength="300"   #messageInput 
+    class="comment-input Typeface" placeholder="Εάν έχετε κάποιο σχόλιο, γράψτε το εδώ..."></textarea>
+  <div class="horizontal-line"></div>
+  <div class="letter-counter Typeface">{{ charLength }}/300</div>
+</div>

@@ -1,0 +1,6 @@
+element:
+  type: text
+  label: Φόρμα Δικαιωμάτων Υποκειμένου
+  viewMode: output
+  pages:
+    contactForm: null

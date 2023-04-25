@@ -1,0 +1,7 @@
+element:
+  type: text
+  defaultValue: "Προώθηση υπηρεσιών ή προϊόντων από τις εταιρείες του Ομίλου της Eurolife FFH Insurance Group Ανώνυμος Εταιρεία Συμμετοχών"
+  label: null
+  pages:
+    customerProfile: null
+  viewMode: output

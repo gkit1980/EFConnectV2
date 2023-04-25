@@ -1,0 +1,4 @@
+element:
+  type: text
+  label: "Εισάγετε την ημερομηνία συμβάντος"
+  viewMode: output

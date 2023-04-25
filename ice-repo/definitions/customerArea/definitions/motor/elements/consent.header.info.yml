@@ -1,0 +1,11 @@
+element:
+  type: text
+  viewMode: output
+  component:
+    StaticComponentRule:
+      component:
+        IconOutputConsentComponent:
+          text: Συγκατάθεση για Επεξεργασία Δεδομένων Ειδικών Κατηγοριών (Υγείας)
+          iconCode: "C8705EB508D542E59548EF002F938768"
+          isConsent: true
+          AdditionalClasses: no-margin-bottom h5

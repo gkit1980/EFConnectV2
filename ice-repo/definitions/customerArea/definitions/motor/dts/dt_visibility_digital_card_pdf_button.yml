@@ -1,0 +1,19 @@
+dt:
+  hit-policy: F
+  inputs:
+    - label: input element for default
+      element: selectedcontractbranch
+  outputs:
+    - id: visibilityPDFButton
+      type: string
+  rules:
+    - inputs:
+        - 1
+      outputs:
+        - >-
+          null
+    - inputs:
+        - 2,3,4,5,6,7,8,9,10,11,12,14,15,16,17,99
+      outputs:
+        - >-
+          reprint_policy_button_visibility

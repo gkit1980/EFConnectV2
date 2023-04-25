@@ -1,0 +1,6 @@
+element:
+  type: boolean
+  component: IceCheckbox
+  viewMode: required
+  pages:
+    signupvalidated: null

@@ -1,0 +1,53 @@
+element:
+  type: text
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.selectedBranch
+      conditionValue: 4
+      conditionViewMode: hidden
+      elseViewMode: output
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent
+  buckets:
+    GetContractMotorDetails:
+      transformation:
+        responsePath: ContractMotorDetails.PartnerName
+    GetContractIndividualDetails:
+      transformation:
+        responsePath: ContractIndividualDetails.PartnerName
+    GetContractMortgageDetails:
+      transformation:
+        responsePath: ContractMortgageDetails.PartnerName
+    GetPensionContractDetails:
+      transformation:
+        responsePath: PensionContractDetails.PartnerName
+    GetHealthContractDetails:
+      transformation:
+        responsePath: HealthContractDetails.PartnerName
+    GetLifeHealthContractDetails:
+      transformation:
+        responsePath: LifeHealthContractDetails.PartnerName
+    GetContractDeathDetails:
+      transformation:
+        responsePath: ContractDeathDetails.PartnerName
+    GetContractConsumerDetails:
+      transformation:
+        responsePath: ContractConsumerDetails.PartnerName
+    GetContractAccidentDetails:
+      transformation:
+        responsePath: ContractAccidentDetails.PartnerName
+    GetContractCargoDetails:
+      transformation:
+        responsePath: ContractCargoDetails.PartnerName
+    GetContractCargoPrudDetails:
+      transformation:
+        responsePath: ContractCargoPrudDetails.PartnerName
+    GetContractDetailsPrudDetails:
+      transformation:
+        responsePath: ContractDetailsPrudDetails.PartnerName
+    GetContractFirePrudDetails:
+      transformation:
+        responsePath: ContractFirePrudDetails.PartnerName
+  pages:
+    policyDetails: null

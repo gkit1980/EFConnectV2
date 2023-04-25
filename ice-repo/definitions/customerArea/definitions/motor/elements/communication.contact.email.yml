@@ -1,0 +1,12 @@
+element:
+  type: text
+  viewMode: output
+  defaultValue: '[info@eurolife.gr](info@eurolife.gr)'
+  component:
+    StaticComponentRule: 
+      component:
+        TextWithLinkComponent:
+          target: value
+          linkType: email
+  pages:
+    communicationService: null

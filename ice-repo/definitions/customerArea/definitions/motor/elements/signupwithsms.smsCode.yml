@@ -1,0 +1,9 @@
+element:
+  type: text
+  viewMode: default
+  buckets:
+    VerifySMS:
+      transformation:
+        dataPath: SMSCode       
+  pages:
+    signupwithsms: null

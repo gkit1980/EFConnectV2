@@ -1,0 +1,6 @@
+element:
+  type: text
+  viewMode: output
+  label: Πληροφορίες Προφίλ
+  pages:
+    customerProfile: null

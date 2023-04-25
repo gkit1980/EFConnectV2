@@ -1,0 +1,7 @@
+element:
+  type: date
+  viewMode: output  
+  buckets:
+    GetContractParticipants:
+      transformation:
+        property: BirthDate

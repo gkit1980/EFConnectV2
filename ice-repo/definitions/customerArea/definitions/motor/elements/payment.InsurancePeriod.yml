@@ -1,0 +1,9 @@
+element:
+  type: text
+  viewMode: output
+  buckets:
+    GetTransactionInfoAEGA:
+      transformation:
+        responsePath: InsurancePeriod
+  pages:
+    paymentManagement: null

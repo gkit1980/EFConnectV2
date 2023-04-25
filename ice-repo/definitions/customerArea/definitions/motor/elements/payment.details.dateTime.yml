@@ -1,0 +1,8 @@
+element:
+  type: datetime
+  viewMode: output
+  defaultValue: 
+    DateExpressionValueRule: 
+      expression: date(today)
+  pages:
+    successfullPayment: null

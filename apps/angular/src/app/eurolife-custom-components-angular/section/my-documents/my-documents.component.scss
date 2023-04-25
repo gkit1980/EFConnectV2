@@ -1,0 +1,285 @@
+.table-container {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  .mat-elevation-z8{
+    box-shadow: none;
+    @media (max-width: 575.98px) {
+      display: none;
+    }
+  }
+  
+  // .mat-form-field {
+  //   font-size: 14px;
+  //   width: 100%;
+  // }
+  
+  // td, th {
+  //   width: 25%;
+  // }
+  
+  // .mat-cell {
+  //   padding:10px;
+  // }
+  
+  ::ng-deep.mat-paginator-icon{
+    width: 32px !important;
+    fill: white !important;
+    background-color: #4a5294;
+    border-radius: 4px;
+    height: 33px;
+  }
+
+  .mat-row{
+    height : 96px;
+    margin-bottom: 16px;
+  }
+
+  .td-doctype{
+    font-size: 18px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.39;
+    letter-spacing: normal;
+    color: #383b38;
+  }
+
+  .select-field-container{
+    width: 166px;
+    margin: 0 16px;
+    margin-top: -150px;
+    @media (max-width: 575.98px) {
+      margin-top: 0;
+    }
+  }
+
+  .spacer{
+    height: 30px;
+  }
+
+  .filter-list{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    @media (max-width: 575.98px) {
+      display: none;
+    }
+  }
+
+  .download-btn{
+    background-color: #485294;
+    color: white;
+    width: 96px;
+    height: 96px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .td-year{
+    font-family: Ubuntu;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.39;
+    letter-spacing: normal;
+    color: #383b38;
+  }
+
+  .mat-cell:last-of-type{
+    padding-right: 0px;
+  }
+  
+  .mat-cell{
+    border-color: #eeeeee;
+    padding-right: 0px;
+    &:nth-child(3){
+      width: 96px;
+    }
+  }
+  .mat-header-cell{
+    border-color: #eeeeee;
+  }
+  
+  .mat-header-row{
+    height: 79px;
+    background-color: #eeeeee;
+  }
+  
+  .status-container{
+    width: calc(100% - 25px);
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 24px;
+    background-color: #2bea9b;
+    @media (max-width: 575.98px) {
+      width: 100px;
+    }
+  }
+  
+  .status-not-paid{
+    background-color: #cc046c;
+  }
+  
+  .status-text{
+    color: white;
+  }
+  
+  .table-label-container{
+    display: flex;
+    align-items: center;
+    margin: 47px 0 24px 0;
+    height: 48px;
+    width: 100%;
+    border-left: solid 2px #479463;
+  }
+  
+  .label-text{
+    margin-left: 16px;
+  }
+  
+  .table-mobile-container{
+    display: none;
+    @media (max-width: 575.98px) {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+  
+  }
+
+  .main-container{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    height: 179px;
+    margin: 16px;
+    width: 100%;
+    padding: 0 16px;
+
+    &:first-child{
+      margin-top: 32px;
+    }
+  }
+  .doctype-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 16px;
+    margin-bottom: 12px;
+  }
+  
+  .show-more-container{
+    margin: 24px 0 135px 0;
+  }
+  
+  .caption3{
+    opacity: 0.6;
+    font-family: Ubuntu;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.36;
+    letter-spacing: normal;
+    color: #383b38;
+  }
+  
+  .h6{
+     font-family: Ubuntu;
+    font-size: 18px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.39;
+    letter-spacing: normal;
+    color: #383b38;
+  }
+
+  .download-container{
+    display: flex;
+    margin-top: 21px;
+  }
+  
+  .download-label{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 2px;
+  }
+    
+  .download-mobile-btn{
+    margin: 12px 0 16px 0;
+    max-width: 311px;
+    height: 48px;
+  }
+
+.mat-row{
+  border-bottom: 16px solid #eee;
+  &:last-child{
+    border-bottom: unset;
+  }
+}
+
+::ng-deep.mat-icon-button {
+  .mat-paginator-icon {
+  width: 32px !important;
+  background-color: #4a5294;
+  border-radius: 4px;
+  height: 33px;
+    fill: white !important;
+  }
+}
+
+::ng-deep.mat-icon-button[disabled][disabled] {
+  .mat-paginator-icon {
+  width: 32px !important;
+  background-color: lightgrey;  
+  border-radius: 4px;
+  height: 33px;
+    fill: white !important;
+  }
+}
+
+::ng-deep.mat-form-field-appearance-standard .mat-form-field-flex {
+  padding-top: 0;
+}
+
+  .mat-row{
+  border-bottom: 16px solid #eee;
+  &:last-child{
+    border-bottom: unset;
+  }
+}
+
+.mat-paginator {
+  background-color: transparent;
+  display: flex;
+}
+
+::ng-deep .mat-select-value-text {
+  font-family: Ubuntu;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.36;
+  letter-spacing: normal;
+  color: #383b38;
+}
+
+.disable-btn {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.items-main-container {
+  display: flex;
+  flex-direction: column-reverse;
+}

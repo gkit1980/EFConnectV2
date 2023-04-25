@@ -1,0 +1,15 @@
+element:
+  type: integer
+  buckets:
+    GetContractParticipants:
+      transformation: {}
+    GetUrlNote:
+      transformation: {}
+    GetContractParticipantsForClaims:
+      transformation: {}   
+    GetFundRates:
+       transformation: {}      
+  change:
+    - ResetElementValueExecutionRule:
+        elements:
+          - policy.contract.general.info.Branch

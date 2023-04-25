@@ -1,0 +1,8 @@
+element:
+  type: text
+  viewMode: enable
+  buckets:
+    AmendmentsCreateCase:
+      transformation: {}
+  pages:
+    viewAmendmentDetails: null

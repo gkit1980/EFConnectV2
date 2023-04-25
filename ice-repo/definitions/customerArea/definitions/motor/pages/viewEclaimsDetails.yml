@@ -1,0 +1,141 @@
+page:
+  component: EclaimsPageComponent
+  componentFlag: eclaimsDetails
+  selectedBranch: ΖΩΗΣ
+  label: null
+  sections:
+    # - component: SimpleGridViewComponent
+    #   backgroundcolor: 
+    #   viewMode:
+    #     DtSectionViewModeRule:
+    #       dt: dt_eclaims_header
+    #   rows:
+    #     - css: group-claims-details-button
+    #       cols:
+    #         - css: h6-active text-center mt-5
+    #           col:
+    #           element: eclaims.back
+    #         - css: h6-active text-center mt-5 ml-3
+    #           col:
+    #           element: eclaims.back.button.header
+    - component: EclaimsStepperComponent 
+      backgroundcolor:       
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_eclaims_stepper
+    - component: EclaimsAvailableContractsComponent  
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_eclaims_available_contracts
+      backgroundcolor:  grey-background 
+      cssClass: with-padding 
+      header: Διαθέσιμα Ασφαλιστήρια
+      innerheader: Επιλέξετε το συμβόλαιο του οποίου θέλετε να κάνετε την χρήση των καλύψεων, καθώς και το ασφαλιζόμενο πρόσωπο.     
+      innersubheader: Αν είστε κάτοχος και ατομικού ασφαλιστηρίου υγείας, το συμβόλαιό σας θα ενεργοποιηθεί αυτόματα, χωρίς να χρειάζεται κάποια άλλη ενέργεια.
+      dataStoreProperty: clientContracts 
+    - component: EclaimsSelectIncidentComponent  
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_eclaims_select_incident
+      backgroundcolor:  grey-background 
+      cssClass: with-padding 
+      header: Περιγραφή συμβάντος
+      # innerheader: Εάν έχει συμβεί κάτι από τα παρακάτω δύο επιλέξτε και πατήστε συνέχεια.     
+      # innersubheader: Διαφορετικά επιλέξτε τον ιατρικό λόγο για τον οποίο κάνατε χρήση των καλύψεων σας, είτε από τα πιο συχνά είτε μέσω της αναλυτικής αναζήτησης.
+      dataStoreProperty: clientContracts
+    - component: EclaimsReceiptScannerComponent  
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_eclaims_receipt_scanner
+      backgroundcolor:  grey-background 
+      cssClass: regular-padding 
+      header: Ανάσυρση δεδομένων
+      innerheader: Ελέγξτε αν το παραστατικό διαθέτει QR code, αν διαθέτει πατήστε “Εκκίνηση Σκαναρίσματος ” και παρουσιάστε το παραστατικό στην κάμερα σας για την αυτόματη ανάσυρση των δεδομένων.     
+      innersubheader: Σε περίπτωση που το παραστατικό δεν διαθέτει QR Code ή η συσκεύη σας δεν διαθέτει κάμερα πατήστε
+      dataStoreProperty: clientContracts  
+    - component: EclaimsLwcCreateCaseComponent  
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_eclaims_create_case
+      backgroundcolor:  grey-background  
+      header: Διαθέσιμα Ασφαλιστήρια
+      innerheader: Επιλέξετε το συμβόλαιο του οποίου θέλετε να κάνετε την χρήση των καλύψεων, καθώς και το ασφαλιζόμενο πρόσωπο.     
+      dataStoreProperty: clientContracts  
+    - component: EclaimsUploadComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_eclaims_drag_drop_file
+      backgroundcolor:  grey-background
+      cssClass: with-padding
+      header: Επισύναψη εντύπων
+      rows:
+        - cols:
+            - css:
+              col: 12
+              element: drag-drop-file
+    # - component: EclaimsGridViewComponent #ailments next button area
+    #   viewMode:
+    #     DtSectionViewModeRule:
+    #       dt: dt_eclaims_ailments_button
+    #   backgroundcolor:  grey-background  
+    #   cssClass: regular-padding
+    #   rows:
+    #     - css: group-claims-next-ailments-button eclaim-align-button new-over sticky-button
+    #       cols:
+    #         - css: h6-active text-right mt-5 unset-margin
+    #           col: 12
+    #           element: eclaims.ailments.next.button
+    #         - css: h6-active text-right mt-5
+    #           col: 12
+    #           element: eclaims.ailments.previous.button
+    - component: EclaimsGridViewComponent #ailments previous scanner step button area
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_eclaims_ailments_static_scanner_previous_button
+      backgroundcolor:  grey-background  
+      cssClass: regular-padding
+      rows:
+        - css: group-claims-previous-button #eclaim-align-previous-button
+          cols:
+            - css: h6-active eclaim-ailments-previous-static-button mt-5
+              col: 12
+              element: eclaims.ailments.static.scanner.previous.button
+    - component: EclaimsGridViewComponent #ailments previous static button area
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_eclaims_ailments_static_previous_button
+      backgroundcolor:  grey-background  
+      cssClass: regular-padding
+      rows:
+        - css: group-claims-previous-button success-scan-btn
+          cols:
+            - css: h6-active text-right back-color mt-5 #eclaim-ailments-previous-static-button mt-5
+              col: 12
+              element: eclaims.ailments.static.previous.button
+            - css: h6-active text-right-success mt-5 unset-margin
+              col: 12
+              element: eclaims.ailment.static.next.button
+    # - component: EclaimsGridViewComponent #new flow next button area
+    #   viewMode:
+    #     DtSectionViewModeRule:
+    #       dt: dt_eclaims_ailments_static_next_button
+    #   backgroundcolor:  grey-background  
+    #   cssClass: regular-padding
+    #   rows:
+    #     - css: group-claims-next-button static-next-button
+    #       cols:
+    #         - css: h6-active text-right mt-5
+    #           col: 12
+    #           element: eclaims.ailment.static.next.button
+    - component: EclaimsGridViewComponent #old flow button area
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_eclaims_next_button
+      backgroundcolor:  grey-background  
+      cssClass: regular-padding
+      rows:
+        - css: group-claims-next-button
+          cols:
+            - css: h6-active text-right mt-5
+              col: 12
+              element: eclaims.next.button

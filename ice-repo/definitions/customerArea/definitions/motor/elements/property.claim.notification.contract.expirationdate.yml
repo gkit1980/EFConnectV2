@@ -1,0 +1,10 @@
+
+element:
+  type: text
+  viewMode: output
+  buckets:
+    GetContractPropertyCoolgenDetails:
+      transformation:
+        responsePath: ContractPropertyCoolgenDetails.ExpirationDate
+  pages:
+    viewPropertyNotificationDetails: null

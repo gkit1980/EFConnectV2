@@ -1,0 +1,7 @@
+page:
+  component: PopUpPage
+  label: Error services
+  # showTopSection: false
+  sections:
+    - component: SignUpGroupErrorServiceModalComponent
+      label:

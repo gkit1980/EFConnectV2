@@ -1,0 +1,6 @@
+element:
+  type: text
+  component: IceTextInput
+  pages:
+    greenCard: null
+  defaultValue: "Test"

@@ -1,0 +1,20 @@
+page:
+  component: PopUpPage
+  flag: walkthrough communication2
+  showTriangle: true
+  validation:
+    onElementComponentChange: true
+    behaviour: page
+  sections:
+    - component: SimpleGridViewComponent
+      rows:
+        - cols:
+            - css: header-title-pop-up-walkthrough text-center walkthrough-header-mb
+              col: 12
+              element: communication.walkthrough.header2
+    - component: ContentWalkthroughComponent
+      text: "Στο κάτω δεξιά μέρος της οθόνης σας βρίσκετε πάντα τις υπηρεσίες μας Click 2 Call και Click 2 Chat. Μπορείτε να μιλήσετε άμεσα με έναν εκπρόσωπό μας ή να ζητήσετε τηλεφωνικό ραντεβού για να σας καλέσουμε."
+      pageNum: 2
+      numberOfScreens: communication.walkthrough.screens
+      next: ΤΕΛΟΣ
+      previous: ΠΡΟΗΓΟΥΜΕΝΟ

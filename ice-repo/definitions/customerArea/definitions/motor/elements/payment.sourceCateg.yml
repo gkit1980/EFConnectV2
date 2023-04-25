@@ -1,0 +1,12 @@
+element:
+  type: text
+  viewMode: output
+  buckets:
+    GetPaymentURLRedirector:
+      transformation:
+        dataPath: SourceCateg
+    GetPaymentURLRedirectorAEAZ:
+      transformation:
+        dataPath: SourceCateg
+  pages:
+    paymentManagement: null

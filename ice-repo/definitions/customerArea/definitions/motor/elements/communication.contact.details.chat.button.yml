@@ -1,0 +1,11 @@
+element:
+  component: EurolifeButtonComponent
+  buttonIcon: https://scp.eurolife.gr/~/media/3BD95EC9DFCD47F3822636935DF14DB3
+  type: text
+  additionalClasses: eurolife_btn-default left eurolife_btn-stroke-red
+  svgFillColor: corporate_color
+  dialogpage: clicktochat
+  modalDialog: SalesforceChatComponent
+  dialogcloseaction: actionClickToChatNow
+  pages:
+    communicationService: null

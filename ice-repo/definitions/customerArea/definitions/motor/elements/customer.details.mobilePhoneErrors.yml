@@ -1,0 +1,10 @@
+element:
+  type: text
+  viewMode: hidden
+  # defaultValue: 'none'
+  buckets:
+    ChangeMobile:
+      transformation:
+        responsePath: Errors[0].Message
+  pages:
+    changeMobilePhonePopUp: null

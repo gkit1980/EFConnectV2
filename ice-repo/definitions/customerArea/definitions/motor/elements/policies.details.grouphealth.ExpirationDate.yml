@@ -1,0 +1,14 @@
+element:
+  type: date
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent
+  buckets:
+    GetContractGroupHealthDetails:
+      transformation:
+        responsePath: ContractGroupHealthDetails.EndDate
+  viewMode:
+    DtViewModeRule:
+      dt: dt_policy_details_sections
+  pages:
+    policyDetails: null

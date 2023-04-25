@@ -1,0 +1,50 @@
+.modal{
+    display: block !important; /* I added this to see the modal, you don't need this */
+}
+
+/* Important part */
+.modal-dialog{
+    overflow-y: initial !important
+}
+.modal-body{
+    min-height: 500px;
+    overflow-y: auto;
+    margin: 16px;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+
+.modal-container{
+ position: sticky;
+ top:0;
+}
+
+table, th, td, tr{
+    border: 1px solid;
+}
+
+tr,td {
+    padding: 15px;
+}
+
+ul, li{
+    text-align: justify;
+}
+
+.tr-header{
+    font-size: 14px;
+    font-weight: 500;
+    text-align: justify;
+}
+.tr-content{
+    font-size: 14px;
+    text-align: justify;
+}
+.text-align{
+    font-size: 0.975rem;
+    text-align: justify;
+    line-height: unset;
+}

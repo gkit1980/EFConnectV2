@@ -1,0 +1,389 @@
+@import '../../../../styles/abstracts/functions';
+@import '../../../../styles/abstracts/variables';
+
+.create-account-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+}
+
+.create-account-text-container{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.create-account-text-container_bottom {
+    display: flex;
+    background-color: rgba(4, 158, 204, 0.098);
+}
+
+.notification-informed {
+    display: flex;
+    text-align: left;
+    width: 537px;
+    height: 123px;
+    background-color: rgba(4, 158, 204, 0.098);
+    margin: 0px;
+    margin-bottom: 88px;
+    margin-top: 48px;
+
+}
+
+.eye-svg{
+    z-index: 10;
+}
+
+.information_icon {
+    fill: rgb(0, 59, 77);
+    padding-top: 9px;
+    padding-left: 6px;
+}
+
+.Typeface {
+    padding: 11px 24px 13px 8px;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.label-font{
+    font-family: Ubuntu;
+    font-size: 14px;
+    font-weight: 500;
+      font-style: normal;
+    font-stretch: normal;
+    line-height: 1.36;
+    letter-spacing: normal;
+    color: #383b38;
+}
+
+.inside-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.eurolife_btn {
+    width: 293px;
+}
+
+.create-account-terms{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.create-account-button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+
+.icon_container {
+    margin-top: 32px;
+    margin-bottom: 48px;
+    border-radius: 50%;
+    height: 154px;
+    width: 154px;
+    background-color: rgb(252, 214, 217);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#terms {
+    width: 19px !important;
+    height: 19px !important;
+}
+
+#privacy {
+    width: 19px !important;
+    height: 19px !important;
+}
+
+label {
+    margin-bottom: 0px;
+}
+
+.lock_icon {
+    fill: rgb(239, 51, 64);
+}
+
+.Eurolife-ERB {
+    margin-top:34px;
+    margin-left: 44px;
+    margin-bottom: 83px;
+    font-family: Ubuntu;
+    font-size: 28px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: rgb(239, 51, 64);
+}
+
+.error-msg{
+    font-size: 12px;
+    color: #ef3340ed;
+    margin-top: -1.34375em;
+    text-align: left;
+    margin-left: 7px;
+    margin-bottom: 5px;
+}
+
+.groupping {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.change-btn-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 48px;
+    margin-bottom: 64px;
+}
+
+/* .eye-container{
+    display: flex;
+    justify-content: flex-end;
+} */
+.header-title-pop {
+    margin-top: 21px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    @media screen and (max-width: 780px) {
+        padding: 0 15px;
+        text-align: center;
+    }
+}
+
+.infobutton {
+    margin-left: 11px;
+}
+
+.eurolife_btn {
+    width: 293px;
+}
+
+.eurolife-button {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+button.eurolife_btn.eurolife_btn-link.ng-star-inserted
+{
+    margin-left: 29%;
+}
+
+
+::ng-deep .tooltip > .tooltip-inner {
+    background-color: #fff !important;
+    font-family: Ubuntu;
+    font-size: 12px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.4;
+    letter-spacing: normal;
+    color: #383b38;
+    padding: 16px 15px 16px 19px;
+    border-radius: 4px;
+    box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.1);
+    opacity: unset;
+  }
+  
+  ::ng-deep .tooltip > .arrow {
+    display: none;
+  }
+
+  .note{
+    margin-top: 15px;
+    opacity: 0.6;
+    font-family: Ubuntu;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.36;
+    letter-spacing: normal;
+    color: #383b38;
+    max-width: 600px;
+    @media screen and (min-width: 1024px){
+        display: none;
+    }
+}
+    
+.infobutton{
+    @media screen and (max-width: 1023px){
+        display: none;
+    }
+}
+
+.radio-button{
+    display: flex;
+    margin-left: -15px;
+    @media screen and (max-width: 580px) {
+        margin-left: -30px;
+    }
+}
+
+
+.word-spacing{
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.info-text{
+    padding: 10px 0px 0px 15px;
+    @media screen and (max-width: 580px) {
+        padding: 10px 0px 0px 15px;
+        text-align: justify;
+    }
+} 
+
+.radio-button-style{
+    margin-top: 10px;
+    font-size: 15px;
+    margin-left: 15px;
+    @media screen and (max-width: 580px) {
+        margin-left: 30px;
+    }
+
+}
+.radio-button-gender{
+    font-size: 15px;
+
+    @media screen and (max-width: 580px) {
+        margin-left: -15px !important;
+    }
+}
+
+.input-label-style{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+$notification-colors: (
+  background: (
+    warning: rgb(249, 229, 240),
+    success: rgb(233, 252, 245),
+    info: rgba(4, 158, 204, 0.1),
+  ),
+  fill: (
+    warning: rgb(204, 4, 108),
+    success: rgb(43, 234, 155),
+    info: rgb(4, 158, 204),
+  ),
+);
+
+::ng-deep th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.group-icon {
+  width: 70px;
+  height: 70px;
+  background: url('../../../../assets-webpacked/eurolife/group.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.notification-bar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  margin-top: 16px;
+  padding: 10px 0px 10px 20px;
+  width: 100%;
+}
+
+.notification-icon {
+  padding-left: 6px;
+  padding-right: 13px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+
+  @media screen and (max-width: 580px) {
+    margin: 0px 0px -25px 0px;
+    } 
+}
+
+.mobile-view-text{
+    @media screen and (max-width: 580px) {
+        padding: 0px 0px 0px 30px;
+    } 
+}
+.warning {
+  background-color: map-get(map-get($notification-colors, background), warning);
+  fill: map-get(map-get($notification-colors, fill), warning);
+}
+
+.success {
+  background-color: map-get(map-get($notification-colors, background), success);
+  fill: map-get(map-get($notification-colors, fill), success);
+}
+
+.info {
+  background-color: map-get(map-get($notification-colors, background), info);
+  fill: map-get(map-get($notification-colors, fill), info);
+}
+
+.label-gender-margin{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.radio-button-productOption{
+    display: flex;
+    height: 20px;
+    width: 20px;
+  }
+  
+.text-radio-button-productOption{
+margin: -35px 20px 0px 25px;;
+}
+  
+.line-style{
+line-height: 50px;
+font-size: 14px;
+margin-top: 20px;
+}
+  
+.consent-label{
+margin-top: 15px;
+}
+  
+div > input[type="radio"]:checked {
+    accent-color: #cc046c;
+}
+
+.word-spacing{
+margin-left: 4px;
+margin-right: 4px;
+color: #017cff
+}
+
+.error-msg-create {
+    font-size: 12px;
+    color: #ef3340ed;
+    margin-top: -1.34375em;
+    text-align: center;
+    margin-left: 7px;
+    margin-bottom: 35px;
+}
+

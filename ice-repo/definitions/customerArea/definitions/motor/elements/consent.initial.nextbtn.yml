@@ -1,0 +1,10 @@
+element:
+  component: EurolifeButtonComponent
+  # additionalClasses:  eurolife_btn eurolife_btn-default mb-2 middle
+  additionalClasses: eurolife_btn eurolife_btn-stroke consent-init-nextbtn
+  svgFillColor: corporate_color
+  defaultValue: action-consent-initial-next
+  type: text
+  label: OK
+  pages:
+    consentInitial: null

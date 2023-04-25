@@ -1,0 +1,12 @@
+element:
+  component: IceButton
+  type: text
+  label: VERIFY YOUR MOBILE
+  pages:
+    changeEmailPopUp: null
+  viewMode:
+    ConditionalViewModeRule: 
+        conditionElement: customer.details.VerifyMobilePhone
+        conditionValue: true
+        conditionViewMode: default
+        elseViewMode: disabled

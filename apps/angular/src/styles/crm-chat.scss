@@ -1,0 +1,386 @@
+// Salesforce chat component
+
+.modalContainer {
+  font-family: Ubuntu, sans-serif !important;
+  z-index: 15 !important;
+}
+
+.helpButtonLabel {
+  // SaleforceChat changes new functionallity
+  // font-family: "Ubuntu", sans-serif;
+  // font-size: 1.125rem;
+  // left: -40px;
+
+  // SaleforceChat changes old functionallity
+  display: none !important;
+}
+
+.embeddedServiceIcon {
+  // SaleforceChat changes new functionallity
+  // display: flex !important;
+ // left: 145px;
+
+  // SaleforceChat changes old functionallity
+  display: none !important;
+}
+
+.embeddedServiceHelpButton {
+  display: none !important;
+  z-index: 15 !important;
+
+  .helpButton {
+    cursor: pointer !important;
+    position: fixed !important;
+    bottom: 224.3px !important;
+    right: 65px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    color: #ffffff !important;
+    width: 233px !important;
+    height: 72px !important;
+    border-radius: 44.5px !important;
+    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.15) !important;
+    background-color: #ef3340 !important;
+
+    .helpButtonEnabled {
+      font-family: Ubuntu, sans-serif !important;
+
+      &:hover {
+        &::before {
+          opacity: 0 !important;
+        }
+      }
+
+      &:focus {
+        &::before {
+          opacity: 0 !important;
+        }
+      }
+    }
+    
+
+    .uiButton {
+      width: 233px !important;
+      height: 72px !important;
+      border-radius: 44.5px !important;
+      box-shadow: none !important;
+      background-color: #ef3340 !important;
+
+      &:focus {
+        // SaleforceChat changes new functionallity
+        // outline: 1px solid #005290;
+
+        // SaleforceChat changes old functionallity
+        outline: none !important;
+      }
+    }
+  }
+}
+
+.embeddedServiceSidebarForm {
+  .fieldList {
+    .inputText.embeddedServiceSidebarFormField {
+      display: none !important;
+    }
+  }
+}
+
+.prechatUI.embeddedServiceLiveAgentStatePrechatDefaultUI {
+  &:before {
+    content: 'Καλώς ήρθατε στο Click to Chat της Eurolife FFH' !important;
+    color: #333 !important;
+    font-size: 1.125rem !important;
+    font-weight: 400 !important;
+    line-height: 1.39 !important;
+    float: left !important;
+    left: 18px !important;
+    position: relative !important;
+    text-align: left !important;
+    max-width: 300px !important;
+    padding-top: 16px !important;
+  }
+}
+
+.prechatUI.embeddedServiceLiveAgentStatePrechatDefaultUI.h2[embeddedService-chatHeader_chatHeader] {
+  visibility: hidden !important;
+  position: relative !important;
+  content: 'Καλώς ήρθατε στο Click to Chat της Eurolife FFH' !important;
+}
+
+.formContent.embeddedServiceSidebarForm {
+  &:before {
+    content: 'Η υπηρεσία λειτουργεί εργάσιμες ημέρες από τις 09:00 το πρωί μέχρι τις 17:00 το απόγευμα.' !important;
+    color: #383b38 !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 1.36 !important;
+    opacity: 0.6 !important;
+    text-align: center !important;
+    float: left !important;
+    padding: 16px !important;
+  }
+}
+
+.dispBlock {
+  display: block !important;
+}
+
+.click-to-chat {
+  // SaleforceChat changes new functionallity
+  //  display: none !important;
+
+  // SaleforceChat changes old functionallity
+   display: flex !important;
+}
+
+//Salesforce chat -new functionallity
+
+// .click-to-chat-icon {
+//   content: ' ' !important;
+//   width: 26px !important;
+//   height: 26px !important;
+//   background: url(https://scp.eurolife.gr/~/media/3BD95EC9DFCD47F3822636935DF14DB3.ashx) !important;
+//   background-repeat: no-repeat !important;
+//   background-size: 26px !important;
+//   filter: invert(1) !important;
+//   left: 164px !important;
+//   top: 20px !important;
+//   margin-left: 38px !important;
+//   margin-bottom: 8px !important;
+// }
+
+button[embeddedService-chatHeader_chatHeader].minimizeButton {
+  display: none !important;
+}
+
+.offlineSupportUI.embeddedServiceLiveAgentStateOfflineSupportDefaultUI {
+  &:before {
+    content: 'Καλώς ήρθατε στο Click to Chat της Eurolife FFH' !important;
+    color: #333 !important;
+    font-size: 1.125rem !important;
+    font-weight: 400 !important;
+    line-height: 1.39 !important;
+    float: left !important;
+    left: 18px !important;
+    position: relative !important;
+    text-align: left !important;
+    max-width: 300px !important;
+    padding-top: 16px !important;
+  }
+
+  .embeddedServiceSidebarFormField {
+    display: none !important;
+  }
+
+  .buttonWrapper.embeddedServiceSidebarForm {
+    display: none !important;
+  }
+}
+
+h2[embeddedService-chatHeader_chatHeader] {
+  visibility: hidden !important;
+  position: relative !important;
+
+  &::after {
+    visibility: visible !important;
+    position: absolute !important;
+    content: ' ' !important;
+    width: 24px !important;
+    height: 24px !important;
+    background: url(https://scp.eurolife.gr/~/media/3BD95EC9DFCD47F3822636935DF14DB3.ashx) !important;
+    background-repeat: no-repeat !important;
+    background-size: 24px !important;
+    filter: invert(1) !important;
+    top: 0px !important;
+    bottom: 0 !important;
+    left: 0px !important;
+  }
+
+  &::before {
+    visibility: visible !important;
+    position: absolute !important;
+    content: 'CLICK TO CHAT' !important;
+    height: 19px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    font-style: normal !important;
+    font-stretch: normal !important;
+    line-height: 1.6 !important;
+    letter-spacing: normal !important;
+    left: 36px !important;
+  }
+}
+
+// SaleforceChat changes new functionallity
+// .embeddedservice-chat-header{
+//   @media screen and (max-width: 575.98px) {
+//     direction: inherit;
+//     height: 50px;
+//     min-height: 50px;
+//     background-color: rgb(239, 51, 64);
+//   }
+  
+// }
+
+
+label[for='FirstName'] > span:first-child {
+  visibility: hidden !important;
+  position: relative !important;
+
+  &::before {
+    visibility: visible !important;
+    position: absolute !important;
+    content: 'Όνομα' !important;
+  }
+}
+
+label[for='LastName'] > span:first-child {
+  visibility: hidden !important;
+  position: relative !important;
+
+  &::before {
+    visibility: visible !important;
+    position: absolute !important;
+    content: 'Επίθετο' !important;
+  }
+}
+
+.embeddedServiceSidebarButton {
+  background: #485294 !important;
+
+  &:focus {
+    text-decoration: none !important;
+  }
+}
+
+.embeddedServiceSidebarButton.uiButton--inverse {
+  .label {
+    color: white !important;
+  }
+}
+
+.has-error.uiInputDefaultError.uiInput.uiInput--default.uiInput--input {
+  li.form-element__help {
+    visibility: hidden !important;
+    position: relative !important;
+
+    &::after {
+      visibility: visible !important;
+      position: absolute !important;
+      content: 'Το πεδίο είναι υποχρεωτικό' !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      line-height: 1.1;
+    }
+  }
+}
+
+.queuePositionContent.queuePositionWaiting.embeddedServiceLiveAgentQueuePosition {
+  width: 100% !important;
+}
+
+.queuePositionCounter.youAreNextMessage {
+  display: none !important;
+}
+
+.queuePositionMessage {
+  p {
+    visibility: hidden !important;
+    position: relative !important;
+
+    &::after {
+      visibility: visible !important;
+      position: absolute !important;
+      content: 'Παρακαλώ περιμένετε και ένας εκπρόσωπός μας θα σας εξυπηρετήσει το συντομότερο δυνατό' !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      color: #383b38 !important;
+      font-size: 14px !important;
+      font-weight: 400 !important;
+      line-height: 1.36 !important;
+      opacity: 0.6 !important;
+      text-align: center !important;
+      float: left !important;
+    }
+  }
+}
+
+.waitingGreetingContent {
+  margin-top: -75px !important;
+  margin-bottom: 0 !important;
+}
+
+.waitingCancelChat.uiButton--inverse.uiButton.embeddedServiceSidebarButton {
+  .label {
+    visibility: hidden !important;
+    position: relative !important;
+
+    &::after {
+      visibility: visible !important;
+      position: absolute !important;
+      content: 'Ακύρωση' !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      color: #ffffff !important;
+    }
+  }
+}
+// SaleforceChat changes new functionallity
+// .embeddedServiceHelpButton .helpButton .uiButton {
+//   background-color: #005290;
+//   font-family: "Arial", sans-serif;
+// }
+// SaleforceChat changes new functionallity
+// .embeddedServiceHelpButton .helpButton .uiButton:focus {
+//   outline: 1px solid #005290;
+// }
+.announcement[embeddedService-chatHeaderAnnouncement_chatHeaderAnnouncement] {
+  display: none !important;
+}
+
+.embeddedServiceLiveAgentStateChatPlaintextMessageDefaultUI.chasitor.plaintextContent {
+  background-color: #ffb3ab !important;
+  color: #383b38 !important;
+} 
+
+//start- SaleforceChat changes new functionallity
+// span.queuePositionChatIcon.large.embeddedServiceIcon{
+//   position: unset !important; 
+// }
+
+// span.loadingBallContainer.animated.loadingBallsOverlay.embeddedServiceLoadingBalls{
+//   top: 180px !important;
+//   position: sticky;
+//   margin: 0px 0px 20px -40px;
+
+//     @media screen and (max-width: 575.98px) {
+//       position: sticky;
+//       margin: 20px -20px 0px 0px;
+      
+//     }
+// }
+
+// embeddedservice-chat-header {
+//   @media screen and (max-width: 575.98px) {
+//   margin: 0px 0px 80px 0px;
+//   }
+// }
+
+// header.sidebarHeader {
+//   @media screen and (max-width: 575.98px) {
+//   bottom: -80px;
+//   }
+// }
+
+// span.message {
+//   font-size: small;
+//   white-space: pre-wrap!important;
+// }
+//end- SaleforceChat changes new functionallity

@@ -1,0 +1,10 @@
+element:
+  type: date
+  label: Ημερομηνία Λήξης Συμβολαίου
+  # labelForEfapax: ΗΜΕΡΟΜΗΝΙΑ ΛΗΞΗΣ
+  viewMode: output
+  pages:
+    policyDetails: null
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent

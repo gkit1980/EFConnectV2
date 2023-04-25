@@ -1,0 +1,133 @@
+.sign-up-confirmation-text {
+  text-align: center;
+  /* border: 1px solid black; */
+}
+
+.confirmation_email {
+  fill: #ef3340;
+  margin-bottom: 16px;
+}
+
+.notification-informed {
+  display: flex;
+  text-align: left;
+  /* width: 468px; */
+  /* height: 81px; */
+  background-color: rgba(4, 158, 204, 0.1);
+  margin: 10px 0 0 0;
+}
+
+.information_icon {
+  fill: #003b4d;
+  padding-top: 9px;
+  padding-left: 6px;
+}
+
+.Caption3 {
+  padding: 11px 24px 13px 8px;
+  margin-bottom: 0;
+}
+
+///new process
+
+.email-form-container {
+  max-width: 703px;
+  border: 1px solid #dedede;
+  border-radius: 8px;
+  margin: auto auto 136px auto;
+  padding-top: 48px;
+  padding-bottom: 48px;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 40px;
+    padding-top: 32px;
+    padding-bottom: 40px;
+  }
+}
+
+.basic-info-header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+
+  .h4 {
+    margin: 0 142px 16px 142px;
+    font-size: 28px;
+  }
+
+  .h5 {
+    margin: 0 159px 48px 159px;
+    font-weight: normal;
+  }
+
+  @media screen and (max-width: 768px) {
+    .h4 {
+      margin: 0 11px 16px 11px;
+    }
+
+    .h5 {
+      margin: 0 11px 48px 11px;
+    }
+  }
+}
+
+.counter {
+  margin: 0 117px 23px 117px;
+
+  .clock {
+    margin-right: 7px;
+  }
+
+  .time {
+    font-size: 16px;
+  }
+}
+
+.second-info-header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 200px 47px 200px;
+
+  @media screen and (max-width: 768px) {
+    margin: 0 40px 47px 40px;
+  }
+}
+
+.third-info-header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 117px 0 117px;
+
+  @media screen and (max-width: 768px) {
+    margin: 0 11px 0 11px;
+  }
+}
+
+.h4 {
+  font-size: 20px;
+}
+
+.h5 {
+  font-size: 16px;
+}
+
+.h6 {
+  font-size: 14px;
+}
+
+.a-link{
+
+    color: #007bff !important;
+    text-decoration: none !important;
+    background-color: transparent;
+    cursor:pointer;
+
+}

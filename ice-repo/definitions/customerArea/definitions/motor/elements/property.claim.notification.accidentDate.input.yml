@@ -1,0 +1,8 @@
+element:
+  type: date
+  component: PropertyNotificationDatepickerComponent
+  label:  
+  viewMode: enable
+  buckets:
+    PropertyClaimNotificationCreateCase:
+      transformation: {} 

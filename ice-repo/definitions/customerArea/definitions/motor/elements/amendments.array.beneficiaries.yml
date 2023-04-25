@@ -1,0 +1,9 @@
+element:
+  component: AmendmentsLifeBeneficiariesComponent
+  arrayElement: beneficiaries
+  arrayElementBenefName: beneficiaries~BenefName
+  arrayElementRelationship: beneficiaries~Relationship
+  arrayElementPercentage: beneficiaries~Percentage
+  pages:
+    viewAmendmentFinanceDetails: null
+    

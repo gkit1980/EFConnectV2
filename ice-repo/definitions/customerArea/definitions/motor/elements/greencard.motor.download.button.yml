@@ -1,0 +1,9 @@
+element:
+  component: EurolifeButtonComponent
+  type: text
+  label: ΛΗΨΗ ΚΑΡΤΑΣ
+  additionalClasses: eurolife_btn-stroke gc-button mr-3 greencard-cancel-btn
+  defaultValue: action-download-greencard
+  alignmentClass: dt_greencard_download_btn
+  pages:
+    greenCard: null

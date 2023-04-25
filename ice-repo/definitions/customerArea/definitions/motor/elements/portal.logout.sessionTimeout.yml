@@ -1,0 +1,6 @@
+element:
+  viewMode: output
+  type: text
+  defaultValue: Test
+  label:
+    NoLabelRule: {}

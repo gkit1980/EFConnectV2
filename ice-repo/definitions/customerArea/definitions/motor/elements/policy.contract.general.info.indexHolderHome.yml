@@ -1,0 +1,7 @@
+element:
+  type: integer
+  buckets:
+    GetUrlNote:
+      transformation: {}
+
+

@@ -1,0 +1,10 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent
+  viewMode: output
+  buckets:
+    GetContractMotorDetails:
+      transformation:
+        responsePath: ContractMotorDetails.VehicleColor

@@ -1,0 +1,11 @@
+element:
+  type: text
+  viewMode: output
+  component:
+    StaticComponentRule:
+      component:
+        TextLabelComponent:
+          text: Επικοινωνία
+          AdditionalClasses: h5
+  pages:
+    communicationService: null

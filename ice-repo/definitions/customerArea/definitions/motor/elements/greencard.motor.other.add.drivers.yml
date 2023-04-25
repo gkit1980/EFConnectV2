@@ -1,0 +1,5 @@
+element:
+  component: GreenCardAddDriverComponent
+  type: text    
+  pages:
+    greenCard: null

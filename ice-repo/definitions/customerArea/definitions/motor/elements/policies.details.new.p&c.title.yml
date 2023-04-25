@@ -1,0 +1,6 @@
+element:
+  type: text
+  viewMode: output
+  pages:
+    policyDetails: null
+  label: Πληροφορίες Συμβολαίου

@@ -1,0 +1,22 @@
+action:
+  title: calls a rest service to get the contract beneficiaries
+  execution:
+    - RestCallExecutionRule:
+        # baseUrl: http://platformsuat.eurolife.gr/CustomerAreaLogin/api/CustomerAreaApi
+        baseUrl: BASEURLCHANGECREDENTIALS
+        url: EmailExists
+        verb: post
+        bucket: EmailExists
+        needsDataStore: false
+        encryptMessage: true
+        encryptSecretElement: token
+  #     - NavigateToPageExecutionRule:
+  #         page: viewMyBeneficiaries
+  #         omitValidation: true
+  #  condition:
+  #    FeelConditionRule:
+  #      expression: policy.contract.general.info.ContractID != null
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - signup.email

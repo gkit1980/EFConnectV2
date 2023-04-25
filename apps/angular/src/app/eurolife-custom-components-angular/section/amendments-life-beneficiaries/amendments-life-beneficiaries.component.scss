@@ -1,0 +1,352 @@
+.grey-background {
+    background-color: #eeeeee;
+}
+
+.white-background {
+    background-color: #ffffff;
+    max-width: 1100px;
+}
+
+.container{
+  background-color: #ffffff;
+  padding: 10px 150px 0px 170px;
+  @media screen and (max-width: 539px) {
+   padding:0px 64px 0px 32px;
+  }
+
+}
+.remove{
+  border: none;
+  opacity: 0.6;
+  background: none;
+}
+
+.btn-remove{
+  border: none;
+  opacity: 0.6;
+  margin-left: auto;
+  margin-right: -80px;
+  margin-top: -86px;
+  @media screen and (max-width: 539px) {
+    border: unset;
+    opacity: 0.6;
+    margin-left: unset;
+    margin: -84px 0px 0px 228px;
+    padding: 0px 0px 0px 50px;
+  }
+}
+
+.btn-add{
+  padding-top: 5%;
+  display: flex;
+  justify-content: center!important;
+}
+.main-container {
+    margin-top: -40px;
+}
+
+.amendments-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eeeeee;
+    width: 100%;
+    height: 109px;
+    padding: 0 24px;
+    margin-top: 8px;
+  
+    @media screen and (max-width: 700px) {
+      flex-direction: column;
+      height: auto;
+      padding: 24px;
+    }
+  
+    .product-container {
+      display: flex;
+      align-items: center;
+      @media screen and (max-width: 700px) {
+        flex-direction: column;
+      }
+    }
+    .product-description {
+      font-family: Ubuntu;
+      font-size: 18px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.39;
+      letter-spacing: normal;
+      margin-bottom: 0;
+    }
+  
+    .description-container {
+      display: flex;
+      flex-direction: column;
+      margin-left: 16px;
+      @media screen and (max-width: 700px) {
+        margin: 16px 0 8px 0;
+      }
+    }
+  
+    .address-section{
+      margin-left: 80px;
+      @media screen and (max-width: 700px) {
+        margin-left: 0px;
+      }
+    }
+  
+    .contract-num {
+      opacity: 0.6;
+      font-family: Ubuntu;
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.36;
+      letter-spacing: normal;
+      color: #383b38;
+    }
+  
+    .btn-container {
+      @media screen and (max-width: 700px) {
+        display: flex;
+        justify-content: center;
+        margin-top: 24px;
+        button {
+          width: 288px;
+          height: 36px;
+          padding: 0;
+        }
+      }
+    }
+  }
+  .card-headers {
+    display: flex;
+    padding: 0 24px;
+  }
+  
+  .life_text {
+    // color: ;
+    color: getColor(life);
+  }
+  
+  .otherpc_text {
+    color: getColor(sme);
+  }
+  
+  .health_text {
+    // color: ;
+    color: getColor(health);
+  }
+  
+  .motor_text {
+    color: getColor(motor);
+  }
+  
+  .house_text {
+    color: #F2B100;
+  }
+  
+  .savings_text {
+    color: getColor(finance);
+  }
+  
+  .other_pc_text {
+    color: getColor(sme);
+  }
+  
+  .accident_header {
+    font-weight: 700;
+    padding: 20px 0px 15px 15px;
+  }
+
+  .accident_subheader {
+    font-size: 0.85rem;
+  }
+
+  
+.header-padding-extra{
+  padding: 26px 0px 10px 0px;
+}
+
+.subheader-padding-extra{
+  padding: 10px 0px 10px 0px;
+}
+
+.bold-address{
+  font-weight: 500;
+}
+
+.info {
+  background-color: #E5F5F9;
+  fill: rgb(4, 158, 204);
+}
+
+.Caption3 {
+  padding-left: 0;
+  display: inline;
+  color: #383B38;
+  font-family: Ubuntu, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 16px;
+  margin-bottom: 12px;
+}
+
+// .notification_icon {
+//       padding-left: 6px;
+//       padding-right: 13px;
+//       padding-top: 4px;
+//       padding-bottom: 4px;
+  
+// }
+.notification_bar {
+  align-items: center;
+  align-content: center;
+  position: relative;
+  margin-top: 40px;
+  margin-left: 120px;
+  margin-right: 120px;
+  z-index: 10;
+  opacity: 1;
+  @media screen and (max-width: 700px) {
+    margin-top: unset;
+    margin-left: unset;
+    margin-right: unset;
+  }
+}
+
+.do_flex {
+  justify-content: center;
+  flex-wrap: nowrap;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  flex-direction: column;
+  @media screen and (max-width: 539px) {
+    padding: 0px 0px 0px 30px
+  }
+}
+
+.outer_flex {
+  display: flex;
+  justify-content: center;
+  padding-top: 16px;
+  @media screen and (max-width: 539px) {
+    display: unset;
+    padding: 0px 0px 0px 5px;
+  }
+
+}
+
+.outer_flex svg {
+  margin: 18px 0px 20px 20px;
+  @media screen and (max-width: 539px) {
+    margin: 0px 0px -120px 0px;
+  }
+}
+
+.padding-label{
+  margin: 0px 0px 40px auto;
+  max-width: 79%;
+  width: 72%;
+  position: relative;
+  @media screen and (max-width: 539px) {
+    margin:  0px 0px 40px 105px;
+  }
+}
+
+.product-icon {
+  float: left;
+  margin-bottom: 16px;
+}
+
+.icon-add{
+  background-image: url(https://scp.eurolife.gr/~/media/4C58B0B2E5D94F20B19C378AEB002832.ashx) !important;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  width: 15px;
+  height: 15px;
+  
+}
+
+.text-add{
+  width: 180px;
+}
+
+button.eurolife_btn.eurolife_btn-stroke {
+  width: 250px;
+}
+
+.btn-lock{
+  background-color: #b9b8b8;
+  border: none;
+  @media screen and (max-width: 539px){
+    width: 300px;
+  }
+}
+
+.lock{
+  border: none;
+  opacity: 0.6;
+  margin: -300px 0px -220px 725px;
+  background-color: unset;
+  @media screen and (max-width: 539px) {
+    margin: -76px 0px 0px 182px;
+    background-color: unset;
+  }
+}
+
+::ng-deep .mat-form-field.mat-form-field.ng-tns-c5-16.mat-primary.mat-form-field-type-mat-input.mat-form-field-appearance-standard.mat-form-field-can-float.mat-form-field-has-label.mat-form-field-hide-placeholder {
+  width: 60px !important;
+}
+
+.disabledDiv {
+  pointer-events: none;
+  opacity: 0.4;   
+}
+
+// .column.col-md-12.Typeface.text-align-center-bp.amendments-border-grey-container-per.ng-star-inserted {
+//   //height: 65px !important;
+// }
+.column.col-md-12.Typeface.text-align-center-bp.amendments-border-grey-container.ng-star-inserted {
+  height: 59px !important;
+}
+
+.editableDiv {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.lock-dis .editableDiv{
+  background-color: #d5d4d4;
+}
+
+
+.padding-row{
+  padding: 42px 0px 0px 0px;
+}
+
+.table-container {
+  margin-top: 10px;
+  .row {
+    height: 50px;
+  }
+  .col {
+    margin: auto;
+  }
+  .header-row {
+    background-color: #eeeeee;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.38;
+    letter-spacing: normal;
+    color: #383b38;
+    height: 52px;
+  }
+}

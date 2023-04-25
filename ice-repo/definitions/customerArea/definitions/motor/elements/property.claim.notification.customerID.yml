@@ -1,0 +1,11 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        PropertyClaimNotificationInputField:
+          elementName: customerID
+  buckets:
+     PropertyClaimNotificationCreateCase:
+      transformation: {}  
+   

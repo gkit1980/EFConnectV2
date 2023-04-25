@@ -1,0 +1,39 @@
+<div>
+  <p class="title">Payment Details</p>
+</div>
+<div class="order-info-container" id="divToPrint">
+  <mat-card>
+    <!-- <mat-card-header>
+    <mat-card-title>Payment Details</mat-card-title>
+  </mat-card-header> -->
+    <mat-card-content>
+      <div class="row">
+        <div class="col-md-6">
+          {{ paymentDate | resourcePipe }}
+        </div>
+        <div class="col-md-6">
+          {{getCurrentDate()}}
+        </div>
+      </div>
+      <div *ngFor="let row of recipe.rows" class="row" [ngClass]="row.css">
+        <div class="column" *ngFor="let col of row.cols" [ngClass]="getGridColumnClass(col)">
+          <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element" [component]="col.component">
+          </ice-element>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div *ngFor="let footer of recipe.footer">
+      <div class="column" *ngFor="let col of footer.cols" [ngClass]="getGridColumnClass(col)">
+        <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element" [component]="col.component">
+        </ice-element>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <p><span class="glyphicon glyphicon-print"></span> <a href="#" (click)="print()"> print</a></p>
+  </div>
+</div>

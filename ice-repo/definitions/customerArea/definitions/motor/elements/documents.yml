@@ -1,0 +1,7 @@
+element:
+  type: array
+  buckets:
+    AmendmentsUploadFiles:
+      transformation: {}
+    EclaimsUploadFiles:
+      transformation: {}

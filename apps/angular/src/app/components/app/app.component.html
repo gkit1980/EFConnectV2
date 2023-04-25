@@ -1,11 +1,38 @@
-<div class="app-root mat-typography">
-  <app-header *ngIf="authenticationService.loggedIn"></app-header>
-
-  <div class="container app-container">
-    <router-outlet></router-outlet>
+<div [ngClass]="getBlurEffect()">
+  <header *ngIf="showHeader"></header>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
   </div>
+  <div class="click-to-call" *ngIf="showIcons && showHeader" (click)="toggleCall()">
+    <p class="h6">Click to Call</p>
+    <div class="click-to-call-icon" aria-label="icon" [inlineSVG]="getIcon('F307FD1B08B4438AA07440347B334F98')"
+      [onSVGLoaded]="handleSVG">
+    </div>
+  </div>
+  <div class="click-to-chat" *ngIf="showIcons && showHeader" (click)="toggleChat()">
+    <p class="h6">Click to Chat</p>
+    <div class="click-to-chat-icon" aria-label="icon" [inlineSVG]="getIcon('3BD95EC9DFCD47F3822636935DF14DB3')"
+      [onSVGLoaded]="handleSVG">
+    </div>
+  </div>
+  <div *ngIf="showHeader" class="chat-icon-outline" (click)="onChatClick()" [ngClass]="getChatIconOutlineActive()">
+    <div class="chat-text">
+      <p class="h6">Πως μπορούμε να βοηθήσουμε;</p>
+    </div>
+    <div class="chat-icon" aria-label="icon" [inlineSVG]="getIcon('85D1F364429E4BBD9D0E4C3D03E42E51')"
+      [onSVGLoaded]="handleSVGChat">
+    </div>
 
-  <app-footer *ngIf="authenticationService.loggedIn"></app-footer>
+    <!--       'https://scp.eurolife.gr/~/media/85D1F364429E4BBD9D0E4C3D03E42E51.ashx' -->
 
-  <app-spinner></app-spinner>
+  </div>
+  <!--Salesforce click to chat-->
+  <!-- <app-salesforce-chat *ngIf="showHeader"></app-salesforce-chat> -->
+  <a id="cookie-btn" class="cookie-dec-container-show-settings">Cookie Settings</a>
+  <app-loading-spinner></app-loading-spinner>
+  <page-footer *ngIf="showFooter"></page-footer>
 </div>

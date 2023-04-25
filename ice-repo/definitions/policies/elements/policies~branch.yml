@@ -1,0 +1,9 @@
+element:
+  type: text
+  viewMode: output
+  defaultValue:
+    ArrayItemValueRule:
+      values:
+        - Motor
+        - Life
+        - Motor

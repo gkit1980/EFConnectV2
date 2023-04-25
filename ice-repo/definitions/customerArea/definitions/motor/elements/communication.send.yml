@@ -1,0 +1,7 @@
+element:
+  type: text
+  label: Αποστολή Σχολίου
+  component: SendEmailButtonComponent
+  viewMode: default
+  pages:
+    contactForm: null

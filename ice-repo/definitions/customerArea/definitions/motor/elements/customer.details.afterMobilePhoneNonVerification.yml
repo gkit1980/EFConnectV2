@@ -1,0 +1,15 @@
+element:
+  type: text
+  label: null
+  buckets:
+    ChangeMobile:
+      transformation:
+        responsePath: Errors[0].ErrorCode
+  viewMode:
+    DtViewModeRule:
+      dt: dt.mobile.phone.non.verification
+  # buckets:
+  #   ChangeMobile:
+  #     transformation: responsePath: Errors[0].Message
+  pages:
+    changeMobilePhonePopUp: null

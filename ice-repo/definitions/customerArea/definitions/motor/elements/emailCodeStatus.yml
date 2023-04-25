@@ -1,0 +1,9 @@
+element:
+  type: boolean
+  viewMode: output
+  buckets:
+    VerifyEmail:
+      transformation:
+        responsePath: Success         
+  pages:
+    signupwithsms: null

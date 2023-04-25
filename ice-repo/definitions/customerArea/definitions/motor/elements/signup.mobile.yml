@@ -1,0 +1,9 @@
+element:
+  type: text
+  viewMode: default
+  buckets:
+    InitSignUp:
+      transformation:
+        dataPath: Mobile      
+  pages:
+    sign-up: null

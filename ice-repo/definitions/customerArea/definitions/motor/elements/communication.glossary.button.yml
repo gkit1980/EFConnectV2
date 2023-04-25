@@ -1,0 +1,8 @@
+element:
+  component: EurolifeButtonComponent
+  additionalClasses: eurolife_btn-default left eurolife_btn-stroke-red
+  svgFillColor: corporate_color
+  type: text
+  defaultValue: action-redirect-glossary
+  pages:
+    communicationService: null

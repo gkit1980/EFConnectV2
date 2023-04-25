@@ -1,0 +1,4 @@
+element:
+  type: text
+  label: "Ημερομηνία Συμβάντος"
+  viewMode: output

@@ -1,0 +1,71 @@
+.modal{
+    display: block !important; /* I added this to see the modal, you don't need this */
+}
+
+/* Important part */
+.modal-dialog{
+    overflow-y: initial !important
+}
+.modal-body{
+    min-height: auto;
+    overflow-y: auto;
+    margin: 16px;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.modal-win{
+    padding:120px 0px 0px 0px;
+}
+
+.modal-container{
+ position: sticky;
+ top:0;
+ width: 700px;
+ height: 640px;
+}
+
+.success-title{
+    color: #383b38;
+    font-size: 32px;
+}
+
+.success-text{
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0px 70px 0px 70px;
+
+}
+
+.div-style{
+  //  padding: 30px 0px 0px 250px;
+  text-align: center;
+
+    @media screen and (max-width: 540px) {
+      //  padding:  30px 0px 0px 140px;
+      text-align: center;
+    }
+
+    @media screen and (max-width : 414px) {
+      //  padding:  30px 0px 0px 80px;
+      text-align: center;
+    }
+}
+
+.button-ok{
+    width: 160px;
+}
+
+.success-img-svg{
+    width: 140px;
+    height: 140px;
+    background: #485294;
+    margin: 30px 143px 0px 320px;
+    border-radius: 80px;
+}
+
+::ng-deep svg path {
+    fill:#92A2CE !important;
+}

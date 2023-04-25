@@ -1,0 +1,16 @@
+action:
+  title: calls a rest service to get the agent info
+  execution:
+    - GetParticipantsRule:
+        baseUrl: BASEURL
+        # baseUrl: https://customer_data
+        url: GetContractParticipants
+        verb: post
+        bucket: GetContractParticipants
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: true
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - triggerActionGetParticipants

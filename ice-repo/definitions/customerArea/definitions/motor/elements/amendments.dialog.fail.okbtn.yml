@@ -1,0 +1,14 @@
+element:
+  component: EurolifeButtonComponent
+  additionalClasses: eurolife_btn-default amendmets-dialog-fail-btn
+  svgFillColor: corporate_color
+  type: text
+  label: "ΟΚ"
+  defaultValue: action-amendments-close-dialog
+  redirectUrl: "/#/ice/default/customerArea.motor/home"
+  pages:
+    viewAmendmentDetails: null
+    viewAmendmentHomeDetails: null
+    viewAmendmentHealthDetails: null
+    viewAmendmentLifeDetails: null
+    viewAmendmentFinanceDetails: null

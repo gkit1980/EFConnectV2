@@ -1,0 +1,12 @@
+element:
+  type: text
+  viewMode: output
+  buckets:
+    GetTransactionInfoAEGA:
+      transformation:
+        responsePath: ConfirmURL
+    # executePayment:
+    #   transformation:
+    #     dataPath: confirmUrl
+  pages:
+    paymentManagement: null

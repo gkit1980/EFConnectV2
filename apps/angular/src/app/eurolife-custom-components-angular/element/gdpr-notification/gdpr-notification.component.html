@@ -1,0 +1,12 @@
+<div class="ice-checkbox" *ngIf="isVisible">
+	<mat-checkbox matInput *ngIf="!isOutput" [(ngModel)]="value" [required]="isRequired" [disabled]="isDisabled"
+		[labelPosition]="labelPosition" (change)="onChange($event)">
+		<mat-label [attr.data-required]="isRequired">{{ text1 | resourcePipe }}<a
+				href="https://www.eurolife.gr/el/prosopika-dedomena" target="_blank">{{ text2 | resourcePipe }}</a>.
+		</mat-label>
+	</mat-checkbox>
+	<mat-output *ngIf="isOutput" [isOutput]="isOutput" [value]="value"></mat-output>
+	<mat-error *ngFor="let message of validation?.getMessagesFor(element.name, index)">
+		{{ message }}
+	</mat-error>
+</div>

@@ -1,0 +1,696 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - label: amendments.details.step.status
+      element: amendments.details.step.status
+    - label: amendments.finance.category.dropdown
+      element: amendments.finance.category.dropdown
+    - label: amendments.finance.subcategory.dropdown
+      element: amendments.finance.subcategory.dropdown
+    - label: amendments.beneficiaries.filledInputs 
+      element: amendments.beneficiaries.filledInputs 
+    - label: amendments.health.life.finance.frequencyOfPayment.input
+      element: amendments.health.life.finance.frequencyOfPayment.input
+    - label: amendments.health.life.finance.extra.payment.input
+      element: amendments.health.life.finance.extra.payment.input
+    - label: amendments.health.life.finance.new.birthdate.input
+      element: amendments.health.life.finance.new.birthdate.input
+    - label: amendments.upload.file
+      element: amendments.upload.file
+    - label: amendments.health.life.finance.new.decrease.amount.input
+      element: amendments.health.life.finance.new.decrease.amount.input
+    - label: amendments.health.life.finance.new.increase.amount.input
+      element: amendments.health.life.finance.new.increase.amount.input
+    - label: amendments.commentuser
+      element: amendments.commentuser
+    - label: amendments.verifieduser
+      element: amendments.verifieduser
+  outputs:
+    - label: viewMode
+      id: viewMode
+      type: string
+  rules:
+    # STEP 0
+    - inputs:
+        - 0
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - null
+        - null
+        - false
+        - null
+        - null
+        - false
+        - false
+      outputs:
+        - default
+    - inputs:
+        - 0
+        - null
+        - null
+        - false
+        - null
+        - null
+        - null
+        - false
+        - null
+        - null
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 0
+        - "-"
+        - null
+        - false
+        - null
+        - null
+        - null
+        - false
+        - null
+        - null
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 0
+        - "-"
+        - "-"
+        - false
+        - null
+        - null
+        - null
+        - false
+        - null
+        - null
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 0
+        - not(null)
+        - "-"
+        - false
+        - null
+        - null
+        - null
+        - false
+        - null
+        - null
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 0
+        - "-"
+        - not(null)
+        - false
+        - null
+        - null
+        - null
+        - false
+        - null
+        - null
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 0
+        - null
+        - "-"
+        - false
+        - null
+        - null
+        - null
+        - false
+        - null
+        - null
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 0
+        - not(null)
+        - null
+        - false
+        - null
+        - null
+        - null
+        - false
+        - null
+        - null
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 0
+        - null
+        - not(null)
+        - false
+        - null
+        - null
+        - null
+        - false
+        - null
+        - null
+        - false
+        - false
+      outputs:
+        - disabled
+    # End STEP 0
+    # STEP 1
+    #comment areas
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - null
+        - null
+        - false
+        - null
+        - null
+        - true
+        - false
+      outputs:
+        - default
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - null
+        - null
+        - false
+        - null
+        - null
+        - false
+        - false
+      outputs:
+        - disabled
+    #change/add beneficiaries  
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - true
+        - null
+        - null
+        - null
+        - false
+        - null
+        - null
+        - false
+        - false
+      outputs:
+        - default
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - null
+        - null
+        - false
+        - null
+        - null
+        - false
+        - false
+      outputs:
+        - disabled
+    #frequency field  
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - false
+        - not(null)
+        - null
+        - null
+        - false
+        - null
+        - null
+        - false
+        - false
+      outputs:
+        - default
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - false
+        - "-"
+        - null
+        - null
+        - false
+        - null
+        - null
+        - false
+        - false
+      outputs:
+        - disabled
+    # extra payment field
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - not(null)
+        - null
+        - true
+        - null
+        - null
+        - false
+        - false
+      outputs:
+        - default
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - "-"
+        - null
+        - false
+        - null
+        - null
+        - false
+        - false
+      outputs:
+        - disabled
+    # birthday field
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - null
+        - not(null)
+        - true
+        - null
+        - null
+        - false
+        - false
+      outputs:
+        - default
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - null
+        - "-"
+        - false
+        - null
+        - null
+        - false
+        - false
+      outputs:
+        - disabled
+    #decrease amount field
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - null
+        - null
+        - false
+        - not(null)
+        - null
+        - false
+        - false
+      outputs:
+        - default
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - null
+        - null
+        - false
+        - "-"
+        - null
+        - false
+        - false
+      outputs:
+        - disabled
+    #increase amount field
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - null
+        - null
+        - false
+        - null
+        - not(null)
+        - false
+        - false
+      outputs:
+        - default
+    - inputs:
+        - 1
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - null
+        - null
+        - false
+        - null
+        - "-"
+        - false
+        - false
+      outputs:
+        - disabled
+    # End STEP 1
+    # # STEP 2
+    #insured change/add beneficiaries field
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - true
+        - null
+        - null
+        - null
+        - false
+        - null
+        - null
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - null
+        - null
+        - false
+        - null
+        - null
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - true
+        - null
+        - null
+        - null
+        - false
+        - null
+        - null
+        - false
+        - true
+      outputs:
+        - default
+    #insured frequency field  
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - false
+        - not(null)
+        - null
+        - null
+        - false
+        - null
+        - null
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - false
+        - "-"
+        - null
+        - null
+        - false
+        - null
+        - null
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - false
+        - not(null)
+        - null
+        - null
+        - false
+        - null
+        - null
+        - false
+        - true
+      outputs:
+        - default
+  # extra payment field
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - not(null)
+        - null
+        - true
+        - null
+        - null
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - "-"
+        - null
+        - false
+        - null
+        - null
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - not(null)
+        - null
+        - true
+        - null
+        - null
+        - false
+        - true
+      outputs:
+        - default
+   # birthday field
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - null
+        - not(null)
+        - true
+        - null
+        - null
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - null
+        - "-"
+        - false
+        - null
+        - null
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - null
+        - not(null)
+        - true
+        - null
+        - false
+        - true
+      outputs:
+        - default
+    #decrease amount field
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - null
+        - null
+        - false
+        - not(null)
+        - null
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - null
+        - null
+        - false
+        - "-"
+        - null
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - null
+        - null
+        - false
+        - not(null)
+        - null
+        - false
+        - true
+      outputs:
+        - default
+  #increase amount field
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - null
+        - null
+        - false
+        - null
+        - not(null)
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - null
+        - null
+        - false
+        - null
+        - "-"
+        - false
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - null
+        - null
+        - false
+        - null
+        - not(null)
+        - false
+        - true
+      outputs:
+        - default
+    #comment areas
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - null
+        - null
+        - false
+        - null
+        - null
+        - true
+        - false
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - false
+        - null
+        - null
+        - null
+        - false
+        - null
+        - null
+        - true
+        - true
+      outputs:
+        - default
+  # END STEP 2  

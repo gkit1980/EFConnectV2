@@ -1,0 +1,674 @@
+$primaryRed: #ef3340;
+$primaryPurple: #485294;
+$secondaryPurple: #5f5b8b;
+$white: #ffffff;
+$primaryGrey: #eeeeee;
+
+#eclaims-create.slds-scope {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-family: 'Ubuntu' !important;
+  color: #383b38 !important;
+  line-height: 23px;
+
+  .loadingSpinner {
+    display: none !important;
+  }
+
+  section{
+    background-color: #fff;
+    margin: 30px 0px 30px 0px;
+    max-width: 100%;
+  }
+
+  .slds-accordion__section{
+    margin-top: unset !important;
+    margin-bottom: unset !important;
+  }
+
+  article {
+    max-width: 688px !important;
+    background-color: $white !important;
+    margin-top: 40px !important;
+    margin-bottom: 56px !important;
+
+    @media screen and (max-width: 575.98px) {
+      width: 345px !important;
+    }
+  }
+
+  .slds-form-element__legend.slds-form-element__label {
+    margin-bottom: 24px !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+    line-height: 18px !important;
+  }
+
+  .actionsRight {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-top: 36px !important;
+    margin-right: 30% !important;
+    @media screen and (max-width: 575.98px) {
+      margin-right: 23% !important;
+      margin-top: unset !important;
+    }
+    @media screen and (max-width: 340px) {
+      margin-right: 22% !important;
+      margin-top: unset !important;
+    }
+
+    .slds-button.slds-button_brand {
+      visibility: hidden !important;
+      position: relative !important;
+
+      &::before {
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        visibility: visible !important;
+        position: absolute !important;
+        content: 'ΕΠΟΜΕΝΟ' !important;
+        display: inline-block !important;
+        text-align: center !important;
+        border: 1px solid transparent !important;
+        border-radius: 0.25rem !important;
+        cursor: pointer !important;
+        z-index: 15 !important;
+        color: white !important;
+        background-color: $primaryPurple !important;
+        margin: 28px 11px 32px auto !important;
+        width: 135px !important;
+        height: 48px !important;
+        padding-top: 0.5rem !important;
+      }
+
+      &:hover {
+        &::before {
+          background-color: $secondaryPurple !important;
+        }
+      }
+    }
+  }
+
+  .actionsLeft {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-top: 36px !important;
+    margin-left: 28% !important;
+    @media screen and (max-width: 575.98px) {
+      margin-left: 8% !important;
+      margin-top: unset !important;
+    }
+    @media screen and (max-width: 360px) {
+      margin-left: -2% !important;
+      margin-top: unset !important;
+    }
+
+    .slds-button.slds-button_brand {
+      visibility: hidden !important;
+      position: relative !important;
+
+      &::before {
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        visibility: visible !important;
+        position: absolute !important;
+        content: 'ΠΡΟΗΓΟΥΜΕΝΟ' !important;
+        display: inline-block !important;
+        text-align: center !important;
+        border: 1px solid $primaryPurple !important;
+        border-radius: 0.25rem !important;
+        cursor: pointer !important;
+        z-index: 15 !important;
+        color: $primaryPurple !important;
+        margin: 28px auto 32px 44px !important;
+        width: 135px !important;
+        height: 48px !important;
+        padding-top: 0.5rem !important;
+      }
+
+      &:hover {
+        &::before {
+          background-color: $primaryPurple !important;
+          color: $white !important;
+        }
+      }
+      @media screen and (max-width: 575.98px) {
+        visibility: hidden !important;
+        position: relative !important;
+  
+        &::before {
+          font-size: 14px !important;
+          font-weight: 500 !important;
+          visibility: visible !important;
+          position: absolute !important;
+          content: 'ΠΙΣΩ' !important;
+          display: inline-block !important;
+          text-align: center !important;
+          border: 1px solid $primaryPurple !important;
+          border-radius: 0.25rem !important;
+          cursor: pointer !important;
+          z-index: 15 !important;
+          color: $primaryPurple !important;
+          margin: 28px 4px 32px 24px !important;
+          width: 62px !important;
+          height: 48px !important;
+          padding-top: 0.5rem !important;
+        }
+  
+        &:hover {
+          &::before {
+            background-color: $primaryPurple !important;
+            color: $white !important;
+          }
+        }
+      }
+    }
+  }
+
+  .slds-radio {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    box-sizing: border-box !important;
+    height: 48px !important;
+    width: 448px !important;
+    border: 1px solid #dedede !important;
+    border-radius: 4px !important;
+    background-color: $white !important;
+    margin-bottom: 12px !important;
+
+    @media screen and (max-width: 575.98px) {
+      width: 313px !important;
+    }
+
+    .slds-radio__label {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: center !important;
+      margin-left: 23px !important;
+      margin-bottom: 0 !important;
+
+      .slds-form-element__label {
+        opacity: 1 !important;
+        font-size: 14px !important;
+        letter-spacing: 0 !important;
+        line-height: 18px !important;
+      }
+
+      .slds-radio_faux {
+        width: 20px !important;
+        height: 20px !important;
+        box-sizing: border-box !important;
+        border: 1px solid #999999 !important;
+
+        &::after {
+          background-color: $primaryRed !important;
+          width: 14px !important;
+          height: 14px !important;
+        }
+      }
+    }
+  }
+
+  .slds-checkbox__label {
+    .slds-checkbox_faux {
+      &::after {
+        border-bottom: 2px solid $primaryRed !important;
+        border-left: 2px solid $primaryRed !important;
+      }
+    }
+  }
+
+  .slds-checkbox_toggle [type=checkbox]:checked+.slds-checkbox_faux_container .slds-checkbox_faux{
+    border-color:  #13BE82 !important;
+    background-color:  #13BE82 !important;
+    &::before {
+      --slds-c-checkbox-toggle-color-border: #13BE82 !important;
+      --slds-c-checkbox-toggle-color-background: #13BE82 !important;
+    }
+  }
+
+
+ 
+    .slds-checkbox_toggle{
+
+      .slds-checkbox_faux_container
+      {
+          // margin-top: -4%;
+          // margin-left: 86% !important;
+
+          @media screen and (max-width: 575.98px) {
+            margin: 0px 0px -8px 0% !important;
+            z-index: 1;
+          }
+          @media screen and (max-width: 340px) {
+            margin-left: 0px !important;
+            margin-top: 8px !important;
+            margin-right: -26px;
+          }
+          
+      }
+    }
+  
+    span.slds-checkbox_on {
+      @media screen and (max-width: 575.98px) {
+        margin: -18px 0px 0px 55px;
+      }
+    }
+
+    span.slds-checkbox_off {
+      @media screen and (max-width: 575.98px) {
+        margin: -18px 0px 0px 55px;
+      }
+    }
+
+  footer {
+    background-color: $white !important;
+  }
+
+  .flowruntime-input.slds-form-element {
+    margin-top: 0px !important;
+    @media screen and (max-width: 575.98px) {
+      margin-top: 42px !important;
+    }
+
+    @media screen and (max-width: 340px) {
+      margin-top: 56px !important;
+    }
+  }
+
+  .slds-card__body.slds-p-horizontal_small.flowruntimeBody {
+    margin: 0px !important;
+    padding: 32px 32px 16px 32px !important;
+
+    @media screen and (max-width: 575.98px) {
+      // padding: 24px 8px !important;
+      margin: 24px 12px 12px 12px !important;
+    }
+    @media screen and (min-width: 320px) and (max-width: 574px) {
+      margin: 0px !important;
+      padding: 0px 0px 0px 36px !important;
+      width: 91%;
+    }
+    
+  }
+
+  .slds-grid.slds-gutters {
+    @media screen and (max-width: 575.98px) {
+      display: flex !important;
+      flex-direction: column !important;
+      margin-top: 0px;
+    }
+  }
+
+  .slds-accordion__summary-action
+  {
+    color: #383b38 !important;
+  }
+  
+  .slds-grid.slds-gutters.first-screen {
+    @media screen and (max-width: 575.98px) {
+    margin: -58% 0px 8px -4% !important;
+    }
+  } 
+
+  .slds-m-bottom_x-small {
+    @media screen and (max-width: 575.98px) {
+      margin: 0px 0px -4% 0px;
+    }
+  }
+
+  .text-eclaim-form {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+    padding-top: 62px;
+    padding-bottom: 10px;
+    @media screen and (min-width: 441px) {
+      font-family: 'Ubuntu';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 18px;
+      padding-top: 42px;
+      padding-bottom: 10px;
+      padding-left: 12px;
+    }
+    @media screen and (max-width: 440px) {
+      font-family: 'Ubuntu';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 18px;
+      // padding-top: 32px;
+      padding-bottom: 10px;
+      padding-left: 12px;
+    }
+  }
+
+  .text-eclaim-form.first-step{
+    margin-top: -18px;
+  }
+
+  .text-eclaim-form.second-step{
+    margin-top: -42px;
+  }
+
+  lightning-formatted-rich-text.slds-rich-text-editor__output {
+    width: 620px;
+    // height: 62px;
+    font-family: 'Ubuntu' !important;
+    display: flex;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    color: #383B38;
+    @media screen and (max-width: 575.98px) {
+      width: 108%;
+      // margin: 8% 0px 8% 0px;
+      // height: 102px;
+      font-family: 'Ubuntu' !important;
+      display: flex;
+      font-family: 'Ubuntu';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 140%;
+      letter-spacing: 0.02em;
+      color: #383B38;
+      margin-top: 32px;
+      padding-right: 8%;
+    }
+  } 
+
+  .right-column{
+    max-width: 52%;
+    padding-left: 36px;
+    @media screen and (max-width: 575.98px) {
+      max-width: 52%;
+      padding-left: 16px;
+    }
+    @media screen and (min-width: 320px) and (max-width: 574px) {
+      max-width: 95%;
+      padding-left: 0px;
+    }
+  }
+
+  .left-column{
+    max-width: 46%;
+    @media screen and (max-width: 575.98px) {
+      max-width: 95%;
+    }
+    @media screen and (min-width: 320px) and (max-width: 574px) {
+      max-width: 95%;
+    }
+  }
+
+  lightning-input.slds-form-element {
+    height: 79px;
+    display: block;
+    @media screen and (max-width: 575.98px) {
+      height: 72px;
+      display: block;
+      padding-top: 24px;
+    }
+  }
+  
+  .slds-col {
+    @media screen and (max-width: 575.98px) {
+      display: block;
+      padding: 0px 24px 0px 24px;
+    }
+  }
+
+  footer.slds-card__footer.actionButtonBar.slds-grid.slds-grid_align-spread {
+    padding-bottom: 36px;
+  }
+
+  label.slds-checkbox_toggle.slds-grid {
+    display: grid;
+  }
+
+  span.slds-form-element__label.slds-m-bottom_none.checkbox-element {
+    font-size: 16px !important;
+    line-height: 140%;
+    margin-bottom: 8px!important;
+    @media screen and (max-width: 670px) {
+      font-size: 12px !important;
+      margin: 0px -12px 0px -2px;
+    }
+    @media screen and (max-width: 440px) {
+      font-size: 12px !important;
+      margin: 0px -12px 0px 2px;
+    }
+  } 
+
+  span[id^="medicalCharge0-"] {
+    margin-left: 190% !important;
+    margin-top: -8%;
+  }
+
+  span[id^="medicalCharge5-"] {
+    margin-left: 192% !important;
+    margin-top: -8%;
+  }
+
+  span[id^="medicalCharge6-"] {
+    margin-left: 192% !important;
+    margin-top: -8%;
+  }
+
+  span[id^="medicalCharge7-"] {
+    margin-left: 192% !important;
+    margin-top: -8%;
+  }
+
+  span[id^="medicalCharge4-"] {
+    margin-left: 192% !important;
+    margin-top: -8%;
+  }
+
+  span[id^="medicalCharge3-"] {
+    margin-left: 192% !important;
+    margin-top: -8%;
+  }
+
+  span[id^="medicalCharge2-"] {
+    margin-left: 192% !important;
+    margin-top: -8%;
+  }
+
+  span[id^="medicalCharge1-"] {
+    margin-left: 192% !important;
+    margin-top: -8%;
+  }
+
+  span[id^="medicalCharge0-"].slds-checkbox_faux_container.checkbox-item {
+    margin-left: 192% !important;
+    margin-top: -8%;
+    @media screen and (max-width: 575.98px) {
+      margin-left: 0% !important;
+      margin-top: 0% !important;
+    }
+  }
+
+  span[id^="toggle-description-"] {
+    margin-left: 88% !important;
+    margin-top: -4%;
+  }
+
+  input[id^="checkbox-toggle-"] {
+    margin-left: 88% !important;
+    margin-top: -4%;
+  }
+
+  label.slds-form-element__label.slds-no-flex {
+    @media screen and (max-width: 575.98px) {
+      font-size: 11px;
+    }
+  }
+
+  label.slds-checkbox_toggle.slds-grid {
+    @media screen and (max-width: 575.98px) {
+      padding-top: 4px;
+    }
+  }
+
+  lightning-formatted-rich-text#input-label-2-19 {
+    @media screen and (max-width: 575.98px) {
+    padding-top: 24px;
+    }
+  }
+
+  lightning-formatted-rich-text#input-label-2-43 {
+    @media screen and (max-width: 575.98px) {
+      font-family: 'Ubuntu';
+      font-style: normal !important;
+      font-weight: 400 !important;
+      font-size: 12px !important;
+      line-height: 12px !important;
+      letter-spacing: 0.0015em;
+      color: rgba(0, 0, 0, 0.6);
+      padding: 0px 0px 0px 4px;
+    }
+  }
+
+  lightning-textarea.slds-form-element {
+    @media screen and (max-width: 575.98px) {
+      margin-top: -42px;
+    }
+  }
+
+  lightning-base-combobox.slds-combobox_container {
+    margin-bottom: 16px;
+    @media screen and (max-width: 575.98px) {
+      margin-bottom: unset;
+    }
+  } 
+
+  .slds-form-element__control.slds-grow.textarea-container {
+    @media screen and (max-width: 575.98px) {
+      margin: 46px 0px 24px 0px;
+    }
+  }
+
+  lightning-primitive-bubble[id^="salesforce-lightning-tooltip-bubble_"]{
+    position: absolute;
+    z-index: 1;
+    width: 270px;
+    color: white;
+    font-size: 12px;
+    background-color: #192733;
+    border-radius: 10px;
+    padding: 8px 16px 8px 16px;
+  }
+
+  span.slds-form-element__label {
+    font-size: 16px !important;
+    @media screen and (max-width: 575.98px) {  
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px !important;
+      line-height: 140%;
+      letter-spacing: 0.02em;
+      color: #383B38;
+    }
+  }
+
+  strong {
+    font-family: 'Ubuntu' !important;
+  }
+  span {
+    font-family: 'Ubuntu' !important;
+  }
+
+  lightning-input.carrierParticipationAmount.slds-form-element {
+    @media screen and (max-width: 575.98px) {   
+      margin: 0px 0px 0px 0px;
+    }
+  }
+  lightning-input.requestedAmount.slds-form-element{
+    @media screen and (max-width: 575.98px) {  
+      margin: 0px 0px 0px 0px
+    }
+  }
+
+  .background-eclaim-form {
+    @media screen and (max-width: 575.98px) {  
+      margin: 62% -24px 0px -12px;
+    }
+  }
+
+  span.text-helper {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+      hyphens: auto;
+      display: inline-block;
+      color: var(--slds-g-color-neutral-base-30, var(--lwc-colorTextLabel,rgb(116, 116, 116)));
+      font-size: var(--lwc-formLabelFontSize,0.75rem);
+      font-size: 16px;
+      margin: 4px 0px 0px -82px !important;
+      left: -28%;
+      @media screen and (max-width: 575.98px) {  
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
+        display: inline-block;
+        color: var(--slds-g-color-neutral-base-30, var(--lwc-colorTextLabel,rgb(116, 116, 116)));
+        font-size: var(--lwc-formLabelFontSize,0.75rem);
+        font-size: 12px;
+        padding: 24px 0px 0px 68px !important;
+      }
+
+      @media screen and (max-width: 387px) {
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
+        display: inline-block;
+        color: var(--slds-g-color-neutral-base-30, var(--lwc-colorTextLabel,rgb(116, 116, 116)));
+        font-size: var(--lwc-formLabelFontSize,0.75rem);
+        font-size: 12px;
+        padding: 24px 0px 0px 98px !important;
+      }
+
+  }
+
+    label {
+      font-family: 'Ubuntu' !important;
+      color: rgba(0, 0, 0, 0.6);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 12px;
+      letter-spacing: 0.0015em;
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+  }
+
+  .picklist-container {
+    @media screen and (max-width: 575.98px) { 
+      margin-top: 24px;
+    }
+  }
+
+  .show-amount {
+    @media screen and (max-width: 575.98px) { 
+      margin-top: -12px;
+    }
+  }
+  
+}

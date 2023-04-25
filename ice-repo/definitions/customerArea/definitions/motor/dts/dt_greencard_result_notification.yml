@@ -1,0 +1,30 @@
+dt:
+  hit-policy: C
+  inputs:
+    - label: greencard notifications
+      element: greencard.motor.other.show.driver  ##dummy element for notification bar
+  outputs:
+    - id: notificationText
+      label: text
+      type: string
+    - id: notificationType
+      label: class
+      type: string
+    - id: svgImageValue
+      label: url
+      type: string
+  rules:
+    - inputs:
+        - true
+      outputs:
+        - >-
+          "Η Κάρτα Διεθνούς Ασφάλισης εκδόθηκε με αριθμό " + greencard.newcard.id
+        - success
+        - "https://scp.eurolife.gr/~/media/F7877569C4C74C9F9D432D5A01DDC0A0.ashx"
+    - inputs:
+        - false
+      outputs:
+        - >-
+          "Η Κάρτα Διεθνούς Ασφάλισης δεν εκδόθηκε"
+        - warning
+        - "https://scp.eurolife.gr/~/media/01D8EA7C762A44E0A8FF3E4FFF8D1C72.ashx"

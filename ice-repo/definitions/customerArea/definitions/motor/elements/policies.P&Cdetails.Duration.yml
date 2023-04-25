@@ -1,0 +1,5 @@
+element:
+  type: text
+  label: Διάρκεια Συμβολαίου
+  component: EurolifeOutputComponent
+  viewMode: output

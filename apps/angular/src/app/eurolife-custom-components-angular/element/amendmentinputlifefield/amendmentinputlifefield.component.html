@@ -1,0 +1,10 @@
+<div class="column form-group">
+  <mat-form-field>
+    <input class="Caption1" matInput name="myinput" #messageInput required (focusout)="focusOutFunction()">
+  </mat-form-field>
+  <div *ngIf="errorMsg !== ''" class="error-msg" [hidden]="showit">
+    {{errorMsg}}
+  </div>
+</div>
+
+<!-- [(ngModel)]="myinput" (ngModelChange)="onInputChange(myinput)" -->

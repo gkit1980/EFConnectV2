@@ -1,0 +1,17 @@
+<div *ngIf="visible" class="spinner ">
+	<div class="loading-spinner"></div>
+</div>
+<div class="ice-text-input" *ngIf="isVisible">
+	<mat-form-field [attr.data-required]="isRequired" [appearance]='appearance' hideRequiredMarker="true" *ngIf="!isOutput"
+	 [hintLabel]="hint">
+		<mat-label [attr.data-required]="isRequired">{{label}}</mat-label>
+		<input #iceInput matInput [required]="isRequired" [disabled]="isDisabled" [(ngModel)]="value" (ngModelChange)="onInputChange(value)"
+		 (keypress)="validateLatin($event)" (blur)="onBlur($event)" (focus)="onFocus($event)" [placeholder]="placeholder"
+		 [errorStateMatcher]="errorStateMatcher">
+		<mat-error *ngFor="let message of validation?.getMessagesFor(element.name, index)">
+			{{ message }}
+		</mat-error>
+	</mat-form-field>
+	<mat-output *ngIf="isOutput" [isOutput]="isOutput" [label]="label" [value]="value"></mat-output>
+	<div class="error-msg" *ngIf="error">Επιτρέπονται μόνο λατινικοί χαρακτήρες</div>
+</div>

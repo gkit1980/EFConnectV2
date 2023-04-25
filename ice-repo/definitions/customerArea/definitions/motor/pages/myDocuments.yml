@@ -1,0 +1,8 @@
+page:
+  component: SimplePageComponent
+  showTitle: true
+  sections:
+    - component: MyDocumentsComponent
+      dataStoreProperty: Statements
+      downloadaction: actionGetStatementPdf
+      getStatements: actionGetStatements

@@ -1,0 +1,10 @@
+element:
+  type: array
+  component: IceArray
+  viewMode: output
+  buckets:
+    GetCustomerContracts:
+      transformation:
+        responsePath: Contracts
+  pages:
+    viewMyPolicies: null        

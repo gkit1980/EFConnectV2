@@ -1,0 +1,5 @@
+bucket:
+  transformation:
+    RestCallTransformationRule:
+      dataStoreProperty: blogInfo
+      responseToDatastore: true    

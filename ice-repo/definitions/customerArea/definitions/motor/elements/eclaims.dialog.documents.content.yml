@@ -1,0 +1,7 @@
+element:
+  component: EclaimsDocumentsComponent
+  additionalClasses: 
+  svgFillColor: corporate_color
+  type: text
+  pages:
+    viewEclaimsDetails: null

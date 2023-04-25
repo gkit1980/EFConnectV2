@@ -1,0 +1,9 @@
+element:
+  type: text
+  viewMode: output
+  buckets:
+    GetCustomerFullData:
+      transformation:
+        responsePath: Customer.Email
+  pages:
+    customerProfile: null

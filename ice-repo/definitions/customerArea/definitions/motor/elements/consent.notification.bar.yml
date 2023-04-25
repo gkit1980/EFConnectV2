@@ -1,0 +1,11 @@
+element:
+  type: text
+  viewMode: output
+  component:
+    StaticComponentRule:
+      component:
+        NotificationBarComponent:
+          url: 'https://scp.eurolife.gr/~/media/01D8EA7C762A44E0A8FF3E4FFF8D1C72.ashx'
+          text: Σημαντικό μήνυμα
+          image:  'info'
+      

@@ -1,0 +1,7 @@
+element:
+  type: boolean
+  defaultValue: false
+  buckets:
+    ProcessChatRequest:
+      transformation:{}
+  

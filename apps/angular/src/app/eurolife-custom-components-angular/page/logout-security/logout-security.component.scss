@@ -1,0 +1,22 @@
+.modal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.btn-cancel {
+  margin-right: 24px;
+}
+
+.btns {
+  margin-bottom: 46px;
+  margin-top: 48px;
+}
+
+.close {
+  margin-right: 16px;
+  width: 27px;
+  height: 27px;
+  fill: #003b4d;
+}

@@ -1,0 +1,6 @@
+action:
+  execution:
+    - WriteLogRule:
+        bucket: WriteLog
+        inputElement: eclaims.coverages.time
+        inputName: 'eclaims Coverages Start Time'

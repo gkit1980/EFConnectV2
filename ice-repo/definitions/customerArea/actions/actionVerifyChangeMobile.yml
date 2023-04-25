@@ -1,0 +1,19 @@
+action:
+  title: Change the Mobile Phone
+  execution:
+    - RestCallExecutionRule:
+        # baseUrl: http://platformsuat.eurolife.gr/CustomerAreaLogin/api/CustomerAreaApi
+        baseUrl: BASEURLCHANGECREDENTIALS
+        url: VerifyChangeMobile
+        verb: post
+        bucket: VerifyChangeMobile
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+  condition:
+    FeelConditionRule:
+      expression: customer.details.smsCode != null
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - customer.details.smsCode

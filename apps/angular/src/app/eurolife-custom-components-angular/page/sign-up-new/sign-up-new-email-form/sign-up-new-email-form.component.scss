@@ -1,0 +1,161 @@
+.email-form-container {
+  max-width: 703px;
+  border: 1px solid #dedede;
+  border-radius: 8px;
+  margin: auto auto 136px auto;
+  padding-top: 48px;
+  padding-bottom: 48px;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+}
+
+.basic-info-header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 80px;
+  padding-right: 80px;
+
+  @media screen and (max-width: 768px) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.basic-info-btn-container {
+  margin-top: 1rem;
+  text-align: center;
+  padding-left: 205px;
+  padding-right: 205px;
+
+  @media screen and (max-width: 768px) {
+    padding-left: 79px;
+    padding-right: 79px;
+  }
+}
+
+.h6-active {
+  margin-top: 43px;
+}
+
+.Typeface {
+  color: #0086d6;
+  text-align: left;
+  z-index: 10;
+}
+
+.eurolife_btn.disabled,
+.eurolife_btn:disabled {
+  background-color: #dedede;
+}
+
+.inputs-container {
+  padding-left: 129px;
+  padding-right: 131px;
+
+  @media screen and (max-width: 768px) {
+    width: auto;
+    margin: auto;
+    padding-left: 31px;
+    padding-right: 23px;
+    .mat-form-field-wrapper {
+      width: auto;
+    }
+  }
+}
+
+.regCodeContainer {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-left: 129px;
+  padding-right: 340px;
+
+  @media screen and (max-width: 768px) {
+    padding-left: 39px;
+    padding-right: 61px;
+  }
+}
+
+.infobutton {
+  margin-left: 13px;
+  z-index: 10;
+}
+
+.basic-info-btn-container {
+  margin-top: 49px;
+}
+
+.eurolife_btn {
+  width: 293px;
+
+  @media screen and (max-width: 768px) {
+    width: 201px;
+  }
+}
+
+.error-msg {
+  font-size: 12px;
+  color: #ef3340ed;
+  margin-top: -1.34375em;
+  text-align: left;
+  margin-left: 7px;
+  margin-bottom: 5px;
+}
+
+.groupping {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+::ng-deep .tooltip > .tooltip-inner {
+  background-color: #fff !important;
+  font-family: Ubuntu;
+  font-size: 12px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.4;
+  letter-spacing: normal;
+  color: #383b38;
+  padding: 16px 15px 16px 19px;
+  border-radius: 4px;
+  box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.1);
+  opacity: unset;
+}
+
+::ng-deep .tooltip > .arrow {
+  display: none;
+}
+
+.fa-phone {
+  margin-right: 10px;
+}
+
+.fa-envelope {
+  margin-right: 10px;
+}
+
+.phone-position {
+  margin-right: 70px;
+}
+
+.sign-up-container {
+  text-align: center;
+}
+
+.h4 {
+  margin-bottom: 16px;
+}
+
+.h6 {
+  font-size: 16px;
+}
+
+strong {
+  font-weight: 500;
+}

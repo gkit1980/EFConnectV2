@@ -1,0 +1,13 @@
+element:
+  type: text
+  viewMode: required
+  buckets:
+    AmendmentsCreatePropertyCase:
+      transformation: {}
+  component:
+    StaticComponentRule:
+      component:
+        AmendmentinputpropertyfieldComponent:
+          elementName: amendmentsInsuredComments
+  pages:
+    viewAmendmentHomeDetails: null

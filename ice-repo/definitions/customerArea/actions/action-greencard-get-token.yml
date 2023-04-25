@@ -1,0 +1,50 @@
+action:
+  title: green card login
+  execution:
+    - EnableSpinnerRule:
+        actionrule: action-greencard-get-token
+    - InitializationGreenCardRule:
+    - WriteMotorDetailsToDatastoreExecutionRule:
+        baseUrl: BASEURL
+        verb: post
+        url: GetCustomerContracts
+        bucket: WriteFromOther
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: true
+    - DisableSpinnerRule:
+        actionrule: action-greencard-get-token    
+    - EnableSpinnerRule:
+        actionrule: action-greencard-get-token    
+    - GreenCardGetToken:
+        GreenCardLogin: GREENCARDLOGIN
+        method: POST
+        username: greenp@eurolifeweb.gr
+        password: 4444Zz
+        bucket: GreenCard
+        GREENCARD_CLIENT_ID: GREENCARD_CLIENT_ID
+        GREENCARD_CLIENT_SECRET: GREENCARD_CLIENT_SECRET
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+    - GreenCardServices:
+        baseUrl: GREENCARDBASEURL
+        url: GetGreenCardOrActiveContract
+        method: POST
+        bucket: GreenCardData
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+    - DisableSpinnerRule:
+        actionrule: action-greencard-get-token
+  # condition:
+  # FeelConditionRule:
+  # expression: greencard.refresh.status = false
+  # trigger:
+  # - ElementChangeTriggerRule:
+  # elements:
+  # - greencard.refresh.status
+  # trigger:
+  # - PageTriggerRule:
+  # enter:
+  # - greenCard

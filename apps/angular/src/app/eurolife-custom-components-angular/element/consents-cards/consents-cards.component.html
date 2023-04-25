@@ -1,0 +1,73 @@
+
+<div class="cards-container" *ngIf="showConsentCards()">
+  <div class="consents-card" *ngFor="let consentContract of gdprItems; let i=index">
+    <div class="product-container">
+        <div 
+          class="product-icon" 
+          aria-label="icon"
+          [inlineSVG]="getIcon('0F0E1AC2A2AC45A7906897CCB41B5580')"
+          [onSVGLoaded]="handleSVGProduct"
+          *ngIf="consentContract.Branch =='ΑΥΤΟΚΙΝΗΤΩΝ'"
+        >
+        </div>
+       <div 
+         class="product-icon" 
+         aria-label="icon"
+         [inlineSVG]="getIcon('4412D69B78B5460B8E25F2FEAFA0105A')" 
+         [onSVGLoaded]="handleSVGProduct"
+         *ngIf="consentContract.Branch =='ΖΩΗΣ'"
+       >
+       </div>
+      <div 
+        class="product-icon" 
+        aria-label="icon"
+        [inlineSVG]="getIcon('5B16FD8598BC4750B8E058C8BDC2528A')" 
+        [onSVGLoaded]="handleSVGProduct"
+        *ngIf="consentContract.Branch =='ΥΓΕΙΑΣ'"
+      >
+      </div>
+      <div 
+        class="product-icon" 
+        aria-label="icon"
+        [inlineSVG]="getIcon('D2F9D495BF194ED0BC3F23078CA4B07E')"
+        [onSVGLoaded]="handleSVGProduct"
+        *ngIf="consentContract.Branch =='ΠΕΡΙΟΥΣΙΑΣ'"
+      >
+      </div>
+      <div 
+        class="product-icon" 
+        aria-label="icon"
+        [inlineSVG]="getIcon('55575BDF0CF94677A59ADCF3F1ECF1AB')"
+        [onSVGLoaded]="handleSVGProduct"
+        *ngIf="consentContract.Branch =='ΔΙΑΦΟΡΑ ΕΠΕΝΔΥΤΙΚΑ'"
+      >
+      </div>
+      <div 
+        class="product-icon" 
+        aria-label="icon"
+        [inlineSVG]="getIcon('9C798E9E7D62478294D477734D3D65B6')"
+        [onSVGLoaded]="handleSVGProduct"
+        *ngIf="consentContract.Branch =='ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ' || consentContract.Branch =='ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ'"
+      >
+      </div>
+      <div class="description-container">
+        <div
+          class="h5 product-description life_text product-distance"
+          *ngIf="true"
+        >
+        {{showSpecificDescription(consentContract)}}
+          <!-- {{consentContract.ProductDescritpion}}   -->
+        </div>
+        <div class="contract-num">Αριθμός Συμβολαίου: {{consentContract.ContractKey}}</div>
+      </div>
+    </div>
+    <div class="horizontal-line"></div>
+    <div class="toggle-container">
+      <div class="Typeface consent-text">Συναινώ</div>
+      <mat-slide-toggle class="toggle" 
+                        (change)="toggle($event,consentContract)" 
+      >
+    </mat-slide-toggle>
+    </div>
+  </div>
+</div>

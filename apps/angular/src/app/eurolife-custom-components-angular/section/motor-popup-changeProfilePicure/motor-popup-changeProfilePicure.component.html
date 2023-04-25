@@ -1,0 +1,38 @@
+<div class="container-prof">
+    <div class="close close-profile" aria-label="My icon" [inlineSVG]="closeImageSource" [onSVGLoaded]="handlecloseSVG"
+        (click)="onNoClick()">
+    </div>
+    <div class="typeface h5 profile-pic-header">{{ changePhoto | resourcePipe }}</div>
+    <mat-card *ngIf="!selectedSVG; else showSvg" class="example-card">
+        <img class="image-container" mat-card-image [src]="profilePicture">
+    </mat-card>
+    <ng-template #showSvg>
+        <div class="circle-header">
+            <div [inlineSVG]="showSVG()" [onSVGLoaded]="handleSVG">
+            </div>
+        </div>
+    </ng-template>
+
+
+
+    <!-- <input class="upload-btn" type="file" (change)="onFileSelected($event)"> -->
+    <button (click)="openInput()"
+        class="eurolife_btn eurolife_btn-stroke upload-btn upload-btn fix-font">{{ upload | resourcePipe }}</button>
+    <p id="ermsg" *ngIf="imageErrorMessage">Ο τύπος αρχείου που ανεβάσατε δεν υποστηρίζεται</p>
+    <input id="fileInput" hidden type="file" (change)="onFileSelected($event)" accept="image/*">
+    <div class="typeface h5 other-pic-label">{{ defaultPhotos | resourcePipe }}</div>
+    <div class="profile-pic">
+        <ng-container *ngFor="let avatar of avatarsList; let i=index;">
+            <div (click)="selectAvatar(avatar)" class="outside-div" *ngIf="i>11">
+                <!-- <div class="circle">
+                    <div class="avatar" aria-label="icon" [inlineSVG]="imageSource(avatar)"
+                        (click)="selectAvatar(avatar)">
+                    </div> -->
+                <img class="avatar-icons" [src]="imageSource(avatar)" alt="avatar">
+                <!-- </div> -->
+            </div>
+        </ng-container>
+    </div>
+    <button [disabled]="imageErrorMessage" class="eurolife_btn eurolife_btn-default submit-btn fix-font"
+        (click)=onSubmitPhoto()>{{ application| resourcePipe }}</button>
+</div>

@@ -1,0 +1,38 @@
+page:
+  component: PopUpPage
+  label: Επιτυχής Καταχώρηση
+  showTopSection: true
+  topImageID: 78263D3F79934F2484455F2FDCB88C1F
+  sections:
+    - component: SimpleGridViewComponent
+      label:
+        ResourceSectionLabelRule:
+          labelKey: sections.communication.service.contact.form.label
+      rows:
+        - css: text-center
+          cols:
+            - css: text-center h4
+              col: 12
+              element: eclaims.dialog.fail.title
+        - cols:
+            - css: text-center Typeface
+              col: 12
+              element: eclaims.dialog.fail.description
+        - cols:
+            - css: text-center Typeface
+              col: 12
+              element: eclaims.dialog.fail.description.info
+        - cols:
+            - css: text-center Typeface mt-5
+              col: 12
+              element: eclaims.dialog.fail.description2
+        - cols:
+            - css: text-center h4 mt-2
+              col: 12
+              element: eclaims.dialog.fail.phone
+    - component: SimpleGridViewComponent
+      rows:
+        - cols:
+            - css:
+              col: 12
+              element: eclaims.dialog.fail.okbtn

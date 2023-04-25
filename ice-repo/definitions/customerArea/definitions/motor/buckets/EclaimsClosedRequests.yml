@@ -1,0 +1,4 @@
+bucket:
+  transformation:
+    RestCallTransformationRule: null
+    # EclaimsClosedRequestsTransformationRule: null

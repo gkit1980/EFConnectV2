@@ -1,0 +1,175 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - label: property.claim.step
+      element: property.claim.step
+    - label: property.claim.notification.accidentDate.input
+      element: property.claim.notification.accidentDate.input
+    - label:  property.claim.notification.claimType.dropdown
+      element: property.claim.notification.claimType.dropdown
+    - label: property.claim.notification.description.input
+      element: property.claim.notification.description.input
+    - label: property.claim.notification.MobilePhone
+      element: property.claim.notification.MobilePhone
+    - label: property.claim.notification.Email
+      element: property.claim.notifications.Email
+  outputs:
+    - label: viewMode
+      id: viewMode
+      type: string
+  rules:
+    # STEP 0
+    - inputs:
+        - 0
+        - null
+        - null
+        - null
+        - null
+        - null
+      outputs:
+        - disabled
+    - inputs:
+        - 1
+        - null
+        - null
+        - null
+        - null
+        - null
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - null
+        - null
+        - null
+        - null
+        - null
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - null
+        - null
+        - null
+        - null
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - null
+      outputs:
+        - disabled   
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - not(null)
+        - null
+        - null
+      outputs:
+        - disabled
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - not(null)
+        - not(null)
+        - null
+      outputs:
+        - disabled 
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - not(null)
+        - not(null)
+        - not(null)
+      outputs:
+        - default      
+    - inputs:
+        - 2
+        - null
+        - not(null)
+        - not(null)
+        - not(null)
+        - not(null)
+      outputs:
+        - disabled       
+    - inputs:
+        - 2
+        - not(null)
+        - null
+        - not(null)
+        - not(null)
+        - not(null)
+      outputs:
+        - disabled                               
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - not(null)
+        - not(null)
+      outputs:
+        - disabled         
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - not(null)
+        - null
+        - not(null)
+      outputs:
+        - disabled  
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - not(null)
+        - not(null)
+        - null
+      outputs:
+        - disabled     
+    - inputs:
+        - 2
+        - not(null)
+        - null
+        - null
+        - not(null)
+        - not(null)
+      outputs:
+        - disabled 
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - null
+        - null
+        - not(null)
+      outputs:
+        - disabled                                    
+    - inputs:
+        - 2
+        - not(null)
+        - not(null)
+        - not(null)
+        - null
+        - null
+      outputs:
+        - disabled 
+    - inputs:
+        - 3
+        - not(null)
+        - not(null)
+        - not(null)
+        - not(null)
+        - not(null)
+      outputs:
+        - disabled                   
+        

@@ -1,0 +1,15 @@
+element:
+  title: Date Call me later
+  type: text
+  component: 
+    StaticComponentRule:
+      component: 
+        TimePicker:
+          pages: 2
+  label: null
+  mirror:
+    CopyValueMirrorRule:
+      originElement: clicktocall.callmelatertime
+  values: clicktochat.times
+  pages:
+    clicktocall: null

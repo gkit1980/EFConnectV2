@@ -1,0 +1,14 @@
+<div class="profile-pic">
+    <div class="circle">
+        <!-- <img [src]=profilePicture alt="customer-profile-pic" class="profile-img"> -->
+        <div *ngIf="showAvatar else showProfilePictyre" class="outer_profile"
+            [inlineSVG]="getIcon('587B1CA564EA46D085F1C755786E2E16')" [onSVGLoaded]="handleSVG">
+        </div>
+        <ng-template #showProfilePictyre>
+            <img class="image-container" [src]=profilePicture>
+        </ng-template>
+
+    </div>
+    <div class="h5 customer-name">{{ fullName }}</div>
+    <p class="edit-button pencil-p opacity" (click)="openDialog()">{{ edit | resourcePipe }}</p>
+</div>

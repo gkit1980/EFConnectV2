@@ -1,0 +1,27 @@
+<div class="modal-container">
+  <div class="close" aria-label="My icon" [inlineSVG]="closeImageSource" [onSVGLoaded]="handlecloseSVG"
+    (click)="onNoClick()">
+  </div>
+  <div class="top-section">
+    <div class="circle">
+      <div class="timeout" aria-label="icon" [inlineSVG]="imageSource">
+      </div>
+    </div>
+
+    <!-- <span class="fa fa-close" (click)="onNoClick()"></span> -->
+  </div>
+  <div class="reg-code-modal-container">
+    <h4 class="text-center">Αποσύνδεση</h4>
+    <p class="Body1">Θέλετε σίγουρα να αποσυνδεθείτε;</p>
+  </div>
+  <div class="reg-code-modal-container btns">
+    <div class="row">
+      <div class="col-sm-12">
+        <a class="eurolife_btn eurolife_btn-default" href="#" (click)="onOK()">ΝΑΙ
+        </a>
+        <button class="btn-cancel btn btn-link btn-sm" (click)="cancel()">ΑΚΥΡΩΣΗ
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

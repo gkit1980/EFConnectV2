@@ -1,0 +1,31 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - label: eclaims.step
+      element: eclaims.step
+  outputs:
+    - label: viewMode
+      id: viewMode
+      type: string
+  rules:
+    - inputs:
+        - -1
+      outputs:
+        - hidden
+    - inputs:
+        - 0
+      outputs:
+        - hidden    
+    - inputs:
+        - 1,11,3,31,12,13,14,15
+      outputs:
+        - hidden
+    - inputs:
+        - 2
+      outputs:
+        - output    
+    - inputs:
+        - "-"
+        - "-"
+      outputs:
+        - hidden

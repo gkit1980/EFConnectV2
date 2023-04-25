@@ -1,0 +1,162 @@
+.reg-code-modal-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+    margin-top: 0;
+    width: 100%;
+    max-width: 512px;
+    // @media screen and (max-height: 800px) {
+    //     margin-top: 0;
+    //     margin-bottom: 0;
+    // }
+    // @media screen and (max-height: 650px) {
+    //     justify-content: start;
+    // }
+}
+
+.reg-code-modal-container{
+    text-align: center;
+    @media screen and (max-height: 800px) {
+        height: 585px;
+        overflow-y: auto;
+    }
+}
+
+.unset-auto{
+    @media screen and (max-height: 800px) {
+       
+        overflow-y: unset;
+    }
+}
+
+.cancel-btn{
+    margin: 30px 0 55px 0;
+}
+
+.circle {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background-color: #fdeaeb;
+    margin-top: -99px;
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body1{
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.75;
+    letter-spacing: normal;
+    text-align: center;
+    color: #383b38;
+}
+
+.modal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.close{
+    cursor: pointer;
+}
+
+
+.regCodeModal {
+    fill: rgb(239, 51, 64);
+    svg {
+        width: 59px;
+        height: 73px;
+    }
+}
+
+.birthdate-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.select-field-container{
+    min-width: 100px;
+    margin: 0 25px 0 0;
+    &:nth-child(3){
+        margin: 0;
+    }
+}
+
+.modal-submit-btn{
+    width: 300px;
+    height: 48px;
+    margin: 5px 0 15px 0;
+}
+
+.submit-btn{
+    margin-top: 25px;
+    max-width: 300px;
+    width: 100%;
+}
+
+
+.modal-cancel-btn{
+    margin-bottom: 48px;
+   
+    @media screen and (max-height: 800px) and (max-width: 500px) {
+        height: 200px;
+    }
+    @media screen and (max-height: 650px) and (max-width: 500px) {
+        height: 280px;
+    }
+    @media screen and (max-height: 500px) and (max-width: 500px) {
+        height: 360px;
+    }
+    // @media screen and (max-height: 650px) {
+    //     height: 60%;
+    // }
+
+}
+
+.reg-code-header{
+    text-align: center;
+    width: 100%;
+    @media screen and (max-height: 800px) and (max-width: 500px) {
+     margin-top: 180px;
+    }
+    @media screen and (max-height: 650px) and (max-width: 500px) {
+        margin-top: 240px;
+    }
+    @media screen and (max-height: 500px) and (max-width: 500px) {
+        margin-top: 320px;
+    }
+}
+
+.cancel-color{
+    color: #0086d6 !important;
+    cursor: pointer;
+}
+
+.error-msg{
+    font-size: 12px;
+    color: #ef3340ed;
+    margin-top: -1.34375em;
+    text-align: center;
+    margin-left: 7px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.birth-date-label{
+    display: flex;  
+}
+
+::ng-deep { .cdk-global-overlay-wrapper, .cdk-overlay-container { z-index: 9999!important; } }

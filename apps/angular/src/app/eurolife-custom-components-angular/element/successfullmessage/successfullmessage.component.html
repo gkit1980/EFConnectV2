@@ -1,0 +1,14 @@
+<!-- <div class="container"> -->
+<!-- <div>
+  <p><span class="glyphicon glyphicon-ok-circle"></span> </p>
+</div> -->
+<ng-template #unsuccessfull>
+  <div>
+    <p><span class="glyphicon glyphicon-remove-circle"></span> </p>
+  </div>
+</ng-template>
+<div *ngIf="success; else unsuccessfull">
+  <div>
+    <p><span class="glyphicon glyphicon-ok-circle"></span> </p>
+  </div>
+</div>

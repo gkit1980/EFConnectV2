@@ -1,0 +1,20 @@
+element:
+  type: text
+  viewMode: hidden
+  buckets:
+    AmendmentsLogin:
+      transformation: {}
+    AmendmentsCreateCase:
+      transformation: {}
+    AmendmentsCreatePropertyCase:
+      transformation: {}
+    AmendmentsCreateLifeCase:
+      transformation: {}
+    AmendmentsCreateHealthCase:
+      transformation: {}
+    AmendmentsCreateFinanceCase:
+      transformation: {}      
+    AmendmentsUploadFiles:
+      transformation: {}
+    PropertyClaimNotificationCreateCase:
+      transformation: {}  

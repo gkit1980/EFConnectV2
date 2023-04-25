@@ -1,0 +1,6 @@
+action:
+  execution:
+    - WriteLogRule:
+        bucket: WriteLog
+        inputElement: policy.coverages
+        inputName: 'Group Health Coverages'

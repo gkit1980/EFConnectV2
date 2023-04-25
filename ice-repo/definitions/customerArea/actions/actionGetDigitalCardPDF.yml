@@ -1,0 +1,31 @@
+action:
+  title: calls a rest service to print individual digital card
+  execution:
+    - ResetElementValueExecutionRule:
+        elements:
+          - contracts.details.digital.card.PDF
+    - DownloadDigitalCardRule:
+        baseUrl: BASEURL
+        url: GetHealthCards
+        verb: post
+        typeOfContract: individual-digital-card
+        bucket: GetHealthCards
+        needsDataStore: false
+    - DigitalCardValuationRule:
+        typeOfContract: individual-digital-card    
+    - OpenPdfExecutionRule:
+        element: digital.card.pdf.base64
+        filename: Digital_Card
+        mode: download
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDatastore: true        
+  condition:
+    FeelConditionRule:
+      expression: policy.selectedSourceSystemID = 1    
+  # trigger:
+  #   - ElementChangeTriggerRule:
+  #       elements:
+  #         - policy.contract.general.info.ContractID
+
+ 

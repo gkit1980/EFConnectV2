@@ -1,0 +1,594 @@
+@import '../../../../styles/abstracts/functions';
+@import '../../../../styles/abstracts/variables';
+
+$notification-colors: (
+  background: (
+    warning: rgb(249, 229, 240),
+    success: rgb(233, 252, 245),
+    info: rgba(4, 158, 204, 0.1),
+  ),
+  fill: (
+    warning: rgb(204, 4, 108),
+    success: rgb(43, 234, 155),
+    info: rgb(4, 158, 204),
+  ),
+);
+
+::ng-deep th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.group-icon {
+  width: 70px;
+  height: 70px;
+  background: url('../../../../assets-webpacked/eurolife/group.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.notification-bar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  margin-top: 16px;
+  padding: 11px 13px 0 11px;
+  width: 100%;
+}
+
+.notification-icon {
+  padding-left: 6px;
+  padding-right: 13px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.warning {
+  background-color: map-get(map-get($notification-colors, background), warning);
+  fill: map-get(map-get($notification-colors, fill), warning);
+}
+
+.success {
+  background-color: map-get(map-get($notification-colors, background), success);
+  fill: map-get(map-get($notification-colors, fill), success);
+}
+
+.info {
+  background-color: map-get(map-get($notification-colors, background), info);
+  fill: map-get(map-get($notification-colors, fill), info);
+}
+
+.info-svg-payment-code {
+  z-index: 10;
+}
+
+.btn-top-distance {
+  margin-top: 6px;
+}
+
+::ng-deep .mat-icon {
+  float: left !important;
+  margin-right: 10px;
+}
+
+.product-distance {
+  margin-bottom: 35px;
+}
+
+.contractNumber {
+  opacity: 0.6;
+  //color: #ef3340;
+}
+
+.distance-fix {
+  margin-top: 9px !important;
+}
+
+.center-text {
+  display: flex;
+  align-items: center;
+}
+
+.value-bold {
+  font-weight: 500;
+  min-height: 20px;
+}
+
+.white-background {
+  background-color: #ffffff;
+  justify-content: center;
+  align-items: center;
+}
+
+.row-container {
+  padding: 15px 0;
+}
+
+.white-background-desk {
+  background-color: #ffffff;
+  display: flex;
+  padding: 22px;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+.grey-background-no-pending-payments {
+  background-color: #eeeeee;
+  display: flex;
+  align-items: center;
+  padding: 90px;
+  justify-content: flex-start;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.w-97 {
+  width: 97% !important;
+}
+
+.w-110 {
+  width: 110% !important;
+}
+
+.first-col {
+  min-width: 330px !important;
+  margin-right: 20px;
+}
+
+.ice-simple-table {
+  margin-top: 24px;
+
+  .h6-active {
+    margin-bottom: 5px;
+  }
+
+  .contractName {
+    margin-bottom: 0px;
+  }
+
+  .contractNumber {
+    opacity: 1;
+    margin-left: 73px;
+    margin-top: -21px;
+  }
+
+  .label {
+    color: #383b38;
+    font-family: Ubuntu;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 18px;
+  }
+}
+
+.label {
+  @media screen and (max-width: 440px) {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 200;
+    font-style: oblique;
+  }
+}
+.only-desktop {
+  width: 113%;
+}
+
+// Mobile
+@media (max-width: 953px) {
+  .only-desktop {
+    display: none;
+  }
+
+  .mobile-payment-btn {
+    display: flex;
+  }
+
+  .last-payments-container {
+    margin-bottom: 48px;
+    margin-right: -32px;
+    margin-top: -16px;
+  }
+
+  .direct-group {
+    padding-left: 0;
+    margin-top: 10px !important;
+    margin-left: 1px;
+    margin: auto;
+  }
+
+  .direct-col {
+    padding: 0 5px 0 0;
+    margin-left: -48px;
+  }
+
+  .product-icon {
+    float: left;
+    margin-bottom: 16px;
+  }
+
+  .line-seperator {
+    border-bottom: solid 0.5px #b5b5b5;
+    margin: 15px;
+  }
+
+  .Caption3 {
+    opacity: 0.6;
+    margin-left: 15px;
+  }
+
+  .no-opacity {
+    opacity: 1;
+  }
+
+  .grey-background {
+    align-items: flex-start;
+  }
+
+  .chevron-right {
+    margin-top: 0px;
+    margin-left: 60px;
+  }
+
+  .contractName {
+    margin-bottom: 0;
+  }
+
+  div.slightly-right {
+    margin-left: 11px;
+  }
+
+  #first {
+    margin-top: 28px;
+  }
+
+  .card-outer {
+    margin-right: -32px;
+    margin-top: -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .card-container {
+    padding: 24px;
+    min-width: 300px;
+    margin: 16px 16px 16px 0;
+  }
+}
+
+@media (max-width: 776px) {
+  .product-distance {
+    font-size: 1.075rem;
+  }
+
+  .ice-simple-table {
+    .contractNumber {
+      opacity: 1;
+      margin-bottom: 14px;
+    }
+  }
+
+  .first-col {
+    text-align: justify;
+  }
+}
+
+@media (max-width: 639px) {
+  .product-distance {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 556px) {
+  .product-distance {
+    font-size: 0.7rem;
+  }
+}
+
+// Desktop
+@media (min-width: 954px) {
+  .only-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 1117px) {
+  .eurolife_btn {
+    font-size: 0.775rem;
+  }
+}
+
+.only-mobile {
+  .Caption3 {
+    margin-left: 0;
+  }
+}
+
+.no-wrap {
+  flex-wrap: unset;
+}
+
+.padding-fix {
+  padding: 10px;
+}
+
+.upload-col {
+  margin-right: 16px;
+}
+
+.upload-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: #485294;
+  width: 152px;
+  height: 48px;
+  white-space: nowrap;
+
+  @media screen and (max-width: 575.98px) {
+    margin: 16px auto 0 auto;
+    width: 100%;
+  }
+
+  &:hover {
+    fill: #ffffff;
+  }
+}
+
+.direct-group {
+  margin-top: 10px;
+  opacity: 0.6;
+  font-family: Ubuntu;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.58;
+  letter-spacing: normal;
+  color: #383b38;
+  padding-left: 30px;
+
+  @media screen and (min-width: 954px) {
+    padding-right: 43px;
+  }
+  @media screen and (max-width: 953px) {
+    justify-content: center;
+    padding-left: 3px;
+    margin: auto;
+  }
+  justify-content: flex-end;
+}
+
+.direct-col {
+  padding: 0 5px 0 0;
+}
+
+.button-icon {
+  margin-left: 10px;
+}
+
+.product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-icon {
+  margin-right: 1rem;
+}
+
+.no-margins {
+  margin: 0px;
+}
+
+.no-right-margins {
+  margin-right: -244px;
+}
+
+.add-padding {
+  padding: 24px;
+}
+
+.product-description {
+  margin-top: -20px;
+  color: #ef3340;
+
+  @media screen and (max-width: 575.98px) {
+    max-width: 214px;
+    margin-top: auto;
+    margin-bottom: 24px;
+  }
+}
+
+.health {
+  border-left: solid 4px getColor(health);
+}
+
+.life {
+  border-left: solid 4px getColor(life);
+}
+
+.otherpc {
+  border-left: solid 4px getColor(sme);
+}
+
+.motor {
+  border-left: solid 4px getColor(motor);
+}
+
+.house {
+  border-left: solid 4px getColor(home);
+}
+
+.savings {
+  border-left: solid 4px getColor(finance);
+}
+
+.other_pc {
+  border-left: solid 4px getColor(sme);
+}
+
+.life_text {
+  color: getColor(life);
+}
+
+.otherpc_text {
+  color: getColor(sme);
+}
+
+.health_text {
+  color: getColor(health);
+}
+
+.motor_text {
+  color: getColor(motor);
+}
+
+.house_text {
+  color: getColor(home);
+}
+
+.savings_text {
+  color: getColor(finance);
+}
+
+.other_pc_text {
+  color: getColor(sme);
+}
+
+.cursor-type {
+  cursor: pointer;
+}
+
+.payment-btn {
+  display: flex;
+  justify-content: center;
+  @media (max-width: 770px) {
+    margin-top: 24px;
+  }
+  margin-top: 32px;
+  margin-bottom: 9px;
+  width: 252px;
+  height: 48px;
+}
+
+::ng-deep .tooltip > .tooltip-inner {
+  background-color: #fff !important;
+  font-family: Ubuntu;
+  font-size: 12px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.4;
+  letter-spacing: normal;
+  color: #383b38;
+  padding: 16px 15px 16px 19px;
+  border-radius: 4px;
+  box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.1);
+  opacity: unset;
+}
+
+::ng-deep .tooltip > .arrow {
+  display: none;
+}
+
+.enable-opacity {
+  opacity: 0.4;
+}
+
+.renewal-width {
+  min-width: 120px !important;
+  margin-right: -90px;
+}
+
+.col {
+  min-width: 180px;
+}
+
+.mobile-first-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.enable-opacity-with-padding {
+  opacity: 0.4;
+  padding: 9px;
+}
+
+.mobile-payment-margin {
+  margin-top: 0px;
+}
+
+.disable-btn {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+.no-data-message-container {
+  margin: 30px 0 140px 0;
+}
+
+.info-open-text:after{
+  margin: 40px 0 16px 0;
+  content: "";
+  display: table;
+  clear: both;
+}
+.button-style {
+  float: left;
+  width: 75%;
+  padding: 20px 0px 0px 0px;
+}
+.h5-style{
+  font-size: 1.25rem !important;
+}
+.extra-padding{
+  padding: 0px 10px 0px 10px;
+}
+.row-header{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-top: 60px;
+  @media screen and (max-width: 770px) {
+    padding-top: unset;
+  }
+}
+
+.button-style-mobile{
+  float: left;
+  padding: 20px 0px 0px 0px;
+}
+
+
+.btn-extra-margin {
+  margin: 10px 0px 0px 240px;
+}
+
+.link-color{
+
+}
+
+.text-link{
+  color: #0491DB;
+  width: max-content;
+  height: 20px;
+}
+
+.text-link:hover{
+  border-bottom: 2px solid #0491DB;
+}
+
+.spinner-btn {
+  display: inline;
+}
+

@@ -1,0 +1,10 @@
+element:
+  type: text
+  defaultValue: 
+    DataStoreArrayValueRule:
+      arrayPath: clientContracts.Contracts
+      property: Branch
+      indexElement: policy.contract.general.info.indexHolder
+  pages:
+    viewMyPolicies: null
+  viewMode: output

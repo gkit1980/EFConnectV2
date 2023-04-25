@@ -1,0 +1,11 @@
+element:
+  type: text
+  viewMode: output
+  component:
+    StaticComponentRule:
+      component:
+        TextLabelComponent:
+          text: Αιτήματα Αποζημιώσεων
+          AdditionalClasses: h5
+  pages:
+    viewClaims: null

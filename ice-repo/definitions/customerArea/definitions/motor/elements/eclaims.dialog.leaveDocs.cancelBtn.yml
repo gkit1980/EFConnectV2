@@ -1,0 +1,9 @@
+element:
+  component: EurolifeButtonComponent
+  additionalClasses: btn btn-link btn-sm eclaims-dialog-cancel-btn
+  svgFillColor: corporate_color
+  type: text
+  label: 'ΑΚΥΡΩΣΗ'
+  defaultValue: action-eclaims-leave-docs-close-dialog
+  pages:
+    viewEclaimsDetails: null

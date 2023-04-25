@@ -1,0 +1,20 @@
+page:
+  component: PopUpPage
+  flag: walkthrough No Content
+  showTriangle: true
+  validation:
+    onElementComponentChange: true
+    behaviour: page
+  sections:
+    - component: SimpleGridViewComponent
+      rows:
+        - cols:
+            - css: header-title-pop-up-walkthrough text-center walkthrough-header-mb
+              col: 12
+              element: nocontent.walkthrough.header1
+    - component: ContentWalkthroughComponent
+      text: "Δεν υπάρχει περιεχόμενο"
+      pageNum: 1
+      numberOfScreens: nocontent.walkthrough.screens
+      next: ΤΕΛΟΣ
+      previous:

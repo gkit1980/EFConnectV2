@@ -1,0 +1,69 @@
+<div class="glossary-top-container row">
+  <div class="glossary-top-header">
+    <div class="H2">{{ insuranceDictionary | resourcePipe }}</div>
+  </div>
+  <div class="glossary-tabs-container">
+    <div
+      [ngClass]="{ 'glossary-tab-active h6-active': i === activeTab }"
+      [id]="'tab' + item.FieldValues.Description"
+      *ngFor="let item of Data; let i = index"
+      class="glossary-tab"
+      (click)="onTabClick(item.Name, i)"
+    >
+      {{ item.FieldValues.Description }}
+    </div>
+  </div>
+</div>
+<ng-container *ngIf="contentLoaded; else loadDataTempl1">
+  <div class="glossary-bottom-container container">
+    <div [id]="'content' + item.Name" *ngFor="let item of Data; let i = index">
+      <a pageScroll id="{{ item.Name }}"></a>
+      <div class="letter-header-content H3">
+        {{ item.FieldValues.Description }}
+      </div>
+      <div
+        (click)="titleClick(i, j)"
+        class="glossary-content-container"
+        *ngFor="let item of Data[i].Children; let j = index"
+      >
+        <div class="content-title">
+          <div class="title Typeface">{{ item.FieldValues.Title }}</div>
+          <div
+            class="faq-svg"
+            aria-label="icon"
+            [inlineSVG]="getIcon('5CC8A933D20F48EF827B77E5947F730D')"
+            [onSVGLoaded]="handleFAQSVG"
+            *ngIf="!item.active"
+          ></div>
+          <div
+            class="faq-svg"
+            aria-label="icon"
+            [inlineSVG]="getIcon('233DC630932544EC880FD4B7FC31B779')"
+            [onSVGLoaded]="handleFAQSVG"
+            *ngIf="item.active"
+          ></div>
+        </div>
+        <div *ngIf="item.active" class="content-text">
+          {{ item.FieldValues.NormalText }}
+        </div>
+        <div class="content-line" [ngClass]="item.active ? 'title-open' : 'title-close'"></div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #loadDataTempl1>
+  <div class="container ice-simple-table" style="margin-top: 64px">
+    <ngx-skeleton-loader
+      count="1"
+      [theme]="{ 'background-color': '#dadada', width: '70%', height: '25px', 'border-radius': '10px' }"
+    >
+    </ngx-skeleton-loader>
+
+    <ngx-skeleton-loader
+      count="2"
+      [theme]="{ 'background-color': '#dadada', width: '100%', height: '25px', 'border-radius': '10px' }"
+    >
+    </ngx-skeleton-loader>
+  </div>
+</ng-template>

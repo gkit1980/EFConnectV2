@@ -1,0 +1,4 @@
+element:
+  type: text
+  label: "Νέα Ασφαλισμένη Αξία"
+  viewMode: output

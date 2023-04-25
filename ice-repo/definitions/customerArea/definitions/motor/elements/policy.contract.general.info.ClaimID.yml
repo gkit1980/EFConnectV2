@@ -1,0 +1,9 @@
+element:
+  type: integer
+  buckets:
+    GetCoolgenClaimDetails:
+      transformation:
+        dataPath: ClaimID
+    GetLifeClaimDetails:
+      transformation:
+        dataPath: ClaimID

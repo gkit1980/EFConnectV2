@@ -1,0 +1,87 @@
+dt:
+  output-label: defaultValue
+  hit-policy: F
+  inputs:
+    - label: input elememnt for default
+      element: selectedcontractbranch
+  outputs:
+    - label: defaultValue
+      id: defaultValue
+      type: text
+  rules:
+    - inputs:
+        - null
+      outputs:
+        - null
+    - inputs:
+        - 1
+      outputs:
+        - "section-breaks-health"
+    - inputs:
+        - 2
+      outputs:
+        - "section-breaks-finance"
+    - inputs:
+        - 3
+      outputs:
+        - "section-breaks-motor"
+    - inputs:
+        - 4
+      outputs:
+        - "section-breaks-home"
+    - inputs:
+        - 5
+      outputs:
+        - "section-breaks-otherpc"
+    - inputs:
+        - 6
+      outputs:
+        - "section-breaks-otherpc"
+    - inputs:
+        - 7
+      outputs:
+        - "section-breaks-otherpc"
+    - inputs:
+        - 8
+      outputs:
+        - "section-breaks-otherpc"
+    - inputs:
+        - 9
+      outputs:
+        - "section-breaks-life"
+    - inputs:
+        - 11
+      outputs:
+        - "section-breaks-finance"
+    - inputs:
+        - 12
+      outputs:
+        - "section-breaks-life"
+    - inputs:
+        - 13
+      outputs:
+        - "section-breaks-home"
+    - inputs:
+        - 14
+      outputs:
+        - "section-breaks-life"
+    - inputs:
+        - 15
+      outputs:
+        - "section-breaks-life"
+    - inputs:
+        - 16
+      outputs:
+        - "section-breaks-life"
+    - inputs:
+        - 17
+      outputs:
+        - "section-breaks-life"
+    - inputs:
+        - 99
+      outputs:
+        - "section-breaks-group-health"          ## without border left
+    - inputs:
+        - "-"
+      outputs:
+        - null

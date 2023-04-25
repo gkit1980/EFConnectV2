@@ -1,0 +1,11 @@
+element:
+  type: text
+  buckets:
+    GetBookletsExist:
+      transformation:
+        paramName: Branch
+    GetBookletsPDF:
+      transformation:
+        paramName: Branch
+  pages:
+    policyDetails: null

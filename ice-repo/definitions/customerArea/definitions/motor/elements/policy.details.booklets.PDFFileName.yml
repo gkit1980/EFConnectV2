@@ -1,0 +1,9 @@
+element:
+  type: text
+  viewMode: hidden
+  buckets:
+    GetBookletsExist:
+      transformation:
+        responsePath: responseData.PDFFileName
+  pages:
+    policyDetails: null

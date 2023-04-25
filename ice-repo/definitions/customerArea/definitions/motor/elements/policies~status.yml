@@ -1,0 +1,9 @@
+element:
+  type: text
+  viewMode: output
+  buckets:
+    GetCustomerContracts:
+      transformation:
+        property: Status
+  pages:
+    viewMyPolicies: null  

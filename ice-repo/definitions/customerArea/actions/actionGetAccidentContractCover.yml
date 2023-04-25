@@ -1,0 +1,18 @@
+action:
+  title: calls a rest service to get the customer contract details
+  execution:
+    - RestCallExecutionRule:
+        baseUrl: BASEURL
+        url: GetAccidentContractCover
+        verb: post
+        bucket: GetAccidentContractCover
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+  condition:
+    FeelConditionRule:
+      expression: policy.selectedBranch = 6
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - policy.selectedBranch

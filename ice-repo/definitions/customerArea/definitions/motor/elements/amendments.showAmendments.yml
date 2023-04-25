@@ -1,0 +1,8 @@
+element:
+  type: boolean
+  defaultValue: null
+  buckets:
+    AmendmentsLogin:
+      transformation:{}
+  pages:
+    home: null

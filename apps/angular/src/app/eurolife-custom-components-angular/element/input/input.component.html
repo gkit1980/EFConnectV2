@@ -1,0 +1,17 @@
+<div class="input-compponent-container">
+  <div class="Typeface label-container">
+    {{label}}
+  </div>
+  <div class="input-container" [ngClass]="errorMsg !== '' ? 'border-error' : 'not-error'">
+    <input [(ngModel)]="value" 
+            (ngModelChange)="inputOnChange()" 
+            [placeholder]="placeholder" 
+            class="input-field" 
+            [type]="isPassword ? 'password' : 'text'" 
+            [value]="value"
+      >
+  </div>
+  <div *ngIf="errorMsg !== ''" class="error-msg">
+    {{errorMsg}}
+  </div>
+</div>

@@ -1,0 +1,20 @@
+page:
+  component: RegistrationPageComponent
+  label: null
+  sections:
+    - component: GridView
+      rows:
+        - css: null
+          cols:
+            - col: 6
+              element: signupwithsms.smsCode
+            - col: 2
+              element: signupwithsms.info
+            - col: 2
+              element: signupwithsms.status
+        - css: null
+          cols:
+            - col: 12
+              element: signupwithsms.next.button
+            - col: 12
+              element: signupwithsms.message

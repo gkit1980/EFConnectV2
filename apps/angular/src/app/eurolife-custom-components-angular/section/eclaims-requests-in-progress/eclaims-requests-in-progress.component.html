@@ -1,0 +1,186 @@
+
+
+
+<ng-container *ngIf="contentLoaded; else loadDataTempl1">
+  <div class="container">
+    <div class="row">
+      <div
+        *ngIf="!groupClaimsExist; else claimTempl"
+        class=""
+      >
+        <!-- {{ groupClaimsMessage }} -->
+      </div>
+      <ng-template #claimTempl>
+        <div *ngIf="visible" class="spinner ">
+          <div class="loading-spinner"></div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div
+              *ngFor="let row of recipe.rows"
+              class="row"
+              [ngClass]="getSectionClass(row)"
+            >
+              <div
+                class="column"
+                *ngFor="let col of row.cols"
+                [ngClass]="getGridColumnClass(col)"
+              >
+                <ice-element
+                  *ngIf="
+                    col.element === 'eclaims.requests.inprogress.title' ||
+                    col.element === 'eclaims.requests.inprogress.description'
+                  "
+                  [section]="section"
+                  [elementName]="col.element"
+                  [component]="col.component"
+                >
+                </ice-element>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mat-elevation-z8">
+          <table class="table-container" mat-table [dataSource]="dataSource" matSort>
+
+          <ng-container matColumnDef="IncidentDate">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Ημερομηνία Συμβάντος</th>
+            <td mat-cell *matCellDef="let row" [style.color]="row.color">{{ row.IncidentDate }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="CaseNumber">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Αρ.Αιτήματος</th>
+            <td mat-cell *matCellDef="let row">{{ row.CaseNumber }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="ClaimNumber">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Αρ.Ζημιάς</th>
+            <td mat-cell *matCellDef="let row">{{ row.ClaimNumber }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="PaymentAmount">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Αιτούμενο Ποσό</th>
+            <td mat-cell *matCellDef="let row" [style.color]="row.color">{{ row.PaymentAmount | euroCurrencyFormat }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="FullName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Ονοματεπώνυμο</th>
+            <td mat-cell *matCellDef="let row">{{ row.FullName }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="Contract">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Αρ.Συμβολαίου</th>
+            <td mat-cell *matCellDef="let row">{{ row.Contract }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="Documents">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Επισυναπτόμενα
+            </th>
+            <td mat-cell *matCellDef="let row"  class="link-color" >
+              <p class="text-link" (click)="DocumentsPopUp(row)"  >{{ this.docText }}</p>
+            </td>
+          </ng-container>
+
+      
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+          </table>
+
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+
+  <!--Mobile Version-->
+
+  <div class="table-mobile-container">
+    <ng-container *ngFor="let item of MobileRequestsArray; let idx = index">
+      <div class="request-container">
+                      
+          <div class="status-btn-container">
+
+            <div class="h6 receipt-mobile-label mobile-label-size">Αίτημα σε εξέλιξη {{start+idx+1}}</div>
+            <div
+              (click)="toggleCollapse(item)"
+              class="{{!item.collapse? 'profile svg-icons-up' : 'profile svg-icons'}}"
+              [onSVGLoaded]="handleSVG"
+              [inlineSVG]="getIcon('F9608FE2FC564FADADE1BF388EB367D9')"
+            ></div>
+          </div>
+
+        <div *ngIf="!item.collapse">
+          <div class="h6 receipt-mobile-label margin-top">Ημερομηνία Συμβάντος</div>
+          <div class="typeface caption3">{{ item.IncidentDate }}</div>
+
+    
+          <div class="hor-line"></div>
+
+          <div class="h6 receipt-mobile-label">Αρ.Αιτήματος</div>
+          <div class="typeface caption3">{{ item.CaseNumber }}</div>
+
+          <div class="hor-line"></div>
+
+          <div class="h6 receipt-mobile-label">Αρ.Ζημιάς</div>
+          <div class="typeface caption3">{{ item.ClaimNumber }}</div>
+
+          <div class="hor-line"></div>
+
+          <div class="h6 receipt-mobile-label">Ονοματεπώνυμο</div>
+          <div class="typeface caption3">{{ item.FullName }}</div>
+      
+          <div class="hor-line"></div>
+
+          <div class="h6 request-mobile-label">Αιτούμενο Ποσό</div>
+          <div class="typeface caption3">{{ item.PaymentAmount | euroCurrencyFormat }}</div>
+
+          <div class="hor-line"></div>
+
+          <div class="h6 receipt-mobile-label">Αρ.Συμβολαίου</div>
+          <div class="typeface caption3">{{ item.Contract }}</div>
+
+          <div class="hor-line"></div>
+
+          <div class="h6 receipt-mobile-label">Επισυναπτόμενα</div>
+          <div class="">
+            <div class="h6 doc-column link-color" (click)="DocumentsPopUp(item)">
+              <p class="text-link">{{ this.docText }}</p>
+            </div>
+          </div>    
+       </div>
+       
+      </div>
+    </ng-container>
+    <div class="padding-style" *ngIf="MobileRequestsArray.length > 0">
+      <mat-paginator [length]="dataSource.data.length" [pageSize]="5" [pageSizeOptions]="[5, 10, 30, 50]" 
+      (page)="onPageChanged($event)"></mat-paginator>
+   </div>
+  </div>
+</ng-container>
+
+<ng-template #loadDataTempl1>
+  <div class="container ice-simple-table">
+    <ngx-skeleton-loader
+      count="1"
+      [theme]="{
+        'background-color': '#dadada',
+        width: '70%',
+        height: '25px',
+        'border-radius': '10px'
+      }"
+    >
+    </ngx-skeleton-loader>
+
+    <ngx-skeleton-loader
+      count="2"
+      [theme]="{
+        'background-color': '#dadada',
+        width: '100%',
+        height: '25px',
+        'border-radius': '10px'
+      }"
+    >
+    </ngx-skeleton-loader>
+  </div>
+</ng-template>

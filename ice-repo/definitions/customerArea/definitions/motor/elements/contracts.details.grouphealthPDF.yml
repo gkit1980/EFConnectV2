@@ -1,0 +1,12 @@
+element:
+  component: EurolifeButtonComponent
+  type: text
+  label: Οδηγός Χρήσης
+  buttonIcon: https://scp.eurolife.gr/~/media/3D4C3EE53B51434B9A9C20E02FA3B340.ashx
+  additionalClasses: eurolife_btn-default eurolife_btn-stroke-red btn-minw
+  svgFillColor: corporate_color
+  defaultValue: actionGetGroupHealthPDF
+  alignmentClass: dt_visibility_grouphealth_pdf_button
+  typeScope: group-health-pdf
+  pages:
+    policyDetails: null

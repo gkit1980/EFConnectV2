@@ -1,0 +1,5 @@
+element:
+  type: date
+  viewMode: default  
+  pages:
+    sign-up: null

@@ -1,0 +1,10 @@
+action:
+  execution:
+    - RestCallExecutionRule:
+        baseUrl: BASEURLCHANGECREDENTIALS
+        url: ChangeMobile
+        verb: post
+        bucket: ChangeMobile
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false

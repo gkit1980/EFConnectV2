@@ -1,0 +1,9 @@
+element:
+  type: integer
+  defaultValue: 9
+  buckets:
+      # leme na stalthei i timh aytou tou element se ayto to bucket po usindeeetai me to action, 
+      #gia na ta steilei sto service kai na mas dwsei apantisi to service 
+    GetReprintedPDF:
+      transformation:
+        dataPath: DocType

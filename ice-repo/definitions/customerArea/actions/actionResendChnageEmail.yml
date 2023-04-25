@@ -1,0 +1,18 @@
+action:
+  execution:
+    - RestCallExecutionRule:
+        # baseUrl: http://platformsuat.eurolife.gr/CustomerAreaLogin/api/CustomerAreaApi
+        baseUrl: BASEURLCHANGECREDENTIALS
+        url: ChangeEmail
+        verb: post
+        bucket: ChangeEmail
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+  condition:
+    FeelConditionRule:
+      expression: customer.details.emailResendButtonFlag = true
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - customer.details.emailResendButtonFlag

@@ -1,0 +1,11 @@
+action:
+  title: when requested or a principal changes - the datamodel is reset  
+  Xexecution: 
+    - ResetDatamodelRule: null
+  Xtrigger:
+    - IceLifecycleEventTriggerRule:
+        events: 
+          - PRINCIPAL_CHANGE
+          - LOCALE_CHANGE
+          - NEW_DATAMODEL
+          - DEFINITIO_INIT

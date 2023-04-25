@@ -1,0 +1,4 @@
+element:
+  type: text
+  label: "Νέα Ημερομηνία Γέννησης"
+  viewMode: output

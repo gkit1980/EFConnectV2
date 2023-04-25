@@ -1,0 +1,6 @@
+element:
+  type: text
+  viewMode:
+    DtViewModeRule:
+      dt: dt_element_view_mode
+  label: Πληροφορίες Συμβολαίου

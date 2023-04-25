@@ -1,0 +1,10 @@
+action:
+  title: calls a rest service to print individual digital card
+  execution:
+    - OpenPdfExecutionRule:
+        element: digital.card.pdf.base64
+        filename: Digital_Card
+        mode: download
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDatastore: true

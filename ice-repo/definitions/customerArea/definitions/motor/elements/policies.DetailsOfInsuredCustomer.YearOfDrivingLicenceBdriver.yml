@@ -1,0 +1,8 @@
+element:
+  type: text
+  component:
+    StaticComponentRule:
+      component:
+        EurolifeMotorOutputDriversComponentComponent:
+          driverClass: dt_second_driver_details
+  viewMode: output

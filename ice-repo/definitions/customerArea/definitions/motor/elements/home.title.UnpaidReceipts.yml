@@ -1,0 +1,6 @@
+element:
+  label: Τελευταίες Πληρωμές
+  type: text
+  viewMode: output
+  pages:
+    home: null

@@ -1,0 +1,98 @@
+<div class="container">
+  <div class="row white-background">
+    <div class="col-md-12 no-paddings">
+ 
+      <!--Content-->
+
+      <div class="top-section">
+        <div class="circle" [ngClass]="moreClasses">
+          <div class="top-icon" aria-label="icon" [inlineSVG]="imageSource" [onSVGLoaded]="handleSVG"></div>
+        </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12">
+              <div class="text-center h4">
+                Αδυναμία παρουσίασης περιεχομένου
+              </div>
+         </div>
+      </div>
+      <div class="msg-alignment">
+          <div class="row">
+            <div class="col-md-12">
+                <div class="header-row-grey m-2"> 
+                  Αυτή η εφαρμογή χρησιμοποιεί Cookies και φαίνεται πως ο συνδυασμός των ρυθμίσεων της συσκευή σας δεν επιτρέπει την εκκίνηση της.
+                </div>
+            </div>
+        </div>
+     
+          <div class="row">
+            <div class="col-md-12">
+                <div class="typeface m-2">
+                  Για την επίλυση του προβλήματος θα πρέπει μέσα απο τις Ρυθμίσεις του Browser, να επιβεβαιώσετε ότι έχετε επιλέξει μια απο τις παρακάτω ρυθμίσεις για Cookies:
+                </div>
+               
+            </div>
+          </div>
+          <div class="row">
+          <div class="col-md-12">
+              <div class="typeface m-2">
+                1. <b>Google Chrome:</b> Επιλεγμένο το "Allow all cookies ή Block third-party cookies in Incognito".
+                Δείτε Αναλυτικές Οδηγίες <a href="https://support.google.com/chrome/answer/95647?hl=en&co=GENIE.Platform%3DDesktop#zippy=%2Callow-or-block-cookies" target="_blank">
+                  εδώ</a>.
+              </div>
+             
+          </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              
+              <div class="typeface m-2">
+                2. <b>Safari:</b> Απενεργοποιημένο το "Prevent cross-site tracking".
+                Δείτε Αναλυτικές Οδηγίες <a href="https://support.apple.com/guide/safari/prevent-cross-site-tracking-sfri40732/mac#:~:text=In%20the%20Safari%20app%20on,Prevent%20cross%2Dsite%20tracking.%E2%80%9D" target="_blank">
+                  εδώ</a>.
+              </div>
+                
+            
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="typeface m-2">
+                3. <b>Μozilla Firefox:</b> Επιλεγμένο το "Standard Protection".
+                Δείτε Αναλυτικές Οδηγίες  <a href="https://support.mozilla.org/en-US/kb/third-party-cookies-firefox-tracking-protection" target="_blank">
+                  εδώ</a>.
+              </div>   
+
+              
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+                <div class="typeface m-2">
+                4. Επιστρέψτε στην αρχική σελίδα και επιλέξτε Νέο Αίτημα Αποζημιώσης 
+                </div>
+            </div>
+          </div>
+      </div>     
+
+     <!--Button-->
+     <div class="row">
+      <div class="col-md-12">
+            <div class="eurolife-button-error-script mb-5">
+              <button
+                class="eurolife_btn eurolife_btn-default"
+                [disabled]="isDisabled"
+                (click)="onClick()"
+              >  
+              <div class="Button">{{ btnLabel }}</div>
+              </button>
+            </div>
+      </div>
+    </div>  
+     <!--End Button-->
+
+      <!--End Content-->
+
+    </div>
+  </div>
+</div>  

@@ -1,0 +1,5 @@
+element:
+  type: boolean
+  defaultValue: false
+  pages:
+    changeMobilePhonePopUp: null

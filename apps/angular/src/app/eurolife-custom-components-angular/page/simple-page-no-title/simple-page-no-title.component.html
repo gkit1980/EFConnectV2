@@ -1,0 +1,24 @@
+<div class="simple-page">
+  <page-validation [page]="page"></page-validation>
+  <div
+    [ngClass]="{
+      'white-background': (this.recipe.componentFlag == 'eclaimsDetails' || this.recipe.componentFlag == 'amendmentDetails' || this.recipe.componentFlag == 'amendmentHomeDetails' || this.recipe.componentFlag == 'amendmentHealthDetails'|| this.recipe.componentFlag == 'amendmentLifeDetails' || this.recipe.componentFlag == 'amendmentFinanceDetails' || this.recipe.componentFlag == 'propertyNotificationDetails'),
+      'grey-background': this.recipe.componentFlag == 'claimsDetails'
+    }"
+    class="row"
+  >
+    <div class="col-sm-12">
+      
+
+      <ice-section *ngFor="let section of page.sections" [section]="section">
+      </ice-section>
+
+      <div *ngIf="showInsights">
+        <hr />
+        <ice-page-insight [page]="page"></ice-page-insight>
+      </div>
+      <ice-confirmation-dialog [page]="page"></ice-confirmation-dialog>
+      
+    </div>
+  </div>
+</div>

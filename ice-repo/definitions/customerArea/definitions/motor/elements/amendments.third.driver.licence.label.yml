@@ -1,0 +1,5 @@
+element:
+  type: text
+  viewMode:
+    DtViewModeRule:
+      dt: dt_amendments_third_licence_view_mode

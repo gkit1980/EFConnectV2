@@ -1,0 +1,7 @@
+element:
+  component: EurolifeButtonComponent
+  type: text
+  label: UPLOAD FILES
+  additionalClasses: eurolife_btn-stroke mobile-center
+  pages:
+    communicationService: null

@@ -1,0 +1,49 @@
+action:
+  title: calls a rest service to get the customer contracts
+  execution:
+    - WriteFromMultipleSourcesDataToDatastoreExecutionRule:
+        baseUrl: BASEURL
+        url: GetCustomerContracts
+        verb: post
+        bucket: GetCustomerContracts
+        salesforceLoginUrl: BASEURLSALESFORCELOGIN
+        salesforceLoginMethod: post
+        eclaimsServicesUrl: BASESALESFORCEURLECLAIMSERVICES
+        eclaimsServicesMethod: get
+        encryptMessage: true
+        needsDataStore: true
+        encryptSecretElement: token
+    - GetLastDocumentUrlNoteRule:
+        baseUrl: BASEURL
+        url: GetReceiptsByContractID
+        verb: post
+        bucket: GetUrlNote
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: true  
+    # - GetParticipantsAllContractsRule:
+    #     baseUrl: BASEURL
+    #     url: GetContractParticipants
+    #     verb: post
+    #     bucket: GetAllContractsParticipants
+    #     encryptMessage: true
+    #     needsDataStore: true
+    #     encryptSecretElement: token            
+    # - GetSalesforceTokenRule:
+    #     salesforceLoginUrl: BASEURLSALESFORCELOGIN
+    #     methodLogin: post
+    #     getAmendmentsUrl: AMENDMENTSURL
+    #     methodGetAmendments: get
+    #     bucket: AmendmentsLogin
+    #     encryptMessage: true
+    #     encryptSecretElement: token
+    #     needsDataStore: false     
+    - ResetCustomerProfileRule:
+  condition:
+    FeelConditionRule:
+      expression: token != null
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - token
+

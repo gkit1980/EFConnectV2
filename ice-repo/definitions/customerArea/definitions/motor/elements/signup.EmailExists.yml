@@ -1,0 +1,9 @@
+element:
+  type: text
+  viewMode: output
+  buckets:
+    EmailExists:
+      transformation:
+        responsePath: EmailExists  
+  pages:
+    sign-up: null

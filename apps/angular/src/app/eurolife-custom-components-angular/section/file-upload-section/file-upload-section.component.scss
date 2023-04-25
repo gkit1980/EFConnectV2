@@ -1,0 +1,59 @@
+.attach-file-view{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: dashed 1px rgb(72, 82, 148);
+    background-color: rgb(236, 237, 244);
+    height: 73px;
+    // width: 632px;
+    margin: auto;
+    cursor: pointer;
+}
+
+.add-new-block-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Typeface {
+    color: rgb(72, 82, 148);
+}
+
+.browse-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.file-attachments {
+    margin-top: 8px;
+    display: flex;
+}
+
+.file-data-container {
+    display: flex;
+    max-width: 210px;
+    min-height: 63px;
+    background-color: rgb(236, 237, 244);
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+}
+
+.close {
+    margin: 0px;
+    align-self: unset;
+    margin-right: 16px;
+    margin-left: 8px;
+}
+
+.icon-container {
+    margin-left: 10px;
+    margin-right: 8px;
+}
+
+.material-icons {
+    color: rgb(0, 59, 77);
+}

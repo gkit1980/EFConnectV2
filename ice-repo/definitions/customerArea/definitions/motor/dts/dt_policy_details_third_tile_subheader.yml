@@ -1,0 +1,20 @@
+dt:
+  hit-policy: C
+  inputs:
+    - label: calculate visibility of section in policy details
+      element: selectedcontractbranch
+  outputs:
+    - id: element
+      label: text
+      type: string
+  rules:
+    - inputs:
+        - 1,2,3,4,5,6,7,8,9,11,12,13,14,15,16,17
+      outputs:
+        - >-
+          "policies.details.frequencyOfPayment"
+    - inputs:
+        - 99
+      outputs:
+        - >-
+          "policies.details.grouphealth.CustomerName"      

@@ -1,0 +1,16 @@
+element:
+  component:
+    StaticComponentRule:
+      component:
+        MatCardHomeComponent:
+          getDocumentsTypes: actionGetDocumentTypes    
+  title: Τα Συμβόλαιά μου
+  link: /#/ice/default/customerArea.motor/viewMyPolicies
+  content: Πληροφορίες και λεπτομέρειες για όλα τα συμβόλαιά σας
+  dataStoreProperty: clientContracts
+  complementText: σύνολο
+  colorCard: red-card
+  fillDatastore: actionFillDatastore
+  type: contracts  
+  pages:
+    home: null

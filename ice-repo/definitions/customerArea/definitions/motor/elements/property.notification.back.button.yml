@@ -1,0 +1,6 @@
+element:
+  type: text
+  label: ΠΡΟΗΓΟΥΜΕΝΟ
+  viewMode: output
+  pages:
+    viewPropertyNotificationDetails: null

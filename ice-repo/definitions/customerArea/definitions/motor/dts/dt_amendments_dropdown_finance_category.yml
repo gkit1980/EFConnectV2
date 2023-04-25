@@ -1,0 +1,198 @@
+dt:
+  hitPolicy: C
+  inputs:
+    - element: request.amendment.change.fop
+  outputs:
+    - id: value
+    - id: label
+    - id: label_en
+      type: text
+  rules:
+    - inputs:
+        - 7
+      outputs:
+        - 2
+        - Αλλαγή Τρόπου και Στοιχείων Πληρωμής
+        - Frequency_Payment_Method
+    - inputs:
+        - 7
+      outputs:
+        - 5
+        - Αλλαγή Κεφαλαίων
+        - Premium_Changes
+    - inputs:
+        - 7
+      outputs:
+        - 3
+        - Έκτακτη Καταβολή Ασφαλίστρου
+        - Extraordinary Payment
+    - inputs:
+        - 7
+      outputs:
+        - 6
+        - Αλλαγή Συχνότητας Πληρωμής Ασφαλίστρων
+        - Frequency_Payment_Method
+    - inputs:
+        - 6
+      outputs:
+        - 5
+        - Αλλαγή Κεφαλαίων
+        - Premium_Changes
+    - inputs:
+        - 6
+      outputs:
+        - 6
+        - Αλλαγή Συχνότητας Πληρωμής Ασφαλίστρων
+        - Frequency_Payment_Method
+    - inputs:
+        - 5
+      outputs:
+        - 1
+        - Αλλαγή Στοιχείων Προσώπων Συμβολαίου
+        - Other_Requests_CT
+    - inputs:
+        - 5
+      outputs:
+        - 4
+        - Αλλαγή Στοιχείων Πελάτη
+        - Personal_Details_Changes
+    - inputs:
+        - 5
+      outputs:
+        - 5
+        - Αλλαγή Κεφαλαίων
+        - Premium_Changes
+    - inputs:
+        - 5
+      outputs:
+        - 6
+        - Αλλαγή Συχνότητας Πληρωμής Ασφαλίστρων
+        - Frequency_Payment_Method
+    - inputs:
+        - 4
+      outputs:
+        - 1
+        - Αλλαγή Στοιχείων Προσώπων Συμβολαίου
+        - Other_Requests_CT
+    - inputs:
+        - 4
+      outputs:
+        - 2
+        - Αλλαγή Τρόπου και Στοιχείων Πληρωμής
+        - Frequency_Payment_Method
+    - inputs:
+        - 4
+      outputs:
+        - 4
+        - Αλλαγή Στοιχείων Πελάτη
+        - Personal_Details_Changes
+    - inputs:
+        - 4
+      outputs:
+        - 5
+        - Αλλαγή Κεφαλαίων
+        - Premium_Changes
+    - inputs:
+        - 4
+      outputs:
+        - 6
+        - Αλλαγή Συχνότητας Πληρωμής Ασφαλίστρων
+        - Frequency_Payment_Method
+    - inputs:
+        - 3
+      outputs:
+        - 5
+        - Αλλαγή Κεφαλαίων
+        - Premium_Changes
+    - inputs:
+        - 3
+      outputs:
+        - 6
+        - Αλλαγή Συχνότητας Πληρωμής Ασφαλίστρων
+        - Frequency_Payment_Method
+    - inputs:
+        - 2
+      outputs:
+        - 1
+        - Αλλαγή Στοιχείων Προσώπων Συμβολαίου
+        - Other_Requests_CT
+    - inputs:
+        - 2
+      outputs:
+        - 4
+        - Αλλαγή Στοιχείων Πελάτη
+        - Personal_Details_Changes
+    - inputs:
+        - 2
+      outputs:
+        - 5
+        - Αλλαγή Κεφαλαίων
+        - Premium_Changes
+    - inputs:
+        - 2
+      outputs:
+        - 3
+        - Έκτακτη Καταβολή Ασφαλίστρου
+        - Extraordinary Payment
+    - inputs:
+        - 2
+      outputs:
+        - 6
+        - Αλλαγή Συχνότητας Πληρωμής Ασφαλίστρων
+        - Frequency_Payment_Method
+    - inputs:
+        - 1
+      outputs:
+        - 1
+        - Αλλαγή Στοιχείων Προσώπων Συμβολαίου
+        - Other_Requests_CT
+    - inputs:
+        - 1
+      outputs:
+        - 2
+        - Αλλαγή Τρόπου και Στοιχείων Πληρωμής
+        - Frequency_Payment_Method
+    - inputs:
+        - 1
+      outputs:
+        - 3
+        - Έκτακτη Καταβολή Ασφαλίστρου
+        - Extraordinary Payment
+    - inputs:
+        - 1
+      outputs:
+        - 4
+        - Αλλαγή Στοιχείων Πελάτη
+        - Personal_Details_Changes
+    - inputs:
+        - 1
+      outputs:
+        - 5
+        - Αλλαγή Κεφαλαίων
+        - Premium_Changes
+    - inputs:
+        - 1
+      outputs:
+        - 6
+        - Αλλαγή Συχνότητας Πληρωμής Ασφαλίστρων
+        - Frequency_Payment_Method
+    - inputs:
+        - 0
+      outputs:
+        - 2
+        - Αλλαγή Τρόπου και Στοιχείων Πληρωμής
+        - Frequency_Payment_Method
+    - inputs:
+        - 0
+      outputs:
+        - 5
+        - Αλλαγή Κεφαλαίων
+        - Premium_Changes
+    - inputs:
+        - 0
+      outputs:
+        - 6
+        - Αλλαγή Συχνότητας Πληρωμής Ασφαλίστρων
+        - Frequency_Payment_Method
+
+    

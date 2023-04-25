@@ -1,0 +1,11 @@
+action:
+  execution:
+    - MessageInfoClicktocallRule:
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDatastore: true
+condition:
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - clicktocall.connected

@@ -1,0 +1,14 @@
+element:
+  type: text
+  component: IceRadiobuttonGroup
+  values:
+    StaticValuesRule:
+      values:
+        - ["ΟΧΙ "]
+        - ["ΝΑΙ ΓΙΑ ΑΠΛΕΣ ΠΡΟΩΘΗΤΙΚΕΣ ΕΝΕΡΓΕΙΕΣ"]
+        - ["ΝΑΙ ΓΙΑ ΑΠΛΕΣ ΚΑΙ ΣΤΟΧΕΥΜΕΝΕΣ* ΠΡΟΩΘΗΤΙΚΕΣ ΕΝΕΡΓΕΙΕΣ"]
+  buckets:
+    SubmitCustomerConsents:
+      transformation: {}
+  pages:
+    customerProfile: null

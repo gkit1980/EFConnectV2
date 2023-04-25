@@ -1,0 +1,4 @@
+element:
+  type: text
+  label: "Νέο Αίτημα Ενυπόθηκου δανειστή."
+  viewMode: output

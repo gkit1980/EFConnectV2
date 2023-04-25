@@ -1,0 +1,44 @@
+button {
+  display: flex;
+  width: 155px;
+  height: 48px;
+  justify-content: space-around;
+  padding: 0;
+}
+
+.button-content {
+  margin: auto 0;
+}
+
+.consents-submit {
+  justify-content: space-between;
+}
+
+.left {
+  flex-direction: row-reverse;
+}
+
+.button-icon {
+  margin: auto 15px;
+}
+
+.corporate_color {
+  fill: #ef3340;
+}
+
+.motor_color {
+  fill: rgb(71, 148, 99);
+}
+
+.eurolife-button {
+  display: flex;
+  justify-content: space-between;
+}
+
+.eurolife-button-center {
+  justify-content: center;
+}
+
+.hide-number{
+visibility: hidden;
+}

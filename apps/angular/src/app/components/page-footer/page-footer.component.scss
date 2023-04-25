@@ -1,0 +1,228 @@
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
+
+footer {
+  background-color: #ffffff;
+}
+
+p{
+  // margin-bottom: 0;
+}
+
+.divider {
+  // width: 1440px;
+  margin-top: 0;
+  height: 6px;
+  background-color: #ef3340;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.Typeface {
+  // width: 796px;
+  // height: 36px;
+  font-family: Ubuntu;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: 0.1px;
+  color: #383b38;
+
+}
+
+.link-pointer {
+  cursor: pointer;
+}
+
+.infoeurolifegr {
+  // width: 121px;
+  // height: 28px;
+  font-family: Ubuntu;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.75;
+  letter-spacing: normal;
+  color: #383b38 !important;
+  padding-top: 16px;
+
+}
+
+.third {
+  div {
+    padding: 8px;
+    fill: #ef3340 !important;
+    cursor: pointer;
+
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+
+  display: flex;
+  justify-content: flex-start;
+}
+
+.social {
+  div {
+    svg {
+      width: 28px !important;
+    }
+  }
+}
+
+.last-hr {
+  padding-top: 27px;
+
+  hr {
+    height: 2px;
+    border-top: solid 1px #eeeeee;
+  }
+}
+
+.telephone {
+  // width: 190px;
+  // height: 42px;
+  font-family: Ubuntu;
+  font-size: 32px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.31;
+  letter-spacing: normal;
+  color: #ef3340;
+
+}
+
+.center {
+  text-align: center;
+}
+
+@media screen and (max-width: 575px) {
+  .centering {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .social {
+    display: none;
+  }
+
+  .infoeurolifegr {
+    padding-bottom: 38px;
+  }
+
+  .logo {
+    padding-bottom: 16px;
+  }
+
+  .first-line {
+    padding-bottom: 0;
+  }
+
+  .mt-48px {
+    // margin-top: 48px;
+    margin-top: 0;
+    flex-direction: column-reverse;
+  }
+
+  .mobile-distance-fix{
+    margin-bottom: 48px;
+  }
+}
+
+.Caption3 {
+  // width: 329px;
+  // height: 38px;
+  padding-right: 2px;
+  opacity: 0.6;
+  font-family: Ubuntu;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.36;
+  letter-spacing: normal;
+  // text-align: center;
+  color: #383b38;
+
+}
+
+.logo {
+  font-weight: 500px;
+  color: #ef3340;
+}
+
+.first-line {
+  text-align: start;
+}
+
+// .at-end {
+//   text-align: end;
+// }
+
+.disclaimer {
+  max-width: 796px;
+}
+
+.mailTo {
+  color: #ef3340;
+}
+
+.mt-48px {
+   margin-top: 15px;
+}
+
+.footer-links {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+.tel-link {
+  color: #ef3340 !important;
+}
+
+.mail-link {
+  color: #383b38 !important;
+}
+
+
+.info-footer-background-container{
+  background-color: #eeeeee;
+  padding: 128px 0 25px 0;
+
+}
+
+.communication-disclaimer-fix-top{
+  padding: 25px 0;
+}
+
+.disclaimer-white{
+  background-color: white;
+}
+
+.legal-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @media screen and (max-width: 768px){
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.left-side{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

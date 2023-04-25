@@ -1,0 +1,53 @@
+$notification-colors: (
+    background: (
+        warning: rgb(249, 229, 240),
+        success: rgb(233, 252, 245),
+        info: rgba(4, 158, 204, 0.1)
+    ),
+    fill: (
+        warning: rgb(204, 4, 108),
+        success: rgb(43, 234, 155),
+        info: rgb(4, 158, 204)
+    )
+);
+
+.text{
+    display: flex;
+    padding: 4px;
+}
+
+.notification_bar {
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+    // border-radius: 32px;
+    flex-wrap: nowrap;
+    display: flex;
+}
+
+.notification_icon {
+    padding-left: 6px;
+    padding-right: 13px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.Caption3 {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.warning {
+    background-color: map-get(map-get($notification-colors, background), warning);
+    fill: map-get(map-get($notification-colors, fill), warning); 
+}
+
+.success {
+    background-color: map-get(map-get($notification-colors, background), success);
+    fill: map-get(map-get($notification-colors, fill), success);
+}
+
+.info {
+    background-color: map-get(map-get($notification-colors, background), info);
+    fill: map-get(map-get($notification-colors, fill), info);
+}

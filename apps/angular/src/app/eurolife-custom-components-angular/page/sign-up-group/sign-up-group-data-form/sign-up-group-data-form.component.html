@@ -1,0 +1,118 @@
+
+<div class="email-form-container">
+  
+  <div class="basic-info-header">
+    <div class="sign-up-container">
+      <p class="h4">Συμμετοχή σε ομαδικό ασφ. Ζωής Ατυχημάτων & Υγείας <br/> Ασφαλιστήριο {{contractKey}} <br/> Αντισυμβαλλόμενος  {{ companyName }} </p>
+    </div>
+  </div>
+
+    <app-sign-up-group-stepper></app-sign-up-group-stepper> 
+
+   <div class="second-info-header">
+    <p class="h6">Για τη συμμετοχή σας στο πρόγραμμα θα χρειαστεί η συμπληρωση της φόρμας</p>
+   </div>
+
+
+
+    <div class="mobile-container">
+      <div class="row">
+        <div class="col-md-6 line-style">
+          <mat-label class="Caption3 opacity">{{ gender | resourcePipe }}</mat-label>
+          <input type="radio" class="radio-button-gender" name="gender"  [(ngModel)]="genderValue" [formControl]="gendervalue" id="male" value="1" (change)="onGenderChecked()"> 
+          <div class="text-radio-button-gender">Άνδρας</div>
+          <input type="radio" class="radio-button-gender" name="gender" [(ngModel)]="genderValue" [formControl]="gendervalue" id="female" value="2" (change)="onGenderChecked()"> 
+          <div class="text-radio-button-gender">Γυναίκα</div>
+          </div>
+      </div>
+      <div class="row">
+        <mat-form-field class="col-md-6">
+          <mat-label class="label-style"> {{ nameText | resourcePipe }} </mat-label>
+          <input class="Caption1" matInput name="name" [(ngModel)]="nameValue" pattern="^[A-ZA-zΑ-Ωα-ωίϊΐόάέύϋΰήώ]+$" [formControl]="namevalue"
+            placeholder="Πληκτρολογήστε το όνομά σας" (ngModelChange)="onNameChange()">
+           <mat-error *ngIf="namevalue.invalid">{{ nameError | resourcePipe }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="col-md-6">
+          <mat-label class="label-style"> {{ surnameText | resourcePipe }} </mat-label>
+          <input class="Caption1" matInput name="surname" [(ngModel)]="surnameValue" pattern="^[A-ZA-zΑ-Ωα-ωίϊΐόάέύϋΰήώ]+$" [formControl]="surnamevalue"
+            placeholder="Πληκτρολογήστε το επώνυμό σας" (ngModelChange)="onSurnameChange()">
+           <mat-error *ngIf="surnamevalue.invalid">{{ surnameError | resourcePipe }}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="col-md-6">
+          <mat-label class="label-style"> {{ fathernameText | resourcePipe }} </mat-label>
+          <input class="Caption1" matInput name="fathername" [(ngModel)]="fathernameValue" pattern="^[A-ZA-zΑ-Ωα-ωίϊΐόάέύϋΰήώ]+$" [formControl]="fathernamevalue"
+            placeholder="Πληκτρολογήστε το όνομα πατρός" (ngModelChange)="onFathernameChange()">
+           <mat-error *ngIf="fathernamevalue.invalid">{{ fathernameError | resourcePipe }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="col-md-6">
+          <mat-label class="label-style"> {{ birthDateText | resourcePipe }} </mat-label>
+          <input class="Caption1" matInput name="birthdate" [(ngModel)]="birtdateValue" pattern="(0[1-9]|[1-2][0-9]|3[0-1])\/(0[1-9]|1[0-2])\/[0-9]{4}$" [formControl]="birthDatevalue"
+            placeholder="ΗΗ/ΜΜ/ΕΕΕΕ" (ngModelChange)="onDateChange()">
+          <mat-error *ngIf="birthDatevalue.invalid">{{ birthdateError | resourcePipe }}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="col-md-6">
+          <mat-label class="label-style"> {{ vatText | resourcePipe }} </mat-label>
+          <input class="Caption1" matInput name="vat" [(ngModel)]="vatNo" pattern="[0-9]{9}" [formControl]="vatno"
+            placeholder="Πληκτρολογήστε τον αριθμό του ΑΦΜ σας" (ngModelChange)="onVatChange()">
+          <mat-error *ngIf="vatno.invalid">{{ vatError | resourcePipe }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="col-md-6">
+          <mat-label class="label-style"> {{ ibanText | resourcePipe }} </mat-label>
+          <input class="Caption1" matInput name="iban" [(ngModel)]="ibanValue" pattern="GR[0-9]{25}" [formControl]="ibanvalue"
+            placeholder="Πληκτρολογήστε το IBAN σας" (ngModelChange)="onIbanChange()">
+           <mat-error *ngIf="ibanvalue.invalid">{{ ibanError | resourcePipe }}</mat-error>
+        </mat-form-field>
+        
+      </div>
+
+      <div class="row">
+        <div class="Caption3 opacity info-text">Έχω <span class="word-spacing" (click)="openUpdateDialog()"> ενημερωθεί </span> για την επεξεργασία των Ειδικών Κατηγοριών Δεδομένων μου (υγείας
+        και περίθαλψης) και δηλώνω ότι:</div>
+		    <div class="col-md-6 line-style" >
+            <div [(ngModel)]="radioOptions" >
+              <input type="radio" class="radio-button-consent" name="consent" id="unChecked" value="unChecked" [(ngModel)]="consentYes" [formControl]="consentYesvalue"
+              (click)="ShowDiv('hide')" (ngModelChange)="onConsentChange()"> <div class="text-radio-button-consent">Συναινώ </div>
+              <input type="radio"class="radio-button-consent" name="consent" id="checked" value="checked" 
+              (click)="ShowDiv('show')" checked><div class="text-radio-button-consent"> Δεν Συναινώ </div> 
+            </div>
+        </div>
+      </div>
+      <div  class="notification-bar" *ngIf="infoText == 'show'">
+        <div class="row">
+            <div class="notification-icon" aria-label="icon" [onSVGLoaded]="handleSVGInfo"
+                [inlineSVG]="getIcon('01D8EA7C762A44E0A8FF3E4FFF8D1C72')"></div>
+            <p class="Caption3 m-auto color-font">
+                Η μη συναίνεσή μου συνεπάγεται την αδυναμία παροχής της ασφαλιστικής κάλυψης. 
+            </p>
+        </div>
+      </div>
+      
+      <div class="create-account-button-container">
+        <button class="eurolife_btn eurolife_btn-default" (click)="onSubmit()" [disabled]="!gotGender|| !gotName || !gotSurname || !gotFathername || !gotDate 
+          || !gotIban ||!gotVatNo || !gotCheckConsent || showSpinnerBtn">
+          <div *ngIf="!showSpinnerBtn">
+            {{ next | resourcePipe }}
+          </div>
+          <div *ngIf="showSpinnerBtn" class="button-icon">
+            <i class="fa fa-spinner fa-spin fa-lg"></i>
+          </div>
+        </button>
+      </div>
+      <div *ngIf="errMsgService !== '' " class="error-msg-create">{{errMsgService}}</div>
+    </div>
+    
+    
+
+</div>
+
+
+
+
+

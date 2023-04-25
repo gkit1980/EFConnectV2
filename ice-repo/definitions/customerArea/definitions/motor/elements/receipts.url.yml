@@ -1,0 +1,8 @@
+element:
+  type: text
+  viewMode: output
+  buckets:
+    DownloadPdf:
+      transformation:{}  
+  pages:
+    home: null

@@ -1,0 +1,13 @@
+action:
+  execution:
+    - VerifyRegexRule:
+        element: customer.details.MobilePhoneI
+        regexp: ^[0][1-9]\d{9}$|^[1-9]\d{9}$
+        returnedElementBoolean: customer.details.VerifyMobilePhone
+  condition:
+    FeelConditionRule:
+      expression: customer.details.MobilePhoneI != null
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - customer.details.MobilePhoneI

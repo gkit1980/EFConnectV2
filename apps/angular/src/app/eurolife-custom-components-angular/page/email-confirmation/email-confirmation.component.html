@@ -1,0 +1,10 @@
+<div class="row">
+  <!-- <p class="Eurolife-ERB">{{ text1 | resourcePipe }}</p> -->
+</div>
+<div class="custom-page-content-container">
+  <div class="col-sm-12 mt-xs-0 mt-sm-5 mx-3 mx-sm-auto">
+    <div class="email-change-text h4">{{ text2 | resourcePipe }}</div>
+    <ice-section *ngFor="let section of page.sections" [section]="section">
+    </ice-section>
+  </div>
+</div>

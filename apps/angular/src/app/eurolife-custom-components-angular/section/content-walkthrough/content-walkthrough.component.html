@@ -1,0 +1,34 @@
+<div class=container-fluid>
+  <div class="row">
+    <div class="col-md-12 no-paddings">
+      <div>
+        <div class="header-title-pop-up-walkthrough text-center walkthrough-header-mb">{{text}}</div>
+
+      </div>
+      <div class="walkthrough-buttons">
+        <div *ngIf="numberOfDots.length >= 2">
+          <!-- <div aria-label="iconPrevious()" [inlineSVG]="iconPrevious()" [onSVGLoaded]="handleSVGReverse">
+          </div> -->
+          <!-- <div class="back-svg" aria-label="icon" [inlineSVG]="getIcon('AB7AD067ECBF48FFA0DEC42C9DC88E5B')"
+            [onSVGLoaded]="handleSVG">
+          </div> -->
+          <div (click)="onClickPrevious()" type="button" class="eurolife_btn">
+            {{previous}} </div>
+        </div>
+        <div *ngIf="numberOfDots.length >= 2">
+          <div class="walkthrough-dots">
+            <span class="dot" [ngClass]="getActive(item)" *ngFor="let item of numberOfDots"></span>
+          </div>
+        </div>
+        <div *ngIf="numberOfDots.length >= 2">
+          <div (click)="onClickNext()" class="eurolife_btn">{{next}} </div>
+          <!-- <div class="back-svg" aria-label="icon" [inlineSVG]="getIcon('AB7AD067ECBF48FFA0DEC42C9DC88E5B')"
+            [onSVGLoaded]="handleSVG">
+          </div> -->
+          <!-- <div aria-label="iconNext()" [inlineSVG]="iconNext()" [onSVGLoaded]="handleSVG">
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

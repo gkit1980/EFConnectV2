@@ -1,0 +1,10 @@
+element:
+  type: boolean
+  defaultValue: false
+  viewMode: hidden
+  pages:
+    viewAmendmentDetails: null
+    viewAmendmentLifeDetails: null
+    viewAmendmentHealthDetails: null
+    viewAmendmentFinanceDetails: null
+    

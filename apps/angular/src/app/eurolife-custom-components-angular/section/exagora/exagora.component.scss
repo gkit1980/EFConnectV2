@@ -1,0 +1,135 @@
+.section-upper-container{
+    display: flex;
+    align-items: center;
+    margin-top: 80px;
+    width: 100%;
+    @media (max-width: 575.98px) {
+        flex-wrap: wrap;   
+    }
+}
+.wrap-text{
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   align-items: center;
+   width: 100%;
+}
+
+.section-label{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    height: 64px;
+    // border-left: solid 2px #479463;
+    padding-left: 16px;
+    width: 40%;
+}
+
+.h5{
+    margin-bottom: 0;
+}
+
+.container{
+    margin-bottom: 143px;
+    padding: 0;
+}
+
+.no-paddings{
+    padding: 0;
+}
+
+.row-container{
+    display: flex;
+    height: 52px;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: solid 0.5px #b5b5b5;
+    flex-wrap: wrap;
+    &:first-child{
+        margin-top: 24px;
+    }
+    &:last-child{
+        background-color: rgba(71, 148, 99, 0.1);
+
+    }
+}
+
+.data-label{
+    opacity: 0.6;
+    font-family: Ubuntu;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.36;
+    letter-spacing: normal;
+    color: #383b38;
+    width: 322px;
+}
+
+.data-value{
+    font-family: Ubuntu;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.36;
+    letter-spacing: normal;
+    color: #383b38;
+  
+  }
+
+.hidden {
+    visibility: hidden;
+}
+
+.typeface {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 0.1px;
+    max-width: fit-content;
+}
+
+
+// #grid-container {
+    
+//     display: grid;
+//     grid-template-columns: 60% 40%;
+//     padding-top: 15px;
+
+//     .item-left {
+//         font-weight: bold;
+//         color: black;
+//         font-size: medium;
+//     }
+
+//     .item-right {
+//         text-align: center;
+//     }
+// }
+
+// #grid-container2 {
+//     display: grid;
+//     grid-template-columns: 50% 50%;
+//     grid-template-rows: auto;
+//     padding-top: 15px;
+
+
+//     .item-left {
+//         font-weight: bold;
+//         color: black;
+//         font-size: small;
+//     }
+
+//     .item-right {
+//         text-align: small;
+//     }
+// }
+
+// #grid-container3{
+//     @extend #grid-container2 ;
+// }

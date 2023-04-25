@@ -1,0 +1,13 @@
+element:
+  type: text  
+  viewMode: output
+  defaultValue: test
+  component:
+    StaticComponentRule:
+      component: 
+        EurolifeOutputComponent:
+          valueClass: sucess-output-value
+          labelClass: sucess-output-label
+
+  pages:
+    paymentManagementSuccess: null

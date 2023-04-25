@@ -1,0 +1,6 @@
+<div
+  [ngClass]="(pageSource != undefined && pageSource == 'home') ? 'ice-image-home' : 'ice-image'"
+  [ngStyle]="{ 'background-image': 'url(' + imageSource + ')' }"
+>
+  <div class="h2 center">{{ values }}</div>
+</div>

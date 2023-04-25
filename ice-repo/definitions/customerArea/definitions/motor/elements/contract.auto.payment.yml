@@ -1,0 +1,6 @@
+element:
+  type: text
+  label: Αυτόματη Πληρωμή
+  viewMode: output
+  pages:
+    policyDetails: null

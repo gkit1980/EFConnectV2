@@ -1,0 +1,6 @@
+element:
+  type: text
+  viewMode: output
+  label: Sign Up       
+  pages:
+    sign-up: null

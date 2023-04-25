@@ -1,0 +1,22 @@
+action:
+    title: calls a rest service to get the contract property details
+    execution:
+        - RestCallExecutionRule:
+              baseUrl: BASEURL
+              #   baseUrl: https://lifena.eurolife.gr/CustomerDataProvider/api/CustomerData/GetContractPropertyCoolgenDetails
+              url: GetContractPropertyCoolgenDetails
+              verb: post
+              bucket: GetContractPropertyCoolgenDetails
+              encryptMessage: true
+              encryptSecretElement: token
+              needsDataStore: false
+        - NavigateToPageExecutionRule:
+              page: policyDetails
+              omitValidation: true
+    condition:
+        FeelConditionRule:
+            expression: policy.selectedBranch = 13
+    trigger:
+        - ElementChangeTriggerRule:
+              elements:
+                  - policy.selectedBranch

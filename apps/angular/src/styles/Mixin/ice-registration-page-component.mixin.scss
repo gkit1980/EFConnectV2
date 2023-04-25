@@ -1,0 +1,96 @@
+@import '~@angular/material/theming';
+
+// @import "";
+
+@mixin ice-registration-page-component-mixin($theme) {
+    $foreground: map-get($theme, foreground);
+    $background: map-get($theme, background);
+
+
+    // .navbar-default {
+    //     display: none;
+    // }
+
+    .ice-one-page {
+
+        @if $ice-registration-page-set-background-image {
+            background:100% 100% url($ice-registration-page-background-image-url);
+            // background-image: url($ice-registration-page-background-logo);
+        }
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: left top;
+
+        $color-teaser-background: #f3f3f3;
+
+        h4 {
+            // color: mat-color($foreground, secondary-text);
+            background-color: mat-color($background, background);
+            margin: 0 0 5px 0;
+            visibility: hidden;
+        }
+
+        hr {
+            visibility: hidden;
+        }
+
+        .page-insight {
+            visibility: hidden;
+        }
+        .ice-grid-view .row {
+            padding-bottom: 5px;
+        }
+        
+        .mat-card-subtitle, .mat-card-content, .mat-card-header .mat-card-title {
+            font-size: 8px;
+        }
+
+        .mat-button, .mat-raised-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button, .mat-fab, .mat-mini-fab {
+            font-size: 8px;
+        }
+
+        ng-deep mat-card-content .mat-card-content, .mat-card-header .mat-card-title, .mat-card-subtitle {
+            max-height: 200px;
+        }
+        
+        .mat-card {
+                height: 320px;
+                width: 300px;
+                opacity: 0.8;
+                position: absolute;
+                bottom: 20px;
+                // top: 20px;
+                right: 20px;
+                background-color: white !important;
+                color: black;
+                padding-left: 20px;
+                padding-right: 20px;
+            
+            
+        }
+        
+        .visual-wrapper {
+            margin: 0 -30px 18px -30px;
+
+            .visual {
+                //dummy
+                width:100%;
+                height:200px;
+                // background-image: ($ice-registration-page-background-logo);
+                // @if $ice-registration-page-set-background-image {
+                //     background:100% 100% url($ice-registration-page-background-image-url);
+                // }
+                background-size: cover;
+                h1{
+                    margin-top: 12px;
+                    height: -webkit-fill-available;
+                    margin-left: 40px;
+                    background: url($ice-registration-page-background-logo);
+                    display: -webkit-box;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+    }
+}

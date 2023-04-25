@@ -1,0 +1,8 @@
+element:
+  type: date
+  viewMode: output  
+  buckets:
+    GetContractMotorDetails:
+      transformation:
+        responsePath: ContractMotorDetails.IssueDate
+  pages:

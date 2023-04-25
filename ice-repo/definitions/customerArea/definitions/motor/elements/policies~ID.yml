@@ -1,0 +1,9 @@
+element:
+  type: integer
+  viewMode: output
+  buckets:
+    GetCustomerContracts:
+      transformation:
+        property: ContractID
+  pages:
+    viewMyPolicies: null  

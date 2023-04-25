@@ -1,0 +1,9 @@
+element:
+  type: date
+  viewMode: output
+  buckets:
+    GetClaim:
+      transformation:
+        property: ClaimEventDate
+  pages:
+    viewClaims: null    

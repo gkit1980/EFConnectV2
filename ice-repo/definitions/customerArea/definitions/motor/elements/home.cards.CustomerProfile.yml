@@ -1,0 +1,8 @@
+element:
+  component: MatCardHomeComponent
+  title: Το προφίλ μου
+  link: /#/ice/default/customerArea.motor/customerProfile
+  content: Δείτε το προφίλ σας,πληροφορίες,αλλάξτε email,τηλέφωνο επικοινωνίας...
+  dataStoreProperty: clientContracts 
+  pages:
+    home: null

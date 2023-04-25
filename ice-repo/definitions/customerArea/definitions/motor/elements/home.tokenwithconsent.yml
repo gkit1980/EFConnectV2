@@ -1,0 +1,11 @@
+element:
+  type: boolean
+  viewMode: output
+  defaultValue:  
+    StaticValueRule:
+      value: null
+  buckets:
+    HomeConsent:
+      transformation:{}
+  pages:
+    home: null

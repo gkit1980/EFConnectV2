@@ -1,0 +1,6 @@
+element:
+  component: IceButton
+  type: text
+  defaultValue: action-redirect-payment
+  pages:
+    paymentManagement: null

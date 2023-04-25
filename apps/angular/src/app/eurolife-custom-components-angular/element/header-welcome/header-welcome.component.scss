@@ -1,0 +1,152 @@
+.welcome-container {
+    margin: 40px 0 16px 32px;
+    width: 90vw;
+    max-width: 100%;
+
+    @media screen and (max-width: 1119px){
+        margin-right: 50vw;
+    }
+
+    @media screen and (max-width: 440px){
+        margin: 16px 0 16px;
+        width: 90vw;
+        max-width: 100%;
+    }
+}
+
+.welcome-text{
+    color: #383b38;
+    width: 569px;
+    // max-width: 100%;
+    margin-top: 16px;
+    // text-align: justify;
+    font-size: 20px; 
+    font-weight: 500;
+    font-family: 'Ubuntu';
+    line-height: 1.5;
+    letter-spacing: 0;
+
+    @media screen and (max-width: 768px){
+        max-width: unset;
+        width: 100%;
+        display: none;
+    }
+
+}
+
+.welcome-mobile-text{
+    display: none;
+    @media screen and (max-width: 768px){
+        color: #383b38;
+        width: 569px;
+        max-width: 68%;
+        margin-top: 16px;
+        font-size: 1rem;
+        font-weight: 500;
+        font-family: Ubuntu;
+        line-height: 1.5;
+        letter-spacing: 0;
+        display: block;
+    }
+}
+
+.welcome-header{
+    width: 569px;
+    max-width: 100%;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: 'Ubuntu';
+    line-height: 1.19;    
+    letter-spacing: 0;
+    color: #EE3242;
+    display: contents;
+
+    @media screen and (max-width: 768px){
+        max-width: unset;
+        width: 100%;
+    }
+  
+}
+
+.welcome-text-secondary{
+
+    width: 569px;
+    max-width: 100%;
+    font-size: 1rem;
+    font-family: 'Ubuntu';
+    line-height: 1.5;
+    letter-spacing: 0;
+    margin-top: 16px;
+
+    @media screen and (max-width: 768px){
+        display: none;
+    }
+}
+
+.welcome-text-secondary-list {
+    padding-left: 0px;
+    list-style-type: none;
+}
+
+.welcome-text-secondary-heading
+{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    strong {
+        font-weight: 500;
+    }
+    @media screen and (max-width: 768px){
+        display: none;
+    }
+}
+
+.notification-bar-info {
+    background-color: rgba(4, 158, 204, 0.1);
+    display: flex;
+    flex-wrap: nowrap;
+  
+    p {
+        margin: 0;
+    }
+}
+
+.showNudge {
+    display: none;
+    @media screen and (max-width: 768px){
+        display: block;
+        width: 72%;
+    }
+
+}
+  
+.svg-container {
+    display: flex;
+    align-items: center;
+    height: 42px;
+    padding: 0 0 0 6px;
+}
+
+.home-btn{
+    margin-top: 16px;
+    @media screen and (max-width: 768px){
+        display: none;
+    }
+}
+
+.disable-btn {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.65;
+}
+
+.spinner-btn {
+    display: inline;
+}
+
+.button-icon {
+    margin-left: 10px;
+}

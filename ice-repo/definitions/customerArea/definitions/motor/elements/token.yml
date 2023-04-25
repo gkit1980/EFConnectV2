@@ -1,0 +1,224 @@
+element:
+  type: text
+  defaultValue:
+    PrincipalDataValueRule:
+      path: token
+  buckets:
+    GetCustomerContracts:
+      transformation:
+        dataPath: token
+    getUserDocument:
+      transformation:
+        dataPath: token
+    getUserDocumentTypes:
+      transformation:
+        dataPath: token
+    GetUrlNote:
+      transformation:
+        dataPath: token
+    GetStatements:
+      transformation:
+        dataPath: token
+    GetContractParticipants:
+      transformation:
+        dataPath: token
+    GetDocumentUrlNoteRule:
+      transformation:
+        dataPath: token
+    DownloadPdf:
+      transformation:
+        dataPath: token
+    GetDafs:
+      transformation:
+        dataPath: token
+    GetContractParticipantsForClaims:
+      transformation:
+        dataPath: token
+    GetCustomerFullData:
+      transformation:
+        dataPath: token
+    GetAgentInfo:
+      transformation:
+        dataPath: token
+    WriteFromOther:
+      transformation:
+        dataPath: token
+    GetContractEndorsement:
+      transformation:
+        dataPath: token
+    GetCustomerAddresses:
+      transformation:
+        dataPath: token
+    GetContractBeneficiaries:
+      transformation:
+        dataPath: token
+    GetContractBeneficiariesForAmendments:
+      transformation:
+        dataPath: token    
+    GetContractIndividualDetails:
+      transformation:
+        dataPath: token
+    GetLifeContractCover:
+      transformation:
+        dataPath: token
+    GetLifeContractCoverForAmendments:
+      transformation:
+        dataPath: token    
+    GetContractMotorDetails:
+      transformation:
+        dataPath: token
+    GetMotorContractCover:
+      transformation:
+        dataPath: token
+    GetReprintedPDF:
+      transformation:
+        dataPath: token
+    GetLifeClaimDetails:
+      transformation:
+        dataPath: token
+    GetCoolgenClaimDetails:
+      transformation:
+        dataPath: token
+    OptOut:
+      transformation:
+        dataPath: token
+    GetOptOut:
+      transformation:
+        dataPath: token
+    GetContractMortgageDetails:
+      transformation:
+        dataPath: token
+    ChangePassword:
+      transformation:
+        dataPath: token
+    GetContractAccidentDetails:
+      transformation:
+        dataPath: token
+    GetContractCargoDetails:
+      transformation:
+        dataPath: token
+    GetContractCargoPrudDetails:
+      transformation:
+        dataPath: token
+    GetContractConsumerDetails:
+      transformation:
+        dataPath: token
+    GetContractDeathDetails:
+      transformation:
+        dataPath: token
+    GetContractDetailsPrudDetails:
+      transformation:
+        dataPath: token
+    GetContractFirePrudDetails:
+      transformation:
+        dataPath: token
+    GetUserDocuments:
+      transformation:
+        dataPath: token
+    EmailExists:
+      transformation:
+        dataPath: token
+    VerifySMS:
+      transformation:
+        dataPath: token
+    VerifyChangeEmail:
+      transformation:
+        dataPath: token
+    VerifyChangeMobile:
+      transformation:
+        dataPath: token
+    GetContractCashValue:
+      transformation:
+        dataPath: token
+    GetClaim:
+      transformation:
+        dataPath: token
+    GetHealthContractDetails:
+      transformation:
+        dataPath: token
+    GetLifeHealthContractDetails:
+      transformation:
+        dataPath: token
+    GetPaymentURLRedirector:
+      transformation:
+        dataPath: token
+    GetPaymentURLRedirectorAEAZ:
+      transformation:
+        dataPath: token
+    GetPensionContractDetails:
+      transformation:
+        dataPath: token
+    GetPropertyCoolgenContractCover:
+      transformation:
+        dataPath: token
+    GetReceiptsByContractKey:
+      transformation:
+        dataPath: token
+    GetReceiptsByContractID:
+      transformation:
+        dataPath: token
+    GetRegistrationCode:
+      transformation:
+        dataPath: token
+    GetTransactionInfoAEGA:
+      transformation:
+        dataPath: token
+    GetContractPropertyCoolgenDetails:
+      transformation:
+        dataPath: token
+    GetAccidentContractCover:
+      transformation:
+        dataPath: token
+    ChangeMobile:
+      transformation:
+        dataPath: token
+    ChangeEmail:
+      transformation:
+        dataPath: token
+    HomeConsent:
+      transformation:
+        dataPath: token
+    GetGdprData:  
+      transformation:
+        dataPath: token  
+    SubmitCustomerConsents:
+      transformation:
+        dataPath: token
+    GetLifeContractFundsValuation:
+      transformation:
+        dataPath: token
+    GetFundRates:
+      transformation:
+        dataPath: token    
+    GetAllContractsParticipants:
+      transformation:
+        dataPath: token
+    GetGroupHealthContractCover:
+      transformation:
+        dataPath: token 
+    GetContractGroupHealthDetails:
+      transformation:
+        dataPath: token        
+    AmendmentsLogin:
+      transformation:
+        dataPath: token   
+    GetHealthCards:
+      transformation:
+        dataPath: token
+    GetGroupHealthCards:
+      transformation:
+        dataPath: token                       
+    EclaimsDocuments:
+      transformation:
+        dataPath: token     
+    EclaimsDownloadDocument: 
+      transformation:
+        dataPath: token     
+                  
+        # GetContractEndorsement
+        # GetContractMortgageDetails
+        # GetContractMotorDetails
+        # GetCustomerAddresses
+        # GetCustomerFullData
+        # DownloadPdf
+        # getUserDocumentTypes

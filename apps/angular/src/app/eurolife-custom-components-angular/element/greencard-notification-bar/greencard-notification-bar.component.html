@@ -1,0 +1,6 @@
+<div *ngIf="show" class="notification_bar" [ngClass]="notificationType">
+  <div class="notification_icon" aria-label="icon" [onSVGLoaded]="handleSVG" [inlineSVG]="imageSource" ></div>
+  <div class="text">
+    <p class="Caption3"> {{ notificationText }} {{cardNumber}}. {{notificationText2}} </p>
+  </div>
+</div>

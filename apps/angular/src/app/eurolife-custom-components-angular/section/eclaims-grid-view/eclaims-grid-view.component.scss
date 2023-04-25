@@ -1,0 +1,16 @@
+.no-paddings {
+  padding: 0;
+}
+
+.group-claims-submit {
+  background-color: #ffffff;
+  max-width: 688px;
+  border: 1px solid #dedede;
+  border-top: 0px;
+  margin: -48px auto auto auto;
+
+  @media screen and (max-width: 575.98px) {
+    margin-left: -28px;
+    margin-right: -28px;
+  }
+}

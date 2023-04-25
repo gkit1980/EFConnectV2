@@ -1,0 +1,12 @@
+element:
+  type: text
+  defaultValue: "GREECE"
+  label: Χώρα μόνιμης διαμονής
+  component: IceTextInput
+  viewMode: disabled
+  buckets:
+    GreenCardData:
+      transformation:
+        dataPath: greencard.country
+  pages:
+    greenCard: null

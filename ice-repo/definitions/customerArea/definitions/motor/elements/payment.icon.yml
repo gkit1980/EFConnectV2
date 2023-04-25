@@ -1,0 +1,6 @@
+element:
+  type: text
+  component: SuccessfullmessageComponent
+  # viewMode: output
+  pages:
+    successfullPayment: null

@@ -1,0 +1,16 @@
+action:
+  title: calls a rest service to get the customer docs
+  execution:
+    - RestCallExecutionRule:
+        baseUrl: BASEURLDOCS
+        # baseUrl: customer_documents
+        url: getUserDocument
+        verb: post
+        bucket: getUserDocument
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - policy.selectedDocUrl

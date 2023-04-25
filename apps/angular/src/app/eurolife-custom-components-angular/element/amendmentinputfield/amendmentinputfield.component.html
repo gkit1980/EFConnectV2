@@ -1,0 +1,11 @@
+<div class="column form-group">
+  <mat-form-field>
+    <mat-label> Συμπληρώστε το πεδίο </mat-label>
+    <input class="Caption1" matInput name="myinput" #messageInput>
+  </mat-form-field>
+  <div *ngIf="errorMsg !== ''" class="error-msg">
+    {{errorMsg}}
+  </div>
+</div>
+
+<!-- [(ngModel)]="myinput" (ngModelChange)="onInputChange(myinput)" -->

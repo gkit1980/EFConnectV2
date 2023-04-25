@@ -1,0 +1,6 @@
+element:
+  component: IceButton
+  type: text
+  defaultValue: actionCreateUser
+  pages:
+    signupvalidated: null

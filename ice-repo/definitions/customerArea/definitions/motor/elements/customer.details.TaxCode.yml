@@ -1,0 +1,12 @@
+element:
+  type: text
+  viewMode: output
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent
+  buckets:
+    GetCustomerFullData:
+      transformation:
+        responsePath: Customer.TaxCode
+  pages:
+    customerProfile:  

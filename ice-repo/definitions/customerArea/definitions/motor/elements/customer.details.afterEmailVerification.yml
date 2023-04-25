@@ -1,0 +1,15 @@
+element:
+  type: text
+  viewMode:
+    # ConditionalViewModeRule: # if the return value from ChangeEmail service is Success: true then show this element
+    #     conditionElement: customer.details.changeEmailSuccess
+    #     conditionValue: true
+    #     conditionViewMode: output
+    #     elseViewMode: hidden
+
+    DtViewModeRule:
+      dt: dt.email.afterEmailVerfication
+      output: viewmode
+  pages:
+    changeEmailPopUp: null
+  label: Παρακαλούμε γράψτε τον κωδικό επιβεβαίωσης που μόλις στείλαμε με μήνυμα στο κινητό σας

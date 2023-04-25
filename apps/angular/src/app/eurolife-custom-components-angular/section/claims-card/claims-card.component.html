@@ -1,0 +1,280 @@
+<div class="info-open-text only-desktop">
+  <div class="button-style">
+    <h5>Διαχείριση Ατομικών Συμβολαίων</h5>
+    <p class="label">
+      Δημιουργήστε νέο αίτημα και παρακολουθήστε την εξέλιξή του από εδώ.
+    </p>
+    <p class="health-label"  *ngIf="hasHealthContract === true">
+      Η αποστολή των δικαιολογητικών αποζημίωσης ατομικών ασφαλιστήριών Ζωής και Υγείας, λόγω νοσηλειών ή άλλων ιατροφαρμακευτικών δαπανών, μπορεί να γίνει μόνο με ηλεκτρονικό τρόπο στο email <a href = "mailto: healthclaims@eurolife.gr">healthclaims@eurolife.gr</a>
+    </p>
+  </div>
+  <div class="row-header">
+    <button [disabled]="!hasContractPropertyCoolgenDetails" [class.disable-btn]="!hasContractPropertyCoolgenDetails"
+      class="eurolife_btn eurolife_btn-default eurolife_btn-claims" (click)="redirectIndividualDetails()">
+      ΝΕΟ ΑΙΤΗΜΑ ΑΠΟΖΗΜΙΩΣΗΣ
+    </button>
+  </div>
+</div>
+<div class="only-mobile row card-oute extra-padding">
+  <div class="button-style-mobile">
+    <h5  class="h5-style">Διαχείριση Ατομικών Συμβολαίων</h5>
+    <p class="label">
+      Δημιουργήστε νέο αίτημα και παρακολουθήστε την εξέλιξή του από εδώ.
+    </p>
+  </div>
+
+  <div class="row-header">
+    <button [disabled]="!hasContractPropertyCoolgenDetails" [class.disable-btn]="!hasContractPropertyCoolgenDetails"
+      class="eurolife_btn eurolife_btn-default eurolife_btn-claims" (click)="redirectIndividualDetails()">
+      ΝΕΟ ΑΙΤΗΜΑ ΑΠΟΖΗΜΙΩΣΗΣ
+    </button>
+  </div>
+
+  <div class="button-style-mobile">
+    <p class="health-label"  *ngIf="hasHealthContract === true" [class.disable-btn]="hasHealthContract" >
+      Η αποστολή των δικαιολογητικών αποζημίωσης ατομικών ασφαλιστήριών Ζωής και Υγείας, λόγω νοσηλειών ή άλλων ιατροφαρμακευτικών δαπανών, μπορεί να γίνει μόνο με ηλεκτρονικό τρόπο στο email <a href = "mailto: healthclaims@eurolife.gr">healthclaims@eurolife.gr</a>
+    </p>
+  </div>
+
+</div>
+
+<!-- desktop-view -->
+<div *ngIf="contentLoaded; else loadDataTempl1" class="ice-simple-table">
+  <div *ngIf="!claimsExist; else claimTempl" class="row w-100 justify-content-md-center no-data-message-container">
+    <!-- {{ claimsMessage }} -->
+  </div>
+  <ng-template #claimTempl>
+    <div class="only-desktop" *ngFor="let policy of policiesList; let i = index">
+      <div class="row white-background-desk mb-5" *ngFor="let claim of policy.Claims; let j = index">
+        <div (click)="onClick(claim)">
+          <div class="row w-110 align-items-center no-wrap" [ngStyle]="{'color':getColor(policy)}">
+            <div class="col first-col"
+              *ngIf="policy.Branch == 'ΖΩΗΣ' || policy.Branch == 'ΥΓΕΙΑΣ' || policy.Branch == 'ΑΥΤΟΚΙΝΗΤΩΝ' || policy.Branch == 'ΠΕΡΙΟΥΣΙΑΣ'">
+              <div class="product">
+                <div class="product-icon group-icon">
+                  <div [ngClass]="policy.Branch | pipeFunction: getBranchClass"></div>
+                </div>
+                <div>
+                  <div class="h5 product-description" *ngIf="(policy.Branch == 'ΖΩΗΣ' || policy.Branch == 'ΥΓΕΙΑΣ') else general">
+                    {{ numberOfFolderDamage1 | resourcePipe }} {{ claim.ClaimKey }}
+                  </div>
+                  <div class="h5 product-description" *ngIf="policy.Branch == 'ΑΥΤΟΚΙΝΗΤΩΝ'">
+                    {{ numberOfFolderDamage2 | resourcePipe }} {{ claim.ClaimKey }}/{{claim.ClaimYear}}
+                  </div>
+                  <div class="h5 product-description" *ngIf="policy.Branch == 'ΠΕΡΙΟΥΣΙΑΣ'">
+                    {{ numberOfFolderDamage2 | resourcePipe }} {{ claim.ClaimKey }}/{{claim.ClaimYear}}
+                  </div>
+                </div>
+              </div>
+              <div class="Caption3 contractNumber" *ngIf="(policy.Branch == 'ΖΩΗΣ' || policy.Branch == 'ΥΓΕΙΑΣ') else general">
+                {{ viewClaimsNumberContract1 | resourcePipe }} {{ policy.ContractKey }}
+              </div>
+              <div class="Caption3 contractNumber" *ngIf="policy.Branch == 'ΑΥΤΟΚΙΝΗΤΩΝ'">
+                {{ viewClaimsNumberContract2 | resourcePipe }} {{ policy.ContractKey }}
+              </div>
+              <div class="Caption3 contractNumber" *ngIf="policy.Branch == 'ΠΕΡΙΟΥΣΙΑΣ'">
+                {{ viewClaimsNumberContract2 | resourcePipe }} {{ policy.ContractKey }}
+              </div>
+            </div>
+            <div class="col pl-0"  *ngIf="policy.Branch == 'ΑΥΤΟΚΙΝΗΤΩΝ'">
+              <p class="Caption3 opacity no-margins">{{ licencePlate | resourcePipe }}</p>
+              <p class="Caption3 no-margins value-bold distance-fix">
+                {{getLicensePlate(i)}}
+              </p>
+            </div>
+            <div class="col pl-0" *ngIf="policy.Branch == 'ΠΕΡΙΟΥΣΙΑΣ'">
+              <p class="Caption3 opacity no-margins">{{ dangerAdrress | resourcePipe }}</p>
+              <p class="Caption3 no-margins value-bold distance-fix">
+                {{getAddress(i)}}
+              </p>
+            </div>
+            <div class="col pl-0" *ngIf="(policy.Branch == 'ΖΩΗΣ' || policy.Branch == 'ΥΓΕΙΑΣ')">
+              <p class="Caption3 opacity no-margins">{{ insuredPerson | resourcePipe }}</p>
+              <p class="Caption3 no-margins value-bold distance-fix">
+                {{ [i, j] | pipeFunction: getInsuredPerson:this }}
+              </p>
+            </div>
+            <div class="col pl-0">
+              <p class="Caption3 opacity no-margins">{{ incidentDate1 | resourcePipe }}</p>
+              <p class="Caption3 no-margins value-bold distance-fix">
+                {{ claim.ClaimEventDate | pipeFunction: formatDate:this | date: 'dd/MM/yyyy' }}
+              </p>
+            </div>
+            <div class="col pl-0 svg-label" [ngClass]="claim | pipeFunction: getClassClosedStatus:this">
+              <div class="svg-label" [ngClass]="claim | pipeFunction: getClassClosedStatus:this">
+                {{ claim | pipeFunction: ClosedStatusDesc:this }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- mobile-view -->
+  </ng-template>
+  <div class="only-mobile row card-oute" *ngFor="let policy of policiesList; let i = index">
+    <div class="row white-background-desk mb-1 card-container" *ngFor="let claim of policy.Claims; let j = index">
+      <div (click)="onClick(claim)">
+        <div class="row">
+          <div class="mobile-first-row"
+            *ngIf="policy.Branch == 'ΖΩΗΣ' || policy.Branch == 'ΥΓΕΙΑΣ' || policy.Branch == 'ΑΥΤΟΚΙΝΗΤΩΝ' || policy.Branch == 'ΠΕΡΙΟΥΣΙΑΣ'">
+            <div class="col-md-12">
+              <div class="product-icon group-icon">
+                <div [ngClass]="policy.Branch | pipeFunction: getBranchClass"></div>
+              </div>
+              <div class="col-md-12" *ngIf="policy.Branch == 'ΖΩΗΣ' || policy.Branch == 'ΥΓΕΙΑΣ'">
+                <div class="h5 product-description">
+                  {{ numberOfFolderDamage1 | resourcePipe }} {{ claim.ClaimKey }}
+                </div>
+              </div>
+              <div class="col-md-12" *ngIf="policy.Branch == 'ΑΥΤΟΚΙΝΗΤΩΝ' || policy.Branch == 'ΠΕΡΙΟΥΣΙΑΣ'">
+                <div class="h5 product-description">
+                  {{ numberOfFolderDamage2 | resourcePipe }} {{ claim.ClaimKey }}/{{claim.ClaimYear}}
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="Caption3 contractNumber">
+                {{ viewClaimsNumberContract1 | resourcePipe }} {{ policy.ContractKey }}
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 no-margins">
+            <p class="Caption3 opacity no-margins">{{ insuredPerson | resourcePipe }}</p>
+            <p class="Caption3 no-margins value-bold distance-fix">
+              {{ [i, j] | pipeFunction: getInsuredPerson:this }}
+            </p>
+          </div>
+          <div class="w-100 line-seperator"></div>
+
+          <div class="col-md-12 no-margins">
+            <p class="Caption3 opacity no-margins">{{ incidentDate1 | resourcePipe }}</p>
+            <p class="Caption3 no-margins value-bold distance-fix">
+              {{ claim.ClaimEventDate | pipeFunction: formatDate:this | date: 'dd/MM/yyyy' }}
+            </p>
+          </div>
+          <div class="w-100 line-seperator"></div>
+
+          <div class="col-md-12 no-margins svg-label-mobile"
+            [ngClass]="claim | pipeFunction: getClassClosedStatus:this">
+            <div class="svg-label-mobile" [ngClass]="claim | pipeFunction: getClassClosedStatus:this">
+              {{ claim | pipeFunction: ClosedStatusDesc:this }}
+            </div>
+          </div>
+          <div class="w-100 line-seperator"></div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <p class="label">
+  Εδώ εμφανίζονται τα αιτήματα για τα οποία πρέπει να επισυνάψετε έγγραφα για την ολοκλήρωσή τους.
+</p> -->
+<!-- NEED TO CHECK FOR TEST CASE -->
+<div *ngIf="getPropertyContentLoaded(); else loadDataTempl1" class="ice-simple-table">
+  <!-- <div>
+    <div class="row w-100 justify-content-md-center no-data-message-container">
+      {{ claimsPropertyMessage }}
+    </div>
+  </div> -->
+  <div *ngIf="!claimsPropertyExist; else claimPropertyTemplate"
+    class="row w-100 justify-content-md-center no-data-message-container">
+    <!-- {{ claimsPropertyMessage }} -->
+  </div>
+
+  <ng-template #claimPropertyTemplate>
+    <h5>Αιτήματα σε εκκρεμότητα</h5>
+    <div class="amend-desktop">
+
+      <div *ngFor="let item of dataToShow" class="amendments-card">
+      <div class="col first-col card-property-padding">
+        <div class="product">
+          <div class="product-icon" aria-label="icon"
+          [inlineSVG]="('D2F9D495BF194ED0BC3F23078CA4B07E' | pipeFunction: getIcon: this)"
+          [onSVGLoaded]="handleSVGProduct">
+        </div>
+          <div>
+            <div class="h5 property-product-description">
+              Αριθμός Αιτήματος: {{item.CaseNumber}}
+            </div>
+          </div>
+        </div>
+        <div class="Caption3 property-contractNumber">
+          Αριθμός Συμβολαίου: {{ item.PolicyId }}
+        </div>
+      </div>
+     
+        <div class="col pl-0">
+          <p class="Caption3 opacity no-margins">Διεύθυνση</p>
+          <p class="Caption3 no-margins value-bold distance-fix card-font-details">
+            {{ item.IncidentLocation }}
+          </p>
+        </div>
+     
+        <div class="col pl-0">
+          <p class="Caption3 opacity no-margins">Ημερομηνία</p>
+          <p class="Caption3 no-margins value-bold distance-fix card-font-details">
+            {{ item.IncidentDate }}
+          </p>
+        </div>
+     
+        <div class="col pl-0 ">
+          <p class="Caption3 opacity no-margins">Είδος Ζημιάς</p>
+          <p class="Caption3 no-margins value-bold distance-fix card-font-details">
+            {{ item.ClaimType }}
+          </p>
+        </div>
+       
+        <!--info bar-->
+         
+        <div class="row notification-bar-info mt-3 notification-bar">
+        <div class="svg-container-info">
+          <svg
+            class="notification-bar-svg-info"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="25"
+            height="25"
+            viewBox="0 0 60 60"
+          >
+            <defs>
+              <path
+                id="g"
+                d="M30.5 4C15.859 4 4 15.859 4 30.5 4 45.128 15.859 57 30.5 57 45.128 57 57 45.128 57 30.5 57 15.859 45.128 4 30.5 4zm2.41 40.842H28V40h4.91v4.842zm0-10.158H28v-17h4.91v17z"
+              />
+            </defs>
+            <use fill="#049ecc" fill-rule="nonzero" xlink:href="#g" />
+          </svg>
+        </div>
+        <div class="col-sm-11 d-flex justify-content-start align-items-center flex-row">
+          <p class="Caption3 info-style">
+            <!-- {{ contractRenewal | resourcePipe }} -->
+            Λάβαμε το αίτημα σας και εντός μίας εργάσιμης ημέρας θα καταχωρηθεί. Στέλεχος της Διεύθυνσης Αποζημιώσεων & Πραγματογνώμονας θα επικοινωνήσουν μαζί σας, ώστε να επιβεβαιωθεί ότι η ζημιά σας εντάσσεται στην <a href="https://www.eurolife.gr/exipiretisi/diadikasia-apozimiosis-katoikias/" target="_blank">Διαδικασία Άμεσης Αποζημίωσης</a>.
+          </p>
+        </div>
+      </div>
+
+        <!--end info bar-->
+
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+
+
+
+
+<ng-template #loadDataTempl1>
+  <div class="ice-simple-table">
+    <ngx-skeleton-loader count="1"
+      [theme]="{ 'background-color': '#dadada', width: '70%', height: '25px', 'border-radius': '10px' }">
+    </ngx-skeleton-loader>
+
+    <ngx-skeleton-loader count="2"
+      [theme]="{ 'background-color': '#dadada', width: '100%', height: '25px', 'border-radius': '10px' }">
+    </ngx-skeleton-loader>
+  </div>
+</ng-template>

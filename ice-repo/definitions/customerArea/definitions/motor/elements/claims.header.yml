@@ -1,0 +1,9 @@
+element:
+  type: text
+  label: Για τον οποιοδήποτε λόγο, μικρό ή μεγάλο είμαστε δίπλα σου. Εαν έχεις κάνει χρήση των καλύψεων δημιούργησε νέο αίτημα αποζημίωσης.
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: eclaims.contract.exist
+      conditionValue: true
+      conditionViewMode: output
+      elseViewMode: hidden

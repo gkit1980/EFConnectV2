@@ -1,0 +1,21 @@
+action:
+  title: calls a rest service to get the contract beneficiaries
+  execution:
+    - RestCallExecutionRule:
+        baseUrl: BASEURL
+        url: GetContractBeneficiaries
+        verb: post
+        bucket: GetContractBeneficiariesForAmendments
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+  #     - NavigateToPageExecutionRule:
+  #         page: viewMyBeneficiaries
+  #         omitValidation: true
+  condition:
+    FeelConditionRule:
+      expression: policy.contract.amendments.info.ContractID != null
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - policy.contract.amendments.info.ContractID

@@ -1,0 +1,21 @@
+element:
+  type: text
+  label: Ονοματεπώνυμο
+  viewMode: required
+  buckets:
+    AmendmentsCreateLifeCase:
+      transformation: {}
+    AmendmentsCreateHealthCase:
+      transformation: {}
+    AmendmentsCreateFinanceCase:
+      transformation: {}
+  component:
+    StaticComponentRule:
+      component:
+        #todo change with property
+        AmendmentinputlifefieldComponent:
+          elementName: amendmentsNameValue
+  pages:
+    viewAmendmentFinanceDetails: null
+    viewAmendmentHealthDetails: null
+    viewAmendmentLifeDetails: null

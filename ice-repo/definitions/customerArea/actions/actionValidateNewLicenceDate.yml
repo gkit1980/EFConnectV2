@@ -1,0 +1,10 @@
+action:
+  execution:
+    - VerifyRegexRule:
+        element: amendments.driver.licence.dob.new.input
+        regexp: ^[0-9]{0,4}?$
+        returnedElementBoolean: amendments.verifyLicenceDate
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - amendments.driver.licence.dob.new.input

@@ -1,0 +1,75 @@
+page:
+  component: RegistrationPageComponent
+  label: null
+  sections:
+    # - component: GridView
+    #   rows:
+    #     - css: null
+    #       cols:
+    #         - col: 12
+    #           element: signup.email
+    #     - css: null
+    #       cols:
+    #         - col: 12
+    #           element: signup.EmailExists
+    #     - css: null
+    #       cols:
+    #         - col: 12
+    #           element: signup.mobile
+    #     - css: null
+    #       cols:
+    #         - col: 12
+    #           element: signup.vatNo
+    #           # element: signup.nationalID
+    #         # - col: 6
+    #         #   element: signup.IQAMA
+    #     - css: null
+    #       cols:
+    #         - col: 12
+    #           element: signup.registrationCode
+    #           # element: signup.dob
+    #     - css: null
+    #       cols:
+    #         - col: 4
+    #           element: signup.info
+    #         - col: 8
+    #           element: signup.notification.message
+    #         - col: 4
+    #           element: signup.button
+    #     - css: null
+    #       cols:
+    #         - col: 12
+    #           element: null
+    #     - css: null
+    #       cols:
+    #         # - col: 6
+    #         #   element: signup.button
+    #         - col: 6
+    #           element: next.button
+    - component: SignUpCardComponent
+      dataStoreProperty: clientContracts
+      rows:
+        - Title:
+            - col: 12
+              element: signup.title
+        - Email:
+            - col: 12
+              element: signup.email
+        - EmailExists:
+            - col: 12
+              element: signup.EmailExists
+        - Mobile:
+            - col: 12
+              element: signup.mobile
+        - vatNo:
+            - col: 12
+              element: signup.vatNo
+        - RegistrationCode:
+            - col: 12
+              element: signup.registrationCode
+        - SignupButton:
+            - col: 4
+              element: signup.button
+        - SignupStatus:
+            - col: 4
+              element: signup.initSignupStatusNumber

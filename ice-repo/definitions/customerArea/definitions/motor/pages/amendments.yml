@@ -1,0 +1,29 @@
+page:
+  component: DemoPage
+  sections:
+    - component: GridView
+      rows:
+        - cols:               
+            - col: 12
+              element: contracts.details.ProductDescritpion
+        - cols:               
+            - col: 12
+              element: contracts.details.ContractKey
+    - component: GridView
+      rows:
+        - cols:               
+            - col: 12
+              element: contracts.amendments.header
+        - cols:               
+            - col: 12
+              element: contracts.amendments.subheader
+        - cols:               
+            - col: 12
+              element: contracts.amendments.stepper
+        - cols:               
+            - col: 12
+              element: contract.amendments.category
+        - cols:               
+            - col: 12
+              element: contract.amendments.subCategory
+        

@@ -1,0 +1,32 @@
+dt:
+  output-label: viewMode
+  hit-policy: F
+  inputs:
+    - label: input elememnt for email regexp verification
+      element: customer.details.verifySmsEmailSuccess
+    - label: input elememnt for email service verification
+      element: customer.details.changeEmailSuccess
+  outputs:
+    - id: viewmode
+      type: ''
+  rules:
+    - inputs:
+        - not(true)
+        - not(true)
+      outputs:
+        - hidden 
+    - inputs:
+        - not(false)
+        - not(false)
+      outputs:
+        - hidden 
+    - inputs: 
+        - not(true)
+        - not(false)
+      outputs:
+        - output
+    - inputs: 
+        - not(false)
+        - not(true)
+      outputs:
+        - hidden

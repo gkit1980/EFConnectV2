@@ -1,0 +1,23 @@
+dt:
+  hit-policy: C
+  inputs:
+    - label: greencard notifications step1
+      element: greencard.motor.security.greenCardNo  ##dummy element for notification bar
+  outputs:
+    - id: notificationText
+      label: text
+      type: string
+    - id: notificationType
+      label: class
+      type: string
+    - id: svgImageValue
+      label: url
+      type: string
+  rules:
+    - inputs:
+        - null, 0
+      outputs:
+        - >-
+          "Έχει ήδη εκδοθεί καρτα με αριθμό " + greencard.newcard.id
+        - success
+        - "https://scp.eurolife.gr/~/media/F7877569C4C74C9F9D432D5A01DDC0A0.ashx"

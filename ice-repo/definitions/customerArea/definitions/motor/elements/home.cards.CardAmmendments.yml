@@ -1,0 +1,12 @@
+element:
+  component: MatCardHomeComponent
+  title: Αιτήματα Τροποποιήσεων
+  content: Ζητήστε αλλαγές στα συμβόλαιά σας και δείτε το ιστορικό των αιτημάτων σας
+  link: /#/ice/default/customerArea.motor/viewAmendments
+  dataStoreProperty: amendmentsInprogress 
+  colorCard: purple-card
+  fillDatastore: actionFillDatastore
+  type: amendments
+  complementText: σε εξέλιξη
+  pages:
+    home: null

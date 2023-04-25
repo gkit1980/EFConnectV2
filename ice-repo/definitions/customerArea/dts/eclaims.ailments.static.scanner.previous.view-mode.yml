@@ -1,0 +1,29 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - label: eclaims.step
+      element: eclaims.step
+    - label: eclaims.selected.Incident
+      element: eclaims.selected.Incident
+  outputs:
+    - label: viewMode
+      id: viewMode
+      type: string
+  rules:
+    # STEP 0
+    - inputs:
+        - 14
+        - not(null)
+      outputs:
+        - default
+    - inputs:
+        - 14
+        - null
+      outputs:
+        - default  
+    - inputs:
+        - "-"
+      outputs:
+        - disabled
+        
+    

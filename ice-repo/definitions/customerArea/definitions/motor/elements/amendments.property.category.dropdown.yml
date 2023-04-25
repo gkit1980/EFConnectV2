@@ -1,0 +1,13 @@
+element:
+  title: Property selected category
+  type: text
+  component: IceDropdown
+  buckets:
+    AmendmentsCreatePropertyCase:
+      transformation: {}
+  values:
+    DtValuesRule:
+      dt: dt_amendments_dropdown_property_category
+      list: label
+  viewMode: enable
+  label: Κατηγορία

@@ -1,0 +1,31 @@
+page:
+  component: PopUpPage
+  label: Έξοδος
+  showTopSection: true
+  moreClasses1: light-red-color
+  topImageID: 78263D3F79934F2484455F2FDCB88C1F
+  sections:
+    - component: SimpleGridViewComponent
+      label:
+        ResourceSectionLabelRule:
+          labelKey: sections.communication.service.contact.form.label
+      rows:
+        - css: text-center
+          cols:
+            - css: Typeface h2 eclaims-dialog-text-header text-center
+              col: 12
+              element: eclaims.dialog.leaveDocs.title
+        - cols:
+            - css: Typeface h5 eclaims-dialog-text-subheader text-center
+              col: 12
+              element: eclaims.dialog.leaveDocs.description
+    - component: SimpleGridViewComponent
+      rows:
+        - css: flex-nowrap
+          cols:
+            - css:
+              col: 6
+              element: eclaims.dialog.leaveDocs.cancelBtn
+            - css:
+              col: 6
+              element: eclaims.dialog.leaveDocs.leaveBtn

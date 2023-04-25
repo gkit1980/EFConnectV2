@@ -1,0 +1,48 @@
+page:
+  component: SimplePageClaimsComponent
+  showTitle: true
+  sections:
+    - component: SimpleGridViewComponent
+      name: Label Component
+      rows:
+        - cols:
+            - css: h5 text-left mt-2
+              col: 12
+              element: claims.header
+    - component: ClaimsCardComponent
+      name: Individual Claims
+      rows:
+        - ProductDescritpion:
+          - col: 12
+            element: policies.details.ProductDescritpion     
+      dataStoreProperty: clientContracts
+      selectedClaim: policy.contract.general.info.ClaimID
+      selectedElementNameType: policy.ContractType
+      branchElement: policy.claims.selectedBranch
+      selectedElementNameKey: policy.contractKey 
+      indexElement: claims.indexHolder   
+      selectedContractIndex: policy.claims.selectedContractIndex
+    - component: EclaimsRequestsOpenComponent
+      name: Group Claims
+    - component: EclaimsRequestsInProgressComponent
+      name: Group Claims  
+      rows:
+        - css: section-group-health-header
+          cols:
+            - col: 12
+              element: eclaims.requests.inprogress.title
+        - css: section-group-health-subheader
+          cols:      
+            - col: 12
+              element: eclaims.requests.inprogress.description   
+    - component: EclaimsRequestsClosedComponent
+      name: Group Claims  
+      rows:
+        - css: section-group-health-header
+          cols:
+            - col: 12
+              element: eclaims.requests.closed.title
+        - css: section-group-health-subheader
+          cols:      
+            - col: 12
+              element: eclaims.requests.closed.description             

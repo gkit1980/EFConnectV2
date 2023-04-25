@@ -1,0 +1,10 @@
+<div *ngIf="showOptions">
+  <mat-form-field>
+    <mat-label>Επιλέξτε</mat-label>
+    <mat-select [(ngModel)]="selectedValue" (selectionChange)="validateOnChange($event)">
+      <mat-option *ngFor="let option of options" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

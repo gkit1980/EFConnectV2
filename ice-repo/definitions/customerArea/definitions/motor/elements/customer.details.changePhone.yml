@@ -1,0 +1,6 @@
+element:
+  type: text
+  component: MotorChangePhone
+  pages:
+    customerProfile: null
+  viewMode: output

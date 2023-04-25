@@ -1,0 +1,10 @@
+action:
+  execution:
+    - EnableSpinnerRule: 
+        actionrule: action-amendments-create-finance-case
+    - AmendmentsCreateFinanceCaseRule:
+        getAmendmentsUrl: AMENDMENTSLIFEURL
+        method: post
+        bucket: AmendmentsCreateFinanceCase
+    - DisableSpinnerRule: 
+        actionrule: action-amendments-create-finance-case

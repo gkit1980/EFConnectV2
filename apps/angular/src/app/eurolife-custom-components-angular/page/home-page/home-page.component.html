@@ -1,0 +1,322 @@
+<div class="split-page-with-icon">
+  <page-validation [page]="page"></page-validation>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="homepage-image">
+        <div class="container wlc-container">
+          <div class="row alignment">
+            <div class="row mt-4 mb-4">
+              <div class="col-sm-12">
+                <ice-section class="imgSection" [section]="getImgSection()"></ice-section>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="red-info">
+          <div class="red-container">
+            <div class="red-info-text">Άμεση αποζημίωση για ιατρικά έξοδα έως <strong class="h3">€150</strong> με την υπηρεσία e-Claims</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="container">
+        <div class="row alignment">
+          <div class="col-sm-12">
+            <ice-section class="main-cards" [section]="getMainCardsSection()">
+            </ice-section>
+          
+            <ice-section class="main-cards" [section]="getSecondCardsSection()">
+            </ice-section>
+          </div>
+        </div>
+        <div class="row mt-4 mb-4">
+          <div class="col-sm-12">
+            <ice-section class="last-payments" [section]="getPendingPayments()">
+            </ice-section>
+          </div>
+        </div>
+        <!-- <div class="row mt-4 mb-4">
+          <div class="col-sm-12">
+            <ice-section [section]="getAgentInfoSection()">
+            </ice-section>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+  <div class="row grey-background ie">
+    <div class="col-sm-12">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 remove-padding">
+            <div class="typeface h5 links-label">{{ links | resourcePipe }}</div>
+            <div class="box-container mb-3">
+              <div
+                appRedirectEclaims
+                *ngIf="hasGroupHealthPolicies"
+                class="links-communication"
+              >
+                <div class="text-container">
+                  <div class="h6-active">
+                    Νέο Αίτημα Αποζημίωσης
+                  </div>
+                  <div class="typeface caption3">
+                    Για τον οποιοδήποτε λόγο, μικρό ή μεγάλο είμαστε δίπλα σου. Εαν έχεις κάνει χρήση των καλύψεων δημιούργησε νέο αίτημα αποζημίωσης.
+                  </div>
+                </div>
+                <div class="arrow-container">
+                  <div class="chevron-right" aria-label="icon" [inlineSVG]="getIcon('C8705EB508D542E59548EF002F938768')"
+                    [onSVGLoaded]="handleSVG">
+                  </div>
+                </div>
+              </div>
+              <div class="links-communication" routerLink="/ice/default/customerArea.motor/communicationService">
+                <div class="text-container">
+                  <div class="h6-active">
+                    {{ communication1 | resourcePipe }}
+                  </div>
+                  <div class="typeface caption3 ">
+                    {{ communication2 | resourcePipe }}
+                  </div>
+                </div>
+                <div class="arrow-container">
+                  <div class="chevron-right" aria-label="icon" [inlineSVG]="getIcon('C8705EB508D542E59548EF002F938768')"
+                    [onSVGLoaded]="handleSVG">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="box-container mb-3">
+              <div *ngIf="showDocs" class="links-container" routerLink="/ice/default/customerArea.motor/myDocuments">
+                <div class="text-container">
+                  <div class="h6-active">
+                    {{ certificates | resourcePipe }}
+                  </div>
+                  <div class="typeface caption3 ">
+                    {{ text1 | resourcePipe }}
+                  </div>
+                </div>
+                <div class="arrow-container">
+                  <div class="chevron-right" aria-label="icon" [inlineSVG]="getIcon('C8705EB508D542E59548EF002F938768')"
+                    [onSVGLoaded]="handleSVG">
+                  </div>
+                </div>
+              </div>
+              <div class="links-container" routerLink="/ice/default/customerArea.motor/customerProfile">
+                <div class="text-container">
+                  <div class="h6-active">
+                    {{ profile | resourcePipe }}
+                  </div>
+                  <div class="typeface caption3 ">
+                    {{ text2 | resourcePipe }}
+                  </div>
+                </div>
+                <div class="arrow-container">
+                  <div class="chevron-right" aria-label="icon" [inlineSVG]="getIcon('C8705EB508D542E59548EF002F938768')"
+                    [onSVGLoaded]="handleSVG">
+                  </div>
+                </div>
+              </div>
+              <!-- This is for greenCard -->
+              <div *ngIf="hasGreenCard" (click)="triggerGreenCard()" class="links-container_2"
+                routerLink="/ice/default/customerArea.motor/greenCard">
+                <div class="text-container">
+                  <div class="h6-active">
+                    {{ greencard | resourcePipe }}
+                  </div>
+                  <div class="typeface caption3 ">
+                    {{ text3 | resourcePipe }}
+                  </div>
+                </div>
+                <div class="arrow-container">
+                  <div class="chevron-right" aria-label="icon" [inlineSVG]="getIcon('C8705EB508D542E59548EF002F938768')"
+                    [onSVGLoaded]="handleSVG">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="typeface h5 files-label">{{ files | resourcePipe }}</div>
+            <div class="box-container">
+              <div class="files-container">
+                <div class="icon-container">
+                  <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('0F0E1AC2A2AC45A7906897CCB41B5580')"
+                    [onSVGLoaded]="handleSVGProduct">
+                  </div>
+                  <div class="category-label category-motor">
+                    {{ categoryMotor | resourcePipe }}
+                  </div>
+                </div>
+                <div class="category-info-group">
+                  <div class="rest-info">
+                    <div class="rest-info-inside">
+                      <div>{{ health | resourcePipe }}</div>
+                      <div class="inside-icon">
+                        <div (click)="onHealthBenefitsMotor()" class="chevron-right" aria-label="icon"
+                          [inlineSVG]="getIcon('3FD4F2114F5741919CDFE32F40C6B931')" [onSVGLoaded]="handleSVGUsefull">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rest-info-inside">
+                      <div>{{ collaborating | resourcePipe }}</div>
+                      <div class="inside-icon">
+                        <div (click)="onGarages()" class="chevron-right" aria-label="icon"
+                          [inlineSVG]="getIcon('3FD4F2114F5741919CDFE32F40C6B931')" [onSVGLoaded]="handleSVGUsefull">
+                        </div>
+                      </div>
+                    </div>
+                    
+                      <div class="rest-info-inside" *ngIf="showMotorAmendments">
+                        <div>Αλλαγή παρόχου Οδικής και Ταξιδιωτικής Βοήθειας</div>
+                        <div class="inside-icon">
+                          <div (click)="execActionGetMondialPdf()" class="chevron-right" aria-label="icon"
+                            [inlineSVG]="getIcon('3FD4F2114F5741919CDFE32F40C6B931')" [onSVGLoaded]="handleSVGUsefull">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="rest-info-inside" *ngIf="showMotorAmendments">
+                        <div>Τροποποίηση Ορίων Ασφάλισης Αστικής Ευθύνης</div>
+                        <div class="inside-icon">
+                          <div (click)="execModificationLiabilityInsuranceLimitPdf()" class="chevron-right" aria-label="icon"
+                            [inlineSVG]="getIcon('3FD4F2114F5741919CDFE32F40C6B931')" [onSVGLoaded]="handleSVGUsefull">
+                          </div>
+                        </div>
+                      </div>
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="files-container">
+                <div class="icon-container">
+                  <div class="product-icon" aria-label="icon" [inlineSVG]="getIcon('5B16FD8598BC4750B8E058C8BDC2528A')"
+                    [onSVGLoaded]="handleSVGProduct">
+                  </div>
+                  <div class="category-label category-health">
+                    {{ categoryHealth | resourcePipe }}
+                  </div>
+                </div>
+                <div class="category-info-group">
+                  <div class="rest-info">
+                    <div class="rest-info-inside">
+                      <div>{{ health2 | resourcePipe }}</div>
+                      <div class="inside-icon">
+                        <div (click)="onHealthBenefits()" class="chevron-right" aria-label="icon"
+                          [inlineSVG]="getIcon('3FD4F2114F5741919CDFE32F40C6B931')" [onSVGLoaded]="handleSVGUsefull">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rest-info-inside">
+                      <div>{{ hospital | resourcePipe }}</div>
+                      <div class="inside-icon">
+                        <div (click)="execActionGetHealthHospitalsPdf()" class=" chevron-right" aria-label="icon"
+                          [inlineSVG]="getIcon('3FD4F2114F5741919CDFE32F40C6B931')" [onSVGLoaded]="handleSVGUsefull">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rest-info-inside">
+                      <div>{{ mondial | resourcePipe }}</div>
+                      <div class="inside-icon">
+                        <div (click)="execActionGetHealthMondialPdf()" class="chevron-right" aria-label="icon"
+                          [inlineSVG]="getIcon('3FD4F2114F5741919CDFE32F40C6B931')" [onSVGLoaded]="handleSVGUsefull">
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="col-sm-12">
+      <div class="container">
+        <div class="row mt-4">
+          <div class="col-sm-12">
+            <ice-section class="quick-links" [section]="getLastSection()"></ice-section>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="container m-b-50 m-t-50">
+        <div class="row">
+          <div class="col-sm-12">
+            <h1 class="h4 t-c m-b-8">Η γνώση είναι δύναμη</h1>
+            <div class="m-b-48 center--650 center t-c">
+              Ενημερώσου για το πώς μπορείς να προστατεύσεις ό,τι έχει αξία για σένα, κάθε στιγμή της ζωής σου.
+            </div>
+          </div>
+        </div>
+        <div *ngIf="letsTalkData.length !== 0" class="row">
+          <ng-container *ngFor="let item of letsTalkData">
+            <div class="col-sm-4">
+              <div class="card" (click)="onClick(item)">
+                <img class="card-img-top" src="{{item.Image}}" alt="{{item.Title}}" style="width:100%">
+                <div class="card-body"  *ngIf="item.Tags.length !== 0">
+                  <a href="{{item.Tags[0].URL}}" class="blog-cat m-b-16"
+                    [ngClass]="getThemeColor(item)">{{item.Tags[0].Title}}</a>
+                  <h4 class="card-title f-s-20">{{item.Title}}</h4>
+                  <p class="card-text">{{item.Summary}}</p>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+        <div *ngIf="letsTalkData.length === 0">
+          <div class="ice-simple-table">
+            <ngx-skeleton-loader
+              count="1"
+              [theme]="{ 'background-color': '#eee', width: '70%', height: '40px', 'border-radius': '10px' }"
+            >
+            </ngx-skeleton-loader>
+
+            <ngx-skeleton-loader
+              count="2"
+              [theme]="{ 'background-color': '#eee', width: '100%', height: '40px', 'border-radius': '10px' }"
+            >
+            </ngx-skeleton-loader>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="container iframe-div mt-4 mb-4">
+    <iframe sandbox="allow-same-origin allow-scripts allow-popups allow-forms" class="row asmilisoume" title="AsMilisoume"
+      src="https://www.as-milisoume.gr/widget-stylefree"></iframe>
+  </div> -->
+  <div class="container">
+    <div class="row no-paddings">
+      <div class="col-md-6 no-paddings">
+        <h2 class="promo-header">Μια ολόκληρη ασφαλιστική δίπλα σου</h2>
+        <div class="promo-text">
+          Με το EurolifePass, την ψηφιακή κάρτα της Eurolife FFH, έχεις όλες τις πληροφορίες που αφορούν τα συμβόλαιά σου απευθείας στο κινητό ή το tablet σου.
+        </div>
+        <div class="eurolife_btn eurolife_btn-stroke promo-btn" (click)="onSeeMoreClick()">ΔΕΙΤΕ ΠΕΡΙΣΣΟΤΕΡΑ</div>
+      </div>
+      <div class="col-md-6 no-paddings iFrame">
+        <!-- <iframe src="https://www.youtube.com/embed/osQZwEHa2GY" frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+        <div class="promo-image-2">
+        </div>
+        <!-- <iframe class="hope-iframe" src="https://www.youtube.com/embed/k4JBV2zaohg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+        <!-- <img class="promo-image pointer" (click)="onSeeMoreClick()" src="../../../../assets-webpacked/eurolife/asd.png" /> -->
+        <!-- <div (click)="onSeeMoreClick()" class="promo-image"></div> -->
+        <!-- <img class="promo-image" [src]="getIcon('B90C2F21145149DBB52B72DBA7FC160F')" /> -->
+      </div>
+    </div>
+  </div>
+  <div *ngIf="showInsights">
+    <hr>
+    <ice-page-insight [page]="page"></ice-page-insight>
+  </div>
+  <ice-confirmation-dialog [page]="page"></ice-confirmation-dialog>
+  <!-- <ice-message [page]="page"></ice-message> -->
+</div>

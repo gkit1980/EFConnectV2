@@ -1,0 +1,18 @@
+action:
+  title: calls a rest service to get transactionInfo for AEGA
+  execution:
+    - RestCallExecutionRule:
+        baseUrl: BASEURLCARDLINK
+        url: GetTransactionInfoAEGA
+        verb: post
+        bucket: GetTransactionInfoAEGA
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+  condition:
+    FeelConditionRule:
+      expression: payment.transactionUID != null
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - payment.transactionUID

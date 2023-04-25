@@ -1,0 +1,9 @@
+element:
+  type: integer
+  defaultValue: 
+    StaticValueRule: 
+      value: 5
+  buckets:
+    GetMotorContractCover:
+      transformation:
+        dataPath: LOBId   

@@ -1,0 +1,4 @@
+element:
+  type: text
+  defaultValue: https://www.eurolife.gr/el/prosopika-dedomena
+  viewMode: hidden

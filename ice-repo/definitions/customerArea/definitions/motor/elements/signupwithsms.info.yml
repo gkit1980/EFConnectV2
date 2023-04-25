@@ -1,0 +1,6 @@
+element:
+  type: text
+  component: InfoButtonComponent
+  viewMode: output
+  pages:
+    signupwithsms: null

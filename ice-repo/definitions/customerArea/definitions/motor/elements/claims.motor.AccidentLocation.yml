@@ -1,0 +1,17 @@
+element:
+  type: text
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: claims.motor.AccidentLocation
+      conditionValue: " "
+      conditionViewMode: hidden
+      elseViewMode: output  
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent
+  buckets:
+    GetCoolgenClaimDetails:
+      transformation:
+        responsePath: ClaimCoolgen.AccidentLocation
+  pages:
+    viewClaimDetails: null

@@ -1,0 +1,17 @@
+element:
+  type: array
+  component: IceArray
+  label: null
+  viewMode: output
+  change:
+    - ResetElementValueExecutionRule:
+        elements:
+          - policy.selectedBranch
+          - policy.contract.general.info.ContractID
+  buckets:
+    GetLifeContractFundsValuation:
+      transformation:
+        responsePath: FundValuations
+    GetFundRates:
+      transformation: {}    
+   

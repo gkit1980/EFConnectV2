@@ -1,0 +1,30 @@
+dt:
+  hit-policy: F
+  inputs:
+    - label: calculate visibility of section in policy details
+      element: selectedcontractbranch
+  outputs:
+    - label: viewMode
+      id: viewMode
+      type: string
+  rules:
+    - inputs:
+        - 1,9,12,14,15,16,17
+      outputs:
+        - hidden
+    - inputs:
+        - 3,99
+      outputs:
+        - output
+    - inputs:
+        - 4,13
+      outputs:
+        - output
+    - inputs:
+        - 2,11
+      outputs:
+        - output
+    - inputs:
+        - "-"
+      outputs:
+        - hidden

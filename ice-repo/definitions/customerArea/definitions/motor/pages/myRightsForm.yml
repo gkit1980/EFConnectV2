@@ -1,0 +1,28 @@
+page:
+  component: PopUpPage
+  label: Φόρμα Άσκησης Δικαιωμάτων Υποκειμένων Δεδομένων
+  sections:
+    - component: SimpleGridViewComponent
+      label:
+        ResourceSectionLabelRule:
+          labelKey: sections.communication.service.myrights.form.label
+      rows:
+        - cols:
+            - css: text-center h4
+              col: 12
+              element: communication.point.contact.myRights.title
+        - cols:
+            - col: 12
+              element: communication.point.myrights.form.description
+        - cols:
+            - col: 12
+              element: communication.myrights.form.theme
+        - cols:
+            - col: 12
+              element: communication.myrights.form.input
+    - component: SimpleGridViewComponent
+      rows:
+        - cols:
+            - css: text-center mt-5 mb-5
+              col: 12
+              element: communication.myrights.send

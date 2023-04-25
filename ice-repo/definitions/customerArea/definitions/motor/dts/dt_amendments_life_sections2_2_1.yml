@@ -1,0 +1,36 @@
+
+dt:
+  hitPolicy: F
+  inputs:
+    - label: selectedcontractbranch
+      element: selectedcontractbranch
+    - label: amendments.details.step.status
+      element: amendments.details.step.status
+    - label: amendments.life.category.dropdown
+      element: amendments.life.category.dropdown
+    - label: amendments.life.subcategory.dropdown
+      element: amendments.life.subcategory.dropdown
+  outputs:
+    - label: viewMode
+      id: viewMode
+      type: string
+  rules:
+    - inputs:
+        - null
+        - null
+        - null
+        - null
+      outputs:
+        - hidden
+    - inputs:
+        - 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+        - 1
+        - "2"
+        - "3"
+      outputs:
+        - output
+    - inputs:
+        - "-"
+        - "-"
+      outputs:
+        - hidden

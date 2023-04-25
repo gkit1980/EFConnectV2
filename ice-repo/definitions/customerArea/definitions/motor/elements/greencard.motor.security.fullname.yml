@@ -1,0 +1,12 @@
+element:
+  type: text
+  label: Ονοματεπώνυμο
+  viewMode: required
+  defaultValue: null
+  component: GreenCardFullnameComponent
+  buckets:
+    GreenCardData:
+      transformation:
+        dataPath: greencard.fullname
+  pages:
+    greenCard: null

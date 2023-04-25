@@ -1,0 +1,18 @@
+action:
+  title: calls a rest service to get the agent info
+  execution:
+    - GetLastDocumentUrlNoteRule:
+        baseUrl: BASEURL
+        url: GetReceiptsByContractID
+        verb: post
+        bucket: GetUrlNote
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: true
+  condition:
+    FeelConditionRule:
+      expression: policy.contract.general.info.indexHolderHome != null
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - policy.contract.general.info.indexHolderHome

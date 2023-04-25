@@ -1,0 +1,133 @@
+page:
+  component: SplitPageWithIconComponent
+  validation:
+    onElementComponentChange: true
+    behaviour: page
+  showNavigation: false
+  sections:
+    - component: FlatSectionComponent
+      skatoules:
+        - cols:
+            - css:
+              col: 12
+              element: communication.top.image
+    - component: CommunicationServiceComponent
+      label:
+        ResourceSectionLabelRule:
+          labelKey: sections.communication.service.contact.details.label
+      contactDetails:
+        - cols:
+            - css:
+              col: 12
+              element: communication.sales.details.info
+      contactButtons:
+        - cols:
+            - col: 6
+              element: communication.contact.details.call.button
+            - col: 6
+              element: communication.contact.details.chat.button
+            - css: communication-form
+              col: 12
+              element: opentextdialog
+            - css: communication-form-btn
+              col: 12
+              element: communication.contact.details.form.button
+      formDetails:
+        - cols:
+            - css:
+              col: 12
+              element: communication.form.details.title
+      phoneNumber:
+        - css: icons-text
+          cols:
+            - css: small-images
+              col: 2
+              element: phonesvgImage
+            - css:
+              col: 10
+              element: communication.contact.phone.number
+      Email:
+        - css: icons-text
+          cols:
+            - css: small-images
+              col: 2
+              element: emailsvgImage
+            - col: 10
+              element: communication.contact.email
+      Address:
+        - css: icons-text
+          cols:
+            - css: bigger-images
+              col: 2
+              element: locationsvgImage
+            - css: no-paddings
+              col: 10
+              element: communication.contact.address1
+        - css: icons-text
+          cols:
+            - css: bigger-images
+              col: 2
+              element: locationsvgImage
+            - css: no-paddings
+              col: 10
+              element: communication.contact.address2
+    - component: SalesChannelDetailsComponent
+      viewMode:
+        ConditionalSectionViewModeRule:
+          conditionElement: policy.sales.channel.eurolife
+          conditionValue: true
+          conditionViewMode: hidden
+      dataStoreProperty: clientContracts
+      label:
+        ResourceSectionLabelRule:
+          labelKey: sections.communication.service.sales.channel.label
+      info:
+        - cols:
+            - col: 12
+              element: communication.sales.details.info
+            - col: 12
+              element:
+            - col: 12
+              element: communication.sales.details.info_child
+    - component: SimpleGridViewComponent
+      sectionName:
+      label:
+        ResourceSectionLabelRule:
+          labelKey: sections.communication.service.faq.label
+      rows:
+        - css:
+          cols:
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - internalCol: 12
+                      css: mt-5 mb-4 no-margin height-68px
+                      element: faqSvgImage
+                    - internalCol: 12
+                      css: red-text h4
+                      element: communication.faq.frequentQuestions
+                    - internalCol: 12
+                      css: Caption3 opacity communication-point-faq-text
+                      element: communication.faq
+                    - internalCol: 12
+                      css: mt-48px mb-128px
+                      element: communication.faq.button
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - internalCol: 12
+                      css: mt-5 mb-4 no-margin
+                      element: glossarySvgImage
+                    - internalCol: 12
+                      css: red-text h4
+                      element: communication.glossary.communicationInsuranceDictionary
+                    - internalCol: 12
+                      css: Caption3 opacity communication-point-faq-text
+                      element: communication.glossary
+                    - internalCol: 12
+                      css: mt-48px mb-128px
+                      element: communication.glossary.button
+    - component: PopUpComponent
+      dialogpage: myRightsForm

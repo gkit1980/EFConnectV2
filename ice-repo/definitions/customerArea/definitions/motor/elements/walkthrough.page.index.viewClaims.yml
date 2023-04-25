@@ -1,0 +1,3 @@
+element:
+  type: integer
+  defaultValue: 1

@@ -1,0 +1,6 @@
+element:
+  type: text
+  label: Επιθυμητή διάρκεια κάρτας
+  component: IceTextInput
+  pages:
+    greenCard: null

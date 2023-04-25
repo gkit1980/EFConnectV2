@@ -1,0 +1,28 @@
+element:
+  type: text
+  viewMode: output
+  label: null
+  change:
+    - ResetElementValueExecutionRule:
+        elements:
+          - policy.selectedBranch
+          - policy.contract.general.info.ContractID
+  buckets:
+    GetMotorContractCover:
+      transformation:
+        property: CoverDescription
+    GetLifeContractCover:
+      transformation:
+        property: CoverDescription
+    GetLifeContractCoverForAmendments:
+      transformation:
+        property: CoverDescription    
+    GetAccidentContractCover:
+      transformation:
+        property: CoverDescription
+    GetPropertyCoolgenContractCover:
+      transformation:
+        property: CoverDescription
+    GetGroupHealthContractCover:
+      transformation:
+        property: CoverDescription         

@@ -1,0 +1,74 @@
+<div *ngIf="!isUlVanilla" class="row">
+  <div class="container">
+    <div class="col-md-12 no-paddings">
+      <div class="section-upper-container">
+        <div [ngClass]="getSectionClass()">
+          <div class="ice-output">
+            <label class="ng-star-inserted">
+              {{ policyRedemption | resourcePipe }}
+            </label>
+          </div>
+        </div>
+        <div class="wrap-text">
+          <div [class.hidden]="!investDate" class="section-date typeface caption3">
+            {{ latestData | resourcePipe }} {{ investDate }}
+          </div>
+          <button
+            (click)="turnOnExpand()"
+            class="eurolife_btn eurolife_btn-default calc-btn"
+          >
+            {{ calculate | resourcePipe }}
+          </button>
+        </div>
+      </div>
+      <ng-container *ngIf="expanded">
+        <div *ngIf="cashActionEnded; else loadDataTempl1" class="section-main-container">
+          <ng-container *ngIf="!!totalExagora; else infoTempl">
+            <div class="row-container">
+              <div class="data-label">{{ lifeRedemption | resourcePipe }}</div>
+              <div class="data-value">{{ lifeAmount }} €</div>
+            </div>
+            <div class="row-container">
+              <div class="data-label">{{ investRedemption | resourcePipe }}</div>
+              <div class="data-value">{{investAmount }} €</div>
+            </div>
+            <div class="row-container">
+              <div class="data-label">
+                {{ totalPolicyRedemption | resourcePipe }}
+              </div>
+              <div class="data-value">{{ totalExagora }} €</div>
+            </div>
+          </ng-container>
+          
+          <ng-template #infoTempl>
+            <div class="alert alert-info typeface">
+              Λόγω τροποποιήσεων που έχουν πραγματοποιηθεί στο συμβόλαιο, δεν υποστηρίζεται ο υπολογισμός της αξίας
+              εξαγοράς.<br /> Για οποιαδήποτε απορία παρακαλώ
+              <a routerLink="/ice/default/customerArea.motor/communicationService" class="mailTo"
+                >επικοινωνήστε μαζί μας</a
+              >.
+            </div>
+          </ng-template>
+          
+        </div>
+  
+        <ng-template #loadDataTempl1>
+          <div class="ice-simple-table">
+            <ngx-skeleton-loader
+              count="1"
+              [theme]="{ 'background-color': '#dadada', width: '70%', height: '25px', 'border-radius': '10px' }"
+            >
+            </ngx-skeleton-loader>
+        
+            <ngx-skeleton-loader
+              count="2"
+              [theme]="{ 'background-color': '#dadada', width: '100%', height: '25px', 'border-radius': '10px' }"
+            >
+            </ngx-skeleton-loader>
+          </div>
+        </ng-template>
+      </ng-container>
+
+    </div>
+  </div>
+</div>

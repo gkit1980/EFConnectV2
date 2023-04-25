@@ -1,0 +1,37 @@
+<div class="simple-page">
+  <page-validation [page]="page"></page-validation>
+  <div
+    [ngClass]="{
+      'white-background': (this.recipe.componentFlag == 'amendmentDetails'  || this.recipe.componentFlag == 'eclaimsDetails' || this.recipe.componentFlag == 'propertyNotificationDetails'),
+      'grey-background':this.recipe.componentFlag == 'claimsDetails'
+    }"
+    class="row"
+  >
+    <div class="col-sm-12">
+      
+      <!-- <ice-section class="topSection" [section]="getTopSection()"> </ice-section> -->
+
+    <div class="section-container">
+         <div *ngFor="let section of page.sections">
+          <ice-section  [section]="section" [class]="getClassSection(section)"></ice-section>
+
+        </div>
+     </div> 
+
+    <div class="footer-coverages" *ngIf="showCoverages()">
+     <div class="Typeface disclaimer text-center" >Δείτε το σύνολο των καλύψεων για τις οποίες δικαιούστε αποζημίωση βάσει του συμβόλαιού σας  </div>
+     <div class="Typeface ml-1 add-style"> <a (click)="openDialog()">εδώ</a>.</div>
+    </div>
+   
+
+    
+
+      <div *ngIf="showInsights">
+        <hr />
+        <ice-page-insight [page]="page"></ice-page-insight>
+      </div>
+      <ice-confirmation-dialog [page]="page"></ice-confirmation-dialog>
+      
+    </div>
+  </div>
+</div>

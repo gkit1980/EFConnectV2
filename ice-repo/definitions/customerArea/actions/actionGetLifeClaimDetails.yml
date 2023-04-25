@@ -1,0 +1,29 @@
+action:
+  title: calls a rest service to get the customer contract details
+  execution:
+    - RestCallExecutionRule:
+        baseUrl: BASEURL
+        url: GetLifeClaimDetails
+        verb: post
+        bucket: GetLifeClaimDetails
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+    - GetParticipantsRule:
+        baseUrl: BASEURL
+        url: GetContractParticipants
+        verb: post
+        bucket: GetContractParticipantsForClaims
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: true
+    - NavigateToPageExecutionRule:
+        page: viewClaimDetails
+        omitValidation: true
+  condition:
+    FeelConditionRule:
+      expression: policy.claims.selectedBranch = 9
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - policy.contract.general.info.ClaimID

@@ -1,0 +1,22 @@
+dt:
+  hit-policy: F
+  inputs:
+    - label: calculate visibility of elements in policy details
+      element: selectedcontractbranch
+  outputs:
+    - label: viewMode
+      id: viewMode
+      type: string
+  rules:
+    - inputs:
+        - 1,2,3,8,9,10,11,12,13,14,15,16,17
+      outputs:
+        - output
+    - inputs:
+        - 4,5,6,7,8
+      outputs:
+        - hidden
+    - inputs:
+        - "-"
+      outputs:
+        - hidden

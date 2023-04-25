@@ -1,0 +1,9 @@
+element:
+  component: EurolifeButtonComponent
+  additionalClasses: eurolife_btn-default eclaims-dialog-leave-btn
+  svgFillColor: corporate_color
+  type: text
+  label: 'ΕΞΟΔΟΣ'
+  defaultValue: action-eclaims-leave-docs-redirect
+  pages:
+    viewEclaimsDetails: null

@@ -1,0 +1,10 @@
+action:
+  execution:
+    - EnableSpinnerRule: 
+        actionrule: action-amendments-create-health-case
+    - AmendmentsCreateHealthCaseRule:
+        getAmendmentsUrl: AMENDMENTSLIFEURL
+        method: post
+        bucket: AmendmentsCreateHealthCase
+    - DisableSpinnerRule: 
+        actionrule: action-amendments-create-health-case

@@ -1,0 +1,21 @@
+element:
+  type: text
+  buckets:
+    AmendmentsCreateLifeCase:
+      transformation: {}
+    AmendmentsCreateHealthCase:
+      transformation: {}
+    AmendmentsCreateFinanceCase:
+      transformation: {}    
+  component:
+    StaticComponentRule:
+      component:
+        EurolifeDropdownComponent:
+          elementName: amendmentLifeChangeFrequencyOfPayment
+  pages:
+    viewAmendmentFinanceDetails: null
+    viewAmendmentHealthDetails: null
+    viewAmendmentLifeDetails: null
+  # component: IceDropdown
+  # viewMode: enable
+  # values: amendments.fop.duration

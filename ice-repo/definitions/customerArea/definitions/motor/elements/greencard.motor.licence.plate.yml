@@ -1,0 +1,6 @@
+element:
+  type: text
+  label: Αριθμός Κυκλοφορίας
+  component: IceTextInput
+  pages:
+    greenCard: null

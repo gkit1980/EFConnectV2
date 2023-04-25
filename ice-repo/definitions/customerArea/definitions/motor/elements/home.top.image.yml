@@ -1,0 +1,13 @@
+element:
+  type: text
+  component: 
+    StaticComponentRule:
+      component: 
+        IceImageComponent:
+          imageURL: "https://scp.eurolife.gr/~/media/70C97743232C4CE7BA3130C67160E950.ashx"
+          pageSource: "home"
+  defaultValue:
+      StaticValueRule:
+        value: ""
+  pages:
+    home: null

@@ -1,0 +1,6 @@
+element:
+  type: boolean
+  viewmode: hidden
+  defaultValue:  
+    StaticValueRule:
+      value: false

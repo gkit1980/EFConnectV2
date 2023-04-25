@@ -1,0 +1,4 @@
+element:
+  label: null
+  type: text
+  viewMode: hidden

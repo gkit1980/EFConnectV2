@@ -1,0 +1,7 @@
+element:
+  label: Κωδικός Πληρωμής
+  type: text
+  viewMode: output
+  # component:
+  #   StaticComponentRule:
+  #     component: EurolifeOutputSubheaderComponent

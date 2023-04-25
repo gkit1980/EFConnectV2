@@ -1,0 +1,5 @@
+element:
+  type: text
+  label: Amendment dialog...success or fail
+  viewMode: hidden
+  component: OpenDialogTextComponent

@@ -1,0 +1,10 @@
+element:
+  component: EurolifeButtonComponent
+  buttonIcon: https://scp.eurolife.gr/~/media/6A4B4AF02141409386D152E3D15FD8B3
+  type: text
+  additionalClasses: eurolife_btn-default left eurolife_btn-stroke-red
+  svgFillColor: corporate_color
+  dialogpage: contactForm
+  modalDialog: contactForm
+  pages:
+    communicationService: null

@@ -1,0 +1,158 @@
+<div class="main-container" *ngIf="showRequests">
+  <div class="header h5">{{ this.header }}</div>
+  <div class="subheader Caption3">{{ this.innerheader }}</div>
+</div>
+<ng-container *ngIf="contentMotorLoaded && contentMotorData!=[] else loadDataTempl1">
+  <div *ngFor="let row of contentMotorData">
+    <div class="amendments-card" *ngIf="row.ExpirationDate; else loadDataTempl1">
+      <!--filteredData  SOS!!!-->
+      <div class="product-container">
+        <div class="product-icon" aria-label="icon"
+          [inlineSVG]="('0F0E1AC2A2AC45A7906897CCB41B5580' | pipeFunction: getIcon: this)"
+          [onSVGLoaded]="handleSVGProduct" *ngIf="row.Branch == 'ΑΥΤΟΚΙΝΗΤΩΝ'">
+        </div>
+        <div class="description-container">
+          <!-- <ng-template #productDescription> -->
+          <div class="h5 product-description product-distance" [ngClass]="{
+                motor_text: row.Branch === 'ΑΥΤΟΚΙΝΗΤΩΝ'
+              }">
+            {{ row.ProductDescritpion }}
+          </div>
+          <!-- </ng-template> -->
+          <div class="contract-num">Αριθμός Συμβολαίου {{ row.ContractKey }}</div>
+          <div class="contract-num">Αριθμός Πινακίδας {{ row.ContractMotorDetails.VehicleLicensePlate }}</div>
+        </div>
+      </div>
+      <div class="btn-container">
+        <button class="eurolife_btn eurolife_btn-default" (click)="requestAmendment(row)">ΕΠΟΜΕΝΟ</button>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+
+
+
+<ng-container *ngIf="contentPropertyLoaded && contentPropertyData!=[] else loadDataTempl1">
+  <div *ngFor="let row of contentPropertyData">
+    <div  class="amendments-card" *ngIf="row.ExpirationDate; else loadDataTempl1">
+      <!--filteredData  SOS!!!-->
+      <div class="product-container">
+        <div class="product-icon" aria-label="icon"
+          [inlineSVG]="('D2F9D495BF194ED0BC3F23078CA4B07E' | pipeFunction: getIcon: this)"
+          [onSVGLoaded]="handleSVGProduct" *ngIf="row.Branch == 'ΠΕΡΙΟΥΣΙΑΣ'">
+        </div>
+        <div class="description-container">
+          <div class="h5 product-description product-distance" [ngClass]="{
+                    house_text: row.Branch === 'ΠΕΡΙΟΥΣΙΑΣ'
+                  }">
+            {{ row.ProductDescritpion }}
+          </div>
+          <!-- </ng-template> -->
+          <div class="contract-num">Αριθμός Συμβολαίου {{ row.ContractKey }}</div>
+          <div class="contract-num">Διεύθυνση Κινδύνου {{ row.ContractPropertyCoolgenDetails.PropertyStreet }}, {{
+            row.ContractPropertyCoolgenDetails.PropertyZipCode
+            }}, {{ row.ContractPropertyCoolgenDetails.PropertyCity }}</div>
+        </div>
+      </div>
+      <div class="btn-container">
+        <button class="eurolife_btn eurolife_btn-default" (click)="requestAmendment(row)">ΕΠΟΜΕΝΟ</button>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="contentHealthLoaded  && contentHealthData!=[]; else loadDataTempl1">
+  <div *ngFor="let row of contentHealthData">
+    <div  class="amendments-card" *ngIf="row.Participants && row.ContractIndividualDetails; else loadDataTempl1">
+      <!--filteredData  SOS!!!-->
+      <div class="product-container">
+        <div class="product-icon" aria-label="icon"
+          [inlineSVG]="( '5B16FD8598BC4750B8E058C8BDC2528A' | pipeFunction: getIcon: this )"
+          [onSVGLoaded]="handleSVGProduct" *ngIf=" row.Branch == 'ΥΓΕΙΑΣ'">
+        </div>
+        <div class="description-container">
+          <div class="h5 product-description product-distance" [ngClass]="{
+                   health_text: row.Branch == 'ΥΓΕΙΑΣ'
+                  }">
+            {{ row.ProductDescritpion }}
+          </div>
+          <!-- </ng-template> -->
+          <div class="contract-num">Αριθμός Συμβολαίου {{ row.ContractKey }}</div>
+          <div class="contract-num">Ασφαλισμένος {{ row.Participants[0].FirstName}} {{ row.Participants[0].LastName}}</div>
+        </div>
+      </div>
+      <div class="btn-container">
+        <button class="eurolife_btn eurolife_btn-default" (click)="requestAmendment(row)">ΕΠΟΜΕΝΟ</button>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="contentLifeLoaded && contentLifeData!=[]; else loadDataTempl1">
+  <div *ngFor="let row of contentLifeData">
+    <div  class="amendments-card" *ngIf="row.Participants && (row.ContractMortgageDetails || row.ContractIndividualDetails ); else loadDataTempl1">
+      <!--filteredData  SOS!!!-->
+      <div class="product-container">
+        <div class="product-icon" aria-label="icon"
+          [inlineSVG]="( '4412D69B78B5460B8E25F2FEAFA0105A' | pipeFunction: getIcon: this )"
+          [onSVGLoaded]="handleSVGProduct" *ngIf=" row.Branch == 'ΖΩΗΣ'">
+        </div>
+        <div class="description-container">
+          <div class="h5 product-description product-distance" [ngClass]="{
+                  life_text: row.Branch == 'ΖΩΗΣ'
+                  }">
+            {{ row.ProductDescritpion }}
+          </div>
+          <!-- </ng-template> -->
+          <div class="contract-num">Αριθμός Συμβολαίου {{ row.ContractKey }}</div>
+          <div class="contract-num">Ασφαλισμένος {{ row.Participants[0].FirstName}} {{ row.Participants[0].LastName}}</div>
+        </div>
+      </div>
+      <div class="btn-container">
+        <button class="eurolife_btn eurolife_btn-default" (click)="requestAmendment(row)">ΕΠΟΜΕΝΟ</button>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="contentFinanceLoaded  && contentFinanceData!=[]; else loadDataTempl1">
+  <div *ngFor="let row of contentFinanceData">
+    <div  class="amendments-card" *ngIf="row.Participants && (row.ContractIndividualDetails || row.ContractDetails || row.PensionContractDetails); else loadDataTempl1">
+      <!--filteredData  SOS!!!-->
+      <div class="product-container">
+        <div class="product-icon" aria-label="icon"
+          [inlineSVG]="( '55575BDF0CF94677A59ADCF3F1ECF1AB' | pipeFunction: getIcon: this )"
+          [onSVGLoaded]="handleSVGProduct" *ngIf=" row.Branch == 'ΔΙΑΦΟΡΑ ΕΠΕΝΔΥΤΙΚΑ'">
+        </div>
+        <div class="description-container">
+          <div class="h5 product-description product-distance" [ngClass]="{
+                  finance_text: row.Branch == 'ΔΙΑΦΟΡΑ ΕΠΕΝΔΥΤΙΚΑ'
+                  }">
+            {{ row.ProductDescritpion }}
+          </div>
+          <!-- </ng-template> -->
+          <div class="contract-num">Αριθμός Συμβολαίου {{ row.ContractKey }}</div>
+          <div class="contract-num">Ασφαλισμένος {{ row.Participants[0].FirstName}} {{ row.Participants[0].LastName}}</div>
+        </div>
+      </div>
+      <div class="btn-container">
+        <button class="eurolife_btn eurolife_btn-default" (click)="requestAmendment(row)">ΕΠΟΜΕΝΟ</button>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+
+
+<ng-template #loadDataTempl1>
+  <div class="ice-simple-table">
+    <ngx-skeleton-loader count="1"
+      [theme]="{ 'background-color': '#dadada', width: '70%', height: '25px', 'border-radius': '10px' }">
+    </ngx-skeleton-loader>
+
+    <ngx-skeleton-loader count="2"
+      [theme]="{ 'background-color': '#dadada', width: '100%', height: '25px', 'border-radius': '10px' }">
+    </ngx-skeleton-loader>
+  </div>
+</ng-template>

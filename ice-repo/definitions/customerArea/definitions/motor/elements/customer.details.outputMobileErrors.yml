@@ -1,0 +1,12 @@
+element:
+  type: text
+  label: null
+  viewMode:
+    DtViewModeRule:
+      dt: dt.mobile.phone.non.verification
+  mirror:
+    DtMirrorRule:
+      dt: dt_mobile_errors
+  # viewMode:
+  #   DtViewModeRule:
+  #     dt: dt_mobile_errors

@@ -1,0 +1,11 @@
+element:
+  type: array
+  component: IceArray
+  label: null
+  viewMode: output
+  buckets:
+    GetClaim:
+      transformation:
+        responsePath: Claims
+  pages:
+    viewClaims: null

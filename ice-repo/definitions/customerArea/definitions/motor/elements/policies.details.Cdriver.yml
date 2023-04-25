@@ -1,0 +1,9 @@
+element:
+  type: text
+  viewMode: hidden
+  buckets:
+    GetContractMotorDetails:
+      transformation:
+        responsePath: ContractMotorDetails.DriverCYearsOfLicence
+  pages:
+    policyDetails: null

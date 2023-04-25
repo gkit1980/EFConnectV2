@@ -1,0 +1,24 @@
+dt:
+  hit-policy: F
+  inputs:
+    - label: input element for default
+      element: selectedcontractbranch
+  outputs:
+    - id: svgImageValue
+      type: string
+  rules:
+    - inputs:
+        - 1,2,5,6,7,8,9,10,11,12,14,15,16,17,99
+      outputs:
+        - >-
+          "https://scp.eurolife.gr/~/media/332EA5B74C664CFABEA14E3FDC05CD98.ashx"
+    - inputs:
+        - 3
+      outputs:
+        - >-
+          "https://scp.eurolife.gr/~/media/D6126333990F42B5AC5F44BDB6436456.ashx"
+    - inputs:
+        - 4,13
+      outputs:
+        - >-
+          "https://scp.eurolife.gr/~/media/38FAC7FB3943431CB2BB310053EFFFBA.ashx"

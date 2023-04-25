@@ -1,0 +1,9 @@
+element:
+  type: text
+  buckets:
+    GetContractMotorDetails:
+      transformation:
+        responsePath: ContractMotorDetails.VehicleLicensePlate
+  viewMode: output
+  pages:
+    viewAmendmentDetails: null

@@ -1,0 +1,6 @@
+element:
+  type: text
+  label: Φόρμα Επικοινωνίας
+  viewMode: output
+  pages:
+    contactForm: null

@@ -1,0 +1,32 @@
+dt:
+  output-label: viewMode
+  hit-policy: F
+  inputs:
+    - label: input elememnt for email first service
+      element: customer.details.changeEmailSuccess
+    - label: input elememnt for email The End button
+      element: customer.details.theEndEmailButtonValue
+  outputs:
+    - id: viewmode
+      type: ''
+  rules:
+    - inputs:
+        - not(true)
+        - not(true)
+      outputs:
+        - default
+    - inputs:
+        - not(false)
+        - not(true)
+      outputs:
+        - disabled
+    - inputs:
+        - not(false)
+        - not(false)
+      outputs:
+        -  hidden
+    - inputs: 
+        - not(true)
+        - not(false)
+      outputs:
+        - hidden

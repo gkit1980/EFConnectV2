@@ -1,0 +1,10 @@
+action:
+  title: when requested - custom event is sent to google analytics
+  execution:
+    - EurolifeGALocaleChangedRule:
+        eventCategory: UX
+        eventAction: Locale Changed
+  trigger:
+    - IceLifecycleEventTriggerRule:
+        event: LOCALE_CHANGE 
+         

@@ -1,0 +1,26 @@
+action:
+  title: Get eclaims closed requests
+  execution:
+    - GetSalesforceTokenRule:
+        fromProcess: eclaims
+        salesforceLoginUrl: BASEURLSALESFORCELOGIN
+        methodLogin: post
+        getAmendmentsUrl: AMENDMENTSURL
+        methodGetAmendments: get
+        bucket: EclaimsSfLogin
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+    - EclaimsGetClosedRequestsRule:
+        baseurl: BASESALESFORCEURLECLAIMSERVICES
+        methodGetClosedEclaims: get
+        bucket: EclaimsClosedRequests
+        activeCustomerId: eclaims.customerID  
+        activecontract: eclaims.contractKey 
+        status: Closed
+    - EclaimsValuationClosedRequestsRule:       
+  trigger:
+    - PageTriggerRule:
+        enter:
+          - viewClaims
+      

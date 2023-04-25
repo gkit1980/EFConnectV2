@@ -1,0 +1,108 @@
+<div class="row faq-top-container">
+  <div class="faq-top-header">
+    <div class="H2">{{ faq | resourcePipe }}</div>
+  </div>
+  <div class="H6 subheader">
+    {{ mayWeHelpYou | resourcePipe }}
+  </div>
+  <div class="faq-search-component">
+    <div class="faq-search-input">
+      <mat-form-field>
+        <mat-label>{{ search | resourcePipe }}</mat-label>
+        <input #inputSearch (keyup.enter)="onSearchClick(inputSearch.value)" matInput type="text" />
+      </mat-form-field>
+    </div>
+    <div (click)="onSearchClick(inputSearch.value)" class="search-icon">
+      <div
+        class="search-svg"
+        aria-label="icon"
+        [inlineSVG]="getIcon('C1F526C6EBE449D0870A889DC07F2B88')"
+        [onSVGLoaded]="handleSVG"
+      ></div>
+    </div>
+    <!-- <input #inputSearch class="faq-search-input" (keyup.enter)="onSearchClick(inputSearch.value)" />
+        <button (click)="onSearchClick(inputSearch.value)" class="faq-search-button">Search</button> -->
+  </div>
+  <div class="faq-tabs-container">
+    <div
+      [ngClass]="{ 'faq-tab-active h6-active': i === activeTab }"
+      *ngFor="let tab of filteredData; let i = index"
+      class="faq-tab"
+      (click)="onTabClick(i)"
+    >
+      {{ tab.FieldValues.Description }}
+    </div>
+  </div>
+</div>
+<!-- <div class="faq-page-container">
+    <div class="faq-questions-container">
+        <ngb-accordion id="faq-accordion">
+            <div *ngFor="let item of filteredData[selectedIndex].data; let i=index">
+                <ngb-panel [title]="item.title">
+                    <ng-template ngbPanelContent>
+                            <span *ngFor="let part of item.text; let i=index">
+                                <span  ng-switch="part.text">
+                                    <span ng-switch-when="true">{{part.text}}</span>
+                                    <span class="tooltip-text" [ngbTooltip]="part.tooltip" ng-switch-when="false">{{part.boldtext}}</span>
+                                </span>
+                            </span>
+                    </ng-template>
+                </ngb-panel>
+            </div>
+        </ngb-accordion>
+    </div>
+</div> -->
+<ng-container *ngIf="contentLoaded; else loadDataTempl1">
+  <div class="container faq-bottom-container">
+    <div class="faq-content-container" *ngFor="let item of filteredData[selectedIndex].Children; let i = index">
+      <div class="content-title" (click)="titleClick(i)">
+        <div class="title Typeface">{{ item.FieldValues.Title }}</div>
+        <div
+          class="faq-svg"
+          aria-label="icon"
+          [inlineSVG]="getIcon('5CC8A933D20F48EF827B77E5947F730D')"
+          [onSVGLoaded]="handleFAQSVG"
+          *ngIf="!item.active"
+        ></div>
+        <div
+          class="faq-svg"
+          aria-label="icon"
+          [inlineSVG]="getIcon('233DC630932544EC880FD4B7FC31B779')"
+          [onSVGLoaded]="handleFAQSVG"
+          *ngIf="item.active"
+        ></div>
+        <!-- 
+                <div (click)="titleClick(i)" class="title-icon">
+                    <hr>
+                </div> -->
+      </div>
+      <div *ngIf="item.active" class="content-text">
+        {{ item.FieldValues.NormalText }}
+      </div>
+      <div class="content-line" [ngClass]="item.active ? 'open-tab' : 'close-tab'"></div>
+    </div>
+    <div *ngIf="filteredData[selectedIndex].noData" class="no-items-message">Δεν βρέθηκαν αποτελέσματα!</div>
+  </div>
+</ng-container>
+<!-- <div class="bottom-text-container">
+    <div class="bottom-text">Όλες οι πληροφορίες σχετικά με τα συμβόλαια και την κατάσταση των αποζημιώσεών σας
+        αποτελούν εικόνα προηγούμενης εργάσιμης ημέρας.</div>
+    <div class="bottom-text">Για οποιαδήποτε απορία παρακαλώ<span class="bottom-text bottom-red-text"> επικοινωνήστε
+            μαζί μας.</span></div>
+</div> -->
+
+<ng-template #loadDataTempl1>
+  <div class="container ice-simple-table" style="margin-top: 64px">
+    <ngx-skeleton-loader
+      count="1"
+      [theme]="{ 'background-color': '#dadada', width: '70%', height: '25px', 'border-radius': '10px' }"
+    >
+    </ngx-skeleton-loader>
+
+    <ngx-skeleton-loader
+      count="2"
+      [theme]="{ 'background-color': '#dadada', width: '100%', height: '25px', 'border-radius': '10px' }"
+    >
+    </ngx-skeleton-loader>
+  </div>
+</ng-template>

@@ -1,0 +1,16 @@
+page:
+  component: PopUpPage
+  topImageID: 99105A3DB76C4494A235D3EEB13C54CD
+  validation:
+    onElementComponentChange: true
+    behaviour: page 
+  sections: 
+    - component: SimpleGridViewComponent 
+      rows:
+        - cols:
+          - css: h4 text-center
+            col: 12
+            element: portal.logout.sessionTimeout
+        - cols:
+          - col: 12
+            element: customer.details.confirmationMessage2

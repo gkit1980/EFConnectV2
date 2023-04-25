@@ -1,0 +1,77 @@
+<div class="email-form-container">
+
+  <div class="basic-info-header">
+    <div class="sign-up-container">
+      <p class="h4">{{ signin | resourcePipe }}</p>
+      <p class="h6">
+        Για την εγγραφή θα σταλεί ένα <strong>email επιβεβαίωσης</strong> στη διεύθυνση που θα μας δηλώσετε.
+      </p>
+    </div>
+  </div>
+  <div class="inputs-container">
+    <mat-form-field>
+      <mat-label>{{ emailText | resourcePipe }}</mat-label>
+      <input
+        class="Caption1"
+        matInput
+        placeholder="Πληκτρολογήστε το email σας"
+        name="Email"
+        [(ngModel)]="mail"
+        (ngModelChange)="executeSignupFormAction('checkMail')"
+        [value]="this.mail"
+        email
+        #mailinput
+      />
+      <!-- <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error> -->
+    </mat-form-field>
+    <div *ngIf="errorMsgMail !== ''" class="error-msg">{{ errorMsgMail }}</div>
+    <mat-form-field>
+      <mat-label>{{ uniqueEntryPassword | resourcePipe }}</mat-label>
+      <div class="groupping">
+        <input
+          class="Caption1"
+          matInput
+          type="text"
+          id="regcodecopy"
+          placeholder="Πληκτρολογήστε τον μοναδικό κωδικό εισόδου"
+          name="regcode"
+          [(ngModel)]="regCode"
+          (ngModelChange)="executeSignupFormAction('checkRegCode')"
+        />
+      </div>
+      <!-- <mat-error *ngIf="regCode.invalid">{{getRegCodeErrorMessage()}}</mat-error> -->
+    </mat-form-field>
+    <div *ngIf="errorMsgRegCode !== ''" class="error-msg">{{ errorMsgRegCode }}</div>
+  </div>
+  <div class="regCodeContainer">
+    <div class="Typeface" (click)="getRegCode()">{{ registration | resourcePipe }}</div>
+    <div
+      class="infobutton"
+      aria-label="My icon"
+      [inlineSVG]="imageSource"
+      ngbTooltip="Ο Μοναδικός Κωδικός Εισόδου αναγράφεται στο ειδοποιητήριο του συμβολαίου σας. Εάν δεν τον βρίσκετε, μπορείτε να τον ανακτήσετε, πατώντας 'Δεν έχω Μοναδικό Κωδικό Εισόδου"
+      [onSVGLoaded]="handleSVG" 
+    ></div>
+  </div>
+  <div class="basic-info-btn-container">
+    <div class="row basic-info-btns">
+      <div class="col-sm-12">
+        <!-- Class = disabled -->
+        <button
+          class="eurolife_btn eurolife_btn-default"
+          (click)="onSubmit()"
+          [disabled]="!regCodeValid || !emailValid"
+        >
+          <div *ngIf="!showSpinnerBtn">{{ submitEmail | resourcePipe }}</div>  
+          <div *ngIf="showSpinnerBtn" class="button-icon">
+            <i class="fa fa-spinner fa-spin fa-lg"></i>
+          </div>
+        </button>
+      </div>
+      <!-- <div class="col-sm-12">
+          <a class="eurolife_btn-link" routerLink="/login">{{ cancel | resourcePipe }}
+          </a>
+        </div> -->
+    </div>
+  </div>
+</div>

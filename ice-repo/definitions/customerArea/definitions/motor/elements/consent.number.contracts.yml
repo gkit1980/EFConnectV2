@@ -1,0 +1,7 @@
+element:
+  type: integer
+  viewMode: output
+  defaultValue: 0
+  label: null
+  pages:
+    consentClose: null

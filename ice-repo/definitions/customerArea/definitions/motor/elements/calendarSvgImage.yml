@@ -1,0 +1,9 @@
+element:
+  type: text
+  label: View Privacy Notice
+  component:
+    StaticComponentRule:
+      component:
+        SvgImageComponent:
+          url: dt_product_image
+          fillColor: dt_product_color

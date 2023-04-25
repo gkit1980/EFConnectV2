@@ -1,0 +1,5 @@
+element:
+  type: integer
+  viewMode: output
+  pages:
+    sign-up: null

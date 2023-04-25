@@ -1,0 +1,22 @@
+action:
+  title: calls a rest service to get the customer contract details
+  execution:
+    - GetParticipantsRule:
+        baseUrl: BASEURL
+        # baseUrl: https://customer_data
+        url: GetContractParticipants
+        verb: post
+        bucket: GetContractParticipants
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: true
+    #   - NavigateToPageExecutionRule:
+    #       page: viewPolicyParticipants
+    #       omitValidation: true
+  condition:
+    FeelConditionRule:
+      expression: policy.contract.general.info.ContractID != null
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - policy.contract.general.info.ContractID

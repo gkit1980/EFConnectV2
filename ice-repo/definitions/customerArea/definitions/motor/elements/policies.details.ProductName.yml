@@ -1,0 +1,62 @@
+element:
+  type: text
+  viewMode: output
+  change:
+    - ResetElementValueExecutionRule:
+        elements:
+          - policy.selectedBranch
+          - policy.contract.general.info.ContractID
+  buckets:
+    GetContractMotorDetails:
+      transformation:
+        responsePath: ContractMotorDetails.ProductDescritpion
+    GetContractIndividualDetails:
+      transformation:
+        responsePath: ContractIndividualDetails.ProductDescritpion
+    GetContractPropertyCoolgenDetails:
+      transformation:
+        responsePath: ContractPropertyCoolgenDetails.ProductDescritpion
+    GetContractMortgageDetails:
+      transformation:
+        responsePath: ContractMortgageDetails.ProductDescritpion
+    GetPensionContractDetails:
+      transformation:
+        responsePath: PensionContractDetails.ProductDescritpion
+    GetHealthContractDetails:
+      transformation:
+        responsePath: HealthContractDetails.ProductDescritpion
+    GetLifeHealthContractDetails:
+      transformation:
+        responsePath: LifeHealthContractDetails.ProductDescritpion
+    GetContractDeathDetails:
+      transformation:
+        responsePath: ContractDeathDetails.ProductDescritpion
+    GetContractConsumerDetails:
+      transformation:
+        responsePath: ContractConsumerDetails.ProductDescritpion
+    GetContractAccidentDetails:
+      transformation:
+        responsePath: ContractAccidentDetails.ProductDescritpion
+    GetContractCargoDetails:
+      transformation:
+        responsePath: ContractCargoDetails.ProductDescritpion
+    GetContractCargoPrudDetails:
+      transformation:
+        responsePath: ContractCargoPrudDetails.ProductDescritpion
+    GetContractDetailsPrudDetails:
+      transformation:
+        responsePath: ContractDetailsPrudDetails.ProductDescritpion
+    GetContractFirePrudDetails:
+      transformation:
+        responsePath: ContractFirePrudDetails.ProductDescritpion
+    GetContractGroupHealthDetails:
+      transformation:
+        responsePath: ContractGroupHealthDetails.ProductDescritpion    
+  label:
+    NoLabelRule: {}
+  component:
+    StaticComponentRule:
+      component:
+        EurolifeH3Component:
+          headingClass: dt_product_text_color
+          headingType: h3 text-align-center-md no-margin-bottom

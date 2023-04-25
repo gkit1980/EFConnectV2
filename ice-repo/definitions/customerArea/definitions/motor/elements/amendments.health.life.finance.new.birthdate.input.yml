@@ -1,0 +1,21 @@
+element:
+  type: text
+  label: Εισάγεται τη νέα ημ. γεννήσεως
+  viewMode: required
+  buckets:
+    AmendmentsCreateLifeCase:
+      transformation: {}
+    AmendmentsCreateHealthCase:
+      transformation: {}
+    AmendmentsCreateFinanceCase:
+      transformation: {}
+  component:
+    StaticComponentRule:
+      component:
+        #todo change with property
+        AmendmentinputlifefieldComponent:
+          elementName: amendmentsNewBirthdateValue
+  pages:
+    viewAmendmentFinanceDetails: null
+    viewAmendmentHealthDetails: null
+    viewAmendmentLifeDetails: null

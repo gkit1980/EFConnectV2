@@ -1,0 +1,13 @@
+element:
+  title: Selected health category
+  type: text
+  component: IceDropdown
+  buckets:
+    AmendmentsCreateHealthCase:
+      transformation: {}
+  values:
+    DtValuesRule:
+      dt: dt_amendments_dropdown_health_category
+      list: label
+  viewMode: enable
+  label: Κατηγορία

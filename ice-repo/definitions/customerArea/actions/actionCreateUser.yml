@@ -1,0 +1,11 @@
+action:
+  title: calls a rest service to get the contract beneficiaries
+  execution: 
+      - RestCallExecutionRule:
+          baseUrl: http://platformsuat.eurolife.gr/CustomerAreaLogin/api/CustomerAreaApi
+          url: CreateUser
+          verb: post
+          bucket: CreateUser
+          encryptMessage: true
+          encryptSecretElement: token
+          needsDataStore: false

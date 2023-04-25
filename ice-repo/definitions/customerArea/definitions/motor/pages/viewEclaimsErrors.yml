@@ -1,0 +1,25 @@
+page:
+  component: EclaimsPageErrorComponent
+  componentFlag: eclaimsDetails
+  selectedBranch: ΖΩΗΣ
+  sections:
+    - component: SimpleGridViewComponent
+      backgroundcolor: 
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_eclaims_errors_header
+      rows:
+        - css: group-claims-details-button
+          cols:
+            - css: h6-active text-center mt-5
+              col:
+              element: eclaims.back
+            - css: h6-active text-center mt-5 ml-3
+              col:
+              element: eclaims.back.button.header      
+    - component: EclaimsErrorScriptComponent     
+      cssClass: with-padding 
+      viemode: output
+      topImageID: 78263D3F79934F2484455F2FDCB88C1F
+
+    

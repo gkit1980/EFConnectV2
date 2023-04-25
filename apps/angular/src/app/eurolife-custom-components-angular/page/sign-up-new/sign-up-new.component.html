@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="sign-up-container">
+      <div class="eurolife-logo">
+        <img _ngcontent-tpi-c4="" alt="EurolifeConnect" class="image-logo" [src]="SIGNUP_LOGO" />
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
+<!-- <app-sign-up-new-email-form></app-sign-up-new-email-form> -->
+<div class="footer-container">
+  <div class="footer-info-header">
+    <div class="contact-icon">
+      <i class="fa fa-phone"></i>
+      <p class="Typeface links phone-position"><a href="tel:2109303800">Κέντρο Εξυπηρέτησης Πελατών: 210 9303800</a></p>
+    </div>
+
+    <div class="contact-icon">
+      <i class="fa fa-envelope"></i>
+      <p class="Typeface links"><a href="mailto:info@eurolife.gr">info@eurolife.gr</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <hr class="footerSignup" />
+    <div class="legal Typeface">
+      <div class="left-container">
+        <div class="Tag Typeface clickable" (click)="openDialog()">{{ oroiXrishs | resourcePipe }} |</div>
+        <div class="Tag Typeface clickable" (click)="openDialogLegal()">{{ prostasiadedomenwn | resourcePipe }}</div>
+        <div class="Tag Typeface clickable" (click)="cookieClick()">{{ politikicookies | resourcePipe }}</div>
+      </div>
+      <div class="Tag Typeface copyright">{{ copyright | resourcePipe }}</div>
+    </div>
+  </div>
+</div>

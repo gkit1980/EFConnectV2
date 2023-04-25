@@ -1,0 +1,8 @@
+element:
+  viewMode: output
+  type: text
+  mirror:
+    CopyValueMirrorRule:
+      originElement: customer.details.newEmail
+  pages:
+    changeEmailPopUp: null

@@ -1,0 +1,7 @@
+action:
+  execution:
+    - PropertyClaimNotificationCreateCaseRule:
+        getPropertyClaimNotificationUrl: PROPERTYCLAIMNOTIFICATIONURL
+        method: post
+        bucket: PropertyClaimNotificationCreateCase
+  

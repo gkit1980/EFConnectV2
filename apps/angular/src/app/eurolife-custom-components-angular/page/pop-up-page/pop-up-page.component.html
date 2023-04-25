@@ -1,0 +1,74 @@
+<div class="pop-up-page">
+  <div class="modal-container">
+    <div *ngIf="Page=='viewGroupProfileWaitingDialog'; else withCloseIcon"
+
+    ></div>
+    <ng-template #withCloseIcon>
+      <div #withCloseIcon
+        class="close"
+        [ngClass]="{'close-icon': showCloseIcon()}"
+        aria-label="My icon"
+        [inlineSVG]="closeImageSource"
+        [onSVGLoaded]="handlecloseSVG"
+        (click)="onNoClick()"
+      ></div>
+    </ng-template>
+    <!-- <div class="top-section" *ngIf="showTopSection">
+      <div class="circle" [ngClass]="moreClasses1">
+        <div class="top-icon" aria-label="icon" [inlineSVG]="imageSource" [onSVGLoaded]="myFunc"></div>
+      </div>
+
+      <span class="fa fa-close" (click)="onNoClick()"></span>
+    </div> -->
+    
+    <div *ngIf="Page=='viewGroupProfileSuccessDialog'; else notAnimatedPhoto">
+      <div class="blue-circle" [ngClass]="moreClasses1">
+        <div class="top-icon-blue" *ngIf="showTopSection">
+          <div class="top-icon-blue" aria-label="icon" [inlineSVG]="imageSource" [onSVGLoaded]="myFunc"></div>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #notAnimatedPhoto>
+      <div class="top-section" *ngIf="showTopSection">
+        <div class="circle" [ngClass]="moreClasses1">
+          <div class="top-icon" aria-label="icon" [inlineSVG]="imageSource" [onSVGLoaded]="myFunc"></div>
+        </div>
+      </div>
+    </ng-template>
+
+    <div class="top-section-triangle" *ngIf="showTriangle">
+      <div class="triangle-up">
+    </div>
+
+    </div>
+
+
+    <!-- <h3 mat-dialog-title><strong>Funds Management</strong> </h3> -->
+    <div *ngIf="Page=='viewGroupProfileWaitingDialog'; else withPadding">
+      <div
+      [ngClass]="alignmentClass"
+      class="custom-page-content-container-no-padding"
+    >
+      <div class="col-sm-12">
+        <!-- <page-validation [page]="page"></page-validation> -->
+        <ice-section *ngFor="let section of page.sections" [section]="section">
+        </ice-section>
+      </div>
+    </div>
+    </div>
+
+    <ng-template #withPadding>
+      <div
+        [ngClass]="alignmentClass"
+        class="custom-page-content-container"
+      >
+        <div class="col-sm-12">
+          <!-- <page-validation [page]="page"></page-validation> -->
+          <ice-section *ngFor="let section of page.sections" [section]="section">
+          </ice-section>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+

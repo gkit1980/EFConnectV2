@@ -1,0 +1,11 @@
+element:
+  title: plate list
+  type: text
+  component: GreenCardDropdownPlatesComponent
+  viewmode: enable
+  label: Επιλέξτε Αριθμό κυκλοφορίας
+  buckets:
+    GreenCardData:
+      transformation: {}  
+  pages:
+    greenCard: null

@@ -1,0 +1,9 @@
+element:
+  component: EurolifeConsentButtonComponent
+  additionalClasses: eurolife_btn-default mb-5
+  svgFillColor: corporate_color
+  type: text
+  defaultValue: actionSubmitConsents
+  labelname: ΕΠΟΜΕΝΟ
+  pages:
+    consent: null

@@ -1,0 +1,10 @@
+element:
+  type: text
+  viewMode: output
+  buckets:
+    GetCustomerFullData:
+      transformation:
+        responsePath: Customer.Email
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent

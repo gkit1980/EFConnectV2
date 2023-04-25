@@ -1,0 +1,104 @@
+<div *ngIf="visible" class="loading-spinner"></div>
+
+<div *ngIf="mailVerified && !visible" class="row">
+  <div class="col-md-12">
+    <div class="sign-up-logo-container">
+      <div class="eurolife-logo">
+        <img _ngcontent-tpi-c4="" alt="EurolifeConnect" class="image-logo" [src]="SIGNUP_LOGO" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="email-form-container" *ngIf="mailVerified && !visible">
+  <div class="basic-info-header">
+    <div class="sign-up-container">
+      <p class="h4">{{ signin | resourcePipe }}</p>
+    </div>
+  </div>
+
+  <app-sign-up-new-stepper></app-sign-up-new-stepper>
+
+  <div class="second-info-header">
+    <p class="h5">Αριθμός Κινητού</p>
+    <p class="h6">Θα σταλεί SMS επαλήθευσης στον ακόλουθο αριθμό.</p>
+  </div>
+
+  <div class="mobile-container">
+    <mat-form-field>
+      <mat-label> {{ numberOfMobile2 | resourcePipe }} </mat-label>
+      <input
+        class="Caption1"
+        matInput
+        type="text"
+        id="mobile"
+        name="mobile"
+        [(ngModel)]="mobileNo"
+        placeholder="Πληκτρολογήστε τον αριθμό σας"
+        pattern="^\d{10}$"
+        #mobileInput
+      />
+    </mat-form-field>
+    <div *ngIf="errorMsgVerifyMobile !== ''" class="error-msg">{{ errorMsgVerifyMobile }}</div>
+  </div>
+
+  <div class="basic-info-btn-container">
+    <div class="row basic-info-btns">
+      <div class="col-sm-12">
+        <!-- Class = disabled -->
+        <button
+          class="eurolife_btn eurolife_btn-default"
+          (click)="onSubmit()"
+          [disabled]="!mobileCodeValid || !emailValid"
+        >
+          {{ next | resourcePipe }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-container *ngIf="mailVerified && !visible">
+  <div class="footer-container">
+    <div class="footer-info-header">
+      <div class="contact-icon">
+        <i class="fa fa-phone"></i>
+        <p class="Typeface links phone-position"><a href="tel:2109303800">Κέντρο Εξυπηρέτησης Πελατών: 210 9303800</a></p>
+      </div>
+
+      <div class="contact-icon">
+        <i class="fa fa-envelope"></i>
+        <p class="Typeface links"><a href="mailto:info@eurolife.gr">info@eurolife.gr</a></p>
+      </div>
+    </div>
+    <div class="container">
+      <hr class="footerSignup" />
+      <div class="legal Typeface">
+        <div class="left-container">
+          <div class="Tag Typeface clickable" (click)="openDialog()">{{ oroiXrishs | resourcePipe }} |</div>
+          <div class="Tag Typeface clickable" (click)="openDialogLegal()">{{ prostasiadedomenwn | resourcePipe }}</div>
+          <div class="Tag Typeface clickable" (click)="cookieClick()">{{ politikicookies | resourcePipe }}</div>
+        </div>
+        <div class="Tag Typeface copyright">{{ copyright | resourcePipe }}</div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<div class="fail-container" *ngIf="!mailVerified && !visible">
+  <div class="icon_container">
+    <div class="lock_icon" aria-label="email" [inlineSVG]="imageSource" [onSVGLoaded]="handleSVG"></div>
+  </div>
+  <div class="oh-no-container h2">
+    {{ ohNo | resourcePipe }}
+  </div>
+  <div class="fail-details-container">
+    <div class="h6 text-center">{{ isLinkExpired ? 'Ο σύνδεσμος έχει λήξει.' : (problem | resourcePipe) }}</div>
+    <div class="h6 text-center">
+      {{ isLinkExpired ? 'Παρακαλούμε ξεκινήστε εκ νέου την διαδικασία εγγραφής.' : (connection | resourcePipe) }}
+    </div>
+  </div>
+  <div (click)="gotitClick()" class="eurolife_btn eurolife_btn-stroke button-container distance-bottom">
+    {{ ok | resourcePipe }}
+  </div>
+</div>

@@ -1,0 +1,13 @@
+element:
+  component: 
+    StaticComponentRule:
+      component:
+        IceCheckbox:
+          labelPosition: after
+  label: Έως τη λήξη του συμβολαίου
+  type: boolean
+  defaultValue:
+    StaticValueRule:
+      value: true
+  pages:
+    greenCard: null

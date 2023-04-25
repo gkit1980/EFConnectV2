@@ -1,0 +1,58 @@
+ page:
+    component: DemoPage
+    label: null
+    sections:
+      - component: GridView
+        viewMode: hidden
+        rows:
+          - css: null
+            cols:
+              - col: 12
+                element: policies.empty    
+      - component: SubheaderStepperComponent
+        rows:
+          - ProductDescritpion:
+            - col: 12
+              element: policies.details.ProductDescritpion
+          - FolderID:
+            - col: 12
+              element: claims.folderID
+          - ClaimDate:
+            - col: 12
+              element: claims.claimDate
+          - ContractKey:
+            - col: 12
+              element: policies.details.ContractKey
+          - InsuredPerson:
+            - col: 12
+              element: policies.details.InsuredPerson
+          - ClaimStatusDescription:
+            - col: 12
+              element: claims.ClaimStatusDescription
+          # - ClaimInsuredName:
+          #   - col: 12
+          #     element: customer.details.FirstName
+          # - ClaimInsuredSurName:
+          #   - col: 12
+          #     element: customer.details.LastName
+          # - ClaimFathersName:
+          #   - col: 12
+          #     element: customer.details.FathersName
+          - AccidentClosingDate:
+            - col: 12
+              element: claims.AccidentClosingDate  
+          - ClaimAnnouncementDate:
+            - col: 12
+              element: claims.ClaimAnnouncementDate
+          - CompensationAmount:
+            - col: 12
+              element: claims.CompensationAmount
+          - DateOpenFolder:
+            - col: 12
+              element: claims.DateOpenFolder
+        dataStoreProperty: clientContracts     
+      - component: ParticipantsViewComponent
+        label:
+          ResourceSectionLabelRule:
+            labelKey: sections.policy.participants.dependants.label
+        dataStoreProperty: clientContractsWithParticipants           

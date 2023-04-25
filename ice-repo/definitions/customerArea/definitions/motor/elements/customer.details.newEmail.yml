@@ -1,0 +1,22 @@
+element:
+  type: text
+  label: Νέο Email
+  component:
+    StaticComponentRule:
+      component:
+        InputonchangeactionComponent:
+          elementName: myEmail
+  # viewMode:
+  #   DtViewModeRule:
+  #     dt: dt.email.newEmailDisHid
+  #     output: viewmode
+  buckets:
+    ChangeEmail:
+      transformation:
+        dataPath: NewEmail
+    # VerifyChangeEmailSMS:
+    #   transformation:
+    #     dataPath: Email
+
+  pages:
+    changeEmailPopUp: null

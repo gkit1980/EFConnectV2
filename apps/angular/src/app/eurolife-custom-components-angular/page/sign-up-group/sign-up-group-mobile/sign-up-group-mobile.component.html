@@ -1,0 +1,90 @@
+<!-- <div *ngIf="visible" class="loading-spinner"></div> *ngIf="mailVerified && !visible" -->
+
+<div class="email-form-container" >
+  <div class="basic-info-header">
+    <div class="sign-up-container">
+      <p class="h4">Συμμετοχή σε ομαδικό ασφ. Ζωής Ατυχημάτων & Υγείας <br/> Ασφαλιστήριο {{contractKey}} <br/> Αντισυμβαλλόμενος  {{ companyName }} </p>
+    </div>
+  </div>
+
+  <app-sign-up-group-stepper></app-sign-up-group-stepper>
+
+  <div class="second-info-header">
+    <p class="h5">Αριθμός Κινητού</p>
+    <p class="h6">Θα σταλεί SMS επαλήθευσης στον ακόλουθο αριθμό.</p>
+  </div>
+
+  <div class="mobile-container">
+    <mat-form-field>
+      <mat-label> {{ numberOfMobile2 | resourcePipe }} </mat-label>
+      <input
+        class="Caption1"
+        matInput
+        type="text"
+        id="mobile"
+        name="mobile"
+        [(ngModel)]="mobileNo"
+        [formControl]="mobileNumber"
+        (ngModelChange)="checkMobileNo()"
+        placeholder="Πληκτρολογήστε τον αριθμό σας"
+        pattern="^69[0-9]{8}"
+        #mobileInput
+      />
+      <mat-error *ngIf="mobileNumber.invalid">{{ numberOfMobileError | resourcePipe }}</mat-error>
+    </mat-form-field>
+    <div *ngIf="errorMsgVerifyMobile !== ''" class="error-msg">{{ errorMsgVerifyMobile }}</div>
+  </div>
+
+  <div class="mobile-container">
+    <mat-form-field>
+      <mat-label> {{ numberOfHome | resourcePipe }} </mat-label>
+      <input
+        class="Caption1"
+        matInput
+        type="text"
+        id="home"
+        name="home"
+        [(ngModel)]="landlineNo"
+        [formControl]="landlineNumber"
+        placeholder="Πληκτρολογήστε τον αριθμό σας"
+        pattern="^2[0-9]{9}"
+      />
+      <mat-error *ngIf="landlineNumber.invalid">{{ numberOfHomeError | resourcePipe }}</mat-error>
+    </mat-form-field>  
+    <!-- <div *ngIf="errorMsgVerifyMobile !== ''" class="error-msg">{{ errorMsgVerifyMobile }}</div> -->
+  </div>
+
+  <div class="basic-info-btn-container">
+    <div class="row basic-info-btns">
+      <div class="col-sm-12">
+        <!-- Class = disabled -->
+        <button
+          class="eurolife_btn eurolife_btn-default"
+          (click)="onSubmit()"
+          [disabled]=" !gotmobileNo|| !mobileCodeValid || !emailValid"
+        >
+          {{ next | resourcePipe }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="fail-container" *ngIf="!mailVerified && !visible">
+  <div class="icon_container">
+    <div class="lock_icon" aria-label="email" [inlineSVG]="imageSource" [onSVGLoaded]="handleSVG"></div>
+  </div>
+  <div class="oh-no-container h2">
+    {{ ohNo | resourcePipe }}
+  </div>
+  <div class="fail-details-container">
+    <div class="h6 text-center">{{ isLinkExpired ? 'Ο σύνδεσμος έχει λήξει.' : (problem | resourcePipe) }}</div>
+    <div class="h6 text-center">
+      {{ isLinkExpired ? 'Παρακαλούμε ξεκινήστε εκ νέου την διαδικασία εγγραφής.' : (connection | resourcePipe) }}
+    </div>
+  </div>
+  <div (click)="gotitClick()" class="eurolife_btn eurolife_btn-stroke button-container distance-bottom">
+    {{ ok | resourcePipe }}
+  </div>
+</div>

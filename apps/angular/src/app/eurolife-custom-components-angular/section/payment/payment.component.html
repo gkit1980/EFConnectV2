@@ -1,0 +1,46 @@
+<div class="payment-container" *ngIf="status == 'Ανείσπρακτη'">
+  <div class="payment-info-container">
+    <div class="cost-label" *ngFor="let row of recipe.rows">
+      <div *ngFor="let col of row.paymentCost">
+        <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element" [component]="col.component">
+        </ice-element>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="(paymentType === 'ΜΕΤΡΗΤΑ' || paymentType === 'ΕΛΤΑ') && paymentCode != null && (currentBranch !='ΠΡΟΣΩΠΙΚΟΥ ΑΤΥΧΗΜΑΤΟΣ'  &&  currentBranch != 'ΧΡΗΜΑΤΙΚΩΝ ΑΠΩΛΕΙΩΝ' && currentBranch != 'ΑΣΤΙΚΗ ΕΥΘΥΝΗ')"
+    class="payment-btn-container">
+    <div class="eurolife_btn eurolife_btn-default payment-btn" (click)="redirectToPayment()">
+      <div>{{ paymentComponent | resourcePipe }}</div>
+      <!-- <div class="arrow">arrow</div> -->
+    </div>
+    <div class="row">
+      <div class="cost-label" *ngFor="let row of recipe.rows">
+        <div class="payment-code" *ngFor="let col of row.paymentCode">
+          <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element" [component]="col.component">
+          </ice-element>
+        </div>
+      </div>
+      <div ngbTooltip="Χρησιμοποιείστε αυτό τον κωδικό για εξόφληση μέσω e-banking ή Τράπεζας" (click)="copyToClipBoard(paymentCode)"
+        class="info-svg-payment-code" aria-label="icon" [inlineSVG]="getIcon('0B8BF05BD9C54878807163B1050D5AF3')"
+        [onSVGLoaded]="handleSVGPaymentCode">
+      </div>
+    </div>
+  </div>
+  <div *ngIf="paymentType == 'ΠΑΓΙΑ ΕΝΤΟΛΗ'" [ngbTooltip]="autoPayment" class="info-svg" aria-label="icon"
+    [inlineSVG]="getIcon('0B8BF05BD9C54878807163B1050D5AF3')" [onSVGLoaded]="handleSVG">
+  </div>
+</div>
+<div class="Typeface Caption3 cost-label " *ngFor="let row of recipe.rows">
+  <div *ngFor="let col of row.notificationBar">
+    <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element" [component]="col.component">
+    </ice-element>
+  </div>
+</div>
+<!-- <p>dsdsdsd</p>
+  <div *ngFor="let row of recipe.rows" class="row" [ngClass]="row.css">
+    <div class="column" *ngFor="let col of row.notificationBar" [ngClass]="getGridColumnClass(col)">
+      <ice-element *ngIf="col.element" [section]="section" [elementName]="col.element"
+      [component]="col.component">
+      </ice-element>
+    </div>
+  </div> -->

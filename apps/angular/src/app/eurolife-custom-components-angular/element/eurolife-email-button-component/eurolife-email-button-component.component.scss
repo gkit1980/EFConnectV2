@@ -1,0 +1,27 @@
+button {
+    display: flex;
+    align-items: center;
+
+}
+ 
+.left {
+        flex-direction: row-reverse;
+}
+
+.button-icon {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.corporate_color {
+    fill: #ef3340;
+}
+
+.motor_color {
+    fill: rgb(71, 148, 99);
+}
+
+.eurolife-button{
+    display: flex;
+    justify-content: center;
+}

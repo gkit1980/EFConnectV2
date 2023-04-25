@@ -1,0 +1,392 @@
+@import '../../../../styles/abstracts/functions';
+@import '../../../../styles/abstracts/variables';
+
+::ng-deep th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.btn-top-distance {
+  margin-top: 6px;
+}
+
+::ng-deep .mat-icon {
+  float: left !important;
+  margin-right: 10px;
+}
+
+.product-distance {
+  margin-bottom: 35px;
+}
+
+.contractNumber {
+  opacity: 0.6;
+}
+
+.distance-fix {
+  margin-top: 9px !important;
+}
+
+.center-text {
+  display: flex;
+  align-items: center;
+}
+
+.value-bold {
+  font-weight: 500;
+}
+
+.row-container {
+  padding: 15px 0;
+}
+
+.grey-background {
+  background-color: #eeeeee;
+  display: flex;
+  align-items: center;
+  padding: 24px;
+  justify-content: start;
+}
+
+.first-col {
+  min-width: 300px;
+  margin-right: 20px;
+}
+
+.ice-simple-table {
+  margin-top: 24px;
+
+  .h6-active {
+    margin-bottom: 5px;
+  }
+
+  .contractName {
+    margin-bottom: 0px;
+  }
+
+  .contractNumber {
+    opacity: 0.6;
+  }
+}
+
+// Mobile
+@media (max-width: 953px) {
+  .only-desktop {
+    display: none;
+  }
+
+  .direct-group {
+    padding-left: 0;
+    margin-top: 10px !important;
+    margin-left: 1px;
+    margin: auto;
+  }
+
+  .direct-col {
+    padding: 0 5px 0 0;
+    margin-left: -48px;
+  }
+
+  .agent-icon {
+    float: left;
+    margin-bottom: 16px;
+  }
+
+  .line-seperator {
+    border-bottom: solid 0.5px #b5b5b5;
+    margin: 15px;
+  }
+
+  .Caption3 {
+    opacity: 0.6;
+    margin-left: 15px;
+  }
+
+  .no-opacity {
+    opacity: 1;
+  }
+
+  .chevron-right {
+    margin-top: 0px;
+  }
+
+  .contractName {
+    margin-bottom: 0;
+  }
+
+  div.slightly-right {
+    margin-left: 11px;
+  }
+
+  #first {
+    margin-top: 28px;
+  }
+}
+
+// Desktop
+@media (min-width: 954px) {
+  .only-mobile {
+    display: none;
+  }
+}
+
+.only-mobile {
+  .Caption3 {
+    margin-left: 0;
+  }
+}
+
+.no-wrap {
+  flex-wrap: unset;
+}
+
+h5 {
+  margin-bottom: 24px;
+  margin-left: -15px;
+}
+
+.padding-fix {
+  padding: 10px;
+}
+
+.direct-group {
+  margin-top: 10px;
+  opacity: 0.6;
+  font-family: Ubuntu;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.58;
+  letter-spacing: normal;
+  color: #383b38;
+  padding-left: 30px;
+
+  @media screen and (min-width: 954px) {
+    padding-right: 43px;
+  }
+  @media screen and (max-width: 953px) {
+    justify-content: center;
+    padding-left: 3px;
+    margin: auto;
+  }
+  justify-content: flex-end;
+}
+
+.direct-col {
+  padding: 0 5px 0 0;
+}
+
+.button-icon {
+  margin-left: 10px;
+}
+
+.agent-icon {
+  margin-right: 1rem;
+}
+
+.no-margins {
+  margin: 0px;
+}
+
+.no-right-margins {
+  margin-right: -244px;
+}
+
+.add-padding {
+  padding: 24px;
+}
+
+.health {
+  border-left: solid 4px getColor(health);
+}
+
+.life {
+  border-left: solid 4px getColor(life);
+}
+
+.otherpc {
+  border-left: solid 4px getColor(sme);
+}
+
+.motor {
+  border-left: solid 4px getColor(motor);
+}
+
+.house {
+  border-left: solid 4px getColor(home);
+}
+
+.savings {
+  border-left: solid 4px getColor(finance);
+}
+
+.other_pc {
+  border-left: solid 4px getColor(sme);
+}
+
+.life_text {
+  color: getColor(life);
+}
+
+.otherpc_text {
+  color: getColor(sme);
+}
+
+.health_text {
+  color: getColor(health);
+}
+
+.motor_text {
+  color: getColor(motor);
+}
+
+.house_text {
+  color: getColor(home);
+}
+
+.savings_text {
+  color: getColor(finance);
+}
+
+.other_pc_text {
+  color: getColor(sme);
+}
+
+.cursor-type {
+  cursor: pointer;
+}
+
+// TB01
+
+.header-title {
+  padding-left: 16px;
+  border-left: solid 2px #ef3340;
+  padding-top: 9.5px;
+  padding-bottom: 9.5px;
+  margin-top: 69px;
+  margin-bottom: 8px;
+}
+
+.fix-top {
+  @media screen and (max-width: 628px) {
+    margin-top: 15px !important;
+  }
+}
+
+.agent {
+  display: flex;
+  align-items: center;
+}
+
+.row-center-alignment {
+  align-items: flex-start;
+}
+
+.life-text {
+  color: getColor(life);
+}
+
+.health-text {
+  color: rgb(239, 51, 64);
+}
+
+.motor-text {
+  color: rgb(71, 148, 99);
+}
+
+.house-text {
+  color: rgb(242, 177, 0);
+}
+
+.savings-text {
+  color: rgb(0, 128, 148);
+}
+
+.otherpc-text {
+  color: #eb7d2e;
+}
+
+.keep-size {
+  flex-shrink: 0;
+}
+
+.background-circle {
+  height: 85px;
+  width: 85px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.life-bg-color {
+  background-color: getColor(life, light);
+  fill: getColor(life) !important;
+}
+
+.health-bg-color {
+  background-color: getColor(health, light);
+  fill: getColor(health) !important;
+}
+
+.motor-bg-color {
+  background-color: getColor(motor, light);
+  fill: getColor(motor) !important;
+}
+
+.house-bg-color {
+  background-color: getColor(home, light);
+  fill: getColor(home) !important;
+}
+
+.savings-bg-color {
+  background-color: getColor(finance, light);
+  fill: getColor(finance) !important;
+}
+
+.otherpc-bg-color {
+  background-color: getColor(sme, light);
+  fill: getColor(sme) !important;
+}
+
+.second-row {
+  @media screen and (max-width: 768px) {
+    margin: 0;
+  }
+
+  margin: 23px 0px 0px 0px;
+  padding: 12px 0px 11px 17px;
+  background-color: rgb(238, 238, 238);
+}
+
+p {
+  margin: 0px;
+}
+
+.margin-bottom-container {
+  margin-bottom: 69px;
+}
+
+.product-aux-icon > svg {
+  width: 20px;
+  height: 20px;
+}
+
+.details {
+  margin-left: 13px;
+}
+
+.text-decoration-none {
+  color: unset;
+  display: table-caption;
+}
+
+.links {
+  a {
+    text-decoration: none;
+    color: getColor(grey, dark);
+  }
+}

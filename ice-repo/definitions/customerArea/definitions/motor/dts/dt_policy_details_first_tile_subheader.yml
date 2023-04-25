@@ -1,0 +1,25 @@
+dt:
+  hit-policy: C
+  inputs:
+    - label: calculate visibility of section in policy details
+      element: selectedcontractbranch
+  outputs:
+    - id: element
+      label: text
+      type: string
+  rules:
+    - inputs:
+        - 1,2,5,6,9,11,12,14,15,16,17,99
+      outputs:
+        - >-
+          "policies.insured.person.header-tile"
+    - inputs:
+        - 3
+      outputs:
+        - >-
+          "policies.license.plate.header-tile"
+    - inputs:
+        - 4,13
+      outputs:
+        - >-
+          "policies.emergency.address.header-tile"

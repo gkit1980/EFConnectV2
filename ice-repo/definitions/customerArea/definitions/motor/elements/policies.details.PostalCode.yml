@@ -1,0 +1,17 @@
+element:
+  type: text
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policy.selectedBranch
+      conditionValue: 3
+      conditionViewMode: output
+      elseViewMode: hidden
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent
+  buckets:
+    GetCustomerAddresses:
+      transformation:
+        responsePath: Address[0].PostalCode
+  pages:
+    policyDetails:

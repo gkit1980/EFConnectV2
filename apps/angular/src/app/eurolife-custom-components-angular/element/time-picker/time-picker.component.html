@@ -1,0 +1,19 @@
+<div class="ice-timepicker" *ngIf="isVisible">
+	<div class="navigation bg-light">
+		<div class="ngb-dp-arrow">
+			<button class="btn btn-link ngb-dp-arrow-btn" type="button" (click)="goToPrev()" [disabled]="hasNoPrev">
+				<span class="ngb-dp-navigation-chevron"></span>
+			</button>
+		</div>
+		<div class="ngb-dp-arrow right">
+			<button class="btn btn-link ngb-dp-arrow-btn" type="button" (click)="goToNext()" [disabled]="hasNoNext">
+				<span class="ngb-dp-navigation-chevron"></span>
+			</button>
+		</div>
+	</div>
+	<div class="times">
+		<div class="time-box" *ngFor="let time of times" (click)="selected(time)" [ngClass]="getclass(time)">
+			<label>{{time}}</label>
+		</div>
+	</div>
+</div>

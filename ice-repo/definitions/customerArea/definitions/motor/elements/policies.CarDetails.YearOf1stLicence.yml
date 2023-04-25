@@ -1,0 +1,12 @@
+element:
+  type: date
+  viewMode: output
+  component:
+    StaticComponentRule:
+      component: EurolifeOutputComponent
+  buckets:
+    GetContractMotorDetails:
+      transformation:
+        responsePath: ContractMotorDetails.DriverPermitYear
+  pages:
+    policyDetails: null

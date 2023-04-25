@@ -1,0 +1,8 @@
+element:
+  type: text
+  buckets:
+    GetHealthCards:
+      transformation:
+        property: File
+
+

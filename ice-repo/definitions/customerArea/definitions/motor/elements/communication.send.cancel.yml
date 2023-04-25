@@ -1,0 +1,7 @@
+element:
+  type: text
+  label: Αποστολή Σχολίου
+  component: CloseCancelPopUpComponent
+  viewMode: default
+  pages:
+    contactForm: null

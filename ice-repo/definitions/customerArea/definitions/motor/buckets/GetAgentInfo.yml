@@ -1,0 +1,5 @@
+bucket:
+  transformation:
+    RestCallTransformationRule:
+      dataStoreProperty: clientContracts
+      responseToDatastore: true    

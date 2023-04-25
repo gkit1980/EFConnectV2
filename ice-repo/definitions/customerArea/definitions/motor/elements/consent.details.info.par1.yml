@@ -1,0 +1,10 @@
+element:
+  component: ConsentComplianceComponent
+  viewMode: 
+    ConditionalViewModeRule:
+        conditionElement: consent.page.index
+        conditionValue: 1
+        conditionViewMode: output
+        elseViewMode: hidden
+  pages:
+    consent: null

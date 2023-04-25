@@ -1,0 +1,10 @@
+element:
+  type: text
+  defaultValue: Θα μιλήσει ο εκπροσωπος μας το συντομοτερο.
+  label: null
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: clicktocall.connected
+      conditionValue: true
+      conditionViewMode: output
+      elseViewMode: hidden

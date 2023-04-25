@@ -1,0 +1,22 @@
+dt:
+  hitPolicy: F
+  inputs:
+    - label: policies.CarDetails.SecondDriver
+      element: policies.CarDetails.SecondDriver
+  outputs:
+    - label: viewMode
+      id: viewMode
+      type: string
+  rules:
+    - inputs:
+        - not(null)
+      outputs:
+        - default
+    - inputs:
+        - null
+      outputs:
+        - hidden
+    - inputs:
+        - "-"
+      outputs:
+        - hidden

@@ -1,0 +1,9 @@
+element:
+  type: text
+  viewMode: output
+  component:
+    StaticComponentRule:
+      component:
+        TextLabelComponent:
+          text: Ζητάμε Συγγνώμη
+          AdditionalClasses: h5

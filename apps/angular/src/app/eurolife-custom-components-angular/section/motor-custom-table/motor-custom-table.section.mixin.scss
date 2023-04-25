@@ -1,0 +1,92 @@
+@import "~@angular/material/theming";
+
+@mixin motor-custom-table-section-mixin($theme) {
+  .popup-page {
+    @media screen and (max-width: 580px) {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      overflow: hidden;
+      background-color: #fff;
+      height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+      // height: calc(var(--vh, 1vh) * 100);
+    }
+    .mat-card {
+      padding-bottom: 0;
+      padding-top: 0;
+
+      .mat-card-header {
+        .mat-card-header-text {
+          margin: 0;
+        }
+      }
+    }
+
+    .ice-array-item {
+      border: none;
+    }
+
+    .custom-page-content-container {
+      position: relative;
+      z-index: 1001;
+
+      @media screen and (max-width: 420px) {
+        margin: -35px;
+      }
+    }
+
+    .custom-page-content-container-ctc {
+      @media screen and (max-width: 420px) {
+        margin: -25px 0 0 0;
+      }
+    }
+
+    .mat-raised-button {
+      color: #157efb;
+      border-radius: 8px;
+      border-color: #157efb;
+      height: 50px;
+      width: 150px;
+      border: solid;
+    }
+
+    &.ice-one-page {
+      background-color: white;
+
+      .ice-array .ice-array-item {
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+    }
+
+    .mat-card {
+      font-family: Frutiger, Helvetica, Arial, sans-serif;
+      border-radius: 0 !important;
+      background-color: #fff;
+      box-shadow: none;
+      margin-top: -20px !important;
+    }
+
+    .mat-card-subtitle,
+    .mat-card-content,
+    .mat-card-header .mat-card-title {
+      color: #333;
+      font-weight: 400;
+      font-size: 1.1rem;
+    }
+    .mat-card,
+    .mat-form-field-label {
+      color: #003299;
+    }
+
+    th {
+      background: inherit;
+      color: rgb(0, 115, 150);
+    }
+    td {
+      color: rgb(0, 13, 103);
+    }
+  }
+}

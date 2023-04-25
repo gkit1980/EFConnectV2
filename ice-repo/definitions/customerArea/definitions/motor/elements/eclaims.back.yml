@@ -1,0 +1,11 @@
+element:
+  component: EclaimsBackButtonComponent
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: eclaims.step
+      conditionValue: -1
+      conditionViewMode: hidden
+      elseViewMode: output
+  type: text
+  pages:
+    greenCard: null

@@ -1,0 +1,23 @@
+action:
+  title: calls a rest service to get the customer addresses
+  execution:
+    - RestCallExecutionRule:
+        baseUrl: BASEURL
+        # baseUrl: https://lifeuatna.eurolife.gr/CustomerDataProvider/api/CustomerData
+        url: GetCustomerAddresses
+        verb: post
+        bucket: GetCustomerAddresses
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+  trigger:
+    # - ElementChangeTriggerRule:
+    #     elements:
+    #       - policy.selectedBranch
+    #       - policy.selectedContractIDType
+    - PageTriggerRule:
+        enter:
+          - policyDetails
+          - customerProfile
+          - communicationService
+          - viewClaimDetails

@@ -1,0 +1,9 @@
+element:
+  type: boolean
+  viewMode: output
+  buckets:
+    InitSignUp:
+      transformation:
+        responsePath: Success  
+  pages:
+    sign-up: null

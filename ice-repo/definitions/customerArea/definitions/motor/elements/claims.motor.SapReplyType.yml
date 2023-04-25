@@ -1,0 +1,9 @@
+element:
+  type: text
+  viewMode: output  
+  buckets:
+    GetCoolgenClaimDetails:
+      transformation:
+        responsePath: ClaimCoolgen.sap_reply_type
+  pages:
+    viewClaimDetails: null

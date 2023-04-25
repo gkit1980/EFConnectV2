@@ -1,0 +1,20 @@
+action:
+  title: calls a rest service to get the UL Contract Funds Valuation
+  execution:
+    - RestCallExecutionRule:
+        baseUrl: BASEURL
+        url: GetLifeContractFundsValuation
+        verb: post
+        bucket: GetLifeContractFundsValuation
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false
+    - FundValuationExecutionRule:     
+    - GetFundRatesRule:
+        baseUrl: BASEURL
+        url: GetFundRate
+        verb: post
+        bucket: GetFundRates
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: true    

@@ -1,0 +1,42 @@
+page:
+  component: PopUpPage
+  showTopSection: false
+  validation:
+    onElementComponentChange: true
+    behaviour: page
+  sections:
+    - component: SimpleGridViewComponent
+      rows:
+        - cols:
+            - css: header-title-pop-up text-center
+              col: 12
+              element: customer.details.textEmail
+        - cols:
+            - css: text-center
+              col: 12
+              element: customer.details.standarMsgEmail
+        # - cols:
+        #   - col: 12
+        #     element: customer.details.emailErrors #customer.details.finalMsgEmail
+        - cols:
+            - col: 12
+              element: customer.details.newEmail
+        - cols:
+            - css: errorClass
+              col: 12
+              element: customer.details.firstStepEmailErrors
+        - cols:
+            - css: errorClass
+              col: 12
+              element: customer.details.outputEmailErrors
+        - cols:
+            - css:
+              col: 12
+              element: customer.details.changeEmailButton
+        - cols:
+            - css: text-center
+              col: 12
+              element: customer.details.afterEmailVerification
+        - cols:
+            - col: 12
+              element: customer.details.insertCodeTimerEmail

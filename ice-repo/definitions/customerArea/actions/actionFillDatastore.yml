@@ -1,0 +1,10 @@
+action:
+  execution:
+    - WriteFromOtherSourcesToDatastoreExecutionRule:
+        baseUrl: BASEURL
+        verb: post
+        url: GetCustomerContracts
+        bucket: WriteFromOther
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDatastore: true

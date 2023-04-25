@@ -1,0 +1,4 @@
+element:
+  type: text
+  label: "Έχετε ανεβάσει 2:"
+  viewMode: output

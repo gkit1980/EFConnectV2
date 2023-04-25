@@ -1,0 +1,88 @@
+<ng-container *ngIf="contentLoaded; else loadDataTempl1"></ng-container>
+
+<div class="mat-elevation-z8">
+  <table class="table-container" mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="docType">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ contentLoaded ? 'Τύπος εγγράφου': '' }}</th>
+      <td class="td-doctype" mat-cell *matCellDef="let row">
+        <!-- {{ item.docType }} -->
+        {{ docType | resourcePipe }}
+        <!-- Αποτίμηση Ομαδικού Ασφαλιστηρίου -->
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ contentLoaded ? 'Ημερομηνία Έκδοσης' : '' }}</th>
+      <td class="td-year" mat-cell *matCellDef="let row">
+        {{formatDate(row.date) | date: 'dd/MM/yyyy'}}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="url">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+      <td [class.disable-btn]="showSpinnerBtnArr[idx]" (click)="getPdfLink(row.url, idx)" mat-cell *matCellDef="let row; let idx = index">
+        <div class="download-btn">
+          <!-- download -->
+          <div *ngIf="!showSpinnerBtnArr[idx]" aria-label="icon" class="button-icon"
+            [inlineSVG]="'https://scp.eurolife.gr/~/media/3D4C3EE53B51434B9A9C20E02FA3B340.ashx'"
+            [onSVGLoaded]="handleSVGButton">
+          </div>
+          <div *ngIf="showSpinnerBtnArr[idx]" class="button-icon">
+            <i class="fa fa-spinner fa-spin fa-lg"></i>
+          </div>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>
+
+<div>
+  <div class="table-mobile-container">
+    <ng-container *ngFor="let item of filteredData; let idx = index">
+      <div class="main-container">
+        <div class="doctype-container td-doctype">
+          {{ docType | resourcePipe }}
+          <!-- Αποτίμηση Ομαδικού Ασφαλιστηρίου  -->
+        </div>
+        <div class="year-container td-year">
+          {{ formatDate(item.date) | date: 'dd/MM/yyyy' }}
+        </div>
+        <button [class.disable-btn]="showSpinnerBtnArr[idx]" class="eurolife_btn eurolife_btn-default download-mobile-btn" (click)="getPdfLink(item.url, idx)">
+          <!-- download -->
+          <div *ngIf="!showSpinnerBtnArr[idx]" aria-label="icon" class="button-icon"
+            [inlineSVG]="'https://scp.eurolife.gr/~/media/3D4C3EE53B51434B9A9C20E02FA3B340.ashx'"
+            [onSVGLoaded]="handleSVGButton">
+          </div>
+          <div *ngIf="showSpinnerBtnArr[idx]" class="button-icon">
+            <i class="fa fa-spinner fa-spin fa-lg"></i>
+          </div>
+        </button>
+      </div>
+    </ng-container>
+  </div>
+  <!--  *ngIf="filteredData.length < 5" -->
+  <button (click)="showMore()" class="eurolife_btn eurolife_btn-link show-more-container">
+    Φόρτωσε περισσότερα
+  </button>
+</div>
+
+<ng-template #loadDataTempl1>
+  <div class="ice-simple-table">
+    <ngx-skeleton-loader
+      count="1"
+      [theme]="{ 'background-color': '#dadada', width: '70%', height: '25px', 'border-radius': '10px' }"
+    >
+    </ngx-skeleton-loader>
+
+    <ngx-skeleton-loader
+      count="2"
+      [theme]="{ 'background-color': '#dadada', width: '100%', height: '25px', 'border-radius': '10px' }"
+    >
+    </ngx-skeleton-loader>
+  </div>
+</ng-template>

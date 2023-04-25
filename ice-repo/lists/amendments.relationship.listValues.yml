@@ -1,0 +1,30 @@
+list:
+  type: text
+  label: 
+  additionals:
+    label_el:
+      label: label_el
+      type: text
+  items:
+    - value: '-'
+      label_el: Επιλογή Σχέσης
+    - value: Σύζυγος
+      label_el: Σύζυγος
+    - value: Γιός
+      label_el: Γιός
+    - value: Κόρη
+      label_el: Κόρη
+    - value: Πατέρας
+      label_el: Πατέρας
+    - value: Μητέρα
+      label_el: Μητέρα
+    - value: Αδερφός
+      label_el: Αδερφός
+    - value: Αδερφή
+      label_el: Αδερφή
+    - value: Εγγονός
+      label_el: Εγγονός
+    - value: Εγγονή
+      label_el: Εγγονή
+    - value: Άλλη
+      label_el: Άλλη

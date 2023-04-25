@@ -1,0 +1,33 @@
+<div class="ice-grid-view attach-file-view" *ngIf="showBrowse">
+    <div>
+        <div class="add-new-block-container">
+            <div class="Caption3 pr-2"> {{ label }}</div>
+            <div class="browse-section" (click)="fileInput.click()">
+                <div class="faq-svg" aria-label="icon" [inlineSVG]="getIcon('5CC8A933D20F48EF827B77E5947F730D')"
+                    [onSVGLoaded]="handleFAQSVG">
+                </div>
+                <div class="Typeface">
+                    {{ browse | resourcePipe }}
+                </div>
+            </div>
+        </div>
+        <input type="file" #fileInput id="fileinput" multiple (change)="onFileImport($event.target.files)" accept="application/pdf,image/*"
+            style="display:none" (click)="onFileInputClick($event)" />
+    </div>
+</div>
+<div class="file-attachments">
+    <div *ngFor="let file of getFilesFromDataModel(); let i = index" class="file-block-container">
+        <p class="Caption3 mt-3 opacity" *ngIf="file">Έχετε ανεβάσει 1 αρχείο:</p>
+        <div class="file-data-container" *ngIf="file">
+            <div class="icon-container">
+                <i *ngIf="isType('image', i)" class="material-icons">{{ image | resourcePipe }}</i>
+                <i *ngIf="!isType('image', i)" class="material-icons">{{ description | resourcePipe }}</i>
+            </div>
+            <div class="description-container Typeface">
+                <span>{{getFileName(i)}}</span>
+            </div>
+            <div class="close" aria-label="My icon" [inlineSVG]="closeImageSource" [onSVGLoaded]="handlecloseSVG"
+                (click)="deleteFile(i)">
+            </div>
+        </div>
+    </div>

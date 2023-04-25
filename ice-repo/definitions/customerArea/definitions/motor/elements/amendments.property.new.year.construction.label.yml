@@ -1,0 +1,4 @@
+element:
+  type: text
+  label: "Νέο Έτος Κατασκευής"
+  viewMode: output

@@ -1,0 +1,7 @@
+page:
+  component: PopUpPage
+  label: Αναμονή για εγγραφή στο πρόγραμμα
+  # showTopSection: false
+  sections:
+    - component: SignUpGroupWaitingModalComponent
+      label:

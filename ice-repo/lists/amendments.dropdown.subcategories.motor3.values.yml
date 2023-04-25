@@ -1,0 +1,16 @@
+list:
+  type: text
+  additionals:
+    label_en:
+      label: label_en
+      type: text
+    label_el:
+      label: label_el
+      type: text
+  items:
+    - value: 1
+      label_en: Ημ.γέννησης
+      label_el: Ημ.γέννησης
+    - value: 2
+      label_en: Ημ.έκδοσης διπλώματος 
+      label_el: Ημ.έκδοσης διπλώματος 

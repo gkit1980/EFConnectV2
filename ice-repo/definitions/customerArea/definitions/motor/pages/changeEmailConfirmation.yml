@@ -1,0 +1,14 @@
+page:
+  component: EmailConfirmationComponent
+  validation:
+    onElementComponentChange: true
+    behaviour: page 
+  sections: 
+    - component: GridView 
+      rows:
+        - cols:
+          - col: 12
+            element: customer.details.confirmationMessage1
+        - cols:
+          - col: 12
+            element: customer.details.confirmationMessage2

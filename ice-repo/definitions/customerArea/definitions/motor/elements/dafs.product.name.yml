@@ -1,0 +1,10 @@
+element:
+  type: text
+  label:
+    NoLabelRule: {}
+  component:
+    StaticComponentRule:
+      component:
+        EurolifeH3Component:
+          headingClass: dt_product_text_color
+          headingType: h3

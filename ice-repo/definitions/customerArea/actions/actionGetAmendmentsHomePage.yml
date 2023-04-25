@@ -1,0 +1,16 @@
+action:
+  title: executed for login and refresh purpose
+  execution:
+    - GetSalesforceTokenRule:
+        salesforceLoginUrl: BASEURLSALESFORCELOGIN
+        methodLogin: post
+        getAmendmentsUrl: AMENDMENTSURL
+        methodGetAmendments: get
+        bucket: AmendmentsLogin
+        encryptMessage: true
+        encryptSecretElement: token
+        needsDataStore: false 
+  trigger:
+    - ElementChangeTriggerRule:
+        elements:
+          - amendments.showAmendments         

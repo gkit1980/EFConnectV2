@@ -1,0 +1,11 @@
+element:
+  type: text
+  label: Στοιχεία Ασφαλισμένου Οδηγού
+  viewMode: 
+    ConditionalViewModeRule:
+        conditionElement: greencard.page.index
+        conditionValue: 1
+        conditionViewMode: output
+        elseViewMode: hidden
+  pages:
+    greenCard: null

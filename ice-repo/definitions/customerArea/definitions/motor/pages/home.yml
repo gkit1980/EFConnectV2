@@ -1,0 +1,119 @@
+page:
+  component: HomePageComponent
+  validation:
+    showGrowl: false
+  label: Home Page
+  sections:
+    - component: FlatSectionComponent
+      skatoules:
+        - cols:
+          - css:
+            col: 4
+            element: header.left.welcome.message
+          # - css: 
+          #   col: 7
+          #   element: home.top.image   
+          # - css:
+          #   col: 2
+          #   element:  
+      pageSource: "home"
+    # - component: AmendmentGridViewComponent
+      # name: Exist Amendments
+      # rows:
+        # - css: homepage-cards-margin-fix
+          # cols:
+            # - css: red-card
+              # col: 4
+              # element: home.cards.CardPolicies
+            # - css: purple-card
+              # col: 4
+              # element: home.cards.CardAmmendments
+            # - css: dark-blue-card
+              # col: 4
+              # element: home.cards.CardClaims
+        # - css: null
+          # cols:
+            # - col: 12
+              # element: home.cards.CardBatchInsurance           
+    # - component: NoAmendmentGridViewComponent
+      # name: Not Existing Amendments
+      # rows:
+        # - css: homepage-cards-margin-fix
+          # cols:
+            # - css: red-card
+              # col: 6
+              # element: home.cards.CardPolicies
+            # - css: dark-blue-card
+              # col: 6
+              # element: home.cards.CardClaims
+        # - css: null
+          # cols:
+            # - col: 12
+              # element: home.cards.CardBatchInsurance
+    - component: HomeCardContainerAmendmentComponent
+      rows:
+        - css: homepage-cards-margin-fix
+          cols:
+            - css: red-card
+              col: 4
+              element: home.cards.CardPolicies
+            - css: dark-blue-card
+              col: 4
+              element: home.cards.CardClaims
+            - css: purple-card
+              col: 4
+              element: home.cards.CardAmmendments
+        - css: null
+          cols:
+            - col: 12
+              element: home.consent.dialog       
+        - css: null
+          cols:
+            - col: 12
+              element: home.cards.CardBatchInsurance                    
+    - component: HomeCardContainerComponent
+      rows:
+        - css: homepage-cards-margin-fix
+          cols:
+            - css: red-card
+              col: 4
+              element: home.cards.CardPolicies
+            - css: dark-blue-card
+              col: 4
+              element: home.cards.CardClaims
+            - css: grey-card
+              col: 4
+              element: home.cards.CardAmenDisabled
+        - css: null
+          cols:
+            - col: 12
+              element: home.consent.dialog       
+        - css: null
+          cols:
+            - col: 12
+              element: home.cards.CardBatchInsurance       
+    # - component: SimpleTableNoPaginationComponent   # Προσφατα Ειδοποιητηρια + Τελευταιες Πληρωμές
+    #   dataStoreProperty: clientContractsUpd
+    #   # getLastDocumentURLNote: actionGetLastURLNote
+    #   name: lastPayments
+    #   selectionElement:
+    #   dataStore: clientContracts
+    #   cols:
+    #     - contract
+    #     - contractNum
+    #     - paymentDate
+    #     - paymentType
+    #     - amount
+    # - component: HomeAgentInfoComponent
+    #   dataStoreProperty: clientContracts
+    - component: PendingPaymentComponent
+      dataStore: clientContractsUpd 
+    - component: GridView
+      rows:
+        - css: null
+          cols:
+            - col: 6
+              element: home.cards.CustomerDocuments
+            - col: 6
+              element: home.cards.CustomerProfile
+  

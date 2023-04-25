@@ -1,0 +1,7 @@
+element:
+  type: decimal
+  viewMode: output  
+  buckets:
+    GetReceiptsByContractID:
+      transformation:
+        property: GrossPremium

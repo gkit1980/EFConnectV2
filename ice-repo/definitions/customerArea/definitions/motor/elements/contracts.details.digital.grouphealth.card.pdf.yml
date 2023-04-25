@@ -1,0 +1,13 @@
+element:
+  component: DigitalCardComponent
+  type: text
+  label: Ψηφιακή Κάρτα Υγείας 
+  buttonIcon: https://scp.eurolife.gr/~/media/3D4C3EE53B51434B9A9C20E02FA3B340.ashx
+  additionalClasses: digital-card-css
+  svgFillColor: digital-card-css
+  defaultValue: actionGetGroupDigitalCardPDF
+  alignmentClass: dt_visibility_digital_group_card_pdf_button
+  typeScope: group-digital-card
+  dataStoreProperty: clientContracts
+  pages:
+    policyDetails: null

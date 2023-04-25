@@ -1,0 +1,6 @@
+element:
+  component: IceButton
+  type: text
+  defaultValue: action-next-page-redirection
+  pages:
+    sign-up: null

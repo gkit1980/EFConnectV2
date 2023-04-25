@@ -1,0 +1,9 @@
+element:
+  type: text
+  viewMode: output
+  buckets:
+    GetCustomerAddresses:
+      transformation:
+        responsePath: Address[0].PhoneNumber1
+  pages:
+    customerProfile: null

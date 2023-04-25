@@ -1,0 +1,13 @@
+action:
+  execution:
+    - EnableSpinnerRule: 
+        actionrule: action-amendments-uploadfiles
+    - AmendmentsUploadFilesRule:
+        baseUrl: UPLOADFILESLOGIN
+        uploadUrl: UPLOADFILESURL
+        method: post
+        deleteUrl: AMENDMENTSURL
+        deleteMethod: delete
+        bucket: AmendmentsUploadFiles
+    - DisableSpinnerRule: 
+        actionrule: action-amendments-uploadfiles     

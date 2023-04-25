@@ -1,0 +1,12 @@
+element:
+  type: boolean
+  viewMode: hidden
+  change:
+    - ResetElementValueExecutionRule:
+        elements:
+          - policy.selectedBranch
+          - policy.contract.general.info.ContractID
+  buckets:
+    GetGroupHealthContractCover:
+      transformation:
+        property: MainInsured

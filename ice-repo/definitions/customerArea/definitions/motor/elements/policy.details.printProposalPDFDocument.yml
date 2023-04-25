@@ -1,0 +1,10 @@
+#pairnei tin timi tou apo to PdfBucket kai apo to PdfAction kai einai aorato kai den fainetai 
+element:
+  type: text
+  viewMode: hidden
+  #why call this searchResultPath instead of just using something more expressive
+  #searchResultPath: policy.contract.motor.PDFDocuments
+  buckets:
+    GetReprintedPDF:
+      transformation:
+        responsePath: pdfFile

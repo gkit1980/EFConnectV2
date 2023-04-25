@@ -1,0 +1,6 @@
+element:
+  title: Home country of person
+  type: text
+  component: IceDropdown
+  viewMode: enable
+  label: Category

@@ -1,0 +1,12 @@
+element:
+  type: text
+  viewMode: output
+  buckets:
+    GetPaymentURLRedirector:
+      transformation:
+        responsePath: PaymentURLRedirector  
+    GetPaymentURLRedirectorAEAZ:
+      transformation:
+        responsePath: PaymentURLRedirector
+  pages:
+    paymentManagement: null

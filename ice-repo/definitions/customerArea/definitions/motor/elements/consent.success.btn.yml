@@ -1,0 +1,8 @@
+element:
+  component: EurolifeButtonComponent
+  additionalClasses: eurolife_btn-stroke mb-5 middle consent-success-btn
+  svgFillColor: corporate_color
+  defaultValue: action-consent-discard-ok
+  type: text
+  pages:
+    consentClose: null

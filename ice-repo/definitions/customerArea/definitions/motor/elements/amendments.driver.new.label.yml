@@ -1,0 +1,10 @@
+element:
+  type: text
+  viewMode:
+    ConditionalViewModeRule:
+      conditionElement: policies.CarDetails.SecondDriver
+      conditionValue: null
+      conditionViewMode: hidden
+      elseViewMode: output
+  pages:
+    viewAmendmentDetails: null

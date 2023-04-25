@@ -1,0 +1,4 @@
+action:
+  redirectUrl: "/#/ice/default/customerArea.motor/viewClaims"
+  execution: 
+      - PropertyNotificationClaimsCloseDialogRule: 

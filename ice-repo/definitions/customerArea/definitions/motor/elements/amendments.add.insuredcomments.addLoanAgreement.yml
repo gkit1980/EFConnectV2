@@ -1,0 +1,4 @@
+element:
+  type: text
+  label: "Νέο Αίτημα Προσθήκης Δανειακής Σύμβασης"
+  viewMode: output

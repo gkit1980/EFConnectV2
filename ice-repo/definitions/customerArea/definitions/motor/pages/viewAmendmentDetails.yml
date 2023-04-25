@@ -1,0 +1,505 @@
+page:
+  component: SimplePageNoTitleComponent
+  componentFlag: amnendmentDetails
+  label: null
+  sections:
+    - component: GridView
+      viewMode: hidden
+      rows:
+        - css: null
+          cols:
+            - col: 12
+              element: policies.empty
+    - component: AmendmentDetailsHeaderComponent
+      componentFlag: amnendmentDetails
+      rows:
+        - css: firstSVG
+          cols:
+            - col: 2
+              css: header-svg-img
+              element: productSvgImage
+            - col: 7
+              internalRows:
+                - css: test-product
+                  internalCols:
+                    - internalCol: 12
+                      element: amendments.details.ProductName
+                - css: amendments.details.header.tiles.productColor
+                  internalCols:
+                    - css: text-align-center-bp opacity
+                      internalCol: 12
+                      element: amendments.details.PolicyNumberHeader
+      dataStoreProperty: clientContracts
+    - component: SimpleGridViewComponent
+      rows:
+        - cols:
+            - css: h5 text-center mt-5
+              col: 12
+              element: amendments.change.request.header
+        - cols:
+            - css: Caption3 text-center
+              col: 12
+              element: amendments.change.request.subheader
+        # - cols:
+        #     - css: header-title-pop-up text-center
+        #       col: 12
+        #       element: amendments.details.infoMessage
+    - component: AmendmentsStepperComponent
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_motor_sections_1
+      rows:
+        - cols:
+            - css: h6-active text-center mt-5
+              col: 12
+              element: amendments.select.request.header
+        - cols:
+            - css: Caption3 text-center mb-4
+              col: 12
+              element: amendments.select.request.subheader
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_motor_sections_header_2
+      rows:
+        - css: gc-back-wrapper
+          cols:
+            - css: h6-active text-center mt-5
+              col:
+              element: amendments.back
+            - css: h6-active text-center mt-5
+              col:
+              element: amendments.select.request.step2.header
+        # - cols:
+        #     - css: h6-active text-center mt-5
+        #       col: 6
+        #       element: greencard.motor.security.driver.back
+        #     - css: h6-active text-center mt-5
+        #       col: 6
+        #       element: amendments.select.request.step2.header
+        - css:
+          cols:
+            - css: Caption3 text-center mb-4
+              col: 12
+              element: amendments.select.request.step2.subheader
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_motor_sections_header_3
+      rows:
+        - css: gc-back-wrapper
+          cols:
+            - css: h6-active text-center mt-5
+              col:
+              element: amendments.back
+            - css: h6-active text-center mt-5
+              col:
+              element: amendments.select.request.step3.header
+        - css:
+          cols:
+            - css: Caption3 text-center mb-4
+              col: 12
+              element: amendments.select.request.step3.subheader
+        # - css:
+        #   cols:
+        #     - css: Caption3 text-center mb-4
+        #       col: 12
+        #       element: amendments.customer.mobile
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_motor_sections_1
+      rows:
+        - cols:
+            - css: amendments-dropdown mb-2 ml-auto mr-auto
+              col: 12
+              element: amendments.motor.category.dropdown
+        - cols:
+            - css: amendments-dropdown ml-auto mr-auto
+              col: 12
+              element: amendments.motor.subcategory.dropdown
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_motor_sections_2
+      rows:
+        - css: amendments-grey-container
+          cols:
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp plate-label
+                      internalCol: 12
+                      element: amendments.plate.id.label
+                - css:
+                  internalCols:
+                    - css: text-align-center-bp plate-label amendment-value margin-check
+                      internalCol: 12
+                      element: amendments.plate.id.value
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.plate.id.new.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      # - css: Typeface text-align-center-bp amend-new-plate
+                      internalCol: 12
+                      element: amendments.plate.new.input
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_motor_sections_2
+      rows:
+        - cols:
+            - css: text-center mt-5
+              col: 12
+              element: amendments.motor.file.upload
+        - cols:
+            - css: text-center mt-5
+              col: 12
+              element: amendments.add.comment
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_motor_sections2_2_1
+      rows:
+        - css: amendments-grey-container
+          cols:
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp plate-label
+                      internalCol: 12
+                      element: amendments.capital.current.label
+                - css:
+                  internalCols:
+                    - css: text-align-center-bp plate-label amendment-value margin-check
+                      internalCol: 12
+                      element: amendments.capital.current.value
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.capital.new.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.capital.new.input
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp
+                      internalCol: 12
+                      element: amendments.default
+                - css:
+                  internalCols:
+                    - css: text-align-center-bp amendment-value
+                      internalCol: 12
+                      element: amendments.mileage.new.default
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.mileage.new.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.mileage.new.input
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_motor_sections2_2_1
+      rows:
+        - cols:
+            - css: text-center mt-5
+              col: 12
+              element: amendments.motor.file.upload
+        - cols:
+            - css: text-center mt-5
+              col: 12
+              element: amendments.add.comment
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_motor_sections2_2_2
+      rows:
+        - css: amendments-grey-container
+          cols:
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp plate-label
+                      internalCol: 12
+                      element: amendments.capital.current.label
+                - css:
+                  internalCols:
+                    - css: text-align-center-bp plate-label amendment-value margin-check
+                      internalCol: 12
+                      element: amendments.capital.current.value
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.largest.capital.new.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.largest.capital.new.input
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp
+                      internalCol: 12
+                      element: amendments.default
+                - css:
+                  internalCols:
+                    - css: text-align-center-bp amendment-value
+                      internalCol: 12
+                      element: amendments.mileage.new.default
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.mileage.new.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.mileage.new.input
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_motor_sections2_2_2
+      rows:
+        - cols:
+            - css: mt-5
+              col: 12
+              element: amendments.motor.file.upload
+        - cols:
+            - css: text-center mt-5
+              col: 12
+              element: amendments.add.comment
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_motor_sections2_3_1
+      rows:
+        - css: amendments-grey-container
+          cols:
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp
+                      internalCol: 12
+                      element: amendments.driver.new.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp
+                      internalCol: 12
+                      element: amendments.driver.new.input
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.default
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.mileage.new.default
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp
+                      internalCol: 12
+                      element: amendments.driver.current.dob.label
+                - css:
+                  internalCols:
+                    - css: text-align-center-bp plate-label amendment-value margin-check
+                      internalCol: 12
+                      element: amendments.driver.current.dob.value
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.driver.dob.new.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.driver.dob.new.input
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_motor_sections2_3_1
+      rows:
+        - cols:
+            - css: text-center mt-5
+              col: 12
+              element: amendments.motor.file.upload
+        - cols:
+            - css: text-center mt-5
+              col: 12
+              element: amendments.add.comment
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_motor_sections2_3_2
+      rows:
+        - css: amendments-grey-container
+          cols:
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp
+                      internalCol: 12
+                      element: amendments.driver.licence.new.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp
+                      internalCol: 12
+                      element: amendments.driver.licence.new.input
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.default
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.mileage.new.default
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp
+                      internalCol: 12
+                      element: amendments.driver.licence.current.label
+                - css:
+                  internalCols:
+                    - css: text-align-center-bp plate-label amendment-value margin-check
+                      internalCol: 12
+                      element: amendments.driver.licence.current.value
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.driver.licence.dob.new.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.driver.licence.dob.new.input
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_motor_sections2_3_2
+      rows:
+        - cols:
+            - css: text-center mt-5
+              col: 12
+              element: amendments.motor.file.upload
+        - cols:
+            - css: text-center mt-5
+              col: 12
+              element: amendments.add.comment
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_motor_sections2_4_1
+      rows:
+        - css: amendments-grey-container
+          cols:
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp plate-label
+                      internalCol: 12
+                      element: amendments.frequencyOfPayment.current.label
+                - css:
+                  internalCols:
+                    - css: text-align-center-bp plate-label amendment-value margin-check
+                      internalCol: 12
+                      element: amendments.frequencyOfPayment.current.value
+            - col: 6
+              internalRows:
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container plate-label
+                      internalCol: 12
+                      element: amendments.frequencyOfPayment.label
+                - css:
+                  internalCols:
+                    - css: Typeface text-align-center-bp amendments-border-grey-container
+                      internalCol: 12
+                      element: amendments.frequencyOfPayment.input
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_motor_sections2_4_1
+      rows:
+        - cols:
+            - css: text-center mt-5
+              col: 12
+              element: amendments.add.comment
+    - component: SimpleGridViewComponent
+      viewMode:
+        DtSectionViewModeRule:
+          dt: dt_amendments_motor_sections_3
+      rows:
+        - cols:
+            - css: Caption3 text-center mb-4
+              col: 12
+              element: amendments.customer.mobile
+            - css:
+              col: 12
+              element: amendments.otp.timer
+    - component: SimpleGridViewComponent
+      rows:
+        - cols:
+            - css: h5 text-center mt-5
+              col: 12
+              element: amendments.details.infoMessage
+        - cols:
+            - css:
+              col: 12
+              element: amendments.details.next.button
+        - cols:
+            - css:
+              col: 12
+              element: amendments.details.dialog
+ 

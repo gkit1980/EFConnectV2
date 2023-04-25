@@ -1,0 +1,5 @@
+element:
+  type: text
+  defaultValue: Notifications
+  label: null
+  viewMode: output

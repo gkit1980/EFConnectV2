@@ -1,0 +1,64 @@
+dt:
+  hitPolicy: C
+  inputs:
+    - element: request.amendment.change.fop
+  outputs:
+    - id: value
+    - id: label
+    - id: label_en
+      type: text
+  rules:
+    - inputs:
+        - 1
+      outputs:
+        - 1
+        - Κεφάλαιο
+        - Amendment
+    - inputs:
+        - 1
+      outputs:
+        - 2
+        - Στοιχεία Ασφαλισμένου
+        - Amendment
+    - inputs:
+        - 1
+      outputs:
+        - 3
+        - Στοιχεία Δικαιούχων
+        - Amendment
+    - inputs:
+        - 1
+      outputs:
+        - 4
+        - Στοιχεία Ακινήτου
+        - Amendment
+    - inputs:
+        - 1
+      outputs:
+        - 5
+        - Συχνότητα Πληρωμής
+        - Amendment
+    - inputs:
+        - 0
+      outputs:
+        - 1
+        - Κεφάλαιο
+        - Amendment
+    - inputs:
+        - 0
+      outputs:
+        - 2
+        - Στοιχεία Ασφαλισμένου
+        - Amendment
+    - inputs:
+        - 0
+      outputs:
+        - 3
+        - Στοιχεία Δικαιούχων
+        - Amendment
+    - inputs:
+        - 0
+      outputs:
+        - 4
+        - Στοιχεία Ακινήτου
+        - Amendment

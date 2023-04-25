@@ -1,0 +1,231 @@
+<div *ngIf="show">
+
+  <div *ngFor="let item of filterInsured(); let i = index">
+    <div class="row light-background">
+      <div class="col-sm-12">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <!-- <div class="row" *ngIf="i == 0; else multipleParticipants">
+                <div [ngClass]="getSectionClass()">
+                  <div class="row-header">{{ Insured | resourcePipe }}</div>
+                </div>
+              </div> -->
+              <div class="row">
+                <div class="header-container" [ngClass]="getSectionClass()" *ngIf="i == 0; else multipleParticipants">
+                  <div class="ice-output">
+                    <label class="ng-star-inserted">{{ Insured | resourcePipe }}</label></div>
+                </div>
+              </div>
+              <ng-template #multipleParticipants>
+                <div style="padding-top:60px;">
+                </div>
+              </ng-template>
+              <div class="row" *ngIf="item.FirstName">
+                <div class="col-sm-3">
+                  <label class="label">{{ FirstName2 | resourcePipe }}</label>
+                </div>
+                <div class="col sm-9">
+                  <span class="value">{{item.FirstName}}</span>
+                </div>
+                <hr>
+              </div>
+              <div class="row" *ngIf="item.LastName">
+                <div class="col-sm-3">
+                  <label class="label">{{ LastName | resourcePipe }}</label>
+                </div>
+                <div class="col sm-9">
+                  <span class="value">{{item.LastName}}</span>
+                </div>
+                <hr>
+              </div>
+              <div class="row" *ngIf="item.FatherName">
+                <div class="col-sm-3">
+                  <label class="label">{{ FatherName | resourcePipe }}</label>
+                </div>
+                <div class="col sm-9">
+                  <span class="value">{{item.FatherName}}</span>
+                </div>
+                <hr>
+              </div>
+              <div class="row" *ngIf="item.BirthDate">
+                <div class="col-sm-3">
+                  <label class="label">{{ BirthDate | resourcePipe }}</label>
+                </div>
+                <div class="col sm-9">
+                  <span class="value">{{formatDate(item.BirthDate) | date: 'dd/MM/yyyy'}}</span>
+                </div>
+                <hr>
+              </div>
+              <!--Group Health -->
+              <div *ngIf="showGroupHealth && item.TaxCode " class="row">
+                <div class="col-sm-3">
+                  <label class="label">{{ TaxCode | resourcePipe }}</label>
+                </div>
+                <div class="col sm-9">
+                  <span class="value">{{item.TaxCode}}</span>
+                </div>
+                <hr>
+              </div>
+              <div *ngIf="showGroupHealth && item.MobilePhone " class="row">
+                <div class="col-sm-3">
+                  <label class="label">{{ MobilePhone | resourcePipe }}</label>
+                </div>
+                <div class="col sm-9">
+                  <span class="value">{{item.MobilePhone}}</span>
+                </div>
+                <hr>
+              </div>
+              <div *ngIf="showGroupHealth && item.PhoneNumber " class="row">
+                <div class="col-sm-3">
+                  <label class="label">{{ PhoneNumber | resourcePipe }}</label>
+                </div>
+                <div class="col sm-9">
+                  <span class="value">{{item.PhoneNumber}}</span>
+                </div>
+                <hr>
+              </div>
+              <div *ngIf="showGroupHealth && item.Email " class="row">
+                <div class="col-sm-3">
+                  <label class="label">{{ Email | resourcePipe }}</label>
+                </div>
+                <div class="col sm-9">
+                  <span class="value">{{item.Email}}</span>
+                </div>
+                <hr>
+              </div>
+
+            </div>
+         
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <div *ngFor="let item of filterDependants(); let i = index">
+    <div class="main-container" *ngIf="getItemLength(item);">
+      <div class="header-container" [ngClass]="getSectionClass()" *ngIf="i == 0;">
+        <div class="ice-output">
+          <label class="ng-star-inserted">{{header}}</label></div>
+      </div>
+      <div class="container table-container">
+        <div class="header-row row" *ngIf="i == 0;">
+          <div class="col" *ngFor="let header of headers">
+            {{header}}
+          </div>
+        </div>
+        <div>
+          <div class="data-row row">
+            <div class="col cover-key">
+              {{item.FirstName}} {{item.LastName}}
+            </div>
+            <div *ngIf="!showGroupHealth" class="col cover-key">
+              {{item.FatherName}}
+            </div>
+            <div class="col cover-key">
+              {{item.Relationship}}
+            </div>
+            <div class="col cover-key">
+              {{formatDate(item.BirthDate) | date: 'dd/MM/yyyy'}}
+            </div>
+            <div *ngIf="showGroupHealth" class="col cover-key">        <!--Only for Group Health-->
+              {{formatDate(item.Insurancedate) | date: 'dd/MM/yyyy'}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <!--mobile version-->
+    <div class="mobile-container" *ngIf="getItemLength(item) && !showGroupHealth">
+      <div class="header-container" [ngClass]="getSectionClass()" *ngIf="i == 0;">
+        <div class="ice-output">
+          <label class="ng-star-inserted">{{header}}</label></div>
+      </div>
+      <div class="mobile-box">
+        <div class="mobile-label">
+          {{ headers[0] }}
+        </div>
+        <div class="mobile-value">
+          {{item.FirstName}} {{item.LastName}}
+        </div>
+        <div class="line-seperator"></div>
+        <div class="mobile-label">
+          {{ headers[1]}}
+        </div>
+        <div class="mobile-value">
+          {{item.FatherName}}
+        </div>
+        <div class="line-seperator"></div>
+        <div class="mobile-label">
+          {{ headers[2] }}
+        </div>
+        <div class="mobile-value">
+          {{item.Relationship}}
+        </div>
+        <div class="line-seperator"></div>
+        <div class="mobile-label">
+          {{ headers[3] }}
+        </div>
+        <div class="mobile-value">
+          {{item.Relationship}}
+        </div>
+        <div class="line-seperator"></div>
+        <div class="mobile-label">
+          {{ headers[4] }}
+        </div>
+        <div class="mobile-value">
+          {{formatDate(item.BirthDate) | date: 'dd/MM/yyyy'}}
+        </div>
+        <div class="line-seperator"></div>
+      </div>
+
+
+    </div>
+
+    <div class="mobile-container" *ngIf="getItemLength(item) && showGroupHealth">
+      <div class="header-container" [ngClass]="getSectionClass()" *ngIf="i == 0;">
+        <div class="ice-output">
+          <label class="ng-star-inserted">{{header}}</label></div>
+      </div>
+      <div class="mobile-box">
+        <div class="mobile-label">
+          {{ headers[0] }}
+        </div>
+        <div class="mobile-value">
+          {{item.FirstName}} {{item.LastName}}
+        </div>
+        <div class="line-seperator"></div>
+        <div class="mobile-label">
+          {{ headers[1] }}
+        </div>
+        <div class="mobile-value">
+          {{item.Relationship}}
+        </div>
+        <div class="line-seperator"></div>
+        <div class="mobile-label">
+          {{ headers[2] }}
+        </div>
+        <div class="mobile-value">
+          {{formatDate(item.BirthDate) | date: 'dd/MM/yyyy'}}
+        </div>
+        <div class="line-seperator"></div>
+        <div class="mobile-label">
+          {{ headers[3] }}
+        </div>
+        <div class="mobile-value">
+          {{formatDate(item.Insurancedate) | date: 'dd/MM/yyyy'}}
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+</div>
+

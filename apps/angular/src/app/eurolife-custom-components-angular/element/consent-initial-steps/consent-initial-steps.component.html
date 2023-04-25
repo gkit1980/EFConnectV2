@@ -1,0 +1,20 @@
+
+  <div class="consent-init-component">
+  <div class="consent-init-container">
+      <div *ngFor="let item of stepsArray" class="consent-init-card">
+        <div class="consent-init-header">{{item.label}}</div>
+        <div class="consent-init-center-container">
+          <div class="consent-init-icon">
+            <div aria-label="icon" [inlineSVG]="getIcon(item.icon)" [onSVGLoaded]="handleSVG"></div>
+          </div>
+          <div class="consent-init-text">{{item.text}}</div>
+      </div>
+    </div>
+    
+  </div>
+  <div class="Typeface slide-container">
+    <i class="arrow-icon fa fa-long-arrow-left fa-lg" aria-hidden="true"></i>
+    <div class="hand-icon"  cla aria-label="icon" [inlineSVG]="getIcon('9697EF67102C47C886D1245BDD099ACF')" [onSVGLoaded]="handleHandSVG"></div>
+  </div>
+</div>
+

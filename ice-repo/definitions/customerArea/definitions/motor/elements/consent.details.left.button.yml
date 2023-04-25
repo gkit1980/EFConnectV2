@@ -1,0 +1,11 @@
+element:
+  component:
+    StaticComponentRule:
+      component: EurolifeConsentButtonComponent
+  additionalClasses: eurolife_btn-default eurolife_btn-stroke mb-5
+  svgFillColor: corporate_color
+  type: text
+  defaultValue: actionCloseDialog
+  labelname: ΥΠΕΝΘΥΜΙΣΗ ΑΡΓΟΤΕΡΑ
+  pages:
+    consent: null

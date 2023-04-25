@@ -1,0 +1,6 @@
+element:
+  type: text
+  component: IceDropdown
+  values: myrights.form.theme
+  pages:
+    myRightsForm: null
