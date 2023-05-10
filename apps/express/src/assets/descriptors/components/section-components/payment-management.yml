@@ -1,0 +1,4 @@
+label: Payment Management Component
+component: PaymentManagementComponent
+description: >
+  Payment Management Component,belongs to paymentManagement page.

@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { SectionComponentImplementation, IceSectionComponent } from '@impeo/ng-ice';
 import { LocalStorageService } from '../../../services/local-storage.service';
 import * as _ from 'lodash';
-import { catchError, first, tap } from "rxjs/operators";
+import { catchError, first, map, tap } from "rxjs/operators";
+import {LifecycleEvent } from '@impeo/ice-core';
 import { Observable, Subject, throwError} from 'rxjs';
 
 @Component({
@@ -26,21 +27,16 @@ export class HeaderComponent extends SectionComponentImplementation implements O
   flag: boolean = true;
 
   ngOnInit() {
-    // if (this.localStorage.getDataFromLocalStorage("refreshStatus") == 1) {
-    //   let action = this.context.iceModel.actions['actionGetCustomerAddresses'];
-    //   let action1 = this.context.iceModel.actions['actionGetPolicies'];
-    //   let action2 = this.context.iceModel.actions['actionGetCustomerFullData'];
-    //   if (action != null || action1 != null || action2 != null) {
-    //     let executionRule = action.executionRules[0];
-    //     let executionRule1 = action1.executionRules[0];
-    //     let executionRule2 = action2.executionRules[0];
-    //     let executionRuleResultData = this.context.executeExecutionRule(executionRule);
-    //     let executionRuleResultData1 = this.context.executeExecutionRule(executionRule1);
-    //     let executionRuleResultData2 = this.context.executeExecutionRule(executionRule2);
-    //   }
-    // }
-    this.context.$actionEnded.pipe(
-      first((action) => action === 'actionWriteFromOtherForRefresh'),
+
+    this.context.$lifecycle.pipe(
+      //first((action) => action === 'actionWriteFromOtherForRefresh'),
+      map((e:LifecycleEvent) =>
+      {
+      const actionName = _.get(e, ['payload', 'action']);
+      if(actionName === 'actionWriteFromOtherForRefresh'&& e.type=="ACTION_FINISHED")
+      return e;
+      }
+      ),
       catchError((err) => this.handleError(err)),
       tap((_x) => {
         //this.addItems();

@@ -1,0 +1,4 @@
+label: Eclaims Page
+component: EclaimsPageComponent
+description: >
+  The component implements the customers e-claims for compensation. 

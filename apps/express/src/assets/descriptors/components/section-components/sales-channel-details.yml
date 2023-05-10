@@ -1,0 +1,6 @@
+label: Sales Channel Details
+component: SalesChannelDetailsComponent
+types:
+  - text
+description: >
+  Custom component that takes a style as input and a decision for text fields.

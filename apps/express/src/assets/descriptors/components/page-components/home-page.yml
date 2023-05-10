@@ -1,0 +1,4 @@
+label: Home Page
+component: HomePageComponent
+description: >
+ Home page component implements one quick view for contracts, useful documents, and general information.

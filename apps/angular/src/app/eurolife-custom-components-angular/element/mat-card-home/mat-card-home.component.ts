@@ -1,12 +1,13 @@
 
 import { environment } from './../../../../environments/environment';
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import {  IceSectionComponent,ElementComponentImplementation } from '@impeo/ng-ice';
+import { ElementComponentImplementation } from '@impeo/ng-ice';
 import * as _ from 'lodash';
-import { LifecycleType } from '@impeo/ice-core';
+import { LifecycleEvent,LifecycleType } from '@impeo/ice-core';
 import { IcePrincipalService } from '@impeo/ng-ice';
 import { LocalStorageService } from '../../../services/local-storage.service';
 import { Subscription } from 'rxjs';
+
 
 
 @Component({
@@ -52,19 +53,14 @@ export class MatCardHomeComponent extends ElementComponentImplementation {
     this.context.iceModel.elements['customer.details.username'].setSimpleValue(this.icePrincipalService.principal.id);
 
     this.addItems();
-    this.subscription1$ = this.context.$lifecycle.subscribe(event => {
-      if (event.type == LifecycleType.DATASTORE_ASSIGN) {
+    this.subscription1$ = this.context.$lifecycle.subscribe((e: LifecycleEvent) => {
+      if (e.type == LifecycleType.ICE_MODEL_READY) {
         this.addItems();
       }
     });
     this.subscriptions.push(this.subscription1$);
 
-    this.subscription2$ = this.context.$actionEnded.subscribe((actionName: string) => {
-      if (actionName.includes("actionWriteFromOtherForRefresh")) {
-        this.context.$actionEnded.observers.pop();
-      }
-    });
-    this.subscriptions.push(this.subscription2$);
+
 
   }
 

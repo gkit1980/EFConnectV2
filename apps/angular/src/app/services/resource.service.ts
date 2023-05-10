@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IceResource } from '@impeo/ice-core';
-
+import { IceRuntimeService } from '@impeo/ng-ice';
 
 @Injectable()
 export class ResourceService {
@@ -12,7 +12,7 @@ export class ResourceService {
 
     //
     //
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient,private runtimeService: IceRuntimeService) {
         console.log('ResourceService constructed');
     }
 
@@ -28,26 +28,24 @@ export class ResourceService {
     //
     //
     async loadResources(repoPath: string): Promise<void> {
-        return new Promise<any>((resolve, reject) => {
+        return new Promise<void>((resolve, reject) => {
             if (this.iceResources) {
                 resolve();
                 return;
             }
-            this.http.get('./api/v1/resources/' + repoPath).subscribe((resp: any) => {
-                if (resp['success'] == true) {
-                    this.resourceData = resp['data'];
-                    this.iceResources = IceResource.build(this.locale, resp['data']);
-                    resolve();
+            else
+            {
+                   this.runtimeService.getRuntime().then((runtime) => {
+                   this.iceResources=runtime.iceResource;
+                    })
                     return;
-                }
-                reject(new Error(resp['message']));
-            });
+               }
         });
     }
 
-    changeLocale(locale: string) {
-        if ((locale == null) || (this.resourceData == null)) return;
-        this.locale = locale;
-        this.iceResources = IceResource.build(this.locale, this.resourceData);
-    }
+    // changeLocale(locale: string) {
+    //     if ((locale == null) || (this.resourceData == null)) return;
+    //     this.locale = locale;
+    //     this.iceResources = IceResource.build(this.locale, this.resourceData);
+    // }
 }

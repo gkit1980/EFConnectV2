@@ -1,0 +1,6 @@
+label: Redirection Green Card
+component: RedirectionGreenCardComponent
+types:
+  - text
+description: >
+  Custom component is responsible for the redirection action.

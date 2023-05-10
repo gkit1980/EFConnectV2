@@ -1,0 +1,6 @@
+label: Payment Management Status Bar
+component: PaymentManagementStatusBarComponent
+types:
+  - text
+description: >
+  Custom component is responsible to fit style for the payment bar.

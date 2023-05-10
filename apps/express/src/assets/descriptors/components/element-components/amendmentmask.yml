@@ -1,0 +1,6 @@
+label: Amendment Mask
+component: AmendmentMaskComponent
+types:
+  - text
+description: >
+  Custom component shows the pattern of the texts.

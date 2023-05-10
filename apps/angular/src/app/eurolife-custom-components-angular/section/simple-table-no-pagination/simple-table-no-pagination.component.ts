@@ -4,7 +4,7 @@ import { IceElement } from '@impeo/ice-core';
 import { Component } from '@angular/core';
 import { SectionComponentImplementation, IceSectionComponent } from '@impeo/ng-ice';
 import * as _ from 'lodash';
-import { LifecycleType } from '@impeo/ice-core';
+import { LifecycleType,LifecycleEvent } from '@impeo/ice-core';
 import * as fsave from "file-saver";
 import { SpinnerService } from '../../../services/spinner.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -29,7 +29,7 @@ export class SimpleTableNoPaginationComponent extends SectionComponentImplementa
   allUnpaidReceipts: any[] = [];
   allLastNotes: any[] = [];
   filterCols: string[] = [];
-  index: number;
+  index: number[];
   dataWithNoteURLs: any[] = [];
   isLooped: boolean = false;
   data: any;
@@ -98,7 +98,7 @@ export class SimpleTableNoPaginationComponent extends SectionComponentImplementa
     if (_.has(this.recipe, 'dataStore'))
     {
       this.context.$lifecycle.subscribe(event => {
-        if (event.type == LifecycleType.DATASTORE_ASSIGN) {
+        if (event.type == LifecycleType.ICE_MODEL_READY) {
           this.data = this.context.dataStore[this.recipe.dataStore];
           // this.SpinnerService.stop();
           if (this.localStorage.getDataFromLocalStorage("refreshStatus") == 1)
@@ -120,10 +120,15 @@ export class SimpleTableNoPaginationComponent extends SectionComponentImplementa
 
         }
 
-        this.context.$actionEnded.subscribe((actionName: string) => {
-          if (actionName.includes("actionGetLastURLNote")) {
+        this.context.$lifecycle.subscribe((e: LifecycleEvent) => {
+
+          const actionName = _.get(e, ['payload', 'action']);
+
+
+
+          if (actionName.includes("actionGetLastURLNote") && e.type === 'ACTION_FINISHED') {
             this.dataWithNoteURLs = _.get(this.context.dataStore, this.recipe.dataStoreProperty);
-            this.context.$actionEnded.observers.pop();
+         //   this.context.$actionEnded.observers.pop();
           }
 
         });
@@ -266,13 +271,16 @@ export class SimpleTableNoPaginationComponent extends SectionComponentImplementa
       //  this.SpinnerService
 
 
-      this.context.$actionEnded.subscribe((actionName: string) => {
-        if (actionName.includes("actionGetHomePdf")) {
+      this.context.$lifecycle.subscribe((e: LifecycleEvent) => {
+
+        const actionName = _.get(e, ['payload', 'action']);
+
+        if (actionName.includes("actionGetHomePdf") &&  e.type === 'ACTION_FINISHED'){
           let data = this.context.iceModel.elements["statement.pdf.base64"].getValue().values[0].value;
           let blob: Blob = this.base64StringToBlob(data);
           this.save(blob);
           // this.SpinnerService.visible.next(false);
-          this.context.$actionEnded.observers.pop();
+          //this.context.$actionEnded.observers.pop();
 
         }
       });
@@ -287,13 +295,17 @@ export class SimpleTableNoPaginationComponent extends SectionComponentImplementa
     this.context.iceModel.elements['receipts.url'].setSimpleValue(receiptId);
     // this.SpinnerService.visible.next(true);
 
-    this.context.$actionEnded.subscribe((actionName: string) => {
-      if (actionName.includes("actionGetHomePdf")) {
+    this.context.$lifecycle.subscribe((e: LifecycleEvent) => {
+
+      const actionName = _.get(e, ['payload', 'action']);
+
+
+      if (actionName.includes("actionGetHomePdf") && e.type === 'ACTION_FINISHED') {
         let data = this.context.iceModel.elements["statement.pdf.base64"].getValue().values[0].value;
         let blob: Blob = this.base64StringToBlob(data);
         this.save(blob);
         // this.SpinnerService.visible.next(false);
-        this.context.$actionEnded.observers.pop();
+        //this.context.$actionEnded.observers.pop();
 
       }
     });
@@ -437,7 +449,7 @@ export class SimpleTableNoPaginationComponent extends SectionComponentImplementa
 
         for (let j = 0; j < data[i].Receipts.length; j++) {
           if (data[i].Receipts[j].ReceiptStatusDescription == "Ανείσπρακτη") {
-            this.index = i
+            this.index[0] = i
             this.showUnpaidReceipts = true;
             this.currentPaymentCode = data[i].Receipts[j].paymentCode;
             this.amount = data[i].Receipts[j].GrossPremium;
@@ -452,7 +464,7 @@ export class SimpleTableNoPaginationComponent extends SectionComponentImplementa
             newRowUnpaid["receiptKey"] = data[i].Receipts[j].ReceiptKey;
             newRowUnpaid["paymentType"] = data[i].Receipts[j].PaymentType;
             newRowUnpaid["AccountNumber"] = "Αυτόματη Πληρωμή: **" + data[i].Receipts[j].AccountNumber;
-            newRowUnpaid["index"] = this.index;
+            newRowUnpaid["index"] = this.index[0];
             this.allUnpaidReceipts.push(newRowUnpaid);
           }
 
@@ -474,7 +486,7 @@ export class SimpleTableNoPaginationComponent extends SectionComponentImplementa
 
 
             for (let ii = 0; ii < data[i].LastUrlNotes.length; ii++) {
-              this.index = ii;
+              this.index[0] = ii;
               var newRowLastNote: any = {};
               newRowLastNote["branch"] = data[i].Branch;
               newRowLastNote["contract"] = data[i].ProductDescritpion;
@@ -501,7 +513,7 @@ export class SimpleTableNoPaginationComponent extends SectionComponentImplementa
       //end Last Notes
 
       this.context.iceModel.elements['policy.contract.general.info.indexHolderHome'].setSimpleValue(null);
-      this.context.iceModel.elements['policy.contract.general.info.indexHolderHome'].setSimpleValue(this.index);
+      this.context.iceModel.elements['policy.contract.general.info.indexHolderHome'].setSimpleValue(this.index[0]);
 
       for (let item of this.allReceipts)
         item.paymentDate = this.formatDate(item.paymentDate);

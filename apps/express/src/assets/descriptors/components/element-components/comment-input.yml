@@ -1,0 +1,6 @@
+label: Comment Input
+component: CommentInputComponent
+types:
+  - text
+description: >
+  Custom component implements comment area.

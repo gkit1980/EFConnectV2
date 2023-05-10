@@ -1,0 +1,6 @@
+label: Text mask
+component: MaskComponent
+types:
+  - text
+description: >
+  Custom component shows the pattern of the texts.

@@ -1,0 +1,67 @@
+implementations:
+  MotorEditionRestCallTransformationRule:
+    description: >
+      This rule will transform the edition from eurotaxmodels
+  MotorModelRestCallTransformationRule:
+    description: >
+      This rule will transform the model from eurotaxmodels
+  AmendmentsCaseTrasformationRule:
+    description: >
+      This rule will fill specific elements
+    params:       
+  AmendmentTokenTransformationRule:
+    description: >
+      This rule will fill token of Amendments
+    params:       
+  AmendmentUploadTransformationRule:
+    description: >
+      This rule will fill 'salesforce.upload' element
+    params:       
+  PdfTransformationRule:
+    description: >
+      This rule will fill 'pdf.base64' element
+    params:       
+  CustomerContractsTransformationRule:
+    description: >
+      This rule will fill 'amendments.showamendments' element 
+    params:
+  GreenCardTokenTransformationRule:     
+    description: >
+      This rule will fill 'greencard.token' and 'greencard.state'  elements 
+    params:    
+  GreenCardTransformationRule:
+    description: >
+       This rule will fill 'greencard.motor.security.*' elements  
+    params:   
+  HomeConsentTransformationRule:
+    description: >
+       This rule will fill 'home.tokenwithconsent' element  
+    params:   
+  SubmitConsentTransformationRule:
+    description: >
+       This rule will fill all 'preferences.privacy.group.consent.*' element  
+    params: 
+  EclaimsSfTokenTransformationRule:
+    description: >
+       This rule will get token from Salesforce for eclaims process
+    params:
+  EclaimsUploadTransformationRule:
+    description: >
+      This rule will fill 'eclaims.salesforce.success' element
+    params:
+  WriteLogTransformationRule:
+    description: >
+      This rule will fill log element
+    params:
+  PropertyClaimsTrasformationRule:
+      description: >
+        This rule will fill the property claim notification's elements.
+      params:
+  EclaimsGetAllFilesRule:
+    description: >
+      This rule loads all the attachments per eclaim.
+    params:
+  EclaimsAadeReceiptFieldsTransformationRule:  
+    description: >
+      This rule loads all the Aade Receipt Fields.
+    params:

@@ -1,0 +1,6 @@
+label: Sign Up Card Component
+component: SignUpCardComponent
+types:
+  - text
+description: >
+  Custom component that takes a rule and a decision for field validation.

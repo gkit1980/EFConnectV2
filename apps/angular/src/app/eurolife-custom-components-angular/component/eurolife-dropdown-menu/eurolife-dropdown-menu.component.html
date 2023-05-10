@@ -1,6 +1,6 @@
 <!-- TODO: Change urls to Sitecore ones ...joyride counting changes if there are amendments -->
-<div *ngIf="(null | pipeFunction: getJoyrideSteps : this) === 'fifthStep_sixthStep'">
-<div class="dropdown" [ngClass]="{addBorder: dropdownOpen}" joyrideStep="home_fifthStep" stepPosition="left" title="Το Προφίλ μου"  text="Πατώντας στο ονοματεπώνυμό σας μπορείτε να διαχειριστείτε πληροφορίες για το Προφίλ σας, όπως τηλέφωνο, email, κωδικό ασφαλείας, κλπ. Μπορείτε επίσης να οδηγηθείτε στην ενότητα των Βεβαιώσεων, όπου μπορείτε να δείτε και να κατεβάσετε τις Βεβαιώσεις Καταβολής Ασφαλίστρων, Τόκων, Ετήσιες Ενημερώσεις, κλπ.">
+
+<div class="dropdown" [ngClass]="{addBorder: dropdownOpen}" >
   <div class="dropdown_menu" id="pofile_dropdown_menu" (click)="toggleDropdown()">
     <div class="cicle">
       <div *ngIf="showAvatar else showProfilePictyre" class="outer_profile"
@@ -45,9 +45,8 @@
     </div>
   </div>
 </div>
-</div>
 
-<div *ngIf="(null | pipeFunction: getJoyrideSteps : this) === 'fifth_Step'">
+
 <!-- TODO: Change urls to Sitecore ones -->
 <div class="dropdown"  [ngClass]="{addBorder: dropdownOpen}" joyrideStep="home_fifthStep" stepPosition="left" title="Το Προφίλ μου"  text="Πατώντας στο ονοματεπώνυμό σας μπορείτε να διαχειριστείτε πληροφορίες για το Προφίλ σας, όπως τηλέφωνο, email, κωδικό ασφαλείας, κλπ. Μπορείτε επίσης να οδηγηθείτε στην ενότητα των Βεβαιώσεων, όπου μπορείτε να δείτε και να κατεβάσετε τις Βεβαιώσεις Καταβολής Ασφαλίστρων, Τόκων, Ετήσιες Ενημερώσεις, κλπ.">
   <div class="dropdown_menu" id="pofile_dropdown_menu" (click)="toggleDropdown()">
@@ -94,9 +93,8 @@
     </div>
   </div>
 </div>
-</div>
 
-<div *ngIf="(null | pipeFunction: getJoyrideSteps : this) === 'fourthStep_fifthStep'">
+
   <div class="dropdown"  [ngClass]="{addBorder: dropdownOpen}" joyrideStep="home_fourthStep" stepPosition="left" title="Το Προφίλ μου"  text="Πατώντας στο ονοματεπώνυμό σας μπορείτε να διαχειριστείτε πληροφορίες για το Προφίλ σας, όπως τηλέφωνο, email, κωδικό ασφαλείας, κλπ. Μπορείτε επίσης να οδηγηθείτε στην ενότητα των Βεβαιώσεων, όπου μπορείτε να δείτε και να κατεβάσετε τις Βεβαιώσεις Καταβολής Ασφαλίστρων, Τόκων, Ετήσιες Ενημερώσεις, κλπ.">
     <div class="dropdown_menu" id="pofile_dropdown_menu" (click)="toggleDropdown()">
       <div class="cicle">
@@ -114,27 +112,27 @@
     </div>
     <div class="dropdown_content" [ngClass]="{'d-none': !dropdownOpen}">
       <!-- <div><i class="fa fa-user-circle favicons"></i><a class="Caption3" href="#">My Profile</a></div> -->
-  
+
       <div class="first">
         <div class="profile svg-icons" [inlineSVG]="('D2CAEF0FCE77415C91C4CAB23BE1513B' | pipeFunction: getIcon : this)">
         </div>
         <a class="Caption3" routerLink="/ice/default/customerArea.motor/customerProfile"
           (click)="toggleDropdown()">{{ profile | resourcePipe }}</a>
       </div>
-  
+
       <div *ngIf="showDocs" class="second" joyrideStep="home_fifthStep" stepPosition="left" title="Βεβαιώσεις & Ενημερώσεις"  text="Πατώντας εδώ μπορείτε να οδηγηθείτε στην ενότητα των Βεβαιώσεων, όπου μπορείτε να δείτε και να κατεβάσετε τις Βεβαιώσεις Καταβολής Ασφαλίστρων, Τόκων, τις Ετήσιες Ενημερώσεις, κλπ.">
         <div class="documents svg-icons" [inlineSVG]="('4D068B5B677746318312AFCC4384DA07' | pipeFunction: getIcon : this)">
         </div>
         <a class="Caption3" routerLink="/ice/default/customerArea.motor/myDocuments"
           (click)="toggleDropdown()">{{ certificates | resourcePipe }}</a>
       </div>
-  
+
       <div class="third">
         <div class="settings svg-icons" [inlineSVG]="('0D1AE135F1E5400C8013000AEAF8AE91' | pipeFunction: getIcon : this)">
         </div>
         <a class="Caption3 on-hover" (click)="toggleDropdown(); onPreferences()">{{ settings | resourcePipe }}</a>
       </div>
-  
+
       <div class="forth">
         <div class="logout svg-icons" [inlineSVG]="('EC208845F727483BA841E9F5DA958459' | pipeFunction: getIcon : this)">
         </div>
@@ -142,9 +140,8 @@
       </div>
     </div>
   </div>
-  </div>
 
-  <div *ngIf="(null | pipeFunction: getJoyrideSteps : this) === 'fourth_Step'">
+
     <!-- TODO: Change urls to Sitecore ones -->
     <div class="dropdown"  [ngClass]="{addBorder: dropdownOpen}" joyrideStep="home_fourthStep" stepPosition="left" title="Το Προφίλ μου"  text="Πατώντας στο ονοματεπώνυμό σας μπορείτε να διαχειριστείτε πληροφορίες για το Προφίλ σας, όπως τηλέφωνο, email, κωδικό ασφαλείας, κλπ. Μπορείτε επίσης να οδηγηθείτε στην ενότητα των Βεβαιώσεων, όπου μπορείτε να δείτε και να κατεβάσετε τις Βεβαιώσεις Καταβολής Ασφαλίστρων, Τόκων, Ετήσιες Ενημερώσεις, κλπ.">
       <div class="dropdown_menu" id="pofile_dropdown_menu" (click)="toggleDropdown()">
@@ -163,27 +160,27 @@
       </div>
       <div class="dropdown_content" [ngClass]="{'d-none': !dropdownOpen}">
         <!-- <div><i class="fa fa-user-circle favicons"></i><a class="Caption3" href="#">My Profile</a></div> -->
-    
+
         <div class="first">
           <div class="profile svg-icons" [inlineSVG]="('D2CAEF0FCE77415C91C4CAB23BE1513B' | pipeFunction: getIcon : this)">
           </div>
           <a class="Caption3" routerLink="/ice/default/customerArea.motor/customerProfile"
             (click)="toggleDropdown()">{{ profile | resourcePipe }}</a>
         </div>
-    
+
         <div *ngIf="showDocs" class="second">
           <div class="documents svg-icons" [inlineSVG]="('4D068B5B677746318312AFCC4384DA07' | pipeFunction: getIcon : this)">
           </div>
           <a class="Caption3" routerLink="/ice/default/customerArea.motor/myDocuments"
             (click)="toggleDropdown()">{{ certificates | resourcePipe }}</a>
         </div>
-    
+
         <div class="third">
           <div class="settings svg-icons" [inlineSVG]="('0D1AE135F1E5400C8013000AEAF8AE91' | pipeFunction: getIcon : this)">
           </div>
           <a class="Caption3 on-hover" (click)="toggleDropdown(); onPreferences()">{{ settings | resourcePipe }}</a>
         </div>
-    
+
         <div class="forth">
           <div class="logout svg-icons" [inlineSVG]="('EC208845F727483BA841E9F5DA958459' | pipeFunction: getIcon : this)">
           </div>
@@ -191,9 +188,9 @@
         </div>
       </div>
     </div>
-  </div>  
 
-  <div *ngIf="(null | pipeFunction: getJoyrideSteps : this) === 'thirdStep_fourthStep'">
+
+
     <div class="dropdown"  [ngClass]="{addBorder: dropdownOpen}" joyrideStep="home_thirdStep" stepPosition="left" title="Το Προφίλ μου"  text="Πατώντας στο ονοματεπώνυμό σας μπορείτε να διαχειριστείτε πληροφορίες για το Προφίλ σας, όπως τηλέφωνο, email, κωδικό ασφαλείας, κλπ. Μπορείτε επίσης να οδηγηθείτε στην ενότητα των Βεβαιώσεων, όπου μπορείτε να δείτε και να κατεβάσετε τις Βεβαιώσεις Καταβολής Ασφαλίστρων, Τόκων, Ετήσιες Ενημερώσεις, κλπ.">
       <div class="dropdown_menu" id="pofile_dropdown_menu" (click)="toggleDropdown()">
         <div class="cicle">
@@ -211,27 +208,27 @@
       </div>
       <div class="dropdown_content" [ngClass]="{'d-none': !dropdownOpen}">
         <!-- <div><i class="fa fa-user-circle favicons"></i><a class="Caption3" href="#">My Profile</a></div> -->
-    
+
         <div class="first">
           <div class="profile svg-icons" [inlineSVG]="('D2CAEF0FCE77415C91C4CAB23BE1513B' | pipeFunction: getIcon : this)">
           </div>
           <a class="Caption3" routerLink="/ice/default/customerArea.motor/customerProfile"
             (click)="toggleDropdown()">{{ profile | resourcePipe }}</a>
         </div>
-    
+
         <div *ngIf="showDocs" class="second" joyrideStep="home_fourthStep" stepPosition="left" title="Βεβαιώσεις & Ενημερώσεις"  text="Πατώντας εδώ μπορείτε να οδηγηθείτε στην ενότητα των Βεβαιώσεων, όπου μπορείτε να δείτε και να κατεβάσετε τις Βεβαιώσεις Καταβολής Ασφαλίστρων, Τόκων, τις Ετήσιες Ενημερώσεις, κλπ.">
           <div class="documents svg-icons" [inlineSVG]="('4D068B5B677746318312AFCC4384DA07' | pipeFunction: getIcon : this)">
           </div>
           <a class="Caption3" routerLink="/ice/default/customerArea.motor/myDocuments"
             (click)="toggleDropdown()">{{ certificates | resourcePipe }}</a>
         </div>
-    
+
         <div class="third">
           <div class="settings svg-icons" [inlineSVG]="('0D1AE135F1E5400C8013000AEAF8AE91' | pipeFunction: getIcon : this)">
           </div>
           <a class="Caption3 on-hover" (click)="toggleDropdown(); onPreferences()">{{ settings | resourcePipe }}</a>
         </div>
-    
+
         <div class="forth">
           <div class="logout svg-icons" [inlineSVG]="('EC208845F727483BA841E9F5DA958459' | pipeFunction: getIcon : this)">
           </div>
@@ -239,9 +236,8 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <div *ngIf="(null | pipeFunction: getJoyrideSteps : this) === 'third_Step'">
+
     <!-- TODO: Change urls to Sitecore ones -->
     <div class="dropdown" [ngClass]="{addBorder: dropdownOpen}" joyrideStep="home_thirdStep" stepPosition="left" title="Το Προφίλ μου"  text="Πατώντας στο ονοματεπώνυμό σας μπορείτε να διαχειριστείτε πληροφορίες για το Προφίλ σας, όπως τηλέφωνο, email, κωδικό ασφαλείας, κλπ. Μπορείτε επίσης να οδηγηθείτε στην ενότητα των Βεβαιώσεων, όπου μπορείτε να δείτε και να κατεβάσετε τις Βεβαιώσεις Καταβολής Ασφαλίστρων, Τόκων, Ετήσιες Ενημερώσεις, κλπ.">
       <div class="dropdown_menu" id="pofile_dropdown_menu" (click)="toggleDropdown()">
@@ -260,27 +256,27 @@
       </div>
       <div class="dropdown_content" [ngClass]="{'d-none': !dropdownOpen}">
         <!-- <div><i class="fa fa-user-circle favicons"></i><a class="Caption3" href="#">My Profile</a></div> -->
-    
+
         <div class="first">
           <div class="profile svg-icons" [inlineSVG]="('D2CAEF0FCE77415C91C4CAB23BE1513B' | pipeFunction: getIcon : this)">
           </div>
           <a class="Caption3" routerLink="/ice/default/customerArea.motor/customerProfile"
             (click)="toggleDropdown()">{{ profile | resourcePipe }}</a>
         </div>
-    
+
         <div *ngIf="showDocs" class="second">
           <div class="documents svg-icons" [inlineSVG]="('4D068B5B677746318312AFCC4384DA07' | pipeFunction: getIcon : this)">
           </div>
           <a class="Caption3" routerLink="/ice/default/customerArea.motor/myDocuments"
             (click)="toggleDropdown()">{{ certificates | resourcePipe }}</a>
         </div>
-    
+
         <div class="third">
           <div class="settings svg-icons" [inlineSVG]="('0D1AE135F1E5400C8013000AEAF8AE91' | pipeFunction: getIcon : this)">
           </div>
           <a class="Caption3 on-hover" (click)="toggleDropdown(); onPreferences()">{{ settings | resourcePipe }}</a>
         </div>
-    
+
         <div class="forth">
           <div class="logout svg-icons" [inlineSVG]="('EC208845F727483BA841E9F5DA958459' | pipeFunction: getIcon : this)">
           </div>
@@ -288,10 +284,9 @@
         </div>
       </div>
     </div>
-  </div>  
+
 
   <!--No joyride counting changes if there are amendments -->
-  <div *ngIf="(null | pipeFunction: getJoyrideSteps : this) === ''">
     <!-- TODO: Change urls to Sitecore ones -->
     <div class="dropdown" [ngClass]="{addBorder: dropdownOpen}">
       <div class="dropdown_menu" id="pofile_dropdown_menu" (click)="toggleDropdown()">
@@ -310,27 +305,27 @@
       </div>
       <div class="dropdown_content" [ngClass]="{'d-none': !dropdownOpen}">
         <!-- <div><i class="fa fa-user-circle favicons"></i><a class="Caption3" href="#">My Profile</a></div> -->
-    
+
         <div class="first">
           <div class="profile svg-icons" [inlineSVG]="('D2CAEF0FCE77415C91C4CAB23BE1513B' | pipeFunction: getIcon : this)">
           </div>
           <a class="Caption3" routerLink="/ice/default/customerArea.motor/customerProfile"
             (click)="toggleDropdown()">{{ profile | resourcePipe }}</a>
         </div>
-    
+
         <div *ngIf="showDocs" class="second">
           <div class="documents svg-icons" [inlineSVG]="('4D068B5B677746318312AFCC4384DA07' | pipeFunction: getIcon : this)">
           </div>
           <a class="Caption3" routerLink="/ice/default/customerArea.motor/myDocuments"
             (click)="toggleDropdown()">{{ certificates | resourcePipe }}</a>
         </div>
-    
+
         <div class="third">
           <div class="settings svg-icons" [inlineSVG]="('0D1AE135F1E5400C8013000AEAF8AE91' | pipeFunction: getIcon : this)">
           </div>
           <a class="Caption3 on-hover" (click)="toggleDropdown(); onPreferences()">{{ settings | resourcePipe }}</a>
         </div>
-    
+
         <div class="forth">
           <div class="logout svg-icons" [inlineSVG]="('EC208845F727483BA841E9F5DA958459' | pipeFunction: getIcon : this)">
           </div>
@@ -338,4 +333,4 @@
         </div>
       </div>
     </div>
-  </div>  
+

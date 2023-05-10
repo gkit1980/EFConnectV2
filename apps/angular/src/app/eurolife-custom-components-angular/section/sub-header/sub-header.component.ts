@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { SectionComponentImplementation, IceSectionComponent } from '@impeo/ng-ice';
+import { LifecycleEvent } from '@impeo/ice-core';
 import * as _ from 'lodash';
 import { LocalStorageService } from '../../../services/local-storage.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-var ice_1 = require("@impeo/ice");
+var ice_1 = require("@impeo/ice-core");
 
 @Component({
   selector: 'app-sub-header',
@@ -39,8 +40,10 @@ export class SubHeaderComponent extends SectionComponentImplementation {
     this.elementFirstName = this.iceModel.elements['policies.insured.person.header-tile~firstName'];
     this.elementLastName = this.iceModel.elements['policies.insured.person.header-tile~lastName'];
 
-    this.writeFromOtherForRefreshEndedSubs = this.context.$lifecycle.subscribe((actionName: string) => {
-      if (actionName.includes("actionWriteFromOtherForRefresh")) {
+    this.writeFromOtherForRefreshEndedSubs = this.context.$lifecycle.subscribe((e: LifecycleEvent) => {
+      const actionName = _.get(e, ['payload', 'action']);
+
+      if (actionName.includes("actionWriteFromOtherForRefresh") &&  e.type === 'ACTION_FINISHED') {
         this.addItems();
         this.findParticipants();
         this.indexFunction();
@@ -270,8 +273,11 @@ export class SubHeaderComponent extends SectionComponentImplementation {
       return;
     }
 
-    this.getPoliciesEndedSubs = this.context.$actionEnded.subscribe((actionName: string) => {
-      if (actionName.includes("actionGetPolicies")) {
+    this.getPoliciesEndedSubs = this.context.$lifecycle.subscribe((e: LifecycleEvent) => {
+
+      const actionName = _.get(e, ['payload', 'action']);
+
+      if (actionName.includes("actionGetPolicies") && e.type === 'ACTION_FINISHED') {
         this.items = _.get(this.context.dataStore, this.recipe.dataStoreProperty);
         this.context.iceModel.elements['triggerActionGetParticipants'].setSimpleValue(1);
         this.context.iceModel.elements['triggerActionGetReceipts'].setSimpleValue(1);

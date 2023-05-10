@@ -1,8 +1,9 @@
 import { Injectable, EventEmitter } from "@angular/core";
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { delay, map, debounceTime } from 'rxjs/operators';
-
+import { IceContext, LifecycleType } from '@impeo/ice-core';
 import { IceContextService } from '@impeo/ng-ice';
+import { get } from "lodash";
 
 @Injectable()
 export class SpinnerService {
@@ -11,6 +12,8 @@ export class SpinnerService {
 	public outstandingSpinnerShowRequests: number;
 	private serverOperationStarted: EventEmitter<string>;
 	private serverOperationEnded: EventEmitter<string>;
+  private delayedActions: string[] = [];
+  private actionsQueue: string[] = [];
 
 	private ignoreActions = [
 	'actionGetPolicies',
@@ -23,6 +26,20 @@ export class SpinnerService {
 	'actionGetLastURLNote',
 	'actionGetStatements'
   ];
+
+
+  private ignoreActionsInDefinitions = [
+    {
+      definition: 'customerArea',
+      action: 'something',
+    },
+    {
+      definition: 'customerArea',
+      action: 'something',
+    }
+  ];
+
+  public visible: Subject<boolean>;
 
 	private isLoadingSubj = new BehaviorSubject<boolean>(false);
 	isLoading$ = this.isLoadingSubj.asObservable();
@@ -52,33 +69,68 @@ export class SpinnerService {
 			considerApplicationInnactiveTime: (120 * 1000) // declare application innactive after 2 minutes
 		});
 
-		let context = this.contextService.getContext;
-
-		context.$actionStarted.subscribe((actionName: string) =>
-		{
-			if (this.shouldIgnoreAction(actionName)) return;
-
-			if(actionName=="action-commit-customer-consents")   //specific case
-			{
-			this.loadingOn();
-			}
 
 
-			this.actionStarted(actionName);
-		});
-		context.$actionEnded.subscribe((actionName: string) =>
-		{
-			this.actionEnded(actionName);
-			this.loadingOff();
+    /////////start
+		// let context = this.contextService.getContext;
 
-		});
+		// context.$actionStarted.subscribe((actionName: string) =>
+		// {
+		// 	if (this.shouldIgnoreAction(actionName)) return;
 
+		// 	if(actionName=="action-commit-customer-consents")   //specific case
+		// 	{
+		// 	this.loadingOn();
+		// 	}
+
+
+		// 	this.actionStarted(actionName);
+		// });
+		// context.$actionEnded.subscribe((actionName: string) =>
+		// {
+		// 	this.actionEnded(actionName);
+		// 	this.loadingOff();
+
+		// });
+
+    this.contextService.$contextCreated.subscribe((contextAndContextId) => {
+      const context = get(contextAndContextId, 'context') as IceContext;
+      const actionStart = (actionName: string, definition: string) => {
+        if (this.shouldIgnoreAction(actionName, definition)) return;
+        this.actionStarted(actionName);
+      };
+
+      const actionEnd = (actionName: string, definition: string) => {
+        if (this.shouldIgnoreAction(actionName, definition)) return;
+        this.actionEnded(actionName);
+      };
+
+      context.$lifecycle.subscribe(({ type, payload }) => {
+        if (type === LifecycleType.ACTION_STARTED) {
+          actionStart(payload.action, context.definition);
+        } else if (type === LifecycleType.ACTION_FINISHED || type === LifecycleType.ACTION_FAILED) {
+          actionEnd(payload.action, context.definition);
+        } else if (
+          type === LifecycleType.ICE_CONTEXT_DEACTIVATED ||
+          type === LifecycleType.ICE_APP_UNLOAD
+        ) {
+          // reset spinner state
+          this.delayedActions = [];
+          this.actionsQueue = [];
+          this.visible.next(this.makeNext());
+        }
+      });
+    });
+
+    /////////end
 	}
 
-	public shouldIgnoreAction(actionName:string): boolean
-	{
-	  return this.ignoreActions.indexOf(actionName) >= 0 || actionName.toLowerCase().includes('details');
-	}
+
+  shouldIgnoreAction = (actionName: string, definition: string) =>
+    this.ignoreActions.indexOf(actionName) >= 0 ||
+    this.ignoreActionsInDefinitions.find(
+      (potential) => definition.includes(potential.definition) && potential.action === actionName
+    );
 
 	public start(actionName:string, suppress?: boolean): void {
 		if (suppress) return;
@@ -125,6 +177,25 @@ export class SpinnerService {
 	    this.stop(actionName, false);
 
 	}
+
+  removeFromList = (actionName, list) => {
+    const index = list.indexOf(actionName);
+    if (index >= 0) {
+      list.splice(index, 1);
+    }
+  };
+
+  removeFromQueue = (actionName) => {
+    this.removeFromList(actionName, this.actionsQueue);
+  };
+
+  removeFromDelayed = (actionName) => {
+    this.removeFromList(actionName, this.delayedActions);
+  };
+
+  isDelayedAction = (actionName) => this.delayedActions.indexOf(actionName) >= 0;
+
+  makeNext = () => this.actionsQueue.length > 0;
 
 	loadingOn() {
 		this.isLoadingSubj.next(true);

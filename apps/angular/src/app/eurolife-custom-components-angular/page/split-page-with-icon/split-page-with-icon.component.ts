@@ -4,7 +4,6 @@ import { IceSection, IndexedValue } from '@impeo/ice-core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalService } from "../../../services/modal.service";
 import { LocalStorageService } from "../../../services/local-storage.service";
-// import { JoyrideService } from 'ngx-joyride';
 import { Subscription } from 'rxjs';
 
 
@@ -82,60 +81,7 @@ export class SplitPageWithIconComponent extends PageComponentImplementation impl
     );
   }
 
-  ngAfterViewInit() {
 
-//   ///*Walkthrough Purpose */
-// if(!this.context.iceModel.elements["home.isMobileDevice"].getValue().forIndex(null))
-// {
-
-//         if (this.localStorage.getDataFromLocalStorage("walkthrough") === undefined)
-//         {
-//             this.localStorage.setDataToLocalStorage("walkthrough", true);
-
-//             this.startTourSubs = this.joyride.startTour(
-//               {
-//                 steps: ['communicationService_firstStep','communicationService_secondStep'],
-//                 showCounter:false
-//               }).subscribe(
-//                 (step) => {
-//                   if(step.number==2)
-//                   {
-//                     window.scroll(250,250);
-//                   }
-//                 });
-
-//             this.subscription.add(this.startTourSubs);
-
-//       }
-//       else
-//       {
-//         ///2.Joy ride for walkthrough functionality.This is referefed for communication service page
-
-//           this.indexCommunicationSubs = this.context.iceModel.elements["walkthrough.page.index.communication"].$dataModelValueChange.subscribe((value: IndexedValue) => {
-//             if (value.element.getValue().forIndex(null) === 1) {
-
-//               this.startTourSubs = this.joyride.startTour(
-//                 {
-//                   steps: ['communicationService_firstStep','communicationService_secondStep'],
-//                   showCounter:false
-//                 }).subscribe(
-//                   (step) => {
-//                     if(step.number==2)
-//                     {
-//                       window.scroll(250,250);
-//                     }
-//                   });
-
-//               this.subscription.add(this.startTourSubs);
-//             }
-//           });
-
-//           this.subscription.add(this.indexCommunicationSubs);
-
-//       }
-
-// }
-  }
 
 
   closeDialog() {
@@ -151,11 +97,6 @@ export class SplitPageWithIconComponent extends PageComponentImplementation impl
 
   ngOnDestroy()
   {
-  //   if(!this.context.iceModel.elements["home.isMobileDevice"].getValue().forIndex(null))
-  //   {
-  //  this.joyride.closeTour();
-  //   }
-
     this.subscription.unsubscribe();
   }
 

@@ -1,0 +1,7 @@
+label: Calculate Property Payment Frequency
+component: CalculatePropertyPaymentFrequencyComponent
+types:
+  - date
+  - boolean
+description: >
+  Custom component includes the calculation for payment frequency.

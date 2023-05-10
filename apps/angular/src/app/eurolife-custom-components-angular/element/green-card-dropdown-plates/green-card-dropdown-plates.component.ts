@@ -60,7 +60,7 @@ export class GreenCardDropdownPlatesComponent extends MaterialSelectComponentImp
       }
     }
     this.context.$lifecycle.subscribe(event => {
-      if (event.type == LifecycleType.DATASTORE_ASSIGN && event.payload.hasOwnProperty('clientContracts') &&  this.context.dataStore.data.clientContracts!=null) {
+      if (event.type == LifecycleType.ICE_MODEL_READY && event.payload.hasOwnProperty('clientContracts') &&  this.context.dataStore.data.clientContracts!=null) {
 
         this.options=[];
 

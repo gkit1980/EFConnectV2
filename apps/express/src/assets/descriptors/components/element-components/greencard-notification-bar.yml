@@ -1,0 +1,7 @@
+label: Green card Notification Bar
+component: GreencardNotificationBarComponent
+types:
+  - text
+  - boolean
+description: >
+  Custom component that takes an `SVG` as input and a decision table that styles the `SVG`.

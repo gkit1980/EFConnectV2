@@ -1,0 +1,4 @@
+label:  Home Card Container
+component: HomeCardContainerComponent
+description: >
+  Card Component Container that includes Cards in Home Page

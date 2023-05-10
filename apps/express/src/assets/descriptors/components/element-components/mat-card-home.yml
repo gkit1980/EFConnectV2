@@ -1,0 +1,7 @@
+label: Mat Card Home
+component: MatCardHomeComponent
+types:
+  - text
+  - boolean
+description: >
+  Custom component provides the customer details for contracts.

@@ -1,0 +1,6 @@
+label: Popup Item
+component: PopUpComponent
+types:
+  - text
+description: >
+  Custom component that opens pop-up dialog.

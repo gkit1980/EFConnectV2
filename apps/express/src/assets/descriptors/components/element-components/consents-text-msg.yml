@@ -1,0 +1,6 @@
+label: Consents Cards
+component: ConsentsCardsComponent
+types:
+  - text
+description: >
+  Custom component shows details.

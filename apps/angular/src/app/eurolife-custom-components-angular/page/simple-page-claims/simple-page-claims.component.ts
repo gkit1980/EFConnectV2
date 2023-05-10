@@ -1,12 +1,12 @@
 import { Component, OnInit, ElementRef, AfterViewInit } from "@angular/core";
 import { PageComponentImplementation } from "@impeo/ng-ice";
-import { IceSection,IndexedValue } from "@impeo/ice-core";
+import { IceSection,IndexedValue,LifecycleEvent } from "@impeo/ice-core";
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalService } from "../../../services/modal.service";
 import { LocalStorageService } from "../../../services/local-storage.service";
 import { PassManagementService } from '../../../services/pass-management.service';
 import { Subject, Subscription } from 'rxjs';
-import { ActivatedRoute,ActivatedRouteSnapshot, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from '../../../../environments/environment';
 import { SpinnerService } from '../../../services/spinner.service';
 import { takeUntil } from "rxjs/operators";
@@ -89,10 +89,13 @@ export class SimplePageClaimsComponent extends PageComponentImplementation
 
 
 
-    this.context.$actionEnded
+    this.context.$lifecycle
     .pipe(takeUntil(this.destroy$))
-    .subscribe((actionName: string) => {
-      if (actionName.includes("action-eclaims-requests-closed")) {
+    .subscribe((e: LifecycleEvent) => {
+
+      const actionName =_.get(e, ['payload', 'action']);
+
+      if (actionName.includes("action-eclaims-requests-closed") &&  e.type === 'ACTION_FINISHED') {
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '//';
       }
     });
@@ -120,10 +123,13 @@ export class SimplePageClaimsComponent extends PageComponentImplementation
         }
       }});
 
-    this.context.$actionEnded
+    this.context.$lifecycle
     .pipe(takeUntil(this.destroy$))
-    .subscribe((actionName: string) => {
-      if (actionName.includes("actionGetParticipantsHomePage")) {
+    .subscribe((e: LifecycleEvent) => {
+
+      const actionName = _.get(e, ['payload', 'action']);
+
+      if (actionName.includes("actionGetParticipantsHomePage") && e.type === 'ACTION_FINISHED') {
 
         if (_.get(this.context.dataStore, 'clientContracts'))
         {
@@ -160,10 +166,15 @@ export class SimplePageClaimsComponent extends PageComponentImplementation
 
       }
 
-        this.subscription2$ = this.context.$actionEnded
+        this.subscription2$ = this.context.$lifecycle
         .pipe(takeUntil(this.destroy$))
-        .subscribe(async (actionName: string) => {
-          if (actionName.includes("actionGetPolicies")) {
+        .subscribe( (e: LifecycleEvent) => {
+
+          const actionName = _.get(e, ['payload', 'action']);
+
+
+
+          if (actionName.includes("actionGetPolicies") && e.type==='ACTION_FINISHED') {
 
             if (_.get(this.context.dataStore, 'clientContracts'))
             {
@@ -200,10 +211,13 @@ export class SimplePageClaimsComponent extends PageComponentImplementation
           }
         });
 
-        this.context.$actionEnded
+        this.context.$lifecycle
         .pipe(takeUntil(this.destroy$))
-        .subscribe((actionName: string) => {
-          if (actionName.includes("actionGetParticipantsHomePage")) {
+        .subscribe((e: LifecycleEvent) => {
+
+          const actionName = _.get(e, ['payload', 'action']);
+
+          if (actionName.includes("actionGetParticipantsHomePage") && e.type === 'ACTION_FINISHED') {
 
             if (_.get(this.context.dataStore, 'clientContracts'))
             {

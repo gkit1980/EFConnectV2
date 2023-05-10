@@ -1,0 +1,5 @@
+implementations:
+  DynamicNavigationPagesRule:
+    description: >
+      This rule is the main for the Navigation page
+    params:

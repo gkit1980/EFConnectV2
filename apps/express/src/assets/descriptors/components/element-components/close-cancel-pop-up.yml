@@ -1,0 +1,6 @@
+label: Close Cancel PopUp
+component: CloseCancelPopUpComponent
+types:
+  - text
+description: >
+  Custom component includes the functionality for close/cancel pop ups.

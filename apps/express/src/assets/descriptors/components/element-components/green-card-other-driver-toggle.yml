@@ -1,0 +1,6 @@
+label: Green card Other Driver Toggle
+component: GreenCardOtherDriverToggleComponent
+types:
+  - boolean
+description: >
+  Custom component that takes an `SVG` as input and a decision table that styles the `SVG`.

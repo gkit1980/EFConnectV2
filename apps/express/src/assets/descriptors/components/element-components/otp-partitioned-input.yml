@@ -1,0 +1,7 @@
+label: Otp Partitioned Input
+component: OtpPartitionedInputComponent
+types:
+  - text
+  - integer
+description: >
+  Custom component implements the OTP message that sends to users.

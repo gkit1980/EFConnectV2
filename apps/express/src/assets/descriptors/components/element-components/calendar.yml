@@ -1,0 +1,6 @@
+label: Calendar
+component: CalendarComponent
+types:
+  - date
+description: >
+  Custom component implements the calendar. 

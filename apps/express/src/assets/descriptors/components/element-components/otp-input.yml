@@ -1,0 +1,7 @@
+label: Otp Input
+component: OtpInputComponent
+types:
+  - text
+  - integer
+description: >
+  Custom component implements the OTP message.

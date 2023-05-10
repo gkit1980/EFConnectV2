@@ -1,0 +1,4 @@
+label:  Coonsent Grid View Component
+component: ConsentGridViewComponent
+description: >
+   Consent Grid View part where all contracts needs a consent (or not) - appears in Consent page

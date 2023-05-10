@@ -1,0 +1,6 @@
+label: Eurolife Notification Bar
+component: EurolifeNotificationBarComponent
+types:
+  - text
+description: >
+  Custom component that takes an `SVG` as input and a decision table that styles the `SVG`.

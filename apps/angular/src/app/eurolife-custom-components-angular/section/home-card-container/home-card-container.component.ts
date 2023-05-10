@@ -3,8 +3,9 @@ import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import * as jwt_token from 'jwt-decode';
 import { LocalStorageService } from '../../../services/local-storage.service';
 import { environment } from "./../../../../environments/environment";
-import { IndexedValue, ItemElement, ValueOrigin } from "@impeo/ice-core";
+import { IndexedValue, LifecycleEvent } from "@impeo/ice-core";
 import { Subscription } from 'rxjs';
+import { get } from 'lodash';
 
 @Component({
   selector: 'app-home-card-container',
@@ -49,9 +50,12 @@ export class HomeCardContainerComponent extends SectionComponentImplementation i
     );
     this.subscriptions.push(this.subscription1$);
 
-    this.subscription2$ = this.context.$actionEnded.subscribe(
-      (actionName: string) => {
-        if (actionName.includes('actionAmendmentsOnInit') || actionName.includes('actionGetPolicies')) {
+    this.subscription2$ = this.context.$lifecycle.subscribe(
+      (e: LifecycleEvent) => {
+
+        const actionName = get(e, ['payload', 'action']);
+9
+        if ( (actionName.includes('actionAmendmentsOnInit') || actionName.includes('actionGetPolicies')) && e.type=="ACTION_FINISHED" ) {
           if (this.context.iceModel.elements['amendments.showAmendments'].getValue().forIndex(null) == true) {
             this.condition = true;
             this.showSkeletonAmendmentScreen = false;

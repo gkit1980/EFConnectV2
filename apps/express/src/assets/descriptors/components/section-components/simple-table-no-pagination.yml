@@ -1,0 +1,6 @@
+label: Simple Table No Pagination
+component: SimpleTableNoPaginationComponent
+types:
+  - text
+description: >
+  Custom component that takes a style as input and a decision for table pagination.

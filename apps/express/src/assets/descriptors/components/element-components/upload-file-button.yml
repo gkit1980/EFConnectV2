@@ -1,0 +1,8 @@
+label: Upload File Button
+component: UploadFileButtonComponent
+types:
+  - text
+  - boolean
+  - time
+description: >
+  Component is responsible for the delay of changes between the pages. 

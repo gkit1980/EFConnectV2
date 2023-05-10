@@ -1,0 +1,8 @@
+label: Tipp Line Chart
+component: TippLineChartComponent
+types:
+  - date
+  - text
+  - boolean
+description: >
+  The custom component implements the infomation about the charts of Financial product of Tipp. 

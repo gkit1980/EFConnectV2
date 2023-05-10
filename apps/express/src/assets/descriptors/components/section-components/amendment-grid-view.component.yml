@@ -1,0 +1,4 @@
+label:  Amendment Grid View
+component: AmendmentGridViewComponent
+description: >
+   Grid View component for Amendment Details page

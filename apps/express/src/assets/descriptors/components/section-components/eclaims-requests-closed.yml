@@ -1,0 +1,4 @@
+label:  Eclaims Close Requests component
+component: EclaimsRequestsClosedComponent
+description: >
+  Appears the closed eclaims requests

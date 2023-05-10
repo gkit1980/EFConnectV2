@@ -9,13 +9,13 @@ import {
   ViewChildren
 } from "@angular/core";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
-import { PageComponentImplementation, NgIceContext } from "@impeo/ng-ice";
-import { NgIceContext } from "@impeo/ng-ice";
+import { PageComponentImplementation } from "@impeo/ng-ice";
+import { IceContext } from "@impeo/ice-core";
 import * as _ from "lodash";
 
 export interface PopupPageData {
   page: string;
-  iceContext: NgIceContext;
+  iceContext: IceContext;
 }
 
 @Component({

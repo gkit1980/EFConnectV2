@@ -4,7 +4,7 @@ import { SectionComponentImplementation, IceSectionComponent } from '@impeo/ng-i
 import * as _ from 'lodash';
 import { Element } from '@angular/compiler';
 var filesize = require("filesize");
-var ice_1 = require("@impeo/ice");
+var ice_1 = require("@impeo/ice-core");
 
 @Component({
     selector: 'file-upload-section',

@@ -1,0 +1,6 @@
+label: Payment Management Success
+component: PaymentManagementSuccessComponent
+types:
+  - text
+description: >
+  Custom component is responsible to fit style for the payment success status.

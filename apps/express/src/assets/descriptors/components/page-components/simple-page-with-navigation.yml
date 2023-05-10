@@ -1,0 +1,28 @@
+label: Simple page with navigation
+component: SimplePageWithNavigationComponent
+description: >
+  Custom page component that implements top section component a navigation below and sections for content.
+
+  #### Example 
+
+  ```
+  component:
+    StaticComponentRule:
+      component:
+        SvgImageComponent:
+          value: https://upload.wikimedia.org/wikipedia/commons/9/9e/Exclamation_encircled.svg
+          fillColor: dt_test
+  ```
+
+params:
+  value:
+    label: url
+    info: URL that points to the SVG location
+    type: text
+    required: true
+
+  fillColor:
+    label: Decision table name
+    info: Decision table name that returns the class name. Class is implemented in the styles directory
+    type: dt
+    required: false

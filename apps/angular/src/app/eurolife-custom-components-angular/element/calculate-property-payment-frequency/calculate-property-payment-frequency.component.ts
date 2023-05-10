@@ -2,6 +2,8 @@ import { IceTextInputComponent, ElementComponentImplementation } from '@impeo/ng
 import { Component, OnInit } from '@angular/core';
 import * as _ from 'lodash';
 import { LocalStorageService } from '../../../services/local-storage.service';
+import { LifecycleEvent} from "@impeo/ice-core";
+import { get } from 'lodash';
 
 @Component({
   selector: 'app-calculate-property-payment-frequency',
@@ -26,11 +28,12 @@ export class CalculatePropertyPaymentFrequencyComponent extends ElementComponent
     if (selectedBranch === 4 ) {
       this.show = true;
     }
-    this.context.$actionEnded.subscribe((actionName: string) => {
-      if (actionName.includes("actionGetPolicies")) {
+    this.context.$lifecycle.subscribe((e: LifecycleEvent) => {
+      const action = get(e, ['payload', 'action']);
+      if (action.includes("actionGetPolicies")) {
        this.addItems();
         //   this.showDafsDocs();
-        this.context.$actionEnded.observers.pop();
+
       }
 
     });

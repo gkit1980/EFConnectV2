@@ -1,0 +1,4 @@
+label: Simple Grid View
+component: SimpleGridViewComponent
+description: >
+  Simple grid view component with no card design.

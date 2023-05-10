@@ -1,0 +1,4 @@
+label: Sign up New User Page by e-mail
+component: SignUpNewEmailFormComponent
+description: >
+  Sign up component that implements the creation of new user on the site based on email.

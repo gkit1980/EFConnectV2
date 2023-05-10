@@ -1,0 +1,6 @@
+label: Social Network SignUp
+component: SocialNetworkSignUpComponent
+types:
+  - text
+description: >
+  Custom component that takes a style as input and a decision table that styles of the fields.

@@ -1,0 +1,4 @@
+label: Funds Basket Component
+component: FundsBasketComponent
+description: >
+  Component that includes info for Financial Products(UL,Investment Plan,Lifecycle Product etc..)-Belongs Policy details page

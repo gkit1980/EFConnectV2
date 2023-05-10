@@ -1,0 +1,4 @@
+label:  Custom Dialog Component
+component: MotorPopUpChangeProfilePicture
+description: >
+  Page Component that renders in dialog-Change Profile Picture

@@ -18,7 +18,7 @@ export class ExternalUrlComponent extends GridViewComponent {
 		let element = this.section.elements.find(pageElement => pageElement.name == elementName);
 		if (element == null) return "";
 
-		return element.element.recipe.defaultValue.StaticValueRule.value;
+		return element.recipe.defaultValue.StaticValueRule.value;
 	}
 	// zeroDigit: string = "0";
 	// elementName: string = "policy.insured.object.motor.owner.TaxIdentificationNumber";
@@ -29,7 +29,7 @@ export class ExternalUrlComponent extends GridViewComponent {
 	// {
 	// 	elementValue = this.zeroDigit + elementValue;
 	// 	this.setValueToElement(this.elementName, elementValue);
-	// } 	
+	// }
 	// }
 
 	// setValueToElement(elementName: string, elementValue: any) {

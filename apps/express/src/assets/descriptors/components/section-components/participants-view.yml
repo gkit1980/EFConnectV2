@@ -1,0 +1,4 @@
+label: Participants View Component
+component: ParticipantsViewComponent
+description: >
+  Participants View Component,contains Participants per Contract,belongs to Policy Details page

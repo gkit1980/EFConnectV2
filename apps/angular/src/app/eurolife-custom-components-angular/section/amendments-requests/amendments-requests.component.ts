@@ -7,9 +7,9 @@ import * as _ from "lodash";
 import { environment } from "../../../../environments/environment";
 import { LocalStorageService } from "../../../services/local-storage.service";
 import { PassManagementService } from '../../../services/pass-management.service';
-import { catchError, first, takeUntil, tap } from "rxjs/operators";
+import { catchError, first, map, takeUntil, tap } from "rxjs/operators";
 import { Subject, Subscription, throwError } from "rxjs";
-import { IndexedValue } from '@impeo/ice-core';
+import { IndexedValue,LifecycleEvent } from '@impeo/ice-core';
 import { ActivatedRoute, RouterEvent } from "@angular/router";
 import * as CryptoJS from 'crypto-js';
 import { DecodeJWTService } from '../../../services/decode-jwt.service';
@@ -118,10 +118,12 @@ export class AmendmentsRequestsComponent extends SectionComponentImplementation 
 
     this.refreshStatus = this.localStorage.getDataFromLocalStorage("refreshStatus");
 
-    this.context.$actionEnded
+    this.context.$lifecycle
     .pipe(takeUntil(this.destroy$))
-    .subscribe((actionName: string) => {
-      if (actionName.includes("actionGetParticipantsHomePage")) {
+    .subscribe((e: LifecycleEvent) => {
+
+      const actionName = _.get(e, ['payload', 'action']);
+      if (actionName.includes("actionGetParticipantsHomePage") &&    e.type === 'ACTION_FINISHED') {
         this.getData();
         ///Finalize
         this.contentMotorLoaded = true;
@@ -135,8 +137,13 @@ export class AmendmentsRequestsComponent extends SectionComponentImplementation 
 
 
 
-    const writeFromOtherForRefreshEnded$ = this.context.$actionEnded.pipe(
-      first((action) => action === 'actionWriteFromOtherForRefresh'),
+    const writeFromOtherForRefreshEnded$ = this.context.$lifecycle.pipe(        //////check ICE2
+      map((e:LifecycleEvent) =>
+      {
+       const actionName = _.get(e, ['payload', 'action'])
+       if(actionName === 'actionWriteFromOtherForRefresh' && e.type==="ACTION_FINISHED")
+       return e;
+      }),
       catchError((err) => this.handleError(err)),
       tap((_) => this.getData())
     );

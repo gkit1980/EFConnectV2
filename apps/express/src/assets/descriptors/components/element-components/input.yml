@@ -1,0 +1,7 @@
+label: Input
+component: InputComponent
+types:
+  - text
+  - integer
+description: >
+  Custom component that takes an `SVG` as input and a decision table that styles the `SVG`.

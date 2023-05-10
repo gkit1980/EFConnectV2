@@ -4,8 +4,6 @@ import { IceSection } from "@impeo/ice-core";
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalService } from "../../../services/modal.service";
 import { LocalStorageService } from "../../../services/local-storage.service";
-import { IndexedValue, ItemElement, ValueOrigin } from "@impeo/ice-core";
-import { JoyrideService } from 'ngx-joyride';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -26,8 +24,8 @@ export class SimplePageComponent extends PageComponentImplementation
 
   private subscription = new Subscription();
 
-  constructor(public ngbModal: NgbModal, public modalService: ModalService, private elementRef: ElementRef, private localStorage: LocalStorageService,
-              private readonly joyride: JoyrideService) {
+  constructor(public ngbModal: NgbModal, public modalService: ModalService, private elementRef: ElementRef, private localStorage: LocalStorageService
+             ) {
     super();
   }
 
@@ -129,47 +127,10 @@ export class SimplePageComponent extends PageComponentImplementation
 
   }
 
-  ngAfterViewInit() {
-    ///walkthrough
-    if(!this.context.iceModel.elements["home.isMobileDevice"].getValue().forIndex(null))
-    {
-        if (this.localStorage.getDataFromLocalStorage("walkthrough") === undefined)
-        {
-          this.localStorage.setDataToLocalStorage("walkthrough", true);
-          if (this.page.name === 'viewClaims') {
-            //joy ride.... Claims page
-            this.joyride.startTour(
-              {
-                steps: ['viewClaims_firstStep'],
-                showCounter:false
-              })
-          }
-        }
-        else
-        {
-          this.indexCommunicationSubs = this.context.iceModel.elements["walkthrough.page.index.viewClaims"].$dataModelValueChange.subscribe((value: IndexedValue) => {
-            if (value.element.getValue().forIndex(null) === 1 && this.page.name=="viewClaims")
-            {
-            this.joyride.startTour(
-                {
-                  steps: ['viewClaims_firstStep'],
-                  showCounter:false
-                })
-            }
-          });
 
-          this.subscription.add(this.indexCommunicationSubs);
-        }
-    }
-}
 
     ngOnDestroy()
     {
-      if(!this.context.iceModel.elements["home.isMobileDevice"].getValue().forIndex(null))
-      {
-     this.joyride.closeTour();
-      }
-
       this.subscription.unsubscribe();
     }
 

@@ -1,0 +1,4 @@
+label: Participants View Claims Component
+component: ParticipantViewClaimsComponent
+description: >
+  Participants View Component,contains Participants per Contract,belongs to viewClaimDetails page

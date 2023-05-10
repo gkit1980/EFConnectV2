@@ -1,0 +1,8 @@
+label: Insert Timer code
+component: InsertCodeTimerComponent
+types:
+  - text
+  - integer
+  - boolean
+description: >
+  Custom component includes timer between functionalities.

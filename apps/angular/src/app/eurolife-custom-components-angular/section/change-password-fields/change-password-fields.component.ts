@@ -1,11 +1,11 @@
 import { errorList } from './../../page/sign-up-new/errorList';
 import { environment } from './../../../../environments/environment';
-import { SectionComponentImplementation, IceSectionComponent } from '@impeo/ng-ice';
+import { SectionComponentImplementation, IceSectionComponent,IcePrincipalService } from '@impeo/ng-ice';
 import { Component } from '@angular/core';
-import { IcePrincipalService } from '@impeo/ng-ice';
-import * as CryptoJS from 'crypto-js';
-import { NgbModalRef, NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { LifecycleEvent } from '@impeo/ice-core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalService } from '../../../services/modal.service';
+import { get } from 'lodash';
 
 @Component({
   selector: 'app-change-password-fields',
@@ -47,8 +47,12 @@ export class ChangePasswordFieldComponent extends SectionComponentImplementation
   changePassword = 'sections.changePassword.changePass.label';
 
   ngOnInit() {
-    this.context.$actionEnded.subscribe((actionName: string) => {
-      if (actionName.includes('actionChangePassword')) {
+    this.context.$lifecycle.subscribe((e: LifecycleEvent) => {
+
+      const actionName = get(e, ['payload', 'action']);
+
+
+      if (actionName.includes('actionChangePassword') &&  e.type === 'ACTION_FINISHED') {
         let response = this.context.iceModel.elements["changePasswordError"].getValue().values[0].value;
         this.checkCurrentPass(response);
         // let data1 = this.context.iceModel.elements["changePasswordResult"].getValue().forIndex(null);

@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from "@angular/core";
+import {LifecycleEvent } from '@impeo/ice-core';
 import { environment } from "../../../../environments/environment.prod";
 import {
   SectionComponentImplementation,
@@ -185,10 +186,13 @@ export class DetailsCustomTableComponent extends SectionComponentImplementation 
       this.headers = this.headersAmendments;
       this.LoadAmendments();
 
-      this.context.$actionEnded
+      this.context.$lifecycle
       .pipe(takeUntil(this.destroy$))
-      .subscribe((action: string) => {
-        if (action === 'actionGetContractEndorsement') {
+      .subscribe((e: LifecycleEvent) => {
+
+        const actionName = _.get(e, ['payload', 'action']);
+
+        if (actionName === 'actionGetContractEndorsement' && e.type === 'ACTION_FINISHED') {
           this.LoadAmendments();
         }
       });

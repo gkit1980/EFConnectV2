@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ElementComponentImplementation } from '@impeo/ng-ice';
 import { LocalStorageService } from "../../../services/local-storage.service";
-// import moment = require('moment');
 import * as moment from "moment";
+import { LifecycleEvent} from "@impeo/ice-core";
+import { get } from 'lodash';
+
 
 @Component({
   selector: 'app-eurolife-header-tile',
@@ -29,14 +31,14 @@ export class EurolifeHeaderTileComponent extends ElementComponentImplementation 
     super.ngOnInit();
     if(this.context.iceModel.elements["selectedcontractbranch"].getValue().values[0].value==99)   //περιπτωση ΑΤΟΜΙΚΟΥ /ΟΜΑΔΙΚΟΥ ΣΥΜΒΟΛΑΙΟΥ
     this.groupHealth=true;
-    
+
     this.refreshStatus = this.localStorage.getDataFromLocalStorage("refreshStatus");
     let dt_name = this.getRecipeParam("dtName");
     let dt = this.page.iceModel.dts[dt_name];
     if (dt) {
       let result = dt.evaluateSync();
       if (dt_name === "dt_policy_details_second_tile_subheader") {
-        if (this.context.iceModel.elements["policies.details.frequencyOfPayment"].getValue().values[0].value == "EΦΑΠΑΞ") 
+        if (this.context.iceModel.elements["policies.details.frequencyOfPayment"].getValue().values[0].value == "EΦΑΠΑΞ")
         {
           this.elementLabel = this.context.iceModel.recipe.elements[result["element"]].labelForEfapax;
         }
@@ -98,9 +100,13 @@ export class EurolifeHeaderTileComponent extends ElementComponentImplementation 
     }
 
     //Only for Refresh...the WriteFromOther is being executed for the purpose of refresh
-    this.context.$actionEnded.subscribe((actionName: string) => {
+    this.context.$lifecycle.subscribe((e:LifecycleEvent) => {
+
+      const actionName = get(e, ['payload', 'action']);
+
+
       if (actionName.includes("actionWriteFromOtherForRefresh") && this.refreshStatus==1) {
-        this.context.$actionEnded.observers.pop();
+      //  this.context.$actionEnded.observers.pop();
         let dt_name = this.getRecipeParam("dtName");
         let dt = this.page.iceModel.dts[dt_name];
         if (dt) {
@@ -119,7 +125,7 @@ export class EurolifeHeaderTileComponent extends ElementComponentImplementation 
             this.elementLabel = this.mylabel.slice(1, this.mylabel.length);
           }
           if (this.context.iceModel.elements[result["element"]].getValue().values[0].value.length) {
-            for (let i = 0; i < this.context.iceModel.elements[result["element"]].getValue().values[0].value.length; i++) 
+            for (let i = 0; i < this.context.iceModel.elements[result["element"]].getValue().values[0].value.length; i++)
             {
               if (this.context.iceModel.elements[result["element"]].getValue().values[0].value[i].firstName && this.context.iceModel.elements[result["element"]].getValue().values[0].value[i].lastName) {
                 this.elementValueArray.push(this.context.iceModel.elements[result["element"]].getValue().values[0].value[i].firstName + " " + this.context.iceModel.elements[result["element"]].getValue().values[0].value[i].lastName);
@@ -136,7 +142,7 @@ export class EurolifeHeaderTileComponent extends ElementComponentImplementation 
                   this.elementValue += this.elementValueArray[j] + " ";
                 }
               }
-            } else 
+            } else
             {
               this.elementValue = this.context.iceModel.elements[result["element"]].getValue().values[0].value;
                 ///!!!! Group Health first tile special occasion
@@ -168,18 +174,18 @@ export class EurolifeHeaderTileComponent extends ElementComponentImplementation 
     if(dt)
     {
       let result = dt.evaluateSync();
-      try 
-      {  
-          //Bug: this fix sshould be updated from backend...its temporary!!!!!! 
-          if(dt_name === "dt_policy_details_third_tile_subheader" && result["element"]=="policies.details.grouphealth.CustomerName" && 
+      try
+      {
+          //Bug: this fix sshould be updated from backend...its temporary!!!!!!
+          if(dt_name === "dt_policy_details_third_tile_subheader" && result["element"]=="policies.details.grouphealth.CustomerName" &&
           this.context.iceModel.elements['policies.details.ContractKey'].getValue().forIndex(null)=="1050000000")
           {
             this.elementValue="Όμιλος Εurobank";
-          }else if(dt_name === "dt_policy_details_third_tile_subheader" && result["element"]=="policies.details.grouphealth.CustomerName" && 
+          }else if(dt_name === "dt_policy_details_third_tile_subheader" && result["element"]=="policies.details.grouphealth.CustomerName" &&
           this.context.iceModel.elements['policies.details.ContractKey'].getValue().forIndex(null)=="2040000119")
           {
             this.elementValue="Latsco Family Office";
-          }else if(dt_name === "dt_policy_details_third_tile_subheader" && result["element"]=="policies.details.grouphealth.CustomerName" && 
+          }else if(dt_name === "dt_policy_details_third_tile_subheader" && result["element"]=="policies.details.grouphealth.CustomerName" &&
           this.context.iceModel.elements['policies.details.ContractKey'].getValue().forIndex(null)=="1018000000")
           {
             this.elementValue="doValue";
@@ -187,24 +193,24 @@ export class EurolifeHeaderTileComponent extends ElementComponentImplementation 
           //end
           else
           {
-              if (this.context.iceModel.elements[result["element"]].getValue().values[0].value!= null) 
+              if (this.context.iceModel.elements[result["element"]].getValue().values[0].value!= null)
               {
-                  for (let i = 0; i < this.context.iceModel.elements[result["element"]].getValue().values[0].value.length; i++) 
+                  for (let i = 0; i < this.context.iceModel.elements[result["element"]].getValue().values[0].value.length; i++)
                   {
-                    if (this.context.iceModel.elements[result["element"]].getValue().values[0].value[i].firstName && this.context.iceModel.elements[result["element"]].getValue().values[0].value[i].lastName) 
+                    if (this.context.iceModel.elements[result["element"]].getValue().values[0].value[i].firstName && this.context.iceModel.elements[result["element"]].getValue().values[0].value[i].lastName)
                     {
                       this.elementValueArray.push(this.context.iceModel.elements[result["element"]].getValue().values[0].value[i].firstName + " " + this.context.iceModel.elements[result["element"]].getValue().values[0].value[i].lastName);
                     }
-          
+
                     // this.elementValue = this.context.iceModel.elements[result["element"]].getValue().values[0].value[0].firstName + " " + this.context.iceModel.elements[result["element"]].getValue().values[0].value[0].lastName;
                   }
-                  if (this.elementValueArray.length >= 1) 
+                  if (this.elementValueArray.length >= 1)
                   {
                     this.elementValue='';
-                    for (let j = 0; j < this.elementValueArray.length; j++) 
-                      this.elementValue += this.elementValueArray[j] + " ";   
+                    for (let j = 0; j < this.elementValueArray.length; j++)
+                      this.elementValue += this.elementValueArray[j] + " ";
                   }
-                  else 
+                  else
                   {
                     this.elementValue = this.context.iceModel.elements[result["element"]].getValue().values[0].value;
                     ///!!!! Group Health first tile special occasion
@@ -212,11 +218,11 @@ export class EurolifeHeaderTileComponent extends ElementComponentImplementation 
                     this.elementValue = this.context.iceModel.elements["policies.details.grouphealth.InsuredFirstName"].getValue().forIndex(null) + " "+
                                         this.context.iceModel.elements["policies.details.grouphealth.InsuredLastName"].getValue().forIndex(null);
                   }
-                  if (this.elementValue instanceof Date) 
+                  if (this.elementValue instanceof Date)
                   this.elementValue = moment(this.elementValue).format('DD/MM/YYYY');
-                  
-              } 
-              else 
+
+              }
+              else
               {
                 this.elementValue = this.context.iceModel.elements[result["element"]].getValue().values[0].value;
                   ///!!!! Group Health first tile special occasion
@@ -224,20 +230,20 @@ export class EurolifeHeaderTileComponent extends ElementComponentImplementation 
                   this.elementValue = this.context.iceModel.elements["policies.details.grouphealth.InsuredFirstName"].getValue().forIndex(null) + " "+
                                       this.context.iceModel.elements["policies.details.grouphealth.InsuredLastName"].getValue().forIndex(null);
 
-                if (this.elementValue instanceof Date) 
+                if (this.elementValue instanceof Date)
                 this.elementValue = moment(this.elementValue).format('DD/MM/YYYY');
               }
-          }    
+          }
         return this.elementValue;
       }
        catch (error) {
-       
+
       }
     }
     else
     return null;
 
-   
+
   }
 
 }

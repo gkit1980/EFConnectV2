@@ -1,0 +1,4 @@
+label: Button To Dialog
+component: ButtonToDialogComponent
+description: >
+  Custom component implements the buttons for the dialog windows.

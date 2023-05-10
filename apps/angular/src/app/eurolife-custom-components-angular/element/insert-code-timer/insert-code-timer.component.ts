@@ -5,6 +5,8 @@ import { SignupService } from '../../../services/signup.service'
 import { Observable } from 'rxjs/Rx';
 import { ElementComponentImplementation } from '@impeo/ng-ice';
 import { IndexedValue } from '@impeo/ice-core';
+import {LifecycleEvent } from '@impeo/ice-core';
+import { get } from 'lodash';
 
 @Component({
   selector: 'app-insert-code-timer',
@@ -103,10 +105,11 @@ export class InsertCodeTimerComponent extends ElementComponentImplementation imp
     if (smsCodeInt.toString().length === 6) {
       this.context.iceModel.elements["customer.details.smsCode"].setSimpleValue(smsCodeInt);// with the cahnge of value an action = 'actionChangeMobile',  is triggered
 
-      this.context.$actionEnded.subscribe(
-        (actioName: string) => {
+      this.context.$lifecycle.subscribe(
+        (e: LifecycleEvent) => {
 
-          if (actioName.includes("actionVerifyChangeMobile")) {
+          const actionName = get(e, ['payload', 'action']);
+          if (actionName.includes("actionVerifyChangeMobile")) {
 
 
             if (this.context.iceModel.elements["customer.details.verifySmsSuccess"].getValue().forIndex(null)) {

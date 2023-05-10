@@ -1,9 +1,9 @@
 import { environment } from './../../../../environments/environment';
-import { Component, HostListener, OnDestroy, OnInit, SimpleChanges } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
 import { FormControl, Validators } from "@angular/forms";
 import { Router, ActivatedRouteSnapshot, ActivatedRoute } from "@angular/router";
-import { IceModel, RuleFactoryImpl, DataModel } from "@impeo/ice-core";
-import { IcePrincipalService, IceContextService, IceModelRecipeResolver } from "@impeo/ng-ice";
+import { IceModel, RuleFactoryImpl, DataModel , LifecycleEvent} from "@impeo/ice-core";
+import { IcePrincipalService, IceContextService, IceRuntimeResolver } from "@impeo/ng-ice";
 import { AuthService } from "../../../services/auth.service";
 import { LocalStorageService } from "../../../services/local-storage.service";
 import { PassManagementService } from '../../../services/pass-management.service';
@@ -18,6 +18,8 @@ import { ModalService } from '../../../services/modal.service';
 import { VideoComponent } from './video/video.component';
 import { LogoutService } from "../../../services/logout.service";
 import * as CryptoJS from 'crypto-js';
+import { get } from 'lodash';
+
 
 export enum KEY_CODE {
   ENTER = 13
@@ -71,7 +73,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     private localStorage: LocalStorageService,
     private spinnerService: SpinnerService,
     private iceContextService: IceContextService,
-    private iceModelRecipeResolver: IceModelRecipeResolver,
+    private iceRuntimeResolver: IceRuntimeResolver,
     private route: ActivatedRoute,
     private modalService: NgbModal,
     private recaptchaV3Service: ReCaptchaV3Service,
@@ -329,15 +331,19 @@ export class LoginComponent implements OnInit, OnDestroy {
       const route: ActivatedRouteSnapshot = { params: {}, url: null, queryParams: {}, routeConfig: <any>null, fragment: '', data: <any>null, outlet: '', component: null, root: null, parent: null, firstChild: null, children: null, pathFromRoot: null, paramMap: null, queryParamMap: null };
       route.params['definition'] = 'customerArea.motor';
       route.params["repo"] = 'default';
-      const iceModelRecipe = await this.iceModelRecipeResolver.resolve(route, null);
+      const iceModelRecipe = await this.iceRuntimeResolver.resolve(route, null);
       RuleFactoryImpl.build((await this.iceContextService.getContext("customerArea")));
-      const iceModel = await IceModel.build((await this.iceContextService.getContext("customerArea")), iceModelRecipe.recipe, iceModelRecipe.hash);
+      const iceModel = await IceModel.build((await this.iceContextService.getContext("customerArea")), null, null);
       (await this.iceContextService.getContext("customerArea")).iceModel = iceModel;
         // this.spinnerService.setMessage('Φόρτωση συμβολαίων');
-      DataModel.build( (await this.iceContextService.getContext("customerArea")).);
+      DataModel.build( (await this.iceContextService.getContext("customerArea")));
       this.router.navigate(["/ice/default/customerArea.motor/home"]);
 
-      this.iceContextService.context.$actionEnded.subscribe((actionName: string) => {
+      (await this.iceContextService.getContext("customeArea")).$lifecycle.subscribe((e: LifecycleEvent) => {
+
+        const actionName = get(e, ['payload', 'action']);
+
+
           if (actionName != 'actionGetPolicies' && actionName == "actionGetDocumentTypes") {
             this.ckeckIfDafDocExists();
             return;
@@ -353,7 +359,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     }
   }
 
-  ckeckIfDafDocExists() {
+  async ckeckIfDafDocExists() {
     var documentTypes = (await this.iceContextService.getContext("customerArea")).iceModel.elements["policy.documentTypes"].getValue().values[0].value;
     var dafLifeDocs = documentTypes.filter((x: any) => x.docType == "dafLife"); //ToDo: this should be changed to dafLife
     if (dafLifeDocs.length > 0) {
@@ -381,9 +387,9 @@ export class LoginComponent implements OnInit, OnDestroy {
       const route: ActivatedRouteSnapshot = { params: {}, url: null, queryParams: {}, routeConfig: <any>null, fragment: '', data: <any>null, outlet: '', component: null, root: null, parent: null, firstChild: null, children: null, pathFromRoot: null, paramMap: null, queryParamMap: null };
       route.params['definition'] = 'customerArea.motor';
       route.params["repo"] = 'default';
-      const iceModelRecipe = await this.iceModelRecipeResolver.resolve(route, null);
+      const iceModelRecipe = await this.iceRuntimeResolver.resolve(route, null);
       RuleFactoryImpl.build(await this.iceContextService.getContext("customerArea"));
-      const iceModel = await IceModel.build(await this.iceContextService.getContext("customerArea"), iceModelRecipe.recipe, iceModelRecipe.hash);
+      const iceModel = await IceModel.build(await this.iceContextService.getContext("customerArea"), null, null);
       (await this.iceContextService.getContext("customerArea")).iceModel = iceModel;
         // this.spinnerService.setMessage('Φόρτωση συμβολαίων');
       DataModel.build(await this.iceContextService.getContext("customerArea"));

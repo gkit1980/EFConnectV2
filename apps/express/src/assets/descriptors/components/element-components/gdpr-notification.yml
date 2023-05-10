@@ -1,0 +1,6 @@
+label: Gdpr Notification
+component: GdprNotificationComponent
+types:
+  - text
+description: >
+  Custom component shows the notifications.

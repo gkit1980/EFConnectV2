@@ -1,0 +1,8 @@
+label: Insert Email Timer code
+component: InsertCodeEmailTimerComponent
+types:
+  - text
+  - integer
+  - boolean
+description: >
+  Custom component includes timer to the e-mail actions.

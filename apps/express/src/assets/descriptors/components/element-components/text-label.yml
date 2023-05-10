@@ -1,0 +1,6 @@
+label: Text Label 
+component: TextLabelComponent
+types:
+  - text
+description: >
+  A component takes the decision for the style of the text area.

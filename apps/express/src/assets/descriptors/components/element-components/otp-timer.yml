@@ -1,0 +1,8 @@
+label: Otp Timer
+component: OtpTimerComponent
+types:
+  - text
+  - boolean
+  - integer
+description: >
+  Custom component is responsible for the time that sends OTP message.

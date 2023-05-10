@@ -3,9 +3,9 @@ import { environment } from '../../../../environments/environment';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { SignupGroupService } from '../../../services/signupgroup.service';
 import { SignUpGroupSuccessModalComponent } from '../sign-up-group-success-modal/sign-up-group-success-modal.component';
-import { RuleFactoryImpl, IceModel, DataModel } from "@impeo/ice-core";
+import { RuleFactoryImpl, IceModel, DataModel,LifecycleEvent } from "@impeo/ice-core";
 import { Router, ActivatedRouteSnapshot, ActivatedRoute } from '@angular/router';
-import { IcePrincipalService, IceModelRecipeResolver, IceContextService } from "@impeo/ng-ice";
+import { IcePrincipalService, IceRuntimeResolver, IceContextService } from "@impeo/ng-ice";
 import { errorList } from '../sign-up-group/errorList';
 import { HttpErrorResponse } from '@angular/common/http';
 import { AuthService } from '../../../services/auth.service';
@@ -13,6 +13,7 @@ import { LocalStorageService } from "../../../services/local-storage.service";
 import { DomSanitizer} from '@angular/platform-browser';
 import { SignUpGroupWaitingModalComponent } from '../sign-up-group-waiting-modal/sign-up-group-waiting-modal.component';
 import { SignUpGroupErrorServiceModalComponent } from '../sign-up-group-errorService-modal/sign-up-group-errorService-modal.component';
+import { get } from 'lodash';
 
 
 @Component({
@@ -46,7 +47,7 @@ export class SignUpGroupConsentsModalComponent implements OnInit {
               private signupGroupService: SignupGroupService,
               private auth: AuthService,
               private icePrincipalService: IcePrincipalService,
-              private iceModelRecipeResolver: IceModelRecipeResolver,
+              private IceRuntimeResolver: IceRuntimeResolver,
               private iceContextService: IceContextService,
               private localStorageService:LocalStorageService,
               private router:Router,
@@ -200,16 +201,19 @@ export class SignUpGroupConsentsModalComponent implements OnInit {
       };
       route.params['definition'] = 'customerArea.motor';
       route.params['repo'] = 'default';
-      const iceModelRecipe = await this.iceModelRecipeResolver.resolve(route, null);
+    //  const iceModelRecipe = await this.IceRuntimeResolver.resolve(route, null);
       RuleFactoryImpl.build(await this.iceContextService.getContext("customerArea"));
-      const iceModel = await IceModel.build(await this.iceContextService.getContext("customerArea"), iceModelRecipe.recipe, iceModelRecipe.hash);
+      const iceModel = await IceModel.build(await this.iceContextService.getContext("customerArea"),null,null);
       (await this.iceContextService.getContext("customerArea")).iceModel = iceModel;
       DataModel.build(await this.iceContextService.getContext("customerArea"));
       this.showSpinnerBtn = false;
       this.router.navigate(['/ice/default/customerArea.motor/home']);
 
-      (await this.iceContextService.getContext("customerArea")).$actionEnded.subscribe((actionName: string) => {
-        if (actionName != 'actionGetPolicies' && actionName == 'actionGetDocumentTypes') {
+      (await this.iceContextService.getContext("customerArea")).$lifecycle.subscribe((e: LifecycleEvent) => {
+
+        const actionName = get(e, ['payload', 'action']);
+
+        if (actionName != 'actionGetPolicies' && actionName == 'actionGetDocumentTypes' && e.type === 'ACTION_FINISHED') {
           this.ckeckIfDafDocExists();
           return;
         }

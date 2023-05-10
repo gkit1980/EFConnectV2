@@ -4,6 +4,8 @@ import { IndexedValue } from '@impeo/ice-core';
 import * as _ from "lodash";
 import { environment } from "../../../../environments/environment";
 import { SpinnerService } from "../../../services/spinner.service";
+import {LifecycleEvent } from '@impeo/ice-core';
+
 
 
 @Component({
@@ -26,14 +28,18 @@ export class GreenCardStepperComponent extends SectionComponentImplementation im
 
     this.setInitialStep();
 
-    this.context.$actionEnded.subscribe(async (actionName: string) => {
-      if (actionName.includes("actionGetPolicies")) {
+    this.context.$lifecycle.subscribe( async (e:LifecycleEvent) => {
+
+
+      const actionName = _.get(e, ['payload', 'action']);
+
+      if (actionName.includes("actionGetPolicies") && e.type==="ACTION_FINISHED") {
      //   this.context.iceModel.elements["greencard.refresh.status"].setSimpleValue(true);   //for refresh purpose of green card
      let action = this.context.iceModel.actions['action-greencard-get-token'];
      for(let i=0;i<action.executionRules.length;i++)
      {
        await action.executionRules[i].execute();
-       
+
      }
       }
     });

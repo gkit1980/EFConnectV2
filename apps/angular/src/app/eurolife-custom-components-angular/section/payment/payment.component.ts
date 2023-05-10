@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { SectionComponentImplementation, IceSectionComponent } from '@impeo/ng-ice';
+import {LifecycleEvent } from '@impeo/ice-core';
+
 import { LocalStorageService } from '../../../services/local-storage.service';
 import { Router } from '@angular/router';
 import * as _ from "lodash";
@@ -62,8 +64,11 @@ export class PaymentComponent extends SectionComponentImplementation {
       return;
     }
 
-    this.context.$actionEnded.subscribe((actionName: string) => {
-      if (actionName.includes("actionGetPolicies")) {
+    this.context.$lifecycle.subscribe((e: LifecycleEvent) => {
+
+      const actionName = _.get(e, ['payload', 'action']);
+
+      if (actionName.includes("actionGetPolicies") && e.type=="ACTION_FINISHED") {
         this.items = _.get(this.context.dataStore, this.recipe.dataStoreProperty);
         this.context.iceModel.elements['triggerActionGetParticipants'].setSimpleValue(1);
         this.context.iceModel.elements['triggerActionGetReceipts'].setSimpleValue(1);

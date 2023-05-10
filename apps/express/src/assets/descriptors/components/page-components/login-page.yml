@@ -1,0 +1,4 @@
+label: Login Page
+component: LoginComponent
+description: >
+  Custom page component that implements login section that if users have a personal account take access on site. 

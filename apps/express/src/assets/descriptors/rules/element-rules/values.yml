@@ -1,0 +1,12 @@
+implementations:
+  MotorPostCodesMunicipalitiesListRule:
+    description: MotorPostCodesMunicipalitiesListRule
+    params:
+      list:
+        label: List
+        required: true
+        type: list
+      postCodeElement:
+        label: Post Code Element
+        required: true
+        type: element

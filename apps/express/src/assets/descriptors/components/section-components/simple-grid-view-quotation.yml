@@ -1,0 +1,6 @@
+label: Simple Grid View Quotation
+component: SimpleGridViewQuotationComponent
+types:
+  - text
+description: >
+  Custom component that takes a style as input and a decision for grid view.

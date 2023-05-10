@@ -1,0 +1,4 @@
+label:  Request Amendment
+component: AmendmentsRequestsComponent
+description: >
+    Request Amendment,belongs to viewAmendments Page

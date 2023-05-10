@@ -1,0 +1,7 @@
+label: Eclaims Back Button
+component: EclaimsBackButtonComponent
+types:
+  - text
+  - date
+description: >
+  Custom component implemts the back buttons.

@@ -1,9 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { SectionComponentImplementation, IceSectionComponent } from '@impeo/ng-ice';
 import * as _ from 'lodash';
-import { IndexedValue } from '@impeo/ice-core';
+import { IndexedValue,LifecycleEvent } from '@impeo/ice-core';
 import { Observable, Subscription, throwError } from 'rxjs';
-import { catchError, first, tap } from 'rxjs/operators';
+import { catchError, first, tap,map } from 'rxjs/operators';
+
 
 
 @Component({
@@ -41,8 +42,13 @@ export class ExagoraComponent extends SectionComponentImplementation implements 
   ngOnInit() {
     super.ngOnInit();
 
-    const getCashValueEnded$ = this.context.$actionEnded.pipe(
-      first((action) => action === 'actionGetCashValue'),
+    const getCashValueEnded$ = this.context.$lifecycle.pipe(
+      map((e:LifecycleEvent) =>
+      {
+       const actionName = _.get(e, ['payload', 'action'])
+       if(actionName === 'actionGetCashValue' && e.type==="ACTION_FINISHED")
+       return e;
+      }),
       catchError((err) => this.handleError(err)),
       tap((_x) => {
         this.getValues();

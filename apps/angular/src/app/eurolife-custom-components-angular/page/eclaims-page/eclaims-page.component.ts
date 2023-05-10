@@ -1,5 +1,5 @@
 import { Component, NgZone, OnInit } from '@angular/core';
-import { IceSection,IndexedValue } from '@impeo/ice-core';
+import { IceSection,IndexedValue,LifecycleEvent } from '@impeo/ice-core';
 import { PageComponentImplementation } from '@impeo/ng-ice';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { Subject } from 'rxjs';
@@ -11,10 +11,10 @@ import { PopUpPageComponent } from '../pop-up-page/pop-up-page.component';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LogoutService } from '../../../services/logout.service';
 import * as _ from "lodash";
-import { HttpClient } from '@angular/common/http';
 import * as CryptoJS from 'crypto-js';
 import { environment } from '../../../../environments/environment';
 import { Renderer2, RendererFactory2, RendererStyleFlags2 } from '@angular/core';
+import { get } from 'lodash';
 
 
 @Component({
@@ -109,9 +109,10 @@ export class EclaimsPageComponent extends PageComponentImplementation implements
 
     }
 
-    this.context.$actionStarted
+    this.context.$lifecycle
       .pipe(takeUntil(this.destroy$))
-      .subscribe((action: string) => {
+      .subscribe((e: LifecycleEvent) => {
+        const action = get(e, ['payload', 'action']);
         if (action === 'action-eclaims-uploadfiles') {
           this.spinnerService.setMessage('Ανέβασμα αρχείων...');
           this.spinnerService.loadingOn();
@@ -123,9 +124,10 @@ export class EclaimsPageComponent extends PageComponentImplementation implements
         }
       });
 
-    this.context.$actionEnded
+    this.context.$lifecycle
       .pipe(takeUntil(this.destroy$))
-      .subscribe((action: string) => {
+      .subscribe((e: LifecycleEvent) => {
+        const action = get(e, ['payload', 'action']);
         if (action === 'action-eclaims-uploadfiles') {
           this.context.iceModel.elements['eclaims.step'].setSimpleValue(1);   ///
 
@@ -227,9 +229,10 @@ export class EclaimsPageComponent extends PageComponentImplementation implements
 
 
     //PropertyClaimNotification page !!!!
-    this.context.$actionStarted
+    this.context.$lifecycle
     .pipe(takeUntil(this.destroy$))
-    .subscribe((action: string) => {
+    .subscribe((e: LifecycleEvent) => {
+      const action = get(e, ['payload', 'action']);
       if (action === 'action-property-notification-create-case') {
         this.spinnerService.setMessage('Δημιουργία Ticket');
         this.spinnerService.loadingOn();

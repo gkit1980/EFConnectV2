@@ -1,0 +1,4 @@
+label: Forgot Username
+component: ForgotUsernameComponent
+description: >
+  Custom page component that implements the actions that user needs to change the username.

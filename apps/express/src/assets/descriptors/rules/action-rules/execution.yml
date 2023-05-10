@@ -1,0 +1,1278 @@
+implementations:
+  OpenPdfExecutionRule:
+    description: >
+      This rule downloads pdf and knows where to get the data from
+    params:
+      element:
+        label: some element name to get the data from
+        type: string
+      datastorePath:
+        label: some path to the datastore to get the data
+        type: string
+      mode:
+        label: do we want to open (mode=open) or save (mode=download) pdf files
+        type: string
+      filename:
+        label: filename for the pdf file; default value is 'unknown.pdf'
+        type: string
+  OpenFileExecutionRule:
+    description: >
+      This rule downloads pdf and knows where to get the data from
+    params:
+      element:
+        label: some element name to get the data from
+        type: string
+      filetype:
+        label: file type as a string
+        type: string
+      mode:
+        label: do we want to open (mode=open) or save (mode=download) pdf files
+        type: string
+      filename:
+        label: filename for the pdf file; default value is 'unknown.pdf'
+        type: string
+  EurolifeGALocaleChangedRule:
+    description: >
+      This rule will send which language is selected information to Google Analytics on language selection change 
+    params: 
+      eventCategory:
+        label: Name of the Category that is used to group similar informations
+        type: string
+        required: true
+      eventAction:
+        label: Name of the action that caused this information to be send
+        type: string
+        required: true
+  EurolifeGAPageEnteredRule:
+    description: >
+      This rule will send which page is opened information to Google Analytics whenever user change page
+  EurolifeGAProductEnteredRule:
+    description: >
+      This rule will send information which product is started to Google Analytics
+    params: 
+      eventCategory:
+        label: Name of the Category that is used to group similar informations
+        type: string
+        required: true
+      eventAction:
+        label: Name of the action that caused this information to be send
+        type: string
+        required: true 
+  GetDocumentUrlNoteRule:
+    description: >      
+      This rule will take url note from Receipt dates
+    params: 
+      baseUrl: 
+        label: Base Url of service
+        type: string
+        required: true
+      url: 
+        label: name of method
+        type: string
+        required: true  
+      verb:
+        label: Type of Method
+        type: string
+        required: true
+      bucket:
+        label: Bucket
+        type: string
+        required: true
+      encryptMessage:
+        label: encrypt the message
+        type: string
+        required: true
+      encryptSecretElement: 
+        label: encrypted token
+        type: string
+        required: true
+      needsDataStore: 
+        label: need Datastore
+        type: string
+        required: true 
+  WriteFromMultipleSourcesDataToDatastoreExecutionRule:
+    description: >      
+      This rule will execute all the services and construct the datasource
+    params:
+      baseUrl: 
+        label: Base Url of service
+        type: string
+        required: true
+      url: 
+        label: name of method
+        type: string
+        required: true  
+      verb:
+        label: Type of Method
+        type: string
+        required: true
+      bucket:
+        label: Bucket
+        type: string
+        required: true
+      salesforceLoginUrl:
+        label: base url Salesforce
+        type: string
+        required: true  
+      salesforceLoginMethod:
+        label: Salesforce login method
+        type: string
+        required: true
+      eclaimsServicesUrl:
+        label: Eclaims service method- returns the number of cases that is not closed
+        type: string
+        required: true
+      eclaimsServicesMethod:
+        label: Eclaims type of services method. 
+        type: string
+        required: true          
+      encryptMessage:
+        label: encrypt the message
+        type: string
+        required: true
+      encryptSecretElement: 
+        label: encrypted token
+        type: string
+        required: true
+      needsDataStore: 
+        label: need Datastore
+        type: string
+        required: true       
+  GetGdprDataRule:
+    description: >      
+      This rule will get all the Gdpr Consents
+    params:
+      baseUrl: 
+        label: Base Url of service
+        type: string
+        required: true
+      bucket:
+        label: Bucket
+        type: string
+        required: true  
+      encryptMessage:
+        label: encrypt the message
+        type: string
+        required: true
+      encryptSecretElement: 
+        label: encrypted token
+        type: string
+        required: true
+      needsDataStore: 
+        label: need Datastore
+        type: string
+        required: false       
+  GetSalesforceTokenRule:
+    description: >      
+      This rule will connect with Salesforce. Get the proper token
+    params: 
+      fromProcess:
+        label: fromProcess
+        type: string
+        required: false
+      salesforceLoginUrl: 
+        label: salesforce login url
+        type: string
+        required: true
+      methodLogin: 
+        label: type of method
+        type: string
+        required: true
+      getAmendmentsUrl:
+        label: url method
+        type: string
+        required: true
+      bucket:
+        label: Bucket
+        type: string
+        required: true
+      encryptMessage:
+        label: encrypt the message
+        type: string
+        required: true
+      encryptSecretElement: 
+        label: encrypted token
+        type: string
+        required: true
+      needsDataStore: 
+        label: need Datastore
+        type: string
+        required: true         
+  ResetCustomerProfileRule:
+    description: >      
+      This rule will reset base elements for customer
+    params:  
+  EnableSpinnerRule:
+    description: >      
+      This rule will trigger spinner
+    params:
+      actionrule:
+        label:  action name that being enabled the spinner
+        type: string
+        required: true
+  DisableSpinnerRule:
+    description: >      
+      This rule will disable spinner
+    params:  
+      actionrule:
+        label:  action name that being disabled the spinner
+        type: string
+        required: true
+  InitializationGreenCardRule:
+    description: >      
+      This rule will set 'greencard.state' element
+    params:   
+  WriteMotorDetailsToDatastoreExecutionRule:
+    description: >      
+      This rule will write motor details to update datastore object
+    params: 
+      baseUrl: 
+        label: BASEURL
+        type: string
+        required: true
+      verb: 
+        label: post
+        type: string
+        required: true
+      url: 
+        label: base url 
+        type: string
+        required: true
+      bucket: 
+        label: specific bucket
+        type: string
+        required: true
+      encryptMessage: 
+        label: encrypt specific message
+        type: string
+        required: true
+      encryptSecretElement: 
+        label: encrypted token
+        type: string
+        required: true
+      needsDataStore:
+        label: need Datastore
+        type: string
+        required: true
+  WriteFromOtherSourcesToDatastoreExecutionRule:
+    description: >      
+      This rule will fill details for contracts and update datastore object
+    params: 
+      baseUrl: 
+        label: BASEURL
+        type: string
+        required: true
+      verb: 
+        label: post
+        type: string
+        required: true
+      url: 
+        label: base url 
+        type: string
+        required: true
+      bucket: 
+        label: specific bucket
+        type: string
+        required: true
+      encryptMessage: 
+        label: encrypt specific message
+        type: string
+        required: true
+      encryptSecretElement: 
+        label: encrypted token
+        type: string
+        required: true
+      needsDataStore:
+        label: need Datastore
+        type: string
+        required: false  
+  GreenCardGetToken:
+    description: >      
+      This rule will take token for green card functionality
+    params: 
+      GreenCardLogin: 
+        label: green card login url
+        type: string
+        required: true
+      method: 
+        label: type of method
+        type: string
+        required: true
+      username: 
+        label: username 
+        type: string
+        required: true
+      password:
+        label: password
+        type: string
+        required: true   
+      bucket: 
+        label: specific bucket
+        type: string
+        required: true
+      GREENCARD_CLIENT_ID:
+        label: client id token
+        type: string
+        required: true
+      GREENCARD_CLIENT_SECRET:
+        label: client secret token
+        type: string
+        required: true  
+      encryptMessage: 
+        label: encrypt specific message
+        type: string
+        required: true
+      encryptSecretElement: 
+        label: encrypted token
+        type: string
+        required: true
+      needsDataStore:
+        label: need Datastore
+        type: string
+        required: true     
+  GreenCardServices:
+    description: >      
+      This rule will Print Green Card,Cancel Green Card,Issue Green Card
+    params: 
+      baseUrl: 
+        label: BASEURL
+        type: string
+        required: true
+      url:
+        label: method name
+        type: string
+        required: true   
+      method: 
+        label: post
+        type: string
+        required: true
+      bucket: 
+        label: specific bucket
+        type: string
+        required: true
+      encryptMessage: 
+        label: encrypt specific message
+        type: string
+        required: true
+      encryptSecretElement: 
+        label: encrypted token
+        type: string
+        required: true
+      needsDataStore:
+        label: need Datastore
+        type: string
+        required: true  
+  GreenCardDownloadPDF:
+    description: >      
+      This rule will download Green Card pdf
+    params:   
+  GreenCardChangeStepRule:
+    description: >      
+      This rule will act as a wizard for green card functionality
+    params: 
+  GetBlogInfoRule:
+    description: >      
+      This rule will get as a json object all the Blog Information and presented to Home page 
+    params: 
+      baseUrl: 
+        label: BASEURL
+        type: string
+        required: true
+      verb: 
+        label: post
+        type: string
+        required: true
+      url: 
+        label: base url 
+        type: string
+        required: true
+      bucket: 
+        label: specific bucket
+        type: string
+        required: true
+      encryptMessage: 
+        label: encrypt specific message
+        type: string
+        required: true
+      encryptSecretElement: 
+        label: encrypted token
+        type: string
+        required: true
+      needsDataStore:
+        label: need Datastore
+        type: string
+        required: true   
+  GetAgentInfoRule:
+    description: >      
+      This rule will get the information about the agent,this action being calles in communication page
+    params: 
+      baseUrl: 
+        label: BASEURL
+        type: string
+        required: true
+      url: 
+        label: base url 
+        type: string
+        required: true   
+      verb: 
+        label: post
+        type: string
+        required: true
+      bucket: 
+        label: specific bucket
+        type: string
+        required: true
+      encryptMessage: 
+        label: encrypt specific message
+        type: string
+        required: true
+      encryptSecretElement: 
+        label: encrypted token
+        type: string
+        required: true
+      needsDataStore:
+        label: need Datastore
+        type: string
+        required: true    
+  AmendmentsDetailsChangestep:
+    description: >      
+      This rule will act as a wizard for Amendments
+    params: 
+  AmendmentsDetailsCloseDialogRule:   
+    description: >      
+      This rule will close dialog for Amendments
+    params: 
+  AmendmentsCreateCaseRule:
+    description: >      
+      This rule will create a new case for Amendments
+    params:  
+      getAmendmentsUrl: 
+        label: url of Amendments
+        type: string
+        required: true
+      method: 
+        label: type of method
+        type: string
+        required: true   
+      bucket: 
+        label: specific bucket
+        type: string
+        required: true
+  AmendmentsCreateCasePropertyRule:
+    description: >      
+      This rule will create a new case for property Amendments
+    params:  
+      getAmendmentsUrl: 
+        label: url of property
+        type: string
+        required: true
+      method: 
+        label: type of method
+        type: string
+        required: true   
+      bucket: 
+        label: specific bucket
+        type: string
+        required: true
+  AmendmentsCreateHealthCaseRule:
+    description: >      
+      This rule will create a new case for health Amendments
+    params:  
+      getAmendmentsUrl: 
+        label: url of property
+        type: string
+        required: true
+      method: 
+        label: type of method
+        type: string
+        required: true   
+      bucket: 
+        label: specific bucket
+        type: string
+        required: true
+  AmendmentsCreateLifeCaseRule:
+    description: >      
+      This rule will create a new case for life Amendments
+    params:  
+      getAmendmentsUrl: 
+        label: url of property
+        type: string
+        required: true
+      method: 
+        label: type of method
+        type: string
+        required: true   
+      bucket: 
+        label: specific bucket
+        type: string
+        required: true
+  AmendmentsCreateFinanceCaseRule:
+    description: >      
+      This rule will create a new case for finance Amendments
+    params:  
+      getAmendmentsUrl: 
+        label: url of property
+        type: string
+        required: true
+      method: 
+        label: type of method
+        type: string
+        required: true   
+      bucket: 
+        label: specific bucket
+        type: string
+        required: true
+  AmendmentsUploadFilesRule:
+    description: >      
+      This rule will upload files when you create a new case for Amendments
+    params:
+      baseUrl: 
+        label: BASEURL
+        type: string
+        required: true
+      uploadUrl: 
+        label: url for uploading files
+        type: string
+        required: true   
+      method: 
+        label: type of method
+        type: string
+        required: true
+      deleteUrl: 
+        label: url for service where we trying to delete the case
+        type: string
+        required: true
+      deleteMethod: 
+        label: method for deletion of the case
+        type: string
+        required: true
+      bucket: 
+        label: specific bucket
+        type: string
+        required: true 
+  AmendmentsSetSubcategory:
+    description: >      
+      This rule will make nullable the element 'amendments.motor.subcategory.dropdown'
+    params:
+  RequestGetAllFilesRule:
+    description: >      
+      This rule will get all documents that the user has uploaded in the requests.
+    params:
+  VerifyRegexRule:
+    description: >      
+      This rule will verify specific element 
+    params: 
+      element: 
+        label: input element
+        type: string
+        required: true
+      regexp: 
+        label: expression of Regex
+        type: string
+        required: true
+      returnedElementBoolean: 
+        label: output element
+        type: string
+        required: true
+  ClickToChatReceiveMessage:
+    description: >      
+      Receive messages to click to chat functionality
+    params:  
+      bucket:
+        label: specific bucket
+        type: string
+        required: true
+      encryptMessage: 
+        label: encrypt specific message
+        type: string
+        required: true
+      encryptSecretElement: 
+        label: encrypted token
+        type: string
+        required: true
+      needsDatastore: 
+        label: need Datastore
+        type: string
+        required: true    
+  ClickToChatSendEmailHistory:
+    description: >      
+      Send email history after click to chat session
+    params: 
+      bucket:
+        label: specific bucket
+        type: string
+        required: true
+  ClickToChatSendMessage:
+    description: >      
+      Send message in click to chat session
+    params:  
+      bucket:
+        label: specific bucket
+        type: string
+        required: true
+  SetupTextRule:
+    description: >      
+      Setup rules when initialize  click to chat session
+    params:     
+      bucket:
+        label: specific bucket
+        type: string
+        required: true
+      encryptMessage: 
+        label: encrypt specific message
+        type: string
+        required: true
+      encryptSecretElement: 
+        label: encrypted token
+        type: string
+        required: true
+      needsDatastore: 
+        label: need Datastore
+        type: string
+        required: true        
+  MessageInfoClicktocallRule:
+    description: >      
+     Set elements while you are connected in 'click to call' functionality
+    params:    
+      encryptMessage: 
+        label: encrypt specific message
+        type: string
+        required: false
+      encryptSecretElement: 
+        label: encrypted token
+        type: string
+        required: false
+      needsDatastore: 
+        label: need Datastore
+        type: string
+        required: true   
+  ClicktoCallClearFieldsRule:
+    description: >      
+     Clear elements in 'click to call' functionality
+    params:  
+  ProcessCallbackRequestRule:
+    description: >      
+     Process all the steps for 'click to call' functionality
+    params:
+      bucket:
+        label: specific bucket
+        type: string
+        required: true  
+  TriggerConsentRule:
+    description: >      
+     Read the data from Web Service and map it to boolean element
+    params:   
+      bucket:
+        label: specific bucket
+        type: string
+        required: true  
+  ConsentDiscardCancelRule:
+    description: >      
+     Discard consent
+    params:
+  ConsentDiscardOkRule:
+    description: >      
+     Discard Ok consent
+    params:
+  SubmitConsentsRule:
+    description: >      
+      Call web service for submit consent
+    params:  
+      baseUrl: 
+        label: BASEURL
+        type: string
+        required: true
+      verb: 
+        label: post
+        type: string
+        required: true
+      url: 
+        label: base url 
+        type: string
+        required: true   
+      bucket: 
+        label: specific bucket
+        type: string
+        required: true
+      encryptMessage: 
+        label: encrypt specific message
+        type: string
+        required: true
+      encryptSecretElement: 
+        label: encrypted token
+        type: string
+        required: true
+      needsDataStore:
+        label: need Datastore
+        type: string
+        required: false    
+  ConsentInitialNextRule:
+    description: >      
+     Open a dialog for consent...set an element 'consent.flag.opendialog'
+    params:
+  EclaimsGetAadeReceiptFields: 
+    description: >      
+     Get receipt fields from AADE
+    params:
+      inputElement: 
+        label: aade url
+        type: string
+        required: true
+  DownloadPdfRule:
+    description: >      
+     Call web service getUserDocument for Statements pdf or Daf pdf
+    params: 
+      encryptMessage: 
+        label: encrypt specific message
+        type: string
+        required: true
+      encryptSecretElement: 
+        label: encrypted token
+        type: string
+        required: true
+      bucket: 
+        label: specific bucket
+        type: string
+        required: true
+  GetDafsUrlRule:
+    description: >      
+     Call web service getUserDocumentsByDate for Statements or Daf
+    params: 
+      baseUrl: 
+        label: BASEURL
+        type: string
+        required: true
+      bucket: 
+        label: specific bucket
+        type: string
+        required: true
+      encryptMessage: 
+        label: encrypt specific message
+        type: string
+        required: true
+      encryptSecretElement: 
+        label: encrypted token
+        type: string
+        required: true
+      needsDataStore:
+        label: need Datastore
+        type: string
+        required: false    
+  GetParticipantsRule:
+    description: >      
+     Call web service 'GetContractParticipants',create Participant piece in datastore
+    params: 
+      baseUrl: 
+        label: BASEURL
+        type: string
+        required: true
+      verb: 
+        label: post
+        type: string
+        required: true
+      url: 
+        label: base url 
+        type: string
+        required: true   
+      bucket: 
+        label: specific bucket
+        type: string
+        required: true
+      encryptMessage: 
+        label: encrypt specific message
+        type: string
+        required: true
+      encryptSecretElement: 
+        label: encrypted token
+        type: string
+        required: true
+      needsDataStore:
+        label: need Datastore
+        type: string
+        required: true    
+  DownloadHomePdfRule:
+    description: >      
+     Call web service 'getUserDocument',get pdf for receipt
+    params: 
+      encryptMessage: 
+        label: encrypt specific message
+        type: string
+        required: true
+      encryptSecretElement: 
+        label: encrypted token
+        type: string
+        required: true
+      bucket: 
+        label: specific bucket
+        type: string
+        required: true
+  SubmitMarketConsentsRule:
+    description: >      
+     submit for market consents rule
+    params: 
+      getCustomerConsentsUrl:
+        label: base url for Customer Consents
+        type: string
+        required: true
+      method: 
+        label: type of method
+        type: string
+        required: true
+      bucket:
+        label: name of bucket
+        type: string
+        required: true
+      encryptMessage: 
+        label: encrypt specific message
+        type: string
+        required: true
+      encryptSecretElement: 
+        label: encrypted token
+        type: string
+        required: true
+      needsDataStore:
+        label: need Datastore
+        type: string
+        required: false      
+  NavigateToEurobankUrlExecutionRule:
+    description: >      
+     Will take you to Eurobank site.
+    params:
+      url:
+        label: relative url for within Connect
+        type: string
+        required: true
+  ResetPolicyDetailsElementsRule:
+    description: >      
+     Reset policy details elements
+    params:
+  GetLastDocumentUrlNoteRule:
+    description: >      
+     Call WS 'getUserDocumentsByDate' with doctype 'note' -Fill with blank all the receipts that don't have Notes
+    params:
+      baseUrl: 
+        label: Base Url of service
+        type: string
+        required: true
+      url: 
+        label: name of method
+        type: string
+        required: true  
+      verb:
+        label: Type of Method
+        type: string
+        required: true
+      bucket:
+        label: Bucket
+        type: string
+        required: true
+      encryptMessage:
+        label: encrypt the message
+        type: string
+        required: true
+      encryptSecretElement: 
+        label: encrypted token
+        type: string
+        required: true
+      needsDataStore: 
+        label: need Datastore
+        type: string
+        required: true 
+  GetStatementsUrlRule:
+    description: >      
+     Call WS 'getUserDocumentsByDate' with doctype 'divident'
+    params:  
+      baseUrl: 
+        label: Base Url of service
+        type: string
+        required: true
+      bucket:
+        label: Bucket
+        type: string
+        required: true
+      encryptMessage:
+        label: encrypt the message
+        type: string
+        required: true
+      encryptSecretElement: 
+        label: encrypted token
+        type: string
+        required: true
+      needsDataStore: 
+        label: need Datastore
+        type: string
+        required: true 
+  ResetModalElements:  
+    description: >      
+     Reset Elements of modal dialog
+    params: 
+  SetElementValueExecutionRule:
+    description: >      
+     set Elements of click to call functionality
+    params: 
+  DownloadGuidePdfRule:
+    description: >      
+     Axios Request for pdf file Insurance Guide
+    params:
+      baseUrl: 
+        label: Base Url of service
+        type: string
+        required: false
+      url: 
+        label: name of method
+        type: string
+        required: false 
+      verb:
+        label: Type of Method
+        type: string
+        required: false
+      typeOfContract:
+        label: Type Of Contract
+        type: string
+        required: true
+      bucket:
+        label: bucket
+        type: string
+        required: true
+      needsDataStore: 
+        label: need Datastore
+        type: string
+        required: true 
+  OpenGuidePdfExecutionRule:
+    description: >      
+     Download pdf file Insurance Guide
+    params:  
+      element: 
+        label: element that stores base64 stream
+        type: string
+        required: true
+      filename: 
+        label: Name of Downloaded file
+        type: string
+        required: true
+      mode: 
+        label: type of action
+        type: string
+        required: true
+      needsDatastore: 
+        label: need Datastore
+        type: string
+        required: true
+  BookletsExistRule:
+    description: >      
+     Check if Insurance Guide exists
+    params:   
+      baseUrl: 
+        label: Base Url of service
+        type: string
+        required: false
+      url: 
+        label: name of method
+        type: string
+        required: false 
+      verb:
+        label: Type of Method
+        type: string
+        required: false
+      bucket:
+        label: bucket
+        type: string
+        required: true
+      needsDataStore: 
+        label: need Datastore
+        type: string
+        required: true   
+  GetFundRatesRule:    
+    description: >      
+     Calculate the fund rates for each fund 
+    params: 
+      baseUrl: 
+        label: Base Url of service
+        type: string
+        required: true
+      url: 
+        label: name of method
+        type: string
+        required: true  
+      verb:
+        label: Type of Method
+        type: string
+        required: true
+      bucket:
+        label: Bucket
+        type: string
+        required: true
+      encryptMessage:
+        label: encrypt the message
+        type: string
+        required: true
+      encryptSecretElement: 
+        label: encrypted token
+        type: string
+        required: true
+      needsDataStore: 
+        label: need Datastore
+        type: string
+        required: true 
+  FundValuationExecutionRule:
+    description: >      
+     Check for the successfull execution of GetLifeContractFundsValuation
+  GetParticipantsAllContractsRule:
+    description: >      
+     Get the Participants as long as actionGetPolicies/0 finishes
+    params:
+      baseUrl: 
+        label: Base Url of service
+        type: string
+        required: true
+      url: 
+        label: name of method
+        type: string
+        required: true  
+      verb:
+        label: Type of Method
+        type: string
+        required: true
+      bucket:
+        label: Bucket
+        type: string
+        required: true
+      encryptMessage:
+        label: encrypt the message
+        type: string
+        required: true
+      encryptSecretElement: 
+        label: encrypted token
+        type: string
+        required: true
+      needsDataStore: 
+        label: need Datastore
+        type: string
+        required: true  
+  EclaimsUploadFilesRule:
+    description: >      
+      This rule will upload files when you create a new case for Eclaims
+    params:
+      baseUrl: 
+        label: BASEURL
+        type: string
+        required: true
+      uploadUrl: 
+        label: url for uploading files
+        type: string
+        required: true   
+      method: 
+        label: type of method
+        type: string
+        required: true
+      deleteUrl: 
+        label: url for service where we trying to delete the case
+        type: string
+        required: true
+      deleteMethod: 
+        label: method for deletion of the case
+        type: string
+        required: true
+      bucket: 
+        label: specific bucket
+        type: string
+        required: true    
+  EclaimsDetailsChangestep:
+    description: >      
+      This rule will change the steps of the stepper and executes the corresponding action
+  EclaimsDetailsPreviousStep:
+    description: >      
+      This rule will change the steps of the stepper and executes the corresponding action
+  EclaimsCoveragesValuationExecutionRule:
+    description: >      
+      This rule will calculate all the coverages for eclaims  
+  EclaimsDetailsCloseDialogRule:
+    description: >      
+      This rule will close the Dialog for eclaims
+  EclaimsDetailsLeaveDocsCloseDialogRule:
+    description: >      
+      This rule will press 'Cancel' the Dialog when you are in the final step (step 3) for eclaims     
+  EclaimsDetailsLeaveDocsRedirectRule:
+     description: >      
+      This rule will press 'Exit' the Dialog when you are in the final step (step 3) for eclaims 
+  EclaimsGetClosedRequestsRule:
+    description: >      
+      This rule will run to fetch all the closed Requests for eclaims 
+    params: 
+      baseurl:
+        label: Base url of method
+        type: string
+        required: true
+      methodGetClosedEclaims: 
+        label: type of method
+        type: string
+        required: true
+      bucket: 
+        label: bucket
+        type: string
+        required: true
+      activeCustomerId:
+        label: active Customer Id of Insured
+        type: string
+        required: true
+      activecontract:
+        label: active Contract Key of Insured
+        type: string
+        required: true
+      status:
+        label: stae of 'closed' eclaims requests
+        type: string
+        required: true
+  EclaimsValuationClosedRequestsRule:
+    description: >      
+      This rule will set a variable indicating that action 'EclaimsGetClosedRequestsRule' has finished
+  EclaimsGetInprogressRequestsRule:   
+    description: >      
+      This rule will run to fetch all the 'in progress' Requests for eclaims  
+    params: 
+      baseurl:
+        label: base url fro eclaims services
+        type: string
+        required: true
+      methodGetInprogressEclaims: 
+        label: type of method
+        type: string
+        required: true
+      bucket:
+        label: name of bucket
+        type: string
+        required: true
+      activeCustomerId: 
+        label: eclaims Customer Id
+        type: string
+        required: true
+      activecontract: 
+        label: eclaims contract key
+        type: string
+        required: true
+      status:
+        label: status 'New,In Progress,Waiting on Bank Broker,Waiting on Internal,Answer Received,Assigned'
+        type: string
+        required: true
+  EclaimsValuationInprogressRequestsRule:      
+    description: >      
+      This rule will set a variable indicating that action 'EclaimsGetInprogressRequestsRule' has finished
+    params:  
+  EclaimsGetOpenRequestsRule:   
+    description: >      
+      This rule will run to fetch all the 'open' Requests for eclaims  
+    params: 
+      baseurl:
+        label: base url fro eclaims services
+        type: string
+        required: true
+      methodGetOpenEclaims: 
+        label: type of method
+        type: string
+        required: true
+      bucket:
+        label: name of bucket
+        type: string
+        required: true
+      activeCustomerId:  
+        label: eclaims Customer Id
+        type: string
+        required: true
+      activecontract: 
+        label: eclaims contract key
+        type: string
+        required: true
+      status:
+        label: status 'Waiting on Customer'
+        type: string
+        required: true
+  EclaimsValuationOpenRequestsRule:      
+    description: >      
+      This rule will set a variable indicating that action 'EclaimsGetOpenRequestsRule' has finished
+    params:     
+  EclaimsDocumentsCloseDialogRule:
+    description: >      
+      This rule will close the dialog that shows the attached documents
+  WriteLogRule:      
+    description: >      
+      This rule will log ice elements in express server
+    params:      
+      bucket: 
+        label: name of bucket
+        type: string
+        required: true
+      inputElement: 
+        label: name of wanted element that wants to log
+        type: string
+        required: true
+      inputName: 
+        label: Name
+        type: string
+        required: true
+  DownloadDigitalCardRule:      
+    description: >      
+      This rule is being used for calling the services that needed to get the health digital card of user an his participants.
+    params:
+      baseUrl: 
+        label: Base Url of service
+        type: string
+        required: false
+      url: 
+        label: name of method
+        type: string
+        required: false 
+      verb:
+        label: Type of Method
+        type: string
+        required: false
+      typeOfContract:
+        label: Type Of Card-individual or Group
+        type: string
+        required: true
+      bucket:
+        label: bucket
+        type: string
+        required: true
+      needsDataStore: 
+        label: need Datastore
+        type: string
+        required: true 
+  DigitalCardValuationRule:
+    params:
+      typeOfContract: 
+        label: type of Contract - individual or group
+        type: string
+        required: false
+  WriteLogTransformationRule:
+    description: >
+      This rule creates logs in express for eclaim service time
+    params:
+  AmendmentsCreatePropertyCaseRule:
+    description: >
+      This rule creates new property amendments
+    params:
+  PropertyNotificationDetailsChangeStepRule:
+    description: >
+      This rule will change the steps for property claim notification
+    params:
+  PropertyClaimNotificationCreateCaseRule:
+    description: >
+      This rule creates the new property claim
+    params:
+  PropertyNotificationClaimsInprogressRequestsRule:
+    description: >
+      This rule appears the inprogress property claim. 
+  PropertyNotificationClaimsCloseDialogRule:
+    description: >
+      This rule closes the dialog for property claim.
+  PropertyNotificationClaimsValuationInprogressRequestsRule:
+    description: >
+      This rule appears the validations for property claim.
+  EclaimsGetAllFilesRule:
+    description: >
+      This rule loads all the attachments per eclaim.
+  ResetElementValueExecutionRule:
+    description: >
+      This rule resets element values.
+  
+         

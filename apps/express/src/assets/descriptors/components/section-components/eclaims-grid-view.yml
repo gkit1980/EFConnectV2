@@ -1,0 +1,4 @@
+label:  Eclaims Grid View
+component: EclaimsGridViewComponent
+description: >
+  Eclaims Grid View,includes next button,belongs to Eclaims page

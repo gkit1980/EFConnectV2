@@ -36,9 +36,9 @@ export class LocalStorageService {
     return this.storage.get(name);
   }
 
-  public removeAll() {
+  public async removeAll() {
     localStorage.clear();
-    this.contextService.context.dataStore = {};
+//    (await this.contextService.getContext("customerArea")).dataStore.set('clientsContracts','');     ////V2 Check!
 
   }
 }

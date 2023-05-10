@@ -1,8 +1,9 @@
 import { Component, ViewChild, ElementRef, AfterViewInit } from "@angular/core";
-import { ElementComponentImplementation, NgIceContext } from "@impeo/ng-ice";
+import { ElementComponentImplementation } from "@impeo/ng-ice";
+import { IceContext } from "@impeo/ice-core";
 import * as _ from "lodash";
 import { environment } from "../../../../environments/environment";
-import { IndexedValue, ItemElement, ValueOrigin } from "@impeo/ice-core";
+import { IndexedValue } from "@impeo/ice-core";
 
 @Component({
   selector: "app-green-card-dynamic",
@@ -15,7 +16,7 @@ export class GreenCardDynamicComponent extends ElementComponentImplementation im
   errorStateMatcher: any;
   show: boolean = false;
   dynamicComponent: any = false;
-  varIceContext: NgIceContext;
+  varIceContext: IceContext;
   numOf: number;
   driverNumOf: number;
   isSubmitted: boolean = false;

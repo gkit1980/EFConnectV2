@@ -1,0 +1,4 @@
+label: Payment Component
+component: PaymentComponent
+description: >
+  Payment Component,contains Payments per Contract,belongs to Policy Details page

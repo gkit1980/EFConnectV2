@@ -1,0 +1,7 @@
+label: Sub header
+component: SubHeaderComponent
+types:
+  - text
+  - boolean
+description: >
+  The custom component implements the styles for the parts when subheaders are used on this site.

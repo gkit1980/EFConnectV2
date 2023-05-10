@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import {SectionComponentImplementation,IceSectionComponent} from "@impeo/ng-ice";
-import { IndexedValue } from '@impeo/ice-core';
+import { IndexedValue,LifecycleEvent } from '@impeo/ice-core';
 import * as _ from "lodash";
 import { LocalStorageService } from "../../../services/local-storage.service";
-import { catchError, first, tap,takeUntil } from "rxjs/operators";
+import { catchError, first, tap,takeUntil, map } from "rxjs/operators";
 import { Subscription, throwError,Subject } from "rxjs";
 import { SpinnerService } from "../../../services/spinner.service";
 import { PassManagementService } from '../../../services/pass-management.service';
@@ -109,8 +109,8 @@ export class ClaimsCardComponent extends SectionComponentImplementation implemen
 
     this.getData();
 
-    const getPoliciesEnded$ = this.context.$actionEnded.pipe(
-      first((action) => action === 'actionGetPolicies'),
+    const getPoliciesEnded$ = this.context.$lifecycle.pipe(
+      //first((action) => action === 'actionGetPolicies'),
       catchError((err) => this.handleError(err)),
       tap((_) => this.execActionWriteFromOtherForRefresh())
     );
@@ -121,11 +121,20 @@ export class ClaimsCardComponent extends SectionComponentImplementation implemen
     );
     this.subscription.add(this.getPoliciesEndedSubs);
 
-    const writeFromOtherForRefreshEnded$ = this.context.$actionEnded.pipe(
-      first((action) => action === 'actionWriteFromOtherForRefresh'),
+
+
+    const writeFromOtherForRefreshEnded$ = this.context.$lifecycle.pipe(        //////check ICE2
+      map((e:LifecycleEvent) =>
+      {
+       const actionName = _.get(e, ['payload', 'action'])
+       if(actionName === 'actionWriteFromOtherForRefresh' && e.type==="ACTION_FINISHED")
+       return e;
+      }),
       catchError((err) => this.handleError(err)),
       tap((_) => this.getData())
     );
+
+    //const writeFromOtherForRefreshEnded$
 
     this.writeFromOtherForRefreshEndedSubs = writeFromOtherForRefreshEnded$.subscribe(
       (_) => {},

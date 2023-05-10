@@ -3,8 +3,8 @@ import { Component, OnInit } from "@angular/core";
 import { LocalStorageService } from "../../../services/local-storage.service";
 import { Router } from "@angular/router";
 import { LogoutService } from "../../../services/logout.service";
-import { AuthService } from "../../../services/auth.service";
-import { IcePrincipalService } from "@impeo/ng-ice/services/ice-principal.service";
+
+import { IcePrincipalService } from "@impeo/ng-ice";
 
 @Component({
   selector: "app-logout",
@@ -30,9 +30,9 @@ export class LogoutComponent implements OnInit {
   }
 
   onOK() {
-   
+
     this.localStorage.removeAll();
-   
+
     this.closeSalesforceChatDialog();
     this.destroySalesforceChatComponent();
 
@@ -77,7 +77,7 @@ export class LogoutComponent implements OnInit {
 
   closeSalesforceChatDialog(): void {
 
- 
+
     let iframe = document.getElementById('salesforce-chat-cmp') as HTMLIFrameElement
     if(iframe!=null)
     iframe.contentWindow.postMessage("close from logout","*");

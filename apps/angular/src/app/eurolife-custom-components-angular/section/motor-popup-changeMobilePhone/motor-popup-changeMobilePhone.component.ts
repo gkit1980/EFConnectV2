@@ -1,12 +1,12 @@
 import { Component, Inject, OnInit, AfterViewInit } from "@angular/core";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
-import { NgIceContext, PageComponentImplementation, IcePrincipalService } from "@impeo/ng-ice";
-import { IndexedValue } from "@impeo/ice-core";
+import { PageComponentImplementation, IcePrincipalService } from "@impeo/ng-ice";
+import { IndexedValue,IceContext } from "@impeo/ice-core";
 
 
 export interface PopupPageData {
 	page: string
-	iceContext: NgIceContext
+	iceContext: IceContext
 }
 
 @Component({

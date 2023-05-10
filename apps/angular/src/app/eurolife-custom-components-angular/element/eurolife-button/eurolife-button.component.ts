@@ -33,7 +33,7 @@ export class EurolifeButtonComponent extends IceButtonComponent implements OnIni
   private printProposalSubs: Subscription;
   private stepStatusSubs: Subscription;
   private errFlagSubs: Subscription;
-  private subscription: Subscription = new Subscription();
+  private subscriptionArray: Subscription = new Subscription();
   private destroy$ = new Subject<void>();
   showSpinnerBtn: boolean = false;
   items: any[] = [];
@@ -42,7 +42,9 @@ export class EurolifeButtonComponent extends IceButtonComponent implements OnIni
   dialogRef2: MatDialogRef<SalesforceChatComponent>;
 
   constructor(public dialog: MatDialog, private overlay: Overlay, public ngbModal: NgbModal, public modalService: ModalService,
-              public communicationService:CommunicationService) { super(); }
+              public communicationService:CommunicationService) {
+                super();
+              }
 
   ngOnInit() {
     super.ngOnInit();
@@ -67,7 +69,7 @@ export class EurolifeButtonComponent extends IceButtonComponent implements OnIni
         this.showSpinnerBtn=false;
       }
     });
-    this.subscription.add(this.stepStatusSubs);
+    this.subscriptionArray.add(this.stepStatusSubs);
 
     this.bookletsExistSubs = this.context.iceModel.elements[
       'policy.details.booklets.exist'
@@ -85,7 +87,7 @@ export class EurolifeButtonComponent extends IceButtonComponent implements OnIni
       },
       (error) => console.error('EurolifeButtonComponent bookletsExistSubs', error)
     );
-    this.subscription.add(this.bookletsExistSubs);
+    this.subscriptionArray.add(this.bookletsExistSubs);
 
 
     //close dialogref2
@@ -381,7 +383,7 @@ export class EurolifeButtonComponent extends IceButtonComponent implements OnIni
             console.error('EurolifeButtonComponent printBookletsSubs', error);
           }
         );
-        this.subscription.add(this.printBookletsSubs);
+        this.subscriptionArray.add(this.printBookletsSubs);
       }
 
       if (this.typeScope === 'contract-pdf-motor')
@@ -402,7 +404,7 @@ export class EurolifeButtonComponent extends IceButtonComponent implements OnIni
             console.error('EurolifeButtonComponent printProposalSubs', error);
           }
         );
-        this.subscription.add(this.printProposalSubs);
+        this.subscriptionArray.add(this.printProposalSubs);
 
         //2.
         this.context.iceModel.elements['deeplink.contract.downloadpdf'].$dataModelValueChange
@@ -438,7 +440,7 @@ export class EurolifeButtonComponent extends IceButtonComponent implements OnIni
             console.error('EurolifeButtonComponent printProposalSubs', error);
           }
         );
-        this.subscription.add(this.printProposalSubs);
+        this.subscriptionArray.add(this.printProposalSubs);
       }
 
       this.errFlagSubs = this.context.iceModel.elements[
@@ -455,7 +457,7 @@ export class EurolifeButtonComponent extends IceButtonComponent implements OnIni
           console.error('EurolifeButtonComponent errFlagSubs', error);
         }
       );
-      this.subscription.add(this.errFlagSubs);
+      this.subscriptionArray.add(this.errFlagSubs);
 
     } else {
      //Salesforce new implementation click-to-chat
@@ -596,7 +598,7 @@ export class EurolifeButtonComponent extends IceButtonComponent implements OnIni
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this.subscriptionArray.unsubscribe();
     this.destroy$.next();
     this.destroy$.complete();
   }

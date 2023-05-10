@@ -3,10 +3,11 @@ import { SectionComponentImplementation, IceSectionComponent } from "@impeo/ng-i
 import { environment } from "../../../../environments/environment";
 import { LocalStorageService } from "../../../services/local-storage.service";
 import * as _ from "lodash";
-import { IndexedValue } from '@impeo/ice-core';
+import { IndexedValue,LifecycleEvent } from '@impeo/ice-core';
 import { takeUntil } from "rxjs/operators";
 import { Subject, throwError } from "rxjs";
 import { MatRadioButton } from '@angular/material/radio';
+
 
 
 export interface Insured {
@@ -87,10 +88,12 @@ export class PropertyAvailableContractsComponent extends SectionComponentImpleme
 
     this.refreshStatus = this.localStorage.getDataFromLocalStorage("refreshStatus");
 
-    this.context.$actionEnded
+    this.context.$lifecycle
       .pipe(takeUntil(this.destroy$))
-      .subscribe((actionName: string) => {
-        if (actionName.includes("actionGetParticipantsHomePage")) {
+      .subscribe((e:LifecycleEvent) => {
+        const actionName = _.get(e, ['payload', 'action']);
+
+        if (actionName.includes("actionGetParticipantsHomePage") &&   e.type === 'ACTION_FINISHED') {
           this.getData();
           this.contentPropertyLoaded = true;
         }

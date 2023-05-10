@@ -31,10 +31,10 @@ export class OtpPartitionedInputComponent implements OnInit {
     @ViewChild('ngOtpInput') ngOtpInput: any;
     config:any
 
-  
 
 
-    //end new input  
+
+    //end new input
 
 
    private eventsSubscription: Subscription;
@@ -62,7 +62,7 @@ export class OtpPartitionedInputComponent implements OnInit {
             // this.renderer.setStyle(this.box, 'top', this.mouseY);
             //          })
 
-        let isMobile = window.matchMedia('only screen and (max-width: 760px)').matches;   
+        let isMobile = window.matchMedia('only screen and (max-width: 760px)').matches;
         if(isMobile)
         {
             this.config = {
@@ -81,7 +81,7 @@ export class OtpPartitionedInputComponent implements OnInit {
                   'font-size':'15px'
                 }
               };
-        
+
 
         }
         else

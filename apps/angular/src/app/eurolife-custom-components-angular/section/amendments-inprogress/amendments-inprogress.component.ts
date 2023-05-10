@@ -5,6 +5,7 @@ import { environment } from '../../../../environments/environment';
 import { LocalStorageService } from '../../../services/local-storage.service';
 import { catchError, filter, first, map, tap,takeUntil } from 'rxjs/operators';
 import { Subscription, throwError, Subject} from 'rxjs';
+import {LifecycleEvent } from '@impeo/ice-core';
 
 
 
@@ -28,7 +29,7 @@ export class AmendmentsInprogressComponent extends SectionComponentImplementatio
   private destroy$ = new Subject<void>();
 
   constructor(
-    parent: IceSectionComponent, 
+    parent: IceSectionComponent,
     private localStorage: LocalStorageService
   ) {
     super(parent);
@@ -64,7 +65,7 @@ export class AmendmentsInprogressComponent extends SectionComponentImplementatio
   }
 
   ngOnInit() {
-    
+
 
     this.header = this.iceModel.elements[this.recipe['inprogresstitle']].recipe.label.ResourceLabelRule.key.slice(
       1,
@@ -81,10 +82,12 @@ export class AmendmentsInprogressComponent extends SectionComponentImplementatio
       tap((_) => this.getData()),
     );
 
-    this.context.$actionEnded
+    this.context.$lifecycle
     .pipe(takeUntil(this.destroy$))
-    .subscribe((actionName: string) => {
-      if (actionName.includes("actionGetParticipantsHomePage")) {
+    .subscribe((e: LifecycleEvent) => {
+
+      const actionName = _.get(e, ['payload', 'action']);
+      if (actionName.includes("actionGetParticipantsHomePage") && e.type === 'ACTION_FINISHED') {
         this.getData();
       }
 

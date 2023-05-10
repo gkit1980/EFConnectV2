@@ -1,5 +1,5 @@
 import { Component, NgZone, OnDestroy, OnInit } from '@angular/core';
-import { IndexedValue } from '@impeo/ice-core';
+import { IndexedValue,LifecycleEvent } from '@impeo/ice-core';
 import {
   IceSectionComponent,
   SectionComponentImplementation,
@@ -13,6 +13,7 @@ import { SpinnerService } from '../../../services/spinner.service';
 import { environment } from './../../../../environments/environment';
 import { LocalStorageService } from '../../../services/local-storage.service';
 import { Router } from '@angular/router';
+import { get } from 'lodash';
 
 declare const $Lightning: any;
 
@@ -119,10 +120,14 @@ export class EclaimsLwcCreateCaseComponent
                 )
             );
 
-          this.context.$actionEnded
+          this.context.$lifecycle
             .pipe(takeUntil(this.destroy$))
-            .subscribe((action: string) => {
-              if (action === 'actionEclaimsSfToken') {
+            .subscribe((e: LifecycleEvent) => {
+
+              const actionName = get(e, ['payload', 'action']);
+
+
+              if (actionName === 'actionEclaimsSfToken' && e.type === 'ACTION_FINISHED') {
                 this.spinnerService.loadingOff();
               }
             });

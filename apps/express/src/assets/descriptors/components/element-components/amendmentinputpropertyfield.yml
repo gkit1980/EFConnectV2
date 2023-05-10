@@ -1,0 +1,6 @@
+label: Amendment Input Property Fields
+component: AmendmentinputpropertyfieldComponent
+types:
+  - text
+description: >
+  Custom component implements all input fields.

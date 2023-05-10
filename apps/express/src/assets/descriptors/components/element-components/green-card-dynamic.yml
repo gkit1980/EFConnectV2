@@ -1,0 +1,8 @@
+label: Green card Dynamic
+component: GreenCardDynamicComponent
+types:
+  - text
+  - integer 
+  - boolean
+description: >
+  Custom component that takes an `SVG` as input and a decision table that styles the `SVG`.

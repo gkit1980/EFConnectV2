@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewContainerRef, ViewChild, ComponentFactoryResolver } from '@angular/core';
+import { Component, ViewContainerRef, ViewChild, ComponentFactoryResolver } from '@angular/core';
 import { ElementComponentImplementation } from '@impeo/ng-ice';
 import { GreenCardDynamicComponent } from '../../element/green-card-dynamic/green-card-dynamic.component';
-import { IndexedValue, ItemElement, ValueOrigin } from "@impeo/ice-core";
+import { IndexedValue} from "@impeo/ice-core";
 import { environment } from "../../../../environments/environment";
 
 @Component({

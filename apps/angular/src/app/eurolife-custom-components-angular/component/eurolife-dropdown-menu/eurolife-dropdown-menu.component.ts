@@ -191,61 +191,6 @@ export class EurolifeDropdownMenuComponent implements OnInit, AfterViewChecked {
 
 
 
-  async getJoyrideSteps(arg: any): Promise<string> {
-    try {
-      if (
-        (await this.contextService.getContext("customerArea")).iceModel.elements['amendments.showAmendments'].getValue().forIndex(null) &&
-        (await this.contextService.getContext("customerArea")).iceModel.elements['policies.showLastNotes'].getValue().forIndex(null) &&
-        this.showDocs
-      )
-        return 'fifthStep_sixthStep';
-      if (
-        (await this.contextService.getContext("customerArea")).iceModel.elements['amendments.showAmendments'].getValue().forIndex(null) &&
-        (await this.contextService.getContext("customerArea")).iceModel.elements['policies.showLastNotes'].getValue().forIndex(null) &&
-        !this.showDocs
-      )
-        return 'fifth_Step';
-      if (
-        (await this.contextService.getContext("customerArea")).iceModel.elements['amendments.showAmendments'].getValue().forIndex(null) &&
-        !(await this.contextService.getContext("customerArea")).iceModel.elements['policies.showLastNotes'].getValue().forIndex(null) &&
-        this.showDocs
-      )
-        return 'fourthStep_fifthStep';
-      if (
-        (await this.contextService.getContext("customerArea")).iceModel.elements['amendments.showAmendments'].getValue().forIndex(null) &&
-        ! (await this.contextService.getContext("customerArea")).iceModel.elements['policies.showLastNotes'].getValue().forIndex(null) &&
-        !this.showDocs
-      )
-        return 'fourthStep';
-      if (
-        ! (await this.contextService.getContext("customerArea")).iceModel.elements['amendments.showAmendments'].getValue().forIndex(null) &&
-        (await this.contextService.getContext("customerArea")).iceModel.elements['policies.showLastNotes'].getValue().forIndex(null) &&
-        this.showDocs
-      )
-        return 'fourthStep_fifthStep';
-      if (
-        ! (await this.contextService.getContext("customerArea")).iceModel.elements['amendments.showAmendments'].getValue().forIndex(null) &&
-        (await this.contextService.getContext("customerArea")).iceModel.elements['policies.showLastNotes'].getValue().forIndex(null) &&
-        !this.showDocs
-      )
-        return 'fourthStep';
-      if (
-        ! (await this.contextService.getContext("customerArea")).iceModel.elements['amendments.showAmendments'].getValue().forIndex(null) &&
-        ! (await this.contextService.getContext("customerArea")).iceModel.elements['policies.showLastNotes'].getValue().forIndex(null) &&
-        this.showDocs
-      )
-        return 'thirdStep_fourthStep';
-      if (
-        ! (await this.contextService.getContext("customerArea")).iceModel.elements['amendments.showAmendments'].getValue().forIndex(null) &&
-        ! (await this.contextService.getContext("customerArea")).iceModel.elements['policies.showLastNotes'].getValue().forIndex(null) &&
-        !this.showDocs
-      )
-        return 'thirdStep';
-      else return '';
-    } catch(error) {
-      return '';
-    }
-  }
 
 
 

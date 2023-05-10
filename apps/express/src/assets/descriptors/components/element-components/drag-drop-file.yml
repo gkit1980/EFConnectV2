@@ -1,0 +1,6 @@
+label: Drag Drop File
+component: DragDropFileComponent
+types:
+  - text
+description: >
+  Custom component implements to uploading file with drag and drop action. 

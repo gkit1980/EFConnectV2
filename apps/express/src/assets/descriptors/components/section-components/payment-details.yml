@@ -1,0 +1,6 @@
+label: Payment Details
+component: PaymentdetailsComponent
+types:
+  - text
+description: >
+  Custom component is responsible to decision for the payment details styles.

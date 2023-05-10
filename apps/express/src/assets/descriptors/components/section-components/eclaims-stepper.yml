@@ -1,0 +1,4 @@
+label:  Eclaims Stepper
+component: EclaimsStepperComponent
+description: >
+  Stepper for eclaims process of new request

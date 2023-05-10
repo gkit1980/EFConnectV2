@@ -1,0 +1,6 @@
+label: Consents Text Messages
+component: ConsentsTextMsgComponent
+types:
+  - text
+description: >
+  Custom component provides the text messages for user's action.

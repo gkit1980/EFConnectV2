@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 import { SignupService } from '../../../services/signup.service'
 import { Observable } from 'rxjs/Rx';
 import { ElementComponentImplementation } from '@impeo/ng-ice';
-import { IndexedValue } from '@impeo/ice-core';
+import { IndexedValue,LifecycleEvent } from '@impeo/ice-core';
+import { get } from 'lodash';
 
 @Component({
   selector: 'app-insert-code-email-timer',
@@ -101,10 +102,13 @@ export class InsertCodeEmailTimerComponent extends ElementComponentImplementatio
     if (smsCodeInt.toString().length === 6) {
       this.context.iceModel.elements["customer.details.smsCodeEmail"].setSimpleValue(smsCodeInt);// with the change of value an action = 'actionVerifyChangeEmailSMS',  is triggered
 
-      this.context.$actionEnded.subscribe(
-        (actioName: string) => {
+      this.context.$lifecycle.subscribe(
+        (e: LifecycleEvent) => {
 
-          if (actioName.includes("actionVerifyChangeEmailSMS")) {
+          const actioName = get(e, ['payload', 'action']);
+
+
+          if (actioName.includes("actionVerifyChangeEmailSMS") && e.type==='ACTION_FINISHED') {
 
             if (this.context.iceModel.elements["customer.details.verifySmsEmailSuccess"].getValue().forIndex(null)) {
               this.successMsgMobileVerification = "Σας στείλαμε email με οδηγίες στην νέα διεύθυνση " + this.context.iceModel.elements["customer.details.newEmail"].getValue().forIndex(null) as string + " Παρακαλούμε ανοίξτε το email σας και πατήστε το link επιβεβαίωσης.";

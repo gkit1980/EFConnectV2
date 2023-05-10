@@ -1,0 +1,6 @@
+label: Redirection Eclaims
+component: RedirectionEclaimsComponent
+types:
+  - text
+description: >
+  Custom component is responsible for the redirection in eclaims page.

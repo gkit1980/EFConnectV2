@@ -3,8 +3,7 @@ import { environment } from "../../../../environments/environment";
 import { ElementComponentImplementation } from "@impeo/ng-ice";
 import * as _ from 'lodash';
 import { MatSlideToggleChange } from "@angular/material/slide-toggle";
-import { ItemElement, ValueOrigin, IndexedValue, LifecycleType } from "@impeo/ice-core";
-import { RECAPTCHA_SETTINGS } from "ng-recaptcha";
+import { IndexedValue, LifecycleType } from "@impeo/ice-core";
 
 @Component({
   selector: "app-consents-cards",
@@ -45,7 +44,7 @@ export class ConsentsCardsComponent extends ElementComponentImplementation imple
 
     this.addItems();
     this.context.$lifecycle.subscribe(event => {
-      if (event.type == LifecycleType.ACTION_FINISHED) {    ///Check  change with DATASTORE_ASSIGN
+      if (event.type == LifecycleType.ICE_MODEL_READY) {    ///Check  change with DATASTORE_ASSIGN
 
         //fill the items
         this.gdprItems=[];

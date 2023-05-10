@@ -1,0 +1,6 @@
+label: Home Page Component
+component: HomePageCardComponent
+types: 
+  - text
+description: > 
+  Den prokeitai na paiksei me tipota

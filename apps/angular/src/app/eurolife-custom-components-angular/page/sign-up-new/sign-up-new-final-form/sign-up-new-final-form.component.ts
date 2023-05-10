@@ -7,12 +7,13 @@ import { SignupService } from '../../../../services/signup.service';
 import { Router, ActivatedRouteSnapshot, ActivatedRoute } from '@angular/router';
 import { LocalStorageService } from '../../../../services/local-storage.service';
 import { AuthService } from '../../../../services/auth.service';
-import { DemoPageComponent, IcePrincipalService, IceModelRecipeResolver, IceContextService } from "@impeo/ng-ice";
-import { IcePrincipal, RuleFactoryImpl, IceModel, DataModel } from "@impeo/ice-core";
+import { DemoPageComponent, IcePrincipalService, IceRuntimeResolver, IceContextService } from "@impeo/ng-ice";
+import { LifecycleEvent, RuleFactoryImpl, IceModel, DataModel } from "@impeo/ice-core";
 import { errorList } from '../errorList';
 import { SpinnerService } from '../../../../services/spinner.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { get } from 'lodash';
 
 @Component({
   selector: 'app-sign-up-new-final-form',
@@ -82,7 +83,7 @@ export class SignUpNewFinalFormComponent  extends DemoPageComponent {
     private localStorage: LocalStorageService,
     private auth: AuthService,
     private icePrincipalService: IcePrincipalService,
-    private iceModelRecipeResolver: IceModelRecipeResolver,
+    private iceRuntimeResolver: IceRuntimeResolver,
     private iceContextService: IceContextService,
     private spinnerService: SpinnerService,
     private modalService: NgbModal) {
@@ -289,20 +290,34 @@ export class SignUpNewFinalFormComponent  extends DemoPageComponent {
       };
       route.params['definition'] = 'customerArea.motor';
       route.params['repo'] = 'default';
-      const iceModelRecipe = await this.iceModelRecipeResolver.resolve(route, null);
+      const iceModelRecipe = await this.iceRuntimeResolver.resolve(route, null);
       RuleFactoryImpl.build( (await this.iceContextService.getContext("customerArea")));
-      const iceModel = await IceModel.build( (await this.iceContextService.getContext("customerArea")), iceModelRecipe.recipe, iceModelRecipe.hash);
+      const iceModel = await IceModel.build( (await this.iceContextService.getContext("customerArea")), null, null);
       (await this.iceContextService.getContext("customerArea")).iceModel = iceModel;
       DataModel.build(await this.iceContextService.getContext("customerArea"));
       this.showSpinnerBtn = false;
       this.router.navigate(['/ice/default/customerArea.motor/home']);
 
-      this.iceContextService.context.$actionEnded.subscribe((actionName: string) => {
-        if (actionName != 'actionGetPolicies' && actionName == 'actionGetDocumentTypes') {
-          this.ckeckIfDafDocExists();
-          return;
-        }
-      });
+      // this.iceContextService.context.$actionEnded.subscribe((actionName: string) => {
+      //   if (actionName != 'actionGetPolicies' && actionName == 'actionGetDocumentTypes') {
+      //     this.ckeckIfDafDocExists();
+      //     return;
+      //   }
+      // });
+
+      (await this.iceContextService.getContext("customeArea")).$lifecycle.subscribe((e: LifecycleEvent) => {
+
+        const actionName = get(e, ['payload', 'action']);
+
+
+          if (actionName != 'actionGetPolicies' && actionName == "actionGetDocumentTypes") {
+            this.ckeckIfDafDocExists();
+            return;
+          }
+
+        })
+
+
     }
   }
 

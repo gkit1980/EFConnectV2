@@ -113,7 +113,7 @@ export class MyDafsComponent extends SectionComponentImplementation implements O
     this.setMatTableDataSource();
 
     this.addItemsSubs = this.context.$lifecycle.subscribe(event => {
-      if (event.type == LifecycleType.DATASTORE_ASSIGN) {
+      if (event.type == LifecycleType.ICE_MODEL_READY) {
         this.setMatTableDataSource();
       }
     });

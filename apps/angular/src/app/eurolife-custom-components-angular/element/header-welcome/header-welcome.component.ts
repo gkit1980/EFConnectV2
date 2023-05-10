@@ -38,7 +38,7 @@ export class HeaderWelcomeComponent extends ElementComponentImplementation imple
     if (_.has(this.element.recipe, 'dataStoreProperty')) {
       this.subscription1$ = this.context.$lifecycle.subscribe(
         (event) => {
-          if (event.type == LifecycleType.DATASTORE_ASSIGN) {
+          if (event.type == LifecycleType.ICE_MODEL_READY) {
             this.data = _.get(this.context.dataStore, this.element.recipe.dataStoreProperty);
             // if (this.data == undefined) {
             //   return;

@@ -7,10 +7,12 @@ import {
   RouterStateSnapshot,
   Router,
 } from '@angular/router';
-import { IcePrincipal } from '@impeo/ice-core';
+import { IcePrincipal,ClientPrincipal } from '@impeo/ice-core';
 import { IcePrincipalService } from '@impeo/ng-ice';
 import { LocalStorageService } from './local-storage.service';
 import * as CryptoJS from 'crypto-js';
+import { getDefaultLanguage } from './language.service';
+import { split } from 'lodash';
 
 
 @Injectable({
@@ -66,9 +68,23 @@ export class AuthService {
   buildPrincipal(): void {
     if (this.icePrincipalService.principal) return;
     const token = this.localStorage.getDataFromLocalStorage("token");
-    const userEmail = this.localStorage.getDataFromLocalStorage("email");
-    const userData = { token: `${token}` };
-    this.icePrincipalService.principal = new IcePrincipal(userEmail, "el", userData);
+    // const userEmail = this.localStorage.getDataFromLocalStorage("email");
+    const langCode = getDefaultLanguage();
+    // const userData = { token: `${token}` };
+    const principal = this.principalFromToken(token, langCode);
+    this.icePrincipalService.principal = principal;
+  }
+
+    //
+  //grab the JWT token payload, decode it, and create principal from it
+  //
+  private principalFromToken(token: string, locale: string): IcePrincipal {
+    const tokenParts = split(token, '.');
+    if (tokenParts.length !== 3) return null;
+
+    const payload = JSON.parse(decodeURIComponent(escape(atob(tokenParts[1]))));
+
+    return new ClientPrincipal(payload.id, token, locale, payload.roles, payload.data);
   }
 
 }

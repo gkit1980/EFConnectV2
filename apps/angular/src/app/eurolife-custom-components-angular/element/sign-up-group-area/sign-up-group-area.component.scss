@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   padding: 15px 15px 15px 15px;
-  justify-content: start;
+  justify-content: flex-start;
   width: inherit;
   margin-top: 80px;
 
@@ -19,7 +19,7 @@
 
 .submit-btn{
   margin-left: 220px;
-  
+
   @media screen and (max-width: 983px) {
     margin-left: 110px;
   }

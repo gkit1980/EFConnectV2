@@ -1,0 +1,4 @@
+label:  Green Card Stepper
+component: GreenCardStepperComponent
+description: >
+  Stepper for Green Card Fuctionallity(create a new Green Card)

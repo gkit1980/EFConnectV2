@@ -1,0 +1,7 @@
+label: Output Action
+component: OutputWithActionComponent
+types:
+  - text
+  - date
+description: >
+  Custom component that takes an action as input 

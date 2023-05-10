@@ -127,7 +127,7 @@ export class MyDocumentsComponent extends SectionComponentImplementation impleme
     this.setMatTableDataSource();
 
     this.addItemsSubs = this.context.$lifecycle.subscribe(event => {
-      if (event.type == LifecycleType.DATASTORE_ASSIGN) {
+      if (event.type == LifecycleType.ICE_MODEL_READY) {
         this.setMatTableDataSource();
       }
     });

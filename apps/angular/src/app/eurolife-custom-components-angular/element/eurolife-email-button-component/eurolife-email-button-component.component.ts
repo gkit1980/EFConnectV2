@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IceButtonComponent } from '@impeo/ng-ice/impeo-ng-ice';
+import { IceButtonComponent } from '@impeo/ng-ice';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MotorCustomTableComponent } from '../../section/motor-custom-table/motor-custom-table.section.component';
 import { Overlay } from '@angular/cdk/overlay';

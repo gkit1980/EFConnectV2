@@ -1,0 +1,4 @@
+label:  Eclaims Ulpoad files component
+component: EclaimsUploadComponent
+description: >
+  Appears the the eclaims final step of eclaims processing,the upload files step

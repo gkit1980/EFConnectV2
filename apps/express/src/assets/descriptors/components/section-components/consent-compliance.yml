@@ -1,0 +1,4 @@
+label:  Coonsent Component
+component: ConsentComplianceComponent
+description: >
+   Consent Compliance page that appears when the user login

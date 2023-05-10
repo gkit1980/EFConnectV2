@@ -1,0 +1,4 @@
+label:  Editor Card Component
+component: MotorCoversEditorCardComponent
+description: >
+  The main component that page of viewMyPolicies consists of

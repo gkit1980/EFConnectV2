@@ -1,0 +1,7 @@
+label: InputonchangeactionComponent
+component: InputonchangeactionComponent
+types:
+  - text
+  - boolean
+description: >
+  Custom component is responsible for actions between changes.

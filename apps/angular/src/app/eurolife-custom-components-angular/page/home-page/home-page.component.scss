@@ -142,7 +142,7 @@
 
         &:nth-child(1) {
             margin-right: 24px;
-            
+
             @media screen and (max-width : 440px){
                 margin-right: unset ;
             }
@@ -406,7 +406,7 @@
     font-weight: 500;
     font-style: normal;
     font-stretch: normal;
-    line-height: 1.2;    
+    line-height: 1.2;
     letter-spacing: normal;
     color: #ef3340;
     margin: 16px 6px 16px 0;
@@ -532,7 +532,7 @@ h1.t-c {
 }
 
 
-.col-sm-4   //only for widget 
+.col-sm-4   //only for widget
 {
     @media screen and (max-width: 768px){
         margin-bottom: 10px;
@@ -544,8 +544,8 @@ h1.t-c {
 
     transition: box-shadow .3s ease,border-color .2s ease;
     height: 100%;
-  
-  
+
+
     &:hover {
       box-shadow:   0 2px 20px 0 rgba(0, 0, 0, 0.15);
     }
@@ -577,7 +577,7 @@ h1.t-c {
     width: 403px;
     height: 204px;
     top: -4%;
-    
+
     background: rgba(239, 51, 64, 0.8);
     border-radius: 0px 0px 0px 83.5px;
     @media screen and (min-width: 769px) and (max-width: 975px){
@@ -617,8 +617,8 @@ h1.t-c {
         color: #fff;
     }
 }
- 
+
 .red-info {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }

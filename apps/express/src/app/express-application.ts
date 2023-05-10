@@ -14,31 +14,56 @@ import { configureIcePrincipal } from './middleware/configure-ice-principal';
 import { configureVisualIce } from './middleware/configure-visual-ice';
 import { registerCustomRules } from '@insis-portal/ice-custom-rules';
 import { registerCustomServerRules } from '@insis-portal/ice-custom-server-rules';
+// import * as compression from 'compression';
+
+
+// import { RuleFactoryImpl, RuleHolder } from '@impeo/ice-core';
+// import * as ElementRules from '../../../../libs/ice-custom-rules/src/lib/rules/element-rules';
+// import * as IntegrationRules from '../../../../libs/ice-custom-rules/src/lib/rules/integration-rules';
+// import * as DefinitionRules from '../../../../libs/ice-custom-rules/src/lib/rules/definition-rules';
+// import * as ActionRules from '../../../../libs/ice-custom-rules/src/lib/rules/action-rules';
+// import * as SectionRules from '../../../../libs/ice-custom-rules/src/lib/rules/section-rules';
+// import * as bodyParser from 'body-parser';
+// import { ServerPrincipal } from '@impeo/ice-core';
+// import jwt from 'jsonwebtoken';
+// import { expressIce, ExpressIceApplicationOptions } from '@impeo/exp-ice';
+
+
 
 export class ExpressApplication {
-  private app: express.Application = express();
+   app: express.Application = express();
   private server: http.Server;
 
   constructor(private appOptions: ExpressApplicationOptions) {}
 
-  start() {
+ async start() {
     /**
      * TIP: Here we register custom rules into express application, this will allow
      * the execution of custom rules on the server.
      */
-    registerCustomRules();
-    registerCustomServerRules();
 
-    configureCompression(this.app);
 
-    configureStaticFiles(this.app, this.appOptions.wwwRootPath);
+   registerCustomRules();
+
+
+
+  registerCustomServerRules();
+
+   configureCompression(this.app);
+
+
+   configureStaticFiles(this.app, this.appOptions.wwwRootPath);
 
     // Needed to parsing JSON request body
-    configureBodyParser(this.app);
+   configureBodyParser(this.app);
+
 
     configureIcePrincipal(this.app);
 
-    configureIceApplication(this.app, this.appOptions);
+
+
+    configureIceApplication(this.app,this.appOptions);
+
 
     if (this.appOptions.visualIce) {
       configureVisualIce(this.app, this.appOptions.visualIce);

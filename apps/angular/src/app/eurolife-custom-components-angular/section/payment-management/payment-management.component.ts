@@ -2,9 +2,10 @@ import { environment } from './../../../../environments/environment';
 import { Component, OnInit } from '@angular/core';
 import { SectionComponentImplementation, IceSectionComponent } from '@impeo/ng-ice';
 import { IceSection } from '@impeo/ice-core';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as _ from "lodash";
+import {LifecycleEvent } from '@impeo/ice-core';
 
 @Component({
   selector: 'app-payment-management',
@@ -224,8 +225,11 @@ export class PaymentManagementComponent extends SectionComponentImplementation {
       return;
     }
     //dataStoreProperty comes from the page
-    this.context.$actionEnded.subscribe((actionName: string) => {
-      if (actionName.includes("actionGetPolicies")) {
+    this.context.$lifecycle.subscribe((e: LifecycleEvent) => {
+
+      const actionName = _.get(e, ['payload', 'action']);
+
+      if (actionName.includes("actionGetPolicies") && e.type === 'ACTION_FINISHED') {
         this.context.iceModel.elements['triggerActionWriteFromOther'].setSimpleValue(1);
         //  this.items = _.get(this.context.dataStore, this.recipe.dataStoreProperty);
         //   this.showDafsDocs();
@@ -234,21 +238,27 @@ export class PaymentManagementComponent extends SectionComponentImplementation {
 
     });
 
-    this.context.$actionEnded.subscribe((actionName: string) => {
-      if (actionName.includes("actionWriteFromOtherForRefresh")) {
+    this.context.$lifecycle.subscribe((e: LifecycleEvent) => {
+
+      const actionName = _.get(e, ['payload', 'action']);
+
+      if (actionName.includes("actionWriteFromOtherForRefresh") && e.type === 'ACTION_FINISHED') {
         this.items = _.get(this.context.dataStore, this.recipe.dataStoreProperty);
         this.setDataToFront();
 
-        this.context.$actionEnded.observers.pop();
+        //this.context.$actionEnded.observers.pop();
       }
 
     });
 
-    this.context.$actionEnded.subscribe((actionName: string) => {
-      if (actionName.includes("actionGetParticipantsHomePage")) {
+    this.context.$lifecycle.subscribe((e: LifecycleEvent) => {
+
+      const actionName = _.get(e, ['payload', 'action']);
+
+      if (actionName.includes("actionGetParticipantsHomePage") && e.type === 'ACTION_FINISHED') {
         this.items = _.get(this.context.dataStore, this.recipe.dataStoreProperty);
         this.setDataToFront();
-        this.context.$actionEnded.observers.pop();
+     //  this.context.$actionEnded.observers.pop();
       }
 
     });

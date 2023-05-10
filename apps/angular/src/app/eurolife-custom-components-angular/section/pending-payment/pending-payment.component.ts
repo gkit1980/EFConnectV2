@@ -1,7 +1,7 @@
 
 import { environment } from './../../../../environments/environment';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
-import { IceElement, IndexedValue } from '@impeo/ice-core';
+import { IceElement,LifecycleEvent } from '@impeo/ice-core';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { SectionComponentImplementation, IceSectionComponent } from '@impeo/ng-ice';
 import * as _ from 'lodash';
@@ -10,7 +10,6 @@ import { SpinnerService } from '../../../services/spinner.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LocalStorageService } from '../../../services/local-storage.service';
 import { CommunicationService } from '../../../services/communication.service';
-import * as moment from "moment";
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -29,7 +28,7 @@ export class PendingPaymentComponent extends SectionComponentImplementation impl
   allUnpaidReceipts: any[] = [];
   allLastNotes: any[] = [];
   filterCols: string[] = [];
-  index: number;
+  indexPos: number;
   dataWithNoteURLs: any[] = [];
   isLooped: boolean = false;
   data: any;
@@ -98,7 +97,7 @@ export class PendingPaymentComponent extends SectionComponentImplementation impl
     if (_.has(this.recipe, 'dataStore'))
     {
       this.datastoreSubs = this.context.$lifecycle.subscribe(event => {
-        if (event.type == LifecycleType.DATASTORE_ASSIGN) {
+        if (event.type == LifecycleType.ICE_MODEL_READY) {
           this.data = this.context.dataStore[this.recipe.dataStore];
           if(this.data==undefined) return;
           // this.SpinnerService.stop();
@@ -121,10 +120,13 @@ export class PendingPaymentComponent extends SectionComponentImplementation impl
 
         }
 
-        this.getLastURLNoteSubs = this.context.$actionEnded.subscribe((actionName: string) => {
-          if (actionName.includes("actionGetLastURLNote")) {
+        this.getLastURLNoteSubs = this.context.$lifecycle.subscribe((e: LifecycleEvent) => {
+
+          const actionName = _.get(e, ['payload', 'action']);
+
+          if (actionName.includes("actionGetLastURLNote") && e.type === 'ACTION_FINISHED') {
             this.dataWithNoteURLs = _.get(this.context.dataStore, this.recipe.dataStoreProperty);
-            this.context.$actionEnded.observers.pop();
+           // this.context.$actionEnded.observers.pop();
           }
 
         });
@@ -363,7 +365,7 @@ export class PendingPaymentComponent extends SectionComponentImplementation impl
 
             if (data[i].Receipts[j].ReceiptStatusDescription == "Ανείσπρακτη" && data[i].Receipts[j].GrossPremium>0)
              {
-                this.index = i
+                this.indexPos = i
                 this.showUnpaidReceipts = true;
 
                 //*Extra Rule for payment codes
@@ -396,7 +398,7 @@ export class PendingPaymentComponent extends SectionComponentImplementation impl
                 newRowUnpaid["urlNote"] = data[i].Receipts[j].UrlNote;
 
                 newRowUnpaid["AccountNumber"] = "Αυτόματη Πληρωμή: **" + data[i].Receipts[j].AccountNumber;
-                newRowUnpaid["index"] = this.index;
+                newRowUnpaid["index"] = this.indexPos;
                 this.allUnpaidReceipts.push(newRowUnpaid);
              }
            }
@@ -454,7 +456,7 @@ export class PendingPaymentComponent extends SectionComponentImplementation impl
 
 
       this.context.iceModel.elements['policy.contract.general.info.indexHolderHome'].setSimpleValue(null);
-      this.context.iceModel.elements['policy.contract.general.info.indexHolderHome'].setSimpleValue(this.index);
+      this.context.iceModel.elements['policy.contract.general.info.indexHolderHome'].setSimpleValue(this.indexPos);
 
       this.contentLoaded=true;
 

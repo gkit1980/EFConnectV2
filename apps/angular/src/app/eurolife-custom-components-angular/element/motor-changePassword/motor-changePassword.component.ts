@@ -4,6 +4,9 @@ import { ElementComponentImplementation } from '@impeo/ng-ice';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalService } from '../../../services/modal.service';
 import { PopUpPageComponent } from '../../page/pop-up-page/pop-up-page.component';
+import {LifecycleEvent } from '@impeo/ice-core';
+import { get } from 'lodash';
+
 
 
 
@@ -25,11 +28,12 @@ export class MotorChangePassword extends ElementComponentImplementation {
 	ngOnInit() {
 
 		// private ngbActiveModal: NgbActiveModal
-		this.context.$actionEnded.subscribe((actionName: string) => {
-			if (actionName.includes('actionChangePassword')) {
-				// if (this.context.iceModel.elements["changePasswordResult"]) {
-				// 	this.ngbModal.dismissAll();
-				// }
+		this.context.$lifecycle.subscribe((e: LifecycleEvent) => {
+
+      const actionName = get(e, ['payload', 'action']);
+
+			if (actionName.includes('actionChangePassword') && e.type==="ACTION_FINISHED") {
+
 			}
 		})
 

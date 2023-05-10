@@ -1,0 +1,7 @@
+label: Calculate Life Expiration Date
+component: CalculateLifeExpirationDateComponent
+types:
+  - date
+  - boolean
+description: >
+  Custom component calculates the expiration date of the contracts.

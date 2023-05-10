@@ -1,0 +1,10 @@
+implementations:
+  MotorBrandsListResolver:
+    description: MotorBrandsListResolver description
+    params: null
+  MotorListResolverBase:
+    description: MotorListResolverBase description
+    params: null
+  MotorPostcodeListResolver:
+    description: MotorPostcodeListResolver description
+    params: null

@@ -1,0 +1,4 @@
+label:  Eclaims lwc component
+component: EclaimsLwcCreateCaseComponent
+description: >
+  Loads the lwc of Salesforce where begins the process of creating a new request of Eclaims-Belongs to viewEClaimsDetails page 

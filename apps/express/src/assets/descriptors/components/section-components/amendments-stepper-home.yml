@@ -1,0 +1,4 @@
+label:  Stepper for Amendment for property
+component: AmendmentsStepperHomeComponent
+description: >
+    Stepper when you request new property,belongs to viewAmendmentHomeDetails Page

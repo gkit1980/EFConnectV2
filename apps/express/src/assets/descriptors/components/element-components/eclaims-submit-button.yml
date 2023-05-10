@@ -1,0 +1,7 @@
+label: Eclaims Button
+component: EclaimsSubmitButtonComponent
+types:
+  - text
+  - date
+description: >
+  Custom eclaims button component.

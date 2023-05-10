@@ -10,12 +10,13 @@ import { PassManagementService } from '../../../services/pass-management.service
 import { Subscription } from 'rxjs';
 import { ChangeDetectorRef } from '@angular/core';
 import * as jwt_token from 'jwt-decode';
-import { LifecycleType } from '@impeo/ice-core';
+import { LifecycleType,LifecycleEvent } from '@impeo/ice-core';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import * as _ from "lodash";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { Router, ActivatedRouteSnapshot, ActivatedRoute } from "@angular/router";
 import * as CryptoJS from 'crypto-js';
+
 
 @Component({
   selector: "app-home-page",
@@ -167,8 +168,12 @@ export class HomePageComponent extends PageComponentImplementation
     //there is bug here...while you refresh the page the actionAmendmentsOnInit is being executed first and then the WriteFromMultiple...so we check the refresh status
     this.refreshStatus = this.localStorage.getDataFromLocalStorage("refreshStatus");
     if (this.refreshStatus == 1) {
-      this.subscription3$ = this.context.$actionEnded.subscribe(async (actionName: string) => {
-        if (actionName.includes("actionGetPolicies")) {
+      this.subscription3$ = this.context.$lifecycle.subscribe(async (e: LifecycleEvent) => {
+
+        const actionName = _.get(e, ['payload', 'action']);
+
+
+        if (actionName.includes("actionGetPolicies") && e.type==='ACTION_FINISHED') {
           let action = this.context.iceModel.actions['actionAmendmentsOnInit'];
           if (action != null) {
             await action.executionRules[1].execute();
@@ -197,7 +202,11 @@ export class HomePageComponent extends PageComponentImplementation
     this.subscriptions.push(this.subscription4$);
 
 
-    this.subscription5$ = this.context.$actionEnded.subscribe((actionName: string) => {
+    this.subscription5$ = this.context.$lifecycle.subscribe((e: LifecycleEvent) => {
+
+      const actionName = _.get(e, ['payload', 'action']);
+
+
       if (actionName.includes("actionGetBlogInfo")) {
         if (_.get(this.context.dataStore, 'blogInfo') != undefined) {
           this.letsTalkData = _.get(this.context.dataStore, 'blogInfo');
@@ -236,7 +245,7 @@ export class HomePageComponent extends PageComponentImplementation
     this.subscriptions.push(this.subscription5$);
 
     this.subscription6$ = this.context.$lifecycle.subscribe(event => {
-      if (event.type == LifecycleType.DATASTORE_ASSIGN) {
+      if (event.type == LifecycleType.ICE_MODEL_READY) {
         if (_.get(this.context.dataStore, 'blogInfo') != undefined) {
           this.letsTalkData = _.get(this.context.dataStore, 'blogInfo');
         }

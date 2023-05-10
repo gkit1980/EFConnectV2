@@ -1,16 +1,16 @@
 import { IceSection } from "@impeo/ice-core";
 import { Component, ElementRef, ChangeDetectorRef, OnInit, AfterViewInit } from "@angular/core";
 import { PageComponentImplementation } from "@impeo/ng-ice";
+import { LifecycleEvent } from "@impeo/ice-core";
 import { ActivatedRoute } from "@angular/router";
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalService } from "../../../services/modal.service";
 import { LocalStorageService } from "../../../services/local-storage.service";
-import { IndexedValue } from "@impeo/ice-core";
-import { JoyrideService } from 'ngx-joyride';
 import { Subscription, throwError } from "rxjs";
-import { catchError, first, tap } from "rxjs/operators";
+import { catchError, first, tap,map } from "rxjs/operators";
 import { SpinnerService } from '../../../services/spinner.service';
 import * as _ from "lodash";
+
 
 
 @Component({
@@ -37,7 +37,6 @@ export class SimplePageWithNavigationComponent extends PageComponentImplementati
 
 
   constructor(private route: ActivatedRoute, public ngbModal: NgbModal, public modalService: ModalService, private elementRef: ElementRef, private localStorage: LocalStorageService,
-    private readonly joyride: JoyrideService,
     private cdr: ChangeDetectorRef,
     private spinnerService: SpinnerService
   ) {
@@ -67,8 +66,14 @@ export class SimplePageWithNavigationComponent extends PageComponentImplementati
       this.chkInvetsmentProduct();
     }
 
-    const writeFromOtherForRefreshEnded$ = this.context.$actionEnded.pipe(
-      first((action) => action === 'actionWriteFromOtherForRefresh'),
+    const writeFromOtherForRefreshEnded$ = this.context.$lifecycle.pipe(
+        map((e:LifecycleEvent) =>
+        {
+        const actionName = _.get(e, ['payload', 'action']);
+
+        if(actionName === 'actionWriteFromOtherForRefresh'&& e.type=="ACTION_FINISHED")
+        return e;
+        }),
       catchError((err) => this.handleError(err)),
       tap((_x) => {
         this.localStorage.setDataToLocalStorage('refreshStatus', 0);
@@ -332,34 +337,7 @@ export class SimplePageWithNavigationComponent extends PageComponentImplementati
       this.context.iceModel.executeAction(actName);
       this.context.iceModel.elements["deeplink.contract.downloadpdf"].setSimpleValue(false);
     }
-    ///walkthrough
-    if (!this.context.iceModel.elements["home.isMobileDevice"].getValue().forIndex(null)) {
-      if (this.localStorage.getDataFromLocalStorage("walkthrough") === undefined) {
-        this.localStorage.setDataToLocalStorage("walkthrough", true);
-        if (this.page.name != 'customerProfile') {
-          //joy ride.... Claims page
-          this.joyride.startTour(
-            {
-              steps: ['policyDetails_firstStep'],
-              showCounter: false
-            })
 
-        }
-      }
-      else {
-        this.walkthroughPolDetSubs = this.context.iceModel.elements["walkthrough.page.index.policyDetails"].$dataModelValueChange.subscribe((value: IndexedValue) => {
-          if (value.element.getValue().forIndex(null) === 1) {
-            this.joyride.startTour(
-              {
-                steps: ['policyDetails_firstStep'],
-                showCounter: false
-              })
-          }
-        });
-        this.subscription.add(this.walkthroughPolDetSubs);
-      }
-
-    }
 
   }
 
@@ -369,9 +347,7 @@ export class SimplePageWithNavigationComponent extends PageComponentImplementati
   }
 
   ngOnDestroy() {
-    if (!this.context.iceModel.elements["home.isMobileDevice"].getValue().forIndex(null)) {
-      this.joyride.closeTour();
-    }
+
 
     this.subscription.unsubscribe();
   }

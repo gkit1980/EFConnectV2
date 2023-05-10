@@ -1,0 +1,5 @@
+label: Simple Page
+component: SimplePageComponent
+description: >
+  Custom page implements the list of the active customer's contracts. 
+

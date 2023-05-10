@@ -9,6 +9,7 @@ import * as _ from 'lodash';
 import { environment } from '../../../../environments/environment';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import {LifecycleEvent } from '@impeo/ice-core';
 
 
 export interface Receipt {
@@ -96,8 +97,11 @@ export class MotorCustomDetailTableComponent extends SectionComponentImplementat
 
                 /////SOS! from redirerection....wait to finish actionGetReceipts
 
-                this.getReceiptsSubs = this.context.$actionEnded.subscribe((actionName: string) => {
-                    if (actionName.includes("actionGetReceipts")) {
+                this.getReceiptsSubs = this.context.$lifecycle.subscribe((e: LifecycleEvent) => {
+
+                  const actionName = _.get(e, ['payload', 'action']);
+
+                    if (actionName.includes("actionGetReceipts") && e.type === 'ACTION_FINISHED') {
 
                         this.items = _.get(this.context.dataStore, this.recipe.dataStoreProperty);
                         if (this.items == null)
@@ -147,7 +151,7 @@ export class MotorCustomDetailTableComponent extends SectionComponentImplementat
                             this.showSpinnerBtnArr = [...this.showSpinnerBtnArr, false];
                         })
                         this.filterStatuses = Array.from(new Set(this.filterStatuses))
-                        this.context.$actionEnded.observers.pop();
+                       // this.context.$lifecycle.observers.pop();
                     }
                 });
                 this.subscription.add(this.getReceiptsSubs);

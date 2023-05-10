@@ -1,0 +1,7 @@
+label: Calculate Property Duartion date
+component: CalculatePropertyDurationDateComponent
+types:
+  - date
+  - boolean
+description: >
+  Custom component includes the calculation for duration.

@@ -1,0 +1,8 @@
+label: Time Picker 
+component: TimePickerComponent
+types:
+  - text
+  - boolean
+  - integer
+description: >
+  Component is responsible for uploading files through a button type. 

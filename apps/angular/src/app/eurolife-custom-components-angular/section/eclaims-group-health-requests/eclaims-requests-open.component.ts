@@ -7,7 +7,7 @@ import { Subject, Subscription } from 'rxjs';
 import { SpinnerService } from '../../../services/spinner.service';
 import { environment } from '../../../../environments/environment';
 import { Router, ActivatedRoute } from '@angular/router';
-import { IndexedValue} from '@impeo/ice-core';
+import { IndexedValue,LifecycleEvent} from '@impeo/ice-core';
 import { takeUntil } from "rxjs/operators";
 import { LocalStorageService } from "../../../services/local-storage.service";
 import * as _ from "lodash";
@@ -83,10 +83,13 @@ export class EclaimsRequestsOpenComponent
       }
     });
 
-    this.context.$actionEnded
+    this.context.$lifecycle
     .pipe(takeUntil(this.destroy$))
-    .subscribe((actionName: string) => {
-      if (actionName.includes("actionGetParticipantsHomePage")) {
+    .subscribe((e: LifecycleEvent) => {
+
+      const actionName = _.get(e, ['payload', 'action']);
+
+      if (actionName.includes("actionGetParticipantsHomePage") && e.type === 'ACTION_FINISHED') {
 
         if (_.get(this.context.dataStore, 'clientContracts'))
         {

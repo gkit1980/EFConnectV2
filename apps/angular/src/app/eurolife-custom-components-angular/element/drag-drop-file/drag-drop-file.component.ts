@@ -5,7 +5,7 @@ import { ElementComponentImplementation } from '@impeo/ng-ice';
 import { Subject } from 'rxjs';
 import { environment } from '../../../../environments/environment';
 var filesize = require('filesize');
-var ice_1 = require('@impeo/ice');
+var ice_1 = require('@impeo/ice-core');
 
 @Component({
   selector: 'app-drag-drop-file',

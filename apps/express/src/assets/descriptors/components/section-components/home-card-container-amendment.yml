@@ -1,0 +1,4 @@
+label:  Home Card Container
+component: HomeCardContainerAmendmentComponent
+description: >
+  Card Component Container that includes Cards (with Amendments) in Home Page

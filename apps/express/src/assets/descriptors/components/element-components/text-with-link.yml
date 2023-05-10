@@ -1,0 +1,25 @@
+label: Text With Clickable Link
+component: TextWithLinkComponent
+types:
+  - text
+  - boolean
+  - integer
+description: >
+  A component to display text and enter label in a special format, in order to render it as a link. This is an example how should label be formated in order to generate a link
+
+  #### Example
+
+  ```
+    label:
+      - el: >-
+          Some static text [click me](https://www.link.com), some more static text [click me as well](https://www.link2.com).
+  ```
+
+# params:
+#   label:
+#     label: Label position
+#     type: select
+#     options:
+#       before: Before
+#       after: After
+#     info: any value that is not 'before' will render the label after the checkbox

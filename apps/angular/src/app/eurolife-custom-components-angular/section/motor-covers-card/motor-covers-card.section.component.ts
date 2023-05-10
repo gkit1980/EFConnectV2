@@ -18,7 +18,7 @@ import { Subscription, throwError } from 'rxjs';
 import { catchError, filter, first, map, tap, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import * as CryptoJS from 'crypto-js';
-import { IndexedValue } from '@impeo/ice-core';
+import { LifecycleEvent } from '@impeo/ice-core';
 
 const fs = require('fs');
 
@@ -121,7 +121,7 @@ export class MotorCoversEditorCardComponent extends SectionComponentImplementati
   viewMyPoliciesPaymentCode2 = 'pages.viewMyPolicies.viewMyPoliciesPaymentCode2.label';
   payment3 = 'pages.viewMyPolicies.payment3.label';
   endDate = 'pages.viewMyPolicies.endDate.label';
-  index: number;
+
   dataWithNoteURLs: any[] = []
   status: string[] = ["Εν Ισχύ", "Ελεύθερο (Λήξη Πληρωμών)", "Μερική Εξαγορά Μεριδίων Α/Κ",
     "Αλλαγή επενδυτικού σεναρίου", "Μερική Εξαγορά", "Επαναφορά"];
@@ -170,8 +170,14 @@ export class MotorCoversEditorCardComponent extends SectionComponentImplementati
 
     this.addItems();
 
-    const getPoliciesEnded$ = this.context.$actionEnded.pipe(
-      first((action) => action === 'actionGetPolicies'),
+    const getPoliciesEnded$ = this.context.$lifecycle.pipe(
+      map((e:LifecycleEvent) =>
+      {
+      const actionName = _.get(e, ['payload', 'action']);
+      if(actionName === 'actionGetPolicies'&& e.type=="ACTION_FINISHED")
+      return e;
+      }
+      ),
       catchError((err) => this.handleError(err)),
       tap((_) => this.execActionWriteFromOtherForRefresh())
     );
@@ -196,10 +202,13 @@ export class MotorCoversEditorCardComponent extends SectionComponentImplementati
     this.subscription.add(this.lifecycleSubs);
 
 
-    this.context.$actionEnded
+    this.context.$lifecycle
     .pipe(takeUntil(this.destroy$))
-    .subscribe((actionName: string) => {
-      if (actionName.includes("actionGetParticipantsHomePage")) {
+    .subscribe((e:LifecycleEvent) => {
+
+      const actionName = _.get(e, ['payload', 'action']);
+
+      if (actionName.includes("actionGetParticipantsHomePage") && e.type=="ACTION_FINISHED") {
       //the last action is being executed
      this.spinnerService.loadingOff();
       }

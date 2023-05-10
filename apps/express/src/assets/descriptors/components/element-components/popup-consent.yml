@@ -1,0 +1,6 @@
+label: Popup Consent
+component: PopupConsentComponent
+types:
+  - text
+description: >
+  Custom component that opens pop-up dialog for consent items in site areas.

@@ -1,0 +1,8 @@
+label: Pending Payment
+component: PendingPaymentComponent
+types:
+  - text
+  - integer
+  - boolean
+description: >
+  Custom component is responsible to check the status payment and decision for the style in these areas.

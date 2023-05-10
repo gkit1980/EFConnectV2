@@ -1,7 +1,7 @@
 import { SectionComponentImplementation, IceSectionComponent } from '@impeo/ng-ice';
 import { Component, OnInit } from '@angular/core';
 import * as _ from 'lodash';
-import { LifecycleType } from '@impeo/ice-core';
+import { LifecycleType,LifecycleEvent } from '@impeo/ice-core';
 import { LocalStorageService } from "../../../services/local-storage.service";
 
 @Component({
@@ -79,7 +79,7 @@ export class ParticipantsViewComponent extends SectionComponentImplementation {
 
 
     this.context.$lifecycle.subscribe(event => {
-      if (event.type == LifecycleType.DATASTORE_ASSIGN) {
+      if (event.type == LifecycleType.ICE_MODEL_READY) {
 
         this.addItems();
         this.flag = false;
@@ -234,10 +234,13 @@ export class ParticipantsViewComponent extends SectionComponentImplementation {
         this.items = _.get(this.context.dataStore, this.recipe.dataStoreProperty);
         return;
       }
-      this.context.$actionEnded.subscribe((actionName: string) => {
-        if (actionName.includes("actionGetPolicies")) {
+      this.context.$lifecycle.subscribe((e: LifecycleEvent) => {
+
+        const actionName = _.get(e, ['payload', 'action']);
+
+        if (actionName.includes("actionGetPolicies") && e.type==="ACTION_FINISHED") {
           this.context.iceModel.elements['triggerActionGetParticipants'].setSimpleValue(1);
-          this.context.$actionEnded.observers.pop();
+         // this.context.$actionEnded.observers.pop();
         }
         else {
           if (this.context.dataStore.data.clientContractsWithParticipants) {
