@@ -1,11 +1,12 @@
 import { NgModule } from "@angular/core";
-import { ResourcePipe } from "./pipes/resource.pipe";
 import { FormatTimePipe } from "./pipes/formatTime.pipe";
+import { ResourcePipe } from "./pipes/resource.pipe";
 import { FilterPipe } from "./pipes/filter.pipe";
 
+
 @NgModule({
-  declarations: [ResourcePipe, FormatTimePipe, FilterPipe],
+  declarations: [FormatTimePipe, FilterPipe,ResourcePipe],
   imports: [],
-  exports: [ResourcePipe, FormatTimePipe, FilterPipe]
+  exports: [FormatTimePipe, FilterPipe,ResourcePipe]
 })
 export class PipesModule {}

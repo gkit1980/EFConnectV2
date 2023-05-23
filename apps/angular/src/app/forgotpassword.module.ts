@@ -8,60 +8,63 @@ import { ResourceResolver } from "./resolvers/resource.resolver";
  import { SignupService } from "./services/signup.service";
  import { SharedModule } from "./shared.module";
 
+
+
 ///forgot password process
 
 
 
-import { 
-  MatToolbarModule, 
-  MatButtonModule,
-  MatSidenavModule,
-  MatIconModule,
-  MatListModule ,
-  MatStepperModule,
-  MatInputModule
-} from '@angular/material';
+
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import {MatSidenavModule}   from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatInputModule} from '@angular/material/input';
+
+
 import { ForgotPasswordComponent } from './eurolife-custom-components-angular/page/forgot-password/forgot-password.component';
 import { ForgotPasswordRecoveryComponent } from './eurolife-custom-components-angular/page/forgot-password-recovery/forgot-password-recovery.component';
 import { ForgotPasswordResetComponent } from './eurolife-custom-components-angular/page/forgot-password-reset/forgot-password-reset.component';
 
-const routes :Routes =  
-[  
+const routes :Routes =
+[
     {
         path: "",
         component: ForgotPasswordComponent,
-        resolve: { resources: ResourceResolver },
+        resolve: { runtime: ResourceResolver },
         children: [
           {
             path: "",
             pathMatch: "full",
             redirectTo: "recovery",
-            resolve: { resources: ResourceResolver }
+            resolve: { runtime: ResourceResolver }
           },
           {
             path: "recovery",
             component: ForgotPasswordRecoveryComponent,
-            resolve: { resources: ResourceResolver }
+            resolve: { runtime: ResourceResolver }
           },
           {
             path: "reset",
             pathMatch: "full",
             component: ForgotPasswordResetComponent,
-            resolve: { resources: ResourceResolver }
+            resolve: { runtime: ResourceResolver }
           }
         ]
       }
-]  
+]
 
 @NgModule({
   declarations: [ForgotPasswordComponent,ForgotPasswordRecoveryComponent,ForgotPasswordResetComponent],
   providers: [SignUpGuard,SignupService],
   imports: [
-    CommonModule,
+   CommonModule,
     FormsModule,
-    PipesModule,  
+    PipesModule,
     SharedModule,
-    MatToolbarModule, 
+    MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
@@ -69,12 +72,12 @@ const routes :Routes =
     MatStepperModule,
     MatInputModule,
     ReactiveFormsModule,
-    RouterModule.forChild(routes)  
+    RouterModule.forChild(routes)
     ],
     exports:
     [
       FormsModule,
-      MatToolbarModule, 
+      MatToolbarModule,
       MatButtonModule,
       MatSidenavModule,
       MatIconModule,

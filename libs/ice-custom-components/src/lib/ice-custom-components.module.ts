@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { InsisDummyButtonComponent } from './components/element-components/insis-dummy-button-component/insis-dummy-button.component';
 import { IceComponentsService, NgIceModule } from '@impeo/ng-ice';
-import { BrowserModule } from '@angular/platform-browser';
+// import { BrowserModule } from '@angular/platform-browser';
 import { InsisSliderComponent } from './components/element-components/insis-slider-component/insis-slider.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -143,7 +143,7 @@ export function registerComponents(componentService: IceComponentsService) {
 @NgModule({
   imports: [
     CommonModule,
-    BrowserModule,
+   // BrowserModule,
     OverlayModule,
     MarkdownToHtmlModule,
     NgIceModule.forRoot(),

@@ -7,6 +7,8 @@ import { SharedModule } from "./shared.module";
 import { ResourceResolver } from "./resolvers/resource.resolver";
 
 
+
+
 ///new sign up process
 
 import { SignUpNewMobileComponent } from './eurolife-custom-components-angular/page/sign-up-new/sign-up-new-mobile/sign-up-new-mobile.component';
@@ -25,17 +27,17 @@ const routes :Routes =
   {
     path: "",
     component: SignUpNewMobileComponent,
-    resolve: { resources: ResourceResolver }
+    resolve: { runtime: ResourceResolver }
   },
   {
     path: "signupform",
-    loadChildren: './external.module#ExternalModule',
-    resolve: { resources: ResourceResolver }
+    loadChildren: ()=> import('./external.module').then(m=>m.ExternalModule),
+    resolve: { runtime: ResourceResolver }
   },
   {
     path: "groupform",
-    loadChildren: './signupgroup.module#SignUpGroupModule',
-    resolve: { resources: ResourceResolver }
+    loadChildren: () => import('./signupgroup.module').then(m=>m.SignUpGroupModule),
+    resolve: { runtime: ResourceResolver }
   }
 
 ]

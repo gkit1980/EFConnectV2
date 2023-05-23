@@ -1,0 +1,131 @@
+#mainform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+iframe.row {}
+
+.slogan {
+    opacity: 0.6;
+    font-family: Ubuntu, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.36;
+    letter-spacing: normal;
+    color: #383b38;
+}
+
+.logo {
+    margin-bottom: 78.4px;
+}
+
+.logo img {
+    width: 158.7px;
+    height: 55.6px;
+}
+
+.articles {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.article {
+    margin: 15px;
+}
+
+.article:last-child {
+}
+
+.article:hover {
+    box-shadow: 0 15px 35px 0 rgba(0, 0, 0, 0.2);
+    background-color: rgb(255, 255, 255);
+}
+
+@media screen and (max-width: 1127px) {
+    .articles {
+        flex-direction: row;
+        /* margin-bottom: 10px; */
+    }
+
+    .article .article__date {
+        margin: 24px;
+    }
+
+}
+
+/* .article__image:before {
+
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 255, 255, 0.5);
+    transition: all .3s linear;
+} */
+
+/* .article__image:hover:before {
+    background: none;
+} */
+
+.article {
+    /* margin-right: 10px; */
+    width: 342px;
+    cursor: pointer;
+}
+
+.articles .article .article__image a img {
+    width: 100%;
+}
+
+.article__title h2 {
+    font-family: Ubuntu, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.39;
+    letter-spacing: normal;
+    color: #ffffff;
+    padding: 0px 24px 30px 24px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.article__title h2 a {
+    text-decoration: none;
+    font-family: Ubuntu, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.39;
+    letter-spacing: normal;
+    color: rgb(56, 59, 56);
+}
+
+.article__date {
+    text-decoration: none;
+    font-family: Ubuntu, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.36;
+    letter-spacing: normal;
+    color: rgb(56, 59, 56);
+    margin: 24px 0px 0px 24px;
+}
+
+/* .article .article__date {
+    margin-top: -130px;
+} */

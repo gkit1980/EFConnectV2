@@ -6,34 +6,22 @@ import { MatDividerModule } from "@angular/material/divider";
 import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from "ng-recaptcha";
 import { registerLocaleData} from "@angular/common";
 import localeEl from "@angular/common/locales/el";
-import { NgModule, Injector, ErrorHandler } from "@angular/core";
+import { NgModule, Injector, ErrorHandler,CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { TextMaskModule } from "angular2-text-mask";
-import { NgOtpInputModule } from  'ng-otp-input';
-import { BrowserModule,Meta } from "@angular/platform-browser";
+import { Meta,BrowserModule} from "@angular/platform-browser";
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { NgIceModule } from "@impeo/ng-ice";
+import { NgIceModule,IcePrincipalService,IceRuntimeService } from "@impeo/ng-ice";
+import { ClientPrincipal } from '@impeo/ice-core';
 import { AmazingTimePickerModule } from "amazing-time-picker";
-import { ViModule } from "@impeo/visual-ice";
+//import { ViModule } from "@impeo/visual-ice";                      //V2
+// import { NgOtpInputModule } from  'ng-otp-input';
 import { HttpClientModule } from "@angular/common/http";
 import { ChartsModule } from 'ng2-charts';
 import { SaveToGooglePayButtonModule } from '@google-pay/save-button-angular';
 import { MessageService } from "primeng/components/common/messageservice";
-import {
-  AutoCompleteModule,
-  BlockUIModule,
-  CardModule,
-  ConfirmDialogModule,
-  ConfirmationService,
-  DropdownModule,
-  GrowlModule,
-  InputSwitchModule,
-  MessageModule,
-  PanelModule,
-  TabViewModule,
-  TreeModule
-} from "primeng/primeng";
+
 import { AppRouting } from "./app.routing";
 import { AppComponent } from "./components/app/app.component";
 import { LoadingSpinnerComponent } from "./components/loading-spinner/loading-spinner.component";
@@ -114,7 +102,6 @@ import { CalculatePropertyPaymentFrequencyComponent } from "./eurolife-custom-co
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { SimplePageComponent } from "./eurolife-custom-components-angular/page/simple-page/simple-page.component";
 import { SvgImageComponent } from "./eurolife-custom-components-angular/element/svg-image/svg-image.component";
-import { JoyrideModule } from "ngx-joyride";
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { InlineSVGModule } from "ng-inline-svg";
 
@@ -242,7 +229,6 @@ import { AmendmentsLifeBeneficiariesComponent } from './eurolife-custom-componen
 import { UploadFileButtonComponent } from "./eurolife-custom-components-angular/element/upload-file-button/upload-file-button.component";
 import { CommentInputComponent } from "./eurolife-custom-components-angular/element/comment-input/comment-input.component";
 import { IconOutputComponent } from "./eurolife-custom-components-angular/element/icon-output/icon-output.component";
-import { OtpTimerComponent } from "./eurolife-custom-components-angular/element/otp-timer/otp-timer.component";
 import { AmendmentinputfieldComponent } from './eurolife-custom-components-angular/element/amendmentinputfield/amendmentinputfield.component';
 import { AmendmentinputlifefieldComponent } from './eurolife-custom-components-angular/element/amendmentinputlifefield/amendmentinputlifefield.component';
 import { PropertyClaimNotificationInputFieldComponent } from './eurolife-custom-components-angular/element/property-clailm-notification-input-field/property-clailm-notification-input-field.component';
@@ -254,7 +240,6 @@ import { NoAmendmentGridViewComponent } from './eurolife-custom-components-angul
 import { TextLabelComponent } from './eurolife-custom-components-angular/element/text-label/text-label.component';
 import { ContentWalkthroughComponent } from './eurolife-custom-components-angular/section/content-walkthrough/content-walkthrough.component';
 import { HomeCardContainerAmendmentComponent } from './eurolife-custom-components-angular/section/home-card-container-amendment/home-card-container-amendment.component';
-import { ShowComponentDirective } from './directives/show-component.directive';
 import { CustomerProfileComponent } from './eurolife-custom-components-angular/section/customer-profile/customer-profile.component';
 import { HeaderWelcomeComponent } from './eurolife-custom-components-angular/element/header-welcome/header-welcome.component';
 import { HomeAgentInfoComponent } from './eurolife-custom-components-angular/section/home-agent-info/home-agent-info.component';
@@ -308,6 +293,14 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { MatButtonToggleModule } from "@angular/material/button-toggle";
 import { AmendmentsGetBeneficiariesComponent } from './eurolife-custom-components-angular/section/amendments-get-beneficiaries/amendments-get-beneficiaries.component';
 import { MatExpansionModule } from '@angular/material/expansion';
+
+
+
+///new
+import { registerCustomRules } from '@insis-portal/ice-custom-rules';
+import { LanguageService, getDefaultLanguage } from './services/language.service';
+import moment from 'moment';
+
 
 
 
@@ -468,7 +461,6 @@ import { MatExpansionModule } from '@angular/material/expansion';
     UploadFileButtonComponent,
     CommentInputComponent,
     IconOutputComponent,
-    OtpTimerComponent,
     EurolifeDropdownComponent,
     AmendmentinputfieldComponent,
     AmendmentinputlifefieldComponent,
@@ -481,7 +473,6 @@ import { MatExpansionModule } from '@angular/material/expansion';
     TextLabelComponent,
     ContentWalkthroughComponent,
     HomeCardContainerAmendmentComponent,
-    ShowComponentDirective,
     CustomerProfileComponent,
     HeaderWelcomeComponent,
     HomeAgentInfoComponent,
@@ -535,9 +526,10 @@ import { MatExpansionModule } from '@angular/material/expansion';
   ],
   imports: [
     PipesModule,
-    NgOtpInputModule,
+    //NgOtpInputModule,
     InlineSVGModule.forRoot(),
     NgxSkeletonLoaderModule,
+    BrowserModule,
     MatDividerModule,
     RecaptchaV3Module,
     StorageServiceModule,
@@ -546,22 +538,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     FormsModule,
     MatFormFieldModule,
     TextMaskModule,
-    BrowserModule,
     BrowserAnimationsModule,
-    ConfirmDialogModule,
-    MessageModule,
-    GrowlModule,
-    InputSwitchModule,
-    GrowlModule,
-    TreeModule,
-    TabViewModule,
-    CardModule,
-    PanelModule,
-    DropdownModule,
-    AutoCompleteModule,
-    BlockUIModule,
     NgIceModule.forRoot(),
-
     MatSelectModule,
     MatTooltipModule,
     MatIconModule,
@@ -581,7 +559,6 @@ import { MatExpansionModule } from '@angular/material/expansion';
     NgbModule,
     AmazingTimePickerModule,
     MatSlideToggleModule,
-    JoyrideModule.forRoot(),
     ChartsModule,
     SaveToGooglePayButtonModule,
     MatProgressBarModule,
@@ -590,10 +567,11 @@ import { MatExpansionModule } from '@angular/material/expansion';
   ],
   providers: [
     LocalStorageService,
+    IcePrincipalService,
+    IceRuntimeService,
     LocalAuthedicationService,
     LoginAuthenticationGuard,
     CanDeactivateGuard,
-    ConfirmationService,
     MessageService,
     GoogleAnalyticsEventsService,
     SignUpGuard,
@@ -609,6 +587,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     WindowRefService,
     ResourceResolver,
     ResourceService,
+    LanguageService,
     LogoutService,
     ModalService,
     CookieConsentService,
@@ -620,6 +599,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     LogoutSecurityComponent,
     Meta,
     DeviceDetectorService,
+    LanguageService,
     {
       provide: RECAPTCHA_V3_SITE_KEY,
       useValue: "6Lfom6kUAAAAAH9Fq2B1IoZgyYdyF2T9k-iyg28r"
@@ -772,7 +752,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     UploadFileButtonComponent,
     CommentInputComponent,
     IconOutputComponent,
-    OtpTimerComponent,
+
     EurolifeDropdownComponent,
     AmendmentinputfieldComponent,
     AmendmentinputlifefieldComponent,
@@ -833,6 +813,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
 
   ],
   bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ],
   exports: [
     MotorCoversEditorCardComponent,
     MotorCustomTableComponent,
@@ -979,7 +962,6 @@ import { MatExpansionModule } from '@angular/material/expansion';
     UploadFileButtonComponent,
     CommentInputComponent,
     IconOutputComponent,
-    OtpTimerComponent,
     EurolifeDropdownComponent,
     AmendmentinputfieldComponent,
     AmendmentinputlifefieldComponent,
@@ -1039,8 +1021,26 @@ import { MatExpansionModule } from '@angular/material/expansion';
   ]
 })
 export class AppModule {
-  constructor(injector: Injector) {
-    setAppInjector(injector);
-    registerLocaleData(localeEl);
+
+  constructor(injector: Injector,icePrincipalService:IcePrincipalService,iceRuntimeService:IceRuntimeService) {
+    /**
+     * TIP: We need to register our custom rules to the client application
+     */
+    registerCustomRules();
+
+
+icePrincipalService.principal = new ClientPrincipal('1','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJPbmxpbmUgSldUIEJ1aWxkZXIiLCJpYXQiOjE2ODQ2MDQxMTIsImV4cCI6MTcxNjE0MDExMiwiYXVkIjoid3d3LmV4YW1wbGUuY29tIiwic3ViIjoianJvY2tldEBleGFtcGxlLmNvbSIsInJvbGVzIjoiW10iLCJkYXRhIjoie30iLCJpZCI6IjEifQ._Izb5qQQTMeoBxt9HmCHVFnkw96gF200P8tupyGWD-Q', 'el', [], {});
+
+    const langCode = getDefaultLanguage();
+    moment.locale(langCode, {
+      week: {
+        dow: 1, // Monday is the first day of the week.
+        doy: 4, // Used to determine first week of the year.
+      },
+    }); //reference https://momentjscom.readthedocs.io/en/latest/moment/07-customization/16-dow-doy/
+
+       setAppInjector(injector);
+      registerLocaleData(localeEl);
   }
+
 }

@@ -4,7 +4,8 @@ import { Component, OnInit, HostListener, ElementRef, ApplicationRef } from "@an
 import { Router, NavigationEnd, Route, NavigationStart, ActivatedRoute } from "@angular/router";
 import { NgIceRegistration } from "./ng-ice-registration";
 
-import { IceComponentsService, IcePrincipalService, IceContextService } from "@impeo/ng-ice";
+import {  IcePrincipalService, IceContextService } from "@impeo/ng-ice";
+import { IceContext,ClientPrincipal,IcePrincipal} from "@impeo/ice-core";
 import { Subscription, Subject } from "rxjs";
 import { LocalStorageService } from "../../services/local-storage.service";
 import { CheckInactivityService } from "../..//services/check-inactivity.service";
@@ -21,7 +22,12 @@ import IdleTimer  from '../../data/IdleTimer';
 import { SalesforceChatComponent } from '../salesforce-chat/salesforce-chat.component';
 import { CommunicationService } from '../../services/communication.service';
 import { SpinnerService } from '../../services/spinner.service';
+import { getDefaultLanguage } from '../../services/language.service';
+import { get } from 'lodash';
+import { split } from 'lodash';
 declare let ga: Function;
+
+
 
 @Component({
   selector: "app-root",
@@ -59,6 +65,7 @@ export class AppComponent implements OnInit {
   ];
   timer: IdleTimer;
   title: string;
+  localStoragekey = 'insis-token';
 
 
 
@@ -66,7 +73,6 @@ export class AppComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private componentsService: IceComponentsService,
     private localStorage: LocalStorageService,
     private checkInactivityService: CheckInactivityService,
     private communicationService: CommunicationService,
@@ -74,12 +80,25 @@ export class AppComponent implements OnInit {
     private cookieConsentService:CookieConsentService,
     private principalService: IcePrincipalService,
     private contextService: IceContextService,
+    // private contextFactory: IceContextFactory,
     public dialog: MatDialog, private overlay: Overlay,
     private _elementRef: ElementRef,
     private logoutService: LogoutService,
     private metaService: Meta,
     private spinnerService:SpinnerService
   ) {
+
+    // let principal = this.loadPrincipalFromLocalStorage();
+    // if (principal) this.principalService.principal = principal;
+    // else
+    // {
+    //   //  principal = new ClientPrincipal('1','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJPbmxpbmUgSldUIEJ1aWxkZXIiLCJpYXQiOjE2ODQ0MDEzODAsImV4cCI6MTcxNTkzNzM4MCwiYXVkIjoid3d3LmV4YW1wbGUuY29tIiwic3ViIjoianJvY2tldEBleGFtcGxlLmNvbSIsImlkIjoiMSIsInJvbGVzIjoiW10iLCJkYXRhIjoiJyciLCJsb2NhbGUiOiJlbCJ9._dVMKVkwJyiNdSUq6w5AVa3nHrVW7MW0i_e9X-wiY48','el',[],'');
+    //   //   // principal.decorateIntegrationConfig = (config) => {
+    //   //   //  set( config.headers, 'X-Auth', oAuthToken );
+    //   //   // }
+    //   //   this.principalService.principal.data=principal;
+    // }
+
 
 
     this.modalService.modalOpened.subscribe((value: boolean) => { this.addBlur = value });
@@ -174,7 +193,7 @@ export class AppComponent implements OnInit {
         this.showFooter = false;
         this.showHeader = false;
         this.statusActivity = true;
-        this.principalService.principal = null;
+        // this.principalService.principal = null;
         var showWalkthrough = this.localStorage.getDataFromLocalStorage("walkthrough");
         this.localStorage.removeAll();
         this.localStorage.setDataToLocalStorage("walkthrough", showWalkthrough);
@@ -190,6 +209,10 @@ export class AppComponent implements OnInit {
             this.router.navigate(['/login']);
           }
         }
+        // else
+        // {
+        //   this.router.navigate(['/login']);
+        // }
       }}, 1000);
     };
 
@@ -226,8 +249,13 @@ export class AppComponent implements OnInit {
 
 
 
-    NgIceRegistration.registerComponent(this.componentsService);
-    NgIceRegistration.registerRules();
+    ///SOS!!!!!!!
+
+    // NgIceRegistration.registerComponent(this.componentsService);
+    // NgIceRegistration.registerRules();
+
+
+    ////ENd SOS
 
     //show header-footer if user in logged in
     this.router.events.subscribe((val) => {
@@ -358,8 +386,8 @@ export class AppComponent implements OnInit {
 
       let added = false;
 
-      if (!route.resolve) route.resolve = {};
-      route.resolve['resources'] = ResourceResolver;
+      // if (!route.resolve) route.resolve = {};
+      // route.resolve['resources'] = ResourceResolver;
 
 
       if (route.canActivate) {
@@ -405,38 +433,73 @@ export class AppComponent implements OnInit {
     });
   }
 
-  setTimeout() {
-    // if (this.statusActivity) {
-    //   return;
-    // } else {
-
-    //   this.userActivity = setTimeout(() => this.userInactive.next(undefined), 900000);
-
-    // }
-
+  private loadPrincipalFromLocalStorage(): IcePrincipal {
+    try {
+      const token = localStorage.getItem(this.localStoragekey);
+      const langCode = getDefaultLanguage();
+      const principal = this.principalFromToken(token, langCode);
+      return principal;
+    } catch (error) {
+      return null;
+    }
   }
+
+    //
+  //grab the JWT token payload, decode it, and create principal from it
+  //
+  private principalFromToken(token: string, locale: string): IcePrincipal {
+    const tokenParts = split(token, '.');
+    if (tokenParts.length !== 3) return null;
+
+    const payload = JSON.parse(decodeURIComponent(escape(atob(tokenParts[1]))));
+
+    return new ClientPrincipal(payload.id, token, locale, payload.roles, payload.data);
+  }
+
+
+
 
   @HostListener('window:mousemove') refreshUserState() {
     clearTimeout(this.userActivity);
-    this.setTimeout();
+
   }
 
   @HostListener('window:beforeunload', ['$event'])
-   async canLeavePage($event: any) :Promise<boolean> {
+   async canLeavePage($event: any) {
 
-    if( (await this.contextService.getContext("customerArea")).iceModel!=undefined)
-    {
+    // if( (await this.contextService.$contextCreated()!=undefined))    //  if(this.contextFactory.getContext("customerArea").iceModel!=undefined)
+    // {
 
-        if( (await this.contextService.getContext("customerArea")).iceModel.elements["eclaims.step"].getValue().forIndex(null)==3 ||  (await this.contextService.getContext("customerArea")).iceModel.elements["eclaims.step"].getValue().forIndex(null)==31)
-        {
-        //
-        (await this.contextService.getContext("customerArea")).iceModel.elements["eclaims.process.exit.trigger"].setSimpleValue(true);
-        $event.preventDefault();
-        return false;
+    //     if( (await this.contextService.getContext("customerArea")).iceModel.elements["eclaims.step"].getValue().forIndex(null)==3 ||  (await this.contextService.getContext("customerArea")).iceModel.elements["eclaims.step"].getValue().forIndex(null)==31)
+    //     {
+    //     //
+    //     (await this.contextService.getContext("customerArea")).iceModel.elements["eclaims.process.exit.trigger"].setSimpleValue(true);
+    //     $event.preventDefault();
+    //     return false;
+    //     }
+    //     else return true;
+    // }
+    //  return true;
+
+   this.contextService.$contextCreated.subscribe((contextAndContextId) => {
+      const context = get(contextAndContextId, 'context') as IceContext;
+
+      if (context.iceModel != null) {
+        if (context.iceModel.elements["eclaims.step"].getValue().forIndex(null) == 3 || context.iceModel.elements["eclaims.step"].getValue().forIndex(null) == 31) {
+          context.iceModel.elements["eclaims.process.exit.trigger"].setSimpleValue(true);
+          $event.preventDefault();
+        //  return false;
         }
-        else return true;
-    }
-     return true;
+      }
+
+      // else
+      //   return true;
+
+
+    })
+
+
+
    }
 
   @HostListener('document:click', ['$event']) async clickout(event: any) {
@@ -637,6 +700,7 @@ export class AppComponent implements OnInit {
   }
 
   private checkUrlStart(arr: string[], url: string): boolean {
+    if(url!=null)
     return arr.some(x => url.startsWith(x));
   }
 

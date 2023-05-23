@@ -7,9 +7,7 @@ import { LogoutComponent } from "../eurolife-custom-components-angular/page/logo
 
 import { LogoutSecurityComponent } from "../eurolife-custom-components-angular/page/logout-security/logout-security.component";
 
-@Injectable({
-  providedIn: "root"
-})
+@Injectable()
 export class LogoutService {
     dialogRef: NgbModalRef;
     constructor(private ngbModal: NgbModal,

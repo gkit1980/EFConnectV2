@@ -19,20 +19,28 @@ import { SignUpGroupValidateSmsComponent } from "./eurolife-custom-components-an
 import { SignUpGroupFinalFormComponent } from "./eurolife-custom-components-angular/page/sign-up-group/sign-up-group-final-form/sign-up-group-final-form.component";
 //import { SignUpGroupAreaComponent } from "./eurolife-custom-components-angular/element/sign-up-group-area/sign-up-group-area.component";
 
-import { 
-  MatToolbarModule, 
-  MatButtonModule,
-  MatSidenavModule,
-  MatIconModule,
-  MatListModule ,
-  MatStepperModule,
-  MatInputModule
-} from '@angular/material';
+// import {
+//   MatToolbarModule,
+//   MatButtonModule,
+//   MatSidenavModule,
+//   MatIconModule,
+//   MatListModule ,
+//   MatStepperModule,
+//   MatInputModule
+// } from '@angular/material';
 
-const routes :Routes =  
-[  
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import {MatSidenavModule}   from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatInputModule} from '@angular/material/input';
+
+const routes :Routes =
+[
   {
-    path: "",   
+    path: "",
     component: SignUpGroupComponent,
     resolve: { resources: ResourceResolver },
     children: [
@@ -71,7 +79,7 @@ const routes :Routes =
 
     ]
   }
-]  
+]
 
 @NgModule({
   declarations: [
@@ -88,8 +96,8 @@ const routes :Routes =
     CommonModule,
     SharedModule,
     FormsModule,
-    PipesModule,  
-    MatToolbarModule, 
+    PipesModule,
+    MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
@@ -98,12 +106,12 @@ const routes :Routes =
     MatInputModule,
     ReactiveFormsModule,
     NgbModule,
-    RouterModule.forChild(routes)  
+    RouterModule.forChild(routes)
     ],
     exports:
     [
       FormsModule,
-      MatToolbarModule, 
+      MatToolbarModule,
       MatButtonModule,
       MatSidenavModule,
       MatIconModule,

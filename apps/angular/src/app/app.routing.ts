@@ -1,5 +1,6 @@
 import { ModuleWithProviders } from "@angular/core";
-import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
+import { IceRuntimeResolver } from '@impeo/ng-ice';
+import {PreloadAllModules,RouterModule, Routes } from "@angular/router";
 import { SignUpValidatedComponent } from "./eurolife-custom-components-angular/section/sign-up-validated/sign-up-validated.component";
 
 import { FaqComponent } from "./eurolife-custom-components-angular/section/faq/faq.component";
@@ -9,53 +10,54 @@ import { ForgotUsernameComponent } from "./eurolife-custom-components-angular/pa
 import { PageNotFoundComponent } from "./eurolife-custom-components-angular/page/page-not-found/page-not-found.component";
 import { LoginComponent } from "./eurolife-custom-components-angular/page/login/login.component";
 
+
 const AppRoutes: Routes = [
   {
     path: "",
     redirectTo: "/login",
     pathMatch: "full",
-    resolve: { resources: ResourceResolver }
+    resolve: { runtime: ResourceResolver },
   },
   {
     path: "login",
     component: LoginComponent,
-    resolve: { resources: ResourceResolver }
+    resolve: { runtime: ResourceResolver },
   },
   {
     path: "signupform",
-    loadChildren: './external.module#ExternalModule',
-    resolve: { resources: ResourceResolver }
+    loadChildren: ()=> import('./external.module').then(m=>m.ExternalModule),
+    resolve: { runtime: ResourceResolver }
   },
   {
     path: "groupform",
-    loadChildren: './signupgroup.module#SignUpGroupModule',
-    resolve: { resources: ResourceResolver }
+    loadChildren: () => import('./signupgroup.module').then(m=>m.SignUpGroupModule),
+    resolve: { runtime: ResourceResolver }
   },
   {
     path: "createaccount",
-    loadChildren: './createaccount.module#CreateAccountModule',
-    resolve: { resources: ResourceResolver }
+    loadChildren: () => import('./createaccount.module').then(m=>m.CreateAccountModule),
+    resolve: { runtime: ResourceResolver }
   },
   {
     path: "Faq",
     component: FaqComponent,
-    resolve: { resources: ResourceResolver }
+    resolve: { runtime: ResourceResolver }
   },
   { path: "pageNotFound", component: PageNotFoundComponent },
   {
     path: "Glossary",
     component: GlossaryComponent,
-    resolve: { resources: ResourceResolver }
+    resolve: { runtime: ResourceResolver }
   },
   {
     path: "forgotUsername",
     component: ForgotUsernameComponent,
-    resolve: { resources: ResourceResolver }
+    resolve: { runtime: ResourceResolver }
   },
   {
     path: "forgotPassword",
-    loadChildren: './forgotpassword.module#ForgotPasswordModule',
-    resolve: { resources: ResourceResolver }
+    loadChildren: () => import('./forgotpassword.module').then(m=>m.ForgotPasswordModule),
+    resolve: { runtime: ResourceResolver }
   },
   {
     path: "ice/default/customerArea.motor/signupvalidated",
@@ -65,6 +67,7 @@ const AppRoutes: Routes = [
 ];
 
 export const AppRouting: ModuleWithProviders = RouterModule.forRoot(AppRoutes, {
+  initialNavigation: true,
   useHash: true,
-  preloadingStrategy: PreloadAllModules
+ preloadingStrategy: PreloadAllModules
 });

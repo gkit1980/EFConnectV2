@@ -6,23 +6,31 @@ import { IceRuntimeService } from '@impeo/ng-ice';
 @Injectable()
 export class ResourceService {
 
-    private iceResources: IceResource = undefined;
+    private iceResources: IceResource;
     private locale = 'el';
     private resourceData: any;
 
-    //
-    //
+
     constructor(private http: HttpClient,private runtimeService: IceRuntimeService) {
         console.log('ResourceService constructed');
     }
 
-    //
-    //
-    resolve(resourceKey: string, paramsOrDefaultReturn?: any, defaultReturn?: string) {
-        if (!this.iceResources) {
+
+    resolve(resourceKey: string) {
+        if (!this.iceResources){
             return `[${resourceKey}]`;
         }
-        return this.iceResources.resolve(resourceKey, paramsOrDefaultReturn, defaultReturn);
+
+        if (this.iceResources!=undefined) {
+          return this.iceResources.resolve(resourceKey);
+      }
+
+       // return this.iceResources.resolve(resourceKey, paramsOrDefaultReturn, defaultReturn);
+       this.runtimeService.getRuntime().then(async (runtime:any) => {
+      // await  runtime.iceResource.resolve(resourceKey);
+        return runtime.iceResource.resolve(resourceKey);
+        });
+
     }
 
     //
@@ -35,10 +43,24 @@ export class ResourceService {
             }
             else
             {
-                   this.runtimeService.getRuntime().then((runtime) => {
-                   this.iceResources=runtime.iceResource;
-                    })
-                    return;
+                   this.http.get('./api/v1/resources/' + repoPath).subscribe((resp: any) => {
+                    if (resp['success'] == true)
+                    {
+                        this.resourceData = resp['data'];
+
+
+                        this.runtimeService.getRuntime().then((runtime:any) => {
+                             IceResource.build(runtime,resp['data'])
+                             this.iceResources=runtime.iceResource;
+                           resolve();
+                           return;
+                        });
+
+
+                    }
+                    else
+                    reject(new Error(resp['message']));
+                });
                }
         });
     }

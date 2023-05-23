@@ -18,6 +18,9 @@ export function configureIcePrincipal(app: express.Application) {
       //assume it is a JWT token!
       const token = request.header('Authorization').replace('Bearer ', '');
       const secret = process.env['JWT_SECRET'];
+
+
+
       const payload = jwt.verify(token, secret);
       const principal = new ServerPrincipal(
         payload['id'],

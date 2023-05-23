@@ -3,6 +3,7 @@ import { ResourceService } from '../services/resource.service';
 import { IcePrincipalService } from '@impeo/ng-ice';
 
 
+
 //
 //
 @Pipe({
@@ -25,7 +26,8 @@ export class ResourcePipe implements PipeTransform {
     //
     transform(value: string, ...args: any[]) {
 
-        return this.resourceService.resolve(value, this.model);
+    return this.resourceService.resolve(value);
     }
 
 }
+

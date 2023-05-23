@@ -17,16 +17,6 @@ import { registerCustomServerRules } from '@insis-portal/ice-custom-server-rules
 // import * as compression from 'compression';
 
 
-// import { RuleFactoryImpl, RuleHolder } from '@impeo/ice-core';
-// import * as ElementRules from '../../../../libs/ice-custom-rules/src/lib/rules/element-rules';
-// import * as IntegrationRules from '../../../../libs/ice-custom-rules/src/lib/rules/integration-rules';
-// import * as DefinitionRules from '../../../../libs/ice-custom-rules/src/lib/rules/definition-rules';
-// import * as ActionRules from '../../../../libs/ice-custom-rules/src/lib/rules/action-rules';
-// import * as SectionRules from '../../../../libs/ice-custom-rules/src/lib/rules/section-rules';
-// import * as bodyParser from 'body-parser';
-// import { ServerPrincipal } from '@impeo/ice-core';
-// import jwt from 'jsonwebtoken';
-// import { expressIce, ExpressIceApplicationOptions } from '@impeo/exp-ice';
 
 
 
@@ -47,7 +37,7 @@ export class ExpressApplication {
 
 
 
-  registerCustomServerRules();
+   registerCustomServerRules();
 
    configureCompression(this.app);
 
@@ -58,7 +48,7 @@ export class ExpressApplication {
    configureBodyParser(this.app);
 
 
-    configureIcePrincipal(this.app);
+    configureIcePrincipal(this.app);         ///for check Bearer token
 
 
 
@@ -69,7 +59,7 @@ export class ExpressApplication {
       configureVisualIce(this.app, this.appOptions.visualIce);
     }
 
-    configureRoutes(this.app);
+     configureRoutes(this.app,this.appOptions);
 
     configureCors(this.app);
 
@@ -81,6 +71,8 @@ export class ExpressApplication {
 
     this.createListeningServer();
   }
+
+
 
   private handleProcessSignals() {
     process.on('SIGINT', () => {

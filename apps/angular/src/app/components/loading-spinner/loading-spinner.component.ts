@@ -9,7 +9,7 @@ import { SpinnerService } from "../../services/spinner.service";
 })
 
 export class LoadingSpinnerComponent implements OnInit {
-    
+
 	 @ViewChild('spinnerElement') spinnerElement: ElementRef;
 
 	readonly displayPopup = true;
@@ -20,7 +20,9 @@ export class LoadingSpinnerComponent implements OnInit {
 	leftPosition$: Observable<number>;
 	messageChanged$: Observable<string>
 
-	constructor(private spinnerService: SpinnerService) {}
+	constructor(private spinnerService: SpinnerService) {
+
+  }
 
 	top:Number=0;
 	left:number=0;
@@ -31,7 +33,7 @@ export class LoadingSpinnerComponent implements OnInit {
 		this.isVisible$ = this.spinnerService.isVisible$;
 		this.messageChanged$ = this.spinnerService.messageChanged$;
 
-		this.left=this.spinnerElement.nativeElement.clientWidth; 
+	//	this.left=this.spinnerElement.nativeElement.clientWidth;
 
 		this.spinnerService.topPositionSubj$.subscribe((x:any)=>
 		{
@@ -45,21 +47,21 @@ export class LoadingSpinnerComponent implements OnInit {
 				'top.px': this.top,
 				'left.px': Math.floor(this.left/2),
 			 }
-		 }  
+		 }
 
 		});
 
 		// this.spinnerService.leftPositionSubj$.subscribe((x:any)=>
 		// {
-        //  this.left=this.spinnerElement.nativeElement.clientWidth;    
+        //  this.left=this.spinnerElement.nativeElement.clientWidth;
 		// });
 
 	}
 
 
-	
+
     getSpinnerStyle(): object {
-       
+
 		if(this.top==0)
         return {};
 		else

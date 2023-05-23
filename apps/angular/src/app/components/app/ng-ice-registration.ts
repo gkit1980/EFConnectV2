@@ -57,12 +57,15 @@ import { ClaimsCardComponent } from "../../eurolife-custom-components-angular/se
 import { FileUploadSection } from "../../eurolife-custom-components-angular/section/file-upload-section/file-upload-section.component";
 import { SignUpCardComponent } from "../../eurolife-custom-components-angular/section/sign-up-card/sign-up-card.component";
 import { SignUpValidatedComponent } from "../../eurolife-custom-components-angular/section/sign-up-validated/sign-up-validated.component";
-import * as eurolife_custom_list_rules from "../../../../../libs/eurolife-custom-rules/rules/list-rules";
-import * as eurolife_custom_element_rules from "../../../../../libs/eurolife-custom-rules/rules/element-rules";
-import * as eurolife_custom_action_rules from "../../../../../libs/eurolife-custom-rules/rules/action-rules/";
-import * as eurolife_custom_bucket_rules from "../../../../../libs/eurolife-custom-rules/rules/bucket-rules";
-import * as eurolife_custom_navigation_rules from "../../../../../libs/eurolife-custom-rules/rules/navigation-rules";
-import * as eurolife_custom_section_rules from "../../../../../libs/eurolife-custom-rules/rules/section-rules";
+
+
+///ICE V2
+// import * as eurolife_custom_list_rules from "../../../../../libs/eurolife-custom-rules/rules/list-rules";
+// import * as eurolife_custom_element_rules from "../../../../../libs/eurolife-custom-rules/rules/element-rules";
+// import * as eurolife_custom_action_rules from "../../../../../libs/eurolife-custom-rules/rules/action-rules/";
+// import * as eurolife_custom_bucket_rules from "../../../../../libs/eurolife-custom-rules/rules/bucket-rules";
+// import * as eurolife_custom_navigation_rules from "../../../../../libs/eurolife-custom-rules/rules/navigation-rules";
+// import * as eurolife_custom_section_rules from "../../../../../libs/eurolife-custom-rules/rules/section-rules";
 
 import { SimplePageComponent } from "../../eurolife-custom-components-angular/page/simple-page/simple-page.component";
 
@@ -152,7 +155,6 @@ import { AmendmentsStepperFinanceComponent } from "../../eurolife-custom-compone
 import { UploadFileButtonComponent } from "../../eurolife-custom-components-angular/element/upload-file-button/upload-file-button.component";
 import { CommentInputComponent } from "../../eurolife-custom-components-angular/element/comment-input/comment-input.component";
 import { IconOutputComponent } from "../../eurolife-custom-components-angular/element/icon-output/icon-output.component";
-import { OtpTimerComponent } from '../../eurolife-custom-components-angular/element/otp-timer/otp-timer.component'
 import { AmendmentGridViewComponent } from "../../eurolife-custom-components-angular/section/amendment-grid-view/amendment-grid-view.component";
 import { NoAmendmentGridViewComponent } from "../../eurolife-custom-components-angular/section/no-amendment-grid-view/no-amendment-grid-view.component";
 import { TextLabelComponent } from "../../eurolife-custom-components-angular/element/text-label/text-label.component";
@@ -209,880 +211,876 @@ import { AmendmentsGetBeneficiariesComponent} from "./../../eurolife-custom-comp
 export class NgIceRegistration {
   //
   //
-  static registerComponent(componentsService: IceComponentsService): void {
-    //Eurolife
-    componentsService.registerComponentType(
-      "RedirectionGreenCardComponent",
-      RedirectionGreenCardComponent
-    );
-
-    componentsService.registerComponentType(
-      "GreencardNotificationBarComponent",
-      GreencardNotificationBarComponent
-    );
-    componentsService.registerComponentType(
-      "DetailsCustomTableComponent",
-      DetailsCustomTableComponent
-    );
-    componentsService.registerComponentType(
-      "ConsentInitialStepsComponent",
-      ConsentInitialStepsComponent
-    );
-    componentsService.registerComponentType(
-      "ConsentComplianceComponent",
-      ConsentComplianceComponent
-    );
-    componentsService.registerComponentType(
-      "IconOutputConsentComponent",
-      IconOutputConsentComponent
-    );
-    componentsService.registerComponentType(
-      "ConsentsCardsComponent",
-      ConsentsCardsComponent
-    );
-
-    componentsService.registerComponentType(
-      "OtpTimerComponent",
-      OtpTimerComponent
-    );
-    componentsService.registerComponentType(
-      "IconOutputComponent",
-      IconOutputComponent
-    );
-    componentsService.registerComponentType(
-      "CommentInputComponent",
-      CommentInputComponent
-    );
-    componentsService.registerComponentType(
-      "UploadFileButtonComponent",
-      UploadFileButtonComponent
-    );
-    componentsService.registerComponentType(
-      "AmendmentsStepperComponent",
-      AmendmentsStepperComponent
-    );
-    componentsService.registerComponentType(
-      "AmendmentsStepperHomeComponent",
-      AmendmentsStepperHomeComponent
-    );
-    componentsService.registerComponentType(
-      "AmendmentsStepperHealthComponent",
-      AmendmentsStepperHealthComponent
-    );
-    componentsService.registerComponentType(
-      "AmendmentsStepperLifeComponent",
-      AmendmentsStepperLifeComponent
-    );
-    componentsService.registerComponentType(
-      "AmendmentsStepperFinanceComponent",
-      AmendmentsStepperFinanceComponent
-    );
-    componentsService.registerComponentType(
-      "AmendmentsInprogressComponent",
-      AmendmentsInprogressComponent
-    );
-    componentsService.registerComponentType(
-      "AmendmentsRequestsComponent",
-      AmendmentsRequestsComponent
-    );
-
-
-    componentsService.registerComponentType(
-      "HomeCardContainerComponent",
-      HomeCardContainerComponent
-    );
-    componentsService.registerComponentType(
-      "MyDocumentsComponent",
-      MyDocumentsComponent
-    );
-    componentsService.registerComponentType(
-      "PaymentManagementSuccessComponent",
-      PaymentManagementSuccessComponent
-    );
-    componentsService.registerComponentType(
-      "PaymentManagementStatusBarComponent",
-      PaymentManagementStatusBarComponent
-    );
-    componentsService.registerComponentType(
-      "MotorCoversEditorCardComponent",
-      MotorCoversEditorCardComponent
-    );
-
-    componentsService.registerComponentType(
-      "MotorCustomTableComponent",
-      MotorCustomTableComponent
-    );
-    componentsService.registerComponentType(
-      "ExternalUrlComponent",
-      ExternalUrlComponent
-    );
-    componentsService.registerComponentType(
-      "PdfDownloadComponent",
-      PdfDownloadComponent
-    );
-    componentsService.registerComponentType(
-      "PdfTableLinkComponent",
-      PdfTableLinkComponent
-    );
-    componentsService.registerComponentType("MaskComponent", MaskComponent);
-    componentsService.registerComponentType(
-      "PaymentdetailsComponent",
-      PaymentdetailsComponent
-    );
-    componentsService.registerComponentType(
-      "SuccessfullmessageComponent",
-      SuccessfullmessageComponent
-    );
-    componentsService.registerComponentType(
-      "MotorPopUpDeleteAccount",
-      MotorPopUpDeleteAccount
-    );
-    componentsService.registerComponentType(
-      "MotorDeleteAccount",
-      MotorDeleteAccount
-    );
-    componentsService.registerComponentType(
-      "MotorPopUpchangeMobilePhone",
-      MotorPopUpchangeMobilePhone
-    );
-    componentsService.registerComponentType(
-      "MotorChangeMobilePhone",
-      MotorChangeMobilePhone
-    );
-    componentsService.registerComponentType(
-      "MotorPopUpchangePhone",
-      MotorPopUpchangePhone
-    );
-    componentsService.registerComponentType(
-      "MotorChangePhone",
-      MotorChangePhone
-    );
-    componentsService.registerComponentType(
-      "MotorPopUpchangeEmail",
-      MotorPopUpchangeEmail
-    );
-    componentsService.registerComponentType(
-      "MotorChangeEmail",
-      MotorChangeEmail
-    );
-    componentsService.registerComponentType(
-      "MotorProfilePicture",
-      MotorProfilePicture
-    );
-    //componentsService.registerComponentType("PopUp",PopUp);
-    componentsService.registerComponentType(
-      "MotorPopUpChangeProfilePicture",
-      MotorPopUpChangeProfilePicture
-    );
-    componentsService.registerComponentType(
-      "MotorPopUpchangePassword",
-      MotorPopUpchangePassword
-    );
-    componentsService.registerComponentType(
-      "MotorChangePassword",
-      MotorChangePassword
-    );
-    componentsService.registerComponentType(
-      "PaymentManagementComponent",
-      PaymentManagementComponent
-    );
-    componentsService.registerComponentType(
-      "SubHeaderComponent",
-      SubHeaderComponent
-    );
-    componentsService.registerComponentType(
-      "MotorCustomDetailTableComponent",
-      MotorCustomDetailTableComponent
-    );
-    componentsService.registerComponentType("HeaderComponent", HeaderComponent);
-    componentsService.registerComponentType(
-      "PaymentComponent",
-      PaymentComponent
-    );
-    componentsService.registerComponentType(
-      "InfoButtonComponent",
-      InfoButtonComponent
-    );
-    componentsService.registerComponentType(
-      "SocialNetworkSignUpComponent",
-      SocialNetworkSignUpComponent
-    );
-    componentsService.registerComponentType(
-      "RegistrationPageComponent",
-      RegistrationPageComponent
-    );
-    componentsService.registerComponentType(
-      "CalculateLifeExpirationDateComponent",
-      CalculateLifeExpirationDateComponent
-    );
-    componentsService.registerComponentType(
-      "ParticipantsViewComponent",
-      ParticipantsViewComponent
-    );
-    componentsService.registerComponentType(
-      "ParticipantViewClaimsComponent",
-      ParticipantViewClaimsComponent
-    );
-    componentsService.registerComponentType(
-      "ExagoraComponent",
-      ExagoraComponent
-    );
-    componentsService.registerComponentType(
-      "ClaimsCardComponent",
-      ClaimsCardComponent
-    );
-    componentsService.registerComponentType(
-      "SubheaderStepperComponent",
-      SubheaderStepperComponent
-    );
-
-    componentsService.registerComponentType(
-      "CommunicationServiceComponent",
-      CommunicationServiceComponent
-    );
-    componentsService.registerComponentType(
-      "TelephoneiconComponent",
-      TelephoneiconComponent
-    );
-    componentsService.registerComponentType(
-      "SalesChannelDetailsComponent",
-      SalesChannelDetailsComponent
-    );
-    componentsService.registerComponentType("PopUpComponent", PopUpComponent);
-    componentsService.registerComponentType(
-      "ButtonToDialogComponent",
-      ButtonToDialogComponent
-    );
-    componentsService.registerComponentType(
-      "GdprNotificationComponent",
-      GdprNotificationComponent
-    );
-    componentsService.registerComponentType(
-      "FileUploadSection",
-      FileUploadSection
-    );
-    componentsService.registerComponentType(
-      "SignUpCardComponent",
-      SignUpCardComponent
-    );
-    componentsService.registerComponentType(
-      "SignUpValidatedComponent",
-      SignUpValidatedComponent
-    );
-    componentsService.registerComponentType(
-      "CalculatePropertyDurationDateComponent",
-      CalculatePropertyDurationDateComponent
-    );
-    componentsService.registerComponentType(
-      "CalculatePropertyPaymentFrequencyComponent",
-      CalculatePropertyPaymentFrequencyComponent
-    );
-
-    componentsService.registerComponentType(
-      "SimplePageComponent",
-      SimplePageComponent
-    );
-
-    componentsService.registerComponentType(
-      "SvgImageComponent",
-      SvgImageComponent
-    );
-    componentsService.registerComponentType(
-      "SimplePageWithNavigationComponent",
-      SimplePageWithNavigationComponent
-    );
-    componentsService.registerComponentType(
-      "EurolifeOutputComponent",
-      EurolifeOutputComponent
-    );
-    componentsService.registerComponentType(
-      "EurolifeHeaderTileComponent",
-      EurolifeHeaderTileComponent
-    );
-    componentsService.registerComponentType(
-      "EurolifeH3Component",
-      EurolifeH3Component
-    );
-    componentsService.registerComponentType(
-      "SimpleGridViewComponent",
-      SimpleGridViewComponent
-    );
-    componentsService.registerComponentType(
-      "EurolifeDropdownMenuComponent",
-      EurolifeDropdownMenuComponent
-    );
-    componentsService.registerComponentType(
-      "EurolifeDropdownComponent",
-      EurolifeDropdownComponent
-    );
-    componentsService.registerComponentType(
-      "EurolifeNotificationBarComponent",
-      EurolifeNotificationBarComponent
-    );
-    componentsService.registerComponentType(
-      "SplitPageWithIconComponent",
-      SplitPageWithIconComponent
-    );
-    componentsService.registerComponentType(
-      "IceImageComponent",
-      IceImageComponent
-    );
-    componentsService.registerComponentType(
-      "FlatSectionComponent",
-      FlatSectionComponent
-    );
-    componentsService.registerComponentType(
-      "MatCardHomeComponent",
-      MatCardHomeComponent
-    );
-    componentsService.registerComponentType(
-      "SimpleTableNoPaginationComponent",
-      SimpleTableNoPaginationComponent
-    );
-    componentsService.registerComponentType(
-      "HomePageComponent",
-      HomePageComponent
-    );
-    componentsService.registerComponentType(
-      "HomePageMainSectionComponent",
-      HomePageMainSectionComponent
-    );
-    componentsService.registerComponentType(
-      "HomePageCardComponent",
-      HomePageCardComponent
-    );
-    componentsService.registerComponentType(
-      "EurolifeOutputSubheaderComponent",
-      EurolifeOutputSubheaderComponent
-    );
-    componentsService.registerComponentType(
-      "EurolifeButtonComponent",
-      EurolifeButtonComponent
-    );
-    componentsService.registerComponentType(
-      "InputonchangeactionComponent",
-      InputonchangeactionComponent
-    );
-    componentsService.registerComponentType(
-      "EurolifeEmailButtonComponentComponent",
-      EurolifeEmailButtonComponentComponent
-    );
-    componentsService.registerComponentType(
-      "OutputWithIconComponent",
-      OutputWithIconComponent
-    );
-    componentsService.registerComponentType(
-      OutputWithActionComponent.componentName,
-      OutputWithActionComponent
-    );
-    componentsService.registerComponentType(
-      "EurolifeMotorOutputDriversComponentComponent",
-      EurolifeMotorOutputDriversComponentComponent
-    );
-
-    componentsService.registerComponentType(
-      "ChangePasswordFieldComponent",
-      ChangePasswordFieldComponent
-    );
-    componentsService.registerComponentType(
-      "InsertCodeTimerComponent",
-      InsertCodeTimerComponent
-    );
-    componentsService.registerComponentType(
-      "OtpInputComponent",
-      OtpInputComponent
-    );
-    componentsService.registerComponentType(
-      "SendEmailButtonComponent",
-      SendEmailButtonComponent
-    );
-    componentsService.registerComponentType(
-      "InsertCodeEmailTimerComponent",
-      InsertCodeEmailTimerComponent
-    );
-    componentsService.registerComponentType(
-      "EmailConfirmationComponent",
-      EmailConfirmationComponent
-    );
-    componentsService.registerComponentType(
-      "TermsConditionsComponent",
-      TermsConditionsComponent
-    );
-    componentsService.registerComponentType(
-      "ConsentsComponent",
-      ConsentsComponent
-    );
-    componentsService.registerComponentType(
-      "SignUpGroupConsentsModalComponent",
-      SignUpGroupConsentsModalComponent
-    );
-    componentsService.registerComponentType(
-      "SignUpGroupSuccessModalComponent",
-      SignUpGroupSuccessModalComponent
-    );
-    componentsService.registerComponentType(
-      "SignUpGroupWaitingModalComponent",
-      SignUpGroupWaitingModalComponent
-    );
-    componentsService.registerComponentType(
-      "SignUpGroupErrorServiceModalComponent",
-      SignUpGroupErrorServiceModalComponent
-    );
-    componentsService.registerComponentType(
-      "CookieDeclarationComponent",
-      CookieDeclarationComponent
-    );
-    componentsService.registerComponentType(
-      "SimplePageNoTitleComponent",
-      SimplePageNoTitleComponent
-    );
-
-    componentsService.registerComponentType(
-      TimePickerComponent.componentName,
-      TimePickerComponent
-    );
-
-    componentsService.registerComponentType(
-      "TextWithLinkComponent",
-      TextWithLinkComponent
-    );
-
-    componentsService.registerComponentType(
-      CalendarComponent.componentName,
-      CalendarComponent
-    );
-
-    componentsService.registerComponentType(
-      PopUpPageComponent.componentName,
-      PopUpPageComponent
-    );
-
-    componentsService.registerComponentType(
-      AvatarElementComponent.componentName,
-      AvatarElementComponent
-    );
-
-    componentsService.registerComponentType("MyDafsComponent", MyDafsComponent);
-
-    componentsService.registerComponentType(
-      "OpenDialogTextComponent",
-      OpenDialogTextComponent
-    );
-    componentsService.registerComponentType(
-      "LegalPopupComponent",
-      LegalPopupComponent
-    );
-    componentsService.registerComponentType(
-      "CloseCancelPopUpComponent",
-      CloseCancelPopUpComponent
-    );
-    componentsService.registerComponentType(
-      "PopupConsentComponent",
-      PopupConsentComponent
-    );
-
-    componentsService.registerComponentType(
-      "EurolifeConsentButtonComponent",
-      EurolifeConsentButtonComponent
-    );
-
-    componentsService.registerComponentType(
-      "NotificationBarComponent",
-      NotificationBarComponent
-    );
-
-    componentsService.registerComponentType(
-      "ConsentGridViewComponent",
-      ConsentGridViewComponent
-    );
-
-    componentsService.registerComponentType(
-      "ConsentFooterComponent",
-      ConsentFooterComponent
-    );
-
-    componentsService.registerComponentType(
-      "ConsentsTextMsgComponent",
-      ConsentsTextMsgComponent
-    );
-
-    componentsService.registerComponentType(
-      "ReviewConfirmComponent",
-      ReviewConfirmComponent
-    );
-
-    componentsService.registerComponentType(
-      "GreenCardStepperComponent",
-      GreenCardStepperComponent
-    );
-
-    componentsService.registerComponentType(
-      "GreenCardDynamicComponent",
-      GreenCardDynamicComponent
-    );
-
-    componentsService.registerComponentType(
-      "GreenCardAddDriverComponent",
-      GreenCardAddDriverComponent
-    );
-
-    componentsService.registerComponentType(
-      "GreenCardOtherDriverToggleComponent",
-      GreenCardOtherDriverToggleComponent
-    );
-
-    componentsService.registerComponentType(
-      "GreenCardDropdownPlatesComponent",
-      GreenCardDropdownPlatesComponent
-    );
-
-    componentsService.registerComponentType(
-      "GreenCardDatepickerComponent",
-      GreenCardDatepickerComponent
-    );
-
-    componentsService.registerComponentType(
-      "GreenCardFullnameComponent",
-      GreenCardFullnameComponent
-    );
-
-    componentsService.registerComponentType(
-      "GreencardNotificationBarComponent",
-      GreencardNotificationBarComponent
-    );
-
-    componentsService.registerComponentType(
-      "AmendmentDetailsHeaderComponent",
-      AmendmentDetailsHeaderComponent
-    );
-
-    componentsService.registerComponentType(
-      "AmendmentinputfieldComponent",
-      AmendmentinputfieldComponent
-    );
-    componentsService.registerComponentType(
-      "AmendmentinputlifefieldComponent",
-      AmendmentinputlifefieldComponent
-    );
-    componentsService.registerComponentType(
-      "AmendmentinputpropertyfieldComponent",
-      AmendmentinputpropertyfieldComponent
-    );
-
-    componentsService.registerComponentType(
-      "AmendmentMaskComponent",
-      AmendmentMaskComponent
-    );
-
-    componentsService.registerComponentType(
-      "EurolifeOutputClickableComponent",
-      EurolifeOutputClickableComponent
-    );
-
-    componentsService.registerComponentType(
-      "AmendmentGridViewComponent",
-      AmendmentGridViewComponent
-    );
-
-    componentsService.registerComponentType(
-      "NoAmendmentGridViewComponent",
-      NoAmendmentGridViewComponent
-    );
-
-    componentsService.registerComponentType(
-      "GreenCardButtonComponent",
-      GreenCardButtonComponent
-    );
-
-    componentsService.registerComponentType(
-      "GreenCardBackButtonComponent",
-      GreenCardBackButtonComponent
-    );
-
-    componentsService.registerComponentType(
-      "AmendmentsBackButtonComponent",
-      AmendmentsBackButtonComponent
-    );
-    componentsService.registerComponentType(
-      "TextLabelComponent",
-      TextLabelComponent
-    );
-
-    componentsService.registerComponentType(
-      "ContentWalkthroughComponent",
-      ContentWalkthroughComponent
-    );
-
-    componentsService.registerComponentType(
-      "HomeCardContainerAmendmentComponent",
-      HomeCardContainerAmendmentComponent
-    );
-
-    componentsService.registerComponentType(
-      "CustomerProfileComponent",
-      CustomerProfileComponent
-    );
-
-    componentsService.registerComponentType(
-      "HomeAgentInfoComponent",
-      HomeAgentInfoComponent
-    );
-
-
-    componentsService.registerComponentType(
-      "HeaderWelcomeComponent",
-      HeaderWelcomeComponent
-    );
-
-
-    componentsService.registerComponentType(
-      "PendingPaymentComponent",
-      PendingPaymentComponent
-    );
-
-    componentsService.registerComponentType(
-      "VanillaUlLineChartComponent",
-      VanillaUlLineChartComponent
-    );
-
-
-    componentsService.registerComponentType(
-      "FundsBasketComponent",
-      FundsBasketComponent
-    );
-
-    componentsService.registerComponentType(
-      "SimpleGridViewQuotationComponent",
-      SimpleGridViewQuotationComponent
-    );
-
-    componentsService.registerComponentType(
-      "OtpPartitionedInputComponent",
-      OtpPartitionedInputComponent
-    );
-
-    componentsService.registerComponentType(
-      "FundsTippProductComponent",
-      FundsTippProductComponent
-    );
-
-    componentsService.registerComponentType(
-      "TippLineChartComponent",
-      TippLineChartComponent
-    );
-
-    componentsService.registerComponentType(
-      "FundsLifecycleProductComponent",
-      FundsLifecycleProductComponent
-    );
-
-    componentsService.registerComponentType(
-      "LifecycleLineChartComponent",
-      LifecycleLineChartComponent
-    );
-
-
-    componentsService.registerComponentType(
-      "SimplePageClaimsComponent",
-      SimplePageClaimsComponent
-    );
-
-    componentsService.registerComponentType(
-      "DragDropFileComponent",
-      DragDropFileComponent
-    );
-
-
-    componentsService.registerComponentType(
-      "EclaimsBackButtonComponent",
-      EclaimsBackButtonComponent
-    );
-
-    componentsService.registerComponentType(
-      "EclaimsStepperComponent",
-      EclaimsStepperComponent
-    );
-
-    componentsService.registerComponentType(
-      "EclaimsAvailableContractsComponent",
-      EclaimsAvailableContractsComponent
-    );
-
-    componentsService.registerComponentType(
-      "EclaimsReceiptScannerComponent",
-      EclaimsReceiptScannerComponent
-    );
-
-    componentsService.registerComponentType(
-      "EclaimsSelectIncidentComponent",
-      EclaimsSelectIncidentComponent
-    );
-
-    componentsService.registerComponentType(
-      "PropertyAvailableContractsComponent",
-      PropertyAvailableContractsComponent
-    );
-
-    componentsService.registerComponentType(
-      "PropertyNotificationStepperComponent",
-      PropertyNotificationStepperComponent
-    );
-
-    componentsService.registerComponentType(
-      "PropertyClaimNotificationCreateCaseComponent",
-      PropertyClaimNotificationCreateCaseComponent
-    );
-
-    componentsService.registerComponentType(
-      "AmendmentsLifeBeneficiariesComponent",
-      AmendmentsLifeBeneficiariesComponent
-    );
-
-    componentsService.registerComponentType(
-      "PropertyClaimSubmitButtonComponent",
-      PropertyClaimSubmitButtonComponent
-    );
-
-    componentsService.registerComponentType(
-      "PropertyNotificationDatepickerComponent",
-      PropertyNotificationDatepickerComponent
-    );
-
-    componentsService.registerComponentType(
-      "EclaimsPageComponent",
-      EclaimsPageComponent
-    );
-
-    componentsService.registerComponentType(
-      "EclaimsSubmitButtonComponent",
-      EclaimsSubmitButtonComponent
-    );
-
-    componentsService.registerComponentType(
-      "EclaimsLwcCreateCaseComponent",
-      EclaimsLwcCreateCaseComponent
-    );
-
-
-    componentsService.registerComponentType(
-      "EclaimsCoveragesComponent",
-       EclaimsCoveragesComponent
-    );
-
-    componentsService.registerComponentType(
-      "EclaimsRequestsOpenComponent",
-      EclaimsRequestsOpenComponent
-    );
-
-    componentsService.registerComponentType(
-      "EclaimsGridViewComponent",
-      EclaimsGridViewComponent
-    );
-
-    componentsService.registerComponentType(
-      "EclaimsUploadComponent",
-      EclaimsUploadComponent
-    );
-
-    componentsService.registerComponentType(
-      "EclaimsRequestsInProgressComponent",
-      EclaimsRequestsInProgressComponent
-    );
-
-    componentsService.registerComponentType(
-      "EclaimsRequestsClosedComponent",
-      EclaimsRequestsClosedComponent
-    );
-
-    componentsService.registerComponentType(
-      "RedirectionEclaimsComponent",
-      RedirectionEclaimsComponent
-    );
-
-    componentsService.registerComponentType(
-      "EclaimsPageErrorComponent",
-      EclaimsPageErrorComponent
-    );
-
-    componentsService.registerComponentType(
-      "EclaimsErrorScriptComponent",
-      EclaimsErrorScriptComponent
-    );
-
-
-    componentsService.registerComponentType(
-      "DigitalCardComponent",
-      DigitalCardComponent
-    );
-
-    componentsService.registerComponentType(
-      "PropertyClaimNotificationInputFieldComponent",
-      PropertyClaimNotificationInputFieldComponent
-    );
-
-    componentsService.registerComponentType(
-      "PropertyClaimTypeComponent",
-      PropertyClaimTypeComponent
-    );
-
-    componentsService.registerComponentType(
-      "AmendmentsRelationshipComponent",
-      AmendmentsRelationshipComponent
-    );
-    componentsService.registerComponentType(
-      "SignUpGroupAreaComponent",
-      SignUpGroupAreaComponent
-    );
-
-    componentsService.registerComponentType(
-      "SignUpGroupCustomerProfilePopUpComponent",
-      SignUpGroupCustomerProfilePopUpComponent
-    );
-
-    componentsService.registerComponentType(
-      "EclaimsDocumentsComponent",
-      EclaimsDocumentsComponent
-    );
-
-    componentsService.registerComponentType(
-      "AmendmentsGetBeneficiariesComponent",
-      AmendmentsGetBeneficiariesComponent
-    );
-
-
-
-
-  }
+  // static registerComponent(componentsService: IceComponentsService): void {
+  //   //Eurolife
+  //   componentsService.registerComponentType(
+  //     "RedirectionGreenCardComponent",
+  //     RedirectionGreenCardComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "GreencardNotificationBarComponent",
+  //     GreencardNotificationBarComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "DetailsCustomTableComponent",
+  //     DetailsCustomTableComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "ConsentInitialStepsComponent",
+  //     ConsentInitialStepsComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "ConsentComplianceComponent",
+  //     ConsentComplianceComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "IconOutputConsentComponent",
+  //     IconOutputConsentComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "ConsentsCardsComponent",
+  //     ConsentsCardsComponent
+  //   );
+
+
+  //   componentsService.registerComponentType(
+  //     "IconOutputComponent",
+  //     IconOutputComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "CommentInputComponent",
+  //     CommentInputComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "UploadFileButtonComponent",
+  //     UploadFileButtonComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "AmendmentsStepperComponent",
+  //     AmendmentsStepperComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "AmendmentsStepperHomeComponent",
+  //     AmendmentsStepperHomeComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "AmendmentsStepperHealthComponent",
+  //     AmendmentsStepperHealthComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "AmendmentsStepperLifeComponent",
+  //     AmendmentsStepperLifeComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "AmendmentsStepperFinanceComponent",
+  //     AmendmentsStepperFinanceComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "AmendmentsInprogressComponent",
+  //     AmendmentsInprogressComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "AmendmentsRequestsComponent",
+  //     AmendmentsRequestsComponent
+  //   );
+
+
+  //   componentsService.registerComponentType(
+  //     "HomeCardContainerComponent",
+  //     HomeCardContainerComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "MyDocumentsComponent",
+  //     MyDocumentsComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "PaymentManagementSuccessComponent",
+  //     PaymentManagementSuccessComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "PaymentManagementStatusBarComponent",
+  //     PaymentManagementStatusBarComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "MotorCoversEditorCardComponent",
+  //     MotorCoversEditorCardComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "MotorCustomTableComponent",
+  //     MotorCustomTableComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "ExternalUrlComponent",
+  //     ExternalUrlComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "PdfDownloadComponent",
+  //     PdfDownloadComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "PdfTableLinkComponent",
+  //     PdfTableLinkComponent
+  //   );
+  //   componentsService.registerComponentType("MaskComponent", MaskComponent);
+  //   componentsService.registerComponentType(
+  //     "PaymentdetailsComponent",
+  //     PaymentdetailsComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "SuccessfullmessageComponent",
+  //     SuccessfullmessageComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "MotorPopUpDeleteAccount",
+  //     MotorPopUpDeleteAccount
+  //   );
+  //   componentsService.registerComponentType(
+  //     "MotorDeleteAccount",
+  //     MotorDeleteAccount
+  //   );
+  //   componentsService.registerComponentType(
+  //     "MotorPopUpchangeMobilePhone",
+  //     MotorPopUpchangeMobilePhone
+  //   );
+  //   componentsService.registerComponentType(
+  //     "MotorChangeMobilePhone",
+  //     MotorChangeMobilePhone
+  //   );
+  //   componentsService.registerComponentType(
+  //     "MotorPopUpchangePhone",
+  //     MotorPopUpchangePhone
+  //   );
+  //   componentsService.registerComponentType(
+  //     "MotorChangePhone",
+  //     MotorChangePhone
+  //   );
+  //   componentsService.registerComponentType(
+  //     "MotorPopUpchangeEmail",
+  //     MotorPopUpchangeEmail
+  //   );
+  //   componentsService.registerComponentType(
+  //     "MotorChangeEmail",
+  //     MotorChangeEmail
+  //   );
+  //   componentsService.registerComponentType(
+  //     "MotorProfilePicture",
+  //     MotorProfilePicture
+  //   );
+  //   //componentsService.registerComponentType("PopUp",PopUp);
+  //   componentsService.registerComponentType(
+  //     "MotorPopUpChangeProfilePicture",
+  //     MotorPopUpChangeProfilePicture
+  //   );
+  //   componentsService.registerComponentType(
+  //     "MotorPopUpchangePassword",
+  //     MotorPopUpchangePassword
+  //   );
+  //   componentsService.registerComponentType(
+  //     "MotorChangePassword",
+  //     MotorChangePassword
+  //   );
+  //   componentsService.registerComponentType(
+  //     "PaymentManagementComponent",
+  //     PaymentManagementComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "SubHeaderComponent",
+  //     SubHeaderComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "MotorCustomDetailTableComponent",
+  //     MotorCustomDetailTableComponent
+  //   );
+  //   componentsService.registerComponentType("HeaderComponent", HeaderComponent);
+  //   componentsService.registerComponentType(
+  //     "PaymentComponent",
+  //     PaymentComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "InfoButtonComponent",
+  //     InfoButtonComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "SocialNetworkSignUpComponent",
+  //     SocialNetworkSignUpComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "RegistrationPageComponent",
+  //     RegistrationPageComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "CalculateLifeExpirationDateComponent",
+  //     CalculateLifeExpirationDateComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "ParticipantsViewComponent",
+  //     ParticipantsViewComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "ParticipantViewClaimsComponent",
+  //     ParticipantViewClaimsComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "ExagoraComponent",
+  //     ExagoraComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "ClaimsCardComponent",
+  //     ClaimsCardComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "SubheaderStepperComponent",
+  //     SubheaderStepperComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "CommunicationServiceComponent",
+  //     CommunicationServiceComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "TelephoneiconComponent",
+  //     TelephoneiconComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "SalesChannelDetailsComponent",
+  //     SalesChannelDetailsComponent
+  //   );
+  //   componentsService.registerComponentType("PopUpComponent", PopUpComponent);
+  //   componentsService.registerComponentType(
+  //     "ButtonToDialogComponent",
+  //     ButtonToDialogComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "GdprNotificationComponent",
+  //     GdprNotificationComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "FileUploadSection",
+  //     FileUploadSection
+  //   );
+  //   componentsService.registerComponentType(
+  //     "SignUpCardComponent",
+  //     SignUpCardComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "SignUpValidatedComponent",
+  //     SignUpValidatedComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "CalculatePropertyDurationDateComponent",
+  //     CalculatePropertyDurationDateComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "CalculatePropertyPaymentFrequencyComponent",
+  //     CalculatePropertyPaymentFrequencyComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "SimplePageComponent",
+  //     SimplePageComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "SvgImageComponent",
+  //     SvgImageComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "SimplePageWithNavigationComponent",
+  //     SimplePageWithNavigationComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "EurolifeOutputComponent",
+  //     EurolifeOutputComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "EurolifeHeaderTileComponent",
+  //     EurolifeHeaderTileComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "EurolifeH3Component",
+  //     EurolifeH3Component
+  //   );
+  //   componentsService.registerComponentType(
+  //     "SimpleGridViewComponent",
+  //     SimpleGridViewComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "EurolifeDropdownMenuComponent",
+  //     EurolifeDropdownMenuComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "EurolifeDropdownComponent",
+  //     EurolifeDropdownComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "EurolifeNotificationBarComponent",
+  //     EurolifeNotificationBarComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "SplitPageWithIconComponent",
+  //     SplitPageWithIconComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "IceImageComponent",
+  //     IceImageComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "FlatSectionComponent",
+  //     FlatSectionComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "MatCardHomeComponent",
+  //     MatCardHomeComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "SimpleTableNoPaginationComponent",
+  //     SimpleTableNoPaginationComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "HomePageComponent",
+  //     HomePageComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "HomePageMainSectionComponent",
+  //     HomePageMainSectionComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "HomePageCardComponent",
+  //     HomePageCardComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "EurolifeOutputSubheaderComponent",
+  //     EurolifeOutputSubheaderComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "EurolifeButtonComponent",
+  //     EurolifeButtonComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "InputonchangeactionComponent",
+  //     InputonchangeactionComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "EurolifeEmailButtonComponentComponent",
+  //     EurolifeEmailButtonComponentComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "OutputWithIconComponent",
+  //     OutputWithIconComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     OutputWithActionComponent.componentName,
+  //     OutputWithActionComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "EurolifeMotorOutputDriversComponentComponent",
+  //     EurolifeMotorOutputDriversComponentComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "ChangePasswordFieldComponent",
+  //     ChangePasswordFieldComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "InsertCodeTimerComponent",
+  //     InsertCodeTimerComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "OtpInputComponent",
+  //     OtpInputComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "SendEmailButtonComponent",
+  //     SendEmailButtonComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "InsertCodeEmailTimerComponent",
+  //     InsertCodeEmailTimerComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "EmailConfirmationComponent",
+  //     EmailConfirmationComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "TermsConditionsComponent",
+  //     TermsConditionsComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "ConsentsComponent",
+  //     ConsentsComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "SignUpGroupConsentsModalComponent",
+  //     SignUpGroupConsentsModalComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "SignUpGroupSuccessModalComponent",
+  //     SignUpGroupSuccessModalComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "SignUpGroupWaitingModalComponent",
+  //     SignUpGroupWaitingModalComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "SignUpGroupErrorServiceModalComponent",
+  //     SignUpGroupErrorServiceModalComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "CookieDeclarationComponent",
+  //     CookieDeclarationComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "SimplePageNoTitleComponent",
+  //     SimplePageNoTitleComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     TimePickerComponent.componentName,
+  //     TimePickerComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "TextWithLinkComponent",
+  //     TextWithLinkComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     CalendarComponent.componentName,
+  //     CalendarComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     PopUpPageComponent.componentName,
+  //     PopUpPageComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     AvatarElementComponent.componentName,
+  //     AvatarElementComponent
+  //   );
+
+  //   componentsService.registerComponentType("MyDafsComponent", MyDafsComponent);
+
+  //   componentsService.registerComponentType(
+  //     "OpenDialogTextComponent",
+  //     OpenDialogTextComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "LegalPopupComponent",
+  //     LegalPopupComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "CloseCancelPopUpComponent",
+  //     CloseCancelPopUpComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "PopupConsentComponent",
+  //     PopupConsentComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "EurolifeConsentButtonComponent",
+  //     EurolifeConsentButtonComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "NotificationBarComponent",
+  //     NotificationBarComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "ConsentGridViewComponent",
+  //     ConsentGridViewComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "ConsentFooterComponent",
+  //     ConsentFooterComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "ConsentsTextMsgComponent",
+  //     ConsentsTextMsgComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "ReviewConfirmComponent",
+  //     ReviewConfirmComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "GreenCardStepperComponent",
+  //     GreenCardStepperComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "GreenCardDynamicComponent",
+  //     GreenCardDynamicComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "GreenCardAddDriverComponent",
+  //     GreenCardAddDriverComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "GreenCardOtherDriverToggleComponent",
+  //     GreenCardOtherDriverToggleComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "GreenCardDropdownPlatesComponent",
+  //     GreenCardDropdownPlatesComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "GreenCardDatepickerComponent",
+  //     GreenCardDatepickerComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "GreenCardFullnameComponent",
+  //     GreenCardFullnameComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "GreencardNotificationBarComponent",
+  //     GreencardNotificationBarComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "AmendmentDetailsHeaderComponent",
+  //     AmendmentDetailsHeaderComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "AmendmentinputfieldComponent",
+  //     AmendmentinputfieldComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "AmendmentinputlifefieldComponent",
+  //     AmendmentinputlifefieldComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "AmendmentinputpropertyfieldComponent",
+  //     AmendmentinputpropertyfieldComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "AmendmentMaskComponent",
+  //     AmendmentMaskComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "EurolifeOutputClickableComponent",
+  //     EurolifeOutputClickableComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "AmendmentGridViewComponent",
+  //     AmendmentGridViewComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "NoAmendmentGridViewComponent",
+  //     NoAmendmentGridViewComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "GreenCardButtonComponent",
+  //     GreenCardButtonComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "GreenCardBackButtonComponent",
+  //     GreenCardBackButtonComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "AmendmentsBackButtonComponent",
+  //     AmendmentsBackButtonComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "TextLabelComponent",
+  //     TextLabelComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "ContentWalkthroughComponent",
+  //     ContentWalkthroughComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "HomeCardContainerAmendmentComponent",
+  //     HomeCardContainerAmendmentComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "CustomerProfileComponent",
+  //     CustomerProfileComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "HomeAgentInfoComponent",
+  //     HomeAgentInfoComponent
+  //   );
+
+
+  //   componentsService.registerComponentType(
+  //     "HeaderWelcomeComponent",
+  //     HeaderWelcomeComponent
+  //   );
+
+
+  //   componentsService.registerComponentType(
+  //     "PendingPaymentComponent",
+  //     PendingPaymentComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "VanillaUlLineChartComponent",
+  //     VanillaUlLineChartComponent
+  //   );
+
+
+  //   componentsService.registerComponentType(
+  //     "FundsBasketComponent",
+  //     FundsBasketComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "SimpleGridViewQuotationComponent",
+  //     SimpleGridViewQuotationComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "OtpPartitionedInputComponent",
+  //     OtpPartitionedInputComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "FundsTippProductComponent",
+  //     FundsTippProductComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "TippLineChartComponent",
+  //     TippLineChartComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "FundsLifecycleProductComponent",
+  //     FundsLifecycleProductComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "LifecycleLineChartComponent",
+  //     LifecycleLineChartComponent
+  //   );
+
+
+  //   componentsService.registerComponentType(
+  //     "SimplePageClaimsComponent",
+  //     SimplePageClaimsComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "DragDropFileComponent",
+  //     DragDropFileComponent
+  //   );
+
+
+  //   componentsService.registerComponentType(
+  //     "EclaimsBackButtonComponent",
+  //     EclaimsBackButtonComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "EclaimsStepperComponent",
+  //     EclaimsStepperComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "EclaimsAvailableContractsComponent",
+  //     EclaimsAvailableContractsComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "EclaimsReceiptScannerComponent",
+  //     EclaimsReceiptScannerComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "EclaimsSelectIncidentComponent",
+  //     EclaimsSelectIncidentComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "PropertyAvailableContractsComponent",
+  //     PropertyAvailableContractsComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "PropertyNotificationStepperComponent",
+  //     PropertyNotificationStepperComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "PropertyClaimNotificationCreateCaseComponent",
+  //     PropertyClaimNotificationCreateCaseComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "AmendmentsLifeBeneficiariesComponent",
+  //     AmendmentsLifeBeneficiariesComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "PropertyClaimSubmitButtonComponent",
+  //     PropertyClaimSubmitButtonComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "PropertyNotificationDatepickerComponent",
+  //     PropertyNotificationDatepickerComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "EclaimsPageComponent",
+  //     EclaimsPageComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "EclaimsSubmitButtonComponent",
+  //     EclaimsSubmitButtonComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "EclaimsLwcCreateCaseComponent",
+  //     EclaimsLwcCreateCaseComponent
+  //   );
+
+
+  //   componentsService.registerComponentType(
+  //     "EclaimsCoveragesComponent",
+  //      EclaimsCoveragesComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "EclaimsRequestsOpenComponent",
+  //     EclaimsRequestsOpenComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "EclaimsGridViewComponent",
+  //     EclaimsGridViewComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "EclaimsUploadComponent",
+  //     EclaimsUploadComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "EclaimsRequestsInProgressComponent",
+  //     EclaimsRequestsInProgressComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "EclaimsRequestsClosedComponent",
+  //     EclaimsRequestsClosedComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "RedirectionEclaimsComponent",
+  //     RedirectionEclaimsComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "EclaimsPageErrorComponent",
+  //     EclaimsPageErrorComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "EclaimsErrorScriptComponent",
+  //     EclaimsErrorScriptComponent
+  //   );
+
+
+  //   componentsService.registerComponentType(
+  //     "DigitalCardComponent",
+  //     DigitalCardComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "PropertyClaimNotificationInputFieldComponent",
+  //     PropertyClaimNotificationInputFieldComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "PropertyClaimTypeComponent",
+  //     PropertyClaimTypeComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "AmendmentsRelationshipComponent",
+  //     AmendmentsRelationshipComponent
+  //   );
+  //   componentsService.registerComponentType(
+  //     "SignUpGroupAreaComponent",
+  //     SignUpGroupAreaComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "SignUpGroupCustomerProfilePopUpComponent",
+  //     SignUpGroupCustomerProfilePopUpComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "EclaimsDocumentsComponent",
+  //     EclaimsDocumentsComponent
+  //   );
+
+  //   componentsService.registerComponentType(
+  //     "AmendmentsGetBeneficiariesComponent",
+  //     AmendmentsGetBeneficiariesComponent
+  //   );
+
+
+
+
+  // }
 
   //
   //
-  static registerRules(): void {
-    RuleFactoryImpl.addRuleImplementations(
-      RuleHolder.IceAction,
-      eurolife_custom_action_rules
-    );
-    RuleFactoryImpl.addRuleImplementations(
-      RuleHolder.IceSection,
-      eurolife_custom_section_rules
-    );
+  // static registerRules(): void {
+  //   RuleFactoryImpl.addRuleImplementations(
+  //     RuleHolder.IceAction,
+  //     eurolife_custom_action_rules
+  //   );
+  //   RuleFactoryImpl.addRuleImplementations(
+  //     RuleHolder.IceSection,
+  //     eurolife_custom_section_rules
+  //   );
 
-    RuleFactoryImpl.addRuleImplementations(
-      RuleHolder.IceList,
-      eurolife_custom_list_rules
-    );
-    RuleFactoryImpl.addRuleImplementations(
-      RuleHolder.IceElement,
-      eurolife_custom_element_rules
-    );
-    RuleFactoryImpl.addRuleImplementations(
-      RuleHolder.IceBucket,
-      eurolife_custom_bucket_rules
-    );
-    RuleFactoryImpl.addRuleImplementations(
-      RuleHolder.IceNavigation,
-      eurolife_custom_navigation_rules
-    );
+  //   RuleFactoryImpl.addRuleImplementations(xx
+  //     eurolife_custom_list_rules
+  //   );
+  //   RuleFactoryImpl.addRuleImplementations(
+  //     RuleHolder.IceElement,
+  //     eurolife_custom_element_rules
+  //   );
+  //   RuleFactoryImpl.addRuleImplementations(
+  //     RuleHolder.IceBucket,
+  //     eurolife_custom_bucket_rules
+  //   );
+  //   RuleFactoryImpl.addRuleImplementations(
+  //     RuleHolder.IceNavigation,
+  //     eurolife_custom_navigation_rules
+  //   );
 
 
-  }
+  // }
 }
