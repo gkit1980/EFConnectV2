@@ -1,9 +1,0 @@
-label: Insis IBAN Output
-
-component: InsisIBANOutput
-
-types:
-  - text
-
-description: >
-  formats iban output mode

@@ -1,9 +1,9 @@
-import { environment } from './../../../environments/environment';
+import { environment } from '@insis-portal/environments/environment';
 import { Component } from "@angular/core";
-import { AuthService } from "../../services/auth.service";
-import { LocalStorageService } from "../../services/local-storage.service";
-import { WindowScrollingService } from "../../services/window-scrolling.service";
-import { LogoutService } from '../../services/logout.service';
+import { AuthService } from "@insis-portal/services/auth.service";
+import { LocalStorageService } from "@insis-portal/services/local-storage.service";
+import { WindowScrollingService } from "@insis-portal/services/window-scrolling.service";
+import { LogoutService } from '@insis-portal/services/logout.service';
 import { IceContextService } from "@impeo/ng-ice";
 import { IndexedValue, LifecycleType } from '@impeo/ice-core';
 import { Router } from "@angular/router";

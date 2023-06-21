@@ -1,0 +1,89 @@
+<div id="scrollToTopBtn" class="before-scanning-page-area"></div>
+
+<div class="container">
+
+    <div class="main-container">
+      <div class="header h5">{{ this.recipe.header }}</div>
+      <div class="header Caption3 subsubheader">{{ this.recipe.innerheader }}</div>
+    </div>
+    <div class="scanner"  *ngIf="scanner">
+
+      <!-- <mat-form-field appearance="fill">
+        <mat-select [value]="deviceSelected" (valueChange)="onDeviceSelectChange($event)">
+          <mat-option value="">No Device Selected</mat-option>
+          <mat-option *ngFor="let device of availableDevices" [value]="device.deviceId">{{device.label}}</mat-option>
+        </mat-select>
+      </mat-form-field> -->
+      <div>
+        <zxing-scanner previewFitMode="contain" *ngIf="!qrResultString" [device]="deviceCurrent" (permissionResponse)="onHasPermission($event)" (deviceChange)="onDeviceChange($event)" (camerasFound)="onCamerasFound($event)" (scanSuccess)="onCodeResult($event)"     [formats]="allowedFormats"
+        >
+        </zxing-scanner>
+        <button (click)="onDeviceSelectChange()"> Switch </button>
+      </div>
+      <!-- success case -->
+      <div *ngIf="qrResultSuccess">
+        <div *ngIf="qrResultString" class="text-center">
+          <img class="success" src="https://scp.eurolife.gr/~/media/673891514F8B4FE3AE6792A451BDDFF4.ashx"  
+              alt="ValidCard" id="validCard" style="width:80px; height: 80px;"> <!-- 673891514F8B4FE3AE6792A451BDDFF4 -->
+          <div class="success_text">
+            Tα δεδομένα σας ανασύρθηκαν επιτυχώς!
+          </div>
+        </div>
+      </div>
+      <!-- error case -->
+      <div *ngIf="!qrResultSuccess">
+        <div class="text-center">
+          <img class="success" src="https://scp.eurolife.gr/~/media/B57E9635757A47D6A8A2E8C08920580A.ashx"  
+            alt="ValidCard" id="validCard" style="width:80px; height: 80px;"> 
+          <div class="error_text">
+            Ουπς! Κάτι δεν πήγε καλά κάτα την ανάσυρση των δεδομένων
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scanner" style="width: 100%; height: 50%;" *ngIf="!scanner">
+      <img class="img-scanner" [src]="imageSource('85E4DF67E7D9440B891F3C6B6FDD617F')" alt="ScanIcon">
+      <button class="start-scanner-button" (click)="showScanner()"> ΕΚΚΙΝΗΣΗ ΣΚΑΝΑΡΙΣΜΑΤΟΣ </button>
+    </div>
+    <!-- <section class="results" *ngIf="qrResultString">
+      <div>
+        <small>Result</small>
+        <strong>{{ qrResultString }}</strong>
+      </div>
+      <button mat-icon-button (click)="clearResult()">&times;</button>
+    </section> -->
+    <div class="subheader">
+      <div  *ngIf="!qrSuccessTextHidden">{{this.recipe.innersubheader}}
+        <a class="add-style" (click)="goToNextScreen()">εδώ</a>.
+      </div>
+    </div>
+    
+</div>
+
+
+<ng-template #loadDataTempl1>
+  <div class="ice-simple-table">
+    <ngx-skeleton-loader
+      count="1"
+      [theme]="{ 'background-color': '#dadada', width: '70%', height: '25px', 'border-radius': '10px' }"
+    >
+    </ngx-skeleton-loader>
+
+    <ngx-skeleton-loader
+      count="2"
+      [theme]="{ 'background-color': '#dadada', width: '100%', height: '25px', 'border-radius': '10px' }"
+    >
+    </ngx-skeleton-loader>
+  </div>
+</ng-template>
+
+
+<ng-template #loadDataMembers>
+    <ngx-skeleton-loader
+      count="1"
+      [theme]="{ width: '20px', height: '20px', 'border-radius': '10px', 'background-color': '#dadada' }"
+    >
+    </ngx-skeleton-loader>
+ 
+</ng-template>
+

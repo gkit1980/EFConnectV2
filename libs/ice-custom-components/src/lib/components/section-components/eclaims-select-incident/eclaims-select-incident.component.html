@@ -1,0 +1,282 @@
+<div class="container">
+
+    <div class="main-container">
+      <mat-button-toggle-group #toggleBtn="matButtonToggleGroup" value = "{{selectedIncident}}" class="incident-padding">
+        <div class="header-incident-padding">
+          <div class="header h5">{{ this.recipe.header }}</div>
+          <div class="header-inside h5">Για ποιο λόγο θέλετε να αποζημιωθείτε;</div>
+        </div>
+        <!-- CATEGORY TOP AREA - DESKOTP VIEW -->
+        <div class="desktop-tab-group">
+          <div *ngIf="showHospitalzationOption  || showSickLeaveOption || showMedicinesDiagnosticTestsOptions" class="border-toggle-buttons" >
+            <div *ngIf="showSickLeaveOption"  class="toggle-div" >
+              <mat-button-toggle  [ngClass]="{'bg-checked':selectedIncident === 'Έχασα μισθούς λόγω ασθένειας','toggle-btn':selectedIncident !== 'Έχασα μισθούς λόγω ασθένειας'}" (change)="onValChange($event.value)" value="Έχασα μισθούς λόγω ασθένειας">
+                Έχασα μισθούς λόγω ασθένειας
+              </mat-button-toggle>
+            </div>
+            <div *ngIf="showHospitalzationOption" class="toggle-div" >  
+              <mat-button-toggle [ngClass]="{'bg-checked':selectedIncident === 'Νοσηλεύτηκα σε νοσοκομείο','toggle-btn':selectedIncident !== 'Νοσηλεύτηκα σε νοσοκομείο'}" (change)="onValChange($event.value)" value="Νοσηλεύτηκα σε νοσοκομείο">
+                Νοσηλεύτηκα σε νοσοκομείο
+              </mat-button-toggle>
+            </div>
+            <div *ngIf="showMedicinesDiagnosticTestsOptions" class="toggle-div" >  
+              <mat-button-toggle [ngClass]="{'bg-checked':selectMedicinesDiagnosticTestsOptions,'toggle-btn': !selectMedicinesDiagnosticTestsOptions}" (change)="onValChange($event.value)" value="Φάρμακα / Διαγνωστικές εξετάσεις / Ιατρικές επισκέψεις">
+                Φάρμακα / Διαγνωστικές εξετάσεις / Ιατρικές επισκέψεις
+              </mat-button-toggle>
+            </div>
+          </div>
+        </div>
+        <!-- CATEGORY TOP AREA - DESKOTP VIEW -->
+
+        <!-- CATEGORY TOP AREA - MOBILE VIEW -->
+        <div class="mobile-tab-group">
+          <div *ngIf="showHospitalzationOption|| showSickLeaveOption || showMedicinesDiagnosticTestsOptions" class="border-toggle-buttons" >
+            <div *ngIf="showSickLeaveOption" class="toggle-div" >
+              <mat-button-toggle  [ngClass]="{'bg-checked':selectedIncident === 'Έχασα μισθούς λόγω ασθένειας','toggle-btn':selectedIncident !== 'Έχασα μισθούς λόγω ασθένειας'}" (change)="onValChange($event.value)" value="Έχασα μισθούς λόγω ασθένειας" style="width: 100%;">
+                Έχασα μισθούς λόγω ασθένειας
+              </mat-button-toggle>
+            </div>
+            <div *ngIf="showHospitalzationOption " class="toggle-div">  
+              <mat-button-toggle [ngClass]="{'bg-checked':selectedIncident === 'Νοσηλεύτηκα σε νοσοκομείο','toggle-btn':selectedIncident !== 'Νοσηλεύτηκα σε νοσοκομείο'}" (change)="onValChange($event.value)" value="Νοσηλεύτηκα σε νοσοκομείο" style="width: 100%;">
+                Νοσηλεύτηκα σε νοσοκομείο
+              </mat-button-toggle>
+            </div>
+            <div *ngIf="showMedicinesDiagnosticTestsOptions" class="toggle-div" >  
+              <mat-button-toggle [ngClass]="{'bg-checked':selectMedicinesDiagnosticTestsOptions,'toggle-btn': !selectMedicinesDiagnosticTestsOptions}" (change)="onValChange($event.value)" value="Φάρμακα / Διαγνωστικές εξετάσεις / Ιατρικές επισκέψεις">
+                Φάρμακα / Διαγνωστικές εξετάσεις / Ιατρικές επισκέψεις
+              </mat-button-toggle>
+            </div>
+          </div>
+        </div>
+        <!-- CATEGORY TOP AREA - MOBILE VIEW -->
+        
+        <!-- AILMENT AREA -->
+        <div *ngIf="selectMedicinesDiagnosticTestsOptions">
+          <!-- AILMENT AREA - DESKTOP VIEW -->
+          <div class="desktop-tab-group">
+            <div class="header-inside-ife h5">Για ποια πάθηση ή παροχή κάνετε χρήση των καλύψεών σας;</div>
+            <p class="description-header">Σε περίπτωση που δεν βρίσκεται στις πιο συχνές αναζητήστε την παρακάτω</p>
+            <mat-tab-group class = "tab-grp"  [(selectedIndex)]="selectedTabIndex">
+                <mat-tab class = "tab-grp-category" label="Α-Γ">
+                  <div class="row toggle-buttons" >
+                    <div *ngFor="let incidents of incidentsData; let idx = index">
+                      <div  class="row row-toggle-button" *ngIf= "idx<1">
+                        <div  *ngFor="let incident of incidents">
+                          <div class="toggle-div" *ngIf= "((incident.code==10336 && showMyopia)||incident.code!=10336)" >
+                            <mat-button-toggle  [ngClass]="{'bg-checked':selectedIncident === incident.name,'toggle-btn':selectedIncident !== incident.name}"  (change)="onValChange(incident.name, incident.code)" value="{{incident.name}}">
+                            {{ incident.name}}
+                            </mat-button-toggle>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </mat-tab>
+                <mat-tab class = "tab-grp-category" label="Δ-Ο">
+                  <div class="row toggle-buttons" >
+                    <div *ngFor="let incidents of incidentsData; let idx = index">
+                      <div class="row row-toggle-button"  *ngIf= "(idx>0 && idx<2)">
+                        <div  *ngFor="let incident of incidents">
+                          <div class="toggle-div"  >
+                            <mat-button-toggle  [ngClass]="{'bg-checked':selectedIncident === incident.name,'toggle-btn':selectedIncident !== incident.name}"  (change)="onValChange(incident.name, incident.code)" value="{{incident.name}}">
+                            {{ incident.name}}
+                            </mat-button-toggle>
+                          </div>
+                        </div>
+                      </div>                      
+                    </div>
+                  </div>
+                </mat-tab>
+                <mat-tab class = "tab-grp-category" label="Π-Ω">
+                  <div class="row toggle-buttons" >
+                    <div *ngFor="let incidents of incidentsData; let idx = index">
+                      <div  class="row row-toggle-button" *ngIf= "idx>1">
+                        <div  *ngFor="let incident of incidents">
+                          <div *ngIf="((incident.code==41 && showTestPap)||incident.code!=41)" class="toggle-div"  >
+                            <mat-button-toggle  [ngClass]="{'bg-checked':selectedIncident === incident.name,'toggle-btn':selectedIncident !== incident.name}"  (change)="onValChange(incident.name, incident.code)" value="{{incident.name}}">
+                            {{ incident.name}}
+                            </mat-button-toggle>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </mat-tab>
+                <mat-tab disabled>
+                  <ng-template mat-tab-label>
+                    <button mat-icon-button (click)="movePreviousTab()"
+                      class="profile svg-icons-left"
+                      [onSVGLoaded]="handleSVG"
+                      [inlineSVG]="getIcon('F9608FE2FC564FADADE1BF388EB367D9')"
+                      style="fill:#4a5294">
+                    </button>
+                    <button mat-icon-button (click)="moveNextTab()"
+                      class="profile svg-icons-right"
+                      [onSVGLoaded]="handleSVG"
+                      [inlineSVG]="getIcon('F9608FE2FC564FADADE1BF388EB367D9')"
+                      style="fill:#4a5294">
+                    </button>
+                  </ng-template>
+                </mat-tab>
+            </mat-tab-group>
+          </div>
+          <!-- AILMENT AREA - DESKTOP VIEW -->
+
+          <!-- AILMENT AREA - MOBILE VIEW -->
+          <div class="mobile-table-ailments">
+            <div class="header-inside-ife h5">Για ποια πάθηση ή παροχή κάνετε χρήση των καλύψεών σας;</div>
+            <p class="description-header">Σε περίπτωση που δεν βρίσκεται στις πιο συχνές αναζητήστε την παρακάτω</p>
+            <mat-tab-group class = "tab-grp-mobile">
+              <mat-tab class = "tab-grp-category" label="Α-Γ">
+                <div class="row toggle-buttons-mobile" >
+                  <div *ngFor="let incidents of incidentsData; let idx = index">
+                    <div  class="row row-toggle-button-mobile" *ngIf= "idx<1">
+                      <div  *ngFor="let incident of incidents">
+                        <div class="toggle-div" *ngIf= "((incident.code==10336 && showMyopia)||incident.code!=10336)" >
+                          <mat-button-toggle  [ngClass]="{'bg-checked':selectedIncident === incident.name,'toggle-btn':selectedIncident !== incident.name}"  (change)="onValChange(incident.name, incident.code)" value="{{incident.name}}">
+                          {{ incident.name}}
+                          </mat-button-toggle>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </mat-tab>
+              <mat-tab class = "tab-grp-category" label="Δ-Ο">
+                <div class="row toggle-buttons-mobile" >
+                  <div *ngFor="let incidents of incidentsData; let idx = index">
+                    <div class="row row-toggle-button-mobile"  *ngIf= "(idx>0 && idx<2)">
+                      <div  *ngFor="let incident of incidents">
+                        <div class="toggle-div"  >
+                          <mat-button-toggle  [ngClass]="{'bg-checked':selectedIncident === incident.name,'toggle-btn':selectedIncident !== incident.name}"  (change)="onValChange(incident.name, incident.code)" value="{{incident.name}}">
+                          {{ incident.name}}
+                          </mat-button-toggle>
+                        </div>
+                      </div>
+                    </div>                      
+                  </div>
+                </div>
+              </mat-tab>
+              <mat-tab class = "tab-grp-category" label="Π-Ω">
+                <div class="row toggle-buttons-mobile" >
+                  <div *ngFor="let incidents of incidentsData; let idx = index">
+                    <div  class="row row-toggle-button-mobile" *ngIf= "idx>1">
+                      <div  *ngFor="let incident of incidents">
+                        <div *ngIf="((incident.code==41 && showTestPap)||incident.code!=41)" class="toggle-div"  >
+                          <mat-button-toggle  [ngClass]="{'bg-checked':selectedIncident === incident.name,'toggle-btn':selectedIncident !== incident.name}"  (change)="onValChange(incident.name, incident.code)" value="{{incident.name}}">
+                          {{ incident.name}}
+                          </mat-button-toggle>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </mat-tab>
+              <mat-tab disabled></mat-tab>
+            </mat-tab-group>
+          </div>
+          <!-- AILMENT AREA - MOBILE VIEW -->
+
+
+          <div class="faq-search">
+            <div class="faq-search-component">
+              <div class="faq-search-input">
+                <mat-form-field class="search-input">
+                  <mat-label>Αναζήτηση πάθησης</mat-label>
+                  <input #inputSearch (keyup.enter)="onSearchClick(inputSearch.value)" matInput type="search" [(ngModel)] = searchValue/>
+                </mat-form-field>
+              </div>
+              <div (click)="onSearchClick(inputSearch.value)" class="search-icon">
+                <div
+                  class="search-svg"
+                  aria-label="icon"
+                  [inlineSVG]="getIcon('C1F526C6EBE449D0870A889DC07F2B88')"
+                  [onSVGLoaded]="handleSVG"
+                ></div>
+              </div>
+            </div>
+            <div *ngIf="searchValue">
+              <div *ngFor="let item of ailmentsData">
+                <div class="search-items"  >
+                  <div *ngFor="let incident of item.ailments | filterPipe: searchValue">
+                    <div class="row"  >
+                      <mat-button-toggle  [ngClass]="{'toggle-btn-dropdown-checked-search-area':selectedIncident === incident.name,'toggle-btn-dropdown-search-area':selectedIncident !== incident.name}"  (change)="onValChange(incident.name, incident.code)" value="{{incident.name}}">
+                      {{incident.name}}
+                      </mat-button-toggle>
+                    </div>
+                    <div class="hor-line"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <ng-container *ngFor="let item of ailmentsData; let idx = index">
+            <div *ngIf="item.ailmentCategory != 'Οδοντιατρικές'" class="request-container">
+                            
+                <div class="status-btn-container" (click)="toggleCollapse(item)">
+                  <div class="ailmentCategory">
+                    <div
+                      class="ailments-icons"
+                      [inlineSVG]="getIcon(item.icon)"
+                      style="fill:#4a5294"
+                    ></div>
+                    <div class="h6 receipt-mobile-label mobile-label-size">{{item.ailmentCategory}}</div>
+                  </div>
+                  <div
+                    class="{{!item.collapse? 'profile svg-icons-up' : 'profile svg-icons'}}"
+                    [onSVGLoaded]="handleSVG"
+                    [inlineSVG]="getIcon('F9608FE2FC564FADADE1BF388EB367D9')"
+                    style="fill:#4a5294"
+                  ></div>
+                </div>
+      
+              <div *ngIf="!item.collapse">
+                  <div *ngFor="let ailment of item.ailments">
+                    <div *ngIf="(ailment.adult && adult) || (ailment.child && !adult)" class="row"  >
+                      <mat-button-toggle  [ngClass]="{'toggle-btn-dropdown-checked':selectedIncident === ailment.name,'toggle-btn-dropdown':selectedIncident !== ailment.name}"  (change)="onValChange(ailment.name,ailment.code)" value="{{ailment.name}}">
+                        <div class="toggle-btn-dropdown-text">{{ ailment.name}}</div>
+                      </mat-button-toggle>
+                    </div>
+                    <div class="hor-line"></div>
+                  </div>
+            </div>
+            
+            </div>
+          </ng-container>
+        </div>
+      </mat-button-toggle-group>
+    </div>
+
+    
+
+   
+
+</div>
+
+<ng-template #loadDataTempl1>
+  <div class="ice-simple-table">
+    <ngx-skeleton-loader
+      count="1"
+      [theme]="{ 'background-color': '#dadada', width: '70%', height: '25px', 'border-radius': '10px' }"
+    >
+    </ngx-skeleton-loader>
+
+    <ngx-skeleton-loader
+      count="2"
+      [theme]="{ 'background-color': '#dadada', width: '100%', height: '25px', 'border-radius': '10px' }"
+    >
+    </ngx-skeleton-loader>
+  </div>
+</ng-template>
+
+
+<ng-template #loadDataMembers>
+    <ngx-skeleton-loader
+      count="1"
+      [theme]="{ width: '20px', height: '20px', 'border-radius': '10px', 'background-color': '#dadada' }"
+    >
+    </ngx-skeleton-loader>
+ 
+</ng-template>
+

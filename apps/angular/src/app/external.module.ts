@@ -13,11 +13,11 @@ import { ResourceResolver } from "./resolvers/resource.resolver";
 //import { SignupService } from "./services/signup.service";
 
 ///new sign up process
-import { SignUpNewComponent } from "./eurolife-custom-components-angular/page/sign-up-new/sign-up-new.component";
-import { SignUpNewEmailFormComponent } from "./eurolife-custom-components-angular/page/sign-up-new/sign-up-new-email-form/sign-up-new-email-form.component";
-import { SignUpNewConfirmationComponent } from "./eurolife-custom-components-angular/page/sign-up-new/sign-up-new-confirmation/sign-up-new-confirmation.component";
-import { SignUpNewValidateSmsComponent } from "./eurolife-custom-components-angular/page/sign-up-new/sign-up-new-validate-sms/sign-up-new-validate-sms.component";
-import { SignUpNewFinalFormComponent } from "./eurolife-custom-components-angular/page/sign-up-new/sign-up-new-final-form/sign-up-new-final-form.component";
+import { SignUpNewComponent } from "./components/sign-up-new/sign-up-new.component";
+import { SignUpNewEmailFormComponent } from "./components/sign-up-new/sign-up-new-email-form/sign-up-new-email-form.component";
+import { SignUpNewConfirmationComponent } from "./components/sign-up-new/sign-up-new-confirmation/sign-up-new-confirmation.component";
+import { SignUpNewValidateSmsComponent } from "./components/sign-up-new/sign-up-new-validate-sms/sign-up-new-validate-sms.component";
+import { SignUpNewFinalFormComponent } from "./components/sign-up-new/sign-up-new-final-form/sign-up-new-final-form.component";
 
 
 

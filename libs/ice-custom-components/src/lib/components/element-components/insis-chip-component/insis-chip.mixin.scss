@@ -1,8 +1,0 @@
-@import '~@angular/material/theming';
-
-@mixin insis-chip-mixin($theme) {
-  .insis-chip {
-    white-space: nowrap;
-    margin-bottom: 8px;
-  }
-}

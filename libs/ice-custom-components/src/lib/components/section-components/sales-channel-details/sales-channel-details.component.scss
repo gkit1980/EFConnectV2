@@ -1,0 +1,178 @@
+@import '../../../../../../../../EurolifeV2/apps/angular/src/styles/abstracts/functions';
+@import '../../../../../../../../EurolifeV2/apps/angular/src/styles/abstracts/variables';
+
+
+.header-title {
+    padding-left: 16px;
+    border-left: solid 2px #ef3340;
+    padding-top: 9.5px;
+    padding-bottom: 9.5px;
+    margin-top: 69px;
+    margin-bottom: 8px;
+}
+
+// .Caption3 {
+//     margin-bottom: 48px;
+// }
+
+.eurolife-card {
+    background-color: #ffffff;
+}
+
+.fix-top{
+    @media screen and (max-width: 628px) {
+        margin-top: 15px !important;
+    }
+}
+
+.eurolife-card-body {
+    padding: 24px;
+}
+
+.product {
+    display: flex;
+    align-items: center;
+}
+
+.row-center-alignment {
+    align-items: flex-start;
+}
+
+.life-text {
+    color: getColor(life);
+}
+
+.health-text {
+    color: rgb(239, 51, 64);
+}
+
+.motor-text {
+    color: rgb(71, 148, 99);
+}
+
+.house-text {
+    color: rgb(242, 177, 0);
+}
+
+.savings-text {
+    color: rgb(0, 128, 148);
+}
+
+.otherpc-text {
+    color: #eb7d2e;
+}
+
+.product-description {
+    margin-left: 13.4px;
+}
+
+.keep-size{
+    flex-shrink: 0;
+}
+
+.background-circle {
+    height: 73px;
+    width: 73px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.life-bg-color {
+    background-color: getColor(life, light_bg);
+    fill: getColor(life) !important;
+}
+
+.health-bg-color {
+    background-color: getColor(health, light_bg);
+    fill: getColor(health) !important;
+}
+
+.motor-bg-color {
+    background-color: getColor(motor, light_bg);
+    fill: getColor(motor) !important;
+}
+
+.house-bg-color {
+    background-color: getColor(home, light_bg);
+    fill: getColor(home) !important;
+}
+
+.savings-bg-color {
+    background-color: getColor(finance, light_bg);
+    fill: getColor(finance) !important;
+}
+
+.otherpc-bg-color {
+    background-color: getColor(sme, light);
+    fill: getColor(sme) !important;
+}
+
+.second-row {
+    @media screen and (max-width: 768px) {
+        margin: 0;
+    }
+
+    margin: 23px 0px 0px 0px;
+    padding: 12px 0px 11px 17px;
+    background-color: rgb(238, 238, 238);
+}
+
+p {
+    margin: 0px;
+}
+
+.margin-bottom-container {
+    margin-bottom: 69px;
+}
+
+.product-aux-icon>svg {
+    width: 20px;
+    height: 20px;
+}
+
+.details {
+    margin-left: 13px;
+}
+
+.text-decoration-none {
+    color: unset;
+    display: table-caption;
+}
+
+.links {
+    a {
+        text-decoration: none;
+        color: getColor(grey, dark);
+    }
+}
+
+
+    .walkthrough-buttons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .walkthrough-dots {
+        width: max-content;
+        position: relative;
+        left: 135px;
+    }
+
+    .dot {
+        height: 10px;
+        width: 10px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        margin-left: 3px;
+    }
+
+    .dot-active{
+        background-color: #000;
+    }

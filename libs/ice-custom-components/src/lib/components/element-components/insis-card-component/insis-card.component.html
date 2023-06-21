@@ -1,8 +1,0 @@
-<div class="insis-card" *ngIf="isVisible" (click)="onClick()">
-  <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
-    <img [src]="src" alt="" />
-    <p class="mat-headline text-align-center" *ngIf="label">{{ label }}</p>
-    <p class="description mat-caption text-align-center" *ngIf="description">{{ description }}</p>
-  </div>
-  <mat-output *ngIf="isOutput" [isOutput]="isOutput" [label]="label" [value]="value"></mat-output>
-</div>

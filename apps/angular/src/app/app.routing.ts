@@ -1,14 +1,13 @@
 import { ModuleWithProviders } from "@angular/core";
-import { IceRuntimeResolver } from '@impeo/ng-ice';
 import {PreloadAllModules,RouterModule, Routes } from "@angular/router";
-import { SignUpValidatedComponent } from "./eurolife-custom-components-angular/section/sign-up-validated/sign-up-validated.component";
+import { SignUpValidatedComponent } from  "@insis-portal/ice-custom-components/src/lib/components/section-components/sign-up-validated/sign-up-validated.component";
 
-import { FaqComponent } from "./eurolife-custom-components-angular/section/faq/faq.component";
-import { GlossaryComponent } from "./eurolife-custom-components-angular/section/glossary/glossary.component";
+import { FaqComponent } from "./components/faq/faq.component";
+import { GlossaryComponent } from "./components//glossary/glossary.component";
 import { ResourceResolver } from "./resolvers/resource.resolver";
-import { ForgotUsernameComponent } from "./eurolife-custom-components-angular/page/forgot-username/forgot-username.component";
-import { PageNotFoundComponent } from "./eurolife-custom-components-angular/page/page-not-found/page-not-found.component";
-import { LoginComponent } from "./eurolife-custom-components-angular/page/login/login.component";
+import { ForgotUsernameComponent } from "./components/forgot-username/forgot-username.component";
+import { PageNotFoundComponent } from "./components//page-not-found/page-not-found.component";
+import { LoginComponent } from "./components//login/login.component";
 
 
 const AppRoutes: Routes = [

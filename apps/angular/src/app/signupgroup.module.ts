@@ -11,13 +11,13 @@ import { ResourceResolver } from "./resolvers/resource.resolver";
 //import { SignupService } from "./services/signup.service";
 
 ///new sign up process
-import { SignUpGroupComponent } from "./eurolife-custom-components-angular/page/sign-up-group/sign-up-group.component";
-import { SignUpGroupNewConfirmationComponent } from "./eurolife-custom-components-angular/page/sign-up-group/sign-up-group-new-confirmation/sign-up-group-new-confirmation.component";
-import { SignUpGroupDataFormComponent } from "./eurolife-custom-components-angular/page/sign-up-group/sign-up-group-data-form/sign-up-group-data-form.component";
-import { SignUpGroupMobileComponent } from "./eurolife-custom-components-angular/page/sign-up-group/sign-up-group-mobile/sign-up-group-mobile.component";
-import { SignUpGroupValidateSmsComponent } from "./eurolife-custom-components-angular/page/sign-up-group/sign-up-group-validate-sms/sign-up-group-validate-sms.component";
-import { SignUpGroupFinalFormComponent } from "./eurolife-custom-components-angular/page/sign-up-group/sign-up-group-final-form/sign-up-group-final-form.component";
-//import { SignUpGroupAreaComponent } from "./eurolife-custom-components-angular/element/sign-up-group-area/sign-up-group-area.component";
+import { SignUpGroupComponent } from "./components/sign-up-group/sign-up-group.component";
+import { SignUpGroupNewConfirmationComponent } from "./components/sign-up-group/sign-up-group-new-confirmation/sign-up-group-new-confirmation.component";
+import { SignUpGroupDataFormComponent } from "./components/sign-up-group/sign-up-group-data-form/sign-up-group-data-form.component";
+import { SignUpGroupMobileComponent } from "./components/sign-up-group/sign-up-group-mobile/sign-up-group-mobile.component";
+import { SignUpGroupValidateSmsComponent } from "./components/sign-up-group/sign-up-group-validate-sms/sign-up-group-validate-sms.component";
+import { SignUpGroupFinalFormComponent } from "./components/sign-up-group/sign-up-group-final-form/sign-up-group-final-form.component";
+//import { SignUpGroupAreaComponent } from "../../../../libs/ice-custom-components/src/lib/components/element-components/sign-up-group-area/sign-up-group-area.component";
 
 // import {
 //   MatToolbarModule,

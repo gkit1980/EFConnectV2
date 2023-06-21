@@ -10,12 +10,12 @@
 @import './ice-master-material-custom.scss';
 @import '../Mixin/ice-registration-page-component.mixin.scss';
 
-@import '../../app/eurolife-custom-components-angular/element/calendar/calendar.mixin.scss';
-@import '../../app/eurolife-custom-components-angular/element/output-with-action/output-with-action.mixin.scss';
-@import '../../app/eurolife-custom-components-angular/section/motor-custom-table/motor-custom-table.section.mixin.scss';
-@import '../../app/eurolife-custom-components-angular/element/time-picker/time-picker.mixin.scss';
+@import '../../../../../libs/ice-custom-components/src/lib/components/element-components/calendar/calendar.mixin.scss';
+@import '../../../../../libs/ice-custom-components/src/lib/components/element-components/output-with-action/output-with-action.mixin.scss';
+@import '../../../../../libs/ice-custom-components/src/lib/components/section-components//motor-custom-table/motor-custom-table.section.mixin.scss';
+@import '../../../../../libs/ice-custom-components/src/lib/components/element-components/time-picker/time-picker.mixin.scss';
 
-@import '../../app/eurolife-custom-components-angular/element/avatar-element.component/avatar-element.component.scss';
+@import '../../../../../libs/ice-custom-components/src/lib/components/element-components/avatar-element.component/avatar-element.component.scss';
 
 $show-required-label-suffix: true;
 $show-required-bottom-border: false;

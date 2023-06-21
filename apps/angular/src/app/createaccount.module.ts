@@ -11,7 +11,7 @@ import { ResourceResolver } from "./resolvers/resource.resolver";
 
 ///new sign up process
 
-import { SignUpNewMobileComponent } from './eurolife-custom-components-angular/page/sign-up-new/sign-up-new-mobile/sign-up-new-mobile.component';
+import { SignUpNewMobileComponent } from './components/sign-up-new/sign-up-new-mobile/sign-up-new-mobile.component';
 
 
 import {MatToolbarModule} from '@angular/material/toolbar';

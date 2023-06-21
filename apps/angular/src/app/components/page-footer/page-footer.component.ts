@@ -1,11 +1,11 @@
-import { CookieDeclarationComponent } from './../../eurolife-custom-components-angular/page/cookie-declaration/cookie-declaration.component';
-import { environment } from "./../../../environments/environment";
+import { CookieDeclarationComponent } from './../../components/cookie-declaration/cookie-declaration.component';
+import { environment } from "@insis-portal/environments/environment";
 import { Component, OnInit } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Router, NavigationEnd } from "@angular/router";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { TermsConditionsComponent } from "../../eurolife-custom-components-angular/page/terms-conditions/terms-conditions.component";
-import { LocalStorageService } from "../../services/local-storage.service";
+import { TermsConditionsComponent } from "../../components/terms-conditions/terms-conditions.component";
+import { LocalStorageService } from "@insis-portal/services/local-storage.service";
 
 @Component({
   selector: "page-footer",

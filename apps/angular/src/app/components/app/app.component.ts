@@ -1,28 +1,28 @@
-import { environment } from './../../../environments/environment';
-import { LoginAuthenticationGuard } from "./../../services/login-authentication.guard";
+import { environment } from '@insis-portal/environments/environment';
+import { LoginAuthenticationGuard } from "@insis-portal/services/login-authentication.guard";
 import { Component, OnInit, HostListener, ElementRef, ApplicationRef } from "@angular/core";
 import { Router, NavigationEnd, Route, NavigationStart, ActivatedRoute } from "@angular/router";
-import { NgIceRegistration } from "./ng-ice-registration";
+
 
 import {  IcePrincipalService, IceContextService } from "@impeo/ng-ice";
 import { IceContext,ClientPrincipal,IcePrincipal} from "@impeo/ice-core";
 import { Subscription, Subject } from "rxjs";
-import { LocalStorageService } from "../../services/local-storage.service";
-import { CheckInactivityService } from "../..//services/check-inactivity.service";
-import { ModalService } from "../../services/modal.service";
+import { LocalStorageService } from "@insis-portal/services/local-storage.service";
+import { CheckInactivityService } from "@insis-portal/services/check-inactivity.service";
+import { ModalService } from "@insis-portal/services/modal.service";
 import { CookieConsentService } from "../../services/cookie-consent.service";
 import { ResourceResolver } from '../../resolvers/resource.resolver';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Overlay } from '@angular/cdk/overlay';
-import { MotorCustomTableComponent } from '../../eurolife-custom-components-angular/section/motor-custom-table/motor-custom-table.section.component';
+import { MotorCustomTableComponent } from '@insis-portal/ice-custom-components/src/lib/components/section-components/motor-custom-table/motor-custom-table.section.component'
 import { LogoutService } from '../../services/logout.service';
 import { Meta } from '@angular/platform-browser';
-import { CanDeactivateGuard } from '../../services/guards/can-deactivate-guard.service';
+import { CanDeactivateGuard } from '@insis-portal/services/guards/can-deactivate-guard.service';
 import IdleTimer  from '../../data/IdleTimer';
 import { SalesforceChatComponent } from '../salesforce-chat/salesforce-chat.component';
-import { CommunicationService } from '../../services/communication.service';
-import { SpinnerService } from '../../services/spinner.service';
-import { getDefaultLanguage } from '../../services/language.service';
+import { CommunicationService } from '@insis-portal/services/communication.service';
+import { SpinnerService } from '@insis-portal/services/spinner.service';
+import { getDefaultLanguage } from '@insis-portal/services/language.service';
 import { get } from 'lodash';
 import { split } from 'lodash';
 declare let ga: Function;

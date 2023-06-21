@@ -1,5 +1,5 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import { SignUpGroupSuccessModalComponent } from '../eurolife-custom-components-angular/page/sign-up-group-success-modal/sign-up-group-success-modal.component';
+import { SignUpGroupSuccessModalComponent } from '../components/sign-up-group-success-modal/sign-up-group-success-modal.component';
 
 @Injectable()
 export class ModalService {

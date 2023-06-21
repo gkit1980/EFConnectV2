@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 import { Observable } from "rxjs";
-import { SpinnerService } from "../../services/spinner.service";
+import { SpinnerService } from "@insis-portal/services/spinner.service";
 
 @Component({
 	selector: "app-loading-spinner",

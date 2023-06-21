@@ -24,9 +24,9 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatInputModule} from '@angular/material/input';
 
 
-import { ForgotPasswordComponent } from './eurolife-custom-components-angular/page/forgot-password/forgot-password.component';
-import { ForgotPasswordRecoveryComponent } from './eurolife-custom-components-angular/page/forgot-password-recovery/forgot-password-recovery.component';
-import { ForgotPasswordResetComponent } from './eurolife-custom-components-angular/page/forgot-password-reset/forgot-password-reset.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { ForgotPasswordRecoveryComponent } from './components/forgot-password-recovery/forgot-password-recovery.component';
+import { ForgotPasswordResetComponent } from './components/forgot-password-reset/forgot-password-reset.component';
 
 const routes :Routes =
 [

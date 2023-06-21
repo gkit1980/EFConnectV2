@@ -2,10 +2,10 @@ import { Injectable } from "@angular/core";
 import { NgbModal, NgbModalRef } from "@ng-bootstrap/ng-bootstrap";
 import { ModalService } from "./modal.service";
 import { IceContextService } from "@impeo/ng-ice";
-import { SessionTimeoutComponent } from "../eurolife-custom-components-angular/page/session-timeout/session-timeout.component";
-import { LogoutComponent } from "../eurolife-custom-components-angular/page/logout/logout.component";
+import { SessionTimeoutComponent } from "../components/session-timeout/session-timeout.component";
+import { LogoutComponent } from "../components/logout/logout.component";
 
-import { LogoutSecurityComponent } from "../eurolife-custom-components-angular/page/logout-security/logout-security.component";
+import { LogoutSecurityComponent } from "../components/logout-security/logout-security.component";
 
 @Injectable()
 export class LogoutService {

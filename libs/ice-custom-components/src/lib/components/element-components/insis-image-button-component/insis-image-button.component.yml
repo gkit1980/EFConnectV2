@@ -1,7 +1,0 @@
-label: Image that acts like button
-component: InsisImageButton
-types:
-  - action
-description: >
-  A component that shows image and triggers action if user clicks on the image.
-  Image url is got from component label and action thats going to be executed depends on element's value.

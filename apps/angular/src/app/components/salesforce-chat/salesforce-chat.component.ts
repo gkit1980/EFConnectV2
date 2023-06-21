@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { LocalStorageService } from '../../services/local-storage.service';
+import { LocalStorageService } from '@insis-portal/services/local-storage.service';
 import * as jwt_token from 'jwt-decode';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import * as CryptoJS from 'crypto-js';
-import { environment } from "./../../../environments/environment";
+import { environment } from "@insis-portal/environments/environment";
 
 @Component({
   selector: 'app-salesforce-chat',
