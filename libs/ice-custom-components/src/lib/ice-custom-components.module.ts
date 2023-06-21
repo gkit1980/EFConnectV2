@@ -140,7 +140,7 @@ import { SimpleGridViewComponent } from "./components/section-components/simple-
 import { EurolifeDropdownMenuComponent } from "./components/shared-components/eurolife-dropdown-menu/eurolife-dropdown-menu.component";
 import { EurolifeNotificationBarComponent } from "./components/element-components/eurolife-notification-bar/eurolife-notification-bar.component";
 import { OtpInputComponent } from "./components/element-components/otp-input/otp-input.component";
-import { OnlyDigitsDirective } from "./components/element-components/otp-input/only-digits.directive";
+// import { OnlyDigitsDirective } from "./components/element-components/otp-input/only-digits.directive";
 import { EurolifeOutputColorComponent } from "./components/element-components/eurolife-output-color/eurolife-output-color.component";
 import { EurolifeHeaderTileComponent } from "./components/element-components/eurolife-header-tile/eurolife-header-tile.component";
 import { HeaderComponent } from "./components/section-components/header/header.component";
@@ -167,7 +167,7 @@ import { InsertCodeTimerComponent } from "./components/element-components/insert
 import { SendEmailButtonComponent } from "./components/element-components/send-email-button/send-email-button.component";
 import { GlossaryComponent } from "../../../../apps/angular/src/app/components/glossary/glossary.component";
 import { InsertCodeEmailTimerComponent } from "./components/element-components/insert-code-email-timer/insert-code-email-timer.component";
-import { FormatTimePipeForEmail } from "./components/element-components/insert-code-email-timer/insert-code-email-timer.component";
+// import { FormatTimePipeForEmail } from "./components/element-components/insert-code-email-timer/insert-code-email-timer.component";
 import { EmailConfirmationComponent } from "./components/page-components/email-confirmation/email-confirmation.component";
 
 import { MyDocumentsComponent } from "./components/section-components/my-documents/my-documents.component";
@@ -353,7 +353,7 @@ export const iceCustomComponents = [
   ButtonToDialogComponent,
   EurolifeMobileButtonComponent,
   OtpInputComponent,
-  OnlyDigitsDirective,
+  // OnlyDigitsDirective,
   EurolifeOutputColorComponent,
   EurolifeHeaderTileComponent,
   HeaderComponent,
@@ -380,7 +380,7 @@ export const iceCustomComponents = [
   SendEmailButtonComponent,
   GlossaryComponent,
   InsertCodeEmailTimerComponent,
-  FormatTimePipeForEmail,
+  // FormatTimePipeForEmail,
   EmailConfirmationComponent,
   MyDocumentsComponent,
   PopUpPageComponent,

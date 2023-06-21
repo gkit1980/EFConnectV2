@@ -33,8 +33,7 @@ export class RedirectionGreenCardComponent extends SectionComponentImplementatio
 
       let action = this.context.iceModel.actions['action-greencard-get-token'];
       for (let i = 0; i < action.executionRules.length; i++) {
-        let executionRule = action.executionRules[i];
-        await this.context.executeExecutionRule(executionRule);
+        await action.executionRules[i].execute();
       }
   }
 

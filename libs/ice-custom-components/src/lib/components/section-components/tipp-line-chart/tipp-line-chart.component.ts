@@ -144,7 +144,7 @@ export class TippLineChartComponent extends SectionComponentImplementation {
 
 
    this.context.$lifecycle.subscribe(event => {
-      if (event.type == LifecycleType.DATASTORE_ASSIGN) {
+      if (event.type == LifecycleType.ICE_MODEL_READY) {
 
         this.addItems();
       }

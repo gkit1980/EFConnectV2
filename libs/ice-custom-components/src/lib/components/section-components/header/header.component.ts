@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { SectionComponentImplementation, IceSectionComponent } from '@impeo/ng-ice';
-import { IndexedValue } from '@impeo/ice-core';
+import { IndexedValue,LifecycleEvent } from '@impeo/ice-core';
 import { LocalStorageService } from '@insis-portal/services/local-storage.service';
 import * as _ from 'lodash';
-import { catchError, first, tap } from "rxjs/operators";
+import { catchError, first, map, tap } from "rxjs/operators";
 import { Observable, Subject, throwError} from 'rxjs';
 
 @Component({
@@ -40,14 +40,33 @@ export class HeaderComponent extends SectionComponentImplementation implements O
     //     let executionRuleResultData2 = this.context.executeExecutionRule(executionRule2);
     //   }
     // }
-    this.context.$actionEnded.pipe(
-      first((action) => action === 'actionWriteFromOtherForRefresh'),
-      catchError((err) => this.handleError(err)),
-      tap((_x) => {
-        //this.addItems();
-        this.indexFunction();
-      })
-    );
+
+
+
+    // this.context.$actionEnded.pipe(
+    //   first((action) => action === 'actionWriteFromOtherForRefresh'),
+    //   catchError((err) => this.handleError(err)),
+    //   tap((_x) => {
+    //     //this.addItems();
+    //     this.indexFunction();
+    //   })
+    // );
+
+    ///replace with  -->
+
+   //check   ??????
+    this.context.$lifecycle.pipe(
+      //first((action) => action === 'actionWriteFromOtherForRefresh'),
+      map((e:LifecycleEvent) =>
+      {
+      const actionName = _.get(e, ['payload', 'action']);
+      if(actionName === 'actionWriteFromOtherForRefresh'&& e.type=="ACTION_FINISHED")
+      return e;
+      }
+      ));
+
+
+
 
     this.flag = false;
     this.addItems();
@@ -140,8 +159,7 @@ export class HeaderComponent extends SectionComponentImplementation implements O
       if (this.currentContract.Branch === 'ΑΥΤΟΚΙΝΗΤΩΝ' || this.currentContract.Branch === 'ΠΕΡΙΟΥΣΙΑΣ' || this.currentContract.Branch === 'ΖΩΗΣ' || this.currentContract.Branch === 'ΥΓΕΙΑΣ' || this.currentContract.Branch === 'ΔΙΑΦΟΡΑ ΕΠΕΝΔΥΤΙΚΑ' ) {
         const action = this.context.iceModel.actions['actionGetBookletsExist'];
         if (action) {
-          const executionRule = action.executionRules[0];
-          const executionRuleResultData = await this.context.executeExecutionRule(executionRule);
+          await action.executionRules[0].execute();
         }
       }
 

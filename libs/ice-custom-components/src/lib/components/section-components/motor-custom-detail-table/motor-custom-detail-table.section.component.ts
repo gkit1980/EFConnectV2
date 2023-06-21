@@ -10,6 +10,7 @@ import { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } from 'constants';
 import { environment } from "@insis-portal/environments/environment";
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import {LifecycleEvent } from '@impeo/ice-core';
 
 
 export interface Receipt {
@@ -97,8 +98,11 @@ export class MotorCustomDetailTableComponent extends SectionComponentImplementat
 
                 /////SOS! from redirerection....wait to finish actionGetReceipts
 
-                this.getReceiptsSubs = this.context.$actionEnded.subscribe((actionName: string) => {
-                    if (actionName.includes("actionGetReceipts")) {
+                this.getReceiptsSubs = this.context.$lifecycle.subscribe((e: LifecycleEvent) => {
+
+                  const actionName = _.get(e, ['payload', 'action']);
+
+                    if (actionName.includes("actionGetReceipts") && e.type === 'ACTION_FINISHED') {
 
                         this.items = _.get(this.context.dataStore, this.recipe.dataStoreProperty);
                         if (this.items == null)
@@ -148,7 +152,7 @@ export class MotorCustomDetailTableComponent extends SectionComponentImplementat
                             this.showSpinnerBtnArr = [...this.showSpinnerBtnArr, false];
                         })
                         this.filterStatuses = Array.from(new Set(this.filterStatuses))
-                        this.context.$actionEnded.observers.pop();
+                        // this.context.$actionEnded.observers.pop();
                     }
                 });
                 this.subscription.add(this.getReceiptsSubs);
@@ -274,10 +278,9 @@ export class MotorCustomDetailTableComponent extends SectionComponentImplementat
             this.showSpinnerBtnArr[idx] = true;
             const action = this.context.iceModel.actions['actionGetUserNotesPerUrl'];
             if (action) {
-                const executionRule0 = action.executionRules[0];
-                await this.context.executeExecutionRule(executionRule0);
-                const executionRule1 = action.executionRules[1];
-                await this.context.executeExecutionRule(executionRule1);
+              await action.executionRules[0].execute();
+
+              await action.executionRules[1].execute();
                 this.showSpinnerBtnArr[idx] = false;
             }
           } catch (error) {

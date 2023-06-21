@@ -6,6 +6,7 @@ import { LifecycleType } from '@impeo/ice-core';
 import { LocalStorageService } from '@insis-portal/services/local-storage.service';
 import { catchError, filter, first, map, tap } from 'rxjs/operators';
 import { Subscription, throwError } from 'rxjs';
+import {LifecycleEvent } from '@impeo/ice-core';
 
 @Component({
   selector: 'app-sales-channel-details',
@@ -83,8 +84,13 @@ export class SalesChannelDetailsComponent extends SectionComponentImplementation
       this.subscription.add(this.lifecycleSubs);
     }
 
-    const getPoliciesEnded$ = this.context.$actionEnded.pipe(
-      first((action) => action === 'actionGetPolicies'),
+    const getPoliciesEnded$ = this.context.$lifecycle.pipe(
+      map((e:LifecycleEvent) =>
+      {
+      const actionName = _.get(e, ['payload', 'action']);
+      if(actionName === 'actionGetPolicies'&& e.type=="ACTION_FINISHED")
+      return e;
+      }),
       catchError((err) => this.handleError(err)),
       tap((_) => this.execActionsForRefresh())
     );

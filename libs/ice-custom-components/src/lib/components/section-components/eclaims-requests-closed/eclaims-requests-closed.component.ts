@@ -274,8 +274,8 @@ ngOnInit() {
     this.context.iceModel.elements['eclaims.request.caseId'].setSimpleValue(item.Id);
     let action = this.context.iceModel.actions["action-request-getallfiles"];
     if(action){
-      let executionRule = action.executionRules[0];
-      await this.context.executeExecutionRule(executionRule);
+      // let executionRule = action.executionRules[0];
+      await action.executionRules[0].execute();
 
       //open Dialog
       let popupPageName = "viewEclaimsDocumentsDialog";

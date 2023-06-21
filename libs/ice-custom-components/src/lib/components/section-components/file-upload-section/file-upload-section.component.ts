@@ -1,5 +1,5 @@
 import { environment } from "../../../../../../../apps/angular/src/environments/environment";
-import { element } from 'protractor';
+
 import { Component, OnInit } from '@angular/core';
 import { SectionComponentImplementation, IceSectionComponent } from '@impeo/ng-ice';
 import * as _ from 'lodash';

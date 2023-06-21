@@ -4,6 +4,7 @@ import { SectionComponentImplementation, IceSectionComponent } from '@impeo/ng-i
 import * as _ from 'lodash';
 import { FormBuilder } from '@angular/forms';
 import { LocalStorageService } from '@insis-portal/services/local-storage.service';
+import {LifecycleEvent } from '@impeo/ice-core';
 
 
 @Component({
@@ -317,7 +318,8 @@ export class SubheaderStepperComponent extends SectionComponentImplementation {
     //dataStoreProperty comes from the page
     this.items = _.get(this.context.dataStore, this.recipe.dataStoreProperty);
     if (this.items == undefined) {
-      this.context.$actionEnded.subscribe((actionName: string) => {
+      this.context.$lifecycle.subscribe((e: LifecycleEvent) => {
+        const actionName = _.get(e, ['payload', 'action']);
         if (actionName.includes("actionGetPolicies")) {
           this.context.iceModel.elements['triggerActionWriteFromOther'].setSimpleValue(1);
         }
@@ -329,7 +331,10 @@ export class SubheaderStepperComponent extends SectionComponentImplementation {
     }
 
 
-    this.context.$actionEnded.subscribe((actionName: string) => {
+    this.context.$lifecycle.subscribe((e: LifecycleEvent) =>
+    {
+
+      const actionName = _.get(e, ['payload', 'action']);
       if (actionName.includes("actionWriteFromOtherForRefresh")) {
         this.items = _.get(this.context.dataStore, this.recipe.dataStoreProperty);
         this.contractSelectedIndex = this.localStorage.getDataFromLocalStorage('generalIndexHolder')
@@ -338,7 +343,7 @@ export class SubheaderStepperComponent extends SectionComponentImplementation {
         this.iceModel.elements['policy.contract.general.info.ClaimID'].setSimpleValue(this.localStorage.getDataFromLocalStorage('claimID')); // in order to get participants
         this.claimsFilter();
         this.getCurrentClaimData();
-        this.context.$actionEnded.observers.pop();
+       // this.context.$actionEnded.observers.pop();
 
         // this.items = _.get(this.context.dataStore, this.recipe.dataStoreProperty);
         // this.setBranch();
@@ -537,7 +542,7 @@ export class SubheaderStepperComponent extends SectionComponentImplementation {
   setBranch() {
     for (let i = 0; i < this.items.length; i++) {
       for (let j = 0; j < this.items[i].Claims.length; j++) {
-        _.set(this.context.dataStore.clientContracts[i].Claims[j], 'Branch', this.context.dataStore.clientContracts[i].Branch);
+        _.set(this.context.dataStore.data.clientContracts[i].Claims[j], 'Branch', this.context.dataStore.data.clientContracts[i].Branch);
       }
     }
   }

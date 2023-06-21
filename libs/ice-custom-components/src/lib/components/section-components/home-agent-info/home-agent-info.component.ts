@@ -2,7 +2,7 @@ import { environment } from "@insis-portal/environments/environment";
 import { Component } from '@angular/core';
 import { SectionComponentImplementation, IceSectionComponent } from '@impeo/ng-ice';
 import * as _ from 'lodash';
-import { LifecycleType } from '@impeo/ice-core';
+import { LifecycleType,LifecycleEvent} from '@impeo/ice-core';
 import { Subscription } from 'rxjs';
 import { LocalStorageService } from '@insis-portal/services/local-storage.service';
 
@@ -47,7 +47,7 @@ export class HomeAgentInfoComponent extends SectionComponentImplementation {
     this.addItems();
     this.itemsSub = this.context.$lifecycle.subscribe(
       (event) => {
-        if (event.type == LifecycleType.DATASTORE_ASSIGN) {
+        if (event.type == LifecycleType.ICE_MODEL_READY) {
           if (!this.showMyAgents) {
 
             this.myDataStoreObject = _.get(this.context.dataStore, this.recipe.dataStoreProperty);
@@ -65,9 +65,13 @@ export class HomeAgentInfoComponent extends SectionComponentImplementation {
 
     this.refreshStatus = this.localStorage.getDataFromLocalStorage('refreshStatus');
     if (this.refreshStatus == 1) {
-      this.refreshSub = this.context.$actionEnded.subscribe(
-        async (actionName: string) => {
-          if (actionName.includes('actionGetPolicies')) {
+      this.refreshSub = this.context.$lifecycle.subscribe(
+        (e: LifecycleEvent) => {
+
+          const actionName = _.get(e, ['payload', 'action']);
+
+
+          if (actionName.includes('actionGetPolicies') && e.type==='ACTION_FINISHED') {
             this.execRules();
           }
         },
@@ -91,8 +95,8 @@ export class HomeAgentInfoComponent extends SectionComponentImplementation {
       let executionRule = action.executionRules[0];
       let executionRule1 = action.executionRules[1];
       try {
-        await this.context.executeExecutionRule(executionRule);
-        await this.context.executeExecutionRule(executionRule1);
+        await  action.executionRules[0].execute();
+        await action.executionRules[1].execute();
       } catch (error) {
         console.log(error);
       }

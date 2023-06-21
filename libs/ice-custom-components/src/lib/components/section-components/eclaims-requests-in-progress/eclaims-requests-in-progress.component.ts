@@ -273,12 +273,13 @@ async DocumentsPopUp(item: any) {
   if (action) {
 
     console.log("visible in action", this.visible)
-    let executionRule = action.executionRules[0];
-    await this.context.executeExecutionRule(executionRule);
-    let executionRule1 = action.executionRules[1];
-    await this.context.executeExecutionRule(executionRule1);
-    let executionRule2 = action.executionRules[2];
-    await this.context.executeExecutionRule(executionRule2);
+    // let executionRule = action.executionRules[0];
+    // await this.context.executeExecutionRule(executionRule);
+    // let executionRule1 = action.executionRules[1];
+    // await this.context.executeExecutionRule(executionRule1);
+    // let executionRule2 = action.executionRules[2];
+    // await this.context.executeExecutionRule(executionRule2);
+    await action.executionRules[0].execute();
 
 
     //open Dialog

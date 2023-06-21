@@ -2,6 +2,8 @@ import { SectionComponentImplementation, IceSectionComponent } from '@impeo/ng-i
 import { Component, OnInit,ChangeDetectorRef } from '@angular/core';
 import * as jwt_token from 'jwt-decode';
 import { LocalStorageService } from '@insis-portal/services/local-storage.service';
+import {LifecycleEvent } from '@impeo/ice-core';
+import { get } from 'lodash';
 
 
 @Component({
@@ -29,9 +31,12 @@ export class CustomerProfileComponent extends SectionComponentImplementation imp
     this.CheckMarketConsents();
 
     //refresh reasons
-    this.context.$actionEnded.subscribe(
-      (actioName: string) => {
-       if (actioName.includes("actionGetCustomerFullData"))
+    this.context.$lifecycle.subscribe(
+      (e: LifecycleEvent) => {
+
+        const actionName = get(e, ['payload', 'action']);
+
+       if (actionName.includes("actionGetCustomerFullData") && e.type === 'ACTION_FINISHED')
        {
         this.CheckMarketConsents();
        }

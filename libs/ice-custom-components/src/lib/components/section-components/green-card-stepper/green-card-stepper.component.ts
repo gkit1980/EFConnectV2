@@ -1,6 +1,6 @@
 import { Component, OnDestroy } from "@angular/core";
 import { IceSectionComponent, SectionComponentImplementation } from "@impeo/ng-ice";
-import { IndexedValue } from '@impeo/ice-core';
+import { IndexedValue,LifecycleEvent } from '@impeo/ice-core';
 import * as _ from "lodash";
 import { environment } from "@insis-portal/environments/environment";
 import { SpinnerService } from "@insis-portal/services/spinner.service";
@@ -26,14 +26,30 @@ export class GreenCardStepperComponent extends SectionComponentImplementation im
 
     this.setInitialStep();
 
-    this.context.$actionEnded.subscribe(async (actionName: string) => {
-      if (actionName.includes("actionGetPolicies")) {
+    // this.context.$actionEnded.subscribe(async (actionName: string) => {
+    //   if (actionName.includes("actionGetPolicies")) {
+    //  //   this.context.iceModel.elements["greencard.refresh.status"].setSimpleValue(true);   //for refresh purpose of green card
+    //  let action = this.context.iceModel.actions['action-greencard-get-token'];
+    //  for(let i=0;i<action.executionRules.length;i++)
+    //  {
+    //    let executionRule =  action.executionRules[i];
+    //    await this.context.executeExecutionRule(executionRule);
+    //  }
+    //   }
+    // });
+     ///replace with
+    this.context.$lifecycle.subscribe( async (e:LifecycleEvent) => {
+
+
+      const actionName = _.get(e, ['payload', 'action']);
+
+      if (actionName.includes("actionGetPolicies") && e.type==="ACTION_FINISHED") {
      //   this.context.iceModel.elements["greencard.refresh.status"].setSimpleValue(true);   //for refresh purpose of green card
      let action = this.context.iceModel.actions['action-greencard-get-token'];
      for(let i=0;i<action.executionRules.length;i++)
      {
-       let executionRule =  action.executionRules[i];
-       await this.context.executeExecutionRule(executionRule);
+       await action.executionRules[i].execute();
+
      }
       }
     });

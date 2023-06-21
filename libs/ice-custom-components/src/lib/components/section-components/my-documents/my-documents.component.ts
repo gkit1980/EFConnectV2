@@ -75,8 +75,7 @@ export class MyDocumentsComponent extends SectionComponentImplementation impleme
     };
     let action = this.context.iceModel.actions[this.recipe['getStatements']];
     if (action != null) {
-      let executionRule = action.executionRules[0];
-      let executionRuleResultData = this.context.executeExecutionRule(executionRule);
+      action.executionRules[0].execute();
     }
     this.addItems();
   }
@@ -127,7 +126,7 @@ export class MyDocumentsComponent extends SectionComponentImplementation impleme
     this.setMatTableDataSource();
 
     this.addItemsSubs = this.context.$lifecycle.subscribe(event => {
-      if (event.type == LifecycleType.DATASTORE_ASSIGN) {
+      if (event.type == LifecycleType.ICE_MODEL_READY) {
         this.setMatTableDataSource();
       }
     });
@@ -172,10 +171,8 @@ export class MyDocumentsComponent extends SectionComponentImplementation impleme
       this.context.iceModel.elements['statement.url'].setSimpleValue(receiptId);
       const action = this.context.iceModel.actions['actionGetStatementPdf'];
       if (action) {
-        const executionRule0 = action.executionRules[0];
-        await this.context.executeExecutionRule(executionRule0);
-        const executionRule1 = action.executionRules[1];
-        await this.context.executeExecutionRule(executionRule1);
+        await action.executionRules[0].execute();
+        await action.executionRules[1].execute();
         this.showSpinnerBtnArr[idx] = false;
       }
     } catch (error) {

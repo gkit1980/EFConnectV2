@@ -4,6 +4,7 @@ import { LocalStorageService } from '@insis-portal/services/local-storage.servic
 import { Router } from '@angular/router';
 import * as _ from "lodash";
 import { environment } from '@insis-portal/environments/environment.prod';
+import {LifecycleEvent } from '@impeo/ice-core';
 
 @Component({
   selector: 'app-payment',
@@ -61,9 +62,11 @@ export class PaymentComponent extends SectionComponentImplementation {
     if (this.recipe.dataStoreProperty == null) {
       return;
     }
+    this.context.$lifecycle.subscribe((e: LifecycleEvent) => {
 
-    this.context.$actionEnded.subscribe((actionName: string) => {
-      if (actionName.includes("actionGetPolicies")) {
+      const actionName = _.get(e, ['payload', 'action']);
+
+      if (actionName.includes("actionGetPolicies") && e.type=="ACTION_FINISHED") {
         this.items = _.get(this.context.dataStore, this.recipe.dataStoreProperty);
         this.context.iceModel.elements['triggerActionGetParticipants'].setSimpleValue(1);
         this.context.iceModel.elements['triggerActionGetReceipts'].setSimpleValue(1);
