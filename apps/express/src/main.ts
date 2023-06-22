@@ -10,7 +10,7 @@ import { ExpressApplicationOptions, VisualIceOptions } from './app/express-appli
  * TIP: You can create a file `user.env` with custom env variables only for you.
  * This file is ignored and won't be checked in to the git repository.
  */
-loadEnvFile('user.env');
+loadEnvFile('process.env');
 
 /**
  * TIP: Put all development-related env variables in `development.env`.

@@ -150,7 +150,7 @@ export class AppComponent implements OnInit {
     window.addEventListener('storage', (event) => {
       if (event.storageArea == localStorage) {
         const token = this.localStorage.getDataFromLocalStorage('token');
-        if (token == undefined && this.currentUrl !== '/' && !this.checkUrlStart(this.urlArr, this.currentUrl)) {
+        if (token == undefined &&  (this.currentUrl !== '/' && this.currentUrl !==null) && !this.checkUrlStart(this.urlArr, this.currentUrl)) {
           this.logoutService.logoutSec();
         }
       }

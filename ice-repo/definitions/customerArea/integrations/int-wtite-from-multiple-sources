@@ -1,0 +1,33 @@
+integration:
+  exchange:
+    InsisRestCallExchangeRule:
+      endpointBaseurl: BASEURL
+      url: GetCustomerContracts
+      verb: post
+      salesforceLoginUrl: BASEURLSALESFORCELOGIN
+      salesforceLoginMethod: post
+      eclaimsServicesUrl: BASESALESFORCEURLECLAIMSERVICES
+      eclaimsServicesMethod: get
+      encryptMessage: true
+      needsDataStore: true
+      encryptSecretElement: token
+  transformation:
+    DefaultTransformationRule:
+      dateFormat: YYYY-MM-DD
+      additional: insis
+      out:
+        - param: PID
+          datastore: insis.claim.fnol.agent.query.pid
+      in:
+        - mappings:
+            - payload: 'RowSet[0].name'
+              element: claim.client.name
+        - mappings:
+            - payload: 'RowSet[0].egn'
+              element: claim.client.id
+        - mappings:
+            - payload: 'RowSet[0].man-id'
+              element: claim.client.number
+        - mappings:
+            - payload: 'RowSet[0].manComp'
+              element: claim.client.type
