@@ -1,4 +1,4 @@
 definition:
   title: Customer Area
   executable: true
-  showInsights: false
+  showInsights: true

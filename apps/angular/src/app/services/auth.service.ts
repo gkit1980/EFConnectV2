@@ -71,7 +71,7 @@ export class AuthService {
     // const userEmail = this.localStorage.getDataFromLocalStorage("email");
     const langCode = getDefaultLanguage();
     // const userData = { token: `${token}` };
-    const principal = this.principalFromToken(token, langCode);
+    const principal = this.principalFromToken(token, 'el');
     this.icePrincipalService.principal = principal;
   }
 
@@ -84,7 +84,9 @@ export class AuthService {
 
     const payload = JSON.parse(decodeURIComponent(escape(atob(tokenParts[1]))));
 
-    return new ClientPrincipal(payload.id, token, locale, payload.roles, payload.data);
+    const userData = { token: `${token}` };
+
+    return new ClientPrincipal('1', token, locale, payload.roles,userData);
   }
 
 }

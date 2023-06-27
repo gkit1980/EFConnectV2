@@ -2,7 +2,7 @@ import { environment } from '@insis-portal/environments/environment';
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { FormControl, Validators } from "@angular/forms";
 import { Router, ActivatedRouteSnapshot, ActivatedRoute } from "@angular/router";
-import { IceModel, RuleFactoryImpl, DataModel , LifecycleEvent} from "@impeo/ice-core";
+import { IceModel, RuleFactoryImpl, DataModel ,IceContext, LifecycleEvent} from "@impeo/ice-core";
 import { IcePrincipalService, IceContextService, IceRuntimeResolver } from "@impeo/ng-ice";
 import { AuthService } from "@insis-portal/services/auth.service";
 import { LocalStorageService } from "@insis-portal/services/local-storage.service";
@@ -65,6 +65,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   showDaf: boolean = false;
   clickCount: number=0;
   returnUrl: string;
+  customerAreaContext: IceContext=undefined;
 
   constructor(
     private router: Router,
@@ -83,6 +84,14 @@ export class LoginComponent implements OnInit, OnDestroy {
     private logoutService: LogoutService,
     private passManagement: PassManagementService
   ) {
+
+
+    this.iceContextService.$contextCreated.subscribe((contextAndContextId) => {
+
+      const context = get(contextAndContextId, 'context') as IceContext;
+      console.info(context)
+
+    });
 
   }
 
@@ -332,14 +341,18 @@ export class LoginComponent implements OnInit, OnDestroy {
       route.params['definition'] = 'customerArea.motor';
       route.params["repo"] = 'default';
       const iceModelRecipe = await this.iceRuntimeResolver.resolve(route, null);
-      RuleFactoryImpl.build((await this.iceContextService.getContext("customerArea")));
-      const iceModel = await IceModel.build((await this.iceContextService.getContext("customerArea")), null, null);
-      (await this.iceContextService.getContext("customerArea")).iceModel = iceModel;
-        // this.spinnerService.setMessage('Φόρτωση συμβολαίων');
-      DataModel.build( (await this.iceContextService.getContext("customerArea")));
+
+
+
+      this.customerAreaContext=await this.iceContextService.getContext('customerArea.motor');
+      RuleFactoryImpl.build(this.customerAreaContext);
+
+      const iceModel = await IceModel.build(this.customerAreaContext, iceModelRecipe.listsRecipe);
+      this.customerAreaContext.iceModel = iceModel;
+      DataModel.build(this.customerAreaContext);
       this.router.navigate(["/ice/default/customerArea.motor/home"]);
 
-      (await this.iceContextService.getContext("customeArea")).$lifecycle.subscribe((e: LifecycleEvent) => {
+      (await this.iceContextService.getContext("customerArea.motor")).$lifecycle.subscribe((e: LifecycleEvent) => {
 
         const actionName = get(e, ['payload', 'action']);
 
@@ -348,12 +361,10 @@ export class LoginComponent implements OnInit, OnDestroy {
             this.ckeckIfDafDocExists();
             return;
           }
-      // if (actionName != 'actionGetPolicies') return;
 
-        //   this.spinnerService.setMessage('Φόρτωση προφίλ');
-          // this.router.navigate([
-          //   "/ice/default/customerArea.motor/home"
-          // ]);
+
+
+
         })
 
     }

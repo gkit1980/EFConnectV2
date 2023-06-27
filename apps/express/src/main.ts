@@ -10,13 +10,22 @@ import { ExpressApplicationOptions, VisualIceOptions } from './app/express-appli
  * TIP: You can create a file `user.env` with custom env variables only for you.
  * This file is ignored and won't be checked in to the git repository.
  */
-loadEnvFile('process.env');
+
+//loadEnvFile('process.env');
 
 /**
  * TIP: Put all development-related env variables in `development.env`.
  * The file will not be included in the final Docker image.
  */
-loadEnvFile('development.env');
+
+//loadEnvFile('development.env');
+
+if (process.env.NODE_ENV== 'development' || process.env.NODE_ENV == null || process.env.NODE_ENV==undefined) {
+  loadEnvFile('development.env');
+} else if(process.env.NODE_ENV== 'production')
+{
+  loadEnvFile('process.env');
+}
 
 const numCPUs = cpus().length;
 const numInstances = process.env.ENABLE_NODE_CLUSTER === 'true' ? numCPUs : 1;

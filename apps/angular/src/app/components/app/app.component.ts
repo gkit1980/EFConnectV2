@@ -453,6 +453,8 @@ export class AppComponent implements OnInit {
 
     const payload = JSON.parse(decodeURIComponent(escape(atob(tokenParts[1]))));
 
+    payload.data["token"]=token;
+
     return new ClientPrincipal(payload.id, token, locale, payload.roles, payload.data);
   }
 
